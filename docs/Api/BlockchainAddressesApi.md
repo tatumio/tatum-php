@@ -1,16 +1,49 @@
 # Tatum/Api/BlockchainAddressesApi
 
-* Blockchain addresses [documentation](https://apidoc.tatum.io/tag/Blockchain-addresses/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**address Exists()**](#addressexists) | **GET** `/v3 /offchain /account /address /{address} /{currency}` | Check whether a blockchain address is assigned to a virtual account
-[**assign Address()**](#assignaddress) | **POST** `/v3 /offchain /account /{id} /address /{address}` | Assign a blockchain address to a virtual account
-[**generate Deposit Address()**](#generatedepositaddress) | **POST** `/v3 /offchain /account /{id} /address` | Create a deposit address for a virtual account
-[**generate Deposit Addresses Batch()**](#generatedepositaddressesbatch) | **POST** `/v3 /offchain /account /address /batch` | Create multiple deposit addresses for a virtual account
-[**get All Deposit Addresses()**](#getalldepositaddresses) | **GET** `/v3 /offchain /account /{id} /address` | Get all deposit addresses for a virtual account
-[**remove Address()**](#removeaddress) | **DELETE** `/v3 /offchain /account /{id} /address /{address}` | Remove a deposit address from a virtual account
+[Blockchain addresses API documentation](https://apidoc.tatum.io/tag/Blockchain-addresses/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **addressExists()**](#addressexists) 
+
+> **GET** `/v3/offchain/account/address/{address}/{currency}`
+> 
+> Check whether a blockchain address is assigned to a virtual account
+
+[🔹 **assignAddress()**](#assignaddress) 
+
+> **POST** `/v3/offchain/account/{id}/address/{address}`
+> 
+> Assign a blockchain address to a virtual account
+
+[🔹 **generateDepositAddress()**](#generatedepositaddress) 
+
+> **POST** `/v3/offchain/account/{id}/address`
+> 
+> Create a deposit address for a virtual account
+
+[🔹 **generateDepositAddressesBatch()**](#generatedepositaddressesbatch) 
+
+> **POST** `/v3/offchain/account/address/batch`
+> 
+> Create multiple deposit addresses for a virtual account
+
+[🔹 **getAllDepositAddresses()**](#getalldepositaddresses) 
+
+> **GET** `/v3/offchain/account/{id}/address`
+> 
+> Get all deposit addresses for a virtual account
+
+[🔹 **removeAddress()**](#removeaddress) 
+
+> **DELETE** `/v3/offchain/account/{id}/address/{address}`
+> 
+> Remove a deposit address from a virtual account
+
 
 
 ## `addressExists()`

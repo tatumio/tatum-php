@@ -1,13 +1,31 @@
 # Tatum/Api/BlockchainStorageApi
 
-* Blockchain storage [documentation](https://apidoc.tatum.io/tag/Blockchain-storage/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create Record()**](#createrecord) | **POST** `/v3 /record` | Store a log record
-[**create Record Celo()**](#createrecordcelo) | **POST** `/v3 /record` | Store a log record
-[**get Log()**](#getlog) | **GET** `/v3 /record` | Get a log record
+[Blockchain storage API documentation](https://apidoc.tatum.io/tag/Blockchain-storage/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **createRecord()**](#createrecord) 
+
+> **POST** `/v3/record`
+> 
+> Store a log record
+
+[🔹 **createRecordCelo()**](#createrecordcelo) 
+
+> **POST** `/v3/record`
+> 
+> Store a log record
+
+[🔹 **getLog()**](#getlog) 
+
+> **GET** `/v3/record`
+> 
+> Get a log record
+
 
 
 ## `createRecord()`

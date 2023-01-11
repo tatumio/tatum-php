@@ -1,90 +1,493 @@
 # Tatum/Api/NFTERC721OrCompatibleApi
 
-* NFT (ERC-721 or compatible) [documentation](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**add Nft Minter()**](#addnftminter) | **POST** `/v3 /nft /mint /add` | Add an NFT minter to an NFT smart contract
-[**add Nft Minter KMS()**](#addnftminterkms) | **POST** `/v3 /nft /mint /add` | Add an NFT minter to an NFT smart contract
-[**burn Nft()**](#burnnft) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft Algo()**](#burnnftalgo) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft Celo()**](#burnnftcelo) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft Flow KMS()**](#burnnftflowkms) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft Flow Mnemonic()**](#burnnftflowmnemonic) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft Flow PK()**](#burnnftflowpk) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft KMS()**](#burnnftkms) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft KMSCelo()**](#burnnftkmscelo) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft KMSTron()**](#burnnftkmstron) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**burn Nft Tron()**](#burnnfttron) | **POST** `/v3 /nft /burn` | Burn an NFT
-[**deploy Nft()**](#deploynft) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**deploy Nft Celo()**](#deploynftcelo) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**deploy Nft Celo KMS()**](#deploynftcelokms) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**deploy Nft Flow KMS()**](#deploynftflowkms) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**deploy Nft Flow Mnemonic()**](#deploynftflowmnemonic) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**deploy Nft Flow PK()**](#deploynftflowpk) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**deploy Nft KMS()**](#deploynftkms) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**deploy Nft Tron()**](#deploynfttron) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**deploy Nft Tron KMS()**](#deploynfttronkms) | **POST** `/v3 /nft /deploy` | Deploy an NFT smart contract
-[**mint Multiple Nft()**](#mintmultiplenft) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft Celo()**](#mintmultiplenftcelo) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft Flow KMS()**](#mintmultiplenftflowkms) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft Flow Mnemonic()**](#mintmultiplenftflowmnemonic) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft Flow PK()**](#mintmultiplenftflowpk) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft KMS()**](#mintmultiplenftkms) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft KMSCelo()**](#mintmultiplenftkmscelo) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft KMSTron()**](#mintmultiplenftkmstron) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft Minter()**](#mintmultiplenftminter) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Multiple Nft Tron()**](#mintmultiplenfttron) | **POST** `/v3 /nft /mint /batch` | Mint multiple NFTs
-[**mint Nft()**](#mintnft) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Algorand()**](#mintnftalgorand) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Algorand KMS()**](#mintnftalgorandkms) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Celo()**](#mintnftcelo) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Express()**](#mintnftexpress) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Express Algorand()**](#mintnftexpressalgorand) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Express Solana()**](#mintnftexpresssolana) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Flow KMS()**](#mintnftflowkms) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Flow Mnemonic()**](#mintnftflowmnemonic) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Flow PK()**](#mintnftflowpk) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft KMS()**](#mintnftkms) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft KMSCelo()**](#mintnftkmscelo) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft KMSTron()**](#mintnftkmstron) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Minter()**](#mintnftminter) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Solana()**](#mintnftsolana) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Solana KMS()**](#mintnftsolanakms) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**mint Nft Tron()**](#mintnfttron) | **POST** `/v3 /nft /mint` | Mint an NFT
-[**nft Get Balance Erc721()**](#nftgetbalanceerc721) | **GET** `/v3 /nft /balance /{chain} /{contractAddress} /{address}` | Get the NFTs from a specific smart contract that a blockchain address holds
-[**nft Get Contract Address()**](#nftgetcontractaddress) | **GET** `/v3 /nft /address /{chain} /{hash}` | Get the address of an NFT smart contract by its transaction hash
-[**nft Get Metadata Erc721()**](#nftgetmetadataerc721) | **GET** `/v3 /nft /metadata /{chain} /{contractAddress} /{tokenId}` | Get NFT metadata
-[**nft Get Provenance Data Erc721()**](#nftgetprovenancedataerc721) | **GET** `/v3 /nft /provenance /{chain} /{contractAddress} /{tokenId}` | Get NFT provenance information
-[**nft Get Royalty Erc721()**](#nftgetroyaltyerc721) | **GET** `/v3 /nft /royalty /{chain} /{contractAddress} /{tokenId}` | Get NFT royalty information
-[**nft Get Tokens By Address Erc721()**](#nftgettokensbyaddresserc721) | **GET** `/v3 /nft /address /balance /{chain} /{address}` | Get all NFTs that a blockchain address holds
-[**nft Get Tokens By Collection Erc721()**](#nftgettokensbycollectionerc721) | **GET** `/v3 /nft /collection /{chain} /{address}` | Get all NFTs from a collection
-[**nft Get Transact Erc721()**](#nftgettransacterc721) | **GET** `/v3 /nft /transaction /{chain} /{hash}` | Get an NFT transaction by its hash
-[**nft Get Transaction By Address()**](#nftgettransactionbyaddress) | **GET** `/v3 /nft /transaction /{chain} /{address} /{tokenAddress}` | Get NFT transactions on a blockchain address
-[**nft Get Transaction By Token()**](#nftgettransactionbytoken) | **GET** `/v3 /nft /transaction /tokenId /{chain} /{tokenAddress} /{tokenId}` | Get NFT transactions for an NFT
-[**transfer Nft()**](#transfernft) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Algo()**](#transfernftalgo) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Algo Express()**](#transfernftalgoexpress) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Algo KMS()**](#transfernftalgokms) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Celo()**](#transfernftcelo) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Flow KMS()**](#transfernftflowkms) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Flow Mnemonic()**](#transfernftflowmnemonic) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Flow PK()**](#transfernftflowpk) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft KMS()**](#transfernftkms) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft KMSCelo()**](#transfernftkmscelo) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft KMSTron()**](#transfernftkmstron) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Solana()**](#transfernftsolana) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Solana KMS()**](#transfernftsolanakms) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**transfer Nft Tron()**](#transfernfttron) | **POST** `/v3 /nft /transaction` | Transfer an NFT
-[**update Cashback Value For Author Nft()**](#updatecashbackvalueforauthornft) | **PUT** `/v3 /nft /royalty` | Update NFT royalty information
-[**update Cashback Value For Author Nft Celo()**](#updatecashbackvalueforauthornftcelo) | **PUT** `/v3 /nft /royalty` | Update NFT royalty information
-[**update Cashback Value For Author Nft KMS()**](#updatecashbackvalueforauthornftkms) | **PUT** `/v3 /nft /royalty` | Update NFT royalty information
-[**update Cashback Value For Author Nft KMSCelo()**](#updatecashbackvalueforauthornftkmscelo) | **PUT** `/v3 /nft /royalty` | Update NFT royalty information
-[**update Cashback Value For Author Nft KMSTron()**](#updatecashbackvalueforauthornftkmstron) | **PUT** `/v3 /nft /royalty` | Update NFT royalty information
-[**update Cashback Value For Author Nft Tron()**](#updatecashbackvalueforauthornfttron) | **PUT** `/v3 /nft /royalty` | Update NFT royalty information
-[**verify Solana NFT()**](#verifysolananft) | **POST** `/v3 /nft /verify` | Verify an NFT in an NFT collection on Solana
-[**verify Solana NFTKMS()**](#verifysolananftkms) | **POST** `/v3 /nft /verify` | Verify an NFT in an NFT collection on Solana
+[NFT (ERC-721 or compatible) API documentation](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **addNftMinter()**](#addnftminter) 
+
+> **POST** `/v3/nft/mint/add`
+> 
+> Add an NFT minter to an NFT smart contract
+
+[🔹 **addNftMinterKMS()**](#addnftminterkms) 
+
+> **POST** `/v3/nft/mint/add`
+> 
+> Add an NFT minter to an NFT smart contract
+
+[🔹 **burnNft()**](#burnnft) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftAlgo()**](#burnnftalgo) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftCelo()**](#burnnftcelo) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftFlowKMS()**](#burnnftflowkms) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftFlowMnemonic()**](#burnnftflowmnemonic) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftFlowPK()**](#burnnftflowpk) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftKMS()**](#burnnftkms) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftKMSCelo()**](#burnnftkmscelo) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftKMSTron()**](#burnnftkmstron) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **burnNftTron()**](#burnnfttron) 
+
+> **POST** `/v3/nft/burn`
+> 
+> Burn an NFT
+
+[🔹 **deployNft()**](#deploynft) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **deployNftCelo()**](#deploynftcelo) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **deployNftCeloKMS()**](#deploynftcelokms) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **deployNftFlowKMS()**](#deploynftflowkms) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **deployNftFlowMnemonic()**](#deploynftflowmnemonic) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **deployNftFlowPK()**](#deploynftflowpk) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **deployNftKMS()**](#deploynftkms) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **deployNftTron()**](#deploynfttron) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **deployNftTronKMS()**](#deploynfttronkms) 
+
+> **POST** `/v3/nft/deploy`
+> 
+> Deploy an NFT smart contract
+
+[🔹 **mintMultipleNft()**](#mintmultiplenft) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftCelo()**](#mintmultiplenftcelo) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftFlowKMS()**](#mintmultiplenftflowkms) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftFlowMnemonic()**](#mintmultiplenftflowmnemonic) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftFlowPK()**](#mintmultiplenftflowpk) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftKMS()**](#mintmultiplenftkms) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftKMSCelo()**](#mintmultiplenftkmscelo) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftKMSTron()**](#mintmultiplenftkmstron) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftMinter()**](#mintmultiplenftminter) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintMultipleNftTron()**](#mintmultiplenfttron) 
+
+> **POST** `/v3/nft/mint/batch`
+> 
+> Mint multiple NFTs
+
+[🔹 **mintNft()**](#mintnft) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftAlgorand()**](#mintnftalgorand) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftAlgorandKMS()**](#mintnftalgorandkms) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftCelo()**](#mintnftcelo) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftExpress()**](#mintnftexpress) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftExpressAlgorand()**](#mintnftexpressalgorand) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftExpressSolana()**](#mintnftexpresssolana) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftFlowKMS()**](#mintnftflowkms) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftFlowMnemonic()**](#mintnftflowmnemonic) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftFlowPK()**](#mintnftflowpk) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftKMS()**](#mintnftkms) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftKMSCelo()**](#mintnftkmscelo) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftKMSTron()**](#mintnftkmstron) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftMinter()**](#mintnftminter) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftSolana()**](#mintnftsolana) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftSolanaKMS()**](#mintnftsolanakms) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **mintNftTron()**](#mintnfttron) 
+
+> **POST** `/v3/nft/mint`
+> 
+> Mint an NFT
+
+[🔹 **nftGetBalanceErc721()**](#nftgetbalanceerc721) 
+
+> **GET** `/v3/nft/balance/{chain}/{contractAddress}/{address}`
+> 
+> Get the NFTs from a specific smart contract that a blockchain address holds
+
+[🔹 **nftGetContractAddress()**](#nftgetcontractaddress) 
+
+> **GET** `/v3/nft/address/{chain}/{hash}`
+> 
+> Get the address of an NFT smart contract by its transaction hash
+
+[🔹 **nftGetMetadataErc721()**](#nftgetmetadataerc721) 
+
+> **GET** `/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}`
+> 
+> Get NFT metadata
+
+[🔹 **nftGetProvenanceDataErc721()**](#nftgetprovenancedataerc721) 
+
+> **GET** `/v3/nft/provenance/{chain}/{contractAddress}/{tokenId}`
+> 
+> Get NFT provenance information
+
+[🔹 **nftGetRoyaltyErc721()**](#nftgetroyaltyerc721) 
+
+> **GET** `/v3/nft/royalty/{chain}/{contractAddress}/{tokenId}`
+> 
+> Get NFT royalty information
+
+[🔹 **nftGetTokensByAddressErc721()**](#nftgettokensbyaddresserc721) 
+
+> **GET** `/v3/nft/address/balance/{chain}/{address}`
+> 
+> Get all NFTs that a blockchain address holds
+
+[🔹 **nftGetTokensByCollectionErc721()**](#nftgettokensbycollectionerc721) 
+
+> **GET** `/v3/nft/collection/{chain}/{address}`
+> 
+> Get all NFTs from a collection
+
+[🔹 **nftGetTransactErc721()**](#nftgettransacterc721) 
+
+> **GET** `/v3/nft/transaction/{chain}/{hash}`
+> 
+> Get an NFT transaction by its hash
+
+[🔹 **nftGetTransactionByAddress()**](#nftgettransactionbyaddress) 
+
+> **GET** `/v3/nft/transaction/{chain}/{address}/{tokenAddress}`
+> 
+> Get NFT transactions on a blockchain address
+
+[🔹 **nftGetTransactionByToken()**](#nftgettransactionbytoken) 
+
+> **GET** `/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}`
+> 
+> Get NFT transactions for an NFT
+
+[🔹 **transferNft()**](#transfernft) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftAlgo()**](#transfernftalgo) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftAlgoExpress()**](#transfernftalgoexpress) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftAlgoKMS()**](#transfernftalgokms) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftCelo()**](#transfernftcelo) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftFlowKMS()**](#transfernftflowkms) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftFlowMnemonic()**](#transfernftflowmnemonic) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftFlowPK()**](#transfernftflowpk) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftKMS()**](#transfernftkms) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftKMSCelo()**](#transfernftkmscelo) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftKMSTron()**](#transfernftkmstron) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftSolana()**](#transfernftsolana) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftSolanaKMS()**](#transfernftsolanakms) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **transferNftTron()**](#transfernfttron) 
+
+> **POST** `/v3/nft/transaction`
+> 
+> Transfer an NFT
+
+[🔹 **updateCashbackValueForAuthorNft()**](#updatecashbackvalueforauthornft) 
+
+> **PUT** `/v3/nft/royalty`
+> 
+> Update NFT royalty information
+
+[🔹 **updateCashbackValueForAuthorNftCelo()**](#updatecashbackvalueforauthornftcelo) 
+
+> **PUT** `/v3/nft/royalty`
+> 
+> Update NFT royalty information
+
+[🔹 **updateCashbackValueForAuthorNftKMS()**](#updatecashbackvalueforauthornftkms) 
+
+> **PUT** `/v3/nft/royalty`
+> 
+> Update NFT royalty information
+
+[🔹 **updateCashbackValueForAuthorNftKMSCelo()**](#updatecashbackvalueforauthornftkmscelo) 
+
+> **PUT** `/v3/nft/royalty`
+> 
+> Update NFT royalty information
+
+[🔹 **updateCashbackValueForAuthorNftKMSTron()**](#updatecashbackvalueforauthornftkmstron) 
+
+> **PUT** `/v3/nft/royalty`
+> 
+> Update NFT royalty information
+
+[🔹 **updateCashbackValueForAuthorNftTron()**](#updatecashbackvalueforauthornfttron) 
+
+> **PUT** `/v3/nft/royalty`
+> 
+> Update NFT royalty information
+
+[🔹 **verifySolanaNFT()**](#verifysolananft) 
+
+> **POST** `/v3/nft/verify`
+> 
+> Verify an NFT in an NFT collection on Solana
+
+[🔹 **verifySolanaNFTKMS()**](#verifysolananftkms) 
+
+> **POST** `/v3/nft/verify`
+> 
+> Verify an NFT in an NFT collection on Solana
+
 
 
 ## `addNftMinter()`

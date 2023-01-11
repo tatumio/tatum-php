@@ -1,27 +1,115 @@
 # Tatum/Api/PolygonApi
 
-* Polygon [documentation](https://apidoc.tatum.io/tag/Polygon/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**call Polygon Smart Contract Method()**](#callpolygonsmartcontractmethod) | **POST** `/v3 /polygon /smartcontract` | Invoke a method in a smart contract on Polygon
-[**call Polygon Smart Contract Method Caller()**](#callpolygonsmartcontractmethodcaller) | **POST** `/v3 /polygon /smartcontract` | Invoke a method in a smart contract on Polygon
-[**call Polygon Smart Contract Method KMS()**](#callpolygonsmartcontractmethodkms) | **POST** `/v3 /polygon /smartcontract` | Invoke a method in a smart contract on Polygon
-[**call Polygon Smart Contract Read Method()**](#callpolygonsmartcontractreadmethod) | **POST** `/v3 /polygon /smartcontract` | Invoke a method in a smart contract on Polygon
-[**polygon Broadcast()**](#polygonbroadcast) | **POST** `/v3 /polygon /broadcast` | Broadcast signed Polygon transaction
-[**polygon Generate Address()**](#polygongenerateaddress) | **GET** `/v3 /polygon /address /{xpub} /{index}` | Generate Polygon account address from Extended public key
-[**polygon Generate Address Private Key()**](#polygongenerateaddressprivatekey) | **POST** `/v3 /polygon /wallet /priv` | Generate Polygon private key
-[**polygon Generate Wallet()**](#polygongeneratewallet) | **GET** `/v3 /polygon /wallet` | Generate Polygon wallet
-[**polygon Get Balance()**](#polygongetbalance) | **GET** `/v3 /polygon /account /balance /{address}` | Get Polygon Account balance
-[**polygon Get Block()**](#polygongetblock) | **GET** `/v3 /polygon /block /{hash}` | Get Polygon block by hash
-[**polygon Get Current Block()**](#polygongetcurrentblock) | **GET** `/v3 /polygon /block /current` | Get current block number
-[**polygon Get Transaction()**](#polygongettransaction) | **GET** `/v3 /polygon /transaction /{hash}` | Get Polygon Transaction
-[**polygon Get Transaction By Address()**](#polygongettransactionbyaddress) | **GET** `/v3 /polygon /account /transaction /{address}` | Get Polygon transactions by address
-[**polygon Get Transaction Count()**](#polygongettransactioncount) | **GET** `/v3 /polygon /transaction /count /{address}` | Get count of outgoing Polygon transactions
-[**polygon Web3 Driver()**](#polygonweb3driver) | **POST** `/v3 /polygon /web3 /{xApiKey}` | Web3 HTTP driver
-[**transfer Polygon Blockchain()**](#transferpolygonblockchain) | **POST** `/v3 /polygon /transaction` | Send MATIC from account to account
-[**transfer Polygon Blockchain KMS()**](#transferpolygonblockchainkms) | **POST** `/v3 /polygon /transaction` | Send MATIC from account to account
+[Polygon API documentation](https://apidoc.tatum.io/tag/Polygon/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **callPolygonSmartContractMethod()**](#callpolygonsmartcontractmethod) 
+
+> **POST** `/v3/polygon/smartcontract`
+> 
+> Invoke a method in a smart contract on Polygon
+
+[🔹 **callPolygonSmartContractMethodCaller()**](#callpolygonsmartcontractmethodcaller) 
+
+> **POST** `/v3/polygon/smartcontract`
+> 
+> Invoke a method in a smart contract on Polygon
+
+[🔹 **callPolygonSmartContractMethodKMS()**](#callpolygonsmartcontractmethodkms) 
+
+> **POST** `/v3/polygon/smartcontract`
+> 
+> Invoke a method in a smart contract on Polygon
+
+[🔹 **callPolygonSmartContractReadMethod()**](#callpolygonsmartcontractreadmethod) 
+
+> **POST** `/v3/polygon/smartcontract`
+> 
+> Invoke a method in a smart contract on Polygon
+
+[🔹 **polygonBroadcast()**](#polygonbroadcast) 
+
+> **POST** `/v3/polygon/broadcast`
+> 
+> Broadcast signed Polygon transaction
+
+[🔹 **polygonGenerateAddress()**](#polygongenerateaddress) 
+
+> **GET** `/v3/polygon/address/{xpub}/{index}`
+> 
+> Generate Polygon account address from Extended public key
+
+[🔹 **polygonGenerateAddressPrivateKey()**](#polygongenerateaddressprivatekey) 
+
+> **POST** `/v3/polygon/wallet/priv`
+> 
+> Generate Polygon private key
+
+[🔹 **polygonGenerateWallet()**](#polygongeneratewallet) 
+
+> **GET** `/v3/polygon/wallet`
+> 
+> Generate Polygon wallet
+
+[🔹 **polygonGetBalance()**](#polygongetbalance) 
+
+> **GET** `/v3/polygon/account/balance/{address}`
+> 
+> Get Polygon Account balance
+
+[🔹 **polygonGetBlock()**](#polygongetblock) 
+
+> **GET** `/v3/polygon/block/{hash}`
+> 
+> Get Polygon block by hash
+
+[🔹 **polygonGetCurrentBlock()**](#polygongetcurrentblock) 
+
+> **GET** `/v3/polygon/block/current`
+> 
+> Get current block number
+
+[🔹 **polygonGetTransaction()**](#polygongettransaction) 
+
+> **GET** `/v3/polygon/transaction/{hash}`
+> 
+> Get Polygon Transaction
+
+[🔹 **polygonGetTransactionByAddress()**](#polygongettransactionbyaddress) 
+
+> **GET** `/v3/polygon/account/transaction/{address}`
+> 
+> Get Polygon transactions by address
+
+[🔹 **polygonGetTransactionCount()**](#polygongettransactioncount) 
+
+> **GET** `/v3/polygon/transaction/count/{address}`
+> 
+> Get count of outgoing Polygon transactions
+
+[🔹 **polygonWeb3Driver()**](#polygonweb3driver) 
+
+> **POST** `/v3/polygon/web3/{xApiKey}`
+> 
+> Web3 HTTP driver
+
+[🔹 **transferPolygonBlockchain()**](#transferpolygonblockchain) 
+
+> **POST** `/v3/polygon/transaction`
+> 
+> Send MATIC from account to account
+
+[🔹 **transferPolygonBlockchainKMS()**](#transferpolygonblockchainkms) 
+
+> **POST** `/v3/polygon/transaction`
+> 
+> Send MATIC from account to account
+
 
 
 ## `callPolygonSmartContractMethod()`

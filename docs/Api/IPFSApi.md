@@ -1,12 +1,25 @@
 # Tatum/Api/IPFSApi
 
-* IPFS [documentation](https://apidoc.tatum.io/tag/IPFS/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get IPFSData()**](#getipfsdata) | **GET** `/v3 /ipfs /{id}` | Get file from IPFS
-[**store IPFS()**](#storeipfs) | **POST** `/v3 /ipfs` | Store data to IPFS
+[IPFS API documentation](https://apidoc.tatum.io/tag/IPFS/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **getIPFSData()**](#getipfsdata) 
+
+> **GET** `/v3/ipfs/{id}`
+> 
+> Get file from IPFS
+
+[🔹 **storeIPFS()**](#storeipfs) 
+
+> **POST** `/v3/ipfs`
+> 
+> Store data to IPFS
+
 
 
 ## `getIPFSData()`

@@ -1,50 +1,253 @@
 # Tatum/Api/GasPumpApi
 
-* Gas pump [documentation](https://apidoc.tatum.io/tag/Gas-pump/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**activate Gas Pump()**](#activategaspump) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
-[**activate Gas Pump Celo()**](#activategaspumpcelo) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
-[**activate Gas Pump Celo KMS()**](#activategaspumpcelokms) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
-[**activate Gas Pump KMS()**](#activategaspumpkms) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
-[**activate Gas Pump Tatum()**](#activategaspumptatum) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
-[**activate Gas Pump Tron()**](#activategaspumptron) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
-[**activate Gas Pump Tron KMS()**](#activategaspumptronkms) | **POST** `/v3 /gas-pump /activate` | Activate gas pump addresses
-[**activated Not Activated Gas Pump Addresses()**](#activatednotactivatedgaspumpaddresses) | **GET** `/v3 /gas-pump /address /{chain} /{txId}` | Get the results of the address activation transaction
-[**approve Transfer Custodial Wallet()**](#approvetransfercustodialwallet) | **POST** `/v3 /blockchain /sc /custodial /approve` | Approve the transfer of an asset from a gas pump address
-[**approve Transfer Custodial Wallet Celo()**](#approvetransfercustodialwalletcelo) | **POST** `/v3 /blockchain /sc /custodial /approve` | Approve the transfer of an asset from a gas pump address
-[**approve Transfer Custodial Wallet Celo KMS()**](#approvetransfercustodialwalletcelokms) | **POST** `/v3 /blockchain /sc /custodial /approve` | Approve the transfer of an asset from a gas pump address
-[**approve Transfer Custodial Wallet KMS()**](#approvetransfercustodialwalletkms) | **POST** `/v3 /blockchain /sc /custodial /approve` | Approve the transfer of an asset from a gas pump address
-[**gas Pump Addresses Activated Or Not()**](#gaspumpaddressesactivatedornot) | **GET** `/v3 /gas-pump /activated /{chain} /{owner} /{index}` | Check whether the gas pump address with a specified index is activated
-[**generate Custodial Wallet()**](#generatecustodialwallet) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
-[**generate Custodial Wallet Batch()**](#generatecustodialwalletbatch) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
-[**generate Custodial Wallet Batch Celo()**](#generatecustodialwalletbatchcelo) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
-[**generate Custodial Wallet Batch Celo KMS()**](#generatecustodialwalletbatchcelokms) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
-[**generate Custodial Wallet Batch KMS()**](#generatecustodialwalletbatchkms) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
-[**generate Custodial Wallet Batch Payer()**](#generatecustodialwalletbatchpayer) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
-[**generate Custodial Wallet Batch Tron()**](#generatecustodialwalletbatchtron) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
-[**generate Custodial Wallet Batch Tron KMS()**](#generatecustodialwalletbatchtronkms) | **POST** `/v3 /blockchain /sc /custodial /batch` | Generate a gas pump wallet address
-[**generate Custodial Wallet Celo()**](#generatecustodialwalletcelo) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
-[**generate Custodial Wallet Celo KMS()**](#generatecustodialwalletcelokms) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
-[**generate Custodial Wallet KMS()**](#generatecustodialwalletkms) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
-[**generate Custodial Wallet Tron()**](#generatecustodialwallettron) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
-[**generate Custodial Wallet Tron KMS()**](#generatecustodialwallettronkms) | **POST** `/v3 /blockchain /sc /custodial` | Generate a custodial wallet address
-[**precalculate Gas Pump Addresses()**](#precalculategaspumpaddresses) | **POST** `/v3 /gas-pump` | Precalculate gas pump addresses
-[**s CGet Custodial Addresses()**](#scgetcustodialaddresses) | **GET** `/v3 /blockchain /sc /custodial /{chain} /{hash}` | Get the custodial wallet address from the transaction
-[**transfer Custodial Wallet()**](#transfercustodialwallet) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
-[**transfer Custodial Wallet Batch()**](#transfercustodialwalletbatch) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
-[**transfer Custodial Wallet Batch Celo()**](#transfercustodialwalletbatchcelo) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
-[**transfer Custodial Wallet Batch Celo KMS()**](#transfercustodialwalletbatchcelokms) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
-[**transfer Custodial Wallet Batch KMS()**](#transfercustodialwalletbatchkms) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
-[**transfer Custodial Wallet Batch Tron()**](#transfercustodialwalletbatchtron) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
-[**transfer Custodial Wallet Batch Tron KMS()**](#transfercustodialwalletbatchtronkms) | **POST** `/v3 /blockchain /sc /custodial /transfer /batch` | Transfer multiple assets from a gas pump address
-[**transfer Custodial Wallet Celo()**](#transfercustodialwalletcelo) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
-[**transfer Custodial Wallet Celo KMS()**](#transfercustodialwalletcelokms) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
-[**transfer Custodial Wallet KMS()**](#transfercustodialwalletkms) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
-[**transfer Custodial Wallet Tron()**](#transfercustodialwallettron) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
-[**transfer Custodial Wallet Tron KMS()**](#transfercustodialwallettronkms) | **POST** `/v3 /blockchain /sc /custodial /transfer` | Transfer an asset from a gas pump address
+[Gas pump API documentation](https://apidoc.tatum.io/tag/Gas-pump/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **activateGasPump()**](#activategaspump) 
+
+> **POST** `/v3/gas-pump/activate`
+> 
+> Activate gas pump addresses
+
+[🔹 **activateGasPumpCelo()**](#activategaspumpcelo) 
+
+> **POST** `/v3/gas-pump/activate`
+> 
+> Activate gas pump addresses
+
+[🔹 **activateGasPumpCeloKMS()**](#activategaspumpcelokms) 
+
+> **POST** `/v3/gas-pump/activate`
+> 
+> Activate gas pump addresses
+
+[🔹 **activateGasPumpKMS()**](#activategaspumpkms) 
+
+> **POST** `/v3/gas-pump/activate`
+> 
+> Activate gas pump addresses
+
+[🔹 **activateGasPumpTatum()**](#activategaspumptatum) 
+
+> **POST** `/v3/gas-pump/activate`
+> 
+> Activate gas pump addresses
+
+[🔹 **activateGasPumpTron()**](#activategaspumptron) 
+
+> **POST** `/v3/gas-pump/activate`
+> 
+> Activate gas pump addresses
+
+[🔹 **activateGasPumpTronKMS()**](#activategaspumptronkms) 
+
+> **POST** `/v3/gas-pump/activate`
+> 
+> Activate gas pump addresses
+
+[🔹 **activatedNotActivatedGasPumpAddresses()**](#activatednotactivatedgaspumpaddresses) 
+
+> **GET** `/v3/gas-pump/address/{chain}/{txId}`
+> 
+> Get the results of the address activation transaction
+
+[🔹 **approveTransferCustodialWallet()**](#approvetransfercustodialwallet) 
+
+> **POST** `/v3/blockchain/sc/custodial/approve`
+> 
+> Approve the transfer of an asset from a gas pump address
+
+[🔹 **approveTransferCustodialWalletCelo()**](#approvetransfercustodialwalletcelo) 
+
+> **POST** `/v3/blockchain/sc/custodial/approve`
+> 
+> Approve the transfer of an asset from a gas pump address
+
+[🔹 **approveTransferCustodialWalletCeloKMS()**](#approvetransfercustodialwalletcelokms) 
+
+> **POST** `/v3/blockchain/sc/custodial/approve`
+> 
+> Approve the transfer of an asset from a gas pump address
+
+[🔹 **approveTransferCustodialWalletKMS()**](#approvetransfercustodialwalletkms) 
+
+> **POST** `/v3/blockchain/sc/custodial/approve`
+> 
+> Approve the transfer of an asset from a gas pump address
+
+[🔹 **gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) 
+
+> **GET** `/v3/gas-pump/activated/{chain}/{owner}/{index}`
+> 
+> Check whether the gas pump address with a specified index is activated
+
+[🔹 **generateCustodialWallet()**](#generatecustodialwallet) 
+
+> **POST** `/v3/blockchain/sc/custodial`
+> 
+> Generate a custodial wallet address
+
+[🔹 **generateCustodialWalletBatch()**](#generatecustodialwalletbatch) 
+
+> **POST** `/v3/blockchain/sc/custodial/batch`
+> 
+> Generate a gas pump wallet address
+
+[🔹 **generateCustodialWalletBatchCelo()**](#generatecustodialwalletbatchcelo) 
+
+> **POST** `/v3/blockchain/sc/custodial/batch`
+> 
+> Generate a gas pump wallet address
+
+[🔹 **generateCustodialWalletBatchCeloKMS()**](#generatecustodialwalletbatchcelokms) 
+
+> **POST** `/v3/blockchain/sc/custodial/batch`
+> 
+> Generate a gas pump wallet address
+
+[🔹 **generateCustodialWalletBatchKMS()**](#generatecustodialwalletbatchkms) 
+
+> **POST** `/v3/blockchain/sc/custodial/batch`
+> 
+> Generate a gas pump wallet address
+
+[🔹 **generateCustodialWalletBatchPayer()**](#generatecustodialwalletbatchpayer) 
+
+> **POST** `/v3/blockchain/sc/custodial/batch`
+> 
+> Generate a gas pump wallet address
+
+[🔹 **generateCustodialWalletBatchTron()**](#generatecustodialwalletbatchtron) 
+
+> **POST** `/v3/blockchain/sc/custodial/batch`
+> 
+> Generate a gas pump wallet address
+
+[🔹 **generateCustodialWalletBatchTronKMS()**](#generatecustodialwalletbatchtronkms) 
+
+> **POST** `/v3/blockchain/sc/custodial/batch`
+> 
+> Generate a gas pump wallet address
+
+[🔹 **generateCustodialWalletCelo()**](#generatecustodialwalletcelo) 
+
+> **POST** `/v3/blockchain/sc/custodial`
+> 
+> Generate a custodial wallet address
+
+[🔹 **generateCustodialWalletCeloKMS()**](#generatecustodialwalletcelokms) 
+
+> **POST** `/v3/blockchain/sc/custodial`
+> 
+> Generate a custodial wallet address
+
+[🔹 **generateCustodialWalletKMS()**](#generatecustodialwalletkms) 
+
+> **POST** `/v3/blockchain/sc/custodial`
+> 
+> Generate a custodial wallet address
+
+[🔹 **generateCustodialWalletTron()**](#generatecustodialwallettron) 
+
+> **POST** `/v3/blockchain/sc/custodial`
+> 
+> Generate a custodial wallet address
+
+[🔹 **generateCustodialWalletTronKMS()**](#generatecustodialwallettronkms) 
+
+> **POST** `/v3/blockchain/sc/custodial`
+> 
+> Generate a custodial wallet address
+
+[🔹 **precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) 
+
+> **POST** `/v3/gas-pump`
+> 
+> Precalculate gas pump addresses
+
+[🔹 **sCGetCustodialAddresses()**](#scgetcustodialaddresses) 
+
+> **GET** `/v3/blockchain/sc/custodial/{chain}/{hash}`
+> 
+> Get the custodial wallet address from the transaction
+
+[🔹 **transferCustodialWallet()**](#transfercustodialwallet) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer`
+> 
+> Transfer an asset from a gas pump address
+
+[🔹 **transferCustodialWalletBatch()**](#transfercustodialwalletbatch) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
+> 
+> Transfer multiple assets from a gas pump address
+
+[🔹 **transferCustodialWalletBatchCelo()**](#transfercustodialwalletbatchcelo) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
+> 
+> Transfer multiple assets from a gas pump address
+
+[🔹 **transferCustodialWalletBatchCeloKMS()**](#transfercustodialwalletbatchcelokms) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
+> 
+> Transfer multiple assets from a gas pump address
+
+[🔹 **transferCustodialWalletBatchKMS()**](#transfercustodialwalletbatchkms) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
+> 
+> Transfer multiple assets from a gas pump address
+
+[🔹 **transferCustodialWalletBatchTron()**](#transfercustodialwalletbatchtron) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
+> 
+> Transfer multiple assets from a gas pump address
+
+[🔹 **transferCustodialWalletBatchTronKMS()**](#transfercustodialwalletbatchtronkms) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
+> 
+> Transfer multiple assets from a gas pump address
+
+[🔹 **transferCustodialWalletCelo()**](#transfercustodialwalletcelo) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer`
+> 
+> Transfer an asset from a gas pump address
+
+[🔹 **transferCustodialWalletCeloKMS()**](#transfercustodialwalletcelokms) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer`
+> 
+> Transfer an asset from a gas pump address
+
+[🔹 **transferCustodialWalletKMS()**](#transfercustodialwalletkms) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer`
+> 
+> Transfer an asset from a gas pump address
+
+[🔹 **transferCustodialWalletTron()**](#transfercustodialwallettron) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer`
+> 
+> Transfer an asset from a gas pump address
+
+[🔹 **transferCustodialWalletTronKMS()**](#transfercustodialwallettronkms) 
+
+> **POST** `/v3/blockchain/sc/custodial/transfer`
+> 
+> Transfer an asset from a gas pump address
+
 
 
 ## `activateGasPump()`

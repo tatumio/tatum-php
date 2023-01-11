@@ -1,27 +1,115 @@
 # Tatum/Api/XRPApi
 
-* XRP [documentation](https://apidoc.tatum.io/tag/XRP/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**account Settings Xrp Blockchain()**](#accountsettingsxrpblockchain) | **POST** `/v3 /xrp /account /settings` | Modify XRP account
-[**account Settings Xrp Blockchain KMS()**](#accountsettingsxrpblockchainkms) | **POST** `/v3 /xrp /account /settings` | Modify XRP account
-[**transfer Xrp Blockchain()**](#transferxrpblockchain) | **POST** `/v3 /xrp /transaction` | Send XRP from address to address
-[**transfer Xrp Blockchain Asset()**](#transferxrpblockchainasset) | **POST** `/v3 /xrp /transaction` | Send XRP from address to address
-[**transfer Xrp Blockchain Asset KMS()**](#transferxrpblockchainassetkms) | **POST** `/v3 /xrp /transaction` | Send XRP from address to address
-[**transfer Xrp Blockchain KMS()**](#transferxrpblockchainkms) | **POST** `/v3 /xrp /transaction` | Send XRP from address to address
-[**trust Line Xrp Blockchain()**](#trustlinexrpblockchain) | **POST** `/v3 /xrp /trust` | Create / Update / Delete XRP trust line
-[**trust Line Xrp Blockchain KMS()**](#trustlinexrpblockchainkms) | **POST** `/v3 /xrp /trust` | Create / Update / Delete XRP trust line
-[**xrp Broadcast()**](#xrpbroadcast) | **POST** `/v3 /xrp /broadcast` | Broadcast signed XRP transaction
-[**xrp Get Account Balance()**](#xrpgetaccountbalance) | **GET** `/v3 /xrp /account /{account} /balance` | Get Account Balance
-[**xrp Get Account Info()**](#xrpgetaccountinfo) | **GET** `/v3 /xrp /account /{account}` | Get Account info
-[**xrp Get Account Tx()**](#xrpgetaccounttx) | **GET** `/v3 /xrp /account /tx /{account}` | Get Account transactions
-[**xrp Get Fee()**](#xrpgetfee) | **GET** `/v3 /xrp /fee` | Get actual Blockchain fee
-[**xrp Get Last Closed Ledger()**](#xrpgetlastclosedledger) | **GET** `/v3 /xrp /info` | Get XRP Blockchain Information
-[**xrp Get Ledger()**](#xrpgetledger) | **GET** `/v3 /xrp /ledger /{i}` | Get Ledger
-[**xrp Get Transaction()**](#xrpgettransaction) | **GET** `/v3 /xrp /transaction /{hash}` | Get XRP Transaction by hash
-[**xrp Wallet()**](#xrpwallet) | **GET** `/v3 /xrp /account` | Generate XRP account
+[XRP API documentation](https://apidoc.tatum.io/tag/XRP/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **accountSettingsXrpBlockchain()**](#accountsettingsxrpblockchain) 
+
+> **POST** `/v3/xrp/account/settings`
+> 
+> Modify XRP account
+
+[🔹 **accountSettingsXrpBlockchainKMS()**](#accountsettingsxrpblockchainkms) 
+
+> **POST** `/v3/xrp/account/settings`
+> 
+> Modify XRP account
+
+[🔹 **transferXrpBlockchain()**](#transferxrpblockchain) 
+
+> **POST** `/v3/xrp/transaction`
+> 
+> Send XRP from address to address
+
+[🔹 **transferXrpBlockchainAsset()**](#transferxrpblockchainasset) 
+
+> **POST** `/v3/xrp/transaction`
+> 
+> Send XRP from address to address
+
+[🔹 **transferXrpBlockchainAssetKMS()**](#transferxrpblockchainassetkms) 
+
+> **POST** `/v3/xrp/transaction`
+> 
+> Send XRP from address to address
+
+[🔹 **transferXrpBlockchainKMS()**](#transferxrpblockchainkms) 
+
+> **POST** `/v3/xrp/transaction`
+> 
+> Send XRP from address to address
+
+[🔹 **trustLineXrpBlockchain()**](#trustlinexrpblockchain) 
+
+> **POST** `/v3/xrp/trust`
+> 
+> Create / Update / Delete XRP trust line
+
+[🔹 **trustLineXrpBlockchainKMS()**](#trustlinexrpblockchainkms) 
+
+> **POST** `/v3/xrp/trust`
+> 
+> Create / Update / Delete XRP trust line
+
+[🔹 **xrpBroadcast()**](#xrpbroadcast) 
+
+> **POST** `/v3/xrp/broadcast`
+> 
+> Broadcast signed XRP transaction
+
+[🔹 **xrpGetAccountBalance()**](#xrpgetaccountbalance) 
+
+> **GET** `/v3/xrp/account/{account}/balance`
+> 
+> Get Account Balance
+
+[🔹 **xrpGetAccountInfo()**](#xrpgetaccountinfo) 
+
+> **GET** `/v3/xrp/account/{account}`
+> 
+> Get Account info
+
+[🔹 **xrpGetAccountTx()**](#xrpgetaccounttx) 
+
+> **GET** `/v3/xrp/account/tx/{account}`
+> 
+> Get Account transactions
+
+[🔹 **xrpGetFee()**](#xrpgetfee) 
+
+> **GET** `/v3/xrp/fee`
+> 
+> Get actual Blockchain fee
+
+[🔹 **xrpGetLastClosedLedger()**](#xrpgetlastclosedledger) 
+
+> **GET** `/v3/xrp/info`
+> 
+> Get XRP Blockchain Information
+
+[🔹 **xrpGetLedger()**](#xrpgetledger) 
+
+> **GET** `/v3/xrp/ledger/{i}`
+> 
+> Get Ledger
+
+[🔹 **xrpGetTransaction()**](#xrpgettransaction) 
+
+> **GET** `/v3/xrp/transaction/{hash}`
+> 
+> Get XRP Transaction by hash
+
+[🔹 **xrpWallet()**](#xrpwallet) 
+
+> **GET** `/v3/xrp/account`
+> 
+> Generate XRP account
+
 
 
 ## `accountSettingsXrpBlockchain()`

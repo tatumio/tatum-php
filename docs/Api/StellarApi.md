@@ -1,25 +1,103 @@
 # Tatum/Api/StellarApi
 
-* Stellar [documentation](https://apidoc.tatum.io/tag/Stellar/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**transfer Xlm Blockchain()**](#transferxlmblockchain) | **POST** `/v3 /xlm /transaction` | Send XLM from address to address
-[**transfer Xlm Blockchain Asset()**](#transferxlmblockchainasset) | **POST** `/v3 /xlm /transaction` | Send XLM from address to address
-[**transfer Xlm Blockchain KMS()**](#transferxlmblockchainkms) | **POST** `/v3 /xlm /transaction` | Send XLM from address to address
-[**transfer Xlm Blockchain KMSAsset()**](#transferxlmblockchainkmsasset) | **POST** `/v3 /xlm /transaction` | Send XLM from address to address
-[**trust Line Xlm Blockchain()**](#trustlinexlmblockchain) | **POST** `/v3 /xlm /trust` | Create / Update / Delete XLM trust line
-[**trust Line Xlm Blockchain KMS()**](#trustlinexlmblockchainkms) | **POST** `/v3 /xlm /trust` | Create / Update / Delete XLM trust line
-[**xlm Broadcast()**](#xlmbroadcast) | **POST** `/v3 /xlm /broadcast` | Broadcast signed XLM transaction
-[**xlm Get Account Info()**](#xlmgetaccountinfo) | **GET** `/v3 /xlm /account /{account}` | Get XLM Account info
-[**xlm Get Account Tx()**](#xlmgetaccounttx) | **GET** `/v3 /xlm /account /tx /{account}` | Get XLM Account transactions
-[**xlm Get Fee()**](#xlmgetfee) | **GET** `/v3 /xlm /fee` | Get actual XLM fee
-[**xlm Get Last Closed Ledger()**](#xlmgetlastclosedledger) | **GET** `/v3 /xlm /info` | Get XLM Blockchain Information
-[**xlm Get Ledger()**](#xlmgetledger) | **GET** `/v3 /xlm /ledger /{sequence}` | Get XLM Blockchain Ledger by sequence
-[**xlm Get Ledger Tx()**](#xlmgetledgertx) | **GET** `/v3 /xlm /ledger /{sequence} /transaction` | Get XLM Blockchain Transactions in Ledger
-[**xlm Get Transaction()**](#xlmgettransaction) | **GET** `/v3 /xlm /transaction /{hash}` | Get XLM Transaction by hash
-[**xlm Wallet()**](#xlmwallet) | **GET** `/v3 /xlm /account` | Generate XLM account
+[Stellar API documentation](https://apidoc.tatum.io/tag/Stellar/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **transferXlmBlockchain()**](#transferxlmblockchain) 
+
+> **POST** `/v3/xlm/transaction`
+> 
+> Send XLM from address to address
+
+[🔹 **transferXlmBlockchainAsset()**](#transferxlmblockchainasset) 
+
+> **POST** `/v3/xlm/transaction`
+> 
+> Send XLM from address to address
+
+[🔹 **transferXlmBlockchainKMS()**](#transferxlmblockchainkms) 
+
+> **POST** `/v3/xlm/transaction`
+> 
+> Send XLM from address to address
+
+[🔹 **transferXlmBlockchainKMSAsset()**](#transferxlmblockchainkmsasset) 
+
+> **POST** `/v3/xlm/transaction`
+> 
+> Send XLM from address to address
+
+[🔹 **trustLineXlmBlockchain()**](#trustlinexlmblockchain) 
+
+> **POST** `/v3/xlm/trust`
+> 
+> Create / Update / Delete XLM trust line
+
+[🔹 **trustLineXlmBlockchainKMS()**](#trustlinexlmblockchainkms) 
+
+> **POST** `/v3/xlm/trust`
+> 
+> Create / Update / Delete XLM trust line
+
+[🔹 **xlmBroadcast()**](#xlmbroadcast) 
+
+> **POST** `/v3/xlm/broadcast`
+> 
+> Broadcast signed XLM transaction
+
+[🔹 **xlmGetAccountInfo()**](#xlmgetaccountinfo) 
+
+> **GET** `/v3/xlm/account/{account}`
+> 
+> Get XLM Account info
+
+[🔹 **xlmGetAccountTx()**](#xlmgetaccounttx) 
+
+> **GET** `/v3/xlm/account/tx/{account}`
+> 
+> Get XLM Account transactions
+
+[🔹 **xlmGetFee()**](#xlmgetfee) 
+
+> **GET** `/v3/xlm/fee`
+> 
+> Get actual XLM fee
+
+[🔹 **xlmGetLastClosedLedger()**](#xlmgetlastclosedledger) 
+
+> **GET** `/v3/xlm/info`
+> 
+> Get XLM Blockchain Information
+
+[🔹 **xlmGetLedger()**](#xlmgetledger) 
+
+> **GET** `/v3/xlm/ledger/{sequence}`
+> 
+> Get XLM Blockchain Ledger by sequence
+
+[🔹 **xlmGetLedgerTx()**](#xlmgetledgertx) 
+
+> **GET** `/v3/xlm/ledger/{sequence}/transaction`
+> 
+> Get XLM Blockchain Transactions in Ledger
+
+[🔹 **xlmGetTransaction()**](#xlmgettransaction) 
+
+> **GET** `/v3/xlm/transaction/{hash}`
+> 
+> Get XLM Transaction by hash
+
+[🔹 **xlmWallet()**](#xlmwallet) 
+
+> **GET** `/v3/xlm/account`
+> 
+> Generate XLM account
+
 
 
 ## `transferXlmBlockchain()`

@@ -1,57 +1,295 @@
 # Tatum/Api/MarketplaceApi
 
-* Marketplace [documentation](https://apidoc.tatum.io/tag/Marketplace/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**blo Mar Withdraw From Marketplace Solana()**](#blomarwithdrawfrommarketplacesolana) | **POST** `/v3 /blockchain /marketplace /withdraw /treasury` | Withdraw funds from the marketplace treasury account on Solana
-[**blo Mar Withdraw From Marketplace Solana KMS()**](#blomarwithdrawfrommarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /withdraw /treasury` | Withdraw funds from the marketplace treasury account on Solana
-[**buy Asset On Marketplace()**](#buyassetonmarketplace) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
-[**buy Asset On Marketplace Celo()**](#buyassetonmarketplacecelo) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
-[**buy Asset On Marketplace Celo KMS()**](#buyassetonmarketplacecelokms) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
-[**buy Asset On Marketplace KMS()**](#buyassetonmarketplacekms) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
-[**buy Asset On Marketplace Solana()**](#buyassetonmarketplacesolana) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
-[**buy Asset On Marketplace Solana KMS()**](#buyassetonmarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /listing /buy` | Buy an asset on the NFT marketplace
-[**cancel Sell Asset On Marketplace()**](#cancelsellassetonmarketplace) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
-[**cancel Sell Asset On Marketplace Celo()**](#cancelsellassetonmarketplacecelo) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
-[**cancel Sell Asset On Marketplace Celo KMS()**](#cancelsellassetonmarketplacecelokms) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
-[**cancel Sell Asset On Marketplace KMS()**](#cancelsellassetonmarketplacekms) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
-[**cancel Sell Asset On Marketplace Solana()**](#cancelsellassetonmarketplacesolana) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
-[**cancel Sell Asset On Marketplace Solana KMS()**](#cancelsellassetonmarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /listing /cancel` | Cancel the selling of an asset on the NFT marketplace
-[**generate Marketplace()**](#generatemarketplace) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
-[**generate Marketplace Celo()**](#generatemarketplacecelo) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
-[**generate Marketplace Celo KMS()**](#generatemarketplacecelokms) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
-[**generate Marketplace KMS()**](#generatemarketplacekms) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
-[**generate Marketplace Solana()**](#generatemarketplacesolana) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
-[**generate Marketplace Solana KMS()**](#generatemarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /listing` | Create an NFT marketplace
-[**get Marketplace Fee()**](#getmarketplacefee) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress} /fee` | Get the NFT marketplace fee
-[**get Marketplace Fee Recipient()**](#getmarketplacefeerecipient) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress} /recipient` | Get the recipient of the NFT marketplace fee
-[**get Marketplace Info()**](#getmarketplaceinfo) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress}` | Get information about an NFT marketplace on Solana
-[**get Marketplace Listing()**](#getmarketplacelisting) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress} /listing /{id}` | Get information about a listing on the NFT marketplace
-[**get Marketplace Listings()**](#getmarketplacelistings) | **GET** `/v3 /blockchain /marketplace /listing /{chain} /{contractAddress} /{type}` | Get the listings of a certain type from the NFT marketplace
-[**sell Asset On Marketplace()**](#sellassetonmarketplace) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
-[**sell Asset On Marketplace Celo()**](#sellassetonmarketplacecelo) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
-[**sell Asset On Marketplace Celo KMS()**](#sellassetonmarketplacecelokms) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
-[**sell Asset On Marketplace KMS()**](#sellassetonmarketplacekms) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
-[**sell Asset On Marketplace Solana()**](#sellassetonmarketplacesolana) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
-[**sell Asset On Marketplace Solana KMS()**](#sellassetonmarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /listing /sell` | Sell an asset on the NFT marketplace
-[**update Fee()**](#updatefee) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
-[**update Fee Celo()**](#updatefeecelo) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
-[**update Fee Celo KMS()**](#updatefeecelokms) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
-[**update Fee KMS()**](#updatefeekms) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
-[**update Fee Recipient()**](#updatefeerecipient) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
-[**update Fee Recipient Celo()**](#updatefeerecipientcelo) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
-[**update Fee Recipient Celo KMS()**](#updatefeerecipientcelokms) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
-[**update Fee Recipient KMS()**](#updatefeerecipientkms) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
-[**update Fee Recipient Solana()**](#updatefeerecipientsolana) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
-[**update Fee Recipient Solana KMS()**](#updatefeerecipientsolanakms) | **PUT** `/v3 /blockchain /marketplace /listing /recipient` | Update the recipient of the NFT marketplace fee
-[**update Fee Solana()**](#updatefeesolana) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
-[**update Fee Solana KMS()**](#updatefeesolanakms) | **PUT** `/v3 /blockchain /marketplace /listing /fee` | Update the NFT marketplace fee
-[**update Marketplace Solana()**](#updatemarketplacesolana) | **PUT** `/v3 /blockchain /marketplace /listing` | Update an NFT marketplace on Solana
-[**update Marketplace Solana KMS()**](#updatemarketplacesolanakms) | **PUT** `/v3 /blockchain /marketplace /listing` | Update an NFT marketplace on Solana
-[**withdraw From Marketplace Solana()**](#withdrawfrommarketplacesolana) | **POST** `/v3 /blockchain /marketplace /withdraw /fee` | Withdraw funds from the marketplace fee account on Solana
-[**withdraw From Marketplace Solana KMS()**](#withdrawfrommarketplacesolanakms) | **POST** `/v3 /blockchain /marketplace /withdraw /fee` | Withdraw funds from the marketplace fee account on Solana
+[Marketplace API documentation](https://apidoc.tatum.io/tag/Marketplace/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **bloMarWithdrawFromMarketplaceSolana()**](#blomarwithdrawfrommarketplacesolana) 
+
+> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
+> 
+> Withdraw funds from the marketplace treasury account on Solana
+
+[🔹 **bloMarWithdrawFromMarketplaceSolanaKMS()**](#blomarwithdrawfrommarketplacesolanakms) 
+
+> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
+> 
+> Withdraw funds from the marketplace treasury account on Solana
+
+[🔹 **buyAssetOnMarketplace()**](#buyassetonmarketplace) 
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
+> 
+> Buy an asset on the NFT marketplace
+
+[🔹 **buyAssetOnMarketplaceCelo()**](#buyassetonmarketplacecelo) 
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
+> 
+> Buy an asset on the NFT marketplace
+
+[🔹 **buyAssetOnMarketplaceCeloKMS()**](#buyassetonmarketplacecelokms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
+> 
+> Buy an asset on the NFT marketplace
+
+[🔹 **buyAssetOnMarketplaceKMS()**](#buyassetonmarketplacekms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
+> 
+> Buy an asset on the NFT marketplace
+
+[🔹 **buyAssetOnMarketplaceSolana()**](#buyassetonmarketplacesolana) 
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
+> 
+> Buy an asset on the NFT marketplace
+
+[🔹 **buyAssetOnMarketplaceSolanaKMS()**](#buyassetonmarketplacesolanakms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
+> 
+> Buy an asset on the NFT marketplace
+
+[🔹 **cancelSellAssetOnMarketplace()**](#cancelsellassetonmarketplace) 
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
+> 
+> Cancel the selling of an asset on the NFT marketplace
+
+[🔹 **cancelSellAssetOnMarketplaceCelo()**](#cancelsellassetonmarketplacecelo) 
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
+> 
+> Cancel the selling of an asset on the NFT marketplace
+
+[🔹 **cancelSellAssetOnMarketplaceCeloKMS()**](#cancelsellassetonmarketplacecelokms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
+> 
+> Cancel the selling of an asset on the NFT marketplace
+
+[🔹 **cancelSellAssetOnMarketplaceKMS()**](#cancelsellassetonmarketplacekms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
+> 
+> Cancel the selling of an asset on the NFT marketplace
+
+[🔹 **cancelSellAssetOnMarketplaceSolana()**](#cancelsellassetonmarketplacesolana) 
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
+> 
+> Cancel the selling of an asset on the NFT marketplace
+
+[🔹 **cancelSellAssetOnMarketplaceSolanaKMS()**](#cancelsellassetonmarketplacesolanakms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
+> 
+> Cancel the selling of an asset on the NFT marketplace
+
+[🔹 **generateMarketplace()**](#generatemarketplace) 
+
+> **POST** `/v3/blockchain/marketplace/listing`
+> 
+> Create an NFT marketplace
+
+[🔹 **generateMarketplaceCelo()**](#generatemarketplacecelo) 
+
+> **POST** `/v3/blockchain/marketplace/listing`
+> 
+> Create an NFT marketplace
+
+[🔹 **generateMarketplaceCeloKMS()**](#generatemarketplacecelokms) 
+
+> **POST** `/v3/blockchain/marketplace/listing`
+> 
+> Create an NFT marketplace
+
+[🔹 **generateMarketplaceKMS()**](#generatemarketplacekms) 
+
+> **POST** `/v3/blockchain/marketplace/listing`
+> 
+> Create an NFT marketplace
+
+[🔹 **generateMarketplaceSolana()**](#generatemarketplacesolana) 
+
+> **POST** `/v3/blockchain/marketplace/listing`
+> 
+> Create an NFT marketplace
+
+[🔹 **generateMarketplaceSolanaKMS()**](#generatemarketplacesolanakms) 
+
+> **POST** `/v3/blockchain/marketplace/listing`
+> 
+> Create an NFT marketplace
+
+[🔹 **getMarketplaceFee()**](#getmarketplacefee) 
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee`
+> 
+> Get the NFT marketplace fee
+
+[🔹 **getMarketplaceFeeRecipient()**](#getmarketplacefeerecipient) 
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient`
+> 
+> Get the recipient of the NFT marketplace fee
+
+[🔹 **getMarketplaceInfo()**](#getmarketplaceinfo) 
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}`
+> 
+> Get information about an NFT marketplace on Solana
+
+[🔹 **getMarketplaceListing()**](#getmarketplacelisting) 
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}`
+> 
+> Get information about a listing on the NFT marketplace
+
+[🔹 **getMarketplaceListings()**](#getmarketplacelistings) 
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}`
+> 
+> Get the listings of a certain type from the NFT marketplace
+
+[🔹 **sellAssetOnMarketplace()**](#sellassetonmarketplace) 
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
+> 
+> Sell an asset on the NFT marketplace
+
+[🔹 **sellAssetOnMarketplaceCelo()**](#sellassetonmarketplacecelo) 
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
+> 
+> Sell an asset on the NFT marketplace
+
+[🔹 **sellAssetOnMarketplaceCeloKMS()**](#sellassetonmarketplacecelokms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
+> 
+> Sell an asset on the NFT marketplace
+
+[🔹 **sellAssetOnMarketplaceKMS()**](#sellassetonmarketplacekms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
+> 
+> Sell an asset on the NFT marketplace
+
+[🔹 **sellAssetOnMarketplaceSolana()**](#sellassetonmarketplacesolana) 
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
+> 
+> Sell an asset on the NFT marketplace
+
+[🔹 **sellAssetOnMarketplaceSolanaKMS()**](#sellassetonmarketplacesolanakms) 
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
+> 
+> Sell an asset on the NFT marketplace
+
+[🔹 **updateFee()**](#updatefee) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
+> 
+> Update the NFT marketplace fee
+
+[🔹 **updateFeeCelo()**](#updatefeecelo) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
+> 
+> Update the NFT marketplace fee
+
+[🔹 **updateFeeCeloKMS()**](#updatefeecelokms) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
+> 
+> Update the NFT marketplace fee
+
+[🔹 **updateFeeKMS()**](#updatefeekms) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
+> 
+> Update the NFT marketplace fee
+
+[🔹 **updateFeeRecipient()**](#updatefeerecipient) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
+> 
+> Update the recipient of the NFT marketplace fee
+
+[🔹 **updateFeeRecipientCelo()**](#updatefeerecipientcelo) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
+> 
+> Update the recipient of the NFT marketplace fee
+
+[🔹 **updateFeeRecipientCeloKMS()**](#updatefeerecipientcelokms) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
+> 
+> Update the recipient of the NFT marketplace fee
+
+[🔹 **updateFeeRecipientKMS()**](#updatefeerecipientkms) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
+> 
+> Update the recipient of the NFT marketplace fee
+
+[🔹 **updateFeeRecipientSolana()**](#updatefeerecipientsolana) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
+> 
+> Update the recipient of the NFT marketplace fee
+
+[🔹 **updateFeeRecipientSolanaKMS()**](#updatefeerecipientsolanakms) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
+> 
+> Update the recipient of the NFT marketplace fee
+
+[🔹 **updateFeeSolana()**](#updatefeesolana) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
+> 
+> Update the NFT marketplace fee
+
+[🔹 **updateFeeSolanaKMS()**](#updatefeesolanakms) 
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
+> 
+> Update the NFT marketplace fee
+
+[🔹 **updateMarketplaceSolana()**](#updatemarketplacesolana) 
+
+> **PUT** `/v3/blockchain/marketplace/listing`
+> 
+> Update an NFT marketplace on Solana
+
+[🔹 **updateMarketplaceSolanaKMS()**](#updatemarketplacesolanakms) 
+
+> **PUT** `/v3/blockchain/marketplace/listing`
+> 
+> Update an NFT marketplace on Solana
+
+[🔹 **withdrawFromMarketplaceSolana()**](#withdrawfrommarketplacesolana) 
+
+> **POST** `/v3/blockchain/marketplace/withdraw/fee`
+> 
+> Withdraw funds from the marketplace fee account on Solana
+
+[🔹 **withdrawFromMarketplaceSolanaKMS()**](#withdrawfrommarketplacesolanakms) 
+
+> **POST** `/v3/blockchain/marketplace/withdraw/fee`
+> 
+> Withdraw funds from the marketplace fee account on Solana
+
 
 
 ## `bloMarWithdrawFromMarketplaceSolana()`

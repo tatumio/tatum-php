@@ -1,22 +1,85 @@
 # Tatum/Api/VeChainApi
 
-* VeChain [documentation](https://apidoc.tatum.io/tag/VeChain/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**transfer Vet Blockchain()**](#transfervetblockchain) | **POST** `/v3 /vet /transaction` | Send VeChain from account to account
-[**transfer Vet Blockchain KMS()**](#transfervetblockchainkms) | **POST** `/v3 /vet /transaction` | Send VeChain from account to account
-[**vet Broadcast()**](#vetbroadcast) | **POST** `/v3 /vet /broadcast` | Broadcast signed VeChain transaction
-[**vet Generate Address()**](#vetgenerateaddress) | **GET** `/v3 /vet /address /{xpub} /{index}` | Generate VeChain account address from Extended public key
-[**vet Generate Address Private Key()**](#vetgenerateaddressprivatekey) | **POST** `/v3 /vet /wallet /priv` | Generate VeChain private key
-[**vet Generate Wallet()**](#vetgeneratewallet) | **GET** `/v3 /vet /wallet` | Generate VeChain wallet
-[**vet Get Balance()**](#vetgetbalance) | **GET** `/v3 /vet /account /balance /{address}` | Get VeChain Account balance
-[**vet Get Block()**](#vetgetblock) | **GET** `/v3 /vet /block /{hash}` | Get VeChain Block by hash
-[**vet Get Current Block()**](#vetgetcurrentblock) | **GET** `/v3 /vet /block /current` | Get VeChain current block
-[**vet Get Energy()**](#vetgetenergy) | **GET** `/v3 /vet /account /energy /{address}` | Get VeChain Account energy (VTHO)
-[**vet Get Transaction()**](#vetgettransaction) | **GET** `/v3 /vet /transaction /{hash}` | Get VeChain Transaction
-[**vet Get Transaction Receipt()**](#vetgettransactionreceipt) | **GET** `/v3 /vet /transaction /{hash} /receipt` | Get VeChain Transaction Receipt
+[VeChain API documentation](https://apidoc.tatum.io/tag/VeChain/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **transferVetBlockchain()**](#transfervetblockchain) 
+
+> **POST** `/v3/vet/transaction`
+> 
+> Send VeChain from account to account
+
+[🔹 **transferVetBlockchainKMS()**](#transfervetblockchainkms) 
+
+> **POST** `/v3/vet/transaction`
+> 
+> Send VeChain from account to account
+
+[🔹 **vetBroadcast()**](#vetbroadcast) 
+
+> **POST** `/v3/vet/broadcast`
+> 
+> Broadcast signed VeChain transaction
+
+[🔹 **vetGenerateAddress()**](#vetgenerateaddress) 
+
+> **GET** `/v3/vet/address/{xpub}/{index}`
+> 
+> Generate VeChain account address from Extended public key
+
+[🔹 **vetGenerateAddressPrivateKey()**](#vetgenerateaddressprivatekey) 
+
+> **POST** `/v3/vet/wallet/priv`
+> 
+> Generate VeChain private key
+
+[🔹 **vetGenerateWallet()**](#vetgeneratewallet) 
+
+> **GET** `/v3/vet/wallet`
+> 
+> Generate VeChain wallet
+
+[🔹 **vetGetBalance()**](#vetgetbalance) 
+
+> **GET** `/v3/vet/account/balance/{address}`
+> 
+> Get VeChain Account balance
+
+[🔹 **vetGetBlock()**](#vetgetblock) 
+
+> **GET** `/v3/vet/block/{hash}`
+> 
+> Get VeChain Block by hash
+
+[🔹 **vetGetCurrentBlock()**](#vetgetcurrentblock) 
+
+> **GET** `/v3/vet/block/current`
+> 
+> Get VeChain current block
+
+[🔹 **vetGetEnergy()**](#vetgetenergy) 
+
+> **GET** `/v3/vet/account/energy/{address}`
+> 
+> Get VeChain Account energy (VTHO)
+
+[🔹 **vetGetTransaction()**](#vetgettransaction) 
+
+> **GET** `/v3/vet/transaction/{hash}`
+> 
+> Get VeChain Transaction
+
+[🔹 **vetGetTransactionReceipt()**](#vetgettransactionreceipt) 
+
+> **GET** `/v3/vet/transaction/{hash}/receipt`
+> 
+> Get VeChain Transaction Receipt
+
 
 
 ## `transferVetBlockchain()`

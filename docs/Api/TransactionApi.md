@@ -1,16 +1,49 @@
 # Tatum/Api/TransactionApi
 
-* Transaction [documentation](https://apidoc.tatum.io/tag/Transaction/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get Transactions()**](#gettransactions) | **POST** `/v3 /ledger /transaction /ledger` | Find transactions within the ledger.
-[**get Transactions By Account Id()**](#gettransactionsbyaccountid) | **POST** `/v3 /ledger /transaction /account` | Find transactions for account.
-[**get Transactions By Customer Id()**](#gettransactionsbycustomerid) | **POST** `/v3 /ledger /transaction /customer` | Find transactions for a customer across all of the customer's accounts.
-[**get Transactions By Reference()**](#gettransactionsbyreference) | **GET** `/v3 /ledger /transaction /reference /{reference}` | Find transactions with a given reference across all accounts.
-[**send Transaction()**](#sendtransaction) | **POST** `/v3 /ledger /transaction` | Send payment
-[**send Transaction Batch()**](#sendtransactionbatch) | **POST** `/v3 /ledger /transaction /batch` | Send payment in batch
+[Transaction API documentation](https://apidoc.tatum.io/tag/Transaction/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **getTransactions()**](#gettransactions) 
+
+> **POST** `/v3/ledger/transaction/ledger`
+> 
+> Find transactions within the ledger.
+
+[🔹 **getTransactionsByAccountId()**](#gettransactionsbyaccountid) 
+
+> **POST** `/v3/ledger/transaction/account`
+> 
+> Find transactions for account.
+
+[🔹 **getTransactionsByCustomerId()**](#gettransactionsbycustomerid) 
+
+> **POST** `/v3/ledger/transaction/customer`
+> 
+> Find transactions for a customer across all of the customer's accounts.
+
+[🔹 **getTransactionsByReference()**](#gettransactionsbyreference) 
+
+> **GET** `/v3/ledger/transaction/reference/{reference}`
+> 
+> Find transactions with a given reference across all accounts.
+
+[🔹 **sendTransaction()**](#sendtransaction) 
+
+> **POST** `/v3/ledger/transaction`
+> 
+> Send payment
+
+[🔹 **sendTransactionBatch()**](#sendtransactionbatch) 
+
+> **POST** `/v3/ledger/transaction/batch`
+> 
+> Send payment in batch
+
 
 
 ## `getTransactions()`

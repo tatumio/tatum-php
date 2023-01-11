@@ -1,24 +1,97 @@
 # Tatum/Api/CardanoApi
 
-* Cardano [documentation](https://apidoc.tatum.io/tag/Cardano/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ada Broadcast()**](#adabroadcast) | **POST** `/v3 /ada /broadcast` | Broadcast signed Ada transaction
-[**ada Generate Address()**](#adagenerateaddress) | **GET** `/v3 /ada /address /{xpub} /{index}` | Generate Ada deposit address from Extended public key
-[**ada Generate Address Private Key()**](#adagenerateaddressprivatekey) | **POST** `/v3 /ada /wallet /priv` | Generate Ada private key
-[**ada Generate Wallet()**](#adageneratewallet) | **GET** `/v3 /ada /wallet` | Generate Ada wallet
-[**ada Get Account()**](#adagetaccount) | **GET** `/v3 /ada /account /{address}` | Gets a Ada account by address
-[**ada Get Block()**](#adagetblock) | **GET** `/v3 /ada /block /{hash}` | Get Block by hash or height
-[**ada Get Block Chain Info()**](#adagetblockchaininfo) | **GET** `/v3 /ada /info` | Get Blockchain information
-[**ada Get Raw Transaction()**](#adagetrawtransaction) | **GET** `/v3 /ada /transaction /{hash}` | Get transaction by hash
-[**ada Get Tx By Address()**](#adagettxbyaddress) | **GET** `/v3 /ada /transaction /address /{address}` | Get transactions by address
-[**ada Get UTXOBy Address()**](#adagetutxobyaddress) | **GET** `/v3 /ada /{address} /utxos` | Get UTXOs by address
-[**ada Transaction From Address()**](#adatransactionfromaddress) | **POST** `/v3 /ada /transaction` | Send ADA to Cardano addresses
-[**ada Transaction From Address KMS()**](#adatransactionfromaddresskms) | **POST** `/v3 /ada /transaction` | Send ADA to Cardano addresses
-[**ada Transaction From UTXO()**](#adatransactionfromutxo) | **POST** `/v3 /ada /transaction` | Send ADA to Cardano addresses
-[**ada Transaction From UTXOKMS()**](#adatransactionfromutxokms) | **POST** `/v3 /ada /transaction` | Send ADA to Cardano addresses
+[Cardano API documentation](https://apidoc.tatum.io/tag/Cardano/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **adaBroadcast()**](#adabroadcast) 
+
+> **POST** `/v3/ada/broadcast`
+> 
+> Broadcast signed Ada transaction
+
+[🔹 **adaGenerateAddress()**](#adagenerateaddress) 
+
+> **GET** `/v3/ada/address/{xpub}/{index}`
+> 
+> Generate Ada deposit address from Extended public key
+
+[🔹 **adaGenerateAddressPrivateKey()**](#adagenerateaddressprivatekey) 
+
+> **POST** `/v3/ada/wallet/priv`
+> 
+> Generate Ada private key
+
+[🔹 **adaGenerateWallet()**](#adageneratewallet) 
+
+> **GET** `/v3/ada/wallet`
+> 
+> Generate Ada wallet
+
+[🔹 **adaGetAccount()**](#adagetaccount) 
+
+> **GET** `/v3/ada/account/{address}`
+> 
+> Gets a Ada account by address
+
+[🔹 **adaGetBlock()**](#adagetblock) 
+
+> **GET** `/v3/ada/block/{hash}`
+> 
+> Get Block by hash or height
+
+[🔹 **adaGetBlockChainInfo()**](#adagetblockchaininfo) 
+
+> **GET** `/v3/ada/info`
+> 
+> Get Blockchain information
+
+[🔹 **adaGetRawTransaction()**](#adagetrawtransaction) 
+
+> **GET** `/v3/ada/transaction/{hash}`
+> 
+> Get transaction by hash
+
+[🔹 **adaGetTxByAddress()**](#adagettxbyaddress) 
+
+> **GET** `/v3/ada/transaction/address/{address}`
+> 
+> Get transactions by address
+
+[🔹 **adaGetUTXOByAddress()**](#adagetutxobyaddress) 
+
+> **GET** `/v3/ada/{address}/utxos`
+> 
+> Get UTXOs by address
+
+[🔹 **adaTransactionFromAddress()**](#adatransactionfromaddress) 
+
+> **POST** `/v3/ada/transaction`
+> 
+> Send ADA to Cardano addresses
+
+[🔹 **adaTransactionFromAddressKMS()**](#adatransactionfromaddresskms) 
+
+> **POST** `/v3/ada/transaction`
+> 
+> Send ADA to Cardano addresses
+
+[🔹 **adaTransactionFromUTXO()**](#adatransactionfromutxo) 
+
+> **POST** `/v3/ada/transaction`
+> 
+> Send ADA to Cardano addresses
+
+[🔹 **adaTransactionFromUTXOKMS()**](#adatransactionfromutxokms) 
+
+> **POST** `/v3/ada/transaction`
+> 
+> Send ADA to Cardano addresses
+
 
 
 ## `adaBroadcast()`

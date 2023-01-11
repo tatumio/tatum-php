@@ -1,143 +1,811 @@
 # Tatum/Api/BlockchainOperationsApi
 
-* Blockchain operations [documentation](https://apidoc.tatum.io/tag/Blockchain-operations/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**bnb Asset Offchain()**](#bnbassetoffchain) | **POST** `/v3 /offchain /bnb /asset` | Create a BNB-based asset
-[**deploy Algo Erc20 Offchain KMSAddress()**](#deployalgoerc20offchainkmsaddress) | **POST** `/v3 /offchain /algo /erc20 /deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Algo Erc20 Offchain Mnemonic Address()**](#deployalgoerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /algo /erc20 /deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Algo Erc20 Offchain PKAddress()**](#deployalgoerc20offchainpkaddress) | **POST** `/v3 /offchain /algo /erc20 /deploy` | Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Celo Erc20 Offchain KMSAddress()**](#deployceloerc20offchainkmsaddress) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Celo Erc20 Offchain KMSXpub()**](#deployceloerc20offchainkmsxpub) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Celo Erc20 Offchain Mnem Xpub()**](#deployceloerc20offchainmnemxpub) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Celo Erc20 Offchain Mnemonic Address()**](#deployceloerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Celo Erc20 Offchain PKAddress()**](#deployceloerc20offchainpkaddress) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Celo Erc20 Offchain PKXpub()**](#deployceloerc20offchainpkxpub) | **POST** `/v3 /offchain /celo /erc20 /deploy` | Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Erc20 Offchain KMSAddress()**](#deployerc20offchainkmsaddress) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**deploy Erc20 Offchain KMSXpub()**](#deployerc20offchainkmsxpub) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**deploy Erc20 Offchain Mnem Xpub()**](#deployerc20offchainmnemxpub) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**deploy Erc20 Offchain Mnemonic Address()**](#deployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**deploy Erc20 Offchain PKAddress()**](#deployerc20offchainpkaddress) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**deploy Erc20 Offchain PKXpub()**](#deployerc20offchainpkxpub) | **POST** `/v3 /offchain /ethereum /erc20 /deploy` | Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
-[**deploy KCSErc20 Offchain KMSAddress()**](#deploykcserc20offchainkmsaddress) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy KCSErc20 Offchain KMSXpub()**](#deploykcserc20offchainkmsxpub) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy KCSErc20 Offchain Mnem Xpub()**](#deploykcserc20offchainmnemxpub) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy KCSErc20 Offchain Mnemonic Address()**](#deploykcserc20offchainmnemonicaddress) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy KCSErc20 Offchain PKAddress()**](#deploykcserc20offchainpkaddress) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy KCSErc20 Offchain PKXpub()**](#deploykcserc20offchainpkxpub) | **POST** `/v3 /offchain /kcs /erc20 /deploy` | Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**deploy Trc Offchain KMSAddress()**](#deploytrcoffchainkmsaddress) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**deploy Trc Offchain KMSXpub()**](#deploytrcoffchainkmsxpub) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**deploy Trc Offchain Mnem Xpub()**](#deploytrcoffchainmnemxpub) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**deploy Trc Offchain Mnemonic Address()**](#deploytrcoffchainmnemonicaddress) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**deploy Trc Offchain PKAddress()**](#deploytrcoffchainpkaddress) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**deploy Trc Offchain PKXpub()**](#deploytrcoffchainpkxpub) | **POST** `/v3 /offchain /tron /trc /deploy` | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
-[**erc20()**](#erc20) | **POST** `/v3 /offchain /ethereum /erc20` | Register a new Ethereum ERC-20 token in the virtual account
-[**erc20 Address()**](#erc20address) | **POST** `/v3 /offchain /ethereum /erc20` | Register a new Ethereum ERC-20 token in the virtual account
-[**off Bsc Deploy Erc20 Offchain KMSAddress()**](#offbscdeployerc20offchainkmsaddress) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**off Bsc Deploy Erc20 Offchain KMSXpub()**](#offbscdeployerc20offchainkmsxpub) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**off Bsc Deploy Erc20 Offchain Mnem Xpub()**](#offbscdeployerc20offchainmnemxpub) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**off Bsc Deploy Erc20 Offchain Mnemonic Address()**](#offbscdeployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**off Bsc Deploy Erc20 Offchain PKAddress()**](#offbscdeployerc20offchainpkaddress) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**off Bsc Deploy Erc20 Offchain PKXpub()**](#offbscdeployerc20offchainpkxpub) | **POST** `/v3 /offchain /bsc /bep20 /deploy` | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
-[**off Bsc Erc20()**](#offbscerc20) | **POST** `/v3 /offchain /bsc /bep20` | Register a new BNB Smart Chain BEP-20 token in the virtual account
-[**off Bsc Erc20 Address()**](#offbscerc20address) | **POST** `/v3 /offchain /bsc /bep20` | Register a new BNB Smart Chain BEP-20 token in the virtual account
-[**off Cel Erc20()**](#offcelerc20) | **POST** `/v3 /offchain /celo /erc20` | Register a new Celo ERC-20-equivalent token in the virtual account
-[**off Cel Erc20 Address()**](#offcelerc20address) | **POST** `/v3 /offchain /celo /erc20` | Register a new Celo ERC-20-equivalent token in the virtual account
-[**off Egl Transfer Eth()**](#offegltransfereth) | **POST** `/v3 /offchain /egld /transfer` | Send EGLD from a virtual account to the blockchain
-[**off Egl Transfer Eth KMS()**](#offegltransferethkms) | **POST** `/v3 /offchain /egld /transfer` | Send EGLD from a virtual account to the blockchain
-[**off Egl Transfer Eth Mnemonic()**](#offegltransferethmnemonic) | **POST** `/v3 /offchain /egld /transfer` | Send EGLD from a virtual account to the blockchain
-[**off Kla Deploy Erc20 Offchain KMSAddress()**](#offkladeployerc20offchainkmsaddress) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Kla Deploy Erc20 Offchain KMSXpub()**](#offkladeployerc20offchainkmsxpub) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Kla Deploy Erc20 Offchain Mnem Xpub()**](#offkladeployerc20offchainmnemxpub) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Kla Deploy Erc20 Offchain Mnemonic Address()**](#offkladeployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Kla Deploy Erc20 Offchain PKAddress()**](#offkladeployerc20offchainpkaddress) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Kla Deploy Erc20 Offchain PKXpub()**](#offkladeployerc20offchainpkxpub) | **POST** `/v3 /offchain /klaytn /erc20 /deploy` | Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Kla Transfer Eth()**](#offklatransfereth) | **POST** `/v3 /offchain /klaytn /transfer` | Send KLAY from a virtual account to the blockchain
-[**off Kla Transfer Eth KMS()**](#offklatransferethkms) | **POST** `/v3 /offchain /klaytn /transfer` | Send KLAY from a virtual account to the blockchain
-[**off Kla Transfer Eth Mnemonic()**](#offklatransferethmnemonic) | **POST** `/v3 /offchain /klaytn /transfer` | Send KLAY from a virtual account to the blockchain
-[**off One Deploy Erc20 Offchain KMSAddress()**](#offonedeployerc20offchainkmsaddress) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**off One Deploy Erc20 Offchain KMSXpub()**](#offonedeployerc20offchainkmsxpub) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**off One Deploy Erc20 Offchain Mnem Xpub()**](#offonedeployerc20offchainmnemxpub) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**off One Deploy Erc20 Offchain Mnemonic Address()**](#offonedeployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**off One Deploy Erc20 Offchain PKAddress()**](#offonedeployerc20offchainpkaddress) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**off One Deploy Erc20 Offchain PKXpub()**](#offonedeployerc20offchainpkxpub) | **POST** `/v3 /offchain /one /hrm20 /deploy` | Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
-[**off One Erc20()**](#offoneerc20) | **POST** `/v3 /offchain /one /hrm20` | Register a new Harmony HRM-20 token in the virtual account
-[**off One Erc20 Address()**](#offoneerc20address) | **POST** `/v3 /offchain /one /hrm20` | Register a new Harmony HRM-20 token in the virtual account
-[**off One Transfer Eth()**](#offonetransfereth) | **POST** `/v3 /offchain /one /transfer` | Send ONE from a virtual account to the blockchain
-[**off One Transfer Eth KMS()**](#offonetransferethkms) | **POST** `/v3 /offchain /one /transfer` | Send ONE from a virtual account to the blockchain
-[**off One Transfer Eth Mnemonic()**](#offonetransferethmnemonic) | **POST** `/v3 /offchain /one /transfer` | Send ONE from a virtual account to the blockchain
-[**off Pol Transfer Eth()**](#offpoltransfereth) | **POST** `/v3 /offchain /polygon /transfer` | Send MATIC from a virtual account to the blockchain
-[**off Pol Transfer Eth KMS()**](#offpoltransferethkms) | **POST** `/v3 /offchain /polygon /transfer` | Send MATIC from a virtual account to the blockchain
-[**off Pol Transfer Eth Mnemonic()**](#offpoltransferethmnemonic) | **POST** `/v3 /offchain /polygon /transfer` | Send MATIC from a virtual account to the blockchain
-[**off Tok Erc20()**](#offtokerc20) | **POST** `/v3 /offchain /token /{chain}` | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-[**off Tok Erc20 Address()**](#offtokerc20address) | **POST** `/v3 /offchain /token /{chain}` | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-[**off Xdc Deploy Erc20 Offchain KMSAddress()**](#offxdcdeployerc20offchainkmsaddress) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Xdc Deploy Erc20 Offchain KMSXpub()**](#offxdcdeployerc20offchainkmsxpub) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Xdc Deploy Erc20 Offchain Mnem Xpub()**](#offxdcdeployerc20offchainmnemxpub) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Xdc Deploy Erc20 Offchain Mnemonic Address()**](#offxdcdeployerc20offchainmnemonicaddress) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Xdc Deploy Erc20 Offchain PKAddress()**](#offxdcdeployerc20offchainpkaddress) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Xdc Deploy Erc20 Offchain PKXpub()**](#offxdcdeployerc20offchainpkxpub) | **POST** `/v3 /offchain /xdc /erc20 /deploy` | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
-[**off Xdc Erc20()**](#offxdcerc20) | **POST** `/v3 /offchain /xdc /erc20` | Register a new XinFin ERC-20-equivalent token in the virtual account
-[**off Xdc Erc20 Address()**](#offxdcerc20address) | **POST** `/v3 /offchain /xdc /erc20` | Register a new XinFin ERC-20-equivalent token in the virtual account
-[**off Xdc Transfer Eth()**](#offxdctransfereth) | **POST** `/v3 /offchain /xdc /transfer` | Send XDC from a virtual account to the blockchain
-[**off Xdc Transfer Eth KMS()**](#offxdctransferethkms) | **POST** `/v3 /offchain /xdc /transfer` | Send XDC from a virtual account to the blockchain
-[**off Xdc Transfer Eth Mnemonic()**](#offxdctransferethmnemonic) | **POST** `/v3 /offchain /xdc /transfer` | Send XDC from a virtual account to the blockchain
-[**store Celo Erc20 Address()**](#storeceloerc20address) | **POST** `/v3 /offchain /celo /erc20 /{name} /{address}` | Set the contract address of a Celo ERC-20-equivalent token
-[**store Token Address()**](#storetokenaddress) | **POST** `/v3 /offchain /token /{name} /{address}` | Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
-[**store Trc Address()**](#storetrcaddress) | **POST** `/v3 /offchain /tron /trc /{name} /{address}` | Set the contract address of a TRC-10 or TRC-20 token
-[**transfer Ada KMS()**](#transferadakms) | **POST** `/v3 /offchain /ada /transfer` | Send ADA from a virtual account to the blockchain
-[**transfer Ada Key Pair()**](#transferadakeypair) | **POST** `/v3 /offchain /ada /transfer` | Send ADA from a virtual account to the blockchain
-[**transfer Ada Mnemonic()**](#transferadamnemonic) | **POST** `/v3 /offchain /ada /transfer` | Send ADA from a virtual account to the blockchain
-[**transfer Algo()**](#transferalgo) | **POST** `/v3 /offchain /algorand /transfer` | Send ALGO from a virtual account to the blockchain
-[**transfer Algo Erc20()**](#transferalgoerc20) | **POST** `/v3 /offchain /algorand /transfer` | Send ALGO from a virtual account to the blockchain
-[**transfer Algo KMS()**](#transferalgokms) | **POST** `/v3 /offchain /algorand /transfer` | Send ALGO from a virtual account to the blockchain
-[**transfer Bch KMS()**](#transferbchkms) | **POST** `/v3 /offchain /bcash /transfer` | Send BCH from a virtual account to the blockchain
-[**transfer Bch Key Pair()**](#transferbchkeypair) | **POST** `/v3 /offchain /bcash /transfer` | Send BCH from a virtual account to the blockchain
-[**transfer Bch Mnemonic()**](#transferbchmnemonic) | **POST** `/v3 /offchain /bcash /transfer` | Send BCH from a virtual account to the blockchain
-[**transfer Bnb()**](#transferbnb) | **POST** `/v3 /offchain /bnb /transfer` | Send BNB from a virtual account to the blockchain
-[**transfer Bnb KMS()**](#transferbnbkms) | **POST** `/v3 /offchain /bnb /transfer` | Send BNB from a virtual account to the blockchain
-[**transfer Bsc()**](#transferbsc) | **POST** `/v3 /offchain /bsc /transfer` | Send BSC from a virtual account to the blockchain
-[**transfer Bsc KMS()**](#transferbsckms) | **POST** `/v3 /offchain /bsc /transfer` | Send BSC from a virtual account to the blockchain
-[**transfer Bsc Mnemonic()**](#transferbscmnemonic) | **POST** `/v3 /offchain /bsc /transfer` | Send BSC from a virtual account to the blockchain
-[**transfer Btc KMS()**](#transferbtckms) | **POST** `/v3 /offchain /bitcoin /transfer` | Send BTC from a virtual account to the blockchain
-[**transfer Btc Key Pair()**](#transferbtckeypair) | **POST** `/v3 /offchain /bitcoin /transfer` | Send BTC from a virtual account to the blockchain
-[**transfer Btc Mnemonic()**](#transferbtcmnemonic) | **POST** `/v3 /offchain /bitcoin /transfer` | Send BTC from a virtual account to the blockchain
-[**transfer Celo()**](#transfercelo) | **POST** `/v3 /offchain /celo /transfer` | Send CELO from a virtual account to the blockchain
-[**transfer Celo KMS()**](#transfercelokms) | **POST** `/v3 /offchain /celo /transfer` | Send CELO from a virtual account to the blockchain
-[**transfer Celo Mnemonic()**](#transfercelomnemonic) | **POST** `/v3 /offchain /celo /transfer` | Send CELO from a virtual account to the blockchain
-[**transfer Doge KMS()**](#transferdogekms) | **POST** `/v3 /offchain /dogecoin /transfer` | Send DOGE from a virtual account to the blockchain
-[**transfer Doge Key Pair()**](#transferdogekeypair) | **POST** `/v3 /offchain /dogecoin /transfer` | Send DOGE from a virtual account to the blockchain
-[**transfer Doge Mnemonic()**](#transferdogemnemonic) | **POST** `/v3 /offchain /dogecoin /transfer` | Send DOGE from a virtual account to the blockchain
-[**transfer Erc20()**](#transfererc20) | **POST** `/v3 /offchain /ethereum /erc20 /transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-[**transfer Erc20 KMS()**](#transfererc20kms) | **POST** `/v3 /offchain /ethereum /erc20 /transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-[**transfer Erc20 Mnemonic()**](#transfererc20mnemonic) | **POST** `/v3 /offchain /ethereum /erc20 /transfer` | Send Ethereum ERC-20 tokens from a virtual account to the blockchain
-[**transfer Eth()**](#transfereth) | **POST** `/v3 /offchain /ethereum /transfer` | Send ETH from a virtual account to the blockchain
-[**transfer Eth KMS()**](#transferethkms) | **POST** `/v3 /offchain /ethereum /transfer` | Send ETH from a virtual account to the blockchain
-[**transfer Eth Mnemonic()**](#transferethmnemonic) | **POST** `/v3 /offchain /ethereum /transfer` | Send ETH from a virtual account to the blockchain
-[**transfer Flow KMS()**](#transferflowkms) | **POST** `/v3 /offchain /flow /transfer` | Send FLOW from a virtual account to the blockchain
-[**transfer Flow Mnemonic()**](#transferflowmnemonic) | **POST** `/v3 /offchain /flow /transfer` | Send FLOW from a virtual account to the blockchain
-[**transfer Flow PK()**](#transferflowpk) | **POST** `/v3 /offchain /flow /transfer` | Send FLOW from a virtual account to the blockchain
-[**transfer KCS()**](#transferkcs) | **POST** `/v3 /offchain /kcs /transfer` | Send KCS from a virtual account to the blockchain
-[**transfer KCSKMS()**](#transferkcskms) | **POST** `/v3 /offchain /kcs /transfer` | Send KCS from a virtual account to the blockchain
-[**transfer KCSMnemonic()**](#transferkcsmnemonic) | **POST** `/v3 /offchain /kcs /transfer` | Send KCS from a virtual account to the blockchain
-[**transfer Ltc KMS()**](#transferltckms) | **POST** `/v3 /offchain /litecoin /transfer` | Send LTC from a virtual account to the blockchain
-[**transfer Ltc Key Pair()**](#transferltckeypair) | **POST** `/v3 /offchain /litecoin /transfer` | Send LTC from a virtual account to the blockchain
-[**transfer Ltc Mnemonic()**](#transferltcmnemonic) | **POST** `/v3 /offchain /litecoin /transfer` | Send LTC from a virtual account to the blockchain
-[**transfer Sol()**](#transfersol) | **POST** `/v3 /offchain /solana /transfer` | Send SOL from a virtual account to the blockchain
-[**transfer Sol KMS()**](#transfersolkms) | **POST** `/v3 /offchain /solana /transfer` | Send SOL from a virtual account to the blockchain
-[**transfer Tron()**](#transfertron) | **POST** `/v3 /offchain /tron /transfer` | Send TRON from a virtual account to the blockchain
-[**transfer Tron KMS()**](#transfertronkms) | **POST** `/v3 /offchain /tron /transfer` | Send TRON from a virtual account to the blockchain
-[**transfer Tron Mnemonic()**](#transfertronmnemonic) | **POST** `/v3 /offchain /tron /transfer` | Send TRON from a virtual account to the blockchain
-[**transfer Xlm()**](#transferxlm) | **POST** `/v3 /offchain /xlm /transfer` | Send XLM from a virtual account to the blockchain
-[**transfer Xlm KMS()**](#transferxlmkms) | **POST** `/v3 /offchain /xlm /transfer` | Send XLM from a virtual account to the blockchain
-[**transfer Xrp()**](#transferxrp) | **POST** `/v3 /offchain /xrp /transfer` | Send XRP from a virtual account to the blockchain
-[**transfer Xrp KMS()**](#transferxrpkms) | **POST** `/v3 /offchain /xrp /transfer` | Send XRP from a virtual account to the blockchain
-[**trc Address()**](#trcaddress) | **POST** `/v3 /offchain /tron /trc` | Register a new TRON TRC-10 or TRC-20 token in the virtual account
-[**trc Xpub()**](#trcxpub) | **POST** `/v3 /offchain /tron /trc` | Register a new TRON TRC-10 or TRC-20 token in the virtual account
-[**xlm Asset Offchain()**](#xlmassetoffchain) | **POST** `/v3 /offchain /xlm /asset` | Create an XLM-based asset
-[**xrp Asset Offchain()**](#xrpassetoffchain) | **POST** `/v3 /offchain /xrp /asset` | Create XRP based Asset
+[Blockchain operations API documentation](https://apidoc.tatum.io/tag/Blockchain-operations/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **bnbAssetOffchain()**](#bnbassetoffchain) 
+
+> **POST** `/v3/offchain/bnb/asset`
+> 
+> Create a BNB-based asset
+
+[🔹 **deployAlgoErc20OffchainKMSAddress()**](#deployalgoerc20offchainkmsaddress) 
+
+> **POST** `/v3/offchain/algo/erc20/deploy`
+> 
+> Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployAlgoErc20OffchainMnemonicAddress()**](#deployalgoerc20offchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/algo/erc20/deploy`
+> 
+> Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployAlgoErc20OffchainPKAddress()**](#deployalgoerc20offchainpkaddress) 
+
+> **POST** `/v3/offchain/algo/erc20/deploy`
+> 
+> Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployCeloErc20OffchainKMSAddress()**](#deployceloerc20offchainkmsaddress) 
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
+> 
+> Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployCeloErc20OffchainKMSXpub()**](#deployceloerc20offchainkmsxpub) 
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
+> 
+> Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployCeloErc20OffchainMnemXpub()**](#deployceloerc20offchainmnemxpub) 
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
+> 
+> Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployCeloErc20OffchainMnemonicAddress()**](#deployceloerc20offchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
+> 
+> Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployCeloErc20OffchainPKAddress()**](#deployceloerc20offchainpkaddress) 
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
+> 
+> Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployCeloErc20OffchainPKXpub()**](#deployceloerc20offchainpkxpub) 
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
+> 
+> Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployErc20OffchainKMSAddress()**](#deployerc20offchainkmsaddress) 
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
+> 
+> Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployErc20OffchainKMSXpub()**](#deployerc20offchainkmsxpub) 
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
+> 
+> Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployErc20OffchainMnemXpub()**](#deployerc20offchainmnemxpub) 
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
+> 
+> Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployErc20OffchainMnemonicAddress()**](#deployerc20offchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
+> 
+> Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployErc20OffchainPKAddress()**](#deployerc20offchainpkaddress) 
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
+> 
+> Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployErc20OffchainPKXpub()**](#deployerc20offchainpkxpub) 
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
+> 
+> Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployKCSErc20OffchainKMSAddress()**](#deploykcserc20offchainkmsaddress) 
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+> 
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployKCSErc20OffchainKMSXpub()**](#deploykcserc20offchainkmsxpub) 
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+> 
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployKCSErc20OffchainMnemXpub()**](#deploykcserc20offchainmnemxpub) 
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+> 
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployKCSErc20OffchainMnemonicAddress()**](#deploykcserc20offchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+> 
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployKCSErc20OffchainPKAddress()**](#deploykcserc20offchainpkaddress) 
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+> 
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployKCSErc20OffchainPKXpub()**](#deploykcserc20offchainpkxpub) 
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+> 
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **deployTrcOffchainKMSAddress()**](#deploytrcoffchainkmsaddress) 
+
+> **POST** `/v3/offchain/tron/trc/deploy`
+> 
+> Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployTrcOffchainKMSXpub()**](#deploytrcoffchainkmsxpub) 
+
+> **POST** `/v3/offchain/tron/trc/deploy`
+> 
+> Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployTrcOffchainMnemXpub()**](#deploytrcoffchainmnemxpub) 
+
+> **POST** `/v3/offchain/tron/trc/deploy`
+> 
+> Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployTrcOffchainMnemonicAddress()**](#deploytrcoffchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/tron/trc/deploy`
+> 
+> Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployTrcOffchainPKAddress()**](#deploytrcoffchainpkaddress) 
+
+> **POST** `/v3/offchain/tron/trc/deploy`
+> 
+> Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **deployTrcOffchainPKXpub()**](#deploytrcoffchainpkxpub) 
+
+> **POST** `/v3/offchain/tron/trc/deploy`
+> 
+> Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+
+[🔹 **erc20()**](#erc20) 
+
+> **POST** `/v3/offchain/ethereum/erc20`
+> 
+> Register a new Ethereum ERC-20 token in the virtual account
+
+[🔹 **erc20Address()**](#erc20address) 
+
+> **POST** `/v3/offchain/ethereum/erc20`
+> 
+> Register a new Ethereum ERC-20 token in the virtual account
+
+[🔹 **offBscDeployErc20OffchainKMSAddress()**](#offbscdeployerc20offchainkmsaddress) 
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
+> 
+> Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offBscDeployErc20OffchainKMSXpub()**](#offbscdeployerc20offchainkmsxpub) 
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
+> 
+> Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offBscDeployErc20OffchainMnemXpub()**](#offbscdeployerc20offchainmnemxpub) 
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
+> 
+> Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offBscDeployErc20OffchainMnemonicAddress()**](#offbscdeployerc20offchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
+> 
+> Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offBscDeployErc20OffchainPKAddress()**](#offbscdeployerc20offchainpkaddress) 
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
+> 
+> Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offBscDeployErc20OffchainPKXpub()**](#offbscdeployerc20offchainpkxpub) 
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
+> 
+> Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offBscErc20()**](#offbscerc20) 
+
+> **POST** `/v3/offchain/bsc/bep20`
+> 
+> Register a new BNB Smart Chain BEP-20 token in the virtual account
+
+[🔹 **offBscErc20Address()**](#offbscerc20address) 
+
+> **POST** `/v3/offchain/bsc/bep20`
+> 
+> Register a new BNB Smart Chain BEP-20 token in the virtual account
+
+[🔹 **offCelErc20()**](#offcelerc20) 
+
+> **POST** `/v3/offchain/celo/erc20`
+> 
+> Register a new Celo ERC-20-equivalent token in the virtual account
+
+[🔹 **offCelErc20Address()**](#offcelerc20address) 
+
+> **POST** `/v3/offchain/celo/erc20`
+> 
+> Register a new Celo ERC-20-equivalent token in the virtual account
+
+[🔹 **offEglTransferEth()**](#offegltransfereth) 
+
+> **POST** `/v3/offchain/egld/transfer`
+> 
+> Send EGLD from a virtual account to the blockchain
+
+[🔹 **offEglTransferEthKMS()**](#offegltransferethkms) 
+
+> **POST** `/v3/offchain/egld/transfer`
+> 
+> Send EGLD from a virtual account to the blockchain
+
+[🔹 **offEglTransferEthMnemonic()**](#offegltransferethmnemonic) 
+
+> **POST** `/v3/offchain/egld/transfer`
+> 
+> Send EGLD from a virtual account to the blockchain
+
+[🔹 **offKlaDeployErc20OffchainKMSAddress()**](#offkladeployerc20offchainkmsaddress) 
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
+> 
+> Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offKlaDeployErc20OffchainKMSXpub()**](#offkladeployerc20offchainkmsxpub) 
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
+> 
+> Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offKlaDeployErc20OffchainMnemXpub()**](#offkladeployerc20offchainmnemxpub) 
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
+> 
+> Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offKlaDeployErc20OffchainMnemonicAddress()**](#offkladeployerc20offchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
+> 
+> Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offKlaDeployErc20OffchainPKAddress()**](#offkladeployerc20offchainpkaddress) 
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
+> 
+> Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offKlaDeployErc20OffchainPKXpub()**](#offkladeployerc20offchainpkxpub) 
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
+> 
+> Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offKlaTransferEth()**](#offklatransfereth) 
+
+> **POST** `/v3/offchain/klaytn/transfer`
+> 
+> Send KLAY from a virtual account to the blockchain
+
+[🔹 **offKlaTransferEthKMS()**](#offklatransferethkms) 
+
+> **POST** `/v3/offchain/klaytn/transfer`
+> 
+> Send KLAY from a virtual account to the blockchain
+
+[🔹 **offKlaTransferEthMnemonic()**](#offklatransferethmnemonic) 
+
+> **POST** `/v3/offchain/klaytn/transfer`
+> 
+> Send KLAY from a virtual account to the blockchain
+
+[🔹 **offOneDeployErc20OffchainKMSAddress()**](#offonedeployerc20offchainkmsaddress) 
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
+> 
+> Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offOneDeployErc20OffchainKMSXpub()**](#offonedeployerc20offchainkmsxpub) 
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
+> 
+> Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offOneDeployErc20OffchainMnemXpub()**](#offonedeployerc20offchainmnemxpub) 
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
+> 
+> Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offOneDeployErc20OffchainMnemonicAddress()**](#offonedeployerc20offchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
+> 
+> Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offOneDeployErc20OffchainPKAddress()**](#offonedeployerc20offchainpkaddress) 
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
+> 
+> Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offOneDeployErc20OffchainPKXpub()**](#offonedeployerc20offchainpkxpub) 
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
+> 
+> Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+
+[🔹 **offOneErc20()**](#offoneerc20) 
+
+> **POST** `/v3/offchain/one/hrm20`
+> 
+> Register a new Harmony HRM-20 token in the virtual account
+
+[🔹 **offOneErc20Address()**](#offoneerc20address) 
+
+> **POST** `/v3/offchain/one/hrm20`
+> 
+> Register a new Harmony HRM-20 token in the virtual account
+
+[🔹 **offOneTransferEth()**](#offonetransfereth) 
+
+> **POST** `/v3/offchain/one/transfer`
+> 
+> Send ONE from a virtual account to the blockchain
+
+[🔹 **offOneTransferEthKMS()**](#offonetransferethkms) 
+
+> **POST** `/v3/offchain/one/transfer`
+> 
+> Send ONE from a virtual account to the blockchain
+
+[🔹 **offOneTransferEthMnemonic()**](#offonetransferethmnemonic) 
+
+> **POST** `/v3/offchain/one/transfer`
+> 
+> Send ONE from a virtual account to the blockchain
+
+[🔹 **offPolTransferEth()**](#offpoltransfereth) 
+
+> **POST** `/v3/offchain/polygon/transfer`
+> 
+> Send MATIC from a virtual account to the blockchain
+
+[🔹 **offPolTransferEthKMS()**](#offpoltransferethkms) 
+
+> **POST** `/v3/offchain/polygon/transfer`
+> 
+> Send MATIC from a virtual account to the blockchain
+
+[🔹 **offPolTransferEthMnemonic()**](#offpoltransferethmnemonic) 
+
+> **POST** `/v3/offchain/polygon/transfer`
+> 
+> Send MATIC from a virtual account to the blockchain
+
+[🔹 **offTokErc20()**](#offtokerc20) 
+
+> **POST** `/v3/offchain/token/{chain}`
+> 
+> Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+
+[🔹 **offTokErc20Address()**](#offtokerc20address) 
+
+> **POST** `/v3/offchain/token/{chain}`
+> 
+> Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+
+[🔹 **offXdcDeployErc20OffchainKMSAddress()**](#offxdcdeployerc20offchainkmsaddress) 
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
+> 
+> Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offXdcDeployErc20OffchainKMSXpub()**](#offxdcdeployerc20offchainkmsxpub) 
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
+> 
+> Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offXdcDeployErc20OffchainMnemXpub()**](#offxdcdeployerc20offchainmnemxpub) 
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
+> 
+> Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offXdcDeployErc20OffchainMnemonicAddress()**](#offxdcdeployerc20offchainmnemonicaddress) 
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
+> 
+> Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offXdcDeployErc20OffchainPKAddress()**](#offxdcdeployerc20offchainpkaddress) 
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
+> 
+> Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offXdcDeployErc20OffchainPKXpub()**](#offxdcdeployerc20offchainpkxpub) 
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
+> 
+> Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+[🔹 **offXdcErc20()**](#offxdcerc20) 
+
+> **POST** `/v3/offchain/xdc/erc20`
+> 
+> Register a new XinFin ERC-20-equivalent token in the virtual account
+
+[🔹 **offXdcErc20Address()**](#offxdcerc20address) 
+
+> **POST** `/v3/offchain/xdc/erc20`
+> 
+> Register a new XinFin ERC-20-equivalent token in the virtual account
+
+[🔹 **offXdcTransferEth()**](#offxdctransfereth) 
+
+> **POST** `/v3/offchain/xdc/transfer`
+> 
+> Send XDC from a virtual account to the blockchain
+
+[🔹 **offXdcTransferEthKMS()**](#offxdctransferethkms) 
+
+> **POST** `/v3/offchain/xdc/transfer`
+> 
+> Send XDC from a virtual account to the blockchain
+
+[🔹 **offXdcTransferEthMnemonic()**](#offxdctransferethmnemonic) 
+
+> **POST** `/v3/offchain/xdc/transfer`
+> 
+> Send XDC from a virtual account to the blockchain
+
+[🔹 **storeCeloErc20Address()**](#storeceloerc20address) 
+
+> **POST** `/v3/offchain/celo/erc20/{name}/{address}`
+> 
+> Set the contract address of a Celo ERC-20-equivalent token
+
+[🔹 **storeTokenAddress()**](#storetokenaddress) 
+
+> **POST** `/v3/offchain/token/{name}/{address}`
+> 
+> Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
+
+[🔹 **storeTrcAddress()**](#storetrcaddress) 
+
+> **POST** `/v3/offchain/tron/trc/{name}/{address}`
+> 
+> Set the contract address of a TRC-10 or TRC-20 token
+
+[🔹 **transferAdaKMS()**](#transferadakms) 
+
+> **POST** `/v3/offchain/ada/transfer`
+> 
+> Send ADA from a virtual account to the blockchain
+
+[🔹 **transferAdaKeyPair()**](#transferadakeypair) 
+
+> **POST** `/v3/offchain/ada/transfer`
+> 
+> Send ADA from a virtual account to the blockchain
+
+[🔹 **transferAdaMnemonic()**](#transferadamnemonic) 
+
+> **POST** `/v3/offchain/ada/transfer`
+> 
+> Send ADA from a virtual account to the blockchain
+
+[🔹 **transferAlgo()**](#transferalgo) 
+
+> **POST** `/v3/offchain/algorand/transfer`
+> 
+> Send ALGO from a virtual account to the blockchain
+
+[🔹 **transferAlgoErc20()**](#transferalgoerc20) 
+
+> **POST** `/v3/offchain/algorand/transfer`
+> 
+> Send ALGO from a virtual account to the blockchain
+
+[🔹 **transferAlgoKMS()**](#transferalgokms) 
+
+> **POST** `/v3/offchain/algorand/transfer`
+> 
+> Send ALGO from a virtual account to the blockchain
+
+[🔹 **transferBchKMS()**](#transferbchkms) 
+
+> **POST** `/v3/offchain/bcash/transfer`
+> 
+> Send BCH from a virtual account to the blockchain
+
+[🔹 **transferBchKeyPair()**](#transferbchkeypair) 
+
+> **POST** `/v3/offchain/bcash/transfer`
+> 
+> Send BCH from a virtual account to the blockchain
+
+[🔹 **transferBchMnemonic()**](#transferbchmnemonic) 
+
+> **POST** `/v3/offchain/bcash/transfer`
+> 
+> Send BCH from a virtual account to the blockchain
+
+[🔹 **transferBnb()**](#transferbnb) 
+
+> **POST** `/v3/offchain/bnb/transfer`
+> 
+> Send BNB from a virtual account to the blockchain
+
+[🔹 **transferBnbKMS()**](#transferbnbkms) 
+
+> **POST** `/v3/offchain/bnb/transfer`
+> 
+> Send BNB from a virtual account to the blockchain
+
+[🔹 **transferBsc()**](#transferbsc) 
+
+> **POST** `/v3/offchain/bsc/transfer`
+> 
+> Send BSC from a virtual account to the blockchain
+
+[🔹 **transferBscKMS()**](#transferbsckms) 
+
+> **POST** `/v3/offchain/bsc/transfer`
+> 
+> Send BSC from a virtual account to the blockchain
+
+[🔹 **transferBscMnemonic()**](#transferbscmnemonic) 
+
+> **POST** `/v3/offchain/bsc/transfer`
+> 
+> Send BSC from a virtual account to the blockchain
+
+[🔹 **transferBtcKMS()**](#transferbtckms) 
+
+> **POST** `/v3/offchain/bitcoin/transfer`
+> 
+> Send BTC from a virtual account to the blockchain
+
+[🔹 **transferBtcKeyPair()**](#transferbtckeypair) 
+
+> **POST** `/v3/offchain/bitcoin/transfer`
+> 
+> Send BTC from a virtual account to the blockchain
+
+[🔹 **transferBtcMnemonic()**](#transferbtcmnemonic) 
+
+> **POST** `/v3/offchain/bitcoin/transfer`
+> 
+> Send BTC from a virtual account to the blockchain
+
+[🔹 **transferCelo()**](#transfercelo) 
+
+> **POST** `/v3/offchain/celo/transfer`
+> 
+> Send CELO from a virtual account to the blockchain
+
+[🔹 **transferCeloKMS()**](#transfercelokms) 
+
+> **POST** `/v3/offchain/celo/transfer`
+> 
+> Send CELO from a virtual account to the blockchain
+
+[🔹 **transferCeloMnemonic()**](#transfercelomnemonic) 
+
+> **POST** `/v3/offchain/celo/transfer`
+> 
+> Send CELO from a virtual account to the blockchain
+
+[🔹 **transferDogeKMS()**](#transferdogekms) 
+
+> **POST** `/v3/offchain/dogecoin/transfer`
+> 
+> Send DOGE from a virtual account to the blockchain
+
+[🔹 **transferDogeKeyPair()**](#transferdogekeypair) 
+
+> **POST** `/v3/offchain/dogecoin/transfer`
+> 
+> Send DOGE from a virtual account to the blockchain
+
+[🔹 **transferDogeMnemonic()**](#transferdogemnemonic) 
+
+> **POST** `/v3/offchain/dogecoin/transfer`
+> 
+> Send DOGE from a virtual account to the blockchain
+
+[🔹 **transferErc20()**](#transfererc20) 
+
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
+> 
+> Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+
+[🔹 **transferErc20KMS()**](#transfererc20kms) 
+
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
+> 
+> Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+
+[🔹 **transferErc20Mnemonic()**](#transfererc20mnemonic) 
+
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
+> 
+> Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+
+[🔹 **transferEth()**](#transfereth) 
+
+> **POST** `/v3/offchain/ethereum/transfer`
+> 
+> Send ETH from a virtual account to the blockchain
+
+[🔹 **transferEthKMS()**](#transferethkms) 
+
+> **POST** `/v3/offchain/ethereum/transfer`
+> 
+> Send ETH from a virtual account to the blockchain
+
+[🔹 **transferEthMnemonic()**](#transferethmnemonic) 
+
+> **POST** `/v3/offchain/ethereum/transfer`
+> 
+> Send ETH from a virtual account to the blockchain
+
+[🔹 **transferFlowKMS()**](#transferflowkms) 
+
+> **POST** `/v3/offchain/flow/transfer`
+> 
+> Send FLOW from a virtual account to the blockchain
+
+[🔹 **transferFlowMnemonic()**](#transferflowmnemonic) 
+
+> **POST** `/v3/offchain/flow/transfer`
+> 
+> Send FLOW from a virtual account to the blockchain
+
+[🔹 **transferFlowPK()**](#transferflowpk) 
+
+> **POST** `/v3/offchain/flow/transfer`
+> 
+> Send FLOW from a virtual account to the blockchain
+
+[🔹 **transferKCS()**](#transferkcs) 
+
+> **POST** `/v3/offchain/kcs/transfer`
+> 
+> Send KCS from a virtual account to the blockchain
+
+[🔹 **transferKCSKMS()**](#transferkcskms) 
+
+> **POST** `/v3/offchain/kcs/transfer`
+> 
+> Send KCS from a virtual account to the blockchain
+
+[🔹 **transferKCSMnemonic()**](#transferkcsmnemonic) 
+
+> **POST** `/v3/offchain/kcs/transfer`
+> 
+> Send KCS from a virtual account to the blockchain
+
+[🔹 **transferLtcKMS()**](#transferltckms) 
+
+> **POST** `/v3/offchain/litecoin/transfer`
+> 
+> Send LTC from a virtual account to the blockchain
+
+[🔹 **transferLtcKeyPair()**](#transferltckeypair) 
+
+> **POST** `/v3/offchain/litecoin/transfer`
+> 
+> Send LTC from a virtual account to the blockchain
+
+[🔹 **transferLtcMnemonic()**](#transferltcmnemonic) 
+
+> **POST** `/v3/offchain/litecoin/transfer`
+> 
+> Send LTC from a virtual account to the blockchain
+
+[🔹 **transferSol()**](#transfersol) 
+
+> **POST** `/v3/offchain/solana/transfer`
+> 
+> Send SOL from a virtual account to the blockchain
+
+[🔹 **transferSolKMS()**](#transfersolkms) 
+
+> **POST** `/v3/offchain/solana/transfer`
+> 
+> Send SOL from a virtual account to the blockchain
+
+[🔹 **transferTron()**](#transfertron) 
+
+> **POST** `/v3/offchain/tron/transfer`
+> 
+> Send TRON from a virtual account to the blockchain
+
+[🔹 **transferTronKMS()**](#transfertronkms) 
+
+> **POST** `/v3/offchain/tron/transfer`
+> 
+> Send TRON from a virtual account to the blockchain
+
+[🔹 **transferTronMnemonic()**](#transfertronmnemonic) 
+
+> **POST** `/v3/offchain/tron/transfer`
+> 
+> Send TRON from a virtual account to the blockchain
+
+[🔹 **transferXlm()**](#transferxlm) 
+
+> **POST** `/v3/offchain/xlm/transfer`
+> 
+> Send XLM from a virtual account to the blockchain
+
+[🔹 **transferXlmKMS()**](#transferxlmkms) 
+
+> **POST** `/v3/offchain/xlm/transfer`
+> 
+> Send XLM from a virtual account to the blockchain
+
+[🔹 **transferXrp()**](#transferxrp) 
+
+> **POST** `/v3/offchain/xrp/transfer`
+> 
+> Send XRP from a virtual account to the blockchain
+
+[🔹 **transferXrpKMS()**](#transferxrpkms) 
+
+> **POST** `/v3/offchain/xrp/transfer`
+> 
+> Send XRP from a virtual account to the blockchain
+
+[🔹 **trcAddress()**](#trcaddress) 
+
+> **POST** `/v3/offchain/tron/trc`
+> 
+> Register a new TRON TRC-10 or TRC-20 token in the virtual account
+
+[🔹 **trcXpub()**](#trcxpub) 
+
+> **POST** `/v3/offchain/tron/trc`
+> 
+> Register a new TRON TRC-10 or TRC-20 token in the virtual account
+
+[🔹 **xlmAssetOffchain()**](#xlmassetoffchain) 
+
+> **POST** `/v3/offchain/xlm/asset`
+> 
+> Create an XLM-based asset
+
+[🔹 **xrpAssetOffchain()**](#xrpassetoffchain) 
+
+> **POST** `/v3/offchain/xrp/asset`
+> 
+> Create XRP based Asset
+
 
 
 ## `bnbAssetOffchain()`

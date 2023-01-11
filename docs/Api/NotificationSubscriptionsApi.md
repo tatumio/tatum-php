@@ -1,31 +1,139 @@
 # Tatum/Api/NotificationSubscriptionsApi
 
-* Notification subscriptions [documentation](https://apidoc.tatum.io/tag/Notification-subscriptions/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create Subscription Balance()**](#createsubscriptionbalance) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Contract Log Event()**](#createsubscriptioncontractlogevent) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Incoming()**](#createsubscriptionincoming) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Interval()**](#createsubscriptioninterval) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription KMSError()**](#createsubscriptionkmserror) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription KMSSuccess()**](#createsubscriptionkmssuccess) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Multi Token Transfer Event()**](#createsubscriptionmultitokentransferevent) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Nft Transfer Event()**](#createsubscriptionnfttransferevent) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Notification()**](#createsubscriptionnotification) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Partial Trade Match()**](#createsubscriptionpartialtradematch) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Pending()**](#createsubscriptionpending) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Trade Match()**](#createsubscriptiontradematch) | **POST** `/v3 /subscription` | Create a subscription
-[**create Subscription Tx In The Block()**](#createsubscriptiontxintheblock) | **POST** `/v3 /subscription` | Create a subscription
-[**delete Subscription()**](#deletesubscription) | **DELETE** `/v3 /subscription /{id}` | Cancel existing subscription
-[**disable Web Hook Hmac()**](#disablewebhookhmac) | **DELETE** `/v3 /subscription` | Disable HMAC webhook digest
-[**enable Web Hook Hmac()**](#enablewebhookhmac) | **PUT** `/v3 /subscription` | Enable HMAC webhook digest
-[**get All Webhooks()**](#getallwebhooks) | **GET** `/v3 /subscription /webhook` | List all executed webhooks
-[**get All Webhooks Count()**](#getallwebhookscount) | **GET** `/v3 /subscription /webhook /count` | Count of found entities for get webhook request
-[**get Subscription Report()**](#getsubscriptionreport) | **GET** `/v3 /subscription /report /{id}` | Obtain report for subscription
-[**get Subscriptions()**](#getsubscriptions) | **GET** `/v3 /subscription` | List all active subscriptions
-[**get Subscriptions Count()**](#getsubscriptionscount) | **GET** `/v3 /subscription /count` | Count of found entities for get webhook request
+[Notification subscriptions API documentation](https://apidoc.tatum.io/tag/Notification-subscriptions/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **createSubscriptionBalance()**](#createsubscriptionbalance) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionContractLogEvent()**](#createsubscriptioncontractlogevent) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionIncoming()**](#createsubscriptionincoming) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionInterval()**](#createsubscriptioninterval) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionKMSError()**](#createsubscriptionkmserror) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionKMSSuccess()**](#createsubscriptionkmssuccess) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionMultiTokenTransferEvent()**](#createsubscriptionmultitokentransferevent) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionNftTransferEvent()**](#createsubscriptionnfttransferevent) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionNotification()**](#createsubscriptionnotification) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionPartialTradeMatch()**](#createsubscriptionpartialtradematch) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionPending()**](#createsubscriptionpending) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionTradeMatch()**](#createsubscriptiontradematch) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **createSubscriptionTxInTheBlock()**](#createsubscriptiontxintheblock) 
+
+> **POST** `/v3/subscription`
+> 
+> Create a subscription
+
+[🔹 **deleteSubscription()**](#deletesubscription) 
+
+> **DELETE** `/v3/subscription/{id}`
+> 
+> Cancel existing subscription
+
+[🔹 **disableWebHookHmac()**](#disablewebhookhmac) 
+
+> **DELETE** `/v3/subscription`
+> 
+> Disable HMAC webhook digest
+
+[🔹 **enableWebHookHmac()**](#enablewebhookhmac) 
+
+> **PUT** `/v3/subscription`
+> 
+> Enable HMAC webhook digest
+
+[🔹 **getAllWebhooks()**](#getallwebhooks) 
+
+> **GET** `/v3/subscription/webhook`
+> 
+> List all executed webhooks
+
+[🔹 **getAllWebhooksCount()**](#getallwebhookscount) 
+
+> **GET** `/v3/subscription/webhook/count`
+> 
+> Count of found entities for get webhook request
+
+[🔹 **getSubscriptionReport()**](#getsubscriptionreport) 
+
+> **GET** `/v3/subscription/report/{id}`
+> 
+> Obtain report for subscription
+
+[🔹 **getSubscriptions()**](#getsubscriptions) 
+
+> **GET** `/v3/subscription`
+> 
+> List all active subscriptions
+
+[🔹 **getSubscriptionsCount()**](#getsubscriptionscount) 
+
+> **GET** `/v3/subscription/count`
+> 
+> Count of found entities for get webhook request
+
 
 
 ## `createSubscriptionBalance()`

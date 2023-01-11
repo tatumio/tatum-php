@@ -1,27 +1,115 @@
 # Tatum/Api/BitcoinApi
 
-* Bitcoin [documentation](https://apidoc.tatum.io/tag/Bitcoin/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**btc Broadcast()**](#btcbroadcast) | **POST** `/v3 /bitcoin /broadcast` | Broadcast a signed Bitcoin transaction
-[**btc Generate Address()**](#btcgenerateaddress) | **GET** `/v3 /bitcoin /address /{xpub} /{index}` | Generate a Bitcoin address from the wallet's extended public key
-[**btc Generate Address Private Key()**](#btcgenerateaddressprivatekey) | **POST** `/v3 /bitcoin /wallet /priv` | Generate the private key for a Bitcoin address
-[**btc Generate Wallet()**](#btcgeneratewallet) | **GET** `/v3 /bitcoin /wallet` | Generate a Bitcoin wallet
-[**btc Get Balance Of Address()**](#btcgetbalanceofaddress) | **GET** `/v3 /bitcoin /address /balance /{address}` | Get the balance of a Bitcoin address
-[**btc Get Block()**](#btcgetblock) | **GET** `/v3 /bitcoin /block /{hash}` | Get a Bitcoin block by its hash or height
-[**btc Get Block Chain Info()**](#btcgetblockchaininfo) | **GET** `/v3 /bitcoin /info` | Get Bitcoin blockchain information
-[**btc Get Block Hash()**](#btcgetblockhash) | **GET** `/v3 /bitcoin /block /hash /{i}` | Get the hash of a Bitcoin block
-[**btc Get Mempool()**](#btcgetmempool) | **GET** `/v3 /bitcoin /mempool` | Get transactions from the Bitcoin mempool
-[**btc Get Raw Transaction()**](#btcgetrawtransaction) | **GET** `/v3 /bitcoin /transaction /{hash}` | Get a Bitcoin transaction by its hash
-[**btc Get Tx By Address()**](#btcgettxbyaddress) | **GET** `/v3 /bitcoin /transaction /address /{address}` | Get all transactions for a Bitcoin address
-[**btc Get UTXO()**](#btcgetutxo) | **GET** `/v3 /bitcoin /utxo /{hash} /{index}` | Get information about a transaction output (UTXO) in a Bitcoin transaction
-[**btc Rpc Driver()**](#btcrpcdriver) | **POST** `/v3 /bitcoin /node` | Connect to a Bitcoin node through an RPC driver
-[**btc Transaction From Address()**](#btctransactionfromaddress) | **POST** `/v3 /bitcoin /transaction` | Send BTC to Bitcoin addresses
-[**btc Transaction From Address KMS()**](#btctransactionfromaddresskms) | **POST** `/v3 /bitcoin /transaction` | Send BTC to Bitcoin addresses
-[**btc Transaction From UTXO()**](#btctransactionfromutxo) | **POST** `/v3 /bitcoin /transaction` | Send BTC to Bitcoin addresses
-[**btc Transaction From UTXOKMS()**](#btctransactionfromutxokms) | **POST** `/v3 /bitcoin /transaction` | Send BTC to Bitcoin addresses
+[Bitcoin API documentation](https://apidoc.tatum.io/tag/Bitcoin/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **btcBroadcast()**](#btcbroadcast) 
+
+> **POST** `/v3/bitcoin/broadcast`
+> 
+> Broadcast a signed Bitcoin transaction
+
+[🔹 **btcGenerateAddress()**](#btcgenerateaddress) 
+
+> **GET** `/v3/bitcoin/address/{xpub}/{index}`
+> 
+> Generate a Bitcoin address from the wallet's extended public key
+
+[🔹 **btcGenerateAddressPrivateKey()**](#btcgenerateaddressprivatekey) 
+
+> **POST** `/v3/bitcoin/wallet/priv`
+> 
+> Generate the private key for a Bitcoin address
+
+[🔹 **btcGenerateWallet()**](#btcgeneratewallet) 
+
+> **GET** `/v3/bitcoin/wallet`
+> 
+> Generate a Bitcoin wallet
+
+[🔹 **btcGetBalanceOfAddress()**](#btcgetbalanceofaddress) 
+
+> **GET** `/v3/bitcoin/address/balance/{address}`
+> 
+> Get the balance of a Bitcoin address
+
+[🔹 **btcGetBlock()**](#btcgetblock) 
+
+> **GET** `/v3/bitcoin/block/{hash}`
+> 
+> Get a Bitcoin block by its hash or height
+
+[🔹 **btcGetBlockChainInfo()**](#btcgetblockchaininfo) 
+
+> **GET** `/v3/bitcoin/info`
+> 
+> Get Bitcoin blockchain information
+
+[🔹 **btcGetBlockHash()**](#btcgetblockhash) 
+
+> **GET** `/v3/bitcoin/block/hash/{i}`
+> 
+> Get the hash of a Bitcoin block
+
+[🔹 **btcGetMempool()**](#btcgetmempool) 
+
+> **GET** `/v3/bitcoin/mempool`
+> 
+> Get transactions from the Bitcoin mempool
+
+[🔹 **btcGetRawTransaction()**](#btcgetrawtransaction) 
+
+> **GET** `/v3/bitcoin/transaction/{hash}`
+> 
+> Get a Bitcoin transaction by its hash
+
+[🔹 **btcGetTxByAddress()**](#btcgettxbyaddress) 
+
+> **GET** `/v3/bitcoin/transaction/address/{address}`
+> 
+> Get all transactions for a Bitcoin address
+
+[🔹 **btcGetUTXO()**](#btcgetutxo) 
+
+> **GET** `/v3/bitcoin/utxo/{hash}/{index}`
+> 
+> Get information about a transaction output (UTXO) in a Bitcoin transaction
+
+[🔹 **btcRpcDriver()**](#btcrpcdriver) 
+
+> **POST** `/v3/bitcoin/node`
+> 
+> Connect to a Bitcoin node through an RPC driver
+
+[🔹 **btcTransactionFromAddress()**](#btctransactionfromaddress) 
+
+> **POST** `/v3/bitcoin/transaction`
+> 
+> Send BTC to Bitcoin addresses
+
+[🔹 **btcTransactionFromAddressKMS()**](#btctransactionfromaddresskms) 
+
+> **POST** `/v3/bitcoin/transaction`
+> 
+> Send BTC to Bitcoin addresses
+
+[🔹 **btcTransactionFromUTXO()**](#btctransactionfromutxo) 
+
+> **POST** `/v3/bitcoin/transaction`
+> 
+> Send BTC to Bitcoin addresses
+
+[🔹 **btcTransactionFromUTXOKMS()**](#btctransactionfromutxokms) 
+
+> **POST** `/v3/bitcoin/transaction`
+> 
+> Send BTC to Bitcoin addresses
+
 
 
 ## `btcBroadcast()`

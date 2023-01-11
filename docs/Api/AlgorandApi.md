@@ -1,25 +1,103 @@
 # Tatum/Api/AlgorandApi
 
-* Algorand [documentation](https://apidoc.tatum.io/tag/Algorand/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**algo Node Get Driver()**](#algonodegetdriver) | **GET** `/v3 /algorand /node /algod /{xApiKey} /{algodPath}` | Access Algorand Algod GET node endpoints
-[**algo Node Indexer Get Driver()**](#algonodeindexergetdriver) | **GET** `/v3 /algorand /node /indexer /{xApiKey} /{indexerPath}` | Access Algorand Indexer GET node endpoints
-[**algo Node Post Driver()**](#algonodepostdriver) | **POST** `/v3 /algorand /node /algod /{xApiKey} /{algodPath}` | Access Algorand Algod POST node endpoints
-[**algoand Broadcast()**](#algoandbroadcast) | **POST** `/v3 /algorand /broadcast` | Broadcast signed Algorand transaction
-[**algorand Generate Address()**](#algorandgenerateaddress) | **GET** `/v3 /algorand /address /{priv}` | Generate Algorand account address from private key
-[**algorand Generate Wallet()**](#algorandgeneratewallet) | **GET** `/v3 /algorand /wallet` | Generate Algorand wallet
-[**algorand Get Balance()**](#algorandgetbalance) | **GET** `/v3 /algorand /account /balance /{address}` | Get Algorand Account balance
-[**algorand Get Block()**](#algorandgetblock) | **GET** `/v3 /algorand /block /{roundNumber}` | Get Algorand block by block round number
-[**algorand Get Current Block()**](#algorandgetcurrentblock) | **GET** `/v3 /algorand /block /current` | Get current block number
-[**algorand Get Pay Transactions By From To()**](#algorandgetpaytransactionsbyfromto) | **GET** `/v3 /algorand /transactions /{from} /{to}` | Get Algorand Transactions between from and to
-[**algorand Get Transaction()**](#algorandgettransaction) | **GET** `/v3 /algorand /transaction /{txid}` | Get Algorand Transaction
-[**receive Algorand Asset()**](#receivealgorandasset) | **POST** `/v3 /algorand /asset /receive` | Enable receiving asset on account
-[**receive Algorand Asset KMS()**](#receivealgorandassetkms) | **POST** `/v3 /algorand /asset /receive` | Enable receiving asset on account
-[**transfer Algorand Blockchain()**](#transferalgorandblockchain) | **POST** `/v3 /algorand /transaction` | Send Algos to an Algorand account
-[**transfer Algorand Blockchain KMS()**](#transferalgorandblockchainkms) | **POST** `/v3 /algorand /transaction` | Send Algos to an Algorand account
+[Algorand API documentation](https://apidoc.tatum.io/tag/Algorand/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **algoNodeGetDriver()**](#algonodegetdriver) 
+
+> **GET** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
+> 
+> Access Algorand Algod GET node endpoints
+
+[🔹 **algoNodeIndexerGetDriver()**](#algonodeindexergetdriver) 
+
+> **GET** `/v3/algorand/node/indexer/{xApiKey}/{indexerPath}`
+> 
+> Access Algorand Indexer GET node endpoints
+
+[🔹 **algoNodePostDriver()**](#algonodepostdriver) 
+
+> **POST** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
+> 
+> Access Algorand Algod POST node endpoints
+
+[🔹 **algoandBroadcast()**](#algoandbroadcast) 
+
+> **POST** `/v3/algorand/broadcast`
+> 
+> Broadcast signed Algorand transaction
+
+[🔹 **algorandGenerateAddress()**](#algorandgenerateaddress) 
+
+> **GET** `/v3/algorand/address/{priv}`
+> 
+> Generate Algorand account address from private key
+
+[🔹 **algorandGenerateWallet()**](#algorandgeneratewallet) 
+
+> **GET** `/v3/algorand/wallet`
+> 
+> Generate Algorand wallet
+
+[🔹 **algorandGetBalance()**](#algorandgetbalance) 
+
+> **GET** `/v3/algorand/account/balance/{address}`
+> 
+> Get Algorand Account balance
+
+[🔹 **algorandGetBlock()**](#algorandgetblock) 
+
+> **GET** `/v3/algorand/block/{roundNumber}`
+> 
+> Get Algorand block by block round number
+
+[🔹 **algorandGetCurrentBlock()**](#algorandgetcurrentblock) 
+
+> **GET** `/v3/algorand/block/current`
+> 
+> Get current block number
+
+[🔹 **algorandGetPayTransactionsByFromTo()**](#algorandgetpaytransactionsbyfromto) 
+
+> **GET** `/v3/algorand/transactions/{from}/{to}`
+> 
+> Get Algorand Transactions between from and to
+
+[🔹 **algorandGetTransaction()**](#algorandgettransaction) 
+
+> **GET** `/v3/algorand/transaction/{txid}`
+> 
+> Get Algorand Transaction
+
+[🔹 **receiveAlgorandAsset()**](#receivealgorandasset) 
+
+> **POST** `/v3/algorand/asset/receive`
+> 
+> Enable receiving asset on account
+
+[🔹 **receiveAlgorandAssetKMS()**](#receivealgorandassetkms) 
+
+> **POST** `/v3/algorand/asset/receive`
+> 
+> Enable receiving asset on account
+
+[🔹 **transferAlgorandBlockchain()**](#transferalgorandblockchain) 
+
+> **POST** `/v3/algorand/transaction`
+> 
+> Send Algos to an Algorand account
+
+[🔹 **transferAlgorandBlockchainKMS()**](#transferalgorandblockchainkms) 
+
+> **POST** `/v3/algorand/transaction`
+> 
+> Send Algos to an Algorand account
+
 
 
 ## `algoNodeGetDriver()`

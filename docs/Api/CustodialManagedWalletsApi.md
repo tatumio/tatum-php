@@ -1,15 +1,43 @@
 # Tatum/Api/CustodialManagedWalletsApi
 
-* Custodial managed wallets [documentation](https://apidoc.tatum.io/tag/Custodial-managed-wallets/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**custodial Create Wallet()**](#custodialcreatewallet) | **POST** `/v3 /custodial /wallet` | Create managed address
-[**custodial Delete Wallet()**](#custodialdeletewallet) | **DELETE** `/v3 /custodial /wallet /{id}` | Delete managed address
-[**custodial Get Wallet()**](#custodialgetwallet) | **GET** `/v3 /custodial /wallet /{id}` | Get managed address
-[**custodial Get Wallets()**](#custodialgetwallets) | **GET** `/v3 /custodial /wallet` | Get managed addresses
-[**custodial Transfer Managed Address()**](#custodialtransfermanagedaddress) | **POST** `/v3 /custodial /transaction` | Sign and transfer using managed address
+[Custodial managed wallets API documentation](https://apidoc.tatum.io/tag/Custodial-managed-wallets/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **custodialCreateWallet()**](#custodialcreatewallet) 
+
+> **POST** `/v3/custodial/wallet`
+> 
+> Create managed address
+
+[🔹 **custodialDeleteWallet()**](#custodialdeletewallet) 
+
+> **DELETE** `/v3/custodial/wallet/{id}`
+> 
+> Delete managed address
+
+[🔹 **custodialGetWallet()**](#custodialgetwallet) 
+
+> **GET** `/v3/custodial/wallet/{id}`
+> 
+> Get managed address
+
+[🔹 **custodialGetWallets()**](#custodialgetwallets) 
+
+> **GET** `/v3/custodial/wallet`
+> 
+> Get managed addresses
+
+[🔹 **custodialTransferManagedAddress()**](#custodialtransfermanagedaddress) 
+
+> **POST** `/v3/custodial/transaction`
+> 
+> Sign and transfer using managed address
+
 
 
 ## `custodialCreateWallet()`

@@ -1,47 +1,235 @@
 # Tatum/Api/MultiTokensERC1155OrCompatibleApi
 
-* Multi Tokens (ERC-1155 or compatible) [documentation](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**add Multi Token Minter()**](#addmultitokenminter) | **POST** `/v3 /multitoken /mint /add` | Add a Multi Token minter
-[**add Multi Token Minter KMS()**](#addmultitokenminterkms) | **POST** `/v3 /multitoken /mint /add` | Add a Multi Token minter
-[**burn Multi Token()**](#burnmultitoken) | **POST** `/v3 /multitoken /burn` | Burn a Multi Token
-[**burn Multi Token Batch()**](#burnmultitokenbatch) | **POST** `/v3 /multitoken /burn /batch` | Burn multiple Multi Tokens
-[**burn Multi Token Batch Celo()**](#burnmultitokenbatchcelo) | **POST** `/v3 /multitoken /burn /batch` | Burn multiple Multi Tokens
-[**burn Multi Token Batch KMS()**](#burnmultitokenbatchkms) | **POST** `/v3 /multitoken /burn /batch` | Burn multiple Multi Tokens
-[**burn Multi Token Batch KMSCelo()**](#burnmultitokenbatchkmscelo) | **POST** `/v3 /multitoken /burn /batch` | Burn multiple Multi Tokens
-[**burn Multi Token Celo()**](#burnmultitokencelo) | **POST** `/v3 /multitoken /burn` | Burn a Multi Token
-[**burn Multi Token KMS()**](#burnmultitokenkms) | **POST** `/v3 /multitoken /burn` | Burn a Multi Token
-[**burn Multi Token KMSCelo()**](#burnmultitokenkmscelo) | **POST** `/v3 /multitoken /burn` | Burn a Multi Token
-[**deploy Multi Token()**](#deploymultitoken) | **POST** `/v3 /multitoken /deploy` | Deploy a Multi Token smart contract
-[**deploy Multi Token Celo()**](#deploymultitokencelo) | **POST** `/v3 /multitoken /deploy` | Deploy a Multi Token smart contract
-[**deploy Multi Token Celo KMS()**](#deploymultitokencelokms) | **POST** `/v3 /multitoken /deploy` | Deploy a Multi Token smart contract
-[**deploy Multi Token KMS()**](#deploymultitokenkms) | **POST** `/v3 /multitoken /deploy` | Deploy a Multi Token smart contract
-[**mint Multi Token()**](#mintmultitoken) | **POST** `/v3 /multitoken /mint` | Mint a Multi Token
-[**mint Multi Token Batch()**](#mintmultitokenbatch) | **POST** `/v3 /multitoken /mint /batch` | Mint multiple Multi Tokens
-[**mint Multi Token Batch Celo()**](#mintmultitokenbatchcelo) | **POST** `/v3 /multitoken /mint /batch` | Mint multiple Multi Tokens
-[**mint Multi Token Batch KMS()**](#mintmultitokenbatchkms) | **POST** `/v3 /multitoken /mint /batch` | Mint multiple Multi Tokens
-[**mint Multi Token Batch KMSCelo()**](#mintmultitokenbatchkmscelo) | **POST** `/v3 /multitoken /mint /batch` | Mint multiple Multi Tokens
-[**mint Multi Token Celo()**](#mintmultitokencelo) | **POST** `/v3 /multitoken /mint` | Mint a Multi Token
-[**mint Multi Token KMS()**](#mintmultitokenkms) | **POST** `/v3 /multitoken /mint` | Mint a Multi Token
-[**mint Multi Token KMSCelo()**](#mintmultitokenkmscelo) | **POST** `/v3 /multitoken /mint` | Mint a Multi Token
-[**multi Token Get Address Balance()**](#multitokengetaddressbalance) | **GET** `/v3 /multitoken /address /balance /{chain} /{address}` | Get all Multi Tokens that a blockchain address holds
-[**multi Token Get Balance()**](#multitokengetbalance) | **GET** `/v3 /multitoken /balance /{chain} /{contractAddress} /{address} /{tokenId}` | Get the amount of a specific MultiToken that a blockchain address holds
-[**multi Token Get Balance Batch()**](#multitokengetbalancebatch) | **GET** `/v3 /multitoken /balance /batch /{chain} /{contractAddress}` | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
-[**multi Token Get Contract Address()**](#multitokengetcontractaddress) | **GET** `/v3 /multitoken /address /{chain} /{hash}` | Get the address of a Multi Token smart contract by its transaction hash
-[**multi Token Get Metadata()**](#multitokengetmetadata) | **GET** `/v3 /multitoken /metadata /{chain} /{contractAddress} /{token}` | Get Multi Token metadata
-[**multi Token Get Transaction()**](#multitokengettransaction) | **GET** `/v3 /multitoken /transaction /{chain} /{hash}` | Get a Multi Token transaction by its hash
-[**multi Token Get Transaction By Address()**](#multitokengettransactionbyaddress) | **GET** `/v3 /multitoken /transaction /{chain} /{address} /{tokenAddress}` | Get Multi Token transactions on a blockchain address
-[**transfer Multi Token()**](#transfermultitoken) | **POST** `/v3 /multitoken /transaction` | Transfer a Multi Token
-[**transfer Multi Token Batch()**](#transfermultitokenbatch) | **POST** `/v3 /multitoken /transaction /batch` | Transfer multiple Multi Tokens
-[**transfer Multi Token Batch Celo()**](#transfermultitokenbatchcelo) | **POST** `/v3 /multitoken /transaction /batch` | Transfer multiple Multi Tokens
-[**transfer Multi Token Batch KMS()**](#transfermultitokenbatchkms) | **POST** `/v3 /multitoken /transaction /batch` | Transfer multiple Multi Tokens
-[**transfer Multi Token Batch KMSCelo()**](#transfermultitokenbatchkmscelo) | **POST** `/v3 /multitoken /transaction /batch` | Transfer multiple Multi Tokens
-[**transfer Multi Token Celo()**](#transfermultitokencelo) | **POST** `/v3 /multitoken /transaction` | Transfer a Multi Token
-[**transfer Multi Token KMS()**](#transfermultitokenkms) | **POST** `/v3 /multitoken /transaction` | Transfer a Multi Token
-[**transfer Multi Token KMSCelo()**](#transfermultitokenkmscelo) | **POST** `/v3 /multitoken /transaction` | Transfer a Multi Token
+[Multi Tokens (ERC-1155 or compatible) API documentation](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **addMultiTokenMinter()**](#addmultitokenminter) 
+
+> **POST** `/v3/multitoken/mint/add`
+> 
+> Add a Multi Token minter
+
+[🔹 **addMultiTokenMinterKMS()**](#addmultitokenminterkms) 
+
+> **POST** `/v3/multitoken/mint/add`
+> 
+> Add a Multi Token minter
+
+[🔹 **burnMultiToken()**](#burnmultitoken) 
+
+> **POST** `/v3/multitoken/burn`
+> 
+> Burn a Multi Token
+
+[🔹 **burnMultiTokenBatch()**](#burnmultitokenbatch) 
+
+> **POST** `/v3/multitoken/burn/batch`
+> 
+> Burn multiple Multi Tokens
+
+[🔹 **burnMultiTokenBatchCelo()**](#burnmultitokenbatchcelo) 
+
+> **POST** `/v3/multitoken/burn/batch`
+> 
+> Burn multiple Multi Tokens
+
+[🔹 **burnMultiTokenBatchKMS()**](#burnmultitokenbatchkms) 
+
+> **POST** `/v3/multitoken/burn/batch`
+> 
+> Burn multiple Multi Tokens
+
+[🔹 **burnMultiTokenBatchKMSCelo()**](#burnmultitokenbatchkmscelo) 
+
+> **POST** `/v3/multitoken/burn/batch`
+> 
+> Burn multiple Multi Tokens
+
+[🔹 **burnMultiTokenCelo()**](#burnmultitokencelo) 
+
+> **POST** `/v3/multitoken/burn`
+> 
+> Burn a Multi Token
+
+[🔹 **burnMultiTokenKMS()**](#burnmultitokenkms) 
+
+> **POST** `/v3/multitoken/burn`
+> 
+> Burn a Multi Token
+
+[🔹 **burnMultiTokenKMSCelo()**](#burnmultitokenkmscelo) 
+
+> **POST** `/v3/multitoken/burn`
+> 
+> Burn a Multi Token
+
+[🔹 **deployMultiToken()**](#deploymultitoken) 
+
+> **POST** `/v3/multitoken/deploy`
+> 
+> Deploy a Multi Token smart contract
+
+[🔹 **deployMultiTokenCelo()**](#deploymultitokencelo) 
+
+> **POST** `/v3/multitoken/deploy`
+> 
+> Deploy a Multi Token smart contract
+
+[🔹 **deployMultiTokenCeloKMS()**](#deploymultitokencelokms) 
+
+> **POST** `/v3/multitoken/deploy`
+> 
+> Deploy a Multi Token smart contract
+
+[🔹 **deployMultiTokenKMS()**](#deploymultitokenkms) 
+
+> **POST** `/v3/multitoken/deploy`
+> 
+> Deploy a Multi Token smart contract
+
+[🔹 **mintMultiToken()**](#mintmultitoken) 
+
+> **POST** `/v3/multitoken/mint`
+> 
+> Mint a Multi Token
+
+[🔹 **mintMultiTokenBatch()**](#mintmultitokenbatch) 
+
+> **POST** `/v3/multitoken/mint/batch`
+> 
+> Mint multiple Multi Tokens
+
+[🔹 **mintMultiTokenBatchCelo()**](#mintmultitokenbatchcelo) 
+
+> **POST** `/v3/multitoken/mint/batch`
+> 
+> Mint multiple Multi Tokens
+
+[🔹 **mintMultiTokenBatchKMS()**](#mintmultitokenbatchkms) 
+
+> **POST** `/v3/multitoken/mint/batch`
+> 
+> Mint multiple Multi Tokens
+
+[🔹 **mintMultiTokenBatchKMSCelo()**](#mintmultitokenbatchkmscelo) 
+
+> **POST** `/v3/multitoken/mint/batch`
+> 
+> Mint multiple Multi Tokens
+
+[🔹 **mintMultiTokenCelo()**](#mintmultitokencelo) 
+
+> **POST** `/v3/multitoken/mint`
+> 
+> Mint a Multi Token
+
+[🔹 **mintMultiTokenKMS()**](#mintmultitokenkms) 
+
+> **POST** `/v3/multitoken/mint`
+> 
+> Mint a Multi Token
+
+[🔹 **mintMultiTokenKMSCelo()**](#mintmultitokenkmscelo) 
+
+> **POST** `/v3/multitoken/mint`
+> 
+> Mint a Multi Token
+
+[🔹 **multiTokenGetAddressBalance()**](#multitokengetaddressbalance) 
+
+> **GET** `/v3/multitoken/address/balance/{chain}/{address}`
+> 
+> Get all Multi Tokens that a blockchain address holds
+
+[🔹 **multiTokenGetBalance()**](#multitokengetbalance) 
+
+> **GET** `/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}`
+> 
+> Get the amount of a specific MultiToken that a blockchain address holds
+
+[🔹 **multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) 
+
+> **GET** `/v3/multitoken/balance/batch/{chain}/{contractAddress}`
+> 
+> Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
+
+[🔹 **multiTokenGetContractAddress()**](#multitokengetcontractaddress) 
+
+> **GET** `/v3/multitoken/address/{chain}/{hash}`
+> 
+> Get the address of a Multi Token smart contract by its transaction hash
+
+[🔹 **multiTokenGetMetadata()**](#multitokengetmetadata) 
+
+> **GET** `/v3/multitoken/metadata/{chain}/{contractAddress}/{token}`
+> 
+> Get Multi Token metadata
+
+[🔹 **multiTokenGetTransaction()**](#multitokengettransaction) 
+
+> **GET** `/v3/multitoken/transaction/{chain}/{hash}`
+> 
+> Get a Multi Token transaction by its hash
+
+[🔹 **multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) 
+
+> **GET** `/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}`
+> 
+> Get Multi Token transactions on a blockchain address
+
+[🔹 **transferMultiToken()**](#transfermultitoken) 
+
+> **POST** `/v3/multitoken/transaction`
+> 
+> Transfer a Multi Token
+
+[🔹 **transferMultiTokenBatch()**](#transfermultitokenbatch) 
+
+> **POST** `/v3/multitoken/transaction/batch`
+> 
+> Transfer multiple Multi Tokens
+
+[🔹 **transferMultiTokenBatchCelo()**](#transfermultitokenbatchcelo) 
+
+> **POST** `/v3/multitoken/transaction/batch`
+> 
+> Transfer multiple Multi Tokens
+
+[🔹 **transferMultiTokenBatchKMS()**](#transfermultitokenbatchkms) 
+
+> **POST** `/v3/multitoken/transaction/batch`
+> 
+> Transfer multiple Multi Tokens
+
+[🔹 **transferMultiTokenBatchKMSCelo()**](#transfermultitokenbatchkmscelo) 
+
+> **POST** `/v3/multitoken/transaction/batch`
+> 
+> Transfer multiple Multi Tokens
+
+[🔹 **transferMultiTokenCelo()**](#transfermultitokencelo) 
+
+> **POST** `/v3/multitoken/transaction`
+> 
+> Transfer a Multi Token
+
+[🔹 **transferMultiTokenKMS()**](#transfermultitokenkms) 
+
+> **POST** `/v3/multitoken/transaction`
+> 
+> Transfer a Multi Token
+
+[🔹 **transferMultiTokenKMSCelo()**](#transfermultitokenkmscelo) 
+
+> **POST** `/v3/multitoken/transaction`
+> 
+> Transfer a Multi Token
+
 
 
 ## `addMultiTokenMinter()`

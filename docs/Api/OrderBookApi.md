@@ -1,23 +1,91 @@
 # Tatum/Api/OrderBookApi
 
-* Order Book [documentation](https://apidoc.tatum.io/tag/Order-Book/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**chart Request()**](#chartrequest) | **POST** `/v3 /trade /chart` | Obtain chart data from historical closed trades
-[**create Future Trade()**](#createfuturetrade) | **POST** `/v3 /trade` | Store buy / sell trade
-[**create Trade()**](#createtrade) | **POST** `/v3 /trade` | Store buy / sell trade
-[**delete Account Trades()**](#deleteaccounttrades) | **DELETE** `/v3 /trade /account /{id}` | Cancel all existing trades for account
-[**delete Trade()**](#deletetrade) | **DELETE** `/v3 /trade /{id}` | Cancel existing trade
-[**get Buy Trades()**](#getbuytrades) | **GET** `/v3 /trade /buy` | List all active buy trades
-[**get Buy Trades Body()**](#getbuytradesbody) | **POST** `/v3 /trade /buy` | List all active buy trades
-[**get Historical Trades()**](#gethistoricaltrades) | **GET** `/v3 /trade /history` | List all historical trades
-[**get Historical Trades Body()**](#gethistoricaltradesbody) | **POST** `/v3 /trade /history` | List all historical trades
-[**get Matched Trades()**](#getmatchedtrades) | **POST** `/v3 /trade /matched` | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
-[**get Sell Trades()**](#getselltrades) | **GET** `/v3 /trade /sell` | List all active sell trades
-[**get Sell Trades Body()**](#getselltradesbody) | **POST** `/v3 /trade /sell` | List all active sell trades
-[**get Trade By Id()**](#gettradebyid) | **GET** `/v3 /trade /{id}` | Get existing trade
+[Order Book API documentation](https://apidoc.tatum.io/tag/Order-Book/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **chartRequest()**](#chartrequest) 
+
+> **POST** `/v3/trade/chart`
+> 
+> Obtain chart data from historical closed trades
+
+[🔹 **createFutureTrade()**](#createfuturetrade) 
+
+> **POST** `/v3/trade`
+> 
+> Store buy / sell trade
+
+[🔹 **createTrade()**](#createtrade) 
+
+> **POST** `/v3/trade`
+> 
+> Store buy / sell trade
+
+[🔹 **deleteAccountTrades()**](#deleteaccounttrades) 
+
+> **DELETE** `/v3/trade/account/{id}`
+> 
+> Cancel all existing trades for account
+
+[🔹 **deleteTrade()**](#deletetrade) 
+
+> **DELETE** `/v3/trade/{id}`
+> 
+> Cancel existing trade
+
+[🔹 **getBuyTrades()**](#getbuytrades) 
+
+> **GET** `/v3/trade/buy`
+> 
+> List all active buy trades
+
+[🔹 **getBuyTradesBody()**](#getbuytradesbody) 
+
+> **POST** `/v3/trade/buy`
+> 
+> List all active buy trades
+
+[🔹 **getHistoricalTrades()**](#gethistoricaltrades) 
+
+> **GET** `/v3/trade/history`
+> 
+> List all historical trades
+
+[🔹 **getHistoricalTradesBody()**](#gethistoricaltradesbody) 
+
+> **POST** `/v3/trade/history`
+> 
+> List all historical trades
+
+[🔹 **getMatchedTrades()**](#getmatchedtrades) 
+
+> **POST** `/v3/trade/matched`
+> 
+> List all matched orders from FUTURE_SELL/FUTURE_BUY trades
+
+[🔹 **getSellTrades()**](#getselltrades) 
+
+> **GET** `/v3/trade/sell`
+> 
+> List all active sell trades
+
+[🔹 **getSellTradesBody()**](#getselltradesbody) 
+
+> **POST** `/v3/trade/sell`
+> 
+> List all active sell trades
+
+[🔹 **getTradeById()**](#gettradebyid) 
+
+> **GET** `/v3/trade/{id}`
+> 
+> Get existing trade
+
 
 
 ## `chartRequest()`

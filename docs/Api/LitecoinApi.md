@@ -1,27 +1,115 @@
 # Tatum/Api/LitecoinApi
 
-* Litecoin [documentation](https://apidoc.tatum.io/tag/Litecoin/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**ltc Broadcast()**](#ltcbroadcast) | **POST** `/v3 /litecoin /broadcast` | Broadcast signed Litecoin transaction
-[**ltc Generate Address()**](#ltcgenerateaddress) | **GET** `/v3 /litecoin /address /{xpub} /{index}` | Generate Litecoin deposit address from Extended public key
-[**ltc Generate Address Private Key()**](#ltcgenerateaddressprivatekey) | **POST** `/v3 /litecoin /wallet /priv` | Generate Litecoin private key
-[**ltc Generate Wallet()**](#ltcgeneratewallet) | **GET** `/v3 /litecoin /wallet` | Generate Litecoin wallet
-[**ltc Get Balance Of Address()**](#ltcgetbalanceofaddress) | **GET** `/v3 /litecoin /address /balance /{address}` | Get the balance of a Litecoin address
-[**ltc Get Block()**](#ltcgetblock) | **GET** `/v3 /litecoin /block /{hash}` | Get Litecoin Block by hash or height
-[**ltc Get Block Chain Info()**](#ltcgetblockchaininfo) | **GET** `/v3 /litecoin /info` | Get Litecoin Blockchain Information
-[**ltc Get Block Hash()**](#ltcgetblockhash) | **GET** `/v3 /litecoin /block /hash /{i}` | Get Litecoin Block hash
-[**ltc Get Mempool()**](#ltcgetmempool) | **GET** `/v3 /litecoin /mempool` | Get Mempool Transactions
-[**ltc Get Raw Transaction()**](#ltcgetrawtransaction) | **GET** `/v3 /litecoin /transaction /{hash}` | Get Litecoin Transaction by hash
-[**ltc Get Tx By Address()**](#ltcgettxbyaddress) | **GET** `/v3 /litecoin /transaction /address /{address}` | Get Litecoin Transactions by address
-[**ltc Get UTXO()**](#ltcgetutxo) | **GET** `/v3 /litecoin /utxo /{hash} /{index}` | Get information about a transaction output (UTXO) in a Litecoin transaction
-[**ltc Rpc Driver()**](#ltcrpcdriver) | **POST** `/v3 /litecoin /node` | JSON RPC HTTP driver
-[**ltc Transaction Address()**](#ltctransactionaddress) | **POST** `/v3 /litecoin /transaction` | Send LTC to Litecoin addresses
-[**ltc Transaction Address KMS()**](#ltctransactionaddresskms) | **POST** `/v3 /litecoin /transaction` | Send LTC to Litecoin addresses
-[**ltc Transaction UTXO()**](#ltctransactionutxo) | **POST** `/v3 /litecoin /transaction` | Send LTC to Litecoin addresses
-[**ltc Transaction UTXOKMS()**](#ltctransactionutxokms) | **POST** `/v3 /litecoin /transaction` | Send LTC to Litecoin addresses
+[Litecoin API documentation](https://apidoc.tatum.io/tag/Litecoin/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **ltcBroadcast()**](#ltcbroadcast) 
+
+> **POST** `/v3/litecoin/broadcast`
+> 
+> Broadcast signed Litecoin transaction
+
+[🔹 **ltcGenerateAddress()**](#ltcgenerateaddress) 
+
+> **GET** `/v3/litecoin/address/{xpub}/{index}`
+> 
+> Generate Litecoin deposit address from Extended public key
+
+[🔹 **ltcGenerateAddressPrivateKey()**](#ltcgenerateaddressprivatekey) 
+
+> **POST** `/v3/litecoin/wallet/priv`
+> 
+> Generate Litecoin private key
+
+[🔹 **ltcGenerateWallet()**](#ltcgeneratewallet) 
+
+> **GET** `/v3/litecoin/wallet`
+> 
+> Generate Litecoin wallet
+
+[🔹 **ltcGetBalanceOfAddress()**](#ltcgetbalanceofaddress) 
+
+> **GET** `/v3/litecoin/address/balance/{address}`
+> 
+> Get the balance of a Litecoin address
+
+[🔹 **ltcGetBlock()**](#ltcgetblock) 
+
+> **GET** `/v3/litecoin/block/{hash}`
+> 
+> Get Litecoin Block by hash or height
+
+[🔹 **ltcGetBlockChainInfo()**](#ltcgetblockchaininfo) 
+
+> **GET** `/v3/litecoin/info`
+> 
+> Get Litecoin Blockchain Information
+
+[🔹 **ltcGetBlockHash()**](#ltcgetblockhash) 
+
+> **GET** `/v3/litecoin/block/hash/{i}`
+> 
+> Get Litecoin Block hash
+
+[🔹 **ltcGetMempool()**](#ltcgetmempool) 
+
+> **GET** `/v3/litecoin/mempool`
+> 
+> Get Mempool Transactions
+
+[🔹 **ltcGetRawTransaction()**](#ltcgetrawtransaction) 
+
+> **GET** `/v3/litecoin/transaction/{hash}`
+> 
+> Get Litecoin Transaction by hash
+
+[🔹 **ltcGetTxByAddress()**](#ltcgettxbyaddress) 
+
+> **GET** `/v3/litecoin/transaction/address/{address}`
+> 
+> Get Litecoin Transactions by address
+
+[🔹 **ltcGetUTXO()**](#ltcgetutxo) 
+
+> **GET** `/v3/litecoin/utxo/{hash}/{index}`
+> 
+> Get information about a transaction output (UTXO) in a Litecoin transaction
+
+[🔹 **ltcRpcDriver()**](#ltcrpcdriver) 
+
+> **POST** `/v3/litecoin/node`
+> 
+> JSON RPC HTTP driver
+
+[🔹 **ltcTransactionAddress()**](#ltctransactionaddress) 
+
+> **POST** `/v3/litecoin/transaction`
+> 
+> Send LTC to Litecoin addresses
+
+[🔹 **ltcTransactionAddressKMS()**](#ltctransactionaddresskms) 
+
+> **POST** `/v3/litecoin/transaction`
+> 
+> Send LTC to Litecoin addresses
+
+[🔹 **ltcTransactionUTXO()**](#ltctransactionutxo) 
+
+> **POST** `/v3/litecoin/transaction`
+> 
+> Send LTC to Litecoin addresses
+
+[🔹 **ltcTransactionUTXOKMS()**](#ltctransactionutxokms) 
+
+> **POST** `/v3/litecoin/transaction`
+> 
+> Send LTC to Litecoin addresses
+
 
 
 ## `ltcBroadcast()`

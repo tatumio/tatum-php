@@ -1,19 +1,67 @@
 # Tatum/Api/BNBBeaconChainApi
 
-* BNB Beacon Chain [documentation](https://apidoc.tatum.io/tag/BNB-Beacon-Chain/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**bnb Broadcast()**](#bnbbroadcast) | **POST** `/v3 /bnb /broadcast` | Broadcast signed BNB transaction
-[**bnb Generate Wallet()**](#bnbgeneratewallet) | **GET** `/v3 /bnb /account` | Generate Binance wallet
-[**bnb Get Account()**](#bnbgetaccount) | **GET** `/v3 /bnb /account /{address}` | Get Binance Account
-[**bnb Get Block()**](#bnbgetblock) | **GET** `/v3 /bnb /block /{height}` | Get Binance Transactions in Block
-[**bnb Get Current Block()**](#bnbgetcurrentblock) | **GET** `/v3 /bnb /block /current` | Get Binance current block
-[**bnb Get Transaction()**](#bnbgettransaction) | **GET** `/v3 /bnb /transaction /{hash}` | Get Binance Transaction
-[**bnb Get Tx By Account()**](#bnbgettxbyaccount) | **GET** `/v3 /bnb /account /transaction /{address}` | Get Binance Transactions By Address
-[**transfer Bnb Blockchain()**](#transferbnbblockchain) | **POST** `/v3 /bnb /transaction` | Send Binance / Binance Token from account to account
-[**transfer Bnb Blockchain KMS()**](#transferbnbblockchainkms) | **POST** `/v3 /bnb /transaction` | Send Binance / Binance Token from account to account
+[BNB Beacon Chain API documentation](https://apidoc.tatum.io/tag/BNB-Beacon-Chain/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **bnbBroadcast()**](#bnbbroadcast) 
+
+> **POST** `/v3/bnb/broadcast`
+> 
+> Broadcast signed BNB transaction
+
+[🔹 **bnbGenerateWallet()**](#bnbgeneratewallet) 
+
+> **GET** `/v3/bnb/account`
+> 
+> Generate Binance wallet
+
+[🔹 **bnbGetAccount()**](#bnbgetaccount) 
+
+> **GET** `/v3/bnb/account/{address}`
+> 
+> Get Binance Account
+
+[🔹 **bnbGetBlock()**](#bnbgetblock) 
+
+> **GET** `/v3/bnb/block/{height}`
+> 
+> Get Binance Transactions in Block
+
+[🔹 **bnbGetCurrentBlock()**](#bnbgetcurrentblock) 
+
+> **GET** `/v3/bnb/block/current`
+> 
+> Get Binance current block
+
+[🔹 **bnbGetTransaction()**](#bnbgettransaction) 
+
+> **GET** `/v3/bnb/transaction/{hash}`
+> 
+> Get Binance Transaction
+
+[🔹 **bnbGetTxByAccount()**](#bnbgettxbyaccount) 
+
+> **GET** `/v3/bnb/account/transaction/{address}`
+> 
+> Get Binance Transactions By Address
+
+[🔹 **transferBnbBlockchain()**](#transferbnbblockchain) 
+
+> **POST** `/v3/bnb/transaction`
+> 
+> Send Binance / Binance Token from account to account
+
+[🔹 **transferBnbBlockchainKMS()**](#transferbnbblockchainkms) 
+
+> **POST** `/v3/bnb/transaction`
+> 
+> Send Binance / Binance Token from account to account
+
 
 
 ## `bnbBroadcast()`

@@ -1,25 +1,103 @@
 # Tatum/Api/KuCoinApi
 
-* KuCoin [documentation](https://apidoc.tatum.io/tag/KuCoin/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**call Kcs Smart Contract Method()**](#callkcssmartcontractmethod) | **POST** `/v3 /kcs /smartcontract` | Invoke a method in a smart contract on KuCoin Community Chain
-[**call Kcs Smart Contract Method KMS()**](#callkcssmartcontractmethodkms) | **POST** `/v3 /kcs /smartcontract` | Invoke a method in a smart contract on KuCoin Community Chain
-[**call Kcs Smart Contract Read Method()**](#callkcssmartcontractreadmethod) | **POST** `/v3 /kcs /smartcontract` | Invoke a method in a smart contract on KuCoin Community Chain
-[**kcs Broadcast()**](#kcsbroadcast) | **POST** `/v3 /kcs /broadcast` | Broadcast signed Kcs transaction
-[**kcs Generate Address()**](#kcsgenerateaddress) | **GET** `/v3 /kcs /address /{xpub} /{index}` | Generate Kcs account address from Extended public key
-[**kcs Generate Address Private Key()**](#kcsgenerateaddressprivatekey) | **POST** `/v3 /kcs /wallet /priv` | Generate Kcs private key
-[**kcs Generate Wallet()**](#kcsgeneratewallet) | **GET** `/v3 /kcs /wallet` | Generate Kcs wallet
-[**kcs Get Balance()**](#kcsgetbalance) | **GET** `/v3 /kcs /account /balance /{address}` | Get Kcs Account balance
-[**kcs Get Block()**](#kcsgetblock) | **GET** `/v3 /kcs /block /{hash}` | Get Kcs block by hash
-[**kcs Get Current Block()**](#kcsgetcurrentblock) | **GET** `/v3 /kcs /block /current` | Get current block number
-[**kcs Get Transaction()**](#kcsgettransaction) | **GET** `/v3 /kcs /transaction /{hash}` | Get Kcs Transaction
-[**kcs Get Transaction Count()**](#kcsgettransactioncount) | **GET** `/v3 /kcs /transaction /count /{address}` | Get count of outgoing Kcs transactions
-[**kcs Web3 Driver()**](#kcsweb3driver) | **POST** `/v3 /kcs /web3 /{xApiKey}` | Web3 HTTP driver
-[**transfer Kcs Blockchain()**](#transferkcsblockchain) | **POST** `/v3 /kcs /transaction` | Send KCS from account to account
-[**transfer Kcs Blockchain KMS()**](#transferkcsblockchainkms) | **POST** `/v3 /kcs /transaction` | Send KCS from account to account
+[KuCoin API documentation](https://apidoc.tatum.io/tag/KuCoin/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **callKcsSmartContractMethod()**](#callkcssmartcontractmethod) 
+
+> **POST** `/v3/kcs/smartcontract`
+> 
+> Invoke a method in a smart contract on KuCoin Community Chain
+
+[🔹 **callKcsSmartContractMethodKMS()**](#callkcssmartcontractmethodkms) 
+
+> **POST** `/v3/kcs/smartcontract`
+> 
+> Invoke a method in a smart contract on KuCoin Community Chain
+
+[🔹 **callKcsSmartContractReadMethod()**](#callkcssmartcontractreadmethod) 
+
+> **POST** `/v3/kcs/smartcontract`
+> 
+> Invoke a method in a smart contract on KuCoin Community Chain
+
+[🔹 **kcsBroadcast()**](#kcsbroadcast) 
+
+> **POST** `/v3/kcs/broadcast`
+> 
+> Broadcast signed Kcs transaction
+
+[🔹 **kcsGenerateAddress()**](#kcsgenerateaddress) 
+
+> **GET** `/v3/kcs/address/{xpub}/{index}`
+> 
+> Generate Kcs account address from Extended public key
+
+[🔹 **kcsGenerateAddressPrivateKey()**](#kcsgenerateaddressprivatekey) 
+
+> **POST** `/v3/kcs/wallet/priv`
+> 
+> Generate Kcs private key
+
+[🔹 **kcsGenerateWallet()**](#kcsgeneratewallet) 
+
+> **GET** `/v3/kcs/wallet`
+> 
+> Generate Kcs wallet
+
+[🔹 **kcsGetBalance()**](#kcsgetbalance) 
+
+> **GET** `/v3/kcs/account/balance/{address}`
+> 
+> Get Kcs Account balance
+
+[🔹 **kcsGetBlock()**](#kcsgetblock) 
+
+> **GET** `/v3/kcs/block/{hash}`
+> 
+> Get Kcs block by hash
+
+[🔹 **kcsGetCurrentBlock()**](#kcsgetcurrentblock) 
+
+> **GET** `/v3/kcs/block/current`
+> 
+> Get current block number
+
+[🔹 **kcsGetTransaction()**](#kcsgettransaction) 
+
+> **GET** `/v3/kcs/transaction/{hash}`
+> 
+> Get Kcs Transaction
+
+[🔹 **kcsGetTransactionCount()**](#kcsgettransactioncount) 
+
+> **GET** `/v3/kcs/transaction/count/{address}`
+> 
+> Get count of outgoing Kcs transactions
+
+[🔹 **kcsWeb3Driver()**](#kcsweb3driver) 
+
+> **POST** `/v3/kcs/web3/{xApiKey}`
+> 
+> Web3 HTTP driver
+
+[🔹 **transferKcsBlockchain()**](#transferkcsblockchain) 
+
+> **POST** `/v3/kcs/transaction`
+> 
+> Send KCS from account to account
+
+[🔹 **transferKcsBlockchainKMS()**](#transferkcsblockchainkms) 
+
+> **POST** `/v3/kcs/transaction`
+> 
+> Send KCS from account to account
+
 
 
 ## `callKcsSmartContractMethod()`

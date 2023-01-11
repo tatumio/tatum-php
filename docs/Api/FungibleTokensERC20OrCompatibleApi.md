@@ -1,51 +1,259 @@
 # Tatum/Api/FungibleTokensERC20OrCompatibleApi
 
-* Fungible Tokens (ERC-20 or compatible) [documentation](https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**approve Celo Erc20()**](#approveceloerc20) | **POST** `/v3 /blockchain /token /approve` | Allow a blockchain address to transfer and burn fungible tokens
-[**approve Celo Erc20 KMS()**](#approveceloerc20kms) | **POST** `/v3 /blockchain /token /approve` | Allow a blockchain address to transfer and burn fungible tokens
-[**approve Erc20()**](#approveerc20) | **POST** `/v3 /blockchain /token /approve` | Allow a blockchain address to transfer and burn fungible tokens
-[**approve Erc20 KMS()**](#approveerc20kms) | **POST** `/v3 /blockchain /token /approve` | Allow a blockchain address to transfer and burn fungible tokens
-[**chain Burn Celo Erc20()**](#chainburnceloerc20) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
-[**chain Burn Celo Erc20 KMS()**](#chainburnceloerc20kms) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
-[**chain Burn Erc20()**](#chainburnerc20) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
-[**chain Burn Erc20 KMS()**](#chainburnerc20kms) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
-[**chain Burn Kcs Erc20()**](#chainburnkcserc20) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
-[**chain Burn Kcs Erc20 KMS()**](#chainburnkcserc20kms) | **POST** `/v3 /blockchain /token /burn` | Burn fungible tokens
-[**chain Deploy Algo Erc20()**](#chaindeployalgoerc20) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Algo Erc20 KMS()**](#chaindeployalgoerc20kms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Celo Erc20()**](#chaindeployceloerc20) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Celo Erc20 KMS()**](#chaindeployceloerc20kms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Erc20()**](#chaindeployerc20) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Erc20 KMS()**](#chaindeployerc20kms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Kcs Erc20()**](#chaindeploykcserc20) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Kcs Erc20 KMS()**](#chaindeploykcserc20kms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Solana Spl()**](#chaindeploysolanaspl) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Deploy Solana Spl KMS()**](#chaindeploysolanasplkms) | **POST** `/v3 /blockchain /token /deploy` | Deploy a fungible token smart contract
-[**chain Mint Celo Erc20()**](#chainmintceloerc20) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
-[**chain Mint Celo Erc20 KMS()**](#chainmintceloerc20kms) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
-[**chain Mint Erc20()**](#chainminterc20) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
-[**chain Mint Erc20 KMS()**](#chainminterc20kms) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
-[**chain Mint Kcs Erc20()**](#chainmintkcserc20) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
-[**chain Mint Kcs Erc20 KMS()**](#chainmintkcserc20kms) | **POST** `/v3 /blockchain /token /mint` | Mint fungible tokens
-[**chain Transfer Algo Erc20()**](#chaintransferalgoerc20) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Algo Erc20 KMS()**](#chaintransferalgoerc20kms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Bsc Bep20()**](#chaintransferbscbep20) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Bsc Bep20 KMS()**](#chaintransferbscbep20kms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Celo Erc20 Token()**](#chaintransferceloerc20token) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Celo Erc20 Token KMS()**](#chaintransferceloerc20tokenkms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Eth Erc20()**](#chaintransferetherc20) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Eth Erc20 KMS()**](#chaintransferetherc20kms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Kcs Eth Erc20()**](#chaintransferkcsetherc20) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Kcs Eth Erc20 KMS()**](#chaintransferkcsetherc20kms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Solana Spl()**](#chaintransfersolanaspl) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**chain Transfer Solana Spl KMS()**](#chaintransfersolanasplkms) | **POST** `/v3 /blockchain /token /transaction` | Transfer fungible tokens
-[**erc20 Get Balance()**](#erc20getbalance) | **GET** `/v3 /blockchain /token /balance /{chain} /{contractAddress} /{address}` | Get the number of fungible tokens that a blockchain address holds in a smart contract
-[**erc20 Get Balance Address()**](#erc20getbalanceaddress) | **GET** `/v3 /blockchain /token /address /{chain} /{address}` | Get the total number of fungible tokens that a blockchain address holds
-[**erc20 Get Transaction By Address()**](#erc20gettransactionbyaddress) | **GET** `/v3 /blockchain /token /transaction /{chain} /{address} /{tokenAddress}` | Get fungible token transactions on a blockchain address
+[Fungible Tokens (ERC-20 or compatible) API documentation](https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **approveCeloErc20()**](#approveceloerc20) 
+
+> **POST** `/v3/blockchain/token/approve`
+> 
+> Allow a blockchain address to transfer and burn fungible tokens
+
+[🔹 **approveCeloErc20KMS()**](#approveceloerc20kms) 
+
+> **POST** `/v3/blockchain/token/approve`
+> 
+> Allow a blockchain address to transfer and burn fungible tokens
+
+[🔹 **approveErc20()**](#approveerc20) 
+
+> **POST** `/v3/blockchain/token/approve`
+> 
+> Allow a blockchain address to transfer and burn fungible tokens
+
+[🔹 **approveErc20KMS()**](#approveerc20kms) 
+
+> **POST** `/v3/blockchain/token/approve`
+> 
+> Allow a blockchain address to transfer and burn fungible tokens
+
+[🔹 **chainBurnCeloErc20()**](#chainburnceloerc20) 
+
+> **POST** `/v3/blockchain/token/burn`
+> 
+> Burn fungible tokens
+
+[🔹 **chainBurnCeloErc20KMS()**](#chainburnceloerc20kms) 
+
+> **POST** `/v3/blockchain/token/burn`
+> 
+> Burn fungible tokens
+
+[🔹 **chainBurnErc20()**](#chainburnerc20) 
+
+> **POST** `/v3/blockchain/token/burn`
+> 
+> Burn fungible tokens
+
+[🔹 **chainBurnErc20KMS()**](#chainburnerc20kms) 
+
+> **POST** `/v3/blockchain/token/burn`
+> 
+> Burn fungible tokens
+
+[🔹 **chainBurnKcsErc20()**](#chainburnkcserc20) 
+
+> **POST** `/v3/blockchain/token/burn`
+> 
+> Burn fungible tokens
+
+[🔹 **chainBurnKcsErc20KMS()**](#chainburnkcserc20kms) 
+
+> **POST** `/v3/blockchain/token/burn`
+> 
+> Burn fungible tokens
+
+[🔹 **chainDeployAlgoErc20()**](#chaindeployalgoerc20) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeployAlgoErc20KMS()**](#chaindeployalgoerc20kms) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeployCeloErc20()**](#chaindeployceloerc20) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeployCeloErc20KMS()**](#chaindeployceloerc20kms) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeployErc20()**](#chaindeployerc20) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeployErc20KMS()**](#chaindeployerc20kms) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeployKcsErc20()**](#chaindeploykcserc20) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeployKcsErc20KMS()**](#chaindeploykcserc20kms) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeploySolanaSpl()**](#chaindeploysolanaspl) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainDeploySolanaSplKMS()**](#chaindeploysolanasplkms) 
+
+> **POST** `/v3/blockchain/token/deploy`
+> 
+> Deploy a fungible token smart contract
+
+[🔹 **chainMintCeloErc20()**](#chainmintceloerc20) 
+
+> **POST** `/v3/blockchain/token/mint`
+> 
+> Mint fungible tokens
+
+[🔹 **chainMintCeloErc20KMS()**](#chainmintceloerc20kms) 
+
+> **POST** `/v3/blockchain/token/mint`
+> 
+> Mint fungible tokens
+
+[🔹 **chainMintErc20()**](#chainminterc20) 
+
+> **POST** `/v3/blockchain/token/mint`
+> 
+> Mint fungible tokens
+
+[🔹 **chainMintErc20KMS()**](#chainminterc20kms) 
+
+> **POST** `/v3/blockchain/token/mint`
+> 
+> Mint fungible tokens
+
+[🔹 **chainMintKcsErc20()**](#chainmintkcserc20) 
+
+> **POST** `/v3/blockchain/token/mint`
+> 
+> Mint fungible tokens
+
+[🔹 **chainMintKcsErc20KMS()**](#chainmintkcserc20kms) 
+
+> **POST** `/v3/blockchain/token/mint`
+> 
+> Mint fungible tokens
+
+[🔹 **chainTransferAlgoErc20()**](#chaintransferalgoerc20) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferAlgoErc20KMS()**](#chaintransferalgoerc20kms) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferBscBep20()**](#chaintransferbscbep20) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferBscBep20KMS()**](#chaintransferbscbep20kms) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferCeloErc20Token()**](#chaintransferceloerc20token) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferCeloErc20TokenKMS()**](#chaintransferceloerc20tokenkms) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferEthErc20()**](#chaintransferetherc20) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferEthErc20KMS()**](#chaintransferetherc20kms) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferKcsEthErc20()**](#chaintransferkcsetherc20) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferKcsEthErc20KMS()**](#chaintransferkcsetherc20kms) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferSolanaSpl()**](#chaintransfersolanaspl) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **chainTransferSolanaSplKMS()**](#chaintransfersolanasplkms) 
+
+> **POST** `/v3/blockchain/token/transaction`
+> 
+> Transfer fungible tokens
+
+[🔹 **erc20GetBalance()**](#erc20getbalance) 
+
+> **GET** `/v3/blockchain/token/balance/{chain}/{contractAddress}/{address}`
+> 
+> Get the number of fungible tokens that a blockchain address holds in a smart contract
+
+[🔹 **erc20GetBalanceAddress()**](#erc20getbalanceaddress) 
+
+> **GET** `/v3/blockchain/token/address/{chain}/{address}`
+> 
+> Get the total number of fungible tokens that a blockchain address holds
+
+[🔹 **erc20GetTransactionByAddress()**](#erc20gettransactionbyaddress) 
+
+> **GET** `/v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}`
+> 
+> Get fungible token transactions on a blockchain address
+
 
 
 ## `approveCeloErc20()`

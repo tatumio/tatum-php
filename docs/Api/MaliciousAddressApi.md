@@ -1,11 +1,19 @@
 # Tatum/Api/MaliciousAddressApi
 
-* Malicious address [documentation](https://apidoc.tatum.io/tag/Malicious-address/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**check Malicous Address()**](#checkmalicousaddress) | **GET** `/v3 /security /address /{address}` | Check malicous address
+[Malicious address API documentation](https://apidoc.tatum.io/tag/Malicious-address/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **checkMalicousAddress()**](#checkmalicousaddress) 
+
+> **GET** `/v3/security/address/{address}`
+> 
+> Check malicous address
+
 
 
 ## `checkMalicousAddress()`

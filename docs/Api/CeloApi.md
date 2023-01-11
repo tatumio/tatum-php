@@ -1,26 +1,109 @@
 # Tatum/Api/CeloApi
 
-* Celo [documentation](https://apidoc.tatum.io/tag/Celo/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**call Celo Read Smart Contract Method()**](#callceloreadsmartcontractmethod) | **POST** `/v3 /celo /smartcontract` | Invoke a method in a smart contract on Celo
-[**call Celo Smart Contract Method()**](#callcelosmartcontractmethod) | **POST** `/v3 /celo /smartcontract` | Invoke a method in a smart contract on Celo
-[**call Celo Smart Contract Method KMS()**](#callcelosmartcontractmethodkms) | **POST** `/v3 /celo /smartcontract` | Invoke a method in a smart contract on Celo
-[**celo Broadcast()**](#celobroadcast) | **POST** `/v3 /celo /broadcast` | Broadcast signed Celo transaction
-[**celo Generate Address()**](#celogenerateaddress) | **GET** `/v3 /celo /address /{xpub} /{index}` | Generate Celo account address from Extended public key
-[**celo Generate Address Private Key()**](#celogenerateaddressprivatekey) | **POST** `/v3 /celo /wallet /priv` | Generate Celo private key
-[**celo Generate Wallet()**](#celogeneratewallet) | **GET** `/v3 /celo /wallet` | Generate Celo wallet
-[**celo Get Balance()**](#celogetbalance) | **GET** `/v3 /celo /account /balance /{address}` | Get Celo Account balance
-[**celo Get Block()**](#celogetblock) | **GET** `/v3 /celo /block /{hash}` | Get Celo block by hash
-[**celo Get Current Block()**](#celogetcurrentblock) | **GET** `/v3 /celo /block /current` | Get current block number
-[**celo Get Transaction()**](#celogettransaction) | **GET** `/v3 /celo /transaction /{hash}` | Get Celo Transaction
-[**celo Get Transaction By Address()**](#celogettransactionbyaddress) | **GET** `/v3 /celo /account /transaction /{address}` | Get Celo transactions by address
-[**celo Get Transaction Count()**](#celogettransactioncount) | **GET** `/v3 /celo /transaction /count /{address}` | Get count of outgoing Celo transactions
-[**celo Web3 Driver()**](#celoweb3driver) | **POST** `/v3 /celo /web3 /{xApiKey}` | Web3 HTTP driver
-[**transfer Celo Blockchain()**](#transferceloblockchain) | **POST** `/v3 /celo /transaction` | Send Celo / ERC20 from account to account
-[**transfer Celo Blockchain KMS()**](#transferceloblockchainkms) | **POST** `/v3 /celo /transaction` | Send Celo / ERC20 from account to account
+[Celo API documentation](https://apidoc.tatum.io/tag/Celo/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **callCeloReadSmartContractMethod()**](#callceloreadsmartcontractmethod) 
+
+> **POST** `/v3/celo/smartcontract`
+> 
+> Invoke a method in a smart contract on Celo
+
+[🔹 **callCeloSmartContractMethod()**](#callcelosmartcontractmethod) 
+
+> **POST** `/v3/celo/smartcontract`
+> 
+> Invoke a method in a smart contract on Celo
+
+[🔹 **callCeloSmartContractMethodKMS()**](#callcelosmartcontractmethodkms) 
+
+> **POST** `/v3/celo/smartcontract`
+> 
+> Invoke a method in a smart contract on Celo
+
+[🔹 **celoBroadcast()**](#celobroadcast) 
+
+> **POST** `/v3/celo/broadcast`
+> 
+> Broadcast signed Celo transaction
+
+[🔹 **celoGenerateAddress()**](#celogenerateaddress) 
+
+> **GET** `/v3/celo/address/{xpub}/{index}`
+> 
+> Generate Celo account address from Extended public key
+
+[🔹 **celoGenerateAddressPrivateKey()**](#celogenerateaddressprivatekey) 
+
+> **POST** `/v3/celo/wallet/priv`
+> 
+> Generate Celo private key
+
+[🔹 **celoGenerateWallet()**](#celogeneratewallet) 
+
+> **GET** `/v3/celo/wallet`
+> 
+> Generate Celo wallet
+
+[🔹 **celoGetBalance()**](#celogetbalance) 
+
+> **GET** `/v3/celo/account/balance/{address}`
+> 
+> Get Celo Account balance
+
+[🔹 **celoGetBlock()**](#celogetblock) 
+
+> **GET** `/v3/celo/block/{hash}`
+> 
+> Get Celo block by hash
+
+[🔹 **celoGetCurrentBlock()**](#celogetcurrentblock) 
+
+> **GET** `/v3/celo/block/current`
+> 
+> Get current block number
+
+[🔹 **celoGetTransaction()**](#celogettransaction) 
+
+> **GET** `/v3/celo/transaction/{hash}`
+> 
+> Get Celo Transaction
+
+[🔹 **celoGetTransactionByAddress()**](#celogettransactionbyaddress) 
+
+> **GET** `/v3/celo/account/transaction/{address}`
+> 
+> Get Celo transactions by address
+
+[🔹 **celoGetTransactionCount()**](#celogettransactioncount) 
+
+> **GET** `/v3/celo/transaction/count/{address}`
+> 
+> Get count of outgoing Celo transactions
+
+[🔹 **celoWeb3Driver()**](#celoweb3driver) 
+
+> **POST** `/v3/celo/web3/{xApiKey}`
+> 
+> Web3 HTTP driver
+
+[🔹 **transferCeloBlockchain()**](#transferceloblockchain) 
+
+> **POST** `/v3/celo/transaction`
+> 
+> Send Celo / ERC20 from account to account
+
+[🔹 **transferCeloBlockchainKMS()**](#transferceloblockchainkms) 
+
+> **POST** `/v3/celo/transaction`
+> 
+> Send Celo / ERC20 from account to account
+
 
 
 ## `callCeloReadSmartContractMethod()`

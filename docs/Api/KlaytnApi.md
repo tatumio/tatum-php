@@ -1,25 +1,103 @@
 # Tatum/Api/KlaytnApi
 
-* Klaytn [documentation](https://apidoc.tatum.io/tag/Klaytn/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**call Klaytn Smart Contract Method()**](#callklaytnsmartcontractmethod) | **POST** `/v3 /klaytn /smartcontract` | Invoke a method in a smart contract on Klaytn
-[**call Klaytn Smart Contract Method KMS()**](#callklaytnsmartcontractmethodkms) | **POST** `/v3 /klaytn /smartcontract` | Invoke a method in a smart contract on Klaytn
-[**call Klaytn Smart Contract Read Method()**](#callklaytnsmartcontractreadmethod) | **POST** `/v3 /klaytn /smartcontract` | Invoke a method in a smart contract on Klaytn
-[**klaytn Broadcast()**](#klaytnbroadcast) | **POST** `/v3 /klaytn /broadcast` | Broadcast signed Klaytn transaction
-[**klaytn Generate Address()**](#klaytngenerateaddress) | **GET** `/v3 /klaytn /address /{xpub} /{index}` | Generate Klaytn account address from Extended public key
-[**klaytn Generate Address Private Key()**](#klaytngenerateaddressprivatekey) | **POST** `/v3 /klaytn /wallet /priv` | Generate Klaytn private key
-[**klaytn Generate Wallet()**](#klaytngeneratewallet) | **GET** `/v3 /klaytn /wallet` | Generate Klaytn wallet
-[**klaytn Get Balance()**](#klaytngetbalance) | **GET** `/v3 /klaytn /account /balance /{address}` | Get Klaytn Account balance
-[**klaytn Get Block()**](#klaytngetblock) | **GET** `/v3 /klaytn /block /{hash}` | Get Klaytn block by hash
-[**klaytn Get Current Block()**](#klaytngetcurrentblock) | **GET** `/v3 /klaytn /block /current` | Get current block number
-[**klaytn Get Transaction()**](#klaytngettransaction) | **GET** `/v3 /klaytn /transaction /{hash}` | Get Klaytn Transaction
-[**klaytn Get Transaction Count()**](#klaytngettransactioncount) | **GET** `/v3 /klaytn /transaction /count /{address}` | Get count of outgoing Klaytn transactions
-[**klaytn Web3 Driver()**](#klaytnweb3driver) | **POST** `/v3 /klaytn /web3 /{xApiKey}` | Web3 HTTP driver
-[**transfer Klaytn Blockchain()**](#transferklaytnblockchain) | **POST** `/v3 /klaytn /transaction` | Send KLAY from account to account
-[**transfer Klaytn Blockchain KMS()**](#transferklaytnblockchainkms) | **POST** `/v3 /klaytn /transaction` | Send KLAY from account to account
+[Klaytn API documentation](https://apidoc.tatum.io/tag/Klaytn/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **callKlaytnSmartContractMethod()**](#callklaytnsmartcontractmethod) 
+
+> **POST** `/v3/klaytn/smartcontract`
+> 
+> Invoke a method in a smart contract on Klaytn
+
+[🔹 **callKlaytnSmartContractMethodKMS()**](#callklaytnsmartcontractmethodkms) 
+
+> **POST** `/v3/klaytn/smartcontract`
+> 
+> Invoke a method in a smart contract on Klaytn
+
+[🔹 **callKlaytnSmartContractReadMethod()**](#callklaytnsmartcontractreadmethod) 
+
+> **POST** `/v3/klaytn/smartcontract`
+> 
+> Invoke a method in a smart contract on Klaytn
+
+[🔹 **klaytnBroadcast()**](#klaytnbroadcast) 
+
+> **POST** `/v3/klaytn/broadcast`
+> 
+> Broadcast signed Klaytn transaction
+
+[🔹 **klaytnGenerateAddress()**](#klaytngenerateaddress) 
+
+> **GET** `/v3/klaytn/address/{xpub}/{index}`
+> 
+> Generate Klaytn account address from Extended public key
+
+[🔹 **klaytnGenerateAddressPrivateKey()**](#klaytngenerateaddressprivatekey) 
+
+> **POST** `/v3/klaytn/wallet/priv`
+> 
+> Generate Klaytn private key
+
+[🔹 **klaytnGenerateWallet()**](#klaytngeneratewallet) 
+
+> **GET** `/v3/klaytn/wallet`
+> 
+> Generate Klaytn wallet
+
+[🔹 **klaytnGetBalance()**](#klaytngetbalance) 
+
+> **GET** `/v3/klaytn/account/balance/{address}`
+> 
+> Get Klaytn Account balance
+
+[🔹 **klaytnGetBlock()**](#klaytngetblock) 
+
+> **GET** `/v3/klaytn/block/{hash}`
+> 
+> Get Klaytn block by hash
+
+[🔹 **klaytnGetCurrentBlock()**](#klaytngetcurrentblock) 
+
+> **GET** `/v3/klaytn/block/current`
+> 
+> Get current block number
+
+[🔹 **klaytnGetTransaction()**](#klaytngettransaction) 
+
+> **GET** `/v3/klaytn/transaction/{hash}`
+> 
+> Get Klaytn Transaction
+
+[🔹 **klaytnGetTransactionCount()**](#klaytngettransactioncount) 
+
+> **GET** `/v3/klaytn/transaction/count/{address}`
+> 
+> Get count of outgoing Klaytn transactions
+
+[🔹 **klaytnWeb3Driver()**](#klaytnweb3driver) 
+
+> **POST** `/v3/klaytn/web3/{xApiKey}`
+> 
+> Web3 HTTP driver
+
+[🔹 **transferKlaytnBlockchain()**](#transferklaytnblockchain) 
+
+> **POST** `/v3/klaytn/transaction`
+> 
+> Send KLAY from account to account
+
+[🔹 **transferKlaytnBlockchainKMS()**](#transferklaytnblockchainkms) 
+
+> **POST** `/v3/klaytn/transaction`
+> 
+> Send KLAY from account to account
+
 
 
 ## `callKlaytnSmartContractMethod()`

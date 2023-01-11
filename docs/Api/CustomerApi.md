@@ -1,17 +1,55 @@
 # Tatum/Api/CustomerApi
 
-* Customer [documentation](https://apidoc.tatum.io/tag/Customer/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**activate Customer()**](#activatecustomer) | **PUT** `/v3 /ledger /customer /{id} /activate` | Activate customer
-[**deactivate Customer()**](#deactivatecustomer) | **PUT** `/v3 /ledger /customer /{id} /deactivate` | Deactivate customer
-[**disable Customer()**](#disablecustomer) | **PUT** `/v3 /ledger /customer /{id} /disable` | Disable customer
-[**enable Customer()**](#enablecustomer) | **PUT** `/v3 /ledger /customer /{id} /enable` | Enable customer
-[**find All Customers()**](#findallcustomers) | **GET** `/v3 /ledger /customer` | List all customers
-[**get Customer By External Or Internal Id()**](#getcustomerbyexternalorinternalid) | **GET** `/v3 /ledger /customer /{id}` | Get customer details
-[**update Customer()**](#updatecustomer) | **PUT** `/v3 /ledger /customer /{id}` | Update customer
+[Customer API documentation](https://apidoc.tatum.io/tag/Customer/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **activateCustomer()**](#activatecustomer) 
+
+> **PUT** `/v3/ledger/customer/{id}/activate`
+> 
+> Activate customer
+
+[🔹 **deactivateCustomer()**](#deactivatecustomer) 
+
+> **PUT** `/v3/ledger/customer/{id}/deactivate`
+> 
+> Deactivate customer
+
+[🔹 **disableCustomer()**](#disablecustomer) 
+
+> **PUT** `/v3/ledger/customer/{id}/disable`
+> 
+> Disable customer
+
+[🔹 **enableCustomer()**](#enablecustomer) 
+
+> **PUT** `/v3/ledger/customer/{id}/enable`
+> 
+> Enable customer
+
+[🔹 **findAllCustomers()**](#findallcustomers) 
+
+> **GET** `/v3/ledger/customer`
+> 
+> List all customers
+
+[🔹 **getCustomerByExternalOrInternalId()**](#getcustomerbyexternalorinternalid) 
+
+> **GET** `/v3/ledger/customer/{id}`
+> 
+> Get customer details
+
+[🔹 **updateCustomer()**](#updatecustomer) 
+
+> **PUT** `/v3/ledger/customer/{id}`
+> 
+> Update customer
+
 
 
 ## `activateCustomer()`

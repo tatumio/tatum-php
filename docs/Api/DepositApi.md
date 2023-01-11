@@ -1,12 +1,25 @@
 # Tatum/Api/DepositApi
 
-* Deposit [documentation](https://apidoc.tatum.io/tag/Deposit/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get Deposits()**](#getdeposits) | **GET** `/v3 /ledger /deposits` | List all deposits for product
-[**get Deposits Count()**](#getdepositscount) | **GET** `/v3 /ledger /deposits /count` | Count of found entities for get deposits request
+[Deposit API documentation](https://apidoc.tatum.io/tag/Deposit/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **getDeposits()**](#getdeposits) 
+
+> **GET** `/v3/ledger/deposits`
+> 
+> List all deposits for product
+
+[🔹 **getDepositsCount()**](#getdepositscount) 
+
+> **GET** `/v3/ledger/deposits/count`
+> 
+> Count of found entities for get deposits request
+
 
 
 ## `getDeposits()`

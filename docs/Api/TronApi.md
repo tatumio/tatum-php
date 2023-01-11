@@ -1,33 +1,151 @@
 # Tatum/Api/TronApi
 
-* Tron [documentation](https://apidoc.tatum.io/tag/Tron/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create Tron Trc10 Blockchain()**](#createtrontrc10blockchain) | **POST** `/v3 /tron /trc10 /deploy` | Create a TRC-10 token
-[**create Tron Trc10 Blockchain KMS()**](#createtrontrc10blockchainkms) | **POST** `/v3 /tron /trc10 /deploy` | Create a TRC-10 token
-[**create Tron Trc20 Blockchain()**](#createtrontrc20blockchain) | **POST** `/v3 /tron /trc20 /deploy` | Create a TRC-20 token
-[**create Tron Trc20 Blockchain KMS()**](#createtrontrc20blockchainkms) | **POST** `/v3 /tron /trc20 /deploy` | Create a TRC-20 token
-[**freeze Tron()**](#freezetron) | **POST** `/v3 /tron /freezeBalance` | Freeze the balance of a TRON account
-[**freeze Tron KMS()**](#freezetronkms) | **POST** `/v3 /tron /freezeBalance` | Freeze the balance of a TRON account
-[**generate Tronwallet()**](#generatetronwallet) | **GET** `/v3 /tron /wallet` | Generate a TRON wallet
-[**transfer Tron Blockchain()**](#transfertronblockchain) | **POST** `/v3 /tron /transaction` | Send TRX to a TRON account
-[**transfer Tron Blockchain KMS()**](#transfertronblockchainkms) | **POST** `/v3 /tron /transaction` | Send TRX to a TRON account
-[**transfer Tron Trc10 Blockchain()**](#transfertrontrc10blockchain) | **POST** `/v3 /tron /trc10 /transaction` | Send TRC-10 tokens to a TRON account
-[**transfer Tron Trc10 Blockchain KMS()**](#transfertrontrc10blockchainkms) | **POST** `/v3 /tron /trc10 /transaction` | Send TRC-10 tokens to a TRON account
-[**transfer Tron Trc20 Blockchain()**](#transfertrontrc20blockchain) | **POST** `/v3 /tron /trc20 /transaction` | Send TRC-20 tokens to a TRON account
-[**transfer Tron Trc20 Blockchain KMS()**](#transfertrontrc20blockchainkms) | **POST** `/v3 /tron /trc20 /transaction` | Send TRC-20 tokens to a TRON account
-[**tron Account Tx()**](#tronaccounttx) | **GET** `/v3 /tron /transaction /account /{address}` | Get all transactions for a TRON account
-[**tron Account Tx20()**](#tronaccounttx20) | **GET** `/v3 /tron /transaction /account /{address} /trc20` | Get TRC-20 transactions for a TRON account
-[**tron Broadcast()**](#tronbroadcast) | **POST** `/v3 /tron /broadcast` | Broadcast a TRON transaction
-[**tron Generate Address()**](#trongenerateaddress) | **GET** `/v3 /tron /address /{xpub} /{index}` | Generate a TRON address from the wallet's extended public key
-[**tron Generate Address Private Key()**](#trongenerateaddressprivatekey) | **POST** `/v3 /tron /wallet /priv` | Generate the private key for a TRON address
-[**tron Get Account()**](#trongetaccount) | **GET** `/v3 /tron /account /{address}` | Get the TRON account by its address
-[**tron Get Block()**](#trongetblock) | **GET** `/v3 /tron /block /{hash}` | Get a TRON block by its hash or height
-[**tron Get Current Block()**](#trongetcurrentblock) | **GET** `/v3 /tron /info` | Get the current TRON block
-[**tron Get Transaction()**](#trongettransaction) | **GET** `/v3 /tron /transaction /{hash}` | Get a TRON transaction by its hash
-[**tron Trc10 Detail()**](#trontrc10detail) | **GET** `/v3 /tron /trc10 /detail /{idOrOwnerAddress}` | Get information about a TRC-10 token
+[Tron API documentation](https://apidoc.tatum.io/tag/Tron/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **createTronTrc10Blockchain()**](#createtrontrc10blockchain) 
+
+> **POST** `/v3/tron/trc10/deploy`
+> 
+> Create a TRC-10 token
+
+[🔹 **createTronTrc10BlockchainKMS()**](#createtrontrc10blockchainkms) 
+
+> **POST** `/v3/tron/trc10/deploy`
+> 
+> Create a TRC-10 token
+
+[🔹 **createTronTrc20Blockchain()**](#createtrontrc20blockchain) 
+
+> **POST** `/v3/tron/trc20/deploy`
+> 
+> Create a TRC-20 token
+
+[🔹 **createTronTrc20BlockchainKMS()**](#createtrontrc20blockchainkms) 
+
+> **POST** `/v3/tron/trc20/deploy`
+> 
+> Create a TRC-20 token
+
+[🔹 **freezeTron()**](#freezetron) 
+
+> **POST** `/v3/tron/freezeBalance`
+> 
+> Freeze the balance of a TRON account
+
+[🔹 **freezeTronKMS()**](#freezetronkms) 
+
+> **POST** `/v3/tron/freezeBalance`
+> 
+> Freeze the balance of a TRON account
+
+[🔹 **generateTronwallet()**](#generatetronwallet) 
+
+> **GET** `/v3/tron/wallet`
+> 
+> Generate a TRON wallet
+
+[🔹 **transferTronBlockchain()**](#transfertronblockchain) 
+
+> **POST** `/v3/tron/transaction`
+> 
+> Send TRX to a TRON account
+
+[🔹 **transferTronBlockchainKMS()**](#transfertronblockchainkms) 
+
+> **POST** `/v3/tron/transaction`
+> 
+> Send TRX to a TRON account
+
+[🔹 **transferTronTrc10Blockchain()**](#transfertrontrc10blockchain) 
+
+> **POST** `/v3/tron/trc10/transaction`
+> 
+> Send TRC-10 tokens to a TRON account
+
+[🔹 **transferTronTrc10BlockchainKMS()**](#transfertrontrc10blockchainkms) 
+
+> **POST** `/v3/tron/trc10/transaction`
+> 
+> Send TRC-10 tokens to a TRON account
+
+[🔹 **transferTronTrc20Blockchain()**](#transfertrontrc20blockchain) 
+
+> **POST** `/v3/tron/trc20/transaction`
+> 
+> Send TRC-20 tokens to a TRON account
+
+[🔹 **transferTronTrc20BlockchainKMS()**](#transfertrontrc20blockchainkms) 
+
+> **POST** `/v3/tron/trc20/transaction`
+> 
+> Send TRC-20 tokens to a TRON account
+
+[🔹 **tronAccountTx()**](#tronaccounttx) 
+
+> **GET** `/v3/tron/transaction/account/{address}`
+> 
+> Get all transactions for a TRON account
+
+[🔹 **tronAccountTx20()**](#tronaccounttx20) 
+
+> **GET** `/v3/tron/transaction/account/{address}/trc20`
+> 
+> Get TRC-20 transactions for a TRON account
+
+[🔹 **tronBroadcast()**](#tronbroadcast) 
+
+> **POST** `/v3/tron/broadcast`
+> 
+> Broadcast a TRON transaction
+
+[🔹 **tronGenerateAddress()**](#trongenerateaddress) 
+
+> **GET** `/v3/tron/address/{xpub}/{index}`
+> 
+> Generate a TRON address from the wallet's extended public key
+
+[🔹 **tronGenerateAddressPrivateKey()**](#trongenerateaddressprivatekey) 
+
+> **POST** `/v3/tron/wallet/priv`
+> 
+> Generate the private key for a TRON address
+
+[🔹 **tronGetAccount()**](#trongetaccount) 
+
+> **GET** `/v3/tron/account/{address}`
+> 
+> Get the TRON account by its address
+
+[🔹 **tronGetBlock()**](#trongetblock) 
+
+> **GET** `/v3/tron/block/{hash}`
+> 
+> Get a TRON block by its hash or height
+
+[🔹 **tronGetCurrentBlock()**](#trongetcurrentblock) 
+
+> **GET** `/v3/tron/info`
+> 
+> Get the current TRON block
+
+[🔹 **tronGetTransaction()**](#trongettransaction) 
+
+> **GET** `/v3/tron/transaction/{hash}`
+> 
+> Get a TRON transaction by its hash
+
+[🔹 **tronTrc10Detail()**](#trontrc10detail) 
+
+> **GET** `/v3/tron/trc10/detail/{idOrOwnerAddress}`
+> 
+> Get information about a TRC-10 token
+
 
 
 ## `createTronTrc10Blockchain()`

@@ -1,25 +1,103 @@
 # Tatum/Api/XinFinApi
 
-* XinFin [documentation](https://apidoc.tatum.io/tag/XinFin/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**call Xdc Read Smart Contract Method()**](#callxdcreadsmartcontractmethod) | **POST** `/v3 /xdc /smartcontract` | Invoke a method in a smart contract on XinFin
-[**call Xdc Smart Contract Method()**](#callxdcsmartcontractmethod) | **POST** `/v3 /xdc /smartcontract` | Invoke a method in a smart contract on XinFin
-[**call Xdc Smart Contract Method KMS()**](#callxdcsmartcontractmethodkms) | **POST** `/v3 /xdc /smartcontract` | Invoke a method in a smart contract on XinFin
-[**transfer Xdc Blockchain()**](#transferxdcblockchain) | **POST** `/v3 /xdc /transaction` | Send XDC / ERC20 from account to account
-[**transfer Xdc Blockchain KMS()**](#transferxdcblockchainkms) | **POST** `/v3 /xdc /transaction` | Send XDC / ERC20 from account to account
-[**xdc Broadcast()**](#xdcbroadcast) | **POST** `/v3 /xdc /broadcast` | Broadcast signed XDC transaction
-[**xdc Generate Address()**](#xdcgenerateaddress) | **GET** `/v3 /xdc /address /{xpub} /{index}` | Generate XDC account address from Extended public key
-[**xdc Generate Address Private Key()**](#xdcgenerateaddressprivatekey) | **POST** `/v3 /xdc /wallet /priv` | Generate XDC private key
-[**xdc Generate Wallet()**](#xdcgeneratewallet) | **GET** `/v3 /xdc /wallet` | Generate XDC wallet
-[**xdc Get Balance()**](#xdcgetbalance) | **GET** `/v3 /xdc /account /balance /{address}` | Get XDC Account balance
-[**xdc Get Block()**](#xdcgetblock) | **GET** `/v3 /xdc /block /{hash}` | Get XDC block by hash
-[**xdc Get Current Block()**](#xdcgetcurrentblock) | **GET** `/v3 /xdc /block /current` | Get current block number
-[**xdc Get Transaction()**](#xdcgettransaction) | **GET** `/v3 /xdc /transaction /{hash}` | Get XDC Transaction
-[**xdc Get Transaction Count()**](#xdcgettransactioncount) | **GET** `/v3 /xdc /transaction /count /{address}` | Get count of outgoing XDC transactions
-[**xdc Web3 Driver()**](#xdcweb3driver) | **POST** `/v3 /xdc /web3 /{xApiKey}` | Web3 HTTP driver
+[XinFin API documentation](https://apidoc.tatum.io/tag/XinFin/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **callXdcReadSmartContractMethod()**](#callxdcreadsmartcontractmethod) 
+
+> **POST** `/v3/xdc/smartcontract`
+> 
+> Invoke a method in a smart contract on XinFin
+
+[🔹 **callXdcSmartContractMethod()**](#callxdcsmartcontractmethod) 
+
+> **POST** `/v3/xdc/smartcontract`
+> 
+> Invoke a method in a smart contract on XinFin
+
+[🔹 **callXdcSmartContractMethodKMS()**](#callxdcsmartcontractmethodkms) 
+
+> **POST** `/v3/xdc/smartcontract`
+> 
+> Invoke a method in a smart contract on XinFin
+
+[🔹 **transferXdcBlockchain()**](#transferxdcblockchain) 
+
+> **POST** `/v3/xdc/transaction`
+> 
+> Send XDC / ERC20 from account to account
+
+[🔹 **transferXdcBlockchainKMS()**](#transferxdcblockchainkms) 
+
+> **POST** `/v3/xdc/transaction`
+> 
+> Send XDC / ERC20 from account to account
+
+[🔹 **xdcBroadcast()**](#xdcbroadcast) 
+
+> **POST** `/v3/xdc/broadcast`
+> 
+> Broadcast signed XDC transaction
+
+[🔹 **xdcGenerateAddress()**](#xdcgenerateaddress) 
+
+> **GET** `/v3/xdc/address/{xpub}/{index}`
+> 
+> Generate XDC account address from Extended public key
+
+[🔹 **xdcGenerateAddressPrivateKey()**](#xdcgenerateaddressprivatekey) 
+
+> **POST** `/v3/xdc/wallet/priv`
+> 
+> Generate XDC private key
+
+[🔹 **xdcGenerateWallet()**](#xdcgeneratewallet) 
+
+> **GET** `/v3/xdc/wallet`
+> 
+> Generate XDC wallet
+
+[🔹 **xdcGetBalance()**](#xdcgetbalance) 
+
+> **GET** `/v3/xdc/account/balance/{address}`
+> 
+> Get XDC Account balance
+
+[🔹 **xdcGetBlock()**](#xdcgetblock) 
+
+> **GET** `/v3/xdc/block/{hash}`
+> 
+> Get XDC block by hash
+
+[🔹 **xdcGetCurrentBlock()**](#xdcgetcurrentblock) 
+
+> **GET** `/v3/xdc/block/current`
+> 
+> Get current block number
+
+[🔹 **xdcGetTransaction()**](#xdcgettransaction) 
+
+> **GET** `/v3/xdc/transaction/{hash}`
+> 
+> Get XDC Transaction
+
+[🔹 **xdcGetTransactionCount()**](#xdcgettransactioncount) 
+
+> **GET** `/v3/xdc/transaction/count/{address}`
+> 
+> Get count of outgoing XDC transactions
+
+[🔹 **xdcWeb3Driver()**](#xdcweb3driver) 
+
+> **POST** `/v3/xdc/web3/{xApiKey}`
+> 
+> Web3 HTTP driver
+
 
 
 ## `callXdcReadSmartContractMethod()`

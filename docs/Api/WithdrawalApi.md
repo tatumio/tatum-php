@@ -1,15 +1,43 @@
 # Tatum/Api/WithdrawalApi
 
-* Withdrawal [documentation](https://apidoc.tatum.io/tag/Withdrawal/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**broadcast Blockchain Transaction()**](#broadcastblockchaintransaction) | **POST** `/v3 /offchain /withdrawal /broadcast` | Broadcast signed transaction and complete withdrawal
-[**cancel In Progress Withdrawal()**](#cancelinprogresswithdrawal) | **DELETE** `/v3 /offchain /withdrawal /{id}` | Cancel withdrawal
-[**complete Withdrawal()**](#completewithdrawal) | **PUT** `/v3 /offchain /withdrawal /{id} /{txId}` | Complete withdrawal
-[**get Withdrawals()**](#getwithdrawals) | **GET** `/v3 /offchain /withdrawal` | Get withdrawals
-[**store Withdrawal()**](#storewithdrawal) | **POST** `/v3 /offchain /withdrawal` | Store withdrawal
+[Withdrawal API documentation](https://apidoc.tatum.io/tag/Withdrawal/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **broadcastBlockchainTransaction()**](#broadcastblockchaintransaction) 
+
+> **POST** `/v3/offchain/withdrawal/broadcast`
+> 
+> Broadcast signed transaction and complete withdrawal
+
+[🔹 **cancelInProgressWithdrawal()**](#cancelinprogresswithdrawal) 
+
+> **DELETE** `/v3/offchain/withdrawal/{id}`
+> 
+> Cancel withdrawal
+
+[🔹 **completeWithdrawal()**](#completewithdrawal) 
+
+> **PUT** `/v3/offchain/withdrawal/{id}/{txId}`
+> 
+> Complete withdrawal
+
+[🔹 **getWithdrawals()**](#getwithdrawals) 
+
+> **GET** `/v3/offchain/withdrawal`
+> 
+> Get withdrawals
+
+[🔹 **storeWithdrawal()**](#storewithdrawal) 
+
+> **POST** `/v3/offchain/withdrawal`
+> 
+> Store withdrawal
+
 
 
 ## `broadcastBlockchainTransaction()`

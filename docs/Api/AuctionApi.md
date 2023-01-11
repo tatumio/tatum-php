@@ -1,45 +1,223 @@
 # Tatum/Api/AuctionApi
 
-* Auction [documentation](https://apidoc.tatum.io/tag/Auction/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**approve Nft Spending()**](#approvenftspending) | **POST** `/v3 /blockchain /auction /approve` | Allow the NFT auction or marketplace to transfer an asset
-[**approve Nft Spending Celo()**](#approvenftspendingcelo) | **POST** `/v3 /blockchain /auction /approve` | Allow the NFT auction or marketplace to transfer an asset
-[**approve Nft Spending Celo KMS()**](#approvenftspendingcelokms) | **POST** `/v3 /blockchain /auction /approve` | Allow the NFT auction or marketplace to transfer an asset
-[**approve Nft Spending KMS()**](#approvenftspendingkms) | **POST** `/v3 /blockchain /auction /approve` | Allow the NFT auction or marketplace to transfer an asset
-[**bid On Auction()**](#bidonauction) | **POST** `/v3 /blockchain /auction /bid` | Bid for an asset at the NFT auction
-[**bid On Auction Celo()**](#bidonauctioncelo) | **POST** `/v3 /blockchain /auction /bid` | Bid for an asset at the NFT auction
-[**bid On Auction Celo KMS()**](#bidonauctioncelokms) | **POST** `/v3 /blockchain /auction /bid` | Bid for an asset at the NFT auction
-[**bid On Auction KMS()**](#bidonauctionkms) | **POST** `/v3 /blockchain /auction /bid` | Bid for an asset at the NFT auction
-[**blo Auc Update Fee Recipient()**](#bloaucupdatefeerecipient) | **PUT** `/v3 /blockchain /auction /recipient` | Update the recipient of the NFT auction fee
-[**blo Auc Update Fee Recipient Celo()**](#bloaucupdatefeerecipientcelo) | **PUT** `/v3 /blockchain /auction /recipient` | Update the recipient of the NFT auction fee
-[**blo Auc Update Fee Recipient Celo KMS()**](#bloaucupdatefeerecipientcelokms) | **PUT** `/v3 /blockchain /auction /recipient` | Update the recipient of the NFT auction fee
-[**blo Auc Update Fee Recipient KMS()**](#bloaucupdatefeerecipientkms) | **PUT** `/v3 /blockchain /auction /recipient` | Update the recipient of the NFT auction fee
-[**cancel Auction()**](#cancelauction) | **POST** `/v3 /blockchain /auction /cancel` | Cancel the selling of an asset at the NFT auction
-[**cancel Auction Celo()**](#cancelauctioncelo) | **POST** `/v3 /blockchain /auction /cancel` | Cancel the selling of an asset at the NFT auction
-[**cancel Auction Celo KMS()**](#cancelauctioncelokms) | **POST** `/v3 /blockchain /auction /cancel` | Cancel the selling of an asset at the NFT auction
-[**cancel Auction KMS()**](#cancelauctionkms) | **POST** `/v3 /blockchain /auction /cancel` | Cancel the selling of an asset at the NFT auction
-[**create Auction()**](#createauction) | **POST** `/v3 /blockchain /auction /sell` | Sell an asset at the NFT auction
-[**create Auction Celo()**](#createauctioncelo) | **POST** `/v3 /blockchain /auction /sell` | Sell an asset at the NFT auction
-[**create Auction Celo KMS()**](#createauctioncelokms) | **POST** `/v3 /blockchain /auction /sell` | Sell an asset at the NFT auction
-[**create Auction KMS()**](#createauctionkms) | **POST** `/v3 /blockchain /auction /sell` | Sell an asset at the NFT auction
-[**generate Auction()**](#generateauction) | **POST** `/v3 /blockchain /auction` | Create an NFT auction
-[**generate Auction Celo()**](#generateauctioncelo) | **POST** `/v3 /blockchain /auction` | Create an NFT auction
-[**generate Auction Celo KMS()**](#generateauctioncelokms) | **POST** `/v3 /blockchain /auction` | Create an NFT auction
-[**generate Auction KMS()**](#generateauctionkms) | **POST** `/v3 /blockchain /auction` | Create an NFT auction
-[**get Auction()**](#getauction) | **GET** `/v3 /blockchain /auction /{chain} /{contractAddress} /{id}` | Get information about an auctioned asset at the NFT auction
-[**get Auction Fee()**](#getauctionfee) | **GET** `/v3 /blockchain /auction /{chain} /{contractAddress} /fee` | Get the NFT auction fee
-[**get Auction Fee Recipient()**](#getauctionfeerecipient) | **GET** `/v3 /blockchain /auction /{chain} /{contractAddress} /recipient` | Get the recipient of the NFT auction fee
-[**settle Auction()**](#settleauction) | **POST** `/v3 /blockchain /auction /settle` | Settle an NFT auction
-[**settle Auction Celo()**](#settleauctioncelo) | **POST** `/v3 /blockchain /auction /settle` | Settle an NFT auction
-[**settle Auction Celo KMS()**](#settleauctioncelokms) | **POST** `/v3 /blockchain /auction /settle` | Settle an NFT auction
-[**settle Auction KMS()**](#settleauctionkms) | **POST** `/v3 /blockchain /auction /settle` | Settle an NFT auction
-[**update Fee Auction()**](#updatefeeauction) | **PUT** `/v3 /blockchain /auction /fee` | Update the NFT auction fee
-[**update Fee Auction Celo()**](#updatefeeauctioncelo) | **PUT** `/v3 /blockchain /auction /fee` | Update the NFT auction fee
-[**update Fee Auction Celo KMS()**](#updatefeeauctioncelokms) | **PUT** `/v3 /blockchain /auction /fee` | Update the NFT auction fee
-[**update Fee Auction KMS()**](#updatefeeauctionkms) | **PUT** `/v3 /blockchain /auction /fee` | Update the NFT auction fee
+[Auction API documentation](https://apidoc.tatum.io/tag/Auction/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **approveNftSpending()**](#approvenftspending) 
+
+> **POST** `/v3/blockchain/auction/approve`
+> 
+> Allow the NFT auction or marketplace to transfer an asset
+
+[🔹 **approveNftSpendingCelo()**](#approvenftspendingcelo) 
+
+> **POST** `/v3/blockchain/auction/approve`
+> 
+> Allow the NFT auction or marketplace to transfer an asset
+
+[🔹 **approveNftSpendingCeloKMS()**](#approvenftspendingcelokms) 
+
+> **POST** `/v3/blockchain/auction/approve`
+> 
+> Allow the NFT auction or marketplace to transfer an asset
+
+[🔹 **approveNftSpendingKMS()**](#approvenftspendingkms) 
+
+> **POST** `/v3/blockchain/auction/approve`
+> 
+> Allow the NFT auction or marketplace to transfer an asset
+
+[🔹 **bidOnAuction()**](#bidonauction) 
+
+> **POST** `/v3/blockchain/auction/bid`
+> 
+> Bid for an asset at the NFT auction
+
+[🔹 **bidOnAuctionCelo()**](#bidonauctioncelo) 
+
+> **POST** `/v3/blockchain/auction/bid`
+> 
+> Bid for an asset at the NFT auction
+
+[🔹 **bidOnAuctionCeloKMS()**](#bidonauctioncelokms) 
+
+> **POST** `/v3/blockchain/auction/bid`
+> 
+> Bid for an asset at the NFT auction
+
+[🔹 **bidOnAuctionKMS()**](#bidonauctionkms) 
+
+> **POST** `/v3/blockchain/auction/bid`
+> 
+> Bid for an asset at the NFT auction
+
+[🔹 **bloAucUpdateFeeRecipient()**](#bloaucupdatefeerecipient) 
+
+> **PUT** `/v3/blockchain/auction/recipient`
+> 
+> Update the recipient of the NFT auction fee
+
+[🔹 **bloAucUpdateFeeRecipientCelo()**](#bloaucupdatefeerecipientcelo) 
+
+> **PUT** `/v3/blockchain/auction/recipient`
+> 
+> Update the recipient of the NFT auction fee
+
+[🔹 **bloAucUpdateFeeRecipientCeloKMS()**](#bloaucupdatefeerecipientcelokms) 
+
+> **PUT** `/v3/blockchain/auction/recipient`
+> 
+> Update the recipient of the NFT auction fee
+
+[🔹 **bloAucUpdateFeeRecipientKMS()**](#bloaucupdatefeerecipientkms) 
+
+> **PUT** `/v3/blockchain/auction/recipient`
+> 
+> Update the recipient of the NFT auction fee
+
+[🔹 **cancelAuction()**](#cancelauction) 
+
+> **POST** `/v3/blockchain/auction/cancel`
+> 
+> Cancel the selling of an asset at the NFT auction
+
+[🔹 **cancelAuctionCelo()**](#cancelauctioncelo) 
+
+> **POST** `/v3/blockchain/auction/cancel`
+> 
+> Cancel the selling of an asset at the NFT auction
+
+[🔹 **cancelAuctionCeloKMS()**](#cancelauctioncelokms) 
+
+> **POST** `/v3/blockchain/auction/cancel`
+> 
+> Cancel the selling of an asset at the NFT auction
+
+[🔹 **cancelAuctionKMS()**](#cancelauctionkms) 
+
+> **POST** `/v3/blockchain/auction/cancel`
+> 
+> Cancel the selling of an asset at the NFT auction
+
+[🔹 **createAuction()**](#createauction) 
+
+> **POST** `/v3/blockchain/auction/sell`
+> 
+> Sell an asset at the NFT auction
+
+[🔹 **createAuctionCelo()**](#createauctioncelo) 
+
+> **POST** `/v3/blockchain/auction/sell`
+> 
+> Sell an asset at the NFT auction
+
+[🔹 **createAuctionCeloKMS()**](#createauctioncelokms) 
+
+> **POST** `/v3/blockchain/auction/sell`
+> 
+> Sell an asset at the NFT auction
+
+[🔹 **createAuctionKMS()**](#createauctionkms) 
+
+> **POST** `/v3/blockchain/auction/sell`
+> 
+> Sell an asset at the NFT auction
+
+[🔹 **generateAuction()**](#generateauction) 
+
+> **POST** `/v3/blockchain/auction`
+> 
+> Create an NFT auction
+
+[🔹 **generateAuctionCelo()**](#generateauctioncelo) 
+
+> **POST** `/v3/blockchain/auction`
+> 
+> Create an NFT auction
+
+[🔹 **generateAuctionCeloKMS()**](#generateauctioncelokms) 
+
+> **POST** `/v3/blockchain/auction`
+> 
+> Create an NFT auction
+
+[🔹 **generateAuctionKMS()**](#generateauctionkms) 
+
+> **POST** `/v3/blockchain/auction`
+> 
+> Create an NFT auction
+
+[🔹 **getAuction()**](#getauction) 
+
+> **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/{id}`
+> 
+> Get information about an auctioned asset at the NFT auction
+
+[🔹 **getAuctionFee()**](#getauctionfee) 
+
+> **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/fee`
+> 
+> Get the NFT auction fee
+
+[🔹 **getAuctionFeeRecipient()**](#getauctionfeerecipient) 
+
+> **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/recipient`
+> 
+> Get the recipient of the NFT auction fee
+
+[🔹 **settleAuction()**](#settleauction) 
+
+> **POST** `/v3/blockchain/auction/settle`
+> 
+> Settle an NFT auction
+
+[🔹 **settleAuctionCelo()**](#settleauctioncelo) 
+
+> **POST** `/v3/blockchain/auction/settle`
+> 
+> Settle an NFT auction
+
+[🔹 **settleAuctionCeloKMS()**](#settleauctioncelokms) 
+
+> **POST** `/v3/blockchain/auction/settle`
+> 
+> Settle an NFT auction
+
+[🔹 **settleAuctionKMS()**](#settleauctionkms) 
+
+> **POST** `/v3/blockchain/auction/settle`
+> 
+> Settle an NFT auction
+
+[🔹 **updateFeeAuction()**](#updatefeeauction) 
+
+> **PUT** `/v3/blockchain/auction/fee`
+> 
+> Update the NFT auction fee
+
+[🔹 **updateFeeAuctionCelo()**](#updatefeeauctioncelo) 
+
+> **PUT** `/v3/blockchain/auction/fee`
+> 
+> Update the NFT auction fee
+
+[🔹 **updateFeeAuctionCeloKMS()**](#updatefeeauctioncelokms) 
+
+> **PUT** `/v3/blockchain/auction/fee`
+> 
+> Update the NFT auction fee
+
+[🔹 **updateFeeAuctionKMS()**](#updatefeeauctionkms) 
+
+> **PUT** `/v3/blockchain/auction/fee`
+> 
+> Update the NFT auction fee
+
 
 
 ## `approveNftSpending()`

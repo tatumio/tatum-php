@@ -1,25 +1,103 @@
 # Tatum/Api/BNBSmartChainApi
 
-* BNB Smart Chain [documentation](https://apidoc.tatum.io/tag/BNB-Smart-Chain/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**bsc Broadcast()**](#bscbroadcast) | **POST** `/v3 /bsc /broadcast` | Broadcast signed BSC transaction
-[**bsc Generate Address()**](#bscgenerateaddress) | **GET** `/v3 /bsc /address /{xpub} /{index}` | Generate BSC account address from Extended public key
-[**bsc Generate Address Private Key()**](#bscgenerateaddressprivatekey) | **POST** `/v3 /bsc /wallet /priv` | Generate BSC private key
-[**bsc Generate Wallet()**](#bscgeneratewallet) | **GET** `/v3 /bsc /wallet` | Generate BSC wallet
-[**bsc Get Balance()**](#bscgetbalance) | **GET** `/v3 /bsc /account /balance /{address}` | Get BSC Account balance
-[**bsc Get Block()**](#bscgetblock) | **GET** `/v3 /bsc /block /{hash}` | Get BSC block by hash
-[**bsc Get Current Block()**](#bscgetcurrentblock) | **GET** `/v3 /bsc /block /current` | Get current block number
-[**bsc Get Transaction()**](#bscgettransaction) | **GET** `/v3 /bsc /transaction /{hash}` | Get BSC Transaction
-[**bsc Get Transaction Count()**](#bscgettransactioncount) | **GET** `/v3 /bsc /transaction /count /{address}` | Get count of outgoing BSC transactions
-[**bsc Web3 Driver()**](#bscweb3driver) | **POST** `/v3 /bsc /web3 /{xApiKey}` | Web3 HTTP driver
-[**call Bsc Smart Contract Method()**](#callbscsmartcontractmethod) | **POST** `/v3 /bsc /smartcontract` | Invoke a method in a smart contract on BNB Smart Chain
-[**call Bsc Smart Contract Method KMS()**](#callbscsmartcontractmethodkms) | **POST** `/v3 /bsc /smartcontract` | Invoke a method in a smart contract on BNB Smart Chain
-[**call Bsc Smart Contract Read Method()**](#callbscsmartcontractreadmethod) | **POST** `/v3 /bsc /smartcontract` | Invoke a method in a smart contract on BNB Smart Chain
-[**transfer Bsc Blockchain()**](#transferbscblockchain) | **POST** `/v3 /bsc /transaction` | Send BSC / BEP20 from account to account
-[**transfer Bsc Blockchain KMS()**](#transferbscblockchainkms) | **POST** `/v3 /bsc /transaction` | Send BSC / BEP20 from account to account
+[BNB Smart Chain API documentation](https://apidoc.tatum.io/tag/BNB-Smart-Chain/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **bscBroadcast()**](#bscbroadcast) 
+
+> **POST** `/v3/bsc/broadcast`
+> 
+> Broadcast signed BSC transaction
+
+[🔹 **bscGenerateAddress()**](#bscgenerateaddress) 
+
+> **GET** `/v3/bsc/address/{xpub}/{index}`
+> 
+> Generate BSC account address from Extended public key
+
+[🔹 **bscGenerateAddressPrivateKey()**](#bscgenerateaddressprivatekey) 
+
+> **POST** `/v3/bsc/wallet/priv`
+> 
+> Generate BSC private key
+
+[🔹 **bscGenerateWallet()**](#bscgeneratewallet) 
+
+> **GET** `/v3/bsc/wallet`
+> 
+> Generate BSC wallet
+
+[🔹 **bscGetBalance()**](#bscgetbalance) 
+
+> **GET** `/v3/bsc/account/balance/{address}`
+> 
+> Get BSC Account balance
+
+[🔹 **bscGetBlock()**](#bscgetblock) 
+
+> **GET** `/v3/bsc/block/{hash}`
+> 
+> Get BSC block by hash
+
+[🔹 **bscGetCurrentBlock()**](#bscgetcurrentblock) 
+
+> **GET** `/v3/bsc/block/current`
+> 
+> Get current block number
+
+[🔹 **bscGetTransaction()**](#bscgettransaction) 
+
+> **GET** `/v3/bsc/transaction/{hash}`
+> 
+> Get BSC Transaction
+
+[🔹 **bscGetTransactionCount()**](#bscgettransactioncount) 
+
+> **GET** `/v3/bsc/transaction/count/{address}`
+> 
+> Get count of outgoing BSC transactions
+
+[🔹 **bscWeb3Driver()**](#bscweb3driver) 
+
+> **POST** `/v3/bsc/web3/{xApiKey}`
+> 
+> Web3 HTTP driver
+
+[🔹 **callBscSmartContractMethod()**](#callbscsmartcontractmethod) 
+
+> **POST** `/v3/bsc/smartcontract`
+> 
+> Invoke a method in a smart contract on BNB Smart Chain
+
+[🔹 **callBscSmartContractMethodKMS()**](#callbscsmartcontractmethodkms) 
+
+> **POST** `/v3/bsc/smartcontract`
+> 
+> Invoke a method in a smart contract on BNB Smart Chain
+
+[🔹 **callBscSmartContractReadMethod()**](#callbscsmartcontractreadmethod) 
+
+> **POST** `/v3/bsc/smartcontract`
+> 
+> Invoke a method in a smart contract on BNB Smart Chain
+
+[🔹 **transferBscBlockchain()**](#transferbscblockchain) 
+
+> **POST** `/v3/bsc/transaction`
+> 
+> Send BSC / BEP20 from account to account
+
+[🔹 **transferBscBlockchainKMS()**](#transferbscblockchainkms) 
+
+> **POST** `/v3/bsc/transaction`
+> 
+> Send BSC / BEP20 from account to account
+
 
 
 ## `bscBroadcast()`

@@ -1,31 +1,139 @@
 # Tatum/Api/FlowApi
 
-* Flow [documentation](https://apidoc.tatum.io/tag/Flow/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**flow Add Pub Key Mnemonic()**](#flowaddpubkeymnemonic) | **PUT** `/v3 /flow /account` | Add public key to Flow address
-[**flow Add Pub Key Secret()**](#flowaddpubkeysecret) | **PUT** `/v3 /flow /account` | Add public key to Flow address
-[**flow Add Pub Key Secret KMS()**](#flowaddpubkeysecretkms) | **PUT** `/v3 /flow /account` | Add public key to Flow address
-[**flow Create Address From Pub Key KMS()**](#flowcreateaddressfrompubkeykms) | **POST** `/v3 /flow /account` | Create Flow address from public key
-[**flow Create Address From Pub Key Mnemonic()**](#flowcreateaddressfrompubkeymnemonic) | **POST** `/v3 /flow /account` | Create Flow address from public key
-[**flow Create Address From Pub Key Secret()**](#flowcreateaddressfrompubkeysecret) | **POST** `/v3 /flow /account` | Create Flow address from public key
-[**flow Custom Transaction KMS()**](#flowcustomtransactionkms) | **POST** `/v3 /flow /transaction /custom` | Send arbitrary transaction to blockchain
-[**flow Custom Transaction Mnemonic()**](#flowcustomtransactionmnemonic) | **POST** `/v3 /flow /transaction /custom` | Send arbitrary transaction to blockchain
-[**flow Custom Transaction PK()**](#flowcustomtransactionpk) | **POST** `/v3 /flow /transaction /custom` | Send arbitrary transaction to blockchain
-[**flow Generate Address()**](#flowgenerateaddress) | **GET** `/v3 /flow /address /{xpub} /{index}` | Generate Flow address from Extended public key
-[**flow Generate Pub Key()**](#flowgeneratepubkey) | **GET** `/v3 /flow /pubkey /{xpub} /{index}` | Generate Flow public key from Extended public key
-[**flow Generate Pub Key Private Key()**](#flowgeneratepubkeyprivatekey) | **POST** `/v3 /flow /wallet /priv` | Generate Flow private key
-[**flow Generate Wallet()**](#flowgeneratewallet) | **GET** `/v3 /flow /wallet` | Generate Flow wallet
-[**flow Get Account()**](#flowgetaccount) | **GET** `/v3 /flow /account /{address}` | Get the balance of a Flow account
-[**flow Get Block()**](#flowgetblock) | **GET** `/v3 /flow /block /{hash}` | Get Flow Block by hash or height
-[**flow Get Block Chain Info()**](#flowgetblockchaininfo) | **GET** `/v3 /flow /block /current` | Get Flow current block number
-[**flow Get Block Events()**](#flowgetblockevents) | **GET** `/v3 /flow /block /events` | Get Flow events from blocks
-[**flow Get Raw Transaction()**](#flowgetrawtransaction) | **GET** `/v3 /flow /transaction /{hash}` | Get Flow Transaction by hash
-[**flow Transaction KMS()**](#flowtransactionkms) | **POST** `/v3 /flow /transaction` | Send Flow to blockchain addresses
-[**flow Transaction Mnemonic()**](#flowtransactionmnemonic) | **POST** `/v3 /flow /transaction` | Send Flow to blockchain addresses
-[**flow Transaction PK()**](#flowtransactionpk) | **POST** `/v3 /flow /transaction` | Send Flow to blockchain addresses
+[Flow API documentation](https://apidoc.tatum.io/tag/Flow/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **flowAddPubKeyMnemonic()**](#flowaddpubkeymnemonic) 
+
+> **PUT** `/v3/flow/account`
+> 
+> Add public key to Flow address
+
+[🔹 **flowAddPubKeySecret()**](#flowaddpubkeysecret) 
+
+> **PUT** `/v3/flow/account`
+> 
+> Add public key to Flow address
+
+[🔹 **flowAddPubKeySecretKMS()**](#flowaddpubkeysecretkms) 
+
+> **PUT** `/v3/flow/account`
+> 
+> Add public key to Flow address
+
+[🔹 **flowCreateAddressFromPubKeyKMS()**](#flowcreateaddressfrompubkeykms) 
+
+> **POST** `/v3/flow/account`
+> 
+> Create Flow address from public key
+
+[🔹 **flowCreateAddressFromPubKeyMnemonic()**](#flowcreateaddressfrompubkeymnemonic) 
+
+> **POST** `/v3/flow/account`
+> 
+> Create Flow address from public key
+
+[🔹 **flowCreateAddressFromPubKeySecret()**](#flowcreateaddressfrompubkeysecret) 
+
+> **POST** `/v3/flow/account`
+> 
+> Create Flow address from public key
+
+[🔹 **flowCustomTransactionKMS()**](#flowcustomtransactionkms) 
+
+> **POST** `/v3/flow/transaction/custom`
+> 
+> Send arbitrary transaction to blockchain
+
+[🔹 **flowCustomTransactionMnemonic()**](#flowcustomtransactionmnemonic) 
+
+> **POST** `/v3/flow/transaction/custom`
+> 
+> Send arbitrary transaction to blockchain
+
+[🔹 **flowCustomTransactionPK()**](#flowcustomtransactionpk) 
+
+> **POST** `/v3/flow/transaction/custom`
+> 
+> Send arbitrary transaction to blockchain
+
+[🔹 **flowGenerateAddress()**](#flowgenerateaddress) 
+
+> **GET** `/v3/flow/address/{xpub}/{index}`
+> 
+> Generate Flow address from Extended public key
+
+[🔹 **flowGeneratePubKey()**](#flowgeneratepubkey) 
+
+> **GET** `/v3/flow/pubkey/{xpub}/{index}`
+> 
+> Generate Flow public key from Extended public key
+
+[🔹 **flowGeneratePubKeyPrivateKey()**](#flowgeneratepubkeyprivatekey) 
+
+> **POST** `/v3/flow/wallet/priv`
+> 
+> Generate Flow private key
+
+[🔹 **flowGenerateWallet()**](#flowgeneratewallet) 
+
+> **GET** `/v3/flow/wallet`
+> 
+> Generate Flow wallet
+
+[🔹 **flowGetAccount()**](#flowgetaccount) 
+
+> **GET** `/v3/flow/account/{address}`
+> 
+> Get the balance of a Flow account
+
+[🔹 **flowGetBlock()**](#flowgetblock) 
+
+> **GET** `/v3/flow/block/{hash}`
+> 
+> Get Flow Block by hash or height
+
+[🔹 **flowGetBlockChainInfo()**](#flowgetblockchaininfo) 
+
+> **GET** `/v3/flow/block/current`
+> 
+> Get Flow current block number
+
+[🔹 **flowGetBlockEvents()**](#flowgetblockevents) 
+
+> **GET** `/v3/flow/block/events`
+> 
+> Get Flow events from blocks
+
+[🔹 **flowGetRawTransaction()**](#flowgetrawtransaction) 
+
+> **GET** `/v3/flow/transaction/{hash}`
+> 
+> Get Flow Transaction by hash
+
+[🔹 **flowTransactionKMS()**](#flowtransactionkms) 
+
+> **POST** `/v3/flow/transaction`
+> 
+> Send Flow to blockchain addresses
+
+[🔹 **flowTransactionMnemonic()**](#flowtransactionmnemonic) 
+
+> **POST** `/v3/flow/transaction`
+> 
+> Send Flow to blockchain addresses
+
+[🔹 **flowTransactionPK()**](#flowtransactionpk) 
+
+> **POST** `/v3/flow/transaction`
+> 
+> Send Flow to blockchain addresses
+
 
 
 ## `flowAddPubKeyMnemonic()`

@@ -1,12 +1,25 @@
 # Tatum/Api/BlockchainUtilsApi
 
-* Blockchain utils [documentation](https://apidoc.tatum.io/tag/Blockchain-utils/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get Auction Estimated Time()**](#getauctionestimatedtime) | **GET** `/v3 /blockchain /auction /time /{chain} /{date}` | Estimate the block height for a future point in time
-[**s CGet Contract Address()**](#scgetcontractaddress) | **GET** `/v3 /blockchain /sc /address /{chain} /{hash}` | Get the blockchain address of a smart contract by the deployment transaction ID
+[Blockchain utils API documentation](https://apidoc.tatum.io/tag/Blockchain-utils/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **getAuctionEstimatedTime()**](#getauctionestimatedtime) 
+
+> **GET** `/v3/blockchain/auction/time/{chain}/{date}`
+> 
+> Estimate the block height for a future point in time
+
+[🔹 **sCGetContractAddress()**](#scgetcontractaddress) 
+
+> **GET** `/v3/blockchain/sc/address/{chain}/{hash}`
+> 
+> Get the blockchain address of a smart contract by the deployment transaction ID
+
 
 
 ## `getAuctionEstimatedTime()`

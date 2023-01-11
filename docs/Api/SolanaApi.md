@@ -1,19 +1,67 @@
 # Tatum/Api/SolanaApi
 
-* Solana [documentation](https://apidoc.tatum.io/tag/Solana/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**solana Broadcast Confirm()**](#solanabroadcastconfirm) | **POST** `/v3 /solana /broadcast /confirm` | Broadcast and confirm signed Solana transaction
-[**solana Generate Wallet()**](#solanageneratewallet) | **GET** `/v3 /solana /wallet` | Generate Solana wallet
-[**solana Get Balance()**](#solanagetbalance) | **GET** `/v3 /solana /account /balance /{address}` | Get Solana Account balance
-[**solana Get Block()**](#solanagetblock) | **GET** `/v3 /solana /block /{height}` | Get Solana block by number
-[**solana Get Current Block()**](#solanagetcurrentblock) | **GET** `/v3 /solana /block /current` | Get current block number
-[**solana Get Transaction()**](#solanagettransaction) | **GET** `/v3 /solana /transaction /{hash}` | Get Solana Transaction
-[**solana Web3 Driver()**](#solanaweb3driver) | **POST** `/v3 /solana /web3 /{xApiKey}` | JSON RPC HTTP driver
-[**transfer Solana Blockchain()**](#transfersolanablockchain) | **POST** `/v3 /solana /transaction` | Send SOL from account to account
-[**transfer Solana Blockchain KMS()**](#transfersolanablockchainkms) | **POST** `/v3 /solana /transaction` | Send SOL from account to account
+[Solana API documentation](https://apidoc.tatum.io/tag/Solana/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **solanaBroadcastConfirm()**](#solanabroadcastconfirm) 
+
+> **POST** `/v3/solana/broadcast/confirm`
+> 
+> Broadcast and confirm signed Solana transaction
+
+[🔹 **solanaGenerateWallet()**](#solanageneratewallet) 
+
+> **GET** `/v3/solana/wallet`
+> 
+> Generate Solana wallet
+
+[🔹 **solanaGetBalance()**](#solanagetbalance) 
+
+> **GET** `/v3/solana/account/balance/{address}`
+> 
+> Get Solana Account balance
+
+[🔹 **solanaGetBlock()**](#solanagetblock) 
+
+> **GET** `/v3/solana/block/{height}`
+> 
+> Get Solana block by number
+
+[🔹 **solanaGetCurrentBlock()**](#solanagetcurrentblock) 
+
+> **GET** `/v3/solana/block/current`
+> 
+> Get current block number
+
+[🔹 **solanaGetTransaction()**](#solanagettransaction) 
+
+> **GET** `/v3/solana/transaction/{hash}`
+> 
+> Get Solana Transaction
+
+[🔹 **solanaWeb3Driver()**](#solanaweb3driver) 
+
+> **POST** `/v3/solana/web3/{xApiKey}`
+> 
+> JSON RPC HTTP driver
+
+[🔹 **transferSolanaBlockchain()**](#transfersolanablockchain) 
+
+> **POST** `/v3/solana/transaction`
+> 
+> Send SOL from account to account
+
+[🔹 **transferSolanaBlockchainKMS()**](#transfersolanablockchainkms) 
+
+> **POST** `/v3/solana/transaction`
+> 
+> Send SOL from account to account
+
 
 
 ## `solanaBroadcastConfirm()`

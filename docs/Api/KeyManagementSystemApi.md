@@ -1,15 +1,43 @@
 # Tatum/Api/KeyManagementSystemApi
 
-* Key Management System [documentation](https://apidoc.tatum.io/tag/Key-Management-System/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**complete Pending Signature()**](#completependingsignature) | **PUT** `/v3 /kms /{id} /{txId}` | Complete pending transaction to sign
-[**delete Pending Transaction To Sign()**](#deletependingtransactiontosign) | **DELETE** `/v3 /kms /{id}` | Delete transaction
-[**get Pending Transaction To Sign()**](#getpendingtransactiontosign) | **GET** `/v3 /kms /{id}` | Get transaction details
-[**get Pending Transactions To Sign()**](#getpendingtransactionstosign) | **GET** `/v3 /kms /pending /{chain}` | Get pending transactions to sign
-[**receive Pending Transactions To Sign()**](#receivependingtransactionstosign) | **POST** `/v3 /kms /pending /{chain}` | Get pending transactions to sign
+[Key Management System API documentation](https://apidoc.tatum.io/tag/Key-Management-System/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **completePendingSignature()**](#completependingsignature) 
+
+> **PUT** `/v3/kms/{id}/{txId}`
+> 
+> Complete pending transaction to sign
+
+[🔹 **deletePendingTransactionToSign()**](#deletependingtransactiontosign) 
+
+> **DELETE** `/v3/kms/{id}`
+> 
+> Delete transaction
+
+[🔹 **getPendingTransactionToSign()**](#getpendingtransactiontosign) 
+
+> **GET** `/v3/kms/{id}`
+> 
+> Get transaction details
+
+[🔹 **getPendingTransactionsToSign()**](#getpendingtransactionstosign) 
+
+> **GET** `/v3/kms/pending/{chain}`
+> 
+> Get pending transactions to sign
+
+[🔹 **receivePendingTransactionsToSign()**](#receivependingtransactionstosign) 
+
+> **POST** `/v3/kms/pending/{chain}`
+> 
+> Get pending transactions to sign
+
 
 
 ## `completePendingSignature()`

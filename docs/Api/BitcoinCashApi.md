@@ -1,22 +1,85 @@
 # Tatum/Api/BitcoinCashApi
 
-* Bitcoin Cash [documentation](https://apidoc.tatum.io/tag/Bitcoin-Cash/)
-* HTTP requests are relative to https://api.tatum.io
+## References
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**bch Broadcast()**](#bchbroadcast) | **POST** `/v3 /bcash /broadcast` | Broadcast signed Bitcoin Cash transaction
-[**bch Generate Address()**](#bchgenerateaddress) | **GET** `/v3 /bcash /address /{xpub} /{index}` | Generate Bitcoin Cash deposit address from Extended public key
-[**bch Generate Address Private Key()**](#bchgenerateaddressprivatekey) | **POST** `/v3 /bcash /wallet /priv` | Generate Bitcoin Cash private key
-[**bch Generate Wallet()**](#bchgeneratewallet) | **GET** `/v3 /bcash /wallet` | Generate Bitcoin Cash wallet
-[**bch Get Block()**](#bchgetblock) | **GET** `/v3 /bcash /block /{hash}` | Get Bitcoin Cash Block by hash
-[**bch Get Block Chain Info()**](#bchgetblockchaininfo) | **GET** `/v3 /bcash /info` | Get Bitcoin Cash Blockchain Information
-[**bch Get Block Hash()**](#bchgetblockhash) | **GET** `/v3 /bcash /block /hash /{i}` | Get Bitcoin Cash Block hash
-[**bch Get Raw Transaction()**](#bchgetrawtransaction) | **GET** `/v3 /bcash /transaction /{hash}` | Get Bitcoin Cash Transaction by hash
-[**bch Get Tx By Address()**](#bchgettxbyaddress) | **GET** `/v3 /bcash /transaction /address /{address}` | Get Bitcoin Cash Transactions by address
-[**bch Rpc Driver()**](#bchrpcdriver) | **POST** `/v3 /bcash /node` | JSON RPC HTTP driver
-[**bch Transaction()**](#bchtransaction) | **POST** `/v3 /bcash /transaction` | Send BCH to Bitcoin Cash addresses
-[**bch Transaction KMS()**](#bchtransactionkms) | **POST** `/v3 /bcash /transaction` | Send BCH to Bitcoin Cash addresses
+[Bitcoin Cash API documentation](https://apidoc.tatum.io/tag/Bitcoin-Cash/)
+
+## Methods
+
+HTTP requests are relative to https://api.tatum.io
+
+[🔹 **bchBroadcast()**](#bchbroadcast) 
+
+> **POST** `/v3/bcash/broadcast`
+> 
+> Broadcast signed Bitcoin Cash transaction
+
+[🔹 **bchGenerateAddress()**](#bchgenerateaddress) 
+
+> **GET** `/v3/bcash/address/{xpub}/{index}`
+> 
+> Generate Bitcoin Cash deposit address from Extended public key
+
+[🔹 **bchGenerateAddressPrivateKey()**](#bchgenerateaddressprivatekey) 
+
+> **POST** `/v3/bcash/wallet/priv`
+> 
+> Generate Bitcoin Cash private key
+
+[🔹 **bchGenerateWallet()**](#bchgeneratewallet) 
+
+> **GET** `/v3/bcash/wallet`
+> 
+> Generate Bitcoin Cash wallet
+
+[🔹 **bchGetBlock()**](#bchgetblock) 
+
+> **GET** `/v3/bcash/block/{hash}`
+> 
+> Get Bitcoin Cash Block by hash
+
+[🔹 **bchGetBlockChainInfo()**](#bchgetblockchaininfo) 
+
+> **GET** `/v3/bcash/info`
+> 
+> Get Bitcoin Cash Blockchain Information
+
+[🔹 **bchGetBlockHash()**](#bchgetblockhash) 
+
+> **GET** `/v3/bcash/block/hash/{i}`
+> 
+> Get Bitcoin Cash Block hash
+
+[🔹 **bchGetRawTransaction()**](#bchgetrawtransaction) 
+
+> **GET** `/v3/bcash/transaction/{hash}`
+> 
+> Get Bitcoin Cash Transaction by hash
+
+[🔹 **bchGetTxByAddress()**](#bchgettxbyaddress) 
+
+> **GET** `/v3/bcash/transaction/address/{address}`
+> 
+> Get Bitcoin Cash Transactions by address
+
+[🔹 **bchRpcDriver()**](#bchrpcdriver) 
+
+> **POST** `/v3/bcash/node`
+> 
+> JSON RPC HTTP driver
+
+[🔹 **bchTransaction()**](#bchtransaction) 
+
+> **POST** `/v3/bcash/transaction`
+> 
+> Send BCH to Bitcoin Cash addresses
+
+[🔹 **bchTransactionKMS()**](#bchtransactionkms) 
+
+> **POST** `/v3/bcash/transaction`
+> 
+> Send BCH to Bitcoin Cash addresses
+
 
 
 ## `bchBroadcast()`
