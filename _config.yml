@@ -1,4 +1,4 @@
 name: Tatum - PHP SDK
+description: A flexible framework to build, run, and scale blockchain apps with PHP
 markdown: kramdown
-kramdown:
-  syntax_highlighter: coderay
+theme: leap-day
