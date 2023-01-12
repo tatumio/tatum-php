@@ -64,8 +64,7 @@ List all deposits for product
 
 <h4>1 credit per API call.</h4>
 
-<p>Lists all deposits for API key.</p>
-
+Lists all deposits for API key.
 
 ### Example
 
@@ -115,8 +114,7 @@ Count of found entities for get deposits request
 
 <h4>1 credit per API call.</h4>
 
-<p>Counts total entities found by get deposits request.</p>
-
+Counts total entities found by get deposits request.
 
 ### Example
 

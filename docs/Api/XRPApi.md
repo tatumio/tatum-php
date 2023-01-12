@@ -140,10 +140,9 @@ Modify XRP account
 
 <h4>10 credits per API call.</h4>
 
-<p> <p>Modify XRP account settings. If an XRP account should be an issuer of the custom asset, this accounts should have rippling enabled to true. In order to support off-chain processing, required destination tag should be set on the account.
+ Modify XRP account settings. If an XRP account should be an issuer of the custom asset, this accounts should have rippling enabled to true. In order to support off-chain processing, required destination tag should be set on the account.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 ### Example
 
@@ -213,10 +212,9 @@ Send XRP from address to address
 
 <h4>10 credits per API call.</h4>
 
- <p>Send XRP from account to account.
+ Send XRP from account to account.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 ### Example
 
@@ -354,11 +352,10 @@ Create / Update / Delete XRP trust line
 
 <h4>10 credits per API call.</h4>
 
-<p> <p>Create / Update / Delete XRP trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions.
+ Create / Update / Delete XRP trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions.
  Account setting rippling must be enabled on the issuer account before the trust line creation to asset work correctly. Creating a trust line will cause an additional 5 XRP to be blocked on the account.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.</p>
-
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 ### Example
 
@@ -428,8 +425,7 @@ Broadcast signed XRP transaction
 
 <h4>5 credits per API call.</h4>
 
- <p>Broadcast signed transaction to XRP blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.</p>
-
+ Broadcast signed transaction to XRP blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 ### Example
 
@@ -465,8 +461,7 @@ Get Account Balance
 
 <h4>5 credits per API call.</h4>
 
-<p>Get XRP Account Balance. Obtain balance of the XRP and other assets on the account.</p>
-
+Get XRP Account Balance. Obtain balance of the XRP and other assets on the account.
 
 ### Example
 
@@ -502,8 +497,7 @@ Get Account info
 
 <h4>5 credits per API call.</h4>
 
-<p>Get XRP Account info.</p>
-
+Get XRP Account info.
 
 ### Example
 
@@ -543,8 +537,7 @@ Get Account transactions
 
 <h4>5 credits per API call.</h4>
 
-<p>List all Account transactions.</p>
-
+List all Account transactions.
 
 ### Example
 
@@ -577,8 +570,7 @@ Get actual Blockchain fee
 
 <h4>5 credits per API call.</h4>
 
- <p>Get XRP Blockchain fee. Standard fee for the transaction is available in the drops.base_fee section and is 10 XRP drops by default. When there is a heavy traffic on the blockchain, fees are increasing according to current traffic.</p>
-
+ Get XRP Blockchain fee. Standard fee for the transaction is available in the drops.base_fee section and is 10 XRP drops by default. When there is a heavy traffic on the blockchain, fees are increasing according to current traffic.
 
 ### Example
 
@@ -611,8 +603,7 @@ Get XRP Blockchain Information
 
 <h4>5 credits per API call.</h4>
 
-<p>Get XRP Blockchain last closed ledger index and hash.</p>
-
+Get XRP Blockchain last closed ledger index and hash.
 
 ### Example
 
@@ -648,8 +639,7 @@ Get Ledger
 
 <h4>5 credits per API call.</h4>
 
-<p>Get ledger by sequence.</p>
-
+Get ledger by sequence.
 
 ### Example
 
@@ -685,8 +675,7 @@ Get XRP Transaction by hash
 
 <h4>5 credits per API call.</h4>
 
-<p>Get XRP Transaction by transaction hash.</p>
-
+Get XRP Transaction by transaction hash.
 
 ### Example
 
@@ -719,8 +708,7 @@ Generate XRP account
 
 <h4>5 credits per API call.</h4>
 
- <p>Generate XRP account. Tatum does not support HD wallet for XRP, only specific address and private key can be generated.</p>
-
+ Generate XRP account. Tatum does not support HD wallet for XRP, only specific address and private key can be generated.
 
 ### Example
 

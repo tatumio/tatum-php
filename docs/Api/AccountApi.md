@@ -152,8 +152,7 @@ Activate account
 
 <h4>2 credits per API call.</h4>
 
-<p>Activates an account.</p>
-
+Activates an account.
 
 ### Example
 
@@ -191,8 +190,7 @@ Block an amount in an account
 
 <h4>2 credits per API call.</h4>
 
- <p>Blocks an amount in an account. Any number of distinct amounts can be blocked in one account. Every new blockage has its own distinct ID, which is used as a reference. When the amount is blocked, it is debited from the available balance of the account. The account balance remains the same. The account balance represents the total amount of funds in the account. The available balance represents the total amount of funds that can be used to perform transactions. When an account is frozen, the available balance is set to 0 minus all blockages for the account.</p>
-
+ Blocks an amount in an account. Any number of distinct amounts can be blocked in one account. Every new blockage has its own distinct ID, which is used as a reference. When the amount is blocked, it is debited from the available balance of the account. The account balance remains the same. The account balance represents the total amount of funds in the account. The available balance represents the total amount of funds that can be used to perform transactions. When an account is frozen, the available balance is set to 0 minus all blockages for the account.
 
 ### Example
 
@@ -262,8 +260,7 @@ Create multiple accounts in a batch call
 
 <h4>2 credits per API call + 1 credit for every account created.</h4>
 
- <p>Creates new accounts for the customer in a batch call.</p>
-
+ Creates new accounts for the customer in a batch call.
 
 ### Example
 
@@ -297,19 +294,32 @@ Name | Type | Description  | Notes
 
 Create a virtual account
 
-<p><b>2 credits per API call</b></p>
- <p>Create a new virtual account for a customer.</p>
- <ul> <li>If the customer that you specified in the request body already exists, the newly created virtual account is added to this customer's list of accounts.</li> <li>If the customer that you specified in the request body does not exist yet, a new customer is created together with the virtual account, and the virtual account is added to this customer.</li> </ul> <p>You can create a virtual account for any supported cryptocurrency, fiat currency, Tatum virtual currency, or fungible tokens created within Tatum. Once the currency/asset is set for a virtual account, it cannot be changed.</p>
- <p><b>Virtual account balance</b></p>
- <p>A virtual account has its own balance. The balance can be logically presented by the account balance and available balance:</p>
- <ul> <li>The <b>account balance</b> (<code>accountBalance</code>) represents all assets on the account, both available and blocked.</li> <li>The <b>available balance</b> (<code>availableBalance</code>) represents the account balance minus the blocked assets. Use the available balance to determine how much a customer can send or withdraw from their virtual account.</li> </ul> <p><b>Cryptocurrency virtual accounts</b></p>
- <p>When you create a virtual account based on a cryptocurrency (for example, BTC or ETH), you have to provide the extended public key (<code>xpub</code>) of the blockchain wallet that will be connected to this account.</p>
- <p><b>NOTE:</b> Adding <code>xpub</code> to the virtual account does <b>not</b> connect any specific blockchain address to this account. <code>xpub</code> is a generator of addresses, not an address itself.</p>
- <p>Not all blockchains provide <code>xpub</code> for wallets, or Tatum may not support wallets on some blockchains. In such cases, use the wallet address or the account address instead.</p>
- <ul> <li><b>ALGO:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>BCH:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Bitcoin-Cash#operation/BchGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>BNB:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/BNB-Beacon-Chain#operation/BnbGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>BSC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/BNB-Smart-Chain#operation/BscGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>BTC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Bitcoin#operation/BtcGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>CELO:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Celo#operation/CeloGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>DOGE:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Dogecoin#operation/DogeGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>EGLD:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/Elrond#operation/EgldGenerateAddress" target="_blank">generated blockchain address</a> instead.
-Blockchain addresses on Elrond are generated based on the mnemonic of an Elrond wallet. If you do not have an Elrond wallet, <a href="https://apidoc.tatum.io/tag/Elrond/#operation/EgldGenerateWallet" target="_blank">create one</a>.</li> <li><b>ETH:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>FLOW:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>KCS:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/KuCoin#operation/KcsGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>KLAY:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>LTC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Litecoin#operation/LtcGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>MATIC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Polygon#operation/PolygonGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>SOL:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/Solana#operation/SolanaGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>TRON:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Tron#operation/GenerateTronwallet" target="_blank">generated wallet</a>.</li> <li><b>XDC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/XinFin#operation/XdcGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>XLM:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/Stellar#operation/XlmWallet" target="_blank">generated account</a> instead.</li> <li><b>XRP:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/XRP#operation/XrpWallet" target="_blank">generated account</a> instead.</li> </ul> <p><b>Connect a virtual account to the blockchain</b></p>
- <ul> <li>If the virtual account was created with the wallet's <code>xpub</code>, <a href="https://apidoc.tatum.io/tag/Blockchain-addresses#operation/generateDepositAddress" target="_blank">generate a new blockchain address</a> for this account.</li> <li>If the virtual account was created with the wallet's or account's address instead of the wallet's <code>xpub</code>, <a href="https://apidoc.tatum.io/tag/Blockchain-addresses#operation/assignAddress" target="_blank">assign an existing blockchain address</a> to this account.</li> </ul> <p>You can connect multiple blockchain addresses to one virtual account.</p>
+<b>2 credits per API call</b>
 
+ Create a new virtual account for a customer.
+
+ <ul> <li>If the customer that you specified in the request body already exists, the newly created virtual account is added to this customer's list of accounts.</li> <li>If the customer that you specified in the request body does not exist yet, a new customer is created together with the virtual account, and the virtual account is added to this customer.</li> </ul>
+ You can create a virtual account for any supported cryptocurrency, fiat currency, Tatum virtual currency, or fungible tokens created within Tatum. Once the currency/asset is set for a virtual account, it cannot be changed.
+
+ <b>Virtual account balance</b>
+
+ A virtual account has its own balance. The balance can be logically presented by the account balance and available balance:
+
+ <ul> <li>The <b>account balance</b> (<code>accountBalance</code>) represents all assets on the account, both available and blocked.</li> <li>The <b>available balance</b> (<code>availableBalance</code>) represents the account balance minus the blocked assets. Use the available balance to determine how much a customer can send or withdraw from their virtual account.</li> </ul>
+ <b>Cryptocurrency virtual accounts</b>
+
+ When you create a virtual account based on a cryptocurrency (for example, BTC or ETH), you have to provide the extended public key (<code>xpub</code>) of the blockchain wallet that will be connected to this account.
+
+ <b>NOTE:</b> Adding <code>xpub</code> to the virtual account does <b>not</b> connect any specific blockchain address to this account. <code>xpub</code> is a generator of addresses, not an address itself.
+
+ Not all blockchains provide <code>xpub</code> for wallets, or Tatum may not support wallets on some blockchains. In such cases, use the wallet address or the account address instead.
+
+ <ul> <li><b>ALGO:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>BCH:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Bitcoin-Cash#operation/BchGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>BNB:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/BNB-Beacon-Chain#operation/BnbGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>BSC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/BNB-Smart-Chain#operation/BscGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>BTC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Bitcoin#operation/BtcGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>CELO:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Celo#operation/CeloGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>DOGE:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Dogecoin#operation/DogeGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>EGLD:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/Elrond#operation/EgldGenerateAddress" target="_blank">generated blockchain address</a> instead.
+Blockchain addresses on Elrond are generated based on the mnemonic of an Elrond wallet. If you do not have an Elrond wallet, <a href="https://apidoc.tatum.io/tag/Elrond/#operation/EgldGenerateWallet" target="_blank">create one</a>.</li> <li><b>ETH:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>FLOW:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>KCS:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/KuCoin#operation/KcsGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>KLAY:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>LTC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Litecoin#operation/LtcGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>MATIC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Polygon#operation/PolygonGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>SOL:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/Solana#operation/SolanaGenerateWallet" target="_blank">generated wallet</a> instead.</li> <li><b>TRON:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/Tron#operation/GenerateTronwallet" target="_blank">generated wallet</a>.</li> <li><b>XDC:</b> Obtain <code>xpub</code> from the <a href="https://apidoc.tatum.io/tag/XinFin#operation/XdcGenerateWallet" target="_blank">generated wallet</a>.</li> <li><b>XLM:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/Stellar#operation/XlmWallet" target="_blank">generated account</a> instead.</li> <li><b>XRP:</b> No <code>xpub</code> provided; use <code>address</code> from the <a href="https://apidoc.tatum.io/tag/XRP#operation/XrpWallet" target="_blank">generated account</a> instead.</li> </ul>
+ <b>Connect a virtual account to the blockchain</b>
+
+ <ul> <li>If the virtual account was created with the wallet's <code>xpub</code>, <a href="https://apidoc.tatum.io/tag/Blockchain-addresses#operation/generateDepositAddress" target="_blank">generate a new blockchain address</a> for this account.</li> <li>If the virtual account was created with the wallet's or account's address instead of the wallet's <code>xpub</code>, <a href="https://apidoc.tatum.io/tag/Blockchain-addresses#operation/assignAddress" target="_blank">assign an existing blockchain address</a> to this account.</li> </ul>
+ You can connect multiple blockchain addresses to one virtual account.
 
 ### Example
 
@@ -345,8 +355,7 @@ Deactivate account
 
 <h4>2 credits per API call.</h4>
 
-<p>Deactivates an account. Only accounts with account and available balances of zero can be deactivated. Deactivated accounts are not visible in the list of accounts, it is not possible to send funds to these accounts or perform transactions. However, they are still present in the ledger and all transaction histories.</p>
-
+Deactivates an account. Only accounts with account and available balances of zero can be deactivated. Deactivated accounts are not visible in the list of accounts, it is not possible to send funds to these accounts or perform transactions. However, they are still present in the ledger and all transaction histories.
 
 ### Example
 
@@ -382,8 +391,7 @@ Unblock all blocked amounts in an account
 
 <h4>1 credit per API call, 1 credit for each deleted blockage. 1 API call + 2 blockages  = 3 credits.</h4>
 
-<p>Unblocks previously blocked amounts in an account. Increases the available balance in the account where the amount was blocked.</p>
-
+Unblocks previously blocked amounts in an account. Increases the available balance in the account where the amount was blocked.
 
 ### Example
 
@@ -419,8 +427,7 @@ Unblock a blocked amount in an account
 
 <h4>1 credit per API call.</h4>
 
-<p>Unblocks a previously blocked amount in an account. Increases the available balance in the account where the amount was blocked.</p>
-
+Unblocks a previously blocked amount in an account. Increases the available balance in the account where the amount was blocked.
 
 ### Example
 
@@ -456,8 +463,7 @@ Freeze account
 
 <h4>2 credits per API call.</h4>
 
-<p>Disables all outgoing transactions. Incoming transactions to the account are available. When an account is frozen, its available balance is set to 0. This operation will create a new blockage of type ACCOUNT_FROZEN, which is automatically deleted when the account is unfrozen.</p>
-
+Disables all outgoing transactions. Incoming transactions to the account are available. When an account is frozen, its available balance is set to 0. This operation will create a new blockage of type ACCOUNT_FROZEN, which is automatically deleted when the account is unfrozen.
 
 ### Example
 
@@ -493,8 +499,7 @@ Get account balance
 
 <h4>1 credit per API call.</h4>
 
-<p>Get balance for the account.</p>
-
+Get balance for the account.
 
 ### Example
 
@@ -530,8 +535,7 @@ Get account by ID
 
 <h4>1 credit per API call.</h4>
 
-<p>Gets active account by ID. Displays all information regarding the given account.</p>
-
+Gets active account by ID. Displays all information regarding the given account.
 
 ### Example
 
@@ -583,8 +587,7 @@ List all accounts
 
 <h4>1 credit per API call.</h4>
 
-<p>Lists all accounts. Inactive accounts are also visible.</p>
-
+Lists all accounts. Inactive accounts are also visible.
 
 ### Example
 
@@ -626,8 +629,7 @@ List all customer accounts
 
 <h4>1 credit per API call.</h4>
 
-<p>Lists all accounts associated with a customer. Only active accounts are visible.</p>
-
+Lists all accounts associated with a customer. Only active accounts are visible.
 
 ### Example
 
@@ -679,8 +681,7 @@ Count of found entities for get accounts request
 
 <h4>1 credit per API call.</h4>
 
-<p>Count of accounts that were found from /v3/ledger/account</p>
-
+Count of accounts that were found from /v3/ledger/account
 
 ### Example
 
@@ -720,8 +721,7 @@ Get blocked amounts in an account
 
 <h4>1 credit per API call.</h4>
 
-<p>Gets blocked amounts for an account.</p>
-
+Gets blocked amounts for an account.
 
 ### Example
 
@@ -757,8 +757,7 @@ Get blocked amount by ID
 
 <h4>1 credit per API call.</h4>
 
-<p>Gets blocked amount by id.</p>
-
+Gets blocked amount by id.
 
 ### Example
 
@@ -796,8 +795,7 @@ Unblock an amount in an account and perform a transaction
 
 <h4>2 credits per API call.</h4>
 
- <p>Unblocks a previously blocked amount in an account and invokes a ledger transaction from that account to a different recipient. If the request fails, the amount is not unblocked.</p>
-
+ Unblocks a previously blocked amount in an account and invokes a ledger transaction from that account to a different recipient. If the request fails, the amount is not unblocked.
 
 ### Example
 
@@ -833,8 +831,7 @@ Unfreeze account
 
 <h4>2 credits per API call.</h4>
 
-<p>Unfreezes a previously frozen account. Unfreezing a non-frozen account not affect the account.</p>
-
+Unfreezes a previously frozen account. Unfreezing a non-frozen account not affect the account.
 
 ### Example
 
@@ -872,8 +869,7 @@ Update account
 
 <h4>2 credits per API call.</h4>
 
-<p>Update account by ID. Only a small number of fields can be updated.</p>
-
+Update account by ID. Only a small number of fields can be updated.
 
 ### Example
 

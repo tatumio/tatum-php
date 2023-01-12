@@ -194,19 +194,27 @@ Name | Type | Description  | Notes
 
 Invoke a method in a smart contract on Klaytn
 
-<p><b>2 credits per API call</b></p>
- <p>Invoke a method in an existing smart contract on Klaytn.</p>
- <p>You can call a read-only or write method.</p>
- <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>         <p><b>Troubleshooting a failed transaction</b>
- Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
-However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.</p>
- <p>If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.</p>
- <p>For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.</p>
- <p><b>Signing a transaction</b>
- When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<b>2 credits per API call</b>
 
+ Invoke a method in an existing smart contract on Klaytn.
+
+ You can call a read-only or write method.
+
+ <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>
+         <b>Troubleshooting a failed transaction</b>
+ Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
+However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
+
+ If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
+
+ For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.
+
+ <b>Signing a transaction</b>
+ When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -240,9 +248,9 @@ Name | Type | Description  | Notes
 
 Broadcast signed Klaytn transaction
 
-<p><b>2 credits per API call</b></p>
- <p>Broadcast signed transaction to Klaytn blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.</p>
+<b>2 credits per API call</b>
 
+ Broadcast signed transaction to Klaytn blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 ### Example
 
@@ -278,9 +286,9 @@ Name | Type | Description  | Notes
 
 Generate Klaytn account address from Extended public key
 
-<p><b>1 credit per API call</b></p>
- <p>Generate Klaytn account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.</p>
+<b>1 credit per API call</b>
 
+ Generate Klaytn account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
 ### Example
 
@@ -314,9 +322,9 @@ Name | Type | Description  | Notes
 
 Generate Klaytn private key
 
-<p><b>1 credit per API call</b></p>
- <p>Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.</p>
+<b>1 credit per API call</b>
 
+ Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
 ### Example
 
@@ -350,11 +358,13 @@ Name | Type | Description  | Notes
 
 Generate Klaytn wallet
 
-<p><b>1 credit per API call</b></p>
- <p>Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-Each address is identified by 3 main values:<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul></p>
-<p>Tatum follows BIP44 specification and generates for Klaytn wallet with derivation path m'/44'/966'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Klaytn wallet.</p>
+<b>1 credit per API call</b>
 
+ Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
+Each address is identified by 3 main values:<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+
+
+Tatum follows BIP44 specification and generates for Klaytn wallet with derivation path m'/44'/966'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Klaytn wallet.
 
 ### Example
 
@@ -388,9 +398,9 @@ Name | Type | Description  | Notes
 
 Get Klaytn Account balance
 
-<p><b>1 credit per API call</b></p>
- <p>Get Klaytn account balance in KLAY. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.</p>
+<b>1 credit per API call</b>
 
+ Get Klaytn account balance in KLAY. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
 ### Example
 
@@ -424,9 +434,9 @@ Name | Type | Description  | Notes
 
 Get Klaytn block by hash
 
-<p><b>1 credit per API call</b></p>
- <p>Get Klaytn block by block hash or block number.</p>
+<b>1 credit per API call</b>
 
+ Get Klaytn block by block hash or block number.
 
 ### Example
 
@@ -457,9 +467,9 @@ This endpoint does not need any parameter.
 
 Get current block number
 
-<p><b>1 credit per API call</b></p>
- <p>Get Klaytn current block number. This is the number of the latest block in the blockchain.</p>
+<b>1 credit per API call</b>
 
+ Get Klaytn current block number. This is the number of the latest block in the blockchain.
 
 ### Example
 
@@ -493,9 +503,9 @@ Name | Type | Description  | Notes
 
 Get Klaytn Transaction
 
-<p><b>2 credits per API call</b></p>
- <p>Get Klaytn transaction by transaction hash.</p>
+<b>2 credits per API call</b>
 
+ Get Klaytn transaction by transaction hash.
 
 ### Example
 
@@ -529,9 +539,9 @@ Name | Type | Description  | Notes
 
 Get count of outgoing Klaytn transactions
 
-<p><b>1 credit per API call</b></p>
- <p>Get a number of outgoing Klaytn transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.</p>
+<b>1 credit per API call</b>
 
+ Get a number of outgoing Klaytn transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
 ### Example
 
@@ -567,11 +577,12 @@ Name | Type | Description  | Notes
 
 Web3 HTTP driver
 
-<p><b>2 credits per API call</b></p>
- <p><b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b></p>
+<b>2 credits per API call</b>
 
- <p>Use this endpoint URL as a http-based web3 driver to connect directly to the Klaytn node provided by Tatum. To learn more about Klaytn Web3, visit the <a href="https://docs.klaytn.foundation/dapp/json-rpc" target="_blank">Klaytn developer's guide</a>.</p>
+ <b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b>
 
+
+ Use this endpoint URL as a http-based web3 driver to connect directly to the Klaytn node provided by Tatum. To learn more about Klaytn Web3, visit the <a href="https://docs.klaytn.foundation/dapp/json-rpc" target="_blank">Klaytn developer's guide</a>.
 
 ### Example
 
@@ -605,14 +616,17 @@ Name | Type | Description  | Notes
 
 Send KLAY from account to account
 
-<p><b>2 credits per API call</b></p>
- <p>Send KLAY from account to account.
+<b>2 credits per API call</b>
 
- <p><b>Signing a transaction</b></p>
- <p>When sending KLAY, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+ Send KLAY from account to account.
 
+ <b>Signing a transaction</b>
+
+ When sending KLAY, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 

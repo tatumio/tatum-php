@@ -140,8 +140,7 @@ Broadcast signed Litecoin transaction
 
 <h4>5 credits per API call.</h4>
 
- <p>Broadcast signed transaction to Litecoin blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.</p>
-
+ Broadcast signed transaction to Litecoin blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 ### Example
 
@@ -179,8 +178,7 @@ Generate Litecoin deposit address from Extended public key
 
 <h4>5 credits per API call.</h4>
 
- <p>Generate Litecoin deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.</p>
-
+ Generate Litecoin deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
 ### Example
 
@@ -216,8 +214,7 @@ Generate Litecoin private key
 
 <h4>5 credits per API call.</h4>
 
- <p>Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.</p>
-
+ Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
 ### Example
 
@@ -253,10 +250,11 @@ Generate Litecoin wallet
 
 <h4>5 credits per API call.</h4>
 
-<p>Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-Each address is identified by 3 main values:<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul></p>
-<p>Tatum follows BIP44 specification and generates for Litecoin wallet with derivation path m'/44'/2'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki">https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Litecoin wallet.</p>
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
+Each address is identified by 3 main values:<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
 
+
+Tatum follows BIP44 specification and generates for Litecoin wallet with derivation path m'/44'/2'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki">https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Litecoin wallet.
 
 ### Example
 
@@ -290,10 +288,11 @@ Name | Type | Description  | Notes
 
 Get the balance of a Litecoin address
 
-<p><b>5 credits per API call</b></p>
- <p>Get the balance of a Litecoin address.</p>
- <p>The API returns the balance only if the address has up to 50,000 UTXOs (Unspent Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns an error with the <code>403</code> response code.</p>
+<b>5 credits per API call</b>
 
+ Get the balance of a Litecoin address.
+
+ The API returns the balance only if the address has up to 50,000 UTXOs (Unspent Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns an error with the <code>403</code> response code.
 
 ### Example
 
@@ -329,8 +328,7 @@ Get Litecoin Block by hash or height
 
 <h4>5 credits per API call.</h4>
 
-<p>Get Litecoin Block detail by block hash or height.</p>
-
+Get Litecoin Block detail by block hash or height.
 
 ### Example
 
@@ -363,8 +361,7 @@ Get Litecoin Blockchain Information
 
 <h4>5 credits per API call.</h4>
 
-<p>Get Litecoin Blockchain Information. Obtain basic info like testnet / mainnet version of the chain, current block number and it's hash.</p>
-
+Get Litecoin Blockchain Information. Obtain basic info like testnet / mainnet version of the chain, current block number and it's hash.
 
 ### Example
 
@@ -400,8 +397,7 @@ Get Litecoin Block hash
 
 <h4>5 credits per API call.</h4>
 
-<p>Get Litecoin Block hash. Returns hash of the block to get the block detail.</p>
-
+Get Litecoin Block hash. Returns hash of the block to get the block detail.
 
 ### Example
 
@@ -434,8 +430,7 @@ Get Mempool Transactions
 
 <h4>1 credit per API call.</h4>
 
-<p>Get Litecoin Transaction ids in the mempool.</p>
-
+Get Litecoin Transaction ids in the mempool.
 
 ### Example
 
@@ -471,8 +466,7 @@ Get Litecoin Transaction by hash
 
 <h4>5 credits per API call.</h4>
 
-<p>Get Litecoin Transaction detail by transaction hash.</p>
-
+Get Litecoin Transaction detail by transaction hash.
 
 ### Example
 
@@ -512,8 +506,7 @@ Get Litecoin Transactions by address
 
 <h4>5 credits per API call.</h4>
 
-<p>Get Litecoin Transaction by address.</p>
-
+Get Litecoin Transaction by address.
 
 ### Example
 
@@ -549,9 +542,12 @@ Name | Type | Description  | Notes
 
 Get information about a transaction output (UTXO) in a Litecoin transaction
 
-<p><b>5 credits per API call</b></p>
- <p>Get information about a transaction output in a transaction and check whether this output is a UTXO or has been spent.</p>
- <p>"UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>.</p>
+<b>5 credits per API call</b>
+
+ Get information about a transaction output in a transaction and check whether this output is a UTXO or has been spent.
+
+ "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>.
+
  <ul> <li>If the transaction output is an UTXO, the API returns data about it.</li> <li>If the transaction output has been spent and there is no UTXO to return, the API returns an error with the <code>404</code> response code.</li> </ul>
 
 ### Example
@@ -586,11 +582,12 @@ Name | Type | Description  | Notes
 
 JSON RPC HTTP driver
 
-<p><b>2 credits per API call</b></p>
- <p><b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b></p>
+<b>2 credits per API call</b>
 
- <p>Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum.</p>
+ <b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b>
 
+
+ Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum.
 
 ### Example
 
@@ -624,24 +621,33 @@ Name | Type | Description  | Notes
 
 Send LTC to Litecoin addresses
 
-<p><b>10 credits per API call</b></p>
- <p>Send LTC to blockchain addresses.</p>
- <p>Litecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#operation/LtcGetUTXO">API for getting information about a transaction output (UTXO) in a Litecoin transaction</a>.</p>
- <p>You can build a LTC transaction by one of the following methods:</p>
+<b>10 credits per API call</b>
+
+ Send LTC to blockchain addresses.
+
+ Litecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#operation/LtcGetUTXO">API for getting information about a transaction output (UTXO) in a Litecoin transaction</a>.
+
+ You can build a LTC transaction by one of the following methods:
+
  <ul> <li><b>Sending LTC from blockchain addresses</b>
 The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.
  To use this method, use the <code>LtcTransactionAddress</code> or <code>LtcTransactionAddressKMS</code> schema of the request body.</li> <li><b>Sending LTC from UTXOs</b>
 The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.
- To use this method, use the <code>LtcTransactionFromUTXO</code> or <code>LtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul> <p>When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 LTC and T2 with 2 LTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 LTC to spend:
-<code>1 LTC (from T1) + 2 LTC (from T2) = 3 LTC (to spend in total)</code></p>
- <p>You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.</p>
- <p><b>Paying the gas fee and receiving the change</b>
- When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).</p>
- <p><b>Signing a transaction</b>
- When sending LTC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+ To use this method, use the <code>LtcTransactionFromUTXO</code> or <code>LtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul>
+ When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 LTC and T2 with 2 LTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 LTC to spend:
+<code>1 LTC (from T1) + 2 LTC (from T2) = 3 LTC (to spend in total)</code>
 
+ You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.
+
+ <b>Paying the gas fee and receiving the change</b>
+ When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).
+
+ <b>Signing a transaction</b>
+ When sending LTC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 

@@ -452,12 +452,18 @@ Name | Type | Description  | Notes
 
 Create a subscription
 
-<p><b>2 credits per API call + credits spent on subscriptions themselves
- Each subscription type consumes a different number of credits.</b></p>
- <p>For Free plans, there is a monthly limit of sent webhooks, which is <b>1000</b>.</p>
- <p>If the webhook is sent unsuccessfully, it will be retried. The number of retries depends on the plan. </p>
- <ul>   <li><b>Free Plan</b> - 3 retries</li>   <li><b>Paid plans</b> - 10 retries</li> </ul> <p>Create a subscription as an HTTP web hook.</p>
- <p>The following subscription types are available:</p>
+<b>2 credits per API call + credits spent on subscriptions themselves
+ Each subscription type consumes a different number of credits.</b>
+
+ For Free plans, there is a monthly limit of sent webhooks, which is <b>1000</b>.
+
+ If the webhook is sent unsuccessfully, it will be retried. The number of retries depends on the plan. 
+
+ <ul>   <li><b>Free Plan</b> - 3 retries</li>   <li><b>Paid plans</b> - 10 retries</li> </ul>
+ Create a subscription as an HTTP web hook.
+
+ The following subscription types are available:
+
  <ul> <li><b>ADDRESS_TRANSACTION</b> - Enable HTTP POST JSON notifications for any blockchain transaction (both incoming and outgoing) at a specified address. This notification applies to transactions in the native blockchain currency or with any type of blockchain tokens.
  - For <b>EVM-based blockchains</b> (ETH), this web hook is first invoked when a transaction appears in the mempool, and then it is invoked again once the transaction is added to a block.
  - For the <b>other blockchains</b>, this webhook is invoked when a transaction is added to a block.
@@ -494,9 +500,9 @@ Create a subscription
  <pre>{   "created": 1619176527481,   "amount": "0.005",   "orderAmount": "0.1",   "price": "0.02",   "type": "SELL",   "pair": "VC_CHF/VC_CHF3",   "id": "6082ab462936b4478117c6a0", // id of the trade   "currency1AccountId": "6082ab462936b4478117c6a0",   "currency2AccountId": "6082ab512936b4478117c6a2",   "fee": null,   "feeAccountId": null,   "isMaker": true,   "expiredWithoutMatch": false }</pre> 10 credits will be debited for every monitored customer every day.</li> <li><b>TRANSACTION_IN_THE_BLOCK</b> - Enable HTTP POST JSON notifications on ledger => blockchain transaction, when transaction is included in the block. This web hook will be invoked, when the outgoing transaction is included in the block. Request body of the POST request will be JSON object with attributes:
  <pre>   {     "txId": "0x026f4f05b972c09279111da13dfd20d8df04eff436d7f604cd97b9ffaa690567",     "reference": "90270634-5b07-4fad-b17b-f82899953533",     "accountId": "6086ed0744c45b24d4fbd039",     "currency": "BSC",     "withdrawalId": "608fe5b73a893234ba379ab2",     "address": "0x8ce4e40889a13971681391AAd29E88eFAF91f784",     "amount": "0.1",     "blockHeight": 8517664   }</pre> 10 credits will be debited every day, 1 credit for every included transaction notified via web hook.</li> <li><b>KMS_FAILED_TX</b> - Enable HTTP POST JSON notifications on error during KMS signature process. This web hook will be invoked, when the Tatum KMS receives error during processing transactions. Request body of the POST request will be JSON object with attributes:
  <pre>{   "signatureId": "6082ab462936b4478117c6a0",   "error": "Error message from the KMS" }</pre> 10 credits will be debited every day.</li> <li><b>KMS_COMPLETED_TX</b> - Enable HTTP POST JSON notifications on successful completion of KMS signature process. This web hook will be invoked, when the Tatum KMS successfully completes the signature during processing transactions. Request body of the POST request will be JSON object with attributes:
- <pre>{   "signatureId": "6082ab462936b4478117c6a0",   "txId": "0x7bb7d3b90567e89f999f2e3d263bc3738a018dbbcfa9f5397678cf17cdf0235f" }</pre> 10 credits will be debited every day.</li> <li><b>ACCOUNT_BALANCE_LIMIT</b> - Report with all account balances above desired limit.</li> <li><b>TRANSACTION_HISTORY_REPORT</b> - Report with all ledger transactions for last X hours, where X is set by the subscription attribute as interval. Maximum number of transactions returned by this report is 20000. Transactions are obtained from the time of the invocation of the GET method to obtain report - X hours.</li> </ul> In case of unsuccesful web hook response status - other then 2xx - web hook is repeated 9 more times with exponential backoff. Parameters are T = 15 * 2.7925^9, where 15 is interval in s, backoff rate is 2.7925 and 9 is current number of retries. Last web hook is fired after 24 hours approximatelly. After last failed attempt, web hook is deleted from our system. The 2xx response must be returned in 10 seconds after web hook is fired.
- Result of the operation is subscription ID, which can be used to cancel subscription or obtain additional data connected to it like reports.</p>
-
+ <pre>{   "signatureId": "6082ab462936b4478117c6a0",   "txId": "0x7bb7d3b90567e89f999f2e3d263bc3738a018dbbcfa9f5397678cf17cdf0235f" }</pre> 10 credits will be debited every day.</li> <li><b>ACCOUNT_BALANCE_LIMIT</b> - Report with all account balances above desired limit.</li> <li><b>TRANSACTION_HISTORY_REPORT</b> - Report with all ledger transactions for last X hours, where X is set by the subscription attribute as interval. Maximum number of transactions returned by this report is 20000. Transactions are obtained from the time of the invocation of the GET method to obtain report - X hours.</li> </ul>
+ In case of unsuccesful web hook response status - other then 2xx - web hook is repeated 9 more times with exponential backoff. Parameters are T = 15 * 2.7925^9, where 15 is interval in s, backoff rate is 2.7925 and 9 is current number of retries. Last web hook is fired after 24 hours approximatelly. After last failed attempt, web hook is deleted from our system. The 2xx response must be returned in 10 seconds after web hook is fired.
+ Result of the operation is subscription ID, which can be used to cancel subscription or obtain additional data connected to it like reports.
 
 ### Example
 
@@ -676,8 +682,7 @@ Cancel existing subscription
 
 <h4>1 credit for API call</h4>
 
-<p>Cancel existing subscription.</p>
-
+Cancel existing subscription.
 
 ### Example
 
@@ -710,8 +715,7 @@ Disable HMAC webhook digest
 
 <h4>2 credits per API call.</h4>
 
-<p>Disable HMAC hash ID on the fired webhooks from Tatum API.</p>
-
+Disable HMAC hash ID on the fired webhooks from Tatum API.
 
 ### Example
 
@@ -747,9 +751,8 @@ Enable HMAC webhook digest
 
 <h4>2 credits per API call.</h4>
 
-<p>Enable HMAC hash ID on the fired webhooks from Tatum API. In order to make sure that a webhook is sent by us, we have the possibility to sign it with the HMAC Sha512 Hex algorithm.
- To verify that a webhook is sent by us <ol> <li>Get a webhook <b>x-payload-hash</b> header value and payload as it is as a JSON file.</li> <li>Convert the HTTP webhook body to stringify JSON without any spaces. In JavaScript, you would do it like this <pre>JSON.stringify(req.body)</pre></li> <li>Perform calculations on your side to create a digest using Secret Key, webhook payload in bytes and HMAC SHA512 algorithm. JavaScript example: <pre>require('crypto').createHmac('sha512', hmacSecret).update(JSON.stringify(req.body)).digest('base64')</pre>.</li> <li>Compare x-payload-hash header value with calculated digest as a Base64 string.</li></p>
-
+Enable HMAC hash ID on the fired webhooks from Tatum API. In order to make sure that a webhook is sent by us, we have the possibility to sign it with the HMAC Sha512 Hex algorithm.
+ To verify that a webhook is sent by us <ol> <li>Get a webhook <b>x-payload-hash</b> header value and payload as it is as a JSON file.</li> <li>Convert the HTTP webhook body to stringify JSON without any spaces. In JavaScript, you would do it like this <pre>JSON.stringify(req.body)</pre></li> <li>Perform calculations on your side to create a digest using Secret Key, webhook payload in bytes and HMAC SHA512 algorithm. JavaScript example: <pre>require('crypto').createHmac('sha512', hmacSecret).update(JSON.stringify(req.body)).digest('base64')</pre>.</li> <li>Compare x-payload-hash header value with calculated digest as a Base64 string.</li>
 
 ### Example
 
@@ -791,8 +794,7 @@ List all executed webhooks
 
 <h4>1 credit per API call.</h4>
 
-<p>List all webhooks.</p>
-
+List all webhooks.
 
 ### Example
 
@@ -834,8 +836,7 @@ Count of found entities for get webhook request
 
 <h4>1 credit per API call.</h4>
 
-<p>Count of webhooks that were found from /v3/subscription/webhook</p>
-
+Count of webhooks that were found from /v3/subscription/webhook
 
 ### Example
 
@@ -871,8 +872,7 @@ Obtain report for subscription
 
 <h4>1 credit for API call. Based on the required report type, additional credits may be charged.</h4>
 
- <p>Obtain report from subscription based on its type. Following reports are supported: <ul> <li><b>ACCOUNT_BALANCE_LIMIT</b> - obtain list of all ledger accounts with account balance above the limit. 1 credit per 50 returned records is charged.</li> <li><b>TRANSACTION_HISTORY_REPORT</b> - obtain list of all ledger transaction for last X hours from the time of invocation. 1 credit per 50 returned records is charged.</li> </ul></p>
-
+ Obtain report from subscription based on its type. Following reports are supported: <ul> <li><b>ACCOUNT_BALANCE_LIMIT</b> - obtain list of all ledger accounts with account balance above the limit. 1 credit per 50 returned records is charged.</li> <li><b>TRANSACTION_HISTORY_REPORT</b> - obtain list of all ledger transaction for last X hours from the time of invocation. 1 credit per 50 returned records is charged.</li> </ul>
 
 ### Example
 
@@ -912,8 +912,7 @@ List all active subscriptions
 
 <h4>1 credit per API call.</h4>
 
-<p>List all active subscriptions.</p>
-
+List all active subscriptions.
 
 ### Example
 
@@ -953,8 +952,7 @@ Count of found entities for get webhook request
 
 <h4>1 credit per API call.</h4>
 
-<p>Count of subscriptions that were found from /v3/subscription</p>
-
+Count of subscriptions that were found from /v3/subscription
 
 ### Example
 

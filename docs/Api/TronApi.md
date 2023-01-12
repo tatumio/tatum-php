@@ -174,14 +174,18 @@ Name | Type | Description  | Notes
 
 Create a TRC-10 token
 
-<p><b>10 credits per API call</b></p>
- <p>Create a TRON TRC-10 token.</p>
- <p>One TRON account can create only one TRC-10 token. The whole supply of the token is transferred to the issuer's account 100 seconds after the token has been created.</p>
- <p><b>Signing a transaction</b>
- When creating a TRC-10 token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<b>10 credits per API call</b>
 
+ Create a TRON TRC-10 token.
+
+ One TRON account can create only one TRC-10 token. The whole supply of the token is transferred to the issuer's account 100 seconds after the token has been created.
+
+ <b>Signing a transaction</b>
+ When creating a TRC-10 token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -249,13 +253,16 @@ Name | Type | Description  | Notes
 
 Create a TRC-20 token
 
-<p><b>10 credits per API call</b></p>
- <p>Create a TRON TRC-20 token.</p>
- <p><b>Signing a transaction</b>
- When creating a TRC-20 token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<b>10 credits per API call</b>
 
+ Create a TRON TRC-20 token.
+
+ <b>Signing a transaction</b>
+ When creating a TRC-20 token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -323,13 +330,17 @@ Name | Type | Description  | Notes
 
 Freeze the balance of a TRON account
 
-<p><b>10 credits per API call</b></p>
- <p>Freeze Tron assets on the address. By freezing assets, you can obtain energy or bandwidth to perform transactions.</p>
- <p><b>Signing a transaction</b></p>
- <p>When freezing the balance, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<b>10 credits per API call</b>
 
+ Freeze Tron assets on the address. By freezing assets, you can obtain energy or bandwidth to perform transactions.
+
+ <b>Signing a transaction</b>
+
+ When freezing the balance, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -397,11 +408,13 @@ Name | Type | Description  | Notes
 
 Generate a TRON wallet
 
-<p><b>1 credit per API call</b></p>
- <p>Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-Each address is identified by 3 main values:<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul></p>
-<p>Tatum follows BIP44 specification and generates for Bitcoin wallet with derivation path m'/44'/195'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/tron/bips/blob/master/bip-0044.mediawiki</a>.         Generate BIP44 compatible Tron wallet.</p>
+<b>1 credit per API call</b>
 
+ Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
+Each address is identified by 3 main values:<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+
+
+Tatum follows BIP44 specification and generates for Bitcoin wallet with derivation path m'/44'/195'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/tron/bips/blob/master/bip-0044.mediawiki</a>.         Generate BIP44 compatible Tron wallet.
 
 ### Example
 
@@ -435,13 +448,17 @@ Name | Type | Description  | Notes
 
 Send TRX to a TRON account
 
-<p><b>10 credits per API call</b></p>
- <p>Send an amount in TRX from address to address.</p>
- <p><b>Signing a transaction</b></p>
- <p>When sending TRX to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<b>10 credits per API call</b>
 
+ Send an amount in TRX from address to address.
+
+ <b>Signing a transaction</b>
+
+ When sending TRX to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -509,13 +526,17 @@ Name | Type | Description  | Notes
 
 Send TRC-10 tokens to a TRON account
 
-<p><b>10 credits per API call</b></p>
- <p>Send TRC-10 tokens from address to address.</p>
- <p><b>Signing a transaction</b></p>
- <p>When sending TRC-10 tokens to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<b>10 credits per API call</b>
 
+ Send TRC-10 tokens from address to address.
+
+ <b>Signing a transaction</b>
+
+ When sending TRC-10 tokens to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -583,13 +604,17 @@ Name | Type | Description  | Notes
 
 Send TRC-20 tokens to a TRON account
 
-<p><b>10 credits per API call</b></p>
- <p>Send TRC-20 tokens from address to address.</p>
- <p><b>Signing a transaction</b></p>
- <p>When sending TRC-20 tokens to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<b>10 credits per API call</b>
 
+ Send TRC-20 tokens from address to address.
+
+ <b>Signing a transaction</b>
+
+ When sending TRC-20 tokens to a TRON account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -659,12 +684,15 @@ Name | Type | Description  | Notes
 
 Get all transactions for a TRON account
 
-<p><b>5 credits per API call</b></p>
- <p>Get all transactions for a TRON account.</p>
- <p>This API returns up to 200 transactions in one API call. If there are more than 200 transactions for the TRON account, the response body will contain the <code>next</code> parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list.</p>
- <p>To get the next 200 transactions, make another call using this API, but this time add the <code>next</code> parameter the endpoint URL and set it to the transaction fingerprint from the <code>next</code> parameter in the response, for example:</p>
- <p><code>https://api.tatum.io/v3/tron/transaction/account/{address}?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code></p>
+<b>5 credits per API call</b>
 
+ Get all transactions for a TRON account.
+
+ This API returns up to 200 transactions in one API call. If there are more than 200 transactions for the TRON account, the response body will contain the <code>next</code> parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list.
+
+ To get the next 200 transactions, make another call using this API, but this time add the <code>next</code> parameter the endpoint URL and set it to the transaction fingerprint from the <code>next</code> parameter in the response, for example:
+
+ <code>https://api.tatum.io/v3/tron/transaction/account/{address}?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code>
 
 ### Example
 
@@ -700,12 +728,15 @@ Name | Type | Description  | Notes
 
 Get TRC-20 transactions for a TRON account
 
-<p><b>5 credits per API call</b></p>
- <p>Get TRC-20 transactions for a TRON account.</p>
- <p>This API returns up to 200 transactions in one API call. If there are more than 200 transactions for the TRON account, the response body will contain the <code>next</code> parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list.</p>
- <p>To get the next 200 transactions, make another call using this API, but this time add the <code>next</code> parameter the endpoint URL and set it to the transaction fingerprint from the <code>next</code> parameter in the response, for example:</p>
- <p><code>https://api.tatum.io/v3/tron/transaction/account/{address}/trc20?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code></p>
+<b>5 credits per API call</b>
 
+ Get TRC-20 transactions for a TRON account.
+
+ This API returns up to 200 transactions in one API call. If there are more than 200 transactions for the TRON account, the response body will contain the <code>next</code> parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list.
+
+ To get the next 200 transactions, make another call using this API, but this time add the <code>next</code> parameter the endpoint URL and set it to the transaction fingerprint from the <code>next</code> parameter in the response, for example:
+
+ <code>https://api.tatum.io/v3/tron/transaction/account/{address}/trc20?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code>
 
 ### Example
 
@@ -739,9 +770,9 @@ Name | Type | Description  | Notes
 
 Broadcast a TRON transaction
 
-<p><b>5 credits per API call</b></p>
- <p>Broadcast Tron transaction. This method is used internally from Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.</p>
+<b>5 credits per API call</b>
 
+ Broadcast Tron transaction. This method is used internally from Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 ### Example
 
@@ -777,9 +808,9 @@ Name | Type | Description  | Notes
 
 Generate a TRON address from the wallet's extended public key
 
-<p><b>5 credits per API call</b></p>
- <p>Generate a TRON address from the extended public key of the wallet. The address is generated for the specific index - each extended public key can generate up to 2^32 addresses with the index starting from 0 up to 2^31.</p>
+<b>5 credits per API call</b>
 
+ Generate a TRON address from the extended public key of the wallet. The address is generated for the specific index - each extended public key can generate up to 2^32 addresses with the index starting from 0 up to 2^31.
 
 ### Example
 
@@ -813,9 +844,9 @@ Name | Type | Description  | Notes
 
 Generate the private key for a TRON address
 
-<p><b>10 credits per API call</b></p>
- <p>Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.</p>
+<b>10 credits per API call</b>
 
+ Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
 ### Example
 
@@ -849,9 +880,9 @@ Name | Type | Description  | Notes
 
 Get the TRON account by its address
 
-<p><b>5 credits per API call</b></p>
- <p>Get Tron account by address.</p>
+<b>5 credits per API call</b>
 
+ Get Tron account by address.
 
 ### Example
 
@@ -885,9 +916,9 @@ Name | Type | Description  | Notes
 
 Get a TRON block by its hash or height
 
-<p><b>5 credits per API call</b></p>
- <p>Get Tron block by hash or height.</p>
+<b>5 credits per API call</b>
 
+ Get Tron block by hash or height.
 
 ### Example
 
@@ -918,9 +949,9 @@ This endpoint does not need any parameter.
 
 Get the current TRON block
 
-<p><b>5 credits per API call</b></p>
- <p>Get current Tron block.</p>
+<b>5 credits per API call</b>
 
+ Get current Tron block.
 
 ### Example
 
@@ -954,9 +985,9 @@ Name | Type | Description  | Notes
 
 Get a TRON transaction by its hash
 
-<p><b>5 credits per API call</b></p>
- <p>Get Tron transaction by hash.</p>
+<b>5 credits per API call</b>
 
+ Get Tron transaction by hash.
 
 ### Example
 
@@ -990,9 +1021,9 @@ Name | Type | Description  | Notes
 
 Get information about a TRC-10 token
 
-<p><b>5 credits per API call</b></p>
- <p>Get information about a TRON TRC-10 token.</p>
+<b>5 credits per API call</b>
 
+ Get information about a TRON TRC-10 token.
 
 ### Example
 

@@ -128,13 +128,14 @@ Name | Type | Description  | Notes
 
 Access Algorand Algod GET node endpoints
 
-<p><b>1 credit per API call</b></p>
- <p><b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b></p>
+<b>1 credit per API call</b>
 
- <p>Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>. 
+ <b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b>
+
+
+ Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>. 
  Example call for Get Block is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround</a>. 
- URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/blocks/16775567</pre> </p>
-
+ URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/blocks/16775567</pre>
 
 ### Example
 
@@ -170,13 +171,14 @@ Name | Type | Description  | Notes
 
 Access Algorand Indexer GET node endpoints
 
-<p><b>1 credit per API call</b></p>
- <p><b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b></p>
+<b>1 credit per API call</b>
 
- <p>Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check all available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/indexer/" target="_blank">https://developer.algorand.org/docs/rest-apis/indexer/</a>. 
+ <b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b>
+
+
+ Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check all available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/indexer/" target="_blank">https://developer.algorand.org/docs/rest-apis/indexer/</a>. 
  Example call for Get Tx By ID is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/indexer/#get-v2transactionstxid" target="_blank">https://developer.algorand.org/docs/rest-apis/indexer/#get-v2transactionstxid</a>. 
- URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/indexer/YOUR_API_KEY/v2/transactions/HNIQ76UTJYPOLZP5FWODYABBJPYPGJNEM2QEJSMDMQRWEKHEYJHQ</pre></p>
-
+ URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/indexer/YOUR_API_KEY/v2/transactions/HNIQ76UTJYPOLZP5FWODYABBJPYPGJNEM2QEJSMDMQRWEKHEYJHQ</pre>
 
 ### Example
 
@@ -214,13 +216,14 @@ Name | Type | Description  | Notes
 
 Access Algorand Algod POST node endpoints
 
-<p><b>2 credits per API call</b></p>
- <p><b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b></p>
+<b>2 credits per API call</b>
 
- <p>Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum.  You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>.  
+ <b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b>
+
+
+ Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum.  You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>.  
   Example call for Broadcast a raw transaction is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions</a>.  
-  URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/transactions</pre>  </p>
-
+  URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/transactions</pre>
 
 ### Example
 
@@ -256,8 +259,7 @@ Broadcast signed Algorand transaction
 
 <h4>2 credits per API call.</h4>
 
- <p>Broadcast signed transaction to Algorand blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.</p>
-
+ Broadcast signed transaction to Algorand blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 ### Example
 
@@ -293,8 +295,7 @@ Generate Algorand account address from private key
 
 <h4>1 credit per API call.</h4>
 
- <p>Generate Algorand account deposit address from private key.</p>
-
+ Generate Algorand account deposit address from private key.
 
 ### Example
 
@@ -330,8 +331,7 @@ Generate Algorand wallet
 
 <h4>1 credit per API call.</h4>
 
-<p>Tatum supports Algorand wallets.</p>
-
+Tatum supports Algorand wallets.
 
 ### Example
 
@@ -367,8 +367,7 @@ Get Algorand Account balance
 
 <h4>1 credit per API call.</h4>
 
- <p>Get Algorand account balance in ALGO.</p>
-
+ Get Algorand account balance in ALGO.
 
 ### Example
 
@@ -404,8 +403,7 @@ Get Algorand block by block round number
 
 <h4>1 credit per API call.</h4>
 
-<p>Get Algorand block by block round number.</p>
-
+Get Algorand block by block round number.
 
 ### Example
 
@@ -438,8 +436,7 @@ Get current block number
 
 <h4>1 credit per API call.</h4>
 
-<p>Get Algorand current block number. This is the number of the latest block in the blockchain.</p>
-
+Get Algorand current block number. This is the number of the latest block in the blockchain.
 
 ### Example
 
@@ -479,11 +476,12 @@ Name | Type | Description  | Notes
 
 Get Algorand Transactions between from and to
 
-<p><b>1 credit per API call</b></p>
- <p><b>This endpoint is deprecated.</b></p>
+<b>1 credit per API call</b>
 
- <p>Get Algorand transaction by specified period of time.</p>
+ <b>This endpoint is deprecated.</b>
 
+
+ Get Algorand transaction by specified period of time.
 
 ### Example
 
@@ -519,8 +517,7 @@ Get Algorand Transaction
 
 <h4>1 credit per API call.</h4>
 
-<p>Get Algorand transaction by transaction id.</p>
-
+Get Algorand transaction by transaction id.
 
 ### Example
 
@@ -556,10 +553,9 @@ Enable receiving asset on account
 
 <h4>2 credits per API call.</h4>
 
- <p>Enable accepting Algorand asset on the sender account.
+ Enable accepting Algorand asset on the sender account.
 
- This operation needs the private key of the blockchain address. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. </p>
-
+ This operation needs the private key of the blockchain address. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 ### Example
 
@@ -627,13 +623,17 @@ Name | Type | Description  | Notes
 
 Send Algos to an Algorand account
 
-<p><b>2 credits per API call</b></p>
- <p>Send Algos from one Algorand address to the other one.</p>
- <p><b>Signing a transaction</b></p>
- <p>When sending Algos, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.</p>
- <p>Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.</p>
- <p>For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.</p>
+<b>2 credits per API call</b>
 
+ Send Algos from one Algorand address to the other one.
+
+ <b>Signing a transaction</b>
+
+ When sending Algos, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+
+ For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
