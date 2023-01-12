@@ -1,3 +1,8 @@
 name: Tatum PHP SDK
 markdown: kramdown
-highlighter: rouge
+kramdown:
+  html_to_native: true
+  syntax_highlighter: coderay
+  syntax_highlighter_opts:
+    line_numbers: table
+    bold_every: 5
