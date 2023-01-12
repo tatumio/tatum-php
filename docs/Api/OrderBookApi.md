@@ -114,7 +114,9 @@ Name | Type | Description  | Notes
 
 Obtain chart data from historical closed trades
 
-<h4>2 credits for API call.</h4><br/> <p>Obtain data from the closed trades for entering in the chart. Time interval is set between <i>from</i> and <i>to</i> and there is defined time frame. There can be obtained at most 200 time points in the time interval.</p>
+<h4>2 credits for API call.</h4>
+
+ Obtain data from the closed trades for entering in the chart. Time interval is set between __from__ and __to__ and there is defined time frame. There can be obtained at most 200 time points in the time interval.
 
 ### Example
 
@@ -182,7 +184,29 @@ Name | Type | Description  | Notes
 
 Store buy / sell trade
 
-<h4>2 credits for API call, 2 credits for each fill of the counter trade. 1 API call + 2 fills  = 6 credits.</h4><br/> <p>Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible.<br/> It is possible to charge fees for the trades. Fees are an extra amount on top of the trade amount and are paid in the currency that you going to block e.g.: - BUY BTC/USDT - fees will be paid in USDT - SELL BTC/ETH - fees will be paid in BTC </p>  <p> If you fill type of the trade with FUTURE_BUY or FUTURE_SELL the trade will behave as a trade future. The trade is concluded now but will be fulfilled in future. The date of fulfillment is by the “Seal Date” field. You can also block a percentage of the amount until the future trade has expired. </p> <p>Futures can also penalize contracting parties if they don’t have the agreed balance available in their accounts. The penalty is calculated in the following way: Penalty amount = (Percentage of incomplete deal amount because of shortage from user) × (Maximum Penalty percentage of futures deal based on blocked amount and time interval) × (total blocked value). </p> <p>Example of the BTC/USDT trade future:</p> <p>The maker creates a sell with the following properties: 1 BTC at a price of 60000 USDT, with a blocking percentage of 22%, a penalty percentage of 45%, a system commision of 1% and with an expiration time of within 12 hours.</p> <pre> {   "type": "FUTURE_SELL",   "price": "60000",   "amount": "1",   "pair": "BTC/USDT",   "currency1AccountId": "60a236db1b57f60d62612bf3",   "currency2AccountId": "609d0696bf835c241ac2920f",   "fee": 1,   "feeAccountId": "609d0696bf835c251ac2920a",   "attr": {     "sealDate": 1621990960631,     "percentBlock": 22,     "percentPenalty": 45   } } </pre>  The taker accepts the offer with a buy and blocks 13200 USDT (60000 USDT × 0.22) in their account. <pre> {   "type": "FUTURE_BUY",   "price": "60000",   "amount": "1",   "pair": "BTC/USDT",   "currency1AccountId": "60a236db1b57f60d62612bf2",   "currency2AccountId": "609d0696bf835c241ac2920a",   "attr": {     "sealDate": 1621990960631,     "percentBlock": 22,     "percentPenalty": 45   } } </pre> <p>At the time of the trade, the maker and taker have the following conditions. The maker has 0.65 BTC (35% deficit) in their account and the taker has 49200 USDT (18% deficit) in their account. </p>  <p> The maker penalty is equal to 0.35 × 0.22 × (0.45 × 1 BTC) = 0.03465 BTC. The taker penalty is equal to 0.18 × 0.22 × (0.45 × 60000 USDT) = 1069.2 USDT. </p> <p> The system commission for the maker is 1 BTC × 1% = 0.01 BTC. The system commission for the taker is 60000 USDT × 1% = 600 USDT. </p> <p> The maker’s assets after deducting penalties and commissions equals 0.65 - 0.03465 - 0.01 = 0.60535 BTC. The taker’s assets after deducting penalties and commissions equals 49200 - 1069.2 - 600 = 47530.8 USDT. </p> <p> The amount received by the maker after the trade is (0.60535 × 60000) + 1069.2 = 37390.2 USDT and the taker receives 0.60535 + 0.03465 = 0.64 BTC. </p>
+<h4>2 credits for API call, 2 credits for each fill of the counter trade. 1 API call + 2 fills = 6 credits.</h4>
+
+ Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible.
+
+ It is possible to charge fees for the trades. Fees are an extra amount on top of the trade amount and are paid in the currency that you going to block e.g.: - BUY BTC/USDT - fees will be paid in USDT - SELL BTC/ETH - fees will be paid in BTC 
+
+ If you fill type of the trade with FUTURE_BUY or FUTURE_SELL the trade will behave as a trade future. The trade is concluded now but will be fulfilled in future. The date of fulfillment is by the “Seal Date” field. You can also block a percentage of the amount until the future trade has expired. 
+
+ Futures can also penalize contracting parties if they don’t have the agreed balance available in their accounts. The penalty is calculated in the following way: Penalty amount = (Percentage of incomplete deal amount because of shortage from user) × (Maximum Penalty percentage of futures deal based on blocked amount and time interval) × (total blocked value). 
+
+ Example of the BTC/USDT trade future:
+
+ The maker creates a sell with the following properties: 1 BTC at a price of 60000 USDT, with a blocking percentage of 22%, a penalty percentage of 45%, a system commision of 1% and with an expiration time of within 12 hours.
+
+ ` { "type": "FUTURE_SELL", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf3", "currency2AccountId": "609d0696bf835c241ac2920f", "fee": 1, "feeAccountId": "609d0696bf835c251ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } ` The taker accepts the offer with a buy and blocks 13200 USDT (60000 USDT × 0.22) in their account. ` { "type": "FUTURE_BUY", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf2", "currency2AccountId": "609d0696bf835c241ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } ` At the time of the trade, the maker and taker have the following conditions. The maker has 0.65 BTC (35% deficit) in their account and the taker has 49200 USDT (18% deficit) in their account. 
+
+ The maker penalty is equal to 0.35 × 0.22 × (0.45 × 1 BTC) = 0.03465 BTC. The taker penalty is equal to 0.18 × 0.22 × (0.45 × 60000 USDT) = 1069.2 USDT. 
+
+ The system commission for the maker is 1 BTC × 1% = 0.01 BTC. The system commission for the taker is 60000 USDT × 1% = 600 USDT. 
+
+ The maker’s assets after deducting penalties and commissions equals 0.65 - 0.03465 - 0.01 = 0.60535 BTC. The taker’s assets after deducting penalties and commissions equals 49200 - 1069.2 - 600 = 47530.8 USDT. 
+
+ The amount received by the maker after the trade is (0.60535 × 60000) + 1069.2 = 37390.2 USDT and the taker receives 0.60535 + 0.03465 = 0.64 BTC.
 
 ### Example
 
@@ -216,7 +240,9 @@ void (empty response body)
 
 Cancel all existing trades for account
 
-<h4>1 credit for API call, 1 credit for each cancelled trade. 1 API call + 2 cancellations  = 3 credits.</h4><br/><p>Cancel all trades for account.</p>
+<h4>1 credit for API call, 1 credit for each cancelled trade. 1 API call + 2 cancellations = 3 credits.</h4>
+
+Cancel all trades for account.
 
 ### Example
 
@@ -250,7 +276,9 @@ void (empty response body)
 
 Cancel existing trade
 
-<h4>1 credit for API call</h4><br/><p>Cancel existing trade.</p>
+<h4>1 credit for API call</h4>
+
+Cancel existing trade.
 
 ### Example
 
@@ -296,7 +324,9 @@ Name | Type | Description  | Notes
 
 List all active buy trades
 
-<h4>1 credit per API call.</h4><br/><p>List all active buy trades.</p>
+<h4>1 credit per API call.</h4>
+
+List all active buy trades.
 
 ### Example
 
@@ -330,7 +360,9 @@ Name | Type | Description  | Notes
 
 List all active buy trades
 
-<h4>1 credit per API call.</h4><br/><p>List all active buy trades.</p>
+<h4>1 credit per API call.</h4>
+
+List all active buy trades.
 
 ### Example
 
@@ -374,7 +406,9 @@ Name | Type | Description  | Notes
 
 List all historical trades
 
-<h4>1 credit per API call.</h4><br/><p>List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.</p>
+<h4>1 credit per API call.</h4>
+
+List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
 
 ### Example
 
@@ -408,7 +442,9 @@ Name | Type | Description  | Notes
 
 List all historical trades
 
-<h4>1 credit per API call.</h4><br/><p>List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.</p>
+<h4>1 credit per API call.</h4>
+
+List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
 
 ### Example
 
@@ -442,7 +478,9 @@ Name | Type | Description  | Notes
 
 List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
-<h4>1 credit per API call.</h4><br/><p>List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.</p>
+<h4>1 credit per API call.</h4>
+
+List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
 
 ### Example
 
@@ -488,7 +526,9 @@ Name | Type | Description  | Notes
 
 List all active sell trades
 
-<h4>1 credit per API call.</h4><br/><p>List all active sell trades.</p>
+<h4>1 credit per API call.</h4>
+
+List all active sell trades.
 
 ### Example
 
@@ -522,7 +562,9 @@ Name | Type | Description  | Notes
 
 List all active sell trades
 
-<h4>1 credit per API call.</h4><br/><p>List all active sell trades.</p>
+<h4>1 credit per API call.</h4>
+
+List all active sell trades.
 
 ### Example
 
@@ -556,7 +598,9 @@ Name | Type | Description  | Notes
 
 Get existing trade
 
-<h4>1 credit for API call</h4><br/><p>Get existing opened trade.</p>
+<h4>1 credit for API call</h4>
+
+Get existing opened trade.
 
 ### Example
 

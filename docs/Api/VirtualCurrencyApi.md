@@ -66,7 +66,15 @@ Name | Type | Description  | Notes
 
 Create new virtual currency
 
-<h4>2 credits per API call.</h4><br/> <p>Create new virtual currency with given supply stored in account. This will create Tatum internal virtual currency. Every virtual currency must be prefixed with <b>VC_</b>.<br/> Every virtual currency must be pegged to existing FIAT or supported cryptocurrency. 1 unit of virtual currency has then the same amount as 1 unit of the base currency it is pegged to. It is possible to set a custom base rate for the virtual currency. (baseRate = 2 => 1 VC unit = 2 basePair units)<br/> Tatum virtual currency acts as any other asset within Tatum. To create a fungible token, see the <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy" target="_blank">API for deploying a fungible token smart contract</a>.<br/> This operation returns the newly created Tatum Ledger account with an initial balance set to the virtual currency's total supply. Total supply can be changed in the future.</p>
+<h4>2 credits per API call.</h4>
+
+ Create new virtual currency with given supply stored in account. This will create Tatum internal virtual currency. Every virtual currency must be prefixed with **VC_**.
+
+ Every virtual currency must be pegged to existing FIAT or supported cryptocurrency. 1 unit of virtual currency has then the same amount as 1 unit of the base currency it is pegged to. It is possible to set a custom base rate for the virtual currency. (baseRate = 2 => 1 VC unit = 2 basePair units)
+
+ Tatum virtual currency acts as any other asset within Tatum. To create a fungible token, see the <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy" target="_blank">API for deploying a fungible token smart contract</a>.
+
+ This operation returns the newly created Tatum Ledger account with an initial balance set to the virtual currency's total supply. Total supply can be changed in the future.
 
 ### Example
 
@@ -100,7 +108,9 @@ Name | Type | Description  | Notes
 
 Get virtual currency
 
-<h4>1 credit per API call.</h4><br/><p>Get detail of virtual currency.<p>
+<h4>1 credit per API call.</h4>
+
+Get detail of virtual currency.
 
 ### Example
 
@@ -134,7 +144,11 @@ Name | Type | Description  | Notes
 
 Create new supply of virtual currency
 
-<h4>2 credits per API call.</h4><br/> <p>Create new supply of virtual currency linked on the given accountId. Method increases the total supply of the currency.<br/> This method creates Ledger transaction with operationType MINT with undefined counterAccountId.<p>
+<h4>2 credits per API call.</h4>
+
+ Create new supply of virtual currency linked on the given accountId. Method increases the total supply of the currency.
+
+ This method creates Ledger transaction with operationType MINT with undefined counterAccountId.
 
 ### Example
 
@@ -168,7 +182,11 @@ Name | Type | Description  | Notes
 
 Destroy supply of virtual currency
 
-<h4>2 credits per API call.</h4><br/> <p>Destroy supply of virtual currency linked on the given accountId. Method decreases the total supply of the currency.<br/> This method creates Ledger transaction with operationType REVOKE with undefined counterAccountId.</p>
+<h4>2 credits per API call.</h4>
+
+ Destroy supply of virtual currency linked on the given accountId. Method decreases the total supply of the currency.
+
+ This method creates Ledger transaction with operationType REVOKE with undefined counterAccountId.
 
 ### Example
 
@@ -202,7 +220,9 @@ void (empty response body)
 
 Update virtual currency
 
-<h4>2 credits per API call.</h4><br/><p>Change base pair and/or base rate of existing virtual currency.</p>
+<h4>2 credits per API call.</h4>
+
+Change base pair and/or base rate of existing virtual currency.
 
 ### Example
 

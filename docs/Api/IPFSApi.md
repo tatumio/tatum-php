@@ -48,7 +48,9 @@ Name | Type | Description  | Notes
 
 Get file from IPFS
 
-<h4>1 credit per API call.</h4><br/><p>Gets data from the IPFS.</p>
+<h4>1 credit per API call.</h4>
+
+Gets data from the IPFS.
 
 ### Example
 
@@ -82,7 +84,9 @@ Name | Type | Description  | Notes
 
 Store data to IPFS
 
-<h4>2 credits per API call. Only files up to 50MB are available for storing.</h4><br/> <p>Stores file on the IPFS. We are leveraging <a href="https://nft.storage/" target="_blank">nft.storage</a> from <a href="https://protocol.ai/" target="_blank">Protocol Labs</a> for free storage on the IPFS.</p>
+<h4>2 credits per API call. Only files up to 50MB are available for storing.</h4>
+
+ Stores file on the IPFS. We are leveraging <a href="https://nft.storage/" target="_blank">nft.storage</a> from <a href="https://protocol.ai/" target="_blank">Protocol Labs</a> for free storage on the IPFS.
 
 ### Example
 

@@ -57,7 +57,9 @@ void (empty response body)
 
 Freeze API Key
 
-<h4>2 credits per API call.</h4><br/><p>Freeze the API Key. It's not possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage. Only read operations are permitted.</p>
+<h4>2 credits per API call.</h4>
+
+Freeze the API Key. It's not possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage. Only read operations are permitted.
 
 ### Example
 
@@ -88,7 +90,9 @@ This endpoint does not need any parameter.
 
 Get information about your credit consumption for the last month
 
-<p><b>1 credit per API call</b></p> <p>Get information about your credit consumption for the last month (used credits per day).</p>
+**1 credit per API call**
+
+ Get information about your credit consumption for the last month (used credits per day).
 
 ### Example
 
@@ -119,7 +123,9 @@ This endpoint does not need any parameter.
 
 Get API version
 
-<h4>1 credit per API call.</h4><br/><p>Get current version of the API.</p>
+<h4>1 credit per API call.</h4>
+
+Get current version of the API.
 
 ### Example
 
@@ -150,7 +156,9 @@ void (empty response body)
 
 Unfreeze API Key
 
-<h4>2 credits per API call.</h4><br/><p>Unfreeze the API Key. It's possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage again.</p>
+<h4>2 credits per API call.</h4>
+
+Unfreeze the API Key. It's possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage again.
 
 ### Example
 

@@ -1,7 +1,4 @@
-name: Tatum PHP SDK
+name: Tatum - PHP SDK
 markdown: kramdown
 kramdown:
   syntax_highlighter: coderay
-  syntax_highlighter_opts:
-    line_numbers: table
-    bold_every: 5

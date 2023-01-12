@@ -44,7 +44,11 @@ Name | Type | Description  | Notes
 
 Get the current exchange rate for exchanging fiat/crypto assets
 
-<p><b>1 credit per API call</b></p> <p>Get the current exchange rate for exchanging fiat/crypto assets.</p> <p>By default, the base pair (the target asset) is EUR. When obtaining the exchange rate for an asset (for example, BTC), the value returned by the API expresses the amount of EUR that can be currently exchanged into 1 BTC.</p>
+**1 credit per API call**
+
+ Get the current exchange rate for exchanging fiat/crypto assets.
+
+ By default, the base pair (the target asset) is EUR. When obtaining the exchange rate for an asset (for example, BTC), the value returned by the API expresses the amount of EUR that can be currently exchanged into 1 BTC.
 
 ### Example
 
