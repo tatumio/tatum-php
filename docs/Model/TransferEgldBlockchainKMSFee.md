@@ -1,0 +1,10 @@
+# TransferEgldBlockchainKMSFee
+
+## Getters
+
+Method name | Return type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**getGasLimit()** | **string** | Gas limit for transaction. | [optional]
+**getGasPrice()** | **string** | Gas price. | [optional]
+
+[[Back to Index]](../index.md)
