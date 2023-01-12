@@ -1233,6 +1233,7 @@ Get the address of a Multi Token smart contract by its transaction hash
  <p><b>1 credit per API call</b></p>
  <p>Get Multi Token contract address from deploy transaction.</p>
  <p>This API is supported for the following blockchains:</p>
+ 
  <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
 
 ### Example
