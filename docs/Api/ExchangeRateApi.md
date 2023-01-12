@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 Get the current exchange rate for exchanging fiat/crypto assets
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get the current exchange rate for exchanging fiat/crypto assets.
 

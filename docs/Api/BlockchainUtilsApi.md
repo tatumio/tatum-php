@@ -50,15 +50,16 @@ Name | Type | Description  | Notes
 
 Estimate the block height for a future point in time
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get an estimated block height (number) for some future point in time.
 
- Note that this API returnes an <b>estimation</b> of what the block height might be and <b>not</b> the exact block height.
+ Note that this API returnes an **estimation** of what the block height might be and **not** the exact block height.
 
  This API is supported for the following blockchains:
 
- <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
+ 
+<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
 
 ### Example
 
@@ -94,13 +95,14 @@ Name | Type | Description  | Notes
 
 Get the blockchain address of a smart contract by the deployment transaction ID
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get the blockchain address of a smart contract by the ID of its deployment transaction.
 
  This API is supported for the following blockchains:
 
- <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
+ 
+<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
 
 ### Example
 

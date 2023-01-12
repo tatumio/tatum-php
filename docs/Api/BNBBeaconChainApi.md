@@ -92,6 +92,8 @@ Broadcast signed BNB transaction
 
 <h4>5 credits per API call.</h4>
 
+
+
  Broadcast signed transaction to Binance blockchain. This method is used internally or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 ### Example
@@ -124,6 +126,8 @@ This endpoint does not need any parameter.
 Generate Binance wallet
 
 <h4>5 credits per API call.</h4>
+
+
 
  Generate BNB account. Tatum does not support HD wallet for BNB, only specific address and private key can be generated.
 
@@ -161,6 +165,8 @@ Get Binance Account
 
 <h4>5 credits per API call.</h4>
 
+
+
 Get Binance Account Detail by address.
 
 ### Example
@@ -197,6 +203,8 @@ Get Binance Transactions in Block
 
 <h4>5 credits per API call.</h4>
 
+
+
 Get Transactions in block by block height.
 
 ### Example
@@ -229,6 +237,8 @@ This endpoint does not need any parameter.
 Get Binance current block
 
 <h4>5 credits per API call.</h4>
+
+
 
 Get Binance current block number.
 
@@ -265,6 +275,8 @@ Name | Type | Description  | Notes
 Get Binance Transaction
 
 <h4>5 credits per API call.</h4>
+
+
 
 Get Binance Transaction by transaction hash.
 
@@ -314,6 +326,8 @@ Get Binance Transactions By Address
 
 <h4>5 credits per API call.</h4>
 
+
+
 Get Binance Transactions by address.
 
 ### Example
@@ -350,7 +364,11 @@ Send Binance / Binance Token from account to account
 
 <h4>10 credits per API call.</h4>
 
+
+
  Send Binance or Binance Token token from account to account.
+
+
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production,  <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request.  Alternatively, using the Tatum client library for supported languages.
 

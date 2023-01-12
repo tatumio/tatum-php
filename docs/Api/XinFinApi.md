@@ -126,27 +126,32 @@ Name | Type | Description  | Notes
 
 Invoke a method in a smart contract on XinFin
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Invoke a method in an existing smart contract on XinFin.
 
  You can call a read-only or write method.
 
- <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>
-         <b>Troubleshooting a failed transaction</b>
+ 
+<ul> <li>For **read-only** methods, the output of the invoked method is returned.</li> <li>For **write** methods, the ID of the associated transaction is returned.</li> </ul>
+
+         **Troubleshooting a failed transaction**
+
  Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
+
 However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
  If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
  For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.
 
- <b>Signing a transaction</b>
+ **Signing a transaction**
+
  When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -248,17 +253,19 @@ Name | Type | Description  | Notes
 
 Send XDC / ERC20 from account to account
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Send XDC or Tatum supported ERC20 token from account to account.
 
- <b>Signing a transaction</b>
+
+
+ **Signing a transaction**
 
  When sending XDC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
  Alternatively, using the Tatum client library for supported languages.
 
@@ -328,7 +335,7 @@ Name | Type | Description  | Notes
 
 Broadcast signed XDC transaction
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Broadcast signed transaction to XDC blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
@@ -366,7 +373,7 @@ Name | Type | Description  | Notes
 
 Generate XDC account address from Extended public key
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Generate XDC account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
@@ -402,7 +409,7 @@ Name | Type | Description  | Notes
 
 Generate XDC private key
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
@@ -438,10 +445,13 @@ Name | Type | Description  | Notes
 
 Generate XDC wallet
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
- Each address is identified by 3 main values: <ul><li>Private Key - your secret value, which should never be revealed</li> <li>Public Key - public address to be published</li> <li>Derivation index - index of generated address</li></ul>
+
+ Each address is identified by 3 main values: 
+<ul><li>Private Key - your secret value, which should never be revealed</li> <li>Public Key - public address to be published</li> <li>Derivation index - index of generated address</li></ul>
+
  
 
  Tatum follows BIP44 specification and generates for XDC wallet with derivation path m'/44'/550'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible XDC wallet.
@@ -478,7 +488,7 @@ Name | Type | Description  | Notes
 
 Get XDC Account balance
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get account balance in XDC. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
@@ -514,7 +524,7 @@ Name | Type | Description  | Notes
 
 Get XDC block by hash
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get XDC block by block hash or block number.
 
@@ -547,7 +557,7 @@ This endpoint does not need any parameter.
 
 Get current block number
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get XDC current block number. This is the number of the latest block in the blockchain.
 
@@ -583,7 +593,7 @@ Name | Type | Description  | Notes
 
 Get XDC Transaction
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Get XDC transaction by transaction hash.
 
@@ -619,7 +629,7 @@ Name | Type | Description  | Notes
 
 Get count of outgoing XDC transactions
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get a number of outgoing XDC transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
@@ -657,9 +667,10 @@ Name | Type | Description  | Notes
 
 Web3 HTTP driver
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
- <b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b>
+ **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
+
 
 
  Use this endpoint URL as a http-based web3 driver to connect directly to the XDC node provided by Tatum. To learn more about XDC Web3, visit the <a href="https://howto.xinfin.org/" target="_blank">XDC developer's guide</a>.

@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 Check whether a blockchain address is assigned to a virtual account
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Check whether a blockchain address with the specified cryptocurrency is registered within Tatum and is assigned to a virtual account (that is, whether this blockchain address is a deposit address associated with the virtual account).
 
@@ -118,17 +118,19 @@ Name | Type | Description  | Notes
 
 Assign a blockchain address to a virtual account
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Assign an existing blockchain address to a virtual account. The blockchain address becomes a deposit address associated with this account.</br>Use this API when the <a href="https://apidoc.tatum.io/tag/Account#operation/createAccount" target="_blank">virtual account has no default extended public key</a> (<code>xpub</code>) and deposit addresses are handled manually.
 
  You can assign multiple blockchain addresses to one virtual account. When you have multiple blockchain addresses assigned to the same virtual account, you aggregate various blockchain transactions from different addresses under a single account.
+
 You can deposit funds from another blockchain address to a deposit address associated with the virtual account, and the funds will be credited to that virtual account.
 
- <b>Scanning for incoming deposits</b>
+ **Scanning for incoming deposits**
 
  By default, deposit addresses are scanned for incoming deposits. Deposit addresses are automatically synchronized with the associated virtual account, and you can see incoming deposits on the virtual account.
-Scanning deposit addresses for incoming deposits consumes <b>20 credits per address per day</b>.
+
+Scanning deposit addresses for incoming deposits consumes **20 credits per address per day**.
 
  If you want to be notified about certain events occurring on the deposit addresses, <a href="https://apidoc.tatum.io/tag/Notification-subscriptions#operation/createSubscription" target="_blank">subscribe for notifications</a>.
 
@@ -166,24 +168,29 @@ Name | Type | Description  | Notes
 
 Create a deposit address for a virtual account
 
-<b>2 credits per API call
- On Flow, additional 3000 credits are consumed for <a href="https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateAddress" target="_blank">each created address</a>.</b>
+**2 credits per API call
+
+ On Flow, additional 3000 credits are consumed for <a href="https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateAddress" target="_blank">each created address</a>.**
 
  Create a deposit address associated with a virtual account.
 
  You can create multiple deposit addresses for one virtual account. When you have multiple deposit addresses created for the same virtual account, you aggregate various blockchain transactions from different addresses under a single account.
+
 You can deposit funds from another blockchain address to a deposit address associated with the virtual account, and the funds will be credited to that virtual account.
 
- <b>Scanning for incoming deposits</b>
+ **Scanning for incoming deposits**
 
  By default, deposit addresses are scanned for incoming deposits. Deposit addresses are automatically synchronized with the associated virtual account, and you can see incoming deposits on the virtual account.
-Scanning deposit addresses for incoming deposits consumes <b>20 credits per address per day</b>.
+
+Scanning deposit addresses for incoming deposits consumes **20 credits per address per day**.
 
  If you want to be notified about certain events occurring on the deposit addresses, <a href="https://apidoc.tatum.io/tag/Notification-subscriptions#operation/createSubscription" target="_blank">subscribe for notifications</a>.
 
- <b>Virtual account cryptocurrency</b>
+ **Virtual account cryptocurrency**
 
- Depending on the cryptocurrency of the virtual account, this API generates: <ul> <li><b>Public address</b> for BTC, BCH, ETH, or LTC</li> <li><b>DestinationTag</b> for XRP</li> <li><b>Message</b> for XLM</li> </ul>
+ Depending on the cryptocurrency of the virtual account, this API generates: 
+<ul> <li>**Public address** for BTC, BCH, ETH, or LTC</li> <li>**DestinationTag** for XRP</li> <li>**Message** for XLM</li> </ul>
+
  For fore information about supported blockchains and address types, see the <a href="https://apidoc.tatum.io/tag/Account#operation/createAccount" target="_blank">API for creating virtual accounts</a>.
 
  Deposit addresses are generated in the natural order of the extended public key provided in the virtual account. The derivation index is the representation of that order; it starts from 0 and ends at 2^31.
@@ -222,24 +229,29 @@ Name | Type | Description  | Notes
 
 Create multiple deposit addresses for a virtual account
 
-<b>2 credits per API call + 1 credit for each created address
- On Flow, additional 3000 credits are consumed for <a href="https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateAddress" target="_blank">each created address</a>.</b>
+**2 credits per API call + 1 credit for each created address
+
+ On Flow, additional 3000 credits are consumed for <a href="https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateAddress" target="_blank">each created address</a>.**
 
  Create multiple deposit addresses associated with a virtual account.
 
  When you have multiple deposit addresses created for the same virtual account, you aggregate various blockchain transactions from different addresses under a single account.
+
 You can deposit funds from another blockchain address to a deposit address associated with the virtual account, and the funds will be credited to that virtual account.
 
- <b>Scanning for incoming deposits</b>
+ **Scanning for incoming deposits**
 
  By default, deposit addresses are scanned for incoming deposits. Deposit addresses are automatically synchronized with the associated virtual account, and you can see incoming deposits on the virtual account.
-Scanning deposit addresses for incoming deposits consumes <b>20 credits per address per day</b>.
+
+Scanning deposit addresses for incoming deposits consumes **20 credits per address per day**.
 
  If you want to be notified about certain events occurring on the deposit addresses, <a href="https://apidoc.tatum.io/tag/Notification-subscriptions#operation/createSubscription" target="_blank">subscribe for notifications</a>.
 
- <b>Virtual account cryptocurrency</b>
+ **Virtual account cryptocurrency**
 
- Depending on the cryptocurrency of the virtual account, this API generates: <ul> <li><b>Public address</b> for BTC, BCH, ETH, or LTC</li> <li><b>DestinationTag</b> for XRP</li> <li><b>Message</b> for XLM</li> </ul>
+ Depending on the cryptocurrency of the virtual account, this API generates: 
+<ul> <li>**Public address** for BTC, BCH, ETH, or LTC</li> <li>**DestinationTag** for XRP</li> <li>**Message** for XLM</li> </ul>
+
  For fore information about supported blockchains and address types, see the <a href="https://apidoc.tatum.io/tag/Account#operation/createAccount" target="_blank">API for creating virtual accounts</a>.
 
  Deposit addresses are generated in the natural order of the extended public key provided in the virtual account. The derivation index is the representation of that order; it starts from 0 and ends at 2^31.
@@ -278,7 +290,7 @@ Name | Type | Description  | Notes
 
 Get all deposit addresses for a virtual account
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get all deposit addresses generated for a virtual account.
 
@@ -318,7 +330,7 @@ void (empty response body)
 
 Remove a deposit address from a virtual account
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Remove a deposit address from the virtual account.
 

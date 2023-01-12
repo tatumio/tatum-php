@@ -44,8 +44,12 @@ Estimate ledger to blockchain transaction fee
 
 <h4>2 credits per API call.</h4>
 
+
+
  Estimate current transaction fee for ledger to blockchain transaction.
- Supported blockchains: <ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Dogecoin</li> </ul>
+
+ Supported blockchains: 
+<ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Dogecoin</li> </ul>
 
 ### Example
 

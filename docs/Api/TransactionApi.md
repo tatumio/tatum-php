@@ -80,6 +80,8 @@ Find transactions within the ledger.
 
 <h4>1 credit per API call.</h4>
 
+
+
 Find transactions across whole ledger.
 
 ### Example
@@ -121,6 +123,8 @@ Name | Type | Description  | Notes
 Find transactions for account.
 
 <h4>1 credit per API call.</h4>
+
+
 
 Finds transactions for the account identified by the given account ID.
 
@@ -164,6 +168,8 @@ Find transactions for a customer across all of the customer's accounts.
 
 <h4>1 credit per API call.</h4>
 
+
+
 Finds transactions for all accounts of the customer identified by the given internal customer ID.
 
 ### Example
@@ -199,6 +205,8 @@ Name | Type | Description  | Notes
 Find transactions with a given reference across all accounts.
 
 <h4>1 credit per API call.</h4>
+
+
 
 Finds transactions for all accounts with the given reference.
 
@@ -236,11 +244,18 @@ Send payment
 
 <h4>4 credits per API call.</h4>
 
+
+
  Sends a payment within Tatum Private Ledger. All assets are settled instantly.
+
  When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them.
+
  This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses.
+
  If there is an insufficient balance in the sender account, no transaction is recorded.
+
  It is possible to perform an anonymous transaction where the sender account is not visible for the recipient.
+
  The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
 
 ### Example
@@ -277,11 +292,18 @@ Send payment in batch
 
 <h4>2 + 2 * N per API call. (N - count of transactions)</h4>
 
+
+
  Sends the N payments within Tatum Private Ledger. All assets are settled instantly.
+
  When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them.
+
  This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses.
+
  If there is an insufficient balance in the sender account, no transaction is recorded.
+
  It is possible to perform an anonymous transaction where the sender account is not visible for the recipient.
+
  The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
 
 ### Example

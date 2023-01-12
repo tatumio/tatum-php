@@ -70,6 +70,8 @@ Complete pending transaction to sign
 
 <h4>2 credits per API call.</h4>
 
+
+
  Mark pending transaction to sign as a complete and update it with a transactionID from the blockchain.
 
 ### Example
@@ -108,6 +110,8 @@ Delete transaction
 
 <h4>2 credits per API call.</h4>
 
+
+
 Delete transaction to be signed. When deleting offchain transaction, linked withdrawal will be cancelled automatically.
 
 ### Example
@@ -143,6 +147,8 @@ Name | Type | Description  | Notes
 Get transaction details
 
 <h4>1 credit per API call.</h4>
+
+
 
 Get detail of transaction to be signed / that was already signed and contains transactionId.
 
@@ -180,7 +186,7 @@ Name | Type | Description  | Notes
 
 Get pending transactions to sign
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.
 
@@ -218,11 +224,11 @@ Name | Type | Description  | Notes
 
 Get pending transactions to sign
 
-<b>1 credit for every 500 signature IDs per API call</b>
+**1 credit for every 500 signature IDs per API call**
 
  Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.
 
- <b>NOTE:</b> This API works only in KMS v5.0 or later. If you use KMS older than v5.0, use <a href="#operation/GetPendingTransactionsToSign">this API</a> instead.
+ **NOTE:** This API works only in KMS v5.0 or later. If you use KMS older than v5.0, use <a href="#operation/GetPendingTransactionsToSign">this API</a> instead.
 
 ### Example
 

@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 Broadcast a signed Bitcoin transaction
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Broadcasts a signed transaction to the Bitcoin blockchain. This method is used internally from Tatum KMS or Tatum Client Libraries. It is possible to create a custom signing mechanism and only use this method for broadcasting data to the blockchain.
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 Generate a Bitcoin address from the wallet's extended public key
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Generate a Bitcoin address from the extended public key of the wallet. The address is generated for the specific index - each extended public key can generate up to 2^32 addresses with the index starting from 0 up to 2^31 - 1.
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 Generate the private key for a Bitcoin address
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Generates a private key for an address from a mnemonic for a given derivation path index. The private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
@@ -248,10 +248,13 @@ Name | Type | Description  | Notes
 
 Generate a Bitcoin wallet
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from 1 mnemonic phrase, they are very convenient and secure. A mnemonic phrase consists of 24 special words in a defined order and can restore access to all generated addresses and private keys.
-Each address is identified by 3 main values:<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+
+Each address is identified by 3 main values:
+<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+
 
 
 Tatum follows BIP44 specification and generates for Bitcoin wallet with derivation path m'/44'/0'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Bitcoin wallet.
@@ -288,7 +291,7 @@ Name | Type | Description  | Notes
 
 Get the balance of a Bitcoin address
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get the balance of a Bitcoin address.
 
@@ -326,7 +329,7 @@ Name | Type | Description  | Notes
 
 Get a Bitcoin block by its hash or height
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Gets Bitcoin block detail by block hash or height.
 
@@ -359,7 +362,7 @@ This endpoint does not need any parameter.
 
 Get Bitcoin blockchain information
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Gets Bitcoin blockchain information. Obtains basic info like the testnet / mainnet version of the chain, the current block number and its hash.
 
@@ -395,7 +398,7 @@ Name | Type | Description  | Notes
 
 Get the hash of a Bitcoin block
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Gets a Bitcoin block hash. Returns the hash of the block to get the block's details.
 
@@ -428,7 +431,7 @@ This endpoint does not need any parameter.
 
 Get transactions from the Bitcoin mempool
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Gets Bitcoin transaction IDs in the mempool.
 
@@ -464,7 +467,7 @@ Name | Type | Description  | Notes
 
 Get a Bitcoin transaction by its hash
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get Bitcoin Transaction detail by transaction hash.
 
@@ -504,7 +507,7 @@ Name | Type | Description  | Notes
 
 Get all transactions for a Bitcoin address
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get all transactions for a Bitcoin address.
 
@@ -542,13 +545,14 @@ Name | Type | Description  | Notes
 
 Get information about a transaction output (UTXO) in a Bitcoin transaction
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
  Get information about a transaction output in a transaction and check whether this output is a UTXO or has been spent.
 
  "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of BTC/satoshis that remains at a Bitcoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about Bitcoin transactions and UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>.
 
- <ul> <li>If the transaction output is an UTXO, the API returns data about it.</li> <li>If the transaction output has been spent and there is no UTXO to return, the API returns an error with the <code>404</code> response code.</li> </ul>
+ 
+<ul> <li>If the transaction output is an UTXO, the API returns data about it.</li> <li>If the transaction output has been spent and there is no UTXO to return, the API returns an error with the <code>404</code> response code.</li> </ul>
 
 ### Example
 
@@ -583,10 +587,12 @@ Name | Type | Description  | Notes
 Connect to a Bitcoin node through an RPC driver
 
 This endpoint is deprecated. Do not use it.
- Instead, use <a href="https://apidoc.tatum.io/tag/Node-RPC#operation/NodeJsonPostRpcDriver" target="_blank">this API</a>.</b>
+
+ Instead, use <a href="https://apidoc.tatum.io/tag/Node-RPC#operation/NodeJsonPostRpcDriver" target="_blank">this API</a>.**
 
 
- <b>2 credits per API call</b>
+
+ **2 credits per API call**
 
  Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum. To learn more about JSON RPC, visit the <a href="https://developer.bitcoin.org/reference/rpc/index.html" target="_blank">Bitcoin developers' guide</a>.
 
@@ -622,7 +628,7 @@ Name | Type | Description  | Notes
 
 Send BTC to Bitcoin addresses
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Send BTC to blockchain addresses.
 
@@ -630,25 +636,34 @@ Send BTC to Bitcoin addresses
 
  You can build a BTC transaction by one of the following methods:
 
- <ul> <li><b>Sending BTC from blockchain addresses</b>
+ 
+<ul> <li>**Sending BTC from blockchain addresses**
+
 The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.
- To use this method, use the <code>BtcTransactionFromAddress</code> or <code>BtcTransactionFromAddressKMS</code> schema of the request body.</li> <li><b>Sending BTC from UTXOs</b>
+
+ To use this method, use the <code>BtcTransactionFromAddress</code> or <code>BtcTransactionFromAddressKMS</code> schema of the request body.</li> <li>**Sending BTC from UTXOs**
+
 The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.
+
  To use this method, use the <code>BtcTransactionFromUTXO</code> or <code>BtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul>
+
  When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 BTC and T2 with 2 BTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 BTC to spend:
+
 <code>1 BTC (from T1) + 2 BTC (from T2) = 3 BTC (to spend in total)</code>
 
  You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.
 
- <b>Paying the gas fee and receiving the change</b>
+ **Paying the gas fee and receiving the change**
+
  When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).
 
- <b>Signing a transaction</b>
+ **Signing a transaction**
+
  When sending BTC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 

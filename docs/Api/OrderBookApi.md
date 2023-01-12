@@ -116,6 +116,8 @@ Obtain chart data from historical closed trades
 
 <h4>2 credits for API call.</h4>
 
+
+
  Obtain data from the closed trades for entering in the chart. Time interval is set between <i>from</i> and <i>to</i> and there is defined time frame. There can be obtained at most 200 time points in the time interval.
 
 ### Example
@@ -186,7 +188,10 @@ Store buy / sell trade
 
 <h4>2 credits for API call, 2 credits for each fill of the counter trade. 1 API call + 2 fills  = 6 credits.</h4>
 
+
+
  Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible.
+
  It is possible to charge fees for the trades. Fees are an extra amount on top of the trade amount and are paid in the currency that you going to block e.g.: - BUY BTC/USDT - fees will be paid in USDT - SELL BTC/ETH - fees will be paid in BTC 
 
    If you fill type of the trade with FUTURE_BUY or FUTURE_SELL the trade will behave as a trade future. The trade is concluded now but will be fulfilled in future. The date of fulfillment is by the “Seal Date” field. You can also block a percentage of the amount until the future trade has expired. 
@@ -241,6 +246,8 @@ Cancel all existing trades for account
 
 <h4>1 credit for API call, 1 credit for each cancelled trade. 1 API call + 2 cancellations  = 3 credits.</h4>
 
+
+
 Cancel all trades for account.
 
 ### Example
@@ -276,6 +283,8 @@ void (empty response body)
 Cancel existing trade
 
 <h4>1 credit for API call</h4>
+
+
 
 Cancel existing trade.
 
@@ -325,6 +334,8 @@ List all active buy trades
 
 <h4>1 credit per API call.</h4>
 
+
+
 List all active buy trades.
 
 ### Example
@@ -360,6 +371,8 @@ Name | Type | Description  | Notes
 List all active buy trades
 
 <h4>1 credit per API call.</h4>
+
+
 
 List all active buy trades.
 
@@ -407,6 +420,8 @@ List all historical trades
 
 <h4>1 credit per API call.</h4>
 
+
+
 List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
 
 ### Example
@@ -443,6 +458,8 @@ List all historical trades
 
 <h4>1 credit per API call.</h4>
 
+
+
 List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
 
 ### Example
@@ -478,6 +495,8 @@ Name | Type | Description  | Notes
 List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
 <h4>1 credit per API call.</h4>
+
+
 
 List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
 
@@ -527,6 +546,8 @@ List all active sell trades
 
 <h4>1 credit per API call.</h4>
 
+
+
 List all active sell trades.
 
 ### Example
@@ -563,6 +584,8 @@ List all active sell trades
 
 <h4>1 credit per API call.</h4>
 
+
+
 List all active sell trades.
 
 ### Example
@@ -598,6 +621,8 @@ Name | Type | Description  | Notes
 Get existing trade
 
 <h4>1 credit for API call</h4>
+
+
 
 Get existing opened trade.
 

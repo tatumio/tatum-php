@@ -44,7 +44,10 @@ Check malicous address
 
 <h4>1 credit per API call.</h4>
 
+
+
  Check, if the blockchain address is malicous. Malicous address can contain assets from the DarkWeb, is connected to the scam projects or contains stolen funds.
+
 
 
  Supported Chains: ETH, BTC, LTC

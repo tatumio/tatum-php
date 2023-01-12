@@ -176,27 +176,32 @@ Name | Type | Description  | Notes
 
 Invoke a method in a smart contract on Ethereum
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Invoke a method in an existing smart contract on Ethereum.
 
  You can call a read-only or write method.
 
- <ul> <li>For <b>read-only</b> methods, the output of the invoked method is returned.</li> <li>For <b>write</b> methods, the ID of the associated transaction is returned.</li> </ul>
- <b>Troubleshooting a failed transaction</b>
+ 
+<ul> <li>For **read-only** methods, the output of the invoked method is returned.</li> <li>For **write** methods, the ID of the associated transaction is returned.</li> </ul>
+
+ **Troubleshooting a failed transaction**
+
  Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
+
 However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
  If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
  For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.
 
- <b>Signing a transaction</b>
+ **Signing a transaction**
+
  When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -268,7 +273,7 @@ Name | Type | Description  | Notes
 
 Broadcast signed Ethereum transaction
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Broadcast signed transaction to Ethereum blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
@@ -310,6 +315,8 @@ Generate Ethereum account address from Extended public key
 
 <h4>1 credit per API call.</h4>
 
+
+
  Generates an Ethereum account deposit address from an Extended public key. The deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
 ### Example
@@ -347,6 +354,8 @@ Name | Type | Description  | Notes
 Generate Ethereum private key
 
 <h4>1 credit per API call.</h4>
+
+
 
  Generates the private key of an address from a mnemonic for a given derivation path index. The private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
@@ -386,8 +395,13 @@ Generate Ethereum wallet
 
 <h4>1 credit per API call.</h4>
 
+
+
 Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from 1 mnemonic phrase, they are very convenient and secure. A mnemonic phrase consists of 24 special words in a defined order and can restore access to all generated addresses and private keys.
-Each address is identified by 3 main values:<ul><li>Private Key - your secret value which should never be revealed</li><li>Public Key - a public address to be published</li><li>Derivation index - an index of generated address</li></ul>
+
+Each address is identified by 3 main values:
+<ul><li>Private Key - your secret value which should never be revealed</li><li>Public Key - a public address to be published</li><li>Derivation index - an index of generated address</li></ul>
+
 
 
 Tatum follows the BIP44 specification and generates for Ethereum wallets with the derivation path m/44'/60'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generates a BIP44 compatible Ethereum wallet.
@@ -426,11 +440,11 @@ Name | Type | Description  | Notes
 
 Get the ETH balance of an Ethereum account
 
-<b>1 credit per API call</b>
+**1 credit per API call**
 
- Get the balance of <b>ETH</b> of an Ethereum account.
+ Get the balance of **ETH** of an Ethereum account.
 
- To get the balance of <b>tokens</b>, use the APIs for getting the balance of <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20GetBalanceAddress" target="_blank">fungible tokens (ERC-20)</a> and <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)#operation/NftGetTokensByAddressErc721" target="_blank">NFTs (ERC-721)</a>.
+ To get the balance of **tokens**, use the APIs for getting the balance of <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20GetBalanceAddress" target="_blank">fungible tokens (ERC-20)</a> and <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)#operation/NftGetTokensByAddressErc721" target="_blank">NFTs (ERC-721)</a>.
 
 ### Example
 
@@ -468,6 +482,8 @@ Get Ethereum block by hash
 
 <h4>1 credit per API call.</h4>
 
+
+
 Gets an Ethereum block-by-block hash or block number.
 
 ### Example
@@ -503,6 +519,8 @@ Name | Type | Description  | Notes
 Get current block number
 
 <h4>1 credit per API call.</h4>
+
+
 
 Gets the current Ethereum block number. This is the number of the latest block in the blockchain.
 
@@ -546,6 +564,8 @@ Get Ethereum internal transactions by address
 
 <h4>1 credit per API call.</h4>
 
+
+
  Get Ethereum internal transactions by address.
 
 ### Example
@@ -583,6 +603,8 @@ Name | Type | Description  | Notes
 Get Ethereum Transaction
 
 <h4>1 credit per API call.</h4>
+
+
 
 Get Ethereum transaction by transaction hash.
 
@@ -632,6 +654,8 @@ Get Ethereum transactions by address
 
 <h4>1 credit per API call.</h4>
 
+
+
 Get Ethereum transactions by address. This includes incoming and outgoing transactions for the address.
 
 ### Example
@@ -669,6 +693,8 @@ Name | Type | Description  | Notes
 Get count of outgoing Ethereum transactions
 
 <h4>1 credit per API call.</h4>
+
+
 
  Get a number of outgoing Ethereum transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
@@ -708,9 +734,10 @@ Name | Type | Description  | Notes
 
 Web3 HTTP driver
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
- <b>This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.</b>
+ **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
+
 
 
  Use this endpoint URL as an http-based web3 driver to connect directly to the Ethereum node provided by Tatum. To learn more about Ethereum Web3, visit the <a href="https://ethereum.org/en/developers/" target="_blank">Ethereum developers' guide</a>.
@@ -749,17 +776,19 @@ Name | Type | Description  | Notes
 
 Send Ethereum / ERC20 from account to account
 
-<b>2 credits per API call</b>
+**2 credits per API call**
 
  Send Ethereum or Tatum supported ERC20 token from account to account.
 
- <b>Signing a transaction</b>
+
+
+ **Signing a transaction**
 
  When sending ETH, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the <b>testnet</b> of a blockchain.
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the <b>mainnet</b>, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
