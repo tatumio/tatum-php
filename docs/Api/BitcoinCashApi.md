@@ -10,79 +10,81 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **bchBroadcast()**](#bchbroadcast) 
 
-> **POST** `/v3/bcash/broadcast`
-> 
 > Broadcast signed Bitcoin Cash transaction
+> 
+> **POST** `/v3/bcash/broadcast`
 
 [🔹 **bchGenerateAddress()**](#bchgenerateaddress) 
 
-> **GET** `/v3/bcash/address/{xpub}/{index}`
-> 
 > Generate Bitcoin Cash deposit address from Extended public key
+> 
+> **GET** `/v3/bcash/address/{xpub}/{index}`
 
 [🔹 **bchGenerateAddressPrivateKey()**](#bchgenerateaddressprivatekey) 
 
-> **POST** `/v3/bcash/wallet/priv`
-> 
 > Generate Bitcoin Cash private key
+> 
+> **POST** `/v3/bcash/wallet/priv`
 
 [🔹 **bchGenerateWallet()**](#bchgeneratewallet) 
 
-> **GET** `/v3/bcash/wallet`
-> 
 > Generate Bitcoin Cash wallet
+> 
+> **GET** `/v3/bcash/wallet`
 
 [🔹 **bchGetBlock()**](#bchgetblock) 
 
-> **GET** `/v3/bcash/block/{hash}`
-> 
 > Get Bitcoin Cash Block by hash
+> 
+> **GET** `/v3/bcash/block/{hash}`
 
 [🔹 **bchGetBlockChainInfo()**](#bchgetblockchaininfo) 
 
-> **GET** `/v3/bcash/info`
-> 
 > Get Bitcoin Cash Blockchain Information
+> 
+> **GET** `/v3/bcash/info`
 
 [🔹 **bchGetBlockHash()**](#bchgetblockhash) 
 
-> **GET** `/v3/bcash/block/hash/{i}`
-> 
 > Get Bitcoin Cash Block hash
+> 
+> **GET** `/v3/bcash/block/hash/{i}`
 
 [🔹 **bchGetRawTransaction()**](#bchgetrawtransaction) 
 
-> **GET** `/v3/bcash/transaction/{hash}`
-> 
 > Get Bitcoin Cash Transaction by hash
+> 
+> **GET** `/v3/bcash/transaction/{hash}`
 
 [🔹 **bchGetTxByAddress()**](#bchgettxbyaddress) 
 
-> **GET** `/v3/bcash/transaction/address/{address}`
-> 
 > Get Bitcoin Cash Transactions by address
+> 
+> **GET** `/v3/bcash/transaction/address/{address}`
 
 [🔹 **bchRpcDriver()**](#bchrpcdriver) 
 
-> **POST** `/v3/bcash/node`
-> 
 > JSON RPC HTTP driver
+> 
+> **POST** `/v3/bcash/node`
 
 [🔹 **bchTransaction()**](#bchtransaction) 
 
-> **POST** `/v3/bcash/transaction`
-> 
 > Send BCH to Bitcoin Cash addresses
+> 
+> **POST** `/v3/bcash/transaction`
 
 [🔹 **bchTransactionKMS()**](#bchtransactionkms) 
 
-> **POST** `/v3/bcash/transaction`
-> 
 > Send BCH to Bitcoin Cash addresses
+> 
+> **POST** `/v3/bcash/transaction`
 
 
 
 ## `bchBroadcast()`
+
+> **POST** `/v3/bcash/broadcast`
 
 ### Type signature
 
@@ -110,11 +112,13 @@ Broadcast signed Bitcoin Cash transaction
 
 ### Example
 
-[✨ View "bchBroadcast.php"](../../examples/Api/BitcoinCashApi/bchBroadcast.php)
+[✨ View "bchBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGenerateAddress()`
+
+> **GET** `/v3/bcash/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -144,11 +148,13 @@ Generate Bitcoin Cash deposit address from Extended public key
 
 ### Example
 
-[✨ View "bchGenerateAddress.php"](../../examples/Api/BitcoinCashApi/bchGenerateAddress.php)
+[✨ View "bchGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGenerateAddressPrivateKey()`
+
+> **POST** `/v3/bcash/wallet/priv`
 
 ### Type signature
 
@@ -176,11 +182,13 @@ Generate Bitcoin Cash private key
 
 ### Example
 
-[✨ View "bchGenerateAddressPrivateKey.php"](../../examples/Api/BitcoinCashApi/bchGenerateAddressPrivateKey.php)
+[✨ View "bchGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGenerateWallet()`
+
+> **GET** `/v3/bcash/wallet`
 
 ### Type signature
 
@@ -208,11 +216,13 @@ Generate Bitcoin Cash wallet
 
 ### Example
 
-[✨ View "bchGenerateWallet.php"](../../examples/Api/BitcoinCashApi/bchGenerateWallet.php)
+[✨ View "bchGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGetBlock()`
+
+> **GET** `/v3/bcash/block/{hash}`
 
 ### Type signature
 
@@ -240,11 +250,13 @@ Get Bitcoin Cash Block by hash
 
 ### Example
 
-[✨ View "bchGetBlock.php"](../../examples/Api/BitcoinCashApi/bchGetBlock.php)
+[✨ View "bchGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGetBlockChainInfo()`
+
+> **GET** `/v3/bcash/info`
 
 ### Type signature
 
@@ -269,11 +281,13 @@ Get Bitcoin Cash Blockchain Information
 
 ### Example
 
-[✨ View "bchGetBlockChainInfo.php"](../../examples/Api/BitcoinCashApi/bchGetBlockChainInfo.php)
+[✨ View "bchGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGetBlockHash()`
+
+> **GET** `/v3/bcash/block/hash/{i}`
 
 ### Type signature
 
@@ -301,11 +315,13 @@ Get Bitcoin Cash Block hash
 
 ### Example
 
-[✨ View "bchGetBlockHash.php"](../../examples/Api/BitcoinCashApi/bchGetBlockHash.php)
+[✨ View "bchGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGetRawTransaction()`
+
+> **GET** `/v3/bcash/transaction/{hash}`
 
 ### Type signature
 
@@ -333,11 +349,13 @@ Get Bitcoin Cash Transaction by hash
 
 ### Example
 
-[✨ View "bchGetRawTransaction.php"](../../examples/Api/BitcoinCashApi/bchGetRawTransaction.php)
+[✨ View "bchGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchGetTxByAddress()`
+
+> **GET** `/v3/bcash/transaction/address/{address}`
 
 ### Type signature
 
@@ -367,11 +385,13 @@ Get Bitcoin Cash Transactions by address
 
 ### Example
 
-[✨ View "bchGetTxByAddress.php"](../../examples/Api/BitcoinCashApi/bchGetTxByAddress.php)
+[✨ View "bchGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchRpcDriver()`
+
+> **POST** `/v3/bcash/node`
 
 ### Type signature
 
@@ -399,11 +419,13 @@ JSON RPC HTTP driver
 
 ### Example
 
-[✨ View "bchRpcDriver.php"](../../examples/Api/BitcoinCashApi/bchRpcDriver.php)
+[✨ View "bchRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchTransaction()`
+
+> **POST** `/v3/bcash/transaction`
 
 ### Type signature
 
@@ -431,11 +453,13 @@ Send BCH to Bitcoin Cash addresses
 
 ### Example
 
-[✨ View "bchTransaction.php"](../../examples/Api/BitcoinCashApi/bchTransaction.php)
+[✨ View "bchTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bchTransactionKMS()`
+
+> **POST** `/v3/bcash/transaction`
 
 ### Type signature
 
@@ -463,6 +487,6 @@ BchTransactionKMS operation
 
 ### Example
 
-[✨ View "bchTransactionKMS.php"](../../examples/Api/BitcoinCashApi/bchTransactionKMS.php)
+[✨ View "bchTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchTransactionKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

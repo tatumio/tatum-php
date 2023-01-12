@@ -10,109 +10,111 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **bscEstimateGas()**](#bscestimategas) 
 
-> **POST** `/v3/bsc/gas`
-> 
 > Estimate BNB Smart Chain transaction fees
+> 
+> **POST** `/v3/bsc/gas`
 
 [🔹 **celoEstimateGas()**](#celoestimategas) 
 
-> **POST** `/v3/celo/gas`
-> 
 > Estimate Celo Chain transaction fees
+> 
+> **POST** `/v3/celo/gas`
 
 [🔹 **egldEstimateGas()**](#egldestimategas) 
 
-> **POST** `/v3/egld/gas`
-> 
 > Estimate EGLD transaction fees
+> 
+> **POST** `/v3/egld/gas`
 
 [🔹 **estimateFee()**](#estimatefee) 
 
-> **POST** `/v3/blockchain/estimate`
-> 
 > Estimate the fee for a transaction
+> 
+> **POST** `/v3/blockchain/estimate`
 
 [🔹 **estimateFeeBatchMintNft()**](#estimatefeebatchmintnft) 
 
-> **POST** `/v3/blockchain/estimate`
-> 
 > Estimate the fee for a transaction
+> 
+> **POST** `/v3/blockchain/estimate`
 
 [🔹 **estimateFeeDeployCustodialWallet()**](#estimatefeedeploycustodialwallet) 
 
-> **POST** `/v3/blockchain/estimate`
-> 
 > Estimate the fee for a transaction
+> 
+> **POST** `/v3/blockchain/estimate`
 
 [🔹 **estimateFeeFromAddress()**](#estimatefeefromaddress) 
 
-> **POST** `/v3/blockchain/estimate`
-> 
 > Estimate the fee for a transaction
+> 
+> **POST** `/v3/blockchain/estimate`
 
 [🔹 **estimateFeeFromUTXO()**](#estimatefeefromutxo) 
 
-> **POST** `/v3/blockchain/estimate`
-> 
 > Estimate the fee for a transaction
+> 
+> **POST** `/v3/blockchain/estimate`
 
 [🔹 **estimateFeeTransferFromCustodial()**](#estimatefeetransferfromcustodial) 
 
-> **POST** `/v3/blockchain/estimate`
-> 
 > Estimate the fee for a transaction
+> 
+> **POST** `/v3/blockchain/estimate`
 
 [🔹 **ethEstimateGas()**](#ethestimategas) 
 
-> **POST** `/v3/ethereum/gas`
-> 
 > Estimate Ethereum transaction fees
+> 
+> **POST** `/v3/ethereum/gas`
 
 [🔹 **ethEstimateGasBatch()**](#ethestimategasbatch) 
 
-> **POST** `/v3/ethereum/gas/batch`
-> 
 > Estimate multiple Ethereum transaction fees
+> 
+> **POST** `/v3/ethereum/gas/batch`
 
 [🔹 **getBlockchainFee()**](#getblockchainfee) 
 
-> **GET** `/v3/blockchain/fee/{chain}`
-> 
 > Get recommended blockchain fee / gas price
+> 
+> **GET** `/v3/blockchain/fee/{chain}`
 
 [🔹 **kcsEstimateGas()**](#kcsestimategas) 
 
-> **POST** `/v3/kcs/gas`
-> 
 > Estimate KuCoin Community Chain transaction fees
+> 
+> **POST** `/v3/kcs/gas`
 
 [🔹 **klaytnEstimateGas()**](#klaytnestimategas) 
 
-> **POST** `/v3/klaytn/gas`
-> 
 > Estimate Klaytn transaction fees
+> 
+> **POST** `/v3/klaytn/gas`
 
 [🔹 **polygonEstimateGas()**](#polygonestimategas) 
 
-> **POST** `/v3/polygon/gas`
-> 
 > Estimate Polygon transaction fees
+> 
+> **POST** `/v3/polygon/gas`
 
 [🔹 **vetEstimateGas()**](#vetestimategas) 
 
-> **POST** `/v3/vet/transaction/gas`
-> 
 > Estimate VeChain Gas for transaction
+> 
+> **POST** `/v3/vet/transaction/gas`
 
 [🔹 **xdcEstimateGas()**](#xdcestimategas) 
 
-> **POST** `/v3/xdc/gas`
-> 
 > Estimate XinFin transaction fees
+> 
+> **POST** `/v3/xdc/gas`
 
 
 
 ## `bscEstimateGas()`
+
+> **POST** `/v3/bsc/gas`
 
 ### Type signature
 
@@ -140,11 +142,13 @@ Estimate BNB Smart Chain transaction fees
 
 ### Example
 
-[✨ View "bscEstimateGas.php"](../../examples/Api/BlockchainFeesApi/bscEstimateGas.php)
+[✨ View "bscEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/bscEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoEstimateGas()`
+
+> **POST** `/v3/celo/gas`
 
 ### Type signature
 
@@ -172,11 +176,13 @@ Estimate Celo Chain transaction fees
 
 ### Example
 
-[✨ View "celoEstimateGas.php"](../../examples/Api/BlockchainFeesApi/celoEstimateGas.php)
+[✨ View "celoEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/celoEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `egldEstimateGas()`
+
+> **POST** `/v3/egld/gas`
 
 ### Type signature
 
@@ -204,11 +210,13 @@ Estimate EGLD transaction fees
 
 ### Example
 
-[✨ View "egldEstimateGas.php"](../../examples/Api/BlockchainFeesApi/egldEstimateGas.php)
+[✨ View "egldEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/egldEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `estimateFee()`
+
+> **POST** `/v3/blockchain/estimate`
 
 ### Type signature
 
@@ -236,11 +244,13 @@ Estimate the fee for a transaction
 
 ### Example
 
-[✨ View "estimateFee.php"](../../examples/Api/BlockchainFeesApi/estimateFee.php)
+[✨ View "estimateFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `estimateFeeBatchMintNft()`
+
+> **POST** `/v3/blockchain/estimate`
 
 ### Type signature
 
@@ -268,11 +278,13 @@ EstimateFeeBatchMintNft operation
 
 ### Example
 
-[✨ View "estimateFeeBatchMintNft.php"](../../examples/Api/BlockchainFeesApi/estimateFeeBatchMintNft.php)
+[✨ View "estimateFeeBatchMintNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeBatchMintNft.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `estimateFeeDeployCustodialWallet()`
+
+> **POST** `/v3/blockchain/estimate`
 
 ### Type signature
 
@@ -300,11 +312,13 @@ EstimateFeeDeployCustodialWallet operation
 
 ### Example
 
-[✨ View "estimateFeeDeployCustodialWallet.php"](../../examples/Api/BlockchainFeesApi/estimateFeeDeployCustodialWallet.php)
+[✨ View "estimateFeeDeployCustodialWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeDeployCustodialWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `estimateFeeFromAddress()`
+
+> **POST** `/v3/blockchain/estimate`
 
 ### Type signature
 
@@ -332,11 +346,13 @@ EstimateFeeFromAddress operation
 
 ### Example
 
-[✨ View "estimateFeeFromAddress.php"](../../examples/Api/BlockchainFeesApi/estimateFeeFromAddress.php)
+[✨ View "estimateFeeFromAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeFromAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `estimateFeeFromUTXO()`
+
+> **POST** `/v3/blockchain/estimate`
 
 ### Type signature
 
@@ -364,11 +380,13 @@ EstimateFeeFromUTXO operation
 
 ### Example
 
-[✨ View "estimateFeeFromUTXO.php"](../../examples/Api/BlockchainFeesApi/estimateFeeFromUTXO.php)
+[✨ View "estimateFeeFromUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeFromUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `estimateFeeTransferFromCustodial()`
+
+> **POST** `/v3/blockchain/estimate`
 
 ### Type signature
 
@@ -396,11 +414,13 @@ EstimateFeeTransferFromCustodial operation
 
 ### Example
 
-[✨ View "estimateFeeTransferFromCustodial.php"](../../examples/Api/BlockchainFeesApi/estimateFeeTransferFromCustodial.php)
+[✨ View "estimateFeeTransferFromCustodial.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeTransferFromCustodial.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethEstimateGas()`
+
+> **POST** `/v3/ethereum/gas`
 
 ### Type signature
 
@@ -430,11 +450,13 @@ Estimate Ethereum transaction fees
 
 ### Example
 
-[✨ View "ethEstimateGas.php"](../../examples/Api/BlockchainFeesApi/ethEstimateGas.php)
+[✨ View "ethEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/ethEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethEstimateGasBatch()`
+
+> **POST** `/v3/ethereum/gas/batch`
 
 ### Type signature
 
@@ -464,11 +486,13 @@ Estimate multiple Ethereum transaction fees
 
 ### Example
 
-[✨ View "ethEstimateGasBatch.php"](../../examples/Api/BlockchainFeesApi/ethEstimateGasBatch.php)
+[✨ View "ethEstimateGasBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/ethEstimateGasBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getBlockchainFee()`
+
+> **GET** `/v3/blockchain/fee/{chain}`
 
 ### Type signature
 
@@ -496,11 +520,13 @@ Get recommended blockchain fee / gas price
 
 ### Example
 
-[✨ View "getBlockchainFee.php"](../../examples/Api/BlockchainFeesApi/getBlockchainFee.php)
+[✨ View "getBlockchainFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/getBlockchainFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `kcsEstimateGas()`
+
+> **POST** `/v3/kcs/gas`
 
 ### Type signature
 
@@ -528,11 +554,13 @@ Estimate KuCoin Community Chain transaction fees
 
 ### Example
 
-[✨ View "kcsEstimateGas.php"](../../examples/Api/BlockchainFeesApi/kcsEstimateGas.php)
+[✨ View "kcsEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/kcsEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `klaytnEstimateGas()`
+
+> **POST** `/v3/klaytn/gas`
 
 ### Type signature
 
@@ -560,11 +588,13 @@ Estimate Klaytn transaction fees
 
 ### Example
 
-[✨ View "klaytnEstimateGas.php"](../../examples/Api/BlockchainFeesApi/klaytnEstimateGas.php)
+[✨ View "klaytnEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/klaytnEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `polygonEstimateGas()`
+
+> **POST** `/v3/polygon/gas`
 
 ### Type signature
 
@@ -592,11 +622,13 @@ Estimate Polygon transaction fees
 
 ### Example
 
-[✨ View "polygonEstimateGas.php"](../../examples/Api/BlockchainFeesApi/polygonEstimateGas.php)
+[✨ View "polygonEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/polygonEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetEstimateGas()`
+
+> **POST** `/v3/vet/transaction/gas`
 
 ### Type signature
 
@@ -624,11 +656,13 @@ Estimate VeChain Gas for transaction
 
 ### Example
 
-[✨ View "vetEstimateGas.php"](../../examples/Api/BlockchainFeesApi/vetEstimateGas.php)
+[✨ View "vetEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/vetEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcEstimateGas()`
+
+> **POST** `/v3/xdc/gas`
 
 ### Type signature
 
@@ -656,6 +690,6 @@ Estimate XinFin transaction fees
 
 ### Example
 
-[✨ View "xdcEstimateGas.php"](../../examples/Api/BlockchainFeesApi/xdcEstimateGas.php)
+[✨ View "xdcEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/xdcEstimateGas.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

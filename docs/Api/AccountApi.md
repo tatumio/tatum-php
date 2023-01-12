@@ -10,121 +10,123 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **activateAccount()**](#activateaccount) 
 
-> **PUT** `/v3/ledger/account/{id}/activate`
-> 
 > Activate account
+> 
+> **PUT** `/v3/ledger/account/{id}/activate`
 
 [🔹 **blockAmount()**](#blockamount) 
 
-> **POST** `/v3/ledger/account/block/{id}`
-> 
 > Block an amount in an account
+> 
+> **POST** `/v3/ledger/account/block/{id}`
 
 [🔹 **createAccount()**](#createaccount) 
 
-> **POST** `/v3/ledger/account`
-> 
 > Create a virtual account
+> 
+> **POST** `/v3/ledger/account`
 
 [🔹 **createAccountBatch()**](#createaccountbatch) 
 
-> **POST** `/v3/ledger/account/batch`
-> 
 > Create multiple accounts in a batch call
+> 
+> **POST** `/v3/ledger/account/batch`
 
 [🔹 **createAccountXpub()**](#createaccountxpub) 
 
-> **POST** `/v3/ledger/account`
-> 
 > Create a virtual account
+> 
+> **POST** `/v3/ledger/account`
 
 [🔹 **deactivateAccount()**](#deactivateaccount) 
 
-> **PUT** `/v3/ledger/account/{id}/deactivate`
-> 
 > Deactivate account
+> 
+> **PUT** `/v3/ledger/account/{id}/deactivate`
 
 [🔹 **deleteAllBlockAmount()**](#deleteallblockamount) 
 
-> **DELETE** `/v3/ledger/account/block/account/{id}`
-> 
 > Unblock all blocked amounts in an account
+> 
+> **DELETE** `/v3/ledger/account/block/account/{id}`
 
 [🔹 **deleteBlockAmount()**](#deleteblockamount) 
 
-> **DELETE** `/v3/ledger/account/block/{id}`
-> 
 > Unblock a blocked amount in an account
+> 
+> **DELETE** `/v3/ledger/account/block/{id}`
 
 [🔹 **freezeAccount()**](#freezeaccount) 
 
-> **PUT** `/v3/ledger/account/{id}/freeze`
-> 
 > Freeze account
+> 
+> **PUT** `/v3/ledger/account/{id}/freeze`
 
 [🔹 **getAccountBalance()**](#getaccountbalance) 
 
-> **GET** `/v3/ledger/account/{id}/balance`
-> 
 > Get account balance
+> 
+> **GET** `/v3/ledger/account/{id}/balance`
 
 [🔹 **getAccountByAccountId()**](#getaccountbyaccountid) 
 
-> **GET** `/v3/ledger/account/{id}`
-> 
 > Get account by ID
+> 
+> **GET** `/v3/ledger/account/{id}`
 
 [🔹 **getAccounts()**](#getaccounts) 
 
-> **GET** `/v3/ledger/account`
-> 
 > List all accounts
+> 
+> **GET** `/v3/ledger/account`
 
 [🔹 **getAccountsByCustomerId()**](#getaccountsbycustomerid) 
 
-> **GET** `/v3/ledger/account/customer/{id}`
-> 
 > List all customer accounts
+> 
+> **GET** `/v3/ledger/account/customer/{id}`
 
 [🔹 **getAccountsCount()**](#getaccountscount) 
 
-> **GET** `/v3/ledger/account/count`
-> 
 > Count of found entities for get accounts request
+> 
+> **GET** `/v3/ledger/account/count`
 
 [🔹 **getBlockAmount()**](#getblockamount) 
 
-> **GET** `/v3/ledger/account/block/{id}`
-> 
 > Get blocked amounts in an account
+> 
+> **GET** `/v3/ledger/account/block/{id}`
 
 [🔹 **getBlockAmountById()**](#getblockamountbyid) 
 
-> **GET** `/v3/ledger/account/block/{id}/detail`
-> 
 > Get blocked amount by ID
+> 
+> **GET** `/v3/ledger/account/block/{id}/detail`
 
 [🔹 **unblockAmountWithTransaction()**](#unblockamountwithtransaction) 
 
-> **PUT** `/v3/ledger/account/block/{id}`
-> 
 > Unblock an amount in an account and perform a transaction
+> 
+> **PUT** `/v3/ledger/account/block/{id}`
 
 [🔹 **unfreezeAccount()**](#unfreezeaccount) 
 
-> **PUT** `/v3/ledger/account/{id}/unfreeze`
-> 
 > Unfreeze account
+> 
+> **PUT** `/v3/ledger/account/{id}/unfreeze`
 
 [🔹 **updateAccountByAccountId()**](#updateaccountbyaccountid) 
 
-> **PUT** `/v3/ledger/account/{id}`
-> 
 > Update account
+> 
+> **PUT** `/v3/ledger/account/{id}`
 
 
 
 ## `activateAccount()`
+
+> **PUT** `/v3/ledger/account/{id}/activate`
 
 ### Type signature
 
@@ -152,11 +154,13 @@ Activate account
 
 ### Example
 
-[✨ View "activateAccount.php"](../../examples/Api/AccountApi/activateAccount.php)
+[✨ View "activateAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `blockAmount()`
+
+> **POST** `/v3/ledger/account/block/{id}`
 
 ### Type signature
 
@@ -186,11 +190,13 @@ Block an amount in an account
 
 ### Example
 
-[✨ View "blockAmount.php"](../../examples/Api/AccountApi/blockAmount.php)
+[✨ View "blockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `createAccount()`
+
+> **POST** `/v3/ledger/account`
 
 ### Type signature
 
@@ -218,11 +224,13 @@ CreateAccount operation
 
 ### Example
 
-[✨ View "createAccount.php"](../../examples/Api/AccountApi/createAccount.php)
+[✨ View "createAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `createAccountBatch()`
+
+> **POST** `/v3/ledger/account/batch`
 
 ### Type signature
 
@@ -250,11 +258,13 @@ Create multiple accounts in a batch call
 
 ### Example
 
-[✨ View "createAccountBatch.php"](../../examples/Api/AccountApi/createAccountBatch.php)
+[✨ View "createAccountBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `createAccountXpub()`
+
+> **POST** `/v3/ledger/account`
 
 ### Type signature
 
@@ -282,11 +292,13 @@ Create a virtual account
 
 ### Example
 
-[✨ View "createAccountXpub.php"](../../examples/Api/AccountApi/createAccountXpub.php)
+[✨ View "createAccountXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deactivateAccount()`
+
+> **PUT** `/v3/ledger/account/{id}/deactivate`
 
 ### Type signature
 
@@ -314,11 +326,13 @@ Deactivate account
 
 ### Example
 
-[✨ View "deactivateAccount.php"](../../examples/Api/AccountApi/deactivateAccount.php)
+[✨ View "deactivateAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deactivateAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deleteAllBlockAmount()`
+
+> **DELETE** `/v3/ledger/account/block/account/{id}`
 
 ### Type signature
 
@@ -346,11 +360,13 @@ Unblock all blocked amounts in an account
 
 ### Example
 
-[✨ View "deleteAllBlockAmount.php"](../../examples/Api/AccountApi/deleteAllBlockAmount.php)
+[✨ View "deleteAllBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteAllBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deleteBlockAmount()`
+
+> **DELETE** `/v3/ledger/account/block/{id}`
 
 ### Type signature
 
@@ -378,11 +394,13 @@ Unblock a blocked amount in an account
 
 ### Example
 
-[✨ View "deleteBlockAmount.php"](../../examples/Api/AccountApi/deleteBlockAmount.php)
+[✨ View "deleteBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `freezeAccount()`
+
+> **PUT** `/v3/ledger/account/{id}/freeze`
 
 ### Type signature
 
@@ -410,11 +428,13 @@ Freeze account
 
 ### Example
 
-[✨ View "freezeAccount.php"](../../examples/Api/AccountApi/freezeAccount.php)
+[✨ View "freezeAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/freezeAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAccountBalance()`
+
+> **GET** `/v3/ledger/account/{id}/balance`
 
 ### Type signature
 
@@ -442,11 +462,13 @@ Get account balance
 
 ### Example
 
-[✨ View "getAccountBalance.php"](../../examples/Api/AccountApi/getAccountBalance.php)
+[✨ View "getAccountBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAccountByAccountId()`
+
+> **GET** `/v3/ledger/account/{id}`
 
 ### Type signature
 
@@ -474,11 +496,13 @@ Get account by ID
 
 ### Example
 
-[✨ View "getAccountByAccountId.php"](../../examples/Api/AccountApi/getAccountByAccountId.php)
+[✨ View "getAccountByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAccounts()`
+
+> **GET** `/v3/ledger/account`
 
 ### Type signature
 
@@ -522,11 +546,13 @@ List all accounts
 
 ### Example
 
-[✨ View "getAccounts.php"](../../examples/Api/AccountApi/getAccounts.php)
+[✨ View "getAccounts.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccounts.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAccountsByCustomerId()`
+
+> **GET** `/v3/ledger/account/customer/{id}`
 
 ### Type signature
 
@@ -560,11 +586,13 @@ List all customer accounts
 
 ### Example
 
-[✨ View "getAccountsByCustomerId.php"](../../examples/Api/AccountApi/getAccountsByCustomerId.php)
+[✨ View "getAccountsByCustomerId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsByCustomerId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAccountsCount()`
+
+> **GET** `/v3/ledger/account/count`
 
 ### Type signature
 
@@ -608,11 +636,13 @@ Count of found entities for get accounts request
 
 ### Example
 
-[✨ View "getAccountsCount.php"](../../examples/Api/AccountApi/getAccountsCount.php)
+[✨ View "getAccountsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getBlockAmount()`
+
+> **GET** `/v3/ledger/account/block/{id}`
 
 ### Type signature
 
@@ -644,11 +674,13 @@ Get blocked amounts in an account
 
 ### Example
 
-[✨ View "getBlockAmount.php"](../../examples/Api/AccountApi/getBlockAmount.php)
+[✨ View "getBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getBlockAmountById()`
+
+> **GET** `/v3/ledger/account/block/{id}/detail`
 
 ### Type signature
 
@@ -676,11 +708,13 @@ Get blocked amount by ID
 
 ### Example
 
-[✨ View "getBlockAmountById.php"](../../examples/Api/AccountApi/getBlockAmountById.php)
+[✨ View "getBlockAmountById.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmountById.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `unblockAmountWithTransaction()`
+
+> **PUT** `/v3/ledger/account/block/{id}`
 
 ### Type signature
 
@@ -710,11 +744,13 @@ Unblock an amount in an account and perform a transaction
 
 ### Example
 
-[✨ View "unblockAmountWithTransaction.php"](../../examples/Api/AccountApi/unblockAmountWithTransaction.php)
+[✨ View "unblockAmountWithTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unblockAmountWithTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `unfreezeAccount()`
+
+> **PUT** `/v3/ledger/account/{id}/unfreeze`
 
 ### Type signature
 
@@ -742,11 +778,13 @@ Unfreeze account
 
 ### Example
 
-[✨ View "unfreezeAccount.php"](../../examples/Api/AccountApi/unfreezeAccount.php)
+[✨ View "unfreezeAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unfreezeAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateAccountByAccountId()`
+
+> **PUT** `/v3/ledger/account/{id}`
 
 ### Type signature
 
@@ -776,6 +814,6 @@ Update account
 
 ### Example
 
-[✨ View "updateAccountByAccountId.php"](../../examples/Api/AccountApi/updateAccountByAccountId.php)
+[✨ View "updateAccountByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/updateAccountByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

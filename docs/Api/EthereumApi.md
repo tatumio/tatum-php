@@ -10,109 +10,111 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **callReadSmartContractMethod()**](#callreadsmartcontractmethod) 
 
-> **POST** `/v3/ethereum/smartcontract`
-> 
 > Invoke a method in a smart contract on Ethereum
+> 
+> **POST** `/v3/ethereum/smartcontract`
 
 [🔹 **callSmartContractMethod()**](#callsmartcontractmethod) 
 
-> **POST** `/v3/ethereum/smartcontract`
-> 
 > Invoke a method in a smart contract on Ethereum
+> 
+> **POST** `/v3/ethereum/smartcontract`
 
 [🔹 **callSmartContractMethodKMS()**](#callsmartcontractmethodkms) 
 
-> **POST** `/v3/ethereum/smartcontract`
-> 
 > Invoke a method in a smart contract on Ethereum
+> 
+> **POST** `/v3/ethereum/smartcontract`
 
 [🔹 **ethBroadcast()**](#ethbroadcast) 
 
-> **POST** `/v3/ethereum/broadcast`
-> 
 > Broadcast signed Ethereum transaction
+> 
+> **POST** `/v3/ethereum/broadcast`
 
 [🔹 **ethGenerateAddress()**](#ethgenerateaddress) 
 
-> **GET** `/v3/ethereum/address/{xpub}/{index}`
-> 
 > Generate Ethereum account address from Extended public key
+> 
+> **GET** `/v3/ethereum/address/{xpub}/{index}`
 
 [🔹 **ethGenerateAddressPrivateKey()**](#ethgenerateaddressprivatekey) 
 
-> **POST** `/v3/ethereum/wallet/priv`
-> 
 > Generate Ethereum private key
+> 
+> **POST** `/v3/ethereum/wallet/priv`
 
 [🔹 **ethGenerateWallet()**](#ethgeneratewallet) 
 
-> **GET** `/v3/ethereum/wallet`
-> 
 > Generate Ethereum wallet
+> 
+> **GET** `/v3/ethereum/wallet`
 
 [🔹 **ethGetBalance()**](#ethgetbalance) 
 
-> **GET** `/v3/ethereum/account/balance/{address}`
-> 
 > Get the ETH balance of an Ethereum account
+> 
+> **GET** `/v3/ethereum/account/balance/{address}`
 
 [🔹 **ethGetBlock()**](#ethgetblock) 
 
-> **GET** `/v3/ethereum/block/{hash}`
-> 
 > Get Ethereum block by hash
+> 
+> **GET** `/v3/ethereum/block/{hash}`
 
 [🔹 **ethGetCurrentBlock()**](#ethgetcurrentblock) 
 
-> **GET** `/v3/ethereum/block/current`
-> 
 > Get current block number
+> 
+> **GET** `/v3/ethereum/block/current`
 
 [🔹 **ethGetInternalTransactionByAddress()**](#ethgetinternaltransactionbyaddress) 
 
-> **GET** `/v3/ethereum/account/transaction/erc20/internal/{address}`
-> 
 > Get Ethereum internal transactions by address
+> 
+> **GET** `/v3/ethereum/account/transaction/erc20/internal/{address}`
 
 [🔹 **ethGetTransaction()**](#ethgettransaction) 
 
-> **GET** `/v3/ethereum/transaction/{hash}`
-> 
 > Get Ethereum Transaction
+> 
+> **GET** `/v3/ethereum/transaction/{hash}`
 
 [🔹 **ethGetTransactionByAddress()**](#ethgettransactionbyaddress) 
 
-> **GET** `/v3/ethereum/account/transaction/{address}`
-> 
 > Get Ethereum transactions by address
+> 
+> **GET** `/v3/ethereum/account/transaction/{address}`
 
 [🔹 **ethGetTransactionCount()**](#ethgettransactioncount) 
 
-> **GET** `/v3/ethereum/transaction/count/{address}`
-> 
 > Get count of outgoing Ethereum transactions
+> 
+> **GET** `/v3/ethereum/transaction/count/{address}`
 
 [🔹 **ethWeb3Driver()**](#ethweb3driver) 
 
-> **POST** `/v3/ethereum/web3/{xApiKey}`
-> 
 > Web3 HTTP driver
+> 
+> **POST** `/v3/ethereum/web3/{xApiKey}`
 
 [🔹 **transferEthBlockchain()**](#transferethblockchain) 
 
-> **POST** `/v3/ethereum/transaction`
-> 
 > Send Ethereum / ERC20 from account to account
+> 
+> **POST** `/v3/ethereum/transaction`
 
 [🔹 **transferEthBlockchainKMS()**](#transferethblockchainkms) 
 
-> **POST** `/v3/ethereum/transaction`
-> 
 > Send Ethereum / ERC20 from account to account
+> 
+> **POST** `/v3/ethereum/transaction`
 
 
 
 ## `callReadSmartContractMethod()`
+
+> **POST** `/v3/ethereum/smartcontract`
 
 ### Type signature
 
@@ -142,11 +144,13 @@ CallReadSmartContractMethod operation
 
 ### Example
 
-[✨ View "callReadSmartContractMethod.php"](../../examples/Api/EthereumApi/callReadSmartContractMethod.php)
+[✨ View "callReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callReadSmartContractMethod.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `callSmartContractMethod()`
+
+> **POST** `/v3/ethereum/smartcontract`
 
 ### Type signature
 
@@ -176,11 +180,13 @@ Invoke a method in a smart contract on Ethereum
 
 ### Example
 
-[✨ View "callSmartContractMethod.php"](../../examples/Api/EthereumApi/callSmartContractMethod.php)
+[✨ View "callSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethod.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `callSmartContractMethodKMS()`
+
+> **POST** `/v3/ethereum/smartcontract`
 
 ### Type signature
 
@@ -210,11 +216,13 @@ CallSmartContractMethodKMS operation
 
 ### Example
 
-[✨ View "callSmartContractMethodKMS.php"](../../examples/Api/EthereumApi/callSmartContractMethodKMS.php)
+[✨ View "callSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethodKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethBroadcast()`
+
+> **POST** `/v3/ethereum/broadcast`
 
 ### Type signature
 
@@ -244,11 +252,13 @@ Broadcast signed Ethereum transaction
 
 ### Example
 
-[✨ View "ethBroadcast.php"](../../examples/Api/EthereumApi/ethBroadcast.php)
+[✨ View "ethBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGenerateAddress()`
+
+> **GET** `/v3/ethereum/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -280,11 +290,13 @@ Generate Ethereum account address from Extended public key
 
 ### Example
 
-[✨ View "ethGenerateAddress.php"](../../examples/Api/EthereumApi/ethGenerateAddress.php)
+[✨ View "ethGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGenerateAddressPrivateKey()`
+
+> **POST** `/v3/ethereum/wallet/priv`
 
 ### Type signature
 
@@ -314,11 +326,13 @@ Generate Ethereum private key
 
 ### Example
 
-[✨ View "ethGenerateAddressPrivateKey.php"](../../examples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
+[✨ View "ethGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGenerateWallet()`
+
+> **GET** `/v3/ethereum/wallet`
 
 ### Type signature
 
@@ -348,11 +362,13 @@ Generate Ethereum wallet
 
 ### Example
 
-[✨ View "ethGenerateWallet.php"](../../examples/Api/EthereumApi/ethGenerateWallet.php)
+[✨ View "ethGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetBalance()`
+
+> **GET** `/v3/ethereum/account/balance/{address}`
 
 ### Type signature
 
@@ -382,11 +398,13 @@ Get the ETH balance of an Ethereum account
 
 ### Example
 
-[✨ View "ethGetBalance.php"](../../examples/Api/EthereumApi/ethGetBalance.php)
+[✨ View "ethGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetBlock()`
+
+> **GET** `/v3/ethereum/block/{hash}`
 
 ### Type signature
 
@@ -416,11 +434,13 @@ Get Ethereum block by hash
 
 ### Example
 
-[✨ View "ethGetBlock.php"](../../examples/Api/EthereumApi/ethGetBlock.php)
+[✨ View "ethGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetCurrentBlock()`
+
+> **GET** `/v3/ethereum/block/current`
 
 ### Type signature
 
@@ -448,11 +468,13 @@ Get current block number
 
 ### Example
 
-[✨ View "ethGetCurrentBlock.php"](../../examples/Api/EthereumApi/ethGetCurrentBlock.php)
+[✨ View "ethGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetInternalTransactionByAddress()`
+
+> **GET** `/v3/ethereum/account/transaction/erc20/internal/{address}`
 
 ### Type signature
 
@@ -486,11 +508,13 @@ Get Ethereum internal transactions by address
 
 ### Example
 
-[✨ View "ethGetInternalTransactionByAddress.php"](../../examples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
+[✨ View "ethGetInternalTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetTransaction()`
+
+> **GET** `/v3/ethereum/transaction/{hash}`
 
 ### Type signature
 
@@ -520,11 +544,13 @@ Get Ethereum Transaction
 
 ### Example
 
-[✨ View "ethGetTransaction.php"](../../examples/Api/EthereumApi/ethGetTransaction.php)
+[✨ View "ethGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetTransactionByAddress()`
+
+> **GET** `/v3/ethereum/account/transaction/{address}`
 
 ### Type signature
 
@@ -564,11 +590,13 @@ Get Ethereum transactions by address
 
 ### Example
 
-[✨ View "ethGetTransactionByAddress.php"](../../examples/Api/EthereumApi/ethGetTransactionByAddress.php)
+[✨ View "ethGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethGetTransactionCount()`
+
+> **GET** `/v3/ethereum/transaction/count/{address}`
 
 ### Type signature
 
@@ -598,11 +626,13 @@ Get count of outgoing Ethereum transactions
 
 ### Example
 
-[✨ View "ethGetTransactionCount.php"](../../examples/Api/EthereumApi/ethGetTransactionCount.php)
+[✨ View "ethGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `ethWeb3Driver()`
+
+> **POST** `/v3/ethereum/web3/{xApiKey}`
 
 ### Type signature
 
@@ -634,11 +664,13 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "ethWeb3Driver.php"](../../examples/Api/EthereumApi/ethWeb3Driver.php)
+[✨ View "ethWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferEthBlockchain()`
+
+> **POST** `/v3/ethereum/transaction`
 
 ### Type signature
 
@@ -668,11 +700,13 @@ Send Ethereum / ERC20 from account to account
 
 ### Example
 
-[✨ View "transferEthBlockchain.php"](../../examples/Api/EthereumApi/transferEthBlockchain.php)
+[✨ View "transferEthBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferEthBlockchainKMS()`
+
+> **POST** `/v3/ethereum/transaction`
 
 ### Type signature
 
@@ -702,6 +736,6 @@ TransferEthBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferEthBlockchainKMS.php"](../../examples/Api/EthereumApi/transferEthBlockchainKMS.php)
+[✨ View "transferEthBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

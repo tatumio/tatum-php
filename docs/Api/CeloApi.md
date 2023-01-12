@@ -10,103 +10,105 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **callCeloReadSmartContractMethod()**](#callceloreadsmartcontractmethod) 
 
-> **POST** `/v3/celo/smartcontract`
-> 
 > Invoke a method in a smart contract on Celo
+> 
+> **POST** `/v3/celo/smartcontract`
 
 [🔹 **callCeloSmartContractMethod()**](#callcelosmartcontractmethod) 
 
-> **POST** `/v3/celo/smartcontract`
-> 
 > Invoke a method in a smart contract on Celo
+> 
+> **POST** `/v3/celo/smartcontract`
 
 [🔹 **callCeloSmartContractMethodKMS()**](#callcelosmartcontractmethodkms) 
 
-> **POST** `/v3/celo/smartcontract`
-> 
 > Invoke a method in a smart contract on Celo
+> 
+> **POST** `/v3/celo/smartcontract`
 
 [🔹 **celoBroadcast()**](#celobroadcast) 
 
-> **POST** `/v3/celo/broadcast`
-> 
 > Broadcast signed Celo transaction
+> 
+> **POST** `/v3/celo/broadcast`
 
 [🔹 **celoGenerateAddress()**](#celogenerateaddress) 
 
-> **GET** `/v3/celo/address/{xpub}/{index}`
-> 
 > Generate Celo account address from Extended public key
+> 
+> **GET** `/v3/celo/address/{xpub}/{index}`
 
 [🔹 **celoGenerateAddressPrivateKey()**](#celogenerateaddressprivatekey) 
 
-> **POST** `/v3/celo/wallet/priv`
-> 
 > Generate Celo private key
+> 
+> **POST** `/v3/celo/wallet/priv`
 
 [🔹 **celoGenerateWallet()**](#celogeneratewallet) 
 
-> **GET** `/v3/celo/wallet`
-> 
 > Generate Celo wallet
+> 
+> **GET** `/v3/celo/wallet`
 
 [🔹 **celoGetBalance()**](#celogetbalance) 
 
-> **GET** `/v3/celo/account/balance/{address}`
-> 
 > Get Celo Account balance
+> 
+> **GET** `/v3/celo/account/balance/{address}`
 
 [🔹 **celoGetBlock()**](#celogetblock) 
 
-> **GET** `/v3/celo/block/{hash}`
-> 
 > Get Celo block by hash
+> 
+> **GET** `/v3/celo/block/{hash}`
 
 [🔹 **celoGetCurrentBlock()**](#celogetcurrentblock) 
 
-> **GET** `/v3/celo/block/current`
-> 
 > Get current block number
+> 
+> **GET** `/v3/celo/block/current`
 
 [🔹 **celoGetTransaction()**](#celogettransaction) 
 
-> **GET** `/v3/celo/transaction/{hash}`
-> 
 > Get Celo Transaction
+> 
+> **GET** `/v3/celo/transaction/{hash}`
 
 [🔹 **celoGetTransactionByAddress()**](#celogettransactionbyaddress) 
 
-> **GET** `/v3/celo/account/transaction/{address}`
-> 
 > Get Celo transactions by address
+> 
+> **GET** `/v3/celo/account/transaction/{address}`
 
 [🔹 **celoGetTransactionCount()**](#celogettransactioncount) 
 
-> **GET** `/v3/celo/transaction/count/{address}`
-> 
 > Get count of outgoing Celo transactions
+> 
+> **GET** `/v3/celo/transaction/count/{address}`
 
 [🔹 **celoWeb3Driver()**](#celoweb3driver) 
 
-> **POST** `/v3/celo/web3/{xApiKey}`
-> 
 > Web3 HTTP driver
+> 
+> **POST** `/v3/celo/web3/{xApiKey}`
 
 [🔹 **transferCeloBlockchain()**](#transferceloblockchain) 
 
-> **POST** `/v3/celo/transaction`
-> 
 > Send Celo / ERC20 from account to account
+> 
+> **POST** `/v3/celo/transaction`
 
 [🔹 **transferCeloBlockchainKMS()**](#transferceloblockchainkms) 
 
-> **POST** `/v3/celo/transaction`
-> 
 > Send Celo / ERC20 from account to account
+> 
+> **POST** `/v3/celo/transaction`
 
 
 
 ## `callCeloReadSmartContractMethod()`
+
+> **POST** `/v3/celo/smartcontract`
 
 ### Type signature
 
@@ -134,11 +136,13 @@ Invoke a method in a smart contract on Celo
 
 ### Example
 
-[✨ View "callCeloReadSmartContractMethod.php"](../../examples/Api/CeloApi/callCeloReadSmartContractMethod.php)
+[✨ View "callCeloReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloReadSmartContractMethod.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `callCeloSmartContractMethod()`
+
+> **POST** `/v3/celo/smartcontract`
 
 ### Type signature
 
@@ -166,11 +170,13 @@ CallCeloSmartContractMethod operation
 
 ### Example
 
-[✨ View "callCeloSmartContractMethod.php"](../../examples/Api/CeloApi/callCeloSmartContractMethod.php)
+[✨ View "callCeloSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethod.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `callCeloSmartContractMethodKMS()`
+
+> **POST** `/v3/celo/smartcontract`
 
 ### Type signature
 
@@ -198,11 +204,13 @@ CallCeloSmartContractMethodKMS operation
 
 ### Example
 
-[✨ View "callCeloSmartContractMethodKMS.php"](../../examples/Api/CeloApi/callCeloSmartContractMethodKMS.php)
+[✨ View "callCeloSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethodKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoBroadcast()`
+
+> **POST** `/v3/celo/broadcast`
 
 ### Type signature
 
@@ -230,11 +238,13 @@ Broadcast signed Celo transaction
 
 ### Example
 
-[✨ View "celoBroadcast.php"](../../examples/Api/CeloApi/celoBroadcast.php)
+[✨ View "celoBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGenerateAddress()`
+
+> **GET** `/v3/celo/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -264,11 +274,13 @@ Generate Celo account address from Extended public key
 
 ### Example
 
-[✨ View "celoGenerateAddress.php"](../../examples/Api/CeloApi/celoGenerateAddress.php)
+[✨ View "celoGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGenerateAddressPrivateKey()`
+
+> **POST** `/v3/celo/wallet/priv`
 
 ### Type signature
 
@@ -296,11 +308,13 @@ Generate Celo private key
 
 ### Example
 
-[✨ View "celoGenerateAddressPrivateKey.php"](../../examples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
+[✨ View "celoGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGenerateWallet()`
+
+> **GET** `/v3/celo/wallet`
 
 ### Type signature
 
@@ -328,11 +342,13 @@ Generate Celo wallet
 
 ### Example
 
-[✨ View "celoGenerateWallet.php"](../../examples/Api/CeloApi/celoGenerateWallet.php)
+[✨ View "celoGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetBalance()`
+
+> **GET** `/v3/celo/account/balance/{address}`
 
 ### Type signature
 
@@ -360,11 +376,13 @@ Get Celo Account balance
 
 ### Example
 
-[✨ View "celoGetBalance.php"](../../examples/Api/CeloApi/celoGetBalance.php)
+[✨ View "celoGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetBlock()`
+
+> **GET** `/v3/celo/block/{hash}`
 
 ### Type signature
 
@@ -392,11 +410,13 @@ Get Celo block by hash
 
 ### Example
 
-[✨ View "celoGetBlock.php"](../../examples/Api/CeloApi/celoGetBlock.php)
+[✨ View "celoGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetCurrentBlock()`
+
+> **GET** `/v3/celo/block/current`
 
 ### Type signature
 
@@ -421,11 +441,13 @@ Get current block number
 
 ### Example
 
-[✨ View "celoGetCurrentBlock.php"](../../examples/Api/CeloApi/celoGetCurrentBlock.php)
+[✨ View "celoGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetTransaction()`
+
+> **GET** `/v3/celo/transaction/{hash}`
 
 ### Type signature
 
@@ -453,11 +475,13 @@ Get Celo Transaction
 
 ### Example
 
-[✨ View "celoGetTransaction.php"](../../examples/Api/CeloApi/celoGetTransaction.php)
+[✨ View "celoGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetTransactionByAddress()`
+
+> **GET** `/v3/celo/account/transaction/{address}`
 
 ### Type signature
 
@@ -495,11 +519,13 @@ Get Celo transactions by address
 
 ### Example
 
-[✨ View "celoGetTransactionByAddress.php"](../../examples/Api/CeloApi/celoGetTransactionByAddress.php)
+[✨ View "celoGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoGetTransactionCount()`
+
+> **GET** `/v3/celo/transaction/count/{address}`
 
 ### Type signature
 
@@ -527,11 +553,13 @@ Get count of outgoing Celo transactions
 
 ### Example
 
-[✨ View "celoGetTransactionCount.php"](../../examples/Api/CeloApi/celoGetTransactionCount.php)
+[✨ View "celoGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `celoWeb3Driver()`
+
+> **POST** `/v3/celo/web3/{xApiKey}`
 
 ### Type signature
 
@@ -561,11 +589,13 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "celoWeb3Driver.php"](../../examples/Api/CeloApi/celoWeb3Driver.php)
+[✨ View "celoWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferCeloBlockchain()`
+
+> **POST** `/v3/celo/transaction`
 
 ### Type signature
 
@@ -593,11 +623,13 @@ Send Celo / ERC20 from account to account
 
 ### Example
 
-[✨ View "transferCeloBlockchain.php"](../../examples/Api/CeloApi/transferCeloBlockchain.php)
+[✨ View "transferCeloBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferCeloBlockchainKMS()`
+
+> **POST** `/v3/celo/transaction`
 
 ### Type signature
 
@@ -625,6 +657,6 @@ TransferCeloBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferCeloBlockchainKMS.php"](../../examples/Api/CeloApi/transferCeloBlockchainKMS.php)
+[✨ View "transferCeloBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

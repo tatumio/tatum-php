@@ -10,85 +10,87 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **dogeBroadcast()**](#dogebroadcast) 
 
-> **POST** `/v3/dogecoin/broadcast`
-> 
 > Broadcast signed Dogecoin transaction
+> 
+> **POST** `/v3/dogecoin/broadcast`
 
 [🔹 **dogeGenerateAddress()**](#dogegenerateaddress) 
 
-> **GET** `/v3/dogecoin/address/{xpub}/{index}`
-> 
 > Generate Dogecoin deposit address from Extended public key
+> 
+> **GET** `/v3/dogecoin/address/{xpub}/{index}`
 
 [🔹 **dogeGenerateAddressPrivateKey()**](#dogegenerateaddressprivatekey) 
 
-> **POST** `/v3/dogecoin/wallet/priv`
-> 
 > Generate Dogecoin private key
+> 
+> **POST** `/v3/dogecoin/wallet/priv`
 
 [🔹 **dogeGenerateWallet()**](#dogegeneratewallet) 
 
-> **GET** `/v3/dogecoin/wallet`
-> 
 > Generate Dogecoin wallet
+> 
+> **GET** `/v3/dogecoin/wallet`
 
 [🔹 **dogeGetBlock()**](#dogegetblock) 
 
-> **GET** `/v3/dogecoin/block/{hash}`
-> 
 > Get Dogecoin Block by hash or height
+> 
+> **GET** `/v3/dogecoin/block/{hash}`
 
 [🔹 **dogeGetBlockChainInfo()**](#dogegetblockchaininfo) 
 
-> **GET** `/v3/dogecoin/info`
-> 
 > Get Dogecoin Blockchain Information
+> 
+> **GET** `/v3/dogecoin/info`
 
 [🔹 **dogeGetBlockHash()**](#dogegetblockhash) 
 
-> **GET** `/v3/dogecoin/block/hash/{i}`
-> 
 > Get Dogecoin Block hash
+> 
+> **GET** `/v3/dogecoin/block/hash/{i}`
 
 [🔹 **dogeGetMempool()**](#dogegetmempool) 
 
-> **GET** `/v3/dogecoin/mempool`
-> 
 > Get Mempool Transactions
+> 
+> **GET** `/v3/dogecoin/mempool`
 
 [🔹 **dogeGetRawTransaction()**](#dogegetrawtransaction) 
 
-> **GET** `/v3/dogecoin/transaction/{hash}`
-> 
 > Get Dogecoin Transaction by hash
+> 
+> **GET** `/v3/dogecoin/transaction/{hash}`
 
 [🔹 **dogeGetUTXO()**](#dogegetutxo) 
 
-> **GET** `/v3/dogecoin/utxo/{hash}/{index}`
-> 
 > Get information about a transaction output (UTXO) in a Dogecoin transaction
+> 
+> **GET** `/v3/dogecoin/utxo/{hash}/{index}`
 
 [🔹 **dogeRpcDriver()**](#dogerpcdriver) 
 
-> **POST** `/v3/dogecoin/node`
-> 
 > JSON RPC HTTP driver
+> 
+> **POST** `/v3/dogecoin/node`
 
 [🔹 **dogeTransactionUTXO()**](#dogetransactionutxo) 
 
-> **POST** `/v3/dogecoin/transaction`
-> 
 > Send DOGE to Dogecoin addresses
+> 
+> **POST** `/v3/dogecoin/transaction`
 
 [🔹 **dogeTransactionUTXOKMS()**](#dogetransactionutxokms) 
 
-> **POST** `/v3/dogecoin/transaction`
-> 
 > Send DOGE to Dogecoin addresses
+> 
+> **POST** `/v3/dogecoin/transaction`
 
 
 
 ## `dogeBroadcast()`
+
+> **POST** `/v3/dogecoin/broadcast`
 
 ### Type signature
 
@@ -116,11 +118,13 @@ Broadcast signed Dogecoin transaction
 
 ### Example
 
-[✨ View "dogeBroadcast.php"](../../examples/Api/DogecoinApi/dogeBroadcast.php)
+[✨ View "dogeBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGenerateAddress()`
+
+> **GET** `/v3/dogecoin/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -150,11 +154,13 @@ Generate Dogecoin deposit address from Extended public key
 
 ### Example
 
-[✨ View "dogeGenerateAddress.php"](../../examples/Api/DogecoinApi/dogeGenerateAddress.php)
+[✨ View "dogeGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGenerateAddressPrivateKey()`
+
+> **POST** `/v3/dogecoin/wallet/priv`
 
 ### Type signature
 
@@ -182,11 +188,13 @@ Generate Dogecoin private key
 
 ### Example
 
-[✨ View "dogeGenerateAddressPrivateKey.php"](../../examples/Api/DogecoinApi/dogeGenerateAddressPrivateKey.php)
+[✨ View "dogeGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGenerateWallet()`
+
+> **GET** `/v3/dogecoin/wallet`
 
 ### Type signature
 
@@ -214,11 +222,13 @@ Generate Dogecoin wallet
 
 ### Example
 
-[✨ View "dogeGenerateWallet.php"](../../examples/Api/DogecoinApi/dogeGenerateWallet.php)
+[✨ View "dogeGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetBlock()`
+
+> **GET** `/v3/dogecoin/block/{hash}`
 
 ### Type signature
 
@@ -246,11 +256,13 @@ Get Dogecoin Block by hash or height
 
 ### Example
 
-[✨ View "dogeGetBlock.php"](../../examples/Api/DogecoinApi/dogeGetBlock.php)
+[✨ View "dogeGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetBlockChainInfo()`
+
+> **GET** `/v3/dogecoin/info`
 
 ### Type signature
 
@@ -275,11 +287,13 @@ Get Dogecoin Blockchain Information
 
 ### Example
 
-[✨ View "dogeGetBlockChainInfo.php"](../../examples/Api/DogecoinApi/dogeGetBlockChainInfo.php)
+[✨ View "dogeGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetBlockHash()`
+
+> **GET** `/v3/dogecoin/block/hash/{i}`
 
 ### Type signature
 
@@ -307,11 +321,13 @@ Get Dogecoin Block hash
 
 ### Example
 
-[✨ View "dogeGetBlockHash.php"](../../examples/Api/DogecoinApi/dogeGetBlockHash.php)
+[✨ View "dogeGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetMempool()`
+
+> **GET** `/v3/dogecoin/mempool`
 
 ### Type signature
 
@@ -336,11 +352,13 @@ Get Mempool Transactions
 
 ### Example
 
-[✨ View "dogeGetMempool.php"](../../examples/Api/DogecoinApi/dogeGetMempool.php)
+[✨ View "dogeGetMempool.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetMempool.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetRawTransaction()`
+
+> **GET** `/v3/dogecoin/transaction/{hash}`
 
 ### Type signature
 
@@ -368,11 +386,13 @@ Get Dogecoin Transaction by hash
 
 ### Example
 
-[✨ View "dogeGetRawTransaction.php"](../../examples/Api/DogecoinApi/dogeGetRawTransaction.php)
+[✨ View "dogeGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeGetUTXO()`
+
+> **GET** `/v3/dogecoin/utxo/{hash}/{index}`
 
 ### Type signature
 
@@ -402,11 +422,13 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 
 ### Example
 
-[✨ View "dogeGetUTXO.php"](../../examples/Api/DogecoinApi/dogeGetUTXO.php)
+[✨ View "dogeGetUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeRpcDriver()`
+
+> **POST** `/v3/dogecoin/node`
 
 ### Type signature
 
@@ -434,11 +456,13 @@ JSON RPC HTTP driver
 
 ### Example
 
-[✨ View "dogeRpcDriver.php"](../../examples/Api/DogecoinApi/dogeRpcDriver.php)
+[✨ View "dogeRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeTransactionUTXO()`
+
+> **POST** `/v3/dogecoin/transaction`
 
 ### Type signature
 
@@ -466,11 +490,13 @@ Send DOGE to Dogecoin addresses
 
 ### Example
 
-[✨ View "dogeTransactionUTXO.php"](../../examples/Api/DogecoinApi/dogeTransactionUTXO.php)
+[✨ View "dogeTransactionUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeTransactionUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `dogeTransactionUTXOKMS()`
+
+> **POST** `/v3/dogecoin/transaction`
 
 ### Type signature
 
@@ -498,6 +524,6 @@ DogeTransactionUTXOKMS operation
 
 ### Example
 
-[✨ View "dogeTransactionUTXOKMS.php"](../../examples/Api/DogecoinApi/dogeTransactionUTXOKMS.php)
+[✨ View "dogeTransactionUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeTransactionUTXOKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

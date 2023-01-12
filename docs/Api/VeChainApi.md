@@ -10,79 +10,81 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **transferVetBlockchain()**](#transfervetblockchain) 
 
-> **POST** `/v3/vet/transaction`
-> 
 > Send VeChain from account to account
+> 
+> **POST** `/v3/vet/transaction`
 
 [🔹 **transferVetBlockchainKMS()**](#transfervetblockchainkms) 
 
-> **POST** `/v3/vet/transaction`
-> 
 > Send VeChain from account to account
+> 
+> **POST** `/v3/vet/transaction`
 
 [🔹 **vetBroadcast()**](#vetbroadcast) 
 
-> **POST** `/v3/vet/broadcast`
-> 
 > Broadcast signed VeChain transaction
+> 
+> **POST** `/v3/vet/broadcast`
 
 [🔹 **vetGenerateAddress()**](#vetgenerateaddress) 
 
-> **GET** `/v3/vet/address/{xpub}/{index}`
-> 
 > Generate VeChain account address from Extended public key
+> 
+> **GET** `/v3/vet/address/{xpub}/{index}`
 
 [🔹 **vetGenerateAddressPrivateKey()**](#vetgenerateaddressprivatekey) 
 
-> **POST** `/v3/vet/wallet/priv`
-> 
 > Generate VeChain private key
+> 
+> **POST** `/v3/vet/wallet/priv`
 
 [🔹 **vetGenerateWallet()**](#vetgeneratewallet) 
 
-> **GET** `/v3/vet/wallet`
-> 
 > Generate VeChain wallet
+> 
+> **GET** `/v3/vet/wallet`
 
 [🔹 **vetGetBalance()**](#vetgetbalance) 
 
-> **GET** `/v3/vet/account/balance/{address}`
-> 
 > Get VeChain Account balance
+> 
+> **GET** `/v3/vet/account/balance/{address}`
 
 [🔹 **vetGetBlock()**](#vetgetblock) 
 
-> **GET** `/v3/vet/block/{hash}`
-> 
 > Get VeChain Block by hash
+> 
+> **GET** `/v3/vet/block/{hash}`
 
 [🔹 **vetGetCurrentBlock()**](#vetgetcurrentblock) 
 
-> **GET** `/v3/vet/block/current`
-> 
 > Get VeChain current block
+> 
+> **GET** `/v3/vet/block/current`
 
 [🔹 **vetGetEnergy()**](#vetgetenergy) 
 
-> **GET** `/v3/vet/account/energy/{address}`
-> 
 > Get VeChain Account energy (VTHO)
+> 
+> **GET** `/v3/vet/account/energy/{address}`
 
 [🔹 **vetGetTransaction()**](#vetgettransaction) 
 
-> **GET** `/v3/vet/transaction/{hash}`
-> 
 > Get VeChain Transaction
+> 
+> **GET** `/v3/vet/transaction/{hash}`
 
 [🔹 **vetGetTransactionReceipt()**](#vetgettransactionreceipt) 
 
-> **GET** `/v3/vet/transaction/{hash}/receipt`
-> 
 > Get VeChain Transaction Receipt
+> 
+> **GET** `/v3/vet/transaction/{hash}/receipt`
 
 
 
 ## `transferVetBlockchain()`
+
+> **POST** `/v3/vet/transaction`
 
 ### Type signature
 
@@ -110,11 +112,13 @@ Send VeChain from account to account
 
 ### Example
 
-[✨ View "transferVetBlockchain.php"](../../examples/Api/VeChainApi/transferVetBlockchain.php)
+[✨ View "transferVetBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/transferVetBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferVetBlockchainKMS()`
+
+> **POST** `/v3/vet/transaction`
 
 ### Type signature
 
@@ -142,11 +146,13 @@ TransferVetBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferVetBlockchainKMS.php"](../../examples/Api/VeChainApi/transferVetBlockchainKMS.php)
+[✨ View "transferVetBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/transferVetBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetBroadcast()`
+
+> **POST** `/v3/vet/broadcast`
 
 ### Type signature
 
@@ -174,11 +180,13 @@ Broadcast signed VeChain transaction
 
 ### Example
 
-[✨ View "vetBroadcast.php"](../../examples/Api/VeChainApi/vetBroadcast.php)
+[✨ View "vetBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGenerateAddress()`
+
+> **GET** `/v3/vet/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -208,11 +216,13 @@ Generate VeChain account address from Extended public key
 
 ### Example
 
-[✨ View "vetGenerateAddress.php"](../../examples/Api/VeChainApi/vetGenerateAddress.php)
+[✨ View "vetGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGenerateAddressPrivateKey()`
+
+> **POST** `/v3/vet/wallet/priv`
 
 ### Type signature
 
@@ -240,11 +250,13 @@ Generate VeChain private key
 
 ### Example
 
-[✨ View "vetGenerateAddressPrivateKey.php"](../../examples/Api/VeChainApi/vetGenerateAddressPrivateKey.php)
+[✨ View "vetGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGenerateWallet()`
+
+> **GET** `/v3/vet/wallet`
 
 ### Type signature
 
@@ -272,11 +284,13 @@ Generate VeChain wallet
 
 ### Example
 
-[✨ View "vetGenerateWallet.php"](../../examples/Api/VeChainApi/vetGenerateWallet.php)
+[✨ View "vetGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGetBalance()`
+
+> **GET** `/v3/vet/account/balance/{address}`
 
 ### Type signature
 
@@ -304,11 +318,13 @@ Get VeChain Account balance
 
 ### Example
 
-[✨ View "vetGetBalance.php"](../../examples/Api/VeChainApi/vetGetBalance.php)
+[✨ View "vetGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGetBlock()`
+
+> **GET** `/v3/vet/block/{hash}`
 
 ### Type signature
 
@@ -336,11 +352,13 @@ Get VeChain Block by hash
 
 ### Example
 
-[✨ View "vetGetBlock.php"](../../examples/Api/VeChainApi/vetGetBlock.php)
+[✨ View "vetGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGetCurrentBlock()`
+
+> **GET** `/v3/vet/block/current`
 
 ### Type signature
 
@@ -365,11 +383,13 @@ Get VeChain current block
 
 ### Example
 
-[✨ View "vetGetCurrentBlock.php"](../../examples/Api/VeChainApi/vetGetCurrentBlock.php)
+[✨ View "vetGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGetEnergy()`
+
+> **GET** `/v3/vet/account/energy/{address}`
 
 ### Type signature
 
@@ -397,11 +417,13 @@ Get VeChain Account energy (VTHO)
 
 ### Example
 
-[✨ View "vetGetEnergy.php"](../../examples/Api/VeChainApi/vetGetEnergy.php)
+[✨ View "vetGetEnergy.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetEnergy.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGetTransaction()`
+
+> **GET** `/v3/vet/transaction/{hash}`
 
 ### Type signature
 
@@ -429,11 +451,13 @@ Get VeChain Transaction
 
 ### Example
 
-[✨ View "vetGetTransaction.php"](../../examples/Api/VeChainApi/vetGetTransaction.php)
+[✨ View "vetGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `vetGetTransactionReceipt()`
+
+> **GET** `/v3/vet/transaction/{hash}/receipt`
 
 ### Type signature
 
@@ -461,6 +485,6 @@ Get VeChain Transaction Receipt
 
 ### Example
 
-[✨ View "vetGetTransactionReceipt.php"](../../examples/Api/VeChainApi/vetGetTransactionReceipt.php)
+[✨ View "vetGetTransactionReceipt.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetTransactionReceipt.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

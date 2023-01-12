@@ -10,109 +10,111 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **btcBroadcast()**](#btcbroadcast) 
 
-> **POST** `/v3/bitcoin/broadcast`
-> 
 > Broadcast a signed Bitcoin transaction
+> 
+> **POST** `/v3/bitcoin/broadcast`
 
 [🔹 **btcGenerateAddress()**](#btcgenerateaddress) 
 
-> **GET** `/v3/bitcoin/address/{xpub}/{index}`
-> 
 > Generate a Bitcoin address from the wallet's extended public key
+> 
+> **GET** `/v3/bitcoin/address/{xpub}/{index}`
 
 [🔹 **btcGenerateAddressPrivateKey()**](#btcgenerateaddressprivatekey) 
 
-> **POST** `/v3/bitcoin/wallet/priv`
-> 
 > Generate the private key for a Bitcoin address
+> 
+> **POST** `/v3/bitcoin/wallet/priv`
 
 [🔹 **btcGenerateWallet()**](#btcgeneratewallet) 
 
-> **GET** `/v3/bitcoin/wallet`
-> 
 > Generate a Bitcoin wallet
+> 
+> **GET** `/v3/bitcoin/wallet`
 
 [🔹 **btcGetBalanceOfAddress()**](#btcgetbalanceofaddress) 
 
-> **GET** `/v3/bitcoin/address/balance/{address}`
-> 
 > Get the balance of a Bitcoin address
+> 
+> **GET** `/v3/bitcoin/address/balance/{address}`
 
 [🔹 **btcGetBlock()**](#btcgetblock) 
 
-> **GET** `/v3/bitcoin/block/{hash}`
-> 
 > Get a Bitcoin block by its hash or height
+> 
+> **GET** `/v3/bitcoin/block/{hash}`
 
 [🔹 **btcGetBlockChainInfo()**](#btcgetblockchaininfo) 
 
-> **GET** `/v3/bitcoin/info`
-> 
 > Get Bitcoin blockchain information
+> 
+> **GET** `/v3/bitcoin/info`
 
 [🔹 **btcGetBlockHash()**](#btcgetblockhash) 
 
-> **GET** `/v3/bitcoin/block/hash/{i}`
-> 
 > Get the hash of a Bitcoin block
+> 
+> **GET** `/v3/bitcoin/block/hash/{i}`
 
 [🔹 **btcGetMempool()**](#btcgetmempool) 
 
-> **GET** `/v3/bitcoin/mempool`
-> 
 > Get transactions from the Bitcoin mempool
+> 
+> **GET** `/v3/bitcoin/mempool`
 
 [🔹 **btcGetRawTransaction()**](#btcgetrawtransaction) 
 
-> **GET** `/v3/bitcoin/transaction/{hash}`
-> 
 > Get a Bitcoin transaction by its hash
+> 
+> **GET** `/v3/bitcoin/transaction/{hash}`
 
 [🔹 **btcGetTxByAddress()**](#btcgettxbyaddress) 
 
-> **GET** `/v3/bitcoin/transaction/address/{address}`
-> 
 > Get all transactions for a Bitcoin address
+> 
+> **GET** `/v3/bitcoin/transaction/address/{address}`
 
 [🔹 **btcGetUTXO()**](#btcgetutxo) 
 
-> **GET** `/v3/bitcoin/utxo/{hash}/{index}`
-> 
 > Get information about a transaction output (UTXO) in a Bitcoin transaction
+> 
+> **GET** `/v3/bitcoin/utxo/{hash}/{index}`
 
 [🔹 **btcRpcDriver()**](#btcrpcdriver) 
 
-> **POST** `/v3/bitcoin/node`
-> 
 > Connect to a Bitcoin node through an RPC driver
+> 
+> **POST** `/v3/bitcoin/node`
 
 [🔹 **btcTransactionFromAddress()**](#btctransactionfromaddress) 
 
-> **POST** `/v3/bitcoin/transaction`
-> 
 > Send BTC to Bitcoin addresses
+> 
+> **POST** `/v3/bitcoin/transaction`
 
 [🔹 **btcTransactionFromAddressKMS()**](#btctransactionfromaddresskms) 
 
-> **POST** `/v3/bitcoin/transaction`
-> 
 > Send BTC to Bitcoin addresses
+> 
+> **POST** `/v3/bitcoin/transaction`
 
 [🔹 **btcTransactionFromUTXO()**](#btctransactionfromutxo) 
 
-> **POST** `/v3/bitcoin/transaction`
-> 
 > Send BTC to Bitcoin addresses
+> 
+> **POST** `/v3/bitcoin/transaction`
 
 [🔹 **btcTransactionFromUTXOKMS()**](#btctransactionfromutxokms) 
 
-> **POST** `/v3/bitcoin/transaction`
-> 
 > Send BTC to Bitcoin addresses
+> 
+> **POST** `/v3/bitcoin/transaction`
 
 
 
 ## `btcBroadcast()`
+
+> **POST** `/v3/bitcoin/broadcast`
 
 ### Type signature
 
@@ -140,11 +142,13 @@ Broadcast a signed Bitcoin transaction
 
 ### Example
 
-[✨ View "btcBroadcast.php"](../../examples/Api/BitcoinApi/btcBroadcast.php)
+[✨ View "btcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGenerateAddress()`
+
+> **GET** `/v3/bitcoin/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -174,11 +178,13 @@ Generate a Bitcoin address from the wallet's extended public key
 
 ### Example
 
-[✨ View "btcGenerateAddress.php"](../../examples/Api/BitcoinApi/btcGenerateAddress.php)
+[✨ View "btcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGenerateAddressPrivateKey()`
+
+> **POST** `/v3/bitcoin/wallet/priv`
 
 ### Type signature
 
@@ -206,11 +212,13 @@ Generate the private key for a Bitcoin address
 
 ### Example
 
-[✨ View "btcGenerateAddressPrivateKey.php"](../../examples/Api/BitcoinApi/btcGenerateAddressPrivateKey.php)
+[✨ View "btcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGenerateWallet()`
+
+> **GET** `/v3/bitcoin/wallet`
 
 ### Type signature
 
@@ -238,11 +246,13 @@ Generate a Bitcoin wallet
 
 ### Example
 
-[✨ View "btcGenerateWallet.php"](../../examples/Api/BitcoinApi/btcGenerateWallet.php)
+[✨ View "btcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetBalanceOfAddress()`
+
+> **GET** `/v3/bitcoin/address/balance/{address}`
 
 ### Type signature
 
@@ -270,11 +280,13 @@ Get the balance of a Bitcoin address
 
 ### Example
 
-[✨ View "btcGetBalanceOfAddress.php"](../../examples/Api/BitcoinApi/btcGetBalanceOfAddress.php)
+[✨ View "btcGetBalanceOfAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetBalanceOfAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetBlock()`
+
+> **GET** `/v3/bitcoin/block/{hash}`
 
 ### Type signature
 
@@ -302,11 +314,13 @@ Get a Bitcoin block by its hash or height
 
 ### Example
 
-[✨ View "btcGetBlock.php"](../../examples/Api/BitcoinApi/btcGetBlock.php)
+[✨ View "btcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetBlockChainInfo()`
+
+> **GET** `/v3/bitcoin/info`
 
 ### Type signature
 
@@ -331,11 +345,13 @@ Get Bitcoin blockchain information
 
 ### Example
 
-[✨ View "btcGetBlockChainInfo.php"](../../examples/Api/BitcoinApi/btcGetBlockChainInfo.php)
+[✨ View "btcGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetBlockHash()`
+
+> **GET** `/v3/bitcoin/block/hash/{i}`
 
 ### Type signature
 
@@ -363,11 +379,13 @@ Get the hash of a Bitcoin block
 
 ### Example
 
-[✨ View "btcGetBlockHash.php"](../../examples/Api/BitcoinApi/btcGetBlockHash.php)
+[✨ View "btcGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetBlockHash.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetMempool()`
+
+> **GET** `/v3/bitcoin/mempool`
 
 ### Type signature
 
@@ -392,11 +410,13 @@ Get transactions from the Bitcoin mempool
 
 ### Example
 
-[✨ View "btcGetMempool.php"](../../examples/Api/BitcoinApi/btcGetMempool.php)
+[✨ View "btcGetMempool.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetMempool.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetRawTransaction()`
+
+> **GET** `/v3/bitcoin/transaction/{hash}`
 
 ### Type signature
 
@@ -424,11 +444,13 @@ Get a Bitcoin transaction by its hash
 
 ### Example
 
-[✨ View "btcGetRawTransaction.php"](../../examples/Api/BitcoinApi/btcGetRawTransaction.php)
+[✨ View "btcGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetTxByAddress()`
+
+> **GET** `/v3/bitcoin/transaction/address/{address}`
 
 ### Type signature
 
@@ -460,11 +482,13 @@ Get all transactions for a Bitcoin address
 
 ### Example
 
-[✨ View "btcGetTxByAddress.php"](../../examples/Api/BitcoinApi/btcGetTxByAddress.php)
+[✨ View "btcGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcGetUTXO()`
+
+> **GET** `/v3/bitcoin/utxo/{hash}/{index}`
 
 ### Type signature
 
@@ -494,11 +518,13 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 
 ### Example
 
-[✨ View "btcGetUTXO.php"](../../examples/Api/BitcoinApi/btcGetUTXO.php)
+[✨ View "btcGetUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcRpcDriver()`
+
+> **POST** `/v3/bitcoin/node`
 
 ### Type signature
 
@@ -526,11 +552,13 @@ Connect to a Bitcoin node through an RPC driver
 
 ### Example
 
-[✨ View "btcRpcDriver.php"](../../examples/Api/BitcoinApi/btcRpcDriver.php)
+[✨ View "btcRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcTransactionFromAddress()`
+
+> **POST** `/v3/bitcoin/transaction`
 
 ### Type signature
 
@@ -558,11 +586,13 @@ Send BTC to Bitcoin addresses
 
 ### Example
 
-[✨ View "btcTransactionFromAddress.php"](../../examples/Api/BitcoinApi/btcTransactionFromAddress.php)
+[✨ View "btcTransactionFromAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcTransactionFromAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcTransactionFromAddressKMS()`
+
+> **POST** `/v3/bitcoin/transaction`
 
 ### Type signature
 
@@ -590,11 +620,13 @@ BtcTransactionFromAddressKMS operation
 
 ### Example
 
-[✨ View "btcTransactionFromAddressKMS.php"](../../examples/Api/BitcoinApi/btcTransactionFromAddressKMS.php)
+[✨ View "btcTransactionFromAddressKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcTransactionFromAddressKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcTransactionFromUTXO()`
+
+> **POST** `/v3/bitcoin/transaction`
 
 ### Type signature
 
@@ -622,11 +654,13 @@ BtcTransactionFromUTXO operation
 
 ### Example
 
-[✨ View "btcTransactionFromUTXO.php"](../../examples/Api/BitcoinApi/btcTransactionFromUTXO.php)
+[✨ View "btcTransactionFromUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcTransactionFromUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `btcTransactionFromUTXOKMS()`
+
+> **POST** `/v3/bitcoin/transaction`
 
 ### Type signature
 
@@ -654,6 +688,6 @@ BtcTransactionFromUTXOKMS operation
 
 ### Example
 
-[✨ View "btcTransactionFromUTXOKMS.php"](../../examples/Api/BitcoinApi/btcTransactionFromUTXOKMS.php)
+[✨ View "btcTransactionFromUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcTransactionFromUTXOKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

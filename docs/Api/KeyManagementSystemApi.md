@@ -10,37 +10,39 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **completePendingSignature()**](#completependingsignature) 
 
-> **PUT** `/v3/kms/{id}/{txId}`
-> 
 > Complete pending transaction to sign
+> 
+> **PUT** `/v3/kms/{id}/{txId}`
 
 [🔹 **deletePendingTransactionToSign()**](#deletependingtransactiontosign) 
 
-> **DELETE** `/v3/kms/{id}`
-> 
 > Delete transaction
+> 
+> **DELETE** `/v3/kms/{id}`
 
 [🔹 **getPendingTransactionToSign()**](#getpendingtransactiontosign) 
 
-> **GET** `/v3/kms/{id}`
-> 
 > Get transaction details
+> 
+> **GET** `/v3/kms/{id}`
 
 [🔹 **getPendingTransactionsToSign()**](#getpendingtransactionstosign) 
 
-> **GET** `/v3/kms/pending/{chain}`
-> 
 > Get pending transactions to sign
+> 
+> **GET** `/v3/kms/pending/{chain}`
 
 [🔹 **receivePendingTransactionsToSign()**](#receivependingtransactionstosign) 
 
-> **POST** `/v3/kms/pending/{chain}`
-> 
 > Get pending transactions to sign
+> 
+> **POST** `/v3/kms/pending/{chain}`
 
 
 
 ## `completePendingSignature()`
+
+> **PUT** `/v3/kms/{id}/{txId}`
 
 ### Type signature
 
@@ -70,11 +72,13 @@ Complete pending transaction to sign
 
 ### Example
 
-[✨ View "completePendingSignature.php"](../../examples/Api/KeyManagementSystemApi/completePendingSignature.php)
+[✨ View "completePendingSignature.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/completePendingSignature.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deletePendingTransactionToSign()`
+
+> **DELETE** `/v3/kms/{id}`
 
 ### Type signature
 
@@ -104,11 +108,13 @@ Delete transaction
 
 ### Example
 
-[✨ View "deletePendingTransactionToSign.php"](../../examples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
+[✨ View "deletePendingTransactionToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getPendingTransactionToSign()`
+
+> **GET** `/v3/kms/{id}`
 
 ### Type signature
 
@@ -136,11 +142,13 @@ Get transaction details
 
 ### Example
 
-[✨ View "getPendingTransactionToSign.php"](../../examples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
+[✨ View "getPendingTransactionToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getPendingTransactionsToSign()`
+
+> **GET** `/v3/kms/pending/{chain}`
 
 ### Type signature
 
@@ -170,11 +178,13 @@ Get pending transactions to sign
 
 ### Example
 
-[✨ View "getPendingTransactionsToSign.php"](../../examples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
+[✨ View "getPendingTransactionsToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `receivePendingTransactionsToSign()`
+
+> **POST** `/v3/kms/pending/{chain}`
 
 ### Type signature
 
@@ -204,6 +214,6 @@ Get pending transactions to sign
 
 ### Example
 
-[✨ View "receivePendingTransactionsToSign.php"](../../examples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
+[✨ View "receivePendingTransactionsToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

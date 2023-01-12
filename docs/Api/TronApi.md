@@ -10,145 +10,147 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **createTronTrc10Blockchain()**](#createtrontrc10blockchain) 
 
-> **POST** `/v3/tron/trc10/deploy`
-> 
 > Create a TRC-10 token
+> 
+> **POST** `/v3/tron/trc10/deploy`
 
 [🔹 **createTronTrc10BlockchainKMS()**](#createtrontrc10blockchainkms) 
 
-> **POST** `/v3/tron/trc10/deploy`
-> 
 > Create a TRC-10 token
+> 
+> **POST** `/v3/tron/trc10/deploy`
 
 [🔹 **createTronTrc20Blockchain()**](#createtrontrc20blockchain) 
 
-> **POST** `/v3/tron/trc20/deploy`
-> 
 > Create a TRC-20 token
+> 
+> **POST** `/v3/tron/trc20/deploy`
 
 [🔹 **createTronTrc20BlockchainKMS()**](#createtrontrc20blockchainkms) 
 
-> **POST** `/v3/tron/trc20/deploy`
-> 
 > Create a TRC-20 token
+> 
+> **POST** `/v3/tron/trc20/deploy`
 
 [🔹 **freezeTron()**](#freezetron) 
 
-> **POST** `/v3/tron/freezeBalance`
-> 
 > Freeze the balance of a TRON account
+> 
+> **POST** `/v3/tron/freezeBalance`
 
 [🔹 **freezeTronKMS()**](#freezetronkms) 
 
-> **POST** `/v3/tron/freezeBalance`
-> 
 > Freeze the balance of a TRON account
+> 
+> **POST** `/v3/tron/freezeBalance`
 
 [🔹 **generateTronwallet()**](#generatetronwallet) 
 
-> **GET** `/v3/tron/wallet`
-> 
 > Generate a TRON wallet
+> 
+> **GET** `/v3/tron/wallet`
 
 [🔹 **transferTronBlockchain()**](#transfertronblockchain) 
 
-> **POST** `/v3/tron/transaction`
-> 
 > Send TRX to a TRON account
+> 
+> **POST** `/v3/tron/transaction`
 
 [🔹 **transferTronBlockchainKMS()**](#transfertronblockchainkms) 
 
-> **POST** `/v3/tron/transaction`
-> 
 > Send TRX to a TRON account
+> 
+> **POST** `/v3/tron/transaction`
 
 [🔹 **transferTronTrc10Blockchain()**](#transfertrontrc10blockchain) 
 
-> **POST** `/v3/tron/trc10/transaction`
-> 
 > Send TRC-10 tokens to a TRON account
+> 
+> **POST** `/v3/tron/trc10/transaction`
 
 [🔹 **transferTronTrc10BlockchainKMS()**](#transfertrontrc10blockchainkms) 
 
-> **POST** `/v3/tron/trc10/transaction`
-> 
 > Send TRC-10 tokens to a TRON account
+> 
+> **POST** `/v3/tron/trc10/transaction`
 
 [🔹 **transferTronTrc20Blockchain()**](#transfertrontrc20blockchain) 
 
-> **POST** `/v3/tron/trc20/transaction`
-> 
 > Send TRC-20 tokens to a TRON account
+> 
+> **POST** `/v3/tron/trc20/transaction`
 
 [🔹 **transferTronTrc20BlockchainKMS()**](#transfertrontrc20blockchainkms) 
 
-> **POST** `/v3/tron/trc20/transaction`
-> 
 > Send TRC-20 tokens to a TRON account
+> 
+> **POST** `/v3/tron/trc20/transaction`
 
 [🔹 **tronAccountTx()**](#tronaccounttx) 
 
-> **GET** `/v3/tron/transaction/account/{address}`
-> 
 > Get all transactions for a TRON account
+> 
+> **GET** `/v3/tron/transaction/account/{address}`
 
 [🔹 **tronAccountTx20()**](#tronaccounttx20) 
 
-> **GET** `/v3/tron/transaction/account/{address}/trc20`
-> 
 > Get TRC-20 transactions for a TRON account
+> 
+> **GET** `/v3/tron/transaction/account/{address}/trc20`
 
 [🔹 **tronBroadcast()**](#tronbroadcast) 
 
-> **POST** `/v3/tron/broadcast`
-> 
 > Broadcast a TRON transaction
+> 
+> **POST** `/v3/tron/broadcast`
 
 [🔹 **tronGenerateAddress()**](#trongenerateaddress) 
 
-> **GET** `/v3/tron/address/{xpub}/{index}`
-> 
 > Generate a TRON address from the wallet's extended public key
+> 
+> **GET** `/v3/tron/address/{xpub}/{index}`
 
 [🔹 **tronGenerateAddressPrivateKey()**](#trongenerateaddressprivatekey) 
 
-> **POST** `/v3/tron/wallet/priv`
-> 
 > Generate the private key for a TRON address
+> 
+> **POST** `/v3/tron/wallet/priv`
 
 [🔹 **tronGetAccount()**](#trongetaccount) 
 
-> **GET** `/v3/tron/account/{address}`
-> 
 > Get the TRON account by its address
+> 
+> **GET** `/v3/tron/account/{address}`
 
 [🔹 **tronGetBlock()**](#trongetblock) 
 
-> **GET** `/v3/tron/block/{hash}`
-> 
 > Get a TRON block by its hash or height
+> 
+> **GET** `/v3/tron/block/{hash}`
 
 [🔹 **tronGetCurrentBlock()**](#trongetcurrentblock) 
 
-> **GET** `/v3/tron/info`
-> 
 > Get the current TRON block
+> 
+> **GET** `/v3/tron/info`
 
 [🔹 **tronGetTransaction()**](#trongettransaction) 
 
-> **GET** `/v3/tron/transaction/{hash}`
-> 
 > Get a TRON transaction by its hash
+> 
+> **GET** `/v3/tron/transaction/{hash}`
 
 [🔹 **tronTrc10Detail()**](#trontrc10detail) 
 
-> **GET** `/v3/tron/trc10/detail/{idOrOwnerAddress}`
-> 
 > Get information about a TRC-10 token
+> 
+> **GET** `/v3/tron/trc10/detail/{idOrOwnerAddress}`
 
 
 
 ## `createTronTrc10Blockchain()`
+
+> **POST** `/v3/tron/trc10/deploy`
 
 ### Type signature
 
@@ -176,11 +178,13 @@ Create a TRC-10 token
 
 ### Example
 
-[✨ View "createTronTrc10Blockchain.php"](../../examples/Api/TronApi/createTronTrc10Blockchain.php)
+[✨ View "createTronTrc10Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc10Blockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `createTronTrc10BlockchainKMS()`
+
+> **POST** `/v3/tron/trc10/deploy`
 
 ### Type signature
 
@@ -208,11 +212,13 @@ CreateTronTrc10BlockchainKMS operation
 
 ### Example
 
-[✨ View "createTronTrc10BlockchainKMS.php"](../../examples/Api/TronApi/createTronTrc10BlockchainKMS.php)
+[✨ View "createTronTrc10BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc10BlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `createTronTrc20Blockchain()`
+
+> **POST** `/v3/tron/trc20/deploy`
 
 ### Type signature
 
@@ -240,11 +246,13 @@ Create a TRC-20 token
 
 ### Example
 
-[✨ View "createTronTrc20Blockchain.php"](../../examples/Api/TronApi/createTronTrc20Blockchain.php)
+[✨ View "createTronTrc20Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc20Blockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `createTronTrc20BlockchainKMS()`
+
+> **POST** `/v3/tron/trc20/deploy`
 
 ### Type signature
 
@@ -272,11 +280,13 @@ CreateTronTrc20BlockchainKMS operation
 
 ### Example
 
-[✨ View "createTronTrc20BlockchainKMS.php"](../../examples/Api/TronApi/createTronTrc20BlockchainKMS.php)
+[✨ View "createTronTrc20BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc20BlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `freezeTron()`
+
+> **POST** `/v3/tron/freezeBalance`
 
 ### Type signature
 
@@ -304,11 +314,13 @@ Freeze the balance of a TRON account
 
 ### Example
 
-[✨ View "freezeTron.php"](../../examples/Api/TronApi/freezeTron.php)
+[✨ View "freezeTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/freezeTron.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `freezeTronKMS()`
+
+> **POST** `/v3/tron/freezeBalance`
 
 ### Type signature
 
@@ -336,11 +348,13 @@ FreezeTronKMS operation
 
 ### Example
 
-[✨ View "freezeTronKMS.php"](../../examples/Api/TronApi/freezeTronKMS.php)
+[✨ View "freezeTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/freezeTronKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateTronwallet()`
+
+> **GET** `/v3/tron/wallet`
 
 ### Type signature
 
@@ -368,11 +382,13 @@ Generate a TRON wallet
 
 ### Example
 
-[✨ View "generateTronwallet.php"](../../examples/Api/TronApi/generateTronwallet.php)
+[✨ View "generateTronwallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/generateTronwallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTronBlockchain()`
+
+> **POST** `/v3/tron/transaction`
 
 ### Type signature
 
@@ -400,11 +416,13 @@ Send TRX to a TRON account
 
 ### Example
 
-[✨ View "transferTronBlockchain.php"](../../examples/Api/TronApi/transferTronBlockchain.php)
+[✨ View "transferTronBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTronBlockchainKMS()`
+
+> **POST** `/v3/tron/transaction`
 
 ### Type signature
 
@@ -432,11 +450,13 @@ TransferTronBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferTronBlockchainKMS.php"](../../examples/Api/TronApi/transferTronBlockchainKMS.php)
+[✨ View "transferTronBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTronTrc10Blockchain()`
+
+> **POST** `/v3/tron/trc10/transaction`
 
 ### Type signature
 
@@ -464,11 +484,13 @@ Send TRC-10 tokens to a TRON account
 
 ### Example
 
-[✨ View "transferTronTrc10Blockchain.php"](../../examples/Api/TronApi/transferTronTrc10Blockchain.php)
+[✨ View "transferTronTrc10Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc10Blockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTronTrc10BlockchainKMS()`
+
+> **POST** `/v3/tron/trc10/transaction`
 
 ### Type signature
 
@@ -496,11 +518,13 @@ TransferTronTrc10BlockchainKMS operation
 
 ### Example
 
-[✨ View "transferTronTrc10BlockchainKMS.php"](../../examples/Api/TronApi/transferTronTrc10BlockchainKMS.php)
+[✨ View "transferTronTrc10BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc10BlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTronTrc20Blockchain()`
+
+> **POST** `/v3/tron/trc20/transaction`
 
 ### Type signature
 
@@ -528,11 +552,13 @@ Send TRC-20 tokens to a TRON account
 
 ### Example
 
-[✨ View "transferTronTrc20Blockchain.php"](../../examples/Api/TronApi/transferTronTrc20Blockchain.php)
+[✨ View "transferTronTrc20Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc20Blockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTronTrc20BlockchainKMS()`
+
+> **POST** `/v3/tron/trc20/transaction`
 
 ### Type signature
 
@@ -560,11 +586,13 @@ TransferTronTrc20BlockchainKMS operation
 
 ### Example
 
-[✨ View "transferTronTrc20BlockchainKMS.php"](../../examples/Api/TronApi/transferTronTrc20BlockchainKMS.php)
+[✨ View "transferTronTrc20BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc20BlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronAccountTx()`
+
+> **GET** `/v3/tron/transaction/account/{address}`
 
 ### Type signature
 
@@ -594,11 +622,13 @@ Get all transactions for a TRON account
 
 ### Example
 
-[✨ View "tronAccountTx.php"](../../examples/Api/TronApi/tronAccountTx.php)
+[✨ View "tronAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronAccountTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronAccountTx20()`
+
+> **GET** `/v3/tron/transaction/account/{address}/trc20`
 
 ### Type signature
 
@@ -628,11 +658,13 @@ Get TRC-20 transactions for a TRON account
 
 ### Example
 
-[✨ View "tronAccountTx20.php"](../../examples/Api/TronApi/tronAccountTx20.php)
+[✨ View "tronAccountTx20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronAccountTx20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronBroadcast()`
+
+> **POST** `/v3/tron/broadcast`
 
 ### Type signature
 
@@ -660,11 +692,13 @@ Broadcast a TRON transaction
 
 ### Example
 
-[✨ View "tronBroadcast.php"](../../examples/Api/TronApi/tronBroadcast.php)
+[✨ View "tronBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGenerateAddress()`
+
+> **GET** `/v3/tron/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -694,11 +728,13 @@ Generate a TRON address from the wallet's extended public key
 
 ### Example
 
-[✨ View "tronGenerateAddress.php"](../../examples/Api/TronApi/tronGenerateAddress.php)
+[✨ View "tronGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGenerateAddressPrivateKey()`
+
+> **POST** `/v3/tron/wallet/priv`
 
 ### Type signature
 
@@ -726,11 +762,13 @@ Generate the private key for a TRON address
 
 ### Example
 
-[✨ View "tronGenerateAddressPrivateKey.php"](../../examples/Api/TronApi/tronGenerateAddressPrivateKey.php)
+[✨ View "tronGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGetAccount()`
+
+> **GET** `/v3/tron/account/{address}`
 
 ### Type signature
 
@@ -758,11 +796,13 @@ Get the TRON account by its address
 
 ### Example
 
-[✨ View "tronGetAccount.php"](../../examples/Api/TronApi/tronGetAccount.php)
+[✨ View "tronGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGetBlock()`
+
+> **GET** `/v3/tron/block/{hash}`
 
 ### Type signature
 
@@ -790,11 +830,13 @@ Get a TRON block by its hash or height
 
 ### Example
 
-[✨ View "tronGetBlock.php"](../../examples/Api/TronApi/tronGetBlock.php)
+[✨ View "tronGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGetCurrentBlock()`
+
+> **GET** `/v3/tron/info`
 
 ### Type signature
 
@@ -819,11 +861,13 @@ Get the current TRON block
 
 ### Example
 
-[✨ View "tronGetCurrentBlock.php"](../../examples/Api/TronApi/tronGetCurrentBlock.php)
+[✨ View "tronGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronGetTransaction()`
+
+> **GET** `/v3/tron/transaction/{hash}`
 
 ### Type signature
 
@@ -851,11 +895,13 @@ Get a TRON transaction by its hash
 
 ### Example
 
-[✨ View "tronGetTransaction.php"](../../examples/Api/TronApi/tronGetTransaction.php)
+[✨ View "tronGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `tronTrc10Detail()`
+
+> **GET** `/v3/tron/trc10/detail/{idOrOwnerAddress}`
 
 ### Type signature
 
@@ -883,6 +929,6 @@ Get information about a TRC-10 token
 
 ### Example
 
-[✨ View "tronTrc10Detail.php"](../../examples/Api/TronApi/tronTrc10Detail.php)
+[✨ View "tronTrc10Detail.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronTrc10Detail.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

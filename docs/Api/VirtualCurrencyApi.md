@@ -10,37 +10,39 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **createCurrency()**](#createcurrency) 
 
-> **POST** `/v3/ledger/virtualCurrency`
-> 
 > Create new virtual currency
+> 
+> **POST** `/v3/ledger/virtualCurrency`
 
 [🔹 **getCurrency()**](#getcurrency) 
 
-> **GET** `/v3/ledger/virtualCurrency/{name}`
-> 
 > Get virtual currency
+> 
+> **GET** `/v3/ledger/virtualCurrency/{name}`
 
 [🔹 **mintCurrency()**](#mintcurrency) 
 
-> **PUT** `/v3/ledger/virtualCurrency/mint`
-> 
 > Create new supply of virtual currency
+> 
+> **PUT** `/v3/ledger/virtualCurrency/mint`
 
 [🔹 **revokeCurrency()**](#revokecurrency) 
 
-> **PUT** `/v3/ledger/virtualCurrency/revoke`
-> 
 > Destroy supply of virtual currency
+> 
+> **PUT** `/v3/ledger/virtualCurrency/revoke`
 
 [🔹 **updateCurrency()**](#updatecurrency) 
 
-> **PUT** `/v3/ledger/virtualCurrency`
-> 
 > Update virtual currency
+> 
+> **PUT** `/v3/ledger/virtualCurrency`
 
 
 
 ## `createCurrency()`
+
+> **POST** `/v3/ledger/virtualCurrency`
 
 ### Type signature
 
@@ -68,11 +70,13 @@ Create new virtual currency
 
 ### Example
 
-[✨ View "createCurrency.php"](../../examples/Api/VirtualCurrencyApi/createCurrency.php)
+[✨ View "createCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/createCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getCurrency()`
+
+> **GET** `/v3/ledger/virtualCurrency/{name}`
 
 ### Type signature
 
@@ -100,11 +104,13 @@ Get virtual currency
 
 ### Example
 
-[✨ View "getCurrency.php"](../../examples/Api/VirtualCurrencyApi/getCurrency.php)
+[✨ View "getCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/getCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `mintCurrency()`
+
+> **PUT** `/v3/ledger/virtualCurrency/mint`
 
 ### Type signature
 
@@ -132,11 +138,13 @@ Create new supply of virtual currency
 
 ### Example
 
-[✨ View "mintCurrency.php"](../../examples/Api/VirtualCurrencyApi/mintCurrency.php)
+[✨ View "mintCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/mintCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `revokeCurrency()`
+
+> **PUT** `/v3/ledger/virtualCurrency/revoke`
 
 ### Type signature
 
@@ -164,11 +172,13 @@ Destroy supply of virtual currency
 
 ### Example
 
-[✨ View "revokeCurrency.php"](../../examples/Api/VirtualCurrencyApi/revokeCurrency.php)
+[✨ View "revokeCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/revokeCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateCurrency()`
+
+> **PUT** `/v3/ledger/virtualCurrency`
 
 ### Type signature
 
@@ -196,6 +206,6 @@ Update virtual currency
 
 ### Example
 
-[✨ View "updateCurrency.php"](../../examples/Api/VirtualCurrencyApi/updateCurrency.php)
+[✨ View "updateCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/updateCurrency.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

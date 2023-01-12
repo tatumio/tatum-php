@@ -35,7 +35,7 @@ Generate wallet
 
 ### Example
 
-[✨ View "generateWallet.php"](../../../examples/Local/Wallet/VeChain/generateWallet.php)
+[✨ View "generateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/VeChain/generateWallet.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -68,7 +68,7 @@ Generate address from xPub and index
 
 ### Example
 
-[✨ View "generateAddressFromXpub.php"](../../../examples/Local/Wallet/VeChain/generateAddressFromXpub.php)
+[✨ View "generateAddressFromXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/VeChain/generateAddressFromXpub.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -99,7 +99,7 @@ Generate address from xPub and index
 
 ### Example
 
-[✨ View "generateAddressFromPrivateKey.php"](../../../examples/Local/Wallet/VeChain/generateAddressFromPrivateKey.php)
+[✨ View "generateAddressFromPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/VeChain/generateAddressFromPrivateKey.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
@@ -132,7 +132,7 @@ Generate private key from mnemonic and index
 
 ### Example
 
-[✨ View "generatePrivateKey.php"](../../../examples/Local/Wallet/VeChain/generatePrivateKey.php)
+[✨ View "generatePrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/VeChain/generatePrivateKey.php)
 
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 

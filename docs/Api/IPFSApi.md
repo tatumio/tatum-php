@@ -10,19 +10,21 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **getIPFSData()**](#getipfsdata) 
 
-> **GET** `/v3/ipfs/{id}`
-> 
 > Get file from IPFS
+> 
+> **GET** `/v3/ipfs/{id}`
 
 [🔹 **storeIPFS()**](#storeipfs) 
 
-> **POST** `/v3/ipfs`
-> 
 > Store data to IPFS
+> 
+> **POST** `/v3/ipfs`
 
 
 
 ## `getIPFSData()`
+
+> **GET** `/v3/ipfs/{id}`
 
 ### Type signature
 
@@ -50,11 +52,13 @@ Get file from IPFS
 
 ### Example
 
-[✨ View "getIPFSData.php"](../../examples/Api/IPFSApi/getIPFSData.php)
+[✨ View "getIPFSData.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/getIPFSData.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `storeIPFS()`
+
+> **POST** `/v3/ipfs`
 
 ### Type signature
 
@@ -82,6 +86,6 @@ Store data to IPFS
 
 ### Example
 
-[✨ View "storeIPFS.php"](../../examples/Api/IPFSApi/storeIPFS.php)
+[✨ View "storeIPFS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/storeIPFS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

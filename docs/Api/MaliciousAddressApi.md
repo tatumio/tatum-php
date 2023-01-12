@@ -10,13 +10,15 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **checkMalicousAddress()**](#checkmalicousaddress) 
 
-> **GET** `/v3/security/address/{address}`
-> 
 > Check malicous address
+> 
+> **GET** `/v3/security/address/{address}`
 
 
 
 ## `checkMalicousAddress()`
+
+> **GET** `/v3/security/address/{address}`
 
 ### Type signature
 
@@ -44,6 +46,6 @@ Check malicous address
 
 ### Example
 
-[✨ View "checkMalicousAddress.php"](../../examples/Api/MaliciousAddressApi/checkMalicousAddress.php)
+[✨ View "checkMalicousAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MaliciousAddressApi/checkMalicousAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

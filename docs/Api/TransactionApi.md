@@ -10,43 +10,45 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **getTransactions()**](#gettransactions) 
 
-> **POST** `/v3/ledger/transaction/ledger`
-> 
 > Find transactions within the ledger.
+> 
+> **POST** `/v3/ledger/transaction/ledger`
 
 [🔹 **getTransactionsByAccountId()**](#gettransactionsbyaccountid) 
 
-> **POST** `/v3/ledger/transaction/account`
-> 
 > Find transactions for account.
+> 
+> **POST** `/v3/ledger/transaction/account`
 
 [🔹 **getTransactionsByCustomerId()**](#gettransactionsbycustomerid) 
 
-> **POST** `/v3/ledger/transaction/customer`
-> 
 > Find transactions for a customer across all of the customer's accounts.
+> 
+> **POST** `/v3/ledger/transaction/customer`
 
 [🔹 **getTransactionsByReference()**](#gettransactionsbyreference) 
 
-> **GET** `/v3/ledger/transaction/reference/{reference}`
-> 
 > Find transactions with a given reference across all accounts.
+> 
+> **GET** `/v3/ledger/transaction/reference/{reference}`
 
 [🔹 **sendTransaction()**](#sendtransaction) 
 
-> **POST** `/v3/ledger/transaction`
-> 
 > Send payment
+> 
+> **POST** `/v3/ledger/transaction`
 
 [🔹 **sendTransactionBatch()**](#sendtransactionbatch) 
 
-> **POST** `/v3/ledger/transaction/batch`
-> 
 > Send payment in batch
+> 
+> **POST** `/v3/ledger/transaction/batch`
 
 
 
 ## `getTransactions()`
+
+> **POST** `/v3/ledger/transaction/ledger`
 
 ### Type signature
 
@@ -80,11 +82,13 @@ Find transactions within the ledger.
 
 ### Example
 
-[✨ View "getTransactions.php"](../../examples/Api/TransactionApi/getTransactions.php)
+[✨ View "getTransactions.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactions.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getTransactionsByAccountId()`
+
+> **POST** `/v3/ledger/transaction/account`
 
 ### Type signature
 
@@ -118,11 +122,13 @@ Find transactions for account.
 
 ### Example
 
-[✨ View "getTransactionsByAccountId.php"](../../examples/Api/TransactionApi/getTransactionsByAccountId.php)
+[✨ View "getTransactionsByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByAccountId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getTransactionsByCustomerId()`
+
+> **POST** `/v3/ledger/transaction/customer`
 
 ### Type signature
 
@@ -156,11 +162,13 @@ Find transactions for a customer across all of the customer's accounts.
 
 ### Example
 
-[✨ View "getTransactionsByCustomerId.php"](../../examples/Api/TransactionApi/getTransactionsByCustomerId.php)
+[✨ View "getTransactionsByCustomerId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByCustomerId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getTransactionsByReference()`
+
+> **GET** `/v3/ledger/transaction/reference/{reference}`
 
 ### Type signature
 
@@ -188,11 +196,13 @@ Find transactions with a given reference across all accounts.
 
 ### Example
 
-[✨ View "getTransactionsByReference.php"](../../examples/Api/TransactionApi/getTransactionsByReference.php)
+[✨ View "getTransactionsByReference.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByReference.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `sendTransaction()`
+
+> **POST** `/v3/ledger/transaction`
 
 ### Type signature
 
@@ -220,11 +230,13 @@ Send payment
 
 ### Example
 
-[✨ View "sendTransaction.php"](../../examples/Api/TransactionApi/sendTransaction.php)
+[✨ View "sendTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `sendTransactionBatch()`
+
+> **POST** `/v3/ledger/transaction/batch`
 
 ### Type signature
 
@@ -252,6 +264,6 @@ Send payment in batch
 
 ### Example
 
-[✨ View "sendTransactionBatch.php"](../../examples/Api/TransactionApi/sendTransactionBatch.php)
+[✨ View "sendTransactionBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransactionBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

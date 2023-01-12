@@ -10,91 +10,93 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **adaBroadcast()**](#adabroadcast) 
 
-> **POST** `/v3/ada/broadcast`
-> 
 > Broadcast signed Ada transaction
+> 
+> **POST** `/v3/ada/broadcast`
 
 [🔹 **adaGenerateAddress()**](#adagenerateaddress) 
 
-> **GET** `/v3/ada/address/{xpub}/{index}`
-> 
 > Generate Ada deposit address from Extended public key
+> 
+> **GET** `/v3/ada/address/{xpub}/{index}`
 
 [🔹 **adaGenerateAddressPrivateKey()**](#adagenerateaddressprivatekey) 
 
-> **POST** `/v3/ada/wallet/priv`
-> 
 > Generate Ada private key
+> 
+> **POST** `/v3/ada/wallet/priv`
 
 [🔹 **adaGenerateWallet()**](#adageneratewallet) 
 
-> **GET** `/v3/ada/wallet`
-> 
 > Generate Ada wallet
+> 
+> **GET** `/v3/ada/wallet`
 
 [🔹 **adaGetAccount()**](#adagetaccount) 
 
-> **GET** `/v3/ada/account/{address}`
-> 
 > Gets a Ada account by address
+> 
+> **GET** `/v3/ada/account/{address}`
 
 [🔹 **adaGetBlock()**](#adagetblock) 
 
-> **GET** `/v3/ada/block/{hash}`
-> 
 > Get Block by hash or height
+> 
+> **GET** `/v3/ada/block/{hash}`
 
 [🔹 **adaGetBlockChainInfo()**](#adagetblockchaininfo) 
 
-> **GET** `/v3/ada/info`
-> 
 > Get Blockchain information
+> 
+> **GET** `/v3/ada/info`
 
 [🔹 **adaGetRawTransaction()**](#adagetrawtransaction) 
 
-> **GET** `/v3/ada/transaction/{hash}`
-> 
 > Get transaction by hash
+> 
+> **GET** `/v3/ada/transaction/{hash}`
 
 [🔹 **adaGetTxByAddress()**](#adagettxbyaddress) 
 
-> **GET** `/v3/ada/transaction/address/{address}`
-> 
 > Get transactions by address
+> 
+> **GET** `/v3/ada/transaction/address/{address}`
 
 [🔹 **adaGetUTXOByAddress()**](#adagetutxobyaddress) 
 
-> **GET** `/v3/ada/{address}/utxos`
-> 
 > Get UTXOs by address
+> 
+> **GET** `/v3/ada/{address}/utxos`
 
 [🔹 **adaTransactionFromAddress()**](#adatransactionfromaddress) 
 
-> **POST** `/v3/ada/transaction`
-> 
 > Send ADA to Cardano addresses
+> 
+> **POST** `/v3/ada/transaction`
 
 [🔹 **adaTransactionFromAddressKMS()**](#adatransactionfromaddresskms) 
 
-> **POST** `/v3/ada/transaction`
-> 
 > Send ADA to Cardano addresses
+> 
+> **POST** `/v3/ada/transaction`
 
 [🔹 **adaTransactionFromUTXO()**](#adatransactionfromutxo) 
 
-> **POST** `/v3/ada/transaction`
-> 
 > Send ADA to Cardano addresses
+> 
+> **POST** `/v3/ada/transaction`
 
 [🔹 **adaTransactionFromUTXOKMS()**](#adatransactionfromutxokms) 
 
-> **POST** `/v3/ada/transaction`
-> 
 > Send ADA to Cardano addresses
+> 
+> **POST** `/v3/ada/transaction`
 
 
 
 ## `adaBroadcast()`
+
+> **POST** `/v3/ada/broadcast`
 
 ### Type signature
 
@@ -122,11 +124,13 @@ Broadcast signed Ada transaction
 
 ### Example
 
-[✨ View "adaBroadcast.php"](../../examples/Api/CardanoApi/adaBroadcast.php)
+[✨ View "adaBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGenerateAddress()`
+
+> **GET** `/v3/ada/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -156,11 +160,13 @@ Generate Ada deposit address from Extended public key
 
 ### Example
 
-[✨ View "adaGenerateAddress.php"](../../examples/Api/CardanoApi/adaGenerateAddress.php)
+[✨ View "adaGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGenerateAddressPrivateKey()`
+
+> **POST** `/v3/ada/wallet/priv`
 
 ### Type signature
 
@@ -188,11 +194,13 @@ Generate Ada private key
 
 ### Example
 
-[✨ View "adaGenerateAddressPrivateKey.php"](../../examples/Api/CardanoApi/adaGenerateAddressPrivateKey.php)
+[✨ View "adaGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGenerateWallet()`
+
+> **GET** `/v3/ada/wallet`
 
 ### Type signature
 
@@ -220,11 +228,13 @@ Generate Ada wallet
 
 ### Example
 
-[✨ View "adaGenerateWallet.php"](../../examples/Api/CardanoApi/adaGenerateWallet.php)
+[✨ View "adaGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetAccount()`
+
+> **GET** `/v3/ada/account/{address}`
 
 ### Type signature
 
@@ -252,11 +262,13 @@ Gets a Ada account by address
 
 ### Example
 
-[✨ View "adaGetAccount.php"](../../examples/Api/CardanoApi/adaGetAccount.php)
+[✨ View "adaGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetBlock()`
+
+> **GET** `/v3/ada/block/{hash}`
 
 ### Type signature
 
@@ -284,11 +296,13 @@ Get Block by hash or height
 
 ### Example
 
-[✨ View "adaGetBlock.php"](../../examples/Api/CardanoApi/adaGetBlock.php)
+[✨ View "adaGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetBlockChainInfo()`
+
+> **GET** `/v3/ada/info`
 
 ### Type signature
 
@@ -313,11 +327,13 @@ Get Blockchain information
 
 ### Example
 
-[✨ View "adaGetBlockChainInfo.php"](../../examples/Api/CardanoApi/adaGetBlockChainInfo.php)
+[✨ View "adaGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetRawTransaction()`
+
+> **GET** `/v3/ada/transaction/{hash}`
 
 ### Type signature
 
@@ -345,11 +361,13 @@ Get transaction by hash
 
 ### Example
 
-[✨ View "adaGetRawTransaction.php"](../../examples/Api/CardanoApi/adaGetRawTransaction.php)
+[✨ View "adaGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetTxByAddress()`
+
+> **GET** `/v3/ada/transaction/address/{address}`
 
 ### Type signature
 
@@ -381,11 +399,13 @@ Get transactions by address
 
 ### Example
 
-[✨ View "adaGetTxByAddress.php"](../../examples/Api/CardanoApi/adaGetTxByAddress.php)
+[✨ View "adaGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGetTxByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaGetUTXOByAddress()`
+
+> **GET** `/v3/ada/{address}/utxos`
 
 ### Type signature
 
@@ -413,11 +433,13 @@ Get UTXOs by address
 
 ### Example
 
-[✨ View "adaGetUTXOByAddress.php"](../../examples/Api/CardanoApi/adaGetUTXOByAddress.php)
+[✨ View "adaGetUTXOByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaGetUTXOByAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaTransactionFromAddress()`
+
+> **POST** `/v3/ada/transaction`
 
 ### Type signature
 
@@ -445,11 +467,13 @@ Send ADA to Cardano addresses
 
 ### Example
 
-[✨ View "adaTransactionFromAddress.php"](../../examples/Api/CardanoApi/adaTransactionFromAddress.php)
+[✨ View "adaTransactionFromAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaTransactionFromAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaTransactionFromAddressKMS()`
+
+> **POST** `/v3/ada/transaction`
 
 ### Type signature
 
@@ -477,11 +501,13 @@ AdaTransactionFromAddressKMS operation
 
 ### Example
 
-[✨ View "adaTransactionFromAddressKMS.php"](../../examples/Api/CardanoApi/adaTransactionFromAddressKMS.php)
+[✨ View "adaTransactionFromAddressKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaTransactionFromAddressKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaTransactionFromUTXO()`
+
+> **POST** `/v3/ada/transaction`
 
 ### Type signature
 
@@ -509,11 +535,13 @@ AdaTransactionFromUTXO operation
 
 ### Example
 
-[✨ View "adaTransactionFromUTXO.php"](../../examples/Api/CardanoApi/adaTransactionFromUTXO.php)
+[✨ View "adaTransactionFromUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaTransactionFromUTXO.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `adaTransactionFromUTXOKMS()`
+
+> **POST** `/v3/ada/transaction`
 
 ### Type signature
 
@@ -541,6 +569,6 @@ AdaTransactionFromUTXOKMS operation
 
 ### Example
 
-[✨ View "adaTransactionFromUTXOKMS.php"](../../examples/Api/CardanoApi/adaTransactionFromUTXOKMS.php)
+[✨ View "adaTransactionFromUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CardanoApi/adaTransactionFromUTXOKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

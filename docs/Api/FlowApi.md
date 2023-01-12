@@ -10,133 +10,135 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **flowAddPubKeyMnemonic()**](#flowaddpubkeymnemonic) 
 
-> **PUT** `/v3/flow/account`
-> 
 > Add public key to Flow address
+> 
+> **PUT** `/v3/flow/account`
 
 [🔹 **flowAddPubKeySecret()**](#flowaddpubkeysecret) 
 
-> **PUT** `/v3/flow/account`
-> 
 > Add public key to Flow address
+> 
+> **PUT** `/v3/flow/account`
 
 [🔹 **flowAddPubKeySecretKMS()**](#flowaddpubkeysecretkms) 
 
-> **PUT** `/v3/flow/account`
-> 
 > Add public key to Flow address
+> 
+> **PUT** `/v3/flow/account`
 
 [🔹 **flowCreateAddressFromPubKeyKMS()**](#flowcreateaddressfrompubkeykms) 
 
-> **POST** `/v3/flow/account`
-> 
 > Create Flow address from public key
+> 
+> **POST** `/v3/flow/account`
 
 [🔹 **flowCreateAddressFromPubKeyMnemonic()**](#flowcreateaddressfrompubkeymnemonic) 
 
-> **POST** `/v3/flow/account`
-> 
 > Create Flow address from public key
+> 
+> **POST** `/v3/flow/account`
 
 [🔹 **flowCreateAddressFromPubKeySecret()**](#flowcreateaddressfrompubkeysecret) 
 
-> **POST** `/v3/flow/account`
-> 
 > Create Flow address from public key
+> 
+> **POST** `/v3/flow/account`
 
 [🔹 **flowCustomTransactionKMS()**](#flowcustomtransactionkms) 
 
-> **POST** `/v3/flow/transaction/custom`
-> 
 > Send arbitrary transaction to blockchain
+> 
+> **POST** `/v3/flow/transaction/custom`
 
 [🔹 **flowCustomTransactionMnemonic()**](#flowcustomtransactionmnemonic) 
 
-> **POST** `/v3/flow/transaction/custom`
-> 
 > Send arbitrary transaction to blockchain
+> 
+> **POST** `/v3/flow/transaction/custom`
 
 [🔹 **flowCustomTransactionPK()**](#flowcustomtransactionpk) 
 
-> **POST** `/v3/flow/transaction/custom`
-> 
 > Send arbitrary transaction to blockchain
+> 
+> **POST** `/v3/flow/transaction/custom`
 
 [🔹 **flowGenerateAddress()**](#flowgenerateaddress) 
 
-> **GET** `/v3/flow/address/{xpub}/{index}`
-> 
 > Generate Flow address from Extended public key
+> 
+> **GET** `/v3/flow/address/{xpub}/{index}`
 
 [🔹 **flowGeneratePubKey()**](#flowgeneratepubkey) 
 
-> **GET** `/v3/flow/pubkey/{xpub}/{index}`
-> 
 > Generate Flow public key from Extended public key
+> 
+> **GET** `/v3/flow/pubkey/{xpub}/{index}`
 
 [🔹 **flowGeneratePubKeyPrivateKey()**](#flowgeneratepubkeyprivatekey) 
 
-> **POST** `/v3/flow/wallet/priv`
-> 
 > Generate Flow private key
+> 
+> **POST** `/v3/flow/wallet/priv`
 
 [🔹 **flowGenerateWallet()**](#flowgeneratewallet) 
 
-> **GET** `/v3/flow/wallet`
-> 
 > Generate Flow wallet
+> 
+> **GET** `/v3/flow/wallet`
 
 [🔹 **flowGetAccount()**](#flowgetaccount) 
 
-> **GET** `/v3/flow/account/{address}`
-> 
 > Get the balance of a Flow account
+> 
+> **GET** `/v3/flow/account/{address}`
 
 [🔹 **flowGetBlock()**](#flowgetblock) 
 
-> **GET** `/v3/flow/block/{hash}`
-> 
 > Get Flow Block by hash or height
+> 
+> **GET** `/v3/flow/block/{hash}`
 
 [🔹 **flowGetBlockChainInfo()**](#flowgetblockchaininfo) 
 
-> **GET** `/v3/flow/block/current`
-> 
 > Get Flow current block number
+> 
+> **GET** `/v3/flow/block/current`
 
 [🔹 **flowGetBlockEvents()**](#flowgetblockevents) 
 
-> **GET** `/v3/flow/block/events`
-> 
 > Get Flow events from blocks
+> 
+> **GET** `/v3/flow/block/events`
 
 [🔹 **flowGetRawTransaction()**](#flowgetrawtransaction) 
 
-> **GET** `/v3/flow/transaction/{hash}`
-> 
 > Get Flow Transaction by hash
+> 
+> **GET** `/v3/flow/transaction/{hash}`
 
 [🔹 **flowTransactionKMS()**](#flowtransactionkms) 
 
-> **POST** `/v3/flow/transaction`
-> 
 > Send Flow to blockchain addresses
+> 
+> **POST** `/v3/flow/transaction`
 
 [🔹 **flowTransactionMnemonic()**](#flowtransactionmnemonic) 
 
-> **POST** `/v3/flow/transaction`
-> 
 > Send Flow to blockchain addresses
+> 
+> **POST** `/v3/flow/transaction`
 
 [🔹 **flowTransactionPK()**](#flowtransactionpk) 
 
-> **POST** `/v3/flow/transaction`
-> 
 > Send Flow to blockchain addresses
+> 
+> **POST** `/v3/flow/transaction`
 
 
 
 ## `flowAddPubKeyMnemonic()`
+
+> **PUT** `/v3/flow/account`
 
 ### Type signature
 
@@ -164,11 +166,13 @@ Add public key to Flow address
 
 ### Example
 
-[✨ View "flowAddPubKeyMnemonic.php"](../../examples/Api/FlowApi/flowAddPubKeyMnemonic.php)
+[✨ View "flowAddPubKeyMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeyMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowAddPubKeySecret()`
+
+> **PUT** `/v3/flow/account`
 
 ### Type signature
 
@@ -196,11 +200,13 @@ FlowAddPubKeySecret operation
 
 ### Example
 
-[✨ View "flowAddPubKeySecret.php"](../../examples/Api/FlowApi/flowAddPubKeySecret.php)
+[✨ View "flowAddPubKeySecret.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecret.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowAddPubKeySecretKMS()`
+
+> **PUT** `/v3/flow/account`
 
 ### Type signature
 
@@ -228,11 +234,13 @@ FlowAddPubKeySecretKMS operation
 
 ### Example
 
-[✨ View "flowAddPubKeySecretKMS.php"](../../examples/Api/FlowApi/flowAddPubKeySecretKMS.php)
+[✨ View "flowAddPubKeySecretKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecretKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowCreateAddressFromPubKeyKMS()`
+
+> **POST** `/v3/flow/account`
 
 ### Type signature
 
@@ -260,11 +268,13 @@ FlowCreateAddressFromPubKeyKMS operation
 
 ### Example
 
-[✨ View "flowCreateAddressFromPubKeyKMS.php"](../../examples/Api/FlowApi/flowCreateAddressFromPubKeyKMS.php)
+[✨ View "flowCreateAddressFromPubKeyKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowCreateAddressFromPubKeyMnemonic()`
+
+> **POST** `/v3/flow/account`
 
 ### Type signature
 
@@ -292,11 +302,13 @@ Create Flow address from public key
 
 ### Example
 
-[✨ View "flowCreateAddressFromPubKeyMnemonic.php"](../../examples/Api/FlowApi/flowCreateAddressFromPubKeyMnemonic.php)
+[✨ View "flowCreateAddressFromPubKeyMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowCreateAddressFromPubKeySecret()`
+
+> **POST** `/v3/flow/account`
 
 ### Type signature
 
@@ -324,11 +336,13 @@ FlowCreateAddressFromPubKeySecret operation
 
 ### Example
 
-[✨ View "flowCreateAddressFromPubKeySecret.php"](../../examples/Api/FlowApi/flowCreateAddressFromPubKeySecret.php)
+[✨ View "flowCreateAddressFromPubKeySecret.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeySecret.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowCustomTransactionKMS()`
+
+> **POST** `/v3/flow/transaction/custom`
 
 ### Type signature
 
@@ -356,11 +370,13 @@ FlowCustomTransactionKMS operation
 
 ### Example
 
-[✨ View "flowCustomTransactionKMS.php"](../../examples/Api/FlowApi/flowCustomTransactionKMS.php)
+[✨ View "flowCustomTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowCustomTransactionMnemonic()`
+
+> **POST** `/v3/flow/transaction/custom`
 
 ### Type signature
 
@@ -388,11 +404,13 @@ Send arbitrary transaction to blockchain
 
 ### Example
 
-[✨ View "flowCustomTransactionMnemonic.php"](../../examples/Api/FlowApi/flowCustomTransactionMnemonic.php)
+[✨ View "flowCustomTransactionMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowCustomTransactionPK()`
+
+> **POST** `/v3/flow/transaction/custom`
 
 ### Type signature
 
@@ -420,11 +438,13 @@ FlowCustomTransactionPK operation
 
 ### Example
 
-[✨ View "flowCustomTransactionPK.php"](../../examples/Api/FlowApi/flowCustomTransactionPK.php)
+[✨ View "flowCustomTransactionPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionPK.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGenerateAddress()`
+
+> **GET** `/v3/flow/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -454,11 +474,13 @@ Generate Flow address from Extended public key
 
 ### Example
 
-[✨ View "flowGenerateAddress.php"](../../examples/Api/FlowApi/flowGenerateAddress.php)
+[✨ View "flowGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGeneratePubKey()`
+
+> **GET** `/v3/flow/pubkey/{xpub}/{index}`
 
 ### Type signature
 
@@ -488,11 +510,13 @@ Generate Flow public key from Extended public key
 
 ### Example
 
-[✨ View "flowGeneratePubKey.php"](../../examples/Api/FlowApi/flowGeneratePubKey.php)
+[✨ View "flowGeneratePubKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGeneratePubKeyPrivateKey()`
+
+> **POST** `/v3/flow/wallet/priv`
 
 ### Type signature
 
@@ -520,11 +544,13 @@ Generate Flow private key
 
 ### Example
 
-[✨ View "flowGeneratePubKeyPrivateKey.php"](../../examples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
+[✨ View "flowGeneratePubKeyPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGenerateWallet()`
+
+> **GET** `/v3/flow/wallet`
 
 ### Type signature
 
@@ -552,11 +578,13 @@ Generate Flow wallet
 
 ### Example
 
-[✨ View "flowGenerateWallet.php"](../../examples/Api/FlowApi/flowGenerateWallet.php)
+[✨ View "flowGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGetAccount()`
+
+> **GET** `/v3/flow/account/{address}`
 
 ### Type signature
 
@@ -584,11 +612,13 @@ Get the balance of a Flow account
 
 ### Example
 
-[✨ View "flowGetAccount.php"](../../examples/Api/FlowApi/flowGetAccount.php)
+[✨ View "flowGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetAccount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGetBlock()`
+
+> **GET** `/v3/flow/block/{hash}`
 
 ### Type signature
 
@@ -616,11 +646,13 @@ Get Flow Block by hash or height
 
 ### Example
 
-[✨ View "flowGetBlock.php"](../../examples/Api/FlowApi/flowGetBlock.php)
+[✨ View "flowGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGetBlockChainInfo()`
+
+> **GET** `/v3/flow/block/current`
 
 ### Type signature
 
@@ -645,11 +677,13 @@ Get Flow current block number
 
 ### Example
 
-[✨ View "flowGetBlockChainInfo.php"](../../examples/Api/FlowApi/flowGetBlockChainInfo.php)
+[✨ View "flowGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockChainInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGetBlockEvents()`
+
+> **GET** `/v3/flow/block/events`
 
 ### Type signature
 
@@ -681,11 +715,13 @@ Get Flow events from blocks
 
 ### Example
 
-[✨ View "flowGetBlockEvents.php"](../../examples/Api/FlowApi/flowGetBlockEvents.php)
+[✨ View "flowGetBlockEvents.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockEvents.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowGetRawTransaction()`
+
+> **GET** `/v3/flow/transaction/{hash}`
 
 ### Type signature
 
@@ -713,11 +749,13 @@ Get Flow Transaction by hash
 
 ### Example
 
-[✨ View "flowGetRawTransaction.php"](../../examples/Api/FlowApi/flowGetRawTransaction.php)
+[✨ View "flowGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetRawTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowTransactionKMS()`
+
+> **POST** `/v3/flow/transaction`
 
 ### Type signature
 
@@ -745,11 +783,13 @@ FlowTransactionKMS operation
 
 ### Example
 
-[✨ View "flowTransactionKMS.php"](../../examples/Api/FlowApi/flowTransactionKMS.php)
+[✨ View "flowTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowTransactionMnemonic()`
+
+> **POST** `/v3/flow/transaction`
 
 ### Type signature
 
@@ -777,11 +817,13 @@ Send Flow to blockchain addresses
 
 ### Example
 
-[✨ View "flowTransactionMnemonic.php"](../../examples/Api/FlowApi/flowTransactionMnemonic.php)
+[✨ View "flowTransactionMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `flowTransactionPK()`
+
+> **POST** `/v3/flow/transaction`
 
 ### Type signature
 
@@ -809,6 +851,6 @@ FlowTransactionPK operation
 
 ### Example
 
-[✨ View "flowTransactionPK.php"](../../examples/Api/FlowApi/flowTransactionPK.php)
+[✨ View "flowTransactionPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionPK.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

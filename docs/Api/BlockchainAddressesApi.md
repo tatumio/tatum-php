@@ -10,43 +10,45 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **addressExists()**](#addressexists) 
 
-> **GET** `/v3/offchain/account/address/{address}/{currency}`
-> 
 > Check whether a blockchain address is assigned to a virtual account
+> 
+> **GET** `/v3/offchain/account/address/{address}/{currency}`
 
 [🔹 **assignAddress()**](#assignaddress) 
 
-> **POST** `/v3/offchain/account/{id}/address/{address}`
-> 
 > Assign a blockchain address to a virtual account
+> 
+> **POST** `/v3/offchain/account/{id}/address/{address}`
 
 [🔹 **generateDepositAddress()**](#generatedepositaddress) 
 
-> **POST** `/v3/offchain/account/{id}/address`
-> 
 > Create a deposit address for a virtual account
+> 
+> **POST** `/v3/offchain/account/{id}/address`
 
 [🔹 **generateDepositAddressesBatch()**](#generatedepositaddressesbatch) 
 
-> **POST** `/v3/offchain/account/address/batch`
-> 
 > Create multiple deposit addresses for a virtual account
+> 
+> **POST** `/v3/offchain/account/address/batch`
 
 [🔹 **getAllDepositAddresses()**](#getalldepositaddresses) 
 
-> **GET** `/v3/offchain/account/{id}/address`
-> 
 > Get all deposit addresses for a virtual account
+> 
+> **GET** `/v3/offchain/account/{id}/address`
 
 [🔹 **removeAddress()**](#removeaddress) 
 
-> **DELETE** `/v3/offchain/account/{id}/address/{address}`
-> 
 > Remove a deposit address from a virtual account
+> 
+> **DELETE** `/v3/offchain/account/{id}/address/{address}`
 
 
 
 ## `addressExists()`
+
+> **GET** `/v3/offchain/account/address/{address}/{currency}`
 
 ### Type signature
 
@@ -78,11 +80,13 @@ Check whether a blockchain address is assigned to a virtual account
 
 ### Example
 
-[✨ View "addressExists.php"](../../examples/Api/BlockchainAddressesApi/addressExists.php)
+[✨ View "addressExists.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/addressExists.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `assignAddress()`
+
+> **POST** `/v3/offchain/account/{id}/address/{address}`
 
 ### Type signature
 
@@ -114,11 +118,13 @@ Assign a blockchain address to a virtual account
 
 ### Example
 
-[✨ View "assignAddress.php"](../../examples/Api/BlockchainAddressesApi/assignAddress.php)
+[✨ View "assignAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/assignAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateDepositAddress()`
+
+> **POST** `/v3/offchain/account/{id}/address`
 
 ### Type signature
 
@@ -148,11 +154,13 @@ Create a deposit address for a virtual account
 
 ### Example
 
-[✨ View "generateDepositAddress.php"](../../examples/Api/BlockchainAddressesApi/generateDepositAddress.php)
+[✨ View "generateDepositAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateDepositAddressesBatch()`
+
+> **POST** `/v3/offchain/account/address/batch`
 
 ### Type signature
 
@@ -180,11 +188,13 @@ Create multiple deposit addresses for a virtual account
 
 ### Example
 
-[✨ View "generateDepositAddressesBatch.php"](../../examples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
+[✨ View "generateDepositAddressesBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getAllDepositAddresses()`
+
+> **GET** `/v3/offchain/account/{id}/address`
 
 ### Type signature
 
@@ -212,11 +222,13 @@ Get all deposit addresses for a virtual account
 
 ### Example
 
-[✨ View "getAllDepositAddresses.php"](../../examples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
+[✨ View "getAllDepositAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `removeAddress()`
+
+> **DELETE** `/v3/offchain/account/{id}/address/{address}`
 
 ### Type signature
 
@@ -248,6 +260,6 @@ Remove a deposit address from a virtual account
 
 ### Example
 
-[✨ View "removeAddress.php"](../../examples/Api/BlockchainAddressesApi/removeAddress.php)
+[✨ View "removeAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/removeAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

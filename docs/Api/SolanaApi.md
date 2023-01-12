@@ -10,61 +10,63 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **solanaBroadcastConfirm()**](#solanabroadcastconfirm) 
 
-> **POST** `/v3/solana/broadcast/confirm`
-> 
 > Broadcast and confirm signed Solana transaction
+> 
+> **POST** `/v3/solana/broadcast/confirm`
 
 [🔹 **solanaGenerateWallet()**](#solanageneratewallet) 
 
-> **GET** `/v3/solana/wallet`
-> 
 > Generate Solana wallet
+> 
+> **GET** `/v3/solana/wallet`
 
 [🔹 **solanaGetBalance()**](#solanagetbalance) 
 
-> **GET** `/v3/solana/account/balance/{address}`
-> 
 > Get Solana Account balance
+> 
+> **GET** `/v3/solana/account/balance/{address}`
 
 [🔹 **solanaGetBlock()**](#solanagetblock) 
 
-> **GET** `/v3/solana/block/{height}`
-> 
 > Get Solana block by number
+> 
+> **GET** `/v3/solana/block/{height}`
 
 [🔹 **solanaGetCurrentBlock()**](#solanagetcurrentblock) 
 
-> **GET** `/v3/solana/block/current`
-> 
 > Get current block number
+> 
+> **GET** `/v3/solana/block/current`
 
 [🔹 **solanaGetTransaction()**](#solanagettransaction) 
 
-> **GET** `/v3/solana/transaction/{hash}`
-> 
 > Get Solana Transaction
+> 
+> **GET** `/v3/solana/transaction/{hash}`
 
 [🔹 **solanaWeb3Driver()**](#solanaweb3driver) 
 
-> **POST** `/v3/solana/web3/{xApiKey}`
-> 
 > JSON RPC HTTP driver
+> 
+> **POST** `/v3/solana/web3/{xApiKey}`
 
 [🔹 **transferSolanaBlockchain()**](#transfersolanablockchain) 
 
-> **POST** `/v3/solana/transaction`
-> 
 > Send SOL from account to account
+> 
+> **POST** `/v3/solana/transaction`
 
 [🔹 **transferSolanaBlockchainKMS()**](#transfersolanablockchainkms) 
 
-> **POST** `/v3/solana/transaction`
-> 
 > Send SOL from account to account
+> 
+> **POST** `/v3/solana/transaction`
 
 
 
 ## `solanaBroadcastConfirm()`
+
+> **POST** `/v3/solana/broadcast/confirm`
 
 ### Type signature
 
@@ -92,11 +94,13 @@ Broadcast and confirm signed Solana transaction
 
 ### Example
 
-[✨ View "solanaBroadcastConfirm.php"](../../examples/Api/SolanaApi/solanaBroadcastConfirm.php)
+[✨ View "solanaBroadcastConfirm.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaBroadcastConfirm.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGenerateWallet()`
+
+> **GET** `/v3/solana/wallet`
 
 ### Type signature
 
@@ -121,11 +125,13 @@ Generate Solana wallet
 
 ### Example
 
-[✨ View "solanaGenerateWallet.php"](../../examples/Api/SolanaApi/solanaGenerateWallet.php)
+[✨ View "solanaGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGetBalance()`
+
+> **GET** `/v3/solana/account/balance/{address}`
 
 ### Type signature
 
@@ -153,11 +159,13 @@ Get Solana Account balance
 
 ### Example
 
-[✨ View "solanaGetBalance.php"](../../examples/Api/SolanaApi/solanaGetBalance.php)
+[✨ View "solanaGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGetBlock()`
+
+> **GET** `/v3/solana/block/{height}`
 
 ### Type signature
 
@@ -185,11 +193,13 @@ Get Solana block by number
 
 ### Example
 
-[✨ View "solanaGetBlock.php"](../../examples/Api/SolanaApi/solanaGetBlock.php)
+[✨ View "solanaGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGetCurrentBlock()`
+
+> **GET** `/v3/solana/block/current`
 
 ### Type signature
 
@@ -214,11 +224,13 @@ Get current block number
 
 ### Example
 
-[✨ View "solanaGetCurrentBlock.php"](../../examples/Api/SolanaApi/solanaGetCurrentBlock.php)
+[✨ View "solanaGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaGetTransaction()`
+
+> **GET** `/v3/solana/transaction/{hash}`
 
 ### Type signature
 
@@ -248,11 +260,13 @@ Get Solana Transaction
 
 ### Example
 
-[✨ View "solanaGetTransaction.php"](../../examples/Api/SolanaApi/solanaGetTransaction.php)
+[✨ View "solanaGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `solanaWeb3Driver()`
+
+> **POST** `/v3/solana/web3/{xApiKey}`
 
 ### Type signature
 
@@ -282,11 +296,13 @@ JSON RPC HTTP driver
 
 ### Example
 
-[✨ View "solanaWeb3Driver.php"](../../examples/Api/SolanaApi/solanaWeb3Driver.php)
+[✨ View "solanaWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferSolanaBlockchain()`
+
+> **POST** `/v3/solana/transaction`
 
 ### Type signature
 
@@ -314,11 +330,13 @@ Send SOL from account to account
 
 ### Example
 
-[✨ View "transferSolanaBlockchain.php"](../../examples/Api/SolanaApi/transferSolanaBlockchain.php)
+[✨ View "transferSolanaBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferSolanaBlockchainKMS()`
+
+> **POST** `/v3/solana/transaction`
 
 ### Type signature
 
@@ -346,6 +364,6 @@ TransferSolanaBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferSolanaBlockchainKMS.php"](../../examples/Api/SolanaApi/transferSolanaBlockchainKMS.php)
+[✨ View "transferSolanaBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

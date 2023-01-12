@@ -32,7 +32,7 @@ Sign transaction
 
 ### Example
 
-[✨ View "sign.php"](../../../examples/Local/Transaction/Ethereum/sign.php)
+[✨ View "sign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/Ethereum/sign.php)
 
 [[Back to top]](#) | [[Back to Local Transaction]](../../index.md#local-transaction)
 

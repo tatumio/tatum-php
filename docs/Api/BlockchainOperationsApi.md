@@ -10,805 +10,807 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **bnbAssetOffchain()**](#bnbassetoffchain) 
 
-> **POST** `/v3/offchain/bnb/asset`
-> 
 > Create a BNB-based asset
+> 
+> **POST** `/v3/offchain/bnb/asset`
 
 [🔹 **deployAlgoErc20OffchainKMSAddress()**](#deployalgoerc20offchainkmsaddress) 
 
-> **POST** `/v3/offchain/algo/erc20/deploy`
-> 
 > Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/algo/erc20/deploy`
 
 [🔹 **deployAlgoErc20OffchainMnemonicAddress()**](#deployalgoerc20offchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/algo/erc20/deploy`
-> 
 > Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/algo/erc20/deploy`
 
 [🔹 **deployAlgoErc20OffchainPKAddress()**](#deployalgoerc20offchainpkaddress) 
 
-> **POST** `/v3/offchain/algo/erc20/deploy`
-> 
 > Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/algo/erc20/deploy`
 
 [🔹 **deployCeloErc20OffchainKMSAddress()**](#deployceloerc20offchainkmsaddress) 
 
-> **POST** `/v3/offchain/celo/erc20/deploy`
-> 
 > Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 [🔹 **deployCeloErc20OffchainKMSXpub()**](#deployceloerc20offchainkmsxpub) 
 
-> **POST** `/v3/offchain/celo/erc20/deploy`
-> 
 > Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 [🔹 **deployCeloErc20OffchainMnemXpub()**](#deployceloerc20offchainmnemxpub) 
 
-> **POST** `/v3/offchain/celo/erc20/deploy`
-> 
 > Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 [🔹 **deployCeloErc20OffchainMnemonicAddress()**](#deployceloerc20offchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/celo/erc20/deploy`
-> 
 > Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 [🔹 **deployCeloErc20OffchainPKAddress()**](#deployceloerc20offchainpkaddress) 
 
-> **POST** `/v3/offchain/celo/erc20/deploy`
-> 
 > Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 [🔹 **deployCeloErc20OffchainPKXpub()**](#deployceloerc20offchainpkxpub) 
 
-> **POST** `/v3/offchain/celo/erc20/deploy`
-> 
 > Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 [🔹 **deployErc20OffchainKMSAddress()**](#deployerc20offchainkmsaddress) 
 
-> **POST** `/v3/offchain/ethereum/erc20/deploy`
-> 
 > Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 [🔹 **deployErc20OffchainKMSXpub()**](#deployerc20offchainkmsxpub) 
 
-> **POST** `/v3/offchain/ethereum/erc20/deploy`
-> 
 > Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 [🔹 **deployErc20OffchainMnemXpub()**](#deployerc20offchainmnemxpub) 
 
-> **POST** `/v3/offchain/ethereum/erc20/deploy`
-> 
 > Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 [🔹 **deployErc20OffchainMnemonicAddress()**](#deployerc20offchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/ethereum/erc20/deploy`
-> 
 > Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 [🔹 **deployErc20OffchainPKAddress()**](#deployerc20offchainpkaddress) 
 
-> **POST** `/v3/offchain/ethereum/erc20/deploy`
-> 
 > Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 [🔹 **deployErc20OffchainPKXpub()**](#deployerc20offchainpkxpub) 
 
-> **POST** `/v3/offchain/ethereum/erc20/deploy`
-> 
 > Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 [🔹 **deployKCSErc20OffchainKMSAddress()**](#deploykcserc20offchainkmsaddress) 
 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-> 
 > Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 [🔹 **deployKCSErc20OffchainKMSXpub()**](#deploykcserc20offchainkmsxpub) 
 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-> 
 > Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 [🔹 **deployKCSErc20OffchainMnemXpub()**](#deploykcserc20offchainmnemxpub) 
 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-> 
 > Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 [🔹 **deployKCSErc20OffchainMnemonicAddress()**](#deploykcserc20offchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-> 
 > Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 [🔹 **deployKCSErc20OffchainPKAddress()**](#deploykcserc20offchainpkaddress) 
 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-> 
 > Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 [🔹 **deployKCSErc20OffchainPKXpub()**](#deploykcserc20offchainpkxpub) 
 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-> 
 > Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 [🔹 **deployTrcOffchainKMSAddress()**](#deploytrcoffchainkmsaddress) 
 
-> **POST** `/v3/offchain/tron/trc/deploy`
-> 
 > Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 [🔹 **deployTrcOffchainKMSXpub()**](#deploytrcoffchainkmsxpub) 
 
-> **POST** `/v3/offchain/tron/trc/deploy`
-> 
 > Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 [🔹 **deployTrcOffchainMnemXpub()**](#deploytrcoffchainmnemxpub) 
 
-> **POST** `/v3/offchain/tron/trc/deploy`
-> 
 > Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 [🔹 **deployTrcOffchainMnemonicAddress()**](#deploytrcoffchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/tron/trc/deploy`
-> 
 > Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 [🔹 **deployTrcOffchainPKAddress()**](#deploytrcoffchainpkaddress) 
 
-> **POST** `/v3/offchain/tron/trc/deploy`
-> 
 > Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 [🔹 **deployTrcOffchainPKXpub()**](#deploytrcoffchainpkxpub) 
 
-> **POST** `/v3/offchain/tron/trc/deploy`
-> 
 > Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 [🔹 **erc20()**](#erc20) 
 
-> **POST** `/v3/offchain/ethereum/erc20`
-> 
 > Register a new Ethereum ERC-20 token in the virtual account
+> 
+> **POST** `/v3/offchain/ethereum/erc20`
 
 [🔹 **erc20Address()**](#erc20address) 
 
-> **POST** `/v3/offchain/ethereum/erc20`
-> 
 > Register a new Ethereum ERC-20 token in the virtual account
+> 
+> **POST** `/v3/offchain/ethereum/erc20`
 
 [🔹 **offBscDeployErc20OffchainKMSAddress()**](#offbscdeployerc20offchainkmsaddress) 
 
-> **POST** `/v3/offchain/bsc/bep20/deploy`
-> 
 > Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 [🔹 **offBscDeployErc20OffchainKMSXpub()**](#offbscdeployerc20offchainkmsxpub) 
 
-> **POST** `/v3/offchain/bsc/bep20/deploy`
-> 
 > Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 [🔹 **offBscDeployErc20OffchainMnemXpub()**](#offbscdeployerc20offchainmnemxpub) 
 
-> **POST** `/v3/offchain/bsc/bep20/deploy`
-> 
 > Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 [🔹 **offBscDeployErc20OffchainMnemonicAddress()**](#offbscdeployerc20offchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/bsc/bep20/deploy`
-> 
 > Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 [🔹 **offBscDeployErc20OffchainPKAddress()**](#offbscdeployerc20offchainpkaddress) 
 
-> **POST** `/v3/offchain/bsc/bep20/deploy`
-> 
 > Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 [🔹 **offBscDeployErc20OffchainPKXpub()**](#offbscdeployerc20offchainpkxpub) 
 
-> **POST** `/v3/offchain/bsc/bep20/deploy`
-> 
 > Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 [🔹 **offBscErc20()**](#offbscerc20) 
 
-> **POST** `/v3/offchain/bsc/bep20`
-> 
 > Register a new BNB Smart Chain BEP-20 token in the virtual account
+> 
+> **POST** `/v3/offchain/bsc/bep20`
 
 [🔹 **offBscErc20Address()**](#offbscerc20address) 
 
-> **POST** `/v3/offchain/bsc/bep20`
-> 
 > Register a new BNB Smart Chain BEP-20 token in the virtual account
+> 
+> **POST** `/v3/offchain/bsc/bep20`
 
 [🔹 **offCelErc20()**](#offcelerc20) 
 
-> **POST** `/v3/offchain/celo/erc20`
-> 
 > Register a new Celo ERC-20-equivalent token in the virtual account
+> 
+> **POST** `/v3/offchain/celo/erc20`
 
 [🔹 **offCelErc20Address()**](#offcelerc20address) 
 
-> **POST** `/v3/offchain/celo/erc20`
-> 
 > Register a new Celo ERC-20-equivalent token in the virtual account
+> 
+> **POST** `/v3/offchain/celo/erc20`
 
 [🔹 **offEglTransferEth()**](#offegltransfereth) 
 
-> **POST** `/v3/offchain/egld/transfer`
-> 
 > Send EGLD from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/egld/transfer`
 
 [🔹 **offEglTransferEthKMS()**](#offegltransferethkms) 
 
-> **POST** `/v3/offchain/egld/transfer`
-> 
 > Send EGLD from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/egld/transfer`
 
 [🔹 **offEglTransferEthMnemonic()**](#offegltransferethmnemonic) 
 
-> **POST** `/v3/offchain/egld/transfer`
-> 
 > Send EGLD from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/egld/transfer`
 
 [🔹 **offKlaDeployErc20OffchainKMSAddress()**](#offkladeployerc20offchainkmsaddress) 
 
-> **POST** `/v3/offchain/klaytn/erc20/deploy`
-> 
 > Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 [🔹 **offKlaDeployErc20OffchainKMSXpub()**](#offkladeployerc20offchainkmsxpub) 
 
-> **POST** `/v3/offchain/klaytn/erc20/deploy`
-> 
 > Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 [🔹 **offKlaDeployErc20OffchainMnemXpub()**](#offkladeployerc20offchainmnemxpub) 
 
-> **POST** `/v3/offchain/klaytn/erc20/deploy`
-> 
 > Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 [🔹 **offKlaDeployErc20OffchainMnemonicAddress()**](#offkladeployerc20offchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/klaytn/erc20/deploy`
-> 
 > Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 [🔹 **offKlaDeployErc20OffchainPKAddress()**](#offkladeployerc20offchainpkaddress) 
 
-> **POST** `/v3/offchain/klaytn/erc20/deploy`
-> 
 > Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 [🔹 **offKlaDeployErc20OffchainPKXpub()**](#offkladeployerc20offchainpkxpub) 
 
-> **POST** `/v3/offchain/klaytn/erc20/deploy`
-> 
 > Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 [🔹 **offKlaTransferEth()**](#offklatransfereth) 
 
-> **POST** `/v3/offchain/klaytn/transfer`
-> 
 > Send KLAY from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/klaytn/transfer`
 
 [🔹 **offKlaTransferEthKMS()**](#offklatransferethkms) 
 
-> **POST** `/v3/offchain/klaytn/transfer`
-> 
 > Send KLAY from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/klaytn/transfer`
 
 [🔹 **offKlaTransferEthMnemonic()**](#offklatransferethmnemonic) 
 
-> **POST** `/v3/offchain/klaytn/transfer`
-> 
 > Send KLAY from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/klaytn/transfer`
 
 [🔹 **offOneDeployErc20OffchainKMSAddress()**](#offonedeployerc20offchainkmsaddress) 
 
-> **POST** `/v3/offchain/one/hrm20/deploy`
-> 
 > Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 [🔹 **offOneDeployErc20OffchainKMSXpub()**](#offonedeployerc20offchainkmsxpub) 
 
-> **POST** `/v3/offchain/one/hrm20/deploy`
-> 
 > Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 [🔹 **offOneDeployErc20OffchainMnemXpub()**](#offonedeployerc20offchainmnemxpub) 
 
-> **POST** `/v3/offchain/one/hrm20/deploy`
-> 
 > Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 [🔹 **offOneDeployErc20OffchainMnemonicAddress()**](#offonedeployerc20offchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/one/hrm20/deploy`
-> 
 > Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 [🔹 **offOneDeployErc20OffchainPKAddress()**](#offonedeployerc20offchainpkaddress) 
 
-> **POST** `/v3/offchain/one/hrm20/deploy`
-> 
 > Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 [🔹 **offOneDeployErc20OffchainPKXpub()**](#offonedeployerc20offchainpkxpub) 
 
-> **POST** `/v3/offchain/one/hrm20/deploy`
-> 
 > Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 [🔹 **offOneErc20()**](#offoneerc20) 
 
-> **POST** `/v3/offchain/one/hrm20`
-> 
 > Register a new Harmony HRM-20 token in the virtual account
+> 
+> **POST** `/v3/offchain/one/hrm20`
 
 [🔹 **offOneErc20Address()**](#offoneerc20address) 
 
-> **POST** `/v3/offchain/one/hrm20`
-> 
 > Register a new Harmony HRM-20 token in the virtual account
+> 
+> **POST** `/v3/offchain/one/hrm20`
 
 [🔹 **offOneTransferEth()**](#offonetransfereth) 
 
-> **POST** `/v3/offchain/one/transfer`
-> 
 > Send ONE from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/one/transfer`
 
 [🔹 **offOneTransferEthKMS()**](#offonetransferethkms) 
 
-> **POST** `/v3/offchain/one/transfer`
-> 
 > Send ONE from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/one/transfer`
 
 [🔹 **offOneTransferEthMnemonic()**](#offonetransferethmnemonic) 
 
-> **POST** `/v3/offchain/one/transfer`
-> 
 > Send ONE from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/one/transfer`
 
 [🔹 **offPolTransferEth()**](#offpoltransfereth) 
 
-> **POST** `/v3/offchain/polygon/transfer`
-> 
 > Send MATIC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/polygon/transfer`
 
 [🔹 **offPolTransferEthKMS()**](#offpoltransferethkms) 
 
-> **POST** `/v3/offchain/polygon/transfer`
-> 
 > Send MATIC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/polygon/transfer`
 
 [🔹 **offPolTransferEthMnemonic()**](#offpoltransferethmnemonic) 
 
-> **POST** `/v3/offchain/polygon/transfer`
-> 
 > Send MATIC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/polygon/transfer`
 
 [🔹 **offTokErc20()**](#offtokerc20) 
 
-> **POST** `/v3/offchain/token/{chain}`
-> 
 > Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+> 
+> **POST** `/v3/offchain/token/{chain}`
 
 [🔹 **offTokErc20Address()**](#offtokerc20address) 
 
-> **POST** `/v3/offchain/token/{chain}`
-> 
 > Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+> 
+> **POST** `/v3/offchain/token/{chain}`
 
 [🔹 **offXdcDeployErc20OffchainKMSAddress()**](#offxdcdeployerc20offchainkmsaddress) 
 
-> **POST** `/v3/offchain/xdc/erc20/deploy`
-> 
 > Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 [🔹 **offXdcDeployErc20OffchainKMSXpub()**](#offxdcdeployerc20offchainkmsxpub) 
 
-> **POST** `/v3/offchain/xdc/erc20/deploy`
-> 
 > Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 [🔹 **offXdcDeployErc20OffchainMnemXpub()**](#offxdcdeployerc20offchainmnemxpub) 
 
-> **POST** `/v3/offchain/xdc/erc20/deploy`
-> 
 > Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 [🔹 **offXdcDeployErc20OffchainMnemonicAddress()**](#offxdcdeployerc20offchainmnemonicaddress) 
 
-> **POST** `/v3/offchain/xdc/erc20/deploy`
-> 
 > Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 [🔹 **offXdcDeployErc20OffchainPKAddress()**](#offxdcdeployerc20offchainpkaddress) 
 
-> **POST** `/v3/offchain/xdc/erc20/deploy`
-> 
 > Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 [🔹 **offXdcDeployErc20OffchainPKXpub()**](#offxdcdeployerc20offchainpkxpub) 
 
-> **POST** `/v3/offchain/xdc/erc20/deploy`
-> 
 > Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 [🔹 **offXdcErc20()**](#offxdcerc20) 
 
-> **POST** `/v3/offchain/xdc/erc20`
-> 
 > Register a new XinFin ERC-20-equivalent token in the virtual account
+> 
+> **POST** `/v3/offchain/xdc/erc20`
 
 [🔹 **offXdcErc20Address()**](#offxdcerc20address) 
 
-> **POST** `/v3/offchain/xdc/erc20`
-> 
 > Register a new XinFin ERC-20-equivalent token in the virtual account
+> 
+> **POST** `/v3/offchain/xdc/erc20`
 
 [🔹 **offXdcTransferEth()**](#offxdctransfereth) 
 
-> **POST** `/v3/offchain/xdc/transfer`
-> 
 > Send XDC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/xdc/transfer`
 
 [🔹 **offXdcTransferEthKMS()**](#offxdctransferethkms) 
 
-> **POST** `/v3/offchain/xdc/transfer`
-> 
 > Send XDC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/xdc/transfer`
 
 [🔹 **offXdcTransferEthMnemonic()**](#offxdctransferethmnemonic) 
 
-> **POST** `/v3/offchain/xdc/transfer`
-> 
 > Send XDC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/xdc/transfer`
 
 [🔹 **storeCeloErc20Address()**](#storeceloerc20address) 
 
-> **POST** `/v3/offchain/celo/erc20/{name}/{address}`
-> 
 > Set the contract address of a Celo ERC-20-equivalent token
+> 
+> **POST** `/v3/offchain/celo/erc20/{name}/{address}`
 
 [🔹 **storeTokenAddress()**](#storetokenaddress) 
 
-> **POST** `/v3/offchain/token/{name}/{address}`
-> 
 > Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
+> 
+> **POST** `/v3/offchain/token/{name}/{address}`
 
 [🔹 **storeTrcAddress()**](#storetrcaddress) 
 
-> **POST** `/v3/offchain/tron/trc/{name}/{address}`
-> 
 > Set the contract address of a TRC-10 or TRC-20 token
+> 
+> **POST** `/v3/offchain/tron/trc/{name}/{address}`
 
 [🔹 **transferAdaKMS()**](#transferadakms) 
 
-> **POST** `/v3/offchain/ada/transfer`
-> 
 > Send ADA from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ada/transfer`
 
 [🔹 **transferAdaKeyPair()**](#transferadakeypair) 
 
-> **POST** `/v3/offchain/ada/transfer`
-> 
 > Send ADA from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ada/transfer`
 
 [🔹 **transferAdaMnemonic()**](#transferadamnemonic) 
 
-> **POST** `/v3/offchain/ada/transfer`
-> 
 > Send ADA from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ada/transfer`
 
 [🔹 **transferAlgo()**](#transferalgo) 
 
-> **POST** `/v3/offchain/algorand/transfer`
-> 
 > Send ALGO from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/algorand/transfer`
 
 [🔹 **transferAlgoErc20()**](#transferalgoerc20) 
 
-> **POST** `/v3/offchain/algorand/transfer`
-> 
 > Send ALGO from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/algorand/transfer`
 
 [🔹 **transferAlgoKMS()**](#transferalgokms) 
 
-> **POST** `/v3/offchain/algorand/transfer`
-> 
 > Send ALGO from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/algorand/transfer`
 
 [🔹 **transferBchKMS()**](#transferbchkms) 
 
-> **POST** `/v3/offchain/bcash/transfer`
-> 
 > Send BCH from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bcash/transfer`
 
 [🔹 **transferBchKeyPair()**](#transferbchkeypair) 
 
-> **POST** `/v3/offchain/bcash/transfer`
-> 
 > Send BCH from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bcash/transfer`
 
 [🔹 **transferBchMnemonic()**](#transferbchmnemonic) 
 
-> **POST** `/v3/offchain/bcash/transfer`
-> 
 > Send BCH from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bcash/transfer`
 
 [🔹 **transferBnb()**](#transferbnb) 
 
-> **POST** `/v3/offchain/bnb/transfer`
-> 
 > Send BNB from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bnb/transfer`
 
 [🔹 **transferBnbKMS()**](#transferbnbkms) 
 
-> **POST** `/v3/offchain/bnb/transfer`
-> 
 > Send BNB from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bnb/transfer`
 
 [🔹 **transferBsc()**](#transferbsc) 
 
-> **POST** `/v3/offchain/bsc/transfer`
-> 
 > Send BSC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bsc/transfer`
 
 [🔹 **transferBscKMS()**](#transferbsckms) 
 
-> **POST** `/v3/offchain/bsc/transfer`
-> 
 > Send BSC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bsc/transfer`
 
 [🔹 **transferBscMnemonic()**](#transferbscmnemonic) 
 
-> **POST** `/v3/offchain/bsc/transfer`
-> 
 > Send BSC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bsc/transfer`
 
 [🔹 **transferBtcKMS()**](#transferbtckms) 
 
-> **POST** `/v3/offchain/bitcoin/transfer`
-> 
 > Send BTC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bitcoin/transfer`
 
 [🔹 **transferBtcKeyPair()**](#transferbtckeypair) 
 
-> **POST** `/v3/offchain/bitcoin/transfer`
-> 
 > Send BTC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bitcoin/transfer`
 
 [🔹 **transferBtcMnemonic()**](#transferbtcmnemonic) 
 
-> **POST** `/v3/offchain/bitcoin/transfer`
-> 
 > Send BTC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/bitcoin/transfer`
 
 [🔹 **transferCelo()**](#transfercelo) 
 
-> **POST** `/v3/offchain/celo/transfer`
-> 
 > Send CELO from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/celo/transfer`
 
 [🔹 **transferCeloKMS()**](#transfercelokms) 
 
-> **POST** `/v3/offchain/celo/transfer`
-> 
 > Send CELO from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/celo/transfer`
 
 [🔹 **transferCeloMnemonic()**](#transfercelomnemonic) 
 
-> **POST** `/v3/offchain/celo/transfer`
-> 
 > Send CELO from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/celo/transfer`
 
 [🔹 **transferDogeKMS()**](#transferdogekms) 
 
-> **POST** `/v3/offchain/dogecoin/transfer`
-> 
 > Send DOGE from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/dogecoin/transfer`
 
 [🔹 **transferDogeKeyPair()**](#transferdogekeypair) 
 
-> **POST** `/v3/offchain/dogecoin/transfer`
-> 
 > Send DOGE from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/dogecoin/transfer`
 
 [🔹 **transferDogeMnemonic()**](#transferdogemnemonic) 
 
-> **POST** `/v3/offchain/dogecoin/transfer`
-> 
 > Send DOGE from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/dogecoin/transfer`
 
 [🔹 **transferErc20()**](#transfererc20) 
 
-> **POST** `/v3/offchain/ethereum/erc20/transfer`
-> 
 > Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
 
 [🔹 **transferErc20KMS()**](#transfererc20kms) 
 
-> **POST** `/v3/offchain/ethereum/erc20/transfer`
-> 
 > Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
 
 [🔹 **transferErc20Mnemonic()**](#transfererc20mnemonic) 
 
-> **POST** `/v3/offchain/ethereum/erc20/transfer`
-> 
 > Send Ethereum ERC-20 tokens from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
 
 [🔹 **transferEth()**](#transfereth) 
 
-> **POST** `/v3/offchain/ethereum/transfer`
-> 
 > Send ETH from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ethereum/transfer`
 
 [🔹 **transferEthKMS()**](#transferethkms) 
 
-> **POST** `/v3/offchain/ethereum/transfer`
-> 
 > Send ETH from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ethereum/transfer`
 
 [🔹 **transferEthMnemonic()**](#transferethmnemonic) 
 
-> **POST** `/v3/offchain/ethereum/transfer`
-> 
 > Send ETH from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/ethereum/transfer`
 
 [🔹 **transferFlowKMS()**](#transferflowkms) 
 
-> **POST** `/v3/offchain/flow/transfer`
-> 
 > Send FLOW from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/flow/transfer`
 
 [🔹 **transferFlowMnemonic()**](#transferflowmnemonic) 
 
-> **POST** `/v3/offchain/flow/transfer`
-> 
 > Send FLOW from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/flow/transfer`
 
 [🔹 **transferFlowPK()**](#transferflowpk) 
 
-> **POST** `/v3/offchain/flow/transfer`
-> 
 > Send FLOW from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/flow/transfer`
 
 [🔹 **transferKCS()**](#transferkcs) 
 
-> **POST** `/v3/offchain/kcs/transfer`
-> 
 > Send KCS from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/kcs/transfer`
 
 [🔹 **transferKCSKMS()**](#transferkcskms) 
 
-> **POST** `/v3/offchain/kcs/transfer`
-> 
 > Send KCS from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/kcs/transfer`
 
 [🔹 **transferKCSMnemonic()**](#transferkcsmnemonic) 
 
-> **POST** `/v3/offchain/kcs/transfer`
-> 
 > Send KCS from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/kcs/transfer`
 
 [🔹 **transferLtcKMS()**](#transferltckms) 
 
-> **POST** `/v3/offchain/litecoin/transfer`
-> 
 > Send LTC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/litecoin/transfer`
 
 [🔹 **transferLtcKeyPair()**](#transferltckeypair) 
 
-> **POST** `/v3/offchain/litecoin/transfer`
-> 
 > Send LTC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/litecoin/transfer`
 
 [🔹 **transferLtcMnemonic()**](#transferltcmnemonic) 
 
-> **POST** `/v3/offchain/litecoin/transfer`
-> 
 > Send LTC from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/litecoin/transfer`
 
 [🔹 **transferSol()**](#transfersol) 
 
-> **POST** `/v3/offchain/solana/transfer`
-> 
 > Send SOL from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/solana/transfer`
 
 [🔹 **transferSolKMS()**](#transfersolkms) 
 
-> **POST** `/v3/offchain/solana/transfer`
-> 
 > Send SOL from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/solana/transfer`
 
 [🔹 **transferTron()**](#transfertron) 
 
-> **POST** `/v3/offchain/tron/transfer`
-> 
 > Send TRON from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/tron/transfer`
 
 [🔹 **transferTronKMS()**](#transfertronkms) 
 
-> **POST** `/v3/offchain/tron/transfer`
-> 
 > Send TRON from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/tron/transfer`
 
 [🔹 **transferTronMnemonic()**](#transfertronmnemonic) 
 
-> **POST** `/v3/offchain/tron/transfer`
-> 
 > Send TRON from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/tron/transfer`
 
 [🔹 **transferXlm()**](#transferxlm) 
 
-> **POST** `/v3/offchain/xlm/transfer`
-> 
 > Send XLM from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/xlm/transfer`
 
 [🔹 **transferXlmKMS()**](#transferxlmkms) 
 
-> **POST** `/v3/offchain/xlm/transfer`
-> 
 > Send XLM from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/xlm/transfer`
 
 [🔹 **transferXrp()**](#transferxrp) 
 
-> **POST** `/v3/offchain/xrp/transfer`
-> 
 > Send XRP from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/xrp/transfer`
 
 [🔹 **transferXrpKMS()**](#transferxrpkms) 
 
-> **POST** `/v3/offchain/xrp/transfer`
-> 
 > Send XRP from a virtual account to the blockchain
+> 
+> **POST** `/v3/offchain/xrp/transfer`
 
 [🔹 **trcAddress()**](#trcaddress) 
 
-> **POST** `/v3/offchain/tron/trc`
-> 
 > Register a new TRON TRC-10 or TRC-20 token in the virtual account
+> 
+> **POST** `/v3/offchain/tron/trc`
 
 [🔹 **trcXpub()**](#trcxpub) 
 
-> **POST** `/v3/offchain/tron/trc`
-> 
 > Register a new TRON TRC-10 or TRC-20 token in the virtual account
+> 
+> **POST** `/v3/offchain/tron/trc`
 
 [🔹 **xlmAssetOffchain()**](#xlmassetoffchain) 
 
-> **POST** `/v3/offchain/xlm/asset`
-> 
 > Create an XLM-based asset
+> 
+> **POST** `/v3/offchain/xlm/asset`
 
 [🔹 **xrpAssetOffchain()**](#xrpassetoffchain) 
 
-> **POST** `/v3/offchain/xrp/asset`
-> 
 > Create XRP based Asset
+> 
+> **POST** `/v3/offchain/xrp/asset`
 
 
 
 ## `bnbAssetOffchain()`
+
+> **POST** `/v3/offchain/bnb/asset`
 
 ### Type signature
 
@@ -836,11 +838,13 @@ Create a BNB-based asset
 
 ### Example
 
-[✨ View "bnbAssetOffchain.php"](../../examples/Api/BlockchainOperationsApi/bnbAssetOffchain.php)
+[✨ View "bnbAssetOffchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/bnbAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployAlgoErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/algo/erc20/deploy`
 
 ### Type signature
 
@@ -868,11 +872,13 @@ DeployAlgoErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "deployAlgoErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainKMSAddress.php)
+[✨ View "deployAlgoErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployAlgoErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/algo/erc20/deploy`
 
 ### Type signature
 
@@ -900,11 +906,13 @@ Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virt
 
 ### Example
 
-[✨ View "deployAlgoErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainMnemonicAddress.php)
+[✨ View "deployAlgoErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployAlgoErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/algo/erc20/deploy`
 
 ### Type signature
 
@@ -932,11 +940,13 @@ DeployAlgoErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "deployAlgoErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainPKAddress.php)
+[✨ View "deployAlgoErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployAlgoErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployCeloErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 ### Type signature
 
@@ -964,11 +974,13 @@ DeployCeloErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "deployCeloErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainKMSAddress.php)
+[✨ View "deployCeloErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployCeloErc20OffchainKMSXpub()`
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 ### Type signature
 
@@ -996,11 +1008,13 @@ DeployCeloErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "deployCeloErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainKMSXpub.php)
+[✨ View "deployCeloErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployCeloErc20OffchainMnemXpub()`
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 ### Type signature
 
@@ -1028,11 +1042,13 @@ DeployCeloErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "deployCeloErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainMnemXpub.php)
+[✨ View "deployCeloErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployCeloErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 ### Type signature
 
@@ -1060,11 +1076,13 @@ Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual a
 
 ### Example
 
-[✨ View "deployCeloErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainMnemonicAddress.php)
+[✨ View "deployCeloErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployCeloErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 ### Type signature
 
@@ -1092,11 +1110,13 @@ DeployCeloErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "deployCeloErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainPKAddress.php)
+[✨ View "deployCeloErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployCeloErc20OffchainPKXpub()`
+
+> **POST** `/v3/offchain/celo/erc20/deploy`
 
 ### Type signature
 
@@ -1124,11 +1144,13 @@ DeployCeloErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "deployCeloErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainPKXpub.php)
+[✨ View "deployCeloErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployCeloErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 ### Type signature
 
@@ -1156,11 +1178,13 @@ DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "deployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainKMSAddress.php)
+[✨ View "deployErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployErc20OffchainKMSXpub()`
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 ### Type signature
 
@@ -1188,11 +1212,13 @@ DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "deployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainKMSXpub.php)
+[✨ View "deployErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployErc20OffchainMnemXpub()`
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 ### Type signature
 
@@ -1220,11 +1246,13 @@ DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "deployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainMnemXpub.php)
+[✨ View "deployErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 ### Type signature
 
@@ -1252,11 +1280,13 @@ Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
 ### Example
 
-[✨ View "deployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainMnemonicAddress.php)
+[✨ View "deployErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 ### Type signature
 
@@ -1284,11 +1314,13 @@ DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "deployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainPKAddress.php)
+[✨ View "deployErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployErc20OffchainPKXpub()`
+
+> **POST** `/v3/offchain/ethereum/erc20/deploy`
 
 ### Type signature
 
@@ -1316,11 +1348,13 @@ DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "deployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/deployErc20OffchainPKXpub.php)
+[✨ View "deployErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployKCSErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 ### Type signature
 
@@ -1348,11 +1382,13 @@ DeployKCSErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "deployKCSErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainKMSAddress.php)
+[✨ View "deployKCSErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployKCSErc20OffchainKMSXpub()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 ### Type signature
 
@@ -1380,11 +1416,13 @@ DeployKCSErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "deployKCSErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainKMSXpub.php)
+[✨ View "deployKCSErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployKCSErc20OffchainMnemXpub()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 ### Type signature
 
@@ -1412,11 +1450,13 @@ DeployKCSErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "deployKCSErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainMnemXpub.php)
+[✨ View "deployKCSErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployKCSErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 ### Type signature
 
@@ -1444,11 +1484,13 @@ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the bl
 
 ### Example
 
-[✨ View "deployKCSErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainMnemonicAddress.php)
+[✨ View "deployKCSErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployKCSErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 ### Type signature
 
@@ -1476,11 +1518,13 @@ DeployKCSErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "deployKCSErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainPKAddress.php)
+[✨ View "deployKCSErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployKCSErc20OffchainPKXpub()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 ### Type signature
 
@@ -1508,11 +1552,13 @@ DeployKCSErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "deployKCSErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainPKXpub.php)
+[✨ View "deployKCSErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployTrcOffchainKMSAddress()`
+
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 ### Type signature
 
@@ -1540,11 +1586,13 @@ DeployTrcOffchainKMSAddress operation
 
 ### Example
 
-[✨ View "deployTrcOffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainKMSAddress.php)
+[✨ View "deployTrcOffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployTrcOffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployTrcOffchainKMSXpub()`
+
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 ### Type signature
 
@@ -1572,11 +1620,13 @@ DeployTrcOffchainKMSXpub operation
 
 ### Example
 
-[✨ View "deployTrcOffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainKMSXpub.php)
+[✨ View "deployTrcOffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployTrcOffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployTrcOffchainMnemXpub()`
+
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 ### Type signature
 
@@ -1604,11 +1654,13 @@ DeployTrcOffchainMnemXpub operation
 
 ### Example
 
-[✨ View "deployTrcOffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainMnemXpub.php)
+[✨ View "deployTrcOffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployTrcOffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployTrcOffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 ### Type signature
 
@@ -1636,11 +1688,13 @@ Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual ac
 
 ### Example
 
-[✨ View "deployTrcOffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainMnemonicAddress.php)
+[✨ View "deployTrcOffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployTrcOffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployTrcOffchainPKAddress()`
+
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 ### Type signature
 
@@ -1668,11 +1722,13 @@ DeployTrcOffchainPKAddress operation
 
 ### Example
 
-[✨ View "deployTrcOffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainPKAddress.php)
+[✨ View "deployTrcOffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployTrcOffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deployTrcOffchainPKXpub()`
+
+> **POST** `/v3/offchain/tron/trc/deploy`
 
 ### Type signature
 
@@ -1700,11 +1756,13 @@ DeployTrcOffchainPKXpub operation
 
 ### Example
 
-[✨ View "deployTrcOffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/deployTrcOffchainPKXpub.php)
+[✨ View "deployTrcOffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployTrcOffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `erc20()`
+
+> **POST** `/v3/offchain/ethereum/erc20`
 
 ### Type signature
 
@@ -1732,11 +1790,13 @@ Register a new Ethereum ERC-20 token in the virtual account
 
 ### Example
 
-[✨ View "erc20.php"](../../examples/Api/BlockchainOperationsApi/erc20.php)
+[✨ View "erc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/erc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `erc20Address()`
+
+> **POST** `/v3/offchain/ethereum/erc20`
 
 ### Type signature
 
@@ -1764,11 +1824,13 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "erc20Address.php"](../../examples/Api/BlockchainOperationsApi/erc20Address.php)
+[✨ View "erc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/erc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offBscDeployErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 ### Type signature
 
@@ -1796,11 +1858,13 @@ DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offBscDeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainKMSAddress.php)
+[✨ View "offBscDeployErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offBscDeployErc20OffchainKMSXpub()`
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 ### Type signature
 
@@ -1828,11 +1892,13 @@ DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offBscDeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainKMSXpub.php)
+[✨ View "offBscDeployErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offBscDeployErc20OffchainMnemXpub()`
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 ### Type signature
 
@@ -1860,11 +1926,13 @@ DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offBscDeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainMnemXpub.php)
+[✨ View "offBscDeployErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offBscDeployErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 ### Type signature
 
@@ -1892,11 +1960,13 @@ Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual a
 
 ### Example
 
-[✨ View "offBscDeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainMnemonicAddress.php)
+[✨ View "offBscDeployErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offBscDeployErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 ### Type signature
 
@@ -1924,11 +1994,13 @@ DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offBscDeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainPKAddress.php)
+[✨ View "offBscDeployErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offBscDeployErc20OffchainPKXpub()`
+
+> **POST** `/v3/offchain/bsc/bep20/deploy`
 
 ### Type signature
 
@@ -1956,11 +2028,13 @@ DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offBscDeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainPKXpub.php)
+[✨ View "offBscDeployErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offBscDeployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offBscErc20()`
+
+> **POST** `/v3/offchain/bsc/bep20`
 
 ### Type signature
 
@@ -1988,11 +2062,13 @@ Register a new BNB Smart Chain BEP-20 token in the virtual account
 
 ### Example
 
-[✨ View "offBscErc20.php"](../../examples/Api/BlockchainOperationsApi/offBscErc20.php)
+[✨ View "offBscErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offBscErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offBscErc20Address()`
+
+> **POST** `/v3/offchain/bsc/bep20`
 
 ### Type signature
 
@@ -2020,11 +2096,13 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offBscErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offBscErc20Address.php)
+[✨ View "offBscErc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offBscErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offCelErc20()`
+
+> **POST** `/v3/offchain/celo/erc20`
 
 ### Type signature
 
@@ -2052,11 +2130,13 @@ Register a new Celo ERC-20-equivalent token in the virtual account
 
 ### Example
 
-[✨ View "offCelErc20.php"](../../examples/Api/BlockchainOperationsApi/offCelErc20.php)
+[✨ View "offCelErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offCelErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offCelErc20Address()`
+
+> **POST** `/v3/offchain/celo/erc20`
 
 ### Type signature
 
@@ -2084,11 +2164,13 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offCelErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offCelErc20Address.php)
+[✨ View "offCelErc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offCelErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offEglTransferEth()`
+
+> **POST** `/v3/offchain/egld/transfer`
 
 ### Type signature
 
@@ -2116,11 +2198,13 @@ Send EGLD from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offEglTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offEglTransferEth.php)
+[✨ View "offEglTransferEth.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offEglTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offEglTransferEthKMS()`
+
+> **POST** `/v3/offchain/egld/transfer`
 
 ### Type signature
 
@@ -2148,11 +2232,13 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offEglTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offEglTransferEthKMS.php)
+[✨ View "offEglTransferEthKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offEglTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offEglTransferEthMnemonic()`
+
+> **POST** `/v3/offchain/egld/transfer`
 
 ### Type signature
 
@@ -2180,11 +2266,13 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offEglTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offEglTransferEthMnemonic.php)
+[✨ View "offEglTransferEthMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offEglTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaDeployErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 ### Type signature
 
@@ -2212,11 +2300,13 @@ DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offKlaDeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainKMSAddress.php)
+[✨ View "offKlaDeployErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaDeployErc20OffchainKMSXpub()`
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 ### Type signature
 
@@ -2244,11 +2334,13 @@ DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offKlaDeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainKMSXpub.php)
+[✨ View "offKlaDeployErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaDeployErc20OffchainMnemXpub()`
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 ### Type signature
 
@@ -2276,11 +2368,13 @@ DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offKlaDeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainMnemXpub.php)
+[✨ View "offKlaDeployErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaDeployErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 ### Type signature
 
@@ -2308,11 +2402,13 @@ Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ### Example
 
-[✨ View "offKlaDeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainMnemonicAddress.php)
+[✨ View "offKlaDeployErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaDeployErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 ### Type signature
 
@@ -2340,11 +2436,13 @@ DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offKlaDeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainPKAddress.php)
+[✨ View "offKlaDeployErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaDeployErc20OffchainPKXpub()`
+
+> **POST** `/v3/offchain/klaytn/erc20/deploy`
 
 ### Type signature
 
@@ -2372,11 +2470,13 @@ DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offKlaDeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainPKXpub.php)
+[✨ View "offKlaDeployErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaDeployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaTransferEth()`
+
+> **POST** `/v3/offchain/klaytn/transfer`
 
 ### Type signature
 
@@ -2404,11 +2504,13 @@ Send KLAY from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offKlaTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offKlaTransferEth.php)
+[✨ View "offKlaTransferEth.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaTransferEthKMS()`
+
+> **POST** `/v3/offchain/klaytn/transfer`
 
 ### Type signature
 
@@ -2436,11 +2538,13 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offKlaTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offKlaTransferEthKMS.php)
+[✨ View "offKlaTransferEthKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offKlaTransferEthMnemonic()`
+
+> **POST** `/v3/offchain/klaytn/transfer`
 
 ### Type signature
 
@@ -2468,11 +2572,13 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offKlaTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offKlaTransferEthMnemonic.php)
+[✨ View "offKlaTransferEthMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKlaTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneDeployErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 ### Type signature
 
@@ -2502,11 +2608,13 @@ DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offOneDeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainKMSAddress.php)
+[✨ View "offOneDeployErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneDeployErc20OffchainKMSXpub()`
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 ### Type signature
 
@@ -2536,11 +2644,13 @@ DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offOneDeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainKMSXpub.php)
+[✨ View "offOneDeployErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneDeployErc20OffchainMnemXpub()`
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 ### Type signature
 
@@ -2570,11 +2680,13 @@ DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offOneDeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainMnemXpub.php)
+[✨ View "offOneDeployErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneDeployErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 ### Type signature
 
@@ -2604,11 +2716,13 @@ Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
 ### Example
 
-[✨ View "offOneDeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainMnemonicAddress.php)
+[✨ View "offOneDeployErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneDeployErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 ### Type signature
 
@@ -2638,11 +2752,13 @@ DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offOneDeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainPKAddress.php)
+[✨ View "offOneDeployErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneDeployErc20OffchainPKXpub()`
+
+> **POST** `/v3/offchain/one/hrm20/deploy`
 
 ### Type signature
 
@@ -2672,11 +2788,13 @@ DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offOneDeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainPKXpub.php)
+[✨ View "offOneDeployErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneDeployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneErc20()`
+
+> **POST** `/v3/offchain/one/hrm20`
 
 ### Type signature
 
@@ -2704,11 +2822,13 @@ Register a new Harmony HRM-20 token in the virtual account
 
 ### Example
 
-[✨ View "offOneErc20.php"](../../examples/Api/BlockchainOperationsApi/offOneErc20.php)
+[✨ View "offOneErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneErc20Address()`
+
+> **POST** `/v3/offchain/one/hrm20`
 
 ### Type signature
 
@@ -2736,11 +2856,13 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offOneErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offOneErc20Address.php)
+[✨ View "offOneErc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneTransferEth()`
+
+> **POST** `/v3/offchain/one/transfer`
 
 ### Type signature
 
@@ -2770,11 +2892,13 @@ Send ONE from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offOneTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offOneTransferEth.php)
+[✨ View "offOneTransferEth.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneTransferEthKMS()`
+
+> **POST** `/v3/offchain/one/transfer`
 
 ### Type signature
 
@@ -2804,11 +2928,13 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offOneTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offOneTransferEthKMS.php)
+[✨ View "offOneTransferEthKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offOneTransferEthMnemonic()`
+
+> **POST** `/v3/offchain/one/transfer`
 
 ### Type signature
 
@@ -2838,11 +2964,13 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offOneTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offOneTransferEthMnemonic.php)
+[✨ View "offOneTransferEthMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offOneTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offPolTransferEth()`
+
+> **POST** `/v3/offchain/polygon/transfer`
 
 ### Type signature
 
@@ -2870,11 +2998,13 @@ Send MATIC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offPolTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offPolTransferEth.php)
+[✨ View "offPolTransferEth.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offPolTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offPolTransferEthKMS()`
+
+> **POST** `/v3/offchain/polygon/transfer`
 
 ### Type signature
 
@@ -2902,11 +3032,13 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offPolTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offPolTransferEthKMS.php)
+[✨ View "offPolTransferEthKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offPolTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offPolTransferEthMnemonic()`
+
+> **POST** `/v3/offchain/polygon/transfer`
 
 ### Type signature
 
@@ -2934,11 +3066,13 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offPolTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offPolTransferEthMnemonic.php)
+[✨ View "offPolTransferEthMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offPolTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offTokErc20()`
+
+> **POST** `/v3/offchain/token/{chain}`
 
 ### Type signature
 
@@ -2968,11 +3102,13 @@ Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
 ### Example
 
-[✨ View "offTokErc20.php"](../../examples/Api/BlockchainOperationsApi/offTokErc20.php)
+[✨ View "offTokErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offTokErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offTokErc20Address()`
+
+> **POST** `/v3/offchain/token/{chain}`
 
 ### Type signature
 
@@ -3002,11 +3138,13 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offTokErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offTokErc20Address.php)
+[✨ View "offTokErc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offTokErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcDeployErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 ### Type signature
 
@@ -3034,11 +3172,13 @@ DeployErc20OffchainKMSAddress operation
 
 ### Example
 
-[✨ View "offXdcDeployErc20OffchainKMSAddress.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainKMSAddress.php)
+[✨ View "offXdcDeployErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainKMSAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcDeployErc20OffchainKMSXpub()`
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 ### Type signature
 
@@ -3066,11 +3206,13 @@ DeployErc20OffchainKMSXpub operation
 
 ### Example
 
-[✨ View "offXdcDeployErc20OffchainKMSXpub.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainKMSXpub.php)
+[✨ View "offXdcDeployErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainKMSXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcDeployErc20OffchainMnemXpub()`
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 ### Type signature
 
@@ -3098,11 +3240,13 @@ DeployErc20OffchainMnemXpub operation
 
 ### Example
 
-[✨ View "offXdcDeployErc20OffchainMnemXpub.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainMnemXpub.php)
+[✨ View "offXdcDeployErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainMnemXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcDeployErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 ### Type signature
 
@@ -3130,11 +3274,13 @@ Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual
 
 ### Example
 
-[✨ View "offXdcDeployErc20OffchainMnemonicAddress.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainMnemonicAddress.php)
+[✨ View "offXdcDeployErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainMnemonicAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcDeployErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 ### Type signature
 
@@ -3162,11 +3308,13 @@ DeployErc20OffchainPKAddress operation
 
 ### Example
 
-[✨ View "offXdcDeployErc20OffchainPKAddress.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainPKAddress.php)
+[✨ View "offXdcDeployErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainPKAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcDeployErc20OffchainPKXpub()`
+
+> **POST** `/v3/offchain/xdc/erc20/deploy`
 
 ### Type signature
 
@@ -3194,11 +3342,13 @@ DeployErc20OffchainPKXpub operation
 
 ### Example
 
-[✨ View "offXdcDeployErc20OffchainPKXpub.php"](../../examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainPKXpub.php)
+[✨ View "offXdcDeployErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcDeployErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcErc20()`
+
+> **POST** `/v3/offchain/xdc/erc20`
 
 ### Type signature
 
@@ -3226,11 +3376,13 @@ Register a new XinFin ERC-20-equivalent token in the virtual account
 
 ### Example
 
-[✨ View "offXdcErc20.php"](../../examples/Api/BlockchainOperationsApi/offXdcErc20.php)
+[✨ View "offXdcErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcErc20Address()`
+
+> **POST** `/v3/offchain/xdc/erc20`
 
 ### Type signature
 
@@ -3258,11 +3410,13 @@ Erc20Address operation
 
 ### Example
 
-[✨ View "offXdcErc20Address.php"](../../examples/Api/BlockchainOperationsApi/offXdcErc20Address.php)
+[✨ View "offXdcErc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcTransferEth()`
+
+> **POST** `/v3/offchain/xdc/transfer`
 
 ### Type signature
 
@@ -3290,11 +3444,13 @@ Send XDC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "offXdcTransferEth.php"](../../examples/Api/BlockchainOperationsApi/offXdcTransferEth.php)
+[✨ View "offXdcTransferEth.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcTransferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcTransferEthKMS()`
+
+> **POST** `/v3/offchain/xdc/transfer`
 
 ### Type signature
 
@@ -3322,11 +3478,13 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "offXdcTransferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/offXdcTransferEthKMS.php)
+[✨ View "offXdcTransferEthKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcTransferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `offXdcTransferEthMnemonic()`
+
+> **POST** `/v3/offchain/xdc/transfer`
 
 ### Type signature
 
@@ -3354,11 +3512,13 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "offXdcTransferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/offXdcTransferEthMnemonic.php)
+[✨ View "offXdcTransferEthMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offXdcTransferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `storeCeloErc20Address()`
+
+> **POST** `/v3/offchain/celo/erc20/{name}/{address}`
 
 ### Type signature
 
@@ -3388,11 +3548,13 @@ Set the contract address of a Celo ERC-20-equivalent token
 
 ### Example
 
-[✨ View "storeCeloErc20Address.php"](../../examples/Api/BlockchainOperationsApi/storeCeloErc20Address.php)
+[✨ View "storeCeloErc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/storeCeloErc20Address.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `storeTokenAddress()`
+
+> **POST** `/v3/offchain/token/{name}/{address}`
 
 ### Type signature
 
@@ -3422,11 +3584,13 @@ Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 
 ### Example
 
-[✨ View "storeTokenAddress.php"](../../examples/Api/BlockchainOperationsApi/storeTokenAddress.php)
+[✨ View "storeTokenAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/storeTokenAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `storeTrcAddress()`
+
+> **POST** `/v3/offchain/tron/trc/{name}/{address}`
 
 ### Type signature
 
@@ -3456,11 +3620,13 @@ Set the contract address of a TRC-10 or TRC-20 token
 
 ### Example
 
-[✨ View "storeTrcAddress.php"](../../examples/Api/BlockchainOperationsApi/storeTrcAddress.php)
+[✨ View "storeTrcAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/storeTrcAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferAdaKMS()`
+
+> **POST** `/v3/offchain/ada/transfer`
 
 ### Type signature
 
@@ -3488,11 +3654,13 @@ TransferAdaKMS operation
 
 ### Example
 
-[✨ View "transferAdaKMS.php"](../../examples/Api/BlockchainOperationsApi/transferAdaKMS.php)
+[✨ View "transferAdaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferAdaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferAdaKeyPair()`
+
+> **POST** `/v3/offchain/ada/transfer`
 
 ### Type signature
 
@@ -3520,11 +3688,13 @@ Send ADA from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferAdaKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferAdaKeyPair.php)
+[✨ View "transferAdaKeyPair.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferAdaKeyPair.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferAdaMnemonic()`
+
+> **POST** `/v3/offchain/ada/transfer`
 
 ### Type signature
 
@@ -3552,11 +3722,13 @@ TransferAdaMnemonic operation
 
 ### Example
 
-[✨ View "transferAdaMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferAdaMnemonic.php)
+[✨ View "transferAdaMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferAdaMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferAlgo()`
+
+> **POST** `/v3/offchain/algorand/transfer`
 
 ### Type signature
 
@@ -3584,11 +3756,13 @@ Send ALGO from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferAlgo.php"](../../examples/Api/BlockchainOperationsApi/transferAlgo.php)
+[✨ View "transferAlgo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferAlgo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferAlgoErc20()`
+
+> **POST** `/v3/offchain/algorand/transfer`
 
 ### Type signature
 
@@ -3616,11 +3790,13 @@ TransferAlgoErc20 operation
 
 ### Example
 
-[✨ View "transferAlgoErc20.php"](../../examples/Api/BlockchainOperationsApi/transferAlgoErc20.php)
+[✨ View "transferAlgoErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferAlgoErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferAlgoKMS()`
+
+> **POST** `/v3/offchain/algorand/transfer`
 
 ### Type signature
 
@@ -3648,11 +3824,13 @@ TransferAlgoKMS operation
 
 ### Example
 
-[✨ View "transferAlgoKMS.php"](../../examples/Api/BlockchainOperationsApi/transferAlgoKMS.php)
+[✨ View "transferAlgoKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferAlgoKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBchKMS()`
+
+> **POST** `/v3/offchain/bcash/transfer`
 
 ### Type signature
 
@@ -3680,11 +3858,13 @@ TransferBchKMS operation
 
 ### Example
 
-[✨ View "transferBchKMS.php"](../../examples/Api/BlockchainOperationsApi/transferBchKMS.php)
+[✨ View "transferBchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBchKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBchKeyPair()`
+
+> **POST** `/v3/offchain/bcash/transfer`
 
 ### Type signature
 
@@ -3712,11 +3892,13 @@ TransferBchKeyPair operation
 
 ### Example
 
-[✨ View "transferBchKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferBchKeyPair.php)
+[✨ View "transferBchKeyPair.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBchKeyPair.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBchMnemonic()`
+
+> **POST** `/v3/offchain/bcash/transfer`
 
 ### Type signature
 
@@ -3744,11 +3926,13 @@ Send BCH from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferBchMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferBchMnemonic.php)
+[✨ View "transferBchMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBchMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBnb()`
+
+> **POST** `/v3/offchain/bnb/transfer`
 
 ### Type signature
 
@@ -3776,11 +3960,13 @@ Send BNB from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferBnb.php"](../../examples/Api/BlockchainOperationsApi/transferBnb.php)
+[✨ View "transferBnb.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBnb.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBnbKMS()`
+
+> **POST** `/v3/offchain/bnb/transfer`
 
 ### Type signature
 
@@ -3808,11 +3994,13 @@ TransferBnbKMS operation
 
 ### Example
 
-[✨ View "transferBnbKMS.php"](../../examples/Api/BlockchainOperationsApi/transferBnbKMS.php)
+[✨ View "transferBnbKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBnbKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBsc()`
+
+> **POST** `/v3/offchain/bsc/transfer`
 
 ### Type signature
 
@@ -3840,11 +4028,13 @@ Send BSC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferBsc.php"](../../examples/Api/BlockchainOperationsApi/transferBsc.php)
+[✨ View "transferBsc.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBsc.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBscKMS()`
+
+> **POST** `/v3/offchain/bsc/transfer`
 
 ### Type signature
 
@@ -3872,11 +4062,13 @@ TransferBscKMS operation
 
 ### Example
 
-[✨ View "transferBscKMS.php"](../../examples/Api/BlockchainOperationsApi/transferBscKMS.php)
+[✨ View "transferBscKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBscKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBscMnemonic()`
+
+> **POST** `/v3/offchain/bsc/transfer`
 
 ### Type signature
 
@@ -3904,11 +4096,13 @@ TransferBscMnemonic operation
 
 ### Example
 
-[✨ View "transferBscMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferBscMnemonic.php)
+[✨ View "transferBscMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBscMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBtcKMS()`
+
+> **POST** `/v3/offchain/bitcoin/transfer`
 
 ### Type signature
 
@@ -3936,11 +4130,13 @@ TransferBtcKMS operation
 
 ### Example
 
-[✨ View "transferBtcKMS.php"](../../examples/Api/BlockchainOperationsApi/transferBtcKMS.php)
+[✨ View "transferBtcKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBtcKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBtcKeyPair()`
+
+> **POST** `/v3/offchain/bitcoin/transfer`
 
 ### Type signature
 
@@ -3968,11 +4164,13 @@ TransferBtcKeyPair operation
 
 ### Example
 
-[✨ View "transferBtcKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferBtcKeyPair.php)
+[✨ View "transferBtcKeyPair.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBtcKeyPair.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferBtcMnemonic()`
+
+> **POST** `/v3/offchain/bitcoin/transfer`
 
 ### Type signature
 
@@ -4000,11 +4198,13 @@ Send BTC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferBtcMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferBtcMnemonic.php)
+[✨ View "transferBtcMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferBtcMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferCelo()`
+
+> **POST** `/v3/offchain/celo/transfer`
 
 ### Type signature
 
@@ -4032,11 +4232,13 @@ Send CELO from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferCelo.php"](../../examples/Api/BlockchainOperationsApi/transferCelo.php)
+[✨ View "transferCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferCeloKMS()`
+
+> **POST** `/v3/offchain/celo/transfer`
 
 ### Type signature
 
@@ -4064,11 +4266,13 @@ TransferCeloKMS operation
 
 ### Example
 
-[✨ View "transferCeloKMS.php"](../../examples/Api/BlockchainOperationsApi/transferCeloKMS.php)
+[✨ View "transferCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferCeloMnemonic()`
+
+> **POST** `/v3/offchain/celo/transfer`
 
 ### Type signature
 
@@ -4096,11 +4300,13 @@ TransferCeloMnemonic operation
 
 ### Example
 
-[✨ View "transferCeloMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferCeloMnemonic.php)
+[✨ View "transferCeloMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferCeloMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferDogeKMS()`
+
+> **POST** `/v3/offchain/dogecoin/transfer`
 
 ### Type signature
 
@@ -4128,11 +4334,13 @@ TransferDogeKMS operation
 
 ### Example
 
-[✨ View "transferDogeKMS.php"](../../examples/Api/BlockchainOperationsApi/transferDogeKMS.php)
+[✨ View "transferDogeKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferDogeKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferDogeKeyPair()`
+
+> **POST** `/v3/offchain/dogecoin/transfer`
 
 ### Type signature
 
@@ -4160,11 +4368,13 @@ TransferDogeKeyPair operation
 
 ### Example
 
-[✨ View "transferDogeKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferDogeKeyPair.php)
+[✨ View "transferDogeKeyPair.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferDogeKeyPair.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferDogeMnemonic()`
+
+> **POST** `/v3/offchain/dogecoin/transfer`
 
 ### Type signature
 
@@ -4192,11 +4402,13 @@ Send DOGE from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferDogeMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferDogeMnemonic.php)
+[✨ View "transferDogeMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferDogeMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferErc20()`
+
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
 
 ### Type signature
 
@@ -4224,11 +4436,13 @@ Send Ethereum ERC-20 tokens from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferErc20.php"](../../examples/Api/BlockchainOperationsApi/transferErc20.php)
+[✨ View "transferErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferErc20.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferErc20KMS()`
+
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
 
 ### Type signature
 
@@ -4256,11 +4470,13 @@ TransferErc20KMS operation
 
 ### Example
 
-[✨ View "transferErc20KMS.php"](../../examples/Api/BlockchainOperationsApi/transferErc20KMS.php)
+[✨ View "transferErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferErc20KMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferErc20Mnemonic()`
+
+> **POST** `/v3/offchain/ethereum/erc20/transfer`
 
 ### Type signature
 
@@ -4288,11 +4504,13 @@ TransferErc20Mnemonic operation
 
 ### Example
 
-[✨ View "transferErc20Mnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferErc20Mnemonic.php)
+[✨ View "transferErc20Mnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferErc20Mnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferEth()`
+
+> **POST** `/v3/offchain/ethereum/transfer`
 
 ### Type signature
 
@@ -4320,11 +4538,13 @@ Send ETH from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferEth.php"](../../examples/Api/BlockchainOperationsApi/transferEth.php)
+[✨ View "transferEth.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferEth.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferEthKMS()`
+
+> **POST** `/v3/offchain/ethereum/transfer`
 
 ### Type signature
 
@@ -4352,11 +4572,13 @@ TransferEthKMS operation
 
 ### Example
 
-[✨ View "transferEthKMS.php"](../../examples/Api/BlockchainOperationsApi/transferEthKMS.php)
+[✨ View "transferEthKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferEthKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferEthMnemonic()`
+
+> **POST** `/v3/offchain/ethereum/transfer`
 
 ### Type signature
 
@@ -4384,11 +4606,13 @@ TransferEthMnemonic operation
 
 ### Example
 
-[✨ View "transferEthMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferEthMnemonic.php)
+[✨ View "transferEthMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferEthMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferFlowKMS()`
+
+> **POST** `/v3/offchain/flow/transfer`
 
 ### Type signature
 
@@ -4416,11 +4640,13 @@ TransferFlowKMS operation
 
 ### Example
 
-[✨ View "transferFlowKMS.php"](../../examples/Api/BlockchainOperationsApi/transferFlowKMS.php)
+[✨ View "transferFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferFlowKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferFlowMnemonic()`
+
+> **POST** `/v3/offchain/flow/transfer`
 
 ### Type signature
 
@@ -4448,11 +4674,13 @@ Send FLOW from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferFlowMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferFlowMnemonic.php)
+[✨ View "transferFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferFlowMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferFlowPK()`
+
+> **POST** `/v3/offchain/flow/transfer`
 
 ### Type signature
 
@@ -4480,11 +4708,13 @@ TransferFlowPK operation
 
 ### Example
 
-[✨ View "transferFlowPK.php"](../../examples/Api/BlockchainOperationsApi/transferFlowPK.php)
+[✨ View "transferFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferFlowPK.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferKCS()`
+
+> **POST** `/v3/offchain/kcs/transfer`
 
 ### Type signature
 
@@ -4512,11 +4742,13 @@ Send KCS from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferKCS.php"](../../examples/Api/BlockchainOperationsApi/transferKCS.php)
+[✨ View "transferKCS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferKCS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferKCSKMS()`
+
+> **POST** `/v3/offchain/kcs/transfer`
 
 ### Type signature
 
@@ -4544,11 +4776,13 @@ TransferKCSKMS operation
 
 ### Example
 
-[✨ View "transferKCSKMS.php"](../../examples/Api/BlockchainOperationsApi/transferKCSKMS.php)
+[✨ View "transferKCSKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferKCSKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferKCSMnemonic()`
+
+> **POST** `/v3/offchain/kcs/transfer`
 
 ### Type signature
 
@@ -4576,11 +4810,13 @@ TransferKCSMnemonic operation
 
 ### Example
 
-[✨ View "transferKCSMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferKCSMnemonic.php)
+[✨ View "transferKCSMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferKCSMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferLtcKMS()`
+
+> **POST** `/v3/offchain/litecoin/transfer`
 
 ### Type signature
 
@@ -4608,11 +4844,13 @@ TransferLtcKMS operation
 
 ### Example
 
-[✨ View "transferLtcKMS.php"](../../examples/Api/BlockchainOperationsApi/transferLtcKMS.php)
+[✨ View "transferLtcKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferLtcKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferLtcKeyPair()`
+
+> **POST** `/v3/offchain/litecoin/transfer`
 
 ### Type signature
 
@@ -4640,11 +4878,13 @@ TransferLtcKeyPair operation
 
 ### Example
 
-[✨ View "transferLtcKeyPair.php"](../../examples/Api/BlockchainOperationsApi/transferLtcKeyPair.php)
+[✨ View "transferLtcKeyPair.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferLtcKeyPair.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferLtcMnemonic()`
+
+> **POST** `/v3/offchain/litecoin/transfer`
 
 ### Type signature
 
@@ -4672,11 +4912,13 @@ Send LTC from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferLtcMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferLtcMnemonic.php)
+[✨ View "transferLtcMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferLtcMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferSol()`
+
+> **POST** `/v3/offchain/solana/transfer`
 
 ### Type signature
 
@@ -4704,11 +4946,13 @@ Send SOL from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferSol.php"](../../examples/Api/BlockchainOperationsApi/transferSol.php)
+[✨ View "transferSol.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferSol.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferSolKMS()`
+
+> **POST** `/v3/offchain/solana/transfer`
 
 ### Type signature
 
@@ -4736,11 +4980,13 @@ TransferSolKMS operation
 
 ### Example
 
-[✨ View "transferSolKMS.php"](../../examples/Api/BlockchainOperationsApi/transferSolKMS.php)
+[✨ View "transferSolKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferSolKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTron()`
+
+> **POST** `/v3/offchain/tron/transfer`
 
 ### Type signature
 
@@ -4768,11 +5014,13 @@ Send TRON from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferTron.php"](../../examples/Api/BlockchainOperationsApi/transferTron.php)
+[✨ View "transferTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferTron.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTronKMS()`
+
+> **POST** `/v3/offchain/tron/transfer`
 
 ### Type signature
 
@@ -4800,11 +5048,13 @@ TransferTronKMS operation
 
 ### Example
 
-[✨ View "transferTronKMS.php"](../../examples/Api/BlockchainOperationsApi/transferTronKMS.php)
+[✨ View "transferTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferTronKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferTronMnemonic()`
+
+> **POST** `/v3/offchain/tron/transfer`
 
 ### Type signature
 
@@ -4832,11 +5082,13 @@ TransferTronMnemonic operation
 
 ### Example
 
-[✨ View "transferTronMnemonic.php"](../../examples/Api/BlockchainOperationsApi/transferTronMnemonic.php)
+[✨ View "transferTronMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferTronMnemonic.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXlm()`
+
+> **POST** `/v3/offchain/xlm/transfer`
 
 ### Type signature
 
@@ -4864,11 +5116,13 @@ Send XLM from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferXlm.php"](../../examples/Api/BlockchainOperationsApi/transferXlm.php)
+[✨ View "transferXlm.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferXlm.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXlmKMS()`
+
+> **POST** `/v3/offchain/xlm/transfer`
 
 ### Type signature
 
@@ -4896,11 +5150,13 @@ TransferXlmKMS operation
 
 ### Example
 
-[✨ View "transferXlmKMS.php"](../../examples/Api/BlockchainOperationsApi/transferXlmKMS.php)
+[✨ View "transferXlmKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferXlmKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXrp()`
+
+> **POST** `/v3/offchain/xrp/transfer`
 
 ### Type signature
 
@@ -4928,11 +5184,13 @@ Send XRP from a virtual account to the blockchain
 
 ### Example
 
-[✨ View "transferXrp.php"](../../examples/Api/BlockchainOperationsApi/transferXrp.php)
+[✨ View "transferXrp.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferXrp.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXrpKMS()`
+
+> **POST** `/v3/offchain/xrp/transfer`
 
 ### Type signature
 
@@ -4960,11 +5218,13 @@ TransferXrpKMS operation
 
 ### Example
 
-[✨ View "transferXrpKMS.php"](../../examples/Api/BlockchainOperationsApi/transferXrpKMS.php)
+[✨ View "transferXrpKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/transferXrpKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `trcAddress()`
+
+> **POST** `/v3/offchain/tron/trc`
 
 ### Type signature
 
@@ -4992,11 +5252,13 @@ Register a new TRON TRC-10 or TRC-20 token in the virtual account
 
 ### Example
 
-[✨ View "trcAddress.php"](../../examples/Api/BlockchainOperationsApi/trcAddress.php)
+[✨ View "trcAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/trcAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `trcXpub()`
+
+> **POST** `/v3/offchain/tron/trc`
 
 ### Type signature
 
@@ -5024,11 +5286,13 @@ TrcXpub operation
 
 ### Example
 
-[✨ View "trcXpub.php"](../../examples/Api/BlockchainOperationsApi/trcXpub.php)
+[✨ View "trcXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/trcXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmAssetOffchain()`
+
+> **POST** `/v3/offchain/xlm/asset`
 
 ### Type signature
 
@@ -5056,11 +5320,13 @@ Create an XLM-based asset
 
 ### Example
 
-[✨ View "xlmAssetOffchain.php"](../../examples/Api/BlockchainOperationsApi/xlmAssetOffchain.php)
+[✨ View "xlmAssetOffchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/xlmAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xrpAssetOffchain()`
+
+> **POST** `/v3/offchain/xrp/asset`
 
 ### Type signature
 
@@ -5088,6 +5354,6 @@ Create XRP based Asset
 
 ### Example
 
-[✨ View "xrpAssetOffchain.php"](../../examples/Api/BlockchainOperationsApi/xrpAssetOffchain.php)
+[✨ View "xrpAssetOffchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/xrpAssetOffchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

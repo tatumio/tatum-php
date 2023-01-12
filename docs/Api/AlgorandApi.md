@@ -10,97 +10,99 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **algoNodeGetDriver()**](#algonodegetdriver) 
 
-> **GET** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
-> 
 > Access Algorand Algod GET node endpoints
+> 
+> **GET** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
 
 [🔹 **algoNodeIndexerGetDriver()**](#algonodeindexergetdriver) 
 
-> **GET** `/v3/algorand/node/indexer/{xApiKey}/{indexerPath}`
-> 
 > Access Algorand Indexer GET node endpoints
+> 
+> **GET** `/v3/algorand/node/indexer/{xApiKey}/{indexerPath}`
 
 [🔹 **algoNodePostDriver()**](#algonodepostdriver) 
 
-> **POST** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
-> 
 > Access Algorand Algod POST node endpoints
+> 
+> **POST** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
 
 [🔹 **algoandBroadcast()**](#algoandbroadcast) 
 
-> **POST** `/v3/algorand/broadcast`
-> 
 > Broadcast signed Algorand transaction
+> 
+> **POST** `/v3/algorand/broadcast`
 
 [🔹 **algorandGenerateAddress()**](#algorandgenerateaddress) 
 
-> **GET** `/v3/algorand/address/{priv}`
-> 
 > Generate Algorand account address from private key
+> 
+> **GET** `/v3/algorand/address/{priv}`
 
 [🔹 **algorandGenerateWallet()**](#algorandgeneratewallet) 
 
-> **GET** `/v3/algorand/wallet`
-> 
 > Generate Algorand wallet
+> 
+> **GET** `/v3/algorand/wallet`
 
 [🔹 **algorandGetBalance()**](#algorandgetbalance) 
 
-> **GET** `/v3/algorand/account/balance/{address}`
-> 
 > Get Algorand Account balance
+> 
+> **GET** `/v3/algorand/account/balance/{address}`
 
 [🔹 **algorandGetBlock()**](#algorandgetblock) 
 
-> **GET** `/v3/algorand/block/{roundNumber}`
-> 
 > Get Algorand block by block round number
+> 
+> **GET** `/v3/algorand/block/{roundNumber}`
 
 [🔹 **algorandGetCurrentBlock()**](#algorandgetcurrentblock) 
 
-> **GET** `/v3/algorand/block/current`
-> 
 > Get current block number
+> 
+> **GET** `/v3/algorand/block/current`
 
 [🔹 **algorandGetPayTransactionsByFromTo()**](#algorandgetpaytransactionsbyfromto) 
 
-> **GET** `/v3/algorand/transactions/{from}/{to}`
-> 
 > Get Algorand Transactions between from and to
+> 
+> **GET** `/v3/algorand/transactions/{from}/{to}`
 
 [🔹 **algorandGetTransaction()**](#algorandgettransaction) 
 
-> **GET** `/v3/algorand/transaction/{txid}`
-> 
 > Get Algorand Transaction
+> 
+> **GET** `/v3/algorand/transaction/{txid}`
 
 [🔹 **receiveAlgorandAsset()**](#receivealgorandasset) 
 
-> **POST** `/v3/algorand/asset/receive`
-> 
 > Enable receiving asset on account
+> 
+> **POST** `/v3/algorand/asset/receive`
 
 [🔹 **receiveAlgorandAssetKMS()**](#receivealgorandassetkms) 
 
-> **POST** `/v3/algorand/asset/receive`
-> 
 > Enable receiving asset on account
+> 
+> **POST** `/v3/algorand/asset/receive`
 
 [🔹 **transferAlgorandBlockchain()**](#transferalgorandblockchain) 
 
-> **POST** `/v3/algorand/transaction`
-> 
 > Send Algos to an Algorand account
+> 
+> **POST** `/v3/algorand/transaction`
 
 [🔹 **transferAlgorandBlockchainKMS()**](#transferalgorandblockchainkms) 
 
-> **POST** `/v3/algorand/transaction`
-> 
 > Send Algos to an Algorand account
+> 
+> **POST** `/v3/algorand/transaction`
 
 
 
 ## `algoNodeGetDriver()`
+
+> **GET** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
 
 ### Type signature
 
@@ -130,11 +132,13 @@ Access Algorand Algod GET node endpoints
 
 ### Example
 
-[✨ View "algoNodeGetDriver.php"](../../examples/Api/AlgorandApi/algoNodeGetDriver.php)
+[✨ View "algoNodeGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodeGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algoNodeIndexerGetDriver()`
+
+> **GET** `/v3/algorand/node/indexer/{xApiKey}/{indexerPath}`
 
 ### Type signature
 
@@ -164,11 +168,13 @@ Access Algorand Indexer GET node endpoints
 
 ### Example
 
-[✨ View "algoNodeIndexerGetDriver.php"](../../examples/Api/AlgorandApi/algoNodeIndexerGetDriver.php)
+[✨ View "algoNodeIndexerGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodeIndexerGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algoNodePostDriver()`
+
+> **POST** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
 
 ### Type signature
 
@@ -200,11 +206,13 @@ Access Algorand Algod POST node endpoints
 
 ### Example
 
-[✨ View "algoNodePostDriver.php"](../../examples/Api/AlgorandApi/algoNodePostDriver.php)
+[✨ View "algoNodePostDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodePostDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algoandBroadcast()`
+
+> **POST** `/v3/algorand/broadcast`
 
 ### Type signature
 
@@ -232,11 +240,13 @@ Broadcast signed Algorand transaction
 
 ### Example
 
-[✨ View "algoandBroadcast.php"](../../examples/Api/AlgorandApi/algoandBroadcast.php)
+[✨ View "algoandBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoandBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGenerateAddress()`
+
+> **GET** `/v3/algorand/address/{priv}`
 
 ### Type signature
 
@@ -264,11 +274,13 @@ Generate Algorand account address from private key
 
 ### Example
 
-[✨ View "algorandGenerateAddress.php"](../../examples/Api/AlgorandApi/algorandGenerateAddress.php)
+[✨ View "algorandGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGenerateWallet()`
+
+> **GET** `/v3/algorand/wallet`
 
 ### Type signature
 
@@ -296,11 +308,13 @@ Generate Algorand wallet
 
 ### Example
 
-[✨ View "algorandGenerateWallet.php"](../../examples/Api/AlgorandApi/algorandGenerateWallet.php)
+[✨ View "algorandGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGetBalance()`
+
+> **GET** `/v3/algorand/account/balance/{address}`
 
 ### Type signature
 
@@ -328,11 +342,13 @@ Get Algorand Account balance
 
 ### Example
 
-[✨ View "algorandGetBalance.php"](../../examples/Api/AlgorandApi/algorandGetBalance.php)
+[✨ View "algorandGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGetBlock()`
+
+> **GET** `/v3/algorand/block/{roundNumber}`
 
 ### Type signature
 
@@ -360,11 +376,13 @@ Get Algorand block by block round number
 
 ### Example
 
-[✨ View "algorandGetBlock.php"](../../examples/Api/AlgorandApi/algorandGetBlock.php)
+[✨ View "algorandGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGetCurrentBlock()`
+
+> **GET** `/v3/algorand/block/current`
 
 ### Type signature
 
@@ -389,11 +407,13 @@ Get current block number
 
 ### Example
 
-[✨ View "algorandGetCurrentBlock.php"](../../examples/Api/AlgorandApi/algorandGetCurrentBlock.php)
+[✨ View "algorandGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGetPayTransactionsByFromTo()`
+
+> **GET** `/v3/algorand/transactions/{from}/{to}`
 
 ### Type signature
 
@@ -427,11 +447,13 @@ Get Algorand Transactions between from and to
 
 ### Example
 
-[✨ View "algorandGetPayTransactionsByFromTo.php"](../../examples/Api/AlgorandApi/algorandGetPayTransactionsByFromTo.php)
+[✨ View "algorandGetPayTransactionsByFromTo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetPayTransactionsByFromTo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `algorandGetTransaction()`
+
+> **GET** `/v3/algorand/transaction/{txid}`
 
 ### Type signature
 
@@ -459,11 +481,13 @@ Get Algorand Transaction
 
 ### Example
 
-[✨ View "algorandGetTransaction.php"](../../examples/Api/AlgorandApi/algorandGetTransaction.php)
+[✨ View "algorandGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `receiveAlgorandAsset()`
+
+> **POST** `/v3/algorand/asset/receive`
 
 ### Type signature
 
@@ -491,11 +515,13 @@ Enable receiving asset on account
 
 ### Example
 
-[✨ View "receiveAlgorandAsset.php"](../../examples/Api/AlgorandApi/receiveAlgorandAsset.php)
+[✨ View "receiveAlgorandAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/receiveAlgorandAsset.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `receiveAlgorandAssetKMS()`
+
+> **POST** `/v3/algorand/asset/receive`
 
 ### Type signature
 
@@ -523,11 +549,13 @@ ReceiveAlgorandAssetKMS operation
 
 ### Example
 
-[✨ View "receiveAlgorandAssetKMS.php"](../../examples/Api/AlgorandApi/receiveAlgorandAssetKMS.php)
+[✨ View "receiveAlgorandAssetKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/receiveAlgorandAssetKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferAlgorandBlockchain()`
+
+> **POST** `/v3/algorand/transaction`
 
 ### Type signature
 
@@ -555,11 +583,13 @@ Send Algos to an Algorand account
 
 ### Example
 
-[✨ View "transferAlgorandBlockchain.php"](../../examples/Api/AlgorandApi/transferAlgorandBlockchain.php)
+[✨ View "transferAlgorandBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/transferAlgorandBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferAlgorandBlockchainKMS()`
+
+> **POST** `/v3/algorand/transaction`
 
 ### Type signature
 
@@ -587,6 +617,6 @@ TransferAlgorandBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferAlgorandBlockchainKMS.php"](../../examples/Api/AlgorandApi/transferAlgorandBlockchainKMS.php)
+[✨ View "transferAlgorandBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/transferAlgorandBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

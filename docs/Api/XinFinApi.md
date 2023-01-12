@@ -10,97 +10,99 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **callXdcReadSmartContractMethod()**](#callxdcreadsmartcontractmethod) 
 
-> **POST** `/v3/xdc/smartcontract`
-> 
 > Invoke a method in a smart contract on XinFin
+> 
+> **POST** `/v3/xdc/smartcontract`
 
 [🔹 **callXdcSmartContractMethod()**](#callxdcsmartcontractmethod) 
 
-> **POST** `/v3/xdc/smartcontract`
-> 
 > Invoke a method in a smart contract on XinFin
+> 
+> **POST** `/v3/xdc/smartcontract`
 
 [🔹 **callXdcSmartContractMethodKMS()**](#callxdcsmartcontractmethodkms) 
 
-> **POST** `/v3/xdc/smartcontract`
-> 
 > Invoke a method in a smart contract on XinFin
+> 
+> **POST** `/v3/xdc/smartcontract`
 
 [🔹 **transferXdcBlockchain()**](#transferxdcblockchain) 
 
-> **POST** `/v3/xdc/transaction`
-> 
 > Send XDC / ERC20 from account to account
+> 
+> **POST** `/v3/xdc/transaction`
 
 [🔹 **transferXdcBlockchainKMS()**](#transferxdcblockchainkms) 
 
-> **POST** `/v3/xdc/transaction`
-> 
 > Send XDC / ERC20 from account to account
+> 
+> **POST** `/v3/xdc/transaction`
 
 [🔹 **xdcBroadcast()**](#xdcbroadcast) 
 
-> **POST** `/v3/xdc/broadcast`
-> 
 > Broadcast signed XDC transaction
+> 
+> **POST** `/v3/xdc/broadcast`
 
 [🔹 **xdcGenerateAddress()**](#xdcgenerateaddress) 
 
-> **GET** `/v3/xdc/address/{xpub}/{index}`
-> 
 > Generate XDC account address from Extended public key
+> 
+> **GET** `/v3/xdc/address/{xpub}/{index}`
 
 [🔹 **xdcGenerateAddressPrivateKey()**](#xdcgenerateaddressprivatekey) 
 
-> **POST** `/v3/xdc/wallet/priv`
-> 
 > Generate XDC private key
+> 
+> **POST** `/v3/xdc/wallet/priv`
 
 [🔹 **xdcGenerateWallet()**](#xdcgeneratewallet) 
 
-> **GET** `/v3/xdc/wallet`
-> 
 > Generate XDC wallet
+> 
+> **GET** `/v3/xdc/wallet`
 
 [🔹 **xdcGetBalance()**](#xdcgetbalance) 
 
-> **GET** `/v3/xdc/account/balance/{address}`
-> 
 > Get XDC Account balance
+> 
+> **GET** `/v3/xdc/account/balance/{address}`
 
 [🔹 **xdcGetBlock()**](#xdcgetblock) 
 
-> **GET** `/v3/xdc/block/{hash}`
-> 
 > Get XDC block by hash
+> 
+> **GET** `/v3/xdc/block/{hash}`
 
 [🔹 **xdcGetCurrentBlock()**](#xdcgetcurrentblock) 
 
-> **GET** `/v3/xdc/block/current`
-> 
 > Get current block number
+> 
+> **GET** `/v3/xdc/block/current`
 
 [🔹 **xdcGetTransaction()**](#xdcgettransaction) 
 
-> **GET** `/v3/xdc/transaction/{hash}`
-> 
 > Get XDC Transaction
+> 
+> **GET** `/v3/xdc/transaction/{hash}`
 
 [🔹 **xdcGetTransactionCount()**](#xdcgettransactioncount) 
 
-> **GET** `/v3/xdc/transaction/count/{address}`
-> 
 > Get count of outgoing XDC transactions
+> 
+> **GET** `/v3/xdc/transaction/count/{address}`
 
 [🔹 **xdcWeb3Driver()**](#xdcweb3driver) 
 
-> **POST** `/v3/xdc/web3/{xApiKey}`
-> 
 > Web3 HTTP driver
+> 
+> **POST** `/v3/xdc/web3/{xApiKey}`
 
 
 
 ## `callXdcReadSmartContractMethod()`
+
+> **POST** `/v3/xdc/smartcontract`
 
 ### Type signature
 
@@ -128,11 +130,13 @@ Invoke a method in a smart contract on XinFin
 
 ### Example
 
-[✨ View "callXdcReadSmartContractMethod.php"](../../examples/Api/XinFinApi/callXdcReadSmartContractMethod.php)
+[✨ View "callXdcReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcReadSmartContractMethod.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `callXdcSmartContractMethod()`
+
+> **POST** `/v3/xdc/smartcontract`
 
 ### Type signature
 
@@ -160,11 +164,13 @@ CallXdcSmartContractMethod operation
 
 ### Example
 
-[✨ View "callXdcSmartContractMethod.php"](../../examples/Api/XinFinApi/callXdcSmartContractMethod.php)
+[✨ View "callXdcSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethod.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `callXdcSmartContractMethodKMS()`
+
+> **POST** `/v3/xdc/smartcontract`
 
 ### Type signature
 
@@ -192,11 +198,13 @@ CallXdcSmartContractMethodKMS operation
 
 ### Example
 
-[✨ View "callXdcSmartContractMethodKMS.php"](../../examples/Api/XinFinApi/callXdcSmartContractMethodKMS.php)
+[✨ View "callXdcSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethodKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXdcBlockchain()`
+
+> **POST** `/v3/xdc/transaction`
 
 ### Type signature
 
@@ -224,11 +232,13 @@ Send XDC / ERC20 from account to account
 
 ### Example
 
-[✨ View "transferXdcBlockchain.php"](../../examples/Api/XinFinApi/transferXdcBlockchain.php)
+[✨ View "transferXdcBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXdcBlockchainKMS()`
+
+> **POST** `/v3/xdc/transaction`
 
 ### Type signature
 
@@ -256,11 +266,13 @@ TransferXdcBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferXdcBlockchainKMS.php"](../../examples/Api/XinFinApi/transferXdcBlockchainKMS.php)
+[✨ View "transferXdcBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcBroadcast()`
+
+> **POST** `/v3/xdc/broadcast`
 
 ### Type signature
 
@@ -288,11 +300,13 @@ Broadcast signed XDC transaction
 
 ### Example
 
-[✨ View "xdcBroadcast.php"](../../examples/Api/XinFinApi/xdcBroadcast.php)
+[✨ View "xdcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGenerateAddress()`
+
+> **GET** `/v3/xdc/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -322,11 +336,13 @@ Generate XDC account address from Extended public key
 
 ### Example
 
-[✨ View "xdcGenerateAddress.php"](../../examples/Api/XinFinApi/xdcGenerateAddress.php)
+[✨ View "xdcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGenerateAddressPrivateKey()`
+
+> **POST** `/v3/xdc/wallet/priv`
 
 ### Type signature
 
@@ -354,11 +370,13 @@ Generate XDC private key
 
 ### Example
 
-[✨ View "xdcGenerateAddressPrivateKey.php"](../../examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
+[✨ View "xdcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGenerateWallet()`
+
+> **GET** `/v3/xdc/wallet`
 
 ### Type signature
 
@@ -386,11 +404,13 @@ Generate XDC wallet
 
 ### Example
 
-[✨ View "xdcGenerateWallet.php"](../../examples/Api/XinFinApi/xdcGenerateWallet.php)
+[✨ View "xdcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGetBalance()`
+
+> **GET** `/v3/xdc/account/balance/{address}`
 
 ### Type signature
 
@@ -418,11 +438,13 @@ Get XDC Account balance
 
 ### Example
 
-[✨ View "xdcGetBalance.php"](../../examples/Api/XinFinApi/xdcGetBalance.php)
+[✨ View "xdcGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGetBlock()`
+
+> **GET** `/v3/xdc/block/{hash}`
 
 ### Type signature
 
@@ -450,11 +472,13 @@ Get XDC block by hash
 
 ### Example
 
-[✨ View "xdcGetBlock.php"](../../examples/Api/XinFinApi/xdcGetBlock.php)
+[✨ View "xdcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGetCurrentBlock()`
+
+> **GET** `/v3/xdc/block/current`
 
 ### Type signature
 
@@ -479,11 +503,13 @@ Get current block number
 
 ### Example
 
-[✨ View "xdcGetCurrentBlock.php"](../../examples/Api/XinFinApi/xdcGetCurrentBlock.php)
+[✨ View "xdcGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGetTransaction()`
+
+> **GET** `/v3/xdc/transaction/{hash}`
 
 ### Type signature
 
@@ -511,11 +537,13 @@ Get XDC Transaction
 
 ### Example
 
-[✨ View "xdcGetTransaction.php"](../../examples/Api/XinFinApi/xdcGetTransaction.php)
+[✨ View "xdcGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcGetTransactionCount()`
+
+> **GET** `/v3/xdc/transaction/count/{address}`
 
 ### Type signature
 
@@ -543,11 +571,13 @@ Get count of outgoing XDC transactions
 
 ### Example
 
-[✨ View "xdcGetTransactionCount.php"](../../examples/Api/XinFinApi/xdcGetTransactionCount.php)
+[✨ View "xdcGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xdcWeb3Driver()`
+
+> **POST** `/v3/xdc/web3/{xApiKey}`
 
 ### Type signature
 
@@ -577,6 +607,6 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "xdcWeb3Driver.php"](../../examples/Api/XinFinApi/xdcWeb3Driver.php)
+[✨ View "xdcWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

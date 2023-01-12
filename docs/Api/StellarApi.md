@@ -10,97 +10,99 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **transferXlmBlockchain()**](#transferxlmblockchain) 
 
-> **POST** `/v3/xlm/transaction`
-> 
 > Send XLM from address to address
+> 
+> **POST** `/v3/xlm/transaction`
 
 [🔹 **transferXlmBlockchainAsset()**](#transferxlmblockchainasset) 
 
-> **POST** `/v3/xlm/transaction`
-> 
 > Send XLM from address to address
+> 
+> **POST** `/v3/xlm/transaction`
 
 [🔹 **transferXlmBlockchainKMS()**](#transferxlmblockchainkms) 
 
-> **POST** `/v3/xlm/transaction`
-> 
 > Send XLM from address to address
+> 
+> **POST** `/v3/xlm/transaction`
 
 [🔹 **transferXlmBlockchainKMSAsset()**](#transferxlmblockchainkmsasset) 
 
-> **POST** `/v3/xlm/transaction`
-> 
 > Send XLM from address to address
+> 
+> **POST** `/v3/xlm/transaction`
 
 [🔹 **trustLineXlmBlockchain()**](#trustlinexlmblockchain) 
 
-> **POST** `/v3/xlm/trust`
-> 
 > Create / Update / Delete XLM trust line
+> 
+> **POST** `/v3/xlm/trust`
 
 [🔹 **trustLineXlmBlockchainKMS()**](#trustlinexlmblockchainkms) 
 
-> **POST** `/v3/xlm/trust`
-> 
 > Create / Update / Delete XLM trust line
+> 
+> **POST** `/v3/xlm/trust`
 
 [🔹 **xlmBroadcast()**](#xlmbroadcast) 
 
-> **POST** `/v3/xlm/broadcast`
-> 
 > Broadcast signed XLM transaction
+> 
+> **POST** `/v3/xlm/broadcast`
 
 [🔹 **xlmGetAccountInfo()**](#xlmgetaccountinfo) 
 
-> **GET** `/v3/xlm/account/{account}`
-> 
 > Get XLM Account info
+> 
+> **GET** `/v3/xlm/account/{account}`
 
 [🔹 **xlmGetAccountTx()**](#xlmgetaccounttx) 
 
-> **GET** `/v3/xlm/account/tx/{account}`
-> 
 > Get XLM Account transactions
+> 
+> **GET** `/v3/xlm/account/tx/{account}`
 
 [🔹 **xlmGetFee()**](#xlmgetfee) 
 
-> **GET** `/v3/xlm/fee`
-> 
 > Get actual XLM fee
+> 
+> **GET** `/v3/xlm/fee`
 
 [🔹 **xlmGetLastClosedLedger()**](#xlmgetlastclosedledger) 
 
-> **GET** `/v3/xlm/info`
-> 
 > Get XLM Blockchain Information
+> 
+> **GET** `/v3/xlm/info`
 
 [🔹 **xlmGetLedger()**](#xlmgetledger) 
 
-> **GET** `/v3/xlm/ledger/{sequence}`
-> 
 > Get XLM Blockchain Ledger by sequence
+> 
+> **GET** `/v3/xlm/ledger/{sequence}`
 
 [🔹 **xlmGetLedgerTx()**](#xlmgetledgertx) 
 
-> **GET** `/v3/xlm/ledger/{sequence}/transaction`
-> 
 > Get XLM Blockchain Transactions in Ledger
+> 
+> **GET** `/v3/xlm/ledger/{sequence}/transaction`
 
 [🔹 **xlmGetTransaction()**](#xlmgettransaction) 
 
-> **GET** `/v3/xlm/transaction/{hash}`
-> 
 > Get XLM Transaction by hash
+> 
+> **GET** `/v3/xlm/transaction/{hash}`
 
 [🔹 **xlmWallet()**](#xlmwallet) 
 
-> **GET** `/v3/xlm/account`
-> 
 > Generate XLM account
+> 
+> **GET** `/v3/xlm/account`
 
 
 
 ## `transferXlmBlockchain()`
+
+> **POST** `/v3/xlm/transaction`
 
 ### Type signature
 
@@ -128,11 +130,13 @@ Send XLM from address to address
 
 ### Example
 
-[✨ View "transferXlmBlockchain.php"](../../examples/Api/StellarApi/transferXlmBlockchain.php)
+[✨ View "transferXlmBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXlmBlockchainAsset()`
+
+> **POST** `/v3/xlm/transaction`
 
 ### Type signature
 
@@ -160,11 +164,13 @@ TransferXlmBlockchainAsset operation
 
 ### Example
 
-[✨ View "transferXlmBlockchainAsset.php"](../../examples/Api/StellarApi/transferXlmBlockchainAsset.php)
+[✨ View "transferXlmBlockchainAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainAsset.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXlmBlockchainKMS()`
+
+> **POST** `/v3/xlm/transaction`
 
 ### Type signature
 
@@ -192,11 +198,13 @@ TransferXlmBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferXlmBlockchainKMS.php"](../../examples/Api/StellarApi/transferXlmBlockchainKMS.php)
+[✨ View "transferXlmBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferXlmBlockchainKMSAsset()`
+
+> **POST** `/v3/xlm/transaction`
 
 ### Type signature
 
@@ -224,11 +232,13 @@ TransferXlmBlockchainKMSAsset operation
 
 ### Example
 
-[✨ View "transferXlmBlockchainKMSAsset.php"](../../examples/Api/StellarApi/transferXlmBlockchainKMSAsset.php)
+[✨ View "transferXlmBlockchainKMSAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMSAsset.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `trustLineXlmBlockchain()`
+
+> **POST** `/v3/xlm/trust`
 
 ### Type signature
 
@@ -256,11 +266,13 @@ Create / Update / Delete XLM trust line
 
 ### Example
 
-[✨ View "trustLineXlmBlockchain.php"](../../examples/Api/StellarApi/trustLineXlmBlockchain.php)
+[✨ View "trustLineXlmBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `trustLineXlmBlockchainKMS()`
+
+> **POST** `/v3/xlm/trust`
 
 ### Type signature
 
@@ -288,11 +300,13 @@ TrustLineXlmBlockchainKMS operation
 
 ### Example
 
-[✨ View "trustLineXlmBlockchainKMS.php"](../../examples/Api/StellarApi/trustLineXlmBlockchainKMS.php)
+[✨ View "trustLineXlmBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmBroadcast()`
+
+> **POST** `/v3/xlm/broadcast`
 
 ### Type signature
 
@@ -320,11 +334,13 @@ Broadcast signed XLM transaction
 
 ### Example
 
-[✨ View "xlmBroadcast.php"](../../examples/Api/StellarApi/xlmBroadcast.php)
+[✨ View "xlmBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetAccountInfo()`
+
+> **GET** `/v3/xlm/account/{account}`
 
 ### Type signature
 
@@ -352,11 +368,13 @@ Get XLM Account info
 
 ### Example
 
-[✨ View "xlmGetAccountInfo.php"](../../examples/Api/StellarApi/xlmGetAccountInfo.php)
+[✨ View "xlmGetAccountInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetAccountTx()`
+
+> **GET** `/v3/xlm/account/tx/{account}`
 
 ### Type signature
 
@@ -386,11 +404,13 @@ Get XLM Account transactions
 
 ### Example
 
-[✨ View "xlmGetAccountTx.php"](../../examples/Api/StellarApi/xlmGetAccountTx.php)
+[✨ View "xlmGetAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetFee()`
+
+> **GET** `/v3/xlm/fee`
 
 ### Type signature
 
@@ -415,11 +435,13 @@ Get actual XLM fee
 
 ### Example
 
-[✨ View "xlmGetFee.php"](../../examples/Api/StellarApi/xlmGetFee.php)
+[✨ View "xlmGetFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetLastClosedLedger()`
+
+> **GET** `/v3/xlm/info`
 
 ### Type signature
 
@@ -444,11 +466,13 @@ Get XLM Blockchain Information
 
 ### Example
 
-[✨ View "xlmGetLastClosedLedger.php"](../../examples/Api/StellarApi/xlmGetLastClosedLedger.php)
+[✨ View "xlmGetLastClosedLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLastClosedLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetLedger()`
+
+> **GET** `/v3/xlm/ledger/{sequence}`
 
 ### Type signature
 
@@ -476,11 +500,13 @@ Get XLM Blockchain Ledger by sequence
 
 ### Example
 
-[✨ View "xlmGetLedger.php"](../../examples/Api/StellarApi/xlmGetLedger.php)
+[✨ View "xlmGetLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedger.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetLedgerTx()`
+
+> **GET** `/v3/xlm/ledger/{sequence}/transaction`
 
 ### Type signature
 
@@ -508,11 +534,13 @@ Get XLM Blockchain Transactions in Ledger
 
 ### Example
 
-[✨ View "xlmGetLedgerTx.php"](../../examples/Api/StellarApi/xlmGetLedgerTx.php)
+[✨ View "xlmGetLedgerTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedgerTx.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmGetTransaction()`
+
+> **GET** `/v3/xlm/transaction/{hash}`
 
 ### Type signature
 
@@ -540,11 +568,13 @@ Get XLM Transaction by hash
 
 ### Example
 
-[✨ View "xlmGetTransaction.php"](../../examples/Api/StellarApi/xlmGetTransaction.php)
+[✨ View "xlmGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `xlmWallet()`
+
+> **GET** `/v3/xlm/account`
 
 ### Type signature
 
@@ -569,6 +599,6 @@ Generate XLM account
 
 ### Example
 
-[✨ View "xlmWallet.php"](../../examples/Api/StellarApi/xlmWallet.php)
+[✨ View "xlmWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

@@ -10,37 +10,39 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **broadcastBlockchainTransaction()**](#broadcastblockchaintransaction) 
 
-> **POST** `/v3/offchain/withdrawal/broadcast`
-> 
 > Broadcast signed transaction and complete withdrawal
+> 
+> **POST** `/v3/offchain/withdrawal/broadcast`
 
 [🔹 **cancelInProgressWithdrawal()**](#cancelinprogresswithdrawal) 
 
-> **DELETE** `/v3/offchain/withdrawal/{id}`
-> 
 > Cancel withdrawal
+> 
+> **DELETE** `/v3/offchain/withdrawal/{id}`
 
 [🔹 **completeWithdrawal()**](#completewithdrawal) 
 
-> **PUT** `/v3/offchain/withdrawal/{id}/{txId}`
-> 
 > Complete withdrawal
+> 
+> **PUT** `/v3/offchain/withdrawal/{id}/{txId}`
 
 [🔹 **getWithdrawals()**](#getwithdrawals) 
 
-> **GET** `/v3/offchain/withdrawal`
-> 
 > Get withdrawals
+> 
+> **GET** `/v3/offchain/withdrawal`
 
 [🔹 **storeWithdrawal()**](#storewithdrawal) 
 
-> **POST** `/v3/offchain/withdrawal`
-> 
 > Store withdrawal
+> 
+> **POST** `/v3/offchain/withdrawal`
 
 
 
 ## `broadcastBlockchainTransaction()`
+
+> **POST** `/v3/offchain/withdrawal/broadcast`
 
 ### Type signature
 
@@ -68,11 +70,13 @@ Broadcast signed transaction and complete withdrawal
 
 ### Example
 
-[✨ View "broadcastBlockchainTransaction.php"](../../examples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
+[✨ View "broadcastBlockchainTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `cancelInProgressWithdrawal()`
+
+> **DELETE** `/v3/offchain/withdrawal/{id}`
 
 ### Type signature
 
@@ -102,11 +106,13 @@ Cancel withdrawal
 
 ### Example
 
-[✨ View "cancelInProgressWithdrawal.php"](../../examples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
+[✨ View "cancelInProgressWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `completeWithdrawal()`
+
+> **PUT** `/v3/offchain/withdrawal/{id}/{txId}`
 
 ### Type signature
 
@@ -136,11 +142,13 @@ Complete withdrawal
 
 ### Example
 
-[✨ View "completeWithdrawal.php"](../../examples/Api/WithdrawalApi/completeWithdrawal.php)
+[✨ View "completeWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/completeWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getWithdrawals()`
+
+> **GET** `/v3/offchain/withdrawal`
 
 ### Type signature
 
@@ -174,11 +182,13 @@ Get withdrawals
 
 ### Example
 
-[✨ View "getWithdrawals.php"](../../examples/Api/WithdrawalApi/getWithdrawals.php)
+[✨ View "getWithdrawals.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/getWithdrawals.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `storeWithdrawal()`
+
+> **POST** `/v3/offchain/withdrawal`
 
 ### Type signature
 
@@ -206,6 +216,6 @@ Store withdrawal
 
 ### Example
 
-[✨ View "storeWithdrawal.php"](../../examples/Api/WithdrawalApi/storeWithdrawal.php)
+[✨ View "storeWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/storeWithdrawal.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

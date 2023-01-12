@@ -10,289 +10,291 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **bloMarWithdrawFromMarketplaceSolana()**](#blomarwithdrawfrommarketplacesolana) 
 
-> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
-> 
 > Withdraw funds from the marketplace treasury account on Solana
+> 
+> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
 
 [🔹 **bloMarWithdrawFromMarketplaceSolanaKMS()**](#blomarwithdrawfrommarketplacesolanakms) 
 
-> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
-> 
 > Withdraw funds from the marketplace treasury account on Solana
+> 
+> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
 
 [🔹 **buyAssetOnMarketplace()**](#buyassetonmarketplace) 
 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-> 
 > Buy an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 [🔹 **buyAssetOnMarketplaceCelo()**](#buyassetonmarketplacecelo) 
 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-> 
 > Buy an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 [🔹 **buyAssetOnMarketplaceCeloKMS()**](#buyassetonmarketplacecelokms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-> 
 > Buy an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 [🔹 **buyAssetOnMarketplaceKMS()**](#buyassetonmarketplacekms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-> 
 > Buy an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 [🔹 **buyAssetOnMarketplaceSolana()**](#buyassetonmarketplacesolana) 
 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-> 
 > Buy an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 [🔹 **buyAssetOnMarketplaceSolanaKMS()**](#buyassetonmarketplacesolanakms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-> 
 > Buy an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 [🔹 **cancelSellAssetOnMarketplace()**](#cancelsellassetonmarketplace) 
 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-> 
 > Cancel the selling of an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 [🔹 **cancelSellAssetOnMarketplaceCelo()**](#cancelsellassetonmarketplacecelo) 
 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-> 
 > Cancel the selling of an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 [🔹 **cancelSellAssetOnMarketplaceCeloKMS()**](#cancelsellassetonmarketplacecelokms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-> 
 > Cancel the selling of an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 [🔹 **cancelSellAssetOnMarketplaceKMS()**](#cancelsellassetonmarketplacekms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-> 
 > Cancel the selling of an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 [🔹 **cancelSellAssetOnMarketplaceSolana()**](#cancelsellassetonmarketplacesolana) 
 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-> 
 > Cancel the selling of an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 [🔹 **cancelSellAssetOnMarketplaceSolanaKMS()**](#cancelsellassetonmarketplacesolanakms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-> 
 > Cancel the selling of an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 [🔹 **generateMarketplace()**](#generatemarketplace) 
 
-> **POST** `/v3/blockchain/marketplace/listing`
-> 
 > Create an NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing`
 
 [🔹 **generateMarketplaceCelo()**](#generatemarketplacecelo) 
 
-> **POST** `/v3/blockchain/marketplace/listing`
-> 
 > Create an NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing`
 
 [🔹 **generateMarketplaceCeloKMS()**](#generatemarketplacecelokms) 
 
-> **POST** `/v3/blockchain/marketplace/listing`
-> 
 > Create an NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing`
 
 [🔹 **generateMarketplaceKMS()**](#generatemarketplacekms) 
 
-> **POST** `/v3/blockchain/marketplace/listing`
-> 
 > Create an NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing`
 
 [🔹 **generateMarketplaceSolana()**](#generatemarketplacesolana) 
 
-> **POST** `/v3/blockchain/marketplace/listing`
-> 
 > Create an NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing`
 
 [🔹 **generateMarketplaceSolanaKMS()**](#generatemarketplacesolanakms) 
 
-> **POST** `/v3/blockchain/marketplace/listing`
-> 
 > Create an NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing`
 
 [🔹 **getMarketplaceFee()**](#getmarketplacefee) 
 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee`
-> 
 > Get the NFT marketplace fee
+> 
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee`
 
 [🔹 **getMarketplaceFeeRecipient()**](#getmarketplacefeerecipient) 
 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient`
-> 
 > Get the recipient of the NFT marketplace fee
+> 
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient`
 
 [🔹 **getMarketplaceInfo()**](#getmarketplaceinfo) 
 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}`
-> 
 > Get information about an NFT marketplace on Solana
+> 
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}`
 
 [🔹 **getMarketplaceListing()**](#getmarketplacelisting) 
 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}`
-> 
 > Get information about a listing on the NFT marketplace
+> 
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}`
 
 [🔹 **getMarketplaceListings()**](#getmarketplacelistings) 
 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}`
-> 
 > Get the listings of a certain type from the NFT marketplace
+> 
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}`
 
 [🔹 **sellAssetOnMarketplace()**](#sellassetonmarketplace) 
 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-> 
 > Sell an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 [🔹 **sellAssetOnMarketplaceCelo()**](#sellassetonmarketplacecelo) 
 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-> 
 > Sell an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 [🔹 **sellAssetOnMarketplaceCeloKMS()**](#sellassetonmarketplacecelokms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-> 
 > Sell an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 [🔹 **sellAssetOnMarketplaceKMS()**](#sellassetonmarketplacekms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-> 
 > Sell an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 [🔹 **sellAssetOnMarketplaceSolana()**](#sellassetonmarketplacesolana) 
 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-> 
 > Sell an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 [🔹 **sellAssetOnMarketplaceSolanaKMS()**](#sellassetonmarketplacesolanakms) 
 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-> 
 > Sell an asset on the NFT marketplace
+> 
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 [🔹 **updateFee()**](#updatefee) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-> 
 > Update the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 [🔹 **updateFeeCelo()**](#updatefeecelo) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-> 
 > Update the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 [🔹 **updateFeeCeloKMS()**](#updatefeecelokms) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-> 
 > Update the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 [🔹 **updateFeeKMS()**](#updatefeekms) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-> 
 > Update the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 [🔹 **updateFeeRecipient()**](#updatefeerecipient) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-> 
 > Update the recipient of the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 [🔹 **updateFeeRecipientCelo()**](#updatefeerecipientcelo) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-> 
 > Update the recipient of the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 [🔹 **updateFeeRecipientCeloKMS()**](#updatefeerecipientcelokms) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-> 
 > Update the recipient of the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 [🔹 **updateFeeRecipientKMS()**](#updatefeerecipientkms) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-> 
 > Update the recipient of the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 [🔹 **updateFeeRecipientSolana()**](#updatefeerecipientsolana) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-> 
 > Update the recipient of the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 [🔹 **updateFeeRecipientSolanaKMS()**](#updatefeerecipientsolanakms) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-> 
 > Update the recipient of the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 [🔹 **updateFeeSolana()**](#updatefeesolana) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-> 
 > Update the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 [🔹 **updateFeeSolanaKMS()**](#updatefeesolanakms) 
 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-> 
 > Update the NFT marketplace fee
+> 
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 [🔹 **updateMarketplaceSolana()**](#updatemarketplacesolana) 
 
-> **PUT** `/v3/blockchain/marketplace/listing`
-> 
 > Update an NFT marketplace on Solana
+> 
+> **PUT** `/v3/blockchain/marketplace/listing`
 
 [🔹 **updateMarketplaceSolanaKMS()**](#updatemarketplacesolanakms) 
 
-> **PUT** `/v3/blockchain/marketplace/listing`
-> 
 > Update an NFT marketplace on Solana
+> 
+> **PUT** `/v3/blockchain/marketplace/listing`
 
 [🔹 **withdrawFromMarketplaceSolana()**](#withdrawfrommarketplacesolana) 
 
-> **POST** `/v3/blockchain/marketplace/withdraw/fee`
-> 
 > Withdraw funds from the marketplace fee account on Solana
+> 
+> **POST** `/v3/blockchain/marketplace/withdraw/fee`
 
 [🔹 **withdrawFromMarketplaceSolanaKMS()**](#withdrawfrommarketplacesolanakms) 
 
-> **POST** `/v3/blockchain/marketplace/withdraw/fee`
-> 
 > Withdraw funds from the marketplace fee account on Solana
+> 
+> **POST** `/v3/blockchain/marketplace/withdraw/fee`
 
 
 
 ## `bloMarWithdrawFromMarketplaceSolana()`
+
+> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
 
 ### Type signature
 
@@ -320,11 +322,13 @@ Withdraw funds from the marketplace treasury account on Solana
 
 ### Example
 
-[✨ View "bloMarWithdrawFromMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php)
+[✨ View "bloMarWithdrawFromMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `bloMarWithdrawFromMarketplaceSolanaKMS()`
+
+> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
 
 ### Type signature
 
@@ -352,11 +356,13 @@ WithdrawFromMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "bloMarWithdrawFromMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php)
+[✨ View "bloMarWithdrawFromMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `buyAssetOnMarketplace()`
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 ### Type signature
 
@@ -384,11 +390,13 @@ Buy an asset on the NFT marketplace
 
 ### Example
 
-[✨ View "buyAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
+[✨ View "buyAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `buyAssetOnMarketplaceCelo()`
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 ### Type signature
 
@@ -416,11 +424,13 @@ BuyAssetOnMarketplaceCelo operation
 
 ### Example
 
-[✨ View "buyAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php)
+[✨ View "buyAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `buyAssetOnMarketplaceCeloKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 ### Type signature
 
@@ -448,11 +458,13 @@ BuyAssetOnMarketplaceCeloKMS operation
 
 ### Example
 
-[✨ View "buyAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php)
+[✨ View "buyAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `buyAssetOnMarketplaceKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 ### Type signature
 
@@ -480,11 +492,13 @@ BuyAssetOnMarketplaceKMS operation
 
 ### Example
 
-[✨ View "buyAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php)
+[✨ View "buyAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `buyAssetOnMarketplaceSolana()`
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 ### Type signature
 
@@ -512,11 +526,13 @@ BuyAssetOnMarketplaceSolana operation
 
 ### Example
 
-[✨ View "buyAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php)
+[✨ View "buyAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `buyAssetOnMarketplaceSolanaKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/buy`
 
 ### Type signature
 
@@ -544,11 +560,13 @@ BuyAssetOnMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "buyAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php)
+[✨ View "buyAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `cancelSellAssetOnMarketplace()`
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 ### Type signature
 
@@ -576,11 +594,13 @@ Cancel the selling of an asset on the NFT marketplace
 
 ### Example
 
-[✨ View "cancelSellAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php)
+[✨ View "cancelSellAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `cancelSellAssetOnMarketplaceCelo()`
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 ### Type signature
 
@@ -608,11 +628,13 @@ CancelSellAssetOnMarketplaceCelo operation
 
 ### Example
 
-[✨ View "cancelSellAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php)
+[✨ View "cancelSellAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `cancelSellAssetOnMarketplaceCeloKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 ### Type signature
 
@@ -640,11 +662,13 @@ CancelSellAssetOnMarketplaceCeloKMS operation
 
 ### Example
 
-[✨ View "cancelSellAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php)
+[✨ View "cancelSellAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `cancelSellAssetOnMarketplaceKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 ### Type signature
 
@@ -672,11 +696,13 @@ CancelSellAssetOnMarketplaceKMS operation
 
 ### Example
 
-[✨ View "cancelSellAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php)
+[✨ View "cancelSellAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `cancelSellAssetOnMarketplaceSolana()`
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 ### Type signature
 
@@ -704,11 +730,13 @@ CancelSellAssetOnMarketplaceSolana operation
 
 ### Example
 
-[✨ View "cancelSellAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php)
+[✨ View "cancelSellAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `cancelSellAssetOnMarketplaceSolanaKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/cancel`
 
 ### Type signature
 
@@ -736,11 +764,13 @@ CancelSellAssetOnMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "cancelSellAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php)
+[✨ View "cancelSellAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateMarketplace()`
+
+> **POST** `/v3/blockchain/marketplace/listing`
 
 ### Type signature
 
@@ -768,11 +798,13 @@ Create an NFT marketplace
 
 ### Example
 
-[✨ View "generateMarketplace.php"](../../examples/Api/MarketplaceApi/generateMarketplace.php)
+[✨ View "generateMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateMarketplaceCelo()`
+
+> **POST** `/v3/blockchain/marketplace/listing`
 
 ### Type signature
 
@@ -800,11 +832,13 @@ GenerateMarketplaceCelo operation
 
 ### Example
 
-[✨ View "generateMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/generateMarketplaceCelo.php)
+[✨ View "generateMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateMarketplaceCeloKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing`
 
 ### Type signature
 
@@ -832,11 +866,13 @@ GenerateMarketplaceCeloKMS operation
 
 ### Example
 
-[✨ View "generateMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php)
+[✨ View "generateMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateMarketplaceKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing`
 
 ### Type signature
 
@@ -864,11 +900,13 @@ GenerateMarketplaceKMS operation
 
 ### Example
 
-[✨ View "generateMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/generateMarketplaceKMS.php)
+[✨ View "generateMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateMarketplaceSolana()`
+
+> **POST** `/v3/blockchain/marketplace/listing`
 
 ### Type signature
 
@@ -896,11 +934,13 @@ GenerateMarketplaceSolana operation
 
 ### Example
 
-[✨ View "generateMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/generateMarketplaceSolana.php)
+[✨ View "generateMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `generateMarketplaceSolanaKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing`
 
 ### Type signature
 
@@ -928,11 +968,13 @@ GenerateMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "generateMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php)
+[✨ View "generateMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getMarketplaceFee()`
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee`
 
 ### Type signature
 
@@ -962,11 +1004,13 @@ Get the NFT marketplace fee
 
 ### Example
 
-[✨ View "getMarketplaceFee.php"](../../examples/Api/MarketplaceApi/getMarketplaceFee.php)
+[✨ View "getMarketplaceFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getMarketplaceFeeRecipient()`
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient`
 
 ### Type signature
 
@@ -996,11 +1040,13 @@ Get the recipient of the NFT marketplace fee
 
 ### Example
 
-[✨ View "getMarketplaceFeeRecipient.php"](../../examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
+[✨ View "getMarketplaceFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getMarketplaceInfo()`
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}`
 
 ### Type signature
 
@@ -1030,11 +1076,13 @@ Get information about an NFT marketplace on Solana
 
 ### Example
 
-[✨ View "getMarketplaceInfo.php"](../../examples/Api/MarketplaceApi/getMarketplaceInfo.php)
+[✨ View "getMarketplaceInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceInfo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getMarketplaceListing()`
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}`
 
 ### Type signature
 
@@ -1066,11 +1114,13 @@ Get information about a listing on the NFT marketplace
 
 ### Example
 
-[✨ View "getMarketplaceListing.php"](../../examples/Api/MarketplaceApi/getMarketplaceListing.php)
+[✨ View "getMarketplaceListing.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListing.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getMarketplaceListings()`
+
+> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}`
 
 ### Type signature
 
@@ -1102,11 +1152,13 @@ Get the listings of a certain type from the NFT marketplace
 
 ### Example
 
-[✨ View "getMarketplaceListings.php"](../../examples/Api/MarketplaceApi/getMarketplaceListings.php)
+[✨ View "getMarketplaceListings.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListings.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `sellAssetOnMarketplace()`
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 ### Type signature
 
@@ -1134,11 +1186,13 @@ Sell an asset on the NFT marketplace
 
 ### Example
 
-[✨ View "sellAssetOnMarketplace.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
+[✨ View "sellAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `sellAssetOnMarketplaceCelo()`
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 ### Type signature
 
@@ -1166,11 +1220,13 @@ SellAssetOnMarketplaceCelo operation
 
 ### Example
 
-[✨ View "sellAssetOnMarketplaceCelo.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php)
+[✨ View "sellAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `sellAssetOnMarketplaceCeloKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 ### Type signature
 
@@ -1198,11 +1254,13 @@ SellAssetOnMarketplaceCeloKMS operation
 
 ### Example
 
-[✨ View "sellAssetOnMarketplaceCeloKMS.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php)
+[✨ View "sellAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `sellAssetOnMarketplaceKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 ### Type signature
 
@@ -1230,11 +1288,13 @@ SellAssetOnMarketplaceKMS operation
 
 ### Example
 
-[✨ View "sellAssetOnMarketplaceKMS.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php)
+[✨ View "sellAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `sellAssetOnMarketplaceSolana()`
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 ### Type signature
 
@@ -1262,11 +1322,13 @@ SellAssetOnMarketplaceSolana operation
 
 ### Example
 
-[✨ View "sellAssetOnMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php)
+[✨ View "sellAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `sellAssetOnMarketplaceSolanaKMS()`
+
+> **POST** `/v3/blockchain/marketplace/listing/sell`
 
 ### Type signature
 
@@ -1294,11 +1356,13 @@ SellAssetOnMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "sellAssetOnMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php)
+[✨ View "sellAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFee()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 ### Type signature
 
@@ -1326,11 +1390,13 @@ Update the NFT marketplace fee
 
 ### Example
 
-[✨ View "updateFee.php"](../../examples/Api/MarketplaceApi/updateFee.php)
+[✨ View "updateFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFee.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeCelo()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 ### Type signature
 
@@ -1358,11 +1424,13 @@ UpdateFeeCelo operation
 
 ### Example
 
-[✨ View "updateFeeCelo.php"](../../examples/Api/MarketplaceApi/updateFeeCelo.php)
+[✨ View "updateFeeCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeCeloKMS()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 ### Type signature
 
@@ -1390,11 +1458,13 @@ UpdateFeeCeloKMS operation
 
 ### Example
 
-[✨ View "updateFeeCeloKMS.php"](../../examples/Api/MarketplaceApi/updateFeeCeloKMS.php)
+[✨ View "updateFeeCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeKMS()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 ### Type signature
 
@@ -1422,11 +1492,13 @@ UpdateFeeKMS operation
 
 ### Example
 
-[✨ View "updateFeeKMS.php"](../../examples/Api/MarketplaceApi/updateFeeKMS.php)
+[✨ View "updateFeeKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeRecipient()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 ### Type signature
 
@@ -1454,11 +1526,13 @@ Update the recipient of the NFT marketplace fee
 
 ### Example
 
-[✨ View "updateFeeRecipient.php"](../../examples/Api/MarketplaceApi/updateFeeRecipient.php)
+[✨ View "updateFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipient.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeRecipientCelo()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 ### Type signature
 
@@ -1486,11 +1560,13 @@ UpdateFeeRecipientCelo operation
 
 ### Example
 
-[✨ View "updateFeeRecipientCelo.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientCelo.php)
+[✨ View "updateFeeRecipientCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeRecipientCeloKMS()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 ### Type signature
 
@@ -1518,11 +1594,13 @@ UpdateFeeRecipientCeloKMS operation
 
 ### Example
 
-[✨ View "updateFeeRecipientCeloKMS.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php)
+[✨ View "updateFeeRecipientCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeRecipientKMS()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 ### Type signature
 
@@ -1550,11 +1628,13 @@ UpdateFeeRecipientKMS operation
 
 ### Example
 
-[✨ View "updateFeeRecipientKMS.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientKMS.php)
+[✨ View "updateFeeRecipientKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeRecipientSolana()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 ### Type signature
 
@@ -1582,11 +1662,13 @@ UpdateFeeRecipientSolana operation
 
 ### Example
 
-[✨ View "updateFeeRecipientSolana.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientSolana.php)
+[✨ View "updateFeeRecipientSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeRecipientSolanaKMS()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
 ### Type signature
 
@@ -1614,11 +1696,13 @@ UpdateFeeRecipientSolanaKMS operation
 
 ### Example
 
-[✨ View "updateFeeRecipientSolanaKMS.php"](../../examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php)
+[✨ View "updateFeeRecipientSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeSolana()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 ### Type signature
 
@@ -1646,11 +1730,13 @@ UpdateFeeSolana operation
 
 ### Example
 
-[✨ View "updateFeeSolana.php"](../../examples/Api/MarketplaceApi/updateFeeSolana.php)
+[✨ View "updateFeeSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateFeeSolanaKMS()`
+
+> **PUT** `/v3/blockchain/marketplace/listing/fee`
 
 ### Type signature
 
@@ -1678,11 +1764,13 @@ UpdateFeeSolanaKMS operation
 
 ### Example
 
-[✨ View "updateFeeSolanaKMS.php"](../../examples/Api/MarketplaceApi/updateFeeSolanaKMS.php)
+[✨ View "updateFeeSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateMarketplaceSolana()`
+
+> **PUT** `/v3/blockchain/marketplace/listing`
 
 ### Type signature
 
@@ -1710,11 +1798,13 @@ Update an NFT marketplace on Solana
 
 ### Example
 
-[✨ View "updateMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/updateMarketplaceSolana.php)
+[✨ View "updateMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateMarketplaceSolanaKMS()`
+
+> **PUT** `/v3/blockchain/marketplace/listing`
 
 ### Type signature
 
@@ -1742,11 +1832,13 @@ UpdateMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "updateMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php)
+[✨ View "updateMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `withdrawFromMarketplaceSolana()`
+
+> **POST** `/v3/blockchain/marketplace/withdraw/fee`
 
 ### Type signature
 
@@ -1774,11 +1866,13 @@ Withdraw funds from the marketplace fee account on Solana
 
 ### Example
 
-[✨ View "withdrawFromMarketplaceSolana.php"](../../examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php)
+[✨ View "withdrawFromMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `withdrawFromMarketplaceSolanaKMS()`
+
+> **POST** `/v3/blockchain/marketplace/withdraw/fee`
 
 ### Type signature
 
@@ -1806,6 +1900,6 @@ WithdrawFromMarketplaceSolanaKMS operation
 
 ### Example
 
-[✨ View "withdrawFromMarketplaceSolanaKMS.php"](../../examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php)
+[✨ View "withdrawFromMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

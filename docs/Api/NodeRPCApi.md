@@ -10,25 +10,27 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **nodeJsonPostRpcDriver()**](#nodejsonpostrpcdriver) 
 
-> **POST** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
-> 
 > Connect to the blockchain node through an RPC driver
+> 
+> **POST** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
 
 [🔹 **nodeJsonRpcGetDriver()**](#nodejsonrpcgetdriver) 
 
-> **GET** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
-> 
 > Connect to the blockchain node through an RPC driver
+> 
+> **GET** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
 
 [🔹 **nodeJsonRpcPutDriver()**](#nodejsonrpcputdriver) 
 
-> **PUT** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
-> 
 > Connect to the blockchain node through an RPC driver
+> 
+> **PUT** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
 
 
 
 ## `nodeJsonPostRpcDriver()`
+
+> **POST** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
 
 ### Type signature
 
@@ -68,11 +70,13 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-[✨ View "nodeJsonPostRpcDriver.php"](../../examples/Api/NodeRPCApi/nodeJsonPostRpcDriver.php)
+[✨ View "nodeJsonPostRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonPostRpcDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `nodeJsonRpcGetDriver()`
+
+> **GET** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
 
 ### Type signature
 
@@ -106,11 +110,13 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-[✨ View "nodeJsonRpcGetDriver.php"](../../examples/Api/NodeRPCApi/nodeJsonRpcGetDriver.php)
+[✨ View "nodeJsonRpcGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonRpcGetDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `nodeJsonRpcPutDriver()`
+
+> **PUT** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
 
 ### Type signature
 
@@ -146,6 +152,6 @@ Connect to the blockchain node through an RPC driver
 
 ### Example
 
-[✨ View "nodeJsonRpcPutDriver.php"](../../examples/Api/NodeRPCApi/nodeJsonRpcPutDriver.php)
+[✨ View "nodeJsonRpcPutDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonRpcPutDriver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

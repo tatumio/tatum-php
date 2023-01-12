@@ -10,19 +10,21 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **getDeposits()**](#getdeposits) 
 
-> **GET** `/v3/ledger/deposits`
-> 
 > List all deposits for product
+> 
+> **GET** `/v3/ledger/deposits`
 
 [🔹 **getDepositsCount()**](#getdepositscount) 
 
-> **GET** `/v3/ledger/deposits/count`
-> 
 > Count of found entities for get deposits request
+> 
+> **GET** `/v3/ledger/deposits/count`
 
 
 
 ## `getDeposits()`
+
+> **GET** `/v3/ledger/deposits`
 
 ### Type signature
 
@@ -64,11 +66,13 @@ List all deposits for product
 
 ### Example
 
-[✨ View "getDeposits.php"](../../examples/Api/DepositApi/getDeposits.php)
+[✨ View "getDeposits.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDeposits.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getDepositsCount()`
+
+> **GET** `/v3/ledger/deposits/count`
 
 ### Type signature
 
@@ -110,6 +114,6 @@ Count of found entities for get deposits request
 
 ### Example
 
-[✨ View "getDepositsCount.php"](../../examples/Api/DepositApi/getDepositsCount.php)
+[✨ View "getDepositsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDepositsCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

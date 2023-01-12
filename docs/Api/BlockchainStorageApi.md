@@ -10,31 +10,33 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **createRecord()**](#createrecord) 
 
-> **POST** `/v3/record`
-> 
 > Store a log record
+> 
+> **POST** `/v3/record`
 
 [🔹 **createRecordCelo()**](#createrecordcelo) 
 
-> **POST** `/v3/record`
-> 
 > Store a log record
+> 
+> **POST** `/v3/record`
 
 [🔹 **createRecordKMS()**](#createrecordkms) 
 
-> **POST** `/v3/record`
-> 
 > Store a log record
+> 
+> **POST** `/v3/record`
 
 [🔹 **getLog()**](#getlog) 
 
-> **GET** `/v3/record`
-> 
 > Get a log record
+> 
+> **GET** `/v3/record`
 
 
 
 ## `createRecord()`
+
+> **POST** `/v3/record`
 
 ### Type signature
 
@@ -62,11 +64,13 @@ Store a log record
 
 ### Example
 
-[✨ View "createRecord.php"](../../examples/Api/BlockchainStorageApi/createRecord.php)
+[✨ View "createRecord.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecord.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `createRecordCelo()`
+
+> **POST** `/v3/record`
 
 ### Type signature
 
@@ -94,11 +98,13 @@ CreateRecordCelo operation
 
 ### Example
 
-[✨ View "createRecordCelo.php"](../../examples/Api/BlockchainStorageApi/createRecordCelo.php)
+[✨ View "createRecordCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordCelo.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `createRecordKMS()`
+
+> **POST** `/v3/record`
 
 ### Type signature
 
@@ -126,11 +132,13 @@ CreateRecordKMS operation
 
 ### Example
 
-[✨ View "createRecordKMS.php"](../../examples/Api/BlockchainStorageApi/createRecordKMS.php)
+[✨ View "createRecordKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getLog()`
+
+> **GET** `/v3/record`
 
 ### Type signature
 
@@ -160,6 +168,6 @@ Get a log record
 
 ### Example
 
-[✨ View "getLog.php"](../../examples/Api/BlockchainStorageApi/getLog.php)
+[✨ View "getLog.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/getLog.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

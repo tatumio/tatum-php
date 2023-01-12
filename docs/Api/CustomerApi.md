@@ -10,49 +10,51 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **activateCustomer()**](#activatecustomer) 
 
-> **PUT** `/v3/ledger/customer/{id}/activate`
-> 
 > Activate customer
+> 
+> **PUT** `/v3/ledger/customer/{id}/activate`
 
 [🔹 **deactivateCustomer()**](#deactivatecustomer) 
 
-> **PUT** `/v3/ledger/customer/{id}/deactivate`
-> 
 > Deactivate customer
+> 
+> **PUT** `/v3/ledger/customer/{id}/deactivate`
 
 [🔹 **disableCustomer()**](#disablecustomer) 
 
-> **PUT** `/v3/ledger/customer/{id}/disable`
-> 
 > Disable customer
+> 
+> **PUT** `/v3/ledger/customer/{id}/disable`
 
 [🔹 **enableCustomer()**](#enablecustomer) 
 
-> **PUT** `/v3/ledger/customer/{id}/enable`
-> 
 > Enable customer
+> 
+> **PUT** `/v3/ledger/customer/{id}/enable`
 
 [🔹 **findAllCustomers()**](#findallcustomers) 
 
-> **GET** `/v3/ledger/customer`
-> 
 > List all customers
+> 
+> **GET** `/v3/ledger/customer`
 
 [🔹 **getCustomerByExternalOrInternalId()**](#getcustomerbyexternalorinternalid) 
 
-> **GET** `/v3/ledger/customer/{id}`
-> 
 > Get customer details
+> 
+> **GET** `/v3/ledger/customer/{id}`
 
 [🔹 **updateCustomer()**](#updatecustomer) 
 
-> **PUT** `/v3/ledger/customer/{id}`
-> 
 > Update customer
+> 
+> **PUT** `/v3/ledger/customer/{id}`
 
 
 
 ## `activateCustomer()`
+
+> **PUT** `/v3/ledger/customer/{id}/activate`
 
 ### Type signature
 
@@ -80,11 +82,13 @@ Activate customer
 
 ### Example
 
-[✨ View "activateCustomer.php"](../../examples/Api/CustomerApi/activateCustomer.php)
+[✨ View "activateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/activateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `deactivateCustomer()`
+
+> **PUT** `/v3/ledger/customer/{id}/deactivate`
 
 ### Type signature
 
@@ -112,11 +116,13 @@ Deactivate customer
 
 ### Example
 
-[✨ View "deactivateCustomer.php"](../../examples/Api/CustomerApi/deactivateCustomer.php)
+[✨ View "deactivateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/deactivateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `disableCustomer()`
+
+> **PUT** `/v3/ledger/customer/{id}/disable`
 
 ### Type signature
 
@@ -144,11 +150,13 @@ Disable customer
 
 ### Example
 
-[✨ View "disableCustomer.php"](../../examples/Api/CustomerApi/disableCustomer.php)
+[✨ View "disableCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/disableCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `enableCustomer()`
+
+> **PUT** `/v3/ledger/customer/{id}/enable`
 
 ### Type signature
 
@@ -176,11 +184,13 @@ Enable customer
 
 ### Example
 
-[✨ View "enableCustomer.php"](../../examples/Api/CustomerApi/enableCustomer.php)
+[✨ View "enableCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/enableCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `findAllCustomers()`
+
+> **GET** `/v3/ledger/customer`
 
 ### Type signature
 
@@ -210,11 +220,13 @@ List all customers
 
 ### Example
 
-[✨ View "findAllCustomers.php"](../../examples/Api/CustomerApi/findAllCustomers.php)
+[✨ View "findAllCustomers.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/findAllCustomers.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getCustomerByExternalOrInternalId()`
+
+> **GET** `/v3/ledger/customer/{id}`
 
 ### Type signature
 
@@ -242,11 +254,13 @@ Get customer details
 
 ### Example
 
-[✨ View "getCustomerByExternalOrInternalId.php"](../../examples/Api/CustomerApi/getCustomerByExternalOrInternalId.php)
+[✨ View "getCustomerByExternalOrInternalId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/getCustomerByExternalOrInternalId.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `updateCustomer()`
+
+> **PUT** `/v3/ledger/customer/{id}`
 
 ### Type signature
 
@@ -276,6 +290,6 @@ Update customer
 
 ### Example
 
-[✨ View "updateCustomer.php"](../../examples/Api/CustomerApi/updateCustomer.php)
+[✨ View "updateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/updateCustomer.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

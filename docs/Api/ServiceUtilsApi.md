@@ -10,31 +10,33 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **freezeApiKey()**](#freezeapikey) 
 
-> **PUT** `/v3/tatum/freeze`
-> 
 > Freeze API Key
+> 
+> **PUT** `/v3/tatum/freeze`
 
 [🔹 **getCredits()**](#getcredits) 
 
-> **GET** `/v3/tatum/usage`
-> 
 > Get information about your credit consumption for the last month
+> 
+> **GET** `/v3/tatum/usage`
 
 [🔹 **getVersion()**](#getversion) 
 
-> **GET** `/v3/tatum/version`
-> 
 > Get API version
+> 
+> **GET** `/v3/tatum/version`
 
 [🔹 **unfreezeApiKey()**](#unfreezeapikey) 
 
-> **DELETE** `/v3/tatum/freeze`
-> 
 > Unfreeze API Key
+> 
+> **DELETE** `/v3/tatum/freeze`
 
 
 
 ## `freezeApiKey()`
+
+> **PUT** `/v3/tatum/freeze`
 
 ### Type signature
 
@@ -59,11 +61,13 @@ Freeze API Key
 
 ### Example
 
-[✨ View "freezeApiKey.php"](../../examples/Api/ServiceUtilsApi/freezeApiKey.php)
+[✨ View "freezeApiKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/freezeApiKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getCredits()`
+
+> **GET** `/v3/tatum/usage`
 
 ### Type signature
 
@@ -88,11 +92,13 @@ Get information about your credit consumption for the last month
 
 ### Example
 
-[✨ View "getCredits.php"](../../examples/Api/ServiceUtilsApi/getCredits.php)
+[✨ View "getCredits.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getCredits.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `getVersion()`
+
+> **GET** `/v3/tatum/version`
 
 ### Type signature
 
@@ -117,11 +123,13 @@ Get API version
 
 ### Example
 
-[✨ View "getVersion.php"](../../examples/Api/ServiceUtilsApi/getVersion.php)
+[✨ View "getVersion.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getVersion.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `unfreezeApiKey()`
+
+> **DELETE** `/v3/tatum/freeze`
 
 ### Type signature
 
@@ -146,6 +154,6 @@ Unfreeze API Key
 
 ### Example
 
-[✨ View "unfreezeApiKey.php"](../../examples/Api/ServiceUtilsApi/unfreezeApiKey.php)
+[✨ View "unfreezeApiKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/unfreezeApiKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)

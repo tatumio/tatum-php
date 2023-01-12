@@ -10,103 +10,105 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **callOneReadSmartContractMethod()**](#callonereadsmartcontractmethod) 
 
-> **POST** `/v3/one/smartcontract`
-> 
 > Invoke a method in a smart contract on Harmony
+> 
+> **POST** `/v3/one/smartcontract`
 
 [🔹 **callOneSmartContractMethod()**](#callonesmartcontractmethod) 
 
-> **POST** `/v3/one/smartcontract`
-> 
 > Invoke a method in a smart contract on Harmony
+> 
+> **POST** `/v3/one/smartcontract`
 
 [🔹 **callOneSmartContractMethodKMS()**](#callonesmartcontractmethodkms) 
 
-> **POST** `/v3/one/smartcontract`
-> 
 > Invoke a method in a smart contract on Harmony
+> 
+> **POST** `/v3/one/smartcontract`
 
 [🔹 **oneBroadcast()**](#onebroadcast) 
 
-> **POST** `/v3/one/broadcast`
-> 
 > Broadcast signed ONE transaction
+> 
+> **POST** `/v3/one/broadcast`
 
 [🔹 **oneFormatAddress()**](#oneformataddress) 
 
-> **GET** `/v3/one/address/format/{address}`
-> 
 > Transform HEX address to Bech32 ONE address format
+> 
+> **GET** `/v3/one/address/format/{address}`
 
 [🔹 **oneGenerateAddress()**](#onegenerateaddress) 
 
-> **GET** `/v3/one/address/{xpub}/{index}`
-> 
 > Generate ONE account address from Extended public key
+> 
+> **GET** `/v3/one/address/{xpub}/{index}`
 
 [🔹 **oneGenerateAddressPrivateKey()**](#onegenerateaddressprivatekey) 
 
-> **POST** `/v3/one/wallet/priv`
-> 
 > Generate ONE private key
+> 
+> **POST** `/v3/one/wallet/priv`
 
 [🔹 **oneGenerateWallet()**](#onegeneratewallet) 
 
-> **GET** `/v3/one/wallet`
-> 
 > Generate ONE wallet
+> 
+> **GET** `/v3/one/wallet`
 
 [🔹 **oneGetBalance()**](#onegetbalance) 
 
-> **GET** `/v3/one/account/balance/{address}`
-> 
 > Get ONE Account balance
+> 
+> **GET** `/v3/one/account/balance/{address}`
 
 [🔹 **oneGetBlock()**](#onegetblock) 
 
-> **GET** `/v3/one/block/{hash}`
-> 
 > Get ONE block by hash
+> 
+> **GET** `/v3/one/block/{hash}`
 
 [🔹 **oneGetCurrentBlock()**](#onegetcurrentblock) 
 
-> **GET** `/v3/one/block/current`
-> 
 > Get current block number
+> 
+> **GET** `/v3/one/block/current`
 
 [🔹 **oneGetTransaction()**](#onegettransaction) 
 
-> **GET** `/v3/one/transaction/{hash}`
-> 
 > Get ONE Transaction
+> 
+> **GET** `/v3/one/transaction/{hash}`
 
 [🔹 **oneGetTransactionCount()**](#onegettransactioncount) 
 
-> **GET** `/v3/one/transaction/count/{address}`
-> 
 > Get count of outgoing ONE transactions
+> 
+> **GET** `/v3/one/transaction/count/{address}`
 
 [🔹 **oneWeb3Driver()**](#oneweb3driver) 
 
-> **POST** `/v3/one/web3/{xApiKey}`
-> 
 > Web3 HTTP driver
+> 
+> **POST** `/v3/one/web3/{xApiKey}`
 
 [🔹 **transferOneBlockchain()**](#transferoneblockchain) 
 
-> **POST** `/v3/one/transaction`
-> 
 > Send ONE / HRM20 from account to account
+> 
+> **POST** `/v3/one/transaction`
 
 [🔹 **transferOneBlockchainKMS()**](#transferoneblockchainkms) 
 
-> **POST** `/v3/one/transaction`
-> 
 > Send ONE / HRM20 from account to account
+> 
+> **POST** `/v3/one/transaction`
 
 
 
 ## `callOneReadSmartContractMethod()`
+
+> **POST** `/v3/one/smartcontract`
 
 ### Type signature
 
@@ -136,11 +138,13 @@ Invoke a method in a smart contract on Harmony
 
 ### Example
 
-[✨ View "callOneReadSmartContractMethod.php"](../../examples/Api/HarmonyApi/callOneReadSmartContractMethod.php)
+[✨ View "callOneReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneReadSmartContractMethod.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `callOneSmartContractMethod()`
+
+> **POST** `/v3/one/smartcontract`
 
 ### Type signature
 
@@ -170,11 +174,13 @@ CallOneSmartContractMethod operation
 
 ### Example
 
-[✨ View "callOneSmartContractMethod.php"](../../examples/Api/HarmonyApi/callOneSmartContractMethod.php)
+[✨ View "callOneSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethod.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `callOneSmartContractMethodKMS()`
+
+> **POST** `/v3/one/smartcontract`
 
 ### Type signature
 
@@ -204,11 +210,13 @@ CallOneSmartContractMethodKMS operation
 
 ### Example
 
-[✨ View "callOneSmartContractMethodKMS.php"](../../examples/Api/HarmonyApi/callOneSmartContractMethodKMS.php)
+[✨ View "callOneSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethodKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneBroadcast()`
+
+> **POST** `/v3/one/broadcast`
 
 ### Type signature
 
@@ -238,11 +246,13 @@ Broadcast signed ONE transaction
 
 ### Example
 
-[✨ View "oneBroadcast.php"](../../examples/Api/HarmonyApi/oneBroadcast.php)
+[✨ View "oneBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneBroadcast.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneFormatAddress()`
+
+> **GET** `/v3/one/address/format/{address}`
 
 ### Type signature
 
@@ -270,11 +280,13 @@ Transform HEX address to Bech32 ONE address format
 
 ### Example
 
-[✨ View "oneFormatAddress.php"](../../examples/Api/HarmonyApi/oneFormatAddress.php)
+[✨ View "oneFormatAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneFormatAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGenerateAddress()`
+
+> **GET** `/v3/one/address/{xpub}/{index}`
 
 ### Type signature
 
@@ -304,11 +316,13 @@ Generate ONE account address from Extended public key
 
 ### Example
 
-[✨ View "oneGenerateAddress.php"](../../examples/Api/HarmonyApi/oneGenerateAddress.php)
+[✨ View "oneGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddress.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGenerateAddressPrivateKey()`
+
+> **POST** `/v3/one/wallet/priv`
 
 ### Type signature
 
@@ -336,11 +350,13 @@ Generate ONE private key
 
 ### Example
 
-[✨ View "oneGenerateAddressPrivateKey.php"](../../examples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
+[✨ View "oneGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGenerateWallet()`
+
+> **GET** `/v3/one/wallet`
 
 ### Type signature
 
@@ -368,11 +384,13 @@ Generate ONE wallet
 
 ### Example
 
-[✨ View "oneGenerateWallet.php"](../../examples/Api/HarmonyApi/oneGenerateWallet.php)
+[✨ View "oneGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateWallet.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetBalance()`
+
+> **GET** `/v3/one/account/balance/{address}`
 
 ### Type signature
 
@@ -402,11 +420,13 @@ Get ONE Account balance
 
 ### Example
 
-[✨ View "oneGetBalance.php"](../../examples/Api/HarmonyApi/oneGetBalance.php)
+[✨ View "oneGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBalance.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetBlock()`
+
+> **GET** `/v3/one/block/{hash}`
 
 ### Type signature
 
@@ -436,11 +456,13 @@ Get ONE block by hash
 
 ### Example
 
-[✨ View "oneGetBlock.php"](../../examples/Api/HarmonyApi/oneGetBlock.php)
+[✨ View "oneGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetCurrentBlock()`
+
+> **GET** `/v3/one/block/current`
 
 ### Type signature
 
@@ -465,11 +487,13 @@ Get current block number
 
 ### Example
 
-[✨ View "oneGetCurrentBlock.php"](../../examples/Api/HarmonyApi/oneGetCurrentBlock.php)
+[✨ View "oneGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetCurrentBlock.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetTransaction()`
+
+> **GET** `/v3/one/transaction/{hash}`
 
 ### Type signature
 
@@ -499,11 +523,13 @@ Get ONE Transaction
 
 ### Example
 
-[✨ View "oneGetTransaction.php"](../../examples/Api/HarmonyApi/oneGetTransaction.php)
+[✨ View "oneGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransaction.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneGetTransactionCount()`
+
+> **GET** `/v3/one/transaction/count/{address}`
 
 ### Type signature
 
@@ -533,11 +559,13 @@ Get count of outgoing ONE transactions
 
 ### Example
 
-[✨ View "oneGetTransactionCount.php"](../../examples/Api/HarmonyApi/oneGetTransactionCount.php)
+[✨ View "oneGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransactionCount.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `oneWeb3Driver()`
+
+> **POST** `/v3/one/web3/{xApiKey}`
 
 ### Type signature
 
@@ -569,11 +597,13 @@ Web3 HTTP driver
 
 ### Example
 
-[✨ View "oneWeb3Driver.php"](../../examples/Api/HarmonyApi/oneWeb3Driver.php)
+[✨ View "oneWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneWeb3Driver.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferOneBlockchain()`
+
+> **POST** `/v3/one/transaction`
 
 ### Type signature
 
@@ -603,11 +633,13 @@ Send ONE / HRM20 from account to account
 
 ### Example
 
-[✨ View "transferOneBlockchain.php"](../../examples/Api/HarmonyApi/transferOneBlockchain.php)
+[✨ View "transferOneBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchain.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
 ## `transferOneBlockchainKMS()`
+
+> **POST** `/v3/one/transaction`
 
 ### Type signature
 
@@ -637,6 +669,6 @@ TransferOneBlockchainKMS operation
 
 ### Example
 
-[✨ View "transferOneBlockchainKMS.php"](../../examples/Api/HarmonyApi/transferOneBlockchainKMS.php)
+[✨ View "transferOneBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchainKMS.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
