@@ -68,7 +68,10 @@ void (empty response body)
 
 Complete pending transaction to sign
 
-<h4>2 credits per API call.</h4><br/> <p>Mark pending transaction to sign as a complete and update it with a transactionID from the blockchain.</p>
+<h4>2 credits per API call.</h4>
+
+ <p>Mark pending transaction to sign as a complete and update it with a transactionID from the blockchain.</p>
+
 
 ### Example
 
@@ -104,7 +107,10 @@ void (empty response body)
 
 Delete transaction
 
-<h4>2 credits per API call.</h4><br/><p>Delete transaction to be signed. When deleting offchain transaction, linked withdrawal will be cancelled automatically.</p>
+<h4>2 credits per API call.</h4>
+
+<p>Delete transaction to be signed. When deleting offchain transaction, linked withdrawal will be cancelled automatically.</p>
+
 
 ### Example
 
@@ -138,7 +144,10 @@ Name | Type | Description  | Notes
 
 Get transaction details
 
-<h4>1 credit per API call.</h4><br/><p>Get detail of transaction to be signed / that was already signed and contains transactionId.</p>
+<h4>1 credit per API call.</h4>
+
+<p>Get detail of transaction to be signed / that was already signed and contains transactionId.</p>
+
 
 ### Example
 
@@ -174,7 +183,9 @@ Name | Type | Description  | Notes
 
 Get pending transactions to sign
 
-<p><b>1 credit per API call</b></p> <p>Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.</p>
+<p><b>1 credit per API call</b></p>
+ <p>Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.</p>
+
 
 ### Example
 
@@ -210,7 +221,10 @@ Name | Type | Description  | Notes
 
 Get pending transactions to sign
 
-<p><b>1 credit for every 500 signature IDs per API call</b></p> <p>Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.</p> <p><b>NOTE:</b> This API works only in KMS v5.0 or later. If you use KMS older than v5.0, use <a href="#operation/GetPendingTransactionsToSign">this API</a> instead.</p>
+<p><b>1 credit for every 500 signature IDs per API call</b></p>
+ <p>Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.</p>
+ <p><b>NOTE:</b> This API works only in KMS v5.0 or later. If you use KMS older than v5.0, use <a href="#operation/GetPendingTransactionsToSign">this API</a> instead.</p>
+
 
 ### Example
 

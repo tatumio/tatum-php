@@ -78,7 +78,10 @@ void (empty response body)
 
 Activate customer
 
-<h4>2 credits per API call.</h4><br/><p>Activated customer is able to do any operation.</p>
+<h4>2 credits per API call.</h4>
+
+<p>Activated customer is able to do any operation.</p>
+
 
 ### Example
 
@@ -112,7 +115,10 @@ void (empty response body)
 
 Deactivate customer
 
-<h4>2 credits per API call.</h4><br/><p>Deactivate customer is not able to do any operation. Customer can be deactivated only when all their accounts are already deactivated.</p>
+<h4>2 credits per API call.</h4>
+
+<p>Deactivate customer is not able to do any operation. Customer can be deactivated only when all their accounts are already deactivated.</p>
+
 
 ### Example
 
@@ -146,7 +152,10 @@ void (empty response body)
 
 Disable customer
 
-<h4>2 credits per API call.</h4><br/><p>Disabled customer cannot perform end-user operations, such as create new accounts or send transactions. Available balance on all accounts is set to 0. Account balance will stay untouched.</p>
+<h4>2 credits per API call.</h4>
+
+<p>Disabled customer cannot perform end-user operations, such as create new accounts or send transactions. Available balance on all accounts is set to 0. Account balance will stay untouched.</p>
+
 
 ### Example
 
@@ -180,7 +189,10 @@ void (empty response body)
 
 Enable customer
 
-<h4>2 credits per API call.</h4><br/><p>Enabled customer can perform all operations. By default all customers are enabled. All previously blocked account balances will be unblocked.</p>
+<h4>2 credits per API call.</h4>
+
+<p>Enabled customer can perform all operations. By default all customers are enabled. All previously blocked account balances will be unblocked.</p>
+
 
 ### Example
 
@@ -216,7 +228,10 @@ Name | Type | Description  | Notes
 
 List all customers
 
-<h4>1 credit per API call.</h4><br/> <p>List of all customers. Also inactive an disabled customers are present.</p>
+<h4>1 credit per API call.</h4>
+
+ <p>List of all customers. Also inactive an disabled customers are present.</p>
+
 
 ### Example
 
@@ -250,7 +265,10 @@ Name | Type | Description  | Notes
 
 Get customer details
 
-<h4>1 credit per API call.</h4><br/><p>Using anonymized external ID or internal customer ID you can access customer detail information. Internal ID is needed to call other customer related methods.</p>
+<h4>1 credit per API call.</h4>
+
+<p>Using anonymized external ID or internal customer ID you can access customer detail information. Internal ID is needed to call other customer related methods.</p>
+
 
 ### Example
 
@@ -286,7 +304,10 @@ Name | Type | Description  | Notes
 
 Update customer
 
-<h4>2 credits per API call.</h4><br/><p>This method is helpful in case your primary system will change ID's or customer will change the country he/she is supposed to be in compliance with.</p>
+<h4>2 credits per API call.</h4>
+
+<p>This method is helpful in case your primary system will change ID's or customer will change the country he/she is supposed to be in compliance with.</p>
+
 
 ### Example
 

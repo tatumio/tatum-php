@@ -42,7 +42,12 @@ Name | Type | Description  | Notes
 
 Check malicous address
 
-<h4>1 credit per API call.</h4><br/> <p>Check, if the blockchain address is malicous. Malicous address can contain assets from the DarkWeb, is connected to the scam projects or contains stolen funds.</p><br/> <p>Supported Chains: ETH, BTC, LTC</p>
+<h4>1 credit per API call.</h4>
+
+ <p>Check, if the blockchain address is malicous. Malicous address can contain assets from the DarkWeb, is connected to the scam projects or contains stolen funds.</p>
+
+ <p>Supported Chains: ETH, BTC, LTC</p>
+
 
 ### Example
 
