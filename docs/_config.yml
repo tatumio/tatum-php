@@ -1,6 +1,6 @@
 name: Tatum - PHP SDK
 description: A flexible framework to build, run, and scale blockchain apps with PHP
-remote_theme: pages-themes/leap-day@v0.2.0
+remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme
 show_downloads: true
