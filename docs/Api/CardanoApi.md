@@ -120,7 +120,9 @@ Name | Type | Description  | Notes
 
 Broadcast signed Ada transaction
 
-<p><b>Support for Cardano is deprecated.<br/> You can work with Cardano by <a href="https://apidoc.tatum.io/tag/Node-RPC#operation/NodeJsonPostRpcDriver" target="_blank">connecting directly to a blockchain node provided by Tatum</a>.</b></p><br/> <h4>2 credits per API call.</h4> <p>Broadcasts a signed transaction to the Ada blockchain. This method is used internally from Tatum KMS or Tatum Client Libraries. It is possible to create a custom signing mechanism and only use this method for broadcasting data to the blockchain.</p>
+<p><b>Support for Cardano is deprecated.<br/> You can work with Cardano by <a href="https://apidoc.tatum.io/tag/Node-RPC#operation/NodeJsonPostRpcDriver" target="_blank">connecting directly to a blockchain node provided by Tatum</a>.</b></p>
+
+<h4>2 credits per API call.</h4> <p>Broadcasts a signed transaction to the Ada blockchain. This method is used internally from Tatum KMS or Tatum Client Libraries. It is possible to create a custom signing mechanism and only use this method for broadcasting data to the blockchain.</p>
 
 ### Example
 
