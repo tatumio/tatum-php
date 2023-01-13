@@ -23,18 +23,18 @@ $arg_update_cashback_value_for_author_nft_kms_celo = new \Tatum\Model\UpdateCash
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->updateCashbackValueForAuthorNftKMSCelo($arg_update_cashback_value_for_author_nft_kms_celo, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSCelo(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSCelo(): " . $exc->getMessage() . PHP_EOL;
 }

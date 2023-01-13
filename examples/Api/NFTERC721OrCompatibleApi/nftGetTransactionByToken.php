@@ -39,18 +39,18 @@ $arg_from = 1087623;
 $arg_to = 1087823;
 
 try {
+
     /** @var \Tatum\Model\NftTx[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->nftGetTransactionByToken($arg_chain, $arg_token_id, $arg_token_address, $arg_page_size, $arg_offset, $arg_from, $arg_to);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetTransactionByToken(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetTransactionByToken(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->nftGetTransactionByToken(): " . $exc->getMessage() . PHP_EOL;
 }

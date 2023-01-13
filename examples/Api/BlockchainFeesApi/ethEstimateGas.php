@@ -23,18 +23,18 @@ $arg_eth_estimate_gas = new \Tatum\Model\EthEstimateGas();
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\EthGasEstimation $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->ethEstimateGas($arg_eth_estimate_gas, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->ethEstimateGas(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->ethEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->ethEstimateGas(): " . $exc->getMessage() . PHP_EOL;
 }

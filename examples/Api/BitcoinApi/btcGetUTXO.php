@@ -24,18 +24,18 @@ $arg_hash = '53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc';
 $arg_index = 0;
 
 try {
+
     /** @var \Tatum\Model\BtcUTXO $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bitcoin()
         ->btcGetUTXO($arg_hash, $arg_index);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bitcoin()->btcGetUTXO(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bitcoin()->btcGetUTXO(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bitcoin()->btcGetUTXO(): " . $exc->getMessage() . PHP_EOL;
 }

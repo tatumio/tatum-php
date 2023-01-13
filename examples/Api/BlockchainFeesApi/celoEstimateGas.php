@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_celo_estimate_gas = new \Tatum\Model\CeloEstimateGas();
 
 try {
+
     /** @var \Tatum\Model\CeloEstimateGas200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->celoEstimateGas($arg_celo_estimate_gas);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->celoEstimateGas(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->celoEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->celoEstimateGas(): " . $exc->getMessage() . PHP_EOL;
 }

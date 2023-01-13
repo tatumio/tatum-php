@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_solana_blockchain = new \Tatum\Model\TransferSolanaBlockchain();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->solana()
         ->transferSolanaBlockchain($arg_transfer_solana_blockchain);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->solana()->transferSolanaBlockchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->solana()->transferSolanaBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->solana()->transferSolanaBlockchain(): " . $exc->getMessage() . PHP_EOL;
 }

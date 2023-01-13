@@ -24,14 +24,15 @@ $arg_id = 'id_example';
 $arg_revert = true;
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->withdrawal()
-        ->cancelInProgressWithdrawal($arg_id, $arg_revert);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->withdrawal()->cancelInProgressWithdrawal(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->cancelInProgressWithdrawal($arg_id, $arg_revert);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->withdrawal()->cancelInProgressWithdrawal(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->withdrawal()->cancelInProgressWithdrawal(): " . $exc->getMessage() . PHP_EOL;
 }

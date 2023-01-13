@@ -29,18 +29,18 @@ $arg_offset = 0;
 $arg_count = true;
 
 try {
+
     /** @var \Tatum\Model\GetTransactionsByAccountId200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->transaction()
         ->getTransactionsByAccountId($arg_transaction_filter, $arg_page_size, $arg_offset, $arg_count);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->transaction()->getTransactionsByAccountId(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->transaction()->getTransactionsByAccountId(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->transaction()->getTransactionsByAccountId(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_celo = new \Tatum\Model\TransferCelo();
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferCelo($arg_transfer_celo);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferCelo(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->transferCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->transferCelo(): " . $exc->getMessage() . PHP_EOL;
 }

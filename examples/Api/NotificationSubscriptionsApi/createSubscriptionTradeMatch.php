@@ -23,18 +23,18 @@ $arg_create_subscription_trade_match = new \Tatum\Model\CreateSubscriptionTradeM
 $arg_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\Id $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->notificationSubscriptions()
         ->createSubscriptionTradeMatch($arg_create_subscription_trade_match, $arg_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->createSubscriptionTradeMatch(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->notificationSubscriptions()->createSubscriptionTradeMatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->notificationSubscriptions()->createSubscriptionTradeMatch(): " . $exc->getMessage() . PHP_EOL;
 }

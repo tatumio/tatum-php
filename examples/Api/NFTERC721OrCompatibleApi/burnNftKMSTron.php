@@ -23,18 +23,18 @@ $arg_burn_nft_kms_tron = new \Tatum\Model\BurnNftKMSTron();
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->burnNftKMSTron($arg_burn_nft_kms_tron, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->burnNftKMSTron(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->burnNftKMSTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->burnNftKMSTron(): " . $exc->getMessage() . PHP_EOL;
 }

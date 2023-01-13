@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_tron_blockchain = new \Tatum\Model\TransferTronBlockchain();
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->tron()
         ->transferTronBlockchain($arg_transfer_tron_blockchain);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->transferTronBlockchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->tron()->transferTronBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->tron()->transferTronBlockchain(): " . $exc->getMessage() . PHP_EOL;
 }

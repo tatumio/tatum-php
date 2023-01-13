@@ -38,18 +38,18 @@ $arg_chain_type = 'avax-c';
 $arg_rpc_path = 'v2/accounts';
 
 try {
+
     /** @var object $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nodeRPC()
         ->nodeJsonPostRpcDriver($arg_chain, $arg_body, $arg_x_api_key, $arg_node_type, $arg_testnet_type, $arg_chain_type, $arg_rpc_path);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nodeRPC()->nodeJsonPostRpcDriver(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nodeRPC()->nodeJsonPostRpcDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nodeRPC()->nodeJsonPostRpcDriver(): " . $exc->getMessage() . PHP_EOL;
 }

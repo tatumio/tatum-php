@@ -24,18 +24,18 @@ $arg_id = '3ad54647-4166-4d34-9186-fd46caaba945';
 $arg_export = false;
 
 try {
+
     /** @var \Tatum\Model\CustodialManagedAddress[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->custodialManagedWallets()
         ->custodialGetWallet($arg_id, $arg_export);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->custodialManagedWallets()->custodialGetWallet(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->custodialManagedWallets()->custodialGetWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->custodialManagedWallets()->custodialGetWallet(): " . $exc->getMessage() . PHP_EOL;
 }

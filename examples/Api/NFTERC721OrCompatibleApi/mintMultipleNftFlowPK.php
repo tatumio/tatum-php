@@ -23,18 +23,18 @@ $arg_mint_multiple_nft_flow_pk = new \Tatum\Model\MintMultipleNftFlowPK();
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintMultipleNftMinter200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->mintMultipleNftFlowPK($arg_mint_multiple_nft_flow_pk, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftFlowPK(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftFlowPK(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftFlowPK(): " . $exc->getMessage() . PHP_EOL;
 }

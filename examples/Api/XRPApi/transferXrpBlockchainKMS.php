@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_xrp_blockchain_kms = new \Tatum\Model\TransferXrpBlockchainKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->xRP()
         ->transferXrpBlockchainKMS($arg_transfer_xrp_blockchain_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->transferXrpBlockchainKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->xRP()->transferXrpBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->xRP()->transferXrpBlockchainKMS(): " . $exc->getMessage() . PHP_EOL;
 }

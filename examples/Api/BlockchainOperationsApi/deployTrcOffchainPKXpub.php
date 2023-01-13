@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_deploy_trc_offchain_pk_xpub = new \Tatum\Model\DeployTrcOffchainPKXpub();
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->deployTrcOffchainPKXpub($arg_deploy_trc_offchain_pk_xpub);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->deployTrcOffchainPKXpub(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->deployTrcOffchainPKXpub(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->deployTrcOffchainPKXpub(): " . $exc->getMessage() . PHP_EOL;
 }

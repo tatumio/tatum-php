@@ -23,18 +23,18 @@ $arg_id = '5e6be89ee6aa436299950c3f';
 $arg_block_amount = new \Tatum\Model\BlockAmount();
 
 try {
+
     /** @var \Tatum\Model\Id $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->account()
         ->blockAmount($arg_id, $arg_block_amount);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->blockAmount(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->account()->blockAmount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->account()->blockAmount(): " . $exc->getMessage() . PHP_EOL;
 }

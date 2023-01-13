@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_xdc_estimate_gas = new \Tatum\Model\XdcEstimateGas();
 
 try {
+
     /** @var \Tatum\Model\PolygonEstimateGas200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->xdcEstimateGas($arg_xdc_estimate_gas);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->xdcEstimateGas(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->xdcEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->xdcEstimateGas(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_offchain_estimate_fee = new \Tatum\Model\OffchainEstimateFee();
 
 try {
+
     /** @var \Tatum\Model\FeeBtc $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->virtualAccountBlockchainFees()
         ->offchainEstimateFee($arg_offchain_estimate_fee);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->virtualAccountBlockchainFees()->offchainEstimateFee(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->virtualAccountBlockchainFees()->offchainEstimateFee(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->virtualAccountBlockchainFees()->offchainEstimateFee(): " . $exc->getMessage() . PHP_EOL;
 }

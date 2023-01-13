@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_withdrawal = new \Tatum\Model\Withdrawal();
 
 try {
+
     /** @var \Tatum\Model\WithdrawalResponse $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->withdrawal()
         ->storeWithdrawal($arg_withdrawal);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->withdrawal()->storeWithdrawal(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->withdrawal()->storeWithdrawal(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->withdrawal()->storeWithdrawal(): " . $exc->getMessage() . PHP_EOL;
 }

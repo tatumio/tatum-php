@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_list_oder_book_active_sell_body = new \Tatum\Model\ListOderBookActiveSellBody();
 
 try {
+
     /** @var \Tatum\Model\Trade[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->orderBook()
         ->getSellTradesBody($arg_list_oder_book_active_sell_body);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->orderBook()->getSellTradesBody(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->orderBook()->getSellTradesBody(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->orderBook()->getSellTradesBody(): " . $exc->getMessage() . PHP_EOL;
 }

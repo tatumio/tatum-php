@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = 647065;
 
 try {
+
     /** @var \Tatum\Model\XdcBlock $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->xinFin()
         ->xdcGetBlock($arg_hash);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xinFin()->xdcGetBlock(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->xinFin()->xdcGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->xinFin()->xdcGetBlock(): " . $exc->getMessage() . PHP_EOL;
 }

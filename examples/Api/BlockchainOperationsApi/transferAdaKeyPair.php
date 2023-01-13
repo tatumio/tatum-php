@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_ada_key_pair = new \Tatum\Model\TransferAdaKeyPair();
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferAdaKeyPair($arg_transfer_ada_key_pair);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferAdaKeyPair(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->transferAdaKeyPair(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->transferAdaKeyPair(): " . $exc->getMessage() . PHP_EOL;
 }

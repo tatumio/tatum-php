@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_update_fee_kms = new \Tatum\Model\UpdateFeeKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->marketplace()
         ->updateFeeKMS($arg_update_fee_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->updateFeeKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->marketplace()->updateFeeKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->marketplace()->updateFeeKMS(): " . $exc->getMessage() . PHP_EOL;
 }

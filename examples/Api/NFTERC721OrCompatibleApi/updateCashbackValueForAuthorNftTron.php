@@ -23,18 +23,18 @@ $arg_update_cashback_value_for_author_nft_tron = new \Tatum\Model\UpdateCashback
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->updateCashbackValueForAuthorNftTron($arg_update_cashback_value_for_author_nft_tron, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftTron(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftTron(): " . $exc->getMessage() . PHP_EOL;
 }

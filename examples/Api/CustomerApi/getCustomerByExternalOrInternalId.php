@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_id = 'id_example';
 
 try {
+
     /** @var \Tatum\Model\Customer $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->customer()
         ->getCustomerByExternalOrInternalId($arg_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->customer()->getCustomerByExternalOrInternalId(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->customer()->getCustomerByExternalOrInternalId(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->customer()->getCustomerByExternalOrInternalId(): " . $exc->getMessage() . PHP_EOL;
 }

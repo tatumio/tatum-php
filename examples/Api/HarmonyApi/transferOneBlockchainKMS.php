@@ -23,18 +23,18 @@ $arg_transfer_one_blockchain_kms = new \Tatum\Model\TransferOneBlockchainKMS();
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->harmony()
         ->transferOneBlockchainKMS($arg_transfer_one_blockchain_kms, $arg_shard_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->harmony()->transferOneBlockchainKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->harmony()->transferOneBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->harmony()->transferOneBlockchainKMS(): " . $exc->getMessage() . PHP_EOL;
 }

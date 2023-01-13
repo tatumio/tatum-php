@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_buy_asset_on_marketplace = new \Tatum\Model\BuyAssetOnMarketplace();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->marketplace()
         ->buyAssetOnMarketplace($arg_buy_asset_on_marketplace);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->buyAssetOnMarketplace(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->marketplace()->buyAssetOnMarketplace(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->marketplace()->buyAssetOnMarketplace(): " . $exc->getMessage() . PHP_EOL;
 }

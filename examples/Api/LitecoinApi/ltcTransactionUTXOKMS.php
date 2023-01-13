@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_ltc_transaction_utxokms = new \Tatum\Model\LtcTransactionUTXOKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->litecoin()
         ->ltcTransactionUTXOKMS($arg_ltc_transaction_utxokms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->litecoin()->ltcTransactionUTXOKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->litecoin()->ltcTransactionUTXOKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->litecoin()->ltcTransactionUTXOKMS(): " . $exc->getMessage() . PHP_EOL;
 }

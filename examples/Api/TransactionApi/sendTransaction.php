@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_create_transaction = new \Tatum\Model\CreateTransaction();
 
 try {
+
     /** @var \Tatum\Model\TransactionResult $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->transaction()
         ->sendTransaction($arg_create_transaction);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->transaction()->sendTransaction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->transaction()->sendTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->transaction()->sendTransaction(): " . $exc->getMessage() . PHP_EOL;
 }

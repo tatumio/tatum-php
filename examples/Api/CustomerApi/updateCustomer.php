@@ -23,18 +23,18 @@ $arg_id = 'id_example';
 $arg_customer_update = new \Tatum\Model\CustomerUpdate();
 
 try {
+
     /** @var \Tatum\Model\Customer $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->customer()
         ->updateCustomer($arg_id, $arg_customer_update);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->customer()->updateCustomer(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->customer()->updateCustomer(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->customer()->updateCustomer(): " . $exc->getMessage() . PHP_EOL;
 }

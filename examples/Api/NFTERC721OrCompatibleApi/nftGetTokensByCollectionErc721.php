@@ -30,18 +30,18 @@ $arg_address = '0x80d8bac9a6901698b3749fe336bbd1385c1f98f2';
 $arg_offset = 0;
 
 try {
+
     /** @var \Tatum\Model\NftTokenByCollectionErc721[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->nftGetTokensByCollectionErc721($arg_chain, $arg_page_size, $arg_address, $arg_offset);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(): " . $exc->getMessage() . PHP_EOL;
 }

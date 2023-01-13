@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_btc_transaction_from_address_kms = new \Tatum\Model\BtcTransactionFromAddressKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bitcoin()
         ->btcTransactionFromAddressKMS($arg_btc_transaction_from_address_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bitcoin()->btcTransactionFromAddressKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bitcoin()->btcTransactionFromAddressKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bitcoin()->btcTransactionFromAddressKMS(): " . $exc->getMessage() . PHP_EOL;
 }

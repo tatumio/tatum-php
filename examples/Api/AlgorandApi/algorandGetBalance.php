@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_address = 'TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4';
 
 try {
+
     /** @var \Tatum\Model\AlgorandGetBalance200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->algorand()
         ->algorandGetBalance($arg_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algorandGetBalance(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->algorand()->algorandGetBalance(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->algorand()->algorandGetBalance(): " . $exc->getMessage() . PHP_EOL;
 }

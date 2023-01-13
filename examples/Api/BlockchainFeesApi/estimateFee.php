@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_estimate_fee = new \Tatum\Model\EstimateFee();
 
 try {
+
     /** @var \Tatum\Model\EstimateFee200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->estimateFee($arg_estimate_fee);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->estimateFee(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->estimateFee(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->estimateFee(): " . $exc->getMessage() . PHP_EOL;
 }

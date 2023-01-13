@@ -26,18 +26,18 @@ $arg_algod_path = 'v2/accounts';
 $arg_algo_node_post_driver_request = new \Tatum\Model\AlgoNodePostDriverRequest();
 
 try {
+
     /** @var \Tatum\Model\AlgoNodePostDriver200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->algorand()
         ->algoNodePostDriver($arg_x_api_key, $arg_algod_path, $arg_algo_node_post_driver_request);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algoNodePostDriver(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->algorand()->algoNodePostDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->algorand()->algoNodePostDriver(): " . $exc->getMessage() . PHP_EOL;
 }

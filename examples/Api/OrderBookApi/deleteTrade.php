@@ -21,14 +21,15 @@ $sdk = new \Tatum\Sdk();
 $arg_id = '5e68c66581f2ee32bc354087';
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->orderBook()
-        ->deleteTrade($arg_id);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->orderBook()->deleteTrade(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->deleteTrade($arg_id);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->orderBook()->deleteTrade(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->orderBook()->deleteTrade(): " . $exc->getMessage() . PHP_EOL;
 }

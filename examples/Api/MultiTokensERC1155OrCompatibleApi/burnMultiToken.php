@@ -23,18 +23,18 @@ $arg_burn_multi_token = new \Tatum\Model\BurnMultiToken();
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->multiTokensERC1155OrCompatible()
         ->burnMultiToken($arg_burn_multi_token, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->burnMultiToken(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->burnMultiToken(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->multiTokensERC1155OrCompatible()->burnMultiToken(): " . $exc->getMessage() . PHP_EOL;
 }

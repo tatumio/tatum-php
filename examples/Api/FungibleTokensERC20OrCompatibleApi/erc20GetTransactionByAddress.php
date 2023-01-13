@@ -42,18 +42,18 @@ $arg_to = 1087823;
 $arg_sort = 'ASC';
 
 try {
+
     /** @var \Tatum\Model\FungibleTx[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->fungibleTokensERC20OrCompatible()
         ->erc20GetTransactionByAddress($arg_chain, $arg_address, $arg_token_address, $arg_page_size, $arg_offset, $arg_from, $arg_to, $arg_sort);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
 }

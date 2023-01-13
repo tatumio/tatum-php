@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_bch_rpc_driver_request = new \Tatum\Model\BchRpcDriverRequest();
 
 try {
+
     /** @var object $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->dogecoin()
         ->dogeRpcDriver($arg_bch_rpc_driver_request);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->dogecoin()->dogeRpcDriver(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->dogecoin()->dogeRpcDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->dogecoin()->dogeRpcDriver(): " . $exc->getMessage() . PHP_EOL;
 }

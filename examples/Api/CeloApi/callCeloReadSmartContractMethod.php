@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_call_celo_read_smart_contract_method = new \Tatum\Model\CallCeloReadSmartContractMethod();
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->celo()
         ->callCeloReadSmartContractMethod($arg_call_celo_read_smart_contract_method);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->celo()->callCeloReadSmartContractMethod(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->celo()->callCeloReadSmartContractMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->celo()->callCeloReadSmartContractMethod(): " . $exc->getMessage() . PHP_EOL;
 }

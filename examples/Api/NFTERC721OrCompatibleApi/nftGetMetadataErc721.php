@@ -33,18 +33,18 @@ $arg_account = '0xc1b45bc27b9c61c3';
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\NftMetadataErc721 $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->nftGetMetadataErc721($arg_chain, $arg_contract_address, $arg_token_id, $arg_account, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetMetadataErc721(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetMetadataErc721(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->nftGetMetadataErc721(): " . $exc->getMessage() . PHP_EOL;
 }

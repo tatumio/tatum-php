@@ -21,14 +21,15 @@ $sdk = new \Tatum\Sdk();
 $arg_id = 'id_example';
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->customer()
-        ->enableCustomer($arg_id);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->customer()->enableCustomer(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->enableCustomer($arg_id);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->customer()->enableCustomer(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->customer()->enableCustomer(): " . $exc->getMessage() . PHP_EOL;
 }

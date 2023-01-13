@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
 try {
+
     /** @var \Tatum\Model\AlgoTransactionHashKMS $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->algorand()
         ->algoandBroadcast($arg_broadcast_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algoandBroadcast(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->algorand()->algoandBroadcast(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->algorand()->algoandBroadcast(): " . $exc->getMessage() . PHP_EOL;
 }

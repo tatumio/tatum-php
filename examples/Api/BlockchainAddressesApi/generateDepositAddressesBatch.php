@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_offchain_addresses = new \Tatum\Model\OffchainAddresses();
 
 try {
+
     /** @var \Tatum\Model\Address[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainAddresses()
         ->generateDepositAddressesBatch($arg_offchain_addresses);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainAddresses()->generateDepositAddressesBatch(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainAddresses()->generateDepositAddressesBatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainAddresses()->generateDepositAddressesBatch(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_height = 6470657;
 
 try {
+
     /** @var \Tatum\Model\BnbBlock $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bNBBeaconChain()
         ->bnbGetBlock($arg_height);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBBeaconChain()->bnbGetBlock(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bNBBeaconChain()->bnbGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bNBBeaconChain()->bnbGetBlock(): " . $exc->getMessage() . PHP_EOL;
 }

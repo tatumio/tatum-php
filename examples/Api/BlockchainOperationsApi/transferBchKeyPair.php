@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_bch_key_pair = new \Tatum\Model\TransferBchKeyPair();
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferBchKeyPair($arg_transfer_bch_key_pair);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferBchKeyPair(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->transferBchKeyPair(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->transferBchKeyPair(): " . $exc->getMessage() . PHP_EOL;
 }

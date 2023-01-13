@@ -27,14 +27,15 @@ $arg_address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
 $arg_index = 1;
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->blockchainAddresses()
-        ->removeAddress($arg_id, $arg_address, $arg_index);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainAddresses()->removeAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->removeAddress($arg_id, $arg_address, $arg_index);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->blockchainAddresses()->removeAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainAddresses()->removeAddress(): " . $exc->getMessage() . PHP_EOL;
 }

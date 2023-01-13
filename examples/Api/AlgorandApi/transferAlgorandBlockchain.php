@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_algorand_blockchain = new \Tatum\Model\TransferAlgorandBlockchain();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->algorand()
         ->transferAlgorandBlockchain($arg_transfer_algorand_blockchain);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->transferAlgorandBlockchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->algorand()->transferAlgorandBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->algorand()->transferAlgorandBlockchain(): " . $exc->getMessage() . PHP_EOL;
 }

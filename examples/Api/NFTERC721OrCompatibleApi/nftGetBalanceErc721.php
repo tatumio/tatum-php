@@ -30,18 +30,18 @@ $arg_contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\NftGetBalanceErc721200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->nftGetBalanceErc721($arg_chain, $arg_address, $arg_contract_address, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetBalanceErc721(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetBalanceErc721(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->nftGetBalanceErc721(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_ada_transaction_from_address_kms = new \Tatum\Model\AdaTransactionFromAddressKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->cardano()
         ->adaTransactionFromAddressKMS($arg_ada_transaction_from_address_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->cardano()->adaTransactionFromAddressKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->cardano()->adaTransactionFromAddressKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->cardano()->adaTransactionFromAddressKMS(): " . $exc->getMessage() . PHP_EOL;
 }

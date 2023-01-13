@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var float $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->ethereum()
         ->ethGetCurrentBlock($arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->ethGetCurrentBlock(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->ethereum()->ethGetCurrentBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->ethereum()->ethGetCurrentBlock(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -23,18 +23,18 @@ $arg_generate_custodial_wallet_batch_celo_kms = new \Tatum\Model\GenerateCustodi
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->gasPump()
         ->generateCustodialWalletBatchCeloKMS($arg_generate_custodial_wallet_batch_celo_kms, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->generateCustodialWalletBatchCeloKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->gasPump()->generateCustodialWalletBatchCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->gasPump()->generateCustodialWalletBatchCeloKMS(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_bsc_estimate_gas = new \Tatum\Model\BscEstimateGas();
 
 try {
+
     /** @var \Tatum\Model\PolygonEstimateGas200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->bscEstimateGas($arg_bsc_estimate_gas);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->bscEstimateGas(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->bscEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->bscEstimateGas(): " . $exc->getMessage() . PHP_EOL;
 }

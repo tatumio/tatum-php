@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_tron_broadcast = new \Tatum\Model\TronBroadcast();
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->tron()
         ->tronBroadcast($arg_tron_broadcast);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->tronBroadcast(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->tron()->tronBroadcast(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->tron()->tronBroadcast(): " . $exc->getMessage() . PHP_EOL;
 }

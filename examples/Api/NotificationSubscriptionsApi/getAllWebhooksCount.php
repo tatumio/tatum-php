@@ -30,18 +30,18 @@ $arg_direction = 'asc';
 $arg_failed = false;
 
 try {
+
     /** @var \Tatum\Model\EntitiesCount $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->notificationSubscriptions()
         ->getAllWebhooksCount($arg_page_size, $arg_offset, $arg_direction, $arg_failed);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->getAllWebhooksCount(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->notificationSubscriptions()->getAllWebhooksCount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->notificationSubscriptions()->getAllWebhooksCount(): " . $exc->getMessage() . PHP_EOL;
 }

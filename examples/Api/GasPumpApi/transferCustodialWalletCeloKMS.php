@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_custodial_wallet_celo_kms = new \Tatum\Model\TransferCustodialWalletCeloKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->gasPump()
         ->transferCustodialWalletCeloKMS($arg_transfer_custodial_wallet_celo_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->transferCustodialWalletCeloKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->gasPump()->transferCustodialWalletCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->gasPump()->transferCustodialWalletCeloKMS(): " . $exc->getMessage() . PHP_EOL;
 }

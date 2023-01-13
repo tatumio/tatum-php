@@ -27,18 +27,18 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 try {
+
     /** @var \Tatum\Model\BtcTx[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bitcoin()
         ->btcGetTxByAddress($arg_address, $arg_page_size, $arg_offset);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bitcoin()->btcGetTxByAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bitcoin()->btcGetTxByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bitcoin()->btcGetTxByAddress(): " . $exc->getMessage() . PHP_EOL;
 }

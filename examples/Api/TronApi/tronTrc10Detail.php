@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_id_or_owner_address = 1000540;
 
 try {
+
     /** @var \Tatum\Model\TronTrc10Detail $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->tron()
         ->tronTrc10Detail($arg_id_or_owner_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->tronTrc10Detail(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->tron()->tronTrc10Detail(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->tron()->tronTrc10Detail(): " . $exc->getMessage() . PHP_EOL;
 }

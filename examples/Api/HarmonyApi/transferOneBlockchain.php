@@ -23,18 +23,18 @@ $arg_transfer_one_blockchain = new \Tatum\Model\TransferOneBlockchain();
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->harmony()
         ->transferOneBlockchain($arg_transfer_one_blockchain, $arg_shard_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->harmony()->transferOneBlockchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->harmony()->transferOneBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->harmony()->transferOneBlockchain(): " . $exc->getMessage() . PHP_EOL;
 }

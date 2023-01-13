@@ -24,18 +24,18 @@ $arg_xpub = 'xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS
 $arg_index = 1;
 
 try {
+
     /** @var \Tatum\Model\GeneratedAddressBsc $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bNBSmartChain()
         ->bscGenerateAddress($arg_xpub, $arg_index);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBSmartChain()->bscGenerateAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bNBSmartChain()->bscGenerateAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bNBSmartChain()->bscGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -23,18 +23,18 @@ $arg_call_smart_contract_method_kms = new \Tatum\Model\CallSmartContractMethodKM
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->ethereum()
         ->callSmartContractMethodKMS($arg_call_smart_contract_method_kms, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->callSmartContractMethodKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->ethereum()->callSmartContractMethodKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->ethereum()->callSmartContractMethodKMS(): " . $exc->getMessage() . PHP_EOL;
 }

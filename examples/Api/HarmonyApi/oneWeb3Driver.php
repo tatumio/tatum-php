@@ -26,18 +26,18 @@ $arg_body = array('key' => new \stdClass);
 $arg_shard_id = 0;
 
 try {
+
     /** @var object $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->harmony()
         ->oneWeb3Driver($arg_x_api_key, $arg_body, $arg_shard_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->harmony()->oneWeb3Driver(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->harmony()->oneWeb3Driver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->harmony()->oneWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
 }

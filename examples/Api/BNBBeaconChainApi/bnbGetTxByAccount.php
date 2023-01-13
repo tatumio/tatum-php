@@ -39,18 +39,18 @@ $arg_asset = 'BNB';
 $arg_address_type = 'FROM';
 
 try {
+
     /** @var \Tatum\Model\BnbTxInAccount $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bNBBeaconChain()
         ->bnbGetTxByAccount($arg_address, $arg_start_time, $arg_end_time, $arg_limit, $arg_offset, $arg_asset, $arg_address_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBBeaconChain()->bnbGetTxByAccount(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bNBBeaconChain()->bnbGetTxByAccount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bNBBeaconChain()->bnbGetTxByAccount(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -24,14 +24,16 @@ $arg_xpub = "tpubDErTz665Maw22hCxRXYGFtqAWE1yMhH927FRnLHhbZEA8Fudk2cgvBEnzj2dme5
 $arg_index = 1;
 
 try {
+    
     /** @var \Tatum\Model\GeneratedAddressBtc $result */
     $result = $sdk
         ->testnet()
         ->local()->wallet()
         ->bitcoinCash()
         ->generateAddressFromXpub($arg_xpub, $arg_index);
-    
+
     var_dump($result);
+
 } catch (\Exception $exc) {
     echo 'Exception when calling local()->wallet()->bitcoinCash()->generateAddressFromXpub(): ', $exc->getMessage(), PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_update_marketplace_solana_kms = new \Tatum\Model\UpdateMarketplaceSolanaKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->marketplace()
         ->updateMarketplaceSolanaKMS($arg_update_marketplace_solana_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->updateMarketplaceSolanaKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->marketplace()->updateMarketplaceSolanaKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->marketplace()->updateMarketplaceSolanaKMS(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -24,14 +24,15 @@ $arg_address = '0x687422eEA2cB73B5d3e242bA5456b782919AFc85';
 $arg_name = 'MY_TOKEN';
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
-        ->storeCeloErc20Address($arg_address, $arg_name);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->storeCeloErc20Address(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->storeCeloErc20Address($arg_address, $arg_name);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->blockchainOperations()->storeCeloErc20Address(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->storeCeloErc20Address(): " . $exc->getMessage() . PHP_EOL;
 }

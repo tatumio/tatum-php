@@ -24,18 +24,18 @@ $arg_x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
 $arg_algod_path = 'v2/accounts';
 
 try {
+
     /** @var \Tatum\Model\AlgoBlock $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->algorand()
         ->algoNodeGetDriver($arg_x_api_key, $arg_algod_path);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algoNodeGetDriver(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->algorand()->algoNodeGetDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->algorand()->algoNodeGetDriver(): " . $exc->getMessage() . PHP_EOL;
 }

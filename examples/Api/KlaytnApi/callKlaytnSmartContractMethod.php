@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_call_klaytn_smart_contract_method = new \Tatum\Model\CallKlaytnSmartContractMethod();
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->klaytn()
         ->callKlaytnSmartContractMethod($arg_call_klaytn_smart_contract_method);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->klaytn()->callKlaytnSmartContractMethod(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->klaytn()->callKlaytnSmartContractMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->klaytn()->callKlaytnSmartContractMethod(): " . $exc->getMessage() . PHP_EOL;
 }

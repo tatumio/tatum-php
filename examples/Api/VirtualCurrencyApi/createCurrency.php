@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_virtual_currency = new \Tatum\Model\VirtualCurrency();
 
 try {
+
     /** @var \Tatum\Model\Account $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->virtualCurrency()
         ->createCurrency($arg_virtual_currency);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->virtualCurrency()->createCurrency(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->virtualCurrency()->createCurrency(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->virtualCurrency()->createCurrency(): " . $exc->getMessage() . PHP_EOL;
 }

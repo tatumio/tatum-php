@@ -20,14 +20,15 @@ $sdk = new \Tatum\Sdk();
 $arg_create_xlm_asset = new \Tatum\Model\CreateXlmAsset();
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
-        ->xlmAssetOffchain($arg_create_xlm_asset);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->xlmAssetOffchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->xlmAssetOffchain($arg_create_xlm_asset);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->blockchainOperations()->xlmAssetOffchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->xlmAssetOffchain(): " . $exc->getMessage() . PHP_EOL;
 }

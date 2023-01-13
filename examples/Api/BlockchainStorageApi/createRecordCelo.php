@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_create_record_celo = new \Tatum\Model\CreateRecordCelo();
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainStorage()
         ->createRecordCelo($arg_create_record_celo);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainStorage()->createRecordCelo(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainStorage()->createRecordCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainStorage()->createRecordCelo(): " . $exc->getMessage() . PHP_EOL;
 }

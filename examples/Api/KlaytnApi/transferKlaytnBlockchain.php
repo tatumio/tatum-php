@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_klaytn_blockchain = new \Tatum\Model\TransferKlaytnBlockchain();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->klaytn()
         ->transferKlaytnBlockchain($arg_transfer_klaytn_blockchain);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->klaytn()->transferKlaytnBlockchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->klaytn()->transferKlaytnBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->klaytn()->transferKlaytnBlockchain(): " . $exc->getMessage() . PHP_EOL;
 }

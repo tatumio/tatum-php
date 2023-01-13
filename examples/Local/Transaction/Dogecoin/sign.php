@@ -25,14 +25,16 @@ $arg_transfer = (new \Tatum\Local\Transaction\Bitcoin\Transfer())
   ->addTarget('nYY7QfwDEbYsb7xpC7yms6SzjMhbYdr5v0', 1);
 
 try {
+    
     /** @var string $result */
     $result = $sdk
         ->testnet()
         ->local()->transaction()
         ->dogecoin()
         ->sign($arg_transfer);
-    
+
     var_dump($result);
+
 } catch (\Exception $exc) {
     echo 'Exception when calling local()->transaction()->dogecoin()->sign(): ', $exc->getMessage(), PHP_EOL;
 }

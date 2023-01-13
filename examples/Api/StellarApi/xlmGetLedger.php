@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_sequence = 1;
 
 try {
+
     /** @var \Tatum\Model\XlmLedger $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->stellar()
         ->xlmGetLedger($arg_sequence);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->xlmGetLedger(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->stellar()->xlmGetLedger(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->stellar()->xlmGetLedger(): " . $exc->getMessage() . PHP_EOL;
 }

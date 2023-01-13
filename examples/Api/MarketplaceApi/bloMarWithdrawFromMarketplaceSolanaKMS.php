@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_withdraw_from_marketplace_solana_kms = new \Tatum\Model\WithdrawFromMarketplaceSolanaKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->marketplace()
         ->bloMarWithdrawFromMarketplaceSolanaKMS($arg_withdraw_from_marketplace_solana_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->bloMarWithdrawFromMarketplaceSolanaKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->marketplace()->bloMarWithdrawFromMarketplaceSolanaKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->marketplace()->bloMarWithdrawFromMarketplaceSolanaKMS(): " . $exc->getMessage() . PHP_EOL;
 }

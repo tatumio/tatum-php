@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_bid_on_auction_celo = new \Tatum\Model\BidOnAuctionCelo();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->auction()
         ->bidOnAuctionCelo($arg_bid_on_auction_celo);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->bidOnAuctionCelo(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->auction()->bidOnAuctionCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->auction()->bidOnAuctionCelo(): " . $exc->getMessage() . PHP_EOL;
 }

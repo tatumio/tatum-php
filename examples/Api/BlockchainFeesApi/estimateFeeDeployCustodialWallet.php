@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_estimate_fee_deploy_custodial_wallet = new \Tatum\Model\EstimateFeeDeployCustodialWallet();
 
 try {
+
     /** @var \Tatum\Model\EstimateFee200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->estimateFeeDeployCustodialWallet($arg_estimate_fee_deploy_custodial_wallet);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->estimateFeeDeployCustodialWallet(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->estimateFeeDeployCustodialWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->estimateFeeDeployCustodialWallet(): " . $exc->getMessage() . PHP_EOL;
 }

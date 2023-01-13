@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_custodial_create_wallet_request = new \Tatum\Model\CustodialCreateWalletRequest();
 
 try {
+
     /** @var \Tatum\Model\CustodialManagedAddress $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->custodialManagedWallets()
         ->custodialCreateWallet($arg_custodial_create_wallet_request);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->custodialManagedWallets()->custodialCreateWallet(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->custodialManagedWallets()->custodialCreateWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->custodialManagedWallets()->custodialCreateWallet(): " . $exc->getMessage() . PHP_EOL;
 }

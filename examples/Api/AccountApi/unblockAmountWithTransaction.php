@@ -23,18 +23,18 @@ $arg_id = '5e6be89ee6aa436299950c3f';
 $arg_unblock_amount = new \Tatum\Model\UnblockAmount();
 
 try {
+
     /** @var \Tatum\Model\TransactionResult $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->account()
         ->unblockAmountWithTransaction($arg_id, $arg_unblock_amount);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->unblockAmountWithTransaction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->account()->unblockAmountWithTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->account()->unblockAmountWithTransaction(): " . $exc->getMessage() . PHP_EOL;
 }

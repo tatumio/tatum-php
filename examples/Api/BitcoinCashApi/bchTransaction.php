@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_bch_transaction = new \Tatum\Model\BchTransaction();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bitcoinCash()
         ->bchTransaction($arg_bch_transaction);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bitcoinCash()->bchTransaction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bitcoinCash()->bchTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bitcoinCash()->bchTransaction(): " . $exc->getMessage() . PHP_EOL;
 }

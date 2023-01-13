@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = 1234314;
 
 try {
+
     /** @var \Tatum\Model\DogeBlock $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->dogecoin()
         ->dogeGetBlock($arg_hash);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->dogecoin()->dogeGetBlock(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->dogecoin()->dogeGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->dogecoin()->dogeGetBlock(): " . $exc->getMessage() . PHP_EOL;
 }

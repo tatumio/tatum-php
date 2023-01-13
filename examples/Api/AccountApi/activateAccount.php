@@ -21,14 +21,15 @@ $sdk = new \Tatum\Sdk();
 $arg_id = '5e68c66581f2ee32bc354087';
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->account()
-        ->activateAccount($arg_id);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->activateAccount(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->activateAccount($arg_id);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->account()->activateAccount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->account()->activateAccount(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -30,18 +30,18 @@ $arg_limit = 5;
 $arg_next = 'ywAAAAAAAAAAAAAA';
 
 try {
+
     /** @var \Tatum\Model\AlgoTxsWithPagination $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->algorand()
         ->algorandGetPayTransactionsByFromTo($arg_from, $arg_to, $arg_limit, $arg_next);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algorandGetPayTransactionsByFromTo(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->algorand()->algorandGetPayTransactionsByFromTo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->algorand()->algorandGetPayTransactionsByFromTo(): " . $exc->getMessage() . PHP_EOL;
 }

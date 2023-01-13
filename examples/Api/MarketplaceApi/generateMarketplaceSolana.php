@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_generate_marketplace_solana = new \Tatum\Model\GenerateMarketplaceSolana();
 
 try {
+
     /** @var \Tatum\Model\GenerateMarketplace200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->marketplace()
         ->generateMarketplaceSolana($arg_generate_marketplace_solana);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->generateMarketplaceSolana(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->marketplace()->generateMarketplaceSolana(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->marketplace()->generateMarketplaceSolana(): " . $exc->getMessage() . PHP_EOL;
 }

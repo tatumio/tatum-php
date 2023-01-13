@@ -24,14 +24,16 @@ $arg_xpub = "ttub4fxCiRuvD7JU842PNEAHYoy6Co1uLs3Tk65nthME7Gh9RzwrGnaVKJ9DFMcZLWw
 $arg_index = 1;
 
 try {
+    
     /** @var \Tatum\Model\GeneratedAddressBtc $result */
     $result = $sdk
         ->testnet()
         ->local()->wallet()
         ->litecoin()
         ->generateAddressFromXpub($arg_xpub, $arg_index);
-    
+
     var_dump($result);
+
 } catch (\Exception $exc) {
     echo 'Exception when calling local()->wallet()->litecoin()->generateAddressFromXpub(): ', $exc->getMessage(), PHP_EOL;
 }

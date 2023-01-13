@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_estimate_fee_from_utxo = new \Tatum\Model\EstimateFeeFromUTXO();
 
 try {
+
     /** @var \Tatum\Model\EstimateFee200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->estimateFeeFromUTXO($arg_estimate_fee_from_utxo);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->estimateFeeFromUTXO(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->estimateFeeFromUTXO(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->estimateFeeFromUTXO(): " . $exc->getMessage() . PHP_EOL;
 }

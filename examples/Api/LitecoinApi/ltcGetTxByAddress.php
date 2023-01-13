@@ -27,18 +27,18 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 try {
+
     /** @var \Tatum\Model\LtcTx[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->litecoin()
         ->ltcGetTxByAddress($arg_address, $arg_page_size, $arg_offset);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->litecoin()->ltcGetTxByAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->litecoin()->ltcGetTxByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->litecoin()->ltcGetTxByAddress(): " . $exc->getMessage() . PHP_EOL;
 }

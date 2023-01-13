@@ -42,18 +42,18 @@ $arg_to = '9.557027372635822E+47';
 $arg_account_id = '628bae6095e9ad06b52eb229';
 
 try {
+
     /** @var \Tatum\Model\Deposit[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->deposit()
         ->getDeposits($arg_page_size, $arg_page, $arg_sort, $arg_status, $arg_currency, $arg_tx_id, $arg_to, $arg_account_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->deposit()->getDeposits(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->deposit()->getDeposits(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->deposit()->getDeposits(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_mnemonic = 'mnemonic_example';
 
 try {
+
     /** @var \Tatum\Model\EgldGenerateWallet200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->elrond()
         ->egldGenerateWallet($arg_mnemonic);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->elrond()->egldGenerateWallet(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->elrond()->egldGenerateWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->elrond()->egldGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
 }

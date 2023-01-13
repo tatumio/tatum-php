@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_list_oder_book_matched_body = new \Tatum\Model\ListOderBookMatchedBody();
 
 try {
+
     /** @var \Tatum\Model\Trade[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->orderBook()
         ->getMatchedTrades($arg_list_oder_book_matched_body);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->orderBook()->getMatchedTrades(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->orderBook()->getMatchedTrades(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->orderBook()->getMatchedTrades(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_reference = 'reference_example';
 
 try {
+
     /** @var \Tatum\Model\Transaction[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->transaction()
         ->getTransactionsByReference($arg_reference);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->transaction()->getTransactionsByReference(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->transaction()->getTransactionsByReference(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->transaction()->getTransactionsByReference(): " . $exc->getMessage() . PHP_EOL;
 }

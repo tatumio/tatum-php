@@ -30,18 +30,18 @@ $arg_node_type = 'node_type_example';
 $arg_rpc_path = 'v2/accounts';
 
 try {
+
     /** @var object $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nodeRPC()
         ->nodeJsonRpcGetDriver($arg_chain, $arg_x_api_key, $arg_node_type, $arg_rpc_path);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nodeRPC()->nodeJsonRpcGetDriver(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nodeRPC()->nodeJsonRpcGetDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nodeRPC()->nodeJsonRpcGetDriver(): " . $exc->getMessage() . PHP_EOL;
 }

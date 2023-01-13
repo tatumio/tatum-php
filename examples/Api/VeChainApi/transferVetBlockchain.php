@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_vet_blockchain = new \Tatum\Model\TransferVetBlockchain();
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->veChain()
         ->transferVetBlockchain($arg_transfer_vet_blockchain);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->veChain()->transferVetBlockchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->veChain()->transferVetBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->veChain()->transferVetBlockchain(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_bid_on_auction_kms = new \Tatum\Model\BidOnAuctionKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->auction()
         ->bidOnAuctionKMS($arg_bid_on_auction_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->bidOnAuctionKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->auction()->bidOnAuctionKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->auction()->bidOnAuctionKMS(): " . $exc->getMessage() . PHP_EOL;
 }

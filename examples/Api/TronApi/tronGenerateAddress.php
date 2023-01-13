@@ -24,18 +24,18 @@ $arg_xpub = '0244b3f40c6e570ae0032f6d7be87737a6c4e5314a4a1a82e22d0460a0d0cd79493
 $arg_index = 1;
 
 try {
+
     /** @var \Tatum\Model\TronGenerateAddress200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->tron()
         ->tronGenerateAddress($arg_xpub, $arg_index);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->tronGenerateAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->tron()->tronGenerateAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->tron()->tronGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
 }

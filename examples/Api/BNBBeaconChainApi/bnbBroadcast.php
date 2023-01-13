@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_broadcast = new \Tatum\Model\Broadcast();
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bNBBeaconChain()
         ->bnbBroadcast($arg_broadcast);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBBeaconChain()->bnbBroadcast(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bNBBeaconChain()->bnbBroadcast(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bNBBeaconChain()->bnbBroadcast(): " . $exc->getMessage() . PHP_EOL;
 }

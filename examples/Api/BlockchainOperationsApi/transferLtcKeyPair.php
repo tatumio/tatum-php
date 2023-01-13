@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_ltc_key_pair = new \Tatum\Model\TransferLtcKeyPair();
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferLtcKeyPair($arg_transfer_ltc_key_pair);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferLtcKeyPair(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->transferLtcKeyPair(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->transferLtcKeyPair(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_trc_address = new \Tatum\Model\TrcAddress();
 
 try {
+
     /** @var \Tatum\Model\Trc20Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->trcAddress($arg_trc_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->trcAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->trcAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->trcAddress(): " . $exc->getMessage() . PHP_EOL;
 }

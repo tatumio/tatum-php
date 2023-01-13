@@ -21,14 +21,16 @@ $sdk = new \Tatum\Sdk();
 $arg_privateKey = (new \Tatum\Model\PrivKey())->setKey("ckYXyxpW7FKp3LPpQdLrXnfttfXa3CBUw6VizABCiQLck1ZVbNq2");
 
 try {
+    
     /** @var \Tatum\Model\GeneratedAddressBtc $result */
     $result = $sdk
         ->testnet()
         ->local()->wallet()
         ->dogecoin()
         ->generateAddressFromPrivateKey($arg_privateKey);
-    
+
     var_dump($result);
+
 } catch (\Exception $exc) {
     echo 'Exception when calling local()->wallet()->dogecoin()->generateAddressFromPrivateKey(): ', $exc->getMessage(), PHP_EOL;
 }

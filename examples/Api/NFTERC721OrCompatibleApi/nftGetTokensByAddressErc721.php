@@ -24,18 +24,18 @@ $arg_chain = 'SOL';
 $arg_address = 'FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ';
 
 try {
+
     /** @var \Tatum\Model\NftTokenByAddressErc721[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->nftGetTokensByAddressErc721($arg_chain, $arg_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetTokensByAddressErc721(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetTokensByAddressErc721(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->nftGetTokensByAddressErc721(): " . $exc->getMessage() . PHP_EOL;
 }

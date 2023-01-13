@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
 
 try {
+
     /** @var \Tatum\Model\BtcBasedBalance $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bitcoin()
         ->btcGetBalanceOfAddress($arg_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bitcoin()->btcGetBalanceOfAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bitcoin()->btcGetBalanceOfAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bitcoin()->btcGetBalanceOfAddress(): " . $exc->getMessage() . PHP_EOL;
 }

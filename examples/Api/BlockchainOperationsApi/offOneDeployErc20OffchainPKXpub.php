@@ -23,18 +23,18 @@ $arg_deploy_erc20_offchain_pk_xpub = new \Tatum\Model\DeployErc20OffchainPKXpub(
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->offOneDeployErc20OffchainPKXpub($arg_deploy_erc20_offchain_pk_xpub, $arg_shard_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->offOneDeployErc20OffchainPKXpub(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->offOneDeployErc20OffchainPKXpub(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->offOneDeployErc20OffchainPKXpub(): " . $exc->getMessage() . PHP_EOL;
 }

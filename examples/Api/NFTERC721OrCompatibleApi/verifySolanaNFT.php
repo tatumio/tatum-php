@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_verify_solana_nft = new \Tatum\Model\VerifySolanaNFT();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->verifySolanaNFT($arg_verify_solana_nft);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->verifySolanaNFT(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->nFTERC721OrCompatible()->verifySolanaNFT(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->nFTERC721OrCompatible()->verifySolanaNFT(): " . $exc->getMessage() . PHP_EOL;
 }

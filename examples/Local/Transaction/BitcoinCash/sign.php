@@ -25,14 +25,16 @@ $arg_transfer = (new \Tatum\Local\Transaction\Bitcoin\Transfer())
   ->addTarget('bchtest:qqsnnrvk28rj7lzg7tvlyw8s7xa2vqvj0yxq2xn9l0', 1);
 
 try {
+    
     /** @var string $result */
     $result = $sdk
         ->testnet()
         ->local()->transaction()
         ->bitcoinCash()
         ->sign($arg_transfer);
-    
+
     var_dump($result);
+
 } catch (\Exception $exc) {
     echo 'Exception when calling local()->transaction()->bitcoinCash()->sign(): ', $exc->getMessage(), PHP_EOL;
 }

@@ -23,18 +23,18 @@ $arg_create_subscription_notification = new \Tatum\Model\CreateSubscriptionNotif
 $arg_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\Id $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->notificationSubscriptions()
         ->createSubscriptionNotification($arg_create_subscription_notification, $arg_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->createSubscriptionNotification(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->notificationSubscriptions()->createSubscriptionNotification(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->notificationSubscriptions()->createSubscriptionNotification(): " . $exc->getMessage() . PHP_EOL;
 }

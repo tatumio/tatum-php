@@ -23,18 +23,18 @@ $arg_broadcast_kms = new \Tatum\Model\BroadcastKMS();
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->ethereum()
         ->ethBroadcast($arg_broadcast_kms, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->ethBroadcast(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->ethereum()->ethBroadcast(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->ethereum()->ethBroadcast(): " . $exc->getMessage() . PHP_EOL;
 }

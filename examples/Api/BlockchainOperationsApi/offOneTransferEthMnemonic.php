@@ -23,18 +23,18 @@ $arg_transfer_eth_mnemonic = new \Tatum\Model\TransferEthMnemonic();
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->offOneTransferEthMnemonic($arg_transfer_eth_mnemonic, $arg_shard_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->offOneTransferEthMnemonic(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->offOneTransferEthMnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->offOneTransferEthMnemonic(): " . $exc->getMessage() . PHP_EOL;
 }

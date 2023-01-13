@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_solana_broadcast_confirm = new \Tatum\Model\SolanaBroadcastConfirm();
 
 try {
+
     /** @var \Tatum\Model\SolanaTransactionHashWithConfirm $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->solana()
         ->solanaBroadcastConfirm($arg_solana_broadcast_confirm);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->solana()->solanaBroadcastConfirm(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->solana()->solanaBroadcastConfirm(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->solana()->solanaBroadcastConfirm(): " . $exc->getMessage() . PHP_EOL;
 }

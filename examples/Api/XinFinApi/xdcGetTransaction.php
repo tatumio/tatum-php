@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = '0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7';
 
 try {
+
     /** @var \Tatum\Model\XdcTx $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->xinFin()
         ->xdcGetTransaction($arg_hash);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xinFin()->xdcGetTransaction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->xinFin()->xdcGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->xinFin()->xdcGetTransaction(): " . $exc->getMessage() . PHP_EOL;
 }

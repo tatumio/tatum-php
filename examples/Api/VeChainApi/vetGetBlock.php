@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = 325324;
 
 try {
+
     /** @var \Tatum\Model\VetBlock $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->veChain()
         ->vetGetBlock($arg_hash);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->veChain()->vetGetBlock(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->veChain()->vetGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->veChain()->vetGetBlock(): " . $exc->getMessage() . PHP_EOL;
 }

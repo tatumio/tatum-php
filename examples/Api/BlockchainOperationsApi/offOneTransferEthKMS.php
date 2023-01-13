@@ -23,18 +23,18 @@ $arg_transfer_eth_kms = new \Tatum\Model\TransferEthKMS();
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->offOneTransferEthKMS($arg_transfer_eth_kms, $arg_shard_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->offOneTransferEthKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->offOneTransferEthKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->offOneTransferEthKMS(): " . $exc->getMessage() . PHP_EOL;
 }

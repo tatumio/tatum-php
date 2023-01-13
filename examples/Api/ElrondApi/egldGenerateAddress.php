@@ -24,18 +24,18 @@ $arg_mnemonic = 'quantum tobacco key they maid mean crime youth chief jungle min
 $arg_index = 1;
 
 try {
+
     /** @var \Tatum\Model\EgldGenerateAddress200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->elrond()
         ->egldGenerateAddress($arg_mnemonic, $arg_index);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->elrond()->egldGenerateAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->elrond()->egldGenerateAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->elrond()->egldGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
 }

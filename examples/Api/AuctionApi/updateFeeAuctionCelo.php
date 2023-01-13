@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_update_fee_auction_celo = new \Tatum\Model\UpdateFeeAuctionCelo();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->auction()
         ->updateFeeAuctionCelo($arg_update_fee_auction_celo);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->updateFeeAuctionCelo(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->auction()->updateFeeAuctionCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->auction()->updateFeeAuctionCelo(): " . $exc->getMessage() . PHP_EOL;
 }

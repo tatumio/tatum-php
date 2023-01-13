@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_vet_estimate_gas = new \Tatum\Model\VetEstimateGas();
 
 try {
+
     /** @var float $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->vetEstimateGas($arg_vet_estimate_gas);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->vetEstimateGas(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->vetEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->vetEstimateGas(): " . $exc->getMessage() . PHP_EOL;
 }

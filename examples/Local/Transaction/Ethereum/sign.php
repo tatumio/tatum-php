@@ -26,14 +26,16 @@ $arg_transfer = (new \Tatum\Model\TransferEthBlockchain())
   ->setFee((new \Tatum\Model\CustomFee())->setGasPrice(55)->setGasLimit(60));
 
 try {
+    
     /** @var string $result */
     $result = $sdk
         ->testnet()
         ->local()->transaction()
         ->ethereum()
         ->sign($arg_transfer);
-    
+
     var_dump($result);
+
 } catch (\Exception $exc) {
     echo 'Exception when calling local()->transaction()->ethereum()->sign(): ', $exc->getMessage(), PHP_EOL;
 }

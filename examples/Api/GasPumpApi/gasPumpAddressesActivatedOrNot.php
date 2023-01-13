@@ -27,18 +27,18 @@ $arg_owner = 'owner_example';
 $arg_index = 3.4;
 
 try {
+
     /** @var \Tatum\Model\Activated $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->gasPump()
         ->gasPumpAddressesActivatedOrNot($arg_chain, $arg_owner, $arg_index);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->gasPumpAddressesActivatedOrNot(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->gasPump()->gasPumpAddressesActivatedOrNot(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->gasPump()->gasPumpAddressesActivatedOrNot(): " . $exc->getMessage() . PHP_EOL;
 }

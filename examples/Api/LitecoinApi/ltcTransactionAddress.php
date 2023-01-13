@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_ltc_transaction_address = new \Tatum\Model\LtcTransactionAddress();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->litecoin()
         ->ltcTransactionAddress($arg_ltc_transaction_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->litecoin()->ltcTransactionAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->litecoin()->ltcTransactionAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->litecoin()->ltcTransactionAddress(): " . $exc->getMessage() . PHP_EOL;
 }

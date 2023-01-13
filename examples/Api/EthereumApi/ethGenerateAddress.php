@@ -27,18 +27,18 @@ $arg_index = 0;
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\GeneratedAddressEth $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->ethereum()
         ->ethGenerateAddress($arg_xpub, $arg_index, $arg_x_testnet_type);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->ethGenerateAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->ethereum()->ethGenerateAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->ethereum()->ethGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -23,18 +23,18 @@ $arg_chain = 'ETH';
 $arg_erc20_address = new \Tatum\Model\Erc20Address();
 
 try {
+
     /** @var \Tatum\Model\Erc20Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->offTokErc20Address($arg_chain, $arg_erc20_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->offTokErc20Address(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->offTokErc20Address(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->offTokErc20Address(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_erc20_mnemonic = new \Tatum\Model\TransferErc20Mnemonic();
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferErc20Mnemonic($arg_transfer_erc20_mnemonic);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferErc20Mnemonic(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->transferErc20Mnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->transferErc20Mnemonic(): " . $exc->getMessage() . PHP_EOL;
 }

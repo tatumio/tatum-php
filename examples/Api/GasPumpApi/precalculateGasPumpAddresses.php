@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_create_gas_pump = new \Tatum\Model\CreateGasPump();
 
 try {
+
     /** @var string[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->gasPump()
         ->precalculateGasPumpAddresses($arg_create_gas_pump);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->precalculateGasPumpAddresses(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->gasPump()->precalculateGasPumpAddresses(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->gasPump()->precalculateGasPumpAddresses(): " . $exc->getMessage() . PHP_EOL;
 }

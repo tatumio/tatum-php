@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_account = 'rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF';
 
 try {
+
     /** @var \Tatum\Model\XrpAccountBalance $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->xRP()
         ->xrpGetAccountBalance($arg_account);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->xrpGetAccountBalance(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->xRP()->xrpGetAccountBalance(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->xRP()->xrpGetAccountBalance(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_custodial_wallet_tron = new \Tatum\Model\TransferCustodialWalletTron();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->gasPump()
         ->transferCustodialWalletTron($arg_transfer_custodial_wallet_tron);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->transferCustodialWalletTron(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->gasPump()->transferCustodialWalletTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->gasPump()->transferCustodialWalletTron(): " . $exc->getMessage() . PHP_EOL;
 }

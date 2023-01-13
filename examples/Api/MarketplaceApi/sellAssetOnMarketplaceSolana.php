@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_sell_asset_on_marketplace_solana = new \Tatum\Model\SellAssetOnMarketplaceSolana();
 
 try {
+
     /** @var \Tatum\Model\SellAssetOnMarketplace200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->marketplace()
         ->sellAssetOnMarketplaceSolana($arg_sell_asset_on_marketplace_solana);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->sellAssetOnMarketplaceSolana(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->marketplace()->sellAssetOnMarketplaceSolana(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->marketplace()->sellAssetOnMarketplaceSolana(): " . $exc->getMessage() . PHP_EOL;
 }

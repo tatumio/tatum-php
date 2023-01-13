@@ -24,14 +24,16 @@ $arg_mnemonic = "police hat quantum advance enroll glove thank build warfare inj
 $arg_index = 1;
 
 try {
+    
     /** @var \Tatum\Model\PrivKey $result */
     $result = $sdk
         ->testnet()
         ->local()->wallet()
         ->litecoin()
         ->generatePrivateKey($arg_mnemonic, $arg_index);
-    
+
     var_dump($result);
+
 } catch (\Exception $exc) {
     echo 'Exception when calling local()->wallet()->litecoin()->generatePrivateKey(): ', $exc->getMessage(), PHP_EOL;
 }

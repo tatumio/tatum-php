@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_call_bsc_smart_contract_method = new \Tatum\Model\CallBscSmartContractMethod();
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bNBSmartChain()
         ->callBscSmartContractMethod($arg_call_bsc_smart_contract_method);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBSmartChain()->callBscSmartContractMethod(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bNBSmartChain()->callBscSmartContractMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bNBSmartChain()->callBscSmartContractMethod(): " . $exc->getMessage() . PHP_EOL;
 }

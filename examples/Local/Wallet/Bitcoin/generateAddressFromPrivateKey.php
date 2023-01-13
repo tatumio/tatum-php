@@ -21,14 +21,16 @@ $sdk = new \Tatum\Sdk();
 $arg_privateKey = (new \Tatum\Model\PrivKey())->setKey("cTPGqe6hkwVY6JNHJUZ4wSUvPo8GNMe2cDFTsFV1jSqCBMDKpfSU");
 
 try {
+    
     /** @var \Tatum\Model\GeneratedAddressBtc $result */
     $result = $sdk
         ->testnet()
         ->local()->wallet()
         ->bitcoin()
         ->generateAddressFromPrivateKey($arg_privateKey);
-    
+
     var_dump($result);
+
 } catch (\Exception $exc) {
     echo 'Exception when calling local()->wallet()->bitcoin()->generateAddressFromPrivateKey(): ', $exc->getMessage(), PHP_EOL;
 }

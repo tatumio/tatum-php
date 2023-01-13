@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_doge_transaction_utxo = new \Tatum\Model\DogeTransactionUTXO();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->dogecoin()
         ->dogeTransactionUTXO($arg_doge_transaction_utxo);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->dogecoin()->dogeTransactionUTXO(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->dogecoin()->dogeTransactionUTXO(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->dogecoin()->dogeTransactionUTXO(): " . $exc->getMessage() . PHP_EOL;
 }

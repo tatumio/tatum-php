@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_trust_line_xrp_blockchain = new \Tatum\Model\TrustLineXrpBlockchain();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->xRP()
         ->trustLineXrpBlockchain($arg_trust_line_xrp_blockchain);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->trustLineXrpBlockchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->xRP()->trustLineXrpBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->xRP()->trustLineXrpBlockchain(): " . $exc->getMessage() . PHP_EOL;
 }

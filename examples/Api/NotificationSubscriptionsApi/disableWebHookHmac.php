@@ -18,14 +18,15 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->notificationSubscriptions()
-        ->disableWebHookHmac();} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->disableWebHookHmac(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->disableWebHookHmac();
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->notificationSubscriptions()->disableWebHookHmac(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->notificationSubscriptions()->disableWebHookHmac(): " . $exc->getMessage() . PHP_EOL;
 }

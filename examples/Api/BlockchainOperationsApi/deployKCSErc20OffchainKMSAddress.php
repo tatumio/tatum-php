@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_deploy_kcs_erc20_offchain_kms_address = new \Tatum\Model\DeployKCSErc20OffchainKMSAddress();
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->deployKCSErc20OffchainKMSAddress($arg_deploy_kcs_erc20_offchain_kms_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->deployKCSErc20OffchainKMSAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->deployKCSErc20OffchainKMSAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->deployKCSErc20OffchainKMSAddress(): " . $exc->getMessage() . PHP_EOL;
 }

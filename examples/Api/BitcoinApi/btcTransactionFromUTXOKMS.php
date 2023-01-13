@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_btc_transaction_from_utxokms = new \Tatum\Model\BtcTransactionFromUTXOKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bitcoin()
         ->btcTransactionFromUTXOKMS($arg_btc_transaction_from_utxokms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bitcoin()->btcTransactionFromUTXOKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bitcoin()->btcTransactionFromUTXOKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bitcoin()->btcTransactionFromUTXOKMS(): " . $exc->getMessage() . PHP_EOL;
 }

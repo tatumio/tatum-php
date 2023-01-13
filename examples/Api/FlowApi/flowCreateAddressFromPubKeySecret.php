@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_flow_create_address_from_pub_key_secret = new \Tatum\Model\FlowCreateAddressFromPubKeySecret();
 
 try {
+
     /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->flow()
         ->flowCreateAddressFromPubKeySecret($arg_flow_create_address_from_pub_key_secret);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowCreateAddressFromPubKeySecret(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->flow()->flowCreateAddressFromPubKeySecret(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->flow()->flowCreateAddressFromPubKeySecret(): " . $exc->getMessage() . PHP_EOL;
 }

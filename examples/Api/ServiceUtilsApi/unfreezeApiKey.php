@@ -18,14 +18,15 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->serviceUtils()
-        ->unfreezeApiKey();} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->serviceUtils()->unfreezeApiKey(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->unfreezeApiKey();
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->serviceUtils()->unfreezeApiKey(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->serviceUtils()->unfreezeApiKey(): " . $exc->getMessage() . PHP_EOL;
 }

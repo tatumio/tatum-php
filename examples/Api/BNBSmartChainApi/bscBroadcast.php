@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_broadcast_kms = new \Tatum\Model\BroadcastKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bNBSmartChain()
         ->bscBroadcast($arg_broadcast_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBSmartChain()->bscBroadcast(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bNBSmartChain()->bscBroadcast(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bNBSmartChain()->bscBroadcast(): " . $exc->getMessage() . PHP_EOL;
 }

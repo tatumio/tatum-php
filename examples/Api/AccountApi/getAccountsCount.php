@@ -45,18 +45,18 @@ $arg_currency = 'BTC';
 $arg_account_number = 'AC_1011_B';
 
 try {
+
     /** @var \Tatum\Model\EntitiesCount $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->account()
         ->getAccountsCount($arg_page_size, $arg_page, $arg_sort, $arg_sort_by, $arg_active, $arg_only_non_zero_balance, $arg_frozen, $arg_currency, $arg_account_number);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->getAccountsCount(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->account()->getAccountsCount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->account()->getAccountsCount(): " . $exc->getMessage() . PHP_EOL;
 }

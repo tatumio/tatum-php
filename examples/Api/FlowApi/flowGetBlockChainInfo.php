@@ -18,18 +18,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 try {
+
     /** @var float $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->flow()
         ->flowGetBlockChainInfo();
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowGetBlockChainInfo(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->flow()->flowGetBlockChainInfo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->flow()->flowGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
 }

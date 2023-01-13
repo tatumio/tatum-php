@@ -24,18 +24,18 @@ $arg_chain = 'chain_example';
 $arg_kms_signature_ids = new \Tatum\Model\KmsSignatureIds();
 
 try {
+
     /** @var \Tatum\Model\PendingTransaction[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->keyManagementSystem()
         ->receivePendingTransactionsToSign($arg_chain, $arg_kms_signature_ids);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->keyManagementSystem()->receivePendingTransactionsToSign(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->keyManagementSystem()->receivePendingTransactionsToSign(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->keyManagementSystem()->receivePendingTransactionsToSign(): " . $exc->getMessage() . PHP_EOL;
 }

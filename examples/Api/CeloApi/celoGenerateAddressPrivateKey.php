@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
 try {
+
     /** @var \Tatum\Model\PrivKey $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->celo()
         ->celoGenerateAddressPrivateKey($arg_priv_key_request);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->celo()->celoGenerateAddressPrivateKey(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->celo()->celoGenerateAddressPrivateKey(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->celo()->celoGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
 }

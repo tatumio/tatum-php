@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_cancel_auction_celo_kms = new \Tatum\Model\CancelAuctionCeloKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->auction()
         ->cancelAuctionCeloKMS($arg_cancel_auction_celo_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->cancelAuctionCeloKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->auction()->cancelAuctionCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->auction()->cancelAuctionCeloKMS(): " . $exc->getMessage() . PHP_EOL;
 }

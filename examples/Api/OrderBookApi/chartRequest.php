@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_chart_request = new \Tatum\Model\ChartRequest();
 
 try {
+
     /** @var \Tatum\Model\Chart[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->orderBook()
         ->chartRequest($arg_chart_request);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->orderBook()->chartRequest(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->orderBook()->chartRequest(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->orderBook()->chartRequest(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_erc20 = new \Tatum\Model\Erc20();
 
 try {
+
     /** @var \Tatum\Model\Erc20Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->offCelErc20($arg_erc20);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->offCelErc20(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->offCelErc20(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->offCelErc20(): " . $exc->getMessage() . PHP_EOL;
 }

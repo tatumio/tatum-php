@@ -18,18 +18,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 try {
+
     /** @var \Tatum\Model\XlmLedger $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->stellar()
         ->xlmGetLastClosedLedger();
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->xlmGetLastClosedLedger(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->stellar()->xlmGetLastClosedLedger(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->stellar()->xlmGetLastClosedLedger(): " . $exc->getMessage() . PHP_EOL;
 }

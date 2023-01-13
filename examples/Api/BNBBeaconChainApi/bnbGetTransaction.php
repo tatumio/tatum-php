@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = '4B944BBF78F3ADE3A377551B5EA7AD0FEDBDA13165D932F94B106EF7A8E16C1A';
 
 try {
+
     /** @var \Tatum\Model\BnbTx $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bNBBeaconChain()
         ->bnbGetTransaction($arg_hash);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBBeaconChain()->bnbGetTransaction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bNBBeaconChain()->bnbGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bNBBeaconChain()->bnbGetTransaction(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_address = '0x5034aa590125b64023a0262112b98d72e3c8e40e';
 
 try {
+
     /** @var \Tatum\Model\VetGetEnergy200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->veChain()
         ->vetGetEnergy($arg_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->veChain()->vetGetEnergy(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->veChain()->vetGetEnergy(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->veChain()->vetGetEnergy(): " . $exc->getMessage() . PHP_EOL;
 }

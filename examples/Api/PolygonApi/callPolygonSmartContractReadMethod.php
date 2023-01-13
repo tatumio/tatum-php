@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_call_polygon_smart_contract_read_method = new \Tatum\Model\CallPolygonSmartContractReadMethod();
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->polygon()
         ->callPolygonSmartContractReadMethod($arg_call_polygon_smart_contract_read_method);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->polygon()->callPolygonSmartContractReadMethod(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->polygon()->callPolygonSmartContractReadMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->polygon()->callPolygonSmartContractReadMethod(): " . $exc->getMessage() . PHP_EOL;
 }

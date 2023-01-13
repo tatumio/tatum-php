@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_klaytn_estimate_gas = new \Tatum\Model\KlaytnEstimateGas();
 
 try {
+
     /** @var \Tatum\Model\KlaytnEstimateGas200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainFees()
         ->klaytnEstimateGas($arg_klaytn_estimate_gas);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->klaytnEstimateGas(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainFees()->klaytnEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainFees()->klaytnEstimateGas(): " . $exc->getMessage() . PHP_EOL;
 }

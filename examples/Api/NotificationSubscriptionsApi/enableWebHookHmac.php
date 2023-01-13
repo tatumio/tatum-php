@@ -20,14 +20,15 @@ $sdk = new \Tatum\Sdk();
 $arg_hmac_web_hook = new \Tatum\Model\HmacWebHook();
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->notificationSubscriptions()
-        ->enableWebHookHmac($arg_hmac_web_hook);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->enableWebHookHmac(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->enableWebHookHmac($arg_hmac_web_hook);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->notificationSubscriptions()->enableWebHookHmac(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->notificationSubscriptions()->enableWebHookHmac(): " . $exc->getMessage() . PHP_EOL;
 }

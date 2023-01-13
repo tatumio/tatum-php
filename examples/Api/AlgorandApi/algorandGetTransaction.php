@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_txid = 'LXEBXIBDAIF72NRI76SU252QSOGFCKEHTG7AI4P6W25V35PETU3Q';
 
 try {
+
     /** @var \Tatum\Model\AlgoTx $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->algorand()
         ->algorandGetTransaction($arg_txid);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algorandGetTransaction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->algorand()->algorandGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->algorand()->algorandGetTransaction(): " . $exc->getMessage() . PHP_EOL;
 }

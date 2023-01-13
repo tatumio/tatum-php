@@ -27,18 +27,18 @@ $arg_min = 3.4;
 $arg_marker = 'marker_example';
 
 try {
+
     /** @var \Tatum\Model\XrpAccountTx $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->xRP()
         ->xrpGetAccountTx($arg_account, $arg_min, $arg_marker);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->xrpGetAccountTx(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->xRP()->xrpGetAccountTx(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->xRP()->xrpGetAccountTx(): " . $exc->getMessage() . PHP_EOL;
 }

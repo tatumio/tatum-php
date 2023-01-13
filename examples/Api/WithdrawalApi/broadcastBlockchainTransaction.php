@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_broadcast_withdrawal = new \Tatum\Model\BroadcastWithdrawal();
 
 try {
+
     /** @var \Tatum\Model\BroadcastResponse $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->withdrawal()
         ->broadcastBlockchainTransaction($arg_broadcast_withdrawal);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->withdrawal()->broadcastBlockchainTransaction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->withdrawal()->broadcastBlockchainTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->withdrawal()->broadcastBlockchainTransaction(): " . $exc->getMessage() . PHP_EOL;
 }

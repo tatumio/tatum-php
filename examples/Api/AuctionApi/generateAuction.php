@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_generate_auction = new \Tatum\Model\GenerateAuction();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->auction()
         ->generateAuction($arg_generate_auction);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->generateAuction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->auction()->generateAuction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->auction()->generateAuction(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_priv_key_request = new \Tatum\Model\PrivKeyRequest();
 
 try {
+
     /** @var \Tatum\Model\PrivKey $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->polygon()
         ->polygonGenerateAddressPrivateKey($arg_priv_key_request);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->polygon()->polygonGenerateAddressPrivateKey(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->polygon()->polygonGenerateAddressPrivateKey(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->polygon()->polygonGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
 }

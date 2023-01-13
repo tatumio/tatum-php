@@ -24,18 +24,18 @@ $arg_chain = 'chain_example';
 $arg_contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
 
 try {
+
     /** @var float $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->auction()
         ->getAuctionFee($arg_chain, $arg_contract_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->getAuctionFee(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->auction()->getAuctionFee(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->auction()->getAuctionFee(): " . $exc->getMessage() . PHP_EOL;
 }

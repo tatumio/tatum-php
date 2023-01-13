@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_id = '5e68c66581f2ee32bc354087';
 
 try {
+
     /** @var \Tatum\Model\Account $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->account()
         ->getAccountByAccountId($arg_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->getAccountByAccountId(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->account()->getAccountByAccountId(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->account()->getAccountByAccountId(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_custodial_wallet_batch_kms = new \Tatum\Model\TransferCustodialWalletBatchKMS();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->gasPump()
         ->transferCustodialWalletBatchKMS($arg_transfer_custodial_wallet_batch_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->transferCustodialWalletBatchKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->gasPump()->transferCustodialWalletBatchKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->gasPump()->transferCustodialWalletBatchKMS(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -21,14 +21,15 @@ $sdk = new \Tatum\Sdk();
 $arg_id = '5e68c66581f2ee32bc354087';
 
 try {
-        $sdk
+
+    $sdk
         ->mainnet()
         ->api()
         ->notificationSubscriptions()
-        ->deleteSubscription($arg_id);} catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->deleteSubscription(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+        ->deleteSubscription($arg_id);
+
+} catch (\Tatum\Sdk\ApiException $apiExc) {
+    echo "API Exception when calling api()->notificationSubscriptions()->deleteSubscription(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->notificationSubscriptions()->deleteSubscription(): " . $exc->getMessage() . PHP_EOL;
 }

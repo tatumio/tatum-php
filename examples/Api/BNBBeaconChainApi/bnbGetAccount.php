@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_address = 'tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn';
 
 try {
+
     /** @var \Tatum\Model\BnbAccount $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bNBBeaconChain()
         ->bnbGetAccount($arg_address);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBBeaconChain()->bnbGetAccount(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bNBBeaconChain()->bnbGetAccount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bNBBeaconChain()->bnbGetAccount(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -21,18 +21,18 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = 'd60631d8e5c8b6eb0557b5181cf28564d771c628a08abc414e87ad7c05ff2fc2';
 
 try {
+
     /** @var \Tatum\Model\FlowTx $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->flow()
         ->flowGetRawTransaction($arg_hash);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowGetRawTransaction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->flow()->flowGetRawTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->flow()->flowGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
 }

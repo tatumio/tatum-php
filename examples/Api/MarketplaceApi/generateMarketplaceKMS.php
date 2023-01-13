@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_generate_marketplace_kms = new \Tatum\Model\GenerateMarketplaceKMS();
 
 try {
+
     /** @var \Tatum\Model\GenerateMarketplace200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->marketplace()
         ->generateMarketplaceKMS($arg_generate_marketplace_kms);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->generateMarketplaceKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->marketplace()->generateMarketplaceKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->marketplace()->generateMarketplaceKMS(): " . $exc->getMessage() . PHP_EOL;
 }

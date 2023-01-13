@@ -24,18 +24,18 @@ $arg_address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
 $arg_skip = 2;
 
 try {
+
     /** @var \Tatum\Model\BchTx[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bitcoinCash()
         ->bchGetTxByAddress($arg_address, $arg_skip);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bitcoinCash()->bchGetTxByAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bitcoinCash()->bchGetTxByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bitcoinCash()->bchGetTxByAddress(): " . $exc->getMessage() . PHP_EOL;
 }

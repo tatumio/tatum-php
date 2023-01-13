@@ -30,18 +30,18 @@ $arg_status = 'Done';
 $arg_offset = 0;
 
 try {
+
     /** @var \Tatum\Model\WithdrawalObject[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->withdrawal()
         ->getWithdrawals($arg_page_size, $arg_currency, $arg_status, $arg_offset);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->withdrawal()->getWithdrawals(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->withdrawal()->getWithdrawals(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->withdrawal()->getWithdrawals(): " . $exc->getMessage() . PHP_EOL;
 }

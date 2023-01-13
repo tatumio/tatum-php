@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_cancel_auction = new \Tatum\Model\CancelAuction();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->auction()
         ->cancelAuction($arg_cancel_auction);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->cancelAuction(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->auction()->cancelAuction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->auction()->cancelAuction(): " . $exc->getMessage() . PHP_EOL;
 }

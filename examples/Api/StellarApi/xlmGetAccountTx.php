@@ -24,18 +24,18 @@ $arg_account = 'GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H';
 $arg_pagination = 1348087155011584;
 
 try {
+
     /** @var \Tatum\Model\XlmTx[] $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->stellar()
         ->xlmGetAccountTx($arg_account, $arg_pagination);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->xlmGetAccountTx(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->stellar()->xlmGetAccountTx(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->stellar()->xlmGetAccountTx(): " . $exc->getMessage() . PHP_EOL;
 }

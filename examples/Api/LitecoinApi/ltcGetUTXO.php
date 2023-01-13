@@ -24,18 +24,18 @@ $arg_hash = '5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a';
 $arg_index = 0;
 
 try {
+
     /** @var \Tatum\Model\LtcUTXO $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->litecoin()
         ->ltcGetUTXO($arg_hash, $arg_index);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->litecoin()->ltcGetUTXO(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->litecoin()->ltcGetUTXO(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->litecoin()->ltcGetUTXO(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_bch_rpc_driver_request = new \Tatum\Model\BchRpcDriverRequest();
 
 try {
+
     /** @var object $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->bitcoinCash()
         ->bchRpcDriver($arg_bch_rpc_driver_request);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bitcoinCash()->bchRpcDriver(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->bitcoinCash()->bchRpcDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->bitcoinCash()->bchRpcDriver(): " . $exc->getMessage() . PHP_EOL;
 }

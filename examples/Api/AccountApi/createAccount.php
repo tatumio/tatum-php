@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_create_account = new \Tatum\Model\CreateAccount();
 
 try {
+
     /** @var \Tatum\Model\Account $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->account()
         ->createAccount($arg_create_account);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->createAccount(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->account()->createAccount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->account()->createAccount(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_transfer_egld_blockchain = new \Tatum\Model\TransferEgldBlockchain();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->elrond()
         ->transferEgldBlockchain($arg_transfer_egld_blockchain);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->elrond()->transferEgldBlockchain(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->elrond()->transferEgldBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->elrond()->transferEgldBlockchain(): " . $exc->getMessage() . PHP_EOL;
 }

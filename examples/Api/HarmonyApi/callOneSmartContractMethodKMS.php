@@ -23,18 +23,18 @@ $arg_call_one_smart_contract_method_kms = new \Tatum\Model\CallOneSmartContractM
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->harmony()
         ->callOneSmartContractMethodKMS($arg_call_one_smart_contract_method_kms, $arg_shard_id);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->harmony()->callOneSmartContractMethodKMS(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->harmony()->callOneSmartContractMethodKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->harmony()->callOneSmartContractMethodKMS(): " . $exc->getMessage() . PHP_EOL;
 }

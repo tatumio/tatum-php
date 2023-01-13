@@ -24,18 +24,18 @@ $arg_xpub = '30e96a57be6235c686da968c1860f69d1871a692b29626b7ebb923aff8c6731cb9f
 $arg_index = 0;
 
 try {
+
     /** @var \Tatum\Model\AdaGenerateAddress200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->cardano()
         ->adaGenerateAddress($arg_xpub, $arg_index);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->cardano()->adaGenerateAddress(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->cardano()->adaGenerateAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->cardano()->adaGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
 }

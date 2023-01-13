@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_activate_gas_pump_tron = new \Tatum\Model\ActivateGasPumpTron();
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->gasPump()
         ->activateGasPumpTron($arg_activate_gas_pump_tron);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->activateGasPumpTron(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->gasPump()->activateGasPumpTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->gasPump()->activateGasPumpTron(): " . $exc->getMessage() . PHP_EOL;
 }

@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_deploy_kcs_erc20_offchain_mnem_xpub = new \Tatum\Model\DeployKCSErc20OffchainMnemXpub();
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainOperations()
         ->deployKCSErc20OffchainMnemXpub($arg_deploy_kcs_erc20_offchain_mnem_xpub);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->deployKCSErc20OffchainMnemXpub(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainOperations()->deployKCSErc20OffchainMnemXpub(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainOperations()->deployKCSErc20OffchainMnemXpub(): " . $exc->getMessage() . PHP_EOL;
 }

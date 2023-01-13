@@ -20,18 +20,18 @@ $sdk = new \Tatum\Sdk();
 $arg_create_record = new \Tatum\Model\CreateRecord();
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk
         ->mainnet()
         ->api()
         ->blockchainStorage()
         ->createRecord($arg_create_record);
-    
+
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainStorage()->createRecord(): ", 
-        var_export($apiExc->getResponseObject(), true), 
-        PHP_EOL;
+    echo "API Exception when calling api()->blockchainStorage()->createRecord(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
     echo "Exception when calling api()->blockchainStorage()->createRecord(): " . $exc->getMessage() . PHP_EOL;
 }
