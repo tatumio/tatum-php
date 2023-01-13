@@ -23,7 +23,7 @@ $arg_burn_nft_algo = (new \Tatum\Model\BurnNftAlgo())
     ->setFromPrivateKey('46OPDKNDLB35M3QMRRZEAW2HDTDT2LFHRUCHDE5FJZAJOV7GDPCC6AYZ6KCUULTHA4QL6YPHN2PNEXHPJMUZGHYJXQK6SUL2HQ2MLXQ');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

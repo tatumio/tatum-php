@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
-$arg_chain = "'chain_example'";
+$arg_chain = 'chain_example';
 
 // The ID (hash) of the deployment transaction
 $arg_hash = "0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7";

@@ -21,7 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = "0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7";
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\EthTx $response */

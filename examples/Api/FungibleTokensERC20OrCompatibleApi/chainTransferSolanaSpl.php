@@ -29,7 +29,7 @@ $arg_chain_transfer_solana_spl = (new \Tatum\Model\ChainTransferSolanaSpl())
     ->setFeePayerPrivateKey('YdQ1iy2NYs93dtkHdz3ijDuhRJj6uXYAUZmixirCrgCsTMj42BN1Q1buYcGZaMxw5buk9VU5ogQ6zuzn8DMsGaf')/* optional */;
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

@@ -26,7 +26,7 @@ $arg_chain_transfer_algo_erc20 = (new \Tatum\Model\ChainTransferAlgoErc20())
     ->setFromPrivateKey('72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

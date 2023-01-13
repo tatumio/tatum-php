@@ -22,7 +22,7 @@ $arg_create_subscription_tx_in_the_block = (new \Tatum\Model\CreateSubscriptionT
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_testnet_type = "'ethereum-sepolia'";
+$arg_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\Id $response */

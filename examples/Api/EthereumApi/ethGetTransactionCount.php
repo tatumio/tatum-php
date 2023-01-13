@@ -21,7 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var float $response */

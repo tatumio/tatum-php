@@ -30,7 +30,7 @@ $arg_chain_deploy_algo_erc20 = (new \Tatum\Model\ChainDeployAlgoErc20())
     ->setFee('0.001');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

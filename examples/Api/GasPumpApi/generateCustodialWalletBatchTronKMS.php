@@ -27,7 +27,7 @@ $arg_generate_custodial_wallet_batch_tron_kms = (new \Tatum\Model\GenerateCustod
     ->setFeeLimit(100);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

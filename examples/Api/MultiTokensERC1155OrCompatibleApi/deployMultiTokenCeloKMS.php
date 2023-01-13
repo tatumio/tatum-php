@@ -27,7 +27,7 @@ $arg_deploy_multi_token_celo_kms = (new \Tatum\Model\DeployMultiTokenCeloKMS())
     ->setFeeCurrency('null');
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

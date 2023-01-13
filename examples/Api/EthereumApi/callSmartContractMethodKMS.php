@@ -33,7 +33,7 @@ $arg_call_smart_contract_method_kms = (new \Tatum\Model\CallSmartContractMethodK
     ->setFee(null)/* optional */;
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */

@@ -26,13 +26,13 @@ $arg_body = array('key' => new \stdClass);
 $arg_x_api_key = "ea8ce228-6ca3-465c-abb0-fd3c5d35c0d5";
 
 // Type of the node to access for Algorand.
-$arg_node_type = "'node_type_example'";
+$arg_node_type = 'node_type_example';
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_testnet_type = "'ethereum-sepolia'";
+$arg_testnet_type = 'ethereum-sepolia';
 
 // Type of Avalanche network. Defaults to Avalanche C-Chain.
-$arg_chain_type = "'avax-c'";
+$arg_chain_type = 'avax-c';
 
 // Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar.
 $arg_rpc_path = "v2/accounts";

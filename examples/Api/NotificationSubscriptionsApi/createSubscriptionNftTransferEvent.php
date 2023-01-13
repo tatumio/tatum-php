@@ -22,7 +22,7 @@ $arg_create_subscription_nft_transfer_event = (new \Tatum\Model\CreateSubscripti
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_testnet_type = "'ethereum-sepolia'";
+$arg_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\Id $response */

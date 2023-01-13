@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Customer internal ID
-$arg_id = "'id_example'";
+$arg_id = 'id_example';
 
 try {
     $sdk->mainnet()

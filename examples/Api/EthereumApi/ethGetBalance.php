@@ -21,7 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\EthBalance $response */

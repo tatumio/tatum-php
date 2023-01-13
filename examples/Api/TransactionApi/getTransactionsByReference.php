@@ -17,7 +17,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_reference = "'reference_example'";
+$arg_reference = 'reference_example';
 
 try {
     /** @var \Tatum\Model\Transaction[] $response */

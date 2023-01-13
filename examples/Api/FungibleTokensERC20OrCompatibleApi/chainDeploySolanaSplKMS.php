@@ -26,7 +26,7 @@ $arg_chain_deploy_solana_spl_kms = (new \Tatum\Model\ChainDeploySolanaSplKMS())
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Blockchain to get pending transactions for.
-$arg_chain = "'chain_example'";
+$arg_chain = 'chain_example';
 
 // Signature IDs of the KMS which invokes this endpoint.
 $arg_kms_signature_ids = (new \Tatum\Model\KmsSignatureIds())

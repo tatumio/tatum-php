@@ -24,7 +24,7 @@ $arg_page_size = 20;
 $arg_page = 0;
 
 // Direction of sorting. Can be asc or desc
-$arg_sort = "'sort_example'";
+$arg_sort = 'sort_example';
 
 // Sort by
 $arg_sort_by = "_id";

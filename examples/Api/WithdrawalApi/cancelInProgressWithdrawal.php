@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // ID of created withdrawal
-$arg_id = "'id_example'";
+$arg_id = 'id_example';
 
 // Defines whether fee should be reverted to account balance as well as amount. Defaults to true. Revert true would be typically used when withdrawal was not broadcast to blockchain. False is used usually for Ethereum based currencies when gas was consumed but transaction was reverted.
 $arg_revert = true;

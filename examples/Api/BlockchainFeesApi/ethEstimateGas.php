@@ -25,7 +25,7 @@ $arg_eth_estimate_gas = (new \Tatum\Model\EthEstimateGas())
     ->setData('4d79206e6f746520746f2074686520726563697069656e74')/* optional */;
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\EthGasEstimation $response */

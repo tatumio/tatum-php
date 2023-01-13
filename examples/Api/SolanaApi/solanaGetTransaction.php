@@ -21,7 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = "5oSXZkPregqGhHrTcbWhgHQJETvBHtBYssuuCMJ3qroAgHsHndsr8fyY8kY76AgwmMaZBZW8ThHAXwjDaUSweApS";
 
 // Commitment of the transaction. If not defined, all transactions are being scanned.
-$arg_commitment = "'commitment_example'";
+$arg_commitment = 'commitment_example';
 
 try {
     /** @var \Tatum\Model\SolanaTx $response */

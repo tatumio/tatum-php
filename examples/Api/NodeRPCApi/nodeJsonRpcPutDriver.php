@@ -26,7 +26,7 @@ $arg_body = array('key' => new \stdClass);
 $arg_x_api_key = "ea8ce228-6ca3-465c-abb0-fd3c5d35c0d5";
 
 // Type of the node to access for Algorand.
-$arg_node_type = "'node_type_example'";
+$arg_node_type = 'node_type_example';
 
 // Optional path of rpc call for non EVM nodes, e.g. Algorand or Stellar.
 $arg_rpc_path = "v2/accounts";

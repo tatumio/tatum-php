@@ -22,7 +22,7 @@ $arg_create_subscription_multi_token_transfer_event = (new \Tatum\Model\CreateSu
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_testnet_type = "'ethereum-sepolia'";
+$arg_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\Id $response */

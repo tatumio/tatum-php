@@ -28,7 +28,7 @@ $arg_burn_multi_token_celo = (new \Tatum\Model\BurnMultiTokenCelo())
     ->setFeeCurrency('null');
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

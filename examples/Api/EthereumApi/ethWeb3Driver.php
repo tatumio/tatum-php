@@ -23,7 +23,7 @@ $arg_x_api_key = "asdlkfjnqunalkwjfnq2oi303294857k";
 $arg_body = array('key' => new \stdClass);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_testnet_type = "'ethereum-sepolia'";
+$arg_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var object $response */

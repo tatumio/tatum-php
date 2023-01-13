@@ -24,7 +24,7 @@ $arg_chain = "ETH";
 $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[] $response */

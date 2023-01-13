@@ -26,7 +26,7 @@ $arg_burn_nft_flow_kms = (new \Tatum\Model\BurnNftFlowKMS())
     ->setIndex(0)/* optional */;
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

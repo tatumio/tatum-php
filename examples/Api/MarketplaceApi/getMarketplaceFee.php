@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
-$arg_chain = "'chain_example'";
+$arg_chain = 'chain_example';
 
 // Contract address
 $arg_contract_address = "0xe6e7340394958674cdf8606936d292f565e4ecc4";

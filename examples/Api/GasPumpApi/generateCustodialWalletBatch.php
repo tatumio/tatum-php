@@ -26,7 +26,7 @@ $arg_generate_custodial_wallet_batch = (new \Tatum\Model\GenerateCustodialWallet
     ->setNonce(null)/* optional */;
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

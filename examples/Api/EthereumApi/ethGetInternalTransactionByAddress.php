@@ -27,7 +27,7 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\EthTxInternal[] $response */

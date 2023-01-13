@@ -21,7 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_chain = "ETH";
 
 // The blockchain address that owns the gas pump address to check; can be referred to as "master address"
-$arg_owner = "'owner_example'";
+$arg_owner = 'owner_example';
 
 // The index of the gas pump address to check
 $arg_index = 3.4;

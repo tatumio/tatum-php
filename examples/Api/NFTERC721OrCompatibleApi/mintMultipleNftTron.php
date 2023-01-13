@@ -27,7 +27,7 @@ $arg_mint_multiple_nft_tron = (new \Tatum\Model\MintMultipleNftTron())
     ->setFeeLimit(600);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\MintMultipleNftMinter200Response $response */

@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
-$arg_chain = "'chain_example'";
+$arg_chain = 'chain_example';
 
 // The blockchain address that you want to get the token balance of
 $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
@@ -27,7 +27,7 @@ $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 $arg_contract_address = "0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326";
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\NftGetBalanceErc721200Response $response */

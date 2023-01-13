@@ -22,7 +22,7 @@ $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse');
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\PrivKey $response */

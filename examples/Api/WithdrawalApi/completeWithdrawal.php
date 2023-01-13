@@ -18,10 +18,10 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // ID of created withdrawal
-$arg_id = "'id_example'";
+$arg_id = 'id_example';
 
 // Blockchain transaction ID of created withdrawal
-$arg_tx_id = "'tx_id_example'";
+$arg_tx_id = 'tx_id_example';
 
 try {
     $sdk->mainnet()

@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
-$arg_chain = "'chain_example'";
+$arg_chain = 'chain_example';
 
 // The date and time in the ISO 8601 standard format
 $arg_date = "2021-09-17T07:55:54Z";

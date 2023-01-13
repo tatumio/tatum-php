@@ -24,7 +24,7 @@ $arg_generate_custodial_wallet_batch_payer = (new \Tatum\Model\GenerateCustodial
     ->setOwner('0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea');
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

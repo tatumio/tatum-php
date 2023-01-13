@@ -34,7 +34,7 @@ $arg_mint_nft_kms_celo = (new \Tatum\Model\MintNftKMSCelo())
     ->setNonce(null)/* optional */;
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = "'ethereum-sepolia'";
+$arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
     /** @var \Tatum\Model\MintNftExpress200Response $response */

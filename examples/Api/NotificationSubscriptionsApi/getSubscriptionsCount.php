@@ -24,7 +24,7 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 // Value for filtering by address
-$arg_address = "'address_example'";
+$arg_address = 'address_example';
 
 try {
     /** @var \Tatum\Model\EntitiesCount $response */
