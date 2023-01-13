@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Transaction hash
-$arg_hash = '99996224823736c1e9b8484ed74c1573049478f871d6f94b86811fb1c7b2addd';
+$arg_hash = "99996224823736c1e9b8484ed74c1573049478f871d6f94b86811fb1c7b2addd";
 
 try {
-
     /** @var \Tatum\Model\EgldTx $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->elrond()
         ->egldGetTransaction($arg_hash);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->elrond()->egldGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

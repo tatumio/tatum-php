@@ -18,16 +18,13 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 try {
-
     /** @var \Tatum\Model\BtcInfo $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bitcoin()
         ->btcGetBlockChainInfo();
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bitcoin()->btcGetBlockChainInfo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

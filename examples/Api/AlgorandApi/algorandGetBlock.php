@@ -21,16 +21,13 @@ $sdk = new \Tatum\Sdk();
 $arg_round_number = 16775567;
 
 try {
-
     /** @var \Tatum\Model\AlgoBlock $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->algorand()
         ->algorandGetBlock($arg_round_number);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->algorand()->algorandGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

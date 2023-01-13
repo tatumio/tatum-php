@@ -24,16 +24,13 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 try {
-
     /** @var \Tatum\Model\Customer[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->customer()
         ->findAllCustomers($arg_page_size, $arg_offset);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->customer()->findAllCustomers(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

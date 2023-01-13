@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_bnb_blockchain_kms = new \Tatum\Model\TransferBnbBlockchainKMS();
+$arg_transfer_bnb_blockchain_kms = (new \Tatum\Model\TransferBnbBlockchainKMS())
+    ->setTo('tbnb138u9djee6fwphhd2a3628q2h0j5w97yx48zqex')
+    ->setCurrency('BNB')
+    ->setAmount('100000')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    ->setFromAddress('tbnb1q82g2h9q0kfe7sysnj5w7nlak92csfjztymp39')
+    ->setMessage('Message to recipient')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bNBBeaconChain()
         ->transferBnbBlockchainKMS($arg_transfer_bnb_blockchain_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bNBBeaconChain()->transferBnbBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

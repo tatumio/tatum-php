@@ -21,25 +21,22 @@ $sdk = new \Tatum\Sdk();
 $arg_page_size = 10;
 
 // Currency of the withdrawal
-$arg_currency = 'BTC';
+$arg_currency = "BTC";
 
 // Status of the withdrawal
-$arg_status = 'Done';
+$arg_status = "Done";
 
 // Offset to obtain next page of the data.
 $arg_offset = 0;
 
 try {
-
     /** @var \Tatum\Model\WithdrawalObject[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->withdrawal()
         ->getWithdrawals($arg_page_size, $arg_currency, $arg_status, $arg_offset);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->withdrawal()->getWithdrawals(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

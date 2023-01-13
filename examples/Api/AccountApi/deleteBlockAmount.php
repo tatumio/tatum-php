@@ -18,16 +18,13 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Blockage ID
-$arg_id = '5e6be89ee6aa436299950c3f';
+$arg_id = "5e6be89ee6aa436299950c3f";
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->account()
         ->deleteBlockAmount($arg_id);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->account()->deleteBlockAmount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

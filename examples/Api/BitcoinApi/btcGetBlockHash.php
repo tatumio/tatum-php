@@ -21,16 +21,13 @@ $sdk = new \Tatum\Sdk();
 $arg_i = 1580117;
 
 try {
-
     /** @var \Tatum\Model\BtcBlockHash $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bitcoin()
         ->btcGetBlockHash($arg_i);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bitcoin()->btcGetBlockHash(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

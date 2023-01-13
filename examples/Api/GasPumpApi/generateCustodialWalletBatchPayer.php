@@ -17,22 +17,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_generate_custodial_wallet_batch_payer = new \Tatum\Model\GenerateCustodialWalletBatchPayer();
+$arg_generate_custodial_wallet_batch_payer = (new \Tatum\Model\GenerateCustodialWalletBatchPayer())
+    ->setChain('MATIC')
+    ->setFeesCovered(true)
+    ->setBatchCount(null)
+    ->setOwner('0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea');
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->generateCustodialWalletBatchPayer($arg_generate_custodial_wallet_batch_payer, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->generateCustodialWalletBatchPayer(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

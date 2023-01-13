@@ -24,10 +24,10 @@ $arg_page_size = 20;
 $arg_page = 0;
 
 // Direction of sorting. Can be asc or desc
-$arg_sort = 'sort_example';
+$arg_sort = "'sort_example'";
 
 // Sort by
-$arg_sort_by = '_id';
+$arg_sort_by = "_id";
 
 // Filter only active or non active accounts
 $arg_active = true;
@@ -39,22 +39,19 @@ $arg_only_non_zero_balance = true;
 $arg_frozen = true;
 
 // Filter by currency
-$arg_currency = 'BTC';
+$arg_currency = "BTC";
 
 // Filter by account number
-$arg_account_number = 'AC_1011_B';
+$arg_account_number = "AC_1011_B";
 
 try {
-
     /** @var \Tatum\Model\EntitiesCount $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->account()
         ->getAccountsCount($arg_page_size, $arg_page, $arg_sort, $arg_sort_by, $arg_active, $arg_only_non_zero_balance, $arg_frozen, $arg_currency, $arg_account_number);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->account()->getAccountsCount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
-$arg_address = '0x5034aa590125b64023a0262112b98d72e3c8e40e';
+$arg_address = "0x5034aa590125b64023a0262112b98d72e3c8e40e";
 
 try {
-
     /** @var \Tatum\Model\VetGetEnergy200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->veChain()
         ->vetGetEnergy($arg_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->veChain()->vetGetEnergy(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -18,16 +18,13 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // WalletID of the managed address
-$arg_id = '3ad54647-4166-4d34-9186-fd46caaba945';
+$arg_id = "3ad54647-4166-4d34-9186-fd46caaba945";
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->custodialManagedWallets()
         ->custodialDeleteWallet($arg_id);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->custodialManagedWallets()->custodialDeleteWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

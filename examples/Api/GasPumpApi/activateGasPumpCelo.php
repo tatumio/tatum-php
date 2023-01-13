@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_activate_gas_pump_celo = new \Tatum\Model\ActivateGasPumpCelo();
+$arg_activate_gas_pump_celo = (new \Tatum\Model\ActivateGasPumpCelo())
+    ->setChain('CELO')
+    ->setOwner('0x2b5a0bE5940B63dE1eDdCCCa7bd977357e2488eD')
+    ->setFrom(0)
+    ->setTo(200)
+    ->setFeeCurrency('null')/* optional */
+    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->activateGasPumpCelo($arg_activate_gas_pump_celo);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->activateGasPumpCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

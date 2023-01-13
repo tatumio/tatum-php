@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Subscription ID
-$arg_id = '5e68c66581f2ee32bc354087';
+$arg_id = "5e68c66581f2ee32bc354087";
 
 try {
-
     /** @var \Tatum\Model\GetSubscriptionReport200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->notificationSubscriptions()
         ->getSubscriptionReport($arg_id);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->notificationSubscriptions()->getSubscriptionReport(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

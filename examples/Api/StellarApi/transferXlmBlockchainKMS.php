@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_xlm_blockchain_kms = new \Tatum\Model\TransferXlmBlockchainKMS();
+$arg_transfer_xlm_blockchain_kms = (new \Tatum\Model\TransferXlmBlockchainKMS())
+    ->setFromAccount('GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H')
+    ->setTo('GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H')
+    ->setAmount('10000')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    ->setInitialize(false)/* optional */
+    ->setMessage('12355')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->stellar()
         ->transferXlmBlockchainKMS($arg_transfer_xlm_blockchain_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->stellar()->transferXlmBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

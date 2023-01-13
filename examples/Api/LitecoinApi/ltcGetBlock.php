@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Block hash or height.
-$arg_hash = 1234314;
+$arg_hash = "1234314";
 
 try {
-
     /** @var \Tatum\Model\LtcBlock $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->litecoin()
         ->ltcGetBlock($arg_hash);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->litecoin()->ltcGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

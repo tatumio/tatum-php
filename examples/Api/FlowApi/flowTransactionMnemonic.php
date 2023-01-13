@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_flow_transaction_mnemonic = new \Tatum\Model\FlowTransactionMnemonic();
+$arg_flow_transaction_mnemonic = (new \Tatum\Model\FlowTransactionMnemonic())
+    ->setAccount('0x955cd3f17b2fd8ad')
+    ->setCurrency('null')
+    ->setTo('0x955cd3f17b2fd8ae')
+    ->setAmount('10000')
+    ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
+    ->setIndex(null);
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->flow()
         ->flowTransactionMnemonic($arg_flow_transaction_mnemonic);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->flow()->flowTransactionMnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

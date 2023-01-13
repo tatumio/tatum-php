@@ -17,22 +17,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_priv_key_request = new \Tatum\Model\PrivKeyRequest();
+$arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
+    ->setIndex(0)
+    ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse');
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\PrivKey $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->ethereum()
         ->ethGenerateAddressPrivateKey($arg_priv_key_request, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->ethereum()->ethGenerateAddressPrivateKey(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

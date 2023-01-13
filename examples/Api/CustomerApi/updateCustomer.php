@@ -18,21 +18,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Customer internal ID
-$arg_id = 'id_example';
+$arg_id = "'id_example'";
 
-$arg_customer_update = new \Tatum\Model\CustomerUpdate();
+$arg_customer_update = (new \Tatum\Model\CustomerUpdate())
+    ->setExternalId('123654')
+    ->setAccountingCurrency('USD')/* optional */
+    ->setCustomerCountry('US')/* optional */
+    ->setProviderCountry('US')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\Customer $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->customer()
         ->updateCustomer($arg_id, $arg_customer_update);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->customer()->updateCustomer(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

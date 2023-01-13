@@ -17,22 +17,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_generate_custodial_wallet_batch_tron_kms = new \Tatum\Model\GenerateCustodialWalletBatchTronKMS();
+$arg_generate_custodial_wallet_batch_tron_kms = (new \Tatum\Model\GenerateCustodialWalletBatchTronKMS())
+    ->setChain('TRON')
+    ->setFrom('TGXh2YJhfwchMGKuzfEJ27W1VEJRKnMdy9')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    ->setIndex(null)/* optional */
+    ->setBatchCount(50)
+    ->setOwner('TGXh2YJhfwchMGKuzfEJ27W1VEJRKnMdy9')
+    ->setFeeLimit(100);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->generateCustodialWalletBatchTronKMS($arg_generate_custodial_wallet_batch_tron_kms, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->generateCustodialWalletBatchTronKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

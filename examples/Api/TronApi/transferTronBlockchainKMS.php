@@ -17,19 +17,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_tron_blockchain_kms = new \Tatum\Model\TransferTronBlockchainKMS();
+$arg_transfer_tron_blockchain_kms = (new \Tatum\Model\TransferTronBlockchainKMS())
+    ->setFrom('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6')
+    ->setTo('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    ->setAmount('100000')
+    ->setIndex(null)/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->tron()
         ->transferTronBlockchainKMS($arg_transfer_tron_blockchain_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->tron()->transferTronBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

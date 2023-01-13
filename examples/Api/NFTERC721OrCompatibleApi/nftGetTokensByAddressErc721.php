@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
-$arg_chain = 'SOL';
+$arg_chain = "SOL";
 
 // The blockchain address that you want to get the token balance of
-$arg_address = 'FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ';
+$arg_address = "FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ";
 
 try {
-
     /** @var \Tatum\Model\NftTokenByAddressErc721[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->nftGetTokensByAddressErc721($arg_chain, $arg_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetTokensByAddressErc721(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

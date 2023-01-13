@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // ID of created withdrawal
-$arg_id = 'id_example';
+$arg_id = "'id_example'";
 
 // Blockchain transaction ID of created withdrawal
-$arg_tx_id = 'tx_id_example';
+$arg_tx_id = "'tx_id_example'";
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->withdrawal()
         ->completeWithdrawal($arg_id, $arg_tx_id);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->withdrawal()->completeWithdrawal(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

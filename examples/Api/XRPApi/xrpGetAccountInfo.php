@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
-$arg_account = 'rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF';
+$arg_account = "rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF";
 
 try {
-
     /** @var \Tatum\Model\XrpAccount $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->xRP()
         ->xrpGetAccountInfo($arg_account);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->xRP()->xrpGetAccountInfo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

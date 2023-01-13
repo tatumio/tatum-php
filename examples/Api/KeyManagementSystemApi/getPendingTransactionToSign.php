@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // ID of transaction
-$arg_id = 'id_example';
+$arg_id = "'id_example'";
 
 try {
-
     /** @var \Tatum\Model\PendingTransaction $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->keyManagementSystem()
         ->getPendingTransactionToSign($arg_id);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->keyManagementSystem()->getPendingTransactionToSign(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

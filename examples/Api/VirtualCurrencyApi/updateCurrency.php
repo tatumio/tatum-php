@@ -17,16 +17,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_virtual_currency_update = new \Tatum\Model\VirtualCurrencyUpdate();
+$arg_virtual_currency_update = (new \Tatum\Model\VirtualCurrencyUpdate())
+    ->setName('VC_VIRTUAL')
+    ->setBaseRate(1)/* optional */
+    ->setBasePair('EUR')/* optional */;
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->virtualCurrency()
         ->updateCurrency($arg_virtual_currency_update);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->virtualCurrency()->updateCurrency(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

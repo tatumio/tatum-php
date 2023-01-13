@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // TRC-10 Token ID or TRC-20 contract address
-$arg_address = 'TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW';
+$arg_address = "TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW";
 
 // TRC 10/20 symbol name.
-$arg_name = 'MY_TOKEN';
+$arg_name = "MY_TOKEN";
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->storeTrcAddress($arg_address, $arg_name);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->storeTrcAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

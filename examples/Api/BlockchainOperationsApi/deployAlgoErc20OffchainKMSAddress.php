@@ -17,19 +17,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_deploy_algo_erc20_offchain_kms_address = new \Tatum\Model\DeployAlgoErc20OffchainKMSAddress();
+$arg_deploy_algo_erc20_offchain_kms_address = (new \Tatum\Model\DeployAlgoErc20OffchainKMSAddress())
+    ->setSymbol('MT')
+    ->setSupply('10000000')
+    ->setDescription('My ERC20 Token')
+    ->setBasePair('EUR')
+    ->setBaseRate(1)/* optional */
+    ->setCustomer(null)/* optional */
+    ->setAddress('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
-
     /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->deployAlgoErc20OffchainKMSAddress($arg_deploy_algo_erc20_offchain_kms_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->deployAlgoErc20OffchainKMSAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

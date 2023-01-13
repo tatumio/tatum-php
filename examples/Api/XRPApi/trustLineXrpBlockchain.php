@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_trust_line_xrp_blockchain = new \Tatum\Model\TrustLineXrpBlockchain();
+$arg_trust_line_xrp_blockchain = (new \Tatum\Model\TrustLineXrpBlockchain())
+    ->setFromAccount('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
+    ->setIssuerAccount('rsP3mgGb2tcYUrxiLFiHJiQXhsziegtwBc')
+    ->setLimit('10000')
+    ->setToken('DA39A3EE5E6B4B0D3255BFEF95601890AFD80709')
+    ->setFromSecret('snSFTHdvSYQKKkYntvEt8cnmZuPJB')
+    ->setFee('10000')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->xRP()
         ->trustLineXrpBlockchain($arg_trust_line_xrp_blockchain);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->xRP()->trustLineXrpBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

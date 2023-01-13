@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_activate_gas_pump_tron = new \Tatum\Model\ActivateGasPumpTron();
+$arg_activate_gas_pump_tron = (new \Tatum\Model\ActivateGasPumpTron())
+    ->setChain('TRON')
+    ->setOwner('0x2b5a0bE5940B63dE1eDdCCCa7bd977357e2488eD')
+    ->setFrom(0)
+    ->setTo(200)
+    ->setFeeLimit(600)
+    ->setFromPrivateKey('e26c1595086cd52f2bc61774c7228b841db66b4b9b0ed36dc29dbc90595dd5b6');
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->activateGasPumpTron($arg_activate_gas_pump_tron);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->activateGasPumpTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -17,19 +17,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_flow_create_address_from_pub_key_secret = new \Tatum\Model\FlowCreateAddressFromPubKeySecret();
+$arg_flow_create_address_from_pub_key_secret = (new \Tatum\Model\FlowCreateAddressFromPubKeySecret())
+    ->setAccount('0x955cd3f17b2fd8ad')
+    ->setPublicKey('968c3ce11e871cb2b7161b282655ee5fcb051f3c04894705d771bf11c6fbebfc6556ab8a0c04f45ea56281312336d0668529077c9d66891a6cad3db877acbe90')
+    ->setPrivateKey('37afa218d41d9cd6a2c6f2b96d9eaa3ad96c598252bc50e4d45d62f9356a51f8');
 
 try {
-
     /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->flow()
         ->flowCreateAddressFromPubKeySecret($arg_flow_create_address_from_pub_key_secret);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->flow()->flowCreateAddressFromPubKeySecret(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

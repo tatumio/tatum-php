@@ -17,22 +17,28 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_deploy_nft = new \Tatum\Model\DeployNft();
+$arg_deploy_nft = (new \Tatum\Model\DeployNft())
+    ->setChain('ETH')
+    ->setName('My ERC721')
+    ->setSymbol('ERC_SYMBOL')
+    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    ->setProvenance(false)/* optional */
+    ->setCashback(false)/* optional */
+    ->setPublicMint(true)/* optional */
+    ->setNonce(null)/* optional */
+    ->setFee(null)/* optional */;
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->deployNft($arg_deploy_nft, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->deployNft(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

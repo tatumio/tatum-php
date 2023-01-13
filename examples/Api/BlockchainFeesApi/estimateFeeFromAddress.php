@@ -17,19 +17,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_estimate_fee_from_address = new \Tatum\Model\EstimateFeeFromAddress();
+$arg_estimate_fee_from_address = (new \Tatum\Model\EstimateFeeFromAddress())
+    ->setChain('null')
+    ->setType('null')
+    ->setFromAddress(null)
+    ->setTo(null);
 
 try {
-
     /** @var \Tatum\Model\EstimateFee200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainFees()
         ->estimateFeeFromAddress($arg_estimate_fee_from_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainFees()->estimateFeeFromAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

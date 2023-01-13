@@ -17,19 +17,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_update_fee_solana_kms = new \Tatum\Model\UpdateFeeSolanaKMS();
+$arg_update_fee_solana_kms = (new \Tatum\Model\UpdateFeeSolanaKMS())
+    ->setChain('SOL')
+    ->setContractAddress('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    ->setMarketplaceFee(150)
+    ->setFrom('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->marketplace()
         ->updateFeeSolanaKMS($arg_update_fee_solana_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->marketplace()->updateFeeSolanaKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

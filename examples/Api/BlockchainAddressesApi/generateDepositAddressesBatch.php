@@ -17,19 +17,17 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_offchain_addresses = new \Tatum\Model\OffchainAddresses();
+$arg_offchain_addresses = (new \Tatum\Model\OffchainAddresses())
+    ->setAddresses(null);
 
 try {
-
     /** @var \Tatum\Model\Address[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainAddresses()
         ->generateDepositAddressesBatch($arg_offchain_addresses);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainAddresses()->generateDepositAddressesBatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

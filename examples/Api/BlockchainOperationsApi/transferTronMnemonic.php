@@ -17,19 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_tron_mnemonic = new \Tatum\Model\TransferTronMnemonic();
+$arg_transfer_tron_mnemonic = (new \Tatum\Model\TransferTronMnemonic())
+    ->setAddress('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
+    ->setAmount('100000')
+    ->setCompliant(false)/* optional */
+    ->setFee('2.5')/* optional */
+    ->setIndex(0)
+    ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
+    ->setPaymentId('1234')/* optional */
+    ->setSenderAccountId('5e68c66581f2ee32bc354087')
+    ->setSenderNote('Sender note')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferTronMnemonic($arg_transfer_tron_mnemonic);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->transferTronMnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

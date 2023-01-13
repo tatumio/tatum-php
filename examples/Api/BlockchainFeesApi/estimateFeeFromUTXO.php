@@ -17,19 +17,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_estimate_fee_from_utxo = new \Tatum\Model\EstimateFeeFromUTXO();
+$arg_estimate_fee_from_utxo = (new \Tatum\Model\EstimateFeeFromUTXO())
+    ->setChain('null')
+    ->setType('null')
+    ->setFromUtxo(null)
+    ->setTo(null);
 
 try {
-
     /** @var \Tatum\Model\EstimateFee200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainFees()
         ->estimateFeeFromUTXO($arg_estimate_fee_from_utxo);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainFees()->estimateFeeFromUTXO(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_update_fee_recipient = new \Tatum\Model\UpdateFeeRecipient();
+$arg_update_fee_recipient = (new \Tatum\Model\UpdateFeeRecipient())
+    ->setChain('ETH')
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setFeeRecipient('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    ->setNonce(1)/* optional */
+    ->setFee(null)/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->auction()
         ->bloAucUpdateFeeRecipient($arg_update_fee_recipient);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->auction()->bloAucUpdateFeeRecipient(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

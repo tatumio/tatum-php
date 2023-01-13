@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The transaction hash
-$arg_hash = '5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a';
+$arg_hash = "5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a";
 
 // The index of the transaction output that you want to check for the UTXO
 $arg_index = 0;
 
 try {
-
     /** @var \Tatum\Model\DogeUTXO $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->dogecoin()
         ->dogeGetUTXO($arg_hash, $arg_index);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->dogecoin()->dogeGetUTXO(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

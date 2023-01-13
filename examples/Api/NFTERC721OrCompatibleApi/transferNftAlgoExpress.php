@@ -17,22 +17,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_nft_algo_express = new \Tatum\Model\TransferNftAlgoExpress();
+$arg_transfer_nft_algo_express = (new \Tatum\Model\TransferNftAlgoExpress())
+    ->setChain('ALGO')
+    ->setTo('TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4')
+    ->setContractAddress('100000')
+    ->setAmount(1)/* optional */;
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->transferNftAlgoExpress($arg_transfer_nft_algo_express, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->transferNftAlgoExpress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

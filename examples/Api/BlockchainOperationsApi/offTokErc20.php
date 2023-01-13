@@ -18,21 +18,28 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
-$arg_chain = 'ETH';
+$arg_chain = "ETH";
 
-$arg_erc20 = new \Tatum\Model\Erc20();
+$arg_erc20 = (new \Tatum\Model\Erc20())
+    ->setSymbol('MY_TOKEN')
+    ->setSupply('1000000.0')
+    ->setDecimals(8)
+    ->setDescription('My Public Token')
+    ->setXpub('xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid')
+    ->setDerivationIndex(0)
+    ->setBasePair('EUR')
+    ->setBaseRate(1)/* optional */
+    ->setCustomer(null)/* optional */
+    ->setAccountingCurrency('USD')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\Erc20Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->offTokErc20($arg_chain, $arg_erc20);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->offTokErc20(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

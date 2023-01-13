@@ -17,19 +17,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_receive_algorand_asset_kms = new \Tatum\Model\ReceiveAlgorandAssetKMS();
+$arg_receive_algorand_asset_kms = (new \Tatum\Model\ReceiveAlgorandAssetKMS())
+    ->setFrom('TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4')
+    ->setAssetId(98745612)
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->algorand()
         ->receiveAlgorandAssetKMS($arg_receive_algorand_asset_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->algorand()->receiveAlgorandAssetKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

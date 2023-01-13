@@ -17,19 +17,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_ada_mnemonic = new \Tatum\Model\TransferAdaMnemonic();
+$arg_transfer_ada_mnemonic = (new \Tatum\Model\TransferAdaMnemonic())
+    ->setAddress('addr1qyyxyhaa2e7kxeqcc72w7f747zqlgwwwstlzsg9umuxc40wnhawldxl4nan95rhtlcnju9q2r8j9qz8vslwsmrkj5r4spxhep9')
+    ->setAmount('100000')
+    ->setCompliant(false)/* optional */
+    ->setFee('2.5')/* optional */
+    ->setIndex(0)
+    ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
+    ->setXpub('41253768cd7c5831988e580cfc7eeecaa78bf52a1ede2bd2f245406605adfbadd5911ab567bc3dc7713e29c2c14bb898b24bb1f01a4992605343ad14703037b9')
+    ->setPaymentId('1234')/* optional */
+    ->setSenderAccountId('5e68c66581f2ee32bc354087')
+    ->setSenderNote('Sender note')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferAdaMnemonic($arg_transfer_ada_mnemonic);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->transferAdaMnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

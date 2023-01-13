@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Account ID
-$arg_id = '5e68c66581f2ee32bc354087';
+$arg_id = "5e68c66581f2ee32bc354087";
 
 try {
-
     /** @var \Tatum\Model\AccountBalance $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->account()
         ->getAccountBalance($arg_id);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->account()->getAccountBalance(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

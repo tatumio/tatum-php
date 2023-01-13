@@ -17,19 +17,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_polygon_estimate_gas = new \Tatum\Model\PolygonEstimateGas();
+$arg_polygon_estimate_gas = (new \Tatum\Model\PolygonEstimateGas())
+    ->setFrom('0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef')
+    ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setAmount('100000')
+    ->setData('4d79206e6f746520746f2074686520726563697069656e74')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\PolygonEstimateGas200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainFees()
         ->polygonEstimateGas($arg_polygon_estimate_gas);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainFees()->polygonEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

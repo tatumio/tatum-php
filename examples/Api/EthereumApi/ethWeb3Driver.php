@@ -18,24 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
-$arg_x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
+$arg_x_api_key = "asdlkfjnqunalkwjfnq2oi303294857k";
 
 $arg_body = array('key' => new \stdClass);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
-$arg_testnet_type = 'ethereum-sepolia';
+$arg_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var object $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->ethereum()
         ->ethWeb3Driver($arg_x_api_key, $arg_body, $arg_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->ethereum()->ethWeb3Driver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

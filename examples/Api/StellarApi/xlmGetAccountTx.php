@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Address of XLM account.
-$arg_account = 'GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H';
+$arg_account = "GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H";
 
 // Paging token from the last transaction gives you next page
-$arg_pagination = 1348087155011584;
+$arg_pagination = "1348087155011584";
 
 try {
-
     /** @var \Tatum\Model\XlmTx[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->stellar()
         ->xlmGetAccountTx($arg_account, $arg_pagination);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->stellar()->xlmGetAccountTx(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

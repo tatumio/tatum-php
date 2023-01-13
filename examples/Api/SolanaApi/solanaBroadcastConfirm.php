@@ -17,19 +17,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_solana_broadcast_confirm = new \Tatum\Model\SolanaBroadcastConfirm();
+$arg_solana_broadcast_confirm = (new \Tatum\Model\SolanaBroadcastConfirm())
+    ->setTxData('01de391b34567fc65080dfe9e27170e2f9ac1cd1719878719feb74bb422d1795201df71fcf7349f5')
+    ->setOptions(null)/* optional */;
 
 try {
-
     /** @var \Tatum\Model\SolanaTransactionHashWithConfirm $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->solana()
         ->solanaBroadcastConfirm($arg_solana_broadcast_confirm);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->solana()->solanaBroadcastConfirm(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -17,19 +17,17 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_custodial_create_wallet_request = new \Tatum\Model\CustodialCreateWalletRequest();
+$arg_custodial_create_wallet_request = (new \Tatum\Model\CustodialCreateWalletRequest())
+    ->setChain('SOL');
 
 try {
-
     /** @var \Tatum\Model\CustodialManagedAddress $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->custodialManagedWallets()
         ->custodialCreateWallet($arg_custodial_create_wallet_request);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->custodialManagedWallets()->custodialCreateWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

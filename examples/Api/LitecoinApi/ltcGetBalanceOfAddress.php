@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Address
-$arg_address = 'n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or';
+$arg_address = "n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or";
 
 try {
-
     /** @var \Tatum\Model\BtcBasedBalance $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->litecoin()
         ->ltcGetBalanceOfAddress($arg_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->litecoin()->ltcGetBalanceOfAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

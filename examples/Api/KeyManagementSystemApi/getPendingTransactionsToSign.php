@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Blockchain to get pending transactions for.
-$arg_chain = 'chain_example';
+$arg_chain = "'chain_example'";
 
 // Signature IDs of the KMS which invokes this endpoint. If multiple, they should be separated by comma.
-$arg_signatures = '6d78dad2-518f-4e76-8255-8f1df0de6884,6d78dad2-518f-4e76-8255-8f1df0de6885,6d78dad2-518f-4e76-8255-8f1df0de6886';
+$arg_signatures = "6d78dad2-518f-4e76-8255-8f1df0de6884,6d78dad2-518f-4e76-8255-8f1df0de6885,6d78dad2-518f-4e76-8255-8f1df0de6886";
 
 try {
-
     /** @var \Tatum\Model\PendingTransaction[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->keyManagementSystem()
         ->getPendingTransactionsToSign($arg_chain, $arg_signatures);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->keyManagementSystem()->getPendingTransactionsToSign(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Address
-$arg_address = 'Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz';
+$arg_address = "Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz";
 
 // Max number of items per page is 50.
 $arg_page_size = 10;
@@ -27,16 +27,13 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 try {
-
     /** @var \Tatum\Model\AdaTx[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->cardano()
         ->adaGetTxByAddress($arg_address, $arg_page_size, $arg_offset);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->cardano()->adaGetTxByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -18,16 +18,13 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Account ID
-$arg_id = '5e68c66581f2ee32bc354087';
+$arg_id = "5e68c66581f2ee32bc354087";
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->account()
         ->deactivateAccount($arg_id);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->account()->deactivateAccount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

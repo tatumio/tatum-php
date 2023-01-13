@@ -17,19 +17,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_erc20 = new \Tatum\Model\TransferErc20();
+$arg_transfer_erc20 = (new \Tatum\Model\TransferErc20())
+    ->setSenderAccountId('5e68c66581f2ee32bc354087')
+    ->setAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setAmount('100000')
+    ->setCompliant(false)/* optional */
+    ->setGasLimit('40000')/* optional */
+    ->setGasPrice('20')/* optional */
+    ->setPrivateKey('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setNonce(null)/* optional */
+    ->setPaymentId('1234')/* optional */
+    ->setSenderNote('Sender note')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferErc20($arg_transfer_erc20);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->transferErc20(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

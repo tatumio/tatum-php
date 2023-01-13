@@ -17,22 +17,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_burn_nft_flow_pk = new \Tatum\Model\BurnNftFlowPK();
+$arg_burn_nft_flow_pk = (new \Tatum\Model\BurnNftFlowPK())
+    ->setChain('FLOW')
+    ->setTokenId('123')
+    ->setContractAddress('17a50dad-bcb1-4f3d-ae2c-ea2bfb04419f')
+    ->setAccount('0xc1b45bc27b9c61c3')
+    ->setPrivateKey('05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->burnNftFlowPK($arg_burn_nft_flow_pk, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->burnNftFlowPK(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

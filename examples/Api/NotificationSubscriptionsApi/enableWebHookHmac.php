@@ -17,16 +17,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_hmac_web_hook = new \Tatum\Model\HmacWebHook();
+$arg_hmac_web_hook = (new \Tatum\Model\HmacWebHook())
+    ->setHmacSecret('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6');
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->notificationSubscriptions()
         ->enableWebHookHmac($arg_hmac_web_hook);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->notificationSubscriptions()->enableWebHookHmac(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

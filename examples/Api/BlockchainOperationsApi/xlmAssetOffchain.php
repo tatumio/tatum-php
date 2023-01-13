@@ -17,16 +17,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_create_xlm_asset = new \Tatum\Model\CreateXlmAsset();
+$arg_create_xlm_asset = (new \Tatum\Model\CreateXlmAsset())
+    ->setIssuerAccount('GC5LAVZ5UPLIFDH6SI33PNVL5TKWA4ODXTI3WEF5JM6LRM5MNGVJ56TT')
+    ->setToken('TOKEN123')
+    ->setBasePair('EUR');
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->xlmAssetOffchain($arg_create_xlm_asset);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->xlmAssetOffchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

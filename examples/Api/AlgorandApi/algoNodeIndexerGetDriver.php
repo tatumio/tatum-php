@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
-$arg_x_api_key = 'asdlkfjnqunalkwjfnq2oi303294857k';
+$arg_x_api_key = "asdlkfjnqunalkwjfnq2oi303294857k";
 
 // `**` path of indexer.
-$arg_indexer_path = 'v2/accounts';
+$arg_indexer_path = "v2/accounts";
 
 try {
-
     /** @var \Tatum\Model\AlgoTx $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->algorand()
         ->algoNodeIndexerGetDriver($arg_x_api_key, $arg_indexer_path);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->algorand()->algoNodeIndexerGetDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

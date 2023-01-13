@@ -21,10 +21,10 @@ $sdk = new \Tatum\Sdk();
 $arg_page_size = 10;
 
 // Account ID. If present, only closed trades for given account will be present.
-$arg_id = '5e68c66581f2ee32bc354087';
+$arg_id = "5e68c66581f2ee32bc354087";
 
 // Trade pair. If present, only closed trades on given trade pair will be present.
-$arg_pair = 'BTC/ETH';
+$arg_pair = "BTC/ETH";
 
 // Offset to obtain next page of the data.
 $arg_offset = 0;
@@ -36,16 +36,13 @@ $arg_count = true;
 $arg_types = array('types_example');
 
 try {
-
     /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->orderBook()
         ->getHistoricalTrades($arg_page_size, $arg_id, $arg_pair, $arg_offset, $arg_count, $arg_types);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->orderBook()->getHistoricalTrades(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

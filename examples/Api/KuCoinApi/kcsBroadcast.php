@@ -17,19 +17,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_broadcast_kms = new \Tatum\Model\BroadcastKMS();
+$arg_broadcast_kms = (new \Tatum\Model\BroadcastKMS())
+    ->setTxData('62BD544D1B9031EFC330A3E855CC3A0D51CA5131455C1AB3BCAC6D243F65460D')
+    ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->kuCoin()
         ->kcsBroadcast($arg_broadcast_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->kuCoin()->kcsBroadcast(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

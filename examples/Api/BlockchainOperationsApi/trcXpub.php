@@ -17,19 +17,28 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_trc_xpub = new \Tatum\Model\TrcXpub();
+$arg_trc_xpub = (new \Tatum\Model\TrcXpub())
+    ->setSymbol('MY_TOKEN')
+    ->setSupply('1000000.0')
+    ->setDecimals(6)
+    ->setType('TRC10')
+    ->setDescription('My Public Token')
+    ->setXpub('xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid')
+    ->setDerivationIndex(0)
+    ->setUrl('https://mytoken.com')
+    ->setBasePair('EUR')
+    ->setBaseRate(1)/* optional */
+    ->setCustomer(null)/* optional */
+    ->setAccountingCurrency('USD')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\Trc20Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->trcXpub($arg_trc_xpub);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->trcXpub(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

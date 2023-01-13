@@ -21,25 +21,22 @@ $sdk = new \Tatum\Sdk();
 $arg_page_size = 10;
 
 // Internal customer ID
-$arg_id = '5e68c66581f2ee32bc354087';
+$arg_id = "5e68c66581f2ee32bc354087";
 
 // Offset to obtain the next page of data.
 $arg_offset = 0;
 
 // For bookkeeping to distinct account purpose.
-$arg_account_code = 'AC_1011_B';
+$arg_account_code = "AC_1011_B";
 
 try {
-
     /** @var \Tatum\Model\Account[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->account()
         ->getAccountsByCustomerId($arg_page_size, $arg_id, $arg_offset, $arg_account_code);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->account()->getAccountsByCustomerId(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

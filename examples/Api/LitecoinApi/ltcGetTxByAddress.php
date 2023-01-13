@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Address
-$arg_address = 'n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or';
+$arg_address = "n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or";
 
 // Max number of items per page is 50.
 $arg_page_size = 10;
@@ -27,16 +27,13 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 try {
-
     /** @var \Tatum\Model\LtcTx[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->litecoin()
         ->ltcGetTxByAddress($arg_address, $arg_page_size, $arg_offset);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->litecoin()->ltcGetTxByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // address
-$arg_address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
+$arg_address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 
 // Shard to read data from
 $arg_shard_id = 0;
 
 try {
-
     /** @var float $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->harmony()
         ->oneGetTransactionCount($arg_address, $arg_shard_id);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->harmony()->oneGetTransactionCount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

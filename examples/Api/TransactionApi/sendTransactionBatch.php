@@ -17,19 +17,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_batch_create_transaction = new \Tatum\Model\BatchCreateTransaction();
+$arg_batch_create_transaction = (new \Tatum\Model\BatchCreateTransaction())
+    ->setSenderAccountId('5e6645712b55823de7ea82f1')
+    ->setTransaction(null)/* optional */;
 
 try {
-
     /** @var string[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->transaction()
         ->sendTransactionBatch($arg_batch_create_transaction);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->transaction()->sendTransactionBatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

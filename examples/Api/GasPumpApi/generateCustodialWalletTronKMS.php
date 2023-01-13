@@ -17,19 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_generate_custodial_wallet_tron_kms = new \Tatum\Model\GenerateCustodialWalletTronKMS();
+$arg_generate_custodial_wallet_tron_kms = (new \Tatum\Model\GenerateCustodialWalletTronKMS())
+    ->setChain('TRON')
+    ->setFeeLimit(0.01)
+    ->setFrom('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    ->setIndex(null)/* optional */
+    ->setEnableFungibleTokens(false)
+    ->setEnableNonFungibleTokens(false)
+    ->setEnableSemiFungibleTokens(false)
+    ->setEnableBatchTransactions(false);
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->generateCustodialWalletTronKMS($arg_generate_custodial_wallet_tron_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->generateCustodialWalletTronKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

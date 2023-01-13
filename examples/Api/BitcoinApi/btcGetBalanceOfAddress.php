@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain address to get the balance for
-$arg_address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
+$arg_address = "2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb";
 
 try {
-
     /** @var \Tatum\Model\BtcBasedBalance $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bitcoin()
         ->btcGetBalanceOfAddress($arg_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bitcoin()->btcGetBalanceOfAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

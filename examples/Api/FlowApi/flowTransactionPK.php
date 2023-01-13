@@ -17,19 +17,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_flow_transaction_pk = new \Tatum\Model\FlowTransactionPK();
+$arg_flow_transaction_pk = (new \Tatum\Model\FlowTransactionPK())
+    ->setAccount('0x955cd3f17b2fd8ad')
+    ->setCurrency('null')
+    ->setTo('0x955cd3f17b2fd8ae')
+    ->setAmount('10000')
+    ->setPrivateKey('37afa218d41d9cd6a2c6f2b96d9eaa3ad96c598252bc50e4d45d62f9356a51f8');
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->flow()
         ->flowTransactionPK($arg_flow_transaction_pk);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->flow()->flowTransactionPK(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

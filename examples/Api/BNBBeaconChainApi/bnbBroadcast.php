@@ -17,19 +17,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_broadcast = new \Tatum\Model\Broadcast();
+$arg_broadcast = (new \Tatum\Model\Broadcast())
+    ->setTxData('62BD544D1B9031EFC330A3E855CC3A0D51CA5131455C1AB3BCAC6D243F65460D')
+    ->setSignatureId('5e68c66581f2ee32bc354087')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bNBBeaconChain()
         ->bnbBroadcast($arg_broadcast);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bNBBeaconChain()->bnbBroadcast(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

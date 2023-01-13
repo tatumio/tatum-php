@@ -17,19 +17,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_account_settings_xrp_blockchain_kms = new \Tatum\Model\AccountSettingsXrpBlockchainKMS();
+$arg_account_settings_xrp_blockchain_kms = (new \Tatum\Model\AccountSettingsXrpBlockchainKMS())
+    ->setFromAccount('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    ->setFee('10000')/* optional */
+    ->setRippling(true)/* optional */
+    ->setRequireDestinationTag(true)/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->xRP()
         ->accountSettingsXrpBlockchainKMS($arg_account_settings_xrp_blockchain_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->xRP()->accountSettingsXrpBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -24,19 +24,16 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 // Value for filtering by address
-$arg_address = 'address_example';
+$arg_address = "'address_example'";
 
 try {
-
     /** @var \Tatum\Model\Subscription[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->notificationSubscriptions()
         ->getSubscriptions($arg_page_size, $arg_offset, $arg_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->notificationSubscriptions()->getSubscriptions(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

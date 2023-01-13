@@ -18,28 +18,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
-$arg_chain = 'chain_example';
+$arg_chain = "'chain_example'";
 
 // The blockchain address of the NFT to get provenance information for
-$arg_contract_address = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
+$arg_contract_address = "0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326";
 
 // The ID of the NFT to get provenance information for
-$arg_token_id = 123;
+$arg_token_id = "123";
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\NftProvenanceDataErc721[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->nftGetProvenanceDataErc721($arg_chain, $arg_contract_address, $arg_token_id, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetProvenanceDataErc721(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

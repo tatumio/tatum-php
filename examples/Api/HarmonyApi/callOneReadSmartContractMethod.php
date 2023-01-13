@@ -17,22 +17,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_call_one_read_smart_contract_method = new \Tatum\Model\CallOneReadSmartContractMethod();
+$arg_call_one_read_smart_contract_method = (new \Tatum\Model\CallOneReadSmartContractMethod())
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setMethodName('transfer')
+    ->setMethodAbi(
+        json_decode(
+            '{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"stake","outputs":[],"stateMutability":"nonpayable","type":"function"}'
+        )
+    )
+    ->setParams(["0x632"]);
 
 // Shard to read data from
 $arg_shard_id = 0;
 
 try {
-
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->harmony()
         ->callOneReadSmartContractMethod($arg_call_one_read_smart_contract_method, $arg_shard_id);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->harmony()->callOneReadSmartContractMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

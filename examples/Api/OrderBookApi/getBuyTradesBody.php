@@ -17,19 +17,28 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_list_oder_book_active_buy_body = new \Tatum\Model\ListOderBookActiveBuyBody();
+$arg_list_oder_book_active_buy_body = (new \Tatum\Model\ListOderBookActiveBuyBody())
+    ->setId('5e68c66581f2ee32bc354087')/* optional */
+    ->setCustomerId('5e68c66581f2ee32bc354087')/* optional */
+    ->setPageSize(10)
+    ->setOffset(0)/* optional */
+    ->setPair('BTC/EUR')/* optional */
+    ->setCount(true)/* optional */
+    ->setTradeType('BUY')/* optional */
+    ->setAmount(null)/* optional */
+    ->setFill(null)/* optional */
+    ->setPrice(null)/* optional */
+    ->setCreated(null)/* optional */
+    ->setSort(null)/* optional */;
 
 try {
-
     /** @var \Tatum\Model\Trade[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->orderBook()
         ->getBuyTradesBody($arg_list_oder_book_active_buy_body);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->orderBook()->getBuyTradesBody(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

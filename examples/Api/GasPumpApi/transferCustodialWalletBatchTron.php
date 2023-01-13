@@ -17,19 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_custodial_wallet_batch_tron = new \Tatum\Model\TransferCustodialWalletBatchTron();
+$arg_transfer_custodial_wallet_batch_tron = (new \Tatum\Model\TransferCustodialWalletBatchTron())
+    ->setChain('TRON')
+    ->setCustodialAddress('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    ->setRecipient(null)
+    ->setContractType(null)
+    ->setTokenAddress(null)
+    ->setAmount(null)
+    ->setTokenId(null)
+    ->setFromPrivateKey('05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2648ce5080c2')
+    ->setFeeLimit(10);
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->transferCustodialWalletBatchTron($arg_transfer_custodial_wallet_batch_tron);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->transferCustodialWalletBatchTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -18,13 +18,13 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
-$arg_chain = 'CELO';
+$arg_chain = "CELO";
 
 // Account address you want to get balance of
-$arg_address = '0x8ce4e40889a13971681391aad29e88efaf91f784';
+$arg_address = "0x8ce4e40889a13971681391aad29e88efaf91f784";
 
 // Address of the token smart contract
-$arg_token_address = '0x1ce4e40889a13971681391aad29e88efaf91f784';
+$arg_token_address = "0x1ce4e40889a13971681391aad29e88efaf91f784";
 
 // Max number of items per page is 50.
 $arg_page_size = 10;
@@ -39,19 +39,16 @@ $arg_from = 1087623;
 $arg_to = 1087823;
 
 // Sorting of the data. ASC - oldest first, DESC - newest first.
-$arg_sort = 'ASC';
+$arg_sort = "ASC";
 
 try {
-
     /** @var \Tatum\Model\FungibleTx[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->fungibleTokensERC20OrCompatible()
         ->erc20GetTransactionByAddress($arg_chain, $arg_address, $arg_token_address, $arg_page_size, $arg_offset, $arg_from, $arg_to, $arg_sort);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

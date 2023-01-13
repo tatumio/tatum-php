@@ -17,19 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_withdrawal = new \Tatum\Model\Withdrawal();
+$arg_withdrawal = (new \Tatum\Model\Withdrawal())
+    ->setSenderAccountId('5e68c66581f2ee32bc354087')
+    ->setAddress('mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7')
+    ->setAmount('0.001')
+    ->setAttr('12345')/* optional */
+    ->setCompliant(false)/* optional */
+    ->setFee('0.0005')
+    ->setMultipleAmounts(null)/* optional */
+    ->setPaymentId('12345')/* optional */
+    ->setSenderNote('Sender note')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\WithdrawalResponse $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->withdrawal()
         ->storeWithdrawal($arg_withdrawal);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->withdrawal()->storeWithdrawal(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

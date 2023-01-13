@@ -17,19 +17,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_cancel_auction_celo = new \Tatum\Model\CancelAuctionCelo();
+$arg_cancel_auction_celo = (new \Tatum\Model\CancelAuctionCelo())
+    ->setChain('CELO')
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setId('null')
+    ->setFeeCurrency('null')
+    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    ->setNonce(1)/* optional */
+    ->setFee(null)/* optional */
+    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->auction()
         ->cancelAuctionCelo($arg_cancel_auction_celo);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->auction()->cancelAuctionCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

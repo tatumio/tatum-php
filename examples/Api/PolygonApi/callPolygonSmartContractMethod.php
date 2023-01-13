@@ -17,19 +17,28 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_call_polygon_smart_contract_method = new \Tatum\Model\CallPolygonSmartContractMethod();
+$arg_call_polygon_smart_contract_method = (new \Tatum\Model\CallPolygonSmartContractMethod())
+    ->setContractAddress('0xC9c8ba8C7e2EAF43e84330Db08915A8106d7bD74')
+    ->setAmount('100000')/* optional */
+    ->setMethodName('transfer')
+    ->setMethodAbi(
+        json_decode(
+            '{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"stake","outputs":[],"stateMutability":"nonpayable","type":"function"}'
+        )
+    )
+    ->setParams(["0x632"])
+    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    ->setNonce(null)/* optional */
+    ->setFee(null)/* optional */;
 
 try {
-
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->polygon()
         ->callPolygonSmartContractMethod($arg_call_polygon_smart_contract_method);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->polygon()->callPolygonSmartContractMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

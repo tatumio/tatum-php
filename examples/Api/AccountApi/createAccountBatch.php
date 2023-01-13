@@ -17,19 +17,17 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_create_account_batch = new \Tatum\Model\CreateAccountBatch();
+$arg_create_account_batch = (new \Tatum\Model\CreateAccountBatch())
+    ->setAccounts(null);
 
 try {
-
     /** @var \Tatum\Model\Account[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->account()
         ->createAccountBatch($arg_create_account_batch);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->account()->createAccountBatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

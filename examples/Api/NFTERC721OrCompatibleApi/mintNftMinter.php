@@ -17,22 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_mint_nft_minter = new \Tatum\Model\MintNftMinter();
+$arg_mint_nft_minter = (new \Tatum\Model\MintNftMinter())
+    ->setChain('ETH')
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setMinter('0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94')
+    ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setTokenId('123')
+    ->setUrl('https://my_token_data.com');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\MintNftExpress200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->mintNftMinter($arg_mint_nft_minter, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->mintNftMinter(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

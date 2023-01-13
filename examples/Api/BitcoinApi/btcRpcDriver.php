@@ -17,19 +17,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_btc_rpc_driver_request = new \Tatum\Model\BtcRpcDriverRequest();
+$arg_btc_rpc_driver_request = (new \Tatum\Model\BtcRpcDriverRequest())
+    ->setJsonrpc('1.0')/* optional */
+    ->setId('test')/* optional */
+    ->setMethod('getblockcount')/* optional */
+    ->setParams([])/* optional */;
 
 try {
-
     /** @var object $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bitcoin()
         ->btcRpcDriver($arg_btc_rpc_driver_request);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bitcoin()->btcRpcDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Sequence of the ledger.
-$arg_sequence = 1;
+$arg_sequence = "1";
 
 try {
-
     /** @var \Tatum\Model\XlmTx[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->stellar()
         ->xlmGetLedgerTx($arg_sequence);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->stellar()->xlmGetLedgerTx(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

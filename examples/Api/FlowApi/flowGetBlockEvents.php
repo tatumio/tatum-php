@@ -18,7 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Event type to search for
-$arg_type = 'A.7e60df042a9c0868.FlowToken.TokensWithdrawn';
+$arg_type = "A.7e60df042a9c0868.FlowToken.TokensWithdrawn";
 
 // Block height to start searching
 $arg_from = 654321;
@@ -27,16 +27,13 @@ $arg_from = 654321;
 $arg_to = 654326;
 
 try {
-
     /** @var \Tatum\Model\FlowEvent[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->flow()
         ->flowGetBlockEvents($arg_type, $arg_from, $arg_to);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->flow()->flowGetBlockEvents(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

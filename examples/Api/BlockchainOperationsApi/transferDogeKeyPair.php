@@ -17,19 +17,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_doge_key_pair = new \Tatum\Model\TransferDogeKeyPair();
+$arg_transfer_doge_key_pair = (new \Tatum\Model\TransferDogeKeyPair())
+    ->setSenderAccountId('5e68c66581f2ee32bc354087')
+    ->setAddress('mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7')
+    ->setAmount('0.001')
+    ->setCompliant(false)/* optional */
+    ->setFee('1')/* optional */
+    ->setMultipleAmounts(null)/* optional */
+    ->setKeyPair(null)
+    ->setAttr('null')
+    ->setPaymentId('1234')/* optional */
+    ->setSenderNote('Sender note')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferDogeKeyPair($arg_transfer_doge_key_pair);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->transferDogeKeyPair(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

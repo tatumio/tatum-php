@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Tatum X-API-Key used for authorization.
-$arg_x_api_key = '/v3/egld/node/asdlkfjnqunalkwjf12341kljl/network/config';
+$arg_x_api_key = "/v3/egld/node/asdlkfjnqunalkwjf12341kljl/network/config";
 
 try {
-
     /** @var object $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->elrond()
         ->egldNodeGet($arg_x_api_key);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->elrond()->egldNodeGet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

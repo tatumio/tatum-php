@@ -18,25 +18,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Address of XRP account.
-$arg_account = 'account_example';
+$arg_account = "'account_example'";
 
 // Ledger version to start scanning for transactions from.
 $arg_min = 3.4;
 
 // Marker from the last paginated request. It is stringified JSON from previous response.
-$arg_marker = 'marker_example';
+$arg_marker = "'marker_example'";
 
 try {
-
     /** @var \Tatum\Model\XrpAccountTx $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->xRP()
         ->xrpGetAccountTx($arg_account, $arg_min, $arg_marker);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->xRP()->xrpGetAccountTx(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

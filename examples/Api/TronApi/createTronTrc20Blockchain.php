@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_create_tron_trc20_blockchain = new \Tatum\Model\CreateTronTrc20Blockchain();
+$arg_create_tron_trc20_blockchain = (new \Tatum\Model\CreateTronTrc20Blockchain())
+    ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701')
+    ->setRecipient('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    ->setName('My token')
+    ->setSymbol('SYM')
+    ->setTotalSupply(100000)
+    ->setDecimals(10);
 
 try {
-
     /** @var \Tatum\Model\TransactionHash $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->tron()
         ->createTronTrc20Blockchain($arg_create_tron_trc20_blockchain);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->tron()->createTronTrc20Blockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

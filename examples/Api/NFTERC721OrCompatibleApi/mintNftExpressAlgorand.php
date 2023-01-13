@@ -17,22 +17,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_mint_nft_express_algorand = new \Tatum\Model\MintNftExpressAlgorand();
+$arg_mint_nft_express_algorand = (new \Tatum\Model\MintNftExpressAlgorand())
+    ->setChain('ALGO')
+    ->setUrl('https://my_token_data.com')
+    ->setName('My Crazy NFT')
+    ->setAttr(null)/* optional */;
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\MintNftExpress200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->mintNftExpressAlgorand($arg_mint_nft_express_algorand, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->mintNftExpressAlgorand(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

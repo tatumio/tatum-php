@@ -17,19 +17,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_create_account = new \Tatum\Model\CreateAccount();
+$arg_create_account = (new \Tatum\Model\CreateAccount())
+    ->setCurrency('BTC')
+    ->setCustomer(null)/* optional */
+    ->setCompliant(false)/* optional */
+    ->setAccountCode('AC_1011_B')/* optional */
+    ->setAccountingCurrency('USD')/* optional */
+    ->setAccountNumber('123456')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\Account $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->account()
         ->createAccount($arg_create_account);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->account()->createAccount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

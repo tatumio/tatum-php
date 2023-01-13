@@ -17,19 +17,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_call_celo_read_smart_contract_method = new \Tatum\Model\CallCeloReadSmartContractMethod();
+$arg_call_celo_read_smart_contract_method = (new \Tatum\Model\CallCeloReadSmartContractMethod())
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setMethodName('transfer')
+    ->setMethodAbi(
+        json_decode(
+            '{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"stake","outputs":[],"stateMutability":"nonpayable","type":"function"}'
+        )
+    )
+    ->setParams(["0x632"]);
 
 try {
-
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->celo()
         ->callCeloReadSmartContractMethod($arg_call_celo_read_smart_contract_method);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->celo()->callCeloReadSmartContractMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

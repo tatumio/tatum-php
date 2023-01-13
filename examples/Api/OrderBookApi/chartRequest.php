@@ -17,19 +17,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_chart_request = new \Tatum\Model\ChartRequest();
+$arg_chart_request = (new \Tatum\Model\ChartRequest())
+    ->setPair('BTC/EUR')
+    ->setFrom(1613654998398)
+    ->setTo(1613654998398)
+    ->setTimeFrame('MIN_5');
 
 try {
-
     /** @var \Tatum\Model\Chart[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->orderBook()
         ->chartRequest($arg_chart_request);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->orderBook()->chartRequest(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

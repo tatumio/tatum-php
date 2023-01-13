@@ -18,25 +18,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The cryptocurrency of the blockchain address to check
-$arg_currency = 'BNB';
+$arg_currency = "BNB";
 
 // The blockchain address to check
-$arg_address = 'tbnb1sfj9981j2eo1ij2e09';
+$arg_address = "tbnb1sfj9981j2eo1ij2e09";
 
 // In case of XLM or XRP, this is a memo or DestinationTag to search for.
 $arg_index = 1;
 
 try {
-
     /** @var \Tatum\Model\Account $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainAddresses()
         ->addressExists($arg_currency, $arg_address, $arg_index);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainAddresses()->addressExists(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

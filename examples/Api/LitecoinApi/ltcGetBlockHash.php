@@ -21,16 +21,13 @@ $sdk = new \Tatum\Sdk();
 $arg_i = 1234314;
 
 try {
-
     /** @var \Tatum\Model\LtcGetBlockHash200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->litecoin()
         ->ltcGetBlockHash($arg_i);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->litecoin()->ltcGetBlockHash(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -17,19 +17,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_trc_address = new \Tatum\Model\TrcAddress();
+$arg_trc_address = (new \Tatum\Model\TrcAddress())
+    ->setSymbol('MY_TOKEN')
+    ->setSupply('1000000.0')
+    ->setDecimals(6)
+    ->setType('TRC10')
+    ->setDescription('My Public Token')
+    ->setAddress('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
+    ->setUrl('https://mytoken.com')
+    ->setBasePair('EUR')
+    ->setBaseRate(1)/* optional */
+    ->setCustomer(null)/* optional */
+    ->setAccountingCurrency('USD')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\Trc20Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->trcAddress($arg_trc_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->trcAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // ID of pending transaction
-$arg_id = 'f91827364f91827364ajdur7';
+$arg_id = "f91827364f91827364ajdur7";
 
 // transaction ID of blockchain transaction
-$arg_tx_id = '0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326';
+$arg_tx_id = "0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326";
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->keyManagementSystem()
         ->completePendingSignature($arg_id, $arg_tx_id);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->keyManagementSystem()->completePendingSignature(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

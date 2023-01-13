@@ -17,19 +17,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_transfer_kcskms = new \Tatum\Model\TransferKCSKMS();
+$arg_transfer_kcskms = (new \Tatum\Model\TransferKCSKMS())
+    ->setNonce(null)/* optional */
+    ->setAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setAmount('100000')
+    ->setCompliant(false)/* optional */
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    ->setIndex(0)/* optional */
+    ->setPaymentId('1234')/* optional */
+    ->setSenderAccountId('5e68c66581f2ee32bc354087')
+    ->setSenderNote('Sender note')/* optional */
+    ->setGasLimit('40000')/* optional */
+    ->setGasPrice('20')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->transferKCSKMS($arg_transfer_kcskms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->transferKCSKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

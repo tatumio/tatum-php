@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Account ID
-$arg_id = '5e68c66581f2ee32bc354087';
+$arg_id = "5e68c66581f2ee32bc354087";
 
 // Blockchain address
-$arg_address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
+$arg_address = "2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb";
 
 // Destination tag or memo attribute for XRP, BNB or XLM addresses
 $arg_index = 1;
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->blockchainAddresses()
         ->removeAddress($arg_id, $arg_address, $arg_index);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainAddresses()->removeAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

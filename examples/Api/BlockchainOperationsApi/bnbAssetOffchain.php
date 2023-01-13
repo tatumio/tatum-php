@@ -17,16 +17,15 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_create_bnb_asset = new \Tatum\Model\CreateBnbAsset();
+$arg_create_bnb_asset = (new \Tatum\Model\CreateBnbAsset())
+    ->setToken('NNB-B90')
+    ->setBasePair('EUR');
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->bnbAssetOffchain($arg_create_bnb_asset);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->bnbAssetOffchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

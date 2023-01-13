@@ -17,19 +17,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_btc_transaction_from_utxo = new \Tatum\Model\BtcTransactionFromUTXO();
+$arg_btc_transaction_from_utxo = (new \Tatum\Model\BtcTransactionFromUTXO())
+    ->setFromUtxo(null)
+    ->setTo(null)
+    ->setFee('0.0015')/* optional */
+    ->setChangeAddress('2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bitcoin()
         ->btcTransactionFromUTXO($arg_btc_transaction_from_utxo);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bitcoin()->btcTransactionFromUTXO(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

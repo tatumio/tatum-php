@@ -21,16 +21,13 @@ $sdk = new \Tatum\Sdk();
 $arg_file = new \SplFileObject('/path/to/file.txt');
 
 try {
-
     /** @var \Tatum\Model\StoreIPFS200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->iPFS()
         ->storeIPFS($arg_file);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->iPFS()->storeIPFS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -17,22 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_chain_deploy_solana_spl_kms = new \Tatum\Model\ChainDeploySolanaSplKMS();
+$arg_chain_deploy_solana_spl_kms = (new \Tatum\Model\ChainDeploySolanaSplKMS())
+    ->setChain('SOL')
+    ->setSupply('10000000')
+    ->setDigits(18)
+    ->setAddress('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
+    ->setFrom('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->fungibleTokensERC20OrCompatible()
         ->chainDeploySolanaSplKMS($arg_chain_deploy_solana_spl_kms, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainDeploySolanaSplKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

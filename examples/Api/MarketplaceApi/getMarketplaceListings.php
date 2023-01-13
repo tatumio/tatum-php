@@ -18,25 +18,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
-$arg_chain = 'CELO';
+$arg_chain = "CELO";
 
 // Contract address
-$arg_contract_address = '0xe6e7340394958674cdf8606936d292f565e4ecc4';
+$arg_contract_address = "0xe6e7340394958674cdf8606936d292f565e4ecc4";
 
 // The type of listings to return
-$arg_type = 'INITIATED';
+$arg_type = "INITIATED";
 
 try {
-
     /** @var string[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->marketplace()
         ->getMarketplaceListings($arg_chain, $arg_contract_address, $arg_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->marketplace()->getMarketplaceListings(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

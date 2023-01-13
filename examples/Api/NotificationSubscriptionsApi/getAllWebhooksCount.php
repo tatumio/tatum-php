@@ -24,22 +24,19 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 // Direction of sorting
-$arg_direction = 'asc';
+$arg_direction = "asc";
 
 // Flag indicating whether the webhook was successful or not
 $arg_failed = false;
 
 try {
-
     /** @var \Tatum\Model\EntitiesCount $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->notificationSubscriptions()
         ->getAllWebhooksCount($arg_page_size, $arg_offset, $arg_direction, $arg_failed);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->notificationSubscriptions()->getAllWebhooksCount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

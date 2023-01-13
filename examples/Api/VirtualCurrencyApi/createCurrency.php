@@ -17,19 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_virtual_currency = new \Tatum\Model\VirtualCurrency();
+$arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
+    ->setName('VC_VIRTUAL')
+    ->setSupply('1000000')
+    ->setBasePair('BTC')
+    ->setBaseRate(1)/* optional */
+    ->setCustomer(null)/* optional */
+    ->setDescription('My Virtual Token description.')/* optional */
+    ->setAccountCode('AC_1011_B')/* optional */
+    ->setAccountNumber('1234567890')/* optional */
+    ->setAccountingCurrency('USD')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\Account $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->virtualCurrency()
         ->createCurrency($arg_virtual_currency);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->virtualCurrency()->createCurrency(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

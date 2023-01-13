@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Transaction hash
-$arg_hash = '749e4f8933221b9942ef38a02856803f379789ec8d971f1f60535db70135673e';
+$arg_hash = "749e4f8933221b9942ef38a02856803f379789ec8d971f1f60535db70135673e";
 
 try {
-
     /** @var \Tatum\Model\XlmTx $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->stellar()
         ->xlmGetTransaction($arg_hash);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->stellar()->xlmGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

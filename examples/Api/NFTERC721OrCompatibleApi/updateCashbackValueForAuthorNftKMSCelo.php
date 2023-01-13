@@ -17,22 +17,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_update_cashback_value_for_author_nft_kms_celo = new \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo();
+$arg_update_cashback_value_for_author_nft_kms_celo = (new \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo())
+    ->setChain('CELO')
+    ->setTokenId('123')
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    ->setCashbackValue('0.1')
+    ->setFeeCurrency('null')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    ->setIndex(null)/* optional */
+    ->setNonce(null)/* optional */;
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-$arg_x_testnet_type = 'ethereum-sepolia';
+$arg_x_testnet_type = "'ethereum-sepolia'";
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->updateCashbackValueForAuthorNftKMSCelo($arg_update_cashback_value_for_author_nft_kms_celo, $arg_x_testnet_type);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

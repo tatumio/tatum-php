@@ -17,19 +17,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_estimate_fee_deploy_custodial_wallet = new \Tatum\Model\EstimateFeeDeployCustodialWallet();
+$arg_estimate_fee_deploy_custodial_wallet = (new \Tatum\Model\EstimateFeeDeployCustodialWallet())
+    ->setChain('null')
+    ->setType('null')
+    ->setBatchCount(10);
 
 try {
-
     /** @var \Tatum\Model\EstimateFee200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->blockchainFees()
         ->estimateFeeDeployCustodialWallet($arg_estimate_fee_deploy_custodial_wallet);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainFees()->estimateFeeDeployCustodialWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

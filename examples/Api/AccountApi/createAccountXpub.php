@@ -17,19 +17,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_create_account_xpub = new \Tatum\Model\CreateAccountXpub();
+$arg_create_account_xpub = (new \Tatum\Model\CreateAccountXpub())
+    ->setCurrency('BTC')
+    ->setXpub('xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid')
+    ->setCustomer(null)/* optional */
+    ->setCompliant(false)/* optional */
+    ->setAccountCode('AC_1011_B')/* optional */
+    ->setAccountingCurrency('USD')/* optional */
+    ->setAccountNumber('123456')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\Account $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->account()
         ->createAccountXpub($arg_create_account_xpub);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->account()->createAccountXpub(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

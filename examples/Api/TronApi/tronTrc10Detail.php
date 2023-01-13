@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The ID of the TRC-10 token or the address of the token's owner
-$arg_id_or_owner_address = 1000540;
+$arg_id_or_owner_address = "1000540";
 
 try {
-
     /** @var \Tatum\Model\TronTrc10Detail $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->tron()
         ->tronTrc10Detail($arg_id_or_owner_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->tron()->tronTrc10Detail(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

@@ -21,16 +21,13 @@ $sdk = new \Tatum\Sdk();
 $arg_height = 6470657;
 
 try {
-
     /** @var \Tatum\Model\SolanaBlock $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->solana()
         ->solanaGetBlock($arg_height);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->solana()->solanaGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

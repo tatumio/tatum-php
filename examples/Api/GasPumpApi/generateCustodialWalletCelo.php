@@ -17,19 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_generate_custodial_wallet_celo = new \Tatum\Model\GenerateCustodialWalletCelo();
+$arg_generate_custodial_wallet_celo = (new \Tatum\Model\GenerateCustodialWalletCelo())
+    ->setChain('CELO')
+    ->setFeeCurrency('null')
+    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    ->setEnableFungibleTokens(false)
+    ->setEnableNonFungibleTokens(false)
+    ->setEnableSemiFungibleTokens(false)
+    ->setEnableBatchTransactions(false)
+    ->setFee(null)/* optional */
+    ->setNonce(null)/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->generateCustodialWalletCelo($arg_generate_custodial_wallet_celo);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->generateCustodialWalletCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

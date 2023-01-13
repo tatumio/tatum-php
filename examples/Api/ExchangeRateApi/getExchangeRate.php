@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The fiat or crypto asset to exchange
-$arg_currency = 'BTC';
+$arg_currency = "BTC";
 
 // The target fiat asset to get the exchange rate for
-$arg_base_pair = 'USD';
+$arg_base_pair = "USD";
 
 try {
-
     /** @var \Tatum\Model\ExchangeRate $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->exchangeRate()
         ->getExchangeRate($arg_currency, $arg_base_pair);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->exchangeRate()->getExchangeRate(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

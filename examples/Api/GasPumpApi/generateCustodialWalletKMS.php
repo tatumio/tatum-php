@@ -17,19 +17,25 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_generate_custodial_wallet_kms = new \Tatum\Model\GenerateCustodialWalletKMS();
+$arg_generate_custodial_wallet_kms = (new \Tatum\Model\GenerateCustodialWalletKMS())
+    ->setChain('ETH')
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    ->setIndex(null)/* optional */
+    ->setEnableFungibleTokens(false)
+    ->setEnableNonFungibleTokens(false)
+    ->setEnableSemiFungibleTokens(false)
+    ->setEnableBatchTransactions(false)
+    ->setFee(null)/* optional */
+    ->setNonce(null)/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->generateCustodialWalletKMS($arg_generate_custodial_wallet_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->generateCustodialWalletKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

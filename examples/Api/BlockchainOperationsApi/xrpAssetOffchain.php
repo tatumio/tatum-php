@@ -17,16 +17,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_create_xrp_asset = new \Tatum\Model\CreateXrpAsset();
+$arg_create_xrp_asset = (new \Tatum\Model\CreateXrpAsset())
+    ->setIssuerAccount('rsCZjvenhxsFycrb33gPSfXdrTNAS5uiR1')
+    ->setToken('DA39A3EE5E6B4B0D3255BFEF95601890AFD80709')
+    ->setBasePair('EUR');
 
 try {
-
-    $sdk
-        ->mainnet()
+    $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->xrpAssetOffchain($arg_create_xrp_asset);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->blockchainOperations()->xrpAssetOffchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

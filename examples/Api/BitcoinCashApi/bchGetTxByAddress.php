@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Address
-$arg_address = '2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb';
+$arg_address = "2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb";
 
 // Define, how much transactions should be skipped to obtain another page.
 $arg_skip = 2;
 
 try {
-
     /** @var \Tatum\Model\BchTx[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bitcoinCash()
         ->bchGetTxByAddress($arg_address, $arg_skip);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bitcoinCash()->bchGetTxByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

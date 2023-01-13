@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // address
-$arg_address = '0xdac17f958d2ee523a2206206994597c13d831ec7';
+$arg_address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 
 try {
-
     /** @var float $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->klaytn()
         ->klaytnGetTransactionCount($arg_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->klaytn()->klaytnGetTransactionCount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

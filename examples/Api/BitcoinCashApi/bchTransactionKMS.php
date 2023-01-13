@@ -17,19 +17,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Tatum SDK
 $sdk = new \Tatum\Sdk();
 
-$arg_bch_transaction_kms = new \Tatum\Model\BchTransactionKMS();
+$arg_bch_transaction_kms = (new \Tatum\Model\BchTransactionKMS())
+    ->setFromUtxo(null)
+    ->setTo(null)
+    ->setFee('0.0015')/* optional */
+    ->setChangeAddress('bitcoincash:qrd9khmeg4nqag3h5gzu8vjt537pm7le85lcauzez')/* optional */;
 
 try {
-
     /** @var \Tatum\Model\TransactionSigned $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->bitcoinCash()
         ->bchTransactionKMS($arg_bch_transaction_kms);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->bitcoinCash()->bchTransactionKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

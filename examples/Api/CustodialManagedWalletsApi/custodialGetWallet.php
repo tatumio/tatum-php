@@ -18,22 +18,19 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // WalletID of the managed address
-$arg_id = '3ad54647-4166-4d34-9186-fd46caaba945';
+$arg_id = "3ad54647-4166-4d34-9186-fd46caaba945";
 
 // If set to "true", returns the private key in the response; if not set, defaults to "false" (the private key is not included in the response)
 $arg_export = false;
 
 try {
-
     /** @var \Tatum\Model\CustodialManagedAddress[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->custodialManagedWallets()
         ->custodialGetWallet($arg_id, $arg_export);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->custodialManagedWallets()->custodialGetWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

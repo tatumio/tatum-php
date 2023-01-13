@@ -18,19 +18,16 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
-$arg_address = 'xdc3223AEB8404C7525FcAA6C512f91e287AE9FfE7B';
+$arg_address = "xdc3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 
 try {
-
     /** @var \Tatum\Model\XdcGetBalance200Response $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->xinFin()
         ->xdcGetBalance($arg_address);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->xinFin()->xdcGetBalance(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

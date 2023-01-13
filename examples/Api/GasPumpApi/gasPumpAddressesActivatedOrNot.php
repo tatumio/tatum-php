@@ -18,25 +18,22 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
-$arg_chain = 'ETH';
+$arg_chain = "ETH";
 
 // The blockchain address that owns the gas pump address to check; can be referred to as "master address"
-$arg_owner = 'owner_example';
+$arg_owner = "'owner_example'";
 
 // The index of the gas pump address to check
 $arg_index = 3.4;
 
 try {
-
     /** @var \Tatum\Model\Activated $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->gasPump()
         ->gasPumpAddressesActivatedOrNot($arg_chain, $arg_owner, $arg_index);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->gasPump()->gasPumpAddressesActivatedOrNot(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {

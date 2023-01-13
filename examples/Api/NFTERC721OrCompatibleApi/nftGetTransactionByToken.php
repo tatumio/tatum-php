@@ -18,13 +18,13 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
-$arg_chain = 'CELO';
+$arg_chain = "CELO";
 
 // NFT Token ID.
-$arg_token_id = 123;
+$arg_token_id = "123";
 
 // Address of the token smart contract
-$arg_token_address = '0x1ce4e40889a13971681391aad29e88efaf91f784';
+$arg_token_address = "0x1ce4e40889a13971681391aad29e88efaf91f784";
 
 // Max number of items per page is 50.
 $arg_page_size = 10;
@@ -39,16 +39,13 @@ $arg_from = 1087623;
 $arg_to = 1087823;
 
 try {
-
     /** @var \Tatum\Model\NftTx[] $response */
-    $response = $sdk
-        ->mainnet()
+    $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()
         ->nftGetTransactionByToken($arg_chain, $arg_token_id, $arg_token_address, $arg_page_size, $arg_offset, $arg_from, $arg_to);
 
     var_dump($response);
-
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo "API Exception when calling api()->nFTERC721OrCompatible()->nftGetTransactionByToken(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
 } catch (\Exception $exc) {
