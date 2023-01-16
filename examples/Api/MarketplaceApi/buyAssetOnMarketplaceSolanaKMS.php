@@ -19,16 +19,16 @@ $sdk = new \Tatum\Sdk();
 
 $arg_buy_asset_on_marketplace_solana_kms = (new \Tatum\Model\BuyAssetOnMarketplaceSolanaKMS())
     
-    // Blockchain to work with.
+    // The blockchain to work with
     ->setChain('SOL')
     
-    // Blockchain address of the smart contract
+    // The blockchain address of the marketplace smart contract
     ->setContractAddress('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
     
-    // Blockchain address of the listing
+    // The blockchain address of the listing with the asset that you want to buy
     ->setListingId(FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU)
     
-    // Blockchain address of the buyer
+    // The blockchain address of the buyer
     ->setFrom(FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU)
     
     // (optional) The KMS identifier of the private key used for signing transactions as authority; required if <co...

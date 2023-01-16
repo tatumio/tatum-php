@@ -40,14 +40,14 @@ $arg_trc_xpub = (new \Tatum\Model\TrcXpub())
     // The derivation index to use together with the extended public key to generate the deposit address
     ->setDerivationIndex(0)
     
-    // (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter ...
-    ->setUrl('https://mytoken.com')
-    
     // The base pair for the virtual currency that represents the token; used to calculate the value of ...
     ->setBasePair('EUR')
     
     // (optional) The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <c...
     ->setBaseRate(1)
+    
+    // (optional) (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter ...
+    ->setUrl('https://mytoken.com')
     
     // (optional) 
     ->setCustomer(null)

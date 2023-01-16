@@ -400,9 +400,9 @@ class TrcXpub extends AbstractModel {
         "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
         "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1, "nl" => 130, "xl" => 130]], 
         "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null, ["r" => 1, "x" => [2147483647]]], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
         "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 3, "xl" => 50]], 
         "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
         "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
         "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR', ["r" => 0, "e" => 1, "nl" => 3, "xl" => 3]]
     ];
@@ -927,7 +927,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Set xpub
      * 
-     * @param string $xpub The extended public key of the TRON wallet from which a deposit address for the virtual account will be generated; the supply of the token will be stored on this address
+     * @param string $xpub The extended public key of the TRON wallet from which a deposit address for the virtual account will be generated
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -953,26 +953,6 @@ class TrcXpub extends AbstractModel {
      */
     public function setDerivationIndex(int $derivation_index) {
         return $this->_set("derivation_index", $derivation_index);
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl(): string {
-        return $this->_data["url"];
-    }
-
-    /**
-     * Set url
-     * 
-     * @param string $url (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter only with TRC-10 tokens. Do <b>not</b> use this parameter with TRC-20 tokens.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setUrl(string $url) {
-        return $this->_set("url", $url);
     }
 
     /**
@@ -1013,6 +993,26 @@ class TrcXpub extends AbstractModel {
      */
     public function setBaseRate(?float $base_rate) {
         return $this->_set("base_rate", $base_rate);
+    }
+
+    /**
+     * Get url
+     *
+     * @return string|null
+     */
+    public function getUrl(): ?string {
+        return $this->_data["url"];
+    }
+
+    /**
+     * Set url
+     * 
+     * @param string|null $url (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter only with TRC-10 tokens. Do <b>not</b> use this parameter with TRC-20 tokens.
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setUrl(?string $url) {
+        return $this->_set("url", $url);
     }
 
     /**

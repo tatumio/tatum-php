@@ -32,7 +32,7 @@ class ActivateGasPumpCelo extends AbstractModel {
         "owner" => ["owner", "string", null, "getOwner", "setOwner", null, ["r" => 1]], 
         "from" => ["from", "int", null, "getFrom", "setFrom", null, ["r" => 1, "n" => [0]]], 
         "to" => ["to", "int", null, "getTo", "setTo", null, ["r" => 1, "n" => [0]]], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 0, "e" => 1]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]]
     ];
 
@@ -153,20 +153,20 @@ class ActivateGasPumpCelo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string|null
+     * @return string
      */
-    public function getFeeCurrency(): ?string {
+    public function getFeeCurrency(): string {
         return $this->_data["fee_currency"];
     }
 
     /**
      * Set fee_currency
      * 
-     * @param string|null $fee_currency The currency to pay for the gas fee; if not set, defaults to CELO
+     * @param string $fee_currency The currency in which the gas fee will be paid
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFeeCurrency(?string $fee_currency) {
+    public function setFeeCurrency(string $fee_currency) {
         return $this->_set("fee_currency", $fee_currency);
     }
 

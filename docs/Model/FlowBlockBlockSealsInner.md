@@ -4,9 +4,7 @@
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBlockId()** | **string** |  | [optional]
-**getExecutionReceiptSignatures()** | **string[]** |  | [optional]
-**getExecutionReceiptId()** | **string** |  | [optional]
-**getResultApprovalSignatures()** | **string[]** |  | [optional]
+**getBlockId()** | **string** | The ID of the block being sealed | [optional]
+**getExecutionReceiptId()** | **string** | The ID of the execution receipt being sealed | [optional]
 
 [[Back to Index]](../index.md)

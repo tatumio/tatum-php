@@ -19,26 +19,26 @@ $sdk = new \Tatum\Sdk();
 
 $arg_buy_asset_on_marketplace = (new \Tatum\Model\BuyAssetOnMarketplace())
     
-    // Blockchain to work with.
+    // The blockchain to work with
     ->setChain('ETH')
     
-    // Address of the marketplace smart contract.
+    // The blockchain address of the marketplace smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) Optional address of the ERC20 token, which will be used as a selling currency of the NFT.
-    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
-    
-    // (optional) In case of the ERC20 listing, it's possible to buy on behalf of someone else. This value is the a...
-    ->setBuyer('0x587422eEA2cB73B5d3e242bA5456b782919AFc85')
-    
-    // ID of the listing.
+    // The ID of the listing with the asset that you want to buy
     ->setListingId('null')
     
-    // Amount of the assets to be sent for buying.
+    // The private key of the blockchain address from which the fee will be deducted
+    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    
+    // (optional) (Only if you pay with the native blockchain currency) The price of the asset that you want to buy...
     ->setAmount('1')
     
-    // Private key of sender address. Private key, or signature Id must be present.
-    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    // (optional) (Only if you pay with the fungible tokens) The blockchain address of the fungible tokens. Do not ...
+    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // (optional) (Only if you want to buy the asset on behalf of someone else and this person wants to pay with th...
+    ->setBuyer('0x587422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
     ->setNonce(1)

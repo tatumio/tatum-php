@@ -4,16 +4,16 @@
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getSymbol()** | **string** | Name of the ERC20 token - stored as a symbol on Blockchain |
-**getSupply()** | **string** | max supply of ERC20 token. |
-**getDescription()** | **string** | Description of the ERC20 token |
-**getBasePair()** | **string** | Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair. |
-**getBaseRate()** | **float** | Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair. | [optional] [default to 1]
-**getCustomer()** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
-**getXpub()** | **string** | Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both. |
-**getDerivationIndex()** | **int** | Derivation index for xpub to generate specific deposit address. |
-**getMnemonic()** | **string** | Mnemonic to generate private key for the deploy account of ERC20, from which the gas will be paid (index will be used). If address is not present, mnemonic is used to generate xpub and index is set to 1. Either mnemonic and index or privateKey and address must be present, not both. |
-**getIndex()** | **int** | derivation index of address to pay for deployment of ERC20 |
+**getSymbol()** | **string** | The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain |
+**getSupply()** | **string** | The supply of the token |
+**getDescription()** | **string** | The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain |
+**getXpub()** | **string** | The extended public key from which a deposit address for the virtual account will be generated |
+**getDerivationIndex()** | **int** | The derivation index to use together with the extended public key to generate the deposit address |
+**getMnemonic()** | **string** | The mnemonic to generate the private key for the blockchain address from which the fee for deploying the smart contract will be deducted; is used together with the derivation index of this address |
+**getIndex()** | **int** | The derivation index of the blockchain address from which the fee for deploying the smart contract will be deducted; is used together with the mnemonic to generate the private key for this address |
+**getBasePair()** | **string** | The base pair for the virtual currency that represents the token; used to calculate the value of a transaction |
+**getBaseRate()** | **float** | The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code> | [optional] [default to 1]
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
+**getCustomer()** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
 
 [[Back to Index]](../index.md)

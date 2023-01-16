@@ -5,7 +5,7 @@
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | Blockchain to work with. |
-**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
+**getFeeCurrency()** | **string** | The currency in which the gas fee will be paid | [optional] [default to 'CELO']
 **getFromPrivateKey()** | **string** | Private key of account, from which the transaction will be initiated. |
 **getEnableFungibleTokens()** | **bool** | If address should support ERC20 tokens, it should be marked as true. |
 **getEnableNonFungibleTokens()** | **bool** | If address should support ERC721 tokens, it should be marked as true. |

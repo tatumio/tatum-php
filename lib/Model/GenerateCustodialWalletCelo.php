@@ -29,7 +29,7 @@ class GenerateCustodialWalletCelo extends AbstractModel {
     protected static $_name = "GenerateCustodialWalletCelo";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", 'CELO', ["r" => 0, "e" => 1]], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
         "enable_fungible_tokens" => ["enableFungibleTokens", "bool", null, "getEnableFungibleTokens", "setEnableFungibleTokens", null, ["r" => 1]], 
         "enable_non_fungible_tokens" => ["enableNonFungibleTokens", "bool", null, "getEnableNonFungibleTokens", "setEnableNonFungibleTokens", null, ["r" => 1]], 
@@ -96,20 +96,20 @@ class GenerateCustodialWalletCelo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
     /**
      * Set fee_currency
      * 
-     * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @param string|null $fee_currency The currency in which the gas fee will be paid
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFeeCurrency(string $fee_currency) {
+    public function setFeeCurrency(?string $fee_currency) {
         return $this->_set("fee_currency", $fee_currency);
     }
 

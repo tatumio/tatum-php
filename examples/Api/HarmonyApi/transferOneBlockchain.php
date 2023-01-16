@@ -19,26 +19,26 @@ $sdk = new \Tatum\Sdk();
 
 $arg_transfer_one_blockchain = (new \Tatum\Model\TransferOneBlockchain())
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
-    ->setData('4d79206e6f746520746f2074686520726563697069656e74')
+    // The amount to transfer
+    ->setAmount('100000')
     
-    // Currency of the transfer.
+    // The currency of the amount to transfer
     ->setCurrency('ONE')
     
-    // (optional) Nonce to be set to ONE transaction. If not present, last known nonce will be used.
-    ->setNonce(null)
-    
-    // Blockchain address to send assets
+    // The blockchain address to transfer the amount to
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The private key of the blockchain address from which the fee will be deducted
+    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
     
     // (optional) 
     ->setFee(null)
     
-    // Amount to be sent in One.
-    ->setAmount('100000')
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
+    ->setData('4d79206e6f746520746f2074686520726563697069656e74')
     
-    // Private key of sender address. Private key, or signature Id must be present.
-    ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null);
 
 // Shard to read data from
 $arg_shard_id = 0;

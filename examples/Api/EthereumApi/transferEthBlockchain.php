@@ -34,7 +34,7 @@ $arg_transfer_eth_blockchain = (new \Tatum\Model\TransferEthBlockchain())
     // (optional) 
     ->setFee(null)
     
-    // Amount to be sent in Ether.
+    // Amount to be sent
     ->setAmount('100000')
     
     // Private key of sender address. Private key, or signature Id must be present.

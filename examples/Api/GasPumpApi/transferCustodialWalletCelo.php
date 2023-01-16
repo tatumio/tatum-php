@@ -43,7 +43,7 @@ $arg_transfer_custodial_wallet_celo = (new \Tatum\Model\TransferCustodialWalletC
     // The private key of the blockchain address that owns the gas pump address ("master address")
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
     
-    // The currency to pay for the gas fee
+    // (optional) The currency in which the gas fee will be paid
     ->setFeeCurrency('null')
     
     // (optional) The nonce to be set to the transfer transaction; if not present, the last known nonce will be used

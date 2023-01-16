@@ -4,12 +4,12 @@
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
-**getCurrency()** | **string** | Currency of the transfer. |
-**getNonce()** | **float** | Nonce to be set to ONE transaction. If not present, last known nonce will be used. | [optional]
-**getTo()** | **string** | Blockchain address to send assets |
+**getAmount()** | **string** | The amount to transfer |
+**getCurrency()** | **string** | The currency of the amount to transfer |
+**getTo()** | **string** | The blockchain address to transfer the amount to |
+**getFromPrivateKey()** | **string** | The private key of the blockchain address from which the fee will be deducted |
 **getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
-**getAmount()** | **string** | Amount to be sent in One. |
-**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getData()** | **string** | Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format | [optional]
+**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
 [[Back to Index]](../index.md)

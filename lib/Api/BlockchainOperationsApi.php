@@ -387,144 +387,6 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
-     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\DeployKCSErc20OffchainKMSAddress $deploy_kcs_erc20_offchain_kms_address 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-     */
-    public function deployKCSErc20OffchainKMSAddress(\Tatum\Model\DeployKCSErc20OffchainKMSAddress $deploy_kcs_erc20_offchain_kms_address) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_kcs_erc20_offchain_kms_address
-            ), 
-            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\DeployKCSErc20OffchainKMSXpub $deploy_kcs_erc20_offchain_kms_xpub 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-     */
-    public function deployKCSErc20OffchainKMSXpub(\Tatum\Model\DeployKCSErc20OffchainKMSXpub $deploy_kcs_erc20_offchain_kms_xpub) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_kcs_erc20_offchain_kms_xpub
-            ), 
-            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\DeployKCSErc20OffchainMnemXpub $deploy_kcs_erc20_offchain_mnem_xpub 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-     */
-    public function deployKCSErc20OffchainMnemXpub(\Tatum\Model\DeployKCSErc20OffchainMnemXpub $deploy_kcs_erc20_offchain_mnem_xpub) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_kcs_erc20_offchain_mnem_xpub
-            ), 
-            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\DeployKCSErc20OffchainMnemonicAddress $deploy_kcs_erc20_offchain_mnemonic_address 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-     */
-    public function deployKCSErc20OffchainMnemonicAddress(\Tatum\Model\DeployKCSErc20OffchainMnemonicAddress $deploy_kcs_erc20_offchain_mnemonic_address) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_kcs_erc20_offchain_mnemonic_address
-            ), 
-            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\DeployKCSErc20OffchainPKAddress $deploy_kcs_erc20_offchain_pk_address 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-     */
-    public function deployKCSErc20OffchainPKAddress(\Tatum\Model\DeployKCSErc20OffchainPKAddress $deploy_kcs_erc20_offchain_pk_address) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_kcs_erc20_offchain_pk_address
-            ), 
-            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-     *
-     * @param \Tatum\Model\DeployKCSErc20OffchainPKXpub $deploy_kcs_erc20_offchain_pk_xpub 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-     */
-    public function deployKCSErc20OffchainPKXpub(\Tatum\Model\DeployKCSErc20OffchainPKXpub $deploy_kcs_erc20_offchain_pk_xpub) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_kcs_erc20_offchain_pk_xpub
-            ), 
-            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployTrcOffchainKMSAddress $deploy_trc_offchain_kms_address 
@@ -1008,6 +870,144 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offKcsDeployErc20OffchainKMSAddress(\Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+            ), 
+            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offKcsDeployErc20OffchainKMSXpub(\Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+            ), 
+            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offKcsDeployErc20OffchainMnemXpub(\Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+            ), 
+            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offKcsDeployErc20OffchainMnemonicAddress(\Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+            ), 
+            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offKcsDeployErc20OffchainPKAddress(\Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+            ), 
+            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+     *
+     * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+     */
+    public function offKcsDeployErc20OffchainPKXpub(\Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", "/v3/offchain/kcs/erc20/deploy", [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+            ), 
+            "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
@@ -1218,7 +1218,7 @@ class BlockchainOperationsApi extends AbstractApi {
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
-     * @param float|0 $shard_id Shard to operate on
+     * @param float|0 $shard_id The ID of the shard to operate
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -1244,7 +1244,7 @@ class BlockchainOperationsApi extends AbstractApi {
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub 
-     * @param float|0 $shard_id Shard to operate on
+     * @param float|0 $shard_id The ID of the shard to operate
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -1270,7 +1270,7 @@ class BlockchainOperationsApi extends AbstractApi {
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub 
-     * @param float|0 $shard_id Shard to operate on
+     * @param float|0 $shard_id The ID of the shard to operate
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -1296,7 +1296,7 @@ class BlockchainOperationsApi extends AbstractApi {
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address 
-     * @param float|0 $shard_id Shard to operate on
+     * @param float|0 $shard_id The ID of the shard to operate
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -1322,7 +1322,7 @@ class BlockchainOperationsApi extends AbstractApi {
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address 
-     * @param float|0 $shard_id Shard to operate on
+     * @param float|0 $shard_id The ID of the shard to operate
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
@@ -1348,7 +1348,7 @@ class BlockchainOperationsApi extends AbstractApi {
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub 
-     * @param float|0 $shard_id Shard to operate on
+     * @param float|0 $shard_id The ID of the shard to operate
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 

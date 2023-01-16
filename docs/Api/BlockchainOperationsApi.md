@@ -104,42 +104,6 @@ HTTP requests are relative to https://api.tatum.io
 > 
 > **POST** `/v3/offchain/ethereum/erc20/deploy`
 
-[🔹 **deployKCSErc20OffchainKMSAddress()**](#deploykcserc20offchainkmsaddress) 
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainKMSXpub()**](#deploykcserc20offchainkmsxpub) 
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainMnemXpub()**](#deploykcserc20offchainmnemxpub) 
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainMnemonicAddress()**](#deploykcserc20offchainmnemonicaddress) 
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainPKAddress()**](#deploykcserc20offchainpkaddress) 
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainPKXpub()**](#deploykcserc20offchainpkxpub) 
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
 [🔹 **deployTrcOffchainKMSAddress()**](#deploytrcoffchainkmsaddress) 
 
 > Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
@@ -265,6 +229,42 @@ HTTP requests are relative to https://api.tatum.io
 > Send EGLD from a virtual account to the blockchain
 > 
 > **POST** `/v3/offchain/egld/transfer`
+
+[🔹 **offKcsDeployErc20OffchainKMSAddress()**](#offkcsdeployerc20offchainkmsaddress) 
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainKMSXpub()**](#offkcsdeployerc20offchainkmsxpub) 
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainMnemXpub()**](#offkcsdeployerc20offchainmnemxpub) 
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainMnemonicAddress()**](#offkcsdeployerc20offchainmnemonicaddress) 
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainPKAddress()**](#offkcsdeployerc20offchainpkaddress) 
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainPKXpub()**](#offkcsdeployerc20offchainpkxpub) 
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 [🔹 **offKlaDeployErc20OffchainKMSAddress()**](#offkladeployerc20offchainkmsaddress) 
 
@@ -906,17 +906,19 @@ Name | Type | Description  | Notes
 
 Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4>
+**4 credits per API call**
 
  Deploy an Algorand ERC-20-equivalent smart contract. This is a helper method, which is combination of Register new Algorand ERC20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
- 
-
- 
-
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+ **Signing a transaction**
+
+ When deploying an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -1086,17 +1088,19 @@ Name | Type | Description  | Notes
 
 Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4>
+**4 credits per API call**
 
  Deploy a Celo ERC-20-equivalent smart contract. This is a helper method, which is combination of Register new Celo ERC-20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
- 
-
- 
-
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+ **Signing a transaction**
+
+ When deploying a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -1300,13 +1304,19 @@ Name | Type | Description  | Notes
 
 Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4>
+**4 credits per API call**
 
  Deploy an Ethereum ERC-20 smart contract. This is a helper method, which is combination of Register new ERC20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+ **Signing a transaction**
+
+ When deploying an Ethereum ERC-20 smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -1379,220 +1389,6 @@ DeployErc20OffchainPKXpub operation
 ### Example
 
 [✨ View "deployErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployErc20OffchainPKXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `deployKCSErc20OffchainKMSAddress()`
-
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainKMSAddress(
-    \Tatum\Model\DeployKCSErc20OffchainKMSAddress $deploy_kcs_erc20_offchain_kms_address
-): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_kms_address** | [**\Tatum\Model\DeployKCSErc20OffchainKMSAddress**](../Model/DeployKCSErc20OffchainKMSAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainKMSAddress operation
-
-### Example
-
-[✨ View "deployKCSErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainKMSAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `deployKCSErc20OffchainKMSXpub()`
-
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainKMSXpub(
-    \Tatum\Model\DeployKCSErc20OffchainKMSXpub $deploy_kcs_erc20_offchain_kms_xpub
-): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainKMSXpub**](../Model/DeployKCSErc20OffchainKMSXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainKMSXpub operation
-
-### Example
-
-[✨ View "deployKCSErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainKMSXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `deployKCSErc20OffchainMnemXpub()`
-
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainMnemXpub(
-    \Tatum\Model\DeployKCSErc20OffchainMnemXpub $deploy_kcs_erc20_offchain_mnem_xpub
-): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainMnemXpub**](../Model/DeployKCSErc20OffchainMnemXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainMnemXpub operation
-
-### Example
-
-[✨ View "deployKCSErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainMnemXpub.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `deployKCSErc20OffchainMnemonicAddress()`
-
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainMnemonicAddress(
-    \Tatum\Model\DeployKCSErc20OffchainMnemonicAddress $deploy_kcs_erc20_offchain_mnemonic_address
-): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployKCSErc20OffchainMnemonicAddress**](../Model/DeployKCSErc20OffchainMnemonicAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-<h4>4 credits per API call.</h4>
-
- Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract. This is a helper method, which is combination of Register new Kcs ERC20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
-
- 
-
- 
-
- After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
-
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
-
-### Example
-
-[✨ View "deployKCSErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainMnemonicAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `deployKCSErc20OffchainPKAddress()`
-
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainPKAddress(
-    \Tatum\Model\DeployKCSErc20OffchainPKAddress $deploy_kcs_erc20_offchain_pk_address
-): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_pk_address** | [**\Tatum\Model\DeployKCSErc20OffchainPKAddress**](../Model/DeployKCSErc20OffchainPKAddress.md) |  |
-
-### Return type
-
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainPKAddress operation
-
-### Example
-
-[✨ View "deployKCSErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainPKAddress.php)
-
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
-
-## `deployKCSErc20OffchainPKXpub()`
-
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-### Type signature
-
-```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployKCSErc20OffchainPKXpub(
-    \Tatum\Model\DeployKCSErc20OffchainPKXpub $deploy_kcs_erc20_offchain_pk_xpub
-): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$deploy_kcs_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployKCSErc20OffchainPKXpub**](../Model/DeployKCSErc20OffchainPKXpub.md) |  |
-
-### Return type
-
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
-
-### Description
-
-Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-
-DeployKCSErc20OffchainPKXpub operation
-
-### Example
-
-[✨ View "deployKCSErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployKCSErc20OffchainPKXpub.php)
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
@@ -1724,13 +1520,19 @@ Name | Type | Description  | Notes
 
 Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
 
-<h4>10 credits per API call.</h4>
+**10 credits per API call**
 
  Deploy a TRON TRC-10 or TRC-20 smart contract. This is a helper method, which is combination of Register new TRC-10/20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">Deploy blockchain TRC20</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy blockchain TRC10</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+ **Signing a transaction**
+
+ When deploying a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -2022,17 +1824,19 @@ Name | Type | Description  | Notes
 
 Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4>
+**4 credits per API call**
 
  Deploy a BNB Smart Chain BEP-20 smart contract. This is a helper method, which is combination of Register new BEP20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
- 
-
- 
-
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+ **Signing a transaction**
+
+ When deploying a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -2406,6 +2210,222 @@ TransferEthMnemonic operation
 
 [[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
 
+## `offKcsDeployErc20OffchainKMSAddress()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainKMSAddress(
+    \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+DeployErc20OffchainKMSAddress operation
+
+### Example
+
+[✨ View "offKcsDeployErc20OffchainKMSAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKcsDeployErc20OffchainKMSAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `offKcsDeployErc20OffchainKMSXpub()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainKMSXpub(
+    \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+DeployErc20OffchainKMSXpub operation
+
+### Example
+
+[✨ View "offKcsDeployErc20OffchainKMSXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKcsDeployErc20OffchainKMSXpub.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `offKcsDeployErc20OffchainMnemXpub()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainMnemXpub(
+    \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+DeployErc20OffchainMnemXpub operation
+
+### Example
+
+[✨ View "offKcsDeployErc20OffchainMnemXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKcsDeployErc20OffchainMnemXpub.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `offKcsDeployErc20OffchainMnemonicAddress()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainMnemonicAddress(
+    \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+**4 credits per API call**
+
+ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract. This is a helper method, which is combination of Register new Kcs ERC20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+
+ After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
+
+ **Signing a transaction**
+
+ When deploying a KCC ERC-20-equivalent smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+
+### Example
+
+[✨ View "offKcsDeployErc20OffchainMnemonicAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKcsDeployErc20OffchainMnemonicAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `offKcsDeployErc20OffchainPKAddress()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainPKAddress(
+    \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+DeployErc20OffchainPKAddress operation
+
+### Example
+
+[✨ View "offKcsDeployErc20OffchainPKAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKcsDeployErc20OffchainPKAddress.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
+## `offKcsDeployErc20OffchainPKXpub()`
+
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+### Type signature
+
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainPKXpub(
+    \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
+): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
+
+### Return type
+
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+
+### Description
+
+Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+
+DeployErc20OffchainPKXpub operation
+
+### Example
+
+[✨ View "offKcsDeployErc20OffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offKcsDeployErc20OffchainPKXpub.php)
+
+[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+
 ## `offKlaDeployErc20OffchainKMSAddress()`
 
 > **POST** `/v3/offchain/klaytn/erc20/deploy`
@@ -2534,17 +2554,19 @@ Name | Type | Description  | Notes
 
 Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4>
+**4 credits per API call**
 
  Deploy a Klaytn ERC-20-equivalent smart contract. This is a helper method, which is combination of Register new ERC20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
- 
-
- 
-
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+ **Signing a transaction**
+
+ When deploying a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -2752,7 +2774,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
- **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
+ **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
@@ -2788,7 +2810,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
- **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
+ **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
@@ -2824,7 +2846,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
- **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
+ **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
@@ -2860,7 +2882,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
- **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
+ **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
@@ -2870,17 +2892,19 @@ Name | Type | Description  | Notes
 
 Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4>
+**4 credits per API call**
 
  Deploy a Harmony HRM-20 smart contract. This is a helper method, which is combination of Register new HRM20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
- 
-
- 
-
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+ **Signing a transaction**
+
+ When deploying a Harmony HRM-20 smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 
@@ -2906,7 +2930,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
- **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
+ **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
@@ -2942,7 +2966,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
- **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
+ **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
@@ -3500,17 +3524,19 @@ Name | Type | Description  | Notes
 
 Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 
-<h4>4 credits per API call.</h4>
+**4 credits per API call**
 
  Deploy a XinFin ERC-20-equivalent smart contract. This is a helper method, which is combination of Register new ERC20 token in the ledger and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
- 
-
- 
-
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+ **Signing a transaction**
+
+ When deploying a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+
+ Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+
+ For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
 ### Example
 

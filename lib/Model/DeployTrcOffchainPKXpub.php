@@ -228,13 +228,13 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
         "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 1, "n" => [0]]], 
         "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
         "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1, "nl" => 130, "xl" => 130]], 
+        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null, ["r" => 1, "x" => [2147483647]]], 
+        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 64, "xl" => 64]], 
         "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 2, "xl" => 30]], 
         "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
-        "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1, "nl" => 1, "xl" => 150]], 
-        "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null, ["r" => 1, "x" => [2147483647]]], 
-        "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]]
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]]
     ];
 
     /**
@@ -478,7 +478,7 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Set symbol
      * 
-     * @param string $symbol Name of the TRC token - stored as a symbol on Blockchain
+     * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -498,7 +498,7 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Set supply
      * 
-     * @param string $supply max supply of TRC token.
+     * @param string $supply The supply of the token
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -518,7 +518,7 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Set decimals
      * 
-     * @param float $decimals Number of decimal points of the token.
+     * @param float $decimals The number of decimal places that the token has
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -538,7 +538,7 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Set type
      * 
-     * @param string $type Type of TRC token to create.
+     * @param string $type The type of the token
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -558,7 +558,7 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Set description
      * 
-     * @param string $description Description of the TRC token
+     * @param string $description The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -567,23 +567,63 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     }
 
     /**
-     * Get url
+     * Get xpub
      *
-     * @return string|null
+     * @return string
      */
-    public function getUrl(): ?string {
-        return $this->_data["url"];
+    public function getXpub(): string {
+        return $this->_data["xpub"];
     }
 
     /**
-     * Set url
+     * Set xpub
      * 
-     * @param string|null $url URL of the project. Applicable for TRC-10 only.
+     * @param string $xpub The extended public key of the TRON wallet from which a deposit address for the virtual account will be generated
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setUrl(?string $url) {
-        return $this->_set("url", $url);
+    public function setXpub(string $xpub) {
+        return $this->_set("xpub", $xpub);
+    }
+
+    /**
+     * Get derivation_index
+     *
+     * @return int
+     */
+    public function getDerivationIndex(): int {
+        return $this->_data["derivation_index"];
+    }
+
+    /**
+     * Set derivation_index
+     * 
+     * @param int $derivation_index The derivation index to use together with the extended public key to generate the deposit address
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setDerivationIndex(int $derivation_index) {
+        return $this->_set("derivation_index", $derivation_index);
+    }
+
+    /**
+     * Get private_key
+     *
+     * @return string
+     */
+    public function getPrivateKey(): string {
+        return $this->_data["private_key"];
+    }
+
+    /**
+     * Set private_key
+     * 
+     * @param string $private_key The private key of the blockchain address from which the fee for deploying the smart contract will be deducted
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setPrivateKey(string $private_key) {
+        return $this->_set("private_key", $private_key);
     }
 
     /**
@@ -598,7 +638,7 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Set base_pair
      * 
-     * @param string $base_pair Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+     * @param string $base_pair The base pair for the virtual currency that represents the token; used to calculate the value of a transaction
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -618,12 +658,32 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
     /**
      * Set base_rate
      * 
-     * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @param float|null $base_rate The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
         return $this->_set("base_rate", $base_rate);
+    }
+
+    /**
+     * Get url
+     *
+     * @return string|null
+     */
+    public function getUrl(): ?string {
+        return $this->_data["url"];
+    }
+
+    /**
+     * Set url
+     * 
+     * @param string|null $url (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter only with TRC-10 tokens. Do <b>not</b> use this parameter with TRC-20 tokens.
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setUrl(?string $url) {
+        return $this->_set("url", $url);
     }
 
     /**
@@ -644,65 +704,5 @@ class DeployTrcOffchainPKXpub extends AbstractModel {
      */
     public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
         return $this->_set("customer", $customer);
-    }
-
-    /**
-     * Get xpub
-     *
-     * @return string
-     */
-    public function getXpub(): string {
-        return $this->_data["xpub"];
-    }
-
-    /**
-     * Set xpub
-     * 
-     * @param string $xpub Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setXpub(string $xpub) {
-        return $this->_set("xpub", $xpub);
-    }
-
-    /**
-     * Get derivation_index
-     *
-     * @return int
-     */
-    public function getDerivationIndex(): int {
-        return $this->_data["derivation_index"];
-    }
-
-    /**
-     * Set derivation_index
-     * 
-     * @param int $derivation_index Derivation index for xpub to generate specific deposit address.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setDerivationIndex(int $derivation_index) {
-        return $this->_set("derivation_index", $derivation_index);
-    }
-
-    /**
-     * Get private_key
-     *
-     * @return string
-     */
-    public function getPrivateKey(): string {
-        return $this->_data["private_key"];
-    }
-
-    /**
-     * Set private_key
-     * 
-     * @param string $private_key Private key of Tron account address, from which gas for deployment of TRC will be paid. Private key, mnemonic or signature Id must be present.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setPrivateKey(string $private_key) {
-        return $this->_set("private_key", $private_key);
     }
 }

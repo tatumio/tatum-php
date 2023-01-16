@@ -12,7 +12,7 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | (Only if the asset is a fungible token, Multi Token, or native blockchain currency) The amount of the asset to transfer. Do not use if the asset is an NFT. | [optional]
 **getTokenId()** | **string** | (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the asset is a fungible token or native blockchain currency. | [optional]
 **getFromPrivateKey()** | **string** | The private key of the blockchain address that owns the gas pump address ("master address") |
-**getFeeCurrency()** | **string** | The currency to pay for the gas fee |
+**getFeeCurrency()** | **string** | The currency in which the gas fee will be paid | [optional] [default to 'CELO']
 **getNonce()** | **float** | The nonce to be set to the transfer transaction; if not present, the last known nonce will be used | [optional]
 **getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 

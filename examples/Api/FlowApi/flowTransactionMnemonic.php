@@ -28,7 +28,7 @@ $arg_flow_transaction_mnemonic = (new \Tatum\Model\FlowTransactionMnemonic())
     // Blockchain address to send assets
     ->setTo('0x955cd3f17b2fd8ae')
     
-    // Amount to be sent, in Flow.
+    // Amount to be sent
     ->setAmount('10000')
     
     // Mnemonic to generate private key.

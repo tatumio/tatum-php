@@ -26,8 +26,8 @@ class CustomFee extends AbstractModel {
     public const _D = null;
     protected static $_name = "CustomFee";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 1, "p" => "/^[+]?\\d+$/"]], 
-        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 1, "p" => "/^[+]?\\d+$/"]]
+        "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 1, "p" => "/^[+]?\\d+$/"]], 
+        "gas_limit" => ["gasLimit", "string", null, "getGasLimit", "setGasLimit", null, ["r" => 1, "p" => "/^[+]?\\d+$/"]]
     ];
 
     /**
@@ -43,26 +43,6 @@ class CustomFee extends AbstractModel {
 
 
     /**
-     * Get gas_limit
-     *
-     * @return string
-     */
-    public function getGasLimit(): string {
-        return $this->_data["gas_limit"];
-    }
-
-    /**
-     * Set gas_limit
-     * 
-     * @param string $gas_limit Gas limit for transaction in gas price.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setGasLimit(string $gas_limit) {
-        return $this->_set("gas_limit", $gas_limit);
-    }
-
-    /**
      * Get gas_price
      *
      * @return string
@@ -74,11 +54,31 @@ class CustomFee extends AbstractModel {
     /**
      * Set gas_price
      * 
-     * @param string $gas_price Gas price in Gwei.
+     * @param string $gas_price The price for one gas unit (in Gwei)
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(string $gas_price) {
         return $this->_set("gas_price", $gas_price);
+    }
+
+    /**
+     * Get gas_limit
+     *
+     * @return string
+     */
+    public function getGasLimit(): string {
+        return $this->_data["gas_limit"];
+    }
+
+    /**
+     * Set gas_limit
+     * 
+     * @param string $gas_limit The maximum number of gas units that you are willing to spend on processing the transaction at the provided gas price
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setGasLimit(string $gas_limit) {
+        return $this->_set("gas_limit", $gas_limit);
     }
 }

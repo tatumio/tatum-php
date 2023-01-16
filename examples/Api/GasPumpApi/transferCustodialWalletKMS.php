@@ -43,7 +43,7 @@ $arg_transfer_custodial_wallet_kms = (new \Tatum\Model\TransferCustodialWalletKM
     // The KMS identifier of the private key of the blockchain address that owns the gas pump address ke...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) (Only if the signature ID is mnemonic-based) The index of the "master address" that was generated...
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the "master address"
     ->setIndex(null)
     
     // (optional) The nonce to be set to the transfer transaction; if not present, the last known nonce will be used

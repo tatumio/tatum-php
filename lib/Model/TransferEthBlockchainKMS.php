@@ -205,7 +205,7 @@ class TransferEthBlockchainKMS extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param string $amount Amount to be sent in Ether.
+     * @param string $amount Amount to be sent
      * @throws \InvalidArgumentException
      * @return $this
      */

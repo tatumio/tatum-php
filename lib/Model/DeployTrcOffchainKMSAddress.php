@@ -228,13 +228,14 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
         "decimals" => ["decimals", "float", null, "getDecimals", "setDecimals", null, ["r" => 1, "n" => [0]]], 
         "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
         "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
-        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
+        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
+        "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
         "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 2, "xl" => 30]], 
         "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
-        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
-        "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
+        "url" => ["url", "string", null, "getUrl", "setUrl", null, ["r" => 0, "nl" => 1, "xl" => 100]], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]]
     ];
 
     /**
@@ -478,7 +479,7 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     /**
      * Set symbol
      * 
-     * @param string $symbol Name of the TRC token - stored as a symbol on Blockchain
+     * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -498,7 +499,7 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     /**
      * Set supply
      * 
-     * @param string $supply max supply of TRC token.
+     * @param string $supply The supply of the token
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -518,7 +519,7 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     /**
      * Set decimals
      * 
-     * @param float $decimals Number of decimal points of the token.
+     * @param float $decimals The number of decimal places that the token has
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -538,7 +539,7 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     /**
      * Set type
      * 
-     * @param string $type Type of TRC token to create.
+     * @param string $type The type of the token
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -558,7 +559,7 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     /**
      * Set description
      * 
-     * @param string $description Description of the TRC token
+     * @param string $description The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -567,23 +568,83 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     }
 
     /**
-     * Get url
+     * Get address
      *
-     * @return string|null
+     * @return string
      */
-    public function getUrl(): ?string {
-        return $this->_data["url"];
+    public function getAddress(): string {
+        return $this->_data["address"];
     }
 
     /**
-     * Set url
+     * Set address
      * 
-     * @param string|null $url URL of the project. Applicable for TRC-10 only.
+     * @param string $address The blockchain address to be assigned to the virtual account as a deposit address
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setUrl(?string $url) {
-        return $this->_set("url", $url);
+    public function setAddress(string $address) {
+        return $this->_set("address", $address);
+    }
+
+    /**
+     * Get from
+     *
+     * @return string
+     */
+    public function getFrom(): string {
+        return $this->_data["from"];
+    }
+
+    /**
+     * Set from
+     * 
+     * @param string $from The blockchain address from which the fee for deploying the smart contract will be deducted
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setFrom(string $from) {
+        return $this->_set("from", $from);
+    }
+
+    /**
+     * Get signature_id
+     *
+     * @return string
+     */
+    public function getSignatureId(): string {
+        return $this->_data["signature_id"];
+    }
+
+    /**
+     * Set signature_id
+     * 
+     * @param string $signature_id The KMS identifier of either the <b>private key</b> of the blockchain address from which the fee for deploying the smart contract will be deducted, or the <b>mnemonic</b> of the TRON wallet to generate the private key for the blockchain address from which the fee will be deducted
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setSignatureId(string $signature_id) {
+        return $this->_set("signature_id", $signature_id);
+    }
+
+    /**
+     * Get index
+     *
+     * @return float|null
+     */
+    public function getIndex(): ?float {
+        return $this->_data["index"];
+    }
+
+    /**
+     * Set index
+     * 
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setIndex(?float $index) {
+        return $this->_set("index", $index);
     }
 
     /**
@@ -598,7 +659,7 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     /**
      * Set base_pair
      * 
-     * @param string $base_pair Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+     * @param string $base_pair The base pair for the virtual currency that represents the token; used to calculate the value of a transaction
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -618,12 +679,32 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
     /**
      * Set base_rate
      * 
-     * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+     * @param float|null $base_rate The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBaseRate(?float $base_rate) {
         return $this->_set("base_rate", $base_rate);
+    }
+
+    /**
+     * Get url
+     *
+     * @return string|null
+     */
+    public function getUrl(): ?string {
+        return $this->_data["url"];
+    }
+
+    /**
+     * Set url
+     * 
+     * @param string|null $url (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter only with TRC-10 tokens. Do <b>not</b> use this parameter with TRC-20 tokens.
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setUrl(?string $url) {
+        return $this->_set("url", $url);
     }
 
     /**
@@ -644,65 +725,5 @@ class DeployTrcOffchainKMSAddress extends AbstractModel {
      */
     public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
         return $this->_set("customer", $customer);
-    }
-
-    /**
-     * Get address
-     *
-     * @return string
-     */
-    public function getAddress(): string {
-        return $this->_data["address"];
-    }
-
-    /**
-     * Set address
-     * 
-     * @param string $address Address on Tron blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setAddress(string $address) {
-        return $this->_set("address", $address);
-    }
-
-    /**
-     * Get from
-     *
-     * @return string
-     */
-    public function getFrom(): string {
-        return $this->_data["from"];
-    }
-
-    /**
-     * Set from
-     * 
-     * @param string $from Blockchain address to perform operation from
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setFrom(string $from) {
-        return $this->_set("from", $from);
-    }
-
-    /**
-     * Get signature_id
-     *
-     * @return string
-     */
-    public function getSignatureId(): string {
-        return $this->_data["signature_id"];
-    }
-
-    /**
-     * Set signature_id
-     * 
-     * @param string $signature_id Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setSignatureId(string $signature_id) {
-        return $this->_set("signature_id", $signature_id);
     }
 }

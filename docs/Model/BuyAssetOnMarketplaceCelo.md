@@ -4,15 +4,15 @@
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | Blockchain to work with. |
+**getChain()** | **string** | The blockchain to work with |
+**getContractAddress()** | **string** | The blockchain address of the marketplace smart contract |
+**getListingId()** | **string** | The ID of the listing with the asset that you want to buy |
 **getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
-**getContractAddress()** | **string** | Address of the marketplace smart contract. |
-**getErc20Address()** | **string** | Optional address of the ERC20 token, which will be used as a selling currency of the NFT. | [optional]
-**getListingId()** | **string** | ID of the listing. |
-**getBuyer()** | **string** | In case of the ERC20 listing, it's possible to buy on behalf of someone else. This value is the address of the buyer, which should approve spending of the ERC20 tokens for the Marketplace contract. This could be used for a buying from the custodial wallet address. | [optional]
-**getAmount()** | **string** | Amount of the assets to be sent for buying. |
-**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
+**getFromPrivateKey()** | **string** | The private key of the blockchain address from which the fee will be deducted |
+**getAmount()** | **string** | (Only if you pay with the native blockchain currency) The price of the asset that you want to buy plus the marketplace fee. Do not use if you pay with fungible tokens. | [optional]
+**getErc20Address()** | **string** | (Only if you pay with the fungible tokens) The blockchain address of the fungible tokens. Do not use if you pay with the native blockchain currency. | [optional]
+**getBuyer()** | **string** | (Only if you want to buy the asset on behalf of someone else and this person wants to pay with the fungible tokens; for example, for buying the asset from a custodial wallet address) The blockchain address of the buyer on whose behalf you are buying the asset<br/>The buyer must <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access their tokens</a> before you make the purchase. | [optional]
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
 
 [[Back to Index]](../index.md)

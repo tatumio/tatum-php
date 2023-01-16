@@ -67,7 +67,7 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to work with.
+     * @param string $chain The blockchain to work with
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -87,7 +87,7 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string $contract_address Blockchain address of the smart contract
+     * @param string $contract_address The blockchain address of the marketplace smart contract
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -107,7 +107,7 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
     /**
      * Set listing_id
      * 
-     * @param mixed $listing_id Blockchain address of the listing
+     * @param mixed $listing_id The blockchain address of the listing with the asset that you want to buy
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -127,7 +127,7 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
     /**
      * Set from
      * 
-     * @param mixed $from Blockchain address of the buyer
+     * @param mixed $from The blockchain address of the buyer
      * @throws \InvalidArgumentException
      * @return $this
      */

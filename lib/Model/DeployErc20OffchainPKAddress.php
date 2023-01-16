@@ -224,12 +224,12 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
         "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "p" => "/^[a-zA-Z0-9_]+$/", "nl" => 1, "xl" => 30]], 
         "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
         "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 2, "xl" => 30]], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
         "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
         "private_key" => ["privateKey", "string", null, "getPrivateKey", "setPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
-        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]]
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 2, "xl" => 30]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
+        "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]]
     ];
 
     /**
@@ -462,7 +462,7 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
     /**
      * Set symbol
      * 
-     * @param string $symbol Name of the ERC20 token - stored as a symbol on Blockchain
+     * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -482,7 +482,7 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
     /**
      * Set supply
      * 
-     * @param string $supply max supply of ERC20 token.
+     * @param string $supply The supply of the token
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -502,72 +502,12 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
     /**
      * Set description
      * 
-     * @param string $description Description of the ERC20 token
+     * @param string $description The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(string $description) {
         return $this->_set("description", $description);
-    }
-
-    /**
-     * Get base_pair
-     *
-     * @return string
-     */
-    public function getBasePair(): string {
-        return $this->_data["base_pair"];
-    }
-
-    /**
-     * Set base_pair
-     * 
-     * @param string $base_pair Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setBasePair(string $base_pair) {
-        return $this->_set("base_pair", $base_pair);
-    }
-
-    /**
-     * Get base_rate
-     *
-     * @return float|null
-     */
-    public function getBaseRate(): ?float {
-        return $this->_data["base_rate"];
-    }
-
-    /**
-     * Set base_rate
-     * 
-     * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setBaseRate(?float $base_rate) {
-        return $this->_set("base_rate", $base_rate);
-    }
-
-    /**
-     * Get customer
-     *
-     * @return \Tatum\Model\CustomerRegistration|null
-     */
-    public function getCustomer(): ?\Tatum\Model\CustomerRegistration {
-        return $this->_data["customer"];
-    }
-
-    /**
-     * Set customer
-     * 
-     * @param \Tatum\Model\CustomerRegistration|null $customer customer
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
-        return $this->_set("customer", $customer);
     }
 
     /**
@@ -582,7 +522,7 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
     /**
      * Set address
      * 
-     * @param string $address Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
+     * @param string $address The blockchain address to be assigned to the virtual account as a deposit address
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -602,12 +542,52 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
     /**
      * Set private_key
      * 
-     * @param string $private_key Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Private key, mnemonic or signature Id must be present.
+     * @param string $private_key The private key of the blockchain address from which the fee for deploying the smart contract will be deducted
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setPrivateKey(string $private_key) {
         return $this->_set("private_key", $private_key);
+    }
+
+    /**
+     * Get base_pair
+     *
+     * @return string
+     */
+    public function getBasePair(): string {
+        return $this->_data["base_pair"];
+    }
+
+    /**
+     * Set base_pair
+     * 
+     * @param string $base_pair The base pair for the virtual currency that represents the token; used to calculate the value of a transaction
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setBasePair(string $base_pair) {
+        return $this->_set("base_pair", $base_pair);
+    }
+
+    /**
+     * Get base_rate
+     *
+     * @return float|null
+     */
+    public function getBaseRate(): ?float {
+        return $this->_data["base_rate"];
+    }
+
+    /**
+     * Set base_rate
+     * 
+     * @param float|null $base_rate The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setBaseRate(?float $base_rate) {
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -628,5 +608,25 @@ class DeployErc20OffchainPKAddress extends AbstractModel {
      */
     public function setNonce(?float $nonce) {
         return $this->_set("nonce", $nonce);
+    }
+
+    /**
+     * Get customer
+     *
+     * @return \Tatum\Model\CustomerRegistration|null
+     */
+    public function getCustomer(): ?\Tatum\Model\CustomerRegistration {
+        return $this->_data["customer"];
+    }
+
+    /**
+     * Set customer
+     * 
+     * @param \Tatum\Model\CustomerRegistration|null $customer customer
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
+        return $this->_set("customer", $customer);
     }
 }

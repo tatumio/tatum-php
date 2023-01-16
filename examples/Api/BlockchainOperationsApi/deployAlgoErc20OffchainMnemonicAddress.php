@@ -19,29 +19,32 @@ $sdk = new \Tatum\Sdk();
 
 $arg_deploy_algo_erc20_offchain_mnemonic_address = (new \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress())
     
-    // Name of the ERC20 token - stored as a symbol on Blockchain
-    ->setSymbol('MT')
+    // The name of the token; used as an identifier within the Tatum platform and as a currency symbol o...
+    ->setSymbol('MY_TOKEN')
     
-    // max supply of ERC20 token.
+    // The supply of the token
     ->setSupply('10000000')
     
-    // Description of the ERC20 token
-    ->setDescription('My ERC20 Token')
+    // The description of the token; used as a description within the Tatum platform and as a currency n...
+    ->setDescription('My Public Token')
     
-    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will b...
+    // The blockchain address to be assigned to the virtual account as a deposit address
+    ->setAddress('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
+    
+    // The mnemonic to generate the private key for the blockchain address from which the fee for deploy...
+    ->setMnemonic('artist alarm clerk obscure timber firm reopen provide ankle vicious exhibit waste math toilet believe puppy lucky coast post kind black suspect mule able market')
+    
+    // The derivation index of the blockchain address from which the fee for deploying the smart contrac...
+    ->setIndex(0)
+    
+    // The base pair for the virtual currency that represents the token; used to calculate the value of ...
     ->setBasePair('EUR')
     
-    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
+    // (optional) The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <c...
     ->setBaseRate(1)
     
     // (optional) 
-    ->setCustomer(null)
-    
-    // Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivati...
-    ->setAddress('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
-    
-    // Mnemonic to generate private key for the deploy account of ERC20, from which the gas will be paid...
-    ->setMnemonic('artist alarm clerk obscure timber firm reopen provide ankle vicious exhibit waste math toilet believe puppy lucky coast post kind black suspect mule able market');
+    ->setCustomer(null);
 
 try {
 

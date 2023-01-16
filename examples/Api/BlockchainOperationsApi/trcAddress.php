@@ -37,14 +37,14 @@ $arg_trc_address = (new \Tatum\Model\TrcAddress())
     // The blockchain address to be assigned to the virtual account as a deposit address
     ->setAddress('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
     
-    // (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter ...
-    ->setUrl('https://mytoken.com')
-    
     // The base pair for the virtual currency that represents the token; used to calculate the value of ...
     ->setBasePair('EUR')
     
     // (optional) The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <c...
     ->setBaseRate(1)
+    
+    // (optional) (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter ...
+    ->setUrl('https://mytoken.com')
     
     // (optional) 
     ->setCustomer(null)

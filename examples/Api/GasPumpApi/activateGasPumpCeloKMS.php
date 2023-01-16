@@ -31,13 +31,13 @@ $arg_activate_gas_pump_celo_kms = (new \Tatum\Model\ActivateGasPumpCeloKMS())
     // The end index of the range of gas pump addresses to activate; must be greater than or equal to th...
     ->setTo(200)
     
-    // (optional) The currency to pay for the gas fee; if not set, defaults to CELO
-    ->setFeeCurrency('null')
+    // The currency in which the gas fee will be paid
+    ->setFeeCurrency('CELO')
     
     // The KMS identifier of the private key of the blockchain address that will pay the gas fee for the...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the address that will pay the gas fee t...
     ->setIndex(null);
 
 try {

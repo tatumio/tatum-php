@@ -404,11 +404,11 @@ Buy an asset on the NFT marketplace
 
  Buy an asset listed on the NFT marketplace.
 
- You can buy the asset either for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.
+ You can buy the asset either for the native blockchain currency (for example, ETH, MATIC, and so on) or for the fungible tokens of the blockchain.
 
  
 
-<ul> <li>If you want to pay for the asset with the **native assets**, send the required amount of the assets with the API call.</li> <li>If you want to pay with the **fungible tokens**, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access your tokens</a> before making the purchase. When you make the API call, the marketplace smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul>
+<ul> <li>If you want to pay for the asset with the **native blockchain currency**, send the required amount plus the marketplace fee right in the API call (in the `amount` request body parameter).</li> <li>If you want to pay with the **fungible tokens**, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access your tokens</a> before making the purchase. When you make the API call, the marketplace smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul>
 
  This API is supported for the following blockchains:
 

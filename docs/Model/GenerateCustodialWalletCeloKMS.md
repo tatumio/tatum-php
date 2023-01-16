@@ -5,7 +5,7 @@
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getChain()** | **string** | Blockchain to work with. |
-**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
+**getFeeCurrency()** | **string** | The currency in which the gas fee will be paid | [optional] [default to 'CELO']
 **getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 **getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 **getEnableFungibleTokens()** | **bool** | If address should support ERC20 tokens, it should be marked as true. |

@@ -19,41 +19,44 @@ $sdk = new \Tatum\Sdk();
 
 $arg_deploy_trc_offchain_kms_address = (new \Tatum\Model\DeployTrcOffchainKMSAddress())
     
-    // Name of the TRC token - stored as a symbol on Blockchain
-    ->setSymbol('MT')
+    // The name of the token; used as an identifier within the Tatum platform and as a currency symbol o...
+    ->setSymbol('MY_TOKEN')
     
-    // max supply of TRC token.
+    // The supply of the token
     ->setSupply('10000000')
     
-    // Number of decimal points of the token.
+    // The number of decimal places that the token has
     ->setDecimals(6)
     
-    // Type of TRC token to create.
+    // The type of the token
     ->setType('TRC10')
     
-    // Description of the TRC token
-    ->setDescription('My TRC Token')
+    // The description of the token; used as a description within the Tatum platform and as a currency n...
+    ->setDescription('My Public Token')
     
-    // (optional) URL of the project. Applicable for TRC-10 only.
-    ->setUrl('https://mytoken.com')
-    
-    // Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be ...
-    ->setBasePair('EUR')
-    
-    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
-    ->setBaseRate(1)
-    
-    // (optional) 
-    ->setCustomer(null)
-    
-    // Address on Tron blockchain, where all initial supply will be stored. Either xpub and derivationIn...
+    // The blockchain address to be assigned to the virtual account as a deposit address
     ->setAddress('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
     
-    // Blockchain address to perform operation from
+    // The blockchain address from which the fee for deploying the smart contract will be deducted
     ->setFrom('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
     
-    // Identifier of the mnemonic / private key associated in signing application. When hash identifies ...
-    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
+    // The KMS identifier of either the <b>private key</b> of the blockchain address from which the fee ...
+    ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be ...
+    ->setIndex(null)
+    
+    // The base pair for the virtual currency that represents the token; used to calculate the value of ...
+    ->setBasePair('EUR')
+    
+    // (optional) The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <c...
+    ->setBaseRate(1)
+    
+    // (optional) (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter ...
+    ->setUrl('https://mytoken.com')
+    
+    // (optional) 
+    ->setCustomer(null);
 
 try {
 

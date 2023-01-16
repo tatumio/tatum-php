@@ -898,7 +898,7 @@ class Erc20 extends AbstractModel {
     /**
      * Set xpub
      * 
-     * @param string $xpub The extended public key of the wallet from which a deposit address for the virtual account will be generated; the supply of the token will be stored on this address<br/><b>NOTE:</b> On Solana, you only can assign an existing address to the virtual account; use the <code>Erc20Address</code> schema of this API.
+     * @param string $xpub The extended public key of the wallet from which a deposit address for the virtual account will be generated<br/><b>NOTE:</b> On Solana, you only can assign an existing address to the virtual account; use the <code>Erc20Address</code> schema of this API.
      * @throws \InvalidArgumentException
      * @return $this
      */

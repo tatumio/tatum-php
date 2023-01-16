@@ -196,9 +196,9 @@ class CustomerRegistration extends AbstractModel {
     public const ACCOUNTING_CURRENCY_ZWL = 'ZWL';
     protected static $_name = "CustomerRegistration";
     protected static $_definition = [
+        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
         "accounting_currency" => ["accountingCurrency", "string", null, "getAccountingCurrency", "setAccountingCurrency", 'EUR', ["r" => 0, "e" => 1, "nl" => 3, "xl" => 3]], 
         "customer_country" => ["customerCountry", "string", null, "getCustomerCountry", "setCustomerCountry", null, ["r" => 0, "nl" => 2, "xl" => 2]], 
-        "external_id" => ["externalId", "string", null, "getExternalId", "setExternalId", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
         "provider_country" => ["providerCountry", "string", null, "getProviderCountry", "setProviderCountry", null, ["r" => 0, "nl" => 2, "xl" => 2]]
     ];
 
@@ -394,6 +394,26 @@ class CustomerRegistration extends AbstractModel {
     }
 
     /**
+     * Get external_id
+     *
+     * @return string
+     */
+    public function getExternalId(): string {
+        return $this->_data["external_id"];
+    }
+
+    /**
+     * Set external_id
+     * 
+     * @param string $external_id The external ID of the customer; use only anonymized identification that you have in your system<br/>If a customer with the specified external ID does not exist, a new customer is created. If a customer with the specified external ID exists, it is updated with the provided information.
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setExternalId(string $external_id) {
+        return $this->_set("external_id", $external_id);
+    }
+
+    /**
      * Get accounting_currency
      *
      * @return string|null
@@ -431,26 +451,6 @@ class CustomerRegistration extends AbstractModel {
      */
     public function setCustomerCountry(?string $customer_country) {
         return $this->_set("customer_country", $customer_country);
-    }
-
-    /**
-     * Get external_id
-     *
-     * @return string
-     */
-    public function getExternalId(): string {
-        return $this->_data["external_id"];
-    }
-
-    /**
-     * Set external_id
-     * 
-     * @param string $external_id The external ID of the customer; use only anonymized identification that you have in your system<br/>If a customer with the specified external ID does not exist, a new customer is created. If a customer with the specified external ID exists, it is updated with the provided information.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setExternalId(string $external_id) {
-        return $this->_set("external_id", $external_id);
     }
 
     /**

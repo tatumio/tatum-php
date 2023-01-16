@@ -19,32 +19,32 @@ $sdk = new \Tatum\Sdk();
 
 $arg_buy_asset_on_marketplace_celo_kms = (new \Tatum\Model\BuyAssetOnMarketplaceCeloKMS())
     
-    // Blockchain to work with.
+    // The blockchain to work with
     ->setChain('CELO')
+    
+    // The blockchain address of the marketplace smart contract
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The ID of the listing with the asset that you want to buy
+    ->setListingId('null')
     
     // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null')
     
-    // Address of the marketplace smart contract.
-    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
-    
-    // (optional) Optional address of the ERC20 token, which will be used as a selling currency of the NFT.
-    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
-    
-    // (optional) In case of the ERC20 listing, it's possible to buy on behalf of someone else. This value is the a...
-    ->setBuyer('0x587422eEA2cB73B5d3e242bA5456b782919AFc85')
-    
-    // ID of the listing.
-    ->setListingId('null')
-    
-    // Amount of the assets to be sent for buying.
-    ->setAmount('1')
-    
-    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
+    // The KMS identifier of the private key of the blockchain address from which the fee will be deducted
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be ...
     ->setIndex(null)
+    
+    // (optional) (Only if you pay with the native blockchain currency) The price of the asset that you want to buy...
+    ->setAmount('1')
+    
+    // (optional) (Only if you pay with the fungible tokens) The blockchain address of the fungible tokens. Do not ...
+    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // (optional) (Only if you want to buy the asset on behalf of someone else and this person wants to pay with th...
+    ->setBuyer('0x587422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
     ->setNonce(1)

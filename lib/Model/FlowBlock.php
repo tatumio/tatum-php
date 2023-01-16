@@ -28,9 +28,9 @@ class FlowBlock extends AbstractModel {
         "parent_id" => ["parentId", "string", null, "getParentId", "setParentId", null, ["r" => 0]], 
         "height" => ["height", "float", null, "getHeight", "setHeight", null, ["r" => 0]], 
         "timestamp" => ["timestamp", "string", null, "getTimestamp", "setTimestamp", null, ["r" => 0]], 
-        "transactions" => ["transactions", "string[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]], 
-        "signatures" => ["signatures", "string[]", null, "getSignatures", "setSignatures", null, ["r" => 0, "c" => 1]], 
-        "block_seals" => ["blockSeals", "\Tatum\Model\FlowBlockBlockSealsInner[]", null, "getBlockSeals", "setBlockSeals", null, ["r" => 0, "c" => 1]]
+        "collection_guarantees" => ["collectionGuarantees", "\Tatum\Model\FlowBlockCollectionGuaranteesInner[]", null, "getCollectionGuarantees", "setCollectionGuarantees", null, ["r" => 0, "c" => 1]], 
+        "block_seals" => ["blockSeals", "\Tatum\Model\FlowBlockBlockSealsInner[]", null, "getBlockSeals", "setBlockSeals", null, ["r" => 0, "c" => 1]], 
+        "transactions" => ["transactions", "string[]", null, "getTransactions", "setTransactions", null, ["r" => 0, "c" => 1]]
     ];
 
     /**
@@ -57,7 +57,7 @@ class FlowBlock extends AbstractModel {
     /**
      * Set id
      * 
-     * @param string|null $id Hash of the block.
+     * @param string|null $id The hash of the block
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -77,7 +77,7 @@ class FlowBlock extends AbstractModel {
     /**
      * Set parent_id
      * 
-     * @param string|null $parent_id Hash of the parent block.
+     * @param string|null $parent_id The hash of the parent block
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -97,7 +97,7 @@ class FlowBlock extends AbstractModel {
     /**
      * Set height
      * 
-     * @param float|null $height The block number.
+     * @param float|null $height The number of the block
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -117,7 +117,7 @@ class FlowBlock extends AbstractModel {
     /**
      * Set timestamp
      * 
-     * @param string|null $timestamp Timestamp of the block.
+     * @param string|null $timestamp The timestamp of the block
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -126,43 +126,23 @@ class FlowBlock extends AbstractModel {
     }
 
     /**
-     * Get transactions
+     * Get collection_guarantees
      *
-     * @return string[]|null
+     * @return \Tatum\Model\FlowBlockCollectionGuaranteesInner[]|null
      */
-    public function getTransactions(): ?array {
-        return $this->_data["transactions"];
+    public function getCollectionGuarantees(): ?array {
+        return $this->_data["collection_guarantees"];
     }
 
     /**
-     * Set transactions
+     * Set collection_guarantees
      * 
-     * @param string[]|null $transactions Array of transaction IDs.
+     * @param \Tatum\Model\FlowBlockCollectionGuaranteesInner[]|null $collection_guarantees Collection guaranties
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setTransactions(?array $transactions) {
-        return $this->_set("transactions", $transactions);
-    }
-
-    /**
-     * Get signatures
-     *
-     * @return string[]|null
-     */
-    public function getSignatures(): ?array {
-        return $this->_data["signatures"];
-    }
-
-    /**
-     * Set signatures
-     * 
-     * @param string[]|null $signatures Array of signatures.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setSignatures(?array $signatures) {
-        return $this->_set("signatures", $signatures);
+    public function setCollectionGuarantees(?array $collection_guarantees) {
+        return $this->_set("collection_guarantees", $collection_guarantees);
     }
 
     /**
@@ -177,11 +157,31 @@ class FlowBlock extends AbstractModel {
     /**
      * Set block_seals
      * 
-     * @param \Tatum\Model\FlowBlockBlockSealsInner[]|null $block_seals Array of block seals.
+     * @param \Tatum\Model\FlowBlockBlockSealsInner[]|null $block_seals Block seals
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setBlockSeals(?array $block_seals) {
         return $this->_set("block_seals", $block_seals);
+    }
+
+    /**
+     * Get transactions
+     *
+     * @return string[]|null
+     */
+    public function getTransactions(): ?array {
+        return $this->_data["transactions"];
+    }
+
+    /**
+     * Set transactions
+     * 
+     * @param string[]|null $transactions The IDs of transactions
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setTransactions(?array $transactions) {
+        return $this->_set("transactions", $transactions);
     }
 }

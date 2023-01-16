@@ -386,7 +386,7 @@ class HarmonyApi extends AbstractApi {
     }
     
     /**
-     * Send ONE / HRM20 from account to account
+     * Send ONE from account to account
      *
      * @param \Tatum\Model\TransferOneBlockchain $transfer_one_blockchain 
      * @param float|0 $shard_id Shard to read data from
@@ -412,7 +412,7 @@ class HarmonyApi extends AbstractApi {
     }
     
     /**
-     * Send ONE / HRM20 from account to account
+     * Send ONE from account to account
      *
      * @param \Tatum\Model\TransferOneBlockchainKMS $transfer_one_blockchain_kms 
      * @param float|0 $shard_id Shard to read data from

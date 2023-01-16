@@ -22,6 +22,9 @@ namespace Tatum\Model;
 class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
 
     public const _D = null;
+    public const FEE_CURRENCY_CELO = 'CELO';
+    public const FEE_CURRENCY_CUSD = 'CUSD';
+    public const FEE_CURRENCY_CEUR = 'CEUR';
     public const BASE_PAIR_AED = 'AED';
     public const BASE_PAIR_AFN = 'AFN';
     public const BASE_PAIR_ALL = 'ALL';
@@ -219,23 +222,20 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     public const BASE_PAIR_ZMK = 'ZMK';
     public const BASE_PAIR_ZMW = 'ZMW';
     public const BASE_PAIR_ZWL = 'ZWL';
-    public const FEE_CURRENCY_CELO = 'CELO';
-    public const FEE_CURRENCY_CUSD = 'CUSD';
-    public const FEE_CURRENCY_CEUR = 'CEUR';
     protected static $_name = "DeployCeloErc20OffchainMnemXpub";
     protected static $_definition = [
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
         "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "p" => "/^[a-zA-Z0-9_]+$/", "nl" => 1, "xl" => 30]], 
         "supply" => ["supply", "string", null, "getSupply", "setSupply", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/", "xl" => 38]], 
         "description" => ["description", "string", null, "getDescription", "setDescription", null, ["r" => 1, "nl" => 1, "xl" => 100]], 
-        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 2, "xl" => 30]], 
-        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
-        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]], 
         "xpub" => ["xpub", "string", null, "getXpub", "setXpub", null, ["r" => 1, "nl" => 1, "xl" => 150]], 
         "derivation_index" => ["derivationIndex", "int", 'int32', "getDerivationIndex", "setDerivationIndex", null, ["r" => 1, "x" => [2147483647]]], 
         "mnemonic" => ["mnemonic", "string", null, "getMnemonic", "setMnemonic", null, ["r" => 1, "nl" => 1, "xl" => 500]], 
         "index" => ["index", "int", null, "getIndex", "setIndex", null, ["r" => 1, "x" => [2147483647]]], 
+        "base_pair" => ["basePair", "string", null, "getBasePair", "setBasePair", null, ["r" => 1, "e" => 1, "nl" => 2, "xl" => 30]], 
+        "base_rate" => ["baseRate", "float", null, "getBaseRate", "setBaseRate", 1, ["r" => 0, "n" => [0]]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0, "n" => [0]]], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]]
+        "customer" => ["customer", "\Tatum\Model\CustomerRegistration", null, "getCustomer", "setCustomer", null, ["r" => 0]]
     ];
 
     /**
@@ -249,6 +249,18 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
         }
     }
 
+    /**
+     * Get allowable values
+     *
+     * @return string[]
+     */
+    public function getFeeCurrencyAllowableValues(): array {
+        return [
+            self::FEE_CURRENCY_CELO,
+            self::FEE_CURRENCY_CUSD,
+            self::FEE_CURRENCY_CEUR,
+        ];
+    }
     /**
      * Get allowable values
      *
@@ -455,17 +467,25 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
             self::BASE_PAIR_ZWL,
         ];
     }
+
     /**
-     * Get allowable values
+     * Get fee_currency
      *
-     * @return string[]
+     * @return string
      */
-    public function getFeeCurrencyAllowableValues(): array {
-        return [
-            self::FEE_CURRENCY_CELO,
-            self::FEE_CURRENCY_CUSD,
-            self::FEE_CURRENCY_CEUR,
-        ];
+    public function getFeeCurrency(): string {
+        return $this->_data["fee_currency"];
+    }
+
+    /**
+     * Set fee_currency
+     * 
+     * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setFeeCurrency(string $fee_currency) {
+        return $this->_set("fee_currency", $fee_currency);
     }
 
     /**
@@ -480,7 +500,7 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Set symbol
      * 
-     * @param string $symbol Name of the ERC20 token - stored as a symbol on Blockchain
+     * @param string $symbol The name of the token; used as an identifier within the Tatum platform and as a currency symbol on the blockchain
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -500,7 +520,7 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Set supply
      * 
-     * @param string $supply max supply of ERC20 token.
+     * @param string $supply The supply of the token
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -520,72 +540,12 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Set description
      * 
-     * @param string $description Description of the ERC20 token
+     * @param string $description The description of the token; used as a description within the Tatum platform and as a currency name on the blockchain
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setDescription(string $description) {
         return $this->_set("description", $description);
-    }
-
-    /**
-     * Get base_pair
-     *
-     * @return string
-     */
-    public function getBasePair(): string {
-        return $this->_data["base_pair"];
-    }
-
-    /**
-     * Set base_pair
-     * 
-     * @param string $base_pair Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setBasePair(string $base_pair) {
-        return $this->_set("base_pair", $base_pair);
-    }
-
-    /**
-     * Get base_rate
-     *
-     * @return float|null
-     */
-    public function getBaseRate(): ?float {
-        return $this->_data["base_rate"];
-    }
-
-    /**
-     * Set base_rate
-     * 
-     * @param float|null $base_rate Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setBaseRate(?float $base_rate) {
-        return $this->_set("base_rate", $base_rate);
-    }
-
-    /**
-     * Get customer
-     *
-     * @return \Tatum\Model\CustomerRegistration|null
-     */
-    public function getCustomer(): ?\Tatum\Model\CustomerRegistration {
-        return $this->_data["customer"];
-    }
-
-    /**
-     * Set customer
-     * 
-     * @param \Tatum\Model\CustomerRegistration|null $customer customer
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
-        return $this->_set("customer", $customer);
     }
 
     /**
@@ -600,7 +560,7 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Set xpub
      * 
-     * @param string $xpub Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both.
+     * @param string $xpub The extended public key from which a deposit address for the virtual account will be generated
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -620,7 +580,7 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Set derivation_index
      * 
-     * @param int $derivation_index Derivation index for xpub to generate specific deposit address.
+     * @param int $derivation_index The derivation index to use together with the extended public key to generate the deposit address
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -640,7 +600,7 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Set mnemonic
      * 
-     * @param string $mnemonic Mnemonic to generate private key for the deploy account of ERC20, from which the gas will be paid (index will be used). If address is not present, mnemonic is used to generate xpub and index is set to 1. Either mnemonic and index or privateKey and address must be present, not both.
+     * @param string $mnemonic The mnemonic to generate the private key for the blockchain address from which the fee for deploying the smart contract will be deducted; is used together with the derivation index of this address
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -660,12 +620,52 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     /**
      * Set index
      * 
-     * @param int $index derivation index of address to pay for deployment of ERC20
+     * @param int $index The derivation index of the blockchain address from which the fee for deploying the smart contract will be deducted; is used together with the mnemonic to generate the private key for this address
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setIndex(int $index) {
         return $this->_set("index", $index);
+    }
+
+    /**
+     * Get base_pair
+     *
+     * @return string
+     */
+    public function getBasePair(): string {
+        return $this->_data["base_pair"];
+    }
+
+    /**
+     * Set base_pair
+     * 
+     * @param string $base_pair The base pair for the virtual currency that represents the token; used to calculate the value of a transaction
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setBasePair(string $base_pair) {
+        return $this->_set("base_pair", $base_pair);
+    }
+
+    /**
+     * Get base_rate
+     *
+     * @return float|null
+     */
+    public function getBaseRate(): ?float {
+        return $this->_data["base_rate"];
+    }
+
+    /**
+     * Set base_rate
+     * 
+     * @param float|null $base_rate The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code>
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setBaseRate(?float $base_rate) {
+        return $this->_set("base_rate", $base_rate);
     }
 
     /**
@@ -689,22 +689,22 @@ class DeployCeloErc20OffchainMnemXpub extends AbstractModel {
     }
 
     /**
-     * Get fee_currency
+     * Get customer
      *
-     * @return string
+     * @return \Tatum\Model\CustomerRegistration|null
      */
-    public function getFeeCurrency(): string {
-        return $this->_data["fee_currency"];
+    public function getCustomer(): ?\Tatum\Model\CustomerRegistration {
+        return $this->_data["customer"];
     }
 
     /**
-     * Set fee_currency
+     * Set customer
      * 
-     * @param string $fee_currency The currency in which the transaction fee will be paid
+     * @param \Tatum\Model\CustomerRegistration|null $customer customer
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFeeCurrency(string $fee_currency) {
-        return $this->_set("fee_currency", $fee_currency);
+    public function setCustomer(?\Tatum\Model\CustomerRegistration $customer) {
+        return $this->_set("customer", $customer);
     }
 }

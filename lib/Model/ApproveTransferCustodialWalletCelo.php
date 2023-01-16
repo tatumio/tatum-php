@@ -39,7 +39,7 @@ class ApproveTransferCustodialWalletCelo extends AbstractModel {
         "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 0, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
         "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 0, "xl" => 256]], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 66, "xl" => 66]], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", 'CELO', ["r" => 0, "e" => 1]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
         "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
@@ -253,20 +253,20 @@ class ApproveTransferCustodialWalletCelo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
     /**
      * Set fee_currency
      * 
-     * @param string $fee_currency The currency to pay for the gas fee
+     * @param string|null $fee_currency The currency in which the gas fee will be paid
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFeeCurrency(string $fee_currency) {
+    public function setFeeCurrency(?string $fee_currency) {
         return $this->_set("fee_currency", $fee_currency);
     }
 

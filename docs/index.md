@@ -1471,42 +1471,6 @@ You can access any of the API endpoints with the following syntax:
 > 
 > **POST** `/v3/offchain/ethereum/erc20/deploy`
 
-[🔹 **deployKCSErc20OffchainKMSAddress()**](./Api/BlockchainOperationsApi.md#deploykcserc20offchainkmsaddress)
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainKMSXpub()**](./Api/BlockchainOperationsApi.md#deploykcserc20offchainkmsxpub)
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainMnemXpub()**](./Api/BlockchainOperationsApi.md#deploykcserc20offchainmnemxpub)
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainMnemonicAddress()**](./Api/BlockchainOperationsApi.md#deploykcserc20offchainmnemonicaddress)
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainPKAddress()**](./Api/BlockchainOperationsApi.md#deploykcserc20offchainpkaddress)
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
-[🔹 **deployKCSErc20OffchainPKXpub()**](./Api/BlockchainOperationsApi.md#deploykcserc20offchainpkxpub)
-
-> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
-> 
-> **POST** `/v3/offchain/kcs/erc20/deploy`
-
 [🔹 **deployTrcOffchainKMSAddress()**](./Api/BlockchainOperationsApi.md#deploytrcoffchainkmsaddress)
 
 > Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
@@ -1632,6 +1596,42 @@ You can access any of the API endpoints with the following syntax:
 > Send EGLD from a virtual account to the blockchain
 > 
 > **POST** `/v3/offchain/egld/transfer`
+
+[🔹 **offKcsDeployErc20OffchainKMSAddress()**](./Api/BlockchainOperationsApi.md#offkcsdeployerc20offchainkmsaddress)
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainKMSXpub()**](./Api/BlockchainOperationsApi.md#offkcsdeployerc20offchainkmsxpub)
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainMnemXpub()**](./Api/BlockchainOperationsApi.md#offkcsdeployerc20offchainmnemxpub)
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainMnemonicAddress()**](./Api/BlockchainOperationsApi.md#offkcsdeployerc20offchainmnemonicaddress)
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainPKAddress()**](./Api/BlockchainOperationsApi.md#offkcsdeployerc20offchainpkaddress)
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
+
+[🔹 **offKcsDeployErc20OffchainPKXpub()**](./Api/BlockchainOperationsApi.md#offkcsdeployerc20offchainpkxpub)
+
+> Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
+> 
+> **POST** `/v3/offchain/kcs/erc20/deploy`
 
 [🔹 **offKlaDeployErc20OffchainKMSAddress()**](./Api/BlockchainOperationsApi.md#offkladeployerc20offchainkmsaddress)
 
@@ -3576,13 +3576,13 @@ You can access any of the API endpoints with the following syntax:
 
 [🔹 **transferOneBlockchain()**](./Api/HarmonyApi.md#transferoneblockchain)
 
-> Send ONE / HRM20 from account to account
+> Send ONE from account to account
 > 
 > **POST** `/v3/one/transaction`
 
 [🔹 **transferOneBlockchainKMS()**](./Api/HarmonyApi.md#transferoneblockchainkms)
 
-> Send ONE / HRM20 from account to account
+> Send ONE from account to account
 > 
 > **POST** `/v3/one/transaction`
 

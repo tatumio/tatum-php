@@ -9,7 +9,7 @@ Method name | Return type | Description | Notes
 **getTo()** | **string** | Blockchain address to send assets |
 **getCurrency()** | **string** | Currency to transfer from Ethereum Blockchain Account. |
 **getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
-**getAmount()** | **string** | Amount to be sent in Ether. |
+**getAmount()** | **string** | Amount to be sent |
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 
 [[Back to Index]](../index.md)

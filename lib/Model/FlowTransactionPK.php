@@ -128,7 +128,7 @@ class FlowTransactionPK extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param string $amount Amount to be sent, in Flow.
+     * @param string $amount Amount to be sent
      * @throws \InvalidArgumentException
      * @return $this
      */

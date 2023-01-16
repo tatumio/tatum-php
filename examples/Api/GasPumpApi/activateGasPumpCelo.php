@@ -31,8 +31,8 @@ $arg_activate_gas_pump_celo = (new \Tatum\Model\ActivateGasPumpCelo())
     // The end index of the range of gas pump addresses to activate; must be greater than or equal to th...
     ->setTo(200)
     
-    // (optional) The currency to pay for the gas fee; if not set, defaults to CELO
-    ->setFeeCurrency('null')
+    // The currency in which the gas fee will be paid
+    ->setFeeCurrency('CELO')
     
     // The private key of the blockchain address that will pay the gas fee for the activation transaction
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');

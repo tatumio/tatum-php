@@ -4,12 +4,12 @@
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getId()** | **string** | Hash of the block. | [optional]
-**getParentId()** | **string** | Hash of the parent block. | [optional]
-**getHeight()** | **float** | The block number. | [optional]
-**getTimestamp()** | **string** | Timestamp of the block. | [optional]
-**getTransactions()** | **string[]** | Array of transaction IDs. | [optional]
-**getSignatures()** | **string[]** | Array of signatures. | [optional]
-**getBlockSeals()** | [**\Tatum\Model\FlowBlockBlockSealsInner[]**](FlowBlockBlockSealsInner.md) | Array of block seals. | [optional]
+**getId()** | **string** | The hash of the block | [optional]
+**getParentId()** | **string** | The hash of the parent block | [optional]
+**getHeight()** | **float** | The number of the block | [optional]
+**getTimestamp()** | **string** | The timestamp of the block | [optional]
+**getCollectionGuarantees()** | [**\Tatum\Model\FlowBlockCollectionGuaranteesInner[]**](FlowBlockCollectionGuaranteesInner.md) | Collection guaranties | [optional]
+**getBlockSeals()** | [**\Tatum\Model\FlowBlockBlockSealsInner[]**](FlowBlockBlockSealsInner.md) | Block seals | [optional]
+**getTransactions()** | **string[]** | The IDs of transactions | [optional]
 
 [[Back to Index]](../index.md)

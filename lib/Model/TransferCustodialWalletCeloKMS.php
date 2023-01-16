@@ -41,7 +41,7 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
         "token_id" => ["tokenId", "string", null, "getTokenId", "setTokenId", null, ["r" => 0, "xl" => 256]], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
         "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
-        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", null, ["r" => 1, "e" => 1]], 
+        "fee_currency" => ["feeCurrency", "string", null, "getFeeCurrency", "setFeeCurrency", 'CELO', ["r" => 0, "e" => 1]], 
         "nonce" => ["nonce", "float", null, "getNonce", "setNonce", null, ["r" => 0]], 
         "fee" => ["fee", "\Tatum\Model\CustomFee", null, "getFee", "setFee", null, ["r" => 0]]
     ];
@@ -265,7 +265,7 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Set index
      * 
-     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the \"master address\" that was generated from the mnemonic
+     * @param float|null $index (Only if the signature ID is mnemonic-based) The index of the \"master address\"
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -276,20 +276,20 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
     /**
      * Set fee_currency
      * 
-     * @param string $fee_currency The currency to pay for the gas fee
+     * @param string|null $fee_currency The currency in which the gas fee will be paid
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setFeeCurrency(string $fee_currency) {
+    public function setFeeCurrency(?string $fee_currency) {
         return $this->_set("fee_currency", $fee_currency);
     }
 

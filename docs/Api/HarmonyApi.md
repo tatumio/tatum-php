@@ -94,13 +94,13 @@ HTTP requests are relative to https://api.tatum.io
 
 [🔹 **transferOneBlockchain()**](#transferoneblockchain) 
 
-> Send ONE / HRM20 from account to account
+> Send ONE from account to account
 > 
 > **POST** `/v3/one/transaction`
 
 [🔹 **transferOneBlockchainKMS()**](#transferoneblockchainkms) 
 
-> Send ONE / HRM20 from account to account
+> Send ONE from account to account
 > 
 > **POST** `/v3/one/transaction`
 
@@ -683,13 +683,13 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send ONE / HRM20 from account to account
+Send ONE from account to account
 
 **2 credits per API call**
 
- Send ONE or Tatum supported HRM20 token from account to account.
+ Send ONE from account to account.
 
- Default shard 0 is used for sender and recipient.
+ The default shard `0` is used for the sender and the recipient.
 
  **Signing a transaction**
 
@@ -733,7 +733,7 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send ONE / HRM20 from account to account
+Send ONE from account to account
 
 TransferOneBlockchainKMS operation
 

@@ -22,7 +22,7 @@ $arg_generate_custodial_wallet_batch_celo_kms = (new \Tatum\Model\GenerateCustod
     // Blockchain to work with.
     ->setChain('CELO')
     
-    // The currency in which the transaction fee will be paid
+    // (optional) The currency in which the gas fee will be paid
     ->setFeeCurrency('null')
     
     // Identifier of the private key associated in signing application. Private key, or signature Id mus...

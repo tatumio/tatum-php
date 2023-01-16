@@ -34,7 +34,7 @@ $arg_transfer_eth_blockchain_kms = (new \Tatum\Model\TransferEthBlockchainKMS())
     // (optional) 
     ->setFee(null)
     
-    // Amount to be sent in Ether.
+    // Amount to be sent
     ->setAmount('100000')
     
     // Identifier of the private key associated in signing application. Private key, or signature Id mus...
