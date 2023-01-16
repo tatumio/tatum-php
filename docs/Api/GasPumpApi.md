@@ -1,4 +1,4 @@
-# Tatum/Api/GasPumpApi
+# Api/GasPumpApi
 
 ## References
 

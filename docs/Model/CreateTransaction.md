@@ -1,4 +1,4 @@
-# CreateTransaction
+# Model/CreateTransaction
 
 ## Getters
 

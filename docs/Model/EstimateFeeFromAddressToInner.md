@@ -1,4 +1,4 @@
-# EstimateFeeFromAddressToInner
+# Model/EstimateFeeFromAddressToInner
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403BlockageAmount
+# Model/Error403BlockageAmount
 
 ## Getters
 

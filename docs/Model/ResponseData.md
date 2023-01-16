@@ -1,4 +1,4 @@
-# ResponseData
+# Model/ResponseData
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# PolygonTx
+# Model/PolygonTx
 
 ## Getters
 

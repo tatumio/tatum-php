@@ -1,4 +1,4 @@
-# Error404BlockNotExists
+# Model/Error404BlockNotExists
 
 ## Getters
 

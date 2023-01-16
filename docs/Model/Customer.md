@@ -1,4 +1,4 @@
-# Customer
+# Model/Customer
 
 ## Getters
 

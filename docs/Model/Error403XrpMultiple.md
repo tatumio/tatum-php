@@ -1,4 +1,4 @@
-# Error403XrpMultiple
+# Model/Error403XrpMultiple
 
 ## Getters
 

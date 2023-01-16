@@ -1,4 +1,4 @@
-# FlowCreateAddressFromPubKeyMnemonic200Response
+# Model/FlowCreateAddressFromPubKeyMnemonic200Response
 
 ## Getters
 

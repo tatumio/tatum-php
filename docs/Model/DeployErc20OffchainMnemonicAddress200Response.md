@@ -1,4 +1,4 @@
-# DeployErc20OffchainMnemonicAddress200Response
+# Model/DeployErc20OffchainMnemonicAddress200Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# MintNftSolana
+# Model/MintNftSolana
 
 ## Getters
 

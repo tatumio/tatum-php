@@ -1,4 +1,4 @@
-# BtcBlockHash
+# Model/BtcBlockHash
 
 ## Getters
 

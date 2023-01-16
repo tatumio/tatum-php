@@ -1,4 +1,4 @@
-# CreateTronTrc20BlockchainKMS
+# Model/CreateTronTrc20BlockchainKMS
 
 ## Getters
 

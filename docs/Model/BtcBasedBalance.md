@@ -1,4 +1,4 @@
-# BtcBasedBalance
+# Model/BtcBasedBalance
 
 ## Getters
 

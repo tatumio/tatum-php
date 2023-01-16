@@ -1,4 +1,4 @@
-# SendTransaction403Response
+# Model/SendTransaction403Response
 
 ## Getters
 

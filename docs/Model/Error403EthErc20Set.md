@@ -1,4 +1,4 @@
-# Error403EthErc20Set
+# Model/Error403EthErc20Set
 
 ## Getters
 

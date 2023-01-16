@@ -1,4 +1,4 @@
-# VerifySolanaNFT
+# Model/VerifySolanaNFT
 
 ## Getters
 

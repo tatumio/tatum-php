@@ -1,4 +1,4 @@
-# TransferAlgoErc20
+# Model/TransferAlgoErc20
 
 ## Getters
 

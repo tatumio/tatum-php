@@ -1,4 +1,4 @@
-# BchTransaction
+# Model/BchTransaction
 
 ## Getters
 

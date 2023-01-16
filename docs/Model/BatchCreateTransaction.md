@@ -1,4 +1,4 @@
-# BatchCreateTransaction
+# Model/BatchCreateTransaction
 
 ## Getters
 

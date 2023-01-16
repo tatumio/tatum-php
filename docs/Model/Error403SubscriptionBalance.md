@@ -1,4 +1,4 @@
-# Error403SubscriptionBalance
+# Model/Error403SubscriptionBalance
 
 ## Getters
 

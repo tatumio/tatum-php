@@ -1,4 +1,4 @@
-# TransferTronMnemonic
+# Model/TransferTronMnemonic
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403AccountCurrencyVC
+# Model/Error403AccountCurrencyVC
 
 ## Getters
 

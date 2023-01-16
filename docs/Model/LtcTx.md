@@ -1,4 +1,4 @@
-# LtcTx
+# Model/LtcTx
 
 ## Getters
 

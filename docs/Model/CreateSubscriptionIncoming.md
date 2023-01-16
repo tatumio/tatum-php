@@ -1,4 +1,4 @@
-# CreateSubscriptionIncoming
+# Model/CreateSubscriptionIncoming
 
 ## Getters
 

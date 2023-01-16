@@ -1,4 +1,4 @@
-# TransferBnbBlockchain
+# Model/TransferBnbBlockchain
 
 ## Getters
 

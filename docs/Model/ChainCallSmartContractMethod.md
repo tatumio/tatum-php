@@ -1,4 +1,4 @@
-# ChainCallSmartContractMethod
+# Model/ChainCallSmartContractMethod
 
 ## Getters
 

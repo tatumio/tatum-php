@@ -1,4 +1,4 @@
-# NftProvenanceDataErc721
+# Model/NftProvenanceDataErc721
 
 ## Getters
 

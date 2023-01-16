@@ -1,4 +1,4 @@
-# TransferEgldBlockchain
+# Model/TransferEgldBlockchain
 
 ## Getters
 

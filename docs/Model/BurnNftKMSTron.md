@@ -1,4 +1,4 @@
-# BurnNftKMSTron
+# Model/BurnNftKMSTron
 
 ## Getters
 

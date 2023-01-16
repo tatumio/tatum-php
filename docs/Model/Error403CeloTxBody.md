@@ -1,4 +1,4 @@
-# Error403CeloTxBody
+# Model/Error403CeloTxBody
 
 ## Getters
 

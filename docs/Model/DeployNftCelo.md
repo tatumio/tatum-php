@@ -1,4 +1,4 @@
-# DeployNftCelo
+# Model/DeployNftCelo
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# DeleteAllBlockAmount403Response
+# Model/DeleteAllBlockAmount403Response
 
 ## Getters
 

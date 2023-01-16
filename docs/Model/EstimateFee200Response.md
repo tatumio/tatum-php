@@ -1,4 +1,4 @@
-# EstimateFee200Response
+# Model/EstimateFee200Response
 
 ## Getters
 

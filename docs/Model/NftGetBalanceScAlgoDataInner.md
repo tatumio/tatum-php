@@ -1,4 +1,4 @@
-# NftGetBalanceScAlgoDataInner
+# Model/NftGetBalanceScAlgoDataInner
 
 ## Getters
 

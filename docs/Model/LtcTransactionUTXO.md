@@ -1,4 +1,4 @@
-# LtcTransactionUTXO
+# Model/LtcTransactionUTXO
 
 ## Getters
 

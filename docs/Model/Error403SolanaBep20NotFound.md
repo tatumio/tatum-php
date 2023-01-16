@@ -1,4 +1,4 @@
-# Error403SolanaBep20NotFound
+# Model/Error403SolanaBep20NotFound
 
 ## Getters
 

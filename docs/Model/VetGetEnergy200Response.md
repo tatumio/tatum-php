@@ -1,4 +1,4 @@
-# VetGetEnergy200Response
+# Model/VetGetEnergy200Response
 
 ## Getters
 

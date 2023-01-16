@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Ethereum
+# Local/Wallet/Ethereum
 
 Ethereum HD Wallet
 

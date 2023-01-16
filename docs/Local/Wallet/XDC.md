@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/XDC
+# Local/Wallet/XDC
 
 XDC HD Wallet
 

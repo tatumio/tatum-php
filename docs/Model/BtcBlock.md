@@ -1,4 +1,4 @@
-# BtcBlock
+# Model/BtcBlock
 
 ## Getters
 

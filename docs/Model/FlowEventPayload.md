@@ -1,4 +1,4 @@
-# FlowEventPayload
+# Model/FlowEventPayload
 
 ## Getters
 

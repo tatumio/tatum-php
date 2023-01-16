@@ -1,4 +1,4 @@
-# TransferXrpBlockchain403Response
+# Model/TransferXrpBlockchain403Response
 
 ## Getters
 

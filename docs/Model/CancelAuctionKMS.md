@@ -1,4 +1,4 @@
-# CancelAuctionKMS
+# Model/CancelAuctionKMS
 
 ## Getters
 

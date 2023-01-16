@@ -1,4 +1,4 @@
-# TransferTron
+# Model/TransferTron
 
 ## Getters
 

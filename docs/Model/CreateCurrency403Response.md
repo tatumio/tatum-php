@@ -1,4 +1,4 @@
-# CreateCurrency403Response
+# Model/CreateCurrency403Response
 
 ## Getters
 

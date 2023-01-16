@@ -1,4 +1,4 @@
-# StoreIPFS200Response
+# Model/StoreIPFS200Response
 
 ## Getters
 

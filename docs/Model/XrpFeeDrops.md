@@ -1,4 +1,4 @@
-# XrpFeeDrops
+# Model/XrpFeeDrops
 
 ## Getters
 

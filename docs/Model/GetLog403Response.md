@@ -1,4 +1,4 @@
-# GetLog403Response
+# Model/GetLog403Response
 
 ## Getters
 

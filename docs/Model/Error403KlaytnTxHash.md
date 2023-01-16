@@ -1,4 +1,4 @@
-# Error403KlaytnTxHash
+# Model/Error403KlaytnTxHash
 
 ## Getters
 

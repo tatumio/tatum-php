@@ -1,4 +1,4 @@
-# Tatum/Api/PolygonApi
+# Api/PolygonApi
 
 ## References
 

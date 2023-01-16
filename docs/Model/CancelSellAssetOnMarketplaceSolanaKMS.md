@@ -1,4 +1,4 @@
-# CancelSellAssetOnMarketplaceSolanaKMS
+# Model/CancelSellAssetOnMarketplaceSolanaKMS
 
 ## Getters
 

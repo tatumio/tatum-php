@@ -1,4 +1,4 @@
-# AdaTransaction
+# Model/AdaTransaction
 
 ## Getters
 

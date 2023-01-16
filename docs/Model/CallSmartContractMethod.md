@@ -1,4 +1,4 @@
-# CallSmartContractMethod
+# Model/CallSmartContractMethod
 
 ## Getters
 

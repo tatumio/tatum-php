@@ -1,4 +1,4 @@
-# CreateBnbAsset
+# Model/CreateBnbAsset
 
 ## Getters
 

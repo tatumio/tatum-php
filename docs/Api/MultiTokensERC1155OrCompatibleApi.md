@@ -1,4 +1,4 @@
-# Tatum/Api/MultiTokensERC1155OrCompatibleApi
+# Api/MultiTokensERC1155OrCompatibleApi
 
 ## References
 

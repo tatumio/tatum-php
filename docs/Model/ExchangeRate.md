@@ -1,4 +1,4 @@
-# ExchangeRate
+# Model/ExchangeRate
 
 ## Getters
 

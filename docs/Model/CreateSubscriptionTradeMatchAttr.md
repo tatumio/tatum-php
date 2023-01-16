@@ -1,4 +1,4 @@
-# CreateSubscriptionTradeMatchAttr
+# Model/CreateSubscriptionTradeMatchAttr
 
 ## Getters
 

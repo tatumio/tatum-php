@@ -1,4 +1,4 @@
-# LtcTransactionAddress403Response
+# Model/LtcTransactionAddress403Response
 
 ## Getters
 

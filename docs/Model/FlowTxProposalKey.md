@@ -1,4 +1,4 @@
-# FlowTxProposalKey
+# Model/FlowTxProposalKey
 
 ## Getters
 

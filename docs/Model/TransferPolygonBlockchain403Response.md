@@ -1,4 +1,4 @@
-# TransferPolygonBlockchain403Response
+# Model/TransferPolygonBlockchain403Response
 
 ## Getters
 

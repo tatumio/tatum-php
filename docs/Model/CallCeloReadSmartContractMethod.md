@@ -1,4 +1,4 @@
-# CallCeloReadSmartContractMethod
+# Model/CallCeloReadSmartContractMethod
 
 ## Getters
 

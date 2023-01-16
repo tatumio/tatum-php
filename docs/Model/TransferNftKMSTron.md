@@ -1,4 +1,4 @@
-# TransferNftKMSTron
+# Model/TransferNftKMSTron
 
 ## Getters
 

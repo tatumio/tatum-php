@@ -1,4 +1,4 @@
-# VetGenerateAddress200Response
+# Model/VetGenerateAddress200Response
 
 ## Getters
 

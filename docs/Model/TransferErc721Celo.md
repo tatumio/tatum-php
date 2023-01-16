@@ -1,4 +1,4 @@
-# TransferErc721Celo
+# Model/TransferErc721Celo
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BurnNft
+# Model/BurnNft
 
 ## Getters
 

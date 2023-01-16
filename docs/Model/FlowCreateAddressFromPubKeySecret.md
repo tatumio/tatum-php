@@ -1,4 +1,4 @@
-# FlowCreateAddressFromPubKeySecret
+# Model/FlowCreateAddressFromPubKeySecret
 
 ## Getters
 

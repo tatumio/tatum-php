@@ -1,4 +1,4 @@
-# Error403OrderCurrency1Pair
+# Model/Error403OrderCurrency1Pair
 
 ## Getters
 

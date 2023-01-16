@@ -1,4 +1,4 @@
-# Error403EthGasCalculation
+# Model/Error403EthGasCalculation
 
 ## Getters
 

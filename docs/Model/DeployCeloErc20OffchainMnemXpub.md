@@ -1,4 +1,4 @@
-# DeployCeloErc20OffchainMnemXpub
+# Model/DeployCeloErc20OffchainMnemXpub
 
 ## Getters
 

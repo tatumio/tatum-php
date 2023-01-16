@@ -1,4 +1,4 @@
-# Error403TxAmountBtcOffchain
+# Model/Error403TxAmountBtcOffchain
 
 ## Getters
 

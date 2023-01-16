@@ -1,4 +1,4 @@
-# BtcUTXO
+# Model/BtcUTXO
 
 ## Getters
 

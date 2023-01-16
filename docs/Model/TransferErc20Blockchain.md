@@ -1,4 +1,4 @@
-# TransferErc20Blockchain
+# Model/TransferErc20Blockchain
 
 ## Getters
 

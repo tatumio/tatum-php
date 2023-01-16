@@ -1,4 +1,4 @@
-# Error403WithdrawalPending
+# Model/Error403WithdrawalPending
 
 ## Getters
 

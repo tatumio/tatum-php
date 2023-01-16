@@ -1,4 +1,4 @@
-# TransferCustodialWalletKMS
+# Model/TransferCustodialWalletKMS
 
 ## Getters
 

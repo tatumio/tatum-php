@@ -1,4 +1,4 @@
-# Error403BscBroadcast
+# Model/Error403BscBroadcast
 
 ## Getters
 

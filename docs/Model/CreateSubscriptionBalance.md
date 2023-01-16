@@ -1,4 +1,4 @@
-# CreateSubscriptionBalance
+# Model/CreateSubscriptionBalance
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# VetTxReceiptOutputsInner
+# Model/VetTxReceiptOutputsInner
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# GenerateCustodialWalletTron
+# Model/GenerateCustodialWalletTron
 
 ## Getters
 

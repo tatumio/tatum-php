@@ -1,4 +1,4 @@
-# Tatum/Api/BlockchainAddressesApi
+# Api/BlockchainAddressesApi
 
 ## References
 

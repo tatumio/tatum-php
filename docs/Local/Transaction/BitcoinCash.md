@@ -1,4 +1,4 @@
-# Tatum/Local/Transaction/BitcoinCash
+# Local/Transaction/BitcoinCash
 
 Bitcoin Cash Transaction
 

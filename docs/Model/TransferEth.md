@@ -1,4 +1,4 @@
-# TransferEth
+# Model/TransferEth
 
 ## Getters
 

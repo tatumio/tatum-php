@@ -1,4 +1,4 @@
-# GeneratedAddressMatic
+# Model/GeneratedAddressMatic
 
 ## Getters
 

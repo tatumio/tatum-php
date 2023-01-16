@@ -1,4 +1,4 @@
-# GetAuctionFeeRecipient200Response
+# Model/GetAuctionFeeRecipient200Response
 
 ## Getters
 

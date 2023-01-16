@@ -1,4 +1,4 @@
-# Error403AccountNotExists
+# Model/Error403AccountNotExists
 
 ## Getters
 

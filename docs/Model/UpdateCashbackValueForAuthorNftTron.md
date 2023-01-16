@@ -1,4 +1,4 @@
-# UpdateCashbackValueForAuthorNftTron
+# Model/UpdateCashbackValueForAuthorNftTron
 
 ## Getters
 

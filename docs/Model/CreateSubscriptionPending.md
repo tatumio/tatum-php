@@ -1,4 +1,4 @@
-# CreateSubscriptionPending
+# Model/CreateSubscriptionPending
 
 ## Getters
 

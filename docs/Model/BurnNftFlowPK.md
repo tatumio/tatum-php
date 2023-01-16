@@ -1,4 +1,4 @@
-# BurnNftFlowPK
+# Model/BurnNftFlowPK
 
 ## Getters
 

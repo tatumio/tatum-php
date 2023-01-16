@@ -1,4 +1,4 @@
-# TransferKlay20BlockchainFee
+# Model/TransferKlay20BlockchainFee
 
 ## Getters
 

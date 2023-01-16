@@ -1,4 +1,4 @@
-# CancelSellAssetOnMarketplaceCelo
+# Model/CancelSellAssetOnMarketplaceCelo
 
 ## Getters
 

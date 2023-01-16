@@ -1,4 +1,4 @@
-# FreezeTron
+# Model/FreezeTron
 
 ## Getters
 

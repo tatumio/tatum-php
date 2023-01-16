@@ -1,4 +1,4 @@
-# Error403CustomerDisabled
+# Model/Error403CustomerDisabled
 
 ## Getters
 

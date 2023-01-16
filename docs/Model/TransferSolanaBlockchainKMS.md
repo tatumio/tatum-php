@@ -1,4 +1,4 @@
-# TransferSolanaBlockchainKMS
+# Model/TransferSolanaBlockchainKMS
 
 ## Getters
 

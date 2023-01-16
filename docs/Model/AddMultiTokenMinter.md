@@ -1,4 +1,4 @@
-# AddMultiTokenMinter
+# Model/AddMultiTokenMinter
 
 ## Getters
 

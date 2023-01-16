@@ -1,4 +1,4 @@
-# FlowMintedResult
+# Model/FlowMintedResult
 
 ## Getters
 

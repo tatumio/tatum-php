@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Celo
+# Local/Wallet/Celo
 
 Celo HD Wallet
 

@@ -1,4 +1,4 @@
-# NftTokenByCollectionErc721
+# Model/NftTokenByCollectionErc721
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403VCNotFound
+# Model/Error403VCNotFound
 
 ## Getters
 

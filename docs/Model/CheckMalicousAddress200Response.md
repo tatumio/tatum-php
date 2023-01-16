@@ -1,4 +1,4 @@
-# CheckMalicousAddress200Response
+# Model/CheckMalicousAddress200Response
 
 ## Getters
 

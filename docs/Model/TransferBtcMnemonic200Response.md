@@ -1,4 +1,4 @@
-# TransferBtcMnemonic200Response
+# Model/TransferBtcMnemonic200Response
 
 ## Getters
 

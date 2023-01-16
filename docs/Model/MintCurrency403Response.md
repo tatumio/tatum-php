@@ -1,4 +1,4 @@
-# MintCurrency403Response
+# Model/MintCurrency403Response
 
 ## Getters
 

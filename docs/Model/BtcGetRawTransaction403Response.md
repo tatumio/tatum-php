@@ -1,4 +1,4 @@
-# BtcGetRawTransaction403Response
+# Model/BtcGetRawTransaction403Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# ApproveCeloErc20KMS
+# Model/ApproveCeloErc20KMS
 
 ## Getters
 

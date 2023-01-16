@@ -1,4 +1,4 @@
-# Error403BscScBody
+# Model/Error403BscScBody
 
 ## Getters
 

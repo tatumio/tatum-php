@@ -1,4 +1,4 @@
-# TransferOneBlockchainKMS
+# Model/TransferOneBlockchainKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BtcTxInputPrevOut
+# Model/BtcTxInputPrevOut
 
 ## Getters
 

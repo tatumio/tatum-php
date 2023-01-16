@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Polygon
+# Local/Wallet/Polygon
 
 Polygon HD Wallet
 

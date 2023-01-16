@@ -1,4 +1,4 @@
-# TransferKcsBlockchain403Response
+# Model/TransferKcsBlockchain403Response
 
 ## Getters
 

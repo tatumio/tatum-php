@@ -1,4 +1,4 @@
-# TransferMultiTokenBatchKMSCelo
+# Model/TransferMultiTokenBatchKMSCelo
 
 ## Getters
 

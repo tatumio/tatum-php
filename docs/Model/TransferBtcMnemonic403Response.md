@@ -1,4 +1,4 @@
-# TransferBtcMnemonic403Response
+# Model/TransferBtcMnemonic403Response
 
 ## Getters
 

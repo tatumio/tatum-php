@@ -1,4 +1,4 @@
-# GetAuction200Response
+# Model/GetAuction200Response
 
 ## Getters
 

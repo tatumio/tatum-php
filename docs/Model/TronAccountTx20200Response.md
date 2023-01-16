@@ -1,4 +1,4 @@
-# TronAccountTx20200Response
+# Model/TronAccountTx20200Response
 
 ## Getters
 

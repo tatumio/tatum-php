@@ -1,4 +1,4 @@
-# Error403EthErc721Call
+# Model/Error403EthErc721Call
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# CreateTrade403Response
+# Model/CreateTrade403Response
 
 ## Getters
 

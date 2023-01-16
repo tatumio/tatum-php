@@ -1,4 +1,4 @@
-# Error403XdcTxHash
+# Model/Error403XdcTxHash
 
 ## Getters
 

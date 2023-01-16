@@ -1,4 +1,4 @@
-# BurnNftTron
+# Model/BurnNftTron
 
 ## Getters
 

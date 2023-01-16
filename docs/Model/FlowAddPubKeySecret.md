@@ -1,4 +1,4 @@
-# FlowAddPubKeySecret
+# Model/FlowAddPubKeySecret
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# XlmAccountSignersInner
+# Model/XlmAccountSignersInner
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BchRpcDriverRequest
+# Model/BchRpcDriverRequest
 
 ## Getters
 

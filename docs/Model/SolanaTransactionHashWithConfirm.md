@@ -1,4 +1,4 @@
-# SolanaTransactionHashWithConfirm
+# Model/SolanaTransactionHashWithConfirm
 
 ## Getters
 

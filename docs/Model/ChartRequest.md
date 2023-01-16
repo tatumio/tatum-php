@@ -1,4 +1,4 @@
-# ChartRequest
+# Model/ChartRequest
 
 ## Getters
 

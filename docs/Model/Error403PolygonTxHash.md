@@ -1,4 +1,4 @@
-# Error403PolygonTxHash
+# Model/Error403PolygonTxHash
 
 ## Getters
 

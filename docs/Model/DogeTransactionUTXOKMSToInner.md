@@ -1,4 +1,4 @@
-# DogeTransactionUTXOKMSToInner
+# Model/DogeTransactionUTXOKMSToInner
 
 ## Getters
 

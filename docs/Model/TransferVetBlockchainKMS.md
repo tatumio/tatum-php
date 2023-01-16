@@ -1,4 +1,4 @@
-# TransferVetBlockchainKMS
+# Model/TransferVetBlockchainKMS
 
 ## Getters
 

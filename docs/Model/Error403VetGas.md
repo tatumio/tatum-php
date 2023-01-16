@@ -1,4 +1,4 @@
-# Error403VetGas
+# Model/Error403VetGas
 
 ## Getters
 

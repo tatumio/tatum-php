@@ -1,4 +1,4 @@
-# ChainDeployErc20
+# Model/ChainDeployErc20
 
 ## Getters
 

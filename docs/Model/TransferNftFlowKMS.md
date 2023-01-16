@@ -1,4 +1,4 @@
-# TransferNftFlowKMS
+# Model/TransferNftFlowKMS
 
 ## Getters
 

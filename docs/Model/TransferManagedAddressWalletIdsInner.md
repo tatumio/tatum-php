@@ -1,4 +1,4 @@
-# TransferManagedAddressWalletIdsInner
+# Model/TransferManagedAddressWalletIdsInner
 
 ## Getters
 

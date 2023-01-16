@@ -1,4 +1,4 @@
-# ApproveNftSpendingKMS
+# Model/ApproveNftSpendingKMS
 
 ## Getters
 

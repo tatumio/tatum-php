@@ -1,4 +1,4 @@
-# CeloTxLogsInner
+# Model/CeloTxLogsInner
 
 ## Getters
 

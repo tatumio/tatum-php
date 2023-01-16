@@ -1,4 +1,4 @@
-# Error403OneBroadcast
+# Model/Error403OneBroadcast
 
 ## Getters
 

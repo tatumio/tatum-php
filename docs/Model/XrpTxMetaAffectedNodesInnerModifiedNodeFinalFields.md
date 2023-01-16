@@ -1,4 +1,4 @@
-# XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields
+# Model/XrpTxMetaAffectedNodesInnerModifiedNodeFinalFields
 
 ## Getters
 

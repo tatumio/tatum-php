@@ -1,4 +1,4 @@
-# MintMultipleErc721KMS
+# Model/MintMultipleErc721KMS
 
 ## Getters
 

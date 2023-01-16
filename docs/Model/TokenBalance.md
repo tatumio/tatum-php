@@ -1,4 +1,4 @@
-# TokenBalance
+# Model/TokenBalance
 
 ## Getters
 

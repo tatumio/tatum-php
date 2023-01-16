@@ -1,4 +1,4 @@
-# Error403TxNotCompliant
+# Model/Error403TxNotCompliant
 
 ## Getters
 

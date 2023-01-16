@@ -1,4 +1,4 @@
-# BurnMultiTokenBatchKMS
+# Model/BurnMultiTokenBatchKMS
 
 ## Getters
 

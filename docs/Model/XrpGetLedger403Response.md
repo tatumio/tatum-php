@@ -1,4 +1,4 @@
-# XrpGetLedger403Response
+# Model/XrpGetLedger403Response
 
 ## Getters
 

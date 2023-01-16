@@ -1,4 +1,4 @@
-# BurnNftCelo
+# Model/BurnNftCelo
 
 ## Getters
 

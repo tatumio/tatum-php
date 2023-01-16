@@ -1,4 +1,4 @@
-# TransferVetBlockchain
+# Model/TransferVetBlockchain
 
 ## Getters
 

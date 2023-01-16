@@ -1,4 +1,4 @@
-# Error403OneErc20TxSign
+# Model/Error403OneErc20TxSign
 
 ## Getters
 

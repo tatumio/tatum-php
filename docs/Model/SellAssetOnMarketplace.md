@@ -1,4 +1,4 @@
-# SellAssetOnMarketplace
+# Model/SellAssetOnMarketplace
 
 ## Getters
 

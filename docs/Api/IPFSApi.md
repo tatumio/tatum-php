@@ -1,4 +1,4 @@
-# Tatum/Api/IPFSApi
+# Api/IPFSApi
 
 ## References
 

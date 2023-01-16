@@ -1,4 +1,4 @@
-# AdaUTXO
+# Model/AdaUTXO
 
 ## Getters
 

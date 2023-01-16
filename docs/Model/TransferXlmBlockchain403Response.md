@@ -1,4 +1,4 @@
-# TransferXlmBlockchain403Response
+# Model/TransferXlmBlockchain403Response
 
 ## Getters
 

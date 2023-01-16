@@ -1,4 +1,4 @@
-# TransferBnbBlockchainKMS
+# Model/TransferBnbBlockchainKMS
 
 ## Getters
 

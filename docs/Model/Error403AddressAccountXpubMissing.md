@@ -1,4 +1,4 @@
-# Error403AddressAccountXpubMissing
+# Model/Error403AddressAccountXpubMissing
 
 ## Getters
 

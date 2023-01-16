@@ -1,4 +1,4 @@
-# TransactionResult
+# Model/TransactionResult
 
 ## Getters
 

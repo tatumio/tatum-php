@@ -1,4 +1,4 @@
-# BurnErc20Celo
+# Model/BurnErc20Celo
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# KlaytnTx
+# Model/KlaytnTx
 
 ## Getters
 

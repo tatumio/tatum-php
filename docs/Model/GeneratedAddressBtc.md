@@ -1,4 +1,4 @@
-# GeneratedAddressBtc
+# Model/GeneratedAddressBtc
 
 ## Getters
 

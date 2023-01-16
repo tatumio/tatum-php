@@ -1,4 +1,4 @@
-# Error403OrderCurrency1NotFound
+# Model/Error403OrderCurrency1NotFound
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# StoreWithdrawal403Response
+# Model/StoreWithdrawal403Response
 
 ## Getters
 

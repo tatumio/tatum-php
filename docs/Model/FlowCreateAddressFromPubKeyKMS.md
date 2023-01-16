@@ -1,4 +1,4 @@
-# FlowCreateAddressFromPubKeyKMS
+# Model/FlowCreateAddressFromPubKeyKMS
 
 ## Getters
 

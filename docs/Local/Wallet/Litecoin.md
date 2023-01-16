@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Litecoin
+# Local/Wallet/Litecoin
 
 Litecoin HD Wallet
 

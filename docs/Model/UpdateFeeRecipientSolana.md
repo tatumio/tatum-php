@@ -1,4 +1,4 @@
-# UpdateFeeRecipientSolana
+# Model/UpdateFeeRecipientSolana
 
 ## Getters
 

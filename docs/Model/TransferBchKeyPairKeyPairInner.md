@@ -1,4 +1,4 @@
-# TransferBchKeyPairKeyPairInner
+# Model/TransferBchKeyPairKeyPairInner
 
 ## Getters
 

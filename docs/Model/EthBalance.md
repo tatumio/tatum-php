@@ -1,4 +1,4 @@
-# EthBalance
+# Model/EthBalance
 
 ## Getters
 

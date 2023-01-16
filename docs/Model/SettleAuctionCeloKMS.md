@@ -1,4 +1,4 @@
-# SettleAuctionCeloKMS
+# Model/SettleAuctionCeloKMS
 
 ## Getters
 

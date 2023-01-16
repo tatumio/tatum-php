@@ -1,4 +1,4 @@
-# TransferSol
+# Model/TransferSol
 
 ## Getters
 

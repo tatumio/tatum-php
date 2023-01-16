@@ -1,4 +1,4 @@
-# DeployKCSErc20OffchainPKXpub
+# Model/DeployKCSErc20OffchainPKXpub
 
 ## Getters
 

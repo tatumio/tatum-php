@@ -1,4 +1,4 @@
-# MintNftExpressAlgorandAttr
+# Model/MintNftExpressAlgorandAttr
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferDogeKeyPair
+# Model/TransferDogeKeyPair
 
 ## Getters
 

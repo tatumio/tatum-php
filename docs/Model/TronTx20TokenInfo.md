@@ -1,4 +1,4 @@
-# TronTx20TokenInfo
+# Model/TronTx20TokenInfo
 
 ## Getters
 

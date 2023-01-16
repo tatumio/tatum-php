@@ -1,4 +1,4 @@
-# Error403SubscriptionPendingId
+# Model/Error403SubscriptionPendingId
 
 ## Getters
 

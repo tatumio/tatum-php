@@ -1,4 +1,4 @@
-# AccountSettingsXrpBlockchainKMS
+# Model/AccountSettingsXrpBlockchainKMS
 
 ## Getters
 

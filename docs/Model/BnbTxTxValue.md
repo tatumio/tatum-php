@@ -1,4 +1,4 @@
-# BnbTxTxValue
+# Model/BnbTxTxValue
 
 ## Getters
 

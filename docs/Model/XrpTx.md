@@ -1,4 +1,4 @@
-# XrpTx
+# Model/XrpTx
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# PolygonEstimateGas403Response
+# Model/PolygonEstimateGas403Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# SCGetContractAddress200Response
+# Model/SCGetContractAddress200Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# SolanaMintedResult
+# Model/SolanaMintedResult
 
 ## Getters
 

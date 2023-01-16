@@ -1,4 +1,4 @@
-# BurnNftKMSCelo
+# Model/BurnNftKMSCelo
 
 ## Getters
 

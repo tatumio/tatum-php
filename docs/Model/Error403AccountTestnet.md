@@ -1,4 +1,4 @@
-# Error403AccountTestnet
+# Model/Error403AccountTestnet
 
 ## Getters
 

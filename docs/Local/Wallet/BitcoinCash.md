@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/BitcoinCash
+# Local/Wallet/BitcoinCash
 
 Bitcoin Cash HD Wallet
 

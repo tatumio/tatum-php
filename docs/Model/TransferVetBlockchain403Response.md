@@ -1,4 +1,4 @@
-# TransferVetBlockchain403Response
+# Model/TransferVetBlockchain403Response
 
 ## Getters
 

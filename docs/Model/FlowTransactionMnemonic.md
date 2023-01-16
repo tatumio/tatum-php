@@ -1,4 +1,4 @@
-# FlowTransactionMnemonic
+# Model/FlowTransactionMnemonic
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# AdaAccountBalanceInnerCurrency
+# Model/AdaAccountBalanceInnerCurrency
 
 ## Getters
 

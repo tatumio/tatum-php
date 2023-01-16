@@ -1,4 +1,4 @@
-# TransferCustodialWallet
+# Model/TransferCustodialWallet
 
 ## Getters
 

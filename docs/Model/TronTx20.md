@@ -1,4 +1,4 @@
-# TronTx20
+# Model/TronTx20
 
 ## Getters
 

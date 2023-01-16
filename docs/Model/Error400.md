@@ -1,4 +1,4 @@
-# Error400
+# Model/Error400
 
 ## Getters
 

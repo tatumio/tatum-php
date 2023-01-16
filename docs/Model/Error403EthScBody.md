@@ -1,4 +1,4 @@
-# Error403EthScBody
+# Model/Error403EthScBody
 
 ## Getters
 

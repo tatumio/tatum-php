@@ -1,4 +1,4 @@
-# Error403OrderCurrency1Frozen
+# Model/Error403OrderCurrency1Frozen
 
 ## Getters
 

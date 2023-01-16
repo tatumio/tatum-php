@@ -1,4 +1,4 @@
-# BurnErc721Celo
+# Model/BurnErc721Celo
 
 ## Getters
 

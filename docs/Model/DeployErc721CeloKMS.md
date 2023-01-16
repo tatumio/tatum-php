@@ -1,4 +1,4 @@
-# DeployErc721CeloKMS
+# Model/DeployErc721CeloKMS
 
 ## Getters
 

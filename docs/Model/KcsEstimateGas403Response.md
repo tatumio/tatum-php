@@ -1,4 +1,4 @@
-# KcsEstimateGas403Response
+# Model/KcsEstimateGas403Response
 
 ## Getters
 

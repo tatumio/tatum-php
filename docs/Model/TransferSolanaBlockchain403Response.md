@@ -1,4 +1,4 @@
-# TransferSolanaBlockchain403Response
+# Model/TransferSolanaBlockchain403Response
 
 ## Getters
 

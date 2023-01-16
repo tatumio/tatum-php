@@ -1,4 +1,4 @@
-# GenerateCustodialWalletBatchKMS
+# Model/GenerateCustodialWalletBatchKMS
 
 ## Getters
 

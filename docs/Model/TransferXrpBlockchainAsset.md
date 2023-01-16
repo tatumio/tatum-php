@@ -1,4 +1,4 @@
-# TransferXrpBlockchainAsset
+# Model/TransferXrpBlockchainAsset
 
 ## Getters
 

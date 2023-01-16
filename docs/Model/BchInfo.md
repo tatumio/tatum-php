@@ -1,4 +1,4 @@
-# BchInfo
+# Model/BchInfo
 
 ## Getters
 

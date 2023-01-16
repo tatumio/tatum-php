@@ -1,4 +1,4 @@
-# BtcTxOutput
+# Model/BtcTxOutput
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# DeployCeloErc20OffchainPKAddress
+# Model/DeployCeloErc20OffchainPKAddress
 
 ## Getters
 

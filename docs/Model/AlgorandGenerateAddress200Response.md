@@ -1,4 +1,4 @@
-# AlgorandGenerateAddress200Response
+# Model/AlgorandGenerateAddress200Response
 
 ## Getters
 

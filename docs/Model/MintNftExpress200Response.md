@@ -1,4 +1,4 @@
-# MintNftExpress200Response
+# Model/MintNftExpress200Response
 
 ## Getters
 

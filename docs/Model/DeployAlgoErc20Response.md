@@ -1,4 +1,4 @@
-# DeployAlgoErc20Response
+# Model/DeployAlgoErc20Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# FlowGenerateAddress200Response
+# Model/FlowGenerateAddress200Response
 
 ## Getters
 

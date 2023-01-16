@@ -1,4 +1,4 @@
-# AccountSettingsXrpBlockchain
+# Model/AccountSettingsXrpBlockchain
 
 ## Getters
 

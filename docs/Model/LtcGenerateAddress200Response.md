@@ -1,4 +1,4 @@
-# LtcGenerateAddress200Response
+# Model/LtcGenerateAddress200Response
 
 ## Getters
 

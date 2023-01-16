@@ -1,4 +1,4 @@
-# MintErc721KMSCelo
+# Model/MintErc721KMSCelo
 
 ## Getters
 

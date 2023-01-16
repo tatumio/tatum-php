@@ -1,4 +1,4 @@
-# BlockAmount403Response
+# Model/BlockAmount403Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403BtcMnemonicTxFailed
+# Model/Error403BtcMnemonicTxFailed
 
 ## Getters
 

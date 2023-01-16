@@ -1,4 +1,4 @@
-# FlowAddPubKeySecretKMS
+# Model/FlowAddPubKeySecretKMS
 
 ## Getters
 

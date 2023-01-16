@@ -1,4 +1,4 @@
-# VetTx
+# Model/VetTx
 
 ## Getters
 

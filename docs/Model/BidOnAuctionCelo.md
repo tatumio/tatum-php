@@ -1,4 +1,4 @@
-# BidOnAuctionCelo
+# Model/BidOnAuctionCelo
 
 ## Getters
 

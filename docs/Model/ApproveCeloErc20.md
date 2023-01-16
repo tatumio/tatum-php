@@ -1,4 +1,4 @@
-# ApproveCeloErc20
+# Model/ApproveCeloErc20
 
 ## Getters
 

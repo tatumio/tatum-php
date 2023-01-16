@@ -1,4 +1,4 @@
-# Tatum/Api/VirtualCurrencyApi
+# Api/VirtualCurrencyApi
 
 ## References
 

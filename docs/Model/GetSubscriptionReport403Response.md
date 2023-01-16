@@ -1,4 +1,4 @@
-# GetSubscriptionReport403Response
+# Model/GetSubscriptionReport403Response
 
 ## Getters
 

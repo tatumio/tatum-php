@@ -1,4 +1,4 @@
-# GenerateCustodialWalletBatchPayer
+# Model/GenerateCustodialWalletBatchPayer
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferEth403Response
+# Model/TransferEth403Response
 
 ## Getters
 

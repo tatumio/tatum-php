@@ -1,4 +1,4 @@
-# BtcTransactionFromUTXOKMSTarget
+# Model/BtcTransactionFromUTXOKMSTarget
 
 ## Getters
 

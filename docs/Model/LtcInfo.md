@@ -1,4 +1,4 @@
-# LtcInfo
+# Model/LtcInfo
 
 ## Getters
 

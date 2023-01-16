@@ -1,4 +1,4 @@
-# PrivKeyRequest
+# Model/PrivKeyRequest
 
 ## Getters
 

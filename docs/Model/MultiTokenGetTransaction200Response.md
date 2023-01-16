@@ -1,4 +1,4 @@
-# MultiTokenGetTransaction200Response
+# Model/MultiTokenGetTransaction200Response
 
 ## Getters
 

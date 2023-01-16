@@ -1,4 +1,4 @@
-# WithdrawalObject
+# Model/WithdrawalObject
 
 ## Getters
 

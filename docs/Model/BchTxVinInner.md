@@ -1,4 +1,4 @@
-# BchTxVinInner
+# Model/BchTxVinInner
 
 ## Getters
 

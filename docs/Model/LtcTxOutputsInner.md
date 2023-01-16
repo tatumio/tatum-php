@@ -1,4 +1,4 @@
-# LtcTxOutputsInner
+# Model/LtcTxOutputsInner
 
 ## Getters
 

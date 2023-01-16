@@ -1,4 +1,4 @@
-# VirtualCurrencyOperation
+# Model/VirtualCurrencyOperation
 
 ## Getters
 

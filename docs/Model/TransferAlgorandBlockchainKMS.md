@@ -1,4 +1,4 @@
-# TransferAlgorandBlockchainKMS
+# Model/TransferAlgorandBlockchainKMS
 
 ## Getters
 

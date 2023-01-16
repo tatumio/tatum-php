@@ -1,4 +1,4 @@
-# TransferErc20BlockchainKMS
+# Model/TransferErc20BlockchainKMS
 
 ## Getters
 

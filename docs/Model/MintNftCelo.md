@@ -1,4 +1,4 @@
-# MintNftCelo
+# Model/MintNftCelo
 
 ## Getters
 

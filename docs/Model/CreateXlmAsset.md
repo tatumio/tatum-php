@@ -1,4 +1,4 @@
-# CreateXlmAsset
+# Model/CreateXlmAsset
 
 ## Getters
 

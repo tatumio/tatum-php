@@ -1,4 +1,4 @@
-# Tatum/Api/VeChainApi
+# Api/VeChainApi
 
 ## References
 

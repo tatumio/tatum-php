@@ -1,4 +1,4 @@
-# UpdateFeeRecipientTronKMS
+# Model/UpdateFeeRecipientTronKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# AlgoBlock
+# Model/AlgoBlock
 
 ## Getters
 

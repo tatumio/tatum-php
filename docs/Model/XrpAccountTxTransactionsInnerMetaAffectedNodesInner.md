@@ -1,4 +1,4 @@
-# XrpAccountTxTransactionsInnerMetaAffectedNodesInner
+# Model/XrpAccountTxTransactionsInnerMetaAffectedNodesInner
 
 ## Getters
 

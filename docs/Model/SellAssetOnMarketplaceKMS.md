@@ -1,4 +1,4 @@
-# SellAssetOnMarketplaceKMS
+# Model/SellAssetOnMarketplaceKMS
 
 ## Getters
 

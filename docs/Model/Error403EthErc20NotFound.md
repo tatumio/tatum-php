@@ -1,4 +1,4 @@
-# Error403EthErc20NotFound
+# Model/Error403EthErc20NotFound
 
 ## Getters
 

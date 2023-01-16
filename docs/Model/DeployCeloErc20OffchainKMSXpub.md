@@ -1,4 +1,4 @@
-# DeployCeloErc20OffchainKMSXpub
+# Model/DeployCeloErc20OffchainKMSXpub
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403BnbBroadcatSigFailed
+# Model/Error403BnbBroadcatSigFailed
 
 ## Getters
 

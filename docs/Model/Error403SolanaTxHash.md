@@ -1,4 +1,4 @@
-# Error403SolanaTxHash
+# Model/Error403SolanaTxHash
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferBscBlockchain403Response
+# Model/TransferBscBlockchain403Response
 
 ## Getters
 

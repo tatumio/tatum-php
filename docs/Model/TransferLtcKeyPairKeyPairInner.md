@@ -1,4 +1,4 @@
-# TransferLtcKeyPairKeyPairInner
+# Model/TransferLtcKeyPairKeyPairInner
 
 ## Getters
 

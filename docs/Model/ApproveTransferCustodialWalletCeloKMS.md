@@ -1,4 +1,4 @@
-# ApproveTransferCustodialWalletCeloKMS
+# Model/ApproveTransferCustodialWalletCeloKMS
 
 ## Getters
 

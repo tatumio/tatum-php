@@ -1,4 +1,4 @@
-# Error403OrderFeeNotFound
+# Model/Error403OrderFeeNotFound
 
 ## Getters
 

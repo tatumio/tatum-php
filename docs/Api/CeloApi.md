@@ -1,4 +1,4 @@
-# Tatum/Api/CeloApi
+# Api/CeloApi
 
 ## References
 

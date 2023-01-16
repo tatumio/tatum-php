@@ -1,4 +1,4 @@
-# TransferLtcMnemonic
+# Model/TransferLtcMnemonic
 
 ## Getters
 

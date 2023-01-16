@@ -1,4 +1,4 @@
-# Error403CustomerActive
+# Model/Error403CustomerActive
 
 ## Getters
 

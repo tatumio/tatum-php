@@ -1,4 +1,4 @@
-# Error403RecipientFormat
+# Model/Error403RecipientFormat
 
 ## Getters
 

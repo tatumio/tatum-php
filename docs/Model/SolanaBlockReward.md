@@ -1,4 +1,4 @@
-# SolanaBlockReward
+# Model/SolanaBlockReward
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BnbTxTxValueSignaturesInner
+# Model/BnbTxTxValueSignaturesInner
 
 ## Getters
 

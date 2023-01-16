@@ -1,4 +1,4 @@
-# CreateAccountBatch
+# Model/CreateAccountBatch
 
 ## Getters
 

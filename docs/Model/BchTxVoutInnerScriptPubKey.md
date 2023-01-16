@@ -1,4 +1,4 @@
-# BchTxVoutInnerScriptPubKey
+# Model/BchTxVoutInnerScriptPubKey
 
 ## Getters
 

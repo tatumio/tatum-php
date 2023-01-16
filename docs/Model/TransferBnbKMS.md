@@ -1,4 +1,4 @@
-# TransferBnbKMS
+# Model/TransferBnbKMS
 
 ## Getters
 

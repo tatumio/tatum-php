@@ -1,4 +1,4 @@
-# CeloGetBalance200Response
+# Model/CeloGetBalance200Response
 
 ## Getters
 

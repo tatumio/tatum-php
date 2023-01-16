@@ -1,4 +1,4 @@
-# XrpAccountTxMarker
+# Model/XrpAccountTxMarker
 
 ## Getters
 

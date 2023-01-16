@@ -1,4 +1,4 @@
-# EthTxInternal
+# Model/EthTxInternal
 
 ## Getters
 

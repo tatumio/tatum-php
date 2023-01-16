@@ -1,4 +1,4 @@
-# TransferKlaytnBlockchain403Response
+# Model/TransferKlaytnBlockchain403Response
 
 ## Getters
 

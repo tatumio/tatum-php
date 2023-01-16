@@ -1,4 +1,4 @@
-# TronBroadcast
+# Model/TronBroadcast
 
 ## Getters
 

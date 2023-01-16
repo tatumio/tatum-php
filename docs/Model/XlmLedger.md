@@ -1,4 +1,4 @@
-# XlmLedger
+# Model/XlmLedger
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Tatum/Api/MaliciousAddressApi
+# Api/MaliciousAddressApi
 
 ## References
 

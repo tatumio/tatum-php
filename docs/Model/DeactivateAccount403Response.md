@@ -1,4 +1,4 @@
-# DeactivateAccount403Response
+# Model/DeactivateAccount403Response
 
 ## Getters
 

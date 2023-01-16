@@ -1,4 +1,4 @@
-# UnfreezeAccount403Response
+# Model/UnfreezeAccount403Response
 
 ## Getters
 

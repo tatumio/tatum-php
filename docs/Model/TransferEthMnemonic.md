@@ -1,4 +1,4 @@
-# TransferEthMnemonic
+# Model/TransferEthMnemonic
 
 ## Getters
 

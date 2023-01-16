@@ -1,4 +1,4 @@
-# CreateSubscriptionKMSError
+# Model/CreateSubscriptionKMSError
 
 ## Getters
 

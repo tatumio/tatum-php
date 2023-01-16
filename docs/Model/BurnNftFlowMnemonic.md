@@ -1,4 +1,4 @@
-# BurnNftFlowMnemonic
+# Model/BurnNftFlowMnemonic
 
 ## Getters
 

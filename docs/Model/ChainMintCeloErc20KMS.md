@@ -1,4 +1,4 @@
-# ChainMintCeloErc20KMS
+# Model/ChainMintCeloErc20KMS
 
 ## Getters
 

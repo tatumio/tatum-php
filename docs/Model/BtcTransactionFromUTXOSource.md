@@ -1,4 +1,4 @@
-# BtcTransactionFromUTXOSource
+# Model/BtcTransactionFromUTXOSource
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferEthKMS
+# Model/TransferEthKMS
 
 ## Getters
 

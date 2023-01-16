@@ -1,4 +1,4 @@
-# BtcTxInput
+# Model/BtcTxInput
 
 ## Getters
 

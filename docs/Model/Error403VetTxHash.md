@@ -1,4 +1,4 @@
-# Error403VetTxHash
+# Model/Error403VetTxHash
 
 ## Getters
 

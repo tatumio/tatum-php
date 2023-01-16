@@ -1,4 +1,4 @@
-# Error403XrpSign
+# Model/Error403XrpSign
 
 ## Getters
 

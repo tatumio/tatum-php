@@ -1,4 +1,4 @@
-# TransferDogeKMS
+# Model/TransferDogeKMS
 
 ## Getters
 

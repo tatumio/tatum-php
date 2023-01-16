@@ -1,4 +1,4 @@
-# Error403XrpFailed
+# Model/Error403XrpFailed
 
 ## Getters
 

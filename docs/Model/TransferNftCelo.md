@@ -1,4 +1,4 @@
-# TransferNftCelo
+# Model/TransferNftCelo
 
 ## Getters
 

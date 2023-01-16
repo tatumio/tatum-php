@@ -1,4 +1,4 @@
-# CreateSubscriptionNftTransferEvent
+# Model/CreateSubscriptionNftTransferEvent
 
 ## Getters
 

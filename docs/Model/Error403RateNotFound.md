@@ -1,4 +1,4 @@
-# Error403RateNotFound
+# Model/Error403RateNotFound
 
 ## Getters
 

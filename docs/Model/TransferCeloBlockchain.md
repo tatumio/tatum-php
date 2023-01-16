@@ -1,4 +1,4 @@
-# TransferCeloBlockchain
+# Model/TransferCeloBlockchain
 
 ## Getters
 

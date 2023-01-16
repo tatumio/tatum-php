@@ -1,4 +1,4 @@
-# UpdateCashbackValueForAuthorNftCelo
+# Model/UpdateCashbackValueForAuthorNftCelo
 
 ## Getters
 

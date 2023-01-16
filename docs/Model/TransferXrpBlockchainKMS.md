@@ -1,4 +1,4 @@
-# TransferXrpBlockchainKMS
+# Model/TransferXrpBlockchainKMS
 
 ## Getters
 

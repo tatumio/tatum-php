@@ -1,4 +1,4 @@
-# StoreTokenAddress403Response
+# Model/StoreTokenAddress403Response
 
 ## Getters
 

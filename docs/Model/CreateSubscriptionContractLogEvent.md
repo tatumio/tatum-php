@@ -1,4 +1,4 @@
-# CreateSubscriptionContractLogEvent
+# Model/CreateSubscriptionContractLogEvent
 
 ## Getters
 

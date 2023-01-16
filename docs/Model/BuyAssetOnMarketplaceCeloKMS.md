@@ -1,4 +1,4 @@
-# BuyAssetOnMarketplaceCeloKMS
+# Model/BuyAssetOnMarketplaceCeloKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# OneTxLog
+# Model/OneTxLog
 
 ## Getters
 

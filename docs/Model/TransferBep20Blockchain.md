@@ -1,4 +1,4 @@
-# TransferBep20Blockchain
+# Model/TransferBep20Blockchain
 
 ## Getters
 

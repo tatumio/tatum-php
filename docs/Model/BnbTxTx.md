@@ -1,4 +1,4 @@
-# BnbTxTx
+# Model/BnbTxTx
 
 ## Getters
 

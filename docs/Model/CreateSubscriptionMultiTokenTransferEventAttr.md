@@ -1,4 +1,4 @@
-# CreateSubscriptionMultiTokenTransferEventAttr
+# Model/CreateSubscriptionMultiTokenTransferEventAttr
 
 ## Getters
 

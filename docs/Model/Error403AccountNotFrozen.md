@@ -1,4 +1,4 @@
-# Error403AccountNotFrozen
+# Model/Error403AccountNotFrozen
 
 ## Getters
 

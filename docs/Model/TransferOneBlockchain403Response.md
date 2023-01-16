@@ -1,4 +1,4 @@
-# TransferOneBlockchain403Response
+# Model/TransferOneBlockchain403Response
 
 ## Getters
 

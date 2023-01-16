@@ -1,4 +1,4 @@
-# PolygonTxLog
+# Model/PolygonTxLog
 
 ## Getters
 

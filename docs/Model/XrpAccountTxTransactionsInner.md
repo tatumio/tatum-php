@@ -1,4 +1,4 @@
-# XrpAccountTxTransactionsInner
+# Model/XrpAccountTxTransactionsInner
 
 ## Getters
 

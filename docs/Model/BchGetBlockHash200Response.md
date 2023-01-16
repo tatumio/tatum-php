@@ -1,4 +1,4 @@
-# BchGetBlockHash200Response
+# Model/BchGetBlockHash200Response
 
 ## Getters
 

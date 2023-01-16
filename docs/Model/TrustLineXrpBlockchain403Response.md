@@ -1,4 +1,4 @@
-# TrustLineXrpBlockchain403Response
+# Model/TrustLineXrpBlockchain403Response
 
 ## Getters
 

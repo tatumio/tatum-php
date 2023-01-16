@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Tron
+# Local/Wallet/Tron
 
 Tron HD Wallet
 

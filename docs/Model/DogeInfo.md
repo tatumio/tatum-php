@@ -1,4 +1,4 @@
-# DogeInfo
+# Model/DogeInfo
 
 ## Getters
 

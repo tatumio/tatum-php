@@ -1,4 +1,4 @@
-# FeeAndChange
+# Model/FeeAndChange
 
 ## Getters
 

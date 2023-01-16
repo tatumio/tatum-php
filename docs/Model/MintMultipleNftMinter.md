@@ -1,4 +1,4 @@
-# MintMultipleNftMinter
+# Model/MintMultipleNftMinter
 
 ## Getters
 

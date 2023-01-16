@@ -1,4 +1,4 @@
-# Error403XdcErc20Set
+# Model/Error403XdcErc20Set
 
 ## Getters
 

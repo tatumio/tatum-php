@@ -1,4 +1,4 @@
-# MultiTokenGetContractAddress200Response
+# Model/MultiTokenGetContractAddress200Response
 
 ## Getters
 

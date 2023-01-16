@@ -1,4 +1,4 @@
-# AdaTxInputsInner
+# Model/AdaTxInputsInner
 
 ## Getters
 

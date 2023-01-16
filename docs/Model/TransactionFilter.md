@@ -1,4 +1,4 @@
-# TransactionFilter
+# Model/TransactionFilter
 
 ## Getters
 

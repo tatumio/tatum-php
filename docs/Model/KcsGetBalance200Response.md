@@ -1,4 +1,4 @@
-# KcsGetBalance200Response
+# Model/KcsGetBalance200Response
 
 ## Getters
 

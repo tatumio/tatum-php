@@ -1,4 +1,4 @@
-# EntitiesCount
+# Model/EntitiesCount
 
 ## Getters
 

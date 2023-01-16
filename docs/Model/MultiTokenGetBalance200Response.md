@@ -1,4 +1,4 @@
-# MultiTokenGetBalance200Response
+# Model/MultiTokenGetBalance200Response
 
 ## Getters
 

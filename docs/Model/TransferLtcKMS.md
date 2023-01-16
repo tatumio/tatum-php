@@ -1,4 +1,4 @@
-# TransferLtcKMS
+# Model/TransferLtcKMS
 
 ## Getters
 

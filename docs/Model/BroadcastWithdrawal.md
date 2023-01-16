@@ -1,4 +1,4 @@
-# BroadcastWithdrawal
+# Model/BroadcastWithdrawal
 
 ## Getters
 

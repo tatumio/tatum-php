@@ -1,4 +1,4 @@
-# CallKlaytnSmartContractReadMethod403Response
+# Model/CallKlaytnSmartContractReadMethod403Response
 
 ## Getters
 

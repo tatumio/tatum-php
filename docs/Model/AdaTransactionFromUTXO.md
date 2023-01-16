@@ -1,4 +1,4 @@
-# AdaTransactionFromUTXO
+# Model/AdaTransactionFromUTXO
 
 ## Getters
 

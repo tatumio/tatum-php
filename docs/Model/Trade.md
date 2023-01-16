@@ -1,4 +1,4 @@
-# Trade
+# Model/Trade
 
 ## Getters
 

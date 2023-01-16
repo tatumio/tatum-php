@@ -1,4 +1,4 @@
-# Error403SubscriptionNotExists
+# Model/Error403SubscriptionNotExists
 
 ## Getters
 

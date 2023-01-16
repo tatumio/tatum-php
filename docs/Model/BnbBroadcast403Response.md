@@ -1,4 +1,4 @@
-# BnbBroadcast403Response
+# Model/BnbBroadcast403Response
 
 ## Getters
 

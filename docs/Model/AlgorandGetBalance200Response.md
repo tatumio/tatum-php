@@ -1,4 +1,4 @@
-# AlgorandGetBalance200Response
+# Model/AlgorandGetBalance200Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# SolanaListingDataNft
+# Model/SolanaListingDataNft
 
 ## Getters
 

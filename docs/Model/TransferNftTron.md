@@ -1,4 +1,4 @@
-# TransferNftTron
+# Model/TransferNftTron
 
 ## Getters
 

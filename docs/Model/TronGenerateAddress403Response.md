@@ -1,4 +1,4 @@
-# TronGenerateAddress403Response
+# Model/TronGenerateAddress403Response
 
 ## Getters
 

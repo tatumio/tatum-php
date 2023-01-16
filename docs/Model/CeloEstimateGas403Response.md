@@ -1,4 +1,4 @@
-# CeloEstimateGas403Response
+# Model/CeloEstimateGas403Response
 
 ## Getters
 

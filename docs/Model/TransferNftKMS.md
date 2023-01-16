@@ -1,4 +1,4 @@
-# TransferNftKMS
+# Model/TransferNftKMS
 
 ## Getters
 

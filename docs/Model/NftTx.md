@@ -1,4 +1,4 @@
-# NftTx
+# Model/NftTx
 
 ## Getters
 

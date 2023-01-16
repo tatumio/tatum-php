@@ -1,4 +1,4 @@
-# BtcTransactionFromAddress403Response
+# Model/BtcTransactionFromAddress403Response
 
 ## Getters
 

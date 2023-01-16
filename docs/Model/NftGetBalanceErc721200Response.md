@@ -1,4 +1,4 @@
-# NftGetBalanceErc721200Response
+# Model/NftGetBalanceErc721200Response
 
 ## Getters
 

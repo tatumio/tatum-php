@@ -1,4 +1,4 @@
-# SolanaTxTransaction
+# Model/SolanaTxTransaction
 
 ## Getters
 

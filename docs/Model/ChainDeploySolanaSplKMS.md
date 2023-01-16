@@ -1,4 +1,4 @@
-# ChainDeploySolanaSplKMS
+# Model/ChainDeploySolanaSplKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Tatum/Api/ServiceUtilsApi
+# Api/ServiceUtilsApi
 
 ## References
 

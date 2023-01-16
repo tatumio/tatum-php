@@ -1,4 +1,4 @@
-# KmsSignatureIds
+# Model/KmsSignatureIds
 
 ## Getters
 

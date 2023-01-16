@@ -1,4 +1,4 @@
-# Error403TradeBalanceNonZero
+# Model/Error403TradeBalanceNonZero
 
 ## Getters
 

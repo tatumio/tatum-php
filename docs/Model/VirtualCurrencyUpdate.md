@@ -1,4 +1,4 @@
-# VirtualCurrencyUpdate
+# Model/VirtualCurrencyUpdate
 
 ## Getters
 

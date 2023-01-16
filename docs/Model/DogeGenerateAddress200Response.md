@@ -1,4 +1,4 @@
-# DogeGenerateAddress200Response
+# Model/DogeGenerateAddress200Response
 
 ## Getters
 

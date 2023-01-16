@@ -1,4 +1,4 @@
-# Tatum/Api/DepositApi
+# Api/DepositApi
 
 ## References
 

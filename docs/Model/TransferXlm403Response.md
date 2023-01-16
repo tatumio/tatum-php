@@ -1,4 +1,4 @@
-# TransferXlm403Response
+# Model/TransferXlm403Response
 
 ## Getters
 

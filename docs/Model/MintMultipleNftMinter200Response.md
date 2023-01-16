@@ -1,4 +1,4 @@
-# MintMultipleNftMinter200Response
+# Model/MintMultipleNftMinter200Response
 
 ## Getters
 

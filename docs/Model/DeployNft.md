@@ -1,4 +1,4 @@
-# DeployNft
+# Model/DeployNft
 
 ## Getters
 

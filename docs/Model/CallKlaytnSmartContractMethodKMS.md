@@ -1,4 +1,4 @@
-# CallKlaytnSmartContractMethodKMS
+# Model/CallKlaytnSmartContractMethodKMS
 
 ## Getters
 

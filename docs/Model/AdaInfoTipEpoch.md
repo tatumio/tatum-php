@@ -1,4 +1,4 @@
-# AdaInfoTipEpoch
+# Model/AdaInfoTipEpoch
 
 ## Getters
 

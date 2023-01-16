@@ -1,4 +1,4 @@
-# Error500
+# Model/Error500
 
 ## Getters
 

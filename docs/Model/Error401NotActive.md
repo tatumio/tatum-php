@@ -1,4 +1,4 @@
-# Error401NotActive
+# Model/Error401NotActive
 
 ## Getters
 

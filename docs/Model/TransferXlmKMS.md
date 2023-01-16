@@ -1,4 +1,4 @@
-# TransferXlmKMS
+# Model/TransferXlmKMS
 
 ## Getters
 

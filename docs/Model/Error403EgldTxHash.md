@@ -1,4 +1,4 @@
-# Error403EgldTxHash
+# Model/Error403EgldTxHash
 
 ## Getters
 

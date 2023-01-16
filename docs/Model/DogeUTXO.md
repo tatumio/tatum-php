@@ -1,4 +1,4 @@
-# DogeUTXO
+# Model/DogeUTXO
 
 ## Getters
 

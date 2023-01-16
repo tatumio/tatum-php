@@ -1,4 +1,4 @@
-# Tatum/Api/ElrondApi
+# Api/ElrondApi
 
 ## References
 

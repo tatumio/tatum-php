@@ -1,4 +1,4 @@
-# CallXdcSmartContractMethodKMS
+# Model/CallXdcSmartContractMethodKMS
 
 ## Getters
 

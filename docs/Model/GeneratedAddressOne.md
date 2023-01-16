@@ -1,4 +1,4 @@
-# GeneratedAddressOne
+# Model/GeneratedAddressOne
 
 ## Getters
 

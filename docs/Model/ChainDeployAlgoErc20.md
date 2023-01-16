@@ -1,4 +1,4 @@
-# ChainDeployAlgoErc20
+# Model/ChainDeployAlgoErc20
 
 ## Getters
 

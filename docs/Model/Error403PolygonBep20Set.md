@@ -1,4 +1,4 @@
-# Error403PolygonBep20Set
+# Model/Error403PolygonBep20Set
 
 ## Getters
 

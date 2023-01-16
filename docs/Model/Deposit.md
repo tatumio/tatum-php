@@ -1,4 +1,4 @@
-# Deposit
+# Model/Deposit
 
 ## Getters
 

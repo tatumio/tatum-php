@@ -1,4 +1,4 @@
-# CreateSubscriptionTradeMatch
+# Model/CreateSubscriptionTradeMatch
 
 ## Getters
 

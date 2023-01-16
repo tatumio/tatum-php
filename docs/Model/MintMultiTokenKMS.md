@@ -1,4 +1,4 @@
-# MintMultiTokenKMS
+# Model/MintMultiTokenKMS
 
 ## Getters
 

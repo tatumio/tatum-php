@@ -1,4 +1,4 @@
-# EgldEstimateGas403Response
+# Model/EgldEstimateGas403Response
 
 ## Getters
 

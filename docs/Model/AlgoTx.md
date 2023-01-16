@@ -1,4 +1,4 @@
-# AlgoTx
+# Model/AlgoTx
 
 ## Getters
 

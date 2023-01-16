@@ -1,4 +1,4 @@
-# BtcBroadcast403Response
+# Model/BtcBroadcast403Response
 
 ## Getters
 

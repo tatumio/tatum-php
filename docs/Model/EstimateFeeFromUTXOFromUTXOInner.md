@@ -1,4 +1,4 @@
-# EstimateFeeFromUTXOFromUTXOInner
+# Model/EstimateFeeFromUTXOFromUTXOInner
 
 ## Getters
 

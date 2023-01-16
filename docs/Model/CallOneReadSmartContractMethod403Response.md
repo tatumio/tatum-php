@@ -1,4 +1,4 @@
-# CallOneReadSmartContractMethod403Response
+# Model/CallOneReadSmartContractMethod403Response
 
 ## Getters
 

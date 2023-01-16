@@ -1,4 +1,4 @@
-# VetTxReceipt
+# Model/VetTxReceipt
 
 ## Getters
 

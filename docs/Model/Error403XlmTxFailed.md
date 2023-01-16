@@ -1,4 +1,4 @@
-# Error403XlmTxFailed
+# Model/Error403XlmTxFailed
 
 ## Getters
 

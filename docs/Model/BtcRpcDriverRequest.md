@@ -1,4 +1,4 @@
-# BtcRpcDriverRequest
+# Model/BtcRpcDriverRequest
 
 ## Getters
 

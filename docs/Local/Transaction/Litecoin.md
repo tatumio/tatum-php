@@ -1,4 +1,4 @@
-# Tatum/Local/Transaction/Litecoin
+# Local/Transaction/Litecoin
 
 Litecoin Transaction
 

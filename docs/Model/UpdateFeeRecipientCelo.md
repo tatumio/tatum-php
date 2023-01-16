@@ -1,4 +1,4 @@
-# UpdateFeeRecipientCelo
+# Model/UpdateFeeRecipientCelo
 
 ## Getters
 

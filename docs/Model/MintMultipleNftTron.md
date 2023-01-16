@@ -1,4 +1,4 @@
-# MintMultipleNftTron
+# Model/MintMultipleNftTron
 
 ## Getters
 

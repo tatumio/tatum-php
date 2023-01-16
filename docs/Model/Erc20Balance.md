@@ -1,4 +1,4 @@
-# Erc20Balance
+# Model/Erc20Balance
 
 ## Getters
 

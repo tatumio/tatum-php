@@ -1,4 +1,4 @@
-# CustodialManagedAddress
+# Model/CustodialManagedAddress
 
 ## Getters
 

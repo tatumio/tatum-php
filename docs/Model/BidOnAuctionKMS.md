@@ -1,4 +1,4 @@
-# BidOnAuctionKMS
+# Model/BidOnAuctionKMS
 
 ## Getters
 

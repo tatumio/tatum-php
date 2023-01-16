@@ -1,4 +1,4 @@
-# CeloTx
+# Model/CeloTx
 
 ## Getters
 

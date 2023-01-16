@@ -1,4 +1,4 @@
-# CreateRecord403Response
+# Model/CreateRecord403Response
 
 ## Getters
 

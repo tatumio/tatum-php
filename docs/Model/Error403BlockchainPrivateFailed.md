@@ -1,4 +1,4 @@
-# Error403BlockchainPrivateFailed
+# Model/Error403BlockchainPrivateFailed
 
 ## Getters
 

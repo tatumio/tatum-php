@@ -1,4 +1,4 @@
-# GenerateCustodialWalletBatchCelo
+# Model/GenerateCustodialWalletBatchCelo
 
 ## Getters
 

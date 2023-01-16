@@ -1,4 +1,4 @@
-# VetTxReceiptMeta
+# Model/VetTxReceiptMeta
 
 ## Getters
 

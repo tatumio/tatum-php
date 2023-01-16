@@ -1,4 +1,4 @@
-# FlowBlockBlockSealsInner
+# Model/FlowBlockBlockSealsInner
 
 ## Getters
 

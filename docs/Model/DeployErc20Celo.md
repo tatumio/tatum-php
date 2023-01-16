@@ -1,4 +1,4 @@
-# DeployErc20Celo
+# Model/DeployErc20Celo
 
 ## Getters
 

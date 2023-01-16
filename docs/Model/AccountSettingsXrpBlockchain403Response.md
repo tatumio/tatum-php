@@ -1,4 +1,4 @@
-# AccountSettingsXrpBlockchain403Response
+# Model/AccountSettingsXrpBlockchain403Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# XlmWallet
+# Model/XlmWallet
 
 ## Getters
 

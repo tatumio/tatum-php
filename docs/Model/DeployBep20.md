@@ -1,4 +1,4 @@
-# DeployBep20
+# Model/DeployBep20
 
 ## Getters
 

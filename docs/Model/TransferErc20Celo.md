@@ -1,4 +1,4 @@
-# TransferErc20Celo
+# Model/TransferErc20Celo
 
 ## Getters
 

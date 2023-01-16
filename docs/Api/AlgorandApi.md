@@ -1,4 +1,4 @@
-# Tatum/Api/AlgorandApi
+# Api/AlgorandApi
 
 ## References
 

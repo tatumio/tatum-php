@@ -1,4 +1,4 @@
-# BchTransaction403Response
+# Model/BchTransaction403Response
 
 ## Getters
 

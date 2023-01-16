@@ -1,4 +1,4 @@
-# CeloEstimateGas200Response
+# Model/CeloEstimateGas200Response
 
 ## Getters
 

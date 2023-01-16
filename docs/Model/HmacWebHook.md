@@ -1,4 +1,4 @@
-# HmacWebHook
+# Model/HmacWebHook
 
 ## Getters
 

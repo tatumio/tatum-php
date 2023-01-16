@@ -1,4 +1,4 @@
-# DeployNftTronKMS
+# Model/DeployNftTronKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BuyAssetOnMarketplaceTron
+# Model/BuyAssetOnMarketplaceTron
 
 ## Getters
 

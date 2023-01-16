@@ -1,4 +1,4 @@
-# OffchainEstimateFee
+# Model/OffchainEstimateFee
 
 ## Getters
 

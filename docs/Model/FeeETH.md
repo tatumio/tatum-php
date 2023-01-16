@@ -1,4 +1,4 @@
-# FeeETH
+# Model/FeeETH
 
 ## Getters
 

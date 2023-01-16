@@ -1,4 +1,4 @@
-# GasPumpTrxOut
+# Model/GasPumpTrxOut
 
 ## Getters
 

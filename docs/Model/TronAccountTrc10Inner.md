@@ -1,4 +1,4 @@
-# TronAccountTrc10Inner
+# Model/TronAccountTrc10Inner
 
 ## Getters
 

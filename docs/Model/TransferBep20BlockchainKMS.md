@@ -1,4 +1,4 @@
-# TransferBep20BlockchainKMS
+# Model/TransferBep20BlockchainKMS
 
 ## Getters
 

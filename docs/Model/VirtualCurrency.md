@@ -1,4 +1,4 @@
-# VirtualCurrency
+# Model/VirtualCurrency
 
 ## Getters
 

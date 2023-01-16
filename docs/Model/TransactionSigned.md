@@ -1,4 +1,4 @@
-# TransactionSigned
+# Model/TransactionSigned
 
 ## Getters
 

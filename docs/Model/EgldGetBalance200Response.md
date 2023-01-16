@@ -1,4 +1,4 @@
-# EgldGetBalance200Response
+# Model/EgldGetBalance200Response
 
 ## Getters
 

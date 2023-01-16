@@ -1,4 +1,4 @@
-# Tatum/Api/KuCoinApi
+# Api/KuCoinApi
 
 ## References
 

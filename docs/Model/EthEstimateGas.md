@@ -1,4 +1,4 @@
-# EthEstimateGas
+# Model/EthEstimateGas
 
 ## Getters
 

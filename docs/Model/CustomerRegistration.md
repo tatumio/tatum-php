@@ -1,4 +1,4 @@
-# CustomerRegistration
+# Model/CustomerRegistration
 
 ## Getters
 

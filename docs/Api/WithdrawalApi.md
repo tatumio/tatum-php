@@ -1,4 +1,4 @@
-# Tatum/Api/WithdrawalApi
+# Api/WithdrawalApi
 
 ## References
 

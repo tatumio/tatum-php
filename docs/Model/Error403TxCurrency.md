@@ -1,4 +1,4 @@
-# Error403TxCurrency
+# Model/Error403TxCurrency
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403EthGasPrice
+# Model/Error403EthGasPrice
 
 ## Getters
 

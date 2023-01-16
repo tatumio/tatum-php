@@ -1,4 +1,4 @@
-# TransferLtcKeyPair
+# Model/TransferLtcKeyPair
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# AccountBalance
+# Model/AccountBalance
 
 ## Getters
 

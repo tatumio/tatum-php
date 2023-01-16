@@ -1,4 +1,4 @@
-# TransferCustodialWalletBatchTron
+# Model/TransferCustodialWalletBatchTron
 
 ## Getters
 

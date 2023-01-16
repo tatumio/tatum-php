@@ -1,4 +1,4 @@
-# BnbAccount
+# Model/BnbAccount
 
 ## Getters
 

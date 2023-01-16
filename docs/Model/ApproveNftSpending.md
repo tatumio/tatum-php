@@ -1,4 +1,4 @@
-# ApproveNftSpending
+# Model/ApproveNftSpending
 
 ## Getters
 

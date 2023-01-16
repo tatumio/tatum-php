@@ -1,4 +1,4 @@
-# Tatum/Api/ExchangeRateApi
+# Api/ExchangeRateApi
 
 ## References
 

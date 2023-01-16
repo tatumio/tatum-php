@@ -1,4 +1,4 @@
-# ChainDeployKcsErc20
+# Model/ChainDeployKcsErc20
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# FlowCustomTransactionPKArgsInnerValue
+# Model/FlowCustomTransactionPKArgsInnerValue
 
 ## Getters
 

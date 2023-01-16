@@ -1,4 +1,4 @@
-# TransferXlm
+# Model/TransferXlm
 
 ## Getters
 

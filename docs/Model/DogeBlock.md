@@ -1,4 +1,4 @@
-# DogeBlock
+# Model/DogeBlock
 
 ## Getters
 

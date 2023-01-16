@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/KCS
+# Local/Wallet/KCS
 
 KCS HD Wallet
 

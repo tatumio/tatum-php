@@ -1,4 +1,4 @@
-# Error403Erc20XpubBoth
+# Model/Error403Erc20XpubBoth
 
 ## Getters
 

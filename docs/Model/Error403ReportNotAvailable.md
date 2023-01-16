@@ -1,4 +1,4 @@
-# Error403ReportNotAvailable
+# Model/Error403ReportNotAvailable
 
 ## Getters
 

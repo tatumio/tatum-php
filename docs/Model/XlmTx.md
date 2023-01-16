@@ -1,4 +1,4 @@
-# XlmTx
+# Model/XlmTx
 
 ## Getters
 

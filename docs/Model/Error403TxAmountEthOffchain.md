@@ -1,4 +1,4 @@
-# Error403TxAmountEthOffchain
+# Model/Error403TxAmountEthOffchain
 
 ## Getters
 

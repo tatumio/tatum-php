@@ -1,4 +1,4 @@
-# Tatum/Api/VirtualAccountBlockchainFeesApi
+# Api/VirtualAccountBlockchainFeesApi
 
 ## References
 

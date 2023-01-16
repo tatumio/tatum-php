@@ -1,4 +1,4 @@
-# TransferXlmBlockchain
+# Model/TransferXlmBlockchain
 
 ## Getters
 

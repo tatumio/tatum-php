@@ -1,4 +1,4 @@
-# SolanaTxMetaStatus
+# Model/SolanaTxMetaStatus
 
 ## Getters
 

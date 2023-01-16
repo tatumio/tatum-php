@@ -1,4 +1,4 @@
-# Error400DataInner
+# Model/Error400DataInner
 
 ## Getters
 

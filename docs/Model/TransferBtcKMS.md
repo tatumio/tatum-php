@@ -1,4 +1,4 @@
-# TransferBtcKMS
+# Model/TransferBtcKMS
 
 ## Getters
 

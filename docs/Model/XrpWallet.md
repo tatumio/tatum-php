@@ -1,4 +1,4 @@
-# XrpWallet
+# Model/XrpWallet
 
 ## Getters
 

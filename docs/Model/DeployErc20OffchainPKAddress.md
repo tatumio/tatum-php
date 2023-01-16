@@ -1,4 +1,4 @@
-# DeployErc20OffchainPKAddress
+# Model/DeployErc20OffchainPKAddress
 
 ## Getters
 

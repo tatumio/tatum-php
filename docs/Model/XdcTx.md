@@ -1,4 +1,4 @@
-# XdcTx
+# Model/XdcTx
 
 ## Getters
 

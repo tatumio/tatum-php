@@ -1,4 +1,4 @@
-# AdaTransactionFromAddressKMS
+# Model/AdaTransactionFromAddressKMS
 
 ## Getters
 

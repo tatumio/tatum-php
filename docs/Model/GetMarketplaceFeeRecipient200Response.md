@@ -1,4 +1,4 @@
-# GetMarketplaceFeeRecipient200Response
+# Model/GetMarketplaceFeeRecipient200Response
 
 ## Getters
 

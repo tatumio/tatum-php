@@ -1,4 +1,4 @@
-# Error403Erc20NameDuplicate
+# Model/Error403Erc20NameDuplicate
 
 ## Getters
 

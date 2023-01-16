@@ -1,4 +1,4 @@
-# Tatum/Api/XRPApi
+# Api/XRPApi
 
 ## References
 

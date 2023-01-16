@@ -1,4 +1,4 @@
-# EstimateFeeDeployCustodialWallet
+# Model/EstimateFeeDeployCustodialWallet
 
 ## Getters
 

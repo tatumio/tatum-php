@@ -1,4 +1,4 @@
-# TronTrc10Detail
+# Model/TronTrc10Detail
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# MintNftFlowMnemonic
+# Model/MintNftFlowMnemonic
 
 ## Getters
 

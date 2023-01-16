@@ -1,4 +1,4 @@
-# DeployTrcOffchainMnemonicAddress
+# Model/DeployTrcOffchainMnemonicAddress
 
 ## Getters
 

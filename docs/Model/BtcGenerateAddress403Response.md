@@ -1,4 +1,4 @@
-# BtcGenerateAddress403Response
+# Model/BtcGenerateAddress403Response
 
 ## Getters
 

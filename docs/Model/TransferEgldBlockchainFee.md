@@ -1,4 +1,4 @@
-# TransferEgldBlockchainFee
+# Model/TransferEgldBlockchainFee
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BurnMultiToken
+# Model/BurnMultiToken
 
 ## Getters
 

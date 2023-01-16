@@ -1,4 +1,4 @@
-# GenerateDepositAddress403Response
+# Model/GenerateDepositAddress403Response
 
 ## Getters
 

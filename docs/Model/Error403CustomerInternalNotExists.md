@@ -1,4 +1,4 @@
-# Error403CustomerInternalNotExists
+# Model/Error403CustomerInternalNotExists
 
 ## Getters
 

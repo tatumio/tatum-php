@@ -1,4 +1,4 @@
-# EthGasEstimationBatch
+# Model/EthGasEstimationBatch
 
 ## Getters
 

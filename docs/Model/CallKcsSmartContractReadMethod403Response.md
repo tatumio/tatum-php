@@ -1,4 +1,4 @@
-# CallKcsSmartContractReadMethod403Response
+# Model/CallKcsSmartContractReadMethod403Response
 
 ## Getters
 

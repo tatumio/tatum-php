@@ -1,4 +1,4 @@
-# SolanaNftMetadata
+# Model/SolanaNftMetadata
 
 ## Getters
 

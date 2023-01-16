@@ -1,4 +1,4 @@
-# Error403BscTxSign
+# Model/Error403BscTxSign
 
 ## Getters
 

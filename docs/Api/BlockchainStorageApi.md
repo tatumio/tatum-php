@@ -1,4 +1,4 @@
-# Tatum/Api/BlockchainStorageApi
+# Api/BlockchainStorageApi
 
 ## References
 

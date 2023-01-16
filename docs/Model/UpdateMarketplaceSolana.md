@@ -1,4 +1,4 @@
-# UpdateMarketplaceSolana
+# Model/UpdateMarketplaceSolana
 
 ## Getters
 

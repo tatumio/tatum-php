@@ -1,4 +1,4 @@
-# Error403PolygonGasPrice
+# Model/Error403PolygonGasPrice
 
 ## Getters
 

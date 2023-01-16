@@ -1,4 +1,4 @@
-# Error403KlaytnBroadcast
+# Model/Error403KlaytnBroadcast
 
 ## Getters
 

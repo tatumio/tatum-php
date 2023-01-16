@@ -1,4 +1,4 @@
-# AdaInfo
+# Model/AdaInfo
 
 ## Getters
 

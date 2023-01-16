@@ -1,4 +1,4 @@
-# UiTokenAmount
+# Model/UiTokenAmount
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# WithdrawalHintValue
+# Model/WithdrawalHintValue
 
 ## Getters
 

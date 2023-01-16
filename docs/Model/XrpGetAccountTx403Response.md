@@ -1,4 +1,4 @@
-# XrpGetAccountTx403Response
+# Model/XrpGetAccountTx403Response
 
 ## Getters
 

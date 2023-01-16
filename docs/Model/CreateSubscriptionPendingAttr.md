@@ -1,4 +1,4 @@
-# CreateSubscriptionPendingAttr
+# Model/CreateSubscriptionPendingAttr
 
 ## Getters
 

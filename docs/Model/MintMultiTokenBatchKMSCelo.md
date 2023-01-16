@@ -1,4 +1,4 @@
-# MintMultiTokenBatchKMSCelo
+# Model/MintMultiTokenBatchKMSCelo
 
 ## Getters
 

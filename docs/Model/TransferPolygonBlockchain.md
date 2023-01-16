@@ -1,4 +1,4 @@
-# TransferPolygonBlockchain
+# Model/TransferPolygonBlockchain
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403OrderFeeIncompatible
+# Model/Error403OrderFeeIncompatible
 
 ## Getters
 

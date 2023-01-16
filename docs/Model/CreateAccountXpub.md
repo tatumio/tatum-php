@@ -1,4 +1,4 @@
-# CreateAccountXpub
+# Model/CreateAccountXpub
 
 ## Getters
 

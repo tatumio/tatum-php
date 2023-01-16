@@ -1,4 +1,4 @@
-# Error
+# Model/Error
 
 ## Getters
 

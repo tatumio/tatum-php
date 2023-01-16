@@ -1,4 +1,4 @@
-# EgldGenerateAddress200Response
+# Model/EgldGenerateAddress200Response
 
 ## Getters
 

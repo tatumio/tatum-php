@@ -1,4 +1,4 @@
-# SolanaTx
+# Model/SolanaTx
 
 ## Getters
 

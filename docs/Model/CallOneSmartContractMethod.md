@@ -1,4 +1,4 @@
-# CallOneSmartContractMethod
+# Model/CallOneSmartContractMethod
 
 ## Getters
 

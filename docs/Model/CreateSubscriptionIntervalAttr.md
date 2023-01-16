@@ -1,4 +1,4 @@
-# CreateSubscriptionIntervalAttr
+# Model/CreateSubscriptionIntervalAttr
 
 ## Getters
 

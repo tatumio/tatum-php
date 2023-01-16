@@ -1,4 +1,4 @@
-# BscBlock
+# Model/BscBlock
 
 ## Getters
 

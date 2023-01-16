@@ -1,4 +1,4 @@
-# Tatum/Api/HarmonyApi
+# Api/HarmonyApi
 
 ## References
 

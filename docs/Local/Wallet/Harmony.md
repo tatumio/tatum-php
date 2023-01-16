@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Harmony
+# Local/Wallet/Harmony
 
 Harmony HD Wallet
 

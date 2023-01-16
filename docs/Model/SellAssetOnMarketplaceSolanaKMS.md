@@ -1,4 +1,4 @@
-# SellAssetOnMarketplaceSolanaKMS
+# Model/SellAssetOnMarketplaceSolanaKMS
 
 ## Getters
 

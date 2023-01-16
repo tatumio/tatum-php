@@ -1,4 +1,4 @@
-# Error403OffchainCheck
+# Model/Error403OffchainCheck
 
 ## Getters
 

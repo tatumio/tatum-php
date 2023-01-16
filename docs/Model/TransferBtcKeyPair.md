@@ -1,4 +1,4 @@
-# TransferBtcKeyPair
+# Model/TransferBtcKeyPair
 
 ## Getters
 

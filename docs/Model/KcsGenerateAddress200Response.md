@@ -1,4 +1,4 @@
-# KcsGenerateAddress200Response
+# Model/KcsGenerateAddress200Response
 
 ## Getters
 

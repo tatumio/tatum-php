@@ -1,4 +1,4 @@
-# TransferErc20Mnemonic
+# Model/TransferErc20Mnemonic
 
 ## Getters
 

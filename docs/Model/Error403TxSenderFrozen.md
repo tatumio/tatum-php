@@ -1,4 +1,4 @@
-# Error403TxSenderFrozen
+# Model/Error403TxSenderFrozen
 
 ## Getters
 

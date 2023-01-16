@@ -1,4 +1,4 @@
-# GetIPFSData403Response
+# Model/GetIPFSData403Response
 
 ## Getters
 

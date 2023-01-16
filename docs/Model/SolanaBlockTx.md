@@ -1,4 +1,4 @@
-# SolanaBlockTx
+# Model/SolanaBlockTx
 
 ## Getters
 

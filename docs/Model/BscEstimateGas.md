@@ -1,4 +1,4 @@
-# BscEstimateGas
+# Model/BscEstimateGas
 
 ## Getters
 

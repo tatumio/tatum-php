@@ -1,4 +1,4 @@
-# Error403EthErc721TxSign
+# Model/Error403EthErc721TxSign
 
 ## Getters
 

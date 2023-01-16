@@ -1,4 +1,4 @@
-# TransferErc20403Response
+# Model/TransferErc20403Response
 
 ## Getters
 

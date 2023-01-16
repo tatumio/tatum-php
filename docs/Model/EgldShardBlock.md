@@ -1,4 +1,4 @@
-# EgldShardBlock
+# Model/EgldShardBlock
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# DogeTxVoutInnerScriptPubKey
+# Model/DogeTxVoutInnerScriptPubKey
 
 ## Getters
 

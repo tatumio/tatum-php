@@ -1,4 +1,4 @@
-# TronTxRawData
+# Model/TronTxRawData
 
 ## Getters
 

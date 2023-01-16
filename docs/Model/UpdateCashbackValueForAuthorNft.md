@@ -1,4 +1,4 @@
-# UpdateCashbackValueForAuthorNft
+# Model/UpdateCashbackValueForAuthorNft
 
 ## Getters
 

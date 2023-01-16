@@ -1,4 +1,4 @@
-# Error403BnbTxFailed
+# Model/Error403BnbTxFailed
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# FlowTxEventsInner
+# Model/FlowTxEventsInner
 
 ## Getters
 

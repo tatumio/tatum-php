@@ -1,4 +1,4 @@
-# Tatum/Api/DogecoinApi
+# Api/DogecoinApi
 
 ## References
 

@@ -1,4 +1,4 @@
-# Error403PolygonTxSign
+# Model/Error403PolygonTxSign
 
 ## Getters
 

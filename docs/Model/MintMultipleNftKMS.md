@@ -1,4 +1,4 @@
-# MintMultipleNftKMS
+# Model/MintMultipleNftKMS
 
 ## Getters
 

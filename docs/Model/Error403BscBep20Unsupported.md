@@ -1,4 +1,4 @@
-# Error403BscBep20Unsupported
+# Model/Error403BscBep20Unsupported
 
 ## Getters
 

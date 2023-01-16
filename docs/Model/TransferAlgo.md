@@ -1,4 +1,4 @@
-# TransferAlgo
+# Model/TransferAlgo
 
 ## Getters
 

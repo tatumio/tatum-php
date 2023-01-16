@@ -1,4 +1,4 @@
-# Error403SolanaTxBody
+# Model/Error403SolanaTxBody
 
 ## Getters
 

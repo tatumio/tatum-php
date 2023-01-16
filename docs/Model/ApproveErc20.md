@@ -1,4 +1,4 @@
-# ApproveErc20
+# Model/ApproveErc20
 
 ## Getters
 

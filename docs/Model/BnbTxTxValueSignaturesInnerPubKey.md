@@ -1,4 +1,4 @@
-# BnbTxTxValueSignaturesInnerPubKey
+# Model/BnbTxTxValueSignaturesInnerPubKey
 
 ## Getters
 

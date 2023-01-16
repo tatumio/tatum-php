@@ -1,4 +1,4 @@
-# Error403AccountIncompatibleXpub
+# Model/Error403AccountIncompatibleXpub
 
 ## Getters
 

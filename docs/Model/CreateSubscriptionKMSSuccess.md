@@ -1,4 +1,4 @@
-# CreateSubscriptionKMSSuccess
+# Model/CreateSubscriptionKMSSuccess
 
 ## Getters
 

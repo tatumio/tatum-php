@@ -1,4 +1,4 @@
-# CancelInProgressWithdrawal403Response
+# Model/CancelInProgressWithdrawal403Response
 
 ## Getters
 

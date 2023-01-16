@@ -1,4 +1,4 @@
-# CreateSubscriptionPartialTradeMatchAttr
+# Model/CreateSubscriptionPartialTradeMatchAttr
 
 ## Getters
 

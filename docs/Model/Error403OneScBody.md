@@ -1,4 +1,4 @@
-# Error403OneScBody
+# Model/Error403OneScBody
 
 ## Getters
 

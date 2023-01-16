@@ -1,4 +1,4 @@
-# DeployCeloErc20OffchainMnemonicAddress
+# Model/DeployCeloErc20OffchainMnemonicAddress
 
 ## Getters
 

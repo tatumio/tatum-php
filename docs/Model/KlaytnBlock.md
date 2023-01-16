@@ -1,4 +1,4 @@
-# KlaytnBlock
+# Model/KlaytnBlock
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# CallBscSmartContractReadMethod403Response
+# Model/CallBscSmartContractReadMethod403Response
 
 ## Getters
 

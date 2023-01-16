@@ -1,4 +1,4 @@
-# Error404TxNotFound
+# Model/Error404TxNotFound
 
 ## Getters
 

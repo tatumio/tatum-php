@@ -1,4 +1,4 @@
-# GetAccounts401Response
+# Model/GetAccounts401Response
 
 ## Getters
 

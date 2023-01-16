@@ -1,4 +1,4 @@
-# Error403KcsMnemonicPrivateKey
+# Model/Error403KcsMnemonicPrivateKey
 
 ## Getters
 

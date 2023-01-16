@@ -1,4 +1,4 @@
-# TronBlock
+# Model/TronBlock
 
 ## Getters
 

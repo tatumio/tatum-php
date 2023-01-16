@@ -1,4 +1,4 @@
-# DeployAlgoErc20OffchainPKAddress
+# Model/DeployAlgoErc20OffchainPKAddress
 
 ## Getters
 

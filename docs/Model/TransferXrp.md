@@ -1,4 +1,4 @@
-# TransferXrp
+# Model/TransferXrp
 
 ## Getters
 

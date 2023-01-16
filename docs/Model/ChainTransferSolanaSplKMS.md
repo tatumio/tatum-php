@@ -1,4 +1,4 @@
-# ChainTransferSolanaSplKMS
+# Model/ChainTransferSolanaSplKMS
 
 ## Getters
 

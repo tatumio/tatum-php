@@ -1,4 +1,4 @@
-# ChainTransferEthErc20
+# Model/ChainTransferEthErc20
 
 ## Getters
 

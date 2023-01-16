@@ -1,4 +1,4 @@
-# Tatum/Api/BNBBeaconChainApi
+# Api/BNBBeaconChainApi
 
 ## References
 

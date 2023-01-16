@@ -1,4 +1,4 @@
-# Tatum/Api/NotificationSubscriptionsApi
+# Api/NotificationSubscriptionsApi
 
 ## References
 

@@ -1,4 +1,4 @@
-# DogeTx
+# Model/DogeTx
 
 ## Getters
 

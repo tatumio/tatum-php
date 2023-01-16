@@ -1,4 +1,4 @@
-# DeployMultiTokenCelo
+# Model/DeployMultiTokenCelo
 
 ## Getters
 

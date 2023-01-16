@@ -1,4 +1,4 @@
-# Error403OrderCurrency2Balance
+# Model/Error403OrderCurrency2Balance
 
 ## Getters
 

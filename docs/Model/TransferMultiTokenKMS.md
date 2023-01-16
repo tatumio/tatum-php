@@ -1,4 +1,4 @@
-# TransferMultiTokenKMS
+# Model/TransferMultiTokenKMS
 
 ## Getters
 

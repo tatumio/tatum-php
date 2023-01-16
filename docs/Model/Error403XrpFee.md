@@ -1,4 +1,4 @@
-# Error403XrpFee
+# Model/Error403XrpFee
 
 ## Getters
 

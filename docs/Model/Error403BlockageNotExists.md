@@ -1,4 +1,4 @@
-# Error403BlockageNotExists
+# Model/Error403BlockageNotExists
 
 ## Getters
 

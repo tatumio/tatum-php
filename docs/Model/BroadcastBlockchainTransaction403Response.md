@@ -1,4 +1,4 @@
-# BroadcastBlockchainTransaction403Response
+# Model/BroadcastBlockchainTransaction403Response
 
 ## Getters
 

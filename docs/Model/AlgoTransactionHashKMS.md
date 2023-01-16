@@ -1,4 +1,4 @@
-# AlgoTransactionHashKMS
+# Model/AlgoTransactionHashKMS
 
 ## Getters
 

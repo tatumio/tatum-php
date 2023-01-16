@@ -1,4 +1,4 @@
-# PendingTransaction
+# Model/PendingTransaction
 
 ## Getters
 

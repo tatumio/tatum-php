@@ -1,4 +1,4 @@
-# FlowAccountKeysInner
+# Model/FlowAccountKeysInner
 
 ## Getters
 

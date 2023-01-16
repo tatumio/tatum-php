@@ -1,4 +1,4 @@
-# MintNftFlowPK
+# Model/MintNftFlowPK
 
 ## Getters
 

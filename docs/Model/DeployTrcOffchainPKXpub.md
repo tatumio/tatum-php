@@ -1,4 +1,4 @@
-# DeployTrcOffchainPKXpub
+# Model/DeployTrcOffchainPKXpub
 
 ## Getters
 

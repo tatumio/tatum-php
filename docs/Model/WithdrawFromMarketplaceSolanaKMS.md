@@ -1,4 +1,4 @@
-# WithdrawFromMarketplaceSolanaKMS
+# Model/WithdrawFromMarketplaceSolanaKMS
 
 ## Getters
 

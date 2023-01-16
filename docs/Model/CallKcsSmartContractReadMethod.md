@@ -1,4 +1,4 @@
-# CallKcsSmartContractReadMethod
+# Model/CallKcsSmartContractReadMethod
 
 ## Getters
 

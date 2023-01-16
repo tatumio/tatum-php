@@ -1,4 +1,4 @@
-# Error403OffchainBroadcastState
+# Model/Error403OffchainBroadcastState
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403KlaytnKlay20Set
+# Model/Error403KlaytnKlay20Set
 
 ## Getters
 

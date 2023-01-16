@@ -1,4 +1,4 @@
-# Tatum/Api/KeyManagementSystemApi
+# Api/KeyManagementSystemApi
 
 ## References
 

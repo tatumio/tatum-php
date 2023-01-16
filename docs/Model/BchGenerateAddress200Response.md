@@ -1,4 +1,4 @@
-# BchGenerateAddress200Response
+# Model/BchGenerateAddress200Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403AccountXpub
+# Model/Error403AccountXpub
 
 ## Getters
 

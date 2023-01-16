@@ -1,4 +1,4 @@
-# BlockchainFee
+# Model/BlockchainFee
 
 ## Getters
 

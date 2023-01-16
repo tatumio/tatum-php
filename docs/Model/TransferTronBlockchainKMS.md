@@ -1,4 +1,4 @@
-# TransferTronBlockchainKMS
+# Model/TransferTronBlockchainKMS
 
 ## Getters
 

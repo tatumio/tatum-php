@@ -1,4 +1,4 @@
-# SellAssetOnMarketplace200Response
+# Model/SellAssetOnMarketplace200Response
 
 ## Getters
 

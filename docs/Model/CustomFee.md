@@ -1,4 +1,4 @@
-# CustomFee
+# Model/CustomFee
 
 ## Getters
 

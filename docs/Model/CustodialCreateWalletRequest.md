@@ -1,4 +1,4 @@
-# CustodialCreateWalletRequest
+# Model/CustodialCreateWalletRequest
 
 ## Getters
 

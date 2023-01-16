@@ -1,4 +1,4 @@
-# CeloGenerateWallet403Response
+# Model/CeloGenerateWallet403Response
 
 ## Getters
 

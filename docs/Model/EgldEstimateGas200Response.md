@@ -1,4 +1,4 @@
-# EgldEstimateGas200Response
+# Model/EgldEstimateGas200Response
 
 ## Getters
 

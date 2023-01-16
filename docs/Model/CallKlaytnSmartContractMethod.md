@@ -1,4 +1,4 @@
-# CallKlaytnSmartContractMethod
+# Model/CallKlaytnSmartContractMethod
 
 ## Getters
 

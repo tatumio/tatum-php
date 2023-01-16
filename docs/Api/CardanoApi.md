@@ -1,4 +1,4 @@
-# Tatum/Api/CardanoApi
+# Api/CardanoApi
 
 ## References
 

@@ -1,4 +1,4 @@
-# Error403BtcTxFailed
+# Model/Error403BtcTxFailed
 
 ## Getters
 

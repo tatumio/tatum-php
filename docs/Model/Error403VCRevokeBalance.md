@@ -1,4 +1,4 @@
-# Error403VCRevokeBalance
+# Model/Error403VCRevokeBalance
 
 ## Getters
 

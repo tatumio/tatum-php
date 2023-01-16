@@ -1,4 +1,4 @@
-# XrpInfo
+# Model/XrpInfo
 
 ## Getters
 

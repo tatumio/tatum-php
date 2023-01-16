@@ -1,4 +1,4 @@
-# TronGetCurrentBlock200Response
+# Model/TronGetCurrentBlock200Response
 
 ## Getters
 

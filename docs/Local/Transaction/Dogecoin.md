@@ -1,4 +1,4 @@
-# Tatum/Local/Transaction/Dogecoin
+# Local/Transaction/Dogecoin
 
 Dogecoin Transaction
 

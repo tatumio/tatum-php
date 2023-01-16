@@ -1,4 +1,4 @@
-# TransferAdaKeyPair403Response
+# Model/TransferAdaKeyPair403Response
 
 ## Getters
 

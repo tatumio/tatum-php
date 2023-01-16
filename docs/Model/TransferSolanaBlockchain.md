@@ -1,4 +1,4 @@
-# TransferSolanaBlockchain
+# Model/TransferSolanaBlockchain
 
 ## Getters
 

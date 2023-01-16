@@ -1,4 +1,4 @@
-# BuyAssetOnMarketplace
+# Model/BuyAssetOnMarketplace
 
 ## Getters
 

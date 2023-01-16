@@ -1,4 +1,4 @@
-# TrcXpub
+# Model/TrcXpub
 
 ## Getters
 

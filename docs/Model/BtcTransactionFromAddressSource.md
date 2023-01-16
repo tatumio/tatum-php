@@ -1,4 +1,4 @@
-# BtcTransactionFromAddressSource
+# Model/BtcTransactionFromAddressSource
 
 ## Getters
 

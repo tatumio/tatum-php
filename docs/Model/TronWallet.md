@@ -1,4 +1,4 @@
-# TronWallet
+# Model/TronWallet
 
 ## Getters
 

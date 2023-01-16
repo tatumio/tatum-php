@@ -1,4 +1,4 @@
-# BscEstimateGas403Response
+# Model/BscEstimateGas403Response
 
 ## Getters
 

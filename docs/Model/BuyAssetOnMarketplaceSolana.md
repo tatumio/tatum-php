@@ -1,4 +1,4 @@
-# BuyAssetOnMarketplaceSolana
+# Model/BuyAssetOnMarketplaceSolana
 
 ## Getters
 

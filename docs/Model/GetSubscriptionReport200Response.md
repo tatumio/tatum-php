@@ -1,4 +1,4 @@
-# GetSubscriptionReport200Response
+# Model/GetSubscriptionReport200Response
 
 ## Getters
 

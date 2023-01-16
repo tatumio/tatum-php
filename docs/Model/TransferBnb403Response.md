@@ -1,4 +1,4 @@
-# TransferBnb403Response
+# Model/TransferBnb403Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# MintErc721
+# Model/MintErc721
 
 ## Getters
 

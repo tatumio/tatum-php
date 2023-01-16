@@ -1,4 +1,4 @@
-# DeployErc20SignatureResponse
+# Model/DeployErc20SignatureResponse
 
 ## Getters
 

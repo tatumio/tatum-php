@@ -1,4 +1,4 @@
-# CreateSubscriptionNotification403Response
+# Model/CreateSubscriptionNotification403Response
 
 ## Getters
 

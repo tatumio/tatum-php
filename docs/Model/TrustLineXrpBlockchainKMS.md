@@ -1,4 +1,4 @@
-# TrustLineXrpBlockchainKMS
+# Model/TrustLineXrpBlockchainKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferEgldBlockchainKMSFee
+# Model/TransferEgldBlockchainKMSFee
 
 ## Getters
 

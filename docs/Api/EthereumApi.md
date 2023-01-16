@@ -1,4 +1,4 @@
-# Tatum/Api/EthereumApi
+# Api/EthereumApi
 
 ## References
 

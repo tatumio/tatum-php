@@ -1,4 +1,4 @@
-# BuyAssetOnMarketplaceKMS
+# Model/BuyAssetOnMarketplaceKMS
 
 ## Getters
 

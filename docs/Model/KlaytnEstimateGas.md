@@ -1,4 +1,4 @@
-# KlaytnEstimateGas
+# Model/KlaytnEstimateGas
 
 ## Getters
 

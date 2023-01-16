@@ -1,4 +1,4 @@
-# ListOderBookActiveSellBody
+# Model/ListOderBookActiveSellBody
 
 ## Getters
 

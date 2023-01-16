@@ -1,4 +1,4 @@
-# Tatum/Api/SolanaApi
+# Api/SolanaApi
 
 ## References
 

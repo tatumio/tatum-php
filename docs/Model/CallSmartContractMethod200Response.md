@@ -1,4 +1,4 @@
-# CallSmartContractMethod200Response
+# Model/CallSmartContractMethod200Response
 
 ## Getters
 

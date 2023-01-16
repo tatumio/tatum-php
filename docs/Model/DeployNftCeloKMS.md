@@ -1,4 +1,4 @@
-# DeployNftCeloKMS
+# Model/DeployNftCeloKMS
 
 ## Getters
 

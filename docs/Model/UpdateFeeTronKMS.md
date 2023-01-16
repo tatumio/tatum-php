@@ -1,4 +1,4 @@
-# UpdateFeeTronKMS
+# Model/UpdateFeeTronKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransactionHash
+# Model/TransactionHash
 
 ## Getters
 

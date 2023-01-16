@@ -1,4 +1,4 @@
-# GenerateAuction
+# Model/GenerateAuction
 
 ## Getters
 

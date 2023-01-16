@@ -1,4 +1,4 @@
-# Error403KlaytnKlay20NotFound
+# Model/Error403KlaytnKlay20NotFound
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403KlaytnScBody
+# Model/Error403KlaytnScBody
 
 ## Getters
 

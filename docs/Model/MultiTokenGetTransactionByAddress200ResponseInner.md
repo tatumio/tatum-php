@@ -1,4 +1,4 @@
-# MultiTokenGetTransactionByAddress200ResponseInner
+# Model/MultiTokenGetTransactionByAddress200ResponseInner
 
 ## Getters
 

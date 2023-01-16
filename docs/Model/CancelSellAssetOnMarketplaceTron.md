@@ -1,4 +1,4 @@
-# CancelSellAssetOnMarketplaceTron
+# Model/CancelSellAssetOnMarketplaceTron
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BchTx
+# Model/BchTx
 
 ## Getters
 

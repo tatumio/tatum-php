@@ -1,4 +1,4 @@
-# MintNftKMSCelo
+# Model/MintNftKMSCelo
 
 ## Getters
 

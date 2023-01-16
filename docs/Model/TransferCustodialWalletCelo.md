@@ -1,4 +1,4 @@
-# TransferCustodialWalletCelo
+# Model/TransferCustodialWalletCelo
 
 ## Getters
 

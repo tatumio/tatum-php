@@ -1,4 +1,4 @@
-# TransferLtcMnemonic403Response
+# Model/TransferLtcMnemonic403Response
 
 ## Getters
 

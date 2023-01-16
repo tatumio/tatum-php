@@ -1,4 +1,4 @@
-# LtcTxInputsInnerPrevout
+# Model/LtcTxInputsInnerPrevout
 
 ## Getters
 

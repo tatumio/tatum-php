@@ -1,4 +1,4 @@
-# TrustLineXrpBlockchain
+# Model/TrustLineXrpBlockchain
 
 ## Getters
 

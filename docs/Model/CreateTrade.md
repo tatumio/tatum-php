@@ -1,4 +1,4 @@
-# CreateTrade
+# Model/CreateTrade
 
 ## Getters
 

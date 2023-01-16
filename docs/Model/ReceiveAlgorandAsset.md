@@ -1,4 +1,4 @@
-# ReceiveAlgorandAsset
+# Model/ReceiveAlgorandAsset
 
 ## Getters
 

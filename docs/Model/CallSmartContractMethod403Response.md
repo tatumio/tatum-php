@@ -1,4 +1,4 @@
-# CallSmartContractMethod403Response
+# Model/CallSmartContractMethod403Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403ComplianceEth
+# Model/Error403ComplianceEth
 
 ## Getters
 

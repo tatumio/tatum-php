@@ -1,4 +1,4 @@
-# WithdrawalResponse
+# Model/WithdrawalResponse
 
 ## Getters
 

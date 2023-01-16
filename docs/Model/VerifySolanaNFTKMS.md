@@ -1,4 +1,4 @@
-# VerifySolanaNFTKMS
+# Model/VerifySolanaNFTKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferNftSolana
+# Model/TransferNftSolana
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# XrpAccountTx
+# Model/XrpAccountTx
 
 ## Getters
 

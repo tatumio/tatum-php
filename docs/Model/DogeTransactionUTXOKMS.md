@@ -1,4 +1,4 @@
-# DogeTransactionUTXOKMS
+# Model/DogeTransactionUTXOKMS
 
 ## Getters
 

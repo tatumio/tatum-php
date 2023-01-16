@@ -1,4 +1,4 @@
-# BscTx
+# Model/BscTx
 
 ## Getters
 

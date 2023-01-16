@@ -1,4 +1,4 @@
-# TransferNftSolanaKMS
+# Model/TransferNftSolanaKMS
 
 ## Getters
 

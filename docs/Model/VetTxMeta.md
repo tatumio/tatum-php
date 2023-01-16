@@ -1,4 +1,4 @@
-# VetTxMeta
+# Model/VetTxMeta
 
 ## Getters
 

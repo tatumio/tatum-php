@@ -1,4 +1,4 @@
-# XlmAccountFlags
+# Model/XlmAccountFlags
 
 ## Getters
 

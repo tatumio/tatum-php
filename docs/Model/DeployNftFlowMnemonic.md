@@ -1,4 +1,4 @@
-# DeployNftFlowMnemonic
+# Model/DeployNftFlowMnemonic
 
 ## Getters
 

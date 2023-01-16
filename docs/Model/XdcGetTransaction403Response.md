@@ -1,4 +1,4 @@
-# XdcGetTransaction403Response
+# Model/XdcGetTransaction403Response
 
 ## Getters
 

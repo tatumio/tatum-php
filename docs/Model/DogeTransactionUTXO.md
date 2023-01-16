@@ -1,4 +1,4 @@
-# DogeTransactionUTXO
+# Model/DogeTransactionUTXO
 
 ## Getters
 

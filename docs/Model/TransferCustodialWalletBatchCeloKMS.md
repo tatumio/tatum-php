@@ -1,4 +1,4 @@
-# TransferCustodialWalletBatchCeloKMS
+# Model/TransferCustodialWalletBatchCeloKMS
 
 ## Getters
 

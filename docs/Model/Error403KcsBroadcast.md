@@ -1,4 +1,4 @@
-# Error403KcsBroadcast
+# Model/Error403KcsBroadcast
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# PolygonEstimateGas200Response
+# Model/PolygonEstimateGas200Response
 
 ## Getters
 

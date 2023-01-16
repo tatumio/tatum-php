@@ -1,4 +1,4 @@
-# Tatum/Api/AccountApi
+# Api/AccountApi
 
 ## References
 

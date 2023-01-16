@@ -1,4 +1,4 @@
-# NftRoyaltyErc721
+# Model/NftRoyaltyErc721
 
 ## Getters
 

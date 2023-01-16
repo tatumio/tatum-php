@@ -1,4 +1,4 @@
-# Tatum/Api/StellarApi
+# Api/StellarApi
 
 ## References
 

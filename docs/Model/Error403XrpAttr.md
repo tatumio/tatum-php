@@ -1,4 +1,4 @@
-# Error403XrpAttr
+# Model/Error403XrpAttr
 
 ## Getters
 

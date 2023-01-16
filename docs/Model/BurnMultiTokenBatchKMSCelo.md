@@ -1,4 +1,4 @@
-# BurnMultiTokenBatchKMSCelo
+# Model/BurnMultiTokenBatchKMSCelo
 
 ## Getters
 

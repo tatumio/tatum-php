@@ -1,4 +1,4 @@
-# Erc20403Response
+# Model/Erc20403Response
 
 ## Getters
 

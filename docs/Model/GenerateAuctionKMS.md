@@ -1,4 +1,4 @@
-# GenerateAuctionKMS
+# Model/GenerateAuctionKMS
 
 ## Getters
 

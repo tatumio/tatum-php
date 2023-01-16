@@ -1,4 +1,4 @@
-# Tatum/Api/BNBSmartChainApi
+# Api/BNBSmartChainApi
 
 ## References
 

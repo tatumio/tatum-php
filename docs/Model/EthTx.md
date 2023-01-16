@@ -1,4 +1,4 @@
-# EthTx
+# Model/EthTx
 
 ## Getters
 

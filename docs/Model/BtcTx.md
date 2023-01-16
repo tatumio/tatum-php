@@ -1,4 +1,4 @@
-# BtcTx
+# Model/BtcTx
 
 ## Getters
 

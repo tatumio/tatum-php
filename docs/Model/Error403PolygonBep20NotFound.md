@@ -1,4 +1,4 @@
-# Error403PolygonBep20NotFound
+# Model/Error403PolygonBep20NotFound
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BscBalance
+# Model/BscBalance
 
 ## Getters
 

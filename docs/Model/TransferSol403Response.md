@@ -1,4 +1,4 @@
-# TransferSol403Response
+# Model/TransferSol403Response
 
 ## Getters
 

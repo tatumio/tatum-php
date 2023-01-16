@@ -1,4 +1,4 @@
-# UpdateFeeRecipientCeloKMS
+# Model/UpdateFeeRecipientCeloKMS
 
 ## Getters
 

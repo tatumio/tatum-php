@@ -1,4 +1,4 @@
-# SolanaListingData
+# Model/SolanaListingData
 
 ## Getters
 

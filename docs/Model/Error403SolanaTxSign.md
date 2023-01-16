@@ -1,4 +1,4 @@
-# Error403SolanaTxSign
+# Model/Error403SolanaTxSign
 
 ## Getters
 

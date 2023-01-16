@@ -1,4 +1,4 @@
-# GenerateCustodialWalletCeloKMS
+# Model/GenerateCustodialWalletCeloKMS
 
 ## Getters
 

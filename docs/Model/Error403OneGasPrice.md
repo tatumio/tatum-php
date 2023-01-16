@@ -1,4 +1,4 @@
-# Error403OneGasPrice
+# Model/Error403OneGasPrice
 
 ## Getters
 

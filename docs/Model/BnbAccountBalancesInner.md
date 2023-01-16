@@ -1,4 +1,4 @@
-# BnbAccountBalancesInner
+# Model/BnbAccountBalancesInner
 
 ## Getters
 

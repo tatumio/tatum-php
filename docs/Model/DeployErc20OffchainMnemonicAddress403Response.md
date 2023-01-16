@@ -1,4 +1,4 @@
-# DeployErc20OffchainMnemonicAddress403Response
+# Model/DeployErc20OffchainMnemonicAddress403Response
 
 ## Getters
 

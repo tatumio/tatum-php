@@ -1,4 +1,4 @@
-# BnbTxInAccount
+# Model/BnbTxInAccount
 
 ## Getters
 

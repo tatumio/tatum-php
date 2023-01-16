@@ -1,4 +1,4 @@
-# DeployKCSErc20OffchainMnemXpub
+# Model/DeployKCSErc20OffchainMnemXpub
 
 ## Getters
 

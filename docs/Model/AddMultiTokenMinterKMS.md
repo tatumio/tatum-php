@@ -1,4 +1,4 @@
-# AddMultiTokenMinterKMS
+# Model/AddMultiTokenMinterKMS
 
 ## Getters
 

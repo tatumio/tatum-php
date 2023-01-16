@@ -1,4 +1,4 @@
-# TransferBscMnemonic
+# Model/TransferBscMnemonic
 
 ## Getters
 

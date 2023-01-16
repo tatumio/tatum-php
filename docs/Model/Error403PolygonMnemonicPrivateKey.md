@@ -1,4 +1,4 @@
-# Error403PolygonMnemonicPrivateKey
+# Model/Error403PolygonMnemonicPrivateKey
 
 ## Getters
 

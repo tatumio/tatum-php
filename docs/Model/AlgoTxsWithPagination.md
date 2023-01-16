@@ -1,4 +1,4 @@
-# AlgoTxsWithPagination
+# Model/AlgoTxsWithPagination
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# ChainDeployCeloErc20
+# Model/ChainDeployCeloErc20
 
 ## Getters
 

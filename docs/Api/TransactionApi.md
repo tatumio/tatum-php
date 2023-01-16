@@ -1,4 +1,4 @@
-# Tatum/Api/TransactionApi
+# Api/TransactionApi
 
 ## References
 

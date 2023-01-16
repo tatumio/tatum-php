@@ -1,4 +1,4 @@
-# Tatum/Api/CustodialManagedWalletsApi
+# Api/CustodialManagedWalletsApi
 
 ## References
 

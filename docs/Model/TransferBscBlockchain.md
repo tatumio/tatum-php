@@ -1,4 +1,4 @@
-# TransferBscBlockchain
+# Model/TransferBscBlockchain
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Trc20Response
+# Model/Trc20Response
 
 ## Getters
 

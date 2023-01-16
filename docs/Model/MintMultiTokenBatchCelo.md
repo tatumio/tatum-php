@@ -1,4 +1,4 @@
-# MintMultiTokenBatchCelo
+# Model/MintMultiTokenBatchCelo
 
 ## Getters
 

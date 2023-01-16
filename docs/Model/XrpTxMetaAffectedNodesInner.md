@@ -1,4 +1,4 @@
-# XrpTxMetaAffectedNodesInner
+# Model/XrpTxMetaAffectedNodesInner
 
 ## Getters
 

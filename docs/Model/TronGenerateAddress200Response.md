@@ -1,4 +1,4 @@
-# TronGenerateAddress200Response
+# Model/TronGenerateAddress200Response
 
 ## Getters
 

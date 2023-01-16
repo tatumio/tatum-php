@@ -1,4 +1,4 @@
-# TransferMultiTokenBatchKMS
+# Model/TransferMultiTokenBatchKMS
 
 ## Getters
 

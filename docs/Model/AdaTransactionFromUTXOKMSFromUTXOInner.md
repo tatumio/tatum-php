@@ -1,4 +1,4 @@
-# AdaTransactionFromUTXOKMSFromUTXOInner
+# Model/AdaTransactionFromUTXOKMSFromUTXOInner
 
 ## Getters
 

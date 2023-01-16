@@ -1,4 +1,4 @@
-# TransferFlowMnemonic
+# Model/TransferFlowMnemonic
 
 ## Getters
 

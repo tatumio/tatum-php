@@ -1,4 +1,4 @@
-# ApproveNftSpendingCeloKMS
+# Model/ApproveNftSpendingCeloKMS
 
 ## Getters
 

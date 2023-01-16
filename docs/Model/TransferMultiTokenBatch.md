@@ -1,4 +1,4 @@
-# TransferMultiTokenBatch
+# Model/TransferMultiTokenBatch
 
 ## Getters
 

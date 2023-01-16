@@ -1,4 +1,4 @@
-# Error403KcsBep20Set
+# Model/Error403KcsBep20Set
 
 ## Getters
 

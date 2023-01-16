@@ -1,4 +1,4 @@
-# ApproveTransferCustodialWalletKMS
+# Model/ApproveTransferCustodialWalletKMS
 
 ## Getters
 

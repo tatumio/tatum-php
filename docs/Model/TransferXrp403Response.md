@@ -1,4 +1,4 @@
-# TransferXrp403Response
+# Model/TransferXrp403Response
 
 ## Getters
 

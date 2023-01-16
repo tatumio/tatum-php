@@ -1,4 +1,4 @@
-# Erc20Address
+# Model/Erc20Address
 
 ## Getters
 

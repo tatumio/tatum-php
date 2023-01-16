@@ -1,4 +1,4 @@
-# Error403AccountBalanceNonZero
+# Model/Error403AccountBalanceNonZero
 
 ## Getters
 

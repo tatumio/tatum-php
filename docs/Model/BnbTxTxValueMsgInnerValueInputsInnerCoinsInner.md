@@ -1,4 +1,4 @@
-# BnbTxTxValueMsgInnerValueInputsInnerCoinsInner
+# Model/BnbTxTxValueMsgInnerValueInputsInnerCoinsInner
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# KlaytnTxLogsInner
+# Model/KlaytnTxLogsInner
 
 ## Getters
 

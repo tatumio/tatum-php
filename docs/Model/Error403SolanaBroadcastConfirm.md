@@ -1,4 +1,4 @@
-# Error403SolanaBroadcastConfirm
+# Model/Error403SolanaBroadcastConfirm
 
 ## Getters
 

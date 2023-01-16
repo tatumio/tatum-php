@@ -1,4 +1,4 @@
-# TransferAdaMnemonic
+# Model/TransferAdaMnemonic
 
 ## Getters
 

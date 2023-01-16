@@ -1,4 +1,4 @@
-# XrpAccountBalance
+# Model/XrpAccountBalance
 
 ## Getters
 

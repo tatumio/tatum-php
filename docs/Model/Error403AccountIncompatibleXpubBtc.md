@@ -1,4 +1,4 @@
-# Error403AccountIncompatibleXpubBtc
+# Model/Error403AccountIncompatibleXpubBtc
 
 ## Getters
 

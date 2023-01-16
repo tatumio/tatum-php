@@ -1,4 +1,4 @@
-# EthGetTransaction404Response
+# Model/EthGetTransaction404Response
 
 ## Getters
 

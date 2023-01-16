@@ -1,4 +1,4 @@
-# TransferNft
+# Model/TransferNft
 
 ## Getters
 

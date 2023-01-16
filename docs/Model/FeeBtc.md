@@ -1,4 +1,4 @@
-# FeeBtc
+# Model/FeeBtc
 
 ## Getters
 

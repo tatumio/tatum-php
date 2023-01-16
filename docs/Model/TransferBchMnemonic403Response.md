@@ -1,4 +1,4 @@
-# TransferBchMnemonic403Response
+# Model/TransferBchMnemonic403Response
 
 ## Getters
 

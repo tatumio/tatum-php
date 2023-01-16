@@ -1,4 +1,4 @@
-# LtcGetBlockHash200Response
+# Model/LtcGetBlockHash200Response
 
 ## Getters
 

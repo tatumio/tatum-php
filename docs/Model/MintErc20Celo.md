@@ -1,4 +1,4 @@
-# MintErc20Celo
+# Model/MintErc20Celo
 
 ## Getters
 

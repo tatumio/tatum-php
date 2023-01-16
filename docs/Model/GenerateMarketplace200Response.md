@@ -1,4 +1,4 @@
-# GenerateMarketplace200Response
+# Model/GenerateMarketplace200Response
 
 ## Getters
 

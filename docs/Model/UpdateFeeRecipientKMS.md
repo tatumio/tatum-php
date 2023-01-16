@@ -1,4 +1,4 @@
-# UpdateFeeRecipientKMS
+# Model/UpdateFeeRecipientKMS
 
 ## Getters
 

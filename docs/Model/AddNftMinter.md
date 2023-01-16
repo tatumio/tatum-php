@@ -1,4 +1,4 @@
-# AddNftMinter
+# Model/AddNftMinter
 
 ## Getters
 

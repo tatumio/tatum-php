@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/VeChain
+# Local/Wallet/VeChain
 
 VeChain HD Wallet
 

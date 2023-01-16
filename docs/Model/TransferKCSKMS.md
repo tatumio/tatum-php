@@ -1,4 +1,4 @@
-# TransferKCSKMS
+# Model/TransferKCSKMS
 
 ## Getters
 

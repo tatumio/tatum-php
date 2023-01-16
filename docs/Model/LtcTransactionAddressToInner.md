@@ -1,4 +1,4 @@
-# LtcTransactionAddressToInner
+# Model/LtcTransactionAddressToInner
 
 ## Getters
 

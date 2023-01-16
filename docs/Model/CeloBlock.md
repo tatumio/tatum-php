@@ -1,4 +1,4 @@
-# CeloBlock
+# Model/CeloBlock
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# LtcTxInputsInnerCoin
+# Model/LtcTxInputsInnerCoin
 
 ## Getters
 

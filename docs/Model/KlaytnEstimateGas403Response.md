@@ -1,4 +1,4 @@
-# KlaytnEstimateGas403Response
+# Model/KlaytnEstimateGas403Response
 
 ## Getters
 

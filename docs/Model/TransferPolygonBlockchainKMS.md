@@ -1,4 +1,4 @@
-# TransferPolygonBlockchainKMS
+# Model/TransferPolygonBlockchainKMS
 
 ## Getters
 

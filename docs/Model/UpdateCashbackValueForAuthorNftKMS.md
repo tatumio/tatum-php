@@ -1,4 +1,4 @@
-# UpdateCashbackValueForAuthorNftKMS
+# Model/UpdateCashbackValueForAuthorNftKMS
 
 ## Getters
 

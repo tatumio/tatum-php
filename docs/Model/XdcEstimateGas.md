@@ -1,4 +1,4 @@
-# XdcEstimateGas
+# Model/XdcEstimateGas
 
 ## Getters
 

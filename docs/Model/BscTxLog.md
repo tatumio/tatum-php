@@ -1,4 +1,4 @@
-# BscTxLog
+# Model/BscTxLog
 
 ## Getters
 

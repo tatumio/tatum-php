@@ -1,4 +1,4 @@
-# Error403EthBroadcast
+# Model/Error403EthBroadcast
 
 ## Getters
 

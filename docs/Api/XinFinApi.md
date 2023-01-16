@@ -1,4 +1,4 @@
-# Tatum/Api/XinFinApi
+# Api/XinFinApi
 
 ## References
 

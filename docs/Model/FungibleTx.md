@@ -1,4 +1,4 @@
-# FungibleTx
+# Model/FungibleTx
 
 ## Getters
 

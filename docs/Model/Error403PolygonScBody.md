@@ -1,4 +1,4 @@
-# Error403PolygonScBody
+# Model/Error403PolygonScBody
 
 ## Getters
 

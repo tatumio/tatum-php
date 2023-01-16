@@ -1,4 +1,4 @@
-# TransferXrpKMS
+# Model/TransferXrpKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BtcTransactionFromAddressKMS
+# Model/BtcTransactionFromAddressKMS
 
 ## Getters
 

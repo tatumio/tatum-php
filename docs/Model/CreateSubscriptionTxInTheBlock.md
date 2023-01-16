@@ -1,4 +1,4 @@
-# CreateSubscriptionTxInTheBlock
+# Model/CreateSubscriptionTxInTheBlock
 
 ## Getters
 

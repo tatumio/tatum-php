@@ -1,4 +1,4 @@
-# TransferTronTrc10Blockchain
+# Model/TransferTronTrc10Blockchain
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BroadcastResponse
+# Model/BroadcastResponse
 
 ## Getters
 

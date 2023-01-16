@@ -1,4 +1,4 @@
-# CallXdcSmartContractMethod
+# Model/CallXdcSmartContractMethod
 
 ## Getters
 

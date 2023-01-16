@@ -1,4 +1,4 @@
-# GenerateMarketplace
+# Model/GenerateMarketplace
 
 ## Getters
 

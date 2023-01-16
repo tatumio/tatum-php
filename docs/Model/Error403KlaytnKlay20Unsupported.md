@@ -1,4 +1,4 @@
-# Error403KlaytnKlay20Unsupported
+# Model/Error403KlaytnKlay20Unsupported
 
 ## Getters
 

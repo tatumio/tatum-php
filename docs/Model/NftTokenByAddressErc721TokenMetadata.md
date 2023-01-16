@@ -1,4 +1,4 @@
-# NftTokenByAddressErc721TokenMetadata
+# Model/NftTokenByAddressErc721TokenMetadata
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403BscTxBody
+# Model/Error403BscTxBody
 
 ## Getters
 

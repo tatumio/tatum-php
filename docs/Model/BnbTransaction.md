@@ -1,4 +1,4 @@
-# BnbTransaction
+# Model/BnbTransaction
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# GenerateMarketplaceTron
+# Model/GenerateMarketplaceTron
 
 ## Getters
 

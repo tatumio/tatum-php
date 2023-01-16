@@ -1,4 +1,4 @@
-# Error403OneBep20NotFound
+# Model/Error403OneBep20NotFound
 
 ## Getters
 

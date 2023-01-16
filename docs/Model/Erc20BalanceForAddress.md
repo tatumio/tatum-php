@@ -1,4 +1,4 @@
-# Erc20BalanceForAddress
+# Model/Erc20BalanceForAddress
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# CreateFutureTradeAttr
+# Model/CreateFutureTradeAttr
 
 ## Getters
 

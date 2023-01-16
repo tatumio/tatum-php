@@ -1,4 +1,4 @@
-# CreateRecord
+# Model/CreateRecord
 
 ## Getters
 

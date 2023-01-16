@@ -1,4 +1,4 @@
-# BnbWallet
+# Model/BnbWallet
 
 ## Getters
 

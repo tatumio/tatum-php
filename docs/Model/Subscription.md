@@ -1,4 +1,4 @@
-# Subscription
+# Model/Subscription
 
 ## Getters
 

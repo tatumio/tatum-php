@@ -1,4 +1,4 @@
-# FlowEventPayloadValueFieldsInnerValueOneOf1Value
+# Model/FlowEventPayloadValueFieldsInnerValueOneOf1Value
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Tatum/Api/BlockchainUtilsApi
+# Api/BlockchainUtilsApi
 
 ## References
 

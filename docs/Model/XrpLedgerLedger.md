@@ -1,4 +1,4 @@
-# XrpLedgerLedger
+# Model/XrpLedgerLedger
 
 ## Getters
 

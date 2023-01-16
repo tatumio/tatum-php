@@ -1,4 +1,4 @@
-# SolanaMarketplaceTransactionHash
+# Model/SolanaMarketplaceTransactionHash
 
 ## Getters
 

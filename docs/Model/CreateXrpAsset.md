@@ -1,4 +1,4 @@
-# CreateXrpAsset
+# Model/CreateXrpAsset
 
 ## Getters
 

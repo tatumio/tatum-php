@@ -1,4 +1,4 @@
-# TransferOneBlockchain
+# Model/TransferOneBlockchain
 
 ## Getters
 

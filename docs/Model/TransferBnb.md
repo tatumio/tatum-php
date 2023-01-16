@@ -1,4 +1,4 @@
-# TransferBnb
+# Model/TransferBnb
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# MultiTokenGetMetadata200Response
+# Model/MultiTokenGetMetadata200Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferBscBlockchainKMS
+# Model/TransferBscBlockchainKMS
 
 ## Getters
 

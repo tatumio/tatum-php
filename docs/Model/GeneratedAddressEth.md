@@ -1,4 +1,4 @@
-# GeneratedAddressEth
+# Model/GeneratedAddressEth
 
 ## Getters
 

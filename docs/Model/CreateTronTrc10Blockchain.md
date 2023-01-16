@@ -1,4 +1,4 @@
-# CreateTronTrc10Blockchain
+# Model/CreateTronTrc10Blockchain
 
 ## Getters
 

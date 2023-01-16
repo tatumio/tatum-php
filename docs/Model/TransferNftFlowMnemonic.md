@@ -1,4 +1,4 @@
-# TransferNftFlowMnemonic
+# Model/TransferNftFlowMnemonic
 
 ## Getters
 

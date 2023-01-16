@@ -1,4 +1,4 @@
-# XdcGetBalance200Response
+# Model/XdcGetBalance200Response
 
 ## Getters
 

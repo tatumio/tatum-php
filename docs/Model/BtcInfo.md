@@ -1,4 +1,4 @@
-# BtcInfo
+# Model/BtcInfo
 
 ## Getters
 

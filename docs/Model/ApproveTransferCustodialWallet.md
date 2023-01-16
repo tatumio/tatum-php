@@ -1,4 +1,4 @@
-# ApproveTransferCustodialWallet
+# Model/ApproveTransferCustodialWallet
 
 ## Getters
 

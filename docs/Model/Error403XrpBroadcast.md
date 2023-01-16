@@ -1,4 +1,4 @@
-# Error403XrpBroadcast
+# Model/Error403XrpBroadcast
 
 ## Getters
 

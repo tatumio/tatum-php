@@ -1,4 +1,4 @@
-# RevokeCurrency403Response
+# Model/RevokeCurrency403Response
 
 ## Getters
 

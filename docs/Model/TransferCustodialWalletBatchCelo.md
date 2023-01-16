@@ -1,4 +1,4 @@
-# TransferCustodialWalletBatchCelo
+# Model/TransferCustodialWalletBatchCelo
 
 ## Getters
 

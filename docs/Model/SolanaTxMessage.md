@@ -1,4 +1,4 @@
-# SolanaTxMessage
+# Model/SolanaTxMessage
 
 ## Getters
 

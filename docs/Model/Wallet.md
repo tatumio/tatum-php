@@ -1,4 +1,4 @@
-# Wallet
+# Model/Wallet
 
 ## Getters
 

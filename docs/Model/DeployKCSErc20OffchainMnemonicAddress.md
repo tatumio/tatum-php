@@ -1,4 +1,4 @@
-# DeployKCSErc20OffchainMnemonicAddress
+# Model/DeployKCSErc20OffchainMnemonicAddress
 
 ## Getters
 

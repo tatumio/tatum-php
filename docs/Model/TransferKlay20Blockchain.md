@@ -1,4 +1,4 @@
-# TransferKlay20Blockchain
+# Model/TransferKlay20Blockchain
 
 ## Getters
 

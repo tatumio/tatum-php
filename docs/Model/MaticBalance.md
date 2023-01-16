@@ -1,4 +1,4 @@
-# MaticBalance
+# Model/MaticBalance
 
 ## Getters
 

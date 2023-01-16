@@ -1,4 +1,4 @@
-# VetGetBalance200Response
+# Model/VetGetBalance200Response
 
 ## Getters
 

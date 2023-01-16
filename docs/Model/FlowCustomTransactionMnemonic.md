@@ -1,4 +1,4 @@
-# FlowCustomTransactionMnemonic
+# Model/FlowCustomTransactionMnemonic
 
 ## Getters
 

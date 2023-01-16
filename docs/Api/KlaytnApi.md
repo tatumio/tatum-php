@@ -1,4 +1,4 @@
-# Tatum/Api/KlaytnApi
+# Api/KlaytnApi
 
 ## References
 

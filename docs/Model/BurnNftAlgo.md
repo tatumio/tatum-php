@@ -1,4 +1,4 @@
-# BurnNftAlgo
+# Model/BurnNftAlgo
 
 ## Getters
 

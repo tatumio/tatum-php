@@ -1,4 +1,4 @@
-# Error403ComplianceBtc
+# Model/Error403ComplianceBtc
 
 ## Getters
 

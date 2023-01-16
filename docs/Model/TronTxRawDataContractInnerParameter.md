@@ -1,4 +1,4 @@
-# TronTxRawDataContractInnerParameter
+# Model/TronTxRawDataContractInnerParameter
 
 ## Getters
 

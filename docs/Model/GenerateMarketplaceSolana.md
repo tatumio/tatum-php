@@ -1,4 +1,4 @@
-# GenerateMarketplaceSolana
+# Model/GenerateMarketplaceSolana
 
 ## Getters
 

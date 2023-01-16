@@ -1,4 +1,4 @@
-# FlowTxArgsInner
+# Model/FlowTxArgsInner
 
 ## Getters
 

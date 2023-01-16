@@ -1,4 +1,4 @@
-# XdcGenerateAddress200Response
+# Model/XdcGenerateAddress200Response
 
 ## Getters
 

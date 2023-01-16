@@ -1,4 +1,4 @@
-# EthTxLog
+# Model/EthTxLog
 
 ## Getters
 

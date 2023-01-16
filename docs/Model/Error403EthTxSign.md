@@ -1,4 +1,4 @@
-# Error403EthTxSign
+# Model/Error403EthTxSign
 
 ## Getters
 

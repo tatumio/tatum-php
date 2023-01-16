@@ -1,4 +1,4 @@
-# Error403PolygonErc20TxSign
+# Model/Error403PolygonErc20TxSign
 
 ## Getters
 

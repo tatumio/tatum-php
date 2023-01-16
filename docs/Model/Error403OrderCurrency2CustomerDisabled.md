@@ -1,4 +1,4 @@
-# Error403OrderCurrency2CustomerDisabled
+# Model/Error403OrderCurrency2CustomerDisabled
 
 ## Getters
 

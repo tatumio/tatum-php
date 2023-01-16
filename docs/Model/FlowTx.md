@@ -1,4 +1,4 @@
-# FlowTx
+# Model/FlowTx
 
 ## Getters
 

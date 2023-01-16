@@ -1,4 +1,4 @@
-# BlockAmount
+# Model/BlockAmount
 
 ## Getters
 

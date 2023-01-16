@@ -1,4 +1,4 @@
-# Error403SubscriptionCurrency
+# Model/Error403SubscriptionCurrency
 
 ## Getters
 

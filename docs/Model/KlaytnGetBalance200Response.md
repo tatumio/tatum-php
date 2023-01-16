@@ -1,4 +1,4 @@
-# KlaytnGetBalance200Response
+# Model/KlaytnGetBalance200Response
 
 ## Getters
 

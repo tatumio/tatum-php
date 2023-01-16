@@ -1,4 +1,4 @@
-# TransferKCSMnemonic
+# Model/TransferKCSMnemonic
 
 ## Getters
 

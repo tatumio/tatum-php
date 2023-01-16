@@ -1,4 +1,4 @@
-# Error401
+# Model/Error401
 
 ## Getters
 

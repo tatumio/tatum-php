@@ -1,4 +1,4 @@
-# CallPolygonSmartContractMethod
+# Model/CallPolygonSmartContractMethod
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Tatum/Api/NodeRPCApi
+# Api/NodeRPCApi
 
 ## References
 

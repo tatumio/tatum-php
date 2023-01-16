@@ -1,4 +1,4 @@
-# Error403EthErc20Unsupported
+# Model/Error403EthErc20Unsupported
 
 ## Getters
 

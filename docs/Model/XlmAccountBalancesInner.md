@@ -1,4 +1,4 @@
-# XlmAccountBalancesInner
+# Model/XlmAccountBalancesInner
 
 ## Getters
 

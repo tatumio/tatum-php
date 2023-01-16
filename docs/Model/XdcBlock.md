@@ -1,4 +1,4 @@
-# XdcBlock
+# Model/XdcBlock
 
 ## Getters
 

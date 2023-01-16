@@ -1,4 +1,4 @@
-# BurnMultiTokenCelo
+# Model/BurnMultiTokenCelo
 
 ## Getters
 

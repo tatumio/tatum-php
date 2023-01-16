@@ -1,4 +1,4 @@
-# DeployNftFlowKMS
+# Model/DeployNftFlowKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# MintMultiTokenBatchKMS
+# Model/MintMultiTokenBatchKMS
 
 ## Getters
 

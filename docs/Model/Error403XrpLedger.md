@@ -1,4 +1,4 @@
-# Error403XrpLedger
+# Model/Error403XrpLedger
 
 ## Getters
 

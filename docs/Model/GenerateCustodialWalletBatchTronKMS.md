@@ -1,4 +1,4 @@
-# GenerateCustodialWalletBatchTronKMS
+# Model/GenerateCustodialWalletBatchTronKMS
 
 ## Getters
 

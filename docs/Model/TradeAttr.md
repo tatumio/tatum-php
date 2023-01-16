@@ -1,4 +1,4 @@
-# TradeAttr
+# Model/TradeAttr
 
 ## Getters
 

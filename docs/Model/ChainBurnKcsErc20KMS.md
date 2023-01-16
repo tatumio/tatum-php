@@ -1,4 +1,4 @@
-# ChainBurnKcsErc20KMS
+# Model/ChainBurnKcsErc20KMS
 
 ## Getters
 

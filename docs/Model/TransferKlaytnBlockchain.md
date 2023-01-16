@@ -1,4 +1,4 @@
-# TransferKlaytnBlockchain
+# Model/TransferKlaytnBlockchain
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403SubscriptionInterval
+# Model/Error403SubscriptionInterval
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# PolygonBlock
+# Model/PolygonBlock
 
 ## Getters
 

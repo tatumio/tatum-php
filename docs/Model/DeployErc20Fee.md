@@ -1,4 +1,4 @@
-# DeployErc20Fee
+# Model/DeployErc20Fee
 
 ## Getters
 

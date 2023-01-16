@@ -1,4 +1,4 @@
-# XrpFeeLevels
+# Model/XrpFeeLevels
 
 ## Getters
 

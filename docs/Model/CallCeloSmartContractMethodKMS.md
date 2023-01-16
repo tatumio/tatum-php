@@ -1,4 +1,4 @@
-# CallCeloSmartContractMethodKMS
+# Model/CallCeloSmartContractMethodKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferNftKMSCelo
+# Model/TransferNftKMSCelo
 
 ## Getters
 

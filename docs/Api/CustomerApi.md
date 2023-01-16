@@ -1,4 +1,4 @@
-# Tatum/Api/CustomerApi
+# Api/CustomerApi
 
 ## References
 

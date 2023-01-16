@@ -1,4 +1,4 @@
-# EgldTx
+# Model/EgldTx
 
 ## Getters
 

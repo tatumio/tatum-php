@@ -1,4 +1,4 @@
-# EthEstimateGas403Response
+# Model/EthEstimateGas403Response
 
 ## Getters
 

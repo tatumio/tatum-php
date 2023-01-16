@@ -1,4 +1,4 @@
-# FlowAddPubKeyMnemonic
+# Model/FlowAddPubKeyMnemonic
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# BtcGetMempool403Response
+# Model/BtcGetMempool403Response
 
 ## Getters
 

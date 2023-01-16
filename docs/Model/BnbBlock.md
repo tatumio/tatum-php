@@ -1,4 +1,4 @@
-# BnbBlock
+# Model/BnbBlock
 
 ## Getters
 

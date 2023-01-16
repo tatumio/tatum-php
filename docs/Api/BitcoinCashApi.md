@@ -1,4 +1,4 @@
-# Tatum/Api/BitcoinCashApi
+# Api/BitcoinCashApi
 
 ## References
 

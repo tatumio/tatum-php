@@ -1,4 +1,4 @@
-# MintNftAlgorand
+# Model/MintNftAlgorand
 
 ## Getters
 

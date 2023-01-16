@@ -1,4 +1,4 @@
-# SolanaBroadcastConfirm
+# Model/SolanaBroadcastConfirm
 
 ## Getters
 

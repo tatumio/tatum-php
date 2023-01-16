@@ -1,4 +1,4 @@
-# Tatum/Api/OrderBookApi
+# Api/OrderBookApi
 
 ## References
 

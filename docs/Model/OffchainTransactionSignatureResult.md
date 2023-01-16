@@ -1,4 +1,4 @@
-# OffchainTransactionSignatureResult
+# Model/OffchainTransactionSignatureResult
 
 ## Getters
 

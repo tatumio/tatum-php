@@ -1,4 +1,4 @@
-# TrustLineXlmBlockchain
+# Model/TrustLineXlmBlockchain
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# LtcTransactionAddressKMS
+# Model/LtcTransactionAddressKMS
 
 ## Getters
 

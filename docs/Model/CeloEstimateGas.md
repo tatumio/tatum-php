@@ -1,4 +1,4 @@
-# CeloEstimateGas
+# Model/CeloEstimateGas
 
 ## Getters
 

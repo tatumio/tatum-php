@@ -1,4 +1,4 @@
-# TransferCustodialWalletTronKMS
+# Model/TransferCustodialWalletTronKMS
 
 ## Getters
 

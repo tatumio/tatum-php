@@ -1,4 +1,4 @@
-# GetMarketplaceInfo200Response
+# Model/GetMarketplaceInfo200Response
 
 ## Getters
 

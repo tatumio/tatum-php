@@ -1,4 +1,4 @@
-# TransferCeloBlockchainKMS
+# Model/TransferCeloBlockchainKMS
 
 ## Getters
 

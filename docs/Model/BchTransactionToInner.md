@@ -1,4 +1,4 @@
-# BchTransactionToInner
+# Model/BchTransactionToInner
 
 ## Getters
 

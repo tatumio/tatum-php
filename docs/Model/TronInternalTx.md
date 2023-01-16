@@ -1,4 +1,4 @@
-# TronInternalTx
+# Model/TronInternalTx
 
 ## Getters
 

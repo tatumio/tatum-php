@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/BSC
+# Local/Wallet/BSC
 
 BSC HD Wallet
 

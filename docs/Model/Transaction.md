@@ -1,4 +1,4 @@
-# Transaction
+# Model/Transaction
 
 ## Getters
 

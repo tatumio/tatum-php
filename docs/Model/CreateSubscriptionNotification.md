@@ -1,4 +1,4 @@
-# CreateSubscriptionNotification
+# Model/CreateSubscriptionNotification
 
 ## Getters
 

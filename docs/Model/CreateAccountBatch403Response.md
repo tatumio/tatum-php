@@ -1,4 +1,4 @@
-# CreateAccountBatch403Response
+# Model/CreateAccountBatch403Response
 
 ## Getters
 

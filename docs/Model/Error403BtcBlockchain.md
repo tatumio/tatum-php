@@ -1,4 +1,4 @@
-# Error403BtcBlockchain
+# Model/Error403BtcBlockchain
 
 ## Getters
 

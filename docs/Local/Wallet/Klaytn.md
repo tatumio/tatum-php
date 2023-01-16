@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Klaytn
+# Local/Wallet/Klaytn
 
 Klaytn HD Wallet
 

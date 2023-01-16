@@ -1,4 +1,4 @@
-# Tatum/Local/Transaction/Ethereum
+# Local/Transaction/Ethereum
 
 Ethereum Transaction
 

@@ -1,4 +1,4 @@
-# Tatum/Api/FungibleTokensERC20OrCompatibleApi
+# Api/FungibleTokensERC20OrCompatibleApi
 
 ## References
 

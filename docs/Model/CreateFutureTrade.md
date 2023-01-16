@@ -1,4 +1,4 @@
-# CreateFutureTrade
+# Model/CreateFutureTrade
 
 ## Getters
 

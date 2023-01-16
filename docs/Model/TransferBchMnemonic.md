@@ -1,4 +1,4 @@
-# TransferBchMnemonic
+# Model/TransferBchMnemonic
 
 ## Getters
 

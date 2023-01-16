@@ -1,4 +1,4 @@
-# TransferAdaKeyPair
+# Model/TransferAdaKeyPair
 
 ## Getters
 

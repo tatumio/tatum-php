@@ -1,4 +1,4 @@
-# Tatum/Api/LitecoinApi
+# Api/LitecoinApi
 
 ## References
 

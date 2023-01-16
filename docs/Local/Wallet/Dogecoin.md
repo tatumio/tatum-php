@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Dogecoin
+# Local/Wallet/Dogecoin
 
 Dogecoin HD Wallet
 

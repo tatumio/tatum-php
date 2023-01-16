@@ -1,4 +1,4 @@
-# ReceiveAlgorandAssetKMS
+# Model/ReceiveAlgorandAssetKMS
 
 ## Getters
 

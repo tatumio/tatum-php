@@ -1,4 +1,4 @@
-# Error403KlaytnGasPrice
+# Model/Error403KlaytnGasPrice
 
 ## Getters
 

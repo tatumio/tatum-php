@@ -1,4 +1,4 @@
-# WebHookResponse
+# Model/WebHookResponse
 
 ## Getters
 

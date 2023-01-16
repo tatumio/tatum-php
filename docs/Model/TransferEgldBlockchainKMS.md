@@ -1,4 +1,4 @@
-# TransferEgldBlockchainKMS
+# Model/TransferEgldBlockchainKMS
 
 ## Getters
 

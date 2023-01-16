@@ -1,4 +1,4 @@
-# BtcTxInputCoin
+# Model/BtcTxInputCoin
 
 ## Getters
 

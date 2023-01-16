@@ -1,4 +1,4 @@
-# BchTxVinInnerScriptSig
+# Model/BchTxVinInnerScriptSig
 
 ## Getters
 

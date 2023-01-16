@@ -1,4 +1,4 @@
-# ChainDeploySolanaSpl
+# Model/ChainDeploySolanaSpl
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403TxRecipientNotFound
+# Model/Error403TxRecipientNotFound
 
 ## Getters
 

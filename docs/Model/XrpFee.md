@@ -1,4 +1,4 @@
-# XrpFee
+# Model/XrpFee
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# EgldGenerateWallet200Response
+# Model/EgldGenerateWallet200Response
 
 ## Getters
 

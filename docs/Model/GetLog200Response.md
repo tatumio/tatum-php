@@ -1,4 +1,4 @@
-# GetLog200Response
+# Model/GetLog200Response
 
 ## Getters
 

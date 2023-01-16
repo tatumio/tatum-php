@@ -1,4 +1,4 @@
-# Erc20
+# Model/Erc20
 
 ## Getters
 

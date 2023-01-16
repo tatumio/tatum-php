@@ -1,4 +1,4 @@
-# Error403TxAmountAda
+# Model/Error403TxAmountAda
 
 ## Getters
 

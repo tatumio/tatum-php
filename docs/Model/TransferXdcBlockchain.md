@@ -1,4 +1,4 @@
-# TransferXdcBlockchain
+# Model/TransferXdcBlockchain
 
 ## Getters
 

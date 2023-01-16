@@ -1,4 +1,4 @@
-# MintNft
+# Model/MintNft
 
 ## Getters
 

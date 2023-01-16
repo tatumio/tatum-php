@@ -1,4 +1,4 @@
-# EgldGetTransaction403Response
+# Model/EgldGetTransaction403Response
 
 ## Getters
 

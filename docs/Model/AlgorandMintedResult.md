@@ -1,4 +1,4 @@
-# AlgorandMintedResult
+# Model/AlgorandMintedResult
 
 ## Getters
 

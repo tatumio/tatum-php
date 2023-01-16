@@ -1,4 +1,4 @@
-# Erc20Response
+# Model/Erc20Response
 
 ## Getters
 

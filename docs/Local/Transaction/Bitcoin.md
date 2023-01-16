@@ -1,4 +1,4 @@
-# Tatum/Local/Transaction/Bitcoin
+# Local/Transaction/Bitcoin
 
 Bitcoin Transaction
 

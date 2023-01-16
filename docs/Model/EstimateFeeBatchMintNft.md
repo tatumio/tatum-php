@@ -1,4 +1,4 @@
-# EstimateFeeBatchMintNft
+# Model/EstimateFeeBatchMintNft
 
 ## Getters
 

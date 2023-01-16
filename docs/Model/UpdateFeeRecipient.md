@@ -1,4 +1,4 @@
-# UpdateFeeRecipient
+# Model/UpdateFeeRecipient
 
 ## Getters
 

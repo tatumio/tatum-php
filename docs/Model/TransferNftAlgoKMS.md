@@ -1,4 +1,4 @@
-# TransferNftAlgoKMS
+# Model/TransferNftAlgoKMS
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403AccountActive
+# Model/Error403AccountActive
 
 ## Getters
 

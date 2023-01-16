@@ -1,4 +1,4 @@
-# AssignAddress403Response
+# Model/AssignAddress403Response
 
 ## Getters
 

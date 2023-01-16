@@ -1,4 +1,4 @@
-# Tatum/Local/Wallet/Bitcoin
+# Local/Wallet/Bitcoin
 
 Bitcoin HD Wallet
 

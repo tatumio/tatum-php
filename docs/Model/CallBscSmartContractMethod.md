@@ -1,4 +1,4 @@
-# CallBscSmartContractMethod
+# Model/CallBscSmartContractMethod
 
 ## Getters
 

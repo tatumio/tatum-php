@@ -1,4 +1,4 @@
-# DeployTrcOffchainMnemXpub
+# Model/DeployTrcOffchainMnemXpub
 
 ## Getters
 

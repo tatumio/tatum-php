@@ -1,4 +1,4 @@
-# LtcBlock
+# Model/LtcBlock
 
 ## Getters
 

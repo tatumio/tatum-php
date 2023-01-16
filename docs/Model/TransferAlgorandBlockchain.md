@@ -1,4 +1,4 @@
-# TransferAlgorandBlockchain
+# Model/TransferAlgorandBlockchain
 
 ## Getters
 

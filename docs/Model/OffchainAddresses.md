@@ -1,4 +1,4 @@
-# OffchainAddresses
+# Model/OffchainAddresses
 
 ## Getters
 

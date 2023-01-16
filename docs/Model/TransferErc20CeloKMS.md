@@ -1,4 +1,4 @@
-# TransferErc20CeloKMS
+# Model/TransferErc20CeloKMS
 
 ## Getters
 

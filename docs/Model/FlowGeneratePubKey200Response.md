@@ -1,4 +1,4 @@
-# FlowGeneratePubKey200Response
+# Model/FlowGeneratePubKey200Response
 
 ## Getters
 

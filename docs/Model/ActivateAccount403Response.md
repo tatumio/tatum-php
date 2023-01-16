@@ -1,4 +1,4 @@
-# ActivateAccount403Response
+# Model/ActivateAccount403Response
 
 ## Getters
 

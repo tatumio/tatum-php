@@ -1,4 +1,4 @@
-# Error403XdcBroadcast
+# Model/Error403XdcBroadcast
 
 ## Getters
 

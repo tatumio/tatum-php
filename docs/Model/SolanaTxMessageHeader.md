@@ -1,4 +1,4 @@
-# SolanaTxMessageHeader
+# Model/SolanaTxMessageHeader
 
 ## Getters
 

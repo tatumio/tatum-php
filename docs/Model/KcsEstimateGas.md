@@ -1,4 +1,4 @@
-# KcsEstimateGas
+# Model/KcsEstimateGas
 
 ## Getters
 

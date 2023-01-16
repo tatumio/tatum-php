@@ -1,4 +1,4 @@
-# DeletePendingTransactionToSign403Response
+# Model/DeletePendingTransactionToSign403Response
 
 ## Getters
 

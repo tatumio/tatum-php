@@ -1,4 +1,4 @@
-# NftGetContractAddress200Response
+# Model/NftGetContractAddress200Response
 
 ## Getters
 

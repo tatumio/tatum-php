@@ -1,4 +1,4 @@
-# MintErc20KMSCelo
+# Model/MintErc20KMSCelo
 
 ## Getters
 

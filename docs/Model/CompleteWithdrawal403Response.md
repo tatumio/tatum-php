@@ -1,4 +1,4 @@
-# CompleteWithdrawal403Response
+# Model/CompleteWithdrawal403Response
 
 ## Getters
 

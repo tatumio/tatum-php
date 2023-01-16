@@ -1,4 +1,4 @@
-# LtcTransactionUTXOKMS
+# Model/LtcTransactionUTXOKMS
 
 ## Getters
 

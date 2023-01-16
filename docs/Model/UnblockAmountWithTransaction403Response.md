@@ -1,4 +1,4 @@
-# UnblockAmountWithTransaction403Response
+# Model/UnblockAmountWithTransaction403Response
 
 ## Getters
 

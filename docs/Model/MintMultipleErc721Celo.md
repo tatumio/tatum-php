@@ -1,4 +1,4 @@
-# MintMultipleErc721Celo
+# Model/MintMultipleErc721Celo
 
 ## Getters
 

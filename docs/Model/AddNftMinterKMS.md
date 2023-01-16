@@ -1,4 +1,4 @@
-# AddNftMinterKMS
+# Model/AddNftMinterKMS
 
 ## Getters
 

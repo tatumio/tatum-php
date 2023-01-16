@@ -1,4 +1,4 @@
-# MultiTokenGetAddressBalance200ResponseInnerMetadataInner
+# Model/MultiTokenGetAddressBalance200ResponseInnerMetadataInner
 
 ## Getters
 

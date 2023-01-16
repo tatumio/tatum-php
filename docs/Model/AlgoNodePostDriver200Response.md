@@ -1,4 +1,4 @@
-# AlgoNodePostDriver200Response
+# Model/AlgoNodePostDriver200Response
 
 ## Getters
 

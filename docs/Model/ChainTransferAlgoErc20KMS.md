@@ -1,4 +1,4 @@
-# ChainTransferAlgoErc20KMS
+# Model/ChainTransferAlgoErc20KMS
 
 ## Getters
 

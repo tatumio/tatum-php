@@ -1,4 +1,4 @@
-# Tatum/Api/NFTERC721OrCompatibleApi
+# Api/NFTERC721OrCompatibleApi
 
 ## References
 

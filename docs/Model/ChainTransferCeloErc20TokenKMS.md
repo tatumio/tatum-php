@@ -1,4 +1,4 @@
-# ChainTransferCeloErc20TokenKMS
+# Model/ChainTransferCeloErc20TokenKMS
 
 ## Getters
 

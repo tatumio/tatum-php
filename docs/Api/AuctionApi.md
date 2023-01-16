@@ -1,4 +1,4 @@
-# Tatum/Api/AuctionApi
+# Api/AuctionApi
 
 ## References
 

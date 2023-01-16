@@ -1,4 +1,4 @@
-# GetTransactionsByAccountId200Response
+# Model/GetTransactionsByAccountId200Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# Error403VetFailed
+# Model/Error403VetFailed
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# KlaytnEstimateGas200Response
+# Model/KlaytnEstimateGas200Response
 
 ## Getters
 

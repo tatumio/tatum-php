@@ -1,4 +1,4 @@
-# TransferVetBlockchainFee
+# Model/TransferVetBlockchainFee
 
 ## Getters
 

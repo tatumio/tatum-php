@@ -1,4 +1,4 @@
-# MintMultiToken
+# Model/MintMultiToken
 
 ## Getters
 

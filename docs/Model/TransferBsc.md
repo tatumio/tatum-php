@@ -1,4 +1,4 @@
-# TransferBsc
+# Model/TransferBsc
 
 ## Getters
 

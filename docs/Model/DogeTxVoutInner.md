@@ -1,4 +1,4 @@
-# DogeTxVoutInner
+# Model/DogeTxVoutInner
 
 ## Getters
 

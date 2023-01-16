@@ -1,4 +1,4 @@
-# BchBlock
+# Model/BchBlock
 
 ## Getters
 

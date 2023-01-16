@@ -1,4 +1,4 @@
-# AdaGenerateAddress200Response
+# Model/AdaGenerateAddress200Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# XrpTxMeta
+# Model/XrpTxMeta
 
 ## Getters
 

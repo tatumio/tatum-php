@@ -1,4 +1,4 @@
-# TransferTronBlockchain
+# Model/TransferTronBlockchain
 
 ## Getters
 

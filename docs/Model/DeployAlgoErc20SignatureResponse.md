@@ -1,4 +1,4 @@
-# DeployAlgoErc20SignatureResponse
+# Model/DeployAlgoErc20SignatureResponse
 
 ## Getters
 

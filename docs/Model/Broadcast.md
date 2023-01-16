@@ -1,4 +1,4 @@
-# Broadcast
+# Model/Broadcast
 
 ## Getters
 

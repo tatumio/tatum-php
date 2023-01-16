@@ -1,4 +1,4 @@
-# EthBlock
+# Model/EthBlock
 
 ## Getters
 

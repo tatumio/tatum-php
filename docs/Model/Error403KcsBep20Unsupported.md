@@ -1,4 +1,4 @@
-# Error403KcsBep20Unsupported
+# Model/Error403KcsBep20Unsupported
 
 ## Getters
 

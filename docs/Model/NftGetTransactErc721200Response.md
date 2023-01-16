@@ -1,4 +1,4 @@
-# NftGetTransactErc721200Response
+# Model/NftGetTransactErc721200Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# TransferManagedAddress
+# Model/TransferManagedAddress
 
 ## Getters
 

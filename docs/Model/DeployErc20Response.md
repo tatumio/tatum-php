@@ -1,4 +1,4 @@
-# DeployErc20Response
+# Model/DeployErc20Response
 
 ## Getters
 

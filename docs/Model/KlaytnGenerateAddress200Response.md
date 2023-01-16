@@ -1,4 +1,4 @@
-# KlaytnGenerateAddress200Response
+# Model/KlaytnGenerateAddress200Response
 
 ## Getters
 

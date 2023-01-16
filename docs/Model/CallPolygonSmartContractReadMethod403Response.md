@@ -1,4 +1,4 @@
-# CallPolygonSmartContractReadMethod403Response
+# Model/CallPolygonSmartContractReadMethod403Response
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# CallKcsSmartContractMethodKMS
+# Model/CallKcsSmartContractMethodKMS
 
 ## Getters
 

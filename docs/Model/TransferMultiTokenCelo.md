@@ -1,4 +1,4 @@
-# TransferMultiTokenCelo
+# Model/TransferMultiTokenCelo
 
 ## Getters
 

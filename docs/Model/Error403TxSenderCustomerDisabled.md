@@ -1,4 +1,4 @@
-# Error403TxSenderCustomerDisabled
+# Model/Error403TxSenderCustomerDisabled
 
 ## Getters
 

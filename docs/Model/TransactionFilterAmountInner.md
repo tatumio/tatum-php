@@ -1,4 +1,4 @@
-# TransactionFilterAmountInner
+# Model/TransactionFilterAmountInner
 
 ## Getters
 

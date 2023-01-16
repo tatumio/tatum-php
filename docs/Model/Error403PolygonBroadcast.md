@@ -1,4 +1,4 @@
-# Error403PolygonBroadcast
+# Model/Error403PolygonBroadcast
 
 ## Getters
 

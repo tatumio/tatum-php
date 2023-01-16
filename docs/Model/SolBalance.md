@@ -1,4 +1,4 @@
-# SolBalance
+# Model/SolBalance
 
 ## Getters
 

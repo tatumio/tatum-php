@@ -1,4 +1,4 @@
-# Error403EgldBroadcast
+# Model/Error403EgldBroadcast
 
 ## Getters
 

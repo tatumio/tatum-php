@@ -1,4 +1,4 @@
-# Error403BcashBroadcast
+# Model/Error403BcashBroadcast
 
 ## Getters
 

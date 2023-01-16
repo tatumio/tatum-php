@@ -1,4 +1,4 @@
-# ChainTransferBscBep20
+# Model/ChainTransferBscBep20
 
 ## Getters
 

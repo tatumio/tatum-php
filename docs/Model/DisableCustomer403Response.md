@@ -1,4 +1,4 @@
-# DisableCustomer403Response
+# Model/DisableCustomer403Response
 
 ## Getters
 

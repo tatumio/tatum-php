@@ -1,4 +1,4 @@
-# TransferBtcMnemonic
+# Model/TransferBtcMnemonic
 
 ## Getters
 

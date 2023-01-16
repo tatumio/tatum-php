@@ -1,4 +1,4 @@
-# GeneratedAddressBsc
+# Model/GeneratedAddressBsc
 
 ## Getters
 

@@ -1,4 +1,4 @@
-# XlmAccountThresholds
+# Model/XlmAccountThresholds
 
 ## Getters
 

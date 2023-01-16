@@ -1,4 +1,4 @@
-# CeloGenerateAddress200Response
+# Model/CeloGenerateAddress200Response
 
 ## Getters
 
