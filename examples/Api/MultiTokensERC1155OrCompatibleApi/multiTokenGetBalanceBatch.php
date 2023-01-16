@@ -33,6 +33,7 @@ $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B,0x3223AEB8404C7525FcA
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var string[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -40,8 +41,15 @@ try {
         ->multiTokenGetBalanceBatch($arg_chain, $arg_contract_address, $arg_token_id, $arg_address, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(): %s\n", 
+        $exc->getMessage()
+    );
 }

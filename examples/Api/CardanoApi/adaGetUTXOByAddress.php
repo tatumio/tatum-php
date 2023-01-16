@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_address = "Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz";
 
 try {
+
     /** @var \Tatum\Model\AdaUTXO[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->adaGetUTXOByAddress($arg_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->cardano()->adaGetUTXOByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->cardano()->adaGetUTXOByAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->cardano()->adaGetUTXOByAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->cardano()->adaGetUTXOByAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

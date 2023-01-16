@@ -25,7 +25,7 @@ $arg_trust_line_xrp_blockchain_kms = (new \Tatum\Model\TrustLineXrpBlockchainKMS
     // Blockchain address of the issuer of the assets to create trust line for.
     ->setIssuerAccount('rsP3mgGb2tcYUrxiLFiHJiQXhsziegtwBc')
     
-    // Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line.
+    // Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust ...
     ->setLimit('10000')
     
     // Asset name. Must be 160bit HEX string, e.g. SHA1.
@@ -38,6 +38,7 @@ $arg_trust_line_xrp_blockchain_kms = (new \Tatum\Model\TrustLineXrpBlockchainKMS
     ->setFee('10000');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->trustLineXrpBlockchainKMS($arg_trust_line_xrp_blockchain_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->trustLineXrpBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xRP()->trustLineXrpBlockchainKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xRP()->trustLineXrpBlockchainKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xRP()->trustLineXrpBlockchainKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

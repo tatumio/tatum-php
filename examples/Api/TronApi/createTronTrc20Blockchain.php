@@ -38,6 +38,7 @@ $arg_create_tron_trc20_blockchain = (new \Tatum\Model\CreateTronTrc20Blockchain(
     ->setDecimals(10);
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->createTronTrc20Blockchain($arg_create_tron_trc20_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->createTronTrc20Blockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->tron()->createTronTrc20Blockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->tron()->createTronTrc20Blockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->tron()->createTronTrc20Blockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

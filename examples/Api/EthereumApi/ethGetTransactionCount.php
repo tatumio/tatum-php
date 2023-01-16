@@ -24,6 +24,7 @@ $arg_address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var float $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->ethGetTransactionCount($arg_address, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->ethGetTransactionCount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->ethereum()->ethGetTransactionCount(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->ethereum()->ethGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->ethereum()->ethGetTransactionCount(): %s\n", 
+        $exc->getMessage()
+    );
 }

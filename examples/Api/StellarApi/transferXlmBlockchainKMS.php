@@ -31,13 +31,14 @@ $arg_transfer_xlm_blockchain_kms = (new \Tatum\Model\TransferXlmBlockchainKMS())
     // Identifier of the secret associated in signing application. Secret, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) Set to true, if the destination address is not yet initialized and should be funded for the first time.
+    // (optional) Set to true, if the destination address is not yet initialized and should be funded for the first...
     ->setInitialize(false)
     
-    // (optional) Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number.
+    // (optional) Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HE...
     ->setMessage('12355');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->transferXlmBlockchainKMS($arg_transfer_xlm_blockchain_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->transferXlmBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->stellar()->transferXlmBlockchainKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->stellar()->transferXlmBlockchainKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->stellar()->transferXlmBlockchainKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

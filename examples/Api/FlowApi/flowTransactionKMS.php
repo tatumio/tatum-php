@@ -38,6 +38,7 @@ $arg_flow_transaction_kms = (new \Tatum\Model\FlowTransactionKMS())
     ->setIndex(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->flowTransactionKMS($arg_flow_transaction_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowTransactionKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->flow()->flowTransactionKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->flow()->flowTransactionKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->flow()->flowTransactionKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

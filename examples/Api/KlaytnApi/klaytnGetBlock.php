@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = "6470657";
 
 try {
+
     /** @var \Tatum\Model\KlaytnBlock $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->klaytnGetBlock($arg_hash);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->klaytn()->klaytnGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->klaytn()->klaytnGetBlock(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->klaytn()->klaytnGetBlock(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->klaytn()->klaytnGetBlock(): %s\n", 
+        $exc->getMessage()
+    );
 }

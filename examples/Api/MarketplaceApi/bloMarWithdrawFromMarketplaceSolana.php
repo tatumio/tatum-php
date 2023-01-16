@@ -35,6 +35,7 @@ $arg_withdraw_from_marketplace_solana = (new \Tatum\Model\WithdrawFromMarketplac
     ->setFromPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->bloMarWithdrawFromMarketplaceSolana($arg_withdraw_from_marketplace_solana);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->bloMarWithdrawFromMarketplaceSolana(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->bloMarWithdrawFromMarketplaceSolana(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->bloMarWithdrawFromMarketplaceSolana(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->bloMarWithdrawFromMarketplaceSolana(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -37,19 +37,20 @@ $arg_chain_transfer_solana_spl = (new \Tatum\Model\ChainTransferSolanaSpl())
     // The number of decimal places that the fungible tokens have
     ->setDigits(18)
     
-    // The private key of the blockchain address that you are sending the fungible tokens from (the address that you specified in the <code>from</code> parameter); the transaction fee will be deducted from this address
+    // The private key of the blockchain address that you are sending the fungible tokens from (the addr...
     ->setFromPrivateKey('YdQ1iy2NYs93dtkHdz3ijDuhRJj6uXYAUZmixirCrgCsTMj42BN1Q1buYcGZaMxw5buk9VU5ogQ6zuzn8DMsGaf')
     
-    // (optional) The blockchain address from which the fee will be deducted; if not set, defaults to the address that you specified in the <code>from</code> parameter
+    // (optional) The blockchain address from which the fee will be deducted; if not set, defaults to the address t...
     ->setFeePayer('BL4Xgn1jkuU4Yr3SQ4HG8cD5SBrsSk7BihKzkb5zTUfs')
     
-    // (optional) The private key of the blockchain address that you specified in the <code>feePayer</code> parameter; if not set, defaults to the private key that you specified in the <code>fromPrivateKey</code> parameter
+    // (optional) The private key of the blockchain address that you specified in the <code>feePayer</code> paramet...
     ->setFeePayerPrivateKey('YdQ1iy2NYs93dtkHdz3ijDuhRJj6uXYAUZmixirCrgCsTMj42BN1Q1buYcGZaMxw5buk9VU5ogQ6zuzn8DMsGaf');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->chainTransferSolanaSpl($arg_chain_transfer_solana_spl, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSpl(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSpl(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSpl(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSpl(): %s\n", 
+        $exc->getMessage()
+    );
 }

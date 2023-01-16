@@ -50,6 +50,7 @@ $arg_transfer_xrp_kms = (new \Tatum\Model\TransferXrpKMS())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->transferXrpKMS($arg_transfer_xrp_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferXrpKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferXrpKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferXrpKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferXrpKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

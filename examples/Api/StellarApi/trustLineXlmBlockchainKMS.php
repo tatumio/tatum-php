@@ -31,10 +31,11 @@ $arg_trust_line_xlm_blockchain_kms = (new \Tatum\Model\TrustLineXlmBlockchainKMS
     // Identifier of the secret associated in signing application. Secret, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line. When no limit is specified, maximum amount available is permitted.
+    // (optional) Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust ...
     ->setLimit('10000');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->trustLineXlmBlockchainKMS($arg_trust_line_xlm_blockchain_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->trustLineXlmBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->stellar()->trustLineXlmBlockchainKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->stellar()->trustLineXlmBlockchainKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->stellar()->trustLineXlmBlockchainKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -25,7 +25,7 @@ $arg_mint_nft_flow_kms = (new \Tatum\Model\MintNftFlowKMS())
     // Blockchain address to send NFT token to.
     ->setTo('0xc1b45bc27b9c61c3')
     
-    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.or...
     ->setUrl('https://my_token_data.com')
     
     // Address of NFT token
@@ -34,7 +34,7 @@ $arg_mint_nft_flow_kms = (new \Tatum\Model\MintNftFlowKMS())
     // Blockchain address of the sender account.
     ->setAccount('0xc1b45bc27b9c61c3')
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) Derivation index of sender address.
@@ -44,6 +44,7 @@ $arg_mint_nft_flow_kms = (new \Tatum\Model\MintNftFlowKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintNftExpress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->mintNftFlowKMS($arg_mint_nft_flow_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintNftFlowKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintNftFlowKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintNftFlowKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintNftFlowKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

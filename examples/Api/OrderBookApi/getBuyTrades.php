@@ -39,6 +39,7 @@ $arg_count = true;
 $arg_trade_type = "BUY";
 
 try {
+
     /** @var \Tatum\Model\Trade[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -46,8 +47,15 @@ try {
         ->getBuyTrades($arg_page_size, $arg_id, $arg_customer_id, $arg_offset, $arg_pair, $arg_count, $arg_trade_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->orderBook()->getBuyTrades(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->orderBook()->getBuyTrades(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->orderBook()->getBuyTrades(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->orderBook()->getBuyTrades(): %s\n", 
+        $exc->getMessage()
+    );
 }

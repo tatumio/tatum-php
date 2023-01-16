@@ -50,6 +50,7 @@ $arg_transfer_multi_token_batch = (new \Tatum\Model\TransferMultiTokenBatch())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->transferMultiTokenBatch($arg_transfer_multi_token_batch, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(): %s\n", 
+        $exc->getMessage()
+    );
 }

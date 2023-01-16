@@ -25,7 +25,7 @@ $arg_update_fee = (new \Tatum\Model\UpdateFee())
     // The blockchain address of the marketplace smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
+    // The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a f...
     ->setMarketplaceFee(150)
     
     // The private key of the blockchain address from which the fee will be deducted
@@ -38,6 +38,7 @@ $arg_update_fee = (new \Tatum\Model\UpdateFee())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->updateFee($arg_update_fee);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->updateFee(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->updateFee(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->updateFee(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->updateFee(): %s\n", 
+        $exc->getMessage()
+    );
 }

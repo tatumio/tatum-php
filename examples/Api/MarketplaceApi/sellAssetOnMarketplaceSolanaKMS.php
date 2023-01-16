@@ -34,13 +34,14 @@ $arg_sell_asset_on_marketplace_solana_kms = (new \Tatum\Model\SellAssetOnMarketp
     // Price of the asset to sell. Marketplace fee will be obtained on top of this price.
     ->setPrice('100000')
     
-    // (optional) The KMS identifier of the private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to "true" for the marketplace
+    // (optional) The KMS identifier of the private key used for signing transactions as authority; required if <co...
     ->setAuthoritySignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // The KMS identifier of the private key of the seller
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
+
     /** @var \Tatum\Model\SellAssetOnMarketplace200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->sellAssetOnMarketplaceSolanaKMS($arg_sell_asset_on_marketplace_solana_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->sellAssetOnMarketplaceSolanaKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->sellAssetOnMarketplaceSolanaKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->sellAssetOnMarketplaceSolanaKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->sellAssetOnMarketplaceSolanaKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

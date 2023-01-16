@@ -19,7 +19,7 @@ $sdk = new \Tatum\Sdk();
 
 $arg_transfer_eth_blockchain = (new \Tatum\Model\TransferEthBlockchain())
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -44,6 +44,7 @@ $arg_transfer_eth_blockchain = (new \Tatum\Model\TransferEthBlockchain())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->transferEthBlockchain($arg_transfer_eth_blockchain, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->transferEthBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->ethereum()->transferEthBlockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->ethereum()->transferEthBlockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->ethereum()->transferEthBlockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -32,5 +32,8 @@ try {
     var_dump($result);
 
 } catch (\Exception $exc) {
-    echo 'Exception when calling local()->wallet()->bitcoinCash()->generateWallet(): ', $exc->getMessage(), PHP_EOL;
+    echo sprintf(
+        "Exception when calling local()->wallet()->bitcoinCash()->generateWallet(): %s\n", 
+        $exc->getMessage()
+    );
 }

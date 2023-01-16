@@ -25,7 +25,7 @@ $arg_update_fee_solana = (new \Tatum\Model\UpdateFeeSolana())
     // The blockchain address of the marketplace smart contract
     ->setContractAddress('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
     
-    // The new percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
+    // The new percentage of the amount that an NFT was sold for that will be sent to the marketplace as...
     ->setMarketplaceFee(150)
     
     // The blockchain address of the marketplace authority
@@ -35,6 +35,7 @@ $arg_update_fee_solana = (new \Tatum\Model\UpdateFeeSolana())
     ->setFromPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->updateFeeSolana($arg_update_fee_solana);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->updateFeeSolana(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->updateFeeSolana(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->updateFeeSolana(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->updateFeeSolana(): %s\n", 
+        $exc->getMessage()
+    );
 }

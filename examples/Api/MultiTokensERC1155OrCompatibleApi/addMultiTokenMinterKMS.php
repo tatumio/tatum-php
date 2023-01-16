@@ -31,7 +31,7 @@ $arg_add_multi_token_minter_kms = (new \Tatum\Model\AddMultiTokenMinterKMS())
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
     ->setIndex(null)
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
@@ -47,6 +47,7 @@ $arg_add_multi_token_minter_kms = (new \Tatum\Model\AddMultiTokenMinterKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->addMultiTokenMinterKMS($arg_add_multi_token_minter_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->addMultiTokenMinterKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->multiTokensERC1155OrCompatible()->addMultiTokenMinterKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->multiTokensERC1155OrCompatible()->addMultiTokenMinterKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->multiTokensERC1155OrCompatible()->addMultiTokenMinterKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

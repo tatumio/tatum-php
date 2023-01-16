@@ -23,6 +23,7 @@ $arg_x_api_key = "asdlkfjnqunalkwjfnq2oi303294857k";
 $arg_body = array('key' => new \stdClass);
 
 try {
+
     /** @var object $response */
     $response = $sdk->mainnet()
         ->api()
@@ -30,8 +31,15 @@ try {
         ->xdcWeb3Driver($arg_x_api_key, $arg_body);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xinFin()->xdcWeb3Driver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xinFin()->xdcWeb3Driver(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xinFin()->xdcWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xinFin()->xdcWeb3Driver(): %s\n", 
+        $exc->getMessage()
+    );
 }

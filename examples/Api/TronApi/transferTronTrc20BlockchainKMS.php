@@ -22,7 +22,7 @@ $arg_transfer_tron_trc20_blockchain_kms = (new \Tatum\Model\TransferTronTrc20Blo
     // Sender address of TRON account in Base58 format.
     ->setFrom('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6')
     
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
@@ -41,6 +41,7 @@ $arg_transfer_tron_trc20_blockchain_kms = (new \Tatum\Model\TransferTronTrc20Blo
     ->setAmount('100000');
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->transferTronTrc20BlockchainKMS($arg_transfer_tron_trc20_blockchain_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->transferTronTrc20BlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->tron()->transferTronTrc20BlockchainKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->tron()->transferTronTrc20BlockchainKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->tron()->transferTronTrc20BlockchainKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

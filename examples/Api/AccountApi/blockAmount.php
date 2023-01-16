@@ -25,13 +25,14 @@ $arg_block_amount = (new \Tatum\Model\BlockAmount())
     // The amount to be blocked on the account
     ->setAmount('5')
     
-    // The type of the blockage that you are applying; can be a code or an identifier from an external system or a short description of the blockage
+    // The type of the blockage that you are applying; can be a code or an identifier from an external s...
     ->setType('DEBIT_CARD_OP')
     
     // (optional) The description of the blockage that you are applying
     ->setDescription('Card payment in the shop.');
 
 try {
+
     /** @var \Tatum\Model\Id $response */
     $response = $sdk->mainnet()
         ->api()
@@ -39,8 +40,15 @@ try {
         ->blockAmount($arg_id, $arg_block_amount);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->blockAmount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->account()->blockAmount(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->account()->blockAmount(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->account()->blockAmount(): %s\n", 
+        $exc->getMessage()
+    );
 }

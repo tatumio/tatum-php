@@ -31,16 +31,16 @@ $arg_deploy_nft_celo_kms = (new \Tatum\Model\DeployNftCeloKMS())
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
     ->setIndex(null)
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
     ->setNonce(null)
     
-    // (optional) True if the contract is provenance percentage royalty type. False by default. <a href="https://github.com/tatumio/smart-contracts" target="_blank">Details and sources available here.</a>
+    // (optional) True if the contract is provenance percentage royalty type. False by default. <a href="https://gi...
     ->setProvenance(false)
     
-    // (optional) True if the contract is fixed price royalty type. False by default. <a href="https://github.com/tatumio/smart-contracts" target="_blank">Details and sources available here.</a>
+    // (optional) True if the contract is fixed price royalty type. False by default. <a href="https://github.com/t...
     ->setCashback(false)
     
     // (optional) True if the contract is publicMint type. False by default.
@@ -53,6 +53,7 @@ $arg_deploy_nft_celo_kms = (new \Tatum\Model\DeployNftCeloKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -60,8 +61,15 @@ try {
         ->deployNftCeloKMS($arg_deploy_nft_celo_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->deployNftCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->deployNftCeloKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->deployNftCeloKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->deployNftCeloKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

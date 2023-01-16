@@ -41,6 +41,7 @@ $arg_cancel_sell_asset_on_marketplace = (new \Tatum\Model\CancelSellAssetOnMarke
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->cancelSellAssetOnMarketplace($arg_cancel_sell_asset_on_marketplace);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->cancelSellAssetOnMarketplace(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->cancelSellAssetOnMarketplace(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->cancelSellAssetOnMarketplace(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->cancelSellAssetOnMarketplace(): %s\n", 
+        $exc->getMessage()
+    );
 }

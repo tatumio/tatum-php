@@ -35,5 +35,8 @@ try {
     var_dump($result);
 
 } catch (\Exception $exc) {
-    echo 'Exception when calling local()->wallet()->bsc()->generatePrivateKey(): ', $exc->getMessage(), PHP_EOL;
+    echo sprintf(
+        "Exception when calling local()->wallet()->bsc()->generatePrivateKey(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -40,7 +40,7 @@ $arg_sell_asset_on_marketplace_celo = (new \Tatum\Model\SellAssetOnMarketplaceCe
     // ID of the listing. It's up to the developer to generate unique ID
     ->setListingId('null')
     
-    // (optional) Amount of the assets to be sent. For ERC-721 tokens, enter amount only in case of native currency cashback.
+    // (optional) Amount of the assets to be sent. For ERC-721 tokens, enter amount only in case of native currency...
     ->setAmount('1')
     
     // ID of token, if transaction is for ERC-721 or ERC-1155.
@@ -62,6 +62,7 @@ $arg_sell_asset_on_marketplace_celo = (new \Tatum\Model\SellAssetOnMarketplaceCe
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\SellAssetOnMarketplace200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -69,8 +70,15 @@ try {
         ->sellAssetOnMarketplaceCelo($arg_sell_asset_on_marketplace_celo);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->sellAssetOnMarketplaceCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->sellAssetOnMarketplaceCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->sellAssetOnMarketplaceCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->sellAssetOnMarketplaceCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -35,5 +35,8 @@ try {
     var_dump($result);
 
 } catch (\Exception $exc) {
-    echo 'Exception when calling local()->wallet()->harmony()->generateAddressFromXpub(): ', $exc->getMessage(), PHP_EOL;
+    echo sprintf(
+        "Exception when calling local()->wallet()->harmony()->generateAddressFromXpub(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -21,12 +21,20 @@ $sdk = new \Tatum\Sdk();
 $arg_id = "5e68c66581f2ee32bc354087";
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->account()
         ->freezeAccount($arg_id);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->freezeAccount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->account()->freezeAccount(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->account()->freezeAccount(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->account()->freezeAccount(): %s\n", 
+        $exc->getMessage()
+    );
 }

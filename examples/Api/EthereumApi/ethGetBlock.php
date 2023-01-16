@@ -24,6 +24,7 @@ $arg_hash = "6470657";
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\EthBlock $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->ethGetBlock($arg_hash, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->ethGetBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->ethereum()->ethGetBlock(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->ethereum()->ethGetBlock(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->ethereum()->ethGetBlock(): %s\n", 
+        $exc->getMessage()
+    );
 }

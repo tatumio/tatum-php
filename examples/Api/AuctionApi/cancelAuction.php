@@ -41,6 +41,7 @@ $arg_cancel_auction = (new \Tatum\Model\CancelAuction())
     ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->cancelAuction($arg_cancel_auction);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->cancelAuction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->auction()->cancelAuction(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->cancelAuction(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->auction()->cancelAuction(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -31,7 +31,7 @@ $arg_mint_nft_solana = (new \Tatum\Model\MintNftSolana())
     // The private key of the blockchain address that will pay the fee for the transaction
     ->setFromPrivateKey('3abc79a31093e4cfa4a724e94a44906cbbc3a32e2f75f985a28616676a5dbaf1de8d82a7e1d0561bb0e1b729c7a9b9b1708cf2803ad0ca928a332587ace391ad')
     
-    // (optional) The private key of the collection verifier (owner) who will verify the NFT in the NFT collection where the NFT is minted in. The blockchain address of this collection is specified in the <code>collection</code> parameter in the <code>metadata</code> section of the request body. To know more about Solana collections and verification, refer to the <a href="https://docs.metaplex.com/programs/token-metadata/certified-collections" target="_blank">Solana user documentation</a>.
+    // (optional) The private key of the collection verifier (owner) who will verify the NFT in the NFT collection ...
     ->setCollectionVerifierPrivateKey('3abc79a31093e4cfa4a724e94a44906cbbc3a32e2f75f985a28616676a5dbaf1de8d82a7e1d0561bb0e1b729c7a9b9b1708cf2803ad0ca928a332587ace391ad')
     
     // 
@@ -41,6 +41,7 @@ $arg_mint_nft_solana = (new \Tatum\Model\MintNftSolana())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintNftExpress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->mintNftSolana($arg_mint_nft_solana, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintNftSolana(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintNftSolana(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintNftSolana(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintNftSolana(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -27,6 +27,7 @@ $arg_min = 3.4;
 $arg_marker = 'marker_example';
 
 try {
+
     /** @var \Tatum\Model\XrpAccountTx $response */
     $response = $sdk->mainnet()
         ->api()
@@ -34,8 +35,15 @@ try {
         ->xrpGetAccountTx($arg_account, $arg_min, $arg_marker);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->xrpGetAccountTx(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xRP()->xrpGetAccountTx(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xRP()->xrpGetAccountTx(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xRP()->xrpGetAccountTx(): %s\n", 
+        $exc->getMessage()
+    );
 }

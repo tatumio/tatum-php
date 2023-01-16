@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_address = "0xa7673161CbfE0116A4De9E341f8465940c2211d4";
 
 try {
+
     /** @var \Tatum\Model\GeneratedAddressOne $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->oneFormatAddress($arg_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->harmony()->oneFormatAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->harmony()->oneFormatAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->harmony()->oneFormatAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->harmony()->oneFormatAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

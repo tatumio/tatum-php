@@ -28,22 +28,22 @@ $arg_approve_transfer_custodial_wallet_celo_kms = (new \Tatum\Model\ApproveTrans
     // The blockchain address to allow the transfer of the asset from the gas pump address
     ->setSpender('0xe242bA5456b782919AFc85687422eEA2cB73B5d3')
     
-    // The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent), or <code>2</code> for Multi Tokens (ERC-1155 or equivalent).
+    // The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent),...
     ->setContractType(0)
     
     // The address of the asset to transfer
     ->setTokenAddress('0x782919AFc85eEA2cB736874225456bB5d3e242bA')
     
-    // (optional) (Only if the asset is a fungible token or Multi Token) The amount of the asset to transfer. Do not use if the asset is an NFT.
+    // (optional) (Only if the asset is a fungible token or Multi Token) The amount of the asset to transfer. Do no...
     ->setAmount('100000')
     
-    // (optional) (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the asset is a fungible token.
+    // (optional) (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the as...
     ->setTokenId('100000')
     
-    // The KMS identifier of the private key of the blockchain address that owns the gas pump address key ("master address")
+    // The KMS identifier of the private key of the blockchain address that owns the gas pump address ke...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) (Only if the signature ID is mnemonic-based) The index of the "master address" that was generated from the mnemonic
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the "master address" that was generated...
     ->setIndex(null)
     
     // The currency to pay for the gas fee
@@ -56,6 +56,7 @@ $arg_approve_transfer_custodial_wallet_celo_kms = (new \Tatum\Model\ApproveTrans
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -63,8 +64,15 @@ try {
         ->approveTransferCustodialWalletCeloKMS($arg_approve_transfer_custodial_wallet_celo_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->approveTransferCustodialWalletCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->gasPump()->approveTransferCustodialWalletCeloKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->gasPump()->approveTransferCustodialWalletCeloKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->gasPump()->approveTransferCustodialWalletCeloKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

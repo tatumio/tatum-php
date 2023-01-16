@@ -47,6 +47,7 @@ $arg_transfer_xrp_blockchain_asset = (new \Tatum\Model\TransferXrpBlockchainAsse
     ->setToken('DA39A3EE5E6B4B0D3255BFEF95601890AFD80709');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->transferXrpBlockchainAsset($arg_transfer_xrp_blockchain_asset);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->transferXrpBlockchainAsset(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xRP()->transferXrpBlockchainAsset(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xRP()->transferXrpBlockchainAsset(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xRP()->transferXrpBlockchainAsset(): %s\n", 
+        $exc->getMessage()
+    );
 }

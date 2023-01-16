@@ -35,6 +35,7 @@ $arg_account_settings_xrp_blockchain = (new \Tatum\Model\AccountSettingsXrpBlock
     ->setRequireDestinationTag(true);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->accountSettingsXrpBlockchain($arg_account_settings_xrp_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->accountSettingsXrpBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xRP()->accountSettingsXrpBlockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xRP()->accountSettingsXrpBlockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xRP()->accountSettingsXrpBlockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -28,7 +28,7 @@ $arg_mint_multiple_nft_tron = (new \Tatum\Model\MintMultipleNftTron())
     // ID of token to be created.
     ->setTokenId(["123"])
     
-    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.or...
     ->setUrl(["https://my_token_data.com"])
     
     // Address of NFT token
@@ -44,6 +44,7 @@ $arg_mint_multiple_nft_tron = (new \Tatum\Model\MintMultipleNftTron())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintMultipleNftMinter200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->mintMultipleNftTron($arg_mint_multiple_nft_tron, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftTron(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftTron(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftTron(): %s\n", 
+        $exc->getMessage()
+    );
 }

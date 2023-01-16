@@ -28,10 +28,10 @@ $arg_transfer_tron = (new \Tatum\Model\TransferTron())
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
     ->setCompliant(false)
     
-    // Private key of sender address. Either mnemonic and index, privateKey or signature Id must be present - depends on the type of account and xpub.
+    // Private key of sender address. Either mnemonic and index, privateKey or signature Id must be pres...
     ->setFromPrivateKey('e75d702ce00987633f8009fbb1eabb5b187cb5b50fe9179a8d6cee6bab076b66')
     
-    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 2.5 TRX is used.
+    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 2.5 TRX ...
     ->setFee('2.5')
     
     // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
@@ -44,6 +44,7 @@ $arg_transfer_tron = (new \Tatum\Model\TransferTron())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->transferTron($arg_transfer_tron);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferTron(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferTron(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferTron(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -28,7 +28,7 @@ $arg_bid_on_auction_kms = (new \Tatum\Model\BidOnAuctionKMS())
     // (optional) Optional address of the ERC20 token, which will be used as a selling currency of the NFT.
     ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) In case of the ERC20 auction, it's possible to bid on behalf of someone else. This value is the address of the bidder, which should approve spending of the ERC20 tokens for the Auction contract. This could be used for a bidding from the custodial wallet address.
+    // (optional) In case of the ERC20 auction, it's possible to bid on behalf of someone else. This value is the a...
     ->setBidder('0x587422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // ID of the auction.
@@ -37,7 +37,7 @@ $arg_bid_on_auction_kms = (new \Tatum\Model\BidOnAuctionKMS())
     // Amount of the assets to be bid. This must include auction fee.
     ->setBidValue('1')
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
@@ -50,6 +50,7 @@ $arg_bid_on_auction_kms = (new \Tatum\Model\BidOnAuctionKMS())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->bidOnAuctionKMS($arg_bid_on_auction_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->bidOnAuctionKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->auction()->bidOnAuctionKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->bidOnAuctionKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->auction()->bidOnAuctionKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

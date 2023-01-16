@@ -28,22 +28,23 @@ $arg_deploy_algo_erc20_offchain_mnemonic_address = (new \Tatum\Model\DeployAlgoE
     // Description of the ERC20 token
     ->setDescription('My ERC20 Token')
     
-    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will b...
     ->setBasePair('EUR')
     
-    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
     ->setBaseRate(1)
     
     // (optional) 
     ->setCustomer(null)
     
-    // Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
+    // Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivati...
     ->setAddress('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
     
-    // Mnemonic to generate private key for the deploy account of ERC20, from which the gas will be paid (index will be used). If address is not present, mnemonic is used to generate xpub and index is set to 1. Either mnemonic and index or privateKey and address must be present, not both.
+    // Mnemonic to generate private key for the deploy account of ERC20, from which the gas will be paid...
     ->setMnemonic('artist alarm clerk obscure timber firm reopen provide ankle vicious exhibit waste math toilet believe puppy lucky coast post kind black suspect mule able market');
 
 try {
+
     /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->deployAlgoErc20OffchainMnemonicAddress($arg_deploy_algo_erc20_offchain_mnemonic_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->deployAlgoErc20OffchainMnemonicAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->deployAlgoErc20OffchainMnemonicAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->deployAlgoErc20OffchainMnemonicAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->deployAlgoErc20OffchainMnemonicAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

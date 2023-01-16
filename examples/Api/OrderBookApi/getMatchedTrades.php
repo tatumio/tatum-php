@@ -52,10 +52,11 @@ $arg_list_oder_book_matched_body = (new \Tatum\Model\ListOderBookMatchedBody())
     // (optional) Created date of the trade. AND is used between filter options.
     ->setCreated(null)
     
-    // (optional) Sorts the result by selected property. The priority of the items is determined by order of the sort properties in array.
+    // (optional) Sorts the result by selected property. The priority of the items is determined by order of the so...
     ->setSort(null);
 
 try {
+
     /** @var \Tatum\Model\Trade[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -63,8 +64,15 @@ try {
         ->getMatchedTrades($arg_list_oder_book_matched_body);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->orderBook()->getMatchedTrades(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->orderBook()->getMatchedTrades(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->orderBook()->getMatchedTrades(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->orderBook()->getMatchedTrades(): %s\n", 
+        $exc->getMessage()
+    );
 }

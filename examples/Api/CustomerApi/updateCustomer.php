@@ -25,7 +25,7 @@ $arg_customer_update = (new \Tatum\Model\CustomerUpdate())
     // External customer ID. If not set, it will not be updated.
     ->setExternalId('123654')
     
-    // (optional) All transaction will be accounted in this currency for all accounts. Currency can be overridden per account level. If not set, it will not be updated. ISO-4217
+    // (optional) All transaction will be accounted in this currency for all accounts. Currency can be overridden p...
     ->setAccountingCurrency('USD')
     
     // (optional) Country customer has to be compliant with. If not set, it will not be updated. ISO-3166-1.
@@ -35,6 +35,7 @@ $arg_customer_update = (new \Tatum\Model\CustomerUpdate())
     ->setProviderCountry('US');
 
 try {
+
     /** @var \Tatum\Model\Customer $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->updateCustomer($arg_id, $arg_customer_update);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->customer()->updateCustomer(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->customer()->updateCustomer(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->customer()->updateCustomer(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->customer()->updateCustomer(): %s\n", 
+        $exc->getMessage()
+    );
 }

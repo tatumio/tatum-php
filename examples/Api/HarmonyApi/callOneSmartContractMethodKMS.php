@@ -38,7 +38,7 @@ $arg_call_one_smart_contract_method_kms = (new \Tatum\Model\CallOneSmartContract
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
     ->setIndex(null)
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) Nonce to be set to ONE transaction. If not present, last known nonce will be used.
@@ -51,6 +51,7 @@ $arg_call_one_smart_contract_method_kms = (new \Tatum\Model\CallOneSmartContract
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -58,8 +59,15 @@ try {
         ->callOneSmartContractMethodKMS($arg_call_one_smart_contract_method_kms, $arg_shard_id);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->harmony()->callOneSmartContractMethodKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->harmony()->callOneSmartContractMethodKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->harmony()->callOneSmartContractMethodKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->harmony()->callOneSmartContractMethodKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

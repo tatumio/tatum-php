@@ -29,12 +29,20 @@ $arg_update_account = (new \Tatum\Model\UpdateAccount())
     ->setAccountNumber('123456');
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->account()
         ->updateAccountByAccountId($arg_id, $arg_update_account);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->updateAccountByAccountId(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->account()->updateAccountByAccountId(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->account()->updateAccountByAccountId(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->account()->updateAccountByAccountId(): %s\n", 
+        $exc->getMessage()
+    );
 }

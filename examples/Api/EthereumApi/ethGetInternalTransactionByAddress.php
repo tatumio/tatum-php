@@ -30,6 +30,7 @@ $arg_offset = 0;
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\EthTxInternal[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -37,8 +38,15 @@ try {
         ->ethGetInternalTransactionByAddress($arg_address, $arg_page_size, $arg_offset, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->ethGetInternalTransactionByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->ethereum()->ethGetInternalTransactionByAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->ethereum()->ethGetInternalTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->ethereum()->ethGetInternalTransactionByAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

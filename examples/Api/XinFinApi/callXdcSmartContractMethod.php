@@ -48,6 +48,7 @@ $arg_call_xdc_smart_contract_method = (new \Tatum\Model\CallXdcSmartContractMeth
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -55,8 +56,15 @@ try {
         ->callXdcSmartContractMethod($arg_call_xdc_smart_contract_method);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xinFin()->callXdcSmartContractMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xinFin()->callXdcSmartContractMethod(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xinFin()->callXdcSmartContractMethod(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xinFin()->callXdcSmartContractMethod(): %s\n", 
+        $exc->getMessage()
+    );
 }

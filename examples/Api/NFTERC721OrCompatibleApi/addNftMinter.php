@@ -25,10 +25,10 @@ $arg_add_nft_minter = (new \Tatum\Model\AddNftMinter())
     // The blockchain address of the NFT smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // The blockchain address to add to the smart contract as an NFT minter<br/>To find the address of the Tatum NFT minter for your blockchain, see the table in "Use your own smart contract to mint NFTs" in <a href="#operation/NftMintErc721">Mint an NFT</a>.<br/>This address will cover your NFT minting fees. The number of credits equivalent to the fees will be then deducted from the credit allowance of your paid pricing plan.
+    // The blockchain address to add to the smart contract as an NFT minter<br/>To find the address of t...
     ->setMinter('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // The private key of the blockchain address that has priviledges to add an NFT minter to the NFT smart contract (the owner of the smart contract or a blockchain address that was granted such priviledges)
+    // The private key of the blockchain address that has priviledges to add an NFT minter to the NFT sm...
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -44,6 +44,7 @@ $arg_add_nft_minter = (new \Tatum\Model\AddNftMinter())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->addNftMinter($arg_add_nft_minter, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->addNftMinter(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->addNftMinter(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->addNftMinter(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->addNftMinter(): %s\n", 
+        $exc->getMessage()
+    );
 }

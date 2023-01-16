@@ -24,6 +24,7 @@ $arg_chain = "CELO";
 $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 
 try {
+
     /** @var \Tatum\Model\Erc20BalanceForAddress[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->erc20GetBalanceAddress($arg_chain, $arg_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

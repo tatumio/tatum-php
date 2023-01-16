@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_address = "TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8";
 
 try {
+
     /** @var \Tatum\Model\TronAccount $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->tronGetAccount($arg_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->tronGetAccount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->tron()->tronGetAccount(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->tron()->tronGetAccount(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->tron()->tronGetAccount(): %s\n", 
+        $exc->getMessage()
+    );
 }

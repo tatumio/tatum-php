@@ -21,12 +21,20 @@ $sdk = new \Tatum\Sdk();
 $arg_id = "3ad54647-4166-4d34-9186-fd46caaba945";
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->custodialManagedWallets()
         ->custodialDeleteWallet($arg_id);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->custodialManagedWallets()->custodialDeleteWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->custodialManagedWallets()->custodialDeleteWallet(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->custodialManagedWallets()->custodialDeleteWallet(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->custodialManagedWallets()->custodialDeleteWallet(): %s\n", 
+        $exc->getMessage()
+    );
 }

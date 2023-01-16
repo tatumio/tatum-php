@@ -28,16 +28,17 @@ $arg_deploy_nft_tron = (new \Tatum\Model\DeployNftTron())
     // Symbol of the NFT token
     ->setSymbol('ERC_SYMBOL')
     
-    // Private key of account address, from which gas for deployment of ERC721 will be paid. Private key, or signature Id must be present.
+    // Private key of account address, from which gas for deployment of ERC721 will be paid. Private key...
     ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701')
     
-    // The maximum amount to be paid as the transaction fee (in TRX); deployment of a smart contract on TRON costs around 580 TRX
+    // The maximum amount to be paid as the transaction fee (in TRX); deployment of a smart contract on ...
     ->setFeeLimit(600);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->deployNftTron($arg_deploy_nft_tron, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->deployNftTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->deployNftTron(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->deployNftTron(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->deployNftTron(): %s\n", 
+        $exc->getMessage()
+    );
 }

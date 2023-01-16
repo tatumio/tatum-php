@@ -19,7 +19,7 @@ $sdk = new \Tatum\Sdk();
 
 $arg_transfer_xdc_blockchain = (new \Tatum\Model\TransferXdcBlockchain())
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74')
     
     // Currency of the transfer.
@@ -41,6 +41,7 @@ $arg_transfer_xdc_blockchain = (new \Tatum\Model\TransferXdcBlockchain())
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->transferXdcBlockchain($arg_transfer_xdc_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xinFin()->transferXdcBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xinFin()->transferXdcBlockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xinFin()->transferXdcBlockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xinFin()->transferXdcBlockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

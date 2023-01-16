@@ -28,7 +28,7 @@ $arg_transfer_bnb_blockchain_kms = (new \Tatum\Model\TransferBnbBlockchainKMS())
     // Amount to be sent in BNB.
     ->setAmount('100000')
     
-    // Signature hash of the mnemonic, which will be used to sign transactions locally. All signature Ids should be present, which might be used to sign transaction.
+    // Signature hash of the mnemonic, which will be used to sign transactions locally. All signature Id...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // Blockchain address to send from
@@ -38,6 +38,7 @@ $arg_transfer_bnb_blockchain_kms = (new \Tatum\Model\TransferBnbBlockchainKMS())
     ->setMessage('Message to recipient');
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->transferBnbBlockchainKMS($arg_transfer_bnb_blockchain_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBBeaconChain()->transferBnbBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->bNBBeaconChain()->transferBnbBlockchainKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->bNBBeaconChain()->transferBnbBlockchainKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->bNBBeaconChain()->transferBnbBlockchainKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

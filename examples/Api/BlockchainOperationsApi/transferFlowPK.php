@@ -44,6 +44,7 @@ $arg_transfer_flow_pk = (new \Tatum\Model\TransferFlowPK())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->transferFlowPK($arg_transfer_flow_pk);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferFlowPK(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferFlowPK(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferFlowPK(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferFlowPK(): %s\n", 
+        $exc->getMessage()
+    );
 }

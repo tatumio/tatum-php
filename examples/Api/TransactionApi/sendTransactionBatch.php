@@ -26,6 +26,7 @@ $arg_batch_create_transaction = (new \Tatum\Model\BatchCreateTransaction())
     ->setTransaction(null);
 
 try {
+
     /** @var string[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -33,8 +34,15 @@ try {
         ->sendTransactionBatch($arg_batch_create_transaction);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->transaction()->sendTransactionBatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->transaction()->sendTransactionBatch(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->transaction()->sendTransactionBatch(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->transaction()->sendTransactionBatch(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -24,12 +24,20 @@ $arg_id = 'id_example';
 $arg_tx_id = 'tx_id_example';
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->withdrawal()
         ->completeWithdrawal($arg_id, $arg_tx_id);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->withdrawal()->completeWithdrawal(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->withdrawal()->completeWithdrawal(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->withdrawal()->completeWithdrawal(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->withdrawal()->completeWithdrawal(): %s\n", 
+        $exc->getMessage()
+    );
 }

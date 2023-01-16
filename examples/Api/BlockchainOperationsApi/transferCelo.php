@@ -31,7 +31,7 @@ $arg_transfer_celo = (new \Tatum\Model\TransferCelo())
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
     ->setCompliant(false)
     
-    // Private key of sender address. Either mnemonic and index, privateKey or signature Id must be present - depends on the type of account and xpub.
+    // Private key of sender address. Either mnemonic and index, privateKey or signature Id must be pres...
     ->setFromPrivateKey('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
@@ -53,6 +53,7 @@ $arg_transfer_celo = (new \Tatum\Model\TransferCelo())
     ->setGasPrice('20');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -60,8 +61,15 @@ try {
         ->transferCelo($arg_transfer_celo);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

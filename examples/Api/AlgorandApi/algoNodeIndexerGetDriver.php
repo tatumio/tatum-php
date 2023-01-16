@@ -24,6 +24,7 @@ $arg_x_api_key = "asdlkfjnqunalkwjfnq2oi303294857k";
 $arg_indexer_path = "v2/accounts";
 
 try {
+
     /** @var \Tatum\Model\AlgoTx $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->algoNodeIndexerGetDriver($arg_x_api_key, $arg_indexer_path);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algoNodeIndexerGetDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->algorand()->algoNodeIndexerGetDriver(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->algorand()->algoNodeIndexerGetDriver(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->algorand()->algoNodeIndexerGetDriver(): %s\n", 
+        $exc->getMessage()
+    );
 }

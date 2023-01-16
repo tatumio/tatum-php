@@ -27,6 +27,7 @@ $arg_address = "tbnb1sfj9981j2eo1ij2e09";
 $arg_index = 1;
 
 try {
+
     /** @var \Tatum\Model\Account $response */
     $response = $sdk->mainnet()
         ->api()
@@ -34,8 +35,15 @@ try {
         ->addressExists($arg_currency, $arg_address, $arg_index);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainAddresses()->addressExists(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainAddresses()->addressExists(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainAddresses()->addressExists(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainAddresses()->addressExists(): %s\n", 
+        $exc->getMessage()
+    );
 }

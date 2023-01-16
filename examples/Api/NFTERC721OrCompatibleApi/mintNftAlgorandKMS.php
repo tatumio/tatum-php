@@ -22,7 +22,7 @@ $arg_mint_nft_algorand_kms = (new \Tatum\Model\MintNftAlgorandKMS())
     // The blockchain to work with
     ->setChain('ALGO')
     
-    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.or...
     ->setUrl('https://my_token_data.com')
     
     // The name of the NFT
@@ -31,7 +31,7 @@ $arg_mint_nft_algorand_kms = (new \Tatum\Model\MintNftAlgorandKMS())
     // The address of the minting account
     ->setFrom('TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4')
     
-    // The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account
+    // The KMS identifier of the private key of the minting account; the transaction fee will be paid fr...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) 
@@ -41,6 +41,7 @@ $arg_mint_nft_algorand_kms = (new \Tatum\Model\MintNftAlgorandKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintNftExpress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->mintNftAlgorandKMS($arg_mint_nft_algorand_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintNftAlgorandKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintNftAlgorandKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintNftAlgorandKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintNftAlgorandKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

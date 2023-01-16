@@ -31,13 +31,14 @@ $arg_cancel_sell_asset_on_marketplace_solana = (new \Tatum\Model\CancelSellAsset
     // Blockchain address of the asset owner
     ->setFrom(FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU)
     
-    // (optional) The private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to "true" for the marketplace
+    // (optional) The private key used for signing transactions as authority; required if <code>requiresSignOff</co...
     ->setAuthorityPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv')
     
     // The private key of the asset owner
     ->setFromPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->cancelSellAssetOnMarketplaceSolana($arg_cancel_sell_asset_on_marketplace_solana);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->cancelSellAssetOnMarketplaceSolana(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->cancelSellAssetOnMarketplaceSolana(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->cancelSellAssetOnMarketplaceSolana(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->cancelSellAssetOnMarketplaceSolana(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -38,6 +38,7 @@ $arg_flow_transaction_mnemonic = (new \Tatum\Model\FlowTransactionMnemonic())
     ->setIndex(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->flowTransactionMnemonic($arg_flow_transaction_mnemonic);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowTransactionMnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->flow()->flowTransactionMnemonic(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->flow()->flowTransactionMnemonic(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->flow()->flowTransactionMnemonic(): %s\n", 
+        $exc->getMessage()
+    );
 }

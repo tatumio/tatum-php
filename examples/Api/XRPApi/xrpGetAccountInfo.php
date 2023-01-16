@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_account = "rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF";
 
 try {
+
     /** @var \Tatum\Model\XrpAccount $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->xrpGetAccountInfo($arg_account);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->xrpGetAccountInfo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xRP()->xrpGetAccountInfo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xRP()->xrpGetAccountInfo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xRP()->xrpGetAccountInfo(): %s\n", 
+        $exc->getMessage()
+    );
 }

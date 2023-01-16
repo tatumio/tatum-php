@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
 
 try {
+
     /** @var float $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->klaytnGetTransactionCount($arg_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->klaytn()->klaytnGetTransactionCount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->klaytn()->klaytnGetTransactionCount(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->klaytn()->klaytnGetTransactionCount(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->klaytn()->klaytnGetTransactionCount(): %s\n", 
+        $exc->getMessage()
+    );
 }

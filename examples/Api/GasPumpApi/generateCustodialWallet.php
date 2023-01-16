@@ -44,6 +44,7 @@ $arg_generate_custodial_wallet = (new \Tatum\Model\GenerateCustodialWallet())
     ->setNonce(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->generateCustodialWallet($arg_generate_custodial_wallet);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->generateCustodialWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->gasPump()->generateCustodialWallet(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->gasPump()->generateCustodialWallet(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->gasPump()->generateCustodialWallet(): %s\n", 
+        $exc->getMessage()
+    );
 }

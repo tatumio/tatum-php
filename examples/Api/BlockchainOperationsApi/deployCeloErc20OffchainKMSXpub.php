@@ -20,6 +20,7 @@ $sdk = new \Tatum\Sdk();
 $arg_deploy_celo_erc20_offchain_kms_xpub = (new \Tatum\Model\DeployCeloErc20OffchainKMSXpub());
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -27,8 +28,15 @@ try {
         ->deployCeloErc20OffchainKMSXpub($arg_deploy_celo_erc20_offchain_kms_xpub);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->deployCeloErc20OffchainKMSXpub(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->deployCeloErc20OffchainKMSXpub(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->deployCeloErc20OffchainKMSXpub(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->deployCeloErc20OffchainKMSXpub(): %s\n", 
+        $exc->getMessage()
+    );
 }

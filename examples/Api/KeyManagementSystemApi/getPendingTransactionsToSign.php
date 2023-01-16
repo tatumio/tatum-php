@@ -24,6 +24,7 @@ $arg_chain = 'chain_example';
 $arg_signatures = "6d78dad2-518f-4e76-8255-8f1df0de6884,6d78dad2-518f-4e76-8255-8f1df0de6885,6d78dad2-518f-4e76-8255-8f1df0de6886";
 
 try {
+
     /** @var \Tatum\Model\PendingTransaction[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->getPendingTransactionsToSign($arg_chain, $arg_signatures);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->keyManagementSystem()->getPendingTransactionsToSign(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->keyManagementSystem()->getPendingTransactionsToSign(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->keyManagementSystem()->getPendingTransactionsToSign(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->keyManagementSystem()->getPendingTransactionsToSign(): %s\n", 
+        $exc->getMessage()
+    );
 }

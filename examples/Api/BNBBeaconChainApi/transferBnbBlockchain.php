@@ -35,6 +35,7 @@ $arg_transfer_bnb_blockchain = (new \Tatum\Model\TransferBnbBlockchain())
     ->setMessage('Message to recipient');
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->transferBnbBlockchain($arg_transfer_bnb_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBBeaconChain()->transferBnbBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->bNBBeaconChain()->transferBnbBlockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->bNBBeaconChain()->transferBnbBlockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->bNBBeaconChain()->transferBnbBlockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

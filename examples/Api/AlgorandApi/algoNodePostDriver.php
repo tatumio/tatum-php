@@ -25,10 +25,11 @@ $arg_algod_path = "v2/accounts";
 
 $arg_algo_node_post_driver_request = (new \Tatum\Model\AlgoNodePostDriverRequest())
     
-    // (optional) Check here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions</a>
+    // (optional) Check here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions...
     ->setRawtxn('null');
 
 try {
+
     /** @var \Tatum\Model\AlgoNodePostDriver200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -36,8 +37,15 @@ try {
         ->algoNodePostDriver($arg_x_api_key, $arg_algod_path, $arg_algo_node_post_driver_request);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algoNodePostDriver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->algorand()->algoNodePostDriver(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->algorand()->algoNodePostDriver(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->algorand()->algoNodePostDriver(): %s\n", 
+        $exc->getMessage()
+    );
 }

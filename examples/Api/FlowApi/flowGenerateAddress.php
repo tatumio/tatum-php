@@ -24,6 +24,7 @@ $arg_xpub = "xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS
 $arg_index = 0;
 
 try {
+
     /** @var \Tatum\Model\FlowGenerateAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->flowGenerateAddress($arg_xpub, $arg_index);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowGenerateAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->flow()->flowGenerateAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->flow()->flowGenerateAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->flow()->flowGenerateAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

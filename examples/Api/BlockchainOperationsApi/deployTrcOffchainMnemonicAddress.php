@@ -37,25 +37,26 @@ $arg_deploy_trc_offchain_mnemonic_address = (new \Tatum\Model\DeployTrcOffchainM
     // (optional) URL of the project. Applicable for TRC-10 only.
     ->setUrl('https://mytoken.com')
     
-    // Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+    // Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be ...
     ->setBasePair('EUR')
     
-    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
     ->setBaseRate(1)
     
     // (optional) 
     ->setCustomer(null)
     
-    // Address on Tron blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
+    // Address on Tron blockchain, where all initial supply will be stored. Either xpub and derivationIn...
     ->setAddress('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
     
-    // Mnemonic to generate private key for the deploy account of TRC, from which the gas will be paid (index will be used). If address is not present, mnemonic is used to generate xpub and index is set to 1. Either mnemonic and index or privateKey and address must be present, not both.
+    // Mnemonic to generate private key for the deploy account of TRC, from which the gas will be paid (...
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
     
     // derivation index of address to pay for deployment of TRC
     ->setIndex(0);
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -63,8 +64,15 @@ try {
         ->deployTrcOffchainMnemonicAddress($arg_deploy_trc_offchain_mnemonic_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->deployTrcOffchainMnemonicAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->deployTrcOffchainMnemonicAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->deployTrcOffchainMnemonicAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->deployTrcOffchainMnemonicAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

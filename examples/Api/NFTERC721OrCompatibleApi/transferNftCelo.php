@@ -19,7 +19,7 @@ $sdk = new \Tatum\Sdk();
 
 $arg_transfer_nft_celo = (new \Tatum\Model\TransferNftCelo())
     
-    // (optional) If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token.
+    // (optional) If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the ...
     ->setValue('1')
     
     // The blockchain to work with
@@ -56,6 +56,7 @@ $arg_transfer_nft_celo = (new \Tatum\Model\TransferNftCelo())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -63,8 +64,15 @@ try {
         ->transferNftCelo($arg_transfer_nft_celo, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->transferNftCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->transferNftCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->transferNftCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->transferNftCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

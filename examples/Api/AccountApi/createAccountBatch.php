@@ -23,6 +23,7 @@ $arg_create_account_batch = (new \Tatum\Model\CreateAccountBatch())
     ->setAccounts(null);
 
 try {
+
     /** @var \Tatum\Model\Account[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -30,8 +31,15 @@ try {
         ->createAccountBatch($arg_create_account_batch);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->createAccountBatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->account()->createAccountBatch(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->account()->createAccountBatch(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->account()->createAccountBatch(): %s\n", 
+        $exc->getMessage()
+    );
 }

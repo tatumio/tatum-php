@@ -40,7 +40,7 @@ $arg_transfer_kcs_mnemonic = (new \Tatum\Model\TransferKCSMnemonic())
     // (optional) Gas price in Gwei. If not set, automatic calculation will be used.
     ->setGasPrice('20')
     
-    // Mnemonic to generate private key for sender address. Either mnemonic and index, privateKey or signature Id must be present - depends on the type of account and xpub.
+    // Mnemonic to generate private key for sender address. Either mnemonic and index, privateKey or sig...
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
     
     // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
@@ -53,6 +53,7 @@ $arg_transfer_kcs_mnemonic = (new \Tatum\Model\TransferKCSMnemonic())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -60,8 +61,15 @@ try {
         ->transferKCSMnemonic($arg_transfer_kcs_mnemonic);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferKCSMnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferKCSMnemonic(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferKCSMnemonic(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferKCSMnemonic(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_i = 3.4;
 
 try {
+
     /** @var \Tatum\Model\XrpLedger $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->xrpGetLedger($arg_i);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->xrpGetLedger(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xRP()->xrpGetLedger(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xRP()->xrpGetLedger(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xRP()->xrpGetLedger(): %s\n", 
+        $exc->getMessage()
+    );
 }

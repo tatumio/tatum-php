@@ -50,6 +50,7 @@ $arg_mint_multi_token = (new \Tatum\Model\MintMultiToken())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->mintMultiToken($arg_mint_multi_token, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->mintMultiToken(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->multiTokensERC1155OrCompatible()->mintMultiToken(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->multiTokensERC1155OrCompatible()->mintMultiToken(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->multiTokensERC1155OrCompatible()->mintMultiToken(): %s\n", 
+        $exc->getMessage()
+    );
 }

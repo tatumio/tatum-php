@@ -62,6 +62,7 @@ $arg_create_auction_celo = (new \Tatum\Model\CreateAuctionCelo())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -69,8 +70,15 @@ try {
         ->createAuctionCelo($arg_create_auction_celo);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->createAuctionCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->auction()->createAuctionCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->createAuctionCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->auction()->createAuctionCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -40,7 +40,7 @@ $arg_chain_deploy_kcs_erc20 = (new \Tatum\Model\ChainDeployKcsErc20())
     // Address on Ethereum blockchain, where all created ERC20 tokens will be transferred.
     ->setAddress('0xa0Ca9FF38Bad06eBe64f0fDfF279cAE35129F5C6')
     
-    // Private key of Ethereum account address, from which the fee for the deployment of ERC20 will be paid. Private key, or signature Id must be present.
+    // Private key of Ethereum account address, from which the fee for the deployment of ERC20 will be p...
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -53,6 +53,7 @@ $arg_chain_deploy_kcs_erc20 = (new \Tatum\Model\ChainDeployKcsErc20())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -60,8 +61,15 @@ try {
         ->chainDeployKcsErc20($arg_chain_deploy_kcs_erc20, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -37,7 +37,7 @@ $arg_transfer_erc20_mnemonic = (new \Tatum\Model\TransferErc20Mnemonic())
     // (optional) Gas price in Gwei. If not set, automatic calculation will be used.
     ->setGasPrice('20')
     
-    // Mnemonic to generate private key for sender address. Either mnemonic and index, or privateKey must be present - depends on the type of account and xpub.
+    // Mnemonic to generate private key for sender address. Either mnemonic and index, or privateKey mus...
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
     
     // Derivation index of sender address.
@@ -53,6 +53,7 @@ $arg_transfer_erc20_mnemonic = (new \Tatum\Model\TransferErc20Mnemonic())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -60,8 +61,15 @@ try {
         ->transferErc20Mnemonic($arg_transfer_erc20_mnemonic);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferErc20Mnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferErc20Mnemonic(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferErc20Mnemonic(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferErc20Mnemonic(): %s\n", 
+        $exc->getMessage()
+    );
 }

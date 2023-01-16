@@ -28,7 +28,7 @@ $arg_generate_marketplace_celo = (new \Tatum\Model\GenerateMarketplaceCelo())
     // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null')
     
-    // The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
+    // The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a f...
     ->setMarketplaceFee(150)
     
     // Private key of sender address. Private key, or signature Id must be present.
@@ -41,6 +41,7 @@ $arg_generate_marketplace_celo = (new \Tatum\Model\GenerateMarketplaceCelo())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\GenerateMarketplace200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->generateMarketplaceCelo($arg_generate_marketplace_celo);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->generateMarketplaceCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->generateMarketplaceCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->generateMarketplaceCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->generateMarketplaceCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

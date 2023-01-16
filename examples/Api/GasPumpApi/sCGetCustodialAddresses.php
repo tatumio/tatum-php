@@ -24,6 +24,7 @@ $arg_chain = 'chain_example';
 $arg_hash = "0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7";
 
 try {
+
     /** @var string[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->sCGetCustodialAddresses($arg_chain, $arg_hash);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->sCGetCustodialAddresses(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->gasPump()->sCGetCustodialAddresses(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->gasPump()->sCGetCustodialAddresses(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->gasPump()->sCGetCustodialAddresses(): %s\n", 
+        $exc->getMessage()
+    );
 }

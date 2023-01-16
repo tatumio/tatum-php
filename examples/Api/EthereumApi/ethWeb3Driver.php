@@ -26,6 +26,7 @@ $arg_body = array('key' => new \stdClass);
 $arg_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var object $response */
     $response = $sdk->mainnet()
         ->api()
@@ -33,8 +34,15 @@ try {
         ->ethWeb3Driver($arg_x_api_key, $arg_body, $arg_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->ethWeb3Driver(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->ethereum()->ethWeb3Driver(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->ethereum()->ethWeb3Driver(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->ethereum()->ethWeb3Driver(): %s\n", 
+        $exc->getMessage()
+    );
 }

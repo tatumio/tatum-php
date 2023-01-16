@@ -25,13 +25,14 @@ $arg_mint_nft_express = (new \Tatum\Model\MintNftExpress())
     // The blockchain address to send the NFT to
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.or...
     ->setUrl('https://my_token_data.com');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintNftExpress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -39,8 +40,15 @@ try {
         ->mintNftExpress($arg_mint_nft_express, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintNftExpress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintNftExpress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintNftExpress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintNftExpress(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -35,6 +35,7 @@ $arg_transfer_tron_trc20_blockchain = (new \Tatum\Model\TransferTronTrc20Blockch
     ->setAmount('100000');
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->transferTronTrc20Blockchain($arg_transfer_tron_trc20_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->transferTronTrc20Blockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->tron()->transferTronTrc20Blockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->tron()->transferTronTrc20Blockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->tron()->transferTronTrc20Blockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

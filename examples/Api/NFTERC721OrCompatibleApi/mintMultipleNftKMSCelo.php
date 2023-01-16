@@ -28,13 +28,13 @@ $arg_mint_multiple_nft_kms_celo = (new \Tatum\Model\MintMultipleNftKMSCelo())
     // ID of token to be created.
     ->setTokenId(["123"])
     
-    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.or...
     ->setUrl(["https://my_token_data.com"])
     
-    // (optional) List of addresses for every token, where royalty cashback for every transfer of this NFT will be send. Royalties are paid in native blockchain currency CELO.
+    // (optional) List of addresses for every token, where royalty cashback for every transfer of this NFT will be ...
     ->setAuthorAddresses(null)
     
-    // (optional) List of values for every token, which will be paid as a royalty for author of the NFT token with every token transfer. This is exact value in native blockchain currency.
+    // (optional) List of values for every token, which will be paid as a royalty for author of the NFT token with ...
     ->setCashbackValues(null)
     
     // Address of NFT token
@@ -43,7 +43,7 @@ $arg_mint_multiple_nft_kms_celo = (new \Tatum\Model\MintMultipleNftKMSCelo())
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
     ->setIndex(null)
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -56,6 +56,7 @@ $arg_mint_multiple_nft_kms_celo = (new \Tatum\Model\MintMultipleNftKMSCelo())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintMultipleNftMinter200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -63,8 +64,15 @@ try {
         ->mintMultipleNftKMSCelo($arg_mint_multiple_nft_kms_celo, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftKMSCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftKMSCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftKMSCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftKMSCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

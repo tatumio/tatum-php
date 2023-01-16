@@ -40,10 +40,11 @@ $arg_estimate_fee_transfer_from_custodial = (new \Tatum\Model\EstimateFeeTransfe
     // Amount to be sent in native asset, ERC20 or ERC1155
     ->setAmount('100000')
     
-    // Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - native asset
+    // Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - nativ...
     ->setTokenType(0);
 
 try {
+
     /** @var \Tatum\Model\EstimateFee200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->estimateFeeTransferFromCustodial($arg_estimate_fee_transfer_from_custodial);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->estimateFeeTransferFromCustodial(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainFees()->estimateFeeTransferFromCustodial(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->estimateFeeTransferFromCustodial(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainFees()->estimateFeeTransferFromCustodial(): %s\n", 
+        $exc->getMessage()
+    );
 }

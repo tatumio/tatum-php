@@ -37,7 +37,7 @@ $arg_transfer_xlm = (new \Tatum\Model\TransferXlm())
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
     ->setCompliant(false)
     
-    // (optional) Short message to recipient. Usually used as an account discriminator. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number. When using as an account disciminator in Tatum Offchain ledger, can be in format of destination_acc/source_acc.
+    // (optional) Short message to recipient. Usually used as an account discriminator. It can be either 28 charact...
     ->setAttr('12355')
     
     // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
@@ -47,6 +47,7 @@ $arg_transfer_xlm = (new \Tatum\Model\TransferXlm())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->transferXlm($arg_transfer_xlm);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferXlm(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferXlm(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferXlm(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferXlm(): %s\n", 
+        $exc->getMessage()
+    );
 }

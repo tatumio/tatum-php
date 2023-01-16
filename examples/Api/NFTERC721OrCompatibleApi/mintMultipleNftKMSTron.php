@@ -31,7 +31,7 @@ $arg_mint_multiple_nft_kms_tron = (new \Tatum\Model\MintMultipleNftKMSTron())
     // ID of token to be created.
     ->setTokenId(["123"])
     
-    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.or...
     ->setUrl(["https://my_token_data.com"])
     
     // Address of NFT token
@@ -40,7 +40,7 @@ $arg_mint_multiple_nft_kms_tron = (new \Tatum\Model\MintMultipleNftKMSTron())
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
     ->setIndex(null)
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // The maximum amount to be paid as the transaction fee (in TRX)
@@ -50,6 +50,7 @@ $arg_mint_multiple_nft_kms_tron = (new \Tatum\Model\MintMultipleNftKMSTron())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintMultipleNftMinter200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->mintMultipleNftKMSTron($arg_mint_multiple_nft_kms_tron, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftKMSTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftKMSTron(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftKMSTron(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftKMSTron(): %s\n", 
+        $exc->getMessage()
+    );
 }

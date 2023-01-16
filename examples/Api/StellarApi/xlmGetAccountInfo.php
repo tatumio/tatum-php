@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_account = "GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H";
 
 try {
+
     /** @var \Tatum\Model\XlmAccount $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->xlmGetAccountInfo($arg_account);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->xlmGetAccountInfo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->stellar()->xlmGetAccountInfo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->stellar()->xlmGetAccountInfo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->stellar()->xlmGetAccountInfo(): %s\n", 
+        $exc->getMessage()
+    );
 }

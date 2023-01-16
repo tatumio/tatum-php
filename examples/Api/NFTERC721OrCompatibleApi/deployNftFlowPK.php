@@ -32,6 +32,7 @@ $arg_deploy_nft_flow_pk = (new \Tatum\Model\DeployNftFlowPK())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -39,8 +40,15 @@ try {
         ->deployNftFlowPK($arg_deploy_nft_flow_pk, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->deployNftFlowPK(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->deployNftFlowPK(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->deployNftFlowPK(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->deployNftFlowPK(): %s\n", 
+        $exc->getMessage()
+    );
 }

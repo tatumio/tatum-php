@@ -22,28 +22,28 @@ $arg_transfer_custodial_wallet_celo_kms = (new \Tatum\Model\TransferCustodialWal
     // The blockchain to work with
     ->setChain('CELO')
     
-    // The gas pump address that transfers the asset; this is the address that you <a href="#operation/PrecalculateGasPumpAddresses">precalculated</a> and <a href="#operation/ActivateGasPumpAddresses">activated</a> earlier and that is assigned to a customer in your custodial application; this is not the "master address"
+    // The gas pump address that transfers the asset; this is the address that you <a href="#operation/P...
     ->setCustodialAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // The blockchain address that receives the asset
     ->setRecipient('0xe242bA5456b782919AFc85687422eEA2cB73B5d3')
     
-    // The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent), <code>2</code> for Multi Tokens (ERC-1155 or equivalent), or <code>3</code> for native blockchain currencies.
+    // The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent),...
     ->setContractType(0)
     
-    // (optional) (Only if the asset is a fungible token, NFT, or Multi Token) The address of the token to transfer. Do not use if the asset is a native blockchain currency.
+    // (optional) (Only if the asset is a fungible token, NFT, or Multi Token) The address of the token to transfer...
     ->setTokenAddress('0x782919AFc85eEA2cB736874225456bB5d3e242bA')
     
-    // (optional) (Only if the asset is a fungible token, Multi Token, or native blockchain currency) The amount of the asset to transfer. Do not use if the asset is an NFT.
+    // (optional) (Only if the asset is a fungible token, Multi Token, or native blockchain currency) The amount of...
     ->setAmount('100000')
     
-    // (optional) (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the asset is a fungible token or native blockchain currency.
+    // (optional) (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the as...
     ->setTokenId('100000')
     
-    // The KMS identifier of the private key of the blockchain address that owns the gas pump address key ("master address")
+    // The KMS identifier of the private key of the blockchain address that owns the gas pump address ke...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) (Only if the signature ID is mnemonic-based) The index of the "master address" that was generated from the mnemonic
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the "master address" that was generated...
     ->setIndex(null)
     
     // The currency to pay for the gas fee
@@ -56,6 +56,7 @@ $arg_transfer_custodial_wallet_celo_kms = (new \Tatum\Model\TransferCustodialWal
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -63,8 +64,15 @@ try {
         ->transferCustodialWalletCeloKMS($arg_transfer_custodial_wallet_celo_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->transferCustodialWalletCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->gasPump()->transferCustodialWalletCeloKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->gasPump()->transferCustodialWalletCeloKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->gasPump()->transferCustodialWalletCeloKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

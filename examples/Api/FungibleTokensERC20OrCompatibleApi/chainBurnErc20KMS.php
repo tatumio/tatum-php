@@ -28,7 +28,7 @@ $arg_chain_burn_erc20_kms = (new \Tatum\Model\ChainBurnErc20KMS())
     // Address of ERC20 token
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) 
@@ -41,6 +41,7 @@ $arg_chain_burn_erc20_kms = (new \Tatum\Model\ChainBurnErc20KMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->chainBurnErc20KMS($arg_chain_burn_erc20_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainBurnErc20KMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainBurnErc20KMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainBurnErc20KMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainBurnErc20KMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

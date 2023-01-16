@@ -23,12 +23,20 @@ $arg_hmac_web_hook = (new \Tatum\Model\HmacWebHook())
     ->setHmacSecret('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6');
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->notificationSubscriptions()
         ->enableWebHookHmac($arg_hmac_web_hook);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->enableWebHookHmac(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->notificationSubscriptions()->enableWebHookHmac(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->notificationSubscriptions()->enableWebHookHmac(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->notificationSubscriptions()->enableWebHookHmac(): %s\n", 
+        $exc->getMessage()
+    );
 }

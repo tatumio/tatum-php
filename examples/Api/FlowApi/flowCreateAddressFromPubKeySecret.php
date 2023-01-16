@@ -29,6 +29,7 @@ $arg_flow_create_address_from_pub_key_secret = (new \Tatum\Model\FlowCreateAddre
     ->setPrivateKey('37afa218d41d9cd6a2c6f2b96d9eaa3ad96c598252bc50e4d45d62f9356a51f8');
 
 try {
+
     /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -36,8 +37,15 @@ try {
         ->flowCreateAddressFromPubKeySecret($arg_flow_create_address_from_pub_key_secret);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowCreateAddressFromPubKeySecret(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->flow()->flowCreateAddressFromPubKeySecret(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->flow()->flowCreateAddressFromPubKeySecret(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->flow()->flowCreateAddressFromPubKeySecret(): %s\n", 
+        $exc->getMessage()
+    );
 }

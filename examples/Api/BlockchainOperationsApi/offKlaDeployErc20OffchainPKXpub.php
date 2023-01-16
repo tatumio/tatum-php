@@ -28,28 +28,29 @@ $arg_deploy_erc20_offchain_pk_xpub = (new \Tatum\Model\DeployErc20OffchainPKXpub
     // Description of the ERC20 token
     ->setDescription('My ERC20 Token')
     
-    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will b...
     ->setBasePair('EUR')
     
-    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
     ->setBaseRate(1)
     
     // (optional) 
     ->setCustomer(null)
     
-    // Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both.
+    // Extended public key (xpub), from which address, where all initial supply will be stored, will be ...
     ->setXpub('xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid')
     
     // Derivation index for xpub to generate specific deposit address.
     ->setDerivationIndex(0)
     
-    // Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Private key, mnemonic or signature Id must be present.
+    // Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Pri...
     ->setPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
     ->setNonce(null);
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->offKlaDeployErc20OffchainPKXpub($arg_deploy_erc20_offchain_pk_xpub);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->offKlaDeployErc20OffchainPKXpub(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->offKlaDeployErc20OffchainPKXpub(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->offKlaDeployErc20OffchainPKXpub(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->offKlaDeployErc20OffchainPKXpub(): %s\n", 
+        $exc->getMessage()
+    );
 }

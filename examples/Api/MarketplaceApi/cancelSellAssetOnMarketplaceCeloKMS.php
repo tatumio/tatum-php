@@ -34,7 +34,7 @@ $arg_cancel_sell_asset_on_marketplace_celo_kms = (new \Tatum\Model\CancelSellAss
     // ID of the listing. It's up to the developer to generate unique ID
     ->setListingId('null')
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
@@ -47,6 +47,7 @@ $arg_cancel_sell_asset_on_marketplace_celo_kms = (new \Tatum\Model\CancelSellAss
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->cancelSellAssetOnMarketplaceCeloKMS($arg_cancel_sell_asset_on_marketplace_celo_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->cancelSellAssetOnMarketplaceCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->cancelSellAssetOnMarketplaceCeloKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->cancelSellAssetOnMarketplaceCeloKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->cancelSellAssetOnMarketplaceCeloKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

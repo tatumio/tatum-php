@@ -31,13 +31,14 @@ $arg_transfer_xlm_blockchain = (new \Tatum\Model\TransferXlmBlockchain())
     // Secret for account. Secret, or signature Id must be present.
     ->setFromSecret('SCVVKNLBHOWBNJYHD3CNROOA2P3K35I5GNTYUHLLMUHMHWQYNEI7LVED')
     
-    // (optional) Set to true, if the destination address is not yet initialized and should be funded for the first time.
+    // (optional) Set to true, if the destination address is not yet initialized and should be funded for the first...
     ->setInitialize(false)
     
-    // (optional) Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number.
+    // (optional) Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HE...
     ->setMessage('12355');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->transferXlmBlockchain($arg_transfer_xlm_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->transferXlmBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->stellar()->transferXlmBlockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->stellar()->transferXlmBlockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->stellar()->transferXlmBlockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

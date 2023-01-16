@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = "1A32A054B04AC9D6814710DDCA416E72C4CD2D78D6C3DFC06CC9369CC4F6B250";
 
 try {
+
     /** @var \Tatum\Model\XrpTx $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->xrpGetTransaction($arg_hash);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->xrpGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xRP()->xrpGetTransaction(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xRP()->xrpGetTransaction(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xRP()->xrpGetTransaction(): %s\n", 
+        $exc->getMessage()
+    );
 }

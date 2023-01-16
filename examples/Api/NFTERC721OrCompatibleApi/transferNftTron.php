@@ -19,7 +19,7 @@ $sdk = new \Tatum\Sdk();
 
 $arg_transfer_nft_tron = (new \Tatum\Model\TransferNftTron())
     
-    // (optional) If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token.
+    // (optional) If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the ...
     ->setValue('1')
     
     // The blockchain to work with
@@ -44,6 +44,7 @@ $arg_transfer_nft_tron = (new \Tatum\Model\TransferNftTron())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->transferNftTron($arg_transfer_nft_tron, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->transferNftTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->transferNftTron(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->transferNftTron(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->transferNftTron(): %s\n", 
+        $exc->getMessage()
+    );
 }

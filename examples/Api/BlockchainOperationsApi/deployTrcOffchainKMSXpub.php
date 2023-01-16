@@ -37,16 +37,16 @@ $arg_deploy_trc_offchain_kms_xpub = (new \Tatum\Model\DeployTrcOffchainKMSXpub()
     // (optional) URL of the project. Applicable for TRC-10 only.
     ->setUrl('https://mytoken.com')
     
-    // Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+    // Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be ...
     ->setBasePair('EUR')
     
-    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
     ->setBaseRate(1)
     
     // (optional) 
     ->setCustomer(null)
     
-    // Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both.
+    // Extended public key (xpub), from which address, where all initial supply will be stored, will be ...
     ->setXpub('0244b3f40c6e570ae0032f6d7be87737a6c4e5314a4a1a82e22d0460a0d0cd794936c61f0c80dc74ace4cd04690d4eeb1aa6555883be006e1748306faa7ed3a26a')
     
     // Derivation index for xpub to generate specific deposit address.
@@ -55,10 +55,11 @@ $arg_deploy_trc_offchain_kms_xpub = (new \Tatum\Model\DeployTrcOffchainKMSXpub()
     // Blockchain address to perform operation from
     ->setFrom('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
     
-    // Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present.
+    // Identifier of the mnemonic / private key associated in signing application. When hash identifies ...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -66,8 +67,15 @@ try {
         ->deployTrcOffchainKMSXpub($arg_deploy_trc_offchain_kms_xpub);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->deployTrcOffchainKMSXpub(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->deployTrcOffchainKMSXpub(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->deployTrcOffchainKMSXpub(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->deployTrcOffchainKMSXpub(): %s\n", 
+        $exc->getMessage()
+    );
 }

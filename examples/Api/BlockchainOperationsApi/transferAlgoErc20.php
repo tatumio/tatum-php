@@ -34,13 +34,14 @@ $arg_transfer_algo_erc20 = (new \Tatum\Model\TransferAlgoErc20())
     // (optional) Compliance check; if the withdrawal is not compliant, it will not be processed
     ->setCompliant(false)
     
-    // (optional) The identifier of the token transfer that is shown on the virtual account for the created transaction
+    // (optional) The identifier of the token transfer that is shown on the virtual account for the created transac...
     ->setPaymentId('1234')
     
     // (optional) The note for the recipient; must not contain spaces
     ->setSenderNote('Helloworld');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->transferAlgoErc20($arg_transfer_algo_erc20);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferAlgoErc20(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferAlgoErc20(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferAlgoErc20(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferAlgoErc20(): %s\n", 
+        $exc->getMessage()
+    );
 }

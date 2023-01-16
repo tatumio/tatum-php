@@ -28,7 +28,7 @@ $arg_bid_on_auction = (new \Tatum\Model\BidOnAuction())
     // (optional) Optional address of the ERC20 token, which will be used as a selling currency of the NFT.
     ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) In case of the ERC20 auction, it's possible to bid on behalf of someone else. This value is the address of the bidder, which should approve spending of the ERC20 tokens for the Auction contract. This could be used for a bidding from the custodial wallet address.
+    // (optional) In case of the ERC20 auction, it's possible to bid on behalf of someone else. This value is the a...
     ->setBidder('0x587422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // ID of the auction.
@@ -47,6 +47,7 @@ $arg_bid_on_auction = (new \Tatum\Model\BidOnAuction())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->bidOnAuction($arg_bid_on_auction);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->bidOnAuction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->auction()->bidOnAuction(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->bidOnAuction(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->auction()->bidOnAuction(): %s\n", 
+        $exc->getMessage()
+    );
 }

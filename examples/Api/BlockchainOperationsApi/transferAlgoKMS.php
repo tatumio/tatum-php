@@ -31,7 +31,7 @@ $arg_transfer_algo_kms = (new \Tatum\Model\TransferAlgoKMS())
     // The transaction fee in Algos
     ->setFee('0.001')
     
-    // The identifier of the secret of the Algorand wallet (account) in the signing application. Secret, or signature Id must be present.
+    // The identifier of the secret of the Algorand wallet (account) in the signing application. Secret,...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
@@ -47,6 +47,7 @@ $arg_transfer_algo_kms = (new \Tatum\Model\TransferAlgoKMS())
     ->setSenderNote('Helloworld');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->transferAlgoKMS($arg_transfer_algo_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferAlgoKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferAlgoKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferAlgoKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferAlgoKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

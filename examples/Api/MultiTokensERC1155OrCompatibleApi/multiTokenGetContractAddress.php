@@ -27,6 +27,7 @@ $arg_hash = "0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7"
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MultiTokenGetContractAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -34,8 +35,15 @@ try {
         ->multiTokenGetContractAddress($arg_chain, $arg_hash, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -22,13 +22,13 @@ $arg_withdrawal = (new \Tatum\Model\Withdrawal())
     // Sender account ID
     ->setSenderAccountId('5e68c66581f2ee32bc354087')
     
-    // Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
+    // Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of...
     ->setAddress('mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7')
     
     // Amount to be withdrawn to blockchain.
     ->setAmount('0.001')
     
-    // (optional) <p>Used to parametrize withdrawal. Used for XRP withdrawal to define destination tag of recipient, or XLM memo of the recipient, if needed.<br/> For Bitcoin, Litecoin, Bitcoin Cash, used as a change address for left coins from transaction.</p>
+    // (optional) <p>Used to parametrize withdrawal. Used for XRP withdrawal to define destination tag of recipient...
     ->setAttr('12345')
     
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
@@ -37,7 +37,7 @@ $arg_withdrawal = (new \Tatum\Model\Withdrawal())
     // Fee to be submitted as a transaction fee to blockchain.
     ->setFee('0.0005')
     
-    // (optional) For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
+    // (optional) For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts...
     ->setMultipleAmounts(null)
     
     // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
@@ -47,6 +47,7 @@ $arg_withdrawal = (new \Tatum\Model\Withdrawal())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\WithdrawalResponse $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->storeWithdrawal($arg_withdrawal);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->withdrawal()->storeWithdrawal(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->withdrawal()->storeWithdrawal(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->withdrawal()->storeWithdrawal(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->withdrawal()->storeWithdrawal(): %s\n", 
+        $exc->getMessage()
+    );
 }

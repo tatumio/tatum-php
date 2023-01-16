@@ -27,6 +27,7 @@ $arg_offset = 0;
 $arg_address = 'address_example';
 
 try {
+
     /** @var \Tatum\Model\Subscription[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -34,8 +35,15 @@ try {
         ->getSubscriptions($arg_page_size, $arg_offset, $arg_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->getSubscriptions(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->notificationSubscriptions()->getSubscriptions(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->notificationSubscriptions()->getSubscriptions(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->notificationSubscriptions()->getSubscriptions(): %s\n", 
+        $exc->getMessage()
+    );
 }

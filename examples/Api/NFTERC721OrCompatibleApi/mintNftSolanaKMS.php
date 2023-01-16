@@ -28,7 +28,7 @@ $arg_mint_nft_solana_kms = (new \Tatum\Model\MintNftSolanaKMS())
     // The blockchain address that will pay the fee for the transaction
     ->setFrom('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
     
-    // The KMS identifier of the private key of the blockchain address that will pay the fee for the transaction
+    // The KMS identifier of the private key of the blockchain address that will pay the fee for the tra...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // 
@@ -38,6 +38,7 @@ $arg_mint_nft_solana_kms = (new \Tatum\Model\MintNftSolanaKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintNftExpress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->mintNftSolanaKMS($arg_mint_nft_solana_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintNftSolanaKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintNftSolanaKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintNftSolanaKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintNftSolanaKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

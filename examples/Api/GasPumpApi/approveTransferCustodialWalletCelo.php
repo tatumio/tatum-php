@@ -28,16 +28,16 @@ $arg_approve_transfer_custodial_wallet_celo = (new \Tatum\Model\ApproveTransferC
     // The blockchain address to allow the transfer of the asset from the gas pump address
     ->setSpender('0xe242bA5456b782919AFc85687422eEA2cB73B5d3')
     
-    // The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent), or <code>2</code> for Multi Tokens (ERC-1155 or equivalent).
+    // The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent),...
     ->setContractType(0)
     
     // The address of the asset to transfer
     ->setTokenAddress('0x782919AFc85eEA2cB736874225456bB5d3e242bA')
     
-    // (optional) (Only if the asset is a fungible token or Multi Token) The amount of the asset to transfer. Do not use if the asset is an NFT.
+    // (optional) (Only if the asset is a fungible token or Multi Token) The amount of the asset to transfer. Do no...
     ->setAmount('100000')
     
-    // (optional) (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the asset is a fungible token.
+    // (optional) (Only if the asset is a Multi Token or NFT) The ID of the token to transfer. Do not use if the as...
     ->setTokenId('100000')
     
     // The private key of the blockchain address that owns the gas pump address ("master address")
@@ -53,6 +53,7 @@ $arg_approve_transfer_custodial_wallet_celo = (new \Tatum\Model\ApproveTransferC
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -60,8 +61,15 @@ try {
         ->approveTransferCustodialWalletCelo($arg_approve_transfer_custodial_wallet_celo);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->approveTransferCustodialWalletCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->gasPump()->approveTransferCustodialWalletCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->gasPump()->approveTransferCustodialWalletCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->gasPump()->approveTransferCustodialWalletCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

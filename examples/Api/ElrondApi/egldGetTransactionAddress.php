@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_address = "erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7";
 
 try {
+
     /** @var object[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->egldGetTransactionAddress($arg_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->elrond()->egldGetTransactionAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->elrond()->egldGetTransactionAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->elrond()->egldGetTransactionAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->elrond()->egldGetTransactionAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

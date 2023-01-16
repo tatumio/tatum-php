@@ -37,19 +37,20 @@ $arg_unblock_amount = (new \Tatum\Model\UnblockAmount())
     // (optional) For bookkeeping to distinct transaction purpose.
     ->setTransactionCode('1_01_EXTERNAL_CODE')
     
-    // (optional) Payment ID, External identifier of the payment, which can be used to pair transactions within Tatum accounts.
+    // (optional) Payment ID, External identifier of the payment, which can be used to pair transactions within Tat...
     ->setPaymentId('9625')
     
     // (optional) Note visible to both, sender and recipient
     ->setRecipientNote('Private note')
     
-    // (optional) Exchange rate of the base pair. Only applicable for Tatum's Virtual currencies Ledger transactions. Override default exchange rate for the Virtual Currency.
+    // (optional) Exchange rate of the base pair. Only applicable for Tatum's Virtual currencies Ledger transaction...
     ->setBaseRate(1)
     
     // (optional) Note visible to sender
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransactionResult $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->unblockAmountWithTransaction($arg_id, $arg_unblock_amount);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->unblockAmountWithTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->account()->unblockAmountWithTransaction(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->account()->unblockAmountWithTransaction(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->account()->unblockAmountWithTransaction(): %s\n", 
+        $exc->getMessage()
+    );
 }

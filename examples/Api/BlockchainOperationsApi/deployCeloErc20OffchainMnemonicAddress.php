@@ -20,6 +20,7 @@ $sdk = new \Tatum\Sdk();
 $arg_deploy_celo_erc20_offchain_mnemonic_address = (new \Tatum\Model\DeployCeloErc20OffchainMnemonicAddress());
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -27,8 +28,15 @@ try {
         ->deployCeloErc20OffchainMnemonicAddress($arg_deploy_celo_erc20_offchain_mnemonic_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->deployCeloErc20OffchainMnemonicAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->deployCeloErc20OffchainMnemonicAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->deployCeloErc20OffchainMnemonicAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->deployCeloErc20OffchainMnemonicAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

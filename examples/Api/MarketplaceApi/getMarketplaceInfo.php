@@ -24,6 +24,7 @@ $arg_chain = "SOL";
 $arg_contract_address = "3MgkEwYY4b8iSX2yMLnbQ7n8KzNRKNAgTGJwVbEcKkUz";
 
 try {
+
     /** @var \Tatum\Model\GetMarketplaceInfo200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->getMarketplaceInfo($arg_chain, $arg_contract_address);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->getMarketplaceInfo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->getMarketplaceInfo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->getMarketplaceInfo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->getMarketplaceInfo(): %s\n", 
+        $exc->getMessage()
+    );
 }

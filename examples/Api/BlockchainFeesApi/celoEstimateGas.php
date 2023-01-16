@@ -28,10 +28,11 @@ $arg_celo_estimate_gas = (new \Tatum\Model\CeloEstimateGas())
     // Amount to be sent.
     ->setAmount('100000')
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74');
 
 try {
+
     /** @var \Tatum\Model\CeloEstimateGas200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -39,8 +40,15 @@ try {
         ->celoEstimateGas($arg_celo_estimate_gas);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->celoEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainFees()->celoEstimateGas(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->celoEstimateGas(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainFees()->celoEstimateGas(): %s\n", 
+        $exc->getMessage()
+    );
 }

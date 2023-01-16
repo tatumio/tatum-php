@@ -28,7 +28,7 @@ $arg_burn_nft_kms = (new \Tatum\Model\BurnNftKMS())
     // The blockchain address of the NFT to burn
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) (Only if the signature ID is mnemonic-based) The index of the address to pay the transaction fee that was generated from the mnemonic
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the address to pay the transaction fee ...
     ->setIndex(null)
     
     // The KMS identifier of the private key of the blockchain address from which the fee will be deducted
@@ -44,6 +44,7 @@ $arg_burn_nft_kms = (new \Tatum\Model\BurnNftKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->burnNftKMS($arg_burn_nft_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->burnNftKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->burnNftKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->burnNftKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->burnNftKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

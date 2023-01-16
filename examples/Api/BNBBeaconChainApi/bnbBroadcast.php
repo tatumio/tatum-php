@@ -26,6 +26,7 @@ $arg_broadcast = (new \Tatum\Model\Broadcast())
     ->setSignatureId('5e68c66581f2ee32bc354087');
 
 try {
+
     /** @var \Tatum\Model\TransactionHash $response */
     $response = $sdk->mainnet()
         ->api()
@@ -33,8 +34,15 @@ try {
         ->bnbBroadcast($arg_broadcast);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->bNBBeaconChain()->bnbBroadcast(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->bNBBeaconChain()->bnbBroadcast(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->bNBBeaconChain()->bnbBroadcast(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->bNBBeaconChain()->bnbBroadcast(): %s\n", 
+        $exc->getMessage()
+    );
 }

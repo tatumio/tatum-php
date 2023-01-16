@@ -21,12 +21,20 @@ $sdk = new \Tatum\Sdk();
 $arg_id = "5e6be89ee6aa436299950c3f";
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->account()
         ->deleteAllBlockAmount($arg_id);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->deleteAllBlockAmount(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->account()->deleteAllBlockAmount(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->account()->deleteAllBlockAmount(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->account()->deleteAllBlockAmount(): %s\n", 
+        $exc->getMessage()
+    );
 }

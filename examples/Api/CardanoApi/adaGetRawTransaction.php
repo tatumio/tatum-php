@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = "1451692ebbfbea1a2d2ec6fe6782596b6aa2e46c0589d04c406f491b5b46bc6a";
 
 try {
+
     /** @var \Tatum\Model\AdaTx $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->adaGetRawTransaction($arg_hash);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->cardano()->adaGetRawTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->cardano()->adaGetRawTransaction(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->cardano()->adaGetRawTransaction(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->cardano()->adaGetRawTransaction(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -38,6 +38,7 @@ $arg_update_fee_recipient = (new \Tatum\Model\UpdateFeeRecipient())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->bloAucUpdateFeeRecipient($arg_update_fee_recipient);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->bloAucUpdateFeeRecipient(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->auction()->bloAucUpdateFeeRecipient(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->bloAucUpdateFeeRecipient(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->auction()->bloAucUpdateFeeRecipient(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -28,7 +28,7 @@ $arg_update_cashback_value_for_author_nft_celo = (new \Tatum\Model\UpdateCashbac
     // The blockchain address of the NFT to update royalty information for
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // The new value of the royalty cashback to be set for the author of the NFT; to disable the royalties for the NFT completely, set this parameter to 0
+    // The new value of the royalty cashback to be set for the author of the NFT; to disable the royalti...
     ->setCashbackValue('0.1')
     
     // The currency in which the transaction fee will be paid
@@ -44,6 +44,7 @@ $arg_update_cashback_value_for_author_nft_celo = (new \Tatum\Model\UpdateCashbac
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->updateCashbackValueForAuthorNftCelo($arg_update_cashback_value_for_author_nft_celo, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -22,7 +22,7 @@ $arg_transfer_ltc_key_pair = (new \Tatum\Model\TransferLtcKeyPair())
     // Sender account ID
     ->setSenderAccountId('5e68c66581f2ee32bc354087')
     
-    // Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
+    // Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of...
     ->setAddress('mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7')
     
     // Amount to be withdrawn to blockchain.
@@ -31,16 +31,16 @@ $arg_transfer_ltc_key_pair = (new \Tatum\Model\TransferLtcKeyPair())
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
     ->setCompliant(false)
     
-    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 0.0005 LTC is used. Minimum fee is 0.00001 LTC.
+    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 0.0005 L...
     ->setFee('0.0005')
     
-    // (optional) For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
+    // (optional) For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts...
     ->setMultipleAmounts(null)
     
-    // Array of assigned blockchain addresses with their private keys. Either mnemonic, keyPair or signature Id must be present - depends on the type of account and xpub. Tatum KMS does not support keyPair type of off-chain transaction, only mnemonic based.
+    // Array of assigned blockchain addresses with their private keys. Either mnemonic, keyPair or signa...
     ->setKeyPair(null)
     
-    // Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr must be used.
+    // Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr ...
     ->setAttr('null')
     
     // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
@@ -50,6 +50,7 @@ $arg_transfer_ltc_key_pair = (new \Tatum\Model\TransferLtcKeyPair())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->transferLtcKeyPair($arg_transfer_ltc_key_pair);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferLtcKeyPair(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferLtcKeyPair(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferLtcKeyPair(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferLtcKeyPair(): %s\n", 
+        $exc->getMessage()
+    );
 }

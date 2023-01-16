@@ -29,6 +29,7 @@ $arg_create_subscription_partial_trade_match = (new \Tatum\Model\CreateSubscript
 $arg_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\Id $response */
     $response = $sdk->mainnet()
         ->api()
@@ -36,8 +37,15 @@ try {
         ->createSubscriptionPartialTradeMatch($arg_create_subscription_partial_trade_match, $arg_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->createSubscriptionPartialTradeMatch(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->notificationSubscriptions()->createSubscriptionPartialTradeMatch(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->notificationSubscriptions()->createSubscriptionPartialTradeMatch(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->notificationSubscriptions()->createSubscriptionPartialTradeMatch(): %s\n", 
+        $exc->getMessage()
+    );
 }

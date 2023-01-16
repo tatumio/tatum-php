@@ -28,7 +28,7 @@ $arg_deploy_multi_token_kms = (new \Tatum\Model\DeployMultiTokenKMS())
     // (optional) True if the contract is publicMint type
     ->setPublicMint(true)
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) Nonce to be set to transaction. If not present, last known nonce will be used.
@@ -41,6 +41,7 @@ $arg_deploy_multi_token_kms = (new \Tatum\Model\DeployMultiTokenKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->deployMultiTokenKMS($arg_deploy_multi_token_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->deployMultiTokenKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->multiTokensERC1155OrCompatible()->deployMultiTokenKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->multiTokensERC1155OrCompatible()->deployMultiTokenKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->multiTokensERC1155OrCompatible()->deployMultiTokenKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

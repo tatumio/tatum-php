@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_chain = "BTC";
 
 try {
+
     /** @var \Tatum\Model\BlockchainFee $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->getBlockchainFee($arg_chain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->getBlockchainFee(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainFees()->getBlockchainFee(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->getBlockchainFee(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainFees()->getBlockchainFee(): %s\n", 
+        $exc->getMessage()
+    );
 }

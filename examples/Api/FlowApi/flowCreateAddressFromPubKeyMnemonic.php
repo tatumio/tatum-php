@@ -32,6 +32,7 @@ $arg_flow_create_address_from_pub_key_mnemonic = (new \Tatum\Model\FlowCreateAdd
     ->setIndex(null);
 
 try {
+
     /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -39,8 +40,15 @@ try {
         ->flowCreateAddressFromPubKeyMnemonic($arg_flow_create_address_from_pub_key_mnemonic);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowCreateAddressFromPubKeyMnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->flow()->flowCreateAddressFromPubKeyMnemonic(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->flow()->flowCreateAddressFromPubKeyMnemonic(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->flow()->flowCreateAddressFromPubKeyMnemonic(): %s\n", 
+        $exc->getMessage()
+    );
 }

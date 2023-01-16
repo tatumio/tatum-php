@@ -34,7 +34,7 @@ $arg_transfer_nft_flow_kms = (new \Tatum\Model\TransferNftFlowKMS())
     // Blockchain address of the sender account.
     ->setAccount('0xc1b45bc27b9c61c3')
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) Derivation index of sender address.
@@ -44,6 +44,7 @@ $arg_transfer_nft_flow_kms = (new \Tatum\Model\TransferNftFlowKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->transferNftFlowKMS($arg_transfer_nft_flow_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->transferNftFlowKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->transferNftFlowKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->transferNftFlowKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->transferNftFlowKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -24,6 +24,7 @@ $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\OneBalance $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->oneGetBalance($arg_address, $arg_shard_id);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->harmony()->oneGetBalance(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->harmony()->oneGetBalance(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->harmony()->oneGetBalance(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->harmony()->oneGetBalance(): %s\n", 
+        $exc->getMessage()
+    );
 }

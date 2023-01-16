@@ -21,12 +21,20 @@ $sdk = new \Tatum\Sdk();
 $arg_id = 'id_example';
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->customer()
         ->deactivateCustomer($arg_id);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->customer()->deactivateCustomer(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->customer()->deactivateCustomer(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->customer()->deactivateCustomer(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->customer()->deactivateCustomer(): %s\n", 
+        $exc->getMessage()
+    );
 }

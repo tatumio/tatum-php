@@ -34,7 +34,7 @@ $arg_settle_auction_celo_kms = (new \Tatum\Model\SettleAuctionCeloKMS())
     // The KMS identifier of the private key of the blockchain address from which the fee will be deducted
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be ...
     ->setIndex(null)
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -44,6 +44,7 @@ $arg_settle_auction_celo_kms = (new \Tatum\Model\SettleAuctionCeloKMS())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->settleAuctionCeloKMS($arg_settle_auction_celo_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->settleAuctionCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->auction()->settleAuctionCeloKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->settleAuctionCeloKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->auction()->settleAuctionCeloKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

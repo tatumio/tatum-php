@@ -28,19 +28,19 @@ $arg_deploy_erc20_offchain_pk_address = (new \Tatum\Model\DeployErc20OffchainPKA
     // Description of the ERC20 token
     ->setDescription('My ERC20 Token')
     
-    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
+    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will b...
     ->setBasePair('EUR')
     
-    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
     ->setBaseRate(1)
     
     // (optional) 
     ->setCustomer(null)
     
-    // Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
+    // Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivati...
     ->setAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Private key, mnemonic or signature Id must be present.
+    // Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Pri...
     ->setPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -50,6 +50,7 @@ $arg_deploy_erc20_offchain_pk_address = (new \Tatum\Model\DeployErc20OffchainPKA
 $arg_shard_id = 0;
 
 try {
+
     /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->offOneDeployErc20OffchainPKAddress($arg_deploy_erc20_offchain_pk_address, $arg_shard_id);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->offOneDeployErc20OffchainPKAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->offOneDeployErc20OffchainPKAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->offOneDeployErc20OffchainPKAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->offOneDeployErc20OffchainPKAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

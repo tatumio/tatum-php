@@ -31,13 +31,14 @@ $arg_transfer_egld_blockchain = (new \Tatum\Model\TransferEgldBlockchain())
     // (optional) 
     ->setFee(null)
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74')
     
     // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('0cd8e6217b4a218807b858ffb508483cdcdadbb7a21196727f764a510a692760');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->transferEgldBlockchain($arg_transfer_egld_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->elrond()->transferEgldBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->elrond()->transferEgldBlockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->elrond()->transferEgldBlockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->elrond()->transferEgldBlockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

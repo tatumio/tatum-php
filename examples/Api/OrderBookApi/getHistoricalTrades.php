@@ -36,6 +36,7 @@ $arg_count = true;
 $arg_types = array('types_example');
 
 try {
+
     /** @var \Tatum\Model\Trade[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -43,8 +44,15 @@ try {
         ->getHistoricalTrades($arg_page_size, $arg_id, $arg_pair, $arg_offset, $arg_count, $arg_types);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->orderBook()->getHistoricalTrades(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->orderBook()->getHistoricalTrades(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->orderBook()->getHistoricalTrades(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->orderBook()->getHistoricalTrades(): %s\n", 
+        $exc->getMessage()
+    );
 }

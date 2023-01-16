@@ -29,6 +29,7 @@ $arg_create_subscription_tx_in_the_block = (new \Tatum\Model\CreateSubscriptionT
 $arg_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\Id $response */
     $response = $sdk->mainnet()
         ->api()
@@ -36,8 +37,15 @@ try {
         ->createSubscriptionTxInTheBlock($arg_create_subscription_tx_in_the_block, $arg_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->createSubscriptionTxInTheBlock(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->notificationSubscriptions()->createSubscriptionTxInTheBlock(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->notificationSubscriptions()->createSubscriptionTxInTheBlock(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->notificationSubscriptions()->createSubscriptionTxInTheBlock(): %s\n", 
+        $exc->getMessage()
+    );
 }

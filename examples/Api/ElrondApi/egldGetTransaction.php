@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = "99996224823736c1e9b8484ed74c1573049478f871d6f94b86811fb1c7b2addd";
 
 try {
+
     /** @var \Tatum\Model\EgldTx $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->egldGetTransaction($arg_hash);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->elrond()->egldGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->elrond()->egldGetTransaction(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->elrond()->egldGetTransaction(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->elrond()->egldGetTransaction(): %s\n", 
+        $exc->getMessage()
+    );
 }

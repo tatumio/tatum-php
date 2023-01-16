@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_mnemonic = 'police hat quantum advance enroll glove thank build warfare inject invite obscure enable inflict seek web cable answer chest suspect comfort tent source seven';
 
 try {
+
     /** @var \Tatum\Model\AlgoWallet $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->algorandGenerateWallet($arg_mnemonic);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->algorandGenerateWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->algorand()->algorandGenerateWallet(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->algorand()->algorandGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->algorand()->algorandGenerateWallet(): %s\n", 
+        $exc->getMessage()
+    );
 }

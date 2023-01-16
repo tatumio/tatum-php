@@ -30,6 +30,7 @@ $arg_offset = 0;
 $arg_account_code = "AC_1011_B";
 
 try {
+
     /** @var \Tatum\Model\Account[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -37,8 +38,15 @@ try {
         ->getAccountsByCustomerId($arg_page_size, $arg_id, $arg_offset, $arg_account_code);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->account()->getAccountsByCustomerId(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->account()->getAccountsByCustomerId(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->account()->getAccountsByCustomerId(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->account()->getAccountsByCustomerId(): %s\n", 
+        $exc->getMessage()
+    );
 }

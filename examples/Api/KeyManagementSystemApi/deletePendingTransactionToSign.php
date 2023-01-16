@@ -24,12 +24,20 @@ $arg_id = 'id_example';
 $arg_revert = true;
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->keyManagementSystem()
         ->deletePendingTransactionToSign($arg_id, $arg_revert);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->keyManagementSystem()->deletePendingTransactionToSign(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->keyManagementSystem()->deletePendingTransactionToSign(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->keyManagementSystem()->deletePendingTransactionToSign(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->keyManagementSystem()->deletePendingTransactionToSign(): %s\n", 
+        $exc->getMessage()
+    );
 }

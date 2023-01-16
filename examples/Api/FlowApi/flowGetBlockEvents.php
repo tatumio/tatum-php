@@ -27,6 +27,7 @@ $arg_from = 654321;
 $arg_to = 654326;
 
 try {
+
     /** @var \Tatum\Model\FlowEvent[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -34,8 +35,15 @@ try {
         ->flowGetBlockEvents($arg_type, $arg_from, $arg_to);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowGetBlockEvents(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->flow()->flowGetBlockEvents(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->flow()->flowGetBlockEvents(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->flow()->flowGetBlockEvents(): %s\n", 
+        $exc->getMessage()
+    );
 }

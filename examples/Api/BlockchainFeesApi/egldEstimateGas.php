@@ -28,10 +28,11 @@ $arg_transaction_fee_egld_blockchain = (new \Tatum\Model\TransactionFeeEgldBlock
     // Value to be sent.
     ->setValue('0.1')
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74');
 
 try {
+
     /** @var \Tatum\Model\EgldEstimateGas200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -39,8 +40,15 @@ try {
         ->egldEstimateGas($arg_transaction_fee_egld_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->egldEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainFees()->egldEstimateGas(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->egldEstimateGas(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainFees()->egldEstimateGas(): %s\n", 
+        $exc->getMessage()
+    );
 }

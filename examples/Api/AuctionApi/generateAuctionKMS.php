@@ -28,7 +28,7 @@ $arg_generate_auction_kms = (new \Tatum\Model\GenerateAuctionKMS())
     // Percentage of the selling amount of the NFT asset. 100 - 1%
     ->setAuctionFee(150)
     
-    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
+    // Identifier of the private key associated in signing application. Private key, or signature Id mus...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
@@ -41,6 +41,7 @@ $arg_generate_auction_kms = (new \Tatum\Model\GenerateAuctionKMS())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->generateAuctionKMS($arg_generate_auction_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->generateAuctionKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->auction()->generateAuctionKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->generateAuctionKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->auction()->generateAuctionKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

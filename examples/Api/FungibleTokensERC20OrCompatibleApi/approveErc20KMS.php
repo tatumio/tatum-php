@@ -31,7 +31,7 @@ $arg_approve_erc20_kms = (new \Tatum\Model\ApproveErc20KMS())
     // The amount of the tokens allowed to be transferred or burnt
     ->setAmount('100000')
     
-    // The KMS identifier of the private key of the smart contract's owner; the fee will be deducted from the owner's address
+    // The KMS identifier of the private key of the smart contract's owner; the fee will be deducted fro...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) 
@@ -44,6 +44,7 @@ $arg_approve_erc20_kms = (new \Tatum\Model\ApproveErc20KMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->approveErc20KMS($arg_approve_erc20_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->approveErc20KMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->fungibleTokensERC20OrCompatible()->approveErc20KMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->fungibleTokensERC20OrCompatible()->approveErc20KMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->fungibleTokensERC20OrCompatible()->approveErc20KMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

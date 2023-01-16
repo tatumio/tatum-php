@@ -37,7 +37,7 @@ $arg_approve_nft_spending_celo_kms = (new \Tatum\Model\ApproveNftSpendingCeloKMS
     // The KMS identifier of the private key of the blockchain address from which the fee will be deducted
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be ...
     ->setIndex(null)
     
     // The currency in which the transaction fee will be paid - CELO - CUSD - CEUR
@@ -50,6 +50,7 @@ $arg_approve_nft_spending_celo_kms = (new \Tatum\Model\ApproveNftSpendingCeloKMS
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->approveNftSpendingCeloKMS($arg_approve_nft_spending_celo_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->auction()->approveNftSpendingCeloKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->auction()->approveNftSpendingCeloKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->auction()->approveNftSpendingCeloKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->auction()->approveNftSpendingCeloKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

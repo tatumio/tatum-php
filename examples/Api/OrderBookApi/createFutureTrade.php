@@ -37,7 +37,7 @@ $arg_create_future_trade = (new \Tatum\Model\CreateFutureTrade())
     // ID of the account of the currency 2 trade currency
     ->setCurrency2AccountId('7c21ed165e294db78b95f0f1')
     
-    // (optional) ID of the account where fee will be paid, if any. If trade is a BUY or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId, and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have same currency as a currency of currency1AccountId.
+    // (optional) ID of the account where fee will be paid, if any. If trade is a BUY or FUTURE_BUY type, feeAccoun...
     ->setFeeAccountId('7c21ed165e294db78b95f0f1')
     
     // (optional) Percentage of the trade amount to be paid as a fee.
@@ -47,6 +47,7 @@ $arg_create_future_trade = (new \Tatum\Model\CreateFutureTrade())
     ->setAttr(null);
 
 try {
+
     /** @var \Tatum\Model\Id $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->createFutureTrade($arg_create_future_trade);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->orderBook()->createFutureTrade(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->orderBook()->createFutureTrade(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->orderBook()->createFutureTrade(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->orderBook()->createFutureTrade(): %s\n", 
+        $exc->getMessage()
+    );
 }

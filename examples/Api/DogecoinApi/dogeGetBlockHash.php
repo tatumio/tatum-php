@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_i = 1234314;
 
 try {
+
     /** @var \Tatum\Model\LtcGetBlockHash200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->dogeGetBlockHash($arg_i);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->dogecoin()->dogeGetBlockHash(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->dogecoin()->dogeGetBlockHash(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->dogecoin()->dogeGetBlockHash(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->dogecoin()->dogeGetBlockHash(): %s\n", 
+        $exc->getMessage()
+    );
 }

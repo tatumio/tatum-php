@@ -71,6 +71,7 @@ $arg_offset = 0;
 $arg_count = true;
 
 try {
+
     /** @var \Tatum\Model\GetTransactionsByAccountId200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -78,8 +79,15 @@ try {
         ->getTransactions($arg_transaction_filter_ledger, $arg_page_size, $arg_offset, $arg_count);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->transaction()->getTransactions(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->transaction()->getTransactions(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->transaction()->getTransactions(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->transaction()->getTransactions(): %s\n", 
+        $exc->getMessage()
+    );
 }

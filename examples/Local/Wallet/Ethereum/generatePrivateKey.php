@@ -35,5 +35,8 @@ try {
     var_dump($result);
 
 } catch (\Exception $exc) {
-    echo 'Exception when calling local()->wallet()->ethereum()->generatePrivateKey(): ', $exc->getMessage(), PHP_EOL;
+    echo sprintf(
+        "Exception when calling local()->wallet()->ethereum()->generatePrivateKey(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_mnemonic = 'police hat quantum advance enroll glove thank build warfare inject invite obscure enable inflict seek web cable answer chest suspect comfort tent source seven';
 
 try {
+
     /** @var \Tatum\Model\Wallet $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->kcsGenerateWallet($arg_mnemonic);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->kuCoin()->kcsGenerateWallet(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->kuCoin()->kcsGenerateWallet(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->kuCoin()->kcsGenerateWallet(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->kuCoin()->kcsGenerateWallet(): %s\n", 
+        $exc->getMessage()
+    );
 }

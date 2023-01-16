@@ -25,16 +25,24 @@ $arg_create_xrp_asset = (new \Tatum\Model\CreateXrpAsset())
     // Asset name.
     ->setToken('DA39A3EE5E6B4B0D3255BFEF95601890AFD80709')
     
-    // Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR.
+    // Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOK...
     ->setBasePair('EUR');
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->xrpAssetOffchain($arg_create_xrp_asset);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->xrpAssetOffchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->xrpAssetOffchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->xrpAssetOffchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->xrpAssetOffchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

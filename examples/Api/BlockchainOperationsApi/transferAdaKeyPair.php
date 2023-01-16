@@ -31,13 +31,13 @@ $arg_transfer_ada_key_pair = (new \Tatum\Model\TransferAdaKeyPair())
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
     ->setCompliant(false)
     
-    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 0.5 ADA is used.
+    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 0.5 ADA ...
     ->setFee('0.5')
     
-    // Array of assigned blockchain addresses with their private keys. Either mnemonic, keyPair or signature Id must be present - depends on the type of account and xpub. Tatum KMS does not support keyPair type of off-chain transaction, only mnemonic based.
+    // Array of assigned blockchain addresses with their private keys. Either mnemonic, keyPair or signa...
     ->setKeyPair(null)
     
-    // Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr must be used.
+    // Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr ...
     ->setAttr('null')
     
     // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
@@ -47,6 +47,7 @@ $arg_transfer_ada_key_pair = (new \Tatum\Model\TransferAdaKeyPair())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->transferAdaKeyPair($arg_transfer_ada_key_pair);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferAdaKeyPair(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferAdaKeyPair(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferAdaKeyPair(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferAdaKeyPair(): %s\n", 
+        $exc->getMessage()
+    );
 }

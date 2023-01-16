@@ -41,6 +41,7 @@ $arg_estimate_fee_batch_mint_nft = (new \Tatum\Model\EstimateFeeBatchMintNft())
     ->setUrls(null);
 
 try {
+
     /** @var \Tatum\Model\EstimateFee200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->estimateFeeBatchMintNft($arg_estimate_fee_batch_mint_nft);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->estimateFeeBatchMintNft(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainFees()->estimateFeeBatchMintNft(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->estimateFeeBatchMintNft(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainFees()->estimateFeeBatchMintNft(): %s\n", 
+        $exc->getMessage()
+    );
 }

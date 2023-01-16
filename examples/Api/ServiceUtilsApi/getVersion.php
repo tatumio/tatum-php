@@ -18,6 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 try {
+
     /** @var \Tatum\Model\GetVersion200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -25,8 +26,15 @@ try {
         ->getVersion();
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->serviceUtils()->getVersion(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->serviceUtils()->getVersion(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->serviceUtils()->getVersion(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->serviceUtils()->getVersion(): %s\n", 
+        $exc->getMessage()
+    );
 }

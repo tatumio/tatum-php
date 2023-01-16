@@ -408,11 +408,11 @@ Body: ( binary data )
 ```
 </details>
 
-> ===
+> 🐛
 > 
 > Providing these logs to [Tatum Support](https://discord.com/invite/tatum) can help us identify and fix issues faster.
 > 
-> ===
+> 🦋
 
 [badge-downloads]: https://img.shields.io/packagist/dt/tatumio/tatum-php.svg?style=flat&colorB=green
 [badge-release]: https://img.shields.io/packagist/v/tatumio/tatum-php.svg?style=flat&label=release&color=blue

@@ -27,6 +27,7 @@ $arg_address = "2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb";
 $arg_index = 1;
 
 try {
+
     /** @var \Tatum\Model\Address $response */
     $response = $sdk->mainnet()
         ->api()
@@ -34,8 +35,15 @@ try {
         ->assignAddress($arg_id, $arg_address, $arg_index);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainAddresses()->assignAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainAddresses()->assignAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainAddresses()->assignAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainAddresses()->assignAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

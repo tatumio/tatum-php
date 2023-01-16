@@ -34,7 +34,7 @@ $arg_transfer_sol = (new \Tatum\Model\TransferSol())
     // Private key for account. Private key, or signature Id must be present.
     ->setPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv')
     
-    // (optional) Fee to be charged for the operation. For SOL, fee is decided by the blockchain, but default SOL fee is 0.000005. This fee will be only charged on top of the withdrawal amount to the virtual account.
+    // (optional) Fee to be charged for the operation. For SOL, fee is decided by the blockchain, but default SOL f...
     ->setFee('10000')
     
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
@@ -47,6 +47,7 @@ $arg_transfer_sol = (new \Tatum\Model\TransferSol())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->transferSol($arg_transfer_sol);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferSol(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferSol(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferSol(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferSol(): %s\n", 
+        $exc->getMessage()
+    );
 }

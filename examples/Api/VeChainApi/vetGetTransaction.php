@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = "0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7";
 
 try {
+
     /** @var \Tatum\Model\VetTx $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->vetGetTransaction($arg_hash);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->veChain()->vetGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->veChain()->vetGetTransaction(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->veChain()->vetGetTransaction(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->veChain()->vetGetTransaction(): %s\n", 
+        $exc->getMessage()
+    );
 }

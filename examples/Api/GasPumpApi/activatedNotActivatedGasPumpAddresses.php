@@ -24,6 +24,7 @@ $arg_chain = "ETH";
 $arg_tx_id = "0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326";
 
 try {
+
     /** @var \Tatum\Model\GasPumpTrxOut $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->activatedNotActivatedGasPumpAddresses($arg_chain, $arg_tx_id);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->activatedNotActivatedGasPumpAddresses(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->gasPump()->activatedNotActivatedGasPumpAddresses(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->gasPump()->activatedNotActivatedGasPumpAddresses(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->gasPump()->activatedNotActivatedGasPumpAddresses(): %s\n", 
+        $exc->getMessage()
+    );
 }

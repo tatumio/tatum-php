@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_id = "QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj";
 
 try {
+
     /** @var \SplFileObject $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->getIPFSData($arg_id);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->iPFS()->getIPFSData(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->iPFS()->getIPFSData(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->iPFS()->getIPFSData(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->iPFS()->getIPFSData(): %s\n", 
+        $exc->getMessage()
+    );
 }

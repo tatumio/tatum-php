@@ -19,7 +19,7 @@ $sdk = new \Tatum\Sdk();
 
 $arg_transfer_kcs_blockchain = (new \Tatum\Model\TransferKcsBlockchain())
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74')
     
     // (optional) Nonce to be set to Kcs transaction. If not present, last known nonce will be used.
@@ -28,7 +28,7 @@ $arg_transfer_kcs_blockchain = (new \Tatum\Model\TransferKcsBlockchain())
     // Blockchain address to send assets
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // Currency to transfer from Kcs Blockchain Account. ERC20 tokens USDC and USDT are available only for mainnet use.
+    // Currency to transfer from Kcs Blockchain Account. ERC20 tokens USDC and USDT are available only f...
     ->setCurrency('KCS')
     
     // (optional) 
@@ -41,6 +41,7 @@ $arg_transfer_kcs_blockchain = (new \Tatum\Model\TransferKcsBlockchain())
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -48,8 +49,15 @@ try {
         ->transferKcsBlockchain($arg_transfer_kcs_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->kuCoin()->transferKcsBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->kuCoin()->transferKcsBlockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->kuCoin()->transferKcsBlockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->kuCoin()->transferKcsBlockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

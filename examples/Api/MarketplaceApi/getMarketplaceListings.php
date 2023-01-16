@@ -27,6 +27,7 @@ $arg_contract_address = "0xe6e7340394958674cdf8606936d292f565e4ecc4";
 $arg_type = "INITIATED";
 
 try {
+
     /** @var string[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -34,8 +35,15 @@ try {
         ->getMarketplaceListings($arg_chain, $arg_contract_address, $arg_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->getMarketplaceListings(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->getMarketplaceListings(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->getMarketplaceListings(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->getMarketplaceListings(): %s\n", 
+        $exc->getMessage()
+    );
 }

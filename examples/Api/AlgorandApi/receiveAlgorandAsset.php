@@ -26,6 +26,7 @@ $arg_receive_algorand_asset = (new \Tatum\Model\ReceiveAlgorandAsset())
     ->setFromPrivateKey('72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -33,8 +34,15 @@ try {
         ->receiveAlgorandAsset($arg_receive_algorand_asset);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->algorand()->receiveAlgorandAsset(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->algorand()->receiveAlgorandAsset(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->algorand()->receiveAlgorandAsset(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->algorand()->receiveAlgorandAsset(): %s\n", 
+        $exc->getMessage()
+    );
 }

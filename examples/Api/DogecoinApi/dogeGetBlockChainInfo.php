@@ -18,6 +18,7 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 try {
+
     /** @var \Tatum\Model\DogeInfo $response */
     $response = $sdk->mainnet()
         ->api()
@@ -25,8 +26,15 @@ try {
         ->dogeGetBlockChainInfo();
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->dogecoin()->dogeGetBlockChainInfo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->dogecoin()->dogeGetBlockChainInfo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->dogecoin()->dogeGetBlockChainInfo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->dogecoin()->dogeGetBlockChainInfo(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -26,6 +26,7 @@ $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse');
 
 try {
+
     /** @var \Tatum\Model\PrivKey $response */
     $response = $sdk->mainnet()
         ->api()
@@ -33,8 +34,15 @@ try {
         ->xdcGenerateAddressPrivateKey($arg_priv_key_request);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xinFin()->xdcGenerateAddressPrivateKey(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xinFin()->xdcGenerateAddressPrivateKey(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xinFin()->xdcGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xinFin()->xdcGenerateAddressPrivateKey(): %s\n", 
+        $exc->getMessage()
+    );
 }

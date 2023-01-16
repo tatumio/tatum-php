@@ -31,10 +31,11 @@ $arg_trust_line_xlm_blockchain = (new \Tatum\Model\TrustLineXlmBlockchain())
     // Secret for account. Secret, or signature Id must be present.
     ->setFromSecret('SCVVKNLBHOWBNJYHD3CNROOA2P3K35I5GNTYUHLLMUHMHWQYNEI7LVED')
     
-    // (optional) Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line. When no limit is specified, maximum amount available is permitted.
+    // (optional) Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust ...
     ->setLimit('10000');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->trustLineXlmBlockchain($arg_trust_line_xlm_blockchain);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->trustLineXlmBlockchain(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->stellar()->trustLineXlmBlockchain(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->stellar()->trustLineXlmBlockchain(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->stellar()->trustLineXlmBlockchain(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -25,7 +25,7 @@ $arg_mint_multiple_nft_flow_mnemonic = (new \Tatum\Model\MintMultipleNftFlowMnem
     // Blockchain address to send NFT token to.
     ->setTo(["0xc1b45bc27b9c61c3"])
     
-    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.or...
     ->setUrl(["https://my_token_data.com"])
     
     // Address of NFT token
@@ -44,6 +44,7 @@ $arg_mint_multiple_nft_flow_mnemonic = (new \Tatum\Model\MintMultipleNftFlowMnem
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintMultipleNftMinter200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->mintMultipleNftFlowMnemonic($arg_mint_multiple_nft_flow_mnemonic, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftFlowMnemonic(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftFlowMnemonic(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftFlowMnemonic(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintMultipleNftFlowMnemonic(): %s\n", 
+        $exc->getMessage()
+    );
 }

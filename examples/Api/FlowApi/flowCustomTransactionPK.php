@@ -37,6 +37,7 @@ $arg_flow_custom_transaction_pk = (new \Tatum\Model\FlowCustomTransactionPK())
     ->setPrivateKey('37afa218d41d9cd6a2c6f2b96d9eaa3ad96c598252bc50e4d45d62f9356a51f8');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -44,8 +45,15 @@ try {
         ->flowCustomTransactionPK($arg_flow_custom_transaction_pk);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->flow()->flowCustomTransactionPK(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->flow()->flowCustomTransactionPK(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->flow()->flowCustomTransactionPK(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->flow()->flowCustomTransactionPK(): %s\n", 
+        $exc->getMessage()
+    );
 }

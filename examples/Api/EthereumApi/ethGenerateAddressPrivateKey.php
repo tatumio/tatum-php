@@ -29,6 +29,7 @@ $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\PrivKey $response */
     $response = $sdk->mainnet()
         ->api()
@@ -36,8 +37,15 @@ try {
         ->ethGenerateAddressPrivateKey($arg_priv_key_request, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->ethereum()->ethGenerateAddressPrivateKey(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->ethereum()->ethGenerateAddressPrivateKey(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->ethereum()->ethGenerateAddressPrivateKey(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->ethereum()->ethGenerateAddressPrivateKey(): %s\n", 
+        $exc->getMessage()
+    );
 }

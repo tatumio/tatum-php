@@ -36,6 +36,7 @@ $arg_call_kcs_smart_contract_read_method = (new \Tatum\Model\CallKcsSmartContrac
     ->setParams(["0x632"]);
 
 try {
+
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -43,8 +44,15 @@ try {
         ->callKcsSmartContractReadMethod($arg_call_kcs_smart_contract_read_method);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->kuCoin()->callKcsSmartContractReadMethod(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->kuCoin()->callKcsSmartContractReadMethod(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->kuCoin()->callKcsSmartContractReadMethod(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->kuCoin()->callKcsSmartContractReadMethod(): %s\n", 
+        $exc->getMessage()
+    );
 }

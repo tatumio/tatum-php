@@ -31,13 +31,14 @@ $arg_buy_asset_on_marketplace_solana_kms = (new \Tatum\Model\BuyAssetOnMarketpla
     // Blockchain address of the buyer
     ->setFrom(FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU)
     
-    // (optional) The KMS identifier of the private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to "true" for the marketplace
+    // (optional) The KMS identifier of the private key used for signing transactions as authority; required if <co...
     ->setAuthoritySignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // The KMS identifier of the private key of the buyer
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->buyAssetOnMarketplaceSolanaKMS($arg_buy_asset_on_marketplace_solana_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->buyAssetOnMarketplaceSolanaKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->buyAssetOnMarketplaceSolanaKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->buyAssetOnMarketplaceSolanaKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->buyAssetOnMarketplaceSolanaKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

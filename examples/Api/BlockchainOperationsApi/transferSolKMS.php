@@ -34,7 +34,7 @@ $arg_transfer_sol_kms = (new \Tatum\Model\TransferSolKMS())
     // Identifier of the secret associated in signing application. Secret, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) Fee to be charged for the operation. For SOL, fee is decided by the blockchain, but default SOL fee is 0.000005. This fee will be only charged on top of the withdrawal amount to the virtual account.
+    // (optional) Fee to be charged for the operation. For SOL, fee is decided by the blockchain, but default SOL f...
     ->setFee('10000')
     
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
@@ -47,6 +47,7 @@ $arg_transfer_sol_kms = (new \Tatum\Model\TransferSolKMS())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->transferSolKMS($arg_transfer_sol_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferSolKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferSolKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferSolKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferSolKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

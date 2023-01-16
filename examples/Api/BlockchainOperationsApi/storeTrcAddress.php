@@ -24,12 +24,20 @@ $arg_address = "TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW";
 $arg_name = "MY_TOKEN";
 
 try {
+
     $sdk->mainnet()
         ->api()
         ->blockchainOperations()
         ->storeTrcAddress($arg_address, $arg_name);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->storeTrcAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->storeTrcAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->storeTrcAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->storeTrcAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

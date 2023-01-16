@@ -39,6 +39,7 @@ $arg_from = 1087623;
 $arg_to = 1087823;
 
 try {
+
     /** @var \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -46,8 +47,15 @@ try {
         ->multiTokenGetTransactionByAddress($arg_chain, $arg_address, $arg_token_address, $arg_page_size, $arg_offset, $arg_from, $arg_to);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(): %s\n", 
+        $exc->getMessage()
+    );
 }

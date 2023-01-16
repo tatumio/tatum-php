@@ -22,7 +22,7 @@ $arg_mint_nft_express_algorand = (new \Tatum\Model\MintNftExpressAlgorand())
     // The blockchain to work with
     ->setChain('ALGO')
     
-    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.or...
     ->setUrl('https://my_token_data.com')
     
     // The name of the NFT
@@ -35,6 +35,7 @@ $arg_mint_nft_express_algorand = (new \Tatum\Model\MintNftExpressAlgorand())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\MintNftExpress200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->mintNftExpressAlgorand($arg_mint_nft_express_algorand, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->mintNftExpressAlgorand(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->mintNftExpressAlgorand(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->mintNftExpressAlgorand(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->mintNftExpressAlgorand(): %s\n", 
+        $exc->getMessage()
+    );
 }

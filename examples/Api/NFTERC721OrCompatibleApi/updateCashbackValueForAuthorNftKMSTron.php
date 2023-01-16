@@ -28,7 +28,7 @@ $arg_update_cashback_value_for_author_nft_kms_tron = (new \Tatum\Model\UpdateCas
     // The blockchain address of the NFT to update royalty information for
     ->setContractAddress('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
     
-    // The new value of the royalty cashback to be set for the author of the NFT; to disable the royalties for the NFT completely, set this parameter to 0
+    // The new value of the royalty cashback to be set for the author of the NFT; to disable the royalti...
     ->setCashbackValue('0.1')
     
     // The maximum amount to be paid as the transaction fee (in TRX)
@@ -40,13 +40,14 @@ $arg_update_cashback_value_for_author_nft_kms_tron = (new \Tatum\Model\UpdateCas
     // The KMS identifier of the private key of the NFT author's address
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) (Only if the signature ID is mnemonic-based) The index of the NFT author's address that was generated from the mnemonic
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the NFT author's address that was gener...
     ->setIndex(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->updateCashbackValueForAuthorNftKMSTron($arg_update_cashback_value_for_author_nft_kms_tron, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSTron(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSTron(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSTron(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSTron(): %s\n", 
+        $exc->getMessage()
+    );
 }

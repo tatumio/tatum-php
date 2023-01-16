@@ -37,19 +37,20 @@ $arg_chain_transfer_solana_spl_kms = (new \Tatum\Model\ChainTransferSolanaSplKMS
     // The number of decimal places that the fungible tokens have
     ->setDigits(18)
     
-    // The KMS identifier of the private key of the blockchain address that you are sending the fungible tokens from (the address that you specified in the <code>from</code> parameter); the transaction fee will be deducted from this address
+    // The KMS identifier of the private key of the blockchain address that you are sending the fungible...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
-    // (optional) The blockchain address from which the fee will be deducted; if not set, defaults to the address that you specified in the <code>from</code> parameter
+    // (optional) The blockchain address from which the fee will be deducted; if not set, defaults to the address t...
     ->setFeePayer('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
     
-    // (optional) The KMS identifier of the private key of the blockchain address that you specified in the <code>feePayer</code> parameter; if not set, defaults to the signature ID that you specified in the <code>signatureId</code> parameter
+    // (optional) The KMS identifier of the private key of the blockchain address that you specified in the <code>f...
     ->setFeePayerSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->chainTransferSolanaSplKMS($arg_chain_transfer_solana_spl_kms, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSplKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSplKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSplKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSplKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

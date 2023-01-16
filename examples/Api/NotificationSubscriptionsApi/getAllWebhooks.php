@@ -30,6 +30,7 @@ $arg_direction = "asc";
 $arg_failed = false;
 
 try {
+
     /** @var \Tatum\Model\WebHook[] $response */
     $response = $sdk->mainnet()
         ->api()
@@ -37,8 +38,15 @@ try {
         ->getAllWebhooks($arg_page_size, $arg_offset, $arg_direction, $arg_failed);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->notificationSubscriptions()->getAllWebhooks(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->notificationSubscriptions()->getAllWebhooks(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->notificationSubscriptions()->getAllWebhooks(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->notificationSubscriptions()->getAllWebhooks(): %s\n", 
+        $exc->getMessage()
+    );
 }

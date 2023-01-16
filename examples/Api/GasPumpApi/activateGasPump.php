@@ -22,19 +22,20 @@ $arg_activate_gas_pump = (new \Tatum\Model\ActivateGasPump())
     // The blockchain to work with
     ->setChain('ETH')
     
-    // The blockchain address that owns the precalculated gas pump addresses and is used to pay gas fees for operations made on the gas pump addresses; can be referred to as "master address"
+    // The blockchain address that owns the precalculated gas pump addresses and is used to pay gas fees...
     ->setOwner('0x2b5a0bE5940B63dE1eDdCCCa7bd977357e2488eD')
     
     // The start index of the range of gas pump addresses to activate
     ->setFrom(0)
     
-    // The end index of the range of gas pump addresses to activate; must be greater than or equal to the value in the <code>from</code> parameter
+    // The end index of the range of gas pump addresses to activate; must be greater than or equal to th...
     ->setTo(200)
     
     // The private key of the blockchain address that will pay the gas fee for the activation transaction
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->activateGasPump($arg_activate_gas_pump);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->gasPump()->activateGasPump(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->gasPump()->activateGasPump(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->gasPump()->activateGasPump(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->gasPump()->activateGasPump(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -21,6 +21,7 @@ $sdk = new \Tatum\Sdk();
 $arg_hash = "81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991";
 
 try {
+
     /** @var \Tatum\Model\TronTx $response */
     $response = $sdk->mainnet()
         ->api()
@@ -28,8 +29,15 @@ try {
         ->tronGetTransaction($arg_hash);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->tronGetTransaction(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->tron()->tronGetTransaction(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->tron()->tronGetTransaction(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->tron()->tronGetTransaction(): %s\n", 
+        $exc->getMessage()
+    );
 }

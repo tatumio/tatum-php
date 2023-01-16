@@ -31,13 +31,14 @@ $arg_eth_estimate_gas = (new \Tatum\Model\EthEstimateGas())
     // Amount to be sent in Ether or ERC20.
     ->setAmount('100000')
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74');
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\EthGasEstimation $response */
     $response = $sdk->mainnet()
         ->api()
@@ -45,8 +46,15 @@ try {
         ->ethEstimateGas($arg_eth_estimate_gas, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->ethEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainFees()->ethEstimateGas(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->ethEstimateGas(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainFees()->ethEstimateGas(): %s\n", 
+        $exc->getMessage()
+    );
 }

@@ -28,13 +28,13 @@ $arg_transfer_tron_kms = (new \Tatum\Model\TransferTronKMS())
     // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
     ->setCompliant(false)
     
-    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 2.5 TRX is used.
+    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 2.5 TRX ...
     ->setFee('2.5')
     
     // Blockchain address to send assets from
     ->setFrom('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
     
-    // Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present.
+    // Identifier of the mnemonic / private key associated in signing application. When hash identifies ...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) Derivation index of sender address.
@@ -50,6 +50,7 @@ $arg_transfer_tron_kms = (new \Tatum\Model\TransferTronKMS())
     ->setSenderNote('Sender note');
 
 try {
+
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->transferTronKMS($arg_transfer_tron_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainOperations()->transferTronKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainOperations()->transferTronKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainOperations()->transferTronKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainOperations()->transferTronKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

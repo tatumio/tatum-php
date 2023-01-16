@@ -25,10 +25,10 @@ $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
     // Supply of virtual currency.
     ->setSupply('1000000')
     
-    // Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC.
+    // Base pair for virtual currency. Transaction value will be calculated according to this base pair....
     ->setBasePair('BTC')
     
-    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
     ->setBaseRate(1)
     
     // (optional) 
@@ -43,10 +43,11 @@ $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
     // (optional) Account number from external system.
     ->setAccountNumber('1234567890')
     
-    // (optional) All transaction will be billed in this currency for created account associated with this currency. If not set, EUR is used. ISO-4217
+    // (optional) All transaction will be billed in this currency for created account associated with this currency...
     ->setAccountingCurrency('USD');
 
 try {
+
     /** @var \Tatum\Model\Account $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->createCurrency($arg_virtual_currency);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->virtualCurrency()->createCurrency(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->virtualCurrency()->createCurrency(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->virtualCurrency()->createCurrency(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->virtualCurrency()->createCurrency(): %s\n", 
+        $exc->getMessage()
+    );
 }

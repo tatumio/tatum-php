@@ -28,10 +28,11 @@ $arg_bsc_estimate_gas = (new \Tatum\Model\BscEstimateGas())
     // Amount to be sent in BSC.
     ->setAmount('100000')
     
-    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74');
 
 try {
+
     /** @var \Tatum\Model\PolygonEstimateGas200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -39,8 +40,15 @@ try {
         ->bscEstimateGas($arg_bsc_estimate_gas);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->bscEstimateGas(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainFees()->bscEstimateGas(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->bscEstimateGas(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainFees()->bscEstimateGas(): %s\n", 
+        $exc->getMessage()
+    );
 }

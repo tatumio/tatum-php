@@ -22,7 +22,7 @@ $arg_account_settings_xrp_blockchain_kms = (new \Tatum\Model\AccountSettingsXrpB
     // XRP account address. Must be the one used for generating deposit tags.
     ->setFromAccount('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
     
-    // Identifier of the private key associated in signing application. Secret or signature Id must be present.
+    // Identifier of the private key associated in signing application. Secret or signature Id must be p...
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
     
     // (optional) Fee to be paid, in XRP. If omitted, current fee will be calculated.
@@ -35,6 +35,7 @@ $arg_account_settings_xrp_blockchain_kms = (new \Tatum\Model\AccountSettingsXrpB
     ->setRequireDestinationTag(true);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -42,8 +43,15 @@ try {
         ->accountSettingsXrpBlockchainKMS($arg_account_settings_xrp_blockchain_kms);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->xRP()->accountSettingsXrpBlockchainKMS(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->xRP()->accountSettingsXrpBlockchainKMS(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->xRP()->accountSettingsXrpBlockchainKMS(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->xRP()->accountSettingsXrpBlockchainKMS(): %s\n", 
+        $exc->getMessage()
+    );
 }

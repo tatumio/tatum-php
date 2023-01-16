@@ -25,13 +25,14 @@ $arg_estimate_fee_from_utxo = (new \Tatum\Model\EstimateFeeFromUTXO())
     // Type of transaction
     ->setType('null')
     
-    // Array of transaction hashes, index of UTXO in it and corresponding private keys. Use this option if you want to calculate amount to send manually. Either fromUTXO or fromAddress must be present.
+    // Array of transaction hashes, index of UTXO in it and corresponding private keys. Use this option ...
     ->setFromUtxo(null)
     
-    // Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between from and to is transaction fee.
+    // Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between ...
     ->setTo(null);
 
 try {
+
     /** @var \Tatum\Model\EstimateFee200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -39,8 +40,15 @@ try {
         ->estimateFeeFromUTXO($arg_estimate_fee_from_utxo);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->blockchainFees()->estimateFeeFromUTXO(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->blockchainFees()->estimateFeeFromUTXO(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->blockchainFees()->estimateFeeFromUTXO(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->blockchainFees()->estimateFeeFromUTXO(): %s\n", 
+        $exc->getMessage()
+    );
 }

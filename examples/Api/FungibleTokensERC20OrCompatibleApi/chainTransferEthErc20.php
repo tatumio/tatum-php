@@ -31,7 +31,7 @@ $arg_chain_transfer_eth_erc20 = (new \Tatum\Model\ChainTransferEthErc20())
     // The amount of the fungible tokens to be sent
     ->setAmount('100000')
     
-    // The number of decimal places that the fungible tokens have; to find out how many decimal places are used in the fungible tokens, check out the <a href="https://apidoc.tatum.io/tag/Blockchain-utils#operation/SCGetContractAddress" target="_blank">smart contract</a>
+    // The number of decimal places that the fungible tokens have; to find out how many decimal places a...
     ->setDigits(18)
     
     // The private key of the blockchain address from which the fee will be deducted
@@ -47,6 +47,7 @@ $arg_chain_transfer_eth_erc20 = (new \Tatum\Model\ChainTransferEthErc20())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->chainTransferEthErc20($arg_chain_transfer_eth_erc20, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20(): %s\n", 
+        $exc->getMessage()
+    );
 }

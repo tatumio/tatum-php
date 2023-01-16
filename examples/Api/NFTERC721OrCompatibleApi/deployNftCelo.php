@@ -25,10 +25,10 @@ $arg_deploy_nft_celo = (new \Tatum\Model\DeployNftCelo())
     // Name of the NFT token
     ->setName('My ERC721')
     
-    // (optional) True if the contract is provenance percentage royalty type. False by default. <a href="https://github.com/tatumio/smart-contracts" target="_blank">Details and sources available here.</a>
+    // (optional) True if the contract is provenance percentage royalty type. False by default. <a href="https://gi...
     ->setProvenance(false)
     
-    // (optional) True if the contract is fixed price royalty type. False by default. <a href="https://github.com/tatumio/smart-contracts" target="_blank">Details and sources available here.</a>
+    // (optional) True if the contract is fixed price royalty type. False by default. <a href="https://github.com/t...
     ->setCashback(false)
     
     // (optional) True if the contract is publicMint type. False by default.
@@ -37,7 +37,7 @@ $arg_deploy_nft_celo = (new \Tatum\Model\DeployNftCelo())
     // Symbol of the NFT token
     ->setSymbol('ERC_SYMBOL')
     
-    // Private key of account address, from which gas for deployment of ERC721 will be paid. Private key, or signature Id must be present.
+    // Private key of account address, from which gas for deployment of ERC721 will be paid. Private key...
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -50,6 +50,7 @@ $arg_deploy_nft_celo = (new \Tatum\Model\DeployNftCelo())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->deployNftCelo($arg_deploy_nft_celo, $arg_x_testnet_type);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->nFTERC721OrCompatible()->deployNftCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->nFTERC721OrCompatible()->deployNftCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->nFTERC721OrCompatible()->deployNftCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->nFTERC721OrCompatible()->deployNftCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

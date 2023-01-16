@@ -34,7 +34,7 @@ $arg_buy_asset_on_marketplace_celo = (new \Tatum\Model\BuyAssetOnMarketplaceCelo
     // ID of the listing.
     ->setListingId('null')
     
-    // (optional) In case of the ERC20 listing, it's possible to buy on behalf of someone else. This value is the address of the buyer, which should approve spending of the ERC20 tokens for the Marketplace contract. This could be used for a buying from the custodial wallet address.
+    // (optional) In case of the ERC20 listing, it's possible to buy on behalf of someone else. This value is the a...
     ->setBuyer('0x587422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // Amount of the assets to be sent for buying.
@@ -50,6 +50,7 @@ $arg_buy_asset_on_marketplace_celo = (new \Tatum\Model\BuyAssetOnMarketplaceCelo
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -57,8 +58,15 @@ try {
         ->buyAssetOnMarketplaceCelo($arg_buy_asset_on_marketplace_celo);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->buyAssetOnMarketplaceCelo(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->buyAssetOnMarketplaceCelo(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->buyAssetOnMarketplaceCelo(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->buyAssetOnMarketplaceCelo(): %s\n", 
+        $exc->getMessage()
+    );
 }

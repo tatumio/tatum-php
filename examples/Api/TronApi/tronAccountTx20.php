@@ -24,6 +24,7 @@ $arg_address = "TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8";
 $arg_next = "81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991";
 
 try {
+
     /** @var \Tatum\Model\TronAccountTx20200Response $response */
     $response = $sdk->mainnet()
         ->api()
@@ -31,8 +32,15 @@ try {
         ->tronAccountTx20($arg_address, $arg_next);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->tron()->tronAccountTx20(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->tron()->tronAccountTx20(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->tron()->tronAccountTx20(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->tron()->tronAccountTx20(): %s\n", 
+        $exc->getMessage()
+    );
 }

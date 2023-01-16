@@ -28,7 +28,7 @@ $arg_buy_asset_on_marketplace = (new \Tatum\Model\BuyAssetOnMarketplace())
     // (optional) Optional address of the ERC20 token, which will be used as a selling currency of the NFT.
     ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) In case of the ERC20 listing, it's possible to buy on behalf of someone else. This value is the address of the buyer, which should approve spending of the ERC20 tokens for the Marketplace contract. This could be used for a buying from the custodial wallet address.
+    // (optional) In case of the ERC20 listing, it's possible to buy on behalf of someone else. This value is the a...
     ->setBuyer('0x587422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // ID of the listing.
@@ -47,6 +47,7 @@ $arg_buy_asset_on_marketplace = (new \Tatum\Model\BuyAssetOnMarketplace())
     ->setFee(null);
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -54,8 +55,15 @@ try {
         ->buyAssetOnMarketplace($arg_buy_asset_on_marketplace);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->marketplace()->buyAssetOnMarketplace(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->marketplace()->buyAssetOnMarketplace(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->marketplace()->buyAssetOnMarketplace(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->marketplace()->buyAssetOnMarketplace(): %s\n", 
+        $exc->getMessage()
+    );
 }

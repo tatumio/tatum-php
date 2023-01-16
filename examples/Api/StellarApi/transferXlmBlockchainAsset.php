@@ -31,7 +31,7 @@ $arg_transfer_xlm_blockchain_asset = (new \Tatum\Model\TransferXlmBlockchainAsse
     // Secret for account. Secret, or signature Id must be present.
     ->setFromSecret('SCVVKNLBHOWBNJYHD3CNROOA2P3K35I5GNTYUHLLMUHMHWQYNEI7LVED')
     
-    // (optional) Set to true, if the destination address is not yet initialized and should be funded for the first time.
+    // (optional) Set to true, if the destination address is not yet initialized and should be funded for the first...
     ->setInitialize(false)
     
     // Asset name. If not defined, transaction is being sent in native XLM asset.
@@ -40,10 +40,11 @@ $arg_transfer_xlm_blockchain_asset = (new \Tatum\Model\TransferXlmBlockchainAsse
     // Blockchain address of the issuer of the assets to send, if not native XLM asset.
     ->setIssuerAccount('GC5LAVZ5UPLIFDH6SI33PNVL5TKWA4ODXTI3WEF5JM6LRM5MNGVJ56TT')
     
-    // (optional) Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number.
+    // (optional) Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HE...
     ->setMessage('12355');
 
 try {
+
     /** @var \Tatum\Model\TransactionSigned $response */
     $response = $sdk->mainnet()
         ->api()
@@ -51,8 +52,15 @@ try {
         ->transferXlmBlockchainAsset($arg_transfer_xlm_blockchain_asset);
 
     var_dump($response);
+
 } catch (\Tatum\Sdk\ApiException $apiExc) {
-    echo "API Exception when calling api()->stellar()->transferXlmBlockchainAsset(): ", var_export($apiExc->getResponseObject(), true), PHP_EOL;
+    echo sprintf(
+        "API Exception when calling api()->stellar()->transferXlmBlockchainAsset(): %s\n", 
+        var_export($apiExc->getResponseObject(), true)
+    );
 } catch (\Exception $exc) {
-    echo "Exception when calling api()->stellar()->transferXlmBlockchainAsset(): " . $exc->getMessage() . PHP_EOL;
+    echo sprintf(
+        "Exception when calling api()->stellar()->transferXlmBlockchainAsset(): %s\n", 
+        $exc->getMessage()
+    );
 }
