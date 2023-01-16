@@ -18,15 +18,33 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_flow_kms = (new \Tatum\Model\TransferFlowKMS())
+    
+    // Sender account ID
     ->setSenderAccountId('61b3bffddfb389cde19c73be')
+    
+    // Blockchain account to send from
     ->setAccount('0x955cd3f17b2fd8ad')
+    
+    // Blockchain address to send assets
     ->setAddress('10762710243615955000')
+    
+    // Amount to be sent, in Flow.
     ->setAmount('10000')
+    
+    // Identifier of the secret associated in signing application. Secret, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(null)/* optional */
-    ->setCompliant(false)/* optional */
-    ->setPaymentId('1234')/* optional */
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('1234')
+    
+    // (optional) Note visible to owner of withdrawing account.
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

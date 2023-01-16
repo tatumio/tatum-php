@@ -18,6 +18,8 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_account_batch = (new \Tatum\Model\CreateAccountBatch())
+    
+    // 
     ->setAccounts(null);
 
 try {

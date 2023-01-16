@@ -18,8 +18,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_mint_nft_express_solana = (new \Tatum\Model\MintNftExpressSolana())
+    
+    // The blockchain to work with
     ->setChain('SOL')
+    
+    // The blockchain address to send the NFT to
     ->setTo('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
+    
+    // 
     ->setMetadata(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

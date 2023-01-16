@@ -18,14 +18,32 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_xrp_blockchain_asset = (new \Tatum\Model\TransferXrpBlockchainAsset())
+    
+    // XRP account address. Must be the one used for generating deposit tags.
     ->setFromAccount('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
+    
+    // Blockchain address to send assets
     ->setTo('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
+    
+    // Amount to be sent, in XRP.
     ->setAmount('10000')
+    
+    // Secret for account. Secret, or signature Id must be present.
     ->setFromSecret('snSFTHdvSYQKKkYntvEt8cnmZuPJB')
-    ->setFee('10000')/* optional */
-    ->setSourceTag(12355)/* optional */
-    ->setDestinationTag(12355)/* optional */
+    
+    // (optional) Fee to be paid, in XRP. If omitted, current fee will be calculated.
+    ->setFee('10000')
+    
+    // (optional) Source tag of sender account, if any.
+    ->setSourceTag(12355)
+    
+    // (optional) Destination tag of recipient account, if any.
+    ->setDestinationTag(12355)
+    
+    // Blockchain address of the issuer of the assets to create trust line for.
     ->setIssuerAccount('rsP3mgGb2tcYUrxiLFiHJiQXhsziegtwBc')
+    
+    // Asset name. Must be 160bit HEX string, e.g. SHA1.
     ->setToken('DA39A3EE5E6B4B0D3255BFEF95601890AFD80709');
 
 try {

@@ -18,11 +18,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_algorand_blockchain = (new \Tatum\Model\TransferAlgorandBlockchain())
+    
+    // The blockchain address of the sender
     ->setFrom('TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4')
+    
+    // The blockchain address of the recipient
     ->setTo('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
+    
+    // The transaction fee in Algos
     ->setFee('0.001')
+    
+    // The amount to send in Algos
     ->setAmount('1')
-    ->setNote('Helloworld')/* optional */
+    
+    // (optional) The note for the recipient; must not contain spaces
+    ->setNote('Helloworld')
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI');
 
 try {

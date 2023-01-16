@@ -18,8 +18,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_mint_nft_express = (new \Tatum\Model\MintNftExpress())
+    
+    // The blockchain to work with
     ->setChain('ETH')
+    
+    // The blockchain address to send the NFT to
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
     ->setUrl('https://my_token_data.com');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

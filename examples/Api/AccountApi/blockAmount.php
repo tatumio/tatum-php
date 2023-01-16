@@ -21,9 +21,15 @@ $sdk = new \Tatum\Sdk();
 $arg_id = "5e6be89ee6aa436299950c3f";
 
 $arg_block_amount = (new \Tatum\Model\BlockAmount())
+    
+    // The amount to be blocked on the account
     ->setAmount('5')
+    
+    // The type of the blockage that you are applying; can be a code or an identifier from an external system or a short description of the blockage
     ->setType('DEBIT_CARD_OP')
-    ->setDescription('Card payment in the shop.')/* optional */;
+    
+    // (optional) The description of the blockage that you are applying
+    ->setDescription('Card payment in the shop.');
 
 try {
     /** @var \Tatum\Model\Id $response */

@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_contract_log_event = (new \Tatum\Model\CreateSubscriptionContractLogEvent())
+    
+    // Type of the subscription.
     ->setType('CONTRACT_LOG_EVENT')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

@@ -18,8 +18,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_xdc_estimate_gas = (new \Tatum\Model\XdcEstimateGas())
+    
+    // Sender address.
     ->setFrom('xdcfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef')
+    
+    // Blockchain address to send assets
     ->setTo('xdc687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Amount to be sent in XDC.
     ->setAmount('100000');
 
 try {

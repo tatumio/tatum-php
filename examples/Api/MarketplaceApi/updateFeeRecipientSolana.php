@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_update_fee_recipient_solana = (new \Tatum\Model\UpdateFeeRecipientSolana())
+    
+    // Blockchain to work with.
     ->setChain('SOL')
+    
+    // Blockchain address of the smart contract
     ->setContractAddress('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // The blockchain address of the new marketplace fee recipient
     ->setTreasuryWithdrawalDestination('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // The blockchain address of the marketplace authority
     ->setFrom('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // The private key of the marketspace authority
     ->setFromPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv');
 
 try {

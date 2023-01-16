@@ -18,17 +18,41 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_trc_offchain_kms_address = (new \Tatum\Model\DeployTrcOffchainKMSAddress())
+    
+    // Name of the TRC token - stored as a symbol on Blockchain
     ->setSymbol('MT')
+    
+    // max supply of TRC token.
     ->setSupply('10000000')
+    
+    // Number of decimal points of the token.
     ->setDecimals(6)
+    
+    // Type of TRC token to create.
     ->setType('TRC10')
+    
+    // Description of the TRC token
     ->setDescription('My TRC Token')
-    ->setUrl('https://mytoken.com')/* optional */
+    
+    // (optional) URL of the project. Applicable for TRC-10 only.
+    ->setUrl('https://mytoken.com')
+    
+    // Base pair for TRC token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
     ->setBasePair('EUR')
-    ->setBaseRate(1)/* optional */
-    ->setCustomer(null)/* optional */
+    
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    ->setBaseRate(1)
+    
+    // (optional) 
+    ->setCustomer(null)
+    
+    // Address on Tron blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
     ->setAddress('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
+    
+    // Blockchain address to perform operation from
     ->setFrom('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
+    
+    // Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {

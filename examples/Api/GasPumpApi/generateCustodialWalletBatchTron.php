@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_generate_custodial_wallet_batch_tron = (new \Tatum\Model\GenerateCustodialWalletBatchTron())
+    
+    // Blockchain to work with.
     ->setChain('TRON')
+    
+    // Private key of account, from which the transaction will be initiated.
     ->setFromPrivateKey('05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    
+    // Number of addresses to generate.
     ->setBatchCount(50)
+    
+    // Owner of the addresses.
     ->setOwner('TGXh2YJhfwchMGKuzfEJ27W1VEJRKnMdy9')
+    
+    // Fee limit to be set, in TRX
     ->setFeeLimit(100);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

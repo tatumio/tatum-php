@@ -18,13 +18,29 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_algo_erc20_offchain_kms_address = (new \Tatum\Model\DeployAlgoErc20OffchainKMSAddress())
+    
+    // Name of the ERC20 token - stored as a symbol on Blockchain
     ->setSymbol('MT')
+    
+    // max supply of ERC20 token.
     ->setSupply('10000000')
+    
+    // Description of the ERC20 token
     ->setDescription('My ERC20 Token')
+    
+    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
     ->setBasePair('EUR')
-    ->setBaseRate(1)/* optional */
-    ->setCustomer(null)/* optional */
+    
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    ->setBaseRate(1)
+    
+    // (optional) 
+    ->setCustomer(null)
+    
+    // Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
     ->setAddress('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
+    
+    // Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {

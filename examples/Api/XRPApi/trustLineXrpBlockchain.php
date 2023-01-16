@@ -18,12 +18,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_trust_line_xrp_blockchain = (new \Tatum\Model\TrustLineXrpBlockchain())
+    
+    // XRP account address. Must be the one used for generating deposit tags.
     ->setFromAccount('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
+    
+    // Blockchain address of the issuer of the assets to create trust line for.
     ->setIssuerAccount('rsP3mgGb2tcYUrxiLFiHJiQXhsziegtwBc')
+    
+    // Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line.
     ->setLimit('10000')
+    
+    // Asset name. Must be 160bit HEX string, e.g. SHA1.
     ->setToken('DA39A3EE5E6B4B0D3255BFEF95601890AFD80709')
+    
+    // Secret for account. Secret, or signature Id must be present.
     ->setFromSecret('snSFTHdvSYQKKkYntvEt8cnmZuPJB')
-    ->setFee('10000')/* optional */;
+    
+    // (optional) Fee to be paid, in XRP. If omitted, current fee will be calculated.
+    ->setFee('10000');
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

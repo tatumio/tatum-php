@@ -18,12 +18,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_multi_token_kms = (new \Tatum\Model\DeployMultiTokenKMS())
+    
+    // Chain to work with.
     ->setChain('ETH')
+    
+    // URI of the Multi Token token
     ->setUri('example.com')
-    ->setPublicMint(true)/* optional */
+    
+    // (optional) True if the contract is publicMint type
+    ->setPublicMint(true)
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setNonce(null)/* optional */
-    ->setFee(null)/* optional */;
+    
+    // (optional) Nonce to be set to transaction. If not present, last known nonce will be used.
+    ->setNonce(null)
+    
+    // (optional) 
+    ->setFee(null);
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
 $arg_x_testnet_type = 'ethereum-sepolia';

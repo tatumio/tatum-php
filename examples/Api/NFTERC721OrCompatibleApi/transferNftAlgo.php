@@ -18,11 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_nft_algo = (new \Tatum\Model\TransferNftAlgo())
+    
+    // The blockchain to work with
     ->setChain('ALGO')
+    
+    // The blockchain address to transfer the NFT to
     ->setTo('TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4')
+    
+    // The asset ID (the ID of the NFT)
     ->setContractAddress('100000')
+    
+    // The private key of the sender's blockchain address
     ->setFromPrivateKey('72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI')
-    ->setAmount(1)/* optional */;
+    
+    // (optional) (For <a href="https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts" target="_blank">fractional NFTs</a> only) The number of NFT fractions to transfer; if not set, defaults to 1, which means that one fraction of the NFT will be transferred
+    ->setAmount(1);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';

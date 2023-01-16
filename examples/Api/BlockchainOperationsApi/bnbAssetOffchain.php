@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_bnb_asset = (new \Tatum\Model\CreateBnbAsset())
+    
+    // Asset name.
     ->setToken('NNB-B90')
+    
+    // Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR.
     ->setBasePair('EUR');
 
 try {

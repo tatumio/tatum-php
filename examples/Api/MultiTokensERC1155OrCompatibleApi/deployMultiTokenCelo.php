@@ -18,11 +18,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_multi_token_celo = (new \Tatum\Model\DeployMultiTokenCelo())
+    
+    // Chain to work with.
     ->setChain('CELO')
+    
+    // URI of the Multi Token contract
     ->setUri('example.com')
-    ->setPublicMint(true)/* optional */
+    
+    // (optional) True if the contract is publicMint type
+    ->setPublicMint(true)
+    
+    // Private key of account address, from which gas for deployment of ERC1155 will be paid. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(null)/* optional */
+    
+    // (optional) Nonce to be set to transaction. If not present, last known nonce will be used.
+    ->setNonce(null)
+    
+    // Currency to pay for transaction gas
     ->setFeeCurrency('null');
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.

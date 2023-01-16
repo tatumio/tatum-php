@@ -18,13 +18,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_algo_erc20 = (new \Tatum\Model\TransferAlgoErc20())
+    
+    // The ID of the virtual account to send the ERC-20-equivalent Algorand tokens from
     ->setSenderAccountId('61b3bffddfb389cde19c73be')
+    
+    // The blockchain address to send the ERC-20-equivalent Algorand tokens to
     ->setAddress('5YVZBUH3STSQ5ABCTLEIEIJ7QOZFILM2DLAEEA4ZL6CU55ODZIQXO5EMYM')
+    
+    // The amount of the ERC-20-equivalent Algorand tokens to send
     ->setAmount('10000')
+    
+    // The secret of the Algorand wallet (account). Secret, or signature Id must be present.
     ->setPrivateKey('NBYMCVEEDFYV3TPWVRE6APE7PKHUJD4XAKXCKNCLKGUXOC3LFNJGZQCJCRA53HB7ZAHF6NFJH2QIVQ5USQNWG35QCJLD4KZ5IWMB24Q')
-    ->setCompliant(false)/* optional */
-    ->setPaymentId('1234')/* optional */
-    ->setSenderNote('Helloworld')/* optional */;
+    
+    // (optional) Compliance check; if the withdrawal is not compliant, it will not be processed
+    ->setCompliant(false)
+    
+    // (optional) The identifier of the token transfer that is shown on the virtual account for the created transaction
+    ->setPaymentId('1234')
+    
+    // (optional) The note for the recipient; must not contain spaces
+    ->setSenderNote('Helloworld');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

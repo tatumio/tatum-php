@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_klaytn_blockchain = (new \Tatum\Model\TransferKlaytnBlockchain())
-    ->setData('4d79206e6f746520746f2074686520726563697069656e74')/* optional */
-    ->setNonce(null)/* optional */
+    
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    ->setData('4d79206e6f746520746f2074686520726563697069656e74')
+    
+    // (optional) Nonce to be set to Klaytn transaction. If not present, last known nonce will be used.
+    ->setNonce(null)
+    
+    // Blockchain address to send assets
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Currency to transfer from Klaytn Blockchain Account.
     ->setCurrency('KLAY')
-    ->setFee(null)/* optional */
+    
+    // (optional) 
+    ->setFee(null)
+    
+    // Amount to be sent.
     ->setAmount('100000')
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');
 
 try {

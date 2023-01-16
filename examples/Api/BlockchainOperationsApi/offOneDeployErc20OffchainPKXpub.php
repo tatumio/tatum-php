@@ -18,16 +18,36 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_erc20_offchain_pk_xpub = (new \Tatum\Model\DeployErc20OffchainPKXpub())
+    
+    // Name of the ERC20 token - stored as a symbol on Blockchain
     ->setSymbol('MT')
+    
+    // max supply of ERC20 token.
     ->setSupply('10000000')
+    
+    // Description of the ERC20 token
     ->setDescription('My ERC20 Token')
+    
+    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
     ->setBasePair('EUR')
-    ->setBaseRate(1)/* optional */
-    ->setCustomer(null)/* optional */
+    
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    ->setBaseRate(1)
+    
+    // (optional) 
+    ->setCustomer(null)
+    
+    // Extended public key (xpub), from which address, where all initial supply will be stored, will be generated. Either xpub and derivationIndex, or address must be present, not both.
     ->setXpub('xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid')
+    
+    // Derivation index for xpub to generate specific deposit address.
     ->setDerivationIndex(0)
+    
+    // Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Private key, mnemonic or signature Id must be present.
     ->setPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(null)/* optional */;
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null);
 
 // Shard to operate on
 $arg_shard_id = 0;

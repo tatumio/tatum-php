@@ -18,14 +18,30 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_bnb = (new \Tatum\Model\TransferBnb())
+    
+    // Sender account ID
     ->setSenderAccountId('61b3bffddfb389cde19c73be')
+    
+    // Blockchain address to send assets
     ->setAddress('tbnb1q82g2h9q0kfe7sysnj5w7nlak92csfjztymp39')
+    
+    // Amount to be sent, in BNB.
     ->setAmount('10000')
-    ->setCompliant(false)/* optional */
-    ->setAttr('12355')/* optional */
-    ->setPaymentId('1234')/* optional */
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // (optional) Memo of the recipient account, if any.
+    ->setAttr('12355')
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('1234')
+    
+    // Private key of sender address.
     ->setFromPrivateKey('8ac4b14b38d8a5af58019088ce5a24b764536bccd1981cf79d3e09e9d1f2ad31')
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Note visible to owner of withdrawing account.
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

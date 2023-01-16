@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_nft_tron_kms = (new \Tatum\Model\DeployNftTronKMS())
+    
+    // The blockchain to work with
     ->setChain('TRON')
+    
+    // Blockchain address to perform transaction from
     ->setAccount('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
+    
+    // Name of the NFT token
     ->setName('My ERC721')
+    
+    // Symbol of the NFT token
     ->setSymbol('ERC_SYMBOL')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    
+    // The maximum amount to be paid as the transaction fee (in TRX); deployment of a smart contract on TRON costs around 580 TRX
     ->setFeeLimit(600);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

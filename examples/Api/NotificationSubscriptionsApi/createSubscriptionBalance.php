@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_balance = (new \Tatum\Model\CreateSubscriptionBalance())
+    
+    // Type of the subscription.
     ->setType('ACCOUNT_BALANCE_LIMIT')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

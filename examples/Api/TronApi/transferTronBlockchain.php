@@ -18,8 +18,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_tron_blockchain = (new \Tatum\Model\TransferTronBlockchain())
+    
+    // Private key of the address, from which the TRX will be sent.
     ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701')
+    
+    // Recipient address of TRON account in Base58 format.
     ->setTo('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    
+    // Amount to be sent in TRX.
     ->setAmount('100000');
 
 try {

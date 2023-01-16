@@ -22,7 +22,9 @@ $arg_chain = 'chain_example';
 
 // Signature IDs of the KMS which invokes this endpoint.
 $arg_kms_signature_ids = (new \Tatum\Model\KmsSignatureIds())
-    ->setSignatureIds(["6d78dad2-518f-4e76-8255-8f1df0de6886","26d3883e-4e17-48b3-a0ee-09a3e484ac83"])/* optional */;
+    
+    // (optional) List of the signature Ids to be used to sign transactions.
+    ->setSignatureIds(["6d78dad2-518f-4e76-8255-8f1df0de6886","26d3883e-4e17-48b3-a0ee-09a3e484ac83"]);
 
 try {
     /** @var \Tatum\Model\PendingTransaction[] $response */

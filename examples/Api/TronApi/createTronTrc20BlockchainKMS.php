@@ -18,13 +18,29 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_tron_trc20_blockchain_kms = (new \Tatum\Model\CreateTronTrc20BlockchainKMS())
+    
+    // Sender address of TRON account in Base58 format.
     ->setFrom('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Recipient address of created TRC20 tokens.
     ->setRecipient('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    
+    // Name of the token.
     ->setName('My token')
+    
+    // Symbol of the token.
     ->setSymbol('SYM')
+    
+    // Total supply of the tokens.
     ->setTotalSupply(100000)
+    
+    // Number of decimal places of the token.
     ->setDecimals(10);
 
 try {

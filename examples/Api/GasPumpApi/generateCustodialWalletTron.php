@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_generate_custodial_wallet_tron = (new \Tatum\Model\GenerateCustodialWalletTron())
+    
+    // Blockchain to work with.
     ->setChain('TRON')
+    
+    // Fee in TRX to be paid.
     ->setFeeLimit(0.01)
+    
+    // Private key of account, from which the transaction will be initiated.
     ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701')
+    
+    // If address should support ERC20 tokens, it should be marked as true.
     ->setEnableFungibleTokens(false)
+    
+    // If address should support ERC721 tokens, it should be marked as true.
     ->setEnableNonFungibleTokens(false)
+    
+    // If address should support ERC1155 tokens, it should be marked as true. Not supported for TRON.
     ->setEnableSemiFungibleTokens(false)
+    
+    // If address should support batch transfers of the assets, it should be marked as true.
     ->setEnableBatchTransactions(false);
 
 try {

@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
+    
+    // Derivation index of private key to generate.
     ->setIndex(0)
+    
+    // Mnemonic to generate private key from.
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse');
 
 try {

@@ -18,14 +18,32 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_nft_celo = (new \Tatum\Model\DeployNftCelo())
+    
+    // The blockchain to work with
     ->setChain('CELO')
+    
+    // Name of the NFT token
     ->setName('My ERC721')
-    ->setProvenance(false)/* optional */
-    ->setCashback(false)/* optional */
-    ->setPublicMint(true)/* optional */
+    
+    // (optional) True if the contract is provenance percentage royalty type. False by default. <a href="https://github.com/tatumio/smart-contracts" target="_blank">Details and sources available here.</a>
+    ->setProvenance(false)
+    
+    // (optional) True if the contract is fixed price royalty type. False by default. <a href="https://github.com/tatumio/smart-contracts" target="_blank">Details and sources available here.</a>
+    ->setCashback(false)
+    
+    // (optional) True if the contract is publicMint type. False by default.
+    ->setPublicMint(true)
+    
+    // Symbol of the NFT token
     ->setSymbol('ERC_SYMBOL')
+    
+    // Private key of account address, from which gas for deployment of ERC721 will be paid. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(null)/* optional */
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null)
+    
+    // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

@@ -18,15 +18,33 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_xlm = (new \Tatum\Model\TransferXlm())
+    
+    // Sender account ID
     ->setSenderAccountId('61b3bffddfb389cde19c73be')
+    
+    // Blockchain account to send from
     ->setFromAccount('GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H')
+    
+    // Blockchain address to send assets
     ->setAddress('GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H')
+    
+    // Amount to be sent, in XLM or XLM-based Asset.
     ->setAmount('10000')
+    
+    // Secret for account. Secret, or signature Id must be present.
     ->setSecret('SCVVKNLBHOWBNJYHD3CNROOA2P3K35I5GNTYUHLLMUHMHWQYNEI7LVED')
-    ->setCompliant(false)/* optional */
-    ->setAttr('12355')/* optional */
-    ->setPaymentId('1234')/* optional */
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // (optional) Short message to recipient. Usually used as an account discriminator. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number. When using as an account disciminator in Tatum Offchain ledger, can be in format of destination_acc/source_acc.
+    ->setAttr('12355')
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('1234')
+    
+    // (optional) Note visible to owner of withdrawing account.
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

@@ -3,10 +3,9 @@
     "type": "library",
     "description": "A flexible framework to build, run, and scale blockchain apps with PHP. Perform local wallet operations (mnemonic, xpub, private key) for Bitcoin, Bitcoin Cash, BSC, Litecoin, Celo, Dogecoin, Ethereum, Harmony.ONE, KCS, Klaytn, Polygon, Tron, VeChain and XDC.",
     "keywords": [
-        "web3", "openapi", "php", "sdk", "tatum", "tatum.io", "kcs", "klaytn", "polygon", "vechain", "xdc",
+        "web3", "sdk", "tatum", "tatum.io", "kcs", "klaytn", "polygon", "vechain", "xdc",
         "blockchain", "bitcoin", "bitcoin-cash", "litecoin", "dogecoin", "bsc", "celo", "harmony", "harmony.one",
-        "stellar", "xrp", "ethereum", "ETH", "tron", "nft", "generate-wallet", "hd-wallet", "sign", "transaction",
-        "crypto"
+        "stellar", "xrp", "ethereum", "eth", "tron", "nft", "hd-wallet", "crypto"
     ],
     "homepage": "https://tatum.io/",
     "license": "MIT",
@@ -27,16 +26,16 @@
         "source": "https://github.com/tatumio/tatum-php"
     },
     "require": {
-        "php": ">=7.3",
-        "ext-curl": "*",
-        "ext-json": "*",
-        "ext-gmp": "*",
+        "php-64bit": ">=7.3",
+        "ext-mbstring": "*",
         "ext-bcmath": "*",
-        "ext-mbstring": "*"
+        "ext-json": "*",
+        "ext-curl": "*",
+        "ext-gmp": "*"
     },
     "require-dev": {
-        "ext-dom": "*",
-        "phpunit/phpunit": "^9.1"
+        "phpunit/phpunit": "^9.1",
+        "ext-dom": "*"
     },
     "autoload": {
         "psr-4": { "Tatum\\" : "lib/" }

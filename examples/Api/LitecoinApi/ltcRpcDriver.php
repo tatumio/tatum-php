@@ -18,10 +18,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_bch_rpc_driver_request = (new \Tatum\Model\BchRpcDriverRequest())
-    ->setJsonrpc('1.0')/* optional */
-    ->setId('test')/* optional */
-    ->setMethod('getblockcount')/* optional */
-    ->setParams([])/* optional */;
+    
+    // (optional) Version of the JSON RPC.
+    ->setJsonrpc('1.0')
+    
+    // (optional) ID of the request, could be any arbitrary identifier.
+    ->setId('test')
+    
+    // (optional) Method to invoke on the node.
+    ->setMethod('getblockcount')
+    
+    // (optional) Params to the method call, if required.
+    ->setParams([]);
 
 try {
     /** @var object $response */

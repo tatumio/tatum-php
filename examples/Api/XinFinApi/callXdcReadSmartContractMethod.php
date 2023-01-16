@@ -18,13 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_call_xdc_read_smart_contract_method = (new \Tatum\Model\CallXdcReadSmartContractMethod())
+    
+    // The address of the smart contract
     ->setContractAddress('xdc687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Name of the method to invoke on smart contract.
     ->setMethodName('transfer')
+    
+    // ABI of the method to invoke.
     ->setMethodAbi(
         json_decode(
             '{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"stake","outputs":[],"stateMutability":"nonpayable","type":"function"}'
         )
     )
+    
+    // Parameters of the method to be invoked.
     ->setParams(["0x632"]);
 
 try {

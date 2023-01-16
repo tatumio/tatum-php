@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_nft_tron = (new \Tatum\Model\TransferNftTron())
-    ->setValue('1')/* optional */
+    
+    // (optional) If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token.
+    ->setValue('1')
+    
+    // The blockchain to work with
     ->setChain('TRON')
+    
+    // Blockchain address to send NFT token to
     ->setTo('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
+    
+    // ID of the token.
     ->setTokenId('123')
+    
+    // Address of NFT token
     ->setContractAddress('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701')
+    
+    // The maximum amount to be paid as the transaction fee (in TRX)
     ->setFeeLimit(600);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

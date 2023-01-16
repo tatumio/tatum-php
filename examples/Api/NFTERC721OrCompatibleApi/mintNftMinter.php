@@ -18,11 +18,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_mint_nft_minter = (new \Tatum\Model\MintNftMinter())
+    
+    // The blockchain to work with
     ->setChain('ETH')
+    
+    // The blockchain address of the smart contract to build the NFT on
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The blockchain address of the Tatum NFT minter; this is the address that you added as an NFT minter to your NFT smart contract
     ->setMinter('0x49678AAB11E001eb3cB2cBD9aA96b36DC2461A94')
+    
+    // The blockchain address to send the NFT to
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The ID of the NFT
     ->setTokenId('123')
+    
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
     ->setUrl('https://my_token_data.com');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

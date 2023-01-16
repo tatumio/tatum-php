@@ -18,15 +18,33 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
+    
+    // Virtual currency name. Must be prefixed with 'VC_'.
     ->setName('VC_VIRTUAL')
+    
+    // Supply of virtual currency.
     ->setSupply('1000000')
+    
+    // Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC.
     ->setBasePair('BTC')
-    ->setBaseRate(1)/* optional */
-    ->setCustomer(null)/* optional */
-    ->setDescription('My Virtual Token description.')/* optional */
-    ->setAccountCode('AC_1011_B')/* optional */
-    ->setAccountNumber('1234567890')/* optional */
-    ->setAccountingCurrency('USD')/* optional */;
+    
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    ->setBaseRate(1)
+    
+    // (optional) 
+    ->setCustomer(null)
+    
+    // (optional) Used as a description within Tatum system.
+    ->setDescription('My Virtual Token description.')
+    
+    // (optional) For bookkeeping to distinct account purpose.
+    ->setAccountCode('AC_1011_B')
+    
+    // (optional) Account number from external system.
+    ->setAccountNumber('1234567890')
+    
+    // (optional) All transaction will be billed in this currency for created account associated with this currency. If not set, EUR is used. ISO-4217
+    ->setAccountingCurrency('USD');
 
 try {
     /** @var \Tatum\Model\Account $response */

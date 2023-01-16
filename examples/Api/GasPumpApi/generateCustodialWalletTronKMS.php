@@ -18,14 +18,32 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_generate_custodial_wallet_tron_kms = (new \Tatum\Model\GenerateCustodialWalletTronKMS())
+    
+    // Blockchain to work with.
     ->setChain('TRON')
+    
+    // Fee in TRX to be paid.
     ->setFeeLimit(0.01)
+    
+    // Sender address of TRON account in Base58 format.
     ->setFrom('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // If address should support ERC20 tokens, it should be marked as true.
     ->setEnableFungibleTokens(false)
+    
+    // If address should support ERC721 tokens, it should be marked as true.
     ->setEnableNonFungibleTokens(false)
+    
+    // If address should support ERC1155 tokens, it should be marked as true. Not supported for TRON.
     ->setEnableSemiFungibleTokens(false)
+    
+    // If address should support batch transfers of the assets, it should be marked as true.
     ->setEnableBatchTransactions(false);
 
 try {

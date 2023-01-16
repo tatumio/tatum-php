@@ -18,15 +18,33 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_record = (new \Tatum\Model\CreateRecord())
+    
+    // The data to be stored on the blockchain
     ->setData('My example log data')
+    
+    // The blockchain to store the data on
     ->setChain('ETH')
+    
+    // The private key of the blockchain address from which the transaction will be made and the transaction fee will be deducted
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setFrom('erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7')/* optional */
-    ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')/* optional */
-    ->setNonce(null)/* optional */
-    ->setFromShardId(null)/* optional */
-    ->setToShardId(null)/* optional */
-    ->setEthFee(null)/* optional */;
+    
+    // (optional) (Elrond only; required) The blockchain address from which the transaction will be made<br/>This is a mandatory parameter for Elrond. Do not use it with any other blockchain.
+    ->setFrom('erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7')
+    
+    // (optional) The blockchain address to store the data on<br/>If not provided, the data will be stored on the address from which the transaction is made.
+    ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null)
+    
+    // (optional) (Harmony only) The ID of the shard from which the data should be read
+    ->setFromShardId(null)
+    
+    // (optional) (Harmony only) The ID of the shard to which the data should be recorded
+    ->setToShardId(null)
+    
+    // (optional) 
+    ->setEthFee(null);
 
 try {
     /** @var \Tatum\Model\TransactionHash $response */

@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_nft_transfer_event = (new \Tatum\Model\CreateSubscriptionNftTransferEvent())
+    
+    // Type of the subscription.
     ->setType('CONTRACT_NFT_TXS_PER_BLOCK')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

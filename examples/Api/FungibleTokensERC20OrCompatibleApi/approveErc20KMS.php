@@ -18,13 +18,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_approve_erc20_kms = (new \Tatum\Model\ApproveErc20KMS())
+    
+    // The blockchain to work with
     ->setChain('ETH')
+    
+    // The address of the smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The blockchain address to be allowed to transfer or burn the fungible tokens
     ->setSpender('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The amount of the tokens allowed to be transferred or burnt
     ->setAmount('100000')
+    
+    // The KMS identifier of the private key of the smart contract's owner; the fee will be deducted from the owner's address
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setFee(null)/* optional */
-    ->setNonce(null)/* optional */;
+    
+    // (optional) 
+    ->setFee(null)
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';

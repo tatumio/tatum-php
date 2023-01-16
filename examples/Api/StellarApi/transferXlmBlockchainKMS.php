@@ -18,12 +18,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_xlm_blockchain_kms = (new \Tatum\Model\TransferXlmBlockchainKMS())
+    
+    // Blockchain account to send assets from
     ->setFromAccount('GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H')
+    
+    // Blockchain address to send assets
     ->setTo('GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H')
+    
+    // Amount to be sent, in XLM.
     ->setAmount('10000')
+    
+    // Identifier of the secret associated in signing application. Secret, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setInitialize(false)/* optional */
-    ->setMessage('12355')/* optional */;
+    
+    // (optional) Set to true, if the destination address is not yet initialized and should be funded for the first time.
+    ->setInitialize(false)
+    
+    // (optional) Short message to recipient. It can be either 28 characters long ASCII text, 64 characters long HEX string or uint64 number.
+    ->setMessage('12355');
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

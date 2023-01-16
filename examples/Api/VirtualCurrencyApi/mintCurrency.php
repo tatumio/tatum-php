@@ -18,14 +18,30 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_virtual_currency_operation = (new \Tatum\Model\VirtualCurrencyOperation())
+    
+    // Ledger account with currency of the virtual currency, on which the operation will be performed.
     ->setAccountId('5e68c66581f2ee32bc354087')
+    
+    // Amount of virtual currency to operate within this operation.
     ->setAmount('1.5')
-    ->setPaymentId('My Payment')/* optional */
-    ->setReference('akjsndakjsdn-asd-kjasnd-asdkn-asdjnasjkdn')/* optional */
-    ->setTransactionCode('1_01_EXTERNAL_CODE')/* optional */
-    ->setRecipientNote('Private note')/* optional */
-    ->setCounterAccount('5e6645712b55823de7ea82f1')/* optional */
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('My Payment')
+    
+    // (optional) Reference of the payment.
+    ->setReference('akjsndakjsdn-asd-kjasnd-asdkn-asdjnasjkdn')
+    
+    // (optional) For bookkeeping to distinct transaction purpose.
+    ->setTransactionCode('1_01_EXTERNAL_CODE')
+    
+    // (optional) Note visible to both, sender and recipient. Available for both Mint and Revoke operations
+    ->setRecipientNote('Private note')
+    
+    // (optional) External account identifier. By default, there is no counterAccount present in the transaction.
+    ->setCounterAccount('5e6645712b55823de7ea82f1')
+    
+    // (optional) Note visible to sender. Available in Revoke operation.
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransactionResult $response */

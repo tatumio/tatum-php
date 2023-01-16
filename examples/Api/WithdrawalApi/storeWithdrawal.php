@@ -18,15 +18,33 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_withdrawal = (new \Tatum\Model\Withdrawal())
+    
+    // Sender account ID
     ->setSenderAccountId('5e68c66581f2ee32bc354087')
+    
+    // Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
     ->setAddress('mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7')
+    
+    // Amount to be withdrawn to blockchain.
     ->setAmount('0.001')
-    ->setAttr('12345')/* optional */
-    ->setCompliant(false)/* optional */
+    
+    // (optional) <p>Used to parametrize withdrawal. Used for XRP withdrawal to define destination tag of recipient, or XLM memo of the recipient, if needed.<br/> For Bitcoin, Litecoin, Bitcoin Cash, used as a change address for left coins from transaction.</p>
+    ->setAttr('12345')
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // Fee to be submitted as a transaction fee to blockchain.
     ->setFee('0.0005')
-    ->setMultipleAmounts(null)/* optional */
-    ->setPaymentId('12345')/* optional */
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
+    ->setMultipleAmounts(null)
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('12345')
+    
+    // (optional) Note visible to owner of withdrawing account
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\WithdrawalResponse $response */

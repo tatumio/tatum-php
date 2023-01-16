@@ -21,8 +21,12 @@ $sdk = new \Tatum\Sdk();
 $arg_id = "5e68c66581f2ee32bc354087";
 
 $arg_update_account = (new \Tatum\Model\UpdateAccount())
-    ->setAccountCode('AC_1011_B')/* optional */
-    ->setAccountNumber('123456')/* optional */;
+    
+    // (optional) For bookkeeping to distinct account purpose.
+    ->setAccountCode('AC_1011_B')
+    
+    // (optional) Account number from external system.
+    ->setAccountNumber('123456');
 
 try {
     $sdk->mainnet()

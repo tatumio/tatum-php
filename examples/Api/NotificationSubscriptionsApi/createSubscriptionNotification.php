@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_notification = (new \Tatum\Model\CreateSubscriptionNotification())
+    
+    // Type of the subscription.
     ->setType('ADDRESS_TRANSACTION')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

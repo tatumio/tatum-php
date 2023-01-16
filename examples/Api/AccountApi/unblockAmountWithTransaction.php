@@ -21,15 +21,33 @@ $sdk = new \Tatum\Sdk();
 $arg_id = "5e6be89ee6aa436299950c3f";
 
 $arg_unblock_amount = (new \Tatum\Model\UnblockAmount())
+    
+    // Internal recipient account ID within Tatum platform
     ->setRecipientAccountId('5e6645712b55823de7ea82f2')
+    
+    // Amount to be sent. Amount can be smaller then the blocked amount.
     ->setAmount('5')
-    ->setAnonymous(false)/* optional */
-    ->setCompliant(false)/* optional */
-    ->setTransactionCode('1_01_EXTERNAL_CODE')/* optional */
-    ->setPaymentId('9625')/* optional */
-    ->setRecipientNote('Private note')/* optional */
-    ->setBaseRate(1)/* optional */
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Anonymous transaction does not show sender account to recipient, default is false
+    ->setAnonymous(false)
+    
+    // (optional) Enable compliant checks. Transaction will not be processed, if compliant check fails.
+    ->setCompliant(false)
+    
+    // (optional) For bookkeeping to distinct transaction purpose.
+    ->setTransactionCode('1_01_EXTERNAL_CODE')
+    
+    // (optional) Payment ID, External identifier of the payment, which can be used to pair transactions within Tatum accounts.
+    ->setPaymentId('9625')
+    
+    // (optional) Note visible to both, sender and recipient
+    ->setRecipientNote('Private note')
+    
+    // (optional) Exchange rate of the base pair. Only applicable for Tatum's Virtual currencies Ledger transactions. Override default exchange rate for the Virtual Currency.
+    ->setBaseRate(1)
+    
+    // (optional) Note visible to sender
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransactionResult $response */

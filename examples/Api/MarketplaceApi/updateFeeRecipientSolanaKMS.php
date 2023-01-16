@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_update_fee_recipient_solana_kms = (new \Tatum\Model\UpdateFeeRecipientSolanaKMS())
+    
+    // Blockchain to work with.
     ->setChain('SOL')
+    
+    // Blockchain address of the smart contract
     ->setContractAddress('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // The blockchain address of the new marketplace fee recipient
     ->setTreasuryWithdrawalDestination('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // The blockchain address of the marketplace authority
     ->setFrom('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // The KMS identifier of the private key of the marketspace authority
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {

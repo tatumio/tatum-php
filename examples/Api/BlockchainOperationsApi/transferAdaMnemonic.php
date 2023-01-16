@@ -18,16 +18,36 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_ada_mnemonic = (new \Tatum\Model\TransferAdaMnemonic())
+    
+    // Blockchain address to send assets
     ->setAddress('addr1qyyxyhaa2e7kxeqcc72w7f747zqlgwwwstlzsg9umuxc40wnhawldxl4nan95rhtlcnju9q2r8j9qz8vslwsmrkj5r4spxhep9')
+    
+    // Amount to be sent in ADA.
     ->setAmount('100000')
-    ->setCompliant(false)/* optional */
-    ->setFee('2.5')/* optional */
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 1 ADA is used.
+    ->setFee('2.5')
+    
+    // Derivation index of sender address.
     ->setIndex(0)
+    
+    // Mnemonic to generate private key for sender address. Either mnemonic and index, privateKey or signature Id must be present - depends on the type of account and xpub.
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
+    
+    // Extended public key (xpub) of the wallet associated with the accounts. Should be present, when mnemonic is used.
     ->setXpub('41253768cd7c5831988e580cfc7eeecaa78bf52a1ede2bd2f245406605adfbadd5911ab567bc3dc7713e29c2c14bb898b24bb1f01a4992605343ad14703037b9')
-    ->setPaymentId('1234')/* optional */
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('1234')
+    
+    // Sender account ID
     ->setSenderAccountId('5e68c66581f2ee32bc354087')
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Note visible to owner of withdrawing account
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

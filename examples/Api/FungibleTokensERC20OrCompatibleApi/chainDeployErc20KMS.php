@@ -18,16 +18,36 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_chain_deploy_erc20_kms = (new \Tatum\Model\ChainDeployErc20KMS())
+    
+    // The blockchain to work with
     ->setChain('ETH')
+    
+    // Symbol of the ERC20 token
     ->setSymbol('ERC_SYMBOL')
+    
+    // Name of the ERC20 token
     ->setName('MyERC20')
-    ->setTotalCap('10000000')/* optional */
+    
+    // (optional) Max supply of ERC20 token.
+    ->setTotalCap('10000000')
+    
+    // Max supply of ERC20 token.
     ->setSupply('10000000')
+    
+    // Number of decimal points
     ->setDigits(18)
+    
+    // Address on Ethereum blockchain, where all created ERC20 tokens will be transferred.
     ->setAddress('0xa0Ca9FF38Bad06eBe64f0fDfF279cAE35129F5C6')
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setNonce(null)/* optional */
-    ->setFee(null)/* optional */;
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null)
+    
+    // (optional) 
+    ->setFee(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';

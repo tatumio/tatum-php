@@ -18,11 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_account_settings_xrp_blockchain_kms = (new \Tatum\Model\AccountSettingsXrpBlockchainKMS())
+    
+    // XRP account address. Must be the one used for generating deposit tags.
     ->setFromAccount('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
+    
+    // Identifier of the private key associated in signing application. Secret or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setFee('10000')/* optional */
-    ->setRippling(true)/* optional */
-    ->setRequireDestinationTag(true)/* optional */;
+    
+    // (optional) Fee to be paid, in XRP. If omitted, current fee will be calculated.
+    ->setFee('10000')
+    
+    // (optional) Should be true, if an account is the issuer of assets.
+    ->setRippling(true)
+    
+    // (optional) Should be true, if an account should support off-chain processing.
+    ->setRequireDestinationTag(true);
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

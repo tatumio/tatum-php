@@ -18,11 +18,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_update_cashback_value_for_author_nft_tron = (new \Tatum\Model\UpdateCashbackValueForAuthorNftTron())
+    
+    // The blockchain to work with
     ->setChain('TRON')
+    
+    // The ID of the NFT to update royalty information for
     ->setTokenId('123')
+    
+    // The blockchain address of the NFT to update royalty information for
     ->setContractAddress('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
+    
+    // The new value of the royalty cashback to be set for the author of the NFT; to disable the royalties for the NFT completely, set this parameter to 0
     ->setCashbackValue('0.1')
+    
+    // The maximum amount to be paid as the transaction fee (in TRX)
     ->setFeeLimit(600)
+    
+    // The private key of the NFT author's address
     ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

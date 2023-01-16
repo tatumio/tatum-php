@@ -18,11 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_mint_nft_algorand = (new \Tatum\Model\MintNftAlgorand())
+    
+    // The blockchain to work with
     ->setChain('ALGO')
+    
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
     ->setUrl('https://my_token_data.com')
+    
+    // The name of the NFT
     ->setName('My Crazy NFT')
+    
+    // The private key of the minting account; the transaction fee will be paid from this account
     ->setFromPrivateKey('EPD5VYFGXWNZ2PY4AQNPD3E3LMAXISKNMGR4IJ44YI74QL5AMNTAIJNQ6Q373RDANF2YERVFQY3C5CKK7VUJDJR4DT6EPP5HZQUPORQ')
-    ->setAttr(null)/* optional */;
+    
+    // (optional) 
+    ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';

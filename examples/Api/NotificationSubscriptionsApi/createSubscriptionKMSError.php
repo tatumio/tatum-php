@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_kms_error = (new \Tatum\Model\CreateSubscriptionKMSError())
+    
+    // Type of the subscription.
     ->setType('KMS_FAILED_TX')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

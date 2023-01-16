@@ -18,16 +18,36 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_btc_key_pair = (new \Tatum\Model\TransferBtcKeyPair())
+    
+    // Sender account ID
     ->setSenderAccountId('5e68c66581f2ee32bc354087')
+    
+    // Blockchain address to send assets to. For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain addresses as a comma separated string.
     ->setAddress('mpTwPdF8up9kidgcAStriUPwRdnE9MRAg7')
+    
+    // Amount to be withdrawn to blockchain.
     ->setAmount('0.001')
-    ->setCompliant(false)/* optional */
-    ->setFee('0.0005')/* optional */
-    ->setMultipleAmounts(null)/* optional */
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 0.0005 BTC is used. Minimum fee is 0.00001 BTC.
+    ->setFee('0.0005')
+    
+    // (optional) For BTC, LTC, DOGE and BCH, it is possible to enter list of multiple recipient blockchain amounts. List of recipient addresses must be present in the address field and total sum of amounts must be equal to the amount field.
+    ->setMultipleAmounts(null)
+    
+    // Array of assigned blockchain addresses with their private keys. Either mnemonic, keyPair or signature Id must be present - depends on the type of account and xpub. Tatum KMS does not support keyPair type of off-chain transaction, only mnemonic based.
     ->setKeyPair(null)
+    
+    // Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr must be used.
     ->setAttr('null')
-    ->setPaymentId('1234')/* optional */
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('1234')
+    
+    // (optional) Note visible to owner of withdrawing account
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

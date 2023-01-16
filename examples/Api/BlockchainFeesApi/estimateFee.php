@@ -18,12 +18,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_estimate_fee = (new \Tatum\Model\EstimateFee())
+    
+    // Blockchain to estimate fee for.
     ->setChain('null')
+    
+    // Type of transaction
     ->setType('null')
-    ->setSender('0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef')/* optional */
-    ->setRecipient('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')/* optional */
-    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')/* optional */
-    ->setAmount('100000')/* optional */;
+    
+    // (optional) Sender address, if type is TRANSFER_ERC20
+    ->setSender('0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef')
+    
+    // (optional) Blockchain address to send assets, if type is TRANSFER_ERC20
+    ->setRecipient('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // (optional) Contract address of ERC20 token, if type is TRANSFER_ERC20
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // (optional) Amount to be sent in ERC20, if type is TRANSFER_ERC20
+    ->setAmount('100000');
 
 try {
     /** @var \Tatum\Model\EstimateFee200Response $response */

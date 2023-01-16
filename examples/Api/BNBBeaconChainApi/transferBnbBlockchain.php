@@ -18,11 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_bnb_blockchain = (new \Tatum\Model\TransferBnbBlockchain())
+    
+    // Blockchain address to send assets.
     ->setTo('tbnb138u9djee6fwphhd2a3628q2h0j5w97yx48zqex')
+    
+    // Currency to transfer from Binance Blockchain Account.
     ->setCurrency('BNB')
+    
+    // Amount to be sent in BNB.
     ->setAmount('100000')
+    
+    // Private key of sender address.
     ->setFromPrivateKey('cTmS2jBWXgFaXZ2xG9jhn67TiyTshnMp3UedamzEhGm6BZV1vLgQ')
-    ->setMessage('Message to recipient')/* optional */;
+    
+    // (optional) Message to recipient.
+    ->setMessage('Message to recipient');
 
 try {
     /** @var \Tatum\Model\TransactionHash $response */

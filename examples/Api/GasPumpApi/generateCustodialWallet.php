@@ -18,14 +18,30 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_generate_custodial_wallet = (new \Tatum\Model\GenerateCustodialWallet())
+    
+    // Blockchain to work with.
     ->setChain('ETH')
+    
+    // Private key of account, from which the transaction will be initiated.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
+    
+    // If address should support ERC20 tokens, it should be marked as true.
     ->setEnableFungibleTokens(false)
+    
+    // If address should support ERC721 tokens, it should be marked as true.
     ->setEnableNonFungibleTokens(false)
+    
+    // If address should support ERC1155 tokens, it should be marked as true.
     ->setEnableSemiFungibleTokens(false)
+    
+    // If address should support batch transfers of the assets, it should be marked as true.
     ->setEnableBatchTransactions(false)
-    ->setFee(null)/* optional */
-    ->setNonce(null)/* optional */;
+    
+    // (optional) 
+    ->setFee(null)
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null);
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

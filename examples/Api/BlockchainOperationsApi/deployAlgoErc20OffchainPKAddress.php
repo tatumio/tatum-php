@@ -18,13 +18,29 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_algo_erc20_offchain_pk_address = (new \Tatum\Model\DeployAlgoErc20OffchainPKAddress())
+    
+    // Name of the ERC20 token - stored as a symbol on Blockchain
     ->setSymbol('MT')
+    
+    // max supply of ERC20 token.
     ->setSupply('10000000')
+    
+    // Description of the ERC20 token
     ->setDescription('My ERC20 Token')
+    
+    // Base pair for ERC20 token. 1 token will be equal to 1 unit of base pair. Transaction value will be calculated according to this base pair.
     ->setBasePair('EUR')
-    ->setBaseRate(1)/* optional */
-    ->setCustomer(null)/* optional */
+    
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    ->setBaseRate(1)
+    
+    // (optional) 
+    ->setCustomer(null)
+    
+    // Address on Ethereum blockchain, where all initial supply will be stored. Either xpub and derivationIndex, or address must be present, not both.
     ->setAddress('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
+    
+    // Private key of Ethereum account address, from which gas for deployment of ERC20 will be paid. Private key, mnemonic or signature Id must be present.
     ->setPrivateKey('NBYMCVEEDFYV3TPWVRE6APE7PKHUJD4XAKXCKNCLKGUXOC3LFNJGZQCJCRA53HB7ZAHF6NFJH2QIVQ5USQNWG35QCJLD4KZ5IWMB24Q');
 
 try {

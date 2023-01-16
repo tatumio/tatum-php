@@ -18,13 +18,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_generate_marketplace_celo = (new \Tatum\Model\GenerateMarketplaceCelo())
+    
+    // Blockchain to work with.
     ->setChain('CELO')
+    
+    // Address of the recipient of the fee for the trade.
     ->setFeeRecipient('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null')
+    
+    // The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
     ->setMarketplaceFee(150)
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(1)/* optional */
-    ->setFee(null)/* optional */;
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(1)
+    
+    // (optional) 
+    ->setFee(null);
 
 try {
     /** @var \Tatum\Model\GenerateMarketplace200Response $response */

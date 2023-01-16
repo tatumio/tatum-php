@@ -18,14 +18,30 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_update_cashback_value_for_author_nft_kms_tron = (new \Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron())
+    
+    // The blockchain to work with
     ->setChain('TRON')
+    
+    // The ID of the NFT to update royalty information for
     ->setTokenId('123')
+    
+    // The blockchain address of the NFT to update royalty information for
     ->setContractAddress('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
+    
+    // The new value of the royalty cashback to be set for the author of the NFT; to disable the royalties for the NFT completely, set this parameter to 0
     ->setCashbackValue('0.1')
+    
+    // The maximum amount to be paid as the transaction fee (in TRX)
     ->setFeeLimit(600)
+    
+    // The blockchain address of the NFT author from which the transaction will be performed
     ->setAccount('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
+    
+    // The KMS identifier of the private key of the NFT author's address
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(null)/* optional */;
+    
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the NFT author's address that was generated from the mnemonic
+    ->setIndex(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';

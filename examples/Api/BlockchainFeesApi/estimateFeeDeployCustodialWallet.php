@@ -18,8 +18,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_estimate_fee_deploy_custodial_wallet = (new \Tatum\Model\EstimateFeeDeployCustodialWallet())
+    
+    // Blockchain to estimate fee for.
     ->setChain('null')
+    
+    // Type of transaction
     ->setType('null')
+    
+    // Number of addresses to create
     ->setBatchCount(10);
 
 try {

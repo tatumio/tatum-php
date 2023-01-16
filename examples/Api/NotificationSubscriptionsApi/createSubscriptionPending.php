@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_pending = (new \Tatum\Model\CreateSubscriptionPending())
+    
+    // Type of the subscription.
     ->setType('ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

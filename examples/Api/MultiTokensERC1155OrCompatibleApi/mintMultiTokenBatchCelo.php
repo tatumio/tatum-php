@@ -18,14 +18,32 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_mint_multi_token_batch_celo = (new \Tatum\Model\MintMultiTokenBatchCelo())
+    
+    // Chain to work with.
     ->setChain('CELO')
+    
+    // The IDs of the Multi Tokens to be created.
     ->setTokenId([["100000","100001"]])
+    
+    // The amounts of the Multi Tokens to be created.
     ->setAmounts([["100","100"]])
-    ->setData('0x1234')/* optional */
+    
+    // (optional) Data in bytes
+    ->setData('0x1234')
+    
+    // The blockchain address to send the Multi Tokens to
     ->setTo(["0x4b812a77b109A150C2Fc89eD133EaBC78bC9EC8f"])
+    
+    // The address of the Multi Token smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(null)/* optional */
+    
+    // (optional) Nonce to be set to Celo transaction. If not present, last known nonce will be used.
+    ->setNonce(null)
+    
+    // Currency to pay for transaction gas
     ->setFeeCurrency('null');
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.

@@ -18,17 +18,31 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_call_polygon_smart_contract_method_caller = (new \Tatum\Model\CallPolygonSmartContractMethodCaller())
+    
+    // The address of the account, which will be sender and fee payer of this transaction
     ->setCaller('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The address of the smart contract
     ->setContractAddress('0xC9c8ba8C7e2EAF43e84330Db08915A8106d7bD74')
-    ->setAmount('100000')/* optional */
+    
+    // (optional) Amount of the assets to be sent.
+    ->setAmount('100000')
+    
+    // Name of the method to invoke on smart contract.
     ->setMethodName('transfer')
+    
+    // ABI of the method to invoke.
     ->setMethodAbi(
         json_decode(
             '{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"stake","outputs":[],"stateMutability":"nonpayable","type":"function"}'
         )
     )
+    
+    // 
     ->setParams(["0x632"])
-    ->setFee(null)/* optional */;
+    
+    // (optional) 
+    ->setFee(null);
 
 try {
     /** @var \Tatum\Model\CallSmartContractMethod200Response $response */

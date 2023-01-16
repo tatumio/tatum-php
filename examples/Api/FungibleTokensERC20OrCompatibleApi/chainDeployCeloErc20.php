@@ -18,15 +18,35 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_chain_deploy_celo_erc20 = (new \Tatum\Model\ChainDeployCeloErc20())
+    
+    // The blockchain to work with
     ->setChain('CELO')
+    
+    // Symbol of the ERC20 token
     ->setSymbol('ERC_SYMBOL')
+    
+    // Name of the ERC20 token
     ->setName('MyERC20')
-    ->setTotalCap('10000000')/* optional */
+    
+    // (optional) Max supply of ERC20 token.
+    ->setTotalCap('10000000')
+    
+    // Max supply of ERC20 token.
     ->setSupply('10000000')
+    
+    // Number of decimal points
     ->setDigits(18)
+    
+    // Address on Ethereum blockchain, where all created ERC20 tokens will be transferred.
     ->setAddress('0xa0Ca9FF38Bad06eBe64f0fDfF279cAE35129F5C6')
+    
+    // Private key of Ethereum account address, from which the fee for the deployment of ERC20 will be paid. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(null)/* optional */
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null)
+    
+    // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

@@ -18,18 +18,42 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_list_oder_book_matched_body = (new \Tatum\Model\ListOderBookMatchedBody())
-    ->setId('5e68c66581f2ee32bc354087')/* optional */
-    ->setCustomerId('5e68c66581f2ee32bc354087')/* optional */
+    
+    // (optional) Account ID. If present, list matched FUTURE_BUY/FUTURE_SELL orders trades for that account.
+    ->setId('5e68c66581f2ee32bc354087')
+    
+    // (optional) Customer ID. If present, list matched FUTURE_BUY/FUTURE_SELL orders trades for that customer.
+    ->setCustomerId('5e68c66581f2ee32bc354087')
+    
+    // Max number of items per page is 50.
     ->setPageSize(10)
-    ->setOffset(0)/* optional */
-    ->setPair('BTC/EUR')/* optional */
-    ->setCount(true)/* optional */
-    ->setType('FUTURE_SELL')/* optional */
-    ->setAmount(null)/* optional */
-    ->setFill(null)/* optional */
-    ->setPrice(null)/* optional */
-    ->setCreated(null)/* optional */
-    ->setSort(null)/* optional */;
+    
+    // (optional) Offset to obtain next page of the data.
+    ->setOffset(0)
+    
+    // (optional) Trade pair. If present, list matched FUTURE_BUY/FUTURE_SELL orders trades for that pair.
+    ->setPair('BTC/EUR')
+    
+    // (optional) Get the total trade pair count based on the filter. Either count or pageSize is accepted.
+    ->setCount(true)
+    
+    // (optional) Trade type.
+    ->setType('FUTURE_SELL')
+    
+    // (optional) Amount of the trade. AND is used between filter options.
+    ->setAmount(null)
+    
+    // (optional) Fill of the trade. AND is used between filter options.
+    ->setFill(null)
+    
+    // (optional) Price of the trade. AND is used between filter options.
+    ->setPrice(null)
+    
+    // (optional) Created date of the trade. AND is used between filter options.
+    ->setCreated(null)
+    
+    // (optional) Sorts the result by selected property. The priority of the items is determined by order of the sort properties in array.
+    ->setSort(null);
 
 try {
     /** @var \Tatum\Model\Trade[] $response */

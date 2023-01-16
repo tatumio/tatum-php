@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_mint_nft_solana_kms = (new \Tatum\Model\MintNftSolanaKMS())
+    
+    // The blockchain to work with
     ->setChain('SOL')
+    
+    // The blockchain address to send the NFT to
     ->setTo('9pSkqSG71Sb25ia9WBFhoeBYjp8dhUf7fRux9xrDq89b')
+    
+    // The blockchain address that will pay the fee for the transaction
     ->setFrom('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
+    
+    // The KMS identifier of the private key of the blockchain address that will pay the fee for the transaction
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    
+    // 
     ->setMetadata(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

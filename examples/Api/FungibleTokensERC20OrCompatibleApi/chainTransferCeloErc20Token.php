@@ -18,13 +18,29 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_chain_transfer_celo_erc20_token = (new \Tatum\Model\ChainTransferCeloErc20Token())
+    
+    // The blockchain to work with
     ->setChain('CELO')
+    
+    // The blockchain address to send the fungible tokens to
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The blockchain address of the fungible token smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The amount of the fungible tokens to be sent
     ->setAmount('100000')
+    
+    // The number of decimal places that the fungible tokens have; to find out how many decimal places are used in the fungible tokens, check out the <a href="https://apidoc.tatum.io/tag/Blockchain-utils#operation/SCGetContractAddress" target="_blank">smart contract</a>
     ->setDigits(18)
+    
+    // The private key of the blockchain address from which the fee will be deducted
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(null)/* optional */
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null)
+    
+    // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

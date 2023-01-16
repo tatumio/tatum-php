@@ -18,16 +18,36 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_nft_kms = (new \Tatum\Model\DeployNftKMS())
+    
+    // The blockchain to work with
     ->setChain('ETH')
+    
+    // Name of the NFT token
     ->setName('My ERC721')
-    ->setProvenance(false)/* optional */
-    ->setCashback(false)/* optional */
-    ->setPublicMint(true)/* optional */
+    
+    // (optional) True if the contract is provenance percentage royalty type. False by default. <a href="https://github.com/tatumio/smart-contracts" target="_blank">Details and sources available here.</a>
+    ->setProvenance(false)
+    
+    // (optional) True if the contract is fixed price royalty type. False by default. <a href="https://github.com/tatumio/smart-contracts" target="_blank">Details and sources available here.</a>
+    ->setCashback(false)
+    
+    // (optional) True if the contract is publicMint type. False by default.
+    ->setPublicMint(true)
+    
+    // Symbol of the NFT token
     ->setSymbol('ERC_SYMBOL')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setNonce(null)/* optional */
-    ->setFee(null)/* optional */;
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null)
+    
+    // (optional) 
+    ->setFee(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';

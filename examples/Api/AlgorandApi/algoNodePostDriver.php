@@ -24,7 +24,9 @@ $arg_x_api_key = "asdlkfjnqunalkwjfnq2oi303294857k";
 $arg_algod_path = "v2/accounts";
 
 $arg_algo_node_post_driver_request = (new \Tatum\Model\AlgoNodePostDriverRequest())
-    ->setRawtxn('null')/* optional */;
+    
+    // (optional) Check here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions</a>
+    ->setRawtxn('null');
 
 try {
     /** @var \Tatum\Model\AlgoNodePostDriver200Response $response */

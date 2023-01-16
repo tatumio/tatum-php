@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_receive_algorand_asset = (new \Tatum\Model\ReceiveAlgorandAsset())
+    
+    // AssetID of the asset you wanna enable for the sender.
     ->setAssetId(116363571)
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI');
 
 try {

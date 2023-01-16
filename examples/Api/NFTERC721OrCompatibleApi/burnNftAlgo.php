@@ -18,8 +18,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_burn_nft_algo = (new \Tatum\Model\BurnNftAlgo())
+    
+    // The blockchain to work with
     ->setChain('ALGO')
+    
+    // The ID of the NFT to burn; this is the ID from the <code>assetIndex</code> parameter returned in the response body of the <a href="#operation/NftMintErc721">minting call</a>
     ->setContractAddress('116363571')
+    
+    // The private key of the blockchain address from which the fee will be deducted
     ->setFromPrivateKey('46OPDKNDLB35M3QMRRZEAW2HDTDT2LFHRUCHDE5FJZAJOV7GDPCC6AYZ6KCUULTHA4QL6YPHN2PNEXHPJMUZGHYJXQK6SUL2HQ2MLXQ');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

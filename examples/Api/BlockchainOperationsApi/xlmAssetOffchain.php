@@ -18,8 +18,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_xlm_asset = (new \Tatum\Model\CreateXlmAsset())
+    
+    // Blockchain address of the issuer of the assets.
     ->setIssuerAccount('GC5LAVZ5UPLIFDH6SI33PNVL5TKWA4ODXTI3WEF5JM6LRM5MNGVJ56TT')
+    
+    // Asset name.
     ->setToken('TOKEN123')
+    
+    // Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR.
     ->setBasePair('EUR');
 
 try {

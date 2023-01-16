@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_nft_flow_mnemonic = (new \Tatum\Model\TransferNftFlowMnemonic())
+    
+    // The blockchain to work with
     ->setChain('FLOW')
+    
+    // Blockchain address to send NFT token to.
     ->setTo('0xc1b45bc27b9c61c3')
+    
+    // ID of token to be sent.
     ->setTokenId('123')
+    
+    // Address of NFT token
     ->setContractAddress('17a50dad-bcb1-4f3d-ae2c-ea2bfb04419f')
+    
+    // Blockchain address of the sender account.
     ->setAccount('0xc1b45bc27b9c61c3')
+    
+    // Mnemonic to generate private key of sender address.
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
+    
+    // Derivation index of sender address.
     ->setIndex(0);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

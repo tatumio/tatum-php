@@ -18,13 +18,29 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_estimate_fee_transfer_from_custodial = (new \Tatum\Model\EstimateFeeTransferFromCustodial())
+    
+    // Blockchain to estimate fee for.
     ->setChain('null')
+    
+    // Type of transaction
     ->setType('null')
+    
+    // Sender address
     ->setSender('0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef')
+    
+    // Blockchain address to send assets
     ->setRecipient('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Contract address of the token
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Contract address of custodial wallet contract
     ->setCustodialAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Amount to be sent in native asset, ERC20 or ERC1155
     ->setAmount('100000')
+    
+    // Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - native asset
     ->setTokenType(0);
 
 try {

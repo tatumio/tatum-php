@@ -18,11 +18,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_chain_transfer_algo_erc20 = (new \Tatum\Model\ChainTransferAlgoErc20())
+    
+    // The blockchain to work with
     ->setChain('ALGO')
+    
+    // The blockchain address to send the fungible tokens to
     ->setTo('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
+    
+    // The asset ID (the ID of the fungible tokens)
     ->setContractAddress('1')
+    
+    // The amount of the fungible tokens to be sent
     ->setAmount('100000')
+    
+    // The number of decimal places that the fungible tokens have
     ->setDigits(18)
+    
+    // The private key of the blockchain address from which the fee will be deducted
     ->setFromPrivateKey('72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

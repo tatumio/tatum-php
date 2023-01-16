@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_chain_transfer_algo_erc20_kms = (new \Tatum\Model\ChainTransferAlgoErc20KMS())
+    
+    // The blockchain to work with
     ->setChain('ALGO')
+    
+    // The blockchain address to send the fungible tokens from
     ->setFrom('NTAESFCB3WOD7SAOL42KSPVARLB3JFA3MNX3AESWHYVT2RMYDVZI6YLG4Y')
+    
+    // The blockchain address to send the fungible tokens to
     ->setTo('TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4')
+    
+    // The asset ID (the ID of the fungible tokens)
     ->setContractAddress('1')
+    
+    // The amount of the fungible tokens to be sent
     ->setAmount('100000')
+    
+    // The number of decimal places that the fungible tokens have
     ->setDigits(18)
+    
+    // The KMS identifier of the private key of the blockchain address that you are sending the fungible tokens from (the address that you specified in the <code>from</code> parameter); the transaction fee will be deducted from this address
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_partial_trade_match = (new \Tatum\Model\CreateSubscriptionPartialTradeMatch())
+    
+    // Type of the subscription.
     ->setType('CUSTOMER_PARTIAL_TRADE_MATCH')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

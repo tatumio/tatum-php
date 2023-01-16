@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_burn_nft_flow_pk = (new \Tatum\Model\BurnNftFlowPK())
+    
+    // The blockchain to work with
     ->setChain('FLOW')
+    
+    // ID of token to be destroyed.
     ->setTokenId('123')
+    
+    // Address of NFT token
     ->setContractAddress('17a50dad-bcb1-4f3d-ae2c-ea2bfb04419f')
+    
+    // Blockchain address of the sender account.
     ->setAccount('0xc1b45bc27b9c61c3')
+    
+    // Private key of sender address. Private key, mnemonic and index or signature Id must be present.
     ->setPrivateKey('05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

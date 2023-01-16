@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_freeze_tron = (new \Tatum\Model\FreezeTron())
+    
+    // Private key of the address, from which the TRX will be sent.
     ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701')
+    
+    // Recipient address of frozen BANDWIDTH or ENERGY.
     ->setReceiver('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    
+    // Duration of frozen funds, in days.
     ->setDuration(3)
+    
+    // Resource to obtain, BANDWIDTH or ENERGY.
     ->setResource('ENERGY')
+    
+    // Amount to be frozen in TRX.
     ->setAmount('100000');
 
 try {

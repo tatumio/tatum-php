@@ -18,9 +18,15 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_virtual_currency_update = (new \Tatum\Model\VirtualCurrencyUpdate())
+    
+    // Virtual currency name, which will be updated. It is not possible to update the name of the virtual currency.
     ->setName('VC_VIRTUAL')
-    ->setBaseRate(1)/* optional */
-    ->setBasePair('EUR')/* optional */;
+    
+    // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate*1 basePair.
+    ->setBaseRate(1)
+    
+    // (optional) Base pair for virtual currency. Transaction value will be calculated according to this base pair. e.g. 1 VC_VIRTUAL is equal to 1 BTC, if basePair is set to BTC.
+    ->setBasePair('EUR');
 
 try {
     $sdk->mainnet()

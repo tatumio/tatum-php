@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_generate_custodial_wallet_batch_tron_kms = (new \Tatum\Model\GenerateCustodialWalletBatchTronKMS())
+    
+    // Blockchain to work with.
     ->setChain('TRON')
+    
+    // Sender address.
     ->setFrom('TGXh2YJhfwchMGKuzfEJ27W1VEJRKnMdy9')
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Number of addresses to generate.
     ->setBatchCount(50)
+    
+    // Owner of the addresses.
     ->setOwner('TGXh2YJhfwchMGKuzfEJ27W1VEJRKnMdy9')
+    
+    // Fee limit to be set, in TRX
     ->setFeeLimit(100);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

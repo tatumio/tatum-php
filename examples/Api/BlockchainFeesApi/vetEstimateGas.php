@@ -18,11 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_vet_estimate_gas = (new \Tatum\Model\VetEstimateGas())
+    
+    // Sender account address.
     ->setFrom('0x5034aa590125b64023a0262112b98d72e3c8e40e')
+    
+    // Recipient account address.
     ->setTo('0x5034aa590125b64023a0262112b98d72e3c8e40e')
+    
+    // Amount to send.
     ->setValue('140')
-    ->setData('null')/* optional */
-    ->setNonce(12345)/* optional */;
+    
+    // (optional) Data to send to Smart Contract
+    ->setData('null')
+    
+    // (optional) Nonce
+    ->setNonce(12345);
 
 try {
     /** @var float $response */

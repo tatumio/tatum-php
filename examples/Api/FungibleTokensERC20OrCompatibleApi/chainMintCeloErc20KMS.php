@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_chain_mint_celo_erc20_kms = (new \Tatum\Model\ChainMintCeloErc20KMS())
+    
+    // The blockchain to work with
     ->setChain('CELO')
+    
+    // Amount to be minted and transferred to the recipient.
     ->setAmount('100000')
+    
+    // Blockchain address to send ERC-20 tokens to.
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Address of ERC-20 token
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setNonce(null)/* optional */
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null)
+    
+    // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

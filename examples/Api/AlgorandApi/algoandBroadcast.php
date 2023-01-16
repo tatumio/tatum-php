@@ -18,8 +18,12 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_broadcast_kms = (new \Tatum\Model\BroadcastKMS())
+    
+    // Raw signed transaction to be published to network.
     ->setTxData('62BD544D1B9031EFC330A3E855CC3A0D51CA5131455C1AB3BCAC6D243F65460D')
-    ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6')/* optional */;
+    
+    // (optional) ID of prepared payment template to sign. Required only, when broadcasting transaction signed by Tatum KMS.
+    ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6');
 
 try {
     /** @var \Tatum\Model\AlgoTransactionHashKMS $response */

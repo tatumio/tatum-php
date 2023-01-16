@@ -18,6 +18,8 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_offchain_addresses = (new \Tatum\Model\OffchainAddresses())
+    
+    // 
     ->setAddresses(null);
 
 try {

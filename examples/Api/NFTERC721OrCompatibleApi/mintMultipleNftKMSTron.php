@@ -18,14 +18,32 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_mint_multiple_nft_kms_tron = (new \Tatum\Model\MintMultipleNftKMSTron())
+    
+    // The blockchain to work with
     ->setChain('TRON')
+    
+    // Blockchain address to send NFT token to.
     ->setTo(["TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ"])
+    
+    // Blockchain address to perform transaction from
     ->setAccount('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
+    
+    // ID of token to be created.
     ->setTokenId(["123"])
+    
+    // The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a>
     ->setUrl(["https://my_token_data.com"])
+    
+    // Address of NFT token
     ->setContractAddress('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    
+    // The maximum amount to be paid as the transaction fee (in TRX)
     ->setFeeLimit(600);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

@@ -18,11 +18,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_flow_transaction_mnemonic = (new \Tatum\Model\FlowTransactionMnemonic())
+    
+    // Blockchain account to send from
     ->setAccount('0x955cd3f17b2fd8ad')
+    
+    // Type of asset to send
     ->setCurrency('null')
+    
+    // Blockchain address to send assets
     ->setTo('0x955cd3f17b2fd8ae')
+    
+    // Amount to be sent, in Flow.
     ->setAmount('10000')
+    
+    // Mnemonic to generate private key.
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
+    
+    // Index to the specific address from mnemonic.
     ->setIndex(null);
 
 try {

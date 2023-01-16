@@ -18,8 +18,12 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_batch_create_transaction = (new \Tatum\Model\BatchCreateTransaction())
+    
+    // Internal sender account ID within Tatum platform
     ->setSenderAccountId('5e6645712b55823de7ea82f1')
-    ->setTransaction(null)/* optional */;
+    
+    // (optional) Array of block seals.
+    ->setTransaction(null);
 
 try {
     /** @var string[] $response */

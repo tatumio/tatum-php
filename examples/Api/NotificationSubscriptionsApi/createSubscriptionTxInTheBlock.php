@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_tx_in_the_block = (new \Tatum\Model\CreateSubscriptionTxInTheBlock())
+    
+    // Type of the subscription.
     ->setType('TRANSACTION_IN_THE_BLOCK')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

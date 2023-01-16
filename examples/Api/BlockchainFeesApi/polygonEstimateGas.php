@@ -18,10 +18,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_polygon_estimate_gas = (new \Tatum\Model\PolygonEstimateGas())
+    
+    // Sender address.
     ->setFrom('0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef')
+    
+    // Blockchain address to send assets
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Amount to be sent in MATIC.
     ->setAmount('100000')
-    ->setData('4d79206e6f746520746f2074686520726563697069656e74')/* optional */;
+    
+    // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the hexadecimal format
+    ->setData('4d79206e6f746520746f2074686520726563697069656e74');
 
 try {
     /** @var \Tatum\Model\PolygonEstimateGas200Response $response */

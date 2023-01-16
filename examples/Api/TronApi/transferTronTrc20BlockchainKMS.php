@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_tron_trc20_blockchain_kms = (new \Tatum\Model\TransferTronTrc20BlockchainKMS())
+    
+    // Sender address of TRON account in Base58 format.
     ->setFrom('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Recipient address of TRON account in Base58 format.
     ->setTo('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
+    
+    // Address of the TRC20 token to transfer.
     ->setTokenAddress('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
+    
+    // Fee in TRX to be paid.
     ->setFeeLimit(0.01)
+    
+    // Amount to be sent in TRX.
     ->setAmount('100000');
 
 try {

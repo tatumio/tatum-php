@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_withdraw_from_marketplace_solana = (new \Tatum\Model\WithdrawFromMarketplaceSolana())
+    
+    // Blockchain to work with.
     ->setChain('SOL')
+    
+    // Blockchain address of the smart contract
     ->setContractAddress('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // Blockchain address of the marketplace fee recipient
     ->setFrom(FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU)
+    
+    // Amount of funds to withdraw.
     ->setAmount('100000')
+    
+    // The private key of the marketplace fee recipient
     ->setFromPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv');
 
 try {

@@ -18,11 +18,21 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_trust_line_xlm_blockchain = (new \Tatum\Model\TrustLineXlmBlockchain())
+    
+    // XLM account address. Must be the one used for generating deposit tags.
     ->setFromAccount('GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H')
+    
+    // Blockchain address of the issuer of the assets to create trust line for.
     ->setIssuerAccount('GC5LAVZ5UPLIFDH6SI33PNVL5TKWA4ODXTI3WEF5JM6LRM5MNGVJ56TT')
+    
+    // Asset name.
     ->setToken('TOKEN123')
+    
+    // Secret for account. Secret, or signature Id must be present.
     ->setFromSecret('SCVVKNLBHOWBNJYHD3CNROOA2P3K35I5GNTYUHLLMUHMHWQYNEI7LVED')
-    ->setLimit('10000')/* optional */;
+    
+    // (optional) Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line. When no limit is specified, maximum amount available is permitted.
+    ->setLimit('10000');
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

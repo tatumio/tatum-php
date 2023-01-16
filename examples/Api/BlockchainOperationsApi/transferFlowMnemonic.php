@@ -18,15 +18,33 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_flow_mnemonic = (new \Tatum\Model\TransferFlowMnemonic())
+    
+    // Sender account ID
     ->setSenderAccountId('61b3bffddfb389cde19c73be')
+    
+    // Blockchain account to send from
     ->setAccount('0x955cd3f17b2fd8ad')
+    
+    // Blockchain address to send assets
     ->setAddress('0x955cd3f17b2fd8ae')
+    
+    // Amount to be sent, in Flow.
     ->setAmount('10000')
+    
+    // Mnemonic to generate private key.
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse')
+    
+    // Index to the specific address from mnemonic.
     ->setIndex(null)
-    ->setCompliant(false)/* optional */
-    ->setPaymentId('1234')/* optional */
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('1234')
+    
+    // (optional) Note visible to owner of withdrawing account.
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

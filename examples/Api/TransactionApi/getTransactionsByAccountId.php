@@ -18,20 +18,48 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transaction_filter = (new \Tatum\Model\TransactionFilter())
+    
+    // Account ID - source of transaction(s).
     ->setId('5e6be8e9e6aa436299950c41')
-    ->setCounterAccount('5e6be8e9e6aa436299950c41')/* optional */
-    ->setFrom(1571833231000)/* optional */
-    ->setTo(1571833231000)/* optional */
-    ->setCurrency('BTC')/* optional */
-    ->setAmount(null)/* optional */
-    ->setCurrencies(null)/* optional */
-    ->setTransactionType('null')/* optional */
-    ->setTransactionTypes(null)/* optional */
-    ->setOpType('PAYMENT')/* optional */
-    ->setTransactionCode('1_01_EXTERNAL_CODE')/* optional */
-    ->setPaymentId('65426')/* optional */
-    ->setRecipientNote('65426')/* optional */
-    ->setSenderNote('65426')/* optional */;
+    
+    // (optional) Counter account - transaction(s) destination account.
+    ->setCounterAccount('5e6be8e9e6aa436299950c41')
+    
+    // (optional) Starting date to search for transactions from in UTC millis. If not present, search all history.
+    ->setFrom(1571833231000)
+    
+    // (optional) Date until to search for transactions in UTC millis. If not present, search up till now.
+    ->setTo(1571833231000)
+    
+    // (optional) Currency of the transactions.
+    ->setCurrency('BTC')
+    
+    // (optional) Amount of the transaction. AND is used between filter options.
+    ->setAmount(null)
+    
+    // (optional) List of currencies of the transactions.
+    ->setCurrencies(null)
+    
+    // (optional) Type of payment
+    ->setTransactionType('null')
+    
+    // (optional) Types of payment
+    ->setTransactionTypes(null)
+    
+    // (optional) Type of operation
+    ->setOpType('PAYMENT')
+    
+    // (optional) For bookkeeping to distinct transaction purpose.
+    ->setTransactionCode('1_01_EXTERNAL_CODE')
+    
+    // (optional) Payment ID defined in payment order by sender.
+    ->setPaymentId('65426')
+    
+    // (optional) Recipient note defined in payment order by sender.
+    ->setRecipientNote('65426')
+    
+    // (optional) Sender note defined in payment order by sender.
+    ->setSenderNote('65426');
 
 // Max number of items per page is 50. Either count or pageSize is accepted.
 $arg_page_size = 10;

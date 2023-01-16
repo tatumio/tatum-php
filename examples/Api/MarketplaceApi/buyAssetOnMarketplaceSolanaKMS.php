@@ -18,11 +18,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_buy_asset_on_marketplace_solana_kms = (new \Tatum\Model\BuyAssetOnMarketplaceSolanaKMS())
+    
+    // Blockchain to work with.
     ->setChain('SOL')
+    
+    // Blockchain address of the smart contract
     ->setContractAddress('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // Blockchain address of the listing
     ->setListingId(FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU)
+    
+    // Blockchain address of the buyer
     ->setFrom(FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU)
-    ->setAuthoritySignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')/* optional */
+    
+    // (optional) The KMS identifier of the private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to "true" for the marketplace
+    ->setAuthoritySignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
+    
+    // The KMS identifier of the private key of the buyer
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {

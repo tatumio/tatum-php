@@ -18,8 +18,14 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_xrp_asset = (new \Tatum\Model\CreateXrpAsset())
+    
+    // Blockchain address of the issuer of the assets.
     ->setIssuerAccount('rsCZjvenhxsFycrb33gPSfXdrTNAS5uiR1')
+    
+    // Asset name.
     ->setToken('DA39A3EE5E6B4B0D3255BFEF95601890AFD80709')
+    
+    // Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR.
     ->setBasePair('EUR');
 
 try {

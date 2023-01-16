@@ -18,7 +18,11 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_subscription_interval = (new \Tatum\Model\CreateSubscriptionInterval())
+    
+    // Type of the subscription.
     ->setType('TRANSACTION_HISTORY_REPORT')
+    
+    // 
     ->setAttr(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.

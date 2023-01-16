@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_burn_nft_kms_celo = (new \Tatum\Model\BurnNftKMSCelo())
+    
+    // The blockchain to work with
     ->setChain('CELO')
+    
+    // ID of token to be destroyed.
     ->setTokenId('123')
+    
+    // Address of NFT token
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setNonce(null)/* optional */
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null)
+    
+    // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

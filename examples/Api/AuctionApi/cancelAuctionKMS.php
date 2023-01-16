@@ -18,14 +18,30 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_cancel_auction_kms = (new \Tatum\Model\CancelAuctionKMS())
+    
+    // The blockchain to work with
     ->setChain('ETH')
+    
+    // The blockchain address of the auction smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The ID of the auction
     ->setId('null')
+    
+    // The KMS identifier of the private key of the blockchain address from which the fee will be deducted
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(null)/* optional */
-    ->setNonce(1)/* optional */
-    ->setFee(null)/* optional */
-    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')/* optional */;
+    
+    // (optional) (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic
+    ->setIndex(null)
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(1)
+    
+    // (optional) 
+    ->setFee(null)
+    
+    // (optional) Optional address of the ERC20 token, which will be used as a selling currency of the NFT.
+    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85');
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

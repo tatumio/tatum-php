@@ -18,9 +18,17 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_chart_request = (new \Tatum\Model\ChartRequest())
+    
+    // Trading pair
     ->setPair('BTC/EUR')
+    
+    // Start interval in UTC millis.
     ->setFrom(1613654998398)
+    
+    // End interval in UTC millis.
     ->setTo(1613654998398)
+    
+    // Time frame of the chart.
     ->setTimeFrame('MIN_5');
 
 try {

@@ -18,13 +18,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_update_cashback_value_for_author_nft_celo = (new \Tatum\Model\UpdateCashbackValueForAuthorNftCelo())
+    
+    // The blockchain to work with
     ->setChain('CELO')
+    
+    // The ID of the NFT to update royalty information for
     ->setTokenId('123')
+    
+    // The blockchain address of the NFT to update royalty information for
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The new value of the royalty cashback to be set for the author of the NFT; to disable the royalties for the NFT completely, set this parameter to 0
     ->setCashbackValue('0.1')
+    
+    // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null')
+    
+    // The private key of the NFT author's address
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(null)/* optional */;
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
 $arg_x_testnet_type = 'ethereum-sepolia';

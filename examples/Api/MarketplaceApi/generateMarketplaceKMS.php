@@ -18,13 +18,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_generate_marketplace_kms = (new \Tatum\Model\GenerateMarketplaceKMS())
+    
+    // Blockchain to work with.
     ->setChain('ETH')
+    
+    // Address of the recipient of the fee for the trade.
     ->setFeeRecipient('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on.
     ->setMarketplaceFee(150)
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(null)/* optional */
-    ->setNonce(1)/* optional */
-    ->setFee(null)/* optional */;
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(1)
+    
+    // (optional) 
+    ->setFee(null);
 
 try {
     /** @var \Tatum\Model\GenerateMarketplace200Response $response */

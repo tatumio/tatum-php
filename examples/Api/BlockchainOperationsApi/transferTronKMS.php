@@ -18,16 +18,36 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_tron_kms = (new \Tatum\Model\TransferTronKMS())
+    
+    // Blockchain address to send assets to
     ->setAddress('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
+    
+    // Amount to be sent in Tron.
     ->setAmount('100000')
-    ->setCompliant(false)/* optional */
-    ->setFee('2.5')/* optional */
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // (optional) Fee to be submitted as a transaction fee to blockchain. If none is set, default value of 2.5 TRX is used.
+    ->setFee('2.5')
+    
+    // Blockchain address to send assets from
     ->setFrom('TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW')
+    
+    // Identifier of the mnemonic / private key associated in signing application. When hash identifies mnemonic, index must be present to represent specific account to pay from. Private key, mnemonic or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(0)/* optional */
-    ->setPaymentId('1234')/* optional */
+    
+    // (optional) Derivation index of sender address.
+    ->setIndex(0)
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('1234')
+    
+    // Sender account ID
     ->setSenderAccountId('5e68c66581f2ee32bc354087')
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Note visible to owner of withdrawing account
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

@@ -18,13 +18,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_add_multi_token_minter = (new \Tatum\Model\AddMultiTokenMinter())
+    
+    // Chain to work with.
     ->setChain('ETH')
+    
+    // Address of MultiToken token
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Address of MultiToken minter
     ->setMinter('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(null)/* optional */
-    ->setFee(null)/* optional */
-    ->setFeeCurrency('null')/* optional */;
+    
+    // (optional) Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
+    ->setNonce(null)
+    
+    // (optional) 
+    ->setFee(null)
+    
+    // (optional) Currency to pay for transaction gas, only valid for CELO chain.
+    ->setFeeCurrency('null');
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
 $arg_x_testnet_type = 'ethereum-sepolia';

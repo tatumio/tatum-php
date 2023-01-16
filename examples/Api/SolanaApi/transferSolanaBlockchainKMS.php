@@ -18,12 +18,24 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_solana_blockchain_kms = (new \Tatum\Model\TransferSolanaBlockchainKMS())
+    
+    // Blockchain address to send assets from
     ->setFrom('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
+    
+    // Blockchain address to send assets to
     ->setTo('FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU')
+    
+    // Amount to be sent in SOL.
     ->setAmount('100000')
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setFeePayer('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')/* optional */
-    ->setFeePayerSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')/* optional */;
+    
+    // (optional) Blockchain address to pay the fee for the transaction from
+    ->setFeePayer('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
+    
+    // (optional) Identifier of the private key used for paying the gas costs in signing application. Defaults to the signatureId.
+    ->setFeePayerSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

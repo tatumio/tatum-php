@@ -18,16 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_flow_custom_transaction_kms = (new \Tatum\Model\FlowCustomTransactionKMS())
+    
+    // Blockchain account to send from
     ->setAccount('0x955cd3f17b2fd8ad')
+    
+    // Transaction string to send to the chain.
     ->setTransaction('transaction(publicKey: String) {
   prepare(signer: AuthAccount) {
     signer.addPublicKey(publicKey.decodeHex())
   }
 }
 ')
+    
+    // 
     ->setArgs(null)
+    
+    // Identifier of the secret associated in signing application. Secret, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(null)/* optional */;
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null);
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

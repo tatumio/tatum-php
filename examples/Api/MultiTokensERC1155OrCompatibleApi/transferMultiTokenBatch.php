@@ -18,15 +18,33 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_multi_token_batch = (new \Tatum\Model\TransferMultiTokenBatch())
+    
+    // Chain to work with.
     ->setChain('ETH')
+    
+    // Blockchain address to send Multi Token token to
     ->setTo('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // ID of token.
     ->setTokenId(["100000"])
+    
+    // amounts of token.
     ->setAmounts(["100000"])
-    ->setData('0x1234')/* optional */
+    
+    // (optional) Data in bytes
+    ->setData('0x1234')
+    
+    // Address of Multi Token token
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(1)/* optional */
-    ->setFee(null)/* optional */;
+    
+    // (optional) Nonce to be set to transaction. If not present, last known nonce will be used.
+    ->setNonce(1)
+    
+    // (optional) 
+    ->setFee(null);
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
 $arg_x_testnet_type = 'ethereum-sepolia';

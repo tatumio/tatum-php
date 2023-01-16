@@ -18,16 +18,36 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_transfer_xrp = (new \Tatum\Model\TransferXrp())
+    
+    // Sender account ID
     ->setSenderAccountId('61b3bffddfb389cde19c73be')
+    
+    // XRP account address. Must be the one used for generating deposit tags.
     ->setAccount('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
+    
+    // Blockchain address to send assets
     ->setAddress('rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV')
+    
+    // Amount to be sent, in XRP.
     ->setAmount('10000')
-    ->setCompliant(false)/* optional */
-    ->setAttr('12355')/* optional */
-    ->setSourceTag(12355)/* optional */
-    ->setPaymentId('1234')/* optional */
+    
+    // (optional) Compliance check, if withdrawal is not compliant, it will not be processed.
+    ->setCompliant(false)
+    
+    // (optional) Destination tag of the recipient account, if any. Must be stringified uint32.
+    ->setAttr('12355')
+    
+    // (optional) Source tag of sender account, if any.
+    ->setSourceTag(12355)
+    
+    // (optional) Identifier of the payment, shown for created Transaction within Tatum sender account.
+    ->setPaymentId('1234')
+    
+    // Secret for account. Secret, or signature Id must be present.
     ->setSecret('snSFTHdvSYQKKkYntvEt8cnmZuPJB')
-    ->setSenderNote('Sender note')/* optional */;
+    
+    // (optional) Note visible to owner of withdrawing account.
+    ->setSenderNote('Sender note');
 
 try {
     /** @var \Tatum\Model\TransferBtcMnemonic200Response $response */

@@ -18,9 +18,17 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_create_gas_pump = (new \Tatum\Model\CreateGasPump())
+    
+    // The blockchain to work with
     ->setChain('ETH')
+    
+    // The blockchain address that will own the precalculated gas pump addresses and will be used to pay gas fees for operations made on the gas pump addresses; can be referred to as "master address"
     ->setOwner('0x2b5a0bE5940B63dE1eDdCCCa7bd977357e2488eD')
+    
+    // The start index of the range of gas pump addresses to precalculate
     ->setFrom(0)
+    
+    // The end index of the range of gas pump addresses to precalculate; must be greater than or equal to the value in the <code>from</code> parameter
     ->setTo(1000);
 
 try {

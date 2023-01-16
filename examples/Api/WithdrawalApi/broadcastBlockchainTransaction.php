@@ -18,10 +18,18 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_broadcast_withdrawal = (new \Tatum\Model\BroadcastWithdrawal())
+    
+    // Currency of signed transaction to be broadcast, BTC, LTC, DOGE, BNB, XLM, TRX, BCH, ETH, XRP, ERC20, TRC20
     ->setCurrency('BTC')
+    
+    // Raw signed transaction to be published to network.
     ->setTxData('62BD544D1B9031EFC330A3E855CC3A0D51CA5131455C1AB3BCAC6D243F65460D')
-    ->setWithdrawalId('5e68c66581f2ee32bc354087')/* optional */
-    ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6')/* optional */;
+    
+    // (optional) Withdrawal ID to be completed by transaction broadcast
+    ->setWithdrawalId('5e68c66581f2ee32bc354087')
+    
+    // (optional) ID of prepared payment template to sign. This is should be stored on a client side to retrieve ID of the blockchain transaction, when signing application signs the transaction and broadcasts it to the blockchain.
+    ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6');
 
 try {
     /** @var \Tatum\Model\BroadcastResponse $response */

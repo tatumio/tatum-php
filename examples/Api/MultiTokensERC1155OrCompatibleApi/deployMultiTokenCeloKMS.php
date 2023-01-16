@@ -18,12 +18,26 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_multi_token_celo_kms = (new \Tatum\Model\DeployMultiTokenCeloKMS())
+    
+    // Chain to work with.
     ->setChain('CELO')
+    
+    // URI of the Multi Token contract
     ->setUri('example.com')
-    ->setPublicMint(true)/* optional */
-    ->setIndex(null)/* optional */
+    
+    // (optional) True if the contract is publicMint type
+    ->setPublicMint(true)
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setNonce(null)/* optional */
+    
+    // (optional) 
+    ->setNonce(null)
+    
+    // Currency to pay for transaction gas
     ->setFeeCurrency('null');
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.

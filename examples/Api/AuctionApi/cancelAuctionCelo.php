@@ -18,14 +18,30 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_cancel_auction_celo = (new \Tatum\Model\CancelAuctionCelo())
+    
+    // The blockchain to work with
     ->setChain('CELO')
+    
+    // The blockchain address of the auction smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The ID of the auction
     ->setId('null')
+    
+    // The currency in which the transaction fee will be paid
     ->setFeeCurrency('null')
+    
+    // The private key of the blockchain address from which the fee will be deducted
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(1)/* optional */
-    ->setFee(null)/* optional */
-    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')/* optional */;
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(1)
+    
+    // (optional) 
+    ->setFee(null)
+    
+    // (optional) Optional address of the ERC20 token, which will be used as a selling currency of the NFT.
+    ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85');
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

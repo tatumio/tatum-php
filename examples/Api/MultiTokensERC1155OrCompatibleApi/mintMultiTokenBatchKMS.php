@@ -18,16 +18,36 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_mint_multi_token_batch_kms = (new \Tatum\Model\MintMultiTokenBatchKMS())
+    
+    // Chain to work with.
     ->setChain('ETH')
+    
+    // The blockchain address to send the Multi Tokens to.
     ->setTo(["0x687422eEA2cB73B5d3e242bA5456b782919AFc85"])
+    
+    // The IDs of the Multi Tokens to be created.
     ->setTokenId([["100000","100001"]])
+    
+    // The amounts of the Multi Tokens to be created.
     ->setAmounts([["100","100"]])
-    ->setData('0x1234')/* optional */
+    
+    // (optional) Data in bytes
+    ->setData('0x1234')
+    
+    // The address of the Multi Token smart contract
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setNonce(null)/* optional */
-    ->setFee(null)/* optional */;
+    
+    // (optional) Nonce to be set to transaction. If not present, last known nonce will be used.
+    ->setNonce(null)
+    
+    // (optional) 
+    ->setFee(null);
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
 $arg_x_testnet_type = 'ethereum-sepolia';

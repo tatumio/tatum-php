@@ -18,13 +18,27 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_generate_custodial_wallet_batch_kms = (new \Tatum\Model\GenerateCustodialWalletBatchKMS())
+    
+    // Blockchain to work with.
     ->setChain('MATIC')
+    
+    // Identifier of the private key associated in signing application. Private key, or signature Id must be present.
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83')
-    ->setIndex(null)/* optional */
+    
+    // (optional) If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic.
+    ->setIndex(null)
+    
+    // Number of addresses to generate.
     ->setBatchCount(null)
+    
+    // Owner of the addresses.
     ->setOwner('0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea')
-    ->setFee(null)/* optional */
-    ->setNonce(null)/* optional */;
+    
+    // (optional) 
+    ->setFee(null)
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
 $arg_x_testnet_type = 'ethereum-sepolia';

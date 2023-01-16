@@ -18,6 +18,8 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_custodial_create_wallet_request = (new \Tatum\Model\CustodialCreateWalletRequest())
+    
+    // 
     ->setChain('SOL');
 
 try {

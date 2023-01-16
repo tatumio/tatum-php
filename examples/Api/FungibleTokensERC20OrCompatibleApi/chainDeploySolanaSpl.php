@@ -18,11 +18,23 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_chain_deploy_solana_spl = (new \Tatum\Model\ChainDeploySolanaSpl())
+    
+    // The blockchain to work with
     ->setChain('SOL')
+    
+    // Initial supply of SPL token.
     ->setSupply('10000000')
+    
+    // Number of decimal points
     ->setDigits(18)
+    
+    // Address on Solana blockchain, where all created SPL tokens will be transferred.
     ->setAddress('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
+    
+    // Address on Solana blockchain, from which the fee for the deployment of SPL will be paid.
     ->setFrom('FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ')
+    
+    // Private key of Solana account address, from which the fee for the deployment of SPL will be paid. Private key, or signature Id must be present.
     ->setFromPrivateKey('3abc79a31093e4cfa4a724e94a44906cbbc3a32e2f75f985a28616676a5dbaf1de8d82a7e1d0561bb0e1b729c7a9b9b1708cf2803ad0ca928a332587ace391ad');
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

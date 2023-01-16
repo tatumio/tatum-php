@@ -18,14 +18,30 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_approve_nft_spending = (new \Tatum\Model\ApproveNftSpending())
+    
+    // The blockchain to work with
     ->setChain('ETH')
+    
+    // The blockchain address of the auction/marketplace smart contract
     ->setSpender('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // Set to "true" if the asset is an NFT; set to "false" is the asset is a Multi Token
     ->setIsErc721(true)
+    
+    // The ID of the asset (NFT or Multi Token)
     ->setTokenId('100000')
+    
+    // The blockchain address of the smart contract from which the asset (NFT or Multi Token) was minted
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
+    
+    // The private key of the blockchain address from which the fee will be deducted
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
-    ->setNonce(1)/* optional */
-    ->setFee(null)/* optional */;
+    
+    // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
+    ->setNonce(1)
+    
+    // (optional) 
+    ->setFee(null);
 
 try {
     /** @var \Tatum\Model\TransactionSigned $response */

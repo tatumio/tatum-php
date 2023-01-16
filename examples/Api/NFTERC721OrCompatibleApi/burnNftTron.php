@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_burn_nft_tron = (new \Tatum\Model\BurnNftTron())
+    
+    // The blockchain to work with
     ->setChain('TRON')
+    
+    // ID of token to be destroyed.
     ->setTokenId('123')
+    
+    // Address of NFT token
     ->setContractAddress('TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ')
+    
+    // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701')
+    
+    // The maximum amount to be paid as the transaction fee (in TRX)
     ->setFeeLimit(600);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.

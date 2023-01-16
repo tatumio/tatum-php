@@ -18,9 +18,17 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_estimate_fee_from_address = (new \Tatum\Model\EstimateFeeFromAddress())
+    
+    // Blockchain to estimate fee for.
     ->setChain('null')
+    
+    // Type of transaction
     ->setType('null')
+    
+    // Array of addresses. Tatum will automatically scan last 100 transactions for each address and will use all of the unspent values. We advise to use this option if you have 1 address per 1 transaction only.
     ->setFromAddress(null)
+    
+    // Array of addresses and values to send bitcoins to. Values must be set in BTC. Difference between from and to is transaction fee.
     ->setTo(null);
 
 try {

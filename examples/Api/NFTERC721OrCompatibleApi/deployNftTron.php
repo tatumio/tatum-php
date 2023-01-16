@@ -18,10 +18,20 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 $sdk = new \Tatum\Sdk();
 
 $arg_deploy_nft_tron = (new \Tatum\Model\DeployNftTron())
+    
+    // The blockchain to work with
     ->setChain('TRON')
+    
+    // Name of the NFT token
     ->setName('My ERC721')
+    
+    // Symbol of the NFT token
     ->setSymbol('ERC_SYMBOL')
+    
+    // Private key of account address, from which gas for deployment of ERC721 will be paid. Private key, or signature Id must be present.
     ->setFromPrivateKey('842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701')
+    
+    // The maximum amount to be paid as the transaction fee (in TRX); deployment of a smart contract on TRON costs around 580 TRX
     ->setFeeLimit(600);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
