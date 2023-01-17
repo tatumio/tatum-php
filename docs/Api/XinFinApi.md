@@ -47,11 +47,11 @@ $sdk->{mainnet/testnet}()->api()->xinFin()->callXdcReadSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_xdc_read_smart_contract_method** | [**\Tatum\Model\CallXdcReadSmartContractMethod**](../Model/CallXdcReadSmartContractMethod.md) |  |
+ **$call_xdc_read_smart_contract_method** | [**\Tatum\Model\CallXdcReadSmartContractMethod**](../../Model/CallXdcReadSmartContractMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -109,11 +109,11 @@ $sdk->{mainnet/testnet}()->api()->xinFin()->callXdcSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_xdc_smart_contract_method** | [**\Tatum\Model\CallXdcSmartContractMethod**](../Model/CallXdcSmartContractMethod.md) |  |
+ **$call_xdc_smart_contract_method** | [**\Tatum\Model\CallXdcSmartContractMethod**](../../Model/CallXdcSmartContractMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -145,11 +145,11 @@ $sdk->{mainnet/testnet}()->api()->xinFin()->callXdcSmartContractMethodKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_xdc_smart_contract_method_kms** | [**\Tatum\Model\CallXdcSmartContractMethodKMS**](../Model/CallXdcSmartContractMethodKMS.md) |  |
+ **$call_xdc_smart_contract_method_kms** | [**\Tatum\Model\CallXdcSmartContractMethodKMS**](../../Model/CallXdcSmartContractMethodKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -181,11 +181,11 @@ $sdk->{mainnet/testnet}()->api()->xinFin()->transferXdcBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xdc_blockchain** | [**\Tatum\Model\TransferXdcBlockchain**](../Model/TransferXdcBlockchain.md) |  |
+ **$transfer_xdc_blockchain** | [**\Tatum\Model\TransferXdcBlockchain**](../../Model/TransferXdcBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -229,11 +229,11 @@ $sdk->{mainnet/testnet}()->api()->xinFin()->transferXdcBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xdc_blockchain_kms** | [**\Tatum\Model\TransferXdcBlockchainKMS**](../Model/TransferXdcBlockchainKMS.md) |  |
+ **$transfer_xdc_blockchain_kms** | [**\Tatum\Model\TransferXdcBlockchainKMS**](../../Model/TransferXdcBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -265,11 +265,11 @@ $sdk->{mainnet/testnet}()->api()->xinFin()->xdcBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XdcGenerateAddress200Response**](../Model/XdcGenerateAddress200Response.md)
+[**\Tatum\Model\XdcGenerateAddress200Response**](../../Model/XdcGenerateAddress200Response)
 
 ### Description
 
@@ -343,11 +343,11 @@ $sdk->{mainnet/testnet}()->api()->xinFin()->xdcGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XdcGetBalance200Response**](../Model/XdcGetBalance200Response.md)
+[**\Tatum\Model\XdcGetBalance200Response**](../../Model/XdcGetBalance200Response)
 
 ### Description
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XdcBlock**](../Model/XdcBlock.md)
+[**\Tatum\Model\XdcBlock**](../../Model/XdcBlock)
 
 ### Description
 
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XdcTx**](../Model/XdcTx.md)
+[**\Tatum\Model\XdcTx**](../../Model/XdcTx)
 
 ### Description
 

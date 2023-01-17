@@ -49,12 +49,12 @@ $sdk->{mainnet/testnet}()->api()->harmony()->callOneReadSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_one_read_smart_contract_method** | [**\Tatum\Model\CallOneReadSmartContractMethod**](../Model/CallOneReadSmartContractMethod.md) |  |
+ **$call_one_read_smart_contract_method** | [**\Tatum\Model\CallOneReadSmartContractMethod**](../../Model/CallOneReadSmartContractMethod) |  |
  **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -113,12 +113,12 @@ $sdk->{mainnet/testnet}()->api()->harmony()->callOneSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_one_smart_contract_method** | [**\Tatum\Model\CallOneSmartContractMethod**](../Model/CallOneSmartContractMethod.md) |  |
+ **$call_one_smart_contract_method** | [**\Tatum\Model\CallOneSmartContractMethod**](../../Model/CallOneSmartContractMethod) |  |
  **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -151,12 +151,12 @@ $sdk->{mainnet/testnet}()->api()->harmony()->callOneSmartContractMethodKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_one_smart_contract_method_kms** | [**\Tatum\Model\CallOneSmartContractMethodKMS**](../Model/CallOneSmartContractMethodKMS.md) |  |
+ **$call_one_smart_contract_method_kms** | [**\Tatum\Model\CallOneSmartContractMethodKMS**](../../Model/CallOneSmartContractMethodKMS) |  |
  **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -189,12 +189,12 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
  **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
+[**\Tatum\Model\GeneratedAddressOne**](../../Model/GeneratedAddressOne)
 
 ### Description
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressOne**](../Model/GeneratedAddressOne.md)
+[**\Tatum\Model\GeneratedAddressOne**](../../Model/GeneratedAddressOne)
 
 ### Description
 
@@ -306,11 +306,11 @@ $sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OneBalance**](../Model/OneBalance.md)
+[**\Tatum\Model\OneBalance**](../../Model/OneBalance)
 
 ### Description
 
@@ -434,7 +434,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
+[**\Tatum\Model\EthBlock**](../../Model/EthBlock)
 
 ### Description
 
@@ -469,7 +469,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\OneBlockCurrent[]**](../Model/OneBlockCurrent.md)
+[**\Tatum\Model\OneBlockCurrent[]**](../../Model/OneBlockCurrent)
 
 ### Description
 
@@ -509,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\OneTx**](../Model/OneTx.md)
+[**\Tatum\Model\OneTx**](../../Model/OneTx)
 
 ### Description
 
@@ -628,12 +628,12 @@ $sdk->{mainnet/testnet}()->api()->harmony()->transferOneBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_one_blockchain** | [**\Tatum\Model\TransferOneBlockchain**](../Model/TransferOneBlockchain.md) |  |
+ **$transfer_one_blockchain** | [**\Tatum\Model\TransferOneBlockchain**](../../Model/TransferOneBlockchain) |  |
  **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -680,12 +680,12 @@ $sdk->{mainnet/testnet}()->api()->harmony()->transferOneBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_one_blockchain_kms** | [**\Tatum\Model\TransferOneBlockchainKMS**](../Model/TransferOneBlockchainKMS.md) |  |
+ **$transfer_one_blockchain_kms** | [**\Tatum\Model\TransferOneBlockchainKMS**](../../Model/TransferOneBlockchainKMS) |  |
  **$shard_id** | **float**  | Shard to read data from | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

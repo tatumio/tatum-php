@@ -54,12 +54,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_balance** | [**\Tatum\Model\CreateSubscriptionBalance**](../Model/CreateSubscriptionBalance.md) |  |
+ **$create_subscription_balance** | [**\Tatum\Model\CreateSubscriptionBalance**](../../Model/CreateSubscriptionBalance) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -92,12 +92,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_contract_log_event** | [**\Tatum\Model\CreateSubscriptionContractLogEvent**](../Model/CreateSubscriptionContractLogEvent.md) |  |
+ **$create_subscription_contract_log_event** | [**\Tatum\Model\CreateSubscriptionContractLogEvent**](../../Model/CreateSubscriptionContractLogEvent) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -130,12 +130,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_incoming** | [**\Tatum\Model\CreateSubscriptionIncoming**](../Model/CreateSubscriptionIncoming.md) |  |
+ **$create_subscription_incoming** | [**\Tatum\Model\CreateSubscriptionIncoming**](../../Model/CreateSubscriptionIncoming) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -168,12 +168,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_interval** | [**\Tatum\Model\CreateSubscriptionInterval**](../Model/CreateSubscriptionInterval.md) |  |
+ **$create_subscription_interval** | [**\Tatum\Model\CreateSubscriptionInterval**](../../Model/CreateSubscriptionInterval) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -206,12 +206,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_kms_error** | [**\Tatum\Model\CreateSubscriptionKMSError**](../Model/CreateSubscriptionKMSError.md) |  |
+ **$create_subscription_kms_error** | [**\Tatum\Model\CreateSubscriptionKMSError**](../../Model/CreateSubscriptionKMSError) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -244,12 +244,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_kms_success** | [**\Tatum\Model\CreateSubscriptionKMSSuccess**](../Model/CreateSubscriptionKMSSuccess.md) |  |
+ **$create_subscription_kms_success** | [**\Tatum\Model\CreateSubscriptionKMSSuccess**](../../Model/CreateSubscriptionKMSSuccess) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -282,12 +282,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_multi_token_transfer_event** | [**\Tatum\Model\CreateSubscriptionMultiTokenTransferEvent**](../Model/CreateSubscriptionMultiTokenTransferEvent.md) |  |
+ **$create_subscription_multi_token_transfer_event** | [**\Tatum\Model\CreateSubscriptionMultiTokenTransferEvent**](../../Model/CreateSubscriptionMultiTokenTransferEvent) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -320,12 +320,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_nft_transfer_event** | [**\Tatum\Model\CreateSubscriptionNftTransferEvent**](../Model/CreateSubscriptionNftTransferEvent.md) |  |
+ **$create_subscription_nft_transfer_event** | [**\Tatum\Model\CreateSubscriptionNftTransferEvent**](../../Model/CreateSubscriptionNftTransferEvent) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -358,12 +358,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_notification** | [**\Tatum\Model\CreateSubscriptionNotification**](../Model/CreateSubscriptionNotification.md) |  |
+ **$create_subscription_notification** | [**\Tatum\Model\CreateSubscriptionNotification**](../../Model/CreateSubscriptionNotification) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -560,12 +560,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_partial_trade_match** | [**\Tatum\Model\CreateSubscriptionPartialTradeMatch**](../Model/CreateSubscriptionPartialTradeMatch.md) |  |
+ **$create_subscription_partial_trade_match** | [**\Tatum\Model\CreateSubscriptionPartialTradeMatch**](../../Model/CreateSubscriptionPartialTradeMatch) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -598,12 +598,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_pending** | [**\Tatum\Model\CreateSubscriptionPending**](../Model/CreateSubscriptionPending.md) |  |
+ **$create_subscription_pending** | [**\Tatum\Model\CreateSubscriptionPending**](../../Model/CreateSubscriptionPending) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -636,12 +636,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_trade_match** | [**\Tatum\Model\CreateSubscriptionTradeMatch**](../Model/CreateSubscriptionTradeMatch.md) |  |
+ **$create_subscription_trade_match** | [**\Tatum\Model\CreateSubscriptionTradeMatch**](../../Model/CreateSubscriptionTradeMatch) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -674,12 +674,12 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_subscription_tx_in_the_block** | [**\Tatum\Model\CreateSubscriptionTxInTheBlock**](../Model/CreateSubscriptionTxInTheBlock.md) |  |
+ **$create_subscription_tx_in_the_block** | [**\Tatum\Model\CreateSubscriptionTxInTheBlock**](../../Model/CreateSubscriptionTxInTheBlock) |  |
  **$testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -784,7 +784,7 @@ $sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->enableWebHookHmac
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$hmac_web_hook** | [**\Tatum\Model\HmacWebHook**](../Model/HmacWebHook.md) |  |
+ **$hmac_web_hook** | [**\Tatum\Model\HmacWebHook**](../../Model/HmacWebHook) |  |
 
 ### Return type
 
@@ -836,7 +836,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\WebHook[]**](../Model/WebHook.md)
+[**\Tatum\Model\WebHook[]**](../../Model/WebHook)
 
 ### Description
 
@@ -880,7 +880,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
+[**\Tatum\Model\EntitiesCount**](../../Model/EntitiesCount)
 
 ### Description
 
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GetSubscriptionReport200Response**](../Model/GetSubscriptionReport200Response.md)
+[**\Tatum\Model\GetSubscriptionReport200Response**](../../Model/GetSubscriptionReport200Response)
 
 ### Description
 
@@ -962,7 +962,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Subscription[]**](../Model/Subscription.md)
+[**\Tatum\Model\Subscription[]**](../../Model/Subscription)
 
 ### Description
 
@@ -1004,7 +1004,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
+[**\Tatum\Model\EntitiesCount**](../../Model/EntitiesCount)
 
 ### Description
 

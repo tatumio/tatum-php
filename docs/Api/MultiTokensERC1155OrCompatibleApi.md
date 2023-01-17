@@ -70,12 +70,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiToke
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$add_multi_token_minter** | [**\Tatum\Model\AddMultiTokenMinter**](../Model/AddMultiTokenMinter.md) |  |
+ **$add_multi_token_minter** | [**\Tatum\Model\AddMultiTokenMinter**](../../Model/AddMultiTokenMinter) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -124,12 +124,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiToke
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$add_multi_token_minter_kms** | [**\Tatum\Model\AddMultiTokenMinterKMS**](../Model/AddMultiTokenMinterKMS.md) |  |
+ **$add_multi_token_minter_kms** | [**\Tatum\Model\AddMultiTokenMinterKMS**](../../Model/AddMultiTokenMinterKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -162,12 +162,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token** | [**\Tatum\Model\BurnMultiToken**](../Model/BurnMultiToken.md) |  |
+ **$burn_multi_token** | [**\Tatum\Model\BurnMultiToken**](../../Model/BurnMultiToken) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -216,12 +216,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_batch** | [**\Tatum\Model\BurnMultiTokenBatch**](../Model/BurnMultiTokenBatch.md) |  |
+ **$burn_multi_token_batch** | [**\Tatum\Model\BurnMultiTokenBatch**](../../Model/BurnMultiTokenBatch) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -270,12 +270,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_batch_celo** | [**\Tatum\Model\BurnMultiTokenBatchCelo**](../Model/BurnMultiTokenBatchCelo.md) |  |
+ **$burn_multi_token_batch_celo** | [**\Tatum\Model\BurnMultiTokenBatchCelo**](../../Model/BurnMultiTokenBatchCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -308,12 +308,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_batch_kms** | [**\Tatum\Model\BurnMultiTokenBatchKMS**](../Model/BurnMultiTokenBatchKMS.md) |  |
+ **$burn_multi_token_batch_kms** | [**\Tatum\Model\BurnMultiTokenBatchKMS**](../../Model/BurnMultiTokenBatchKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -346,12 +346,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_batch_kms_celo** | [**\Tatum\Model\BurnMultiTokenBatchKMSCelo**](../Model/BurnMultiTokenBatchKMSCelo.md) |  |
+ **$burn_multi_token_batch_kms_celo** | [**\Tatum\Model\BurnMultiTokenBatchKMSCelo**](../../Model/BurnMultiTokenBatchKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -384,12 +384,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_celo** | [**\Tatum\Model\BurnMultiTokenCelo**](../Model/BurnMultiTokenCelo.md) |  |
+ **$burn_multi_token_celo** | [**\Tatum\Model\BurnMultiTokenCelo**](../../Model/BurnMultiTokenCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -422,12 +422,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_kms** | [**\Tatum\Model\BurnMultiTokenKMS**](../Model/BurnMultiTokenKMS.md) |  |
+ **$burn_multi_token_kms** | [**\Tatum\Model\BurnMultiTokenKMS**](../../Model/BurnMultiTokenKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -460,12 +460,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_multi_token_kms_celo** | [**\Tatum\Model\BurnMultiTokenKMSCelo**](../Model/BurnMultiTokenKMSCelo.md) |  |
+ **$burn_multi_token_kms_celo** | [**\Tatum\Model\BurnMultiTokenKMSCelo**](../../Model/BurnMultiTokenKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -498,12 +498,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_multi_token** | [**\Tatum\Model\DeployMultiToken**](../Model/DeployMultiToken.md) |  |
+ **$deploy_multi_token** | [**\Tatum\Model\DeployMultiToken**](../../Model/DeployMultiToken) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -552,12 +552,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_multi_token_celo** | [**\Tatum\Model\DeployMultiTokenCelo**](../Model/DeployMultiTokenCelo.md) |  |
+ **$deploy_multi_token_celo** | [**\Tatum\Model\DeployMultiTokenCelo**](../../Model/DeployMultiTokenCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -590,12 +590,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_multi_token_celo_kms** | [**\Tatum\Model\DeployMultiTokenCeloKMS**](../Model/DeployMultiTokenCeloKMS.md) |  |
+ **$deploy_multi_token_celo_kms** | [**\Tatum\Model\DeployMultiTokenCeloKMS**](../../Model/DeployMultiTokenCeloKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -628,12 +628,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiT
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_multi_token_kms** | [**\Tatum\Model\DeployMultiTokenKMS**](../Model/DeployMultiTokenKMS.md) |  |
+ **$deploy_multi_token_kms** | [**\Tatum\Model\DeployMultiTokenKMS**](../../Model/DeployMultiTokenKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -666,12 +666,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token** | [**\Tatum\Model\MintMultiToken**](../Model/MintMultiToken.md) |  |
+ **$mint_multi_token** | [**\Tatum\Model\MintMultiToken**](../../Model/MintMultiToken) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -720,12 +720,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_batch** | [**\Tatum\Model\MintMultiTokenBatch**](../Model/MintMultiTokenBatch.md) |  |
+ **$mint_multi_token_batch** | [**\Tatum\Model\MintMultiTokenBatch**](../../Model/MintMultiTokenBatch) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -774,12 +774,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_batch_celo** | [**\Tatum\Model\MintMultiTokenBatchCelo**](../Model/MintMultiTokenBatchCelo.md) |  |
+ **$mint_multi_token_batch_celo** | [**\Tatum\Model\MintMultiTokenBatchCelo**](../../Model/MintMultiTokenBatchCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -812,12 +812,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_batch_kms** | [**\Tatum\Model\MintMultiTokenBatchKMS**](../Model/MintMultiTokenBatchKMS.md) |  |
+ **$mint_multi_token_batch_kms** | [**\Tatum\Model\MintMultiTokenBatchKMS**](../../Model/MintMultiTokenBatchKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -850,12 +850,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_batch_kms_celo** | [**\Tatum\Model\MintMultiTokenBatchKMSCelo**](../Model/MintMultiTokenBatchKMSCelo.md) |  |
+ **$mint_multi_token_batch_kms_celo** | [**\Tatum\Model\MintMultiTokenBatchKMSCelo**](../../Model/MintMultiTokenBatchKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -888,12 +888,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_celo** | [**\Tatum\Model\MintMultiTokenCelo**](../Model/MintMultiTokenCelo.md) |  |
+ **$mint_multi_token_celo** | [**\Tatum\Model\MintMultiTokenCelo**](../../Model/MintMultiTokenCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -926,12 +926,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_kms** | [**\Tatum\Model\MintMultiTokenKMS**](../Model/MintMultiTokenKMS.md) |  |
+ **$mint_multi_token_kms** | [**\Tatum\Model\MintMultiTokenKMS**](../../Model/MintMultiTokenKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -964,12 +964,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTok
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multi_token_kms_celo** | [**\Tatum\Model\MintMultiTokenKMSCelo**](../Model/MintMultiTokenKMSCelo.md) |  |
+ **$mint_multi_token_kms_celo** | [**\Tatum\Model\MintMultiTokenKMSCelo**](../../Model/MintMultiTokenKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1009,7 +1009,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]**](../Model/MultiTokenGetAddressBalance200ResponseInner.md)
+[**\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]**](../../Model/MultiTokenGetAddressBalance200ResponseInner)
 
 ### Description
 
@@ -1061,7 +1061,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\MultiTokenGetBalance200Response**](../Model/MultiTokenGetBalance200Response.md)
+[**\Tatum\Model\MultiTokenGetBalance200Response**](../../Model/MultiTokenGetBalance200Response)
 
 ### Description
 
@@ -1161,7 +1161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\MultiTokenGetContractAddress200Response**](../Model/MultiTokenGetContractAddress200Response.md)
+[**\Tatum\Model\MultiTokenGetContractAddress200Response**](../../Model/MultiTokenGetContractAddress200Response)
 
 ### Description
 
@@ -1215,7 +1215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\MultiTokenGetMetadata200Response**](../Model/MultiTokenGetMetadata200Response.md)
+[**\Tatum\Model\MultiTokenGetMetadata200Response**](../../Model/MultiTokenGetMetadata200Response)
 
 ### Description
 
@@ -1263,7 +1263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\MultiTokenGetTransaction200Response**](../Model/MultiTokenGetTransaction200Response.md)
+[**\Tatum\Model\MultiTokenGetTransaction200Response**](../../Model/MultiTokenGetTransaction200Response)
 
 ### Description
 
@@ -1319,7 +1319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]**](../Model/MultiTokenGetTransactionByAddress200ResponseInner.md)
+[**\Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]**](../../Model/MultiTokenGetTransactionByAddress200ResponseInner)
 
 ### Description
 
@@ -1360,12 +1360,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token** | [**\Tatum\Model\TransferMultiToken**](../Model/TransferMultiToken.md) |  |
+ **$transfer_multi_token** | [**\Tatum\Model\TransferMultiToken**](../../Model/TransferMultiToken) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1416,12 +1416,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_batch** | [**\Tatum\Model\TransferMultiTokenBatch**](../Model/TransferMultiTokenBatch.md) |  |
+ **$transfer_multi_token_batch** | [**\Tatum\Model\TransferMultiTokenBatch**](../../Model/TransferMultiTokenBatch) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1470,12 +1470,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_batch_celo** | [**\Tatum\Model\TransferMultiTokenBatchCelo**](../Model/TransferMultiTokenBatchCelo.md) |  |
+ **$transfer_multi_token_batch_celo** | [**\Tatum\Model\TransferMultiTokenBatchCelo**](../../Model/TransferMultiTokenBatchCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1508,12 +1508,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_batch_kms** | [**\Tatum\Model\TransferMultiTokenBatchKMS**](../Model/TransferMultiTokenBatchKMS.md) |  |
+ **$transfer_multi_token_batch_kms** | [**\Tatum\Model\TransferMultiTokenBatchKMS**](../../Model/TransferMultiTokenBatchKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1546,12 +1546,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_batch_kms_celo** | [**\Tatum\Model\TransferMultiTokenBatchKMSCelo**](../Model/TransferMultiTokenBatchKMSCelo.md) |  |
+ **$transfer_multi_token_batch_kms_celo** | [**\Tatum\Model\TransferMultiTokenBatchKMSCelo**](../../Model/TransferMultiTokenBatchKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1584,12 +1584,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_celo** | [**\Tatum\Model\TransferMultiTokenCelo**](../Model/TransferMultiTokenCelo.md) |  |
+ **$transfer_multi_token_celo** | [**\Tatum\Model\TransferMultiTokenCelo**](../../Model/TransferMultiTokenCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1622,12 +1622,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_kms** | [**\Tatum\Model\TransferMultiTokenKMS**](../Model/TransferMultiTokenKMS.md) |  |
+ **$transfer_multi_token_kms** | [**\Tatum\Model\TransferMultiTokenKMS**](../../Model/TransferMultiTokenKMS) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1660,12 +1660,12 @@ $sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMult
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_multi_token_kms_celo** | [**\Tatum\Model\TransferMultiTokenKMSCelo**](../Model/TransferMultiTokenKMSCelo.md) |  |
+ **$transfer_multi_token_kms_celo** | [**\Tatum\Model\TransferMultiTokenKMSCelo**](../../Model/TransferMultiTokenKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

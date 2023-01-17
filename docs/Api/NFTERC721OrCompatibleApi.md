@@ -113,12 +113,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->addNftMinter(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$add_nft_minter** | [**\Tatum\Model\AddNftMinter**](../Model/AddNftMinter.md) |  |
+ **$add_nft_minter** | [**\Tatum\Model\AddNftMinter**](../../Model/AddNftMinter) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -171,12 +171,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->addNftMinterKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$add_nft_minter_kms** | [**\Tatum\Model\AddNftMinterKMS**](../Model/AddNftMinterKMS.md) |  |
+ **$add_nft_minter_kms** | [**\Tatum\Model\AddNftMinterKMS**](../../Model/AddNftMinterKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -209,12 +209,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNft(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft** | [**\Tatum\Model\BurnNft**](../Model/BurnNft.md) |  |
+ **$burn_nft** | [**\Tatum\Model\BurnNft**](../../Model/BurnNft) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -269,12 +269,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftAlgo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_algo** | [**\Tatum\Model\BurnNftAlgo**](../Model/BurnNftAlgo.md) |  |
+ **$burn_nft_algo** | [**\Tatum\Model\BurnNftAlgo**](../../Model/BurnNftAlgo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -307,12 +307,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_celo** | [**\Tatum\Model\BurnNftCelo**](../Model/BurnNftCelo.md) |  |
+ **$burn_nft_celo** | [**\Tatum\Model\BurnNftCelo**](../../Model/BurnNftCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -345,12 +345,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_flow_kms** | [**\Tatum\Model\BurnNftFlowKMS**](../Model/BurnNftFlowKMS.md) |  |
+ **$burn_nft_flow_kms** | [**\Tatum\Model\BurnNftFlowKMS**](../../Model/BurnNftFlowKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -383,12 +383,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_flow_mnemonic** | [**\Tatum\Model\BurnNftFlowMnemonic**](../Model/BurnNftFlowMnemonic.md) |  |
+ **$burn_nft_flow_mnemonic** | [**\Tatum\Model\BurnNftFlowMnemonic**](../../Model/BurnNftFlowMnemonic) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -421,12 +421,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowPK(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_flow_pk** | [**\Tatum\Model\BurnNftFlowPK**](../Model/BurnNftFlowPK.md) |  |
+ **$burn_nft_flow_pk** | [**\Tatum\Model\BurnNftFlowPK**](../../Model/BurnNftFlowPK) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -459,12 +459,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_kms** | [**\Tatum\Model\BurnNftKMS**](../Model/BurnNftKMS.md) |  |
+ **$burn_nft_kms** | [**\Tatum\Model\BurnNftKMS**](../../Model/BurnNftKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -497,12 +497,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMSCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_kms_celo** | [**\Tatum\Model\BurnNftKMSCelo**](../Model/BurnNftKMSCelo.md) |  |
+ **$burn_nft_kms_celo** | [**\Tatum\Model\BurnNftKMSCelo**](../../Model/BurnNftKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -535,12 +535,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMSTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_kms_tron** | [**\Tatum\Model\BurnNftKMSTron**](../Model/BurnNftKMSTron.md) |  |
+ **$burn_nft_kms_tron** | [**\Tatum\Model\BurnNftKMSTron**](../../Model/BurnNftKMSTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -573,12 +573,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$burn_nft_tron** | [**\Tatum\Model\BurnNftTron**](../Model/BurnNftTron.md) |  |
+ **$burn_nft_tron** | [**\Tatum\Model\BurnNftTron**](../../Model/BurnNftTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -611,12 +611,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNft(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft** | [**\Tatum\Model\DeployNft**](../Model/DeployNft.md) |  |
+ **$deploy_nft** | [**\Tatum\Model\DeployNft**](../../Model/DeployNft) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -691,12 +691,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft_celo** | [**\Tatum\Model\DeployNftCelo**](../Model/DeployNftCelo.md) |  |
+ **$deploy_nft_celo** | [**\Tatum\Model\DeployNftCelo**](../../Model/DeployNftCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -729,12 +729,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft_celo_kms** | [**\Tatum\Model\DeployNftCeloKMS**](../Model/DeployNftCeloKMS.md) |  |
+ **$deploy_nft_celo_kms** | [**\Tatum\Model\DeployNftCeloKMS**](../../Model/DeployNftCeloKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -767,12 +767,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft_flow_kms** | [**\Tatum\Model\DeployNftFlowKMS**](../Model/DeployNftFlowKMS.md) |  |
+ **$deploy_nft_flow_kms** | [**\Tatum\Model\DeployNftFlowKMS**](../../Model/DeployNftFlowKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -805,12 +805,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowMnemonic
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft_flow_mnemonic** | [**\Tatum\Model\DeployNftFlowMnemonic**](../Model/DeployNftFlowMnemonic.md) |  |
+ **$deploy_nft_flow_mnemonic** | [**\Tatum\Model\DeployNftFlowMnemonic**](../../Model/DeployNftFlowMnemonic) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -843,12 +843,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowPK(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft_flow_pk** | [**\Tatum\Model\DeployNftFlowPK**](../Model/DeployNftFlowPK.md) |  |
+ **$deploy_nft_flow_pk** | [**\Tatum\Model\DeployNftFlowPK**](../../Model/DeployNftFlowPK) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -881,12 +881,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft_kms** | [**\Tatum\Model\DeployNftKMS**](../Model/DeployNftKMS.md) |  |
+ **$deploy_nft_kms** | [**\Tatum\Model\DeployNftKMS**](../../Model/DeployNftKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -919,12 +919,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft_tron** | [**\Tatum\Model\DeployNftTron**](../Model/DeployNftTron.md) |  |
+ **$deploy_nft_tron** | [**\Tatum\Model\DeployNftTron**](../../Model/DeployNftTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -957,12 +957,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftTronKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_nft_tron_kms** | [**\Tatum\Model\DeployNftTronKMS**](../Model/DeployNftTronKMS.md) |  |
+ **$deploy_nft_tron_kms** | [**\Tatum\Model\DeployNftTronKMS**](../../Model/DeployNftTronKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -995,12 +995,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNft(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft** | [**\Tatum\Model\MintMultipleNft**](../Model/MintMultipleNft.md) |  |
+ **$mint_multiple_nft** | [**\Tatum\Model\MintMultipleNft**](../../Model/MintMultipleNft) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1033,12 +1033,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_celo** | [**\Tatum\Model\MintMultipleNftCelo**](../Model/MintMultipleNftCelo.md) |  |
+ **$mint_multiple_nft_celo** | [**\Tatum\Model\MintMultipleNftCelo**](../../Model/MintMultipleNftCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1071,12 +1071,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowKM
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_flow_kms** | [**\Tatum\Model\MintMultipleNftFlowKMS**](../Model/MintMultipleNftFlowKMS.md) |  |
+ **$mint_multiple_nft_flow_kms** | [**\Tatum\Model\MintMultipleNftFlowKMS**](../../Model/MintMultipleNftFlowKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1109,12 +1109,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowMn
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_flow_mnemonic** | [**\Tatum\Model\MintMultipleNftFlowMnemonic**](../Model/MintMultipleNftFlowMnemonic.md) |  |
+ **$mint_multiple_nft_flow_mnemonic** | [**\Tatum\Model\MintMultipleNftFlowMnemonic**](../../Model/MintMultipleNftFlowMnemonic) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1147,12 +1147,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowPK
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_flow_pk** | [**\Tatum\Model\MintMultipleNftFlowPK**](../Model/MintMultipleNftFlowPK.md) |  |
+ **$mint_multiple_nft_flow_pk** | [**\Tatum\Model\MintMultipleNftFlowPK**](../../Model/MintMultipleNftFlowPK) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1185,12 +1185,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_kms** | [**\Tatum\Model\MintMultipleNftKMS**](../Model/MintMultipleNftKMS.md) |  |
+ **$mint_multiple_nft_kms** | [**\Tatum\Model\MintMultipleNftKMS**](../../Model/MintMultipleNftKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1223,12 +1223,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMSCel
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_kms_celo** | [**\Tatum\Model\MintMultipleNftKMSCelo**](../Model/MintMultipleNftKMSCelo.md) |  |
+ **$mint_multiple_nft_kms_celo** | [**\Tatum\Model\MintMultipleNftKMSCelo**](../../Model/MintMultipleNftKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1261,12 +1261,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMSTro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_kms_tron** | [**\Tatum\Model\MintMultipleNftKMSTron**](../Model/MintMultipleNftKMSTron.md) |  |
+ **$mint_multiple_nft_kms_tron** | [**\Tatum\Model\MintMultipleNftKMSTron**](../../Model/MintMultipleNftKMSTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1299,12 +1299,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftMinter
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_minter** | [**\Tatum\Model\MintMultipleNftMinter**](../Model/MintMultipleNftMinter.md) |  |
+ **$mint_multiple_nft_minter** | [**\Tatum\Model\MintMultipleNftMinter**](../../Model/MintMultipleNftMinter) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1369,12 +1369,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_multiple_nft_tron** | [**\Tatum\Model\MintMultipleNftTron**](../Model/MintMultipleNftTron.md) |  |
+ **$mint_multiple_nft_tron** | [**\Tatum\Model\MintMultipleNftTron**](../../Model/MintMultipleNftTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintMultipleNftMinter200Response**](../Model/MintMultipleNftMinter200Response.md)
+[**\Tatum\Model\MintMultipleNftMinter200Response**](../../Model/MintMultipleNftMinter200Response)
 
 ### Description
 
@@ -1407,12 +1407,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNft(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft** | [**\Tatum\Model\MintNft**](../Model/MintNft.md) |  |
+ **$mint_nft** | [**\Tatum\Model\MintNft**](../../Model/MintNft) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1447,12 +1447,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftAlgorand(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_algorand** | [**\Tatum\Model\MintNftAlgorand**](../Model/MintNftAlgorand.md) |  |
+ **$mint_nft_algorand** | [**\Tatum\Model\MintNftAlgorand**](../../Model/MintNftAlgorand) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1487,12 +1487,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftAlgorandKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_algorand_kms** | [**\Tatum\Model\MintNftAlgorandKMS**](../Model/MintNftAlgorandKMS.md) |  |
+ **$mint_nft_algorand_kms** | [**\Tatum\Model\MintNftAlgorandKMS**](../../Model/MintNftAlgorandKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1527,12 +1527,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_celo** | [**\Tatum\Model\MintNftCelo**](../Model/MintNftCelo.md) |  |
+ **$mint_nft_celo** | [**\Tatum\Model\MintNftCelo**](../../Model/MintNftCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1567,12 +1567,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_express** | [**\Tatum\Model\MintNftExpress**](../Model/MintNftExpress.md) |  |
+ **$mint_nft_express** | [**\Tatum\Model\MintNftExpress**](../../Model/MintNftExpress) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1607,12 +1607,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpressAlgoran
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_express_algorand** | [**\Tatum\Model\MintNftExpressAlgorand**](../Model/MintNftExpressAlgorand.md) |  |
+ **$mint_nft_express_algorand** | [**\Tatum\Model\MintNftExpressAlgorand**](../../Model/MintNftExpressAlgorand) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1647,12 +1647,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpressSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_express_solana** | [**\Tatum\Model\MintNftExpressSolana**](../Model/MintNftExpressSolana.md) |  |
+ **$mint_nft_express_solana** | [**\Tatum\Model\MintNftExpressSolana**](../../Model/MintNftExpressSolana) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1687,12 +1687,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_flow_kms** | [**\Tatum\Model\MintNftFlowKMS**](../Model/MintNftFlowKMS.md) |  |
+ **$mint_nft_flow_kms** | [**\Tatum\Model\MintNftFlowKMS**](../../Model/MintNftFlowKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1727,12 +1727,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_flow_mnemonic** | [**\Tatum\Model\MintNftFlowMnemonic**](../Model/MintNftFlowMnemonic.md) |  |
+ **$mint_nft_flow_mnemonic** | [**\Tatum\Model\MintNftFlowMnemonic**](../../Model/MintNftFlowMnemonic) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1767,12 +1767,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowPK(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_flow_pk** | [**\Tatum\Model\MintNftFlowPK**](../Model/MintNftFlowPK.md) |  |
+ **$mint_nft_flow_pk** | [**\Tatum\Model\MintNftFlowPK**](../../Model/MintNftFlowPK) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1807,12 +1807,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_kms** | [**\Tatum\Model\MintNftKMS**](../Model/MintNftKMS.md) |  |
+ **$mint_nft_kms** | [**\Tatum\Model\MintNftKMS**](../../Model/MintNftKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1847,12 +1847,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMSCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_kms_celo** | [**\Tatum\Model\MintNftKMSCelo**](../Model/MintNftKMSCelo.md) |  |
+ **$mint_nft_kms_celo** | [**\Tatum\Model\MintNftKMSCelo**](../../Model/MintNftKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1887,12 +1887,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMSTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_kms_tron** | [**\Tatum\Model\MintNftKMSTron**](../Model/MintNftKMSTron.md) |  |
+ **$mint_nft_kms_tron** | [**\Tatum\Model\MintNftKMSTron**](../../Model/MintNftKMSTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1927,12 +1927,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftMinter(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_minter** | [**\Tatum\Model\MintNftMinter**](../Model/MintNftMinter.md) |  |
+ **$mint_nft_minter** | [**\Tatum\Model\MintNftMinter**](../../Model/MintNftMinter) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -1967,12 +1967,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_solana** | [**\Tatum\Model\MintNftSolana**](../Model/MintNftSolana.md) |  |
+ **$mint_nft_solana** | [**\Tatum\Model\MintNftSolana**](../../Model/MintNftSolana) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -2007,12 +2007,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftSolanaKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_solana_kms** | [**\Tatum\Model\MintNftSolanaKMS**](../Model/MintNftSolanaKMS.md) |  |
+ **$mint_nft_solana_kms** | [**\Tatum\Model\MintNftSolanaKMS**](../../Model/MintNftSolanaKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -2047,12 +2047,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$mint_nft_tron** | [**\Tatum\Model\MintNftTron**](../Model/MintNftTron.md) |  |
+ **$mint_nft_tron** | [**\Tatum\Model\MintNftTron**](../../Model/MintNftTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\MintNftExpress200Response**](../Model/MintNftExpress200Response.md)
+[**\Tatum\Model\MintNftExpress200Response**](../../Model/MintNftExpress200Response)
 
 ### Description
 
@@ -2096,7 +2096,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftGetBalanceErc721200Response**](../Model/NftGetBalanceErc721200Response.md)
+[**\Tatum\Model\NftGetBalanceErc721200Response**](../../Model/NftGetBalanceErc721200Response)
 
 ### Description
 
@@ -2146,7 +2146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftGetContractAddress200Response**](../Model/NftGetContractAddress200Response.md)
+[**\Tatum\Model\NftGetContractAddress200Response**](../../Model/NftGetContractAddress200Response)
 
 ### Description
 
@@ -2202,7 +2202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftMetadataErc721**](../Model/NftMetadataErc721.md)
+[**\Tatum\Model\NftMetadataErc721**](../../Model/NftMetadataErc721)
 
 ### Description
 
@@ -2252,7 +2252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftProvenanceDataErc721[]**](../Model/NftProvenanceDataErc721.md)
+[**\Tatum\Model\NftProvenanceDataErc721[]**](../../Model/NftProvenanceDataErc721)
 
 ### Description
 
@@ -2304,7 +2304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftRoyaltyErc721**](../Model/NftRoyaltyErc721.md)
+[**\Tatum\Model\NftRoyaltyErc721**](../../Model/NftRoyaltyErc721)
 
 ### Description
 
@@ -2350,7 +2350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftTokenByAddressErc721[]**](../Model/NftTokenByAddressErc721.md)
+[**\Tatum\Model\NftTokenByAddressErc721[]**](../../Model/NftTokenByAddressErc721)
 
 ### Description
 
@@ -2402,7 +2402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftTokenByCollectionErc721[]**](../Model/NftTokenByCollectionErc721.md)
+[**\Tatum\Model\NftTokenByCollectionErc721[]**](../../Model/NftTokenByCollectionErc721)
 
 ### Description
 
@@ -2450,7 +2450,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftGetTransactErc721200Response**](../Model/NftGetTransactErc721200Response.md)
+[**\Tatum\Model\NftGetTransactErc721200Response**](../../Model/NftGetTransactErc721200Response)
 
 ### Description
 
@@ -2506,7 +2506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftTx[]**](../Model/NftTx.md)
+[**\Tatum\Model\NftTx[]**](../../Model/NftTx)
 
 ### Description
 
@@ -2562,7 +2562,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\NftTx[]**](../Model/NftTx.md)
+[**\Tatum\Model\NftTx[]**](../../Model/NftTx)
 
 ### Description
 
@@ -2603,12 +2603,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNft(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft** | [**\Tatum\Model\TransferNft**](../Model/TransferNft.md) |  |
+ **$transfer_nft** | [**\Tatum\Model\TransferNft**](../../Model/TransferNft) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2679,12 +2679,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_algo** | [**\Tatum\Model\TransferNftAlgo**](../Model/TransferNftAlgo.md) |  |
+ **$transfer_nft_algo** | [**\Tatum\Model\TransferNftAlgo**](../../Model/TransferNftAlgo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2717,12 +2717,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgoExpres
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_algo_express** | [**\Tatum\Model\TransferNftAlgoExpress**](../Model/TransferNftAlgoExpress.md) |  |
+ **$transfer_nft_algo_express** | [**\Tatum\Model\TransferNftAlgoExpress**](../../Model/TransferNftAlgoExpress) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2755,12 +2755,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgoKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_algo_kms** | [**\Tatum\Model\TransferNftAlgoKMS**](../Model/TransferNftAlgoKMS.md) |  |
+ **$transfer_nft_algo_kms** | [**\Tatum\Model\TransferNftAlgoKMS**](../../Model/TransferNftAlgoKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2793,12 +2793,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_celo** | [**\Tatum\Model\TransferNftCelo**](../Model/TransferNftCelo.md) |  |
+ **$transfer_nft_celo** | [**\Tatum\Model\TransferNftCelo**](../../Model/TransferNftCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2831,12 +2831,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_flow_kms** | [**\Tatum\Model\TransferNftFlowKMS**](../Model/TransferNftFlowKMS.md) |  |
+ **$transfer_nft_flow_kms** | [**\Tatum\Model\TransferNftFlowKMS**](../../Model/TransferNftFlowKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2869,12 +2869,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowMnemon
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_flow_mnemonic** | [**\Tatum\Model\TransferNftFlowMnemonic**](../Model/TransferNftFlowMnemonic.md) |  |
+ **$transfer_nft_flow_mnemonic** | [**\Tatum\Model\TransferNftFlowMnemonic**](../../Model/TransferNftFlowMnemonic) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2907,12 +2907,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowPK(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_flow_pk** | [**\Tatum\Model\TransferNftFlowPK**](../Model/TransferNftFlowPK.md) |  |
+ **$transfer_nft_flow_pk** | [**\Tatum\Model\TransferNftFlowPK**](../../Model/TransferNftFlowPK) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2945,12 +2945,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_kms** | [**\Tatum\Model\TransferNftKMS**](../Model/TransferNftKMS.md) |  |
+ **$transfer_nft_kms** | [**\Tatum\Model\TransferNftKMS**](../../Model/TransferNftKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -2983,12 +2983,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMSCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_kms_celo** | [**\Tatum\Model\TransferNftKMSCelo**](../Model/TransferNftKMSCelo.md) |  |
+ **$transfer_nft_kms_celo** | [**\Tatum\Model\TransferNftKMSCelo**](../../Model/TransferNftKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3021,12 +3021,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMSTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_kms_tron** | [**\Tatum\Model\TransferNftKMSTron**](../Model/TransferNftKMSTron.md) |  |
+ **$transfer_nft_kms_tron** | [**\Tatum\Model\TransferNftKMSTron**](../../Model/TransferNftKMSTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3059,12 +3059,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_solana** | [**\Tatum\Model\TransferNftSolana**](../Model/TransferNftSolana.md) |  |
+ **$transfer_nft_solana** | [**\Tatum\Model\TransferNftSolana**](../../Model/TransferNftSolana) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3097,12 +3097,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftSolanaKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_solana_kms** | [**\Tatum\Model\TransferNftSolanaKMS**](../Model/TransferNftSolanaKMS.md) |  |
+ **$transfer_nft_solana_kms** | [**\Tatum\Model\TransferNftSolanaKMS**](../../Model/TransferNftSolanaKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3135,12 +3135,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_nft_tron** | [**\Tatum\Model\TransferNftTron**](../Model/TransferNftTron.md) |  |
+ **$transfer_nft_tron** | [**\Tatum\Model\TransferNftTron**](../../Model/TransferNftTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3173,12 +3173,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueFo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft** | [**\Tatum\Model\UpdateCashbackValueForAuthorNft**](../Model/UpdateCashbackValueForAuthorNft.md) |  |
+ **$update_cashback_value_for_author_nft** | [**\Tatum\Model\UpdateCashbackValueForAuthorNft**](../../Model/UpdateCashbackValueForAuthorNft) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3233,12 +3233,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueFo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftCelo**](../Model/UpdateCashbackValueForAuthorNftCelo.md) |  |
+ **$update_cashback_value_for_author_nft_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftCelo**](../../Model/UpdateCashbackValueForAuthorNftCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3271,12 +3271,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueFo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_kms** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMS**](../Model/UpdateCashbackValueForAuthorNftKMS.md) |  |
+ **$update_cashback_value_for_author_nft_kms** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMS**](../../Model/UpdateCashbackValueForAuthorNftKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3309,12 +3309,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueFo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_kms_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo**](../Model/UpdateCashbackValueForAuthorNftKMSCelo.md) |  |
+ **$update_cashback_value_for_author_nft_kms_celo** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo**](../../Model/UpdateCashbackValueForAuthorNftKMSCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3347,12 +3347,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueFo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_kms_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron**](../Model/UpdateCashbackValueForAuthorNftKMSTron.md) |  |
+ **$update_cashback_value_for_author_nft_kms_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron**](../../Model/UpdateCashbackValueForAuthorNftKMSTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3385,12 +3385,12 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueFo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_cashback_value_for_author_nft_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftTron**](../Model/UpdateCashbackValueForAuthorNftTron.md) |  |
+ **$update_cashback_value_for_author_nft_tron** | [**\Tatum\Model\UpdateCashbackValueForAuthorNftTron**](../../Model/UpdateCashbackValueForAuthorNftTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3422,11 +3422,11 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->verifySolanaNFT(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$verify_solana_nft** | [**\Tatum\Model\VerifySolanaNFT**](../Model/VerifySolanaNFT.md) |  |
+ **$verify_solana_nft** | [**\Tatum\Model\VerifySolanaNFT**](../../Model/VerifySolanaNFT) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -3472,11 +3472,11 @@ $sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->verifySolanaNFTKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$verify_solana_nftkms** | [**\Tatum\Model\VerifySolanaNFTKMS**](../Model/VerifySolanaNFTKMS.md) |  |
+ **$verify_solana_nftkms** | [**\Tatum\Model\VerifySolanaNFTKMS**](../../Model/VerifySolanaNFTKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

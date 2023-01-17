@@ -55,11 +55,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->createTronTrc10Blockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_tron_trc10_blockchain** | [**\Tatum\Model\CreateTronTrc10Blockchain**](../Model/CreateTronTrc10Blockchain.md) |  |
+ **$create_tron_trc10_blockchain** | [**\Tatum\Model\CreateTronTrc10Blockchain**](../../Model/CreateTronTrc10Blockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -103,11 +103,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->createTronTrc10BlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_tron_trc10_blockchain_kms** | [**\Tatum\Model\CreateTronTrc10BlockchainKMS**](../Model/CreateTronTrc10BlockchainKMS.md) |  |
+ **$create_tron_trc10_blockchain_kms** | [**\Tatum\Model\CreateTronTrc10BlockchainKMS**](../../Model/CreateTronTrc10BlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -139,11 +139,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->createTronTrc20Blockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_tron_trc20_blockchain** | [**\Tatum\Model\CreateTronTrc20Blockchain**](../Model/CreateTronTrc20Blockchain.md) |  |
+ **$create_tron_trc20_blockchain** | [**\Tatum\Model\CreateTronTrc20Blockchain**](../../Model/CreateTronTrc20Blockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -185,11 +185,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->createTronTrc20BlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_tron_trc20_blockchain_kms** | [**\Tatum\Model\CreateTronTrc20BlockchainKMS**](../Model/CreateTronTrc20BlockchainKMS.md) |  |
+ **$create_tron_trc20_blockchain_kms** | [**\Tatum\Model\CreateTronTrc20BlockchainKMS**](../../Model/CreateTronTrc20BlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -221,11 +221,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->freezeTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$freeze_tron** | [**\Tatum\Model\FreezeTron**](../Model/FreezeTron.md) |  |
+ **$freeze_tron** | [**\Tatum\Model\FreezeTron**](../../Model/FreezeTron) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -267,11 +267,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->freezeTronKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$freeze_tron_kms** | [**\Tatum\Model\FreezeTronKMS**](../Model/FreezeTronKMS.md) |  |
+ **$freeze_tron_kms** | [**\Tatum\Model\FreezeTronKMS**](../../Model/FreezeTronKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\TronWallet**](../Model/TronWallet.md)
+[**\Tatum\Model\TronWallet**](../../Model/TronWallet)
 
 ### Description
 
@@ -347,11 +347,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->transferTronBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_blockchain** | [**\Tatum\Model\TransferTronBlockchain**](../Model/TransferTronBlockchain.md) |  |
+ **$transfer_tron_blockchain** | [**\Tatum\Model\TransferTronBlockchain**](../../Model/TransferTronBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -393,11 +393,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->transferTronBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_blockchain_kms** | [**\Tatum\Model\TransferTronBlockchainKMS**](../Model/TransferTronBlockchainKMS.md) |  |
+ **$transfer_tron_blockchain_kms** | [**\Tatum\Model\TransferTronBlockchainKMS**](../../Model/TransferTronBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -429,11 +429,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc10Blockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_trc10_blockchain** | [**\Tatum\Model\TransferTronTrc10Blockchain**](../Model/TransferTronTrc10Blockchain.md) |  |
+ **$transfer_tron_trc10_blockchain** | [**\Tatum\Model\TransferTronTrc10Blockchain**](../../Model/TransferTronTrc10Blockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -475,11 +475,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc10BlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_trc10_blockchain_kms** | [**\Tatum\Model\TransferTronTrc10BlockchainKMS**](../Model/TransferTronTrc10BlockchainKMS.md) |  |
+ **$transfer_tron_trc10_blockchain_kms** | [**\Tatum\Model\TransferTronTrc10BlockchainKMS**](../../Model/TransferTronTrc10BlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -511,11 +511,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc20Blockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_trc20_blockchain** | [**\Tatum\Model\TransferTronTrc20Blockchain**](../Model/TransferTronTrc20Blockchain.md) |  |
+ **$transfer_tron_trc20_blockchain** | [**\Tatum\Model\TransferTronTrc20Blockchain**](../../Model/TransferTronTrc20Blockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -557,11 +557,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc20BlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_trc20_blockchain_kms** | [**\Tatum\Model\TransferTronTrc20BlockchainKMS**](../Model/TransferTronTrc20BlockchainKMS.md) |  |
+ **$transfer_tron_trc20_blockchain_kms** | [**\Tatum\Model\TransferTronTrc20BlockchainKMS**](../../Model/TransferTronTrc20BlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\TronAccountTx200Response**](../Model/TronAccountTx200Response.md)
+[**\Tatum\Model\TronAccountTx200Response**](../../Model/TronAccountTx200Response)
 
 ### Description
 
@@ -645,7 +645,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\TronAccountTx20200Response**](../Model/TronAccountTx20200Response.md)
+[**\Tatum\Model\TronAccountTx20200Response**](../../Model/TronAccountTx20200Response)
 
 ### Description
 
@@ -685,11 +685,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$tron_broadcast** | [**\Tatum\Model\TronBroadcast**](../Model/TronBroadcast.md) |  |
+ **$tron_broadcast** | [**\Tatum\Model\TronBroadcast**](../../Model/TronBroadcast) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -729,7 +729,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\TronGenerateAddress200Response**](../Model/TronGenerateAddress200Response.md)
+[**\Tatum\Model\TronGenerateAddress200Response**](../../Model/TronGenerateAddress200Response)
 
 ### Description
 
@@ -763,11 +763,11 @@ $sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -805,7 +805,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\TronAccount**](../Model/TronAccount.md)
+[**\Tatum\Model\TronAccount**](../../Model/TronAccount)
 
 ### Description
 
@@ -843,7 +843,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\TronBlock**](../Model/TronBlock.md)
+[**\Tatum\Model\TronBlock**](../../Model/TronBlock)
 
 ### Description
 
@@ -878,7 +878,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\TronGetCurrentBlock200Response**](../Model/TronGetCurrentBlock200Response.md)
+[**\Tatum\Model\TronGetCurrentBlock200Response**](../../Model/TronGetCurrentBlock200Response)
 
 ### Description
 
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\TronTx**](../Model/TronTx.md)
+[**\Tatum\Model\TronTx**](../../Model/TronTx)
 
 ### Description
 
@@ -954,7 +954,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\TronTrc10Detail**](../Model/TronTrc10Detail.md)
+[**\Tatum\Model\TronTrc10Detail**](../../Model/TronTrc10Detail)
 
 ### Description
 

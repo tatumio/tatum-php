@@ -37,11 +37,11 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->createCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency** | [**\Tatum\Model\VirtualCurrency**](../Model/VirtualCurrency.md) |  |
+ **$virtual_currency** | [**\Tatum\Model\VirtualCurrency**](../../Model/VirtualCurrency) |  |
 
 ### Return type
 
-[**\Tatum\Model\Account**](../Model/Account.md)
+[**\Tatum\Model\Account**](../../Model/Account)
 
 ### Description
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\VC**](../Model/VC.md)
+[**\Tatum\Model\VC**](../../Model/VC)
 
 ### Description
 
@@ -119,11 +119,11 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->mintCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../Model/VirtualCurrencyOperation.md) |  |
+ **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../../Model/VirtualCurrencyOperation) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
+[**\Tatum\Model\TransactionResult**](../../Model/TransactionResult)
 
 ### Description
 
@@ -159,11 +159,11 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->revokeCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../Model/VirtualCurrencyOperation.md) |  |
+ **$virtual_currency_operation** | [**\Tatum\Model\VirtualCurrencyOperation**](../../Model/VirtualCurrencyOperation) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
+[**\Tatum\Model\TransactionResult**](../../Model/TransactionResult)
 
 ### Description
 
@@ -199,7 +199,7 @@ $sdk->{mainnet/testnet}()->api()->virtualCurrency()->updateCurrency(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$virtual_currency_update** | [**\Tatum\Model\VirtualCurrencyUpdate**](../Model/VirtualCurrencyUpdate.md) |  |
+ **$virtual_currency_update** | [**\Tatum\Model\VirtualCurrencyUpdate**](../../Model/VirtualCurrencyUpdate) |  |
 
 ### Return type
 

@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Account**](../Model/Account.md)
+[**\Tatum\Model\Account**](../../Model/Account)
 
 ### Description
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Address**](../Model/Address.md)
+[**\Tatum\Model\Address**](../../Model/Address)
 
 ### Description
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Address**](../Model/Address.md)
+[**\Tatum\Model\Address**](../../Model/Address)
 
 ### Description
 
@@ -204,11 +204,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddresse
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$offchain_addresses** | [**\Tatum\Model\OffchainAddresses**](../Model/OffchainAddresses.md) |  |
+ **$offchain_addresses** | [**\Tatum\Model\OffchainAddresses**](../../Model/OffchainAddresses) |  |
 
 ### Return type
 
-[**\Tatum\Model\Address[]**](../Model/Address.md)
+[**\Tatum\Model\Address[]**](../../Model/Address)
 
 ### Description
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Address[]**](../Model/Address.md)
+[**\Tatum\Model\Address[]**](../../Model/Address)
 
 ### Description
 

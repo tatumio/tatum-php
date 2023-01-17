@@ -67,11 +67,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->approveNftSpending(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_nft_spending** | [**\Tatum\Model\ApproveNftSpending**](../Model/ApproveNftSpending.md) |  |
+ **$approve_nft_spending** | [**\Tatum\Model\ApproveNftSpending**](../../Model/ApproveNftSpending) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -121,11 +121,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->approveNftSpendingCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_nft_spending_celo** | [**\Tatum\Model\ApproveNftSpendingCelo**](../Model/ApproveNftSpendingCelo.md) |  |
+ **$approve_nft_spending_celo** | [**\Tatum\Model\ApproveNftSpendingCelo**](../../Model/ApproveNftSpendingCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -157,11 +157,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->approveNftSpendingCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_nft_spending_celo_kms** | [**\Tatum\Model\ApproveNftSpendingCeloKMS**](../Model/ApproveNftSpendingCeloKMS.md) |  |
+ **$approve_nft_spending_celo_kms** | [**\Tatum\Model\ApproveNftSpendingCeloKMS**](../../Model/ApproveNftSpendingCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -193,11 +193,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->approveNftSpendingKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_nft_spending_kms** | [**\Tatum\Model\ApproveNftSpendingKMS**](../Model/ApproveNftSpendingKMS.md) |  |
+ **$approve_nft_spending_kms** | [**\Tatum\Model\ApproveNftSpendingKMS**](../../Model/ApproveNftSpendingKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -229,11 +229,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->bidOnAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bid_on_auction** | [**\Tatum\Model\BidOnAuction**](../Model/BidOnAuction.md) |  |
+ **$bid_on_auction** | [**\Tatum\Model\BidOnAuction**](../../Model/BidOnAuction) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -297,11 +297,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->bidOnAuctionCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bid_on_auction_celo** | [**\Tatum\Model\BidOnAuctionCelo**](../Model/BidOnAuctionCelo.md) |  |
+ **$bid_on_auction_celo** | [**\Tatum\Model\BidOnAuctionCelo**](../../Model/BidOnAuctionCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -333,11 +333,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->bidOnAuctionCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bid_on_auction_celo_kms** | [**\Tatum\Model\BidOnAuctionCeloKMS**](../Model/BidOnAuctionCeloKMS.md) |  |
+ **$bid_on_auction_celo_kms** | [**\Tatum\Model\BidOnAuctionCeloKMS**](../../Model/BidOnAuctionCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -369,11 +369,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->bidOnAuctionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bid_on_auction_kms** | [**\Tatum\Model\BidOnAuctionKMS**](../Model/BidOnAuctionKMS.md) |  |
+ **$bid_on_auction_kms** | [**\Tatum\Model\BidOnAuctionKMS**](../../Model/BidOnAuctionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -405,11 +405,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipient(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient** | [**\Tatum\Model\UpdateFeeRecipient**](../Model/UpdateFeeRecipient.md) |  |
+ **$update_fee_recipient** | [**\Tatum\Model\UpdateFeeRecipient**](../../Model/UpdateFeeRecipient) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -457,11 +457,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
+ **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../../Model/UpdateFeeRecipientCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -493,11 +493,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
+ **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../../Model/UpdateFeeRecipientCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -529,11 +529,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
+ **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../../Model/UpdateFeeRecipientKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -565,11 +565,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->cancelAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_auction** | [**\Tatum\Model\CancelAuction**](../Model/CancelAuction.md) |  |
+ **$cancel_auction** | [**\Tatum\Model\CancelAuction**](../../Model/CancelAuction) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -627,11 +627,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->cancelAuctionCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_auction_celo** | [**\Tatum\Model\CancelAuctionCelo**](../Model/CancelAuctionCelo.md) |  |
+ **$cancel_auction_celo** | [**\Tatum\Model\CancelAuctionCelo**](../../Model/CancelAuctionCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -663,11 +663,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->cancelAuctionCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_auction_celo_kms** | [**\Tatum\Model\CancelAuctionCeloKMS**](../Model/CancelAuctionCeloKMS.md) |  |
+ **$cancel_auction_celo_kms** | [**\Tatum\Model\CancelAuctionCeloKMS**](../../Model/CancelAuctionCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -699,11 +699,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->cancelAuctionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_auction_kms** | [**\Tatum\Model\CancelAuctionKMS**](../Model/CancelAuctionKMS.md) |  |
+ **$cancel_auction_kms** | [**\Tatum\Model\CancelAuctionKMS**](../../Model/CancelAuctionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -735,11 +735,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->createAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_auction** | [**\Tatum\Model\CreateAuction**](../Model/CreateAuction.md) |  |
+ **$create_auction** | [**\Tatum\Model\CreateAuction**](../../Model/CreateAuction) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -785,11 +785,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->createAuctionCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_auction_celo** | [**\Tatum\Model\CreateAuctionCelo**](../Model/CreateAuctionCelo.md) |  |
+ **$create_auction_celo** | [**\Tatum\Model\CreateAuctionCelo**](../../Model/CreateAuctionCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -821,11 +821,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->createAuctionCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_auction_celo_kms** | [**\Tatum\Model\CreateAuctionCeloKMS**](../Model/CreateAuctionCeloKMS.md) |  |
+ **$create_auction_celo_kms** | [**\Tatum\Model\CreateAuctionCeloKMS**](../../Model/CreateAuctionCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -857,11 +857,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->createAuctionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_auction_kms** | [**\Tatum\Model\CreateAuctionKMS**](../Model/CreateAuctionKMS.md) |  |
+ **$create_auction_kms** | [**\Tatum\Model\CreateAuctionKMS**](../../Model/CreateAuctionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -893,11 +893,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->generateAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_auction** | [**\Tatum\Model\GenerateAuction**](../Model/GenerateAuction.md) |  |
+ **$generate_auction** | [**\Tatum\Model\GenerateAuction**](../../Model/GenerateAuction) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -945,11 +945,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->generateAuctionCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_auction_celo** | [**\Tatum\Model\GenerateAuctionCelo**](../Model/GenerateAuctionCelo.md) |  |
+ **$generate_auction_celo** | [**\Tatum\Model\GenerateAuctionCelo**](../../Model/GenerateAuctionCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -981,11 +981,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->generateAuctionCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_auction_celo_kms** | [**\Tatum\Model\GenerateAuctionCeloKMS**](../Model/GenerateAuctionCeloKMS.md) |  |
+ **$generate_auction_celo_kms** | [**\Tatum\Model\GenerateAuctionCeloKMS**](../../Model/GenerateAuctionCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1017,11 +1017,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->generateAuctionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_auction_kms** | [**\Tatum\Model\GenerateAuctionKMS**](../Model/GenerateAuctionKMS.md) |  |
+ **$generate_auction_kms** | [**\Tatum\Model\GenerateAuctionKMS**](../../Model/GenerateAuctionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1061,7 +1061,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GetAuction200Response**](../Model/GetAuction200Response.md)
+[**\Tatum\Model\GetAuction200Response**](../../Model/GetAuction200Response)
 
 ### Description
 
@@ -1153,7 +1153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GetAuctionFeeRecipient200Response**](../Model/GetAuctionFeeRecipient200Response.md)
+[**\Tatum\Model\GetAuctionFeeRecipient200Response**](../../Model/GetAuctionFeeRecipient200Response)
 
 ### Description
 
@@ -1193,11 +1193,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->settleAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$settle_auction** | [**\Tatum\Model\SettleAuction**](../Model/SettleAuction.md) |  |
+ **$settle_auction** | [**\Tatum\Model\SettleAuction**](../../Model/SettleAuction) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1253,11 +1253,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->settleAuctionCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$settle_auction_celo** | [**\Tatum\Model\SettleAuctionCelo**](../Model/SettleAuctionCelo.md) |  |
+ **$settle_auction_celo** | [**\Tatum\Model\SettleAuctionCelo**](../../Model/SettleAuctionCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1289,11 +1289,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->settleAuctionCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$settle_auction_celo_kms** | [**\Tatum\Model\SettleAuctionCeloKMS**](../Model/SettleAuctionCeloKMS.md) |  |
+ **$settle_auction_celo_kms** | [**\Tatum\Model\SettleAuctionCeloKMS**](../../Model/SettleAuctionCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1325,11 +1325,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->settleAuctionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$settle_auction_kms** | [**\Tatum\Model\SettleAuctionKMS**](../Model/SettleAuctionKMS.md) |  |
+ **$settle_auction_kms** | [**\Tatum\Model\SettleAuctionKMS**](../../Model/SettleAuctionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1361,11 +1361,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->updateFeeAuction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_auction** | [**\Tatum\Model\UpdateFeeAuction**](../Model/UpdateFeeAuction.md) |  |
+ **$update_fee_auction** | [**\Tatum\Model\UpdateFeeAuction**](../../Model/UpdateFeeAuction) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1413,11 +1413,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->updateFeeAuctionCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_auction_celo** | [**\Tatum\Model\UpdateFeeAuctionCelo**](../Model/UpdateFeeAuctionCelo.md) |  |
+ **$update_fee_auction_celo** | [**\Tatum\Model\UpdateFeeAuctionCelo**](../../Model/UpdateFeeAuctionCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1449,11 +1449,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->updateFeeAuctionCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_auction_celo_kms** | [**\Tatum\Model\UpdateFeeAuctionCeloKMS**](../Model/UpdateFeeAuctionCeloKMS.md) |  |
+ **$update_fee_auction_celo_kms** | [**\Tatum\Model\UpdateFeeAuctionCeloKMS**](../../Model/UpdateFeeAuctionCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1485,11 +1485,11 @@ $sdk->{mainnet/testnet}()->api()->auction()->updateFeeAuctionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_auction_kms** | [**\Tatum\Model\UpdateFeeAuctionKMS**](../Model/UpdateFeeAuctionKMS.md) |  |
+ **$update_fee_auction_kms** | [**\Tatum\Model\UpdateFeeAuctionKMS**](../../Model/UpdateFeeAuctionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

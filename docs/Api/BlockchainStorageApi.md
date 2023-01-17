@@ -36,11 +36,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainStorage()->createRecord(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_record** | [**\Tatum\Model\CreateRecord**](../Model/CreateRecord.md) |  |
+ **$create_record** | [**\Tatum\Model\CreateRecord**](../../Model/CreateRecord) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -84,11 +84,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainStorage()->createRecordCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_record_celo** | [**\Tatum\Model\CreateRecordCelo**](../Model/CreateRecordCelo.md) |  |
+ **$create_record_celo** | [**\Tatum\Model\CreateRecordCelo**](../../Model/CreateRecordCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -120,11 +120,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainStorage()->createRecordKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_record_kms** | [**\Tatum\Model\CreateRecordKMS**](../Model/CreateRecordKMS.md) |  |
+ **$create_record_kms** | [**\Tatum\Model\CreateRecordKMS**](../../Model/CreateRecordKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GetLog200Response**](../Model/GetLog200Response.md)
+[**\Tatum\Model\GetLog200Response**](../../Model/GetLog200Response)
 
 ### Description
 

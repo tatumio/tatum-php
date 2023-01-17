@@ -49,11 +49,11 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\LtcGenerateAddress200Response**](../Model/LtcGenerateAddress200Response.md)
+[**\Tatum\Model\LtcGenerateAddress200Response**](../../Model/LtcGenerateAddress200Response)
 
 ### Description
 
@@ -127,11 +127,11 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcBasedBalance**](../Model/BtcBasedBalance.md)
+[**\Tatum\Model\BtcBasedBalance**](../../Model/BtcBasedBalance)
 
 ### Description
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\LtcBlock**](../Model/LtcBlock.md)
+[**\Tatum\Model\LtcBlock**](../../Model/LtcBlock)
 
 ### Description
 
@@ -288,7 +288,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\LtcInfo**](../Model/LtcInfo.md)
+[**\Tatum\Model\LtcInfo**](../../Model/LtcInfo)
 
 ### Description
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\LtcGetBlockHash200Response**](../Model/LtcGetBlockHash200Response.md)
+[**\Tatum\Model\LtcGetBlockHash200Response**](../../Model/LtcGetBlockHash200Response)
 
 ### Description
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\LtcTx**](../Model/LtcTx.md)
+[**\Tatum\Model\LtcTx**](../../Model/LtcTx)
 
 ### Description
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\LtcTx[]**](../Model/LtcTx.md)
+[**\Tatum\Model\LtcTx[]**](../../Model/LtcTx)
 
 ### Description
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\LtcUTXO**](../Model/LtcUTXO.md)
+[**\Tatum\Model\LtcUTXO**](../../Model/LtcUTXO)
 
 ### Description
 
@@ -521,7 +521,7 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcRpcDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md) |  |
+ **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../../Model/BchRpcDriverRequest) |  |
 
 ### Return type
 
@@ -561,11 +561,11 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ltc_transaction_address** | [**\Tatum\Model\LtcTransactionAddress**](../Model/LtcTransactionAddress.md) |  |
+ **$ltc_transaction_address** | [**\Tatum\Model\LtcTransactionAddress**](../../Model/LtcTransactionAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -633,11 +633,11 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionAddressKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ltc_transaction_address_kms** | [**\Tatum\Model\LtcTransactionAddressKMS**](../Model/LtcTransactionAddressKMS.md) |  |
+ **$ltc_transaction_address_kms** | [**\Tatum\Model\LtcTransactionAddressKMS**](../../Model/LtcTransactionAddressKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -669,11 +669,11 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionUTXO(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ltc_transaction_utxo** | [**\Tatum\Model\LtcTransactionUTXO**](../Model/LtcTransactionUTXO.md) |  |
+ **$ltc_transaction_utxo** | [**\Tatum\Model\LtcTransactionUTXO**](../../Model/LtcTransactionUTXO) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -705,11 +705,11 @@ $sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionUTXOKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ltc_transaction_utxokms** | [**\Tatum\Model\LtcTransactionUTXOKMS**](../Model/LtcTransactionUTXOKMS.md) |  |
+ **$ltc_transaction_utxokms** | [**\Tatum\Model\LtcTransactionUTXOKMS**](../../Model/LtcTransactionUTXOKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

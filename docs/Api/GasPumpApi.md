@@ -72,11 +72,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPump(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$activate_gas_pump** | [**\Tatum\Model\ActivateGasPump**](../Model/ActivateGasPump.md) |  |
+ **$activate_gas_pump** | [**\Tatum\Model\ActivateGasPump**](../../Model/ActivateGasPump) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -108,11 +108,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_celo** | [**\Tatum\Model\ActivateGasPumpCelo**](../Model/ActivateGasPumpCelo.md) |  |
+ **$activate_gas_pump_celo** | [**\Tatum\Model\ActivateGasPumpCelo**](../../Model/ActivateGasPumpCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -144,11 +144,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_celo_kms** | [**\Tatum\Model\ActivateGasPumpCeloKMS**](../Model/ActivateGasPumpCeloKMS.md) |  |
+ **$activate_gas_pump_celo_kms** | [**\Tatum\Model\ActivateGasPumpCeloKMS**](../../Model/ActivateGasPumpCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -180,11 +180,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_kms** | [**\Tatum\Model\ActivateGasPumpKMS**](../Model/ActivateGasPumpKMS.md) |  |
+ **$activate_gas_pump_kms** | [**\Tatum\Model\ActivateGasPumpKMS**](../../Model/ActivateGasPumpKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -216,11 +216,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTatum(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_tatum** | [**\Tatum\Model\ActivateGasPumpTatum**](../Model/ActivateGasPumpTatum.md) |  |
+ **$activate_gas_pump_tatum** | [**\Tatum\Model\ActivateGasPumpTatum**](../../Model/ActivateGasPumpTatum) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -292,11 +292,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_tron** | [**\Tatum\Model\ActivateGasPumpTron**](../Model/ActivateGasPumpTron.md) |  |
+ **$activate_gas_pump_tron** | [**\Tatum\Model\ActivateGasPumpTron**](../../Model/ActivateGasPumpTron) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -328,11 +328,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTronKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$activate_gas_pump_tron_kms** | [**\Tatum\Model\ActivateGasPumpTronKMS**](../Model/ActivateGasPumpTronKMS.md) |  |
+ **$activate_gas_pump_tron_kms** | [**\Tatum\Model\ActivateGasPumpTronKMS**](../../Model/ActivateGasPumpTronKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GasPumpTrxOut**](../Model/GasPumpTrxOut.md)
+[**\Tatum\Model\GasPumpTrxOut**](../../Model/GasPumpTrxOut)
 
 ### Description
 
@@ -418,11 +418,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_transfer_custodial_wallet** | [**\Tatum\Model\ApproveTransferCustodialWallet**](../Model/ApproveTransferCustodialWallet.md) |  |
+ **$approve_transfer_custodial_wallet** | [**\Tatum\Model\ApproveTransferCustodialWallet**](../../Model/ApproveTransferCustodialWallet) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -478,11 +478,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_transfer_custodial_wallet_celo** | [**\Tatum\Model\ApproveTransferCustodialWalletCelo**](../Model/ApproveTransferCustodialWalletCelo.md) |  |
+ **$approve_transfer_custodial_wallet_celo** | [**\Tatum\Model\ApproveTransferCustodialWalletCelo**](../../Model/ApproveTransferCustodialWalletCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -514,11 +514,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletCeloK
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_transfer_custodial_wallet_celo_kms** | [**\Tatum\Model\ApproveTransferCustodialWalletCeloKMS**](../Model/ApproveTransferCustodialWalletCeloKMS.md) |  |
+ **$approve_transfer_custodial_wallet_celo_kms** | [**\Tatum\Model\ApproveTransferCustodialWalletCeloKMS**](../../Model/ApproveTransferCustodialWalletCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -550,11 +550,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_transfer_custodial_wallet_kms** | [**\Tatum\Model\ApproveTransferCustodialWalletKMS**](../Model/ApproveTransferCustodialWalletKMS.md) |  |
+ **$approve_transfer_custodial_wallet_kms** | [**\Tatum\Model\ApproveTransferCustodialWalletKMS**](../../Model/ApproveTransferCustodialWalletKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Activated**](../Model/Activated.md)
+[**\Tatum\Model\Activated**](../../Model/Activated)
 
 ### Description
 
@@ -636,11 +636,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet** | [**\Tatum\Model\GenerateCustodialWallet**](../Model/GenerateCustodialWallet.md) |  |
+ **$generate_custodial_wallet** | [**\Tatum\Model\GenerateCustodialWallet**](../../Model/GenerateCustodialWallet) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -699,12 +699,12 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatch(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch** | [**\Tatum\Model\GenerateCustodialWalletBatch**](../Model/GenerateCustodialWalletBatch.md) |  |
+ **$generate_custodial_wallet_batch** | [**\Tatum\Model\GenerateCustodialWalletBatch**](../../Model/GenerateCustodialWalletBatch) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -737,12 +737,12 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_celo** | [**\Tatum\Model\GenerateCustodialWalletBatchCelo**](../Model/GenerateCustodialWalletBatchCelo.md) |  |
+ **$generate_custodial_wallet_batch_celo** | [**\Tatum\Model\GenerateCustodialWalletBatchCelo**](../../Model/GenerateCustodialWalletBatchCelo) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -775,12 +775,12 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCeloKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchCeloKMS**](../Model/GenerateCustodialWalletBatchCeloKMS.md) |  |
+ **$generate_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchCeloKMS**](../../Model/GenerateCustodialWalletBatchCeloKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -813,12 +813,12 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchKMS**](../Model/GenerateCustodialWalletBatchKMS.md) |  |
+ **$generate_custodial_wallet_batch_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchKMS**](../../Model/GenerateCustodialWalletBatchKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -851,12 +851,12 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchPayer(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_payer** | [**\Tatum\Model\GenerateCustodialWalletBatchPayer**](../Model/GenerateCustodialWalletBatchPayer.md) |  |
+ **$generate_custodial_wallet_batch_payer** | [**\Tatum\Model\GenerateCustodialWalletBatchPayer**](../../Model/GenerateCustodialWalletBatchPayer) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -903,12 +903,12 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_tron** | [**\Tatum\Model\GenerateCustodialWalletBatchTron**](../Model/GenerateCustodialWalletBatchTron.md) |  |
+ **$generate_custodial_wallet_batch_tron** | [**\Tatum\Model\GenerateCustodialWalletBatchTron**](../../Model/GenerateCustodialWalletBatchTron) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -941,12 +941,12 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTronKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchTronKMS**](../Model/GenerateCustodialWalletBatchTronKMS.md) |  |
+ **$generate_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchTronKMS**](../../Model/GenerateCustodialWalletBatchTronKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -978,11 +978,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_celo** | [**\Tatum\Model\GenerateCustodialWalletCelo**](../Model/GenerateCustodialWalletCelo.md) |  |
+ **$generate_custodial_wallet_celo** | [**\Tatum\Model\GenerateCustodialWalletCelo**](../../Model/GenerateCustodialWalletCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1014,11 +1014,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletCeloKMS**](../Model/GenerateCustodialWalletCeloKMS.md) |  |
+ **$generate_custodial_wallet_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletCeloKMS**](../../Model/GenerateCustodialWalletCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1050,11 +1050,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_kms** | [**\Tatum\Model\GenerateCustodialWalletKMS**](../Model/GenerateCustodialWalletKMS.md) |  |
+ **$generate_custodial_wallet_kms** | [**\Tatum\Model\GenerateCustodialWalletKMS**](../../Model/GenerateCustodialWalletKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1086,11 +1086,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_tron** | [**\Tatum\Model\GenerateCustodialWalletTron**](../Model/GenerateCustodialWalletTron.md) |  |
+ **$generate_custodial_wallet_tron** | [**\Tatum\Model\GenerateCustodialWalletTron**](../../Model/GenerateCustodialWalletTron) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1122,11 +1122,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTronKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletTronKMS**](../Model/GenerateCustodialWalletTronKMS.md) |  |
+ **$generate_custodial_wallet_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletTronKMS**](../../Model/GenerateCustodialWalletTronKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1158,7 +1158,7 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->precalculateGasPumpAddresses(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_gas_pump** | [**\Tatum\Model\CreateGasPump**](../Model/CreateGasPump.md) |  | [optional]
+ **$create_gas_pump** | [**\Tatum\Model\CreateGasPump**](../../Model/CreateGasPump) |  | [optional]
 
 ### Return type
 
@@ -1280,11 +1280,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWallet(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet** | [**\Tatum\Model\TransferCustodialWallet**](../Model/TransferCustodialWallet.md) |  |
+ **$transfer_custodial_wallet** | [**\Tatum\Model\TransferCustodialWallet**](../../Model/TransferCustodialWallet) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1346,11 +1346,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatch(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch** | [**\Tatum\Model\TransferCustodialWalletBatch**](../Model/TransferCustodialWalletBatch.md) |  |
+ **$transfer_custodial_wallet_batch** | [**\Tatum\Model\TransferCustodialWalletBatch**](../../Model/TransferCustodialWalletBatch) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1412,11 +1412,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_celo** | [**\Tatum\Model\TransferCustodialWalletBatchCelo**](../Model/TransferCustodialWalletBatchCelo.md) |  |
+ **$transfer_custodial_wallet_batch_celo** | [**\Tatum\Model\TransferCustodialWalletBatchCelo**](../../Model/TransferCustodialWalletBatchCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1448,11 +1448,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchCeloKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\TransferCustodialWalletBatchCeloKMS**](../Model/TransferCustodialWalletBatchCeloKMS.md) |  |
+ **$transfer_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\TransferCustodialWalletBatchCeloKMS**](../../Model/TransferCustodialWalletBatchCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1484,11 +1484,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_kms** | [**\Tatum\Model\TransferCustodialWalletBatchKMS**](../Model/TransferCustodialWalletBatchKMS.md) |  |
+ **$transfer_custodial_wallet_batch_kms** | [**\Tatum\Model\TransferCustodialWalletBatchKMS**](../../Model/TransferCustodialWalletBatchKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1520,11 +1520,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_tron** | [**\Tatum\Model\TransferCustodialWalletBatchTron**](../Model/TransferCustodialWalletBatchTron.md) |  |
+ **$transfer_custodial_wallet_batch_tron** | [**\Tatum\Model\TransferCustodialWalletBatchTron**](../../Model/TransferCustodialWalletBatchTron) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1556,11 +1556,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchTronKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\TransferCustodialWalletBatchTronKMS**](../Model/TransferCustodialWalletBatchTronKMS.md) |  |
+ **$transfer_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\TransferCustodialWalletBatchTronKMS**](../../Model/TransferCustodialWalletBatchTronKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1592,11 +1592,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_celo** | [**\Tatum\Model\TransferCustodialWalletCelo**](../Model/TransferCustodialWalletCelo.md) |  |
+ **$transfer_custodial_wallet_celo** | [**\Tatum\Model\TransferCustodialWalletCelo**](../../Model/TransferCustodialWalletCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1628,11 +1628,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_celo_kms** | [**\Tatum\Model\TransferCustodialWalletCeloKMS**](../Model/TransferCustodialWalletCeloKMS.md) |  |
+ **$transfer_custodial_wallet_celo_kms** | [**\Tatum\Model\TransferCustodialWalletCeloKMS**](../../Model/TransferCustodialWalletCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1664,11 +1664,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_kms** | [**\Tatum\Model\TransferCustodialWalletKMS**](../Model/TransferCustodialWalletKMS.md) |  |
+ **$transfer_custodial_wallet_kms** | [**\Tatum\Model\TransferCustodialWalletKMS**](../../Model/TransferCustodialWalletKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1700,11 +1700,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_tron** | [**\Tatum\Model\TransferCustodialWalletTron**](../Model/TransferCustodialWalletTron.md) |  |
+ **$transfer_custodial_wallet_tron** | [**\Tatum\Model\TransferCustodialWalletTron**](../../Model/TransferCustodialWalletTron) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1736,11 +1736,11 @@ $sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletTronKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_custodial_wallet_tron_kms** | [**\Tatum\Model\TransferCustodialWalletTronKMS**](../Model/TransferCustodialWalletTronKMS.md) |  |
+ **$transfer_custodial_wallet_tron_kms** | [**\Tatum\Model\TransferCustodialWalletTronKMS**](../../Model/TransferCustodialWalletTronKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

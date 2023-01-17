@@ -37,11 +37,11 @@ $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialCreateWall
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$custodial_create_wallet_request** | [**\Tatum\Model\CustodialCreateWalletRequest**](../Model/CustodialCreateWalletRequest.md) |  | [optional]
+ **$custodial_create_wallet_request** | [**\Tatum\Model\CustodialCreateWalletRequest**](../../Model/CustodialCreateWalletRequest) |  | [optional]
 
 ### Return type
 
-[**\Tatum\Model\CustodialManagedAddress**](../Model/CustodialManagedAddress.md)
+[**\Tatum\Model\CustodialManagedAddress**](../../Model/CustodialManagedAddress)
 
 ### Description
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\CustodialManagedAddress[]**](../Model/CustodialManagedAddress.md)
+[**\Tatum\Model\CustodialManagedAddress[]**](../../Model/CustodialManagedAddress)
 
 ### Description
 
@@ -156,7 +156,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\CustodialManagedAddress[]**](../Model/CustodialManagedAddress.md)
+[**\Tatum\Model\CustodialManagedAddress[]**](../../Model/CustodialManagedAddress)
 
 ### Description
 
@@ -190,11 +190,11 @@ $sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialTransferMa
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_managed_address** | [**\Tatum\Model\TransferManagedAddress**](../Model/TransferManagedAddress.md) |  | [optional]
+ **$transfer_managed_address** | [**\Tatum\Model\TransferManagedAddress**](../../Model/TransferManagedAddress) |  | [optional]
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 

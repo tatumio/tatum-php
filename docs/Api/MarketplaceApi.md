@@ -79,11 +79,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->bloMarWithdrawFromMarketplaceSo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$withdraw_from_marketplace_solana** | [**\Tatum\Model\WithdrawFromMarketplaceSolana**](../Model/WithdrawFromMarketplaceSolana.md) |  |
+ **$withdraw_from_marketplace_solana** | [**\Tatum\Model\WithdrawFromMarketplaceSolana**](../../Model/WithdrawFromMarketplaceSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -129,11 +129,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->bloMarWithdrawFromMarketplaceSo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$withdraw_from_marketplace_solana_kms** | [**\Tatum\Model\WithdrawFromMarketplaceSolanaKMS**](../Model/WithdrawFromMarketplaceSolanaKMS.md) |  |
+ **$withdraw_from_marketplace_solana_kms** | [**\Tatum\Model\WithdrawFromMarketplaceSolanaKMS**](../../Model/WithdrawFromMarketplaceSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -165,11 +165,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$buy_asset_on_marketplace** | [**\Tatum\Model\BuyAssetOnMarketplace**](../Model/BuyAssetOnMarketplace.md) |  |
+ **$buy_asset_on_marketplace** | [**\Tatum\Model\BuyAssetOnMarketplace**](../../Model/BuyAssetOnMarketplace) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -229,11 +229,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$buy_asset_on_marketplace_celo** | [**\Tatum\Model\BuyAssetOnMarketplaceCelo**](../Model/BuyAssetOnMarketplaceCelo.md) |  |
+ **$buy_asset_on_marketplace_celo** | [**\Tatum\Model\BuyAssetOnMarketplaceCelo**](../../Model/BuyAssetOnMarketplaceCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -265,11 +265,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$buy_asset_on_marketplace_celo_kms** | [**\Tatum\Model\BuyAssetOnMarketplaceCeloKMS**](../Model/BuyAssetOnMarketplaceCeloKMS.md) |  |
+ **$buy_asset_on_marketplace_celo_kms** | [**\Tatum\Model\BuyAssetOnMarketplaceCeloKMS**](../../Model/BuyAssetOnMarketplaceCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -301,11 +301,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$buy_asset_on_marketplace_kms** | [**\Tatum\Model\BuyAssetOnMarketplaceKMS**](../Model/BuyAssetOnMarketplaceKMS.md) |  |
+ **$buy_asset_on_marketplace_kms** | [**\Tatum\Model\BuyAssetOnMarketplaceKMS**](../../Model/BuyAssetOnMarketplaceKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -337,11 +337,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$buy_asset_on_marketplace_solana** | [**\Tatum\Model\BuyAssetOnMarketplaceSolana**](../Model/BuyAssetOnMarketplaceSolana.md) |  |
+ **$buy_asset_on_marketplace_solana** | [**\Tatum\Model\BuyAssetOnMarketplaceSolana**](../../Model/BuyAssetOnMarketplaceSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -373,11 +373,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceSolanaKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$buy_asset_on_marketplace_solana_kms** | [**\Tatum\Model\BuyAssetOnMarketplaceSolanaKMS**](../Model/BuyAssetOnMarketplaceSolanaKMS.md) |  |
+ **$buy_asset_on_marketplace_solana_kms** | [**\Tatum\Model\BuyAssetOnMarketplaceSolanaKMS**](../../Model/BuyAssetOnMarketplaceSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -409,11 +409,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_sell_asset_on_marketplace** | [**\Tatum\Model\CancelSellAssetOnMarketplace**](../Model/CancelSellAssetOnMarketplace.md) |  |
+ **$cancel_sell_asset_on_marketplace** | [**\Tatum\Model\CancelSellAssetOnMarketplace**](../../Model/CancelSellAssetOnMarketplace) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -471,11 +471,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceCel
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_sell_asset_on_marketplace_celo** | [**\Tatum\Model\CancelSellAssetOnMarketplaceCelo**](../Model/CancelSellAssetOnMarketplaceCelo.md) |  |
+ **$cancel_sell_asset_on_marketplace_celo** | [**\Tatum\Model\CancelSellAssetOnMarketplaceCelo**](../../Model/CancelSellAssetOnMarketplaceCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -507,11 +507,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceCel
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_sell_asset_on_marketplace_celo_kms** | [**\Tatum\Model\CancelSellAssetOnMarketplaceCeloKMS**](../Model/CancelSellAssetOnMarketplaceCeloKMS.md) |  |
+ **$cancel_sell_asset_on_marketplace_celo_kms** | [**\Tatum\Model\CancelSellAssetOnMarketplaceCeloKMS**](../../Model/CancelSellAssetOnMarketplaceCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -543,11 +543,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_sell_asset_on_marketplace_kms** | [**\Tatum\Model\CancelSellAssetOnMarketplaceKMS**](../Model/CancelSellAssetOnMarketplaceKMS.md) |  |
+ **$cancel_sell_asset_on_marketplace_kms** | [**\Tatum\Model\CancelSellAssetOnMarketplaceKMS**](../../Model/CancelSellAssetOnMarketplaceKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -579,11 +579,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceSol
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_sell_asset_on_marketplace_solana** | [**\Tatum\Model\CancelSellAssetOnMarketplaceSolana**](../Model/CancelSellAssetOnMarketplaceSolana.md) |  |
+ **$cancel_sell_asset_on_marketplace_solana** | [**\Tatum\Model\CancelSellAssetOnMarketplaceSolana**](../../Model/CancelSellAssetOnMarketplaceSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -615,11 +615,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceSol
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$cancel_sell_asset_on_marketplace_solana_kms** | [**\Tatum\Model\CancelSellAssetOnMarketplaceSolanaKMS**](../Model/CancelSellAssetOnMarketplaceSolanaKMS.md) |  |
+ **$cancel_sell_asset_on_marketplace_solana_kms** | [**\Tatum\Model\CancelSellAssetOnMarketplaceSolanaKMS**](../../Model/CancelSellAssetOnMarketplaceSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -651,11 +651,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_marketplace** | [**\Tatum\Model\GenerateMarketplace**](../Model/GenerateMarketplace.md) |  |
+ **$generate_marketplace** | [**\Tatum\Model\GenerateMarketplace**](../../Model/GenerateMarketplace) |  |
 
 ### Return type
 
-[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../../Model/GenerateMarketplace200Response)
 
 ### Description
 
@@ -717,11 +717,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_marketplace_celo** | [**\Tatum\Model\GenerateMarketplaceCelo**](../Model/GenerateMarketplaceCelo.md) |  |
+ **$generate_marketplace_celo** | [**\Tatum\Model\GenerateMarketplaceCelo**](../../Model/GenerateMarketplaceCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../../Model/GenerateMarketplace200Response)
 
 ### Description
 
@@ -753,11 +753,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_marketplace_celo_kms** | [**\Tatum\Model\GenerateMarketplaceCeloKMS**](../Model/GenerateMarketplaceCeloKMS.md) |  |
+ **$generate_marketplace_celo_kms** | [**\Tatum\Model\GenerateMarketplaceCeloKMS**](../../Model/GenerateMarketplaceCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../../Model/GenerateMarketplace200Response)
 
 ### Description
 
@@ -789,11 +789,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_marketplace_kms** | [**\Tatum\Model\GenerateMarketplaceKMS**](../Model/GenerateMarketplaceKMS.md) |  |
+ **$generate_marketplace_kms** | [**\Tatum\Model\GenerateMarketplaceKMS**](../../Model/GenerateMarketplaceKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../../Model/GenerateMarketplace200Response)
 
 ### Description
 
@@ -825,11 +825,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_marketplace_solana** | [**\Tatum\Model\GenerateMarketplaceSolana**](../Model/GenerateMarketplaceSolana.md) |  |
+ **$generate_marketplace_solana** | [**\Tatum\Model\GenerateMarketplaceSolana**](../../Model/GenerateMarketplaceSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../../Model/GenerateMarketplace200Response)
 
 ### Description
 
@@ -861,11 +861,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceSolanaKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$generate_marketplace_solana_kms** | [**\Tatum\Model\GenerateMarketplaceSolanaKMS**](../Model/GenerateMarketplaceSolanaKMS.md) |  |
+ **$generate_marketplace_solana_kms** | [**\Tatum\Model\GenerateMarketplaceSolanaKMS**](../../Model/GenerateMarketplaceSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\GenerateMarketplace200Response**](../Model/GenerateMarketplace200Response.md)
+[**\Tatum\Model\GenerateMarketplace200Response**](../../Model/GenerateMarketplace200Response)
 
 ### Description
 
@@ -949,7 +949,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GetMarketplaceFeeRecipient200Response**](../Model/GetMarketplaceFeeRecipient200Response.md)
+[**\Tatum\Model\GetMarketplaceFeeRecipient200Response**](../../Model/GetMarketplaceFeeRecipient200Response)
 
 ### Description
 
@@ -995,7 +995,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GetMarketplaceInfo200Response**](../Model/GetMarketplaceInfo200Response.md)
+[**\Tatum\Model\GetMarketplaceInfo200Response**](../../Model/GetMarketplaceInfo200Response)
 
 ### Description
 
@@ -1039,7 +1039,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GetMarketplaceListing200Response**](../Model/GetMarketplaceListing200Response.md)
+[**\Tatum\Model\GetMarketplaceListing200Response**](../../Model/GetMarketplaceListing200Response)
 
 ### Description
 
@@ -1127,11 +1127,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplace(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace** | [**\Tatum\Model\SellAssetOnMarketplace**](../Model/SellAssetOnMarketplace.md) |  |
+ **$sell_asset_on_marketplace** | [**\Tatum\Model\SellAssetOnMarketplace**](../../Model/SellAssetOnMarketplace) |  |
 
 ### Return type
 
-[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../../Model/SellAssetOnMarketplace200Response)
 
 ### Description
 
@@ -1189,11 +1189,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_celo** | [**\Tatum\Model\SellAssetOnMarketplaceCelo**](../Model/SellAssetOnMarketplaceCelo.md) |  |
+ **$sell_asset_on_marketplace_celo** | [**\Tatum\Model\SellAssetOnMarketplaceCelo**](../../Model/SellAssetOnMarketplaceCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../../Model/SellAssetOnMarketplace200Response)
 
 ### Description
 
@@ -1225,11 +1225,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_celo_kms** | [**\Tatum\Model\SellAssetOnMarketplaceCeloKMS**](../Model/SellAssetOnMarketplaceCeloKMS.md) |  |
+ **$sell_asset_on_marketplace_celo_kms** | [**\Tatum\Model\SellAssetOnMarketplaceCeloKMS**](../../Model/SellAssetOnMarketplaceCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../../Model/SellAssetOnMarketplace200Response)
 
 ### Description
 
@@ -1261,11 +1261,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_kms** | [**\Tatum\Model\SellAssetOnMarketplaceKMS**](../Model/SellAssetOnMarketplaceKMS.md) |  |
+ **$sell_asset_on_marketplace_kms** | [**\Tatum\Model\SellAssetOnMarketplaceKMS**](../../Model/SellAssetOnMarketplaceKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../../Model/SellAssetOnMarketplace200Response)
 
 ### Description
 
@@ -1297,11 +1297,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_solana** | [**\Tatum\Model\SellAssetOnMarketplaceSolana**](../Model/SellAssetOnMarketplaceSolana.md) |  |
+ **$sell_asset_on_marketplace_solana** | [**\Tatum\Model\SellAssetOnMarketplaceSolana**](../../Model/SellAssetOnMarketplaceSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../../Model/SellAssetOnMarketplace200Response)
 
 ### Description
 
@@ -1333,11 +1333,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceSolanaKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$sell_asset_on_marketplace_solana_kms** | [**\Tatum\Model\SellAssetOnMarketplaceSolanaKMS**](../Model/SellAssetOnMarketplaceSolanaKMS.md) |  |
+ **$sell_asset_on_marketplace_solana_kms** | [**\Tatum\Model\SellAssetOnMarketplaceSolanaKMS**](../../Model/SellAssetOnMarketplaceSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\SellAssetOnMarketplace200Response**](../Model/SellAssetOnMarketplace200Response.md)
+[**\Tatum\Model\SellAssetOnMarketplace200Response**](../../Model/SellAssetOnMarketplace200Response)
 
 ### Description
 
@@ -1369,11 +1369,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFee(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee** | [**\Tatum\Model\UpdateFee**](../Model/UpdateFee.md) |  |
+ **$update_fee** | [**\Tatum\Model\UpdateFee**](../../Model/UpdateFee) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1423,11 +1423,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_celo** | [**\Tatum\Model\UpdateFeeCelo**](../Model/UpdateFeeCelo.md) |  |
+ **$update_fee_celo** | [**\Tatum\Model\UpdateFeeCelo**](../../Model/UpdateFeeCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1459,11 +1459,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_celo_kms** | [**\Tatum\Model\UpdateFeeCeloKMS**](../Model/UpdateFeeCeloKMS.md) |  |
+ **$update_fee_celo_kms** | [**\Tatum\Model\UpdateFeeCeloKMS**](../../Model/UpdateFeeCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1495,11 +1495,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_kms** | [**\Tatum\Model\UpdateFeeKMS**](../Model/UpdateFeeKMS.md) |  |
+ **$update_fee_kms** | [**\Tatum\Model\UpdateFeeKMS**](../../Model/UpdateFeeKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1531,11 +1531,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipient(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient** | [**\Tatum\Model\UpdateFeeRecipient**](../Model/UpdateFeeRecipient.md) |  |
+ **$update_fee_recipient** | [**\Tatum\Model\UpdateFeeRecipient**](../../Model/UpdateFeeRecipient) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1585,11 +1585,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../Model/UpdateFeeRecipientCelo.md) |  |
+ **$update_fee_recipient_celo** | [**\Tatum\Model\UpdateFeeRecipientCelo**](../../Model/UpdateFeeRecipientCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1621,11 +1621,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../Model/UpdateFeeRecipientCeloKMS.md) |  |
+ **$update_fee_recipient_celo_kms** | [**\Tatum\Model\UpdateFeeRecipientCeloKMS**](../../Model/UpdateFeeRecipientCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1657,11 +1657,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../Model/UpdateFeeRecipientKMS.md) |  |
+ **$update_fee_recipient_kms** | [**\Tatum\Model\UpdateFeeRecipientKMS**](../../Model/UpdateFeeRecipientKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1693,11 +1693,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_solana** | [**\Tatum\Model\UpdateFeeRecipientSolana**](../Model/UpdateFeeRecipientSolana.md) |  |
+ **$update_fee_recipient_solana** | [**\Tatum\Model\UpdateFeeRecipientSolana**](../../Model/UpdateFeeRecipientSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1729,11 +1729,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientSolanaKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_recipient_solana_kms** | [**\Tatum\Model\UpdateFeeRecipientSolanaKMS**](../Model/UpdateFeeRecipientSolanaKMS.md) |  |
+ **$update_fee_recipient_solana_kms** | [**\Tatum\Model\UpdateFeeRecipientSolanaKMS**](../../Model/UpdateFeeRecipientSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1765,11 +1765,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_solana** | [**\Tatum\Model\UpdateFeeSolana**](../Model/UpdateFeeSolana.md) |  |
+ **$update_fee_solana** | [**\Tatum\Model\UpdateFeeSolana**](../../Model/UpdateFeeSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1801,11 +1801,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeSolanaKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_fee_solana_kms** | [**\Tatum\Model\UpdateFeeSolanaKMS**](../Model/UpdateFeeSolanaKMS.md) |  |
+ **$update_fee_solana_kms** | [**\Tatum\Model\UpdateFeeSolanaKMS**](../../Model/UpdateFeeSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1837,11 +1837,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplaceSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_marketplace_solana** | [**\Tatum\Model\UpdateMarketplaceSolana**](../Model/UpdateMarketplaceSolana.md) |  |
+ **$update_marketplace_solana** | [**\Tatum\Model\UpdateMarketplaceSolana**](../../Model/UpdateMarketplaceSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1887,11 +1887,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplaceSolanaKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$update_marketplace_solana_kms** | [**\Tatum\Model\UpdateMarketplaceSolanaKMS**](../Model/UpdateMarketplaceSolanaKMS.md) |  |
+ **$update_marketplace_solana_kms** | [**\Tatum\Model\UpdateMarketplaceSolanaKMS**](../../Model/UpdateMarketplaceSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1923,11 +1923,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFromMarketplaceSolana(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$withdraw_from_marketplace_solana** | [**\Tatum\Model\WithdrawFromMarketplaceSolana**](../Model/WithdrawFromMarketplaceSolana.md) |  |
+ **$withdraw_from_marketplace_solana** | [**\Tatum\Model\WithdrawFromMarketplaceSolana**](../../Model/WithdrawFromMarketplaceSolana) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1973,11 +1973,11 @@ $sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFromMarketplaceSolanaKM
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$withdraw_from_marketplace_solana_kms** | [**\Tatum\Model\WithdrawFromMarketplaceSolanaKMS**](../Model/WithdrawFromMarketplaceSolanaKMS.md) |  |
+ **$withdraw_from_marketplace_solana_kms** | [**\Tatum\Model\WithdrawFromMarketplaceSolanaKMS**](../../Model/WithdrawFromMarketplaceSolanaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Customer[]**](../Model/Customer.md)
+[**\Tatum\Model\Customer[]**](../../Model/Customer)
 
 ### Description
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Customer**](../Model/Customer.md)
+[**\Tatum\Model\Customer**](../../Model/Customer)
 
 ### Description
 
@@ -271,11 +271,11 @@ $sdk->{mainnet/testnet}()->api()->customer()->updateCustomer(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**  | Customer internal ID |
- **$customer_update** | [**\Tatum\Model\CustomerUpdate**](../Model/CustomerUpdate.md) |  |
+ **$customer_update** | [**\Tatum\Model\CustomerUpdate**](../../Model/CustomerUpdate) |  |
 
 ### Return type
 
-[**\Tatum\Model\Customer**](../Model/Customer.md)
+[**\Tatum\Model\Customer**](../../Model/Customer)
 
 ### Description
 

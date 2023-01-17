@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\SCGetContractAddress200Response**](../Model/SCGetContractAddress200Response.md)
+[**\Tatum\Model\SCGetContractAddress200Response**](../../Model/SCGetContractAddress200Response)
 
 ### Description
 

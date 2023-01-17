@@ -33,11 +33,11 @@ $sdk->{mainnet/testnet}()->api()->virtualAccountBlockchainFees()->offchainEstima
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$offchain_estimate_fee** | [**\Tatum\Model\OffchainEstimateFee**](../Model/OffchainEstimateFee.md) |  |
+ **$offchain_estimate_fee** | [**\Tatum\Model\OffchainEstimateFee**](../../Model/OffchainEstimateFee) |  |
 
 ### Return type
 
-[**\Tatum\Model\FeeBtc**](../Model/FeeBtc.md)
+[**\Tatum\Model\FeeBtc**](../../Model/FeeBtc)
 
 ### Description
 

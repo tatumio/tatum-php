@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\ExchangeRate**](../Model/ExchangeRate.md)
+[**\Tatum\Model\ExchangeRate**](../../Model/ExchangeRate)
 
 ### Description
 

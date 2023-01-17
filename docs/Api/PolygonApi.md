@@ -49,11 +49,11 @@ $sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_polygon_smart_contract_method** | [**\Tatum\Model\CallPolygonSmartContractMethod**](../Model/CallPolygonSmartContractMethod.md) |  |
+ **$call_polygon_smart_contract_method** | [**\Tatum\Model\CallPolygonSmartContractMethod**](../../Model/CallPolygonSmartContractMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -85,11 +85,11 @@ $sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethodCalle
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_polygon_smart_contract_method_caller** | [**\Tatum\Model\CallPolygonSmartContractMethodCaller**](../Model/CallPolygonSmartContractMethodCaller.md) |  |
+ **$call_polygon_smart_contract_method_caller** | [**\Tatum\Model\CallPolygonSmartContractMethodCaller**](../../Model/CallPolygonSmartContractMethodCaller) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -121,11 +121,11 @@ $sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethodKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_polygon_smart_contract_method_kms** | [**\Tatum\Model\CallPolygonSmartContractMethodKMS**](../Model/CallPolygonSmartContractMethodKMS.md) |  |
+ **$call_polygon_smart_contract_method_kms** | [**\Tatum\Model\CallPolygonSmartContractMethodKMS**](../../Model/CallPolygonSmartContractMethodKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -157,11 +157,11 @@ $sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractReadMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_polygon_smart_contract_read_method** | [**\Tatum\Model\CallPolygonSmartContractReadMethod**](../Model/CallPolygonSmartContractReadMethod.md) |  |
+ **$call_polygon_smart_contract_read_method** | [**\Tatum\Model\CallPolygonSmartContractReadMethod**](../../Model/CallPolygonSmartContractReadMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -221,11 +221,11 @@ $sdk->{mainnet/testnet}()->api()->polygon()->polygonBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressMatic**](../Model/GeneratedAddressMatic.md)
+[**\Tatum\Model\GeneratedAddressMatic**](../../Model/GeneratedAddressMatic)
 
 ### Description
 
@@ -299,11 +299,11 @@ $sdk->{mainnet/testnet}()->api()->polygon()->polygonGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\MaticBalance**](../Model/MaticBalance.md)
+[**\Tatum\Model\MaticBalance**](../../Model/MaticBalance)
 
 ### Description
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
+[**\Tatum\Model\EthBlock**](../../Model/EthBlock)
 
 ### Description
 
@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\PolygonTx**](../Model/PolygonTx.md)
+[**\Tatum\Model\PolygonTx**](../../Model/PolygonTx)
 
 ### Description
 
@@ -544,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\PolygonTx[]**](../Model/PolygonTx.md)
+[**\Tatum\Model\PolygonTx[]**](../../Model/PolygonTx)
 
 ### Description
 
@@ -658,11 +658,11 @@ $sdk->{mainnet/testnet}()->api()->polygon()->transferPolygonBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_polygon_blockchain** | [**\Tatum\Model\TransferPolygonBlockchain**](../Model/TransferPolygonBlockchain.md) |  |
+ **$transfer_polygon_blockchain** | [**\Tatum\Model\TransferPolygonBlockchain**](../../Model/TransferPolygonBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -704,11 +704,11 @@ $sdk->{mainnet/testnet}()->api()->polygon()->transferPolygonBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_polygon_blockchain_kms** | [**\Tatum\Model\TransferPolygonBlockchainKMS**](../Model/TransferPolygonBlockchainKMS.md) |  |
+ **$transfer_polygon_blockchain_kms** | [**\Tatum\Model\TransferPolygonBlockchainKMS**](../../Model/TransferPolygonBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

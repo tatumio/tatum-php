@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AlgoBlock**](../Model/AlgoBlock.md)
+[**\Tatum\Model\AlgoBlock**](../../Model/AlgoBlock)
 
 ### Description
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AlgoTx**](../Model/AlgoTx.md)
+[**\Tatum\Model\AlgoTx**](../../Model/AlgoTx)
 
 ### Description
 
@@ -143,11 +143,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
  **$algod_path** | **string**  | &#x60;**&#x60; path of algod. |
- **$algo_node_post_driver_request** | [**\Tatum\Model\AlgoNodePostDriverRequest**](../Model/AlgoNodePostDriverRequest.md) |  |
+ **$algo_node_post_driver_request** | [**\Tatum\Model\AlgoNodePostDriverRequest**](../../Model/AlgoNodePostDriverRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\AlgoNodePostDriver200Response**](../Model/AlgoNodePostDriver200Response.md)
+[**\Tatum\Model\AlgoNodePostDriver200Response**](../../Model/AlgoNodePostDriver200Response)
 
 ### Description
 
@@ -187,11 +187,11 @@ $sdk->{mainnet/testnet}()->api()->algorand()->algoandBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\AlgoTransactionHashKMS**](../Model/AlgoTransactionHashKMS.md)
+[**\Tatum\Model\AlgoTransactionHashKMS**](../../Model/AlgoTransactionHashKMS)
 
 ### Description
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AlgorandGenerateAddress200Response**](../Model/AlgorandGenerateAddress200Response.md)
+[**\Tatum\Model\AlgorandGenerateAddress200Response**](../../Model/AlgorandGenerateAddress200Response)
 
 ### Description
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AlgoWallet**](../Model/AlgoWallet.md)
+[**\Tatum\Model\AlgoWallet**](../../Model/AlgoWallet)
 
 ### Description
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AlgorandGetBalance200Response**](../Model/AlgorandGetBalance200Response.md)
+[**\Tatum\Model\AlgorandGetBalance200Response**](../../Model/AlgorandGetBalance200Response)
 
 ### Description
 
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AlgoBlock**](../Model/AlgoBlock.md)
+[**\Tatum\Model\AlgoBlock**](../../Model/AlgoBlock)
 
 ### Description
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AlgoTxsWithPagination**](../Model/AlgoTxsWithPagination.md)
+[**\Tatum\Model\AlgoTxsWithPagination**](../../Model/AlgoTxsWithPagination)
 
 ### Description
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AlgoTx**](../Model/AlgoTx.md)
+[**\Tatum\Model\AlgoTx**](../../Model/AlgoTx)
 
 ### Description
 
@@ -496,11 +496,11 @@ $sdk->{mainnet/testnet}()->api()->algorand()->receiveAlgorandAsset(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$receive_algorand_asset** | [**\Tatum\Model\ReceiveAlgorandAsset**](../Model/ReceiveAlgorandAsset.md) |  |
+ **$receive_algorand_asset** | [**\Tatum\Model\ReceiveAlgorandAsset**](../../Model/ReceiveAlgorandAsset) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -536,11 +536,11 @@ $sdk->{mainnet/testnet}()->api()->algorand()->receiveAlgorandAssetKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$receive_algorand_asset_kms** | [**\Tatum\Model\ReceiveAlgorandAssetKMS**](../Model/ReceiveAlgorandAssetKMS.md) |  |
+ **$receive_algorand_asset_kms** | [**\Tatum\Model\ReceiveAlgorandAssetKMS**](../../Model/ReceiveAlgorandAssetKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -572,11 +572,11 @@ $sdk->{mainnet/testnet}()->api()->algorand()->transferAlgorandBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_algorand_blockchain** | [**\Tatum\Model\TransferAlgorandBlockchain**](../Model/TransferAlgorandBlockchain.md) |  |
+ **$transfer_algorand_blockchain** | [**\Tatum\Model\TransferAlgorandBlockchain**](../../Model/TransferAlgorandBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -618,11 +618,11 @@ $sdk->{mainnet/testnet}()->api()->algorand()->transferAlgorandBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_algorand_blockchain_kms** | [**\Tatum\Model\TransferAlgorandBlockchainKMS**](../Model/TransferAlgorandBlockchainKMS.md) |  |
+ **$transfer_algorand_blockchain_kms** | [**\Tatum\Model\TransferAlgorandBlockchainKMS**](../../Model/TransferAlgorandBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

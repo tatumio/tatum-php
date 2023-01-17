@@ -46,11 +46,11 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AdaGenerateAddress200Response**](../Model/AdaGenerateAddress200Response.md)
+[**\Tatum\Model\AdaGenerateAddress200Response**](../../Model/AdaGenerateAddress200Response)
 
 ### Description
 
@@ -132,11 +132,11 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AdaBlock**](../Model/AdaBlock.md)
+[**\Tatum\Model\AdaBlock**](../../Model/AdaBlock)
 
 ### Description
 
@@ -307,7 +307,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\AdaInfo**](../Model/AdaInfo.md)
+[**\Tatum\Model\AdaInfo**](../../Model/AdaInfo)
 
 ### Description
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AdaTx**](../Model/AdaTx.md)
+[**\Tatum\Model\AdaTx**](../../Model/AdaTx)
 
 ### Description
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AdaTx[]**](../Model/AdaTx.md)
+[**\Tatum\Model\AdaTx[]**](../../Model/AdaTx)
 
 ### Description
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AdaUTXO[]**](../Model/AdaUTXO.md)
+[**\Tatum\Model\AdaUTXO[]**](../../Model/AdaUTXO)
 
 ### Description
 
@@ -475,11 +475,11 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ada_transaction_from_address** | [**\Tatum\Model\AdaTransactionFromAddress**](../Model/AdaTransactionFromAddress.md) |  |
+ **$ada_transaction_from_address** | [**\Tatum\Model\AdaTransactionFromAddress**](../../Model/AdaTransactionFromAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -551,11 +551,11 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromAddressKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ada_transaction_from_address_kms** | [**\Tatum\Model\AdaTransactionFromAddressKMS**](../Model/AdaTransactionFromAddressKMS.md) |  |
+ **$ada_transaction_from_address_kms** | [**\Tatum\Model\AdaTransactionFromAddressKMS**](../../Model/AdaTransactionFromAddressKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -587,11 +587,11 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromUTXO(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ada_transaction_from_utxo** | [**\Tatum\Model\AdaTransactionFromUTXO**](../Model/AdaTransactionFromUTXO.md) |  |
+ **$ada_transaction_from_utxo** | [**\Tatum\Model\AdaTransactionFromUTXO**](../../Model/AdaTransactionFromUTXO) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -623,11 +623,11 @@ $sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromUTXOKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$ada_transaction_from_utxokms** | [**\Tatum\Model\AdaTransactionFromUTXOKMS**](../Model/AdaTransactionFromUTXOKMS.md) |  |
+ **$ada_transaction_from_utxokms** | [**\Tatum\Model\AdaTransactionFromUTXOKMS**](../../Model/AdaTransactionFromUTXOKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Deposit[]**](../Model/Deposit.md)
+[**\Tatum\Model\Deposit[]**](../../Model/Deposit)
 
 ### Description
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
+[**\Tatum\Model\EntitiesCount**](../../Model/EntitiesCount)
 
 ### Description
 

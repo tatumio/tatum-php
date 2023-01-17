@@ -74,12 +74,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveCelo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_celo_erc20** | [**\Tatum\Model\ApproveCeloErc20**](../Model/ApproveCeloErc20.md) |  |
+ **$approve_celo_erc20** | [**\Tatum\Model\ApproveCeloErc20**](../../Model/ApproveCeloErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -112,12 +112,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveCelo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_celo_erc20_kms** | [**\Tatum\Model\ApproveCeloErc20KMS**](../Model/ApproveCeloErc20KMS.md) |  |
+ **$approve_celo_erc20_kms** | [**\Tatum\Model\ApproveCeloErc20KMS**](../../Model/ApproveCeloErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -150,12 +150,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveErc2
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_erc20** | [**\Tatum\Model\ApproveErc20**](../Model/ApproveErc20.md) |  |
+ **$approve_erc20** | [**\Tatum\Model\ApproveErc20**](../../Model/ApproveErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -204,12 +204,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveErc2
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$approve_erc20_kms** | [**\Tatum\Model\ApproveErc20KMS**](../Model/ApproveErc20KMS.md) |  |
+ **$approve_erc20_kms** | [**\Tatum\Model\ApproveErc20KMS**](../../Model/ApproveErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -242,12 +242,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnCe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_burn_celo_erc20** | [**\Tatum\Model\ChainBurnCeloErc20**](../Model/ChainBurnCeloErc20.md) |  |
+ **$chain_burn_celo_erc20** | [**\Tatum\Model\ChainBurnCeloErc20**](../../Model/ChainBurnCeloErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -280,12 +280,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnCe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_burn_celo_erc20_kms** | [**\Tatum\Model\ChainBurnCeloErc20KMS**](../Model/ChainBurnCeloErc20KMS.md) |  |
+ **$chain_burn_celo_erc20_kms** | [**\Tatum\Model\ChainBurnCeloErc20KMS**](../../Model/ChainBurnCeloErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -318,12 +318,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnEr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_burn_erc20** | [**\Tatum\Model\ChainBurnErc20**](../Model/ChainBurnErc20.md) |  |
+ **$chain_burn_erc20** | [**\Tatum\Model\ChainBurnErc20**](../../Model/ChainBurnErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -372,12 +372,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnEr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_burn_erc20_kms** | [**\Tatum\Model\ChainBurnErc20KMS**](../Model/ChainBurnErc20KMS.md) |  |
+ **$chain_burn_erc20_kms** | [**\Tatum\Model\ChainBurnErc20KMS**](../../Model/ChainBurnErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -410,12 +410,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnKc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_burn_kcs_erc20** | [**\Tatum\Model\ChainBurnKcsErc20**](../Model/ChainBurnKcsErc20.md) |  |
+ **$chain_burn_kcs_erc20** | [**\Tatum\Model\ChainBurnKcsErc20**](../../Model/ChainBurnKcsErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -448,12 +448,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnKc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_burn_kcs_erc20_kms** | [**\Tatum\Model\ChainBurnKcsErc20KMS**](../Model/ChainBurnKcsErc20KMS.md) |  |
+ **$chain_burn_kcs_erc20_kms** | [**\Tatum\Model\ChainBurnKcsErc20KMS**](../../Model/ChainBurnKcsErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -486,12 +486,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_algo_erc20** | [**\Tatum\Model\ChainDeployAlgoErc20**](../Model/ChainDeployAlgoErc20.md) |  |
+ **$chain_deploy_algo_erc20** | [**\Tatum\Model\ChainDeployAlgoErc20**](../../Model/ChainDeployAlgoErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -524,12 +524,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_algo_erc20_kms** | [**\Tatum\Model\ChainDeployAlgoErc20KMS**](../Model/ChainDeployAlgoErc20KMS.md) |  |
+ **$chain_deploy_algo_erc20_kms** | [**\Tatum\Model\ChainDeployAlgoErc20KMS**](../../Model/ChainDeployAlgoErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -562,12 +562,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_celo_erc20** | [**\Tatum\Model\ChainDeployCeloErc20**](../Model/ChainDeployCeloErc20.md) |  |
+ **$chain_deploy_celo_erc20** | [**\Tatum\Model\ChainDeployCeloErc20**](../../Model/ChainDeployCeloErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -600,12 +600,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_celo_erc20_kms** | [**\Tatum\Model\ChainDeployCeloErc20KMS**](../Model/ChainDeployCeloErc20KMS.md) |  |
+ **$chain_deploy_celo_erc20_kms** | [**\Tatum\Model\ChainDeployCeloErc20KMS**](../../Model/ChainDeployCeloErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -638,12 +638,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_erc20** | [**\Tatum\Model\ChainDeployErc20**](../Model/ChainDeployErc20.md) |  |
+ **$chain_deploy_erc20** | [**\Tatum\Model\ChainDeployErc20**](../../Model/ChainDeployErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -696,12 +696,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_erc20_kms** | [**\Tatum\Model\ChainDeployErc20KMS**](../Model/ChainDeployErc20KMS.md) |  |
+ **$chain_deploy_erc20_kms** | [**\Tatum\Model\ChainDeployErc20KMS**](../../Model/ChainDeployErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -734,12 +734,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_kcs_erc20** | [**\Tatum\Model\ChainDeployKcsErc20**](../Model/ChainDeployKcsErc20.md) |  |
+ **$chain_deploy_kcs_erc20** | [**\Tatum\Model\ChainDeployKcsErc20**](../../Model/ChainDeployKcsErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -772,12 +772,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_kcs_erc20_kms** | [**\Tatum\Model\ChainDeployKcsErc20KMS**](../Model/ChainDeployKcsErc20KMS.md) |  |
+ **$chain_deploy_kcs_erc20_kms** | [**\Tatum\Model\ChainDeployKcsErc20KMS**](../../Model/ChainDeployKcsErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -810,12 +810,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_solana_spl** | [**\Tatum\Model\ChainDeploySolanaSpl**](../Model/ChainDeploySolanaSpl.md) |  |
+ **$chain_deploy_solana_spl** | [**\Tatum\Model\ChainDeploySolanaSpl**](../../Model/ChainDeploySolanaSpl) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -848,12 +848,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploy
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_deploy_solana_spl_kms** | [**\Tatum\Model\ChainDeploySolanaSplKMS**](../Model/ChainDeploySolanaSplKMS.md) |  |
+ **$chain_deploy_solana_spl_kms** | [**\Tatum\Model\ChainDeploySolanaSplKMS**](../../Model/ChainDeploySolanaSplKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -886,12 +886,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintCe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_mint_celo_erc20** | [**\Tatum\Model\ChainMintCeloErc20**](../Model/ChainMintCeloErc20.md) |  |
+ **$chain_mint_celo_erc20** | [**\Tatum\Model\ChainMintCeloErc20**](../../Model/ChainMintCeloErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -924,12 +924,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintCe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_mint_celo_erc20_kms** | [**\Tatum\Model\ChainMintCeloErc20KMS**](../Model/ChainMintCeloErc20KMS.md) |  |
+ **$chain_mint_celo_erc20_kms** | [**\Tatum\Model\ChainMintCeloErc20KMS**](../../Model/ChainMintCeloErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -962,12 +962,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintEr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_mint_erc20** | [**\Tatum\Model\ChainMintErc20**](../Model/ChainMintErc20.md) |  |
+ **$chain_mint_erc20** | [**\Tatum\Model\ChainMintErc20**](../../Model/ChainMintErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1016,12 +1016,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintEr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_mint_erc20_kms** | [**\Tatum\Model\ChainMintErc20KMS**](../Model/ChainMintErc20KMS.md) |  |
+ **$chain_mint_erc20_kms** | [**\Tatum\Model\ChainMintErc20KMS**](../../Model/ChainMintErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1054,12 +1054,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintKc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_mint_kcs_erc20** | [**\Tatum\Model\ChainMintKcsErc20**](../Model/ChainMintKcsErc20.md) |  |
+ **$chain_mint_kcs_erc20** | [**\Tatum\Model\ChainMintKcsErc20**](../../Model/ChainMintKcsErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1092,12 +1092,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintKc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_mint_kcs_erc20_kms** | [**\Tatum\Model\ChainMintKcsErc20KMS**](../Model/ChainMintKcsErc20KMS.md) |  |
+ **$chain_mint_kcs_erc20_kms** | [**\Tatum\Model\ChainMintKcsErc20KMS**](../../Model/ChainMintKcsErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1130,12 +1130,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_algo_erc20** | [**\Tatum\Model\ChainTransferAlgoErc20**](../Model/ChainTransferAlgoErc20.md) |  |
+ **$chain_transfer_algo_erc20** | [**\Tatum\Model\ChainTransferAlgoErc20**](../../Model/ChainTransferAlgoErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1168,12 +1168,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_algo_erc20_kms** | [**\Tatum\Model\ChainTransferAlgoErc20KMS**](../Model/ChainTransferAlgoErc20KMS.md) |  |
+ **$chain_transfer_algo_erc20_kms** | [**\Tatum\Model\ChainTransferAlgoErc20KMS**](../../Model/ChainTransferAlgoErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1206,12 +1206,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_bsc_bep20** | [**\Tatum\Model\ChainTransferBscBep20**](../Model/ChainTransferBscBep20.md) |  |
+ **$chain_transfer_bsc_bep20** | [**\Tatum\Model\ChainTransferBscBep20**](../../Model/ChainTransferBscBep20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1244,12 +1244,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_bsc_bep20_kms** | [**\Tatum\Model\ChainTransferBscBep20KMS**](../Model/ChainTransferBscBep20KMS.md) |  |
+ **$chain_transfer_bsc_bep20_kms** | [**\Tatum\Model\ChainTransferBscBep20KMS**](../../Model/ChainTransferBscBep20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1282,12 +1282,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_celo_erc20_token** | [**\Tatum\Model\ChainTransferCeloErc20Token**](../Model/ChainTransferCeloErc20Token.md) |  |
+ **$chain_transfer_celo_erc20_token** | [**\Tatum\Model\ChainTransferCeloErc20Token**](../../Model/ChainTransferCeloErc20Token) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1320,12 +1320,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_celo_erc20_token_kms** | [**\Tatum\Model\ChainTransferCeloErc20TokenKMS**](../Model/ChainTransferCeloErc20TokenKMS.md) |  |
+ **$chain_transfer_celo_erc20_token_kms** | [**\Tatum\Model\ChainTransferCeloErc20TokenKMS**](../../Model/ChainTransferCeloErc20TokenKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1358,12 +1358,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_eth_erc20** | [**\Tatum\Model\ChainTransferEthErc20**](../Model/ChainTransferEthErc20.md) |  |
+ **$chain_transfer_eth_erc20** | [**\Tatum\Model\ChainTransferEthErc20**](../../Model/ChainTransferEthErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1424,12 +1424,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_eth_erc20_kms** | [**\Tatum\Model\ChainTransferEthErc20KMS**](../Model/ChainTransferEthErc20KMS.md) |  |
+ **$chain_transfer_eth_erc20_kms** | [**\Tatum\Model\ChainTransferEthErc20KMS**](../../Model/ChainTransferEthErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1462,12 +1462,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_kcs_eth_erc20** | [**\Tatum\Model\ChainTransferKcsEthErc20**](../Model/ChainTransferKcsEthErc20.md) |  |
+ **$chain_transfer_kcs_eth_erc20** | [**\Tatum\Model\ChainTransferKcsEthErc20**](../../Model/ChainTransferKcsEthErc20) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1500,12 +1500,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_kcs_eth_erc20_kms** | [**\Tatum\Model\ChainTransferKcsEthErc20KMS**](../Model/ChainTransferKcsEthErc20KMS.md) |  |
+ **$chain_transfer_kcs_eth_erc20_kms** | [**\Tatum\Model\ChainTransferKcsEthErc20KMS**](../../Model/ChainTransferKcsEthErc20KMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1538,12 +1538,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_solana_spl** | [**\Tatum\Model\ChainTransferSolanaSpl**](../Model/ChainTransferSolanaSpl.md) |  |
+ **$chain_transfer_solana_spl** | [**\Tatum\Model\ChainTransferSolanaSpl**](../../Model/ChainTransferSolanaSpl) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1576,12 +1576,12 @@ $sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransf
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chain_transfer_solana_spl_kms** | [**\Tatum\Model\ChainTransferSolanaSplKMS**](../Model/ChainTransferSolanaSplKMS.md) |  |
+ **$chain_transfer_solana_spl_kms** | [**\Tatum\Model\ChainTransferSolanaSplKMS**](../../Model/ChainTransferSolanaSplKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -1623,7 +1623,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Erc20Balance**](../Model/Erc20Balance.md)
+[**\Tatum\Model\Erc20Balance**](../../Model/Erc20Balance)
 
 ### Description
 
@@ -1669,7 +1669,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Erc20BalanceForAddress[]**](../Model/Erc20BalanceForAddress.md)
+[**\Tatum\Model\Erc20BalanceForAddress[]**](../../Model/Erc20BalanceForAddress)
 
 ### Description
 
@@ -1727,7 +1727,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FungibleTx[]**](../Model/FungibleTx.md)
+[**\Tatum\Model\FungibleTx[]**](../../Model/FungibleTx)
 
 ### Description
 

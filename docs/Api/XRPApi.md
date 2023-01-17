@@ -49,11 +49,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->accountSettingsXrpBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$account_settings_xrp_blockchain** | [**\Tatum\Model\AccountSettingsXrpBlockchain**](../Model/AccountSettingsXrpBlockchain.md) |  |
+ **$account_settings_xrp_blockchain** | [**\Tatum\Model\AccountSettingsXrpBlockchain**](../../Model/AccountSettingsXrpBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -89,11 +89,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->accountSettingsXrpBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$account_settings_xrp_blockchain_kms** | [**\Tatum\Model\AccountSettingsXrpBlockchainKMS**](../Model/AccountSettingsXrpBlockchainKMS.md) |  |
+ **$account_settings_xrp_blockchain_kms** | [**\Tatum\Model\AccountSettingsXrpBlockchainKMS**](../../Model/AccountSettingsXrpBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -125,11 +125,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xrp_blockchain** | [**\Tatum\Model\TransferXrpBlockchain**](../Model/TransferXrpBlockchain.md) |  |
+ **$transfer_xrp_blockchain** | [**\Tatum\Model\TransferXrpBlockchain**](../../Model/TransferXrpBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -165,11 +165,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainAsset(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xrp_blockchain_asset** | [**\Tatum\Model\TransferXrpBlockchainAsset**](../Model/TransferXrpBlockchainAsset.md) |  |
+ **$transfer_xrp_blockchain_asset** | [**\Tatum\Model\TransferXrpBlockchainAsset**](../../Model/TransferXrpBlockchainAsset) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -201,11 +201,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainAssetKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xrp_blockchain_asset_kms** | [**\Tatum\Model\TransferXrpBlockchainAssetKMS**](../Model/TransferXrpBlockchainAssetKMS.md) |  |
+ **$transfer_xrp_blockchain_asset_kms** | [**\Tatum\Model\TransferXrpBlockchainAssetKMS**](../../Model/TransferXrpBlockchainAssetKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -237,11 +237,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xrp_blockchain_kms** | [**\Tatum\Model\TransferXrpBlockchainKMS**](../Model/TransferXrpBlockchainKMS.md) |  |
+ **$transfer_xrp_blockchain_kms** | [**\Tatum\Model\TransferXrpBlockchainKMS**](../../Model/TransferXrpBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -273,11 +273,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->trustLineXrpBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$trust_line_xrp_blockchain** | [**\Tatum\Model\TrustLineXrpBlockchain**](../Model/TrustLineXrpBlockchain.md) |  |
+ **$trust_line_xrp_blockchain** | [**\Tatum\Model\TrustLineXrpBlockchain**](../../Model/TrustLineXrpBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -315,11 +315,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->trustLineXrpBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$trust_line_xrp_blockchain_kms** | [**\Tatum\Model\TrustLineXrpBlockchainKMS**](../Model/TrustLineXrpBlockchainKMS.md) |  |
+ **$trust_line_xrp_blockchain_kms** | [**\Tatum\Model\TrustLineXrpBlockchainKMS**](../../Model/TrustLineXrpBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -351,11 +351,11 @@ $sdk->{mainnet/testnet}()->api()->xRP()->xrpBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XrpAccountBalance**](../Model/XrpAccountBalance.md)
+[**\Tatum\Model\XrpAccountBalance**](../../Model/XrpAccountBalance)
 
 ### Description
 
@@ -431,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XrpAccount**](../Model/XrpAccount.md)
+[**\Tatum\Model\XrpAccount**](../../Model/XrpAccount)
 
 ### Description
 
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XrpAccountTx**](../Model/XrpAccountTx.md)
+[**\Tatum\Model\XrpAccountTx**](../../Model/XrpAccountTx)
 
 ### Description
 
@@ -508,7 +508,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\XrpFee**](../Model/XrpFee.md)
+[**\Tatum\Model\XrpFee**](../../Model/XrpFee)
 
 ### Description
 
@@ -543,7 +543,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\XrpInfo**](../Model/XrpInfo.md)
+[**\Tatum\Model\XrpInfo**](../../Model/XrpInfo)
 
 ### Description
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XrpLedger**](../Model/XrpLedger.md)
+[**\Tatum\Model\XrpLedger**](../../Model/XrpLedger)
 
 ### Description
 
@@ -619,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XrpTx**](../Model/XrpTx.md)
+[**\Tatum\Model\XrpTx**](../../Model/XrpTx)
 
 ### Description
 
@@ -654,7 +654,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\XrpWallet**](../Model/XrpWallet.md)
+[**\Tatum\Model\XrpWallet**](../../Model/XrpWallet)
 
 ### Description
 

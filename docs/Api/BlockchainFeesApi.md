@@ -49,11 +49,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->bscEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bsc_estimate_gas** | [**\Tatum\Model\BscEstimateGas**](../Model/BscEstimateGas.md) |  |
+ **$bsc_estimate_gas** | [**\Tatum\Model\BscEstimateGas**](../../Model/BscEstimateGas) |  |
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
+[**\Tatum\Model\PolygonEstimateGas200Response**](../../Model/PolygonEstimateGas200Response)
 
 ### Description
 
@@ -89,11 +89,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->celoEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$celo_estimate_gas** | [**\Tatum\Model\CeloEstimateGas**](../Model/CeloEstimateGas.md) |  |
+ **$celo_estimate_gas** | [**\Tatum\Model\CeloEstimateGas**](../../Model/CeloEstimateGas) |  |
 
 ### Return type
 
-[**\Tatum\Model\CeloEstimateGas200Response**](../Model/CeloEstimateGas200Response.md)
+[**\Tatum\Model\CeloEstimateGas200Response**](../../Model/CeloEstimateGas200Response)
 
 ### Description
 
@@ -129,11 +129,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->egldEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_fee_egld_blockchain** | [**\Tatum\Model\TransactionFeeEgldBlockchain**](../Model/TransactionFeeEgldBlockchain.md) |  |
+ **$transaction_fee_egld_blockchain** | [**\Tatum\Model\TransactionFeeEgldBlockchain**](../../Model/TransactionFeeEgldBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\EgldEstimateGas200Response**](../Model/EgldEstimateGas200Response.md)
+[**\Tatum\Model\EgldEstimateGas200Response**](../../Model/EgldEstimateGas200Response)
 
 ### Description
 
@@ -167,11 +167,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFee(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$estimate_fee** | [**\Tatum\Model\EstimateFee**](../Model/EstimateFee.md) |  |
+ **$estimate_fee** | [**\Tatum\Model\EstimateFee**](../../Model/EstimateFee) |  |
 
 ### Return type
 
-[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+[**\Tatum\Model\EstimateFee200Response**](../../Model/EstimateFee200Response)
 
 ### Description
 
@@ -209,11 +209,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeBatchMintNft(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$estimate_fee_batch_mint_nft** | [**\Tatum\Model\EstimateFeeBatchMintNft**](../Model/EstimateFeeBatchMintNft.md) |  |
+ **$estimate_fee_batch_mint_nft** | [**\Tatum\Model\EstimateFeeBatchMintNft**](../../Model/EstimateFeeBatchMintNft) |  |
 
 ### Return type
 
-[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+[**\Tatum\Model\EstimateFee200Response**](../../Model/EstimateFee200Response)
 
 ### Description
 
@@ -245,11 +245,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeDeployCustodialWa
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$estimate_fee_deploy_custodial_wallet** | [**\Tatum\Model\EstimateFeeDeployCustodialWallet**](../Model/EstimateFeeDeployCustodialWallet.md) |  |
+ **$estimate_fee_deploy_custodial_wallet** | [**\Tatum\Model\EstimateFeeDeployCustodialWallet**](../../Model/EstimateFeeDeployCustodialWallet) |  |
 
 ### Return type
 
-[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+[**\Tatum\Model\EstimateFee200Response**](../../Model/EstimateFee200Response)
 
 ### Description
 
@@ -281,11 +281,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeFromAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$estimate_fee_from_address** | [**\Tatum\Model\EstimateFeeFromAddress**](../Model/EstimateFeeFromAddress.md) |  |
+ **$estimate_fee_from_address** | [**\Tatum\Model\EstimateFeeFromAddress**](../../Model/EstimateFeeFromAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+[**\Tatum\Model\EstimateFee200Response**](../../Model/EstimateFee200Response)
 
 ### Description
 
@@ -317,11 +317,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeFromUTXO(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$estimate_fee_from_utxo** | [**\Tatum\Model\EstimateFeeFromUTXO**](../Model/EstimateFeeFromUTXO.md) |  |
+ **$estimate_fee_from_utxo** | [**\Tatum\Model\EstimateFeeFromUTXO**](../../Model/EstimateFeeFromUTXO) |  |
 
 ### Return type
 
-[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+[**\Tatum\Model\EstimateFee200Response**](../../Model/EstimateFee200Response)
 
 ### Description
 
@@ -353,11 +353,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeTransferFromCusto
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$estimate_fee_transfer_from_custodial** | [**\Tatum\Model\EstimateFeeTransferFromCustodial**](../Model/EstimateFeeTransferFromCustodial.md) |  |
+ **$estimate_fee_transfer_from_custodial** | [**\Tatum\Model\EstimateFeeTransferFromCustodial**](../../Model/EstimateFeeTransferFromCustodial) |  |
 
 ### Return type
 
-[**\Tatum\Model\EstimateFee200Response**](../Model/EstimateFee200Response.md)
+[**\Tatum\Model\EstimateFee200Response**](../../Model/EstimateFee200Response)
 
 ### Description
 
@@ -390,12 +390,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_estimate_gas** | [**\Tatum\Model\EthEstimateGas**](../Model/EthEstimateGas.md) |  |
+ **$eth_estimate_gas** | [**\Tatum\Model\EthEstimateGas**](../../Model/EthEstimateGas) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\EthGasEstimation**](../Model/EthGasEstimation.md)
+[**\Tatum\Model\EthGasEstimation**](../../Model/EthGasEstimation)
 
 ### Description
 
@@ -430,12 +430,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGasBatch(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$eth_estimate_gas_array** | [**\Tatum\Model\EthEstimateGasArray**](../Model/EthEstimateGasArray.md) |  |
+ **$eth_estimate_gas_array** | [**\Tatum\Model\EthEstimateGasArray**](../../Model/EthEstimateGasArray) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\EthGasEstimationBatch**](../Model/EthGasEstimationBatch.md)
+[**\Tatum\Model\EthGasEstimationBatch**](../../Model/EthGasEstimationBatch)
 
 ### Description
 
@@ -475,7 +475,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BlockchainFee**](../Model/BlockchainFee.md)
+[**\Tatum\Model\BlockchainFee**](../../Model/BlockchainFee)
 
 ### Description
 
@@ -509,11 +509,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->kcsEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$kcs_estimate_gas** | [**\Tatum\Model\KcsEstimateGas**](../Model/KcsEstimateGas.md) |  |
+ **$kcs_estimate_gas** | [**\Tatum\Model\KcsEstimateGas**](../../Model/KcsEstimateGas) |  |
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
+[**\Tatum\Model\PolygonEstimateGas200Response**](../../Model/PolygonEstimateGas200Response)
 
 ### Description
 
@@ -549,11 +549,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->klaytnEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$klaytn_estimate_gas** | [**\Tatum\Model\KlaytnEstimateGas**](../Model/KlaytnEstimateGas.md) |  |
+ **$klaytn_estimate_gas** | [**\Tatum\Model\KlaytnEstimateGas**](../../Model/KlaytnEstimateGas) |  |
 
 ### Return type
 
-[**\Tatum\Model\KlaytnEstimateGas200Response**](../Model/KlaytnEstimateGas200Response.md)
+[**\Tatum\Model\KlaytnEstimateGas200Response**](../../Model/KlaytnEstimateGas200Response)
 
 ### Description
 
@@ -587,11 +587,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->polygonEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$polygon_estimate_gas** | [**\Tatum\Model\PolygonEstimateGas**](../Model/PolygonEstimateGas.md) |  |
+ **$polygon_estimate_gas** | [**\Tatum\Model\PolygonEstimateGas**](../../Model/PolygonEstimateGas) |  |
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
+[**\Tatum\Model\PolygonEstimateGas200Response**](../../Model/PolygonEstimateGas200Response)
 
 ### Description
 
@@ -627,7 +627,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->vetEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$vet_estimate_gas** | [**\Tatum\Model\VetEstimateGas**](../Model/VetEstimateGas.md) |  |
+ **$vet_estimate_gas** | [**\Tatum\Model\VetEstimateGas**](../../Model/VetEstimateGas) |  |
 
 ### Return type
 
@@ -665,11 +665,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainFees()->xdcEstimateGas(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$xdc_estimate_gas** | [**\Tatum\Model\XdcEstimateGas**](../Model/XdcEstimateGas.md) |  |
+ **$xdc_estimate_gas** | [**\Tatum\Model\XdcEstimateGas**](../../Model/XdcEstimateGas) |  |
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../Model/PolygonEstimateGas200Response.md)
+[**\Tatum\Model\PolygonEstimateGas200Response**](../../Model/PolygonEstimateGas200Response)
 
 ### Description
 

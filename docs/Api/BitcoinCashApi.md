@@ -44,11 +44,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BchGenerateAddress200Response**](../Model/BchGenerateAddress200Response.md)
+[**\Tatum\Model\BchGenerateAddress200Response**](../../Model/BchGenerateAddress200Response)
 
 ### Description
 
@@ -122,11 +122,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BchBlock**](../Model/BchBlock.md)
+[**\Tatum\Model\BchBlock**](../../Model/BchBlock)
 
 ### Description
 
@@ -243,7 +243,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\BchInfo**](../Model/BchInfo.md)
+[**\Tatum\Model\BchInfo**](../../Model/BchInfo)
 
 ### Description
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BchGetBlockHash200Response**](../Model/BchGetBlockHash200Response.md)
+[**\Tatum\Model\BchGetBlockHash200Response**](../../Model/BchGetBlockHash200Response)
 
 ### Description
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BchTx**](../Model/BchTx.md)
+[**\Tatum\Model\BchTx**](../../Model/BchTx)
 
 ### Description
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BchTx[]**](../Model/BchTx.md)
+[**\Tatum\Model\BchTx[]**](../../Model/BchTx)
 
 ### Description
 
@@ -393,7 +393,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchRpcDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md) |  |
+ **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../../Model/BchRpcDriverRequest) |  |
 
 ### Return type
 
@@ -433,11 +433,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_transaction** | [**\Tatum\Model\BchTransaction**](../Model/BchTransaction.md) |  |
+ **$bch_transaction** | [**\Tatum\Model\BchTransaction**](../../Model/BchTransaction) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -493,11 +493,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchTransactionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_transaction_kms** | [**\Tatum\Model\BchTransactionKMS**](../Model/BchTransactionKMS.md) |  |
+ **$bch_transaction_kms** | [**\Tatum\Model\BchTransactionKMS**](../../Model/BchTransactionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

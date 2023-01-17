@@ -41,14 +41,14 @@ $sdk->{mainnet/testnet}()->api()->transaction()->getTransactions(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_filter_ledger** | [**\Tatum\Model\TransactionFilterLedger**](../Model/TransactionFilterLedger.md) |  |
+ **$transaction_filter_ledger** | [**\Tatum\Model\TransactionFilterLedger**](../../Model/TransactionFilterLedger) |  |
  **$page_size** | **float**  | Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
  **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
  **$count** | **bool**  | Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
+[**\Tatum\Model\GetTransactionsByAccountId200Response**](../../Model/GetTransactionsByAccountId200Response)
 
 ### Description
 
@@ -85,14 +85,14 @@ $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByAccountId(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_filter** | [**\Tatum\Model\TransactionFilter**](../Model/TransactionFilter.md) |  |
+ **$transaction_filter** | [**\Tatum\Model\TransactionFilter**](../../Model/TransactionFilter) |  |
  **$page_size** | **float**  | Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
  **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
  **$count** | **bool**  | Get the total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
+[**\Tatum\Model\GetTransactionsByAccountId200Response**](../../Model/GetTransactionsByAccountId200Response)
 
 ### Description
 
@@ -129,14 +129,14 @@ $sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByCustomerId(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transaction_filter_customer** | [**\Tatum\Model\TransactionFilterCustomer**](../Model/TransactionFilterCustomer.md) |  |
+ **$transaction_filter_customer** | [**\Tatum\Model\TransactionFilterCustomer**](../../Model/TransactionFilterCustomer) |  |
  **$page_size** | **float**  | Max number of items per page is 50. Either count or pageSize is accepted. | [optional]
  **$offset** | **float**  | Offset to obtain the next page of data. | [optional]
  **$count** | **bool**  | Get total transaction count based on the filter. Either count or pageSize is accepted. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\GetTransactionsByAccountId200Response**](../Model/GetTransactionsByAccountId200Response.md)
+[**\Tatum\Model\GetTransactionsByAccountId200Response**](../../Model/GetTransactionsByAccountId200Response)
 
 ### Description
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Transaction[]**](../Model/Transaction.md)
+[**\Tatum\Model\Transaction[]**](../../Model/Transaction)
 
 ### Description
 
@@ -208,11 +208,11 @@ $sdk->{mainnet/testnet}()->api()->transaction()->sendTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_transaction** | [**\Tatum\Model\CreateTransaction**](../Model/CreateTransaction.md) |  |
+ **$create_transaction** | [**\Tatum\Model\CreateTransaction**](../../Model/CreateTransaction) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
+[**\Tatum\Model\TransactionResult**](../../Model/TransactionResult)
 
 ### Description
 
@@ -256,7 +256,7 @@ $sdk->{mainnet/testnet}()->api()->transaction()->sendTransactionBatch(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$batch_create_transaction** | [**\Tatum\Model\BatchCreateTransaction**](../Model/BatchCreateTransaction.md) |  |
+ **$batch_create_transaction** | [**\Tatum\Model\BatchCreateTransaction**](../../Model/BatchCreateTransaction) |  |
 
 ### Return type
 

@@ -81,11 +81,11 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EgldGenerateAddress200Response**](../Model/EgldGenerateAddress200Response.md)
+[**\Tatum\Model\EgldGenerateAddress200Response**](../../Model/EgldGenerateAddress200Response)
 
 ### Description
 
@@ -159,11 +159,11 @@ $sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EgldGenerateWallet200Response**](../Model/EgldGenerateWallet200Response.md)
+[**\Tatum\Model\EgldGenerateWallet200Response**](../../Model/EgldGenerateWallet200Response)
 
 ### Description
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EgldGetBalance200Response**](../Model/EgldGetBalance200Response.md)
+[**\Tatum\Model\EgldGetBalance200Response**](../../Model/EgldGetBalance200Response)
 
 ### Description
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EgldBlock**](../Model/EgldBlock.md)
+[**\Tatum\Model\EgldBlock**](../../Model/EgldBlock)
 
 ### Description
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EgldTx**](../Model/EgldTx.md)
+[**\Tatum\Model\EgldTx**](../../Model/EgldTx)
 
 ### Description
 
@@ -515,11 +515,11 @@ $sdk->{mainnet/testnet}()->api()->elrond()->transferEgldBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_egld_blockchain** | [**\Tatum\Model\TransferEgldBlockchain**](../Model/TransferEgldBlockchain.md) |  |
+ **$transfer_egld_blockchain** | [**\Tatum\Model\TransferEgldBlockchain**](../../Model/TransferEgldBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -555,11 +555,11 @@ $sdk->{mainnet/testnet}()->api()->elrond()->transferEgldBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_egld_blockchain_kms** | [**\Tatum\Model\TransferEgldBlockchainKMS**](../Model/TransferEgldBlockchainKMS.md) |  |
+ **$transfer_egld_blockchain_kms** | [**\Tatum\Model\TransferEgldBlockchainKMS**](../../Model/TransferEgldBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

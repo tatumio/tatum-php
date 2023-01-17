@@ -91,11 +91,11 @@ $sdk->{mainnet/testnet}()->api()->account()->blockAmount(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**  | Account ID |
- **$block_amount** | [**\Tatum\Model\BlockAmount**](../Model/BlockAmount.md) |  |
+ **$block_amount** | [**\Tatum\Model\BlockAmount**](../../Model/BlockAmount) |  |
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -129,11 +129,11 @@ $sdk->{mainnet/testnet}()->api()->account()->createAccount(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_account** | [**\Tatum\Model\CreateAccount**](../Model/CreateAccount.md) |  |
+ **$create_account** | [**\Tatum\Model\CreateAccount**](../../Model/CreateAccount) |  |
 
 ### Return type
 
-[**\Tatum\Model\Account**](../Model/Account.md)
+[**\Tatum\Model\Account**](../../Model/Account)
 
 ### Description
 
@@ -165,11 +165,11 @@ $sdk->{mainnet/testnet}()->api()->account()->createAccountBatch(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_account_batch** | [**\Tatum\Model\CreateAccountBatch**](../Model/CreateAccountBatch.md) |  |
+ **$create_account_batch** | [**\Tatum\Model\CreateAccountBatch**](../../Model/CreateAccountBatch) |  |
 
 ### Return type
 
-[**\Tatum\Model\Account[]**](../Model/Account.md)
+[**\Tatum\Model\Account[]**](../../Model/Account)
 
 ### Description
 
@@ -203,11 +203,11 @@ $sdk->{mainnet/testnet}()->api()->account()->createAccountXpub(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_account_xpub** | [**\Tatum\Model\CreateAccountXpub**](../Model/CreateAccountXpub.md) |  |
+ **$create_account_xpub** | [**\Tatum\Model\CreateAccountXpub**](../../Model/CreateAccountXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\Account**](../Model/Account.md)
+[**\Tatum\Model\Account**](../../Model/Account)
 
 ### Description
 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\AccountBalance**](../Model/AccountBalance.md)
+[**\Tatum\Model\AccountBalance**](../../Model/AccountBalance)
 
 ### Description
 
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Account**](../Model/Account.md)
+[**\Tatum\Model\Account**](../../Model/Account)
 
 ### Description
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Account[]**](../Model/Account.md)
+[**\Tatum\Model\Account[]**](../../Model/Account)
 
 ### Description
 
@@ -569,7 +569,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Account[]**](../Model/Account.md)
+[**\Tatum\Model\Account[]**](../../Model/Account)
 
 ### Description
 
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EntitiesCount**](../Model/EntitiesCount.md)
+[**\Tatum\Model\EntitiesCount**](../../Model/EntitiesCount)
 
 ### Description
 
@@ -665,7 +665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Blockage[]**](../Model/Blockage.md)
+[**\Tatum\Model\Blockage[]**](../../Model/Blockage)
 
 ### Description
 
@@ -703,7 +703,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Blockage**](../Model/Blockage.md)
+[**\Tatum\Model\Blockage**](../../Model/Blockage)
 
 ### Description
 
@@ -739,11 +739,11 @@ $sdk->{mainnet/testnet}()->api()->account()->unblockAmountWithTransaction(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**  | Blockage ID |
- **$unblock_amount** | [**\Tatum\Model\UnblockAmount**](../Model/UnblockAmount.md) |  |
+ **$unblock_amount** | [**\Tatum\Model\UnblockAmount**](../../Model/UnblockAmount) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionResult**](../Model/TransactionResult.md)
+[**\Tatum\Model\TransactionResult**](../../Model/TransactionResult)
 
 ### Description
 
@@ -817,7 +817,7 @@ $sdk->{mainnet/testnet}()->api()->account()->updateAccountByAccountId(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$id** | **string**  | Account ID |
- **$update_account** | [**\Tatum\Model\UpdateAccount**](../Model/UpdateAccount.md) |  |
+ **$update_account** | [**\Tatum\Model\UpdateAccount**](../../Model/UpdateAccount) |  |
 
 ### Return type
 

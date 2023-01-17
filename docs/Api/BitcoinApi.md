@@ -49,11 +49,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressBtc**](../Model/GeneratedAddressBtc.md)
+[**\Tatum\Model\GeneratedAddressBtc**](../../Model/GeneratedAddressBtc)
 
 ### Description
 
@@ -127,11 +127,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcBasedBalance**](../Model/BtcBasedBalance.md)
+[**\Tatum\Model\BtcBasedBalance**](../../Model/BtcBasedBalance)
 
 ### Description
 
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcBlock**](../Model/BtcBlock.md)
+[**\Tatum\Model\BtcBlock**](../../Model/BtcBlock)
 
 ### Description
 
@@ -288,7 +288,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\BtcInfo**](../Model/BtcInfo.md)
+[**\Tatum\Model\BtcInfo**](../../Model/BtcInfo)
 
 ### Description
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcBlockHash**](../Model/BtcBlockHash.md)
+[**\Tatum\Model\BtcBlockHash**](../../Model/BtcBlockHash)
 
 ### Description
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcTx**](../Model/BtcTx.md)
+[**\Tatum\Model\BtcTx**](../../Model/BtcTx)
 
 ### Description
 
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcTx[]**](../Model/BtcTx.md)
+[**\Tatum\Model\BtcTx[]**](../../Model/BtcTx)
 
 ### Description
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BtcUTXO**](../Model/BtcUTXO.md)
+[**\Tatum\Model\BtcUTXO**](../../Model/BtcUTXO)
 
 ### Description
 
@@ -521,7 +521,7 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcRpcDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_rpc_driver_request** | [**\Tatum\Model\BtcRpcDriverRequest**](../Model/BtcRpcDriverRequest.md) |  |
+ **$btc_rpc_driver_request** | [**\Tatum\Model\BtcRpcDriverRequest**](../../Model/BtcRpcDriverRequest) |  |
 
 ### Return type
 
@@ -563,11 +563,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_transaction_from_address** | [**\Tatum\Model\BtcTransactionFromAddress**](../Model/BtcTransactionFromAddress.md) |  |
+ **$btc_transaction_from_address** | [**\Tatum\Model\BtcTransactionFromAddress**](../../Model/BtcTransactionFromAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -635,11 +635,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromAddressKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_transaction_from_address_kms** | [**\Tatum\Model\BtcTransactionFromAddressKMS**](../Model/BtcTransactionFromAddressKMS.md) |  |
+ **$btc_transaction_from_address_kms** | [**\Tatum\Model\BtcTransactionFromAddressKMS**](../../Model/BtcTransactionFromAddressKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -671,11 +671,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromUTXO(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_transaction_from_utxo** | [**\Tatum\Model\BtcTransactionFromUTXO**](../Model/BtcTransactionFromUTXO.md) |  |
+ **$btc_transaction_from_utxo** | [**\Tatum\Model\BtcTransactionFromUTXO**](../../Model/BtcTransactionFromUTXO) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -707,11 +707,11 @@ $sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromUTXOKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$btc_transaction_from_utxokms** | [**\Tatum\Model\BtcTransactionFromUTXOKMS**](../Model/BtcTransactionFromUTXOKMS.md) |  |
+ **$btc_transaction_from_utxokms** | [**\Tatum\Model\BtcTransactionFromUTXOKMS**](../../Model/BtcTransactionFromUTXOKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

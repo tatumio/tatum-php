@@ -44,11 +44,11 @@ $sdk->{mainnet/testnet}()->api()->veChain()->transferVetBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_vet_blockchain** | [**\Tatum\Model\TransferVetBlockchain**](../Model/TransferVetBlockchain.md) |  |
+ **$transfer_vet_blockchain** | [**\Tatum\Model\TransferVetBlockchain**](../../Model/TransferVetBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -84,11 +84,11 @@ $sdk->{mainnet/testnet}()->api()->veChain()->transferVetBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_vet_blockchain_kms** | [**\Tatum\Model\TransferVetBlockchainKMS**](../Model/TransferVetBlockchainKMS.md) |  |
+ **$transfer_vet_blockchain_kms** | [**\Tatum\Model\TransferVetBlockchainKMS**](../../Model/TransferVetBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -120,11 +120,11 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\VetGenerateAddress200Response**](../Model/VetGenerateAddress200Response.md)
+[**\Tatum\Model\VetGenerateAddress200Response**](../../Model/VetGenerateAddress200Response)
 
 ### Description
 
@@ -198,11 +198,11 @@ $sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\VetGetBalance200Response**](../Model/VetGetBalance200Response.md)
+[**\Tatum\Model\VetGetBalance200Response**](../../Model/VetGetBalance200Response)
 
 ### Description
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\VetBlock**](../Model/VetBlock.md)
+[**\Tatum\Model\VetBlock**](../../Model/VetBlock)
 
 ### Description
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\VetGetEnergy200Response**](../Model/VetGetEnergy200Response.md)
+[**\Tatum\Model\VetGetEnergy200Response**](../../Model/VetGetEnergy200Response)
 
 ### Description
 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\VetTx**](../Model/VetTx.md)
+[**\Tatum\Model\VetTx**](../../Model/VetTx)
 
 ### Description
 
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\VetTxReceipt**](../Model/VetTxReceipt.md)
+[**\Tatum\Model\VetTxReceipt**](../../Model/VetTxReceipt)
 
 ### Description
 

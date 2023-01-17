@@ -72,7 +72,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\Consumption[]**](../Model/Consumption.md)
+[**\Tatum\Model\Consumption[]**](../../Model/Consumption)
 
 ### Description
 
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\GetVersion200Response**](../Model/GetVersion200Response.md)
+[**\Tatum\Model\GetVersion200Response**](../../Model/GetVersion200Response)
 
 ### Description
 

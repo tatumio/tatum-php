@@ -47,11 +47,11 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_kcs_smart_contract_method** | [**\Tatum\Model\CallKcsSmartContractMethod**](../Model/CallKcsSmartContractMethod.md) |  |
+ **$call_kcs_smart_contract_method** | [**\Tatum\Model\CallKcsSmartContractMethod**](../../Model/CallKcsSmartContractMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -83,11 +83,11 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractMethodKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_kcs_smart_contract_method_kms** | [**\Tatum\Model\CallKcsSmartContractMethodKMS**](../Model/CallKcsSmartContractMethodKMS.md) |  |
+ **$call_kcs_smart_contract_method_kms** | [**\Tatum\Model\CallKcsSmartContractMethodKMS**](../../Model/CallKcsSmartContractMethodKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -119,11 +119,11 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractReadMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_kcs_smart_contract_read_method** | [**\Tatum\Model\CallKcsSmartContractReadMethod**](../Model/CallKcsSmartContractReadMethod.md) |  |
+ **$call_kcs_smart_contract_read_method** | [**\Tatum\Model\CallKcsSmartContractReadMethod**](../../Model/CallKcsSmartContractReadMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -181,11 +181,11 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\KcsGenerateAddress200Response**](../Model/KcsGenerateAddress200Response.md)
+[**\Tatum\Model\KcsGenerateAddress200Response**](../../Model/KcsGenerateAddress200Response)
 
 ### Description
 
@@ -259,11 +259,11 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\KcsGetBalance200Response**](../Model/KcsGetBalance200Response.md)
+[**\Tatum\Model\KcsGetBalance200Response**](../../Model/KcsGetBalance200Response)
 
 ### Description
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
+[**\Tatum\Model\EthBlock**](../../Model/EthBlock)
 
 ### Description
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\KcsTx**](../Model/KcsTx.md)
+[**\Tatum\Model\KcsTx**](../../Model/KcsTx)
 
 ### Description
 
@@ -570,11 +570,11 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->transferKcsBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_kcs_blockchain** | [**\Tatum\Model\TransferKcsBlockchain**](../Model/TransferKcsBlockchain.md) |  |
+ **$transfer_kcs_blockchain** | [**\Tatum\Model\TransferKcsBlockchain**](../../Model/TransferKcsBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -618,11 +618,11 @@ $sdk->{mainnet/testnet}()->api()->kuCoin()->transferKcsBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_kcs_blockchain_kms** | [**\Tatum\Model\TransferKcsBlockchainKMS**](../Model/TransferKcsBlockchainKMS.md) |  |
+ **$transfer_kcs_blockchain_kms** | [**\Tatum\Model\TransferKcsBlockchainKMS**](../../Model/TransferKcsBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

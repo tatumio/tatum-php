@@ -50,12 +50,12 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->callReadSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_read_smart_contract_method** | [**\Tatum\Model\CallReadSmartContractMethod**](../Model/CallReadSmartContractMethod.md) |  |
+ **$call_read_smart_contract_method** | [**\Tatum\Model\CallReadSmartContractMethod**](../../Model/CallReadSmartContractMethod) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -88,12 +88,12 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->callSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_smart_contract_method** | [**\Tatum\Model\CallSmartContractMethod**](../Model/CallSmartContractMethod.md) |  |
+ **$call_smart_contract_method** | [**\Tatum\Model\CallSmartContractMethod**](../../Model/CallSmartContractMethod) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -152,12 +152,12 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->callSmartContractMethodKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_smart_contract_method_kms** | [**\Tatum\Model\CallSmartContractMethodKMS**](../Model/CallSmartContractMethodKMS.md) |  |
+ **$call_smart_contract_method_kms** | [**\Tatum\Model\CallSmartContractMethodKMS**](../../Model/CallSmartContractMethodKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -190,12 +190,12 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressEth**](../Model/GeneratedAddressEth.md)
+[**\Tatum\Model\GeneratedAddressEth**](../../Model/GeneratedAddressEth)
 
 ### Description
 
@@ -272,12 +272,12 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -317,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthBalance**](../Model/EthBalance.md)
+[**\Tatum\Model\EthBalance**](../../Model/EthBalance)
 
 ### Description
 
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
+[**\Tatum\Model\EthBlock**](../../Model/EthBlock)
 
 ### Description
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthTxInternal[]**](../Model/EthTxInternal.md)
+[**\Tatum\Model\EthTxInternal[]**](../../Model/EthTxInternal)
 
 ### Description
 
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthTx**](../Model/EthTx.md)
+[**\Tatum\Model\EthTx**](../../Model/EthTx)
 
 ### Description
 
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthTx[]**](../Model/EthTx.md)
+[**\Tatum\Model\EthTx[]**](../../Model/EthTx)
 
 ### Description
 
@@ -696,12 +696,12 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->transferEthBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_blockchain** | [**\Tatum\Model\TransferEthBlockchain**](../Model/TransferEthBlockchain.md) |  |
+ **$transfer_eth_blockchain** | [**\Tatum\Model\TransferEthBlockchain**](../../Model/TransferEthBlockchain) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -744,12 +744,12 @@ $sdk->{mainnet/testnet}()->api()->ethereum()->transferEthBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_blockchain_kms** | [**\Tatum\Model\TransferEthBlockchainKMS**](../Model/TransferEthBlockchainKMS.md) |  |
+ **$transfer_eth_blockchain_kms** | [**\Tatum\Model\TransferEthBlockchainKMS**](../../Model/TransferEthBlockchainKMS) |  |
  **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

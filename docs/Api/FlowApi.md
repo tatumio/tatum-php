@@ -53,11 +53,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeyMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_add_pub_key_mnemonic** | [**\Tatum\Model\FlowAddPubKeyMnemonic**](../Model/FlowAddPubKeyMnemonic.md) |  |
+ **$flow_add_pub_key_mnemonic** | [**\Tatum\Model\FlowAddPubKeyMnemonic**](../../Model/FlowAddPubKeyMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -95,11 +95,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeySecret(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_add_pub_key_secret** | [**\Tatum\Model\FlowAddPubKeySecret**](../Model/FlowAddPubKeySecret.md) |  |
+ **$flow_add_pub_key_secret** | [**\Tatum\Model\FlowAddPubKeySecret**](../../Model/FlowAddPubKeySecret) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -131,11 +131,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeySecretKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_add_pub_key_secret_kms** | [**\Tatum\Model\FlowAddPubKeySecretKMS**](../Model/FlowAddPubKeySecretKMS.md) |  |
+ **$flow_add_pub_key_secret_kms** | [**\Tatum\Model\FlowAddPubKeySecretKMS**](../../Model/FlowAddPubKeySecretKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -167,11 +167,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeyKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_create_address_from_pub_key_kms** | [**\Tatum\Model\FlowCreateAddressFromPubKeyKMS**](../Model/FlowCreateAddressFromPubKeyKMS.md) |  |
+ **$flow_create_address_from_pub_key_kms** | [**\Tatum\Model\FlowCreateAddressFromPubKeyKMS**](../../Model/FlowCreateAddressFromPubKeyKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowCreateAddressFromPubKeyMnemonic200Response.md)
+[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../../Model/FlowCreateAddressFromPubKeyMnemonic200Response)
 
 ### Description
 
@@ -203,11 +203,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeyMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_create_address_from_pub_key_mnemonic** | [**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic**](../Model/FlowCreateAddressFromPubKeyMnemonic.md) |  |
+ **$flow_create_address_from_pub_key_mnemonic** | [**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic**](../../Model/FlowCreateAddressFromPubKeyMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowCreateAddressFromPubKeyMnemonic200Response.md)
+[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../../Model/FlowCreateAddressFromPubKeyMnemonic200Response)
 
 ### Description
 
@@ -245,11 +245,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeySecret(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_create_address_from_pub_key_secret** | [**\Tatum\Model\FlowCreateAddressFromPubKeySecret**](../Model/FlowCreateAddressFromPubKeySecret.md) |  |
+ **$flow_create_address_from_pub_key_secret** | [**\Tatum\Model\FlowCreateAddressFromPubKeySecret**](../../Model/FlowCreateAddressFromPubKeySecret) |  |
 
 ### Return type
 
-[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../Model/FlowCreateAddressFromPubKeyMnemonic200Response.md)
+[**\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response**](../../Model/FlowCreateAddressFromPubKeyMnemonic200Response)
 
 ### Description
 
@@ -281,11 +281,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_custom_transaction_kms** | [**\Tatum\Model\FlowCustomTransactionKMS**](../Model/FlowCustomTransactionKMS.md) |  |
+ **$flow_custom_transaction_kms** | [**\Tatum\Model\FlowCustomTransactionKMS**](../../Model/FlowCustomTransactionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -317,11 +317,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_custom_transaction_mnemonic** | [**\Tatum\Model\FlowCustomTransactionMnemonic**](../Model/FlowCustomTransactionMnemonic.md) |  |
+ **$flow_custom_transaction_mnemonic** | [**\Tatum\Model\FlowCustomTransactionMnemonic**](../../Model/FlowCustomTransactionMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -361,11 +361,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionPK(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_custom_transaction_pk** | [**\Tatum\Model\FlowCustomTransactionPK**](../Model/FlowCustomTransactionPK.md) |  |
+ **$flow_custom_transaction_pk** | [**\Tatum\Model\FlowCustomTransactionPK**](../../Model/FlowCustomTransactionPK) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowGenerateAddress200Response**](../Model/FlowGenerateAddress200Response.md)
+[**\Tatum\Model\FlowGenerateAddress200Response**](../../Model/FlowGenerateAddress200Response)
 
 ### Description
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowGeneratePubKey200Response**](../Model/FlowGeneratePubKey200Response.md)
+[**\Tatum\Model\FlowGeneratePubKey200Response**](../../Model/FlowGeneratePubKey200Response)
 
 ### Description
 
@@ -479,11 +479,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKeyPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowAccount**](../Model/FlowAccount.md)
+[**\Tatum\Model\FlowAccount**](../../Model/FlowAccount)
 
 ### Description
 
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowBlock**](../Model/FlowBlock.md)
+[**\Tatum\Model\FlowBlock**](../../Model/FlowBlock)
 
 ### Description
 
@@ -680,7 +680,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowEvent[]**](../Model/FlowEvent.md)
+[**\Tatum\Model\FlowEvent[]**](../../Model/FlowEvent)
 
 ### Description
 
@@ -718,7 +718,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\FlowTx**](../Model/FlowTx.md)
+[**\Tatum\Model\FlowTx**](../../Model/FlowTx)
 
 ### Description
 
@@ -752,11 +752,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowTransactionKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transaction_kms** | [**\Tatum\Model\FlowTransactionKMS**](../Model/FlowTransactionKMS.md) |  |
+ **$flow_transaction_kms** | [**\Tatum\Model\FlowTransactionKMS**](../../Model/FlowTransactionKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -788,11 +788,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowTransactionMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transaction_mnemonic** | [**\Tatum\Model\FlowTransactionMnemonic**](../Model/FlowTransactionMnemonic.md) |  |
+ **$flow_transaction_mnemonic** | [**\Tatum\Model\FlowTransactionMnemonic**](../../Model/FlowTransactionMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -832,11 +832,11 @@ $sdk->{mainnet/testnet}()->api()->flow()->flowTransactionPK(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$flow_transaction_pk** | [**\Tatum\Model\FlowTransactionPK**](../Model/FlowTransactionPK.md) |  |
+ **$flow_transaction_pk** | [**\Tatum\Model\FlowTransactionPK**](../../Model/FlowTransactionPK) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

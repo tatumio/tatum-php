@@ -41,11 +41,11 @@ $sdk->{mainnet/testnet}()->api()->solana()->solanaBroadcastConfirm(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$solana_broadcast_confirm** | [**\Tatum\Model\SolanaBroadcastConfirm**](../Model/SolanaBroadcastConfirm.md) |  |
+ **$solana_broadcast_confirm** | [**\Tatum\Model\SolanaBroadcastConfirm**](../../Model/SolanaBroadcastConfirm) |  |
 
 ### Return type
 
-[**\Tatum\Model\SolanaTransactionHashWithConfirm**](../Model/SolanaTransactionHashWithConfirm.md)
+[**\Tatum\Model\SolanaTransactionHashWithConfirm**](../../Model/SolanaTransactionHashWithConfirm)
 
 ### Description
 
@@ -80,7 +80,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\SolanaWallet**](../Model/SolanaWallet.md)
+[**\Tatum\Model\SolanaWallet**](../../Model/SolanaWallet)
 
 ### Description
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\SolBalance**](../Model/SolBalance.md)
+[**\Tatum\Model\SolBalance**](../../Model/SolBalance)
 
 ### Description
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\SolanaBlock**](../Model/SolanaBlock.md)
+[**\Tatum\Model\SolanaBlock**](../../Model/SolanaBlock)
 
 ### Description
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\SolanaTx**](../Model/SolanaTx.md)
+[**\Tatum\Model\SolanaTx**](../../Model/SolanaTx)
 
 ### Description
 
@@ -311,11 +311,11 @@ $sdk->{mainnet/testnet}()->api()->solana()->transferSolanaBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_solana_blockchain** | [**\Tatum\Model\TransferSolanaBlockchain**](../Model/TransferSolanaBlockchain.md) |  |
+ **$transfer_solana_blockchain** | [**\Tatum\Model\TransferSolanaBlockchain**](../../Model/TransferSolanaBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -351,11 +351,11 @@ $sdk->{mainnet/testnet}()->api()->solana()->transferSolanaBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_solana_blockchain_kms** | [**\Tatum\Model\TransferSolanaBlockchainKMS**](../Model/TransferSolanaBlockchainKMS.md) |  |
+ **$transfer_solana_blockchain_kms** | [**\Tatum\Model\TransferSolanaBlockchainKMS**](../../Model/TransferSolanaBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

@@ -47,11 +47,11 @@ $sdk->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_klaytn_smart_contract_method** | [**\Tatum\Model\CallKlaytnSmartContractMethod**](../Model/CallKlaytnSmartContractMethod.md) |  |
+ **$call_klaytn_smart_contract_method** | [**\Tatum\Model\CallKlaytnSmartContractMethod**](../../Model/CallKlaytnSmartContractMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -83,11 +83,11 @@ $sdk->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractMethodKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_klaytn_smart_contract_method_kms** | [**\Tatum\Model\CallKlaytnSmartContractMethodKMS**](../Model/CallKlaytnSmartContractMethodKMS.md) |  |
+ **$call_klaytn_smart_contract_method_kms** | [**\Tatum\Model\CallKlaytnSmartContractMethodKMS**](../../Model/CallKlaytnSmartContractMethodKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -119,11 +119,11 @@ $sdk->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractReadMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_klaytn_smart_contract_read_method** | [**\Tatum\Model\CallKlaytnSmartContractReadMethod**](../Model/CallKlaytnSmartContractReadMethod.md) |  |
+ **$call_klaytn_smart_contract_read_method** | [**\Tatum\Model\CallKlaytnSmartContractReadMethod**](../../Model/CallKlaytnSmartContractReadMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -181,11 +181,11 @@ $sdk->{mainnet/testnet}()->api()->klaytn()->klaytnBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\KlaytnGenerateAddress200Response**](../Model/KlaytnGenerateAddress200Response.md)
+[**\Tatum\Model\KlaytnGenerateAddress200Response**](../../Model/KlaytnGenerateAddress200Response)
 
 ### Description
 
@@ -259,11 +259,11 @@ $sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\KlaytnGetBalance200Response**](../Model/KlaytnGetBalance200Response.md)
+[**\Tatum\Model\KlaytnGetBalance200Response**](../../Model/KlaytnGetBalance200Response)
 
 ### Description
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\KlaytnBlock**](../Model/KlaytnBlock.md)
+[**\Tatum\Model\KlaytnBlock**](../../Model/KlaytnBlock)
 
 ### Description
 
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\KlaytnTx**](../Model/KlaytnTx.md)
+[**\Tatum\Model\KlaytnTx**](../../Model/KlaytnTx)
 
 ### Description
 
@@ -570,11 +570,11 @@ $sdk->{mainnet/testnet}()->api()->klaytn()->transferKlaytnBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_klaytn_blockchain** | [**\Tatum\Model\TransferKlaytnBlockchain**](../Model/TransferKlaytnBlockchain.md) |  |
+ **$transfer_klaytn_blockchain** | [**\Tatum\Model\TransferKlaytnBlockchain**](../../Model/TransferKlaytnBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -616,11 +616,11 @@ $sdk->{mainnet/testnet}()->api()->klaytn()->transferKlaytnBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_klaytn_blockchain_kms** | [**\Tatum\Model\TransferKlaytnBlockchainKMS**](../Model/TransferKlaytnBlockchainKMS.md) |  |
+ **$transfer_klaytn_blockchain_kms** | [**\Tatum\Model\TransferKlaytnBlockchainKMS**](../../Model/TransferKlaytnBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

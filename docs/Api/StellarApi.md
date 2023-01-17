@@ -47,11 +47,11 @@ $sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xlm_blockchain** | [**\Tatum\Model\TransferXlmBlockchain**](../Model/TransferXlmBlockchain.md) |  |
+ **$transfer_xlm_blockchain** | [**\Tatum\Model\TransferXlmBlockchain**](../../Model/TransferXlmBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -87,11 +87,11 @@ $sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainAsset(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xlm_blockchain_asset** | [**\Tatum\Model\TransferXlmBlockchainAsset**](../Model/TransferXlmBlockchainAsset.md) |  |
+ **$transfer_xlm_blockchain_asset** | [**\Tatum\Model\TransferXlmBlockchainAsset**](../../Model/TransferXlmBlockchainAsset) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -123,11 +123,11 @@ $sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xlm_blockchain_kms** | [**\Tatum\Model\TransferXlmBlockchainKMS**](../Model/TransferXlmBlockchainKMS.md) |  |
+ **$transfer_xlm_blockchain_kms** | [**\Tatum\Model\TransferXlmBlockchainKMS**](../../Model/TransferXlmBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -159,11 +159,11 @@ $sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainKMSAsset(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xlm_blockchain_kms_asset** | [**\Tatum\Model\TransferXlmBlockchainKMSAsset**](../Model/TransferXlmBlockchainKMSAsset.md) |  |
+ **$transfer_xlm_blockchain_kms_asset** | [**\Tatum\Model\TransferXlmBlockchainKMSAsset**](../../Model/TransferXlmBlockchainKMSAsset) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -195,11 +195,11 @@ $sdk->{mainnet/testnet}()->api()->stellar()->trustLineXlmBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$trust_line_xlm_blockchain** | [**\Tatum\Model\TrustLineXlmBlockchain**](../Model/TrustLineXlmBlockchain.md) |  |
+ **$trust_line_xlm_blockchain** | [**\Tatum\Model\TrustLineXlmBlockchain**](../../Model/TrustLineXlmBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -235,11 +235,11 @@ $sdk->{mainnet/testnet}()->api()->stellar()->trustLineXlmBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$trust_line_xlm_blockchain_kms** | [**\Tatum\Model\TrustLineXlmBlockchainKMS**](../Model/TrustLineXlmBlockchainKMS.md) |  |
+ **$trust_line_xlm_blockchain_kms** | [**\Tatum\Model\TrustLineXlmBlockchainKMS**](../../Model/TrustLineXlmBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -271,11 +271,11 @@ $sdk->{mainnet/testnet}()->api()->stellar()->xlmBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XlmAccount**](../Model/XlmAccount.md)
+[**\Tatum\Model\XlmAccount**](../../Model/XlmAccount)
 
 ### Description
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XlmTx[]**](../Model/XlmTx.md)
+[**\Tatum\Model\XlmTx[]**](../../Model/XlmTx)
 
 ### Description
 
@@ -423,7 +423,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\XlmLedger**](../Model/XlmLedger.md)
+[**\Tatum\Model\XlmLedger**](../../Model/XlmLedger)
 
 ### Description
 
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XlmLedger**](../Model/XlmLedger.md)
+[**\Tatum\Model\XlmLedger**](../../Model/XlmLedger)
 
 ### Description
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XlmTx[]**](../Model/XlmTx.md)
+[**\Tatum\Model\XlmTx[]**](../../Model/XlmTx)
 
 ### Description
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\XlmTx**](../Model/XlmTx.md)
+[**\Tatum\Model\XlmTx**](../../Model/XlmTx)
 
 ### Description
 
@@ -572,7 +572,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\XlmWallet**](../Model/XlmWallet.md)
+[**\Tatum\Model\XlmWallet**](../../Model/XlmWallet)
 
 ### Description
 

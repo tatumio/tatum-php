@@ -26,7 +26,7 @@ $sdk->{mainnet/testnet}()->local()->transaction()->ethereum()->sign(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**$transfer** | [**\Tatum\Model\TransferEthBlockchain**](../../Model/TransferEthBlockchain.md) | Transfer request | 
+**$transfer** | [**\Tatum\Model\TransferEthBlockchain**](../../../Model/TransferEthBlockchain.md) | Transfer request | 
 
 ### Return type
 

@@ -48,11 +48,11 @@ $sdk->{mainnet/testnet}()->api()->celo()->callCeloReadSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_celo_read_smart_contract_method** | [**\Tatum\Model\CallCeloReadSmartContractMethod**](../Model/CallCeloReadSmartContractMethod.md) |  |
+ **$call_celo_read_smart_contract_method** | [**\Tatum\Model\CallCeloReadSmartContractMethod**](../../Model/CallCeloReadSmartContractMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -110,11 +110,11 @@ $sdk->{mainnet/testnet}()->api()->celo()->callCeloSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_celo_smart_contract_method** | [**\Tatum\Model\CallCeloSmartContractMethod**](../Model/CallCeloSmartContractMethod.md) |  |
+ **$call_celo_smart_contract_method** | [**\Tatum\Model\CallCeloSmartContractMethod**](../../Model/CallCeloSmartContractMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -146,11 +146,11 @@ $sdk->{mainnet/testnet}()->api()->celo()->callCeloSmartContractMethodKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_celo_smart_contract_method_kms** | [**\Tatum\Model\CallCeloSmartContractMethodKMS**](../Model/CallCeloSmartContractMethodKMS.md) |  |
+ **$call_celo_smart_contract_method_kms** | [**\Tatum\Model\CallCeloSmartContractMethodKMS**](../../Model/CallCeloSmartContractMethodKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -182,11 +182,11 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\CeloGenerateAddress200Response**](../Model/CeloGenerateAddress200Response.md)
+[**\Tatum\Model\CeloGenerateAddress200Response**](../../Model/CeloGenerateAddress200Response)
 
 ### Description
 
@@ -260,11 +260,11 @@ $sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -302,7 +302,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\CeloGetBalance200Response**](../Model/CeloGetBalance200Response.md)
+[**\Tatum\Model\CeloGetBalance200Response**](../../Model/CeloGetBalance200Response)
 
 ### Description
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\CeloBlock**](../Model/CeloBlock.md)
+[**\Tatum\Model\CeloBlock**](../../Model/CeloBlock)
 
 ### Description
 
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\CeloTx**](../Model/CeloTx.md)
+[**\Tatum\Model\CeloTx**](../../Model/CeloTx)
 
 ### Description
 
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\CeloTx[]**](../Model/CeloTx.md)
+[**\Tatum\Model\CeloTx[]**](../../Model/CeloTx)
 
 ### Description
 
@@ -619,11 +619,11 @@ $sdk->{mainnet/testnet}()->api()->celo()->transferCeloBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_celo_blockchain** | [**\Tatum\Model\TransferCeloBlockchain**](../Model/TransferCeloBlockchain.md) |  |
+ **$transfer_celo_blockchain** | [**\Tatum\Model\TransferCeloBlockchain**](../../Model/TransferCeloBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -665,11 +665,11 @@ $sdk->{mainnet/testnet}()->api()->celo()->transferCeloBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_celo_blockchain_kms** | [**\Tatum\Model\TransferCeloBlockchainKMS**](../Model/TransferCeloBlockchainKMS.md) |  |
+ **$transfer_celo_blockchain_kms** | [**\Tatum\Model\TransferCeloBlockchainKMS**](../../Model/TransferCeloBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

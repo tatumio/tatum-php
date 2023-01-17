@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\StoreIPFS200Response**](../Model/StoreIPFS200Response.md)
+[**\Tatum\Model\StoreIPFS200Response**](../../Model/StoreIPFS200Response)
 
 ### Description
 

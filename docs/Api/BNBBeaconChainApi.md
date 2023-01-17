@@ -41,11 +41,11 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast** | [**\Tatum\Model\Broadcast**](../Model/Broadcast.md) |  |
+ **$broadcast** | [**\Tatum\Model\Broadcast**](../../Model/Broadcast) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -80,7 +80,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\BnbWallet**](../Model/BnbWallet.md)
+[**\Tatum\Model\BnbWallet**](../../Model/BnbWallet)
 
 ### Description
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BnbAccount**](../Model/BnbAccount.md)
+[**\Tatum\Model\BnbAccount**](../../Model/BnbAccount)
 
 ### Description
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BnbBlock**](../Model/BnbBlock.md)
+[**\Tatum\Model\BnbBlock**](../../Model/BnbBlock)
 
 ### Description
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BnbTx**](../Model/BnbTx.md)
+[**\Tatum\Model\BnbTx**](../../Model/BnbTx)
 
 ### Description
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BnbTxInAccount**](../Model/BnbTxInAccount.md)
+[**\Tatum\Model\BnbTxInAccount**](../../Model/BnbTxInAccount)
 
 ### Description
 
@@ -313,11 +313,11 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->transferBnbBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bnb_blockchain** | [**\Tatum\Model\TransferBnbBlockchain**](../Model/TransferBnbBlockchain.md) |  |
+ **$transfer_bnb_blockchain** | [**\Tatum\Model\TransferBnbBlockchain**](../../Model/TransferBnbBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -353,11 +353,11 @@ $sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->transferBnbBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bnb_blockchain_kms** | [**\Tatum\Model\TransferBnbBlockchainKMS**](../Model/TransferBnbBlockchainKMS.md) |  |
+ **$transfer_bnb_blockchain_kms** | [**\Tatum\Model\TransferBnbBlockchainKMS**](../../Model/TransferBnbBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 

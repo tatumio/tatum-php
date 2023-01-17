@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\PendingTransaction**](../Model/PendingTransaction.md)
+[**\Tatum\Model\PendingTransaction**](../../Model/PendingTransaction)
 
 ### Description
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\PendingTransaction[]**](../Model/PendingTransaction.md)
+[**\Tatum\Model\PendingTransaction[]**](../../Model/PendingTransaction)
 
 ### Description
 
@@ -197,11 +197,11 @@ $sdk->{mainnet/testnet}()->api()->keyManagementSystem()->receivePendingTransacti
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**  | Blockchain to get pending transactions for. |
- **$kms_signature_ids** | [**\Tatum\Model\KmsSignatureIds**](../Model/KmsSignatureIds.md) | Signature IDs of the KMS which invokes this endpoint. | [optional]
+ **$kms_signature_ids** | [**\Tatum\Model\KmsSignatureIds**](../../Model/KmsSignatureIds) | Signature IDs of the KMS which invokes this endpoint. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\PendingTransaction[]**](../Model/PendingTransaction.md)
+[**\Tatum\Model\PendingTransaction[]**](../../Model/PendingTransaction)
 
 ### Description
 

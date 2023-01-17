@@ -45,11 +45,11 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->chartRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$chart_request** | [**\Tatum\Model\ChartRequest**](../Model/ChartRequest.md) |  |
+ **$chart_request** | [**\Tatum\Model\ChartRequest**](../../Model/ChartRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\Chart[]**](../Model/Chart.md)
+[**\Tatum\Model\Chart[]**](../../Model/Chart)
 
 ### Description
 
@@ -83,11 +83,11 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->createFutureTrade(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_future_trade** | [**\Tatum\Model\CreateFutureTrade**](../Model/CreateFutureTrade.md) |  |
+ **$create_future_trade** | [**\Tatum\Model\CreateFutureTrade**](../../Model/CreateFutureTrade) |  |
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -119,11 +119,11 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->createTrade(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_trade** | [**\Tatum\Model\CreateTrade**](../Model/CreateTrade.md) |  |
+ **$create_trade** | [**\Tatum\Model\CreateTrade**](../../Model/CreateTrade) |  |
 
 ### Return type
 
-[**\Tatum\Model\Id**](../Model/Id.md)
+[**\Tatum\Model\Id**](../../Model/Id)
 
 ### Description
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+[**\Tatum\Model\Trade[]**](../../Model/Trade)
 
 ### Description
 
@@ -303,11 +303,11 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTradesBody(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_active_buy_body** | [**\Tatum\Model\ListOderBookActiveBuyBody**](../Model/ListOderBookActiveBuyBody.md) |  |
+ **$list_oder_book_active_buy_body** | [**\Tatum\Model\ListOderBookActiveBuyBody**](../../Model/ListOderBookActiveBuyBody) |  |
 
 ### Return type
 
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+[**\Tatum\Model\Trade[]**](../../Model/Trade)
 
 ### Description
 
@@ -351,11 +351,11 @@ Name | Type | Description  | Notes
  **$pair** | **string**  | Trade pair. If present, only closed trades on given trade pair will be present. | [optional]
  **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
  **$count** | **bool**  | Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$types** | [**string[]**](../Model/string.md) | Trade types. | [optional]
+ **$types** | [**string[]**](../../Model/string) | Trade types. | [optional]
 
 ### Return type
 
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+[**\Tatum\Model\Trade[]**](../../Model/Trade)
 
 ### Description
 
@@ -389,11 +389,11 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTradesBody(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_history_body** | [**\Tatum\Model\ListOderBookHistoryBody**](../Model/ListOderBookHistoryBody.md) |  | [optional]
+ **$list_oder_book_history_body** | [**\Tatum\Model\ListOderBookHistoryBody**](../../Model/ListOderBookHistoryBody) |  | [optional]
 
 ### Return type
 
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+[**\Tatum\Model\Trade[]**](../../Model/Trade)
 
 ### Description
 
@@ -427,11 +427,11 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getMatchedTrades(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_matched_body** | [**\Tatum\Model\ListOderBookMatchedBody**](../Model/ListOderBookMatchedBody.md) |  |
+ **$list_oder_book_matched_body** | [**\Tatum\Model\ListOderBookMatchedBody**](../../Model/ListOderBookMatchedBody) |  |
 
 ### Return type
 
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+[**\Tatum\Model\Trade[]**](../../Model/Trade)
 
 ### Description
 
@@ -481,7 +481,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+[**\Tatum\Model\Trade[]**](../../Model/Trade)
 
 ### Description
 
@@ -515,11 +515,11 @@ $sdk->{mainnet/testnet}()->api()->orderBook()->getSellTradesBody(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$list_oder_book_active_sell_body** | [**\Tatum\Model\ListOderBookActiveSellBody**](../Model/ListOderBookActiveSellBody.md) |  |
+ **$list_oder_book_active_sell_body** | [**\Tatum\Model\ListOderBookActiveSellBody**](../../Model/ListOderBookActiveSellBody) |  |
 
 ### Return type
 
-[**\Tatum\Model\Trade[]**](../Model/Trade.md)
+[**\Tatum\Model\Trade[]**](../../Model/Trade)
 
 ### Description
 
@@ -557,7 +557,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Trade**](../Model/Trade.md)
+[**\Tatum\Model\Trade**](../../Model/Trade)
 
 ### Description
 

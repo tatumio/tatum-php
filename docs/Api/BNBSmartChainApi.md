@@ -47,11 +47,11 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\GeneratedAddressBsc**](../Model/GeneratedAddressBsc.md)
+[**\Tatum\Model\GeneratedAddressBsc**](../../Model/GeneratedAddressBsc)
 
 ### Description
 
@@ -125,11 +125,11 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BscBalance**](../Model/BscBalance.md)
+[**\Tatum\Model\BscBalance**](../../Model/BscBalance)
 
 ### Description
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\EthBlock**](../Model/EthBlock.md)
+[**\Tatum\Model\EthBlock**](../../Model/EthBlock)
 
 ### Description
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\BscTx**](../Model/BscTx.md)
+[**\Tatum\Model\BscTx**](../../Model/BscTx)
 
 ### Description
 
@@ -436,11 +436,11 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractMethod(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_bsc_smart_contract_method** | [**\Tatum\Model\CallBscSmartContractMethod**](../Model/CallBscSmartContractMethod.md) |  |
+ **$call_bsc_smart_contract_method** | [**\Tatum\Model\CallBscSmartContractMethod**](../../Model/CallBscSmartContractMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -472,11 +472,11 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractMethodKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_bsc_smart_contract_method_kms** | [**\Tatum\Model\CallBscSmartContractMethodKMS**](../Model/CallBscSmartContractMethodKMS.md) |  |
+ **$call_bsc_smart_contract_method_kms** | [**\Tatum\Model\CallBscSmartContractMethodKMS**](../../Model/CallBscSmartContractMethodKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -508,11 +508,11 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractReadMetho
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$call_bsc_smart_contract_read_method** | [**\Tatum\Model\CallBscSmartContractReadMethod**](../Model/CallBscSmartContractReadMethod.md) |  |
+ **$call_bsc_smart_contract_read_method** | [**\Tatum\Model\CallBscSmartContractReadMethod**](../../Model/CallBscSmartContractReadMethod) |  |
 
 ### Return type
 
-[**\Tatum\Model\CallSmartContractMethod200Response**](../Model/CallSmartContractMethod200Response.md)
+[**\Tatum\Model\CallSmartContractMethod200Response**](../../Model/CallSmartContractMethod200Response)
 
 ### Description
 
@@ -570,11 +570,11 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->transferBscBlockchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bsc_blockchain** | [**\Tatum\Model\TransferBscBlockchain**](../Model/TransferBscBlockchain.md) |  |
+ **$transfer_bsc_blockchain** | [**\Tatum\Model\TransferBscBlockchain**](../../Model/TransferBscBlockchain) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -616,11 +616,11 @@ $sdk->{mainnet/testnet}()->api()->bNBSmartChain()->transferBscBlockchainKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bsc_blockchain_kms** | [**\Tatum\Model\TransferBscBlockchainKMS**](../Model/TransferBscBlockchainKMS.md) |  |
+ **$transfer_bsc_blockchain_kms** | [**\Tatum\Model\TransferBscBlockchainKMS**](../../Model/TransferBscBlockchainKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 

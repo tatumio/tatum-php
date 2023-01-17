@@ -37,11 +37,11 @@ $sdk->{mainnet/testnet}()->api()->withdrawal()->broadcastBlockchainTransaction(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_withdrawal** | [**\Tatum\Model\BroadcastWithdrawal**](../Model/BroadcastWithdrawal.md) |  |
+ **$broadcast_withdrawal** | [**\Tatum\Model\BroadcastWithdrawal**](../../Model/BroadcastWithdrawal) |  |
 
 ### Return type
 
-[**\Tatum\Model\BroadcastResponse**](../Model/BroadcastResponse.md)
+[**\Tatum\Model\BroadcastResponse**](../../Model/BroadcastResponse)
 
 ### Description
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\WithdrawalObject[]**](../Model/WithdrawalObject.md)
+[**\Tatum\Model\WithdrawalObject[]**](../../Model/WithdrawalObject)
 
 ### Description
 
@@ -201,11 +201,11 @@ $sdk->{mainnet/testnet}()->api()->withdrawal()->storeWithdrawal(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$withdrawal** | [**\Tatum\Model\Withdrawal**](../Model/Withdrawal.md) |  |
+ **$withdrawal** | [**\Tatum\Model\Withdrawal**](../../Model/Withdrawal) |  |
 
 ### Return type
 
-[**\Tatum\Model\WithdrawalResponse**](../Model/WithdrawalResponse.md)
+[**\Tatum\Model\WithdrawalResponse**](../../Model/WithdrawalResponse)
 
 ### Description
 

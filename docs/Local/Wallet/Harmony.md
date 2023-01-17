@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Wallet Model ([**\Tatum\Model\Wallet**](../../Model/Wallet.md))
+Wallet Model ([**\Tatum\Model\Wallet**](../../../Model/Wallet.md))
 
 ### Description
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../Model/GeneratedAddressBtc.md))
+Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAddressBtc.md))
 
 ### Description
 
@@ -93,11 +93,11 @@ $sdk->{mainnet/testnet}()->local()->wallet()->harmony()->generateAddressFromPriv
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**$privateKey** | [**\Tatum\Model\PrivKey**](../../Model/PrivKey.md) | Private Key | 
+**$privateKey** | [**\Tatum\Model\PrivKey**](../../../Model/PrivKey.md) | Private Key | 
 
 ### Return type
 
-Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../Model/GeneratedAddressBtc.md))
+Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAddressBtc.md))
 
 ### Description
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Private Key ([**\Tatum\Model\PrivKey**](../../Model/PrivKey.md))
+Private Key ([**\Tatum\Model\PrivKey**](../../../Model/PrivKey.md))
 
 ### Description
 

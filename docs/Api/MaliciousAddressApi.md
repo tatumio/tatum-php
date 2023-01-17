@@ -37,7 +37,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\CheckMalicousAddress200Response**](../Model/CheckMalicousAddress200Response.md)
+[**\Tatum\Model\CheckMalicousAddress200Response**](../../Model/CheckMalicousAddress200Response)
 
 ### Description
 

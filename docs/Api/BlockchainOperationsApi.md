@@ -165,7 +165,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->bnbAssetOffchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_bnb_asset** | [**\Tatum\Model\CreateBnbAsset**](../Model/CreateBnbAsset.md) |  |
+ **$create_bnb_asset** | [**\Tatum\Model\CreateBnbAsset**](../../Model/CreateBnbAsset) |  |
 
 ### Return type
 
@@ -205,11 +205,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_algo_erc20_offchain_kms_address** | [**\Tatum\Model\DeployAlgoErc20OffchainKMSAddress**](../Model/DeployAlgoErc20OffchainKMSAddress.md) |  |
+ **$deploy_algo_erc20_offchain_kms_address** | [**\Tatum\Model\DeployAlgoErc20OffchainKMSAddress**](../../Model/DeployAlgoErc20OffchainKMSAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/DeployAlgoErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../../Model/DeployAlgoErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -241,11 +241,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_algo_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress**](../Model/DeployAlgoErc20OffchainMnemonicAddress.md) |  |
+ **$deploy_algo_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress**](../../Model/DeployAlgoErc20OffchainMnemonicAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/DeployAlgoErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../../Model/DeployAlgoErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -289,11 +289,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_algo_erc20_offchain_pk_address** | [**\Tatum\Model\DeployAlgoErc20OffchainPKAddress**](../Model/DeployAlgoErc20OffchainPKAddress.md) |  |
+ **$deploy_algo_erc20_offchain_pk_address** | [**\Tatum\Model\DeployAlgoErc20OffchainPKAddress**](../../Model/DeployAlgoErc20OffchainPKAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../Model/DeployAlgoErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response**](../../Model/DeployAlgoErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -325,11 +325,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_celo_erc20_offchain_kms_address** | [**\Tatum\Model\DeployCeloErc20OffchainKMSAddress**](../Model/DeployCeloErc20OffchainKMSAddress.md) |  |
+ **$deploy_celo_erc20_offchain_kms_address** | [**\Tatum\Model\DeployCeloErc20OffchainKMSAddress**](../../Model/DeployCeloErc20OffchainKMSAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -361,11 +361,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_celo_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployCeloErc20OffchainKMSXpub**](../Model/DeployCeloErc20OffchainKMSXpub.md) |  |
+ **$deploy_celo_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployCeloErc20OffchainKMSXpub**](../../Model/DeployCeloErc20OffchainKMSXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -397,11 +397,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_celo_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployCeloErc20OffchainMnemXpub**](../Model/DeployCeloErc20OffchainMnemXpub.md) |  |
+ **$deploy_celo_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployCeloErc20OffchainMnemXpub**](../../Model/DeployCeloErc20OffchainMnemXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -433,11 +433,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_celo_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployCeloErc20OffchainMnemonicAddress**](../Model/DeployCeloErc20OffchainMnemonicAddress.md) |  |
+ **$deploy_celo_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployCeloErc20OffchainMnemonicAddress**](../../Model/DeployCeloErc20OffchainMnemonicAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -481,11 +481,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_celo_erc20_offchain_pk_address** | [**\Tatum\Model\DeployCeloErc20OffchainPKAddress**](../Model/DeployCeloErc20OffchainPKAddress.md) |  |
+ **$deploy_celo_erc20_offchain_pk_address** | [**\Tatum\Model\DeployCeloErc20OffchainPKAddress**](../../Model/DeployCeloErc20OffchainPKAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -517,11 +517,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20Offchai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_celo_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployCeloErc20OffchainPKXpub**](../Model/DeployCeloErc20OffchainPKXpub.md) |  |
+ **$deploy_celo_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployCeloErc20OffchainPKXpub**](../../Model/DeployCeloErc20OffchainPKXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -553,11 +553,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../../Model/DeployErc20OffchainKMSAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -589,11 +589,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainKMS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../../Model/DeployErc20OffchainKMSXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -625,11 +625,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainMne
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../../Model/DeployErc20OffchainMnemXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -661,11 +661,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainMne
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../../Model/DeployErc20OffchainMnemonicAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -709,11 +709,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainPKA
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../../Model/DeployErc20OffchainPKAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -745,11 +745,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainPKX
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../../Model/DeployErc20OffchainPKXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -781,11 +781,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainKMSAd
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_kms_address** | [**\Tatum\Model\DeployTrcOffchainKMSAddress**](../Model/DeployTrcOffchainKMSAddress.md) |  |
+ **$deploy_trc_offchain_kms_address** | [**\Tatum\Model\DeployTrcOffchainKMSAddress**](../../Model/DeployTrcOffchainKMSAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -817,11 +817,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainKMSXp
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_kms_xpub** | [**\Tatum\Model\DeployTrcOffchainKMSXpub**](../Model/DeployTrcOffchainKMSXpub.md) |  |
+ **$deploy_trc_offchain_kms_xpub** | [**\Tatum\Model\DeployTrcOffchainKMSXpub**](../../Model/DeployTrcOffchainKMSXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -853,11 +853,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainMnemX
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_mnem_xpub** | [**\Tatum\Model\DeployTrcOffchainMnemXpub**](../Model/DeployTrcOffchainMnemXpub.md) |  |
+ **$deploy_trc_offchain_mnem_xpub** | [**\Tatum\Model\DeployTrcOffchainMnemXpub**](../../Model/DeployTrcOffchainMnemXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -889,11 +889,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainMnemo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_mnemonic_address** | [**\Tatum\Model\DeployTrcOffchainMnemonicAddress**](../Model/DeployTrcOffchainMnemonicAddress.md) |  |
+ **$deploy_trc_offchain_mnemonic_address** | [**\Tatum\Model\DeployTrcOffchainMnemonicAddress**](../../Model/DeployTrcOffchainMnemonicAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -937,11 +937,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainPKAdd
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_pk_address** | [**\Tatum\Model\DeployTrcOffchainPKAddress**](../Model/DeployTrcOffchainPKAddress.md) |  |
+ **$deploy_trc_offchain_pk_address** | [**\Tatum\Model\DeployTrcOffchainPKAddress**](../../Model/DeployTrcOffchainPKAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -973,11 +973,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainPKXpu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_trc_offchain_pk_xpub** | [**\Tatum\Model\DeployTrcOffchainPKXpub**](../Model/DeployTrcOffchainPKXpub.md) |  |
+ **$deploy_trc_offchain_pk_xpub** | [**\Tatum\Model\DeployTrcOffchainPKXpub**](../../Model/DeployTrcOffchainPKXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1009,11 +1009,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->erc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
+ **$erc20** | [**\Tatum\Model\Erc20**](../../Model/Erc20) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -1065,11 +1065,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->erc20Address(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../../Model/Erc20Address) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -1101,11 +1101,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../../Model/DeployErc20OffchainKMSAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1137,11 +1137,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../../Model/DeployErc20OffchainKMSXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1173,11 +1173,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../../Model/DeployErc20OffchainMnemXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1209,11 +1209,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../../Model/DeployErc20OffchainMnemonicAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1257,11 +1257,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../../Model/DeployErc20OffchainPKAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1293,11 +1293,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../../Model/DeployErc20OffchainPKXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1329,11 +1329,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
+ **$erc20** | [**\Tatum\Model\Erc20**](../../Model/Erc20) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -1389,11 +1389,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscErc20Address(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../../Model/Erc20Address) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -1425,11 +1425,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offCelErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
+ **$erc20** | [**\Tatum\Model\Erc20**](../../Model/Erc20) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -1485,11 +1485,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offCelErc20Address(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../../Model/Erc20Address) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -1521,11 +1521,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEth(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth** | [**\Tatum\Model\TransferEth**](../Model/TransferEth.md) |  |
+ **$transfer_eth** | [**\Tatum\Model\TransferEth**](../../Model/TransferEth) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -1569,11 +1569,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEthKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../Model/TransferEthKMS.md) |  |
+ **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../../Model/TransferEthKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -1605,11 +1605,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEthMnemo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../Model/TransferEthMnemonic.md) |  |
+ **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../../Model/TransferEthMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -1641,11 +1641,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../../Model/DeployErc20OffchainKMSAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1677,11 +1677,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../../Model/DeployErc20OffchainKMSXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1713,11 +1713,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../../Model/DeployErc20OffchainMnemXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1749,11 +1749,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../../Model/DeployErc20OffchainMnemonicAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1797,11 +1797,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../../Model/DeployErc20OffchainPKAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1833,11 +1833,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../../Model/DeployErc20OffchainPKXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1869,11 +1869,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../../Model/DeployErc20OffchainKMSAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1905,11 +1905,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../../Model/DeployErc20OffchainKMSXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1941,11 +1941,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../../Model/DeployErc20OffchainMnemXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -1977,11 +1977,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../../Model/DeployErc20OffchainMnemonicAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2025,11 +2025,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../../Model/DeployErc20OffchainPKAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2061,11 +2061,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../../Model/DeployErc20OffchainPKXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2097,11 +2097,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEth(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth** | [**\Tatum\Model\TransferEth**](../Model/TransferEth.md) |  |
+ **$transfer_eth** | [**\Tatum\Model\TransferEth**](../../Model/TransferEth) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2145,11 +2145,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEthKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../Model/TransferEthKMS.md) |  |
+ **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../../Model/TransferEthKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2181,11 +2181,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEthMnemo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../Model/TransferEthMnemonic.md) |  |
+ **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../../Model/TransferEthMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2218,12 +2218,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../../Model/DeployErc20OffchainKMSAddress) |  |
  **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2256,12 +2256,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../../Model/DeployErc20OffchainKMSXpub) |  |
  **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2294,12 +2294,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../../Model/DeployErc20OffchainMnemXpub) |  |
  **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2332,12 +2332,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../../Model/DeployErc20OffchainMnemonicAddress) |  |
  **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2382,12 +2382,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../../Model/DeployErc20OffchainPKAddress) |  |
  **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2420,12 +2420,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../../Model/DeployErc20OffchainPKXpub) |  |
  **$shard_id** | **float**  | The ID of the shard to operate | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2457,11 +2457,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
+ **$erc20** | [**\Tatum\Model\Erc20**](../../Model/Erc20) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -2517,11 +2517,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneErc20Address(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../../Model/Erc20Address) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -2554,12 +2554,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEth(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth** | [**\Tatum\Model\TransferEth**](../Model/TransferEth.md) |  |
+ **$transfer_eth** | [**\Tatum\Model\TransferEth**](../../Model/TransferEth) |  |
  **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2604,12 +2604,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEthKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../Model/TransferEthKMS.md) |  |
+ **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../../Model/TransferEthKMS) |  |
  **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2642,12 +2642,12 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEthMnemo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../Model/TransferEthMnemonic.md) |  |
+ **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../../Model/TransferEthMnemonic) |  |
  **$shard_id** | **float**  | Shard to operate on | [optional] [default to 0]
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2679,11 +2679,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEth(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth** | [**\Tatum\Model\TransferEth**](../Model/TransferEth.md) |  |
+ **$transfer_eth** | [**\Tatum\Model\TransferEth**](../../Model/TransferEth) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2723,11 +2723,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEthKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../Model/TransferEthKMS.md) |  |
+ **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../../Model/TransferEthKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2759,11 +2759,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEthMnemo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../Model/TransferEthMnemonic.md) |  |
+ **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../../Model/TransferEthMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -2797,11 +2797,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**  | Blockchain to work with |
- **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
+ **$erc20** | [**\Tatum\Model\Erc20**](../../Model/Erc20) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -2853,11 +2853,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20Address(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$chain** | **string**  | Blockchain to work with |
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../../Model/Erc20Address) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -2889,11 +2889,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../Model/DeployErc20OffchainKMSAddress.md) |  |
+ **$deploy_erc20_offchain_kms_address** | [**\Tatum\Model\DeployErc20OffchainKMSAddress**](../../Model/DeployErc20OffchainKMSAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2925,11 +2925,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../Model/DeployErc20OffchainKMSXpub.md) |  |
+ **$deploy_erc20_offchain_kms_xpub** | [**\Tatum\Model\DeployErc20OffchainKMSXpub**](../../Model/DeployErc20OffchainKMSXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2961,11 +2961,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../Model/DeployErc20OffchainMnemXpub.md) |  |
+ **$deploy_erc20_offchain_mnem_xpub** | [**\Tatum\Model\DeployErc20OffchainMnemXpub**](../../Model/DeployErc20OffchainMnemXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -2997,11 +2997,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../Model/DeployErc20OffchainMnemonicAddress.md) |  |
+ **$deploy_erc20_offchain_mnemonic_address** | [**\Tatum\Model\DeployErc20OffchainMnemonicAddress**](../../Model/DeployErc20OffchainMnemonicAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -3045,11 +3045,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../Model/DeployErc20OffchainPKAddress.md) |  |
+ **$deploy_erc20_offchain_pk_address** | [**\Tatum\Model\DeployErc20OffchainPKAddress**](../../Model/DeployErc20OffchainPKAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -3081,11 +3081,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20Offch
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../Model/DeployErc20OffchainPKXpub.md) |  |
+ **$deploy_erc20_offchain_pk_xpub** | [**\Tatum\Model\DeployErc20OffchainPKXpub**](../../Model/DeployErc20OffchainPKXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../Model/DeployErc20OffchainMnemonicAddress200Response.md)
+[**\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response**](../../Model/DeployErc20OffchainMnemonicAddress200Response)
 
 ### Description
 
@@ -3117,11 +3117,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20** | [**\Tatum\Model\Erc20**](../Model/Erc20.md) |  |
+ **$erc20** | [**\Tatum\Model\Erc20**](../../Model/Erc20) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -3173,11 +3173,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcErc20Address(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../Model/Erc20Address.md) |  |
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../../Model/Erc20Address) |  |
 
 ### Return type
 
-[**\Tatum\Model\Erc20Response**](../Model/Erc20Response.md)
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
 
 ### Description
 
@@ -3209,11 +3209,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEth(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth** | [**\Tatum\Model\TransferEth**](../Model/TransferEth.md) |  |
+ **$transfer_eth** | [**\Tatum\Model\TransferEth**](../../Model/TransferEth) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3257,11 +3257,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEthKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../Model/TransferEthKMS.md) |  |
+ **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../../Model/TransferEthKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3293,11 +3293,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEthMnemo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../Model/TransferEthMnemonic.md) |  |
+ **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../../Model/TransferEthMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3461,11 +3461,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_ada_kms** | [**\Tatum\Model\TransferAdaKMS**](../Model/TransferAdaKMS.md) |  |
+ **$transfer_ada_kms** | [**\Tatum\Model\TransferAdaKMS**](../../Model/TransferAdaKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3497,11 +3497,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaKeyPair(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_ada_key_pair** | [**\Tatum\Model\TransferAdaKeyPair**](../Model/TransferAdaKeyPair.md) |  |
+ **$transfer_ada_key_pair** | [**\Tatum\Model\TransferAdaKeyPair**](../../Model/TransferAdaKeyPair) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3543,11 +3543,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_ada_mnemonic** | [**\Tatum\Model\TransferAdaMnemonic**](../Model/TransferAdaMnemonic.md) |  |
+ **$transfer_ada_mnemonic** | [**\Tatum\Model\TransferAdaMnemonic**](../../Model/TransferAdaMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3579,11 +3579,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_algo** | [**\Tatum\Model\TransferAlgo**](../Model/TransferAlgo.md) |  |
+ **$transfer_algo** | [**\Tatum\Model\TransferAlgo**](../../Model/TransferAlgo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3633,11 +3633,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgoErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_algo_erc20** | [**\Tatum\Model\TransferAlgoErc20**](../Model/TransferAlgoErc20.md) |  |
+ **$transfer_algo_erc20** | [**\Tatum\Model\TransferAlgoErc20**](../../Model/TransferAlgoErc20) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3669,11 +3669,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgoKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_algo_kms** | [**\Tatum\Model\TransferAlgoKMS**](../Model/TransferAlgoKMS.md) |  |
+ **$transfer_algo_kms** | [**\Tatum\Model\TransferAlgoKMS**](../../Model/TransferAlgoKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3705,11 +3705,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bch_kms** | [**\Tatum\Model\TransferBchKMS**](../Model/TransferBchKMS.md) |  |
+ **$transfer_bch_kms** | [**\Tatum\Model\TransferBchKMS**](../../Model/TransferBchKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3741,11 +3741,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchKeyPair(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bch_key_pair** | [**\Tatum\Model\TransferBchKeyPair**](../Model/TransferBchKeyPair.md) |  |
+ **$transfer_bch_key_pair** | [**\Tatum\Model\TransferBchKeyPair**](../../Model/TransferBchKeyPair) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3777,11 +3777,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bch_mnemonic** | [**\Tatum\Model\TransferBchMnemonic**](../Model/TransferBchMnemonic.md) |  |
+ **$transfer_bch_mnemonic** | [**\Tatum\Model\TransferBchMnemonic**](../../Model/TransferBchMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3829,11 +3829,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBnb(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bnb** | [**\Tatum\Model\TransferBnb**](../Model/TransferBnb.md) |  |
+ **$transfer_bnb** | [**\Tatum\Model\TransferBnb**](../../Model/TransferBnb) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3873,11 +3873,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBnbKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bnb_kms** | [**\Tatum\Model\TransferBnbKMS**](../Model/TransferBnbKMS.md) |  |
+ **$transfer_bnb_kms** | [**\Tatum\Model\TransferBnbKMS**](../../Model/TransferBnbKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3909,11 +3909,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBsc(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bsc** | [**\Tatum\Model\TransferBsc**](../Model/TransferBsc.md) |  |
+ **$transfer_bsc** | [**\Tatum\Model\TransferBsc**](../../Model/TransferBsc) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3957,11 +3957,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBscKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bsc_kms** | [**\Tatum\Model\TransferBscKMS**](../Model/TransferBscKMS.md) |  |
+ **$transfer_bsc_kms** | [**\Tatum\Model\TransferBscKMS**](../../Model/TransferBscKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -3993,11 +3993,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBscMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_bsc_mnemonic** | [**\Tatum\Model\TransferBscMnemonic**](../Model/TransferBscMnemonic.md) |  |
+ **$transfer_bsc_mnemonic** | [**\Tatum\Model\TransferBscMnemonic**](../../Model/TransferBscMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4029,11 +4029,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_btc_kms** | [**\Tatum\Model\TransferBtcKMS**](../Model/TransferBtcKMS.md) |  |
+ **$transfer_btc_kms** | [**\Tatum\Model\TransferBtcKMS**](../../Model/TransferBtcKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4065,11 +4065,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcKeyPair(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_btc_key_pair** | [**\Tatum\Model\TransferBtcKeyPair**](../Model/TransferBtcKeyPair.md) |  |
+ **$transfer_btc_key_pair** | [**\Tatum\Model\TransferBtcKeyPair**](../../Model/TransferBtcKeyPair) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4101,11 +4101,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_btc_mnemonic** | [**\Tatum\Model\TransferBtcMnemonic**](../Model/TransferBtcMnemonic.md) |  |
+ **$transfer_btc_mnemonic** | [**\Tatum\Model\TransferBtcMnemonic**](../../Model/TransferBtcMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4153,11 +4153,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCelo(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_celo** | [**\Tatum\Model\TransferCelo**](../Model/TransferCelo.md) |  |
+ **$transfer_celo** | [**\Tatum\Model\TransferCelo**](../../Model/TransferCelo) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4201,11 +4201,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCeloKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_celo_kms** | [**\Tatum\Model\TransferCeloKMS**](../Model/TransferCeloKMS.md) |  |
+ **$transfer_celo_kms** | [**\Tatum\Model\TransferCeloKMS**](../../Model/TransferCeloKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4237,11 +4237,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCeloMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_celo_mnemonic** | [**\Tatum\Model\TransferCeloMnemonic**](../Model/TransferCeloMnemonic.md) |  |
+ **$transfer_celo_mnemonic** | [**\Tatum\Model\TransferCeloMnemonic**](../../Model/TransferCeloMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4273,11 +4273,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_doge_kms** | [**\Tatum\Model\TransferDogeKMS**](../Model/TransferDogeKMS.md) |  |
+ **$transfer_doge_kms** | [**\Tatum\Model\TransferDogeKMS**](../../Model/TransferDogeKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4309,11 +4309,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeKeyPair(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_doge_key_pair** | [**\Tatum\Model\TransferDogeKeyPair**](../Model/TransferDogeKeyPair.md) |  |
+ **$transfer_doge_key_pair** | [**\Tatum\Model\TransferDogeKeyPair**](../../Model/TransferDogeKeyPair) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4345,11 +4345,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_doge_mnemonic** | [**\Tatum\Model\TransferDogeMnemonic**](../Model/TransferDogeMnemonic.md) |  |
+ **$transfer_doge_mnemonic** | [**\Tatum\Model\TransferDogeMnemonic**](../../Model/TransferDogeMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4397,11 +4397,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_erc20** | [**\Tatum\Model\TransferErc20**](../Model/TransferErc20.md) |  |
+ **$transfer_erc20** | [**\Tatum\Model\TransferErc20**](../../Model/TransferErc20) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4441,11 +4441,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20KMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_erc20_kms** | [**\Tatum\Model\TransferErc20KMS**](../Model/TransferErc20KMS.md) |  |
+ **$transfer_erc20_kms** | [**\Tatum\Model\TransferErc20KMS**](../../Model/TransferErc20KMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4477,11 +4477,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20Mnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_erc20_mnemonic** | [**\Tatum\Model\TransferErc20Mnemonic**](../Model/TransferErc20Mnemonic.md) |  |
+ **$transfer_erc20_mnemonic** | [**\Tatum\Model\TransferErc20Mnemonic**](../../Model/TransferErc20Mnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4513,11 +4513,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEth(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth** | [**\Tatum\Model\TransferEth**](../Model/TransferEth.md) |  |
+ **$transfer_eth** | [**\Tatum\Model\TransferEth**](../../Model/TransferEth) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4557,11 +4557,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEthKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../Model/TransferEthKMS.md) |  |
+ **$transfer_eth_kms** | [**\Tatum\Model\TransferEthKMS**](../../Model/TransferEthKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4593,11 +4593,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEthMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../Model/TransferEthMnemonic.md) |  |
+ **$transfer_eth_mnemonic** | [**\Tatum\Model\TransferEthMnemonic**](../../Model/TransferEthMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4629,11 +4629,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_flow_kms** | [**\Tatum\Model\TransferFlowKMS**](../Model/TransferFlowKMS.md) |  |
+ **$transfer_flow_kms** | [**\Tatum\Model\TransferFlowKMS**](../../Model/TransferFlowKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4665,11 +4665,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_flow_mnemonic** | [**\Tatum\Model\TransferFlowMnemonic**](../Model/TransferFlowMnemonic.md) |  |
+ **$transfer_flow_mnemonic** | [**\Tatum\Model\TransferFlowMnemonic**](../../Model/TransferFlowMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4717,11 +4717,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowPK(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_flow_pk** | [**\Tatum\Model\TransferFlowPK**](../Model/TransferFlowPK.md) |  |
+ **$transfer_flow_pk** | [**\Tatum\Model\TransferFlowPK**](../../Model/TransferFlowPK) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4753,11 +4753,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_kcs** | [**\Tatum\Model\TransferKCS**](../Model/TransferKCS.md) |  |
+ **$transfer_kcs** | [**\Tatum\Model\TransferKCS**](../../Model/TransferKCS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4797,11 +4797,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCSKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_kcskms** | [**\Tatum\Model\TransferKCSKMS**](../Model/TransferKCSKMS.md) |  |
+ **$transfer_kcskms** | [**\Tatum\Model\TransferKCSKMS**](../../Model/TransferKCSKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4833,11 +4833,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCSMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_kcs_mnemonic** | [**\Tatum\Model\TransferKCSMnemonic**](../Model/TransferKCSMnemonic.md) |  |
+ **$transfer_kcs_mnemonic** | [**\Tatum\Model\TransferKCSMnemonic**](../../Model/TransferKCSMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4869,11 +4869,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_ltc_kms** | [**\Tatum\Model\TransferLtcKMS**](../Model/TransferLtcKMS.md) |  |
+ **$transfer_ltc_kms** | [**\Tatum\Model\TransferLtcKMS**](../../Model/TransferLtcKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4905,11 +4905,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcKeyPair(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_ltc_key_pair** | [**\Tatum\Model\TransferLtcKeyPair**](../Model/TransferLtcKeyPair.md) |  |
+ **$transfer_ltc_key_pair** | [**\Tatum\Model\TransferLtcKeyPair**](../../Model/TransferLtcKeyPair) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4941,11 +4941,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_ltc_mnemonic** | [**\Tatum\Model\TransferLtcMnemonic**](../Model/TransferLtcMnemonic.md) |  |
+ **$transfer_ltc_mnemonic** | [**\Tatum\Model\TransferLtcMnemonic**](../../Model/TransferLtcMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -4993,11 +4993,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferSol(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_sol** | [**\Tatum\Model\TransferSol**](../Model/TransferSol.md) |  |
+ **$transfer_sol** | [**\Tatum\Model\TransferSol**](../../Model/TransferSol) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5037,11 +5037,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferSolKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_sol_kms** | [**\Tatum\Model\TransferSolKMS**](../Model/TransferSolKMS.md) |  |
+ **$transfer_sol_kms** | [**\Tatum\Model\TransferSolKMS**](../../Model/TransferSolKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5073,11 +5073,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTron(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron** | [**\Tatum\Model\TransferTron**](../Model/TransferTron.md) |  |
+ **$transfer_tron** | [**\Tatum\Model\TransferTron**](../../Model/TransferTron) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5117,11 +5117,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTronKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_kms** | [**\Tatum\Model\TransferTronKMS**](../Model/TransferTronKMS.md) |  |
+ **$transfer_tron_kms** | [**\Tatum\Model\TransferTronKMS**](../../Model/TransferTronKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5153,11 +5153,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTronMnemonic(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_tron_mnemonic** | [**\Tatum\Model\TransferTronMnemonic**](../Model/TransferTronMnemonic.md) |  |
+ **$transfer_tron_mnemonic** | [**\Tatum\Model\TransferTronMnemonic**](../../Model/TransferTronMnemonic) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5189,11 +5189,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXlm(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xlm** | [**\Tatum\Model\TransferXlm**](../Model/TransferXlm.md) |  |
+ **$transfer_xlm** | [**\Tatum\Model\TransferXlm**](../../Model/TransferXlm) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5233,11 +5233,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXlmKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xlm_kms** | [**\Tatum\Model\TransferXlmKMS**](../Model/TransferXlmKMS.md) |  |
+ **$transfer_xlm_kms** | [**\Tatum\Model\TransferXlmKMS**](../../Model/TransferXlmKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5269,11 +5269,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXrp(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xrp** | [**\Tatum\Model\TransferXrp**](../Model/TransferXrp.md) |  |
+ **$transfer_xrp** | [**\Tatum\Model\TransferXrp**](../../Model/TransferXrp) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5313,11 +5313,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXrpKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$transfer_xrp_kms** | [**\Tatum\Model\TransferXrpKMS**](../Model/TransferXrpKMS.md) |  |
+ **$transfer_xrp_kms** | [**\Tatum\Model\TransferXrpKMS**](../../Model/TransferXrpKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransferBtcMnemonic200Response**](../Model/TransferBtcMnemonic200Response.md)
+[**\Tatum\Model\TransferBtcMnemonic200Response**](../../Model/TransferBtcMnemonic200Response)
 
 ### Description
 
@@ -5349,11 +5349,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->trcAddress(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$trc_address** | [**\Tatum\Model\TrcAddress**](../Model/TrcAddress.md) |  |
+ **$trc_address** | [**\Tatum\Model\TrcAddress**](../../Model/TrcAddress) |  |
 
 ### Return type
 
-[**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
+[**\Tatum\Model\Trc20Response**](../../Model/Trc20Response)
 
 ### Description
 
@@ -5399,11 +5399,11 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->trcXpub(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$trc_xpub** | [**\Tatum\Model\TrcXpub**](../Model/TrcXpub.md) |  |
+ **$trc_xpub** | [**\Tatum\Model\TrcXpub**](../../Model/TrcXpub) |  |
 
 ### Return type
 
-[**\Tatum\Model\Trc20Response**](../Model/Trc20Response.md)
+[**\Tatum\Model\Trc20Response**](../../Model/Trc20Response)
 
 ### Description
 
@@ -5435,7 +5435,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xlmAssetOffchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_xlm_asset** | [**\Tatum\Model\CreateXlmAsset**](../Model/CreateXlmAsset.md) |  |
+ **$create_xlm_asset** | [**\Tatum\Model\CreateXlmAsset**](../../Model/CreateXlmAsset) |  |
 
 ### Return type
 
@@ -5475,7 +5475,7 @@ $sdk->{mainnet/testnet}()->api()->blockchainOperations()->xrpAssetOffchain(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$create_xrp_asset** | [**\Tatum\Model\CreateXrpAsset**](../Model/CreateXrpAsset.md) |  |
+ **$create_xrp_asset** | [**\Tatum\Model\CreateXrpAsset**](../../Model/CreateXrpAsset) |  |
 
 ### Return type
 

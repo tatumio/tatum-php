@@ -45,11 +45,11 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeBroadcast(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../Model/BroadcastKMS.md) |  |
+ **$broadcast_kms** | [**\Tatum\Model\BroadcastKMS**](../../Model/BroadcastKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionHash**](../Model/TransactionHash.md)
+[**\Tatum\Model\TransactionHash**](../../Model/TransactionHash)
 
 ### Description
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\DogeGenerateAddress200Response**](../Model/DogeGenerateAddress200Response.md)
+[**\Tatum\Model\DogeGenerateAddress200Response**](../../Model/DogeGenerateAddress200Response)
 
 ### Description
 
@@ -123,11 +123,11 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddressPrivateKey(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../Model/PrivKeyRequest.md) |  |
+ **$priv_key_request** | [**\Tatum\Model\PrivKeyRequest**](../../Model/PrivKeyRequest) |  |
 
 ### Return type
 
-[**\Tatum\Model\PrivKey**](../Model/PrivKey.md)
+[**\Tatum\Model\PrivKey**](../../Model/PrivKey)
 
 ### Description
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\Wallet**](../Model/Wallet.md)
+[**\Tatum\Model\Wallet**](../../Model/Wallet)
 
 ### Description
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\DogeBlock**](../Model/DogeBlock.md)
+[**\Tatum\Model\DogeBlock**](../../Model/DogeBlock)
 
 ### Description
 
@@ -244,7 +244,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Tatum\Model\DogeInfo**](../Model/DogeInfo.md)
+[**\Tatum\Model\DogeInfo**](../../Model/DogeInfo)
 
 ### Description
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\LtcGetBlockHash200Response**](../Model/LtcGetBlockHash200Response.md)
+[**\Tatum\Model\LtcGetBlockHash200Response**](../../Model/LtcGetBlockHash200Response)
 
 ### Description
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\DogeTx**](../Model/DogeTx.md)
+[**\Tatum\Model\DogeTx**](../../Model/DogeTx)
 
 ### Description
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\DogeUTXO**](../Model/DogeUTXO.md)
+[**\Tatum\Model\DogeUTXO**](../../Model/DogeUTXO)
 
 ### Description
 
@@ -435,7 +435,7 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeRpcDriver(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../Model/BchRpcDriverRequest.md) |  |
+ **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../../Model/BchRpcDriverRequest) |  |
 
 ### Return type
 
@@ -475,11 +475,11 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransactionUTXO(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$doge_transaction_utxo** | [**\Tatum\Model\DogeTransactionUTXO**](../Model/DogeTransactionUTXO.md) |  |
+ **$doge_transaction_utxo** | [**\Tatum\Model\DogeTransactionUTXO**](../../Model/DogeTransactionUTXO) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
@@ -535,11 +535,11 @@ $sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransactionUTXOKMS(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$doge_transaction_utxokms** | [**\Tatum\Model\DogeTransactionUTXOKMS**](../Model/DogeTransactionUTXOKMS.md) |  |
+ **$doge_transaction_utxokms** | [**\Tatum\Model\DogeTransactionUTXOKMS**](../../Model/DogeTransactionUTXOKMS) |  |
 
 ### Return type
 
-[**\Tatum\Model\TransactionSigned**](../Model/TransactionSigned.md)
+[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
 
 ### Description
 
