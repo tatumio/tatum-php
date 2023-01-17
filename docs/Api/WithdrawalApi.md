@@ -12,38 +12,13 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **broadcastBlockchainTransaction()**](#broadcastblockchaintransaction) 
-
-> Broadcast signed transaction and complete withdrawal
-> 
-> **POST** `/v3/offchain/withdrawal/broadcast`
-
-[🔹 **cancelInProgressWithdrawal()**](#cancelinprogresswithdrawal) 
-
-> Cancel withdrawal
-> 
-> **DELETE** `/v3/offchain/withdrawal/{id}`
-
-[🔹 **completeWithdrawal()**](#completewithdrawal) 
-
-> Complete withdrawal
-> 
-> **PUT** `/v3/offchain/withdrawal/{id}/{txId}`
-
-[🔹 **getWithdrawals()**](#getwithdrawals) 
-
-> Get withdrawals
-> 
-> **GET** `/v3/offchain/withdrawal`
-
-[🔹 **storeWithdrawal()**](#storewithdrawal) 
-
-> Store withdrawal
-> 
-> **POST** `/v3/offchain/withdrawal`
-
+Method | Description
+------------- | ------------- | -------------
+[**broadcastBlockchainTransaction()**](#broadcastblockchaintransaction) | Broadcast signed transaction and complete withdrawal
+[**cancelInProgressWithdrawal()**](#cancelinprogresswithdrawal) | Cancel withdrawal
+[**completeWithdrawal()**](#completewithdrawal) | Complete withdrawal
+[**getWithdrawals()**](#getwithdrawals) | Get withdrawals
+[**storeWithdrawal()**](#storewithdrawal) | Store withdrawal
 
 
 ## `broadcastBlockchainTransaction()`
@@ -80,7 +55,9 @@ Broadcast signed transaction and complete withdrawal
 
 [✨ View "broadcastBlockchainTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelInProgressWithdrawal()`
 
@@ -120,7 +97,9 @@ Cancel withdrawal
 
 [✨ View "cancelInProgressWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `completeWithdrawal()`
 
@@ -158,7 +137,9 @@ Complete withdrawal
 
 [✨ View "completeWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/completeWithdrawal.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getWithdrawals()`
 
@@ -200,7 +181,9 @@ Get withdrawals.
 
 [✨ View "getWithdrawals.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/getWithdrawals.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `storeWithdrawal()`
 
@@ -260,4 +243,5 @@ Store withdrawal
 
 [✨ View "storeWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/storeWithdrawal.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

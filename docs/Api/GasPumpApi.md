@@ -12,248 +12,48 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **activateGasPump()**](#activategaspump) 
-
-> Activate gas pump addresses
-> 
-> **POST** `/v3/gas-pump/activate`
-
-[🔹 **activateGasPumpCelo()**](#activategaspumpcelo) 
-
-> Activate gas pump addresses
-> 
-> **POST** `/v3/gas-pump/activate`
-
-[🔹 **activateGasPumpCeloKMS()**](#activategaspumpcelokms) 
-
-> Activate gas pump addresses
-> 
-> **POST** `/v3/gas-pump/activate`
-
-[🔹 **activateGasPumpKMS()**](#activategaspumpkms) 
-
-> Activate gas pump addresses
-> 
-> **POST** `/v3/gas-pump/activate`
-
-[🔹 **activateGasPumpTatum()**](#activategaspumptatum) 
-
-> Activate gas pump addresses
-> 
-> **POST** `/v3/gas-pump/activate`
-
-[🔹 **activateGasPumpTron()**](#activategaspumptron) 
-
-> Activate gas pump addresses
-> 
-> **POST** `/v3/gas-pump/activate`
-
-[🔹 **activateGasPumpTronKMS()**](#activategaspumptronkms) 
-
-> Activate gas pump addresses
-> 
-> **POST** `/v3/gas-pump/activate`
-
-[🔹 **activatedNotActivatedGasPumpAddresses()**](#activatednotactivatedgaspumpaddresses) 
-
-> Get the results of the address activation transaction
-> 
-> **GET** `/v3/gas-pump/address/{chain}/{txId}`
-
-[🔹 **approveTransferCustodialWallet()**](#approvetransfercustodialwallet) 
-
-> Approve the transfer of an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/approve`
-
-[🔹 **approveTransferCustodialWalletCelo()**](#approvetransfercustodialwalletcelo) 
-
-> Approve the transfer of an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/approve`
-
-[🔹 **approveTransferCustodialWalletCeloKMS()**](#approvetransfercustodialwalletcelokms) 
-
-> Approve the transfer of an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/approve`
-
-[🔹 **approveTransferCustodialWalletKMS()**](#approvetransfercustodialwalletkms) 
-
-> Approve the transfer of an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/approve`
-
-[🔹 **gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) 
-
-> Check whether the gas pump address with a specified index is activated
-> 
-> **GET** `/v3/gas-pump/activated/{chain}/{owner}/{index}`
-
-[🔹 **generateCustodialWallet()**](#generatecustodialwallet) 
-
-> Generate a custodial wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial`
-
-[🔹 **generateCustodialWalletBatch()**](#generatecustodialwalletbatch) 
-
-> Generate a gas pump wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial/batch`
-
-[🔹 **generateCustodialWalletBatchCelo()**](#generatecustodialwalletbatchcelo) 
-
-> Generate a gas pump wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial/batch`
-
-[🔹 **generateCustodialWalletBatchCeloKMS()**](#generatecustodialwalletbatchcelokms) 
-
-> Generate a gas pump wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial/batch`
-
-[🔹 **generateCustodialWalletBatchKMS()**](#generatecustodialwalletbatchkms) 
-
-> Generate a gas pump wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial/batch`
-
-[🔹 **generateCustodialWalletBatchPayer()**](#generatecustodialwalletbatchpayer) 
-
-> Generate a gas pump wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial/batch`
-
-[🔹 **generateCustodialWalletBatchTron()**](#generatecustodialwalletbatchtron) 
-
-> Generate a gas pump wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial/batch`
-
-[🔹 **generateCustodialWalletBatchTronKMS()**](#generatecustodialwalletbatchtronkms) 
-
-> Generate a gas pump wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial/batch`
-
-[🔹 **generateCustodialWalletCelo()**](#generatecustodialwalletcelo) 
-
-> Generate a custodial wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial`
-
-[🔹 **generateCustodialWalletCeloKMS()**](#generatecustodialwalletcelokms) 
-
-> Generate a custodial wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial`
-
-[🔹 **generateCustodialWalletKMS()**](#generatecustodialwalletkms) 
-
-> Generate a custodial wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial`
-
-[🔹 **generateCustodialWalletTron()**](#generatecustodialwallettron) 
-
-> Generate a custodial wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial`
-
-[🔹 **generateCustodialWalletTronKMS()**](#generatecustodialwallettronkms) 
-
-> Generate a custodial wallet address
-> 
-> **POST** `/v3/blockchain/sc/custodial`
-
-[🔹 **precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) 
-
-> Precalculate gas pump addresses
-> 
-> **POST** `/v3/gas-pump`
-
-[🔹 **sCGetCustodialAddresses()**](#scgetcustodialaddresses) 
-
-> Get the custodial wallet address from the transaction
-> 
-> **GET** `/v3/blockchain/sc/custodial/{chain}/{hash}`
-
-[🔹 **transferCustodialWallet()**](#transfercustodialwallet) 
-
-> Transfer an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer`
-
-[🔹 **transferCustodialWalletBatch()**](#transfercustodialwalletbatch) 
-
-> Transfer multiple assets from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
-
-[🔹 **transferCustodialWalletBatchCelo()**](#transfercustodialwalletbatchcelo) 
-
-> Transfer multiple assets from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
-
-[🔹 **transferCustodialWalletBatchCeloKMS()**](#transfercustodialwalletbatchcelokms) 
-
-> Transfer multiple assets from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
-
-[🔹 **transferCustodialWalletBatchKMS()**](#transfercustodialwalletbatchkms) 
-
-> Transfer multiple assets from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
-
-[🔹 **transferCustodialWalletBatchTron()**](#transfercustodialwalletbatchtron) 
-
-> Transfer multiple assets from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
-
-[🔹 **transferCustodialWalletBatchTronKMS()**](#transfercustodialwalletbatchtronkms) 
-
-> Transfer multiple assets from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer/batch`
-
-[🔹 **transferCustodialWalletCelo()**](#transfercustodialwalletcelo) 
-
-> Transfer an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer`
-
-[🔹 **transferCustodialWalletCeloKMS()**](#transfercustodialwalletcelokms) 
-
-> Transfer an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer`
-
-[🔹 **transferCustodialWalletKMS()**](#transfercustodialwalletkms) 
-
-> Transfer an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer`
-
-[🔹 **transferCustodialWalletTron()**](#transfercustodialwallettron) 
-
-> Transfer an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer`
-
-[🔹 **transferCustodialWalletTronKMS()**](#transfercustodialwallettronkms) 
-
-> Transfer an asset from a gas pump address
-> 
-> **POST** `/v3/blockchain/sc/custodial/transfer`
-
+Method | Description
+------------- | ------------- | -------------
+[**activateGasPump()**](#activategaspump) | Activate gas pump addresses
+[**activateGasPumpCelo()**](#activategaspumpcelo) | Activate gas pump addresses
+[**activateGasPumpCeloKMS()**](#activategaspumpcelokms) | Activate gas pump addresses
+[**activateGasPumpKMS()**](#activategaspumpkms) | Activate gas pump addresses
+[**activateGasPumpTatum()**](#activategaspumptatum) | Activate gas pump addresses
+[**activateGasPumpTron()**](#activategaspumptron) | Activate gas pump addresses
+[**activateGasPumpTronKMS()**](#activategaspumptronkms) | Activate gas pump addresses
+[**activatedNotActivatedGasPumpAddresses()**](#activatednotactivatedgaspumpaddresses) | Get the results of the address activation transaction
+[**approveTransferCustodialWallet()**](#approvetransfercustodialwallet) | Approve the transfer of an asset from a gas pump address
+[**approveTransferCustodialWalletCelo()**](#approvetransfercustodialwalletcelo) | Approve the transfer of an asset from a gas pump address
+[**approveTransferCustodialWalletCeloKMS()**](#approvetransfercustodialwalletcelokms) | Approve the transfer of an asset from a gas pump address
+[**approveTransferCustodialWalletKMS()**](#approvetransfercustodialwalletkms) | Approve the transfer of an asset from a gas pump address
+[**gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) | Check whether the gas pump address with a specified index is activated
+[**generateCustodialWallet()**](#generatecustodialwallet) | Generate a custodial wallet address
+[**generateCustodialWalletBatch()**](#generatecustodialwalletbatch) | Generate a gas pump wallet address
+[**generateCustodialWalletBatchCelo()**](#generatecustodialwalletbatchcelo) | Generate a gas pump wallet address
+[**generateCustodialWalletBatchCeloKMS()**](#generatecustodialwalletbatchcelokms) | Generate a gas pump wallet address
+[**generateCustodialWalletBatchKMS()**](#generatecustodialwalletbatchkms) | Generate a gas pump wallet address
+[**generateCustodialWalletBatchPayer()**](#generatecustodialwalletbatchpayer) | Generate a gas pump wallet address
+[**generateCustodialWalletBatchTron()**](#generatecustodialwalletbatchtron) | Generate a gas pump wallet address
+[**generateCustodialWalletBatchTronKMS()**](#generatecustodialwalletbatchtronkms) | Generate a gas pump wallet address
+[**generateCustodialWalletCelo()**](#generatecustodialwalletcelo) | Generate a custodial wallet address
+[**generateCustodialWalletCeloKMS()**](#generatecustodialwalletcelokms) | Generate a custodial wallet address
+[**generateCustodialWalletKMS()**](#generatecustodialwalletkms) | Generate a custodial wallet address
+[**generateCustodialWalletTron()**](#generatecustodialwallettron) | Generate a custodial wallet address
+[**generateCustodialWalletTronKMS()**](#generatecustodialwallettronkms) | Generate a custodial wallet address
+[**precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) | Precalculate gas pump addresses
+[**sCGetCustodialAddresses()**](#scgetcustodialaddresses) | Get the custodial wallet address from the transaction
+[**transferCustodialWallet()**](#transfercustodialwallet) | Transfer an asset from a gas pump address
+[**transferCustodialWalletBatch()**](#transfercustodialwalletbatch) | Transfer multiple assets from a gas pump address
+[**transferCustodialWalletBatchCelo()**](#transfercustodialwalletbatchcelo) | Transfer multiple assets from a gas pump address
+[**transferCustodialWalletBatchCeloKMS()**](#transfercustodialwalletbatchcelokms) | Transfer multiple assets from a gas pump address
+[**transferCustodialWalletBatchKMS()**](#transfercustodialwalletbatchkms) | Transfer multiple assets from a gas pump address
+[**transferCustodialWalletBatchTron()**](#transfercustodialwalletbatchtron) | Transfer multiple assets from a gas pump address
+[**transferCustodialWalletBatchTronKMS()**](#transfercustodialwalletbatchtronkms) | Transfer multiple assets from a gas pump address
+[**transferCustodialWalletCelo()**](#transfercustodialwalletcelo) | Transfer an asset from a gas pump address
+[**transferCustodialWalletCeloKMS()**](#transfercustodialwalletcelokms) | Transfer an asset from a gas pump address
+[**transferCustodialWalletKMS()**](#transfercustodialwalletkms) | Transfer an asset from a gas pump address
+[**transferCustodialWalletTron()**](#transfercustodialwallettron) | Transfer an asset from a gas pump address
+[**transferCustodialWalletTronKMS()**](#transfercustodialwallettronkms) | Transfer an asset from a gas pump address
 
 
 ## `activateGasPump()`
@@ -288,7 +88,9 @@ ActivateGasPump operation
 
 [✨ View "activateGasPump.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPump.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `activateGasPumpCelo()`
 
@@ -322,7 +124,9 @@ ActivateGasPumpCelo operation
 
 [✨ View "activateGasPumpCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `activateGasPumpCeloKMS()`
 
@@ -356,7 +160,9 @@ ActivateGasPumpCeloKMS operation
 
 [✨ View "activateGasPumpCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `activateGasPumpKMS()`
 
@@ -390,7 +196,9 @@ ActivateGasPumpKMS operation
 
 [✨ View "activateGasPumpKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `activateGasPumpTatum()`
 
@@ -464,7 +272,9 @@ Activate gas pump addresses
 
 [✨ View "activateGasPumpTatum.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTatum.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `activateGasPumpTron()`
 
@@ -498,7 +308,9 @@ ActivateGasPumpTron operation
 
 [✨ View "activateGasPumpTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTron.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `activateGasPumpTronKMS()`
 
@@ -532,7 +344,9 @@ ActivateGasPumpTronKMS operation
 
 [✨ View "activateGasPumpTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTronKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `activatedNotActivatedGasPumpAddresses()`
 
@@ -584,7 +398,9 @@ Get the results of the address activation transaction
 
 [✨ View "activatedNotActivatedGasPumpAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activatedNotActivatedGasPumpAddresses.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `approveTransferCustodialWallet()`
 
@@ -642,7 +458,9 @@ Approve the transfer of an asset from a gas pump address
 
 [✨ View "approveTransferCustodialWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `approveTransferCustodialWalletCelo()`
 
@@ -676,7 +494,9 @@ ApproveTransferCustodialWalletCelo operation
 
 [✨ View "approveTransferCustodialWalletCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `approveTransferCustodialWalletCeloKMS()`
 
@@ -710,7 +530,9 @@ ApproveTransferCustodialWalletCeloKMS operation
 
 [✨ View "approveTransferCustodialWalletCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `approveTransferCustodialWalletKMS()`
 
@@ -744,7 +566,9 @@ ApproveTransferCustodialWalletKMS operation
 
 [✨ View "approveTransferCustodialWalletKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `gasPumpAddressesActivatedOrNot()`
 
@@ -792,7 +616,9 @@ Check whether the gas pump address with a specified index is activated
 
 [✨ View "gasPumpAddressesActivatedOrNot.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWallet()`
 
@@ -852,7 +678,9 @@ To start with the gas pump, use the API for precalculating the gas pump addresse
 
 [✨ View "generateCustodialWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletBatch()`
 
@@ -888,7 +716,9 @@ GenerateCustodialWalletBatch operation
 
 [✨ View "generateCustodialWalletBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletBatchCelo()`
 
@@ -924,7 +754,9 @@ GenerateCustodialWalletBatchCelo operation
 
 [✨ View "generateCustodialWalletBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletBatchCeloKMS()`
 
@@ -960,7 +792,9 @@ GenerateCustodialWalletBatchCeloKMS operation
 
 [✨ View "generateCustodialWalletBatchCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletBatchKMS()`
 
@@ -996,7 +830,9 @@ GenerateCustodialWalletBatchKMS operation
 
 [✨ View "generateCustodialWalletBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletBatchPayer()`
 
@@ -1046,7 +882,9 @@ To start with the gas pump, use the API for precalculating the gas pump addresse
 
 [✨ View "generateCustodialWalletBatchPayer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchPayer.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletBatchTron()`
 
@@ -1082,7 +920,9 @@ GenerateCustodialWalletBatchTron operation
 
 [✨ View "generateCustodialWalletBatchTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchTron.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletBatchTronKMS()`
 
@@ -1118,7 +958,9 @@ GenerateCustodialWalletBatchTronKMS operation
 
 [✨ View "generateCustodialWalletBatchTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchTronKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletCelo()`
 
@@ -1152,7 +994,9 @@ GenerateCustodialWalletCelo operation
 
 [✨ View "generateCustodialWalletCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletCeloKMS()`
 
@@ -1186,7 +1030,9 @@ GenerateCustodialWalletCeloKMS operation
 
 [✨ View "generateCustodialWalletCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletKMS()`
 
@@ -1220,7 +1066,9 @@ GenerateCustodialWalletKMS operation
 
 [✨ View "generateCustodialWalletKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletTron()`
 
@@ -1254,7 +1102,9 @@ GenerateCustodialWalletTron operation
 
 [✨ View "generateCustodialWalletTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletTron.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateCustodialWalletTronKMS()`
 
@@ -1288,7 +1138,9 @@ GenerateCustodialWalletTronKMS operation
 
 [✨ View "generateCustodialWalletTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletTronKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `precalculateGasPumpAddresses()`
 
@@ -1356,7 +1208,9 @@ For example, you precalculated three gas pump addresses with a range of index va
 
 [✨ View "precalculateGasPumpAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/precalculateGasPumpAddresses.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sCGetCustodialAddresses()`
 
@@ -1406,7 +1260,9 @@ To start with the gas pump, use the API for precalculating the gas pump addresse
 
 [✨ View "sCGetCustodialAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/sCGetCustodialAddresses.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWallet()`
 
@@ -1470,7 +1326,9 @@ To check whether the gas pump address is activated, use this API.</li> <li>The g
 
 [✨ View "transferCustodialWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletBatch()`
 
@@ -1534,7 +1392,9 @@ To check whether the gas pump address is activated, use this API.</li> <li>The g
 
 [✨ View "transferCustodialWalletBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletBatchCelo()`
 
@@ -1568,7 +1428,9 @@ TransferCustodialWalletBatchCelo operation
 
 [✨ View "transferCustodialWalletBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletBatchCeloKMS()`
 
@@ -1602,7 +1464,9 @@ TransferCustodialWalletBatchCeloKMS operation
 
 [✨ View "transferCustodialWalletBatchCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletBatchKMS()`
 
@@ -1636,7 +1500,9 @@ TransferCustodialWalletBatchKMS operation
 
 [✨ View "transferCustodialWalletBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletBatchTron()`
 
@@ -1670,7 +1536,9 @@ TransferCustodialWalletBatchTron operation
 
 [✨ View "transferCustodialWalletBatchTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTron.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletBatchTronKMS()`
 
@@ -1704,7 +1572,9 @@ TransferCustodialWalletBatchTronKMS operation
 
 [✨ View "transferCustodialWalletBatchTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTronKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletCelo()`
 
@@ -1738,7 +1608,9 @@ TransferCustodialWalletCelo operation
 
 [✨ View "transferCustodialWalletCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletCeloKMS()`
 
@@ -1772,7 +1644,9 @@ TransferCustodialWalletCeloKMS operation
 
 [✨ View "transferCustodialWalletCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletKMS()`
 
@@ -1806,7 +1680,9 @@ TransferCustodialWalletKMS operation
 
 [✨ View "transferCustodialWalletKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletTron()`
 
@@ -1840,7 +1716,9 @@ TransferCustodialWalletTron operation
 
 [✨ View "transferCustodialWalletTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTron.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferCustodialWalletTronKMS()`
 
@@ -1874,4 +1752,5 @@ TransferCustodialWalletTronKMS operation
 
 [✨ View "transferCustodialWalletTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTronKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

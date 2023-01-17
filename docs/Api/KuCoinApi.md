@@ -12,98 +12,23 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **callKcsSmartContractMethod()**](#callkcssmartcontractmethod) 
-
-> Invoke a method in a smart contract on KuCoin Community Chain
-> 
-> **POST** `/v3/kcs/smartcontract`
-
-[🔹 **callKcsSmartContractMethodKMS()**](#callkcssmartcontractmethodkms) 
-
-> Invoke a method in a smart contract on KuCoin Community Chain
-> 
-> **POST** `/v3/kcs/smartcontract`
-
-[🔹 **callKcsSmartContractReadMethod()**](#callkcssmartcontractreadmethod) 
-
-> Invoke a method in a smart contract on KuCoin Community Chain
-> 
-> **POST** `/v3/kcs/smartcontract`
-
-[🔹 **kcsBroadcast()**](#kcsbroadcast) 
-
-> Broadcast signed Kcs transaction
-> 
-> **POST** `/v3/kcs/broadcast`
-
-[🔹 **kcsGenerateAddress()**](#kcsgenerateaddress) 
-
-> Generate Kcs account address from Extended public key
-> 
-> **GET** `/v3/kcs/address/{xpub}/{index}`
-
-[🔹 **kcsGenerateAddressPrivateKey()**](#kcsgenerateaddressprivatekey) 
-
-> Generate Kcs private key
-> 
-> **POST** `/v3/kcs/wallet/priv`
-
-[🔹 **kcsGenerateWallet()**](#kcsgeneratewallet) 
-
-> Generate Kcs wallet
-> 
-> **GET** `/v3/kcs/wallet`
-
-[🔹 **kcsGetBalance()**](#kcsgetbalance) 
-
-> Get Kcs Account balance
-> 
-> **GET** `/v3/kcs/account/balance/{address}`
-
-[🔹 **kcsGetBlock()**](#kcsgetblock) 
-
-> Get Kcs block by hash
-> 
-> **GET** `/v3/kcs/block/{hash}`
-
-[🔹 **kcsGetCurrentBlock()**](#kcsgetcurrentblock) 
-
-> Get current block number
-> 
-> **GET** `/v3/kcs/block/current`
-
-[🔹 **kcsGetTransaction()**](#kcsgettransaction) 
-
-> Get Kcs Transaction
-> 
-> **GET** `/v3/kcs/transaction/{hash}`
-
-[🔹 **kcsGetTransactionCount()**](#kcsgettransactioncount) 
-
-> Get count of outgoing Kcs transactions
-> 
-> **GET** `/v3/kcs/transaction/count/{address}`
-
-[🔹 **kcsWeb3Driver()**](#kcsweb3driver) 
-
-> Web3 HTTP driver
-> 
-> **POST** `/v3/kcs/web3/{xApiKey}`
-
-[🔹 **transferKcsBlockchain()**](#transferkcsblockchain) 
-
-> Send KCS from account to account
-> 
-> **POST** `/v3/kcs/transaction`
-
-[🔹 **transferKcsBlockchainKMS()**](#transferkcsblockchainkms) 
-
-> Send KCS from account to account
-> 
-> **POST** `/v3/kcs/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**callKcsSmartContractMethod()**](#callkcssmartcontractmethod) | Invoke a method in a smart contract on KuCoin Community Chain
+[**callKcsSmartContractMethodKMS()**](#callkcssmartcontractmethodkms) | Invoke a method in a smart contract on KuCoin Community Chain
+[**callKcsSmartContractReadMethod()**](#callkcssmartcontractreadmethod) | Invoke a method in a smart contract on KuCoin Community Chain
+[**kcsBroadcast()**](#kcsbroadcast) | Broadcast signed Kcs transaction
+[**kcsGenerateAddress()**](#kcsgenerateaddress) | Generate Kcs account address from Extended public key
+[**kcsGenerateAddressPrivateKey()**](#kcsgenerateaddressprivatekey) | Generate Kcs private key
+[**kcsGenerateWallet()**](#kcsgeneratewallet) | Generate Kcs wallet
+[**kcsGetBalance()**](#kcsgetbalance) | Get Kcs Account balance
+[**kcsGetBlock()**](#kcsgetblock) | Get Kcs block by hash
+[**kcsGetCurrentBlock()**](#kcsgetcurrentblock) | Get current block number
+[**kcsGetTransaction()**](#kcsgettransaction) | Get Kcs Transaction
+[**kcsGetTransactionCount()**](#kcsgettransactioncount) | Get count of outgoing Kcs transactions
+[**kcsWeb3Driver()**](#kcsweb3driver) | Web3 HTTP driver
+[**transferKcsBlockchain()**](#transferkcsblockchain) | Send KCS from account to account
+[**transferKcsBlockchainKMS()**](#transferkcsblockchainkms) | Send KCS from account to account
 
 
 ## `callKcsSmartContractMethod()`
@@ -138,7 +63,9 @@ CallKcsSmartContractMethod operation
 
 [✨ View "callKcsSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callKcsSmartContractMethodKMS()`
 
@@ -172,7 +99,9 @@ CallKcsSmartContractMethodKMS operation
 
 [✨ View "callKcsSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractMethodKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callKcsSmartContractReadMethod()`
 
@@ -232,7 +161,9 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callKcsSmartContractReadMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractReadMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsBroadcast()`
 
@@ -268,7 +199,9 @@ Broadcast signed Kcs transaction
 
 [✨ View "kcsBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsGenerateAddress()`
 
@@ -306,7 +239,9 @@ Generate Kcs account address from Extended public key
 
 [✨ View "kcsGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsGenerateAddressPrivateKey()`
 
@@ -342,7 +277,9 @@ Generate Kcs private key
 
 [✨ View "kcsGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsGenerateWallet()`
 
@@ -384,7 +321,9 @@ Tatum follows BIP44 specification and generates for Kcs wallet with derivation p
 
 [✨ View "kcsGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsGetBalance()`
 
@@ -420,7 +359,9 @@ Get Kcs Account balance
 
 [✨ View "kcsGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsGetBlock()`
 
@@ -456,7 +397,9 @@ Get Kcs block by hash
 
 [✨ View "kcsGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsGetCurrentBlock()`
 
@@ -489,7 +432,9 @@ Get current block number
 
 [✨ View "kcsGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsGetTransaction()`
 
@@ -525,7 +470,9 @@ Get Kcs Transaction
 
 [✨ View "kcsGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsGetTransactionCount()`
 
@@ -561,7 +508,9 @@ Get count of outgoing Kcs transactions
 
 [✨ View "kcsGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetTransactionCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `kcsWeb3Driver()`
 
@@ -601,7 +550,9 @@ Web3 HTTP driver
 
 [✨ View "kcsWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsWeb3Driver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferKcsBlockchain()`
 
@@ -647,7 +598,9 @@ Send KCS from account to account
 
 [✨ View "transferKcsBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/transferKcsBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferKcsBlockchainKMS()`
 
@@ -681,4 +634,5 @@ TransferKcsBlockchainKMS operation
 
 [✨ View "transferKcsBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/transferKcsBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

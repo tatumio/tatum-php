@@ -12,98 +12,23 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **transferXlmBlockchain()**](#transferxlmblockchain) 
-
-> Send XLM from address to address
-> 
-> **POST** `/v3/xlm/transaction`
-
-[🔹 **transferXlmBlockchainAsset()**](#transferxlmblockchainasset) 
-
-> Send XLM from address to address
-> 
-> **POST** `/v3/xlm/transaction`
-
-[🔹 **transferXlmBlockchainKMS()**](#transferxlmblockchainkms) 
-
-> Send XLM from address to address
-> 
-> **POST** `/v3/xlm/transaction`
-
-[🔹 **transferXlmBlockchainKMSAsset()**](#transferxlmblockchainkmsasset) 
-
-> Send XLM from address to address
-> 
-> **POST** `/v3/xlm/transaction`
-
-[🔹 **trustLineXlmBlockchain()**](#trustlinexlmblockchain) 
-
-> Create / Update / Delete XLM trust line
-> 
-> **POST** `/v3/xlm/trust`
-
-[🔹 **trustLineXlmBlockchainKMS()**](#trustlinexlmblockchainkms) 
-
-> Create / Update / Delete XLM trust line
-> 
-> **POST** `/v3/xlm/trust`
-
-[🔹 **xlmBroadcast()**](#xlmbroadcast) 
-
-> Broadcast signed XLM transaction
-> 
-> **POST** `/v3/xlm/broadcast`
-
-[🔹 **xlmGetAccountInfo()**](#xlmgetaccountinfo) 
-
-> Get XLM Account info
-> 
-> **GET** `/v3/xlm/account/{account}`
-
-[🔹 **xlmGetAccountTx()**](#xlmgetaccounttx) 
-
-> Get XLM Account transactions
-> 
-> **GET** `/v3/xlm/account/tx/{account}`
-
-[🔹 **xlmGetFee()**](#xlmgetfee) 
-
-> Get actual XLM fee
-> 
-> **GET** `/v3/xlm/fee`
-
-[🔹 **xlmGetLastClosedLedger()**](#xlmgetlastclosedledger) 
-
-> Get XLM Blockchain Information
-> 
-> **GET** `/v3/xlm/info`
-
-[🔹 **xlmGetLedger()**](#xlmgetledger) 
-
-> Get XLM Blockchain Ledger by sequence
-> 
-> **GET** `/v3/xlm/ledger/{sequence}`
-
-[🔹 **xlmGetLedgerTx()**](#xlmgetledgertx) 
-
-> Get XLM Blockchain Transactions in Ledger
-> 
-> **GET** `/v3/xlm/ledger/{sequence}/transaction`
-
-[🔹 **xlmGetTransaction()**](#xlmgettransaction) 
-
-> Get XLM Transaction by hash
-> 
-> **GET** `/v3/xlm/transaction/{hash}`
-
-[🔹 **xlmWallet()**](#xlmwallet) 
-
-> Generate XLM account
-> 
-> **GET** `/v3/xlm/account`
-
+Method | Description
+------------- | ------------- | -------------
+[**transferXlmBlockchain()**](#transferxlmblockchain) | Send XLM from address to address
+[**transferXlmBlockchainAsset()**](#transferxlmblockchainasset) | Send XLM from address to address
+[**transferXlmBlockchainKMS()**](#transferxlmblockchainkms) | Send XLM from address to address
+[**transferXlmBlockchainKMSAsset()**](#transferxlmblockchainkmsasset) | Send XLM from address to address
+[**trustLineXlmBlockchain()**](#trustlinexlmblockchain) | Create / Update / Delete XLM trust line
+[**trustLineXlmBlockchainKMS()**](#trustlinexlmblockchainkms) | Create / Update / Delete XLM trust line
+[**xlmBroadcast()**](#xlmbroadcast) | Broadcast signed XLM transaction
+[**xlmGetAccountInfo()**](#xlmgetaccountinfo) | Get XLM Account info
+[**xlmGetAccountTx()**](#xlmgetaccounttx) | Get XLM Account transactions
+[**xlmGetFee()**](#xlmgetfee) | Get actual XLM fee
+[**xlmGetLastClosedLedger()**](#xlmgetlastclosedledger) | Get XLM Blockchain Information
+[**xlmGetLedger()**](#xlmgetledger) | Get XLM Blockchain Ledger by sequence
+[**xlmGetLedgerTx()**](#xlmgetledgertx) | Get XLM Blockchain Transactions in Ledger
+[**xlmGetTransaction()**](#xlmgettransaction) | Get XLM Transaction by hash
+[**xlmWallet()**](#xlmwallet) | Generate XLM account
 
 
 ## `transferXlmBlockchain()`
@@ -142,7 +67,9 @@ Send XLM from address to address
 
 [✨ View "transferXlmBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXlmBlockchainAsset()`
 
@@ -176,7 +103,9 @@ TransferXlmBlockchainAsset operation
 
 [✨ View "transferXlmBlockchainAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainAsset.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXlmBlockchainKMS()`
 
@@ -210,7 +139,9 @@ TransferXlmBlockchainKMS operation
 
 [✨ View "transferXlmBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXlmBlockchainKMSAsset()`
 
@@ -244,7 +175,9 @@ TransferXlmBlockchainKMSAsset operation
 
 [✨ View "transferXlmBlockchainKMSAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMSAsset.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `trustLineXlmBlockchain()`
 
@@ -282,7 +215,9 @@ Create / Update / Delete XLM trust line
 
 [✨ View "trustLineXlmBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `trustLineXlmBlockchainKMS()`
 
@@ -316,7 +251,9 @@ TrustLineXlmBlockchainKMS operation
 
 [✨ View "trustLineXlmBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmBroadcast()`
 
@@ -352,7 +289,9 @@ Broadcast signed XLM transaction
 
 [✨ View "xlmBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmGetAccountInfo()`
 
@@ -388,7 +327,9 @@ Get XLM Account detail.
 
 [✨ View "xlmGetAccountInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountInfo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmGetAccountTx()`
 
@@ -426,7 +367,9 @@ List all XLM account transactions.
 
 [✨ View "xlmGetAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountTx.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmGetFee()`
 
@@ -459,7 +402,9 @@ Get XLM Blockchain fee in 1/10000000 of XLM (stroop)
 
 [✨ View "xlmGetFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetFee.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmGetLastClosedLedger()`
 
@@ -492,7 +437,9 @@ Get XLM Blockchain last closed ledger.
 
 [✨ View "xlmGetLastClosedLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLastClosedLedger.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmGetLedger()`
 
@@ -528,7 +475,9 @@ Get XLM Blockchain ledger for ledger sequence.
 
 [✨ View "xlmGetLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedger.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmGetLedgerTx()`
 
@@ -564,7 +513,9 @@ Get XLM Blockchain transactions in the ledger.
 
 [✨ View "xlmGetLedgerTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedgerTx.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmGetTransaction()`
 
@@ -600,7 +551,9 @@ Get XLM Transaction by transaction hash.
 
 [✨ View "xlmGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xlmWallet()`
 
@@ -633,4 +586,5 @@ Generate XLM account
 
 [✨ View "xlmWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

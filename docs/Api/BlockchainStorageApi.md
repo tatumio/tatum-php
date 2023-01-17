@@ -12,32 +12,12 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **createRecord()**](#createrecord) 
-
-> Store a log record
-> 
-> **POST** `/v3/record`
-
-[🔹 **createRecordCelo()**](#createrecordcelo) 
-
-> Store a log record
-> 
-> **POST** `/v3/record`
-
-[🔹 **createRecordKMS()**](#createrecordkms) 
-
-> Store a log record
-> 
-> **POST** `/v3/record`
-
-[🔹 **getLog()**](#getlog) 
-
-> Get a log record
-> 
-> **GET** `/v3/record`
-
+Method | Description
+------------- | ------------- | -------------
+[**createRecord()**](#createrecord) | Store a log record
+[**createRecordCelo()**](#createrecordcelo) | Store a log record
+[**createRecordKMS()**](#createrecordkms) | Store a log record
+[**getLog()**](#getlog) | Get a log record
 
 
 ## `createRecord()`
@@ -84,7 +64,9 @@ Store a log record
 
 [✨ View "createRecord.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecord.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createRecordCelo()`
 
@@ -118,7 +100,9 @@ CreateRecordCelo operation
 
 [✨ View "createRecordCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createRecordKMS()`
 
@@ -152,7 +136,9 @@ CreateRecordKMS operation
 
 [✨ View "createRecordKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getLog()`
 
@@ -190,4 +176,5 @@ Get a log record
 
 [✨ View "getLog.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/getLog.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

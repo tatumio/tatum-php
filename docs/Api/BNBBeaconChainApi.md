@@ -12,62 +12,17 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **bnbBroadcast()**](#bnbbroadcast) 
-
-> Broadcast signed BNB transaction
-> 
-> **POST** `/v3/bnb/broadcast`
-
-[🔹 **bnbGenerateWallet()**](#bnbgeneratewallet) 
-
-> Generate Binance wallet
-> 
-> **GET** `/v3/bnb/account`
-
-[🔹 **bnbGetAccount()**](#bnbgetaccount) 
-
-> Get Binance Account
-> 
-> **GET** `/v3/bnb/account/{address}`
-
-[🔹 **bnbGetBlock()**](#bnbgetblock) 
-
-> Get Binance Transactions in Block
-> 
-> **GET** `/v3/bnb/block/{height}`
-
-[🔹 **bnbGetCurrentBlock()**](#bnbgetcurrentblock) 
-
-> Get Binance current block
-> 
-> **GET** `/v3/bnb/block/current`
-
-[🔹 **bnbGetTransaction()**](#bnbgettransaction) 
-
-> Get Binance Transaction
-> 
-> **GET** `/v3/bnb/transaction/{hash}`
-
-[🔹 **bnbGetTxByAccount()**](#bnbgettxbyaccount) 
-
-> Get Binance Transactions By Address
-> 
-> **GET** `/v3/bnb/account/transaction/{address}`
-
-[🔹 **transferBnbBlockchain()**](#transferbnbblockchain) 
-
-> Send Binance / Binance Token from account to account
-> 
-> **POST** `/v3/bnb/transaction`
-
-[🔹 **transferBnbBlockchainKMS()**](#transferbnbblockchainkms) 
-
-> Send Binance / Binance Token from account to account
-> 
-> **POST** `/v3/bnb/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**bnbBroadcast()**](#bnbbroadcast) | Broadcast signed BNB transaction
+[**bnbGenerateWallet()**](#bnbgeneratewallet) | Generate Binance wallet
+[**bnbGetAccount()**](#bnbgetaccount) | Get Binance Account
+[**bnbGetBlock()**](#bnbgetblock) | Get Binance Transactions in Block
+[**bnbGetCurrentBlock()**](#bnbgetcurrentblock) | Get Binance current block
+[**bnbGetTransaction()**](#bnbgettransaction) | Get Binance Transaction
+[**bnbGetTxByAccount()**](#bnbgettxbyaccount) | Get Binance Transactions By Address
+[**transferBnbBlockchain()**](#transferbnbblockchain) | Send Binance / Binance Token from account to account
+[**transferBnbBlockchainKMS()**](#transferbnbblockchainkms) | Send Binance / Binance Token from account to account
 
 
 ## `bnbBroadcast()`
@@ -104,7 +59,9 @@ Broadcast signed BNB transaction
 
 [✨ View "bnbBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bnbGenerateWallet()`
 
@@ -137,7 +94,9 @@ Generate Binance wallet
 
 [✨ View "bnbGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bnbGetAccount()`
 
@@ -173,7 +132,9 @@ Get Binance Account Detail by address.
 
 [✨ View "bnbGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetAccount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bnbGetBlock()`
 
@@ -209,7 +170,9 @@ Get Transactions in block by block height.
 
 [✨ View "bnbGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bnbGetCurrentBlock()`
 
@@ -242,7 +205,9 @@ Get Binance current block number.
 
 [✨ View "bnbGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bnbGetTransaction()`
 
@@ -278,7 +243,9 @@ Get Binance Transaction by transaction hash.
 
 [✨ View "bnbGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bnbGetTxByAccount()`
 
@@ -326,7 +293,9 @@ Get Binance Transactions by address.
 
 [✨ View "bnbGetTxByAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferBnbBlockchain()`
 
@@ -364,7 +333,9 @@ Send Binance / Binance Token from account to account
 
 [✨ View "transferBnbBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferBnbBlockchainKMS()`
 
@@ -398,4 +369,5 @@ TransferBnbBlockchainKMS operation
 
 [✨ View "transferBnbBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

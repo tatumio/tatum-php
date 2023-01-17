@@ -12,62 +12,17 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **solanaBroadcastConfirm()**](#solanabroadcastconfirm) 
-
-> Broadcast and confirm signed Solana transaction
-> 
-> **POST** `/v3/solana/broadcast/confirm`
-
-[🔹 **solanaGenerateWallet()**](#solanageneratewallet) 
-
-> Generate Solana wallet
-> 
-> **GET** `/v3/solana/wallet`
-
-[🔹 **solanaGetBalance()**](#solanagetbalance) 
-
-> Get Solana Account balance
-> 
-> **GET** `/v3/solana/account/balance/{address}`
-
-[🔹 **solanaGetBlock()**](#solanagetblock) 
-
-> Get Solana block by number
-> 
-> **GET** `/v3/solana/block/{height}`
-
-[🔹 **solanaGetCurrentBlock()**](#solanagetcurrentblock) 
-
-> Get current block number
-> 
-> **GET** `/v3/solana/block/current`
-
-[🔹 **solanaGetTransaction()**](#solanagettransaction) 
-
-> Get Solana Transaction
-> 
-> **GET** `/v3/solana/transaction/{hash}`
-
-[🔹 **solanaWeb3Driver()**](#solanaweb3driver) 
-
-> JSON RPC HTTP driver
-> 
-> **POST** `/v3/solana/web3/{xApiKey}`
-
-[🔹 **transferSolanaBlockchain()**](#transfersolanablockchain) 
-
-> Send SOL from account to account
-> 
-> **POST** `/v3/solana/transaction`
-
-[🔹 **transferSolanaBlockchainKMS()**](#transfersolanablockchainkms) 
-
-> Send SOL from account to account
-> 
-> **POST** `/v3/solana/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**solanaBroadcastConfirm()**](#solanabroadcastconfirm) | Broadcast and confirm signed Solana transaction
+[**solanaGenerateWallet()**](#solanageneratewallet) | Generate Solana wallet
+[**solanaGetBalance()**](#solanagetbalance) | Get Solana Account balance
+[**solanaGetBlock()**](#solanagetblock) | Get Solana block by number
+[**solanaGetCurrentBlock()**](#solanagetcurrentblock) | Get current block number
+[**solanaGetTransaction()**](#solanagettransaction) | Get Solana Transaction
+[**solanaWeb3Driver()**](#solanaweb3driver) | JSON RPC HTTP driver
+[**transferSolanaBlockchain()**](#transfersolanablockchain) | Send SOL from account to account
+[**transferSolanaBlockchainKMS()**](#transfersolanablockchainkms) | Send SOL from account to account
 
 
 ## `solanaBroadcastConfirm()`
@@ -104,7 +59,9 @@ Broadcast and confirm signed Solana transaction
 
 [✨ View "solanaBroadcastConfirm.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaBroadcastConfirm.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `solanaGenerateWallet()`
 
@@ -137,7 +94,9 @@ Generate Solana wallet
 
 [✨ View "solanaGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `solanaGetBalance()`
 
@@ -173,7 +132,9 @@ Get Solana account balance in SOL. This method does not prints any balance of th
 
 [✨ View "solanaGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `solanaGetBlock()`
 
@@ -211,7 +172,9 @@ Get Solana block by number
 
 [✨ View "solanaGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `solanaGetCurrentBlock()`
 
@@ -244,7 +207,9 @@ Get Solana current block number. This is the number of the latest block in the b
 
 [✨ View "solanaGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `solanaGetTransaction()`
 
@@ -284,7 +249,9 @@ Get Solana transaction by transaction hash.
 
 [✨ View "solanaGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `solanaWeb3Driver()`
 
@@ -324,7 +291,9 @@ JSON RPC HTTP driver
 
 [✨ View "solanaWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaWeb3Driver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferSolanaBlockchain()`
 
@@ -362,7 +331,9 @@ Send SOL from account to account
 
 [✨ View "transferSolanaBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferSolanaBlockchainKMS()`
 
@@ -396,4 +367,5 @@ TransferSolanaBlockchainKMS operation
 
 [✨ View "transferSolanaBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

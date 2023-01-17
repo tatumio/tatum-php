@@ -12,44 +12,14 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **getTransactions()**](#gettransactions) 
-
-> Find transactions within the ledger.
-> 
-> **POST** `/v3/ledger/transaction/ledger`
-
-[🔹 **getTransactionsByAccountId()**](#gettransactionsbyaccountid) 
-
-> Find transactions for account.
-> 
-> **POST** `/v3/ledger/transaction/account`
-
-[🔹 **getTransactionsByCustomerId()**](#gettransactionsbycustomerid) 
-
-> Find transactions for a customer across all of the customer's accounts.
-> 
-> **POST** `/v3/ledger/transaction/customer`
-
-[🔹 **getTransactionsByReference()**](#gettransactionsbyreference) 
-
-> Find transactions with a given reference across all accounts.
-> 
-> **GET** `/v3/ledger/transaction/reference/{reference}`
-
-[🔹 **sendTransaction()**](#sendtransaction) 
-
-> Send payment
-> 
-> **POST** `/v3/ledger/transaction`
-
-[🔹 **sendTransactionBatch()**](#sendtransactionbatch) 
-
-> Send payment in batch
-> 
-> **POST** `/v3/ledger/transaction/batch`
-
+Method | Description
+------------- | ------------- | -------------
+[**getTransactions()**](#gettransactions) | Find transactions within the ledger.
+[**getTransactionsByAccountId()**](#gettransactionsbyaccountid) | Find transactions for account.
+[**getTransactionsByCustomerId()**](#gettransactionsbycustomerid) | Find transactions for a customer across all of the customer's accounts.
+[**getTransactionsByReference()**](#gettransactionsbyreference) | Find transactions with a given reference across all accounts.
+[**sendTransaction()**](#sendtransaction) | Send payment
+[**sendTransactionBatch()**](#sendtransactionbatch) | Send payment in batch
 
 
 ## `getTransactions()`
@@ -92,7 +62,9 @@ Find transactions across whole ledger.
 
 [✨ View "getTransactions.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactions.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getTransactionsByAccountId()`
 
@@ -134,7 +106,9 @@ Finds transactions for the account identified by the given account ID.
 
 [✨ View "getTransactionsByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByAccountId.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getTransactionsByCustomerId()`
 
@@ -176,7 +150,9 @@ Finds transactions for all accounts of the customer identified by the given inte
 
 [✨ View "getTransactionsByCustomerId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByCustomerId.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getTransactionsByReference()`
 
@@ -212,7 +188,9 @@ Finds transactions for all accounts with the given reference.
 
 [✨ View "getTransactionsByReference.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByReference.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sendTransaction()`
 
@@ -258,7 +236,9 @@ Send payment
 
 [✨ View "sendTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sendTransactionBatch()`
 
@@ -304,4 +284,5 @@ Send payment in batch
 
 [✨ View "sendTransactionBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransactionBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

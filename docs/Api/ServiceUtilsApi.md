@@ -12,32 +12,12 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **freezeApiKey()**](#freezeapikey) 
-
-> Freeze API Key
-> 
-> **PUT** `/v3/tatum/freeze`
-
-[🔹 **getCredits()**](#getcredits) 
-
-> Get information about your credit consumption for the last month
-> 
-> **GET** `/v3/tatum/usage`
-
-[🔹 **getVersion()**](#getversion) 
-
-> Get API version
-> 
-> **GET** `/v3/tatum/version`
-
-[🔹 **unfreezeApiKey()**](#unfreezeapikey) 
-
-> Unfreeze API Key
-> 
-> **DELETE** `/v3/tatum/freeze`
-
+Method | Description
+------------- | ------------- | -------------
+[**freezeApiKey()**](#freezeapikey) | Freeze API Key
+[**getCredits()**](#getcredits) | Get information about your credit consumption for the last month
+[**getVersion()**](#getversion) | Get API version
+[**unfreezeApiKey()**](#unfreezeapikey) | Unfreeze API Key
 
 
 ## `freezeApiKey()`
@@ -71,7 +51,9 @@ Freeze the API Key. It's not possible to perform sensitive operations like send 
 
 [✨ View "freezeApiKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/freezeApiKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getCredits()`
 
@@ -104,7 +86,9 @@ Get information about your credit consumption for the last month
 
 [✨ View "getCredits.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getCredits.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getVersion()`
 
@@ -137,7 +121,9 @@ Get current version of the API.
 
 [✨ View "getVersion.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getVersion.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `unfreezeApiKey()`
 
@@ -170,4 +156,5 @@ Unfreeze the API Key. It's possible to perform sensitive operations like send le
 
 [✨ View "unfreezeApiKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/unfreezeApiKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

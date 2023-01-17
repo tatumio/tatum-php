@@ -12,38 +12,13 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **completePendingSignature()**](#completependingsignature) 
-
-> Complete pending transaction to sign
-> 
-> **PUT** `/v3/kms/{id}/{txId}`
-
-[🔹 **deletePendingTransactionToSign()**](#deletependingtransactiontosign) 
-
-> Delete transaction
-> 
-> **DELETE** `/v3/kms/{id}`
-
-[🔹 **getPendingTransactionToSign()**](#getpendingtransactiontosign) 
-
-> Get transaction details
-> 
-> **GET** `/v3/kms/{id}`
-
-[🔹 **getPendingTransactionsToSign()**](#getpendingtransactionstosign) 
-
-> Get pending transactions to sign
-> 
-> **GET** `/v3/kms/pending/{chain}`
-
-[🔹 **receivePendingTransactionsToSign()**](#receivependingtransactionstosign) 
-
-> Get pending transactions to sign
-> 
-> **POST** `/v3/kms/pending/{chain}`
-
+Method | Description
+------------- | ------------- | -------------
+[**completePendingSignature()**](#completependingsignature) | Complete pending transaction to sign
+[**deletePendingTransactionToSign()**](#deletependingtransactiontosign) | Delete transaction
+[**getPendingTransactionToSign()**](#getpendingtransactiontosign) | Get transaction details
+[**getPendingTransactionsToSign()**](#getpendingtransactionstosign) | Get pending transactions to sign
+[**receivePendingTransactionsToSign()**](#receivependingtransactionstosign) | Get pending transactions to sign
 
 
 ## `completePendingSignature()`
@@ -82,7 +57,9 @@ Complete pending transaction to sign
 
 [✨ View "completePendingSignature.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/completePendingSignature.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deletePendingTransactionToSign()`
 
@@ -120,7 +97,9 @@ Delete transaction to be signed. When deleting offchain transaction, linked with
 
 [✨ View "deletePendingTransactionToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getPendingTransactionToSign()`
 
@@ -156,7 +135,9 @@ Get detail of transaction to be signed / that was already signed and contains tr
 
 [✨ View "getPendingTransactionToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getPendingTransactionsToSign()`
 
@@ -194,7 +175,9 @@ Get pending transactions to sign
 
 [✨ View "getPendingTransactionsToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `receivePendingTransactionsToSign()`
 
@@ -234,4 +217,5 @@ Get pending transactions to sign
 
 [✨ View "receivePendingTransactionsToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

@@ -12,14 +12,9 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **offchainEstimateFee()**](#offchainestimatefee) 
-
-> Estimate ledger to blockchain transaction fee
-> 
-> **POST** `/v3/offchain/blockchain/estimate`
-
+Method | Description
+------------- | ------------- | -------------
+[**offchainEstimateFee()**](#offchainestimatefee) | Estimate ledger to blockchain transaction fee
 
 
 ## `offchainEstimateFee()`
@@ -60,4 +55,5 @@ Estimate ledger to blockchain transaction fee
 
 [✨ View "offchainEstimateFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualAccountBlockchainFeesApi/offchainEstimateFee.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

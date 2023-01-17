@@ -43,7 +43,7 @@ Generate wallet
 
 [✨ View "generateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateWallet.php)
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+[[Back to top]](#top)
 
 
 # `generateAddressFromXpub()`
@@ -76,7 +76,7 @@ Generate address from xPub and index
 
 [✨ View "generateAddressFromXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateAddressFromXpub.php)
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+[[Back to top]](#top)
 
 
 # `generateAddressFromPrivateKey()`
@@ -107,7 +107,7 @@ Generate address from xPub and index
 
 [✨ View "generateAddressFromPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateAddressFromPrivateKey.php)
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+[[Back to top]](#top)
 
 
 # `generatePrivateKey()`
@@ -140,5 +140,5 @@ Generate private key from mnemonic and index
 
 [✨ View "generatePrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generatePrivateKey.php)
 
-[[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
+[[Back to top]](#top)
 

@@ -12,290 +12,55 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **bloMarWithdrawFromMarketplaceSolana()**](#blomarwithdrawfrommarketplacesolana) 
-
-> Withdraw funds from the marketplace treasury account on Solana
-> 
-> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
-
-[🔹 **bloMarWithdrawFromMarketplaceSolanaKMS()**](#blomarwithdrawfrommarketplacesolanakms) 
-
-> Withdraw funds from the marketplace treasury account on Solana
-> 
-> **POST** `/v3/blockchain/marketplace/withdraw/treasury`
-
-[🔹 **buyAssetOnMarketplace()**](#buyassetonmarketplace) 
-
-> Buy an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-
-[🔹 **buyAssetOnMarketplaceCelo()**](#buyassetonmarketplacecelo) 
-
-> Buy an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-
-[🔹 **buyAssetOnMarketplaceCeloKMS()**](#buyassetonmarketplacecelokms) 
-
-> Buy an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-
-[🔹 **buyAssetOnMarketplaceKMS()**](#buyassetonmarketplacekms) 
-
-> Buy an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-
-[🔹 **buyAssetOnMarketplaceSolana()**](#buyassetonmarketplacesolana) 
-
-> Buy an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-
-[🔹 **buyAssetOnMarketplaceSolanaKMS()**](#buyassetonmarketplacesolanakms) 
-
-> Buy an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/buy`
-
-[🔹 **cancelSellAssetOnMarketplace()**](#cancelsellassetonmarketplace) 
-
-> Cancel the selling of an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-
-[🔹 **cancelSellAssetOnMarketplaceCelo()**](#cancelsellassetonmarketplacecelo) 
-
-> Cancel the selling of an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-
-[🔹 **cancelSellAssetOnMarketplaceCeloKMS()**](#cancelsellassetonmarketplacecelokms) 
-
-> Cancel the selling of an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-
-[🔹 **cancelSellAssetOnMarketplaceKMS()**](#cancelsellassetonmarketplacekms) 
-
-> Cancel the selling of an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-
-[🔹 **cancelSellAssetOnMarketplaceSolana()**](#cancelsellassetonmarketplacesolana) 
-
-> Cancel the selling of an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-
-[🔹 **cancelSellAssetOnMarketplaceSolanaKMS()**](#cancelsellassetonmarketplacesolanakms) 
-
-> Cancel the selling of an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/cancel`
-
-[🔹 **generateMarketplace()**](#generatemarketplace) 
-
-> Create an NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing`
-
-[🔹 **generateMarketplaceCelo()**](#generatemarketplacecelo) 
-
-> Create an NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing`
-
-[🔹 **generateMarketplaceCeloKMS()**](#generatemarketplacecelokms) 
-
-> Create an NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing`
-
-[🔹 **generateMarketplaceKMS()**](#generatemarketplacekms) 
-
-> Create an NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing`
-
-[🔹 **generateMarketplaceSolana()**](#generatemarketplacesolana) 
-
-> Create an NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing`
-
-[🔹 **generateMarketplaceSolanaKMS()**](#generatemarketplacesolanakms) 
-
-> Create an NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing`
-
-[🔹 **getMarketplaceFee()**](#getmarketplacefee) 
-
-> Get the NFT marketplace fee
-> 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee`
-
-[🔹 **getMarketplaceFeeRecipient()**](#getmarketplacefeerecipient) 
-
-> Get the recipient of the NFT marketplace fee
-> 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient`
-
-[🔹 **getMarketplaceInfo()**](#getmarketplaceinfo) 
-
-> Get information about an NFT marketplace on Solana
-> 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}`
-
-[🔹 **getMarketplaceListing()**](#getmarketplacelisting) 
-
-> Get information about a listing on the NFT marketplace
-> 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}`
-
-[🔹 **getMarketplaceListings()**](#getmarketplacelistings) 
-
-> Get the listings of a certain type from the NFT marketplace
-> 
-> **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}`
-
-[🔹 **sellAssetOnMarketplace()**](#sellassetonmarketplace) 
-
-> Sell an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-
-[🔹 **sellAssetOnMarketplaceCelo()**](#sellassetonmarketplacecelo) 
-
-> Sell an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-
-[🔹 **sellAssetOnMarketplaceCeloKMS()**](#sellassetonmarketplacecelokms) 
-
-> Sell an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-
-[🔹 **sellAssetOnMarketplaceKMS()**](#sellassetonmarketplacekms) 
-
-> Sell an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-
-[🔹 **sellAssetOnMarketplaceSolana()**](#sellassetonmarketplacesolana) 
-
-> Sell an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-
-[🔹 **sellAssetOnMarketplaceSolanaKMS()**](#sellassetonmarketplacesolanakms) 
-
-> Sell an asset on the NFT marketplace
-> 
-> **POST** `/v3/blockchain/marketplace/listing/sell`
-
-[🔹 **updateFee()**](#updatefee) 
-
-> Update the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-
-[🔹 **updateFeeCelo()**](#updatefeecelo) 
-
-> Update the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-
-[🔹 **updateFeeCeloKMS()**](#updatefeecelokms) 
-
-> Update the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-
-[🔹 **updateFeeKMS()**](#updatefeekms) 
-
-> Update the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-
-[🔹 **updateFeeRecipient()**](#updatefeerecipient) 
-
-> Update the recipient of the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-
-[🔹 **updateFeeRecipientCelo()**](#updatefeerecipientcelo) 
-
-> Update the recipient of the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-
-[🔹 **updateFeeRecipientCeloKMS()**](#updatefeerecipientcelokms) 
-
-> Update the recipient of the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-
-[🔹 **updateFeeRecipientKMS()**](#updatefeerecipientkms) 
-
-> Update the recipient of the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-
-[🔹 **updateFeeRecipientSolana()**](#updatefeerecipientsolana) 
-
-> Update the recipient of the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-
-[🔹 **updateFeeRecipientSolanaKMS()**](#updatefeerecipientsolanakms) 
-
-> Update the recipient of the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/recipient`
-
-[🔹 **updateFeeSolana()**](#updatefeesolana) 
-
-> Update the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-
-[🔹 **updateFeeSolanaKMS()**](#updatefeesolanakms) 
-
-> Update the NFT marketplace fee
-> 
-> **PUT** `/v3/blockchain/marketplace/listing/fee`
-
-[🔹 **updateMarketplaceSolana()**](#updatemarketplacesolana) 
-
-> Update an NFT marketplace on Solana
-> 
-> **PUT** `/v3/blockchain/marketplace/listing`
-
-[🔹 **updateMarketplaceSolanaKMS()**](#updatemarketplacesolanakms) 
-
-> Update an NFT marketplace on Solana
-> 
-> **PUT** `/v3/blockchain/marketplace/listing`
-
-[🔹 **withdrawFromMarketplaceSolana()**](#withdrawfrommarketplacesolana) 
-
-> Withdraw funds from the marketplace fee account on Solana
-> 
-> **POST** `/v3/blockchain/marketplace/withdraw/fee`
-
-[🔹 **withdrawFromMarketplaceSolanaKMS()**](#withdrawfrommarketplacesolanakms) 
-
-> Withdraw funds from the marketplace fee account on Solana
-> 
-> **POST** `/v3/blockchain/marketplace/withdraw/fee`
-
+Method | Description
+------------- | ------------- | -------------
+[**bloMarWithdrawFromMarketplaceSolana()**](#blomarwithdrawfrommarketplacesolana) | Withdraw funds from the marketplace treasury account on Solana
+[**bloMarWithdrawFromMarketplaceSolanaKMS()**](#blomarwithdrawfrommarketplacesolanakms) | Withdraw funds from the marketplace treasury account on Solana
+[**buyAssetOnMarketplace()**](#buyassetonmarketplace) | Buy an asset on the NFT marketplace
+[**buyAssetOnMarketplaceCelo()**](#buyassetonmarketplacecelo) | Buy an asset on the NFT marketplace
+[**buyAssetOnMarketplaceCeloKMS()**](#buyassetonmarketplacecelokms) | Buy an asset on the NFT marketplace
+[**buyAssetOnMarketplaceKMS()**](#buyassetonmarketplacekms) | Buy an asset on the NFT marketplace
+[**buyAssetOnMarketplaceSolana()**](#buyassetonmarketplacesolana) | Buy an asset on the NFT marketplace
+[**buyAssetOnMarketplaceSolanaKMS()**](#buyassetonmarketplacesolanakms) | Buy an asset on the NFT marketplace
+[**cancelSellAssetOnMarketplace()**](#cancelsellassetonmarketplace) | Cancel the selling of an asset on the NFT marketplace
+[**cancelSellAssetOnMarketplaceCelo()**](#cancelsellassetonmarketplacecelo) | Cancel the selling of an asset on the NFT marketplace
+[**cancelSellAssetOnMarketplaceCeloKMS()**](#cancelsellassetonmarketplacecelokms) | Cancel the selling of an asset on the NFT marketplace
+[**cancelSellAssetOnMarketplaceKMS()**](#cancelsellassetonmarketplacekms) | Cancel the selling of an asset on the NFT marketplace
+[**cancelSellAssetOnMarketplaceSolana()**](#cancelsellassetonmarketplacesolana) | Cancel the selling of an asset on the NFT marketplace
+[**cancelSellAssetOnMarketplaceSolanaKMS()**](#cancelsellassetonmarketplacesolanakms) | Cancel the selling of an asset on the NFT marketplace
+[**generateMarketplace()**](#generatemarketplace) | Create an NFT marketplace
+[**generateMarketplaceCelo()**](#generatemarketplacecelo) | Create an NFT marketplace
+[**generateMarketplaceCeloKMS()**](#generatemarketplacecelokms) | Create an NFT marketplace
+[**generateMarketplaceKMS()**](#generatemarketplacekms) | Create an NFT marketplace
+[**generateMarketplaceSolana()**](#generatemarketplacesolana) | Create an NFT marketplace
+[**generateMarketplaceSolanaKMS()**](#generatemarketplacesolanakms) | Create an NFT marketplace
+[**getMarketplaceFee()**](#getmarketplacefee) | Get the NFT marketplace fee
+[**getMarketplaceFeeRecipient()**](#getmarketplacefeerecipient) | Get the recipient of the NFT marketplace fee
+[**getMarketplaceInfo()**](#getmarketplaceinfo) | Get information about an NFT marketplace on Solana
+[**getMarketplaceListing()**](#getmarketplacelisting) | Get information about a listing on the NFT marketplace
+[**getMarketplaceListings()**](#getmarketplacelistings) | Get the listings of a certain type from the NFT marketplace
+[**sellAssetOnMarketplace()**](#sellassetonmarketplace) | Sell an asset on the NFT marketplace
+[**sellAssetOnMarketplaceCelo()**](#sellassetonmarketplacecelo) | Sell an asset on the NFT marketplace
+[**sellAssetOnMarketplaceCeloKMS()**](#sellassetonmarketplacecelokms) | Sell an asset on the NFT marketplace
+[**sellAssetOnMarketplaceKMS()**](#sellassetonmarketplacekms) | Sell an asset on the NFT marketplace
+[**sellAssetOnMarketplaceSolana()**](#sellassetonmarketplacesolana) | Sell an asset on the NFT marketplace
+[**sellAssetOnMarketplaceSolanaKMS()**](#sellassetonmarketplacesolanakms) | Sell an asset on the NFT marketplace
+[**updateFee()**](#updatefee) | Update the NFT marketplace fee
+[**updateFeeCelo()**](#updatefeecelo) | Update the NFT marketplace fee
+[**updateFeeCeloKMS()**](#updatefeecelokms) | Update the NFT marketplace fee
+[**updateFeeKMS()**](#updatefeekms) | Update the NFT marketplace fee
+[**updateFeeRecipient()**](#updatefeerecipient) | Update the recipient of the NFT marketplace fee
+[**updateFeeRecipientCelo()**](#updatefeerecipientcelo) | Update the recipient of the NFT marketplace fee
+[**updateFeeRecipientCeloKMS()**](#updatefeerecipientcelokms) | Update the recipient of the NFT marketplace fee
+[**updateFeeRecipientKMS()**](#updatefeerecipientkms) | Update the recipient of the NFT marketplace fee
+[**updateFeeRecipientSolana()**](#updatefeerecipientsolana) | Update the recipient of the NFT marketplace fee
+[**updateFeeRecipientSolanaKMS()**](#updatefeerecipientsolanakms) | Update the recipient of the NFT marketplace fee
+[**updateFeeSolana()**](#updatefeesolana) | Update the NFT marketplace fee
+[**updateFeeSolanaKMS()**](#updatefeesolanakms) | Update the NFT marketplace fee
+[**updateMarketplaceSolana()**](#updatemarketplacesolana) | Update an NFT marketplace on Solana
+[**updateMarketplaceSolanaKMS()**](#updatemarketplacesolanakms) | Update an NFT marketplace on Solana
+[**withdrawFromMarketplaceSolana()**](#withdrawfrommarketplacesolana) | Withdraw funds from the marketplace fee account on Solana
+[**withdrawFromMarketplaceSolanaKMS()**](#withdrawfrommarketplacesolanakms) | Withdraw funds from the marketplace fee account on Solana
 
 
 ## `bloMarWithdrawFromMarketplaceSolana()`
@@ -344,7 +109,9 @@ Withdraw funds from the marketplace treasury account on Solana
 
 [✨ View "bloMarWithdrawFromMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bloMarWithdrawFromMarketplaceSolanaKMS()`
 
@@ -378,7 +145,9 @@ WithdrawFromMarketplaceSolanaKMS operation
 
 [✨ View "bloMarWithdrawFromMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `buyAssetOnMarketplace()`
 
@@ -440,7 +209,9 @@ Buy an asset on the NFT marketplace
 
 [✨ View "buyAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `buyAssetOnMarketplaceCelo()`
 
@@ -474,7 +245,9 @@ BuyAssetOnMarketplaceCelo operation
 
 [✨ View "buyAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `buyAssetOnMarketplaceCeloKMS()`
 
@@ -508,7 +281,9 @@ BuyAssetOnMarketplaceCeloKMS operation
 
 [✨ View "buyAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `buyAssetOnMarketplaceKMS()`
 
@@ -542,7 +317,9 @@ BuyAssetOnMarketplaceKMS operation
 
 [✨ View "buyAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `buyAssetOnMarketplaceSolana()`
 
@@ -576,7 +353,9 @@ BuyAssetOnMarketplaceSolana operation
 
 [✨ View "buyAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `buyAssetOnMarketplaceSolanaKMS()`
 
@@ -610,7 +389,9 @@ BuyAssetOnMarketplaceSolanaKMS operation
 
 [✨ View "buyAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelSellAssetOnMarketplace()`
 
@@ -670,7 +451,9 @@ Cancel the selling of an asset on the NFT marketplace
 
 [✨ View "cancelSellAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelSellAssetOnMarketplaceCelo()`
 
@@ -704,7 +487,9 @@ CancelSellAssetOnMarketplaceCelo operation
 
 [✨ View "cancelSellAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelSellAssetOnMarketplaceCeloKMS()`
 
@@ -738,7 +523,9 @@ CancelSellAssetOnMarketplaceCeloKMS operation
 
 [✨ View "cancelSellAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelSellAssetOnMarketplaceKMS()`
 
@@ -772,7 +559,9 @@ CancelSellAssetOnMarketplaceKMS operation
 
 [✨ View "cancelSellAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelSellAssetOnMarketplaceSolana()`
 
@@ -806,7 +595,9 @@ CancelSellAssetOnMarketplaceSolana operation
 
 [✨ View "cancelSellAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelSellAssetOnMarketplaceSolanaKMS()`
 
@@ -840,7 +631,9 @@ CancelSellAssetOnMarketplaceSolanaKMS operation
 
 [✨ View "cancelSellAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateMarketplace()`
 
@@ -904,7 +697,9 @@ Create an NFT marketplace
 
 [✨ View "generateMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplace.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateMarketplaceCelo()`
 
@@ -938,7 +733,9 @@ GenerateMarketplaceCelo operation
 
 [✨ View "generateMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateMarketplaceCeloKMS()`
 
@@ -972,7 +769,9 @@ GenerateMarketplaceCeloKMS operation
 
 [✨ View "generateMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateMarketplaceKMS()`
 
@@ -1006,7 +805,9 @@ GenerateMarketplaceKMS operation
 
 [✨ View "generateMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateMarketplaceSolana()`
 
@@ -1040,7 +841,9 @@ GenerateMarketplaceSolana operation
 
 [✨ View "generateMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateMarketplaceSolanaKMS()`
 
@@ -1074,7 +877,9 @@ GenerateMarketplaceSolanaKMS operation
 
 [✨ View "generateMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getMarketplaceFee()`
 
@@ -1118,7 +923,9 @@ Get the NFT marketplace fee
 
 [✨ View "getMarketplaceFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFee.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getMarketplaceFeeRecipient()`
 
@@ -1162,7 +969,9 @@ Get the recipient of the NFT marketplace fee
 
 [✨ View "getMarketplaceFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getMarketplaceInfo()`
 
@@ -1202,7 +1011,9 @@ Get information about an NFT marketplace on Solana
 
 [✨ View "getMarketplaceInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceInfo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getMarketplaceListing()`
 
@@ -1248,7 +1059,9 @@ Get information about a listing on the NFT marketplace
 
 [✨ View "getMarketplaceListing.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListing.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getMarketplaceListings()`
 
@@ -1294,7 +1107,9 @@ Get the listings of a certain type from the NFT marketplace
 
 [✨ View "getMarketplaceListings.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListings.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sellAssetOnMarketplace()`
 
@@ -1354,7 +1169,9 @@ Sell an asset on the NFT marketplace
 
 [✨ View "sellAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sellAssetOnMarketplaceCelo()`
 
@@ -1388,7 +1205,9 @@ SellAssetOnMarketplaceCelo operation
 
 [✨ View "sellAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sellAssetOnMarketplaceCeloKMS()`
 
@@ -1422,7 +1241,9 @@ SellAssetOnMarketplaceCeloKMS operation
 
 [✨ View "sellAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sellAssetOnMarketplaceKMS()`
 
@@ -1456,7 +1277,9 @@ SellAssetOnMarketplaceKMS operation
 
 [✨ View "sellAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sellAssetOnMarketplaceSolana()`
 
@@ -1490,7 +1313,9 @@ SellAssetOnMarketplaceSolana operation
 
 [✨ View "sellAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sellAssetOnMarketplaceSolanaKMS()`
 
@@ -1524,7 +1349,9 @@ SellAssetOnMarketplaceSolanaKMS operation
 
 [✨ View "sellAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFee()`
 
@@ -1576,7 +1403,9 @@ Update the NFT marketplace fee
 
 [✨ View "updateFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFee.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeCelo()`
 
@@ -1610,7 +1439,9 @@ UpdateFeeCelo operation
 
 [✨ View "updateFeeCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeCeloKMS()`
 
@@ -1644,7 +1475,9 @@ UpdateFeeCeloKMS operation
 
 [✨ View "updateFeeCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeKMS()`
 
@@ -1678,7 +1511,9 @@ UpdateFeeKMS operation
 
 [✨ View "updateFeeKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeRecipient()`
 
@@ -1730,7 +1565,9 @@ Update the recipient of the NFT marketplace fee
 
 [✨ View "updateFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipient.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeRecipientCelo()`
 
@@ -1764,7 +1601,9 @@ UpdateFeeRecipientCelo operation
 
 [✨ View "updateFeeRecipientCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeRecipientCeloKMS()`
 
@@ -1798,7 +1637,9 @@ UpdateFeeRecipientCeloKMS operation
 
 [✨ View "updateFeeRecipientCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeRecipientKMS()`
 
@@ -1832,7 +1673,9 @@ UpdateFeeRecipientKMS operation
 
 [✨ View "updateFeeRecipientKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeRecipientSolana()`
 
@@ -1866,7 +1709,9 @@ UpdateFeeRecipientSolana operation
 
 [✨ View "updateFeeRecipientSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeRecipientSolanaKMS()`
 
@@ -1900,7 +1745,9 @@ UpdateFeeRecipientSolanaKMS operation
 
 [✨ View "updateFeeRecipientSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeSolana()`
 
@@ -1934,7 +1781,9 @@ UpdateFeeSolana operation
 
 [✨ View "updateFeeSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeSolanaKMS()`
 
@@ -1968,7 +1817,9 @@ UpdateFeeSolanaKMS operation
 
 [✨ View "updateFeeSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateMarketplaceSolana()`
 
@@ -2016,7 +1867,9 @@ Update an NFT marketplace on Solana
 
 [✨ View "updateMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateMarketplaceSolanaKMS()`
 
@@ -2050,7 +1903,9 @@ UpdateMarketplaceSolanaKMS operation
 
 [✨ View "updateMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `withdrawFromMarketplaceSolana()`
 
@@ -2098,7 +1953,9 @@ Withdraw funds from the marketplace fee account on Solana
 
 [✨ View "withdrawFromMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `withdrawFromMarketplaceSolanaKMS()`
 
@@ -2132,4 +1989,5 @@ WithdrawFromMarketplaceSolanaKMS operation
 
 [✨ View "withdrawFromMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

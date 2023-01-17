@@ -12,98 +12,23 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **callXdcReadSmartContractMethod()**](#callxdcreadsmartcontractmethod) 
-
-> Invoke a method in a smart contract on XinFin
-> 
-> **POST** `/v3/xdc/smartcontract`
-
-[🔹 **callXdcSmartContractMethod()**](#callxdcsmartcontractmethod) 
-
-> Invoke a method in a smart contract on XinFin
-> 
-> **POST** `/v3/xdc/smartcontract`
-
-[🔹 **callXdcSmartContractMethodKMS()**](#callxdcsmartcontractmethodkms) 
-
-> Invoke a method in a smart contract on XinFin
-> 
-> **POST** `/v3/xdc/smartcontract`
-
-[🔹 **transferXdcBlockchain()**](#transferxdcblockchain) 
-
-> Send XDC / ERC20 from account to account
-> 
-> **POST** `/v3/xdc/transaction`
-
-[🔹 **transferXdcBlockchainKMS()**](#transferxdcblockchainkms) 
-
-> Send XDC / ERC20 from account to account
-> 
-> **POST** `/v3/xdc/transaction`
-
-[🔹 **xdcBroadcast()**](#xdcbroadcast) 
-
-> Broadcast signed XDC transaction
-> 
-> **POST** `/v3/xdc/broadcast`
-
-[🔹 **xdcGenerateAddress()**](#xdcgenerateaddress) 
-
-> Generate XDC account address from Extended public key
-> 
-> **GET** `/v3/xdc/address/{xpub}/{index}`
-
-[🔹 **xdcGenerateAddressPrivateKey()**](#xdcgenerateaddressprivatekey) 
-
-> Generate XDC private key
-> 
-> **POST** `/v3/xdc/wallet/priv`
-
-[🔹 **xdcGenerateWallet()**](#xdcgeneratewallet) 
-
-> Generate XDC wallet
-> 
-> **GET** `/v3/xdc/wallet`
-
-[🔹 **xdcGetBalance()**](#xdcgetbalance) 
-
-> Get XDC Account balance
-> 
-> **GET** `/v3/xdc/account/balance/{address}`
-
-[🔹 **xdcGetBlock()**](#xdcgetblock) 
-
-> Get XDC block by hash
-> 
-> **GET** `/v3/xdc/block/{hash}`
-
-[🔹 **xdcGetCurrentBlock()**](#xdcgetcurrentblock) 
-
-> Get current block number
-> 
-> **GET** `/v3/xdc/block/current`
-
-[🔹 **xdcGetTransaction()**](#xdcgettransaction) 
-
-> Get XDC Transaction
-> 
-> **GET** `/v3/xdc/transaction/{hash}`
-
-[🔹 **xdcGetTransactionCount()**](#xdcgettransactioncount) 
-
-> Get count of outgoing XDC transactions
-> 
-> **GET** `/v3/xdc/transaction/count/{address}`
-
-[🔹 **xdcWeb3Driver()**](#xdcweb3driver) 
-
-> Web3 HTTP driver
-> 
-> **POST** `/v3/xdc/web3/{xApiKey}`
-
+Method | Description
+------------- | ------------- | -------------
+[**callXdcReadSmartContractMethod()**](#callxdcreadsmartcontractmethod) | Invoke a method in a smart contract on XinFin
+[**callXdcSmartContractMethod()**](#callxdcsmartcontractmethod) | Invoke a method in a smart contract on XinFin
+[**callXdcSmartContractMethodKMS()**](#callxdcsmartcontractmethodkms) | Invoke a method in a smart contract on XinFin
+[**transferXdcBlockchain()**](#transferxdcblockchain) | Send XDC / ERC20 from account to account
+[**transferXdcBlockchainKMS()**](#transferxdcblockchainkms) | Send XDC / ERC20 from account to account
+[**xdcBroadcast()**](#xdcbroadcast) | Broadcast signed XDC transaction
+[**xdcGenerateAddress()**](#xdcgenerateaddress) | Generate XDC account address from Extended public key
+[**xdcGenerateAddressPrivateKey()**](#xdcgenerateaddressprivatekey) | Generate XDC private key
+[**xdcGenerateWallet()**](#xdcgeneratewallet) | Generate XDC wallet
+[**xdcGetBalance()**](#xdcgetbalance) | Get XDC Account balance
+[**xdcGetBlock()**](#xdcgetblock) | Get XDC block by hash
+[**xdcGetCurrentBlock()**](#xdcgetcurrentblock) | Get current block number
+[**xdcGetTransaction()**](#xdcgettransaction) | Get XDC Transaction
+[**xdcGetTransactionCount()**](#xdcgettransactioncount) | Get count of outgoing XDC transactions
+[**xdcWeb3Driver()**](#xdcweb3driver) | Web3 HTTP driver
 
 
 ## `callXdcReadSmartContractMethod()`
@@ -164,7 +89,9 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callXdcReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcReadSmartContractMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callXdcSmartContractMethod()`
 
@@ -198,7 +125,9 @@ CallXdcSmartContractMethod operation
 
 [✨ View "callXdcSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callXdcSmartContractMethodKMS()`
 
@@ -232,7 +161,9 @@ CallXdcSmartContractMethodKMS operation
 
 [✨ View "callXdcSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethodKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXdcBlockchain()`
 
@@ -278,7 +209,9 @@ Send XDC / ERC20 from account to account
 
 [✨ View "transferXdcBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXdcBlockchainKMS()`
 
@@ -312,7 +245,9 @@ TransferXdcBlockchainKMS operation
 
 [✨ View "transferXdcBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcBroadcast()`
 
@@ -348,7 +283,9 @@ Broadcast signed XDC transaction
 
 [✨ View "xdcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcGenerateAddress()`
 
@@ -386,7 +323,9 @@ Generate XDC account address from Extended public key
 
 [✨ View "xdcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcGenerateAddressPrivateKey()`
 
@@ -422,7 +361,9 @@ Generate XDC private key
 
 [✨ View "xdcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcGenerateWallet()`
 
@@ -466,7 +407,9 @@ Generate XDC wallet
 
 [✨ View "xdcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcGetBalance()`
 
@@ -502,7 +445,9 @@ Get XDC Account balance
 
 [✨ View "xdcGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcGetBlock()`
 
@@ -538,7 +483,9 @@ Get XDC block by hash
 
 [✨ View "xdcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcGetCurrentBlock()`
 
@@ -571,7 +518,9 @@ Get current block number
 
 [✨ View "xdcGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcGetTransaction()`
 
@@ -607,7 +556,9 @@ Get XDC Transaction
 
 [✨ View "xdcGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcGetTransactionCount()`
 
@@ -643,7 +594,9 @@ Get count of outgoing XDC transactions
 
 [✨ View "xdcGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransactionCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xdcWeb3Driver()`
 
@@ -683,4 +636,5 @@ Web3 HTTP driver
 
 [✨ View "xdcWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcWeb3Driver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

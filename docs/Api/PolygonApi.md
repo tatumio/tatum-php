@@ -12,110 +12,25 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **callPolygonSmartContractMethod()**](#callpolygonsmartcontractmethod) 
-
-> Invoke a method in a smart contract on Polygon
-> 
-> **POST** `/v3/polygon/smartcontract`
-
-[🔹 **callPolygonSmartContractMethodCaller()**](#callpolygonsmartcontractmethodcaller) 
-
-> Invoke a method in a smart contract on Polygon
-> 
-> **POST** `/v3/polygon/smartcontract`
-
-[🔹 **callPolygonSmartContractMethodKMS()**](#callpolygonsmartcontractmethodkms) 
-
-> Invoke a method in a smart contract on Polygon
-> 
-> **POST** `/v3/polygon/smartcontract`
-
-[🔹 **callPolygonSmartContractReadMethod()**](#callpolygonsmartcontractreadmethod) 
-
-> Invoke a method in a smart contract on Polygon
-> 
-> **POST** `/v3/polygon/smartcontract`
-
-[🔹 **polygonBroadcast()**](#polygonbroadcast) 
-
-> Broadcast signed Polygon transaction
-> 
-> **POST** `/v3/polygon/broadcast`
-
-[🔹 **polygonGenerateAddress()**](#polygongenerateaddress) 
-
-> Generate Polygon account address from Extended public key
-> 
-> **GET** `/v3/polygon/address/{xpub}/{index}`
-
-[🔹 **polygonGenerateAddressPrivateKey()**](#polygongenerateaddressprivatekey) 
-
-> Generate Polygon private key
-> 
-> **POST** `/v3/polygon/wallet/priv`
-
-[🔹 **polygonGenerateWallet()**](#polygongeneratewallet) 
-
-> Generate Polygon wallet
-> 
-> **GET** `/v3/polygon/wallet`
-
-[🔹 **polygonGetBalance()**](#polygongetbalance) 
-
-> Get Polygon Account balance
-> 
-> **GET** `/v3/polygon/account/balance/{address}`
-
-[🔹 **polygonGetBlock()**](#polygongetblock) 
-
-> Get Polygon block by hash
-> 
-> **GET** `/v3/polygon/block/{hash}`
-
-[🔹 **polygonGetCurrentBlock()**](#polygongetcurrentblock) 
-
-> Get current block number
-> 
-> **GET** `/v3/polygon/block/current`
-
-[🔹 **polygonGetTransaction()**](#polygongettransaction) 
-
-> Get Polygon Transaction
-> 
-> **GET** `/v3/polygon/transaction/{hash}`
-
-[🔹 **polygonGetTransactionByAddress()**](#polygongettransactionbyaddress) 
-
-> Get Polygon transactions by address
-> 
-> **GET** `/v3/polygon/account/transaction/{address}`
-
-[🔹 **polygonGetTransactionCount()**](#polygongettransactioncount) 
-
-> Get count of outgoing Polygon transactions
-> 
-> **GET** `/v3/polygon/transaction/count/{address}`
-
-[🔹 **polygonWeb3Driver()**](#polygonweb3driver) 
-
-> Web3 HTTP driver
-> 
-> **POST** `/v3/polygon/web3/{xApiKey}`
-
-[🔹 **transferPolygonBlockchain()**](#transferpolygonblockchain) 
-
-> Send MATIC from account to account
-> 
-> **POST** `/v3/polygon/transaction`
-
-[🔹 **transferPolygonBlockchainKMS()**](#transferpolygonblockchainkms) 
-
-> Send MATIC from account to account
-> 
-> **POST** `/v3/polygon/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**callPolygonSmartContractMethod()**](#callpolygonsmartcontractmethod) | Invoke a method in a smart contract on Polygon
+[**callPolygonSmartContractMethodCaller()**](#callpolygonsmartcontractmethodcaller) | Invoke a method in a smart contract on Polygon
+[**callPolygonSmartContractMethodKMS()**](#callpolygonsmartcontractmethodkms) | Invoke a method in a smart contract on Polygon
+[**callPolygonSmartContractReadMethod()**](#callpolygonsmartcontractreadmethod) | Invoke a method in a smart contract on Polygon
+[**polygonBroadcast()**](#polygonbroadcast) | Broadcast signed Polygon transaction
+[**polygonGenerateAddress()**](#polygongenerateaddress) | Generate Polygon account address from Extended public key
+[**polygonGenerateAddressPrivateKey()**](#polygongenerateaddressprivatekey) | Generate Polygon private key
+[**polygonGenerateWallet()**](#polygongeneratewallet) | Generate Polygon wallet
+[**polygonGetBalance()**](#polygongetbalance) | Get Polygon Account balance
+[**polygonGetBlock()**](#polygongetblock) | Get Polygon block by hash
+[**polygonGetCurrentBlock()**](#polygongetcurrentblock) | Get current block number
+[**polygonGetTransaction()**](#polygongettransaction) | Get Polygon Transaction
+[**polygonGetTransactionByAddress()**](#polygongettransactionbyaddress) | Get Polygon transactions by address
+[**polygonGetTransactionCount()**](#polygongettransactioncount) | Get count of outgoing Polygon transactions
+[**polygonWeb3Driver()**](#polygonweb3driver) | Web3 HTTP driver
+[**transferPolygonBlockchain()**](#transferpolygonblockchain) | Send MATIC from account to account
+[**transferPolygonBlockchainKMS()**](#transferpolygonblockchainkms) | Send MATIC from account to account
 
 
 ## `callPolygonSmartContractMethod()`
@@ -150,7 +65,9 @@ CallPolygonSmartContractMethod operation
 
 [✨ View "callPolygonSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callPolygonSmartContractMethodCaller()`
 
@@ -184,7 +101,9 @@ CallPolygonSmartContractMethodCaller operation
 
 [✨ View "callPolygonSmartContractMethodCaller.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodCaller.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callPolygonSmartContractMethodKMS()`
 
@@ -218,7 +137,9 @@ CallPolygonSmartContractMethodKMS operation
 
 [✨ View "callPolygonSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callPolygonSmartContractReadMethod()`
 
@@ -280,7 +201,9 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callPolygonSmartContractReadMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractReadMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonBroadcast()`
 
@@ -316,7 +239,9 @@ Broadcast signed Polygon transaction
 
 [✨ View "polygonBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGenerateAddress()`
 
@@ -354,7 +279,9 @@ Generate Polygon account address from Extended public key
 
 [✨ View "polygonGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGenerateAddressPrivateKey()`
 
@@ -390,7 +317,9 @@ Generate Polygon private key
 
 [✨ View "polygonGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGenerateWallet()`
 
@@ -432,7 +361,9 @@ Tatum follows BIP44 specification and generates for Polygon wallet with derivati
 
 [✨ View "polygonGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGetBalance()`
 
@@ -468,7 +399,9 @@ Get Polygon Account balance
 
 [✨ View "polygonGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGetBlock()`
 
@@ -504,7 +437,9 @@ Get Polygon block by hash
 
 [✨ View "polygonGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGetCurrentBlock()`
 
@@ -537,7 +472,9 @@ Get current block number
 
 [✨ View "polygonGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGetTransaction()`
 
@@ -573,7 +510,9 @@ Get Polygon Transaction
 
 [✨ View "polygonGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGetTransactionByAddress()`
 
@@ -619,7 +558,9 @@ Get Polygon transactions by address
 
 [✨ View "polygonGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionByAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonGetTransactionCount()`
 
@@ -655,7 +596,9 @@ Get count of outgoing Polygon transactions
 
 [✨ View "polygonGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `polygonWeb3Driver()`
 
@@ -695,7 +638,9 @@ Web3 HTTP driver
 
 [✨ View "polygonWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonWeb3Driver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferPolygonBlockchain()`
 
@@ -739,7 +684,9 @@ Send MATIC from account to account
 
 [✨ View "transferPolygonBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferPolygonBlockchainKMS()`
 
@@ -773,4 +720,5 @@ TransferPolygonBlockchainKMS operation
 
 [✨ View "transferPolygonBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

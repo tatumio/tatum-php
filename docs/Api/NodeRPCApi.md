@@ -12,26 +12,11 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **nodeJsonPostRpcDriver()**](#nodejsonpostrpcdriver) 
-
-> Connect to the blockchain node through an RPC driver
-> 
-> **POST** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
-
-[🔹 **nodeJsonRpcGetDriver()**](#nodejsonrpcgetdriver) 
-
-> Connect to the blockchain node through an RPC driver
-> 
-> **GET** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
-
-[🔹 **nodeJsonRpcPutDriver()**](#nodejsonrpcputdriver) 
-
-> Connect to the blockchain node through an RPC driver
-> 
-> **PUT** `/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}`
-
+Method | Description
+------------- | ------------- | -------------
+[**nodeJsonPostRpcDriver()**](#nodejsonpostrpcdriver) | Connect to the blockchain node through an RPC driver
+[**nodeJsonRpcGetDriver()**](#nodejsonrpcgetdriver) | Connect to the blockchain node through an RPC driver
+[**nodeJsonRpcPutDriver()**](#nodejsonrpcputdriver) | Connect to the blockchain node through an RPC driver
 
 
 ## `nodeJsonPostRpcDriver()`
@@ -100,7 +85,9 @@ Connect to the blockchain node through an RPC driver
 
 [✨ View "nodeJsonPostRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonPostRpcDriver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `nodeJsonRpcGetDriver()`
 
@@ -150,7 +137,9 @@ Connect to the blockchain node through an RPC driver
 
 [✨ View "nodeJsonRpcGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonRpcGetDriver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `nodeJsonRpcPutDriver()`
 
@@ -206,4 +195,5 @@ Connect to the blockchain node through an RPC driver
 
 [✨ View "nodeJsonRpcPutDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonRpcPutDriver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

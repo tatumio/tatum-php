@@ -12,14 +12,9 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **getExchangeRate()**](#getexchangerate) 
-
-> Get the current exchange rate for exchanging fiat/crypto assets
-> 
-> **GET** `/v3/tatum/rate/{currency}`
-
+Method | Description
+------------- | ------------- | -------------
+[**getExchangeRate()**](#getexchangerate) | Get the current exchange rate for exchanging fiat/crypto assets
 
 
 ## `getExchangeRate()`
@@ -60,4 +55,5 @@ Get the current exchange rate for exchanging fiat/crypto assets
 
 [✨ View "getExchangeRate.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ExchangeRateApi/getExchangeRate.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

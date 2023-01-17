@@ -12,92 +12,22 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **eGldGetCurrentBlock()**](#egldgetcurrentblock) 
-
-> Get current block number
-> 
-> **GET** `/v3/egld/block/current`
-
-[🔹 **egldBroadcast()**](#egldbroadcast) 
-
-> Broadcast signed EGLD transaction
-> 
-> **POST** `/v3/egld/broadcast`
-
-[🔹 **egldGenerateAddress()**](#egldgenerateaddress) 
-
-> Generate EGLD account address from mnemonic
-> 
-> **GET** `/v3/egld/address/{mnemonic}/{index}`
-
-[🔹 **egldGenerateAddressPrivateKey()**](#egldgenerateaddressprivatekey) 
-
-> Generate EGLD private key
-> 
-> **POST** `/v3/egld/wallet/priv`
-
-[🔹 **egldGenerateWallet()**](#egldgeneratewallet) 
-
-> Generate EGLD wallet
-> 
-> **GET** `/v3/egld/wallet`
-
-[🔹 **egldGetBalance()**](#egldgetbalance) 
-
-> Get EGLD Account balance
-> 
-> **GET** `/v3/egld/account/balance/{address}`
-
-[🔹 **egldGetBlock()**](#egldgetblock) 
-
-> Get EGLD block by hash
-> 
-> **GET** `/v3/egld/block/{hash}`
-
-[🔹 **egldGetTransaction()**](#egldgettransaction) 
-
-> Get EGLD Transaction
-> 
-> **GET** `/v3/egld/transaction/{hash}`
-
-[🔹 **egldGetTransactionAddress()**](#egldgettransactionaddress) 
-
-> Get count of outgoing EGLD transactions
-> 
-> **GET** `/v3/egld/transaction/address/{address}`
-
-[🔹 **egldGetTransactionCount()**](#egldgettransactioncount) 
-
-> Get count of outgoing EGLD transactions
-> 
-> **GET** `/v3/egld/transaction/count/{address}`
-
-[🔹 **egldNodeGet()**](#egldnodeget) 
-
-> Node HTTP driver
-> 
-> **GET** `/v3/egld/node/{xApiKey}/*`
-
-[🔹 **egldNodePost()**](#egldnodepost) 
-
-> Node HTTP driver
-> 
-> **POST** `/v3/egld/node/{xApiKey}/*`
-
-[🔹 **transferEgldBlockchain()**](#transferegldblockchain) 
-
-> Send EGLD from account to account
-> 
-> **POST** `/v3/egld/transaction`
-
-[🔹 **transferEgldBlockchainKMS()**](#transferegldblockchainkms) 
-
-> Send EGLD from account to account
-> 
-> **POST** `/v3/egld/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**eGldGetCurrentBlock()**](#egldgetcurrentblock) | Get current block number
+[**egldBroadcast()**](#egldbroadcast) | Broadcast signed EGLD transaction
+[**egldGenerateAddress()**](#egldgenerateaddress) | Generate EGLD account address from mnemonic
+[**egldGenerateAddressPrivateKey()**](#egldgenerateaddressprivatekey) | Generate EGLD private key
+[**egldGenerateWallet()**](#egldgeneratewallet) | Generate EGLD wallet
+[**egldGetBalance()**](#egldgetbalance) | Get EGLD Account balance
+[**egldGetBlock()**](#egldgetblock) | Get EGLD block by hash
+[**egldGetTransaction()**](#egldgettransaction) | Get EGLD Transaction
+[**egldGetTransactionAddress()**](#egldgettransactionaddress) | Get count of outgoing EGLD transactions
+[**egldGetTransactionCount()**](#egldgettransactioncount) | Get count of outgoing EGLD transactions
+[**egldNodeGet()**](#egldnodeget) | Node HTTP driver
+[**egldNodePost()**](#egldnodepost) | Node HTTP driver
+[**transferEgldBlockchain()**](#transferegldblockchain) | Send EGLD from account to account
+[**transferEgldBlockchainKMS()**](#transferegldblockchainkms) | Send EGLD from account to account
 
 
 ## `eGldGetCurrentBlock()`
@@ -131,7 +61,9 @@ Get current block number
 
 [✨ View "eGldGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/eGldGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldBroadcast()`
 
@@ -167,7 +99,9 @@ Broadcast signed EGLD transaction
 
 [✨ View "egldBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldGenerateAddress()`
 
@@ -205,7 +139,9 @@ Generate EGLD account address from mnemonic
 
 [✨ View "egldGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldGenerateAddressPrivateKey()`
 
@@ -241,7 +177,9 @@ Generate EGLD private key
 
 [✨ View "egldGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldGenerateWallet()`
 
@@ -285,7 +223,9 @@ Generate EGLD wallet
 
 [✨ View "egldGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldGetBalance()`
 
@@ -321,7 +261,9 @@ Get EGLD Account balance
 
 [✨ View "egldGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldGetBlock()`
 
@@ -357,7 +299,9 @@ Get EGLD block by hash
 
 [✨ View "egldGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldGetTransaction()`
 
@@ -393,7 +337,9 @@ Get EGLD Transaction
 
 [✨ View "egldGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldGetTransactionAddress()`
 
@@ -429,7 +375,9 @@ Get count of outgoing EGLD transactions
 
 [✨ View "egldGetTransactionAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransactionAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldGetTransactionCount()`
 
@@ -465,7 +413,9 @@ Get count of outgoing EGLD transactions
 
 [✨ View "egldGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransactionCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldNodeGet()`
 
@@ -503,7 +453,9 @@ Node HTTP driver
 
 [✨ View "egldNodeGet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldNodeGet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `egldNodePost()`
 
@@ -543,7 +495,9 @@ Node HTTP driver
 
 [✨ View "egldNodePost.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldNodePost.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferEgldBlockchain()`
 
@@ -581,7 +535,9 @@ Send EGLD from account to account
 
 [✨ View "transferEgldBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/transferEgldBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferEgldBlockchainKMS()`
 
@@ -615,4 +571,5 @@ TransferEgldBlockchainKMS operation
 
 [✨ View "transferEgldBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/transferEgldBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

@@ -12,98 +12,23 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **bscBroadcast()**](#bscbroadcast) 
-
-> Broadcast signed BSC transaction
-> 
-> **POST** `/v3/bsc/broadcast`
-
-[🔹 **bscGenerateAddress()**](#bscgenerateaddress) 
-
-> Generate BSC account address from Extended public key
-> 
-> **GET** `/v3/bsc/address/{xpub}/{index}`
-
-[🔹 **bscGenerateAddressPrivateKey()**](#bscgenerateaddressprivatekey) 
-
-> Generate BSC private key
-> 
-> **POST** `/v3/bsc/wallet/priv`
-
-[🔹 **bscGenerateWallet()**](#bscgeneratewallet) 
-
-> Generate BSC wallet
-> 
-> **GET** `/v3/bsc/wallet`
-
-[🔹 **bscGetBalance()**](#bscgetbalance) 
-
-> Get BSC Account balance
-> 
-> **GET** `/v3/bsc/account/balance/{address}`
-
-[🔹 **bscGetBlock()**](#bscgetblock) 
-
-> Get BSC block by hash
-> 
-> **GET** `/v3/bsc/block/{hash}`
-
-[🔹 **bscGetCurrentBlock()**](#bscgetcurrentblock) 
-
-> Get current block number
-> 
-> **GET** `/v3/bsc/block/current`
-
-[🔹 **bscGetTransaction()**](#bscgettransaction) 
-
-> Get BSC Transaction
-> 
-> **GET** `/v3/bsc/transaction/{hash}`
-
-[🔹 **bscGetTransactionCount()**](#bscgettransactioncount) 
-
-> Get count of outgoing BSC transactions
-> 
-> **GET** `/v3/bsc/transaction/count/{address}`
-
-[🔹 **bscWeb3Driver()**](#bscweb3driver) 
-
-> Web3 HTTP driver
-> 
-> **POST** `/v3/bsc/web3/{xApiKey}`
-
-[🔹 **callBscSmartContractMethod()**](#callbscsmartcontractmethod) 
-
-> Invoke a method in a smart contract on BNB Smart Chain
-> 
-> **POST** `/v3/bsc/smartcontract`
-
-[🔹 **callBscSmartContractMethodKMS()**](#callbscsmartcontractmethodkms) 
-
-> Invoke a method in a smart contract on BNB Smart Chain
-> 
-> **POST** `/v3/bsc/smartcontract`
-
-[🔹 **callBscSmartContractReadMethod()**](#callbscsmartcontractreadmethod) 
-
-> Invoke a method in a smart contract on BNB Smart Chain
-> 
-> **POST** `/v3/bsc/smartcontract`
-
-[🔹 **transferBscBlockchain()**](#transferbscblockchain) 
-
-> Send BSC / BEP20 from account to account
-> 
-> **POST** `/v3/bsc/transaction`
-
-[🔹 **transferBscBlockchainKMS()**](#transferbscblockchainkms) 
-
-> Send BSC / BEP20 from account to account
-> 
-> **POST** `/v3/bsc/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**bscBroadcast()**](#bscbroadcast) | Broadcast signed BSC transaction
+[**bscGenerateAddress()**](#bscgenerateaddress) | Generate BSC account address from Extended public key
+[**bscGenerateAddressPrivateKey()**](#bscgenerateaddressprivatekey) | Generate BSC private key
+[**bscGenerateWallet()**](#bscgeneratewallet) | Generate BSC wallet
+[**bscGetBalance()**](#bscgetbalance) | Get BSC Account balance
+[**bscGetBlock()**](#bscgetblock) | Get BSC block by hash
+[**bscGetCurrentBlock()**](#bscgetcurrentblock) | Get current block number
+[**bscGetTransaction()**](#bscgettransaction) | Get BSC Transaction
+[**bscGetTransactionCount()**](#bscgettransactioncount) | Get count of outgoing BSC transactions
+[**bscWeb3Driver()**](#bscweb3driver) | Web3 HTTP driver
+[**callBscSmartContractMethod()**](#callbscsmartcontractmethod) | Invoke a method in a smart contract on BNB Smart Chain
+[**callBscSmartContractMethodKMS()**](#callbscsmartcontractmethodkms) | Invoke a method in a smart contract on BNB Smart Chain
+[**callBscSmartContractReadMethod()**](#callbscsmartcontractreadmethod) | Invoke a method in a smart contract on BNB Smart Chain
+[**transferBscBlockchain()**](#transferbscblockchain) | Send BSC / BEP20 from account to account
+[**transferBscBlockchainKMS()**](#transferbscblockchainkms) | Send BSC / BEP20 from account to account
 
 
 ## `bscBroadcast()`
@@ -140,7 +65,9 @@ Broadcast signed BSC transaction
 
 [✨ View "bscBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscGenerateAddress()`
 
@@ -178,7 +105,9 @@ Generate BSC account address from Extended public key
 
 [✨ View "bscGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscGenerateAddressPrivateKey()`
 
@@ -214,7 +143,9 @@ Generate BSC private key
 
 [✨ View "bscGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscGenerateWallet()`
 
@@ -256,7 +187,9 @@ Tatum follows BIP44 specification and generates for BSC wallet with derivation p
 
 [✨ View "bscGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscGetBalance()`
 
@@ -292,7 +225,9 @@ Get BSC Account balance
 
 [✨ View "bscGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscGetBlock()`
 
@@ -328,7 +263,9 @@ Get BSC block by hash
 
 [✨ View "bscGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscGetCurrentBlock()`
 
@@ -361,7 +298,9 @@ Get current block number
 
 [✨ View "bscGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscGetTransaction()`
 
@@ -397,7 +336,9 @@ Get BSC Transaction
 
 [✨ View "bscGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscGetTransactionCount()`
 
@@ -433,7 +374,9 @@ Get count of outgoing BSC transactions
 
 [✨ View "bscGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetTransactionCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bscWeb3Driver()`
 
@@ -473,7 +416,9 @@ Web3 HTTP driver
 
 [✨ View "bscWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscWeb3Driver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callBscSmartContractMethod()`
 
@@ -507,7 +452,9 @@ CallBscSmartContractMethod operation
 
 [✨ View "callBscSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callBscSmartContractMethodKMS()`
 
@@ -541,7 +488,9 @@ CallBscSmartContractMethodKMS operation
 
 [✨ View "callBscSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractMethodKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callBscSmartContractReadMethod()`
 
@@ -601,7 +550,9 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callBscSmartContractReadMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractReadMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferBscBlockchain()`
 
@@ -645,7 +596,9 @@ Send BSC / BEP20 from account to account
 
 [✨ View "transferBscBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/transferBscBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferBscBlockchainKMS()`
 
@@ -679,4 +632,5 @@ TransferBscBlockchainKMS operation
 
 [✨ View "transferBscBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/transferBscBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

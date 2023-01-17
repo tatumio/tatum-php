@@ -12,110 +12,25 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **ltcBroadcast()**](#ltcbroadcast) 
-
-> Broadcast signed Litecoin transaction
-> 
-> **POST** `/v3/litecoin/broadcast`
-
-[🔹 **ltcGenerateAddress()**](#ltcgenerateaddress) 
-
-> Generate Litecoin deposit address from Extended public key
-> 
-> **GET** `/v3/litecoin/address/{xpub}/{index}`
-
-[🔹 **ltcGenerateAddressPrivateKey()**](#ltcgenerateaddressprivatekey) 
-
-> Generate Litecoin private key
-> 
-> **POST** `/v3/litecoin/wallet/priv`
-
-[🔹 **ltcGenerateWallet()**](#ltcgeneratewallet) 
-
-> Generate Litecoin wallet
-> 
-> **GET** `/v3/litecoin/wallet`
-
-[🔹 **ltcGetBalanceOfAddress()**](#ltcgetbalanceofaddress) 
-
-> Get the balance of a Litecoin address
-> 
-> **GET** `/v3/litecoin/address/balance/{address}`
-
-[🔹 **ltcGetBlock()**](#ltcgetblock) 
-
-> Get Litecoin Block by hash or height
-> 
-> **GET** `/v3/litecoin/block/{hash}`
-
-[🔹 **ltcGetBlockChainInfo()**](#ltcgetblockchaininfo) 
-
-> Get Litecoin Blockchain Information
-> 
-> **GET** `/v3/litecoin/info`
-
-[🔹 **ltcGetBlockHash()**](#ltcgetblockhash) 
-
-> Get Litecoin Block hash
-> 
-> **GET** `/v3/litecoin/block/hash/{i}`
-
-[🔹 **ltcGetMempool()**](#ltcgetmempool) 
-
-> Get Mempool Transactions
-> 
-> **GET** `/v3/litecoin/mempool`
-
-[🔹 **ltcGetRawTransaction()**](#ltcgetrawtransaction) 
-
-> Get Litecoin Transaction by hash
-> 
-> **GET** `/v3/litecoin/transaction/{hash}`
-
-[🔹 **ltcGetTxByAddress()**](#ltcgettxbyaddress) 
-
-> Get Litecoin Transactions by address
-> 
-> **GET** `/v3/litecoin/transaction/address/{address}`
-
-[🔹 **ltcGetUTXO()**](#ltcgetutxo) 
-
-> Get information about a transaction output (UTXO) in a Litecoin transaction
-> 
-> **GET** `/v3/litecoin/utxo/{hash}/{index}`
-
-[🔹 **ltcRpcDriver()**](#ltcrpcdriver) 
-
-> JSON RPC HTTP driver
-> 
-> **POST** `/v3/litecoin/node`
-
-[🔹 **ltcTransactionAddress()**](#ltctransactionaddress) 
-
-> Send LTC to Litecoin addresses
-> 
-> **POST** `/v3/litecoin/transaction`
-
-[🔹 **ltcTransactionAddressKMS()**](#ltctransactionaddresskms) 
-
-> Send LTC to Litecoin addresses
-> 
-> **POST** `/v3/litecoin/transaction`
-
-[🔹 **ltcTransactionUTXO()**](#ltctransactionutxo) 
-
-> Send LTC to Litecoin addresses
-> 
-> **POST** `/v3/litecoin/transaction`
-
-[🔹 **ltcTransactionUTXOKMS()**](#ltctransactionutxokms) 
-
-> Send LTC to Litecoin addresses
-> 
-> **POST** `/v3/litecoin/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**ltcBroadcast()**](#ltcbroadcast) | Broadcast signed Litecoin transaction
+[**ltcGenerateAddress()**](#ltcgenerateaddress) | Generate Litecoin deposit address from Extended public key
+[**ltcGenerateAddressPrivateKey()**](#ltcgenerateaddressprivatekey) | Generate Litecoin private key
+[**ltcGenerateWallet()**](#ltcgeneratewallet) | Generate Litecoin wallet
+[**ltcGetBalanceOfAddress()**](#ltcgetbalanceofaddress) | Get the balance of a Litecoin address
+[**ltcGetBlock()**](#ltcgetblock) | Get Litecoin Block by hash or height
+[**ltcGetBlockChainInfo()**](#ltcgetblockchaininfo) | Get Litecoin Blockchain Information
+[**ltcGetBlockHash()**](#ltcgetblockhash) | Get Litecoin Block hash
+[**ltcGetMempool()**](#ltcgetmempool) | Get Mempool Transactions
+[**ltcGetRawTransaction()**](#ltcgetrawtransaction) | Get Litecoin Transaction by hash
+[**ltcGetTxByAddress()**](#ltcgettxbyaddress) | Get Litecoin Transactions by address
+[**ltcGetUTXO()**](#ltcgetutxo) | Get information about a transaction output (UTXO) in a Litecoin transaction
+[**ltcRpcDriver()**](#ltcrpcdriver) | JSON RPC HTTP driver
+[**ltcTransactionAddress()**](#ltctransactionaddress) | Send LTC to Litecoin addresses
+[**ltcTransactionAddressKMS()**](#ltctransactionaddresskms) | Send LTC to Litecoin addresses
+[**ltcTransactionUTXO()**](#ltctransactionutxo) | Send LTC to Litecoin addresses
+[**ltcTransactionUTXOKMS()**](#ltctransactionutxokms) | Send LTC to Litecoin addresses
 
 
 ## `ltcBroadcast()`
@@ -152,7 +67,9 @@ Broadcast signed Litecoin transaction
 
 [✨ View "ltcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGenerateAddress()`
 
@@ -190,7 +107,9 @@ Generate Litecoin deposit address from Extended public key
 
 [✨ View "ltcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGenerateAddressPrivateKey()`
 
@@ -226,7 +145,9 @@ Generate Litecoin private key
 
 [✨ View "ltcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGenerateWallet()`
 
@@ -268,7 +189,9 @@ Tatum follows BIP44 specification and generates for Litecoin wallet with derivat
 
 [✨ View "ltcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGetBalanceOfAddress()`
 
@@ -306,7 +229,9 @@ Get the balance of a Litecoin address
 
 [✨ View "ltcGetBalanceOfAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBalanceOfAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGetBlock()`
 
@@ -342,7 +267,9 @@ Get Litecoin Block detail by block hash or height.
 
 [✨ View "ltcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGetBlockChainInfo()`
 
@@ -375,7 +302,9 @@ Get Litecoin Blockchain Information. Obtain basic info like testnet / mainnet ve
 
 [✨ View "ltcGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockChainInfo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGetBlockHash()`
 
@@ -411,7 +340,9 @@ Get Litecoin Block hash. Returns hash of the block to get the block detail.
 
 [✨ View "ltcGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockHash.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGetMempool()`
 
@@ -444,7 +375,9 @@ Get Litecoin Transaction ids in the mempool.
 
 [✨ View "ltcGetMempool.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetMempool.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGetRawTransaction()`
 
@@ -480,7 +413,9 @@ Get Litecoin Transaction detail by transaction hash.
 
 [✨ View "ltcGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetRawTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGetTxByAddress()`
 
@@ -520,7 +455,9 @@ Get Litecoin Transaction by address.
 
 [✨ View "ltcGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetTxByAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcGetUTXO()`
 
@@ -564,7 +501,9 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 
 [✨ View "ltcGetUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetUTXO.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcRpcDriver()`
 
@@ -602,7 +541,9 @@ JSON RPC HTTP driver
 
 [✨ View "ltcRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcRpcDriver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcTransactionAddress()`
 
@@ -672,7 +613,9 @@ The assets are sent from a list of UTXOs. Each UTXO is included in the transacti
 
 [✨ View "ltcTransactionAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcTransactionAddressKMS()`
 
@@ -706,7 +649,9 @@ LtcTransactionAddressKMS operation
 
 [✨ View "ltcTransactionAddressKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddressKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcTransactionUTXO()`
 
@@ -740,7 +685,9 @@ LtcTransactionUTXO operation
 
 [✨ View "ltcTransactionUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXO.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ltcTransactionUTXOKMS()`
 
@@ -774,4 +721,5 @@ LtcTransactionUTXOKMS operation
 
 [✨ View "ltcTransactionUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXOKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

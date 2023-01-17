@@ -12,86 +12,21 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **chartRequest()**](#chartrequest) 
-
-> Obtain chart data from historical closed trades
-> 
-> **POST** `/v3/trade/chart`
-
-[🔹 **createFutureTrade()**](#createfuturetrade) 
-
-> Store buy / sell trade
-> 
-> **POST** `/v3/trade`
-
-[🔹 **createTrade()**](#createtrade) 
-
-> Store buy / sell trade
-> 
-> **POST** `/v3/trade`
-
-[🔹 **deleteAccountTrades()**](#deleteaccounttrades) 
-
-> Cancel all existing trades for account
-> 
-> **DELETE** `/v3/trade/account/{id}`
-
-[🔹 **deleteTrade()**](#deletetrade) 
-
-> Cancel existing trade
-> 
-> **DELETE** `/v3/trade/{id}`
-
-[🔹 **getBuyTrades()**](#getbuytrades) 
-
-> List all active buy trades
-> 
-> **GET** `/v3/trade/buy`
-
-[🔹 **getBuyTradesBody()**](#getbuytradesbody) 
-
-> List all active buy trades
-> 
-> **POST** `/v3/trade/buy`
-
-[🔹 **getHistoricalTrades()**](#gethistoricaltrades) 
-
-> List all historical trades
-> 
-> **GET** `/v3/trade/history`
-
-[🔹 **getHistoricalTradesBody()**](#gethistoricaltradesbody) 
-
-> List all historical trades
-> 
-> **POST** `/v3/trade/history`
-
-[🔹 **getMatchedTrades()**](#getmatchedtrades) 
-
-> List all matched orders from FUTURE_SELL/FUTURE_BUY trades
-> 
-> **POST** `/v3/trade/matched`
-
-[🔹 **getSellTrades()**](#getselltrades) 
-
-> List all active sell trades
-> 
-> **GET** `/v3/trade/sell`
-
-[🔹 **getSellTradesBody()**](#getselltradesbody) 
-
-> List all active sell trades
-> 
-> **POST** `/v3/trade/sell`
-
-[🔹 **getTradeById()**](#gettradebyid) 
-
-> Get existing trade
-> 
-> **GET** `/v3/trade/{id}`
-
+Method | Description
+------------- | ------------- | -------------
+[**chartRequest()**](#chartrequest) | Obtain chart data from historical closed trades
+[**createFutureTrade()**](#createfuturetrade) | Store buy / sell trade
+[**createTrade()**](#createtrade) | Store buy / sell trade
+[**deleteAccountTrades()**](#deleteaccounttrades) | Cancel all existing trades for account
+[**deleteTrade()**](#deletetrade) | Cancel existing trade
+[**getBuyTrades()**](#getbuytrades) | List all active buy trades
+[**getBuyTradesBody()**](#getbuytradesbody) | List all active buy trades
+[**getHistoricalTrades()**](#gethistoricaltrades) | List all historical trades
+[**getHistoricalTradesBody()**](#gethistoricaltradesbody) | List all historical trades
+[**getMatchedTrades()**](#getmatchedtrades) | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
+[**getSellTrades()**](#getselltrades) | List all active sell trades
+[**getSellTradesBody()**](#getselltradesbody) | List all active sell trades
+[**getTradeById()**](#gettradebyid) | Get existing trade
 
 
 ## `chartRequest()`
@@ -128,7 +63,9 @@ Obtain chart data from historical closed trades
 
 [✨ View "chartRequest.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/chartRequest.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createFutureTrade()`
 
@@ -162,7 +99,9 @@ CreateFutureTrade operation
 
 [✨ View "createFutureTrade.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createFutureTrade.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createTrade()`
 
@@ -218,7 +157,9 @@ Store buy / sell trade
 
 [✨ View "createTrade.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createTrade.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deleteAccountTrades()`
 
@@ -254,7 +195,9 @@ Cancel all trades for account.
 
 [✨ View "deleteAccountTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteAccountTrades.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deleteTrade()`
 
@@ -290,7 +233,9 @@ Cancel existing trade.
 
 [✨ View "deleteTrade.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteTrade.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getBuyTrades()`
 
@@ -338,7 +283,9 @@ List all active buy trades.
 
 [✨ View "getBuyTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getBuyTrades.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getBuyTradesBody()`
 
@@ -374,7 +321,9 @@ List all active buy trades.
 
 [✨ View "getBuyTradesBody.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getBuyTradesBody.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getHistoricalTrades()`
 
@@ -420,7 +369,9 @@ List all historical trades. It is possible to list all trades, trades for specif
 
 [✨ View "getHistoricalTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getHistoricalTrades.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getHistoricalTradesBody()`
 
@@ -456,7 +407,9 @@ List all historical trades. It is possible to list all trades, trades for specif
 
 [✨ View "getHistoricalTradesBody.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getHistoricalTradesBody.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getMatchedTrades()`
 
@@ -492,7 +445,9 @@ List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
 
 [✨ View "getMatchedTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getMatchedTrades.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getSellTrades()`
 
@@ -540,7 +495,9 @@ List all active sell trades.
 
 [✨ View "getSellTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getSellTrades.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getSellTradesBody()`
 
@@ -576,7 +533,9 @@ List all active sell trades.
 
 [✨ View "getSellTradesBody.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getSellTradesBody.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getTradeById()`
 
@@ -612,4 +571,5 @@ Get existing opened trade.
 
 [✨ View "getTradeById.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getTradeById.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

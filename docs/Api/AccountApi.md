@@ -12,122 +12,27 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **activateAccount()**](#activateaccount) 
-
-> Activate account
-> 
-> **PUT** `/v3/ledger/account/{id}/activate`
-
-[🔹 **blockAmount()**](#blockamount) 
-
-> Block an amount in an account
-> 
-> **POST** `/v3/ledger/account/block/{id}`
-
-[🔹 **createAccount()**](#createaccount) 
-
-> Create a virtual account
-> 
-> **POST** `/v3/ledger/account`
-
-[🔹 **createAccountBatch()**](#createaccountbatch) 
-
-> Create multiple accounts in a batch call
-> 
-> **POST** `/v3/ledger/account/batch`
-
-[🔹 **createAccountXpub()**](#createaccountxpub) 
-
-> Create a virtual account
-> 
-> **POST** `/v3/ledger/account`
-
-[🔹 **deactivateAccount()**](#deactivateaccount) 
-
-> Deactivate account
-> 
-> **PUT** `/v3/ledger/account/{id}/deactivate`
-
-[🔹 **deleteAllBlockAmount()**](#deleteallblockamount) 
-
-> Unblock all blocked amounts in an account
-> 
-> **DELETE** `/v3/ledger/account/block/account/{id}`
-
-[🔹 **deleteBlockAmount()**](#deleteblockamount) 
-
-> Unblock a blocked amount in an account
-> 
-> **DELETE** `/v3/ledger/account/block/{id}`
-
-[🔹 **freezeAccount()**](#freezeaccount) 
-
-> Freeze account
-> 
-> **PUT** `/v3/ledger/account/{id}/freeze`
-
-[🔹 **getAccountBalance()**](#getaccountbalance) 
-
-> Get account balance
-> 
-> **GET** `/v3/ledger/account/{id}/balance`
-
-[🔹 **getAccountByAccountId()**](#getaccountbyaccountid) 
-
-> Get account by ID
-> 
-> **GET** `/v3/ledger/account/{id}`
-
-[🔹 **getAccounts()**](#getaccounts) 
-
-> List all accounts
-> 
-> **GET** `/v3/ledger/account`
-
-[🔹 **getAccountsByCustomerId()**](#getaccountsbycustomerid) 
-
-> List all customer accounts
-> 
-> **GET** `/v3/ledger/account/customer/{id}`
-
-[🔹 **getAccountsCount()**](#getaccountscount) 
-
-> Count of found entities for get accounts request
-> 
-> **GET** `/v3/ledger/account/count`
-
-[🔹 **getBlockAmount()**](#getblockamount) 
-
-> Get blocked amounts in an account
-> 
-> **GET** `/v3/ledger/account/block/{id}`
-
-[🔹 **getBlockAmountById()**](#getblockamountbyid) 
-
-> Get blocked amount by ID
-> 
-> **GET** `/v3/ledger/account/block/{id}/detail`
-
-[🔹 **unblockAmountWithTransaction()**](#unblockamountwithtransaction) 
-
-> Unblock an amount in an account and perform a transaction
-> 
-> **PUT** `/v3/ledger/account/block/{id}`
-
-[🔹 **unfreezeAccount()**](#unfreezeaccount) 
-
-> Unfreeze account
-> 
-> **PUT** `/v3/ledger/account/{id}/unfreeze`
-
-[🔹 **updateAccountByAccountId()**](#updateaccountbyaccountid) 
-
-> Update account
-> 
-> **PUT** `/v3/ledger/account/{id}`
-
+Method | Description
+------------- | ------------- | -------------
+[**activateAccount()**](#activateaccount) | Activate account
+[**blockAmount()**](#blockamount) | Block an amount in an account
+[**createAccount()**](#createaccount) | Create a virtual account
+[**createAccountBatch()**](#createaccountbatch) | Create multiple accounts in a batch call
+[**createAccountXpub()**](#createaccountxpub) | Create a virtual account
+[**deactivateAccount()**](#deactivateaccount) | Deactivate account
+[**deleteAllBlockAmount()**](#deleteallblockamount) | Unblock all blocked amounts in an account
+[**deleteBlockAmount()**](#deleteblockamount) | Unblock a blocked amount in an account
+[**freezeAccount()**](#freezeaccount) | Freeze account
+[**getAccountBalance()**](#getaccountbalance) | Get account balance
+[**getAccountByAccountId()**](#getaccountbyaccountid) | Get account by ID
+[**getAccounts()**](#getaccounts) | List all accounts
+[**getAccountsByCustomerId()**](#getaccountsbycustomerid) | List all customer accounts
+[**getAccountsCount()**](#getaccountscount) | Count of found entities for get accounts request
+[**getBlockAmount()**](#getblockamount) | Get blocked amounts in an account
+[**getBlockAmountById()**](#getblockamountbyid) | Get blocked amount by ID
+[**unblockAmountWithTransaction()**](#unblockamountwithtransaction) | Unblock an amount in an account and perform a transaction
+[**unfreezeAccount()**](#unfreezeaccount) | Unfreeze account
+[**updateAccountByAccountId()**](#updateaccountbyaccountid) | Update account
 
 
 ## `activateAccount()`
@@ -164,7 +69,9 @@ Activates an account.
 
 [✨ View "activateAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `blockAmount()`
 
@@ -202,7 +109,9 @@ Block an amount in an account
 
 [✨ View "blockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createAccount()`
 
@@ -236,7 +145,9 @@ CreateAccount operation
 
 [✨ View "createAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createAccountBatch()`
 
@@ -272,7 +183,9 @@ Create multiple accounts in a batch call
 
 [✨ View "createAccountBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createAccountXpub()`
 
@@ -344,7 +257,9 @@ Blockchain addresses on Elrond are generated based on the mnemonic of an Elrond 
 
 [✨ View "createAccountXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountXpub.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deactivateAccount()`
 
@@ -380,7 +295,9 @@ Deactivates an account. Only accounts with account and available balances of zer
 
 [✨ View "deactivateAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deactivateAccount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deleteAllBlockAmount()`
 
@@ -416,7 +333,9 @@ Unblocks previously blocked amounts in an account. Increases the available balan
 
 [✨ View "deleteAllBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteAllBlockAmount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deleteBlockAmount()`
 
@@ -452,7 +371,9 @@ Unblocks a previously blocked amount in an account. Increases the available bala
 
 [✨ View "deleteBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteBlockAmount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `freezeAccount()`
 
@@ -488,7 +409,9 @@ Disables all outgoing transactions. Incoming transactions to the account are ava
 
 [✨ View "freezeAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/freezeAccount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAccountBalance()`
 
@@ -524,7 +447,9 @@ Get balance for the account.
 
 [✨ View "getAccountBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAccountByAccountId()`
 
@@ -560,7 +485,9 @@ Gets active account by ID. Displays all information regarding the given account.
 
 [✨ View "getAccountByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountByAccountId.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAccounts()`
 
@@ -612,7 +539,9 @@ Lists all accounts. Inactive accounts are also visible.
 
 [✨ View "getAccounts.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccounts.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAccountsByCustomerId()`
 
@@ -654,7 +583,9 @@ Lists all accounts associated with a customer. Only active accounts are visible.
 
 [✨ View "getAccountsByCustomerId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsByCustomerId.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAccountsCount()`
 
@@ -706,7 +637,9 @@ Count of accounts that were found from /v3/ledger/account
 
 [✨ View "getAccountsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getBlockAmount()`
 
@@ -746,7 +679,9 @@ Gets blocked amounts for an account.
 
 [✨ View "getBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getBlockAmountById()`
 
@@ -782,7 +717,9 @@ Gets blocked amount by id.
 
 [✨ View "getBlockAmountById.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmountById.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `unblockAmountWithTransaction()`
 
@@ -820,7 +757,9 @@ Unblock an amount in an account and perform a transaction
 
 [✨ View "unblockAmountWithTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unblockAmountWithTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `unfreezeAccount()`
 
@@ -856,7 +795,9 @@ Unfreezes a previously frozen account. Unfreezing a non-frozen account not affec
 
 [✨ View "unfreezeAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unfreezeAccount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateAccountByAccountId()`
 
@@ -894,4 +835,5 @@ Update account by ID. Only a small number of fields can be updated.
 
 [✨ View "updateAccountByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/updateAccountByAccountId.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

@@ -12,98 +12,23 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **callKlaytnSmartContractMethod()**](#callklaytnsmartcontractmethod) 
-
-> Invoke a method in a smart contract on Klaytn
-> 
-> **POST** `/v3/klaytn/smartcontract`
-
-[🔹 **callKlaytnSmartContractMethodKMS()**](#callklaytnsmartcontractmethodkms) 
-
-> Invoke a method in a smart contract on Klaytn
-> 
-> **POST** `/v3/klaytn/smartcontract`
-
-[🔹 **callKlaytnSmartContractReadMethod()**](#callklaytnsmartcontractreadmethod) 
-
-> Invoke a method in a smart contract on Klaytn
-> 
-> **POST** `/v3/klaytn/smartcontract`
-
-[🔹 **klaytnBroadcast()**](#klaytnbroadcast) 
-
-> Broadcast signed Klaytn transaction
-> 
-> **POST** `/v3/klaytn/broadcast`
-
-[🔹 **klaytnGenerateAddress()**](#klaytngenerateaddress) 
-
-> Generate Klaytn account address from Extended public key
-> 
-> **GET** `/v3/klaytn/address/{xpub}/{index}`
-
-[🔹 **klaytnGenerateAddressPrivateKey()**](#klaytngenerateaddressprivatekey) 
-
-> Generate Klaytn private key
-> 
-> **POST** `/v3/klaytn/wallet/priv`
-
-[🔹 **klaytnGenerateWallet()**](#klaytngeneratewallet) 
-
-> Generate Klaytn wallet
-> 
-> **GET** `/v3/klaytn/wallet`
-
-[🔹 **klaytnGetBalance()**](#klaytngetbalance) 
-
-> Get Klaytn Account balance
-> 
-> **GET** `/v3/klaytn/account/balance/{address}`
-
-[🔹 **klaytnGetBlock()**](#klaytngetblock) 
-
-> Get Klaytn block by hash
-> 
-> **GET** `/v3/klaytn/block/{hash}`
-
-[🔹 **klaytnGetCurrentBlock()**](#klaytngetcurrentblock) 
-
-> Get current block number
-> 
-> **GET** `/v3/klaytn/block/current`
-
-[🔹 **klaytnGetTransaction()**](#klaytngettransaction) 
-
-> Get Klaytn Transaction
-> 
-> **GET** `/v3/klaytn/transaction/{hash}`
-
-[🔹 **klaytnGetTransactionCount()**](#klaytngettransactioncount) 
-
-> Get count of outgoing Klaytn transactions
-> 
-> **GET** `/v3/klaytn/transaction/count/{address}`
-
-[🔹 **klaytnWeb3Driver()**](#klaytnweb3driver) 
-
-> Web3 HTTP driver
-> 
-> **POST** `/v3/klaytn/web3/{xApiKey}`
-
-[🔹 **transferKlaytnBlockchain()**](#transferklaytnblockchain) 
-
-> Send KLAY from account to account
-> 
-> **POST** `/v3/klaytn/transaction`
-
-[🔹 **transferKlaytnBlockchainKMS()**](#transferklaytnblockchainkms) 
-
-> Send KLAY from account to account
-> 
-> **POST** `/v3/klaytn/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**callKlaytnSmartContractMethod()**](#callklaytnsmartcontractmethod) | Invoke a method in a smart contract on Klaytn
+[**callKlaytnSmartContractMethodKMS()**](#callklaytnsmartcontractmethodkms) | Invoke a method in a smart contract on Klaytn
+[**callKlaytnSmartContractReadMethod()**](#callklaytnsmartcontractreadmethod) | Invoke a method in a smart contract on Klaytn
+[**klaytnBroadcast()**](#klaytnbroadcast) | Broadcast signed Klaytn transaction
+[**klaytnGenerateAddress()**](#klaytngenerateaddress) | Generate Klaytn account address from Extended public key
+[**klaytnGenerateAddressPrivateKey()**](#klaytngenerateaddressprivatekey) | Generate Klaytn private key
+[**klaytnGenerateWallet()**](#klaytngeneratewallet) | Generate Klaytn wallet
+[**klaytnGetBalance()**](#klaytngetbalance) | Get Klaytn Account balance
+[**klaytnGetBlock()**](#klaytngetblock) | Get Klaytn block by hash
+[**klaytnGetCurrentBlock()**](#klaytngetcurrentblock) | Get current block number
+[**klaytnGetTransaction()**](#klaytngettransaction) | Get Klaytn Transaction
+[**klaytnGetTransactionCount()**](#klaytngettransactioncount) | Get count of outgoing Klaytn transactions
+[**klaytnWeb3Driver()**](#klaytnweb3driver) | Web3 HTTP driver
+[**transferKlaytnBlockchain()**](#transferklaytnblockchain) | Send KLAY from account to account
+[**transferKlaytnBlockchainKMS()**](#transferklaytnblockchainkms) | Send KLAY from account to account
 
 
 ## `callKlaytnSmartContractMethod()`
@@ -138,7 +63,9 @@ CallKlaytnSmartContractMethod operation
 
 [✨ View "callKlaytnSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callKlaytnSmartContractMethodKMS()`
 
@@ -172,7 +99,9 @@ CallKlaytnSmartContractMethodKMS operation
 
 [✨ View "callKlaytnSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractMethodKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callKlaytnSmartContractReadMethod()`
 
@@ -232,7 +161,9 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callKlaytnSmartContractReadMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractReadMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnBroadcast()`
 
@@ -268,7 +199,9 @@ Broadcast signed Klaytn transaction
 
 [✨ View "klaytnBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnGenerateAddress()`
 
@@ -306,7 +239,9 @@ Generate Klaytn account address from Extended public key
 
 [✨ View "klaytnGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnGenerateAddressPrivateKey()`
 
@@ -342,7 +277,9 @@ Generate Klaytn private key
 
 [✨ View "klaytnGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnGenerateWallet()`
 
@@ -384,7 +321,9 @@ Tatum follows BIP44 specification and generates for Klaytn wallet with derivatio
 
 [✨ View "klaytnGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnGetBalance()`
 
@@ -420,7 +359,9 @@ Get Klaytn Account balance
 
 [✨ View "klaytnGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnGetBlock()`
 
@@ -456,7 +397,9 @@ Get Klaytn block by hash
 
 [✨ View "klaytnGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnGetCurrentBlock()`
 
@@ -489,7 +432,9 @@ Get current block number
 
 [✨ View "klaytnGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnGetTransaction()`
 
@@ -525,7 +470,9 @@ Get Klaytn Transaction
 
 [✨ View "klaytnGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnGetTransactionCount()`
 
@@ -561,7 +508,9 @@ Get count of outgoing Klaytn transactions
 
 [✨ View "klaytnGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetTransactionCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `klaytnWeb3Driver()`
 
@@ -601,7 +550,9 @@ Web3 HTTP driver
 
 [✨ View "klaytnWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnWeb3Driver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferKlaytnBlockchain()`
 
@@ -645,7 +596,9 @@ Send KLAY from account to account
 
 [✨ View "transferKlaytnBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/transferKlaytnBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferKlaytnBlockchainKMS()`
 
@@ -679,4 +632,5 @@ TransferKlaytnBlockchainKMS operation
 
 [✨ View "transferKlaytnBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/transferKlaytnBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

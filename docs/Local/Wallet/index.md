@@ -1,7 +1,8 @@
 ---
-title: Local/Wallet
+title: Local - Wallet
 has_children: true
 layout: page
+nav_order: 3
 ---
 
 Local wallet operations:

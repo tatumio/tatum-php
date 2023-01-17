@@ -12,38 +12,13 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **createCurrency()**](#createcurrency) 
-
-> Create new virtual currency
-> 
-> **POST** `/v3/ledger/virtualCurrency`
-
-[🔹 **getCurrency()**](#getcurrency) 
-
-> Get virtual currency
-> 
-> **GET** `/v3/ledger/virtualCurrency/{name}`
-
-[🔹 **mintCurrency()**](#mintcurrency) 
-
-> Create new supply of virtual currency
-> 
-> **PUT** `/v3/ledger/virtualCurrency/mint`
-
-[🔹 **revokeCurrency()**](#revokecurrency) 
-
-> Destroy supply of virtual currency
-> 
-> **PUT** `/v3/ledger/virtualCurrency/revoke`
-
-[🔹 **updateCurrency()**](#updatecurrency) 
-
-> Update virtual currency
-> 
-> **PUT** `/v3/ledger/virtualCurrency`
-
+Method | Description
+------------- | ------------- | -------------
+[**createCurrency()**](#createcurrency) | Create new virtual currency
+[**getCurrency()**](#getcurrency) | Get virtual currency
+[**mintCurrency()**](#mintcurrency) | Create new supply of virtual currency
+[**revokeCurrency()**](#revokecurrency) | Destroy supply of virtual currency
+[**updateCurrency()**](#updatecurrency) | Update virtual currency
 
 
 ## `createCurrency()`
@@ -86,7 +61,9 @@ Create new virtual currency
 
 [✨ View "createCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/createCurrency.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getCurrency()`
 
@@ -122,7 +99,9 @@ Get detail of virtual currency.
 
 [✨ View "getCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/getCurrency.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintCurrency()`
 
@@ -160,7 +139,9 @@ Create new supply of virtual currency
 
 [✨ View "mintCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/mintCurrency.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `revokeCurrency()`
 
@@ -198,7 +179,9 @@ Destroy supply of virtual currency
 
 [✨ View "revokeCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/revokeCurrency.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateCurrency()`
 
@@ -234,4 +217,5 @@ Change base pair and/or base rate of existing virtual currency.
 
 [✨ View "updateCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/updateCurrency.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

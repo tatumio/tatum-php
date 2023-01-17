@@ -12,230 +12,45 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **addMultiTokenMinter()**](#addmultitokenminter) 
-
-> Add a Multi Token minter
-> 
-> **POST** `/v3/multitoken/mint/add`
-
-[🔹 **addMultiTokenMinterKMS()**](#addmultitokenminterkms) 
-
-> Add a Multi Token minter
-> 
-> **POST** `/v3/multitoken/mint/add`
-
-[🔹 **burnMultiToken()**](#burnmultitoken) 
-
-> Burn a Multi Token
-> 
-> **POST** `/v3/multitoken/burn`
-
-[🔹 **burnMultiTokenBatch()**](#burnmultitokenbatch) 
-
-> Burn multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/burn/batch`
-
-[🔹 **burnMultiTokenBatchCelo()**](#burnmultitokenbatchcelo) 
-
-> Burn multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/burn/batch`
-
-[🔹 **burnMultiTokenBatchKMS()**](#burnmultitokenbatchkms) 
-
-> Burn multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/burn/batch`
-
-[🔹 **burnMultiTokenBatchKMSCelo()**](#burnmultitokenbatchkmscelo) 
-
-> Burn multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/burn/batch`
-
-[🔹 **burnMultiTokenCelo()**](#burnmultitokencelo) 
-
-> Burn a Multi Token
-> 
-> **POST** `/v3/multitoken/burn`
-
-[🔹 **burnMultiTokenKMS()**](#burnmultitokenkms) 
-
-> Burn a Multi Token
-> 
-> **POST** `/v3/multitoken/burn`
-
-[🔹 **burnMultiTokenKMSCelo()**](#burnmultitokenkmscelo) 
-
-> Burn a Multi Token
-> 
-> **POST** `/v3/multitoken/burn`
-
-[🔹 **deployMultiToken()**](#deploymultitoken) 
-
-> Deploy a Multi Token smart contract
-> 
-> **POST** `/v3/multitoken/deploy`
-
-[🔹 **deployMultiTokenCelo()**](#deploymultitokencelo) 
-
-> Deploy a Multi Token smart contract
-> 
-> **POST** `/v3/multitoken/deploy`
-
-[🔹 **deployMultiTokenCeloKMS()**](#deploymultitokencelokms) 
-
-> Deploy a Multi Token smart contract
-> 
-> **POST** `/v3/multitoken/deploy`
-
-[🔹 **deployMultiTokenKMS()**](#deploymultitokenkms) 
-
-> Deploy a Multi Token smart contract
-> 
-> **POST** `/v3/multitoken/deploy`
-
-[🔹 **mintMultiToken()**](#mintmultitoken) 
-
-> Mint a Multi Token
-> 
-> **POST** `/v3/multitoken/mint`
-
-[🔹 **mintMultiTokenBatch()**](#mintmultitokenbatch) 
-
-> Mint multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/mint/batch`
-
-[🔹 **mintMultiTokenBatchCelo()**](#mintmultitokenbatchcelo) 
-
-> Mint multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/mint/batch`
-
-[🔹 **mintMultiTokenBatchKMS()**](#mintmultitokenbatchkms) 
-
-> Mint multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/mint/batch`
-
-[🔹 **mintMultiTokenBatchKMSCelo()**](#mintmultitokenbatchkmscelo) 
-
-> Mint multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/mint/batch`
-
-[🔹 **mintMultiTokenCelo()**](#mintmultitokencelo) 
-
-> Mint a Multi Token
-> 
-> **POST** `/v3/multitoken/mint`
-
-[🔹 **mintMultiTokenKMS()**](#mintmultitokenkms) 
-
-> Mint a Multi Token
-> 
-> **POST** `/v3/multitoken/mint`
-
-[🔹 **mintMultiTokenKMSCelo()**](#mintmultitokenkmscelo) 
-
-> Mint a Multi Token
-> 
-> **POST** `/v3/multitoken/mint`
-
-[🔹 **multiTokenGetAddressBalance()**](#multitokengetaddressbalance) 
-
-> Get all Multi Tokens that a blockchain address holds
-> 
-> **GET** `/v3/multitoken/address/balance/{chain}/{address}`
-
-[🔹 **multiTokenGetBalance()**](#multitokengetbalance) 
-
-> Get the amount of a specific MultiToken that a blockchain address holds
-> 
-> **GET** `/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}`
-
-[🔹 **multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) 
-
-> Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
-> 
-> **GET** `/v3/multitoken/balance/batch/{chain}/{contractAddress}`
-
-[🔹 **multiTokenGetContractAddress()**](#multitokengetcontractaddress) 
-
-> Get the address of a Multi Token smart contract by its transaction hash
-> 
-> **GET** `/v3/multitoken/address/{chain}/{hash}`
-
-[🔹 **multiTokenGetMetadata()**](#multitokengetmetadata) 
-
-> Get Multi Token metadata
-> 
-> **GET** `/v3/multitoken/metadata/{chain}/{contractAddress}/{token}`
-
-[🔹 **multiTokenGetTransaction()**](#multitokengettransaction) 
-
-> Get a Multi Token transaction by its hash
-> 
-> **GET** `/v3/multitoken/transaction/{chain}/{hash}`
-
-[🔹 **multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) 
-
-> Get Multi Token transactions on a blockchain address
-> 
-> **GET** `/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}`
-
-[🔹 **transferMultiToken()**](#transfermultitoken) 
-
-> Transfer a Multi Token
-> 
-> **POST** `/v3/multitoken/transaction`
-
-[🔹 **transferMultiTokenBatch()**](#transfermultitokenbatch) 
-
-> Transfer multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/transaction/batch`
-
-[🔹 **transferMultiTokenBatchCelo()**](#transfermultitokenbatchcelo) 
-
-> Transfer multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/transaction/batch`
-
-[🔹 **transferMultiTokenBatchKMS()**](#transfermultitokenbatchkms) 
-
-> Transfer multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/transaction/batch`
-
-[🔹 **transferMultiTokenBatchKMSCelo()**](#transfermultitokenbatchkmscelo) 
-
-> Transfer multiple Multi Tokens
-> 
-> **POST** `/v3/multitoken/transaction/batch`
-
-[🔹 **transferMultiTokenCelo()**](#transfermultitokencelo) 
-
-> Transfer a Multi Token
-> 
-> **POST** `/v3/multitoken/transaction`
-
-[🔹 **transferMultiTokenKMS()**](#transfermultitokenkms) 
-
-> Transfer a Multi Token
-> 
-> **POST** `/v3/multitoken/transaction`
-
-[🔹 **transferMultiTokenKMSCelo()**](#transfermultitokenkmscelo) 
-
-> Transfer a Multi Token
-> 
-> **POST** `/v3/multitoken/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**addMultiTokenMinter()**](#addmultitokenminter) | Add a Multi Token minter
+[**addMultiTokenMinterKMS()**](#addmultitokenminterkms) | Add a Multi Token minter
+[**burnMultiToken()**](#burnmultitoken) | Burn a Multi Token
+[**burnMultiTokenBatch()**](#burnmultitokenbatch) | Burn multiple Multi Tokens
+[**burnMultiTokenBatchCelo()**](#burnmultitokenbatchcelo) | Burn multiple Multi Tokens
+[**burnMultiTokenBatchKMS()**](#burnmultitokenbatchkms) | Burn multiple Multi Tokens
+[**burnMultiTokenBatchKMSCelo()**](#burnmultitokenbatchkmscelo) | Burn multiple Multi Tokens
+[**burnMultiTokenCelo()**](#burnmultitokencelo) | Burn a Multi Token
+[**burnMultiTokenKMS()**](#burnmultitokenkms) | Burn a Multi Token
+[**burnMultiTokenKMSCelo()**](#burnmultitokenkmscelo) | Burn a Multi Token
+[**deployMultiToken()**](#deploymultitoken) | Deploy a Multi Token smart contract
+[**deployMultiTokenCelo()**](#deploymultitokencelo) | Deploy a Multi Token smart contract
+[**deployMultiTokenCeloKMS()**](#deploymultitokencelokms) | Deploy a Multi Token smart contract
+[**deployMultiTokenKMS()**](#deploymultitokenkms) | Deploy a Multi Token smart contract
+[**mintMultiToken()**](#mintmultitoken) | Mint a Multi Token
+[**mintMultiTokenBatch()**](#mintmultitokenbatch) | Mint multiple Multi Tokens
+[**mintMultiTokenBatchCelo()**](#mintmultitokenbatchcelo) | Mint multiple Multi Tokens
+[**mintMultiTokenBatchKMS()**](#mintmultitokenbatchkms) | Mint multiple Multi Tokens
+[**mintMultiTokenBatchKMSCelo()**](#mintmultitokenbatchkmscelo) | Mint multiple Multi Tokens
+[**mintMultiTokenCelo()**](#mintmultitokencelo) | Mint a Multi Token
+[**mintMultiTokenKMS()**](#mintmultitokenkms) | Mint a Multi Token
+[**mintMultiTokenKMSCelo()**](#mintmultitokenkmscelo) | Mint a Multi Token
+[**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | Get all Multi Tokens that a blockchain address holds
+[**multiTokenGetBalance()**](#multitokengetbalance) | Get the amount of a specific MultiToken that a blockchain address holds
+[**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
+[**multiTokenGetContractAddress()**](#multitokengetcontractaddress) | Get the address of a Multi Token smart contract by its transaction hash
+[**multiTokenGetMetadata()**](#multitokengetmetadata) | Get Multi Token metadata
+[**multiTokenGetTransaction()**](#multitokengettransaction) | Get a Multi Token transaction by its hash
+[**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | Get Multi Token transactions on a blockchain address
+[**transferMultiToken()**](#transfermultitoken) | Transfer a Multi Token
+[**transferMultiTokenBatch()**](#transfermultitokenbatch) | Transfer multiple Multi Tokens
+[**transferMultiTokenBatchCelo()**](#transfermultitokenbatchcelo) | Transfer multiple Multi Tokens
+[**transferMultiTokenBatchKMS()**](#transfermultitokenbatchkms) | Transfer multiple Multi Tokens
+[**transferMultiTokenBatchKMSCelo()**](#transfermultitokenbatchkmscelo) | Transfer multiple Multi Tokens
+[**transferMultiTokenCelo()**](#transfermultitokencelo) | Transfer a Multi Token
+[**transferMultiTokenKMS()**](#transfermultitokenkms) | Transfer a Multi Token
+[**transferMultiTokenKMSCelo()**](#transfermultitokenkmscelo) | Transfer a Multi Token
 
 
 ## `addMultiTokenMinter()`
@@ -288,7 +103,9 @@ Add a Multi Token minter
 
 [✨ View "addMultiTokenMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `addMultiTokenMinterKMS()`
 
@@ -324,7 +141,9 @@ AddMultiTokenMinterKMS operation
 
 [✨ View "addMultiTokenMinterKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinterKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `burnMultiToken()`
 
@@ -376,7 +195,9 @@ Burn a Multi Token
 
 [✨ View "burnMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `burnMultiTokenBatch()`
 
@@ -428,7 +249,9 @@ Burn multiple Multi Tokens
 
 [✨ View "burnMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `burnMultiTokenBatchCelo()`
 
@@ -464,7 +287,9 @@ BurnMultiTokenBatchCelo operation
 
 [✨ View "burnMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `burnMultiTokenBatchKMS()`
 
@@ -500,7 +325,9 @@ BurnMultiTokenBatchKMS operation
 
 [✨ View "burnMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `burnMultiTokenBatchKMSCelo()`
 
@@ -536,7 +363,9 @@ BurnMultiTokenBatchKMSCelo operation
 
 [✨ View "burnMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMSCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `burnMultiTokenCelo()`
 
@@ -572,7 +401,9 @@ BurnMultiTokenCelo operation
 
 [✨ View "burnMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `burnMultiTokenKMS()`
 
@@ -608,7 +439,9 @@ BurnMultiTokenKMS operation
 
 [✨ View "burnMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `burnMultiTokenKMSCelo()`
 
@@ -644,7 +477,9 @@ BurnMultiTokenKMSCelo operation
 
 [✨ View "burnMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMSCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deployMultiToken()`
 
@@ -696,7 +531,9 @@ Deploy a Multi Token smart contract
 
 [✨ View "deployMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deployMultiTokenCelo()`
 
@@ -732,7 +569,9 @@ DeployMultiTokenCelo operation
 
 [✨ View "deployMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deployMultiTokenCeloKMS()`
 
@@ -768,7 +607,9 @@ DeployMultiTokenCeloKMS operation
 
 [✨ View "deployMultiTokenCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deployMultiTokenKMS()`
 
@@ -804,7 +645,9 @@ DeployMultiTokenKMS operation
 
 [✨ View "deployMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintMultiToken()`
 
@@ -856,7 +699,9 @@ Mint a Multi Token
 
 [✨ View "mintMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintMultiTokenBatch()`
 
@@ -908,7 +753,9 @@ Mint multiple Multi Tokens
 
 [✨ View "mintMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintMultiTokenBatchCelo()`
 
@@ -944,7 +791,9 @@ MintMultiTokenBatchCelo operation
 
 [✨ View "mintMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintMultiTokenBatchKMS()`
 
@@ -980,7 +829,9 @@ MintMultiTokenBatchKMS operation
 
 [✨ View "mintMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintMultiTokenBatchKMSCelo()`
 
@@ -1016,7 +867,9 @@ MintMultiTokenBatchKMSCelo operation
 
 [✨ View "mintMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMSCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintMultiTokenCelo()`
 
@@ -1052,7 +905,9 @@ MintMultiTokenCelo operation
 
 [✨ View "mintMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintMultiTokenKMS()`
 
@@ -1088,7 +943,9 @@ MintMultiTokenKMS operation
 
 [✨ View "mintMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `mintMultiTokenKMSCelo()`
 
@@ -1124,7 +981,9 @@ MintMultiTokenKMSCelo operation
 
 [✨ View "mintMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMSCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `multiTokenGetAddressBalance()`
 
@@ -1170,7 +1029,9 @@ Get all Multi Tokens that a blockchain address holds
 
 [✨ View "multiTokenGetAddressBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `multiTokenGetBalance()`
 
@@ -1220,7 +1081,9 @@ Get the amount of a specific MultiToken that a blockchain address holds
 
 [✨ View "multiTokenGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `multiTokenGetBalanceBatch()`
 
@@ -1270,7 +1133,9 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 [✨ View "multiTokenGetBalanceBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `multiTokenGetContractAddress()`
 
@@ -1320,7 +1185,9 @@ This endpoint is deprecated. Do not use it.
 
 [✨ View "multiTokenGetContractAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetContractAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `multiTokenGetMetadata()`
 
@@ -1368,7 +1235,9 @@ Get Multi Token metadata
 
 [✨ View "multiTokenGetMetadata.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `multiTokenGetTransaction()`
 
@@ -1414,7 +1283,9 @@ Get a Multi Token transaction by its hash
 
 [✨ View "multiTokenGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `multiTokenGetTransactionByAddress()`
 
@@ -1468,7 +1339,9 @@ Get Multi Token transactions on a blockchain address
 
 [✨ View "multiTokenGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferMultiToken()`
 
@@ -1522,7 +1395,9 @@ Transfer a Multi Token
 
 [✨ View "transferMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferMultiTokenBatch()`
 
@@ -1574,7 +1449,9 @@ Transfer multiple Multi Tokens
 
 [✨ View "transferMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferMultiTokenBatchCelo()`
 
@@ -1610,7 +1487,9 @@ TransferMultiTokenBatchCelo operation
 
 [✨ View "transferMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferMultiTokenBatchKMS()`
 
@@ -1646,7 +1525,9 @@ TransferMultiTokenBatchKMS operation
 
 [✨ View "transferMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferMultiTokenBatchKMSCelo()`
 
@@ -1682,7 +1563,9 @@ TransferMultiTokenBatchKMSCelo operation
 
 [✨ View "transferMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMSCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferMultiTokenCelo()`
 
@@ -1718,7 +1601,9 @@ TransferMultiTokenCelo operation
 
 [✨ View "transferMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferMultiTokenKMS()`
 
@@ -1754,7 +1639,9 @@ TransferMultiTokenKMS operation
 
 [✨ View "transferMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferMultiTokenKMSCelo()`
 
@@ -1790,4 +1677,5 @@ TransferMultiTokenKMSCelo operation
 
 [✨ View "transferMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMSCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

@@ -12,20 +12,10 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **getAuctionEstimatedTime()**](#getauctionestimatedtime) 
-
-> Estimate the block height for a future point in time
-> 
-> **GET** `/v3/blockchain/auction/time/{chain}/{date}`
-
-[🔹 **sCGetContractAddress()**](#scgetcontractaddress) 
-
-> Get the blockchain address of a smart contract by the deployment transaction ID
-> 
-> **GET** `/v3/blockchain/sc/address/{chain}/{hash}`
-
+Method | Description
+------------- | ------------- | -------------
+[**getAuctionEstimatedTime()**](#getauctionestimatedtime) | Estimate the block height for a future point in time
+[**sCGetContractAddress()**](#scgetcontractaddress) | Get the blockchain address of a smart contract by the deployment transaction ID
 
 
 ## `getAuctionEstimatedTime()`
@@ -72,7 +62,9 @@ Estimate the block height for a future point in time
 
 [✨ View "getAuctionEstimatedTime.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `sCGetContractAddress()`
 
@@ -116,4 +108,5 @@ Get the blockchain address of a smart contract by the deployment transaction ID
 
 [✨ View "sCGetContractAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/sCGetContractAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

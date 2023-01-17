@@ -12,218 +12,43 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **approveNftSpending()**](#approvenftspending) 
-
-> Allow the NFT auction or marketplace to transfer an asset
-> 
-> **POST** `/v3/blockchain/auction/approve`
-
-[🔹 **approveNftSpendingCelo()**](#approvenftspendingcelo) 
-
-> Allow the NFT auction or marketplace to transfer an asset
-> 
-> **POST** `/v3/blockchain/auction/approve`
-
-[🔹 **approveNftSpendingCeloKMS()**](#approvenftspendingcelokms) 
-
-> Allow the NFT auction or marketplace to transfer an asset
-> 
-> **POST** `/v3/blockchain/auction/approve`
-
-[🔹 **approveNftSpendingKMS()**](#approvenftspendingkms) 
-
-> Allow the NFT auction or marketplace to transfer an asset
-> 
-> **POST** `/v3/blockchain/auction/approve`
-
-[🔹 **bidOnAuction()**](#bidonauction) 
-
-> Bid for an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/bid`
-
-[🔹 **bidOnAuctionCelo()**](#bidonauctioncelo) 
-
-> Bid for an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/bid`
-
-[🔹 **bidOnAuctionCeloKMS()**](#bidonauctioncelokms) 
-
-> Bid for an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/bid`
-
-[🔹 **bidOnAuctionKMS()**](#bidonauctionkms) 
-
-> Bid for an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/bid`
-
-[🔹 **bloAucUpdateFeeRecipient()**](#bloaucupdatefeerecipient) 
-
-> Update the recipient of the NFT auction fee
-> 
-> **PUT** `/v3/blockchain/auction/recipient`
-
-[🔹 **bloAucUpdateFeeRecipientCelo()**](#bloaucupdatefeerecipientcelo) 
-
-> Update the recipient of the NFT auction fee
-> 
-> **PUT** `/v3/blockchain/auction/recipient`
-
-[🔹 **bloAucUpdateFeeRecipientCeloKMS()**](#bloaucupdatefeerecipientcelokms) 
-
-> Update the recipient of the NFT auction fee
-> 
-> **PUT** `/v3/blockchain/auction/recipient`
-
-[🔹 **bloAucUpdateFeeRecipientKMS()**](#bloaucupdatefeerecipientkms) 
-
-> Update the recipient of the NFT auction fee
-> 
-> **PUT** `/v3/blockchain/auction/recipient`
-
-[🔹 **cancelAuction()**](#cancelauction) 
-
-> Cancel the selling of an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/cancel`
-
-[🔹 **cancelAuctionCelo()**](#cancelauctioncelo) 
-
-> Cancel the selling of an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/cancel`
-
-[🔹 **cancelAuctionCeloKMS()**](#cancelauctioncelokms) 
-
-> Cancel the selling of an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/cancel`
-
-[🔹 **cancelAuctionKMS()**](#cancelauctionkms) 
-
-> Cancel the selling of an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/cancel`
-
-[🔹 **createAuction()**](#createauction) 
-
-> Sell an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/sell`
-
-[🔹 **createAuctionCelo()**](#createauctioncelo) 
-
-> Sell an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/sell`
-
-[🔹 **createAuctionCeloKMS()**](#createauctioncelokms) 
-
-> Sell an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/sell`
-
-[🔹 **createAuctionKMS()**](#createauctionkms) 
-
-> Sell an asset at the NFT auction
-> 
-> **POST** `/v3/blockchain/auction/sell`
-
-[🔹 **generateAuction()**](#generateauction) 
-
-> Create an NFT auction
-> 
-> **POST** `/v3/blockchain/auction`
-
-[🔹 **generateAuctionCelo()**](#generateauctioncelo) 
-
-> Create an NFT auction
-> 
-> **POST** `/v3/blockchain/auction`
-
-[🔹 **generateAuctionCeloKMS()**](#generateauctioncelokms) 
-
-> Create an NFT auction
-> 
-> **POST** `/v3/blockchain/auction`
-
-[🔹 **generateAuctionKMS()**](#generateauctionkms) 
-
-> Create an NFT auction
-> 
-> **POST** `/v3/blockchain/auction`
-
-[🔹 **getAuction()**](#getauction) 
-
-> Get information about an auctioned asset at the NFT auction
-> 
-> **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/{id}`
-
-[🔹 **getAuctionFee()**](#getauctionfee) 
-
-> Get the NFT auction fee
-> 
-> **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/fee`
-
-[🔹 **getAuctionFeeRecipient()**](#getauctionfeerecipient) 
-
-> Get the recipient of the NFT auction fee
-> 
-> **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/recipient`
-
-[🔹 **settleAuction()**](#settleauction) 
-
-> Settle an NFT auction
-> 
-> **POST** `/v3/blockchain/auction/settle`
-
-[🔹 **settleAuctionCelo()**](#settleauctioncelo) 
-
-> Settle an NFT auction
-> 
-> **POST** `/v3/blockchain/auction/settle`
-
-[🔹 **settleAuctionCeloKMS()**](#settleauctioncelokms) 
-
-> Settle an NFT auction
-> 
-> **POST** `/v3/blockchain/auction/settle`
-
-[🔹 **settleAuctionKMS()**](#settleauctionkms) 
-
-> Settle an NFT auction
-> 
-> **POST** `/v3/blockchain/auction/settle`
-
-[🔹 **updateFeeAuction()**](#updatefeeauction) 
-
-> Update the NFT auction fee
-> 
-> **PUT** `/v3/blockchain/auction/fee`
-
-[🔹 **updateFeeAuctionCelo()**](#updatefeeauctioncelo) 
-
-> Update the NFT auction fee
-> 
-> **PUT** `/v3/blockchain/auction/fee`
-
-[🔹 **updateFeeAuctionCeloKMS()**](#updatefeeauctioncelokms) 
-
-> Update the NFT auction fee
-> 
-> **PUT** `/v3/blockchain/auction/fee`
-
-[🔹 **updateFeeAuctionKMS()**](#updatefeeauctionkms) 
-
-> Update the NFT auction fee
-> 
-> **PUT** `/v3/blockchain/auction/fee`
-
+Method | Description
+------------- | ------------- | -------------
+[**approveNftSpending()**](#approvenftspending) | Allow the NFT auction or marketplace to transfer an asset
+[**approveNftSpendingCelo()**](#approvenftspendingcelo) | Allow the NFT auction or marketplace to transfer an asset
+[**approveNftSpendingCeloKMS()**](#approvenftspendingcelokms) | Allow the NFT auction or marketplace to transfer an asset
+[**approveNftSpendingKMS()**](#approvenftspendingkms) | Allow the NFT auction or marketplace to transfer an asset
+[**bidOnAuction()**](#bidonauction) | Bid for an asset at the NFT auction
+[**bidOnAuctionCelo()**](#bidonauctioncelo) | Bid for an asset at the NFT auction
+[**bidOnAuctionCeloKMS()**](#bidonauctioncelokms) | Bid for an asset at the NFT auction
+[**bidOnAuctionKMS()**](#bidonauctionkms) | Bid for an asset at the NFT auction
+[**bloAucUpdateFeeRecipient()**](#bloaucupdatefeerecipient) | Update the recipient of the NFT auction fee
+[**bloAucUpdateFeeRecipientCelo()**](#bloaucupdatefeerecipientcelo) | Update the recipient of the NFT auction fee
+[**bloAucUpdateFeeRecipientCeloKMS()**](#bloaucupdatefeerecipientcelokms) | Update the recipient of the NFT auction fee
+[**bloAucUpdateFeeRecipientKMS()**](#bloaucupdatefeerecipientkms) | Update the recipient of the NFT auction fee
+[**cancelAuction()**](#cancelauction) | Cancel the selling of an asset at the NFT auction
+[**cancelAuctionCelo()**](#cancelauctioncelo) | Cancel the selling of an asset at the NFT auction
+[**cancelAuctionCeloKMS()**](#cancelauctioncelokms) | Cancel the selling of an asset at the NFT auction
+[**cancelAuctionKMS()**](#cancelauctionkms) | Cancel the selling of an asset at the NFT auction
+[**createAuction()**](#createauction) | Sell an asset at the NFT auction
+[**createAuctionCelo()**](#createauctioncelo) | Sell an asset at the NFT auction
+[**createAuctionCeloKMS()**](#createauctioncelokms) | Sell an asset at the NFT auction
+[**createAuctionKMS()**](#createauctionkms) | Sell an asset at the NFT auction
+[**generateAuction()**](#generateauction) | Create an NFT auction
+[**generateAuctionCelo()**](#generateauctioncelo) | Create an NFT auction
+[**generateAuctionCeloKMS()**](#generateauctioncelokms) | Create an NFT auction
+[**generateAuctionKMS()**](#generateauctionkms) | Create an NFT auction
+[**getAuction()**](#getauction) | Get information about an auctioned asset at the NFT auction
+[**getAuctionFee()**](#getauctionfee) | Get the NFT auction fee
+[**getAuctionFeeRecipient()**](#getauctionfeerecipient) | Get the recipient of the NFT auction fee
+[**settleAuction()**](#settleauction) | Settle an NFT auction
+[**settleAuctionCelo()**](#settleauctioncelo) | Settle an NFT auction
+[**settleAuctionCeloKMS()**](#settleauctioncelokms) | Settle an NFT auction
+[**settleAuctionKMS()**](#settleauctionkms) | Settle an NFT auction
+[**updateFeeAuction()**](#updatefeeauction) | Update the NFT auction fee
+[**updateFeeAuctionCelo()**](#updatefeeauctioncelo) | Update the NFT auction fee
+[**updateFeeAuctionCeloKMS()**](#updatefeeauctioncelokms) | Update the NFT auction fee
+[**updateFeeAuctionKMS()**](#updatefeeauctionkms) | Update the NFT auction fee
 
 
 ## `approveNftSpending()`
@@ -276,7 +101,9 @@ The auction/marketplace smart contract will transfer the asset to the buyer afte
 
 [✨ View "approveNftSpending.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpending.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `approveNftSpendingCelo()`
 
@@ -310,7 +137,9 @@ ApproveNftSpendingCelo operation
 
 [✨ View "approveNftSpendingCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `approveNftSpendingCeloKMS()`
 
@@ -344,7 +173,9 @@ ApproveNftSpendingCeloKMS operation
 
 [✨ View "approveNftSpendingCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `approveNftSpendingKMS()`
 
@@ -378,7 +209,9 @@ ApproveNftSpendingKMS operation
 
 [✨ View "approveNftSpendingKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bidOnAuction()`
 
@@ -444,7 +277,9 @@ Bid for an asset at the NFT auction
 
 [✨ View "bidOnAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bidOnAuctionCelo()`
 
@@ -478,7 +313,9 @@ BidOnAuctionCelo operation
 
 [✨ View "bidOnAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bidOnAuctionCeloKMS()`
 
@@ -512,7 +349,9 @@ BidOnAuctionCeloKMS operation
 
 [✨ View "bidOnAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bidOnAuctionKMS()`
 
@@ -546,7 +385,9 @@ BidOnAuctionKMS operation
 
 [✨ View "bidOnAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bloAucUpdateFeeRecipient()`
 
@@ -596,7 +437,9 @@ Update the recipient of the NFT auction fee
 
 [✨ View "bloAucUpdateFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipient.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bloAucUpdateFeeRecipientCelo()`
 
@@ -630,7 +473,9 @@ UpdateFeeRecipientCelo operation
 
 [✨ View "bloAucUpdateFeeRecipientCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bloAucUpdateFeeRecipientCeloKMS()`
 
@@ -664,7 +509,9 @@ UpdateFeeRecipientCeloKMS operation
 
 [✨ View "bloAucUpdateFeeRecipientCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `bloAucUpdateFeeRecipientKMS()`
 
@@ -698,7 +545,9 @@ UpdateFeeRecipientKMS operation
 
 [✨ View "bloAucUpdateFeeRecipientKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelAuction()`
 
@@ -758,7 +607,9 @@ Cancel the selling of an asset at the NFT auction
 
 [✨ View "cancelAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelAuctionCelo()`
 
@@ -792,7 +643,9 @@ CancelAuctionCelo operation
 
 [✨ View "cancelAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelAuctionCeloKMS()`
 
@@ -826,7 +679,9 @@ CancelAuctionCeloKMS operation
 
 [✨ View "cancelAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `cancelAuctionKMS()`
 
@@ -860,7 +715,9 @@ CancelAuctionKMS operation
 
 [✨ View "cancelAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createAuction()`
 
@@ -908,7 +765,9 @@ Sell an asset at the NFT auction
 
 [✨ View "createAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createAuctionCelo()`
 
@@ -942,7 +801,9 @@ CreateAuctionCelo operation
 
 [✨ View "createAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createAuctionCeloKMS()`
 
@@ -976,7 +837,9 @@ CreateAuctionCeloKMS operation
 
 [✨ View "createAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createAuctionKMS()`
 
@@ -1010,7 +873,9 @@ CreateAuctionKMS operation
 
 [✨ View "createAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateAuction()`
 
@@ -1060,7 +925,9 @@ Create an NFT auction
 
 [✨ View "generateAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateAuctionCelo()`
 
@@ -1094,7 +961,9 @@ GenerateAuctionCelo operation
 
 [✨ View "generateAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateAuctionCeloKMS()`
 
@@ -1128,7 +997,9 @@ GenerateAuctionCeloKMS operation
 
 [✨ View "generateAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateAuctionKMS()`
 
@@ -1162,7 +1033,9 @@ GenerateAuctionKMS operation
 
 [✨ View "generateAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAuction()`
 
@@ -1208,7 +1081,9 @@ Get information about an auctioned asset at the NFT auction
 
 [✨ View "getAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAuctionFee()`
 
@@ -1252,7 +1127,9 @@ Get the NFT auction fee
 
 [✨ View "getAuctionFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFee.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAuctionFeeRecipient()`
 
@@ -1296,7 +1173,9 @@ Get the recipient of the NFT auction fee
 
 [✨ View "getAuctionFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFeeRecipient.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `settleAuction()`
 
@@ -1354,7 +1233,9 @@ Both seller and buyer can settle the auction.
 
 [✨ View "settleAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `settleAuctionCelo()`
 
@@ -1388,7 +1269,9 @@ SettleAuctionCelo operation
 
 [✨ View "settleAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `settleAuctionCeloKMS()`
 
@@ -1422,7 +1305,9 @@ SettleAuctionCeloKMS operation
 
 [✨ View "settleAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `settleAuctionKMS()`
 
@@ -1456,7 +1341,9 @@ SettleAuctionKMS operation
 
 [✨ View "settleAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeAuction()`
 
@@ -1506,7 +1393,9 @@ Update the NFT auction fee
 
 [✨ View "updateFeeAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeAuctionCelo()`
 
@@ -1540,7 +1429,9 @@ UpdateFeeAuctionCelo operation
 
 [✨ View "updateFeeAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCelo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeAuctionCeloKMS()`
 
@@ -1574,7 +1465,9 @@ UpdateFeeAuctionCeloKMS operation
 
 [✨ View "updateFeeAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCeloKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateFeeAuctionKMS()`
 
@@ -1608,4 +1501,5 @@ UpdateFeeAuctionKMS operation
 
 [✨ View "updateFeeAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

@@ -12,110 +12,25 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **callReadSmartContractMethod()**](#callreadsmartcontractmethod) 
-
-> Invoke a method in a smart contract on Ethereum
-> 
-> **POST** `/v3/ethereum/smartcontract`
-
-[🔹 **callSmartContractMethod()**](#callsmartcontractmethod) 
-
-> Invoke a method in a smart contract on Ethereum
-> 
-> **POST** `/v3/ethereum/smartcontract`
-
-[🔹 **callSmartContractMethodKMS()**](#callsmartcontractmethodkms) 
-
-> Invoke a method in a smart contract on Ethereum
-> 
-> **POST** `/v3/ethereum/smartcontract`
-
-[🔹 **ethBroadcast()**](#ethbroadcast) 
-
-> Broadcast signed Ethereum transaction
-> 
-> **POST** `/v3/ethereum/broadcast`
-
-[🔹 **ethGenerateAddress()**](#ethgenerateaddress) 
-
-> Generate Ethereum account address from Extended public key
-> 
-> **GET** `/v3/ethereum/address/{xpub}/{index}`
-
-[🔹 **ethGenerateAddressPrivateKey()**](#ethgenerateaddressprivatekey) 
-
-> Generate Ethereum private key
-> 
-> **POST** `/v3/ethereum/wallet/priv`
-
-[🔹 **ethGenerateWallet()**](#ethgeneratewallet) 
-
-> Generate Ethereum wallet
-> 
-> **GET** `/v3/ethereum/wallet`
-
-[🔹 **ethGetBalance()**](#ethgetbalance) 
-
-> Get the ETH balance of an Ethereum account
-> 
-> **GET** `/v3/ethereum/account/balance/{address}`
-
-[🔹 **ethGetBlock()**](#ethgetblock) 
-
-> Get Ethereum block by hash
-> 
-> **GET** `/v3/ethereum/block/{hash}`
-
-[🔹 **ethGetCurrentBlock()**](#ethgetcurrentblock) 
-
-> Get current block number
-> 
-> **GET** `/v3/ethereum/block/current`
-
-[🔹 **ethGetInternalTransactionByAddress()**](#ethgetinternaltransactionbyaddress) 
-
-> Get Ethereum internal transactions by address
-> 
-> **GET** `/v3/ethereum/account/transaction/erc20/internal/{address}`
-
-[🔹 **ethGetTransaction()**](#ethgettransaction) 
-
-> Get Ethereum Transaction
-> 
-> **GET** `/v3/ethereum/transaction/{hash}`
-
-[🔹 **ethGetTransactionByAddress()**](#ethgettransactionbyaddress) 
-
-> Get Ethereum transactions by address
-> 
-> **GET** `/v3/ethereum/account/transaction/{address}`
-
-[🔹 **ethGetTransactionCount()**](#ethgettransactioncount) 
-
-> Get count of outgoing Ethereum transactions
-> 
-> **GET** `/v3/ethereum/transaction/count/{address}`
-
-[🔹 **ethWeb3Driver()**](#ethweb3driver) 
-
-> Web3 HTTP driver
-> 
-> **POST** `/v3/ethereum/web3/{xApiKey}`
-
-[🔹 **transferEthBlockchain()**](#transferethblockchain) 
-
-> Send Ethereum / ERC20 from account to account
-> 
-> **POST** `/v3/ethereum/transaction`
-
-[🔹 **transferEthBlockchainKMS()**](#transferethblockchainkms) 
-
-> Send Ethereum / ERC20 from account to account
-> 
-> **POST** `/v3/ethereum/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**callReadSmartContractMethod()**](#callreadsmartcontractmethod) | Invoke a method in a smart contract on Ethereum
+[**callSmartContractMethod()**](#callsmartcontractmethod) | Invoke a method in a smart contract on Ethereum
+[**callSmartContractMethodKMS()**](#callsmartcontractmethodkms) | Invoke a method in a smart contract on Ethereum
+[**ethBroadcast()**](#ethbroadcast) | Broadcast signed Ethereum transaction
+[**ethGenerateAddress()**](#ethgenerateaddress) | Generate Ethereum account address from Extended public key
+[**ethGenerateAddressPrivateKey()**](#ethgenerateaddressprivatekey) | Generate Ethereum private key
+[**ethGenerateWallet()**](#ethgeneratewallet) | Generate Ethereum wallet
+[**ethGetBalance()**](#ethgetbalance) | Get the ETH balance of an Ethereum account
+[**ethGetBlock()**](#ethgetblock) | Get Ethereum block by hash
+[**ethGetCurrentBlock()**](#ethgetcurrentblock) | Get current block number
+[**ethGetInternalTransactionByAddress()**](#ethgetinternaltransactionbyaddress) | Get Ethereum internal transactions by address
+[**ethGetTransaction()**](#ethgettransaction) | Get Ethereum Transaction
+[**ethGetTransactionByAddress()**](#ethgettransactionbyaddress) | Get Ethereum transactions by address
+[**ethGetTransactionCount()**](#ethgettransactioncount) | Get count of outgoing Ethereum transactions
+[**ethWeb3Driver()**](#ethweb3driver) | Web3 HTTP driver
+[**transferEthBlockchain()**](#transferethblockchain) | Send Ethereum / ERC20 from account to account
+[**transferEthBlockchainKMS()**](#transferethblockchainkms) | Send Ethereum / ERC20 from account to account
 
 
 ## `callReadSmartContractMethod()`
@@ -152,7 +67,9 @@ CallReadSmartContractMethod operation
 
 [✨ View "callReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callReadSmartContractMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callSmartContractMethod()`
 
@@ -214,7 +131,9 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethod.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `callSmartContractMethodKMS()`
 
@@ -250,7 +169,9 @@ CallSmartContractMethodKMS operation
 
 [✨ View "callSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethodKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethBroadcast()`
 
@@ -288,7 +209,9 @@ Broadcast signed Ethereum transaction
 
 [✨ View "ethBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGenerateAddress()`
 
@@ -328,7 +251,9 @@ Generate Ethereum account address from Extended public key
 
 [✨ View "ethGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGenerateAddressPrivateKey()`
 
@@ -366,7 +291,9 @@ Generate Ethereum private key
 
 [✨ View "ethGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGenerateWallet()`
 
@@ -410,7 +337,9 @@ Tatum follows the BIP44 specification and generates for Ethereum wallets with th
 
 [✨ View "ethGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGetBalance()`
 
@@ -450,7 +379,9 @@ Get the ETH balance of an Ethereum account
 
 [✨ View "ethGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGetBlock()`
 
@@ -488,7 +419,9 @@ Gets an Ethereum block-by-block hash or block number.
 
 [✨ View "ethGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGetCurrentBlock()`
 
@@ -524,7 +457,9 @@ Gets the current Ethereum block number. This is the number of the latest block i
 
 [✨ View "ethGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGetInternalTransactionByAddress()`
 
@@ -566,7 +501,9 @@ Get Ethereum internal transactions by address
 
 [✨ View "ethGetInternalTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGetTransaction()`
 
@@ -604,7 +541,9 @@ Get Ethereum transaction by transaction hash.
 
 [✨ View "ethGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGetTransactionByAddress()`
 
@@ -652,7 +591,9 @@ Get Ethereum transactions by address. This includes incoming and outgoing transa
 
 [✨ View "ethGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionByAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethGetTransactionCount()`
 
@@ -690,7 +631,9 @@ Get count of outgoing Ethereum transactions
 
 [✨ View "ethGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `ethWeb3Driver()`
 
@@ -732,7 +675,9 @@ Web3 HTTP driver
 
 [✨ View "ethWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethWeb3Driver.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferEthBlockchain()`
 
@@ -778,7 +723,9 @@ Send Ethereum / ERC20 from account to account
 
 [✨ View "transferEthBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferEthBlockchainKMS()`
 
@@ -814,4 +761,5 @@ TransferEthBlockchainKMS operation
 
 [✨ View "transferEthBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

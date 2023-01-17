@@ -12,38 +12,13 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **custodialCreateWallet()**](#custodialcreatewallet) 
-
-> Create managed address
-> 
-> **POST** `/v3/custodial/wallet`
-
-[🔹 **custodialDeleteWallet()**](#custodialdeletewallet) 
-
-> Delete managed address
-> 
-> **DELETE** `/v3/custodial/wallet/{id}`
-
-[🔹 **custodialGetWallet()**](#custodialgetwallet) 
-
-> Get managed address
-> 
-> **GET** `/v3/custodial/wallet/{id}`
-
-[🔹 **custodialGetWallets()**](#custodialgetwallets) 
-
-> Get managed addresses
-> 
-> **GET** `/v3/custodial/wallet`
-
-[🔹 **custodialTransferManagedAddress()**](#custodialtransfermanagedaddress) 
-
-> Sign and transfer using managed address
-> 
-> **POST** `/v3/custodial/transaction`
-
+Method | Description
+------------- | ------------- | -------------
+[**custodialCreateWallet()**](#custodialcreatewallet) | Create managed address
+[**custodialDeleteWallet()**](#custodialdeletewallet) | Delete managed address
+[**custodialGetWallet()**](#custodialgetwallet) | Get managed address
+[**custodialGetWallets()**](#custodialgetwallets) | Get managed addresses
+[**custodialTransferManagedAddress()**](#custodialtransfermanagedaddress) | Sign and transfer using managed address
 
 
 ## `custodialCreateWallet()`
@@ -82,7 +57,9 @@ Create managed address
 
 [✨ View "custodialCreateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `custodialDeleteWallet()`
 
@@ -118,7 +95,9 @@ Delete managed address
 
 [✨ View "custodialDeleteWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `custodialGetWallet()`
 
@@ -156,7 +135,9 @@ Get managed address
 
 [✨ View "custodialGetWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `custodialGetWallets()`
 
@@ -189,7 +170,9 @@ Get managed addresses
 
 [✨ View "custodialGetWallets.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallets.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `custodialTransferManagedAddress()`
 
@@ -253,4 +236,5 @@ Sign and transfer using managed address
 
 [✨ View "custodialTransferManagedAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

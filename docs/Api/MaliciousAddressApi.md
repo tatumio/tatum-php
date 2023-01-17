@@ -12,14 +12,9 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **checkMalicousAddress()**](#checkmalicousaddress) 
-
-> Check malicous address
-> 
-> **GET** `/v3/security/address/{address}`
-
+Method | Description
+------------- | ------------- | -------------
+[**checkMalicousAddress()**](#checkmalicousaddress) | Check malicous address
 
 
 ## `checkMalicousAddress()`
@@ -58,4 +53,5 @@ Check malicous address
 
 [✨ View "checkMalicousAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MaliciousAddressApi/checkMalicousAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

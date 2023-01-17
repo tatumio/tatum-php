@@ -12,44 +12,14 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **addressExists()**](#addressexists) 
-
-> Check whether a blockchain address is assigned to a virtual account
-> 
-> **GET** `/v3/offchain/account/address/{address}/{currency}`
-
-[🔹 **assignAddress()**](#assignaddress) 
-
-> Assign a blockchain address to a virtual account
-> 
-> **POST** `/v3/offchain/account/{id}/address/{address}`
-
-[🔹 **generateDepositAddress()**](#generatedepositaddress) 
-
-> Create a deposit address for a virtual account
-> 
-> **POST** `/v3/offchain/account/{id}/address`
-
-[🔹 **generateDepositAddressesBatch()**](#generatedepositaddressesbatch) 
-
-> Create multiple deposit addresses for a virtual account
-> 
-> **POST** `/v3/offchain/account/address/batch`
-
-[🔹 **getAllDepositAddresses()**](#getalldepositaddresses) 
-
-> Get all deposit addresses for a virtual account
-> 
-> **GET** `/v3/offchain/account/{id}/address`
-
-[🔹 **removeAddress()**](#removeaddress) 
-
-> Remove a deposit address from a virtual account
-> 
-> **DELETE** `/v3/offchain/account/{id}/address/{address}`
-
+Method | Description
+------------- | ------------- | -------------
+[**addressExists()**](#addressexists) | Check whether a blockchain address is assigned to a virtual account
+[**assignAddress()**](#assignaddress) | Assign a blockchain address to a virtual account
+[**generateDepositAddress()**](#generatedepositaddress) | Create a deposit address for a virtual account
+[**generateDepositAddressesBatch()**](#generatedepositaddressesbatch) | Create multiple deposit addresses for a virtual account
+[**getAllDepositAddresses()**](#getalldepositaddresses) | Get all deposit addresses for a virtual account
+[**removeAddress()**](#removeaddress) | Remove a deposit address from a virtual account
 
 
 ## `addressExists()`
@@ -92,7 +62,9 @@ Check whether a blockchain address is assigned to a virtual account
 
 [✨ View "addressExists.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/addressExists.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `assignAddress()`
 
@@ -146,7 +118,9 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
 [✨ View "assignAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/assignAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateDepositAddress()`
 
@@ -210,7 +184,9 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
 [✨ View "generateDepositAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateDepositAddressesBatch()`
 
@@ -272,7 +248,9 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
 [✨ View "generateDepositAddressesBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getAllDepositAddresses()`
 
@@ -308,7 +286,9 @@ Get all deposit addresses for a virtual account
 
 [✨ View "getAllDepositAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `removeAddress()`
 
@@ -350,4 +330,5 @@ Remove a deposit address from a virtual account
 
 [✨ View "removeAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/removeAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

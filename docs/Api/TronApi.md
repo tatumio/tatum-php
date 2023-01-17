@@ -12,146 +12,31 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **createTronTrc10Blockchain()**](#createtrontrc10blockchain) 
-
-> Create a TRC-10 token
-> 
-> **POST** `/v3/tron/trc10/deploy`
-
-[🔹 **createTronTrc10BlockchainKMS()**](#createtrontrc10blockchainkms) 
-
-> Create a TRC-10 token
-> 
-> **POST** `/v3/tron/trc10/deploy`
-
-[🔹 **createTronTrc20Blockchain()**](#createtrontrc20blockchain) 
-
-> Create a TRC-20 token
-> 
-> **POST** `/v3/tron/trc20/deploy`
-
-[🔹 **createTronTrc20BlockchainKMS()**](#createtrontrc20blockchainkms) 
-
-> Create a TRC-20 token
-> 
-> **POST** `/v3/tron/trc20/deploy`
-
-[🔹 **freezeTron()**](#freezetron) 
-
-> Freeze the balance of a TRON account
-> 
-> **POST** `/v3/tron/freezeBalance`
-
-[🔹 **freezeTronKMS()**](#freezetronkms) 
-
-> Freeze the balance of a TRON account
-> 
-> **POST** `/v3/tron/freezeBalance`
-
-[🔹 **generateTronwallet()**](#generatetronwallet) 
-
-> Generate a TRON wallet
-> 
-> **GET** `/v3/tron/wallet`
-
-[🔹 **transferTronBlockchain()**](#transfertronblockchain) 
-
-> Send TRX to a TRON account
-> 
-> **POST** `/v3/tron/transaction`
-
-[🔹 **transferTronBlockchainKMS()**](#transfertronblockchainkms) 
-
-> Send TRX to a TRON account
-> 
-> **POST** `/v3/tron/transaction`
-
-[🔹 **transferTronTrc10Blockchain()**](#transfertrontrc10blockchain) 
-
-> Send TRC-10 tokens to a TRON account
-> 
-> **POST** `/v3/tron/trc10/transaction`
-
-[🔹 **transferTronTrc10BlockchainKMS()**](#transfertrontrc10blockchainkms) 
-
-> Send TRC-10 tokens to a TRON account
-> 
-> **POST** `/v3/tron/trc10/transaction`
-
-[🔹 **transferTronTrc20Blockchain()**](#transfertrontrc20blockchain) 
-
-> Send TRC-20 tokens to a TRON account
-> 
-> **POST** `/v3/tron/trc20/transaction`
-
-[🔹 **transferTronTrc20BlockchainKMS()**](#transfertrontrc20blockchainkms) 
-
-> Send TRC-20 tokens to a TRON account
-> 
-> **POST** `/v3/tron/trc20/transaction`
-
-[🔹 **tronAccountTx()**](#tronaccounttx) 
-
-> Get all transactions for a TRON account
-> 
-> **GET** `/v3/tron/transaction/account/{address}`
-
-[🔹 **tronAccountTx20()**](#tronaccounttx20) 
-
-> Get TRC-20 transactions for a TRON account
-> 
-> **GET** `/v3/tron/transaction/account/{address}/trc20`
-
-[🔹 **tronBroadcast()**](#tronbroadcast) 
-
-> Broadcast a TRON transaction
-> 
-> **POST** `/v3/tron/broadcast`
-
-[🔹 **tronGenerateAddress()**](#trongenerateaddress) 
-
-> Generate a TRON address from the wallet's extended public key
-> 
-> **GET** `/v3/tron/address/{xpub}/{index}`
-
-[🔹 **tronGenerateAddressPrivateKey()**](#trongenerateaddressprivatekey) 
-
-> Generate the private key for a TRON address
-> 
-> **POST** `/v3/tron/wallet/priv`
-
-[🔹 **tronGetAccount()**](#trongetaccount) 
-
-> Get the TRON account by its address
-> 
-> **GET** `/v3/tron/account/{address}`
-
-[🔹 **tronGetBlock()**](#trongetblock) 
-
-> Get a TRON block by its hash or height
-> 
-> **GET** `/v3/tron/block/{hash}`
-
-[🔹 **tronGetCurrentBlock()**](#trongetcurrentblock) 
-
-> Get the current TRON block
-> 
-> **GET** `/v3/tron/info`
-
-[🔹 **tronGetTransaction()**](#trongettransaction) 
-
-> Get a TRON transaction by its hash
-> 
-> **GET** `/v3/tron/transaction/{hash}`
-
-[🔹 **tronTrc10Detail()**](#trontrc10detail) 
-
-> Get information about a TRC-10 token
-> 
-> **GET** `/v3/tron/trc10/detail/{idOrOwnerAddress}`
-
+Method | Description
+------------- | ------------- | -------------
+[**createTronTrc10Blockchain()**](#createtrontrc10blockchain) | Create a TRC-10 token
+[**createTronTrc10BlockchainKMS()**](#createtrontrc10blockchainkms) | Create a TRC-10 token
+[**createTronTrc20Blockchain()**](#createtrontrc20blockchain) | Create a TRC-20 token
+[**createTronTrc20BlockchainKMS()**](#createtrontrc20blockchainkms) | Create a TRC-20 token
+[**freezeTron()**](#freezetron) | Freeze the balance of a TRON account
+[**freezeTronKMS()**](#freezetronkms) | Freeze the balance of a TRON account
+[**generateTronwallet()**](#generatetronwallet) | Generate a TRON wallet
+[**transferTronBlockchain()**](#transfertronblockchain) | Send TRX to a TRON account
+[**transferTronBlockchainKMS()**](#transfertronblockchainkms) | Send TRX to a TRON account
+[**transferTronTrc10Blockchain()**](#transfertrontrc10blockchain) | Send TRC-10 tokens to a TRON account
+[**transferTronTrc10BlockchainKMS()**](#transfertrontrc10blockchainkms) | Send TRC-10 tokens to a TRON account
+[**transferTronTrc20Blockchain()**](#transfertrontrc20blockchain) | Send TRC-20 tokens to a TRON account
+[**transferTronTrc20BlockchainKMS()**](#transfertrontrc20blockchainkms) | Send TRC-20 tokens to a TRON account
+[**tronAccountTx()**](#tronaccounttx) | Get all transactions for a TRON account
+[**tronAccountTx20()**](#tronaccounttx20) | Get TRC-20 transactions for a TRON account
+[**tronBroadcast()**](#tronbroadcast) | Broadcast a TRON transaction
+[**tronGenerateAddress()**](#trongenerateaddress) | Generate a TRON address from the wallet's extended public key
+[**tronGenerateAddressPrivateKey()**](#trongenerateaddressprivatekey) | Generate the private key for a TRON address
+[**tronGetAccount()**](#trongetaccount) | Get the TRON account by its address
+[**tronGetBlock()**](#trongetblock) | Get a TRON block by its hash or height
+[**tronGetCurrentBlock()**](#trongetcurrentblock) | Get the current TRON block
+[**tronGetTransaction()**](#trongettransaction) | Get a TRON transaction by its hash
+[**tronTrc10Detail()**](#trontrc10detail) | Get information about a TRC-10 token
 
 
 ## `createTronTrc10Blockchain()`
@@ -198,7 +83,9 @@ Create a TRC-10 token
 
 [✨ View "createTronTrc10Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc10Blockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createTronTrc10BlockchainKMS()`
 
@@ -232,7 +119,9 @@ CreateTronTrc10BlockchainKMS operation
 
 [✨ View "createTronTrc10BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc10BlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createTronTrc20Blockchain()`
 
@@ -276,7 +165,9 @@ Create a TRC-20 token
 
 [✨ View "createTronTrc20Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc20Blockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `createTronTrc20BlockchainKMS()`
 
@@ -310,7 +201,9 @@ CreateTronTrc20BlockchainKMS operation
 
 [✨ View "createTronTrc20BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc20BlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `freezeTron()`
 
@@ -354,7 +247,9 @@ Freeze the balance of a TRON account
 
 [✨ View "freezeTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/freezeTron.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `freezeTronKMS()`
 
@@ -388,7 +283,9 @@ FreezeTronKMS operation
 
 [✨ View "freezeTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/freezeTronKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `generateTronwallet()`
 
@@ -430,7 +327,9 @@ Tatum follows BIP44 specification and generates for Bitcoin wallet with derivati
 
 [✨ View "generateTronwallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/generateTronwallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferTronBlockchain()`
 
@@ -474,7 +373,9 @@ Send TRX to a TRON account
 
 [✨ View "transferTronBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferTronBlockchainKMS()`
 
@@ -508,7 +409,9 @@ TransferTronBlockchainKMS operation
 
 [✨ View "transferTronBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferTronTrc10Blockchain()`
 
@@ -552,7 +455,9 @@ Send TRC-10 tokens to a TRON account
 
 [✨ View "transferTronTrc10Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc10Blockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferTronTrc10BlockchainKMS()`
 
@@ -586,7 +491,9 @@ TransferTronTrc10BlockchainKMS operation
 
 [✨ View "transferTronTrc10BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc10BlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferTronTrc20Blockchain()`
 
@@ -630,7 +537,9 @@ Send TRC-20 tokens to a TRON account
 
 [✨ View "transferTronTrc20Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc20Blockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferTronTrc20BlockchainKMS()`
 
@@ -664,7 +573,9 @@ TransferTronTrc20BlockchainKMS operation
 
 [✨ View "transferTronTrc20BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc20BlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronAccountTx()`
 
@@ -708,7 +619,9 @@ Get all transactions for a TRON account
 
 [✨ View "tronAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronAccountTx.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronAccountTx20()`
 
@@ -752,7 +665,9 @@ Get TRC-20 transactions for a TRON account
 
 [✨ View "tronAccountTx20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronAccountTx20.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronBroadcast()`
 
@@ -788,7 +703,9 @@ Broadcast a TRON transaction
 
 [✨ View "tronBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronGenerateAddress()`
 
@@ -826,7 +743,9 @@ Generate a TRON address from the wallet's extended public key
 
 [✨ View "tronGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGenerateAddress.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronGenerateAddressPrivateKey()`
 
@@ -862,7 +781,9 @@ Generate the private key for a TRON address
 
 [✨ View "tronGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGenerateAddressPrivateKey.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronGetAccount()`
 
@@ -898,7 +819,9 @@ Get the TRON account by its address
 
 [✨ View "tronGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetAccount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronGetBlock()`
 
@@ -934,7 +857,9 @@ Get a TRON block by its hash or height
 
 [✨ View "tronGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronGetCurrentBlock()`
 
@@ -967,7 +892,9 @@ Get the current TRON block
 
 [✨ View "tronGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetCurrentBlock.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronGetTransaction()`
 
@@ -1003,7 +930,9 @@ Get a TRON transaction by its hash
 
 [✨ View "tronGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `tronTrc10Detail()`
 
@@ -1039,4 +968,5 @@ Get information about a TRC-10 token
 
 [✨ View "tronTrc10Detail.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronTrc10Detail.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

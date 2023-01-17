@@ -12,50 +12,15 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **activateCustomer()**](#activatecustomer) 
-
-> Activate customer
-> 
-> **PUT** `/v3/ledger/customer/{id}/activate`
-
-[🔹 **deactivateCustomer()**](#deactivatecustomer) 
-
-> Deactivate customer
-> 
-> **PUT** `/v3/ledger/customer/{id}/deactivate`
-
-[🔹 **disableCustomer()**](#disablecustomer) 
-
-> Disable customer
-> 
-> **PUT** `/v3/ledger/customer/{id}/disable`
-
-[🔹 **enableCustomer()**](#enablecustomer) 
-
-> Enable customer
-> 
-> **PUT** `/v3/ledger/customer/{id}/enable`
-
-[🔹 **findAllCustomers()**](#findallcustomers) 
-
-> List all customers
-> 
-> **GET** `/v3/ledger/customer`
-
-[🔹 **getCustomerByExternalOrInternalId()**](#getcustomerbyexternalorinternalid) 
-
-> Get customer details
-> 
-> **GET** `/v3/ledger/customer/{id}`
-
-[🔹 **updateCustomer()**](#updatecustomer) 
-
-> Update customer
-> 
-> **PUT** `/v3/ledger/customer/{id}`
-
+Method | Description
+------------- | ------------- | -------------
+[**activateCustomer()**](#activatecustomer) | Activate customer
+[**deactivateCustomer()**](#deactivatecustomer) | Deactivate customer
+[**disableCustomer()**](#disablecustomer) | Disable customer
+[**enableCustomer()**](#enablecustomer) | Enable customer
+[**findAllCustomers()**](#findallcustomers) | List all customers
+[**getCustomerByExternalOrInternalId()**](#getcustomerbyexternalorinternalid) | Get customer details
+[**updateCustomer()**](#updatecustomer) | Update customer
 
 
 ## `activateCustomer()`
@@ -92,7 +57,9 @@ Activated customer is able to do any operation.
 
 [✨ View "activateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/activateCustomer.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `deactivateCustomer()`
 
@@ -128,7 +95,9 @@ Deactivate customer is not able to do any operation. Customer can be deactivated
 
 [✨ View "deactivateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/deactivateCustomer.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `disableCustomer()`
 
@@ -164,7 +133,9 @@ Disabled customer cannot perform end-user operations, such as create new account
 
 [✨ View "disableCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/disableCustomer.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `enableCustomer()`
 
@@ -200,7 +171,9 @@ Enabled customer can perform all operations. By default all customers are enable
 
 [✨ View "enableCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/enableCustomer.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `findAllCustomers()`
 
@@ -238,7 +211,9 @@ List all customers
 
 [✨ View "findAllCustomers.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/findAllCustomers.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getCustomerByExternalOrInternalId()`
 
@@ -274,7 +249,9 @@ Using anonymized external ID or internal customer ID you can access customer det
 
 [✨ View "getCustomerByExternalOrInternalId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/getCustomerByExternalOrInternalId.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `updateCustomer()`
 
@@ -312,4 +289,5 @@ This method is helpful in case your primary system will change ID's or customer 
 
 [✨ View "updateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/updateCustomer.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

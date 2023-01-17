@@ -12,110 +12,25 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **accountSettingsXrpBlockchain()**](#accountsettingsxrpblockchain) 
-
-> Modify XRP account
-> 
-> **POST** `/v3/xrp/account/settings`
-
-[🔹 **accountSettingsXrpBlockchainKMS()**](#accountsettingsxrpblockchainkms) 
-
-> Modify XRP account
-> 
-> **POST** `/v3/xrp/account/settings`
-
-[🔹 **transferXrpBlockchain()**](#transferxrpblockchain) 
-
-> Send XRP from address to address
-> 
-> **POST** `/v3/xrp/transaction`
-
-[🔹 **transferXrpBlockchainAsset()**](#transferxrpblockchainasset) 
-
-> Send XRP from address to address
-> 
-> **POST** `/v3/xrp/transaction`
-
-[🔹 **transferXrpBlockchainAssetKMS()**](#transferxrpblockchainassetkms) 
-
-> Send XRP from address to address
-> 
-> **POST** `/v3/xrp/transaction`
-
-[🔹 **transferXrpBlockchainKMS()**](#transferxrpblockchainkms) 
-
-> Send XRP from address to address
-> 
-> **POST** `/v3/xrp/transaction`
-
-[🔹 **trustLineXrpBlockchain()**](#trustlinexrpblockchain) 
-
-> Create / Update / Delete XRP trust line
-> 
-> **POST** `/v3/xrp/trust`
-
-[🔹 **trustLineXrpBlockchainKMS()**](#trustlinexrpblockchainkms) 
-
-> Create / Update / Delete XRP trust line
-> 
-> **POST** `/v3/xrp/trust`
-
-[🔹 **xrpBroadcast()**](#xrpbroadcast) 
-
-> Broadcast signed XRP transaction
-> 
-> **POST** `/v3/xrp/broadcast`
-
-[🔹 **xrpGetAccountBalance()**](#xrpgetaccountbalance) 
-
-> Get Account Balance
-> 
-> **GET** `/v3/xrp/account/{account}/balance`
-
-[🔹 **xrpGetAccountInfo()**](#xrpgetaccountinfo) 
-
-> Get Account info
-> 
-> **GET** `/v3/xrp/account/{account}`
-
-[🔹 **xrpGetAccountTx()**](#xrpgetaccounttx) 
-
-> Get Account transactions
-> 
-> **GET** `/v3/xrp/account/tx/{account}`
-
-[🔹 **xrpGetFee()**](#xrpgetfee) 
-
-> Get actual Blockchain fee
-> 
-> **GET** `/v3/xrp/fee`
-
-[🔹 **xrpGetLastClosedLedger()**](#xrpgetlastclosedledger) 
-
-> Get XRP Blockchain Information
-> 
-> **GET** `/v3/xrp/info`
-
-[🔹 **xrpGetLedger()**](#xrpgetledger) 
-
-> Get Ledger
-> 
-> **GET** `/v3/xrp/ledger/{i}`
-
-[🔹 **xrpGetTransaction()**](#xrpgettransaction) 
-
-> Get XRP Transaction by hash
-> 
-> **GET** `/v3/xrp/transaction/{hash}`
-
-[🔹 **xrpWallet()**](#xrpwallet) 
-
-> Generate XRP account
-> 
-> **GET** `/v3/xrp/account`
-
+Method | Description
+------------- | ------------- | -------------
+[**accountSettingsXrpBlockchain()**](#accountsettingsxrpblockchain) | Modify XRP account
+[**accountSettingsXrpBlockchainKMS()**](#accountsettingsxrpblockchainkms) | Modify XRP account
+[**transferXrpBlockchain()**](#transferxrpblockchain) | Send XRP from address to address
+[**transferXrpBlockchainAsset()**](#transferxrpblockchainasset) | Send XRP from address to address
+[**transferXrpBlockchainAssetKMS()**](#transferxrpblockchainassetkms) | Send XRP from address to address
+[**transferXrpBlockchainKMS()**](#transferxrpblockchainkms) | Send XRP from address to address
+[**trustLineXrpBlockchain()**](#trustlinexrpblockchain) | Create / Update / Delete XRP trust line
+[**trustLineXrpBlockchainKMS()**](#trustlinexrpblockchainkms) | Create / Update / Delete XRP trust line
+[**xrpBroadcast()**](#xrpbroadcast) | Broadcast signed XRP transaction
+[**xrpGetAccountBalance()**](#xrpgetaccountbalance) | Get Account Balance
+[**xrpGetAccountInfo()**](#xrpgetaccountinfo) | Get Account info
+[**xrpGetAccountTx()**](#xrpgetaccounttx) | Get Account transactions
+[**xrpGetFee()**](#xrpgetfee) | Get actual Blockchain fee
+[**xrpGetLastClosedLedger()**](#xrpgetlastclosedledger) | Get XRP Blockchain Information
+[**xrpGetLedger()**](#xrpgetledger) | Get Ledger
+[**xrpGetTransaction()**](#xrpgettransaction) | Get XRP Transaction by hash
+[**xrpWallet()**](#xrpwallet) | Generate XRP account
 
 
 ## `accountSettingsXrpBlockchain()`
@@ -154,7 +69,9 @@ Modify XRP account
 
 [✨ View "accountSettingsXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/accountSettingsXrpBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `accountSettingsXrpBlockchainKMS()`
 
@@ -188,7 +105,9 @@ AccountSettingsXrpBlockchainKMS operation
 
 [✨ View "accountSettingsXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/accountSettingsXrpBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXrpBlockchain()`
 
@@ -226,7 +145,9 @@ Send XRP from address to address
 
 [✨ View "transferXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXrpBlockchainAsset()`
 
@@ -260,7 +181,9 @@ TransferXrpBlockchainAsset operation
 
 [✨ View "transferXrpBlockchainAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainAsset.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXrpBlockchainAssetKMS()`
 
@@ -294,7 +217,9 @@ TransferXrpBlockchainAssetKMS operation
 
 [✨ View "transferXrpBlockchainAssetKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainAssetKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `transferXrpBlockchainKMS()`
 
@@ -328,7 +253,9 @@ TransferXrpBlockchainKMS operation
 
 [✨ View "transferXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `trustLineXrpBlockchain()`
 
@@ -368,7 +295,9 @@ Create / Update / Delete XRP trust line
 
 [✨ View "trustLineXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/trustLineXrpBlockchain.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `trustLineXrpBlockchainKMS()`
 
@@ -402,7 +331,9 @@ TrustLineXrpBlockchainKMS operation
 
 [✨ View "trustLineXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/trustLineXrpBlockchainKMS.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpBroadcast()`
 
@@ -438,7 +369,9 @@ Broadcast signed XRP transaction
 
 [✨ View "xrpBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpBroadcast.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpGetAccountBalance()`
 
@@ -474,7 +407,9 @@ Get XRP Account Balance. Obtain balance of the XRP and other assets on the accou
 
 [✨ View "xrpGetAccountBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountBalance.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpGetAccountInfo()`
 
@@ -510,7 +445,9 @@ Get XRP Account info.
 
 [✨ View "xrpGetAccountInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountInfo.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpGetAccountTx()`
 
@@ -550,7 +487,9 @@ List all Account transactions.
 
 [✨ View "xrpGetAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountTx.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpGetFee()`
 
@@ -583,7 +522,9 @@ Get actual Blockchain fee
 
 [✨ View "xrpGetFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetFee.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpGetLastClosedLedger()`
 
@@ -616,7 +557,9 @@ Get XRP Blockchain last closed ledger index and hash.
 
 [✨ View "xrpGetLastClosedLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetLastClosedLedger.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpGetLedger()`
 
@@ -652,7 +595,9 @@ Get ledger by sequence.
 
 [✨ View "xrpGetLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetLedger.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpGetTransaction()`
 
@@ -688,7 +633,9 @@ Get XRP Transaction by transaction hash.
 
 [✨ View "xrpGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetTransaction.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `xrpWallet()`
 
@@ -721,4 +668,5 @@ Generate XRP account
 
 [✨ View "xrpWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpWallet.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+

@@ -12,20 +12,10 @@ layout: page
 
 ## Methods
 
-HTTP requests are relative to https://api.tatum.io
-
-[🔹 **getDeposits()**](#getdeposits) 
-
-> List all deposits for product
-> 
-> **GET** `/v3/ledger/deposits`
-
-[🔹 **getDepositsCount()**](#getdepositscount) 
-
-> Count of found entities for get deposits request
-> 
-> **GET** `/v3/ledger/deposits/count`
-
+Method | Description
+------------- | ------------- | -------------
+[**getDeposits()**](#getdeposits) | List all deposits for product
+[**getDepositsCount()**](#getdepositscount) | Count of found entities for get deposits request
 
 
 ## `getDeposits()`
@@ -76,7 +66,9 @@ Lists all deposits for API key.
 
 [✨ View "getDeposits.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDeposits.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
+
 
 ## `getDepositsCount()`
 
@@ -126,4 +118,5 @@ Counts total entities found by get deposits request.
 
 [✨ View "getDepositsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDepositsCount.php)
 
-[[Back to top]](#) | [[Back to API Endpoints]](../index.md#api-endpoints)
+[[Back to top]](#top)
+
