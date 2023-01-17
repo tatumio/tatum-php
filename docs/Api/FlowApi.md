@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**flowAddPubKeyMnemonic()**](#flowaddpubkeymnemonic) | Add public key to Flow address
 [**flowAddPubKeySecret()**](#flowaddpubkeysecret) | Add public key to Flow address
 [**flowAddPubKeySecretKMS()**](#flowaddpubkeysecretkms) | Add public key to Flow address

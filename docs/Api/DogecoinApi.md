@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**dogeBroadcast()**](#dogebroadcast) | Broadcast signed Dogecoin transaction
 [**dogeGenerateAddress()**](#dogegenerateaddress) | Generate Dogecoin deposit address from Extended public key
 [**dogeGenerateAddressPrivateKey()**](#dogegenerateaddressprivatekey) | Generate Dogecoin private key

@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**ltcBroadcast()**](#ltcbroadcast) | Broadcast signed Litecoin transaction
 [**ltcGenerateAddress()**](#ltcgenerateaddress) | Generate Litecoin deposit address from Extended public key
 [**ltcGenerateAddressPrivateKey()**](#ltcgenerateaddressprivatekey) | Generate Litecoin private key

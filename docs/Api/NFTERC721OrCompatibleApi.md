@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**addNftMinter()**](#addnftminter) | Add a blockchain address as an NFT minter to an NFT smart contract
 [**addNftMinterKMS()**](#addnftminterkms) | Add a blockchain address as an NFT minter to an NFT smart contract
 [**burnNft()**](#burnnft) | Burn an NFT

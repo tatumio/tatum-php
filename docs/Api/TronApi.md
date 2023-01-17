@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**createTronTrc10Blockchain()**](#createtrontrc10blockchain) | Create a TRC-10 token
 [**createTronTrc10BlockchainKMS()**](#createtrontrc10blockchainkms) | Create a TRC-10 token
 [**createTronTrc20Blockchain()**](#createtrontrc20blockchain) | Create a TRC-20 token

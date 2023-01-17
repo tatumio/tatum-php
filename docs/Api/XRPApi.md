@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**accountSettingsXrpBlockchain()**](#accountsettingsxrpblockchain) | Modify XRP account
 [**accountSettingsXrpBlockchainKMS()**](#accountsettingsxrpblockchainkms) | Modify XRP account
 [**transferXrpBlockchain()**](#transferxrpblockchain) | Send XRP from address to address

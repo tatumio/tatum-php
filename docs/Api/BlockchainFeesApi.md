@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**bscEstimateGas()**](#bscestimategas) | Estimate BNB Smart Chain transaction fees
 [**celoEstimateGas()**](#celoestimategas) | Estimate Celo Chain transaction fees
 [**egldEstimateGas()**](#egldestimategas) | Estimate EGLD transaction fees

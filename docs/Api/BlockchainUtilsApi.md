@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**getAuctionEstimatedTime()**](#getauctionestimatedtime) | Estimate the block height for a future point in time
 [**sCGetContractAddress()**](#scgetcontractaddress) | Get the blockchain address of a smart contract by the deployment transaction ID
 

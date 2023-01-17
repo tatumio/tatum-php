@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**createSubscriptionBalance()**](#createsubscriptionbalance) | Create a subscription
 [**createSubscriptionContractLogEvent()**](#createsubscriptioncontractlogevent) | Create a subscription
 [**createSubscriptionIncoming()**](#createsubscriptionincoming) | Create a subscription

@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**getDeposits()**](#getdeposits) | List all deposits for product
 [**getDepositsCount()**](#getdepositscount) | Count of found entities for get deposits request
 

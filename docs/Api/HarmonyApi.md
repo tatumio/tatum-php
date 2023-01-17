@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**callOneReadSmartContractMethod()**](#callonereadsmartcontractmethod) | Invoke a method in a smart contract on Harmony
 [**callOneSmartContractMethod()**](#callonesmartcontractmethod) | Invoke a method in a smart contract on Harmony
 [**callOneSmartContractMethodKMS()**](#callonesmartcontractmethodkms) | Invoke a method in a smart contract on Harmony

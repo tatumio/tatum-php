@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**activateCustomer()**](#activatecustomer) | Activate customer
 [**deactivateCustomer()**](#deactivatecustomer) | Deactivate customer
 [**disableCustomer()**](#disablecustomer) | Disable customer

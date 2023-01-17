@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**solanaBroadcastConfirm()**](#solanabroadcastconfirm) | Broadcast and confirm signed Solana transaction
 [**solanaGenerateWallet()**](#solanageneratewallet) | Generate Solana wallet
 [**solanaGetBalance()**](#solanagetbalance) | Get Solana Account balance

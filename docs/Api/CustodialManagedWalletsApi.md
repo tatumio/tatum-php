@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**custodialCreateWallet()**](#custodialcreatewallet) | Create managed address
 [**custodialDeleteWallet()**](#custodialdeletewallet) | Delete managed address
 [**custodialGetWallet()**](#custodialgetwallet) | Get managed address

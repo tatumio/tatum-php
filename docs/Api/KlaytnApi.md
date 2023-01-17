@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**callKlaytnSmartContractMethod()**](#callklaytnsmartcontractmethod) | Invoke a method in a smart contract on Klaytn
 [**callKlaytnSmartContractMethodKMS()**](#callklaytnsmartcontractmethodkms) | Invoke a method in a smart contract on Klaytn
 [**callKlaytnSmartContractReadMethod()**](#callklaytnsmartcontractreadmethod) | Invoke a method in a smart contract on Klaytn

@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**approveNftSpending()**](#approvenftspending) | Allow the NFT auction or marketplace to transfer an asset
 [**approveNftSpendingCelo()**](#approvenftspendingcelo) | Allow the NFT auction or marketplace to transfer an asset
 [**approveNftSpendingCeloKMS()**](#approvenftspendingcelokms) | Allow the NFT auction or marketplace to transfer an asset

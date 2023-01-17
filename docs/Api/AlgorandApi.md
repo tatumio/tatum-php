@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**algoNodeGetDriver()**](#algonodegetdriver) | Access Algorand Algod GET node endpoints
 [**algoNodeIndexerGetDriver()**](#algonodeindexergetdriver) | Access Algorand Indexer GET node endpoints
 [**algoNodePostDriver()**](#algonodepostdriver) | Access Algorand Algod POST node endpoints

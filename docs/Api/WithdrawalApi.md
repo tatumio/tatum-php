@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**broadcastBlockchainTransaction()**](#broadcastblockchaintransaction) | Broadcast signed transaction and complete withdrawal
 [**cancelInProgressWithdrawal()**](#cancelinprogresswithdrawal) | Cancel withdrawal
 [**completeWithdrawal()**](#completewithdrawal) | Complete withdrawal

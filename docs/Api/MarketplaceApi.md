@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**bloMarWithdrawFromMarketplaceSolana()**](#blomarwithdrawfrommarketplacesolana) | Withdraw funds from the marketplace treasury account on Solana
 [**bloMarWithdrawFromMarketplaceSolanaKMS()**](#blomarwithdrawfrommarketplacesolanakms) | Withdraw funds from the marketplace treasury account on Solana
 [**buyAssetOnMarketplace()**](#buyassetonmarketplace) | Buy an asset on the NFT marketplace

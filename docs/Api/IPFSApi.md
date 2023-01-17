@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**getIPFSData()**](#getipfsdata) | Get file from IPFS
 [**storeIPFS()**](#storeipfs) | Store data to IPFS
 

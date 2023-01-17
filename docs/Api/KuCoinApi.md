@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**callKcsSmartContractMethod()**](#callkcssmartcontractmethod) | Invoke a method in a smart contract on KuCoin Community Chain
 [**callKcsSmartContractMethodKMS()**](#callkcssmartcontractmethodkms) | Invoke a method in a smart contract on KuCoin Community Chain
 [**callKcsSmartContractReadMethod()**](#callkcssmartcontractreadmethod) | Invoke a method in a smart contract on KuCoin Community Chain

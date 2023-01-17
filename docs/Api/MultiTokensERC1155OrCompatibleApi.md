@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**addMultiTokenMinter()**](#addmultitokenminter) | Add a Multi Token minter
 [**addMultiTokenMinterKMS()**](#addmultitokenminterkms) | Add a Multi Token minter
 [**burnMultiToken()**](#burnmultitoken) | Burn a Multi Token

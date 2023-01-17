@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**freezeApiKey()**](#freezeapikey) | Freeze API Key
 [**getCredits()**](#getcredits) | Get information about your credit consumption for the last month
 [**getVersion()**](#getversion) | Get API version

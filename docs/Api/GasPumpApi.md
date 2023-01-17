@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**activateGasPump()**](#activategaspump) | Activate gas pump addresses
 [**activateGasPumpCelo()**](#activategaspumpcelo) | Activate gas pump addresses
 [**activateGasPumpCeloKMS()**](#activategaspumpcelokms) | Activate gas pump addresses

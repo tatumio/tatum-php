@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**nodeJsonPostRpcDriver()**](#nodejsonpostrpcdriver) | Connect to the blockchain node through an RPC driver
 [**nodeJsonRpcGetDriver()**](#nodejsonrpcgetdriver) | Connect to the blockchain node through an RPC driver
 [**nodeJsonRpcPutDriver()**](#nodejsonrpcputdriver) | Connect to the blockchain node through an RPC driver

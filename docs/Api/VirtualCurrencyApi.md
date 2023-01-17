@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**createCurrency()**](#createcurrency) | Create new virtual currency
 [**getCurrency()**](#getcurrency) | Get virtual currency
 [**mintCurrency()**](#mintcurrency) | Create new supply of virtual currency

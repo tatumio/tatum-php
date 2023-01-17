@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**bchBroadcast()**](#bchbroadcast) | Broadcast signed Bitcoin Cash transaction
 [**bchGenerateAddress()**](#bchgenerateaddress) | Generate Bitcoin Cash deposit address from Extended public key
 [**bchGenerateAddressPrivateKey()**](#bchgenerateaddressprivatekey) | Generate Bitcoin Cash private key

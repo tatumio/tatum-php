@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**offchainEstimateFee()**](#offchainestimatefee) | Estimate ledger to blockchain transaction fee
 
 

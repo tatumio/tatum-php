@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**chartRequest()**](#chartrequest) | Obtain chart data from historical closed trades
 [**createFutureTrade()**](#createfuturetrade) | Store buy / sell trade
 [**createTrade()**](#createtrade) | Store buy / sell trade

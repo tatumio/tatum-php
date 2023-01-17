@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**callCeloReadSmartContractMethod()**](#callceloreadsmartcontractmethod) | Invoke a method in a smart contract on Celo
 [**callCeloSmartContractMethod()**](#callcelosmartcontractmethod) | Invoke a method in a smart contract on Celo
 [**callCeloSmartContractMethodKMS()**](#callcelosmartcontractmethodkms) | Invoke a method in a smart contract on Celo

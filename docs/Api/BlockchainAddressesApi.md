@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**addressExists()**](#addressexists) | Check whether a blockchain address is assigned to a virtual account
 [**assignAddress()**](#assignaddress) | Assign a blockchain address to a virtual account
 [**generateDepositAddress()**](#generatedepositaddress) | Create a deposit address for a virtual account

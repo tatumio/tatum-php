@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**bnbBroadcast()**](#bnbbroadcast) | Broadcast signed BNB transaction
 [**bnbGenerateWallet()**](#bnbgeneratewallet) | Generate Binance wallet
 [**bnbGetAccount()**](#bnbgetaccount) | Get Binance Account

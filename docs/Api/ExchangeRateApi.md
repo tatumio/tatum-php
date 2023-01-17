@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**getExchangeRate()**](#getexchangerate) | Get the current exchange rate for exchanging fiat/crypto assets
 
 

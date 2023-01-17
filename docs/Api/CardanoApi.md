@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**adaBroadcast()**](#adabroadcast) | Broadcast signed Ada transaction
 [**adaGenerateAddress()**](#adagenerateaddress) | Generate Ada deposit address from Extended public key
 [**adaGenerateAddressPrivateKey()**](#adagenerateaddressprivatekey) | Generate Ada private key

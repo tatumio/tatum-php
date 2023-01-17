@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**checkMalicousAddress()**](#checkmalicousaddress) | Check malicous address
 
 

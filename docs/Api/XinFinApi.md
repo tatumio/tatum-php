@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**callXdcReadSmartContractMethod()**](#callxdcreadsmartcontractmethod) | Invoke a method in a smart contract on XinFin
 [**callXdcSmartContractMethod()**](#callxdcsmartcontractmethod) | Invoke a method in a smart contract on XinFin
 [**callXdcSmartContractMethodKMS()**](#callxdcsmartcontractmethodkms) | Invoke a method in a smart contract on XinFin

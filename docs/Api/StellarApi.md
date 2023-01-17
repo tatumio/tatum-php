@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**transferXlmBlockchain()**](#transferxlmblockchain) | Send XLM from address to address
 [**transferXlmBlockchainAsset()**](#transferxlmblockchainasset) | Send XLM from address to address
 [**transferXlmBlockchainKMS()**](#transferxlmblockchainkms) | Send XLM from address to address

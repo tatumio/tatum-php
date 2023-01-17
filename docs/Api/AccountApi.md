@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**activateAccount()**](#activateaccount) | Activate account
 [**blockAmount()**](#blockamount) | Block an amount in an account
 [**createAccount()**](#createaccount) | Create a virtual account

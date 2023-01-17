@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**callPolygonSmartContractMethod()**](#callpolygonsmartcontractmethod) | Invoke a method in a smart contract on Polygon
 [**callPolygonSmartContractMethodCaller()**](#callpolygonsmartcontractmethodcaller) | Invoke a method in a smart contract on Polygon
 [**callPolygonSmartContractMethodKMS()**](#callpolygonsmartcontractmethodkms) | Invoke a method in a smart contract on Polygon

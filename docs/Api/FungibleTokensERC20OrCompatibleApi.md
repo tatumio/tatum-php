@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**approveCeloErc20()**](#approveceloerc20) | Allow a blockchain address to transfer and burn fungible tokens
 [**approveCeloErc20KMS()**](#approveceloerc20kms) | Allow a blockchain address to transfer and burn fungible tokens
 [**approveErc20()**](#approveerc20) | Allow a blockchain address to transfer and burn fungible tokens

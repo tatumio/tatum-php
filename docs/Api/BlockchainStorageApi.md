@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**createRecord()**](#createrecord) | Store a log record
 [**createRecordCelo()**](#createrecordcelo) | Store a log record
 [**createRecordKMS()**](#createrecordkms) | Store a log record

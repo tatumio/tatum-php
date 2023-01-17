@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**bscBroadcast()**](#bscbroadcast) | Broadcast signed BSC transaction
 [**bscGenerateAddress()**](#bscgenerateaddress) | Generate BSC account address from Extended public key
 [**bscGenerateAddressPrivateKey()**](#bscgenerateaddressprivatekey) | Generate BSC private key

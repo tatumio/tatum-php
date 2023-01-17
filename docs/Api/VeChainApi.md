@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**transferVetBlockchain()**](#transfervetblockchain) | Send VeChain from account to account
 [**transferVetBlockchainKMS()**](#transfervetblockchainkms) | Send VeChain from account to account
 [**vetBroadcast()**](#vetbroadcast) | Broadcast signed VeChain transaction

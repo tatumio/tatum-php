@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**getTransactions()**](#gettransactions) | Find transactions within the ledger.
 [**getTransactionsByAccountId()**](#gettransactionsbyaccountid) | Find transactions for account.
 [**getTransactionsByCustomerId()**](#gettransactionsbycustomerid) | Find transactions for a customer across all of the customer's accounts.

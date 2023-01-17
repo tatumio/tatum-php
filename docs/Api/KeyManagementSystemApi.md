@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**completePendingSignature()**](#completependingsignature) | Complete pending transaction to sign
 [**deletePendingTransactionToSign()**](#deletependingtransactiontosign) | Delete transaction
 [**getPendingTransactionToSign()**](#getpendingtransactiontosign) | Get transaction details

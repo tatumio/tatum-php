@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**callReadSmartContractMethod()**](#callreadsmartcontractmethod) | Invoke a method in a smart contract on Ethereum
 [**callSmartContractMethod()**](#callsmartcontractmethod) | Invoke a method in a smart contract on Ethereum
 [**callSmartContractMethodKMS()**](#callsmartcontractmethodkms) | Invoke a method in a smart contract on Ethereum

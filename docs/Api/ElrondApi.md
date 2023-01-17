@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**eGldGetCurrentBlock()**](#egldgetcurrentblock) | Get current block number
 [**egldBroadcast()**](#egldbroadcast) | Broadcast signed EGLD transaction
 [**egldGenerateAddress()**](#egldgenerateaddress) | Generate EGLD account address from mnemonic

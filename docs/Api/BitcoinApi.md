@@ -13,7 +13,7 @@ layout: page
 ## Methods
 
 Method | Description
-------------- | ------------- | -------------
+------------- | -------------
 [**btcBroadcast()**](#btcbroadcast) | Broadcast a signed Bitcoin transaction
 [**btcGenerateAddress()**](#btcgenerateaddress) | Generate a Bitcoin address from the wallet's extended public key
 [**btcGenerateAddressPrivateKey()**](#btcgenerateaddressprivatekey) | Generate the private key for a Bitcoin address
