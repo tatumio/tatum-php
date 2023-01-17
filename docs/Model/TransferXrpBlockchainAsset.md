@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getIssuerAccount()** | **string** | Blockchain address of the issuer of the assets to create trust line for. |
 **getToken()** | **string** | Asset name. Must be 160bit HEX string, e.g. SHA1. |
 
-[[Back to Index]](../index.md)

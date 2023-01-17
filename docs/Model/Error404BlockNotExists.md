@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | No such block. |
 **getStatusCode()** | **float** | 404 |
 
-[[Back to Index]](../index.md)

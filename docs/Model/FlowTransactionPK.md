@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | Amount to be sent |
 **getPrivateKey()** | **string** | Secret for account. Secret, or signature Id must be present. |
 
-[[Back to Index]](../index.md)

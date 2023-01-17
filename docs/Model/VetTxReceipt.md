@@ -13,11 +13,10 @@ Method name | Return type | Description | Notes
 **getPaid()** | **string** |  | [optional]
 **getReward()** | **string** |  | [optional]
 **getReverted()** | **bool** |  | [optional]
-**getMeta()** | [**\Tatum\Model\VetTxReceiptMeta**](VetTxReceiptMeta.md) |  | [optional]
-**getOutputs()** | [**\Tatum\Model\VetTxReceiptOutputsInner[]**](VetTxReceiptOutputsInner.md) | List of recipient addresses and amounts to send to each of them. | [optional]
+**getMeta()** | [**\Tatum\Model\VetTxReceiptMeta**](../VetTxReceiptMeta) |  | [optional]
+**getOutputs()** | [**\Tatum\Model\VetTxReceiptOutputsInner[]**](../VetTxReceiptOutputsInner) | List of recipient addresses and amounts to send to each of them. | [optional]
 **getBlockNumber()** | **float** |  | [optional]
 **getBlockHash()** | **string** |  | [optional]
 **getTransactionHash()** | **string** |  | [optional]
 **getStatus()** | **string** |  | [optional]
 
-[[Back to Index]](../index.md)

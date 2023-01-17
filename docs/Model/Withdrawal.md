@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getPaymentId()** | **string** | Identifier of the payment, shown for created Transaction within Tatum sender account. | [optional]
 **getSenderNote()** | **string** | Note visible to owner of withdrawing account | [optional]
 
-[[Back to Index]](../index.md)

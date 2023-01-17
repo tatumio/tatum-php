@@ -8,7 +8,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getValue()** | [**\Tatum\Model\TronTxRawDataContractInnerParameterValue**](TronTxRawDataContractInnerParameterValue.md) |  | [optional]
+**getValue()** | [**\Tatum\Model\TronTxRawDataContractInnerParameterValue**](../TronTxRawDataContractInnerParameterValue) |  | [optional]
 **getTypeUrl()** | **string** | Type of the smart contract event. | [optional]
 
-[[Back to Index]](../index.md)

@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getContractAddress()** | **string** | The blockchain address of the NFT; this is the address from the <code>nftAddress</code> parameter returned in the response body of the <a href="#operation/NftMintErc721">minting call</a> |
 **getFromPrivateKey()** | **string** | The private key of the blockchain address that you are sending the NFT from (the address that you specified in the <code>from</code> parameter) |
 
-[[Back to Index]](../index.md)

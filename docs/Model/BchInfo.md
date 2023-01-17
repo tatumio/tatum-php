@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getBestblockhash()** | **string** | Hash of the last block. | [optional]
 **getDifficulty()** | **float** | Difficulty of the PoW algorithm. | [optional]
 
-[[Back to Index]](../index.md)

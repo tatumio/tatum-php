@@ -40,5 +40,5 @@ Sign transaction
 
 [✨ View "sign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/BitcoinCash/sign.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

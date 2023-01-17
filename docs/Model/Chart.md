@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getClose()** | **string** | Close trade value in the current interval. |
 **getVolume()** | **string** | Total volume of assets traded in the current interval. Volume is in currency1 asset. |
 
-[[Back to Index]](../index.md)

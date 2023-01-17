@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getName()** | **string** | Name of the property | [optional]
-**getValue()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInnerValue**](FlowEventPayloadValueFieldsInnerValue.md) |  | [optional]
+**getValue()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInnerValue**](../FlowEventPayloadValueFieldsInnerValue) |  | [optional]
 
-[[Back to Index]](../index.md)

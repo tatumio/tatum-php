@@ -19,4 +19,3 @@ Method name | Return type | Description | Notes
 **getGasLimit()** | **string** | Gas limit for transaction in gas price. If not set, automatic calculation will be used. | [optional]
 **getGasPrice()** | **string** | Gas price in Gwei. If not set, automatic calculation will be used. | [optional]
 
-[[Back to Index]](../index.md)

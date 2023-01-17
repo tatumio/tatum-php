@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getSourceTag()** | **int** | Source tag of sender account, if any. | [optional]
 **getDestinationTag()** | **int** | Destination tag of recipient account, if any. | [optional]
 
-[[Back to Index]](../index.md)

@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getTxHash()** | **string** | Transaction hash. | [optional]
 **getAddress()** | **string** | Recipient address. | [optional]
 
-[[Back to Index]](../index.md)

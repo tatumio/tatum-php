@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getAttr()** | **string** | Used to parametrize withdrawal as a change address for left coins from transaction. XPub or attr must be used. | [optional]
 **getXpub()** | **string** | Extended public key (xpub) of the wallet associated with the accounts. | [optional]
 
-[[Back to Index]](../index.md)

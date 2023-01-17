@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Incompatible currencies for currency1 and fee account. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

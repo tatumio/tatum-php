@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getSequence()** | **float** | The sequence number of the next valid transaction for this account. (Each account starts with Sequence = 1 and increases each time a transaction is made.) | [optional]
 **getIndex()** | **string** |  | [optional]
 
-[[Back to Index]](../index.md)

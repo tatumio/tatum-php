@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getDigits()** | **float** | The number of decimal places that the fungible tokens have |
 **getFromPrivateKey()** | **string** | The private key of the blockchain address from which the fee will be deducted |
 
-[[Back to Index]](../index.md)

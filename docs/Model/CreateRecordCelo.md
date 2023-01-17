@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getTo()** | **string** | The blockchain address to store the data on<br/>If not provided, the data will be stored on the address from which the transaction is made. | [optional]
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to Index]](../index.md)

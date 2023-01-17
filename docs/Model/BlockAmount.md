@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getType()** | **string** | The type of the blockage that you are applying; can be a code or an identifier from an external system or a short description of the blockage |
 **getDescription()** | **string** | The description of the blockage that you are applying | [optional]
 
-[[Back to Index]](../index.md)

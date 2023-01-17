@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to store withdrawal, it is impossible to create transaction. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

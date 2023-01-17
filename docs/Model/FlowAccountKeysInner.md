@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getRevoked()** | **bool** |  | [optional]
 **getWeight()** | **float** | Weight of the key. 1000 means single signature necessary. | [optional]
 
-[[Back to Index]](../index.md)

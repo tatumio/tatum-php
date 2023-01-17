@@ -62,7 +62,7 @@ Broadcast signed Bitcoin Cash transaction
 
 [✨ View "bchBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -102,7 +102,7 @@ Generate Bitcoin Cash deposit address from Extended public key
 
 [✨ View "bchGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -140,7 +140,7 @@ Generate Bitcoin Cash private key
 
 [✨ View "bchGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -184,7 +184,7 @@ Tatum follows BIP44 specification and generates for Bitcoin Cash wallet with der
 
 [✨ View "bchGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -222,7 +222,7 @@ Get Bitcoin Cash Block detail by block hash or height.
 
 [✨ View "bchGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -257,7 +257,7 @@ Get Bitcoin Cash Blockchain Information. Obtain basic info like testnet / mainne
 
 [✨ View "bchGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlockChainInfo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -295,7 +295,7 @@ Get Bitcoin Cash Block hash. Returns hash of the block to get the block detail.
 
 [✨ View "bchGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlockHash.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -333,7 +333,7 @@ Get Bitcoin Cash Transaction by transaction hash.
 
 [✨ View "bchGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetRawTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -373,7 +373,7 @@ Get Bitcoin Cash Transaction by address. Limit is 50 transaction per response.
 
 [✨ View "bchGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetTxByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -413,7 +413,7 @@ JSON RPC HTTP driver
 
 [✨ View "bchRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchRpcDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -473,7 +473,7 @@ Send BCH to Bitcoin Cash addresses
 
 [✨ View "bchTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -509,5 +509,5 @@ BchTransactionKMS operation
 
 [✨ View "bchTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchTransactionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

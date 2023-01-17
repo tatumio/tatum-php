@@ -19,4 +19,3 @@ Method name | Return type | Description | Notes
 **getRequiresSignOff()** | **bool** | If set to "true", the marketplace must sign all operations related to the listings and sales. |
 **getCanChangeSalePrice()** | **bool** | If set to "true", the marketplace can change the sale price that the seller intentionally set to 0. |
 
-[[Back to Index]](../index.md)

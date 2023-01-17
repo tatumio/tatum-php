@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Incompatible currencies for currency2 account ${trade.currency2AccountId} and trading pair. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

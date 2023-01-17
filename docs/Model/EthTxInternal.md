@@ -23,4 +23,3 @@ Method name | Return type | Description | Notes
 **getGasUsed()** | **float** | The amount of gas used by this specific transaction alone. | [optional]
 **getContractAddress()** | **string** | The contract address created, if the transaction was a contract creation, otherwise null. | [optional]
 
-[[Back to Index]](../index.md)

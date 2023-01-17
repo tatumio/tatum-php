@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | No such KMS signature with id '{id}'. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

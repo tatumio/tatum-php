@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Currency2 account's customer ${currency2Account.customerId} is disabled, unable to perform exchange trade. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

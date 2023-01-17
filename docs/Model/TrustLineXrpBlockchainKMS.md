@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getSignatureId()** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
 **getFee()** | **string** | Fee to be paid, in XRP. If omitted, current fee will be calculated. | [optional]
 
-[[Back to Index]](../index.md)

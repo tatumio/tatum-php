@@ -19,4 +19,3 @@ Method name | Return type | Description | Notes
 **getSignatureId()** | **string** | Identifier of the secret associated in signing application. Secret, or signature Id must be present. |
 **getSenderNote()** | **string** | Note visible to owner of withdrawing account. | [optional]
 
-[[Back to Index]](../index.md)

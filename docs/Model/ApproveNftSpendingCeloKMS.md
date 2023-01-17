@@ -17,6 +17,5 @@ Method name | Return type | Description | Notes
 **getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic | [optional]
 **getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid - CELO - CUSD - CEUR |
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

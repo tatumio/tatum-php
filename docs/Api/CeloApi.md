@@ -90,7 +90,7 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callCeloReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloReadSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -126,7 +126,7 @@ CallCeloSmartContractMethod operation
 
 [✨ View "callCeloSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -162,7 +162,7 @@ CallCeloSmartContractMethodKMS operation
 
 [✨ View "callCeloSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethodKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -200,7 +200,7 @@ Broadcast signed Celo transaction
 
 [✨ View "celoBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -240,7 +240,7 @@ Generate Celo account address from Extended public key
 
 [✨ View "celoGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -278,7 +278,7 @@ Generate Celo private key
 
 [✨ View "celoGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -322,7 +322,7 @@ Tatum follows BIP44 specification and generates for Celo wallet with derivation 
 
 [✨ View "celoGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -360,7 +360,7 @@ Get Celo Account balance
 
 [✨ View "celoGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -398,7 +398,7 @@ Get Celo block by hash
 
 [✨ View "celoGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -433,7 +433,7 @@ Get current block number
 
 [✨ View "celoGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -471,7 +471,7 @@ Get Celo Transaction
 
 [✨ View "celoGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -519,7 +519,7 @@ Get Celo transactions by address
 
 [✨ View "celoGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -557,7 +557,7 @@ Get count of outgoing Celo transactions
 
 [✨ View "celoGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -599,7 +599,7 @@ Web3 HTTP driver
 
 [✨ View "celoWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoWeb3Driver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -645,7 +645,7 @@ Send Celo / ERC20 from account to account
 
 [✨ View "transferCeloBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -681,5 +681,5 @@ TransferCeloBlockchainKMS operation
 
 [✨ View "transferCeloBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

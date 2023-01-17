@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getRecipient()** | **string** |  | [optional]
 **getAmount()** | **string** |  | [optional]
 
-[[Back to Index]](../index.md)

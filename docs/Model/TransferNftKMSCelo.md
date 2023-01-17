@@ -21,4 +21,3 @@ Method name | Return type | Description | Notes
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
 
-[[Back to Index]](../index.md)

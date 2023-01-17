@@ -69,7 +69,7 @@ Activates an account.
 
 [✨ View "activateAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -109,7 +109,7 @@ Block an amount in an account
 
 [✨ View "blockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -145,7 +145,7 @@ CreateAccount operation
 
 [✨ View "createAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -183,7 +183,7 @@ Create multiple accounts in a batch call
 
 [✨ View "createAccountBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountBatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -257,7 +257,7 @@ Blockchain addresses on Elrond are generated based on the mnemonic of an Elrond 
 
 [✨ View "createAccountXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountXpub.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -295,7 +295,7 @@ Deactivates an account. Only accounts with account and available balances of zer
 
 [✨ View "deactivateAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deactivateAccount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -333,7 +333,7 @@ Unblocks previously blocked amounts in an account. Increases the available balan
 
 [✨ View "deleteAllBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteAllBlockAmount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -371,7 +371,7 @@ Unblocks a previously blocked amount in an account. Increases the available bala
 
 [✨ View "deleteBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteBlockAmount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -409,7 +409,7 @@ Disables all outgoing transactions. Incoming transactions to the account are ava
 
 [✨ View "freezeAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/freezeAccount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -447,7 +447,7 @@ Get balance for the account.
 
 [✨ View "getAccountBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -485,7 +485,7 @@ Gets active account by ID. Displays all information regarding the given account.
 
 [✨ View "getAccountByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountByAccountId.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -539,7 +539,7 @@ Lists all accounts. Inactive accounts are also visible.
 
 [✨ View "getAccounts.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccounts.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -583,7 +583,7 @@ Lists all accounts associated with a customer. Only active accounts are visible.
 
 [✨ View "getAccountsByCustomerId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsByCustomerId.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -637,7 +637,7 @@ Count of accounts that were found from /v3/ledger/account
 
 [✨ View "getAccountsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -679,7 +679,7 @@ Gets blocked amounts for an account.
 
 [✨ View "getBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -717,7 +717,7 @@ Gets blocked amount by id.
 
 [✨ View "getBlockAmountById.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmountById.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -757,7 +757,7 @@ Unblock an amount in an account and perform a transaction
 
 [✨ View "unblockAmountWithTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unblockAmountWithTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -795,7 +795,7 @@ Unfreezes a previously frozen account. Unfreezing a non-frozen account not affec
 
 [✨ View "unfreezeAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unfreezeAccount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -835,5 +835,5 @@ Update account by ID. Only a small number of fields can be updated.
 
 [✨ View "updateAccountByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/updateAccountByAccountId.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

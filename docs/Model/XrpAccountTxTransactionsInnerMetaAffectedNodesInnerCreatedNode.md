@@ -10,6 +10,5 @@ Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getLedgerEntryType()** | **string** |  | [optional]
 **getLedgerIndex()** | **string** |  | [optional]
-**getNewFields()** | [**\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields**](XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields.md) |  | [optional]
+**getNewFields()** | [**\Tatum\Model\XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields**](../XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields) |  | [optional]
 
-[[Back to Index]](../index.md)

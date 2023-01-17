@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getBlockNumber()** | **float** |  | [optional]
 **getBlockTimestamp()** | **float** |  | [optional]
 
-[[Back to Index]](../index.md)

@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getTo()** | **int** | The end index of the range of gas pump addresses to activate; must be greater than or equal to the value in the <code>from</code> parameter |
 **getFromPrivateKey()** | **string** | The private key of the blockchain address that will pay the gas fee for the activation transaction |
 
-[[Back to Index]](../index.md)

@@ -20,6 +20,5 @@ Method name | Return type | Description | Notes
 **getCurrency1AccountId()** | **string** | ID of the account of the currenc 1 trade currency | [optional]
 **getCurrency2AccountId()** | **string** | ID of the account of the currenc 2 trade currency | [optional]
 **getCreated()** | **float** | Creation date, UTC millis | [optional]
-**getAttr()** | [**\Tatum\Model\TradeAttr**](TradeAttr.md) |  | [optional]
+**getAttr()** | [**\Tatum\Model\TradeAttr**](../TradeAttr) |  | [optional]
 
-[[Back to Index]](../index.md)

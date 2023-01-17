@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getContractAddress()** | **string** | Address of NFT token |
 **getFeeCurrency()** | **string** | (Celo only) The currency in which the transaction fee will be paid | [optional]
 
-[[Back to Index]](../index.md)

@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getFeeAccount()** | **string** | The blockchain address of the fee account |
 **getTreasuryAccount()** | **string** | The blockchain address of the treasury account |
 
-[[Back to Index]](../index.md)

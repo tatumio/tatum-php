@@ -57,7 +57,7 @@ Complete pending transaction to sign
 
 [✨ View "completePendingSignature.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/completePendingSignature.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -97,7 +97,7 @@ Delete transaction to be signed. When deleting offchain transaction, linked with
 
 [✨ View "deletePendingTransactionToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -135,7 +135,7 @@ Get detail of transaction to be signed / that was already signed and contains tr
 
 [✨ View "getPendingTransactionToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -175,7 +175,7 @@ Get pending transactions to sign
 
 [✨ View "getPendingTransactionsToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -217,5 +217,5 @@ Get pending transactions to sign
 
 [✨ View "receivePendingTransactionsToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

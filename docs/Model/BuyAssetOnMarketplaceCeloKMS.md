@@ -18,6 +18,5 @@ Method name | Return type | Description | Notes
 **getErc20Address()** | **string** | (Only if you pay with the fungible tokens) The blockchain address of the fungible tokens. Do not use if you pay with the native blockchain currency. | [optional]
 **getBuyer()** | **string** | (Only if you want to buy the asset on behalf of someone else and this person wants to pay with the fungible tokens; for example, for buying the asset from a custodial wallet address) The blockchain address of the buyer on whose behalf you are buying the asset<br/>The buyer must <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access their tokens</a> before you make the purchase. | [optional]
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

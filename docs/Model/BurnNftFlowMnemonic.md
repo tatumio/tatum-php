@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getMnemonic()** | **string** | Mnemonic to generate private key of sender address. |
 **getIndex()** | **int** | Derivation index of sender address. |
 
-[[Back to Index]](../index.md)

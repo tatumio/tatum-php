@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Transaction not compliant, recipient account customer country is not defined. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

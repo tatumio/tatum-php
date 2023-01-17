@@ -21,6 +21,5 @@ Method name | Return type | Description | Notes
 **getIsErc721()** | **bool** | True if asset is NFT of type ERC721, false if ERC1155. |
 **getFromPrivateKey()** | **string** | The private key of the seller's blockchain address |
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\DeployErc20Fee**](../DeployErc20Fee) |  | [optional]
 
-[[Back to Index]](../index.md)

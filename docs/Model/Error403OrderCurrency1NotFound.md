@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to find currency1 account ${trade.currency1AccountId}. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

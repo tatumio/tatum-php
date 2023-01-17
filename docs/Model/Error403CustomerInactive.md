@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to perform operation on inactive customer. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

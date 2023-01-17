@@ -15,6 +15,5 @@ Method name | Return type | Description | Notes
 **getParams()** | **string[]** |  |
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 **getNonce()** | **float** | Nonce to be set to Klaytn transaction. If not present, last known nonce will be used. | [optional]
-**getFee()** | [**\Tatum\Model\TransferKlay20BlockchainFee**](TransferKlay20BlockchainFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\TransferKlay20BlockchainFee**](../TransferKlay20BlockchainFee) |  | [optional]
 
-[[Back to Index]](../index.md)

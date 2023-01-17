@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | It is not possible to create virtual currency. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

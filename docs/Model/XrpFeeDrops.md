@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getMinimumFee()** | **string** | The minimum transaction cost for a reference transaction to be queued for a later ledger, represented in drops of XRP. If greater than base_fee, the transaction queue is full. | [optional]
 **getOpenLedgerFee()** | **string** | The minimum transaction cost that a reference transaction must pay to be included in the current open ledger, represented in drops of XRP. | [optional]
 
-[[Back to Index]](../index.md)

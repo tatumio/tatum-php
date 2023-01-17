@@ -27,4 +27,3 @@ Method name | Return type | Description | Notes
 **getSignature()** | **object** | signature | [optional]
 **getTxType()** | **string** | indicates what type of transaction this is. Different types have differnet fields. | [optional]
 
-[[Back to Index]](../index.md)

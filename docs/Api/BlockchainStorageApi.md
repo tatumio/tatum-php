@@ -64,7 +64,7 @@ Store a log record
 
 [✨ View "createRecord.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecord.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -100,7 +100,7 @@ CreateRecordCelo operation
 
 [✨ View "createRecordCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -136,7 +136,7 @@ CreateRecordKMS operation
 
 [✨ View "createRecordKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -176,5 +176,5 @@ Get a log record
 
 [✨ View "getLog.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/getLog.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

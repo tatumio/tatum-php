@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getTo()** | **int** | The end index of the range of gas pump addresses to activate; must be greater than or equal to the value in the <code>from</code> parameter |
 **getFeesCovered()** | **bool** | Set to "true" to cover the gas fee by credits from your monthly credit allowance. |
 
-[[Back to Index]](../index.md)

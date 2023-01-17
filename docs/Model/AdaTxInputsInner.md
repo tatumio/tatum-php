@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getValue()** | **string** | Value of the transaction, in Lovelace - 1/1000000 of ADA. | [optional]
 **getAddress()** | **string** | Sender address. | [optional]
 
-[[Back to Index]](../index.md)

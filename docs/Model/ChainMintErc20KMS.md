@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to Index]](../index.md)

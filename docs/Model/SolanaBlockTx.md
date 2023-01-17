@@ -8,7 +8,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMeta()** | [**\Tatum\Model\SolanaTxMeta**](SolanaTxMeta.md) |  | [optional]
-**getTransaction()** | [**\Tatum\Model\SolanaTxTransaction**](SolanaTxTransaction.md) |  | [optional]
+**getMeta()** | [**\Tatum\Model\SolanaTxMeta**](../SolanaTxMeta) |  | [optional]
+**getTransaction()** | [**\Tatum\Model\SolanaTxTransaction**](../SolanaTxTransaction) |  | [optional]
 
-[[Back to Index]](../index.md)

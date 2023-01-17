@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionNotificationAttr**](CreateSubscriptionNotificationAttr.md) |  |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionNotificationAttr**](../CreateSubscriptionNotificationAttr) |  |
 
-[[Back to Index]](../index.md)

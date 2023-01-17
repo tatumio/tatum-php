@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getPubkey()** | **string** |  | [optional]
 **getRewardType()** | **string** |  | [optional]
 
-[[Back to Index]](../index.md)

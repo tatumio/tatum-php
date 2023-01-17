@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionPendingAttr**](CreateSubscriptionPendingAttr.md) |  |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionPendingAttr**](../CreateSubscriptionPendingAttr) |  |
 
-[[Back to Index]](../index.md)

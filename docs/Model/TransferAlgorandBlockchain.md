@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getNote()** | **string** | The note for the recipient; must not contain spaces | [optional]
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 
-[[Back to Index]](../index.md)

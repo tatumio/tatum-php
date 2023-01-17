@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | ERC20 token with given name already exists. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

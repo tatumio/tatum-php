@@ -67,7 +67,7 @@ CallReadSmartContractMethod operation
 
 [✨ View "callReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callReadSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -131,7 +131,7 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -169,7 +169,7 @@ CallSmartContractMethodKMS operation
 
 [✨ View "callSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethodKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -209,7 +209,7 @@ Broadcast signed Ethereum transaction
 
 [✨ View "ethBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -251,7 +251,7 @@ Generate Ethereum account address from Extended public key
 
 [✨ View "ethGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -291,7 +291,7 @@ Generate Ethereum private key
 
 [✨ View "ethGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -337,7 +337,7 @@ Tatum follows the BIP44 specification and generates for Ethereum wallets with th
 
 [✨ View "ethGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -379,7 +379,7 @@ Get the ETH balance of an Ethereum account
 
 [✨ View "ethGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -419,7 +419,7 @@ Gets an Ethereum block-by-block hash or block number.
 
 [✨ View "ethGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -457,7 +457,7 @@ Gets the current Ethereum block number. This is the number of the latest block i
 
 [✨ View "ethGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -501,7 +501,7 @@ Get Ethereum internal transactions by address
 
 [✨ View "ethGetInternalTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -541,7 +541,7 @@ Get Ethereum transaction by transaction hash.
 
 [✨ View "ethGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -591,7 +591,7 @@ Get Ethereum transactions by address. This includes incoming and outgoing transa
 
 [✨ View "ethGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -631,7 +631,7 @@ Get count of outgoing Ethereum transactions
 
 [✨ View "ethGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -675,7 +675,7 @@ Web3 HTTP driver
 
 [✨ View "ethWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethWeb3Driver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -723,7 +723,7 @@ Send Ethereum / ERC20 from account to account
 
 [✨ View "transferEthBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -761,5 +761,5 @@ TransferEthBlockchainKMS operation
 
 [✨ View "transferEthBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

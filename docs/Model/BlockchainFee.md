@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getTime()** | **string** | Last time fees were recalculated |
 **getBlock()** | **float** | Last used to calculate fee from |
 
-[[Back to Index]](../index.md)

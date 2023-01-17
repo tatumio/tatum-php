@@ -19,8 +19,7 @@ Method name | Return type | Description | Notes
 **getIndex()** | **float** | Index of the transaction in the block. | [optional]
 **getVersion()** | **float** | Index of the transaction. | [optional]
 **getFlag()** | **float** |  | [optional]
-**getInputs()** | [**\Tatum\Model\LtcTxInputsInner[]**](LtcTxInputsInner.md) | List of transactions, from which assets are being sent. | [optional]
-**getOutputs()** | [**\Tatum\Model\LtcTxOutputsInner[]**](LtcTxOutputsInner.md) | List of recipient addresses and amounts to send to each of them. | [optional]
+**getInputs()** | [**\Tatum\Model\LtcTxInputsInner[]**](../LtcTxInputsInner) | List of transactions, from which assets are being sent. | [optional]
+**getOutputs()** | [**\Tatum\Model\LtcTxOutputsInner[]**](../LtcTxOutputsInner) | List of recipient addresses and amounts to send to each of them. | [optional]
 **getLocktime()** | **float** | Block this transaction was included in. | [optional]
 
-[[Back to Index]](../index.md)

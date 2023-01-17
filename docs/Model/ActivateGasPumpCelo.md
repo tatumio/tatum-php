@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getFeeCurrency()** | **string** | The currency in which the gas fee will be paid |
 **getFromPrivateKey()** | **string** | The private key of the blockchain address that will pay the gas fee for the activation transaction |
 
-[[Back to Index]](../index.md)

@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSErrorAttr**](CreateSubscriptionKMSErrorAttr.md) |  |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSErrorAttr**](../CreateSubscriptionKMSErrorAttr) |  |
 
-[[Back to Index]](../index.md)

@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | ${error.message} Code: ${error.code} |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

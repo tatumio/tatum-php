@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getDecimals()** | **float** |  |
 **getName()** | **string** |  |
 
-[[Back to Index]](../index.md)

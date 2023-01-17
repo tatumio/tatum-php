@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getValue()** | **string** |  | [optional]
 **getData()** | **string** |  | [optional]
 
-[[Back to Index]](../index.md)

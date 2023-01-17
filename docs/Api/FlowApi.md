@@ -75,7 +75,7 @@ Add public key to Flow address
 
 [✨ View "flowAddPubKeyMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeyMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -111,7 +111,7 @@ FlowAddPubKeySecret operation
 
 [✨ View "flowAddPubKeySecret.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecret.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -147,7 +147,7 @@ FlowAddPubKeySecretKMS operation
 
 [✨ View "flowAddPubKeySecretKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecretKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -183,7 +183,7 @@ FlowCreateAddressFromPubKeyKMS operation
 
 [✨ View "flowCreateAddressFromPubKeyKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -225,7 +225,7 @@ Create Flow address from public key
 
 [✨ View "flowCreateAddressFromPubKeyMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -261,7 +261,7 @@ FlowCreateAddressFromPubKeySecret operation
 
 [✨ View "flowCreateAddressFromPubKeySecret.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeySecret.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -297,7 +297,7 @@ FlowCustomTransactionKMS operation
 
 [✨ View "flowCustomTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -341,7 +341,7 @@ Send arbitrary transaction to blockchain
 
 [✨ View "flowCustomTransactionMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -377,7 +377,7 @@ FlowCustomTransactionPK operation
 
 [✨ View "flowCustomTransactionPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionPK.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -419,7 +419,7 @@ Generate Flow address from Extended public key
 
 [✨ View "flowGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -459,7 +459,7 @@ Generate Flow public key from Extended public key
 
 [✨ View "flowGeneratePubKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -497,7 +497,7 @@ Generate Flow private key
 
 [✨ View "flowGeneratePubKeyPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -541,7 +541,7 @@ Tatum follows BIP44 specification and generates for Dogecoin wallet with derivat
 
 [✨ View "flowGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -579,7 +579,7 @@ Get Flow account details.
 
 [✨ View "flowGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetAccount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -617,7 +617,7 @@ Get Flow Block detail by block hash or height.
 
 [✨ View "flowGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -652,7 +652,7 @@ Get Flow current block number.
 
 [✨ View "flowGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockChainInfo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -694,7 +694,7 @@ Get Flow events from block.
 
 [✨ View "flowGetBlockEvents.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockEvents.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -732,7 +732,7 @@ Get Flow Transaction detail by transaction hash.
 
 [✨ View "flowGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetRawTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -768,7 +768,7 @@ FlowTransactionKMS operation
 
 [✨ View "flowTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -812,7 +812,7 @@ Send Flow to blockchain addresses
 
 [✨ View "flowTransactionMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -848,5 +848,5 @@ FlowTransactionPK operation
 
 [✨ View "flowTransactionPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionPK.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

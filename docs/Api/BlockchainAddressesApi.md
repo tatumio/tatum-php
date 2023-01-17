@@ -62,7 +62,7 @@ Check whether a blockchain address is assigned to a virtual account
 
 [✨ View "addressExists.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/addressExists.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -118,7 +118,7 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
 [✨ View "assignAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/assignAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -184,7 +184,7 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
 [✨ View "generateDepositAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -248,7 +248,7 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
 [✨ View "generateDepositAddressesBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -286,7 +286,7 @@ Get all deposit addresses for a virtual account
 
 [✨ View "getAllDepositAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -330,5 +330,5 @@ Remove a deposit address from a virtual account
 
 [✨ View "removeAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/removeAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

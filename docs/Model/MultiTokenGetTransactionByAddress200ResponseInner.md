@@ -17,4 +17,3 @@ Method name | Return type | Description | Notes
 **getOperator()** | **string** | Operator |
 **getTo()** | **string** | recipient |
 
-[[Back to Index]](../index.md)

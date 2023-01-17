@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getNonce()** | **float** |  | [optional]
 **getFeeCurrency()** | **string** | Currency to pay for transaction gas |
 
-[[Back to Index]](../index.md)

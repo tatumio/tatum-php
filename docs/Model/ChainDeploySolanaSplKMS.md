@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getFrom()** | **string** | Address on Solana blockchain, from which the fee for the deployment of SPL will be paid. |
 **getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 
-[[Back to Index]](../index.md)

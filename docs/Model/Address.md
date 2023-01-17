@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getMemo()** | **string** | In case of BNB, message is the distinguisher of the account. | [optional]
 **getMessage()** | **string** | In case of XLM, message is the distinguisher of the account. | [optional]
 
-[[Back to Index]](../index.md)

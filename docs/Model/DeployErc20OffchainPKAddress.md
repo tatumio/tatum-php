@@ -16,6 +16,5 @@ Method name | Return type | Description | Notes
 **getBasePair()** | **string** | The base pair for the virtual currency that represents the token; used to calculate the value of a transaction |
 **getBaseRate()** | **float** | The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code> | [optional] [default to 1]
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getCustomer()** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
+**getCustomer()** | [**\Tatum\Model\CustomerRegistration**](../CustomerRegistration) |  | [optional]
 
-[[Back to Index]](../index.md)

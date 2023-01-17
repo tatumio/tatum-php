@@ -26,7 +26,7 @@ $sdk->{mainnet/testnet}()->local()->transaction()->ethereum()->sign(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**$transfer** | [**\Tatum\Model\TransferEthBlockchain**](../../../Model/TransferEthBlockchain.md) | Transfer request | 
+**$transfer** | [**\Tatum\Model\TransferEthBlockchain**](../../../Model/TransferEthBlockchain) | Transfer request | 
 
 ### Return type
 
@@ -40,5 +40,5 @@ Sign transaction
 
 [✨ View "sign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/Ethereum/sign.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

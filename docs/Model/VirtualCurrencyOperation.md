@@ -17,4 +17,3 @@ Method name | Return type | Description | Notes
 **getCounterAccount()** | **string** | External account identifier. By default, there is no counterAccount present in the transaction. | [optional]
 **getSenderNote()** | **string** | Note visible to sender. Available in Revoke operation. | [optional]
 
-[[Back to Index]](../index.md)

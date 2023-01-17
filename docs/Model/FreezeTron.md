@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getResource()** | **string** | Resource to obtain, BANDWIDTH or ENERGY. |
 **getAmount()** | **string** | Amount to be frozen in TRX. |
 
-[[Back to Index]](../index.md)

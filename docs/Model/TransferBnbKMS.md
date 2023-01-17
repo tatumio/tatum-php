@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getFromAddress()** | **string** | Blockchain address to send from. |
 **getSenderNote()** | **string** | Note visible to owner of withdrawing account. | [optional]
 
-[[Back to Index]](../index.md)

@@ -57,7 +57,7 @@ Create managed address
 
 [✨ View "custodialCreateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -95,7 +95,7 @@ Delete managed address
 
 [✨ View "custodialDeleteWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -135,7 +135,7 @@ Get managed address
 
 [✨ View "custodialGetWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -170,7 +170,7 @@ Get managed addresses
 
 [✨ View "custodialGetWallets.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallets.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -236,5 +236,5 @@ Sign and transfer using managed address
 
 [✨ View "custodialTransferManagedAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

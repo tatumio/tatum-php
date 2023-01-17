@@ -17,4 +17,3 @@ Method name | Return type | Description | Notes
 **getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the NFT author's address that was generated from the mnemonic | [optional]
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to Index]](../index.md)

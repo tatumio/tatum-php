@@ -12,8 +12,7 @@ Method name | Return type | Description | Notes
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **getTo()** | **string** | Blockchain address to send assets |
 **getCurrency()** | **string** | Currency to transfer from Ethereum Blockchain Account. |
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 **getAmount()** | **string** | Amount to be sent |
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 
-[[Back to Index]](../index.md)

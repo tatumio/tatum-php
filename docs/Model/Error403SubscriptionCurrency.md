@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Invalid subscription attribute 'currency'. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

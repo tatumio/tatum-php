@@ -61,7 +61,7 @@ Create new virtual currency
 
 [✨ View "createCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/createCurrency.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -99,7 +99,7 @@ Get detail of virtual currency.
 
 [✨ View "getCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/getCurrency.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -139,7 +139,7 @@ Create new supply of virtual currency
 
 [✨ View "mintCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/mintCurrency.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -179,7 +179,7 @@ Destroy supply of virtual currency
 
 [✨ View "revokeCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/revokeCurrency.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -217,5 +217,5 @@ Change base pair and/or base rate of existing virtual currency.
 
 [✨ View "updateCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/updateCurrency.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

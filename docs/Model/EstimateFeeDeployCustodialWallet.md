@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getType()** | **string** | Type of transaction |
 **getBatchCount()** | **float** | Number of addresses to create |
 
-[[Back to Index]](../index.md)

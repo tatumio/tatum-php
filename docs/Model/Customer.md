@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getCustomerCountry()** | **string** | Country customer has to be compliant with | [optional]
 **getProviderCountry()** | **string** | Country service provider has to be compliant with | [optional]
 
-[[Back to Index]](../index.md)

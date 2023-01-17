@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | Amount of funds to withdraw. |
 **getSignatureId()** | **string** | The KMS identifier of the private key of the marketplace fee recipient |
 
-[[Back to Index]](../index.md)

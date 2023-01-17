@@ -62,7 +62,7 @@ Find transactions across whole ledger.
 
 [✨ View "getTransactions.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactions.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -106,7 +106,7 @@ Finds transactions for the account identified by the given account ID.
 
 [✨ View "getTransactionsByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByAccountId.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -150,7 +150,7 @@ Finds transactions for all accounts of the customer identified by the given inte
 
 [✨ View "getTransactionsByCustomerId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByCustomerId.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -188,7 +188,7 @@ Finds transactions for all accounts with the given reference.
 
 [✨ View "getTransactionsByReference.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByReference.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -236,7 +236,7 @@ Send payment
 
 [✨ View "sendTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -284,5 +284,5 @@ Send payment in batch
 
 [✨ View "sendTransactionBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransactionBatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

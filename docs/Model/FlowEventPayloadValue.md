@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getId()** | **string** | Event type | [optional]
-**getFields()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInner[]**](FlowEventPayloadValueFieldsInner.md) |  | [optional]
+**getFields()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInner[]**](../FlowEventPayloadValueFieldsInner) |  | [optional]
 
-[[Back to Index]](../index.md)

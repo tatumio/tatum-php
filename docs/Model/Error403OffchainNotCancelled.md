@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to broadcast transaction, and impossible to cancel withdrawal. ID is attached, "${withdrawalId}", cancel it manually. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

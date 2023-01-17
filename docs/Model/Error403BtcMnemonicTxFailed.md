@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

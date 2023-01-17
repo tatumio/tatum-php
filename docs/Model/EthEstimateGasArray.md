@@ -8,6 +8,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getEstimations()** | [**\Tatum\Model\EthEstimateGas[]**](EthEstimateGas.md) |  |
+**getEstimations()** | [**\Tatum\Model\EthEstimateGas[]**](../EthEstimateGas) |  |
 
-[[Back to Index]](../index.md)

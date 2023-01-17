@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getAddress()** | **string** | Sender address. | [optional]
 **getCoinbase()** | **bool** | Coinbase transaction - miner fee. | [optional]
 
-[[Back to Index]](../index.md)

@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getFeeLimit()** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
 **getFromPrivateKey()** | **string** | The private key of the NFT author's address |
 
-[[Back to Index]](../index.md)

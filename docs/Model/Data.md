@@ -8,6 +8,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | [**\Tatum\Model\DataData**](DataData.md) |  |
+**getData()** | [**\Tatum\Model\DataData**](../DataData) |  |
 
-[[Back to Index]](../index.md)

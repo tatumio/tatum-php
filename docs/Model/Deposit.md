@@ -24,4 +24,3 @@ Method name | Return type | Description | Notes
 **getBlockHash()** | **string** | Hash of the block where this transaction was in. | [optional]
 **getFrom()** | **string** | Blockchain address. | [optional]
 
-[[Back to Index]](../index.md)

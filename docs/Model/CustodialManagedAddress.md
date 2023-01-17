@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getChain()** | **string** | Blockchain of the address |
 **getPrivateKey()** | **string** | Private key of the address. Not present by default. | [optional]
 
-[[Back to Index]](../index.md)

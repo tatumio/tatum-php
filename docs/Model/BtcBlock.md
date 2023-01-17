@@ -17,6 +17,5 @@ Method name | Return type | Description | Notes
 **getTime()** | **float** | Time of the block. | [optional]
 **getBits()** | **float** |  | [optional]
 **getNonce()** | **float** | Arbitrary number that is used in Bitcoin's proof of work consensus algorithm. | [optional]
-**getTxs()** | [**\Tatum\Model\BtcTx[]**](BtcTx.md) |  | [optional]
+**getTxs()** | [**\Tatum\Model\BtcTx[]**](../BtcTx) |  | [optional]
 
-[[Back to Index]](../index.md)

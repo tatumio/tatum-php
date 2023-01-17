@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Recipient blockchain address has incorrect format. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

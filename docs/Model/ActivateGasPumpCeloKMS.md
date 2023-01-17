@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getSignatureId()** | **string** | The KMS identifier of the private key of the blockchain address that will pay the gas fee for the activation transaction |
 **getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the address that will pay the gas fee that was generated from the mnemonic | [optional]
 
-[[Back to Index]](../index.md)

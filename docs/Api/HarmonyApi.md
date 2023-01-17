@@ -92,7 +92,7 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callOneReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneReadSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -130,7 +130,7 @@ CallOneSmartContractMethod operation
 
 [✨ View "callOneSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -168,7 +168,7 @@ CallOneSmartContractMethodKMS operation
 
 [✨ View "callOneSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethodKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -208,7 +208,7 @@ Broadcast signed ONE transaction
 
 [✨ View "oneBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -246,7 +246,7 @@ Transform HEX address to Bech32 ONE address format
 
 [✨ View "oneFormatAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneFormatAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -286,7 +286,7 @@ Generate ONE account address from Extended public key
 
 [✨ View "oneGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -324,7 +324,7 @@ Generate ONE private key
 
 [✨ View "oneGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -368,7 +368,7 @@ Tatum follows BIP44 specification and generates for ONE wallet with derivation p
 
 [✨ View "oneGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -408,7 +408,7 @@ Get ONE Account balance
 
 [✨ View "oneGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -448,7 +448,7 @@ Get ONE block by hash
 
 [✨ View "oneGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -483,7 +483,7 @@ Get current block number
 
 [✨ View "oneGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -523,7 +523,7 @@ Get ONE Transaction
 
 [✨ View "oneGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -563,7 +563,7 @@ Get count of outgoing ONE transactions
 
 [✨ View "oneGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransactionCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -607,7 +607,7 @@ Web3 HTTP driver
 
 [✨ View "oneWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneWeb3Driver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -659,7 +659,7 @@ Send ONE from account to account
 
 [✨ View "transferOneBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -697,5 +697,5 @@ TransferOneBlockchainKMS operation
 
 [✨ View "transferOneBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

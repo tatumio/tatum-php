@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to create ${account.currency} account with xpub. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

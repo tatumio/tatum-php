@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getTo()** | **string** | Recipient address of TRON account in Base58 format. |
 **getAmount()** | **string** | Amount to be sent in TRX. |
 
-[[Back to Index]](../index.md)

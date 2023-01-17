@@ -12,6 +12,5 @@ Method name | Return type | Description | Notes
 **getTo()** | **string** | The blockchain address to send the NFT to |
 **getFrom()** | **string** | The blockchain address that will pay the fee for the transaction |
 **getSignatureId()** | **string** | The KMS identifier of the private key of the blockchain address that will pay the fee for the transaction |
-**getMetadata()** | [**\Tatum\Model\SolanaNftMetadataKMS**](SolanaNftMetadataKMS.md) |  |
+**getMetadata()** | [**\Tatum\Model\SolanaNftMetadataKMS**](../SolanaNftMetadataKMS) |  |
 
-[[Back to Index]](../index.md)

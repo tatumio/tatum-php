@@ -15,6 +15,5 @@ Method name | Return type | Description | Notes
 **getWithdrawalId()** | **string** | ID of the pending off-chain withdrawal connected to this transaction | [optional]
 **getIndex()** | **float** | In case of mnemonic type of signature Id, this is the index to the specific account that should be used for signature. | [optional]
 **getTxId()** | **string** | TX hash of successful transaction. | [optional]
-**getWithdrawalResponses()** | [**\Tatum\Model\ResponseData[]**](ResponseData.md) | Additional information used for BTC, LTC, DOGE and BCH off-chain to blockchain transactions. | [optional]
+**getWithdrawalResponses()** | [**\Tatum\Model\ResponseData[]**](../ResponseData) | Additional information used for BTC, LTC, DOGE and BCH off-chain to blockchain transactions. | [optional]
 
-[[Back to Index]](../index.md)

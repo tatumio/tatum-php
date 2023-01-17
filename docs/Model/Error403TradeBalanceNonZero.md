@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to deactivate account with non-zero exchange trades. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

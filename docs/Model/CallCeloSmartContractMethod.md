@@ -15,7 +15,6 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | Amount of the assets to be sent. | [optional]
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 **getNonce()** | **float** | Nonce to be set to transaction. If not present, last known nonce will be used. | [optional]
-**getFee()** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\DeployErc20Fee**](../DeployErc20Fee) |  | [optional]
 **getFeeCurrency()** | **string** | Currency to pay for transaction gas |
 
-[[Back to Index]](../index.md)

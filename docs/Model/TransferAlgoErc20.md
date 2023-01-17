@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getPaymentId()** | **string** | The identifier of the token transfer that is shown on the virtual account for the created transaction | [optional]
 **getSenderNote()** | **string** | The note for the recipient; must not contain spaces | [optional]
 
-[[Back to Index]](../index.md)

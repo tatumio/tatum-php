@@ -13,6 +13,5 @@ Method name | Return type | Description | Notes
 **getName()** | **string** | The name of the NFT |
 **getFrom()** | **string** | The address of the minting account |
 **getSignatureId()** | **string** | The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account |
-**getAttr()** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](MintNftExpressAlgorandAttr.md) |  | [optional]
+**getAttr()** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](../MintNftExpressAlgorandAttr) |  | [optional]
 
-[[Back to Index]](../index.md)

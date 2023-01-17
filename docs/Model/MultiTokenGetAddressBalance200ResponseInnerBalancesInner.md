@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | Number of tokens held by the address. | [optional]
 **getBlockNumber()** | **float** | Block number when the token was received by the address. | [optional]
 
-[[Back to Index]](../index.md)

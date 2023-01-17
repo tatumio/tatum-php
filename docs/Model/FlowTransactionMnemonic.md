@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getMnemonic()** | **string** | Mnemonic to generate private key. |
 **getIndex()** | **float** | Index to the specific address from mnemonic. |
 
-[[Back to Index]](../index.md)

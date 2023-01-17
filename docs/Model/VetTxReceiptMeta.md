@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getTxId()** | **string** |  | [optional]
 **getTxOrigin()** | **string** |  | [optional]
 
-[[Back to Index]](../index.md)

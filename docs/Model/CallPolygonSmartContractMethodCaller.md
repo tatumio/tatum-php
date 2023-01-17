@@ -14,6 +14,5 @@ Method name | Return type | Description | Notes
 **getMethodName()** | **string** | Name of the method to invoke on smart contract. |
 **getMethodAbi()** | **object** | ABI of the method to invoke. |
 **getParams()** | **string[]** |  |
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

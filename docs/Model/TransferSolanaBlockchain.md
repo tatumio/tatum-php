@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getFeePayer()** | **string** | Address on the Solana blockchain, from which the fee will be paid for transaction. Defaults to from. | [optional]
 **getFeePayerPrivateKey()** | **string** | Private key of the fee payer address. | [optional]
 
-[[Back to Index]](../index.md)

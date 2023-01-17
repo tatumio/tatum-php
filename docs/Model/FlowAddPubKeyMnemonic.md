@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getIndex()** | **float** | Index to the specific address from mnemonic. |
 **getWeight()** | **float** | Weight of the key. If not set, default 1000 will be used. | [optional]
 
-[[Back to Index]](../index.md)

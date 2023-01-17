@@ -59,7 +59,7 @@ Broadcast and confirm signed Solana transaction
 
 [✨ View "solanaBroadcastConfirm.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaBroadcastConfirm.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -94,7 +94,7 @@ Generate Solana wallet
 
 [✨ View "solanaGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -132,7 +132,7 @@ Get Solana account balance in SOL. This method does not prints any balance of th
 
 [✨ View "solanaGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -172,7 +172,7 @@ Get Solana block by number
 
 [✨ View "solanaGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -207,7 +207,7 @@ Get Solana current block number. This is the number of the latest block in the b
 
 [✨ View "solanaGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -249,7 +249,7 @@ Get Solana transaction by transaction hash.
 
 [✨ View "solanaGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -291,7 +291,7 @@ JSON RPC HTTP driver
 
 [✨ View "solanaWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaWeb3Driver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -331,7 +331,7 @@ Send SOL from account to account
 
 [✨ View "transferSolanaBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -367,5 +367,5 @@ TransferSolanaBlockchainKMS operation
 
 [✨ View "transferSolanaBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

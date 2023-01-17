@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionContractLogEventAttr**](CreateSubscriptionContractLogEventAttr.md) |  |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionContractLogEventAttr**](../CreateSubscriptionContractLogEventAttr) |  |
 
-[[Back to Index]](../index.md)

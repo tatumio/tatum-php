@@ -19,8 +19,7 @@ Method name | Return type | Description | Notes
 **getTime()** | **float** | Time of the transaction. | [optional]
 **getIndex()** | **float** | Index of the transaction in the block. | [optional]
 **getVersion()** | **float** | Index of the transaction. | [optional]
-**getInputs()** | [**\Tatum\Model\BtcTxInput[]**](BtcTxInput.md) | List of transactions, from which assets are being sent. | [optional]
-**getOutputs()** | [**\Tatum\Model\BtcTxOutput[]**](BtcTxOutput.md) | List of recipient addresses and amounts to send to each of them. | [optional]
+**getInputs()** | [**\Tatum\Model\BtcTxInput[]**](../BtcTxInput) | List of transactions, from which assets are being sent. | [optional]
+**getOutputs()** | [**\Tatum\Model\BtcTxOutput[]**](../BtcTxOutput) | List of recipient addresses and amounts to send to each of them. | [optional]
 **getLocktime()** | **float** | Block this transaction was included in. | [optional]
 
-[[Back to Index]](../index.md)

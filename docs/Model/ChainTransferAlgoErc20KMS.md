@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getDigits()** | **float** | The number of decimal places that the fungible tokens have |
 **getSignatureId()** | **string** | The KMS identifier of the private key of the blockchain address that you are sending the fungible tokens from (the address that you specified in the <code>from</code> parameter); the transaction fee will be deducted from this address |
 
-[[Back to Index]](../index.md)

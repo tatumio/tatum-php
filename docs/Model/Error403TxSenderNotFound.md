@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to find sender account ${transaction.senderAccountId}. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

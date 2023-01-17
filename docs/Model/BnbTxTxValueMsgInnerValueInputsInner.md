@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | **string** |  | [optional]
-**getCoins()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValueInputsInnerCoinsInner[]**](BnbTxTxValueMsgInnerValueInputsInnerCoinsInner.md) |  | [optional]
+**getCoins()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValueInputsInnerCoinsInner[]**](../BnbTxTxValueMsgInnerValueInputsInnerCoinsInner) |  | [optional]
 
-[[Back to Index]](../index.md)

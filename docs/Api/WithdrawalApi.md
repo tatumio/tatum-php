@@ -55,7 +55,7 @@ Broadcast signed transaction and complete withdrawal
 
 [✨ View "broadcastBlockchainTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -97,7 +97,7 @@ Cancel withdrawal
 
 [✨ View "cancelInProgressWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -137,7 +137,7 @@ Complete withdrawal
 
 [✨ View "completeWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/completeWithdrawal.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -181,7 +181,7 @@ Get withdrawals.
 
 [✨ View "getWithdrawals.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/getWithdrawals.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -243,5 +243,5 @@ Store withdrawal
 
 [✨ View "storeWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/storeWithdrawal.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

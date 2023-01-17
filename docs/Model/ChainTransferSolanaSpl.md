@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getFeePayer()** | **string** | The blockchain address from which the fee will be deducted; if not set, defaults to the address that you specified in the <code>from</code> parameter | [optional]
 **getFeePayerPrivateKey()** | **string** | The private key of the blockchain address that you specified in the <code>feePayer</code> parameter; if not set, defaults to the private key that you specified in the <code>fromPrivateKey</code> parameter | [optional]
 
-[[Back to Index]](../index.md)

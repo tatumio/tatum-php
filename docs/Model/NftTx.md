@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getFrom()** | **string** | Sender |
 **getTo()** | **string** | recipient |
 
-[[Back to Index]](../index.md)

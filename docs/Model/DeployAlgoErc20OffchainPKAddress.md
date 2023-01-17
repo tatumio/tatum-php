@@ -15,6 +15,5 @@ Method name | Return type | Description | Notes
 **getPrivateKey()** | **string** | The private key of the blockchain address from which the fee for deploying the smart contract will be deducted |
 **getBasePair()** | **string** | The base pair for the virtual currency that represents the token; used to calculate the value of a transaction |
 **getBaseRate()** | **float** | The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code> | [optional] [default to 1]
-**getCustomer()** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
+**getCustomer()** | [**\Tatum\Model\CustomerRegistration**](../CustomerRegistration) |  | [optional]
 
-[[Back to Index]](../index.md)

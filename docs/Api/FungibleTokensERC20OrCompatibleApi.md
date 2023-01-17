@@ -91,7 +91,7 @@ ApproveCeloErc20 operation
 
 [✨ View "approveCeloErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveCeloErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -129,7 +129,7 @@ ApproveCeloErc20KMS operation
 
 [✨ View "approveCeloErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveCeloErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -183,7 +183,7 @@ Allow a blockchain address to transfer and burn fungible tokens
 
 [✨ View "approveErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -221,7 +221,7 @@ ApproveErc20KMS operation
 
 [✨ View "approveErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -259,7 +259,7 @@ ChainBurnCeloErc20 operation
 
 [✨ View "chainBurnCeloErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnCeloErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -297,7 +297,7 @@ ChainBurnCeloErc20KMS operation
 
 [✨ View "chainBurnCeloErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnCeloErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -351,7 +351,7 @@ Burn fungible tokens
 
 [✨ View "chainBurnErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -389,7 +389,7 @@ ChainBurnErc20KMS operation
 
 [✨ View "chainBurnErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -427,7 +427,7 @@ ChainBurnKcsErc20 operation
 
 [✨ View "chainBurnKcsErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnKcsErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -465,7 +465,7 @@ ChainBurnKcsErc20KMS operation
 
 [✨ View "chainBurnKcsErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnKcsErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -503,7 +503,7 @@ ChainDeployAlgoErc20 operation
 
 [✨ View "chainDeployAlgoErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployAlgoErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -541,7 +541,7 @@ ChainDeployAlgoErc20KMS operation
 
 [✨ View "chainDeployAlgoErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployAlgoErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -579,7 +579,7 @@ ChainDeployCeloErc20 operation
 
 [✨ View "chainDeployCeloErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployCeloErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -617,7 +617,7 @@ ChainDeployCeloErc20KMS operation
 
 [✨ View "chainDeployCeloErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployCeloErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -675,7 +675,7 @@ Deploy a fungible token smart contract
 
 [✨ View "chainDeployErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -713,7 +713,7 @@ ChainDeployErc20KMS operation
 
 [✨ View "chainDeployErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -751,7 +751,7 @@ ChainDeployKcsErc20 operation
 
 [✨ View "chainDeployKcsErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployKcsErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -789,7 +789,7 @@ ChainDeployKcsErc20KMS operation
 
 [✨ View "chainDeployKcsErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployKcsErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -827,7 +827,7 @@ ChainDeploySolanaSpl operation
 
 [✨ View "chainDeploySolanaSpl.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeploySolanaSpl.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -865,7 +865,7 @@ ChainDeploySolanaSplKMS operation
 
 [✨ View "chainDeploySolanaSplKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeploySolanaSplKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -903,7 +903,7 @@ ChainMintCeloErc20 operation
 
 [✨ View "chainMintCeloErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintCeloErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -941,7 +941,7 @@ ChainMintCeloErc20KMS operation
 
 [✨ View "chainMintCeloErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintCeloErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -995,7 +995,7 @@ Mint fungible tokens
 
 [✨ View "chainMintErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1033,7 +1033,7 @@ ChainMintErc20KMS operation
 
 [✨ View "chainMintErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1071,7 +1071,7 @@ ChainMintKcsErc20 operation
 
 [✨ View "chainMintKcsErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintKcsErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1109,7 +1109,7 @@ ChainMintKcsErc20KMS operation
 
 [✨ View "chainMintKcsErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintKcsErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1147,7 +1147,7 @@ ChainTransferAlgoErc20 operation
 
 [✨ View "chainTransferAlgoErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferAlgoErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1185,7 +1185,7 @@ ChainTransferAlgoErc20KMS operation
 
 [✨ View "chainTransferAlgoErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferAlgoErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1223,7 +1223,7 @@ ChainTransferBscBep20 operation
 
 [✨ View "chainTransferBscBep20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferBscBep20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1261,7 +1261,7 @@ ChainTransferBscBep20KMS operation
 
 [✨ View "chainTransferBscBep20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferBscBep20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1299,7 +1299,7 @@ ChainTransferCeloErc20Token operation
 
 [✨ View "chainTransferCeloErc20Token.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferCeloErc20Token.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1337,7 +1337,7 @@ ChainTransferCeloErc20TokenKMS operation
 
 [✨ View "chainTransferCeloErc20TokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferCeloErc20TokenKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1403,7 +1403,7 @@ Transfer fungible tokens
 
 [✨ View "chainTransferEthErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferEthErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1441,7 +1441,7 @@ ChainTransferEthErc20KMS operation
 
 [✨ View "chainTransferEthErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferEthErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1479,7 +1479,7 @@ ChainTransferKcsEthErc20 operation
 
 [✨ View "chainTransferKcsEthErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferKcsEthErc20.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1517,7 +1517,7 @@ ChainTransferKcsEthErc20KMS operation
 
 [✨ View "chainTransferKcsEthErc20KMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferKcsEthErc20KMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1555,7 +1555,7 @@ ChainTransferSolanaSpl operation
 
 [✨ View "chainTransferSolanaSpl.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferSolanaSpl.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1593,7 +1593,7 @@ ChainTransferSolanaSplKMS operation
 
 [✨ View "chainTransferSolanaSplKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferSolanaSplKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1643,7 +1643,7 @@ Get the number of fungible tokens that a blockchain address holds in a smart con
 
 [✨ View "erc20GetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1689,7 +1689,7 @@ Get the total number of fungible tokens that a blockchain address holds
 
 [✨ View "erc20GetBalanceAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalanceAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1747,5 +1747,5 @@ Get fungible token transactions on a blockchain address
 
 [✨ View "erc20GetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetTransactionByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Sender accounts customer ${senderAccount.customerId} is disabled, unable to perform payment. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

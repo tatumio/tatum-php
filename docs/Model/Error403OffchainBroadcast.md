@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | WithdrawalId must be present. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

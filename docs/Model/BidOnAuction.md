@@ -16,6 +16,5 @@ Method name | Return type | Description | Notes
 **getBidValue()** | **string** | Amount of the assets to be bid. This must include auction fee. |
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\DeployErc20Fee**](../DeployErc20Fee) |  | [optional]
 
-[[Back to Index]](../index.md)

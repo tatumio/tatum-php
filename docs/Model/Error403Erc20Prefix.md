@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | ERC20 token cannot start with VC_. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

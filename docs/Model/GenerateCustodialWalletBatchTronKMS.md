@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getOwner()** | **string** | Owner of the addresses. |
 **getFeeLimit()** | **float** | Fee limit to be set, in TRX |
 
-[[Back to Index]](../index.md)

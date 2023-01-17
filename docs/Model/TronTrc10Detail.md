@@ -17,4 +17,3 @@ Method name | Return type | Description | Notes
 **getPrecision()** | **float** | The number of decimal places | [optional]
 **getId()** | **float** | The ID of the TRC-10 token | [optional]
 
-[[Back to Index]](../index.md)

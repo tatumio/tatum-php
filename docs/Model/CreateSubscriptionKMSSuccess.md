@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSSuccessAttr**](CreateSubscriptionKMSSuccessAttr.md) |  |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSSuccessAttr**](../CreateSubscriptionKMSSuccessAttr) |  |
 
-[[Back to Index]](../index.md)

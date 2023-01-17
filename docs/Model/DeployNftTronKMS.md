@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 **getFeeLimit()** | **float** | The maximum amount to be paid as the transaction fee (in TRX); deployment of a smart contract on TRON costs around 580 TRX |
 
-[[Back to Index]](../index.md)

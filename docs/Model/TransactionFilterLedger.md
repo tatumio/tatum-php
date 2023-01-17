@@ -12,7 +12,7 @@ Method name | Return type | Description | Notes
 **getCounterAccount()** | **string** | Counter account - transaction(s) destination account. | [optional]
 **getCurrency()** | **string** | Currency of the transactions. | [optional]
 **getFrom()** | **int** | Starting date to search for transactions from in UTC millis. If not present, search all history. | [optional]
-**getAmount()** | [**\Tatum\Model\TransactionFilterAmountInner[]**](TransactionFilterAmountInner.md) | Amount of the transaction. AND is used between filter options. | [optional]
+**getAmount()** | [**\Tatum\Model\TransactionFilterAmountInner[]**](../TransactionFilterAmountInner) | Amount of the transaction. AND is used between filter options. | [optional]
 **getCurrencies()** | **string[]** | List of currencies of the transactions. | [optional]
 **getTransactionType()** | **string** | Type of payment | [optional]
 **getTransactionTypes()** | **string[]** | Types of payment | [optional]
@@ -23,4 +23,3 @@ Method name | Return type | Description | Notes
 **getSenderNote()** | **string** | Sender note defined in payment order by sender. | [optional]
 **getTo()** | **int** | Date until to search for transactions in UTC millis. If not present, search up till now. | [optional]
 
-[[Back to Index]](../index.md)

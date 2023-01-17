@@ -13,7 +13,6 @@ Method name | Return type | Description | Notes
 **getBlockhash()** | **string** |  | [optional]
 **getParentSlot()** | **float** |  | [optional]
 **getPreviousBlockhash()** | **string** |  | [optional]
-**getRewards()** | [**\Tatum\Model\SolanaBlockReward[]**](SolanaBlockReward.md) |  | [optional]
-**getTransactions()** | [**\Tatum\Model\SolanaBlockTx[]**](SolanaBlockTx.md) |  | [optional]
+**getRewards()** | [**\Tatum\Model\SolanaBlockReward[]**](../SolanaBlockReward) |  | [optional]
+**getTransactions()** | [**\Tatum\Model\SolanaBlockTx[]**](../SolanaBlockTx) |  | [optional]
 
-[[Back to Index]](../index.md)

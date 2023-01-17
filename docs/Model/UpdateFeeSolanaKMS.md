@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getFrom()** | **string** | The blockchain address of the marketplace authority |
 **getSignatureId()** | **string** | The KMS identifier of the private key of the marketspace authority |
 
-[[Back to Index]](../index.md)

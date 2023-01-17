@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getTokenId()** | **string** | ID of the token to transfer. |
 **getAmount()** | **string** | Amount to be sent in TRX. |
 
-[[Back to Index]](../index.md)

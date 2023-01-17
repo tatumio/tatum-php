@@ -18,6 +18,5 @@ Method name | Return type | Description | Notes
 **getSignatureId()** | **string** | The KMS identifier of the private key of the blockchain address that owns the gas pump address key ("master address") |
 **getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the "master address" | [optional]
 **getNonce()** | **float** | The nonce to be set to the transfer transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

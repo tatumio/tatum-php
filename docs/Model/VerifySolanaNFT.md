@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getFrom()** | **string** | The blockchain address of the collection verifier on behalf of whom the transaction will be originated. The transaction fee will be paid from this address. |
 **getFromPrivateKey()** | **string** | The private key of the collection verifier's address |
 
-[[Back to Index]](../index.md)

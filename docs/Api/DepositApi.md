@@ -66,7 +66,7 @@ Lists all deposits for API key.
 
 [✨ View "getDeposits.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDeposits.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -118,5 +118,5 @@ Counts total entities found by get deposits request.
 
 [✨ View "getDepositsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDepositsCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

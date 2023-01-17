@@ -89,7 +89,7 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callXdcReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcReadSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -125,7 +125,7 @@ CallXdcSmartContractMethod operation
 
 [✨ View "callXdcSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -161,7 +161,7 @@ CallXdcSmartContractMethodKMS operation
 
 [✨ View "callXdcSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethodKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -209,7 +209,7 @@ Send XDC / ERC20 from account to account
 
 [✨ View "transferXdcBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -245,7 +245,7 @@ TransferXdcBlockchainKMS operation
 
 [✨ View "transferXdcBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -283,7 +283,7 @@ Broadcast signed XDC transaction
 
 [✨ View "xdcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -323,7 +323,7 @@ Generate XDC account address from Extended public key
 
 [✨ View "xdcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -361,7 +361,7 @@ Generate XDC private key
 
 [✨ View "xdcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -407,7 +407,7 @@ Generate XDC wallet
 
 [✨ View "xdcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -445,7 +445,7 @@ Get XDC Account balance
 
 [✨ View "xdcGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -483,7 +483,7 @@ Get XDC block by hash
 
 [✨ View "xdcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -518,7 +518,7 @@ Get current block number
 
 [✨ View "xdcGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -556,7 +556,7 @@ Get XDC Transaction
 
 [✨ View "xdcGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -594,7 +594,7 @@ Get count of outgoing XDC transactions
 
 [✨ View "xdcGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransactionCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -636,5 +636,5 @@ Web3 HTTP driver
 
 [✨ View "xdcWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcWeb3Driver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

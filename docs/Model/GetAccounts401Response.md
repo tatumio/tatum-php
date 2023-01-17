@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to find valid subscription for '${apiKey}' |
 **getStatusCode()** | **float** | 401 |
 
-[[Back to Index]](../index.md)

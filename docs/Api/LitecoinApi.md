@@ -67,7 +67,7 @@ Broadcast signed Litecoin transaction
 
 [✨ View "ltcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -107,7 +107,7 @@ Generate Litecoin deposit address from Extended public key
 
 [✨ View "ltcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -145,7 +145,7 @@ Generate Litecoin private key
 
 [✨ View "ltcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -189,7 +189,7 @@ Tatum follows BIP44 specification and generates for Litecoin wallet with derivat
 
 [✨ View "ltcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -229,7 +229,7 @@ Get the balance of a Litecoin address
 
 [✨ View "ltcGetBalanceOfAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBalanceOfAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -267,7 +267,7 @@ Get Litecoin Block detail by block hash or height.
 
 [✨ View "ltcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -302,7 +302,7 @@ Get Litecoin Blockchain Information. Obtain basic info like testnet / mainnet ve
 
 [✨ View "ltcGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockChainInfo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -340,7 +340,7 @@ Get Litecoin Block hash. Returns hash of the block to get the block detail.
 
 [✨ View "ltcGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockHash.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -375,7 +375,7 @@ Get Litecoin Transaction ids in the mempool.
 
 [✨ View "ltcGetMempool.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetMempool.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -413,7 +413,7 @@ Get Litecoin Transaction detail by transaction hash.
 
 [✨ View "ltcGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetRawTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -455,7 +455,7 @@ Get Litecoin Transaction by address.
 
 [✨ View "ltcGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetTxByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -501,7 +501,7 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 
 [✨ View "ltcGetUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetUTXO.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -541,7 +541,7 @@ JSON RPC HTTP driver
 
 [✨ View "ltcRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcRpcDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -613,7 +613,7 @@ The assets are sent from a list of UTXOs. Each UTXO is included in the transacti
 
 [✨ View "ltcTransactionAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -649,7 +649,7 @@ LtcTransactionAddressKMS operation
 
 [✨ View "ltcTransactionAddressKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddressKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -685,7 +685,7 @@ LtcTransactionUTXO operation
 
 [✨ View "ltcTransactionUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXO.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -721,5 +721,5 @@ LtcTransactionUTXOKMS operation
 
 [✨ View "ltcTransactionUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXOKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

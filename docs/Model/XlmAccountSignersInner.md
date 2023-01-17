@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getKey()** | **string** | A hash of characters dependent on the signer type. | [optional]
 **getType()** | **string** | The type of hash for this signer. | [optional]
 
-[[Back to Index]](../index.md)

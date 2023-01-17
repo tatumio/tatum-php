@@ -55,5 +55,5 @@ Get the current exchange rate for exchanging fiat/crypto assets
 
 [✨ View "getExchangeRate.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ExchangeRateApi/getExchangeRate.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

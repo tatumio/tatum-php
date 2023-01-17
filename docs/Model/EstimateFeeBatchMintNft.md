@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getTokenIds()** | **string[]** | Token IDs |
 **getUrls()** | **string[]** | Metadata URLs |
 
-[[Back to Index]](../index.md)

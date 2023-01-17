@@ -22,7 +22,6 @@ Method name | Return type | Description | Notes
 **getInLedger()** | **float** | Ledger, in which transaction took place. | [optional]
 **getSigningPubKey()** | **string** |  | [optional]
 **getTxnSignature()** | **string** |  | [optional]
-**getMeta()** | [**\Tatum\Model\XrpTxMeta**](XrpTxMeta.md) |  | [optional]
+**getMeta()** | [**\Tatum\Model\XrpTxMeta**](../XrpTxMeta) |  | [optional]
 **getValidated()** | **bool** | Whether or not the transaction is included in a validated ledger. Any transaction not yet in a validated ledger is subject to change. | [optional]
 
-[[Back to Index]](../index.md)

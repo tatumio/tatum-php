@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getMethod()** | **string** | Method to invoke on the node. | [optional]
 **getParams()** | **array** | Params to the method call, if required. | [optional]
 
-[[Back to Index]](../index.md)

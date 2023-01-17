@@ -12,8 +12,7 @@ Method name | Return type | Description | Notes
 **getParentId()** | **string** | The hash of the parent block | [optional]
 **getHeight()** | **float** | The number of the block | [optional]
 **getTimestamp()** | **string** | The timestamp of the block | [optional]
-**getCollectionGuarantees()** | [**\Tatum\Model\FlowBlockCollectionGuaranteesInner[]**](FlowBlockCollectionGuaranteesInner.md) | Collection guaranties | [optional]
-**getBlockSeals()** | [**\Tatum\Model\FlowBlockBlockSealsInner[]**](FlowBlockBlockSealsInner.md) | Block seals | [optional]
+**getCollectionGuarantees()** | [**\Tatum\Model\FlowBlockCollectionGuaranteesInner[]**](../FlowBlockCollectionGuaranteesInner) | Collection guaranties | [optional]
+**getBlockSeals()** | [**\Tatum\Model\FlowBlockBlockSealsInner[]**](../FlowBlockBlockSealsInner) | Block seals | [optional]
 **getTransactions()** | **string[]** | The IDs of transactions | [optional]
 
-[[Back to Index]](../index.md)

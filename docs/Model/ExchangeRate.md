@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getTimestamp()** | **float** | Date of validity of rate in UTC. |
 **getSource()** | **string** | Source of base pair. |
 
-[[Back to Index]](../index.md)

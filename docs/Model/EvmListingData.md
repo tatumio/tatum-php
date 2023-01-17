@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getSeller()** | **string** | Address of the seller. | [optional]
 **getState()** | **string** | State of the listing. 0 - available, 1 - sold, 2 - cancelled | [optional]
 
-[[Back to Index]](../index.md)

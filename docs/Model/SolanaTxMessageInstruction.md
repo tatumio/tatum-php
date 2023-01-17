@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getData()** | **string** |  | [optional]
 **getProgramIdIndex()** | **float** |  | [optional]
 
-[[Back to Index]](../index.md)

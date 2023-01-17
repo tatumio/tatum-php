@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getEventIndex()** | **float** |  | [optional]
 **getData()** | **object** | Event specific data. May vary. | [optional]
 
-[[Back to Index]](../index.md)

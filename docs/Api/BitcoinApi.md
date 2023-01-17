@@ -67,7 +67,7 @@ Broadcast a signed Bitcoin transaction
 
 [✨ View "btcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -107,7 +107,7 @@ Generate a Bitcoin address from the wallet's extended public key
 
 [✨ View "btcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -145,7 +145,7 @@ Generate the private key for a Bitcoin address
 
 [✨ View "btcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -189,7 +189,7 @@ Tatum follows BIP44 specification and generates for Bitcoin wallet with derivati
 
 [✨ View "btcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -229,7 +229,7 @@ Get the balance of a Bitcoin address
 
 [✨ View "btcGetBalanceOfAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetBalanceOfAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -267,7 +267,7 @@ Get a Bitcoin block by its hash or height
 
 [✨ View "btcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -302,7 +302,7 @@ Get Bitcoin blockchain information
 
 [✨ View "btcGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetBlockChainInfo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -340,7 +340,7 @@ Get the hash of a Bitcoin block
 
 [✨ View "btcGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetBlockHash.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -375,7 +375,7 @@ Get transactions from the Bitcoin mempool
 
 [✨ View "btcGetMempool.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetMempool.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -413,7 +413,7 @@ Get a Bitcoin transaction by its hash
 
 [✨ View "btcGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetRawTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -455,7 +455,7 @@ Get all transactions for a Bitcoin address
 
 [✨ View "btcGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetTxByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -501,7 +501,7 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 
 [✨ View "btcGetUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcGetUTXO.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -543,7 +543,7 @@ This endpoint is deprecated. Do not use it.
 
 [✨ View "btcRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcRpcDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -615,7 +615,7 @@ The assets are sent from a list of UTXOs. Each UTXO is included in the transacti
 
 [✨ View "btcTransactionFromAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcTransactionFromAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -651,7 +651,7 @@ BtcTransactionFromAddressKMS operation
 
 [✨ View "btcTransactionFromAddressKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcTransactionFromAddressKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -687,7 +687,7 @@ BtcTransactionFromUTXO operation
 
 [✨ View "btcTransactionFromUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcTransactionFromUTXO.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -723,5 +723,5 @@ BtcTransactionFromUTXOKMS operation
 
 [✨ View "btcTransactionFromUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcTransactionFromUTXOKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

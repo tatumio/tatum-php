@@ -8,6 +8,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getModifiedNode()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode**](XrpTxMetaAffectedNodesInnerModifiedNode.md) |  | [optional]
+**getModifiedNode()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode**](../XrpTxMetaAffectedNodesInnerModifiedNode) |  | [optional]
 
-[[Back to Index]](../index.md)

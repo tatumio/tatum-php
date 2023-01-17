@@ -29,4 +29,3 @@ Method name | Return type | Description | Notes
 **getHyperblockNonce()** | **float** | Nonce of the hyperblockwhere this transaction was in. | [optional]
 **getHyperblockHash()** | **string** | Hash of the hyperblock where this transaction was in. | [optional]
 
-[[Back to Index]](../index.md)

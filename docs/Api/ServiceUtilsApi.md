@@ -51,7 +51,7 @@ Freeze the API Key. It's not possible to perform sensitive operations like send 
 
 [✨ View "freezeApiKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/freezeApiKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -86,7 +86,7 @@ Get information about your credit consumption for the last month
 
 [✨ View "getCredits.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getCredits.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -121,7 +121,7 @@ Get current version of the API.
 
 [✨ View "getVersion.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getVersion.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -156,5 +156,5 @@ Unfreeze the API Key. It's possible to perform sensitive operations like send le
 
 [✨ View "unfreezeApiKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/unfreezeApiKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

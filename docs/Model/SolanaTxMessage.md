@@ -8,10 +8,9 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getHeader()** | [**\Tatum\Model\SolanaTxMessageHeader**](SolanaTxMessageHeader.md) |  | [optional]
+**getHeader()** | [**\Tatum\Model\SolanaTxMessageHeader**](../SolanaTxMessageHeader) |  | [optional]
 **getAccountKeys()** | **string[]** |  | [optional]
 **getRecentBlockhash()** | **string** |  | [optional]
-**getInstructions()** | [**\Tatum\Model\SolanaTxMessageInstruction[]**](SolanaTxMessageInstruction.md) |  | [optional]
+**getInstructions()** | [**\Tatum\Model\SolanaTxMessageInstruction[]**](../SolanaTxMessageInstruction) |  | [optional]
 **getIndexToProgramIds()** | **object** |  | [optional]
 
-[[Back to Index]](../index.md)

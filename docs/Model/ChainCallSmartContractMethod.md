@@ -15,6 +15,5 @@ Method name | Return type | Description | Notes
 **getParams()** | **string[]** | Parameters of the method to be invoked. |
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

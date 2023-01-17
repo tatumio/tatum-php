@@ -64,7 +64,7 @@ Send VeChain from account to account
 
 [✨ View "transferVetBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/transferVetBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -100,7 +100,7 @@ TransferVetBlockchainKMS operation
 
 [✨ View "transferVetBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/transferVetBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -138,7 +138,7 @@ Broadcast signed VeChain transaction
 
 [✨ View "vetBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -178,7 +178,7 @@ Generate VeChain account address from Extended public key
 
 [✨ View "vetGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -216,7 +216,7 @@ Generate VeChain private key
 
 [✨ View "vetGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -260,7 +260,7 @@ Tatum follows BIP44 specification and generates for VeChain wallet with derivati
 
 [✨ View "vetGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -298,7 +298,7 @@ Get VeChain Account balance in VET.
 
 [✨ View "vetGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -336,7 +336,7 @@ Get VeChain Block by block hash or block number.
 
 [✨ View "vetGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -371,7 +371,7 @@ Get VeChain current block number.
 
 [✨ View "vetGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -409,7 +409,7 @@ Get VeChain Account energy in VTHO. VTHO is used for paying for the transaction 
 
 [✨ View "vetGetEnergy.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetEnergy.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -447,7 +447,7 @@ Get VeChain Transaction by transaction hash.
 
 [✨ View "vetGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -485,5 +485,5 @@ Get VeChain Transaction Receipt
 
 [✨ View "vetGetTransactionReceipt.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetTransactionReceipt.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

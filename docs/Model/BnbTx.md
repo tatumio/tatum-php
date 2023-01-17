@@ -13,6 +13,5 @@ Method name | Return type | Description | Notes
 **getHeight()** | **string** |  | [optional]
 **getLog()** | **string** |  | [optional]
 **getOk()** | **bool** |  | [optional]
-**getTx()** | [**\Tatum\Model\BnbTxTx**](BnbTxTx.md) |  | [optional]
+**getTx()** | [**\Tatum\Model\BnbTxTx**](../BnbTxTx) |  | [optional]
 
-[[Back to Index]](../index.md)

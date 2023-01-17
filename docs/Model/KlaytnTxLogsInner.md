@@ -17,4 +17,3 @@ Method name | Return type | Description | Notes
 **getTransactionIndex()** | **float** | Integer of the transaction’s index position, the event was created in. | [optional]
 **getTransactionHash()** | **string** | Hash of the transaction this event was created in. | [optional]
 
-[[Back to Index]](../index.md)

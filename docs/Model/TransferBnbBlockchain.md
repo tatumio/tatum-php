@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getFromPrivateKey()** | **string** | Private key of sender address. |
 **getMessage()** | **string** | Message to recipient. | [optional]
 
-[[Back to Index]](../index.md)

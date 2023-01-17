@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** |  | [optional]
-**getValue()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValue**](BnbTxTxValueMsgInnerValue.md) |  | [optional]
+**getValue()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValue**](../BnbTxTxValueMsgInnerValue) |  | [optional]
 
-[[Back to Index]](../index.md)

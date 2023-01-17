@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTestnet()** | **string** | Chain of the blockchain, main or test. | [optional]
-**getTip()** | [**\Tatum\Model\AdaInfoTip**](AdaInfoTip.md) |  | [optional]
+**getTip()** | [**\Tatum\Model\AdaInfoTip**](../AdaInfoTip) |  | [optional]
 
-[[Back to Index]](../index.md)

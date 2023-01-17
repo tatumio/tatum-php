@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Impossible to find last UTXO. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

@@ -20,4 +20,3 @@ Method name | Return type | Description | Notes
 **getSenderAccountId()** | **string** | Sender account ID |
 **getSenderNote()** | **string** | Note visible to owner of withdrawing account | [optional]
 
-[[Back to Index]](../index.md)

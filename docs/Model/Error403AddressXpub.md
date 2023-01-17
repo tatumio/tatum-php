@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Xpub assigned to account, it is not possible to assign address. Use generateAddress method instead. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

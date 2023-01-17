@@ -150,7 +150,7 @@ Add a blockchain address as an NFT minter to an NFT smart contract
 
 [✨ View "addNftMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinter.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -188,7 +188,7 @@ AddNftMinterKMS operation
 
 [✨ View "addNftMinterKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinterKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -248,7 +248,7 @@ Burn an NFT
 
 [✨ View "burnNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNft.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -286,7 +286,7 @@ BurnNftAlgo operation
 
 [✨ View "burnNftAlgo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftAlgo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -324,7 +324,7 @@ BurnNftCelo operation
 
 [✨ View "burnNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -362,7 +362,7 @@ BurnNftFlowKMS operation
 
 [✨ View "burnNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -400,7 +400,7 @@ BurnNftFlowMnemonic operation
 
 [✨ View "burnNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -438,7 +438,7 @@ BurnNftFlowPK operation
 
 [✨ View "burnNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowPK.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -476,7 +476,7 @@ BurnNftKMS operation
 
 [✨ View "burnNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -514,7 +514,7 @@ BurnNftKMSCelo operation
 
 [✨ View "burnNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -552,7 +552,7 @@ BurnNftKMSTron operation
 
 [✨ View "burnNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -590,7 +590,7 @@ BurnNftTron operation
 
 [✨ View "burnNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -670,7 +670,7 @@ Deploy an NFT smart contract
 
 [✨ View "deployNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNft.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -708,7 +708,7 @@ DeployNftCelo operation
 
 [✨ View "deployNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -746,7 +746,7 @@ DeployNftCeloKMS operation
 
 [✨ View "deployNftCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -784,7 +784,7 @@ DeployNftFlowKMS operation
 
 [✨ View "deployNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -822,7 +822,7 @@ DeployNftFlowMnemonic operation
 
 [✨ View "deployNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -860,7 +860,7 @@ DeployNftFlowPK operation
 
 [✨ View "deployNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowPK.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -898,7 +898,7 @@ DeployNftKMS operation
 
 [✨ View "deployNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -936,7 +936,7 @@ DeployNftTron operation
 
 [✨ View "deployNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -974,7 +974,7 @@ DeployNftTronKMS operation
 
 [✨ View "deployNftTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTronKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1012,7 +1012,7 @@ MintMultipleNft operation
 
 [✨ View "mintMultipleNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNft.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1050,7 +1050,7 @@ MintMultipleNftCelo operation
 
 [✨ View "mintMultipleNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1088,7 +1088,7 @@ MintMultipleNftFlowKMS operation
 
 [✨ View "mintMultipleNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1126,7 +1126,7 @@ MintMultipleNftFlowMnemonic operation
 
 [✨ View "mintMultipleNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1164,7 +1164,7 @@ MintMultipleNftFlowPK operation
 
 [✨ View "mintMultipleNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowPK.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1202,7 +1202,7 @@ MintMultipleNftKMS operation
 
 [✨ View "mintMultipleNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1240,7 +1240,7 @@ MintMultipleNftKMSCelo operation
 
 [✨ View "mintMultipleNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1278,7 +1278,7 @@ MintMultipleNftKMSTron operation
 
 [✨ View "mintMultipleNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1348,7 +1348,7 @@ Mint multiple NFTs
 
 [✨ View "mintMultipleNftMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftMinter.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1386,7 +1386,7 @@ MintMultipleNftTron operation
 
 [✨ View "mintMultipleNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1426,7 +1426,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNft.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1466,7 +1466,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftAlgorand.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorand.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1506,7 +1506,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftAlgorandKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorandKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1546,7 +1546,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1586,7 +1586,7 @@ For more information, see "Use the pre-built smart contract provided by Tatum to
 
 [✨ View "mintNftExpress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1626,7 +1626,7 @@ For more information, see "Use the pre-built smart contract provided by Tatum to
 
 [✨ View "mintNftExpressAlgorand.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressAlgorand.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1666,7 +1666,7 @@ For more information, see "Use the pre-built smart contract provided by Tatum to
 
 [✨ View "mintNftExpressSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1706,7 +1706,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1746,7 +1746,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1786,7 +1786,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowPK.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1826,7 +1826,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1866,7 +1866,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1906,7 +1906,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1946,7 +1946,7 @@ For more information, see "Use your own smart contract to mint NFTs" in Mint an 
 
 [✨ View "mintNftMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftMinter.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1986,7 +1986,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2026,7 +2026,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2066,7 +2066,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 
 [✨ View "mintNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2118,7 +2118,7 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 
 [✨ View "nftGetBalanceErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetBalanceErc721.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2170,7 +2170,7 @@ This endpoint is deprecated. Do not use it.
 
 [✨ View "nftGetContractAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetContractAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2222,7 +2222,7 @@ Get NFT metadata
 
 [✨ View "nftGetMetadataErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetMetadataErc721.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2274,7 +2274,7 @@ Get NFT provenance information
 
 [✨ View "nftGetProvenanceDataErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetProvenanceDataErc721.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2324,7 +2324,7 @@ Get NFT royalty information
 
 [✨ View "nftGetRoyaltyErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetRoyaltyErc721.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2372,7 +2372,7 @@ Get all NFTs that a blockchain address holds
 
 [✨ View "nftGetTokensByAddressErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByAddressErc721.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2422,7 +2422,7 @@ Get all NFTs from a collection
 
 [✨ View "nftGetTokensByCollectionErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByCollectionErc721.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2470,7 +2470,7 @@ Get an NFT transaction by its hash
 
 [✨ View "nftGetTransactErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactErc721.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2526,7 +2526,7 @@ Get NFT transactions on a blockchain address
 
 [✨ View "nftGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2582,7 +2582,7 @@ Get NFT transactions for an NFT
 
 [✨ View "nftGetTransactionByToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByToken.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2658,7 +2658,7 @@ Transfer an NFT
 
 [✨ View "transferNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNft.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2696,7 +2696,7 @@ TransferNftAlgo operation
 
 [✨ View "transferNftAlgo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2734,7 +2734,7 @@ TransferNftAlgoExpress operation
 
 [✨ View "transferNftAlgoExpress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoExpress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2772,7 +2772,7 @@ TransferNftAlgoKMS operation
 
 [✨ View "transferNftAlgoKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2810,7 +2810,7 @@ TransferNftCelo operation
 
 [✨ View "transferNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2848,7 +2848,7 @@ TransferNftFlowKMS operation
 
 [✨ View "transferNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2886,7 +2886,7 @@ TransferNftFlowMnemonic operation
 
 [✨ View "transferNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowMnemonic.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2924,7 +2924,7 @@ TransferNftFlowPK operation
 
 [✨ View "transferNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowPK.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -2962,7 +2962,7 @@ TransferNftKMS operation
 
 [✨ View "transferNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3000,7 +3000,7 @@ TransferNftKMSCelo operation
 
 [✨ View "transferNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3038,7 +3038,7 @@ TransferNftKMSTron operation
 
 [✨ View "transferNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3076,7 +3076,7 @@ TransferNftSolana operation
 
 [✨ View "transferNftSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3114,7 +3114,7 @@ TransferNftSolanaKMS operation
 
 [✨ View "transferNftSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3152,7 +3152,7 @@ TransferNftTron operation
 
 [✨ View "transferNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3212,7 +3212,7 @@ Update NFT royalty information
 
 [✨ View "updateCashbackValueForAuthorNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNft.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3250,7 +3250,7 @@ UpdateCashbackValueForAuthorNftCelo operation
 
 [✨ View "updateCashbackValueForAuthorNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3288,7 +3288,7 @@ UpdateCashbackValueForAuthorNftKMS operation
 
 [✨ View "updateCashbackValueForAuthorNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3326,7 +3326,7 @@ UpdateCashbackValueForAuthorNftKMSCelo operation
 
 [✨ View "updateCashbackValueForAuthorNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3364,7 +3364,7 @@ UpdateCashbackValueForAuthorNftKMSTron operation
 
 [✨ View "updateCashbackValueForAuthorNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3402,7 +3402,7 @@ UpdateCashbackValueForAuthorNftTron operation
 
 [✨ View "updateCashbackValueForAuthorNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftTron.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3452,7 +3452,7 @@ Verify an NFT in an NFT collection on Solana
 
 [✨ View "verifySolanaNFT.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFT.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -3488,5 +3488,5 @@ VerifySolanaNFTKMS operation
 
 [✨ View "verifySolanaNFTKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFTKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

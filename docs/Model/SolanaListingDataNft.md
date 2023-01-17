@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getAddress()** | **string** | NFT Address |
-**getData()** | [**\Tatum\Model\SolanaNftMetadata**](SolanaNftMetadata.md) |  |
+**getData()** | [**\Tatum\Model\SolanaNftMetadata**](../SolanaNftMetadata) |  |
 
-[[Back to Index]](../index.md)

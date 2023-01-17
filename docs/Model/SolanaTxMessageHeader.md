@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getNumReadonlyUnsignedAccounts()** | **float** |  | [optional]
 **getNumRequiredSignatures()** | **float** |  | [optional]
 
-[[Back to Index]](../index.md)

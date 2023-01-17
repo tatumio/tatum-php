@@ -14,7 +14,6 @@ Method name | Return type | Description | Notes
 **getSignatureId()** | **string** | The KMS identifier of the private key of the blockchain address that has priviledges to add an NFT minter to the NFT smart contract (the owner of the smart contract or a blockchain address that was granted such priviledges) |
 **getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the address that holds the NFT smart contract that was generated from the mnemonic | [optional]
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 **getFeeCurrency()** | **string** | (Celo only) The currency in which the transaction fee will be paid | [optional]
 
-[[Back to Index]](../index.md)

@@ -16,6 +16,5 @@ Method name | Return type | Description | Notes
 **getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be deducted that was generated from the mnemonic | [optional]
 **getBasePair()** | **string** | The base pair for the virtual currency that represents the token; used to calculate the value of a transaction |
 **getBaseRate()** | **float** | The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <code>basePair</code>*<code>baseRate</code> | [optional] [default to 1]
-**getCustomer()** | [**\Tatum\Model\CustomerRegistration**](CustomerRegistration.md) |  | [optional]
+**getCustomer()** | [**\Tatum\Model\CustomerRegistration**](../CustomerRegistration) |  | [optional]
 
-[[Back to Index]](../index.md)

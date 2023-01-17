@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getLocked()** | **string** |  | [optional]
 **getSymbol()** | **string** |  | [optional]
 
-[[Back to Index]](../index.md)

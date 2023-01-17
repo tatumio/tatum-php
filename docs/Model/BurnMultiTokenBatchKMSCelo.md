@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getNonce()** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
 **getFeeCurrency()** | **string** | Currency to pay for transaction gas |
 
-[[Back to Index]](../index.md)

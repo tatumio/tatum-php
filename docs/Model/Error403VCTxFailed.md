@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to perform operation on virtual currency, impossible to store transaction. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

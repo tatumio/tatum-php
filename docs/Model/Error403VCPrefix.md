@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Virtual currency has wrong name, must start with VC_. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

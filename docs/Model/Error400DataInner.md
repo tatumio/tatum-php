@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getProperty()** | **string** | Property name of the target object which validation is wrong | [optional]
 **getConstraints()** | **array<string,mixed>** | Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint. | [optional]
 
-[[Back to Index]](../index.md)

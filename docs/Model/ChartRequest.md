@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getTo()** | **float** | End interval in UTC millis. |
 **getTimeFrame()** | **string** | Time frame of the chart. |
 
-[[Back to Index]](../index.md)

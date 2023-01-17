@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getFrom()** | **int** | The start index of the range of gas pump addresses to precalculate |
 **getTo()** | **int** | The end index of the range of gas pump addresses to precalculate; must be greater than or equal to the value in the <code>from</code> parameter |
 
-[[Back to Index]](../index.md)

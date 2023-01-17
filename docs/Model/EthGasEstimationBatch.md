@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getError()** | **bool** | If all estimations succeeded. |
-**getResult()** | [**\Tatum\Model\EthGasEstimationBatchResult[]**](EthGasEstimationBatchResult.md) |  |
+**getResult()** | [**\Tatum\Model\EthGasEstimationBatchResult[]**](../EthGasEstimationBatchResult) |  |
 
-[[Back to Index]](../index.md)

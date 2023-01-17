@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getUiAmount()** | **mixed** | Token amount as a float, accounting for decimals. | [optional]
 **getUiAmountString()** | **string** | Token amount as a string, accounting for decimals. | [optional]
 
-[[Back to Index]](../index.md)

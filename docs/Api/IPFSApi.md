@@ -52,7 +52,7 @@ Gets data from the IPFS.
 
 [✨ View "getIPFSData.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/getIPFSData.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -90,5 +90,5 @@ Store data to IPFS
 
 [✨ View "storeIPFS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/storeIPFS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

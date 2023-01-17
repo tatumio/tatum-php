@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getTotalSupply()** | **float** | Total supply of the tokens. |
 **getDecimals()** | **float** | Number of decimal places of the token. |
 
-[[Back to Index]](../index.md)

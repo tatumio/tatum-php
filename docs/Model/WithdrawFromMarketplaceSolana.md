@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | Amount of funds to withdraw. |
 **getFromPrivateKey()** | **string** | The private key of the marketplace fee recipient |
 
-[[Back to Index]](../index.md)

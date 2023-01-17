@@ -19,4 +19,3 @@ Method name | Return type | Description | Notes
 **getSecret()** | **string** | Secret for account. Secret, or signature Id must be present. |
 **getSenderNote()** | **string** | Note visible to owner of withdrawing account. | [optional]
 
-[[Back to Index]](../index.md)

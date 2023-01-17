@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getBatchCount()** | **float** | Number of addresses to generate. |
 **getOwner()** | **string** | Owner of the addresses. |
 
-[[Back to Index]](../index.md)

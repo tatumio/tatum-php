@@ -63,7 +63,7 @@ Broadcast signed Dogecoin transaction
 
 [✨ View "dogeBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -103,7 +103,7 @@ Generate Dogecoin deposit address from Extended public key
 
 [✨ View "dogeGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -141,7 +141,7 @@ Generate Dogecoin private key
 
 [✨ View "dogeGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -185,7 +185,7 @@ Tatum follows BIP44 specification and generates for Dogecoin wallet with derivat
 
 [✨ View "dogeGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -223,7 +223,7 @@ Get Dogecoin Block detail by block hash or height.
 
 [✨ View "dogeGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -258,7 +258,7 @@ Get Dogecoin Blockchain Information. Obtain basic info like testnet / mainnet ve
 
 [✨ View "dogeGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlockChainInfo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -296,7 +296,7 @@ Get Dogecoin Block hash. Returns hash of the block to get the block detail.
 
 [✨ View "dogeGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlockHash.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -331,7 +331,7 @@ Get Dogecoin Transaction ids in the mempool.
 
 [✨ View "dogeGetMempool.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetMempool.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -369,7 +369,7 @@ Get Dogecoin Transaction detail by transaction hash.
 
 [✨ View "dogeGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetRawTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -415,7 +415,7 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 
 [✨ View "dogeGetUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetUTXO.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -455,7 +455,7 @@ JSON RPC HTTP driver
 
 [✨ View "dogeRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeRpcDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -515,7 +515,7 @@ Send DOGE to Dogecoin addresses
 
 [✨ View "dogeTransactionUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeTransactionUTXO.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -551,5 +551,5 @@ DogeTransactionUTXOKMS operation
 
 [✨ View "dogeTransactionUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeTransactionUTXOKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

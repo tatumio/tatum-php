@@ -12,13 +12,12 @@ Method name | Return type | Description | Notes
 **getChainTag()** | **string** |  | [optional]
 **getBlockRef()** | **string** |  | [optional]
 **getExpiration()** | **float** |  | [optional]
-**getClauses()** | [**\Tatum\Model\VetTxClausesInner[]**](VetTxClausesInner.md) |  | [optional]
+**getClauses()** | [**\Tatum\Model\VetTxClausesInner[]**](../VetTxClausesInner) |  | [optional]
 **getGasPriceCoef()** | **float** |  | [optional]
 **getGas()** | **float** |  | [optional]
 **getOrigin()** | **string** |  | [optional]
 **getNonce()** | **string** |  | [optional]
 **getSize()** | **float** |  | [optional]
-**getMeta()** | [**\Tatum\Model\VetTxMeta**](VetTxMeta.md) |  | [optional]
+**getMeta()** | [**\Tatum\Model\VetTxMeta**](../VetTxMeta) |  | [optional]
 **getBlockNumber()** | **float** |  | [optional]
 
-[[Back to Index]](../index.md)

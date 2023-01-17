@@ -53,5 +53,5 @@ Check malicous address
 
 [✨ View "checkMalicousAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MaliciousAddressApi/checkMalicousAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

@@ -59,7 +59,7 @@ Broadcast signed BNB transaction
 
 [✨ View "bnbBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -94,7 +94,7 @@ Generate Binance wallet
 
 [✨ View "bnbGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -132,7 +132,7 @@ Get Binance Account Detail by address.
 
 [✨ View "bnbGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetAccount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -170,7 +170,7 @@ Get Transactions in block by block height.
 
 [✨ View "bnbGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -205,7 +205,7 @@ Get Binance current block number.
 
 [✨ View "bnbGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -243,7 +243,7 @@ Get Binance Transaction by transaction hash.
 
 [✨ View "bnbGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -293,7 +293,7 @@ Get Binance Transactions by address.
 
 [✨ View "bnbGetTxByAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -333,7 +333,7 @@ Send Binance / Binance Token from account to account
 
 [✨ View "transferBnbBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -369,5 +369,5 @@ TransferBnbBlockchainKMS operation
 
 [✨ View "transferBnbBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

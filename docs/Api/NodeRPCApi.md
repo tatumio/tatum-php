@@ -85,7 +85,7 @@ Connect to the blockchain node through an RPC driver
 
 [✨ View "nodeJsonPostRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonPostRpcDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -137,7 +137,7 @@ Connect to the blockchain node through an RPC driver
 
 [✨ View "nodeJsonRpcGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonRpcGetDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -195,5 +195,5 @@ Connect to the blockchain node through an RPC driver
 
 [✨ View "nodeJsonRpcPutDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NodeRPCApi/nodeJsonRpcPutDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

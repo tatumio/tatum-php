@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 **getFeeLimit()** | **float** | Fee in TRX to be paid. |
 
-[[Back to Index]](../index.md)

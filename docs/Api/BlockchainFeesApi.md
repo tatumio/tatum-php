@@ -69,7 +69,7 @@ Estimate BNB Smart Chain transaction fees
 
 [✨ View "bscEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/bscEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -109,7 +109,7 @@ Estimate Celo Chain transaction fees
 
 [✨ View "celoEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/celoEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -147,7 +147,7 @@ Estimate EGLD transaction fees
 
 [✨ View "egldEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/egldEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -189,7 +189,7 @@ Estimate the fee for a transaction
 
 [✨ View "estimateFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFee.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -225,7 +225,7 @@ EstimateFeeBatchMintNft operation
 
 [✨ View "estimateFeeBatchMintNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeBatchMintNft.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -261,7 +261,7 @@ EstimateFeeDeployCustodialWallet operation
 
 [✨ View "estimateFeeDeployCustodialWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeDeployCustodialWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -297,7 +297,7 @@ EstimateFeeFromAddress operation
 
 [✨ View "estimateFeeFromAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeFromAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -333,7 +333,7 @@ EstimateFeeFromUTXO operation
 
 [✨ View "estimateFeeFromUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeFromUTXO.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -369,7 +369,7 @@ EstimateFeeTransferFromCustodial operation
 
 [✨ View "estimateFeeTransferFromCustodial.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/estimateFeeTransferFromCustodial.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -409,7 +409,7 @@ Estimate Ethereum transaction fees
 
 [✨ View "ethEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/ethEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -451,7 +451,7 @@ Estimate multiple Ethereum transaction fees
 
 [✨ View "ethEstimateGasBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/ethEstimateGasBatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -489,7 +489,7 @@ Get recommended blockchain fee / gas price
 
 [✨ View "getBlockchainFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/getBlockchainFee.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -529,7 +529,7 @@ Estimate KuCoin Community Chain transaction fees
 
 [✨ View "kcsEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/kcsEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -567,7 +567,7 @@ Estimate Klaytn transaction fees
 
 [✨ View "klaytnEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/klaytnEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -607,7 +607,7 @@ Estimate Polygon transaction fees
 
 [✨ View "polygonEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/polygonEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -645,7 +645,7 @@ Estimate gas required for transaction.
 
 [✨ View "vetEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/vetEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -685,5 +685,5 @@ Estimate XinFin transaction fees
 
 [✨ View "xdcEstimateGas.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainFeesApi/xdcEstimateGas.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

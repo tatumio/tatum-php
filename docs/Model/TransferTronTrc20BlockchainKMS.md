@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getFeeLimit()** | **float** | Fee in TRX to be paid. |
 **getAmount()** | **string** | Amount to be sent in TRX. |
 
-[[Back to Index]](../index.md)

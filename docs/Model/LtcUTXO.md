@@ -17,4 +17,3 @@ Method name | Return type | Description | Notes
 **getHash()** | **string** | The hash of the transaction | [optional]
 **getIndex()** | **float** | The index of the transaction output checked for the UTXO | [optional]
 
-[[Back to Index]](../index.md)

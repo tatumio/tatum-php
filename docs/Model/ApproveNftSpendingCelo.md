@@ -16,6 +16,5 @@ Method name | Return type | Description | Notes
 **getFromPrivateKey()** | **string** | The private key of the blockchain address from which the fee will be deducted |
 **getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

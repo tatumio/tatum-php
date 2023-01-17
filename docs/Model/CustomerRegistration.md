@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getCustomerCountry()** | **string** | The ISO 3166-1 code of the country that the customer has to be compliant with | [optional]
 **getProviderCountry()** | **string** | The ISO 3166-1 code of the country that the service provider has to be compliant with | [optional]
 
-[[Back to Index]](../index.md)

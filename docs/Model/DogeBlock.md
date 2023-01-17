@@ -19,6 +19,5 @@ Method name | Return type | Description | Notes
 **getTime()** | **float** | Time of the block. | [optional]
 **getBits()** | **float** |  | [optional]
 **getNonce()** | **float** | Arbitrary number that is used in Litecoin's proof of work consensus algorithm. | [optional]
-**getTxs()** | [**\Tatum\Model\DogeTx[]**](DogeTx.md) |  | [optional]
+**getTxs()** | [**\Tatum\Model\DogeTx[]**](../DogeTx) |  | [optional]
 
-[[Back to Index]](../index.md)

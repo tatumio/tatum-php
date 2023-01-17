@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getEnableSemiFungibleTokens()** | **bool** | If address should support ERC1155 tokens, it should be marked as true. Not supported for TRON. |
 **getEnableBatchTransactions()** | **bool** | If address should support batch transfers of the assets, it should be marked as true. |
 
-[[Back to Index]](../index.md)

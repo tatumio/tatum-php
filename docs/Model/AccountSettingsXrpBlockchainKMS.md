@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getRippling()** | **bool** | Should be true, if an account is the issuer of assets. | [optional]
 **getRequireDestinationTag()** | **bool** | Should be true, if an account should support off-chain processing. | [optional]
 
-[[Back to Index]](../index.md)

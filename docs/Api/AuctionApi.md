@@ -101,7 +101,7 @@ The auction/marketplace smart contract will transfer the asset to the buyer afte
 
 [✨ View "approveNftSpending.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpending.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -137,7 +137,7 @@ ApproveNftSpendingCelo operation
 
 [✨ View "approveNftSpendingCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -173,7 +173,7 @@ ApproveNftSpendingCeloKMS operation
 
 [✨ View "approveNftSpendingCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -209,7 +209,7 @@ ApproveNftSpendingKMS operation
 
 [✨ View "approveNftSpendingKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -277,7 +277,7 @@ Bid for an asset at the NFT auction
 
 [✨ View "bidOnAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -313,7 +313,7 @@ BidOnAuctionCelo operation
 
 [✨ View "bidOnAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -349,7 +349,7 @@ BidOnAuctionCeloKMS operation
 
 [✨ View "bidOnAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -385,7 +385,7 @@ BidOnAuctionKMS operation
 
 [✨ View "bidOnAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -437,7 +437,7 @@ Update the recipient of the NFT auction fee
 
 [✨ View "bloAucUpdateFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipient.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -473,7 +473,7 @@ UpdateFeeRecipientCelo operation
 
 [✨ View "bloAucUpdateFeeRecipientCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -509,7 +509,7 @@ UpdateFeeRecipientCeloKMS operation
 
 [✨ View "bloAucUpdateFeeRecipientCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -545,7 +545,7 @@ UpdateFeeRecipientKMS operation
 
 [✨ View "bloAucUpdateFeeRecipientKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -607,7 +607,7 @@ Cancel the selling of an asset at the NFT auction
 
 [✨ View "cancelAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -643,7 +643,7 @@ CancelAuctionCelo operation
 
 [✨ View "cancelAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -679,7 +679,7 @@ CancelAuctionCeloKMS operation
 
 [✨ View "cancelAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -715,7 +715,7 @@ CancelAuctionKMS operation
 
 [✨ View "cancelAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -765,7 +765,7 @@ Sell an asset at the NFT auction
 
 [✨ View "createAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -801,7 +801,7 @@ CreateAuctionCelo operation
 
 [✨ View "createAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -837,7 +837,7 @@ CreateAuctionCeloKMS operation
 
 [✨ View "createAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -873,7 +873,7 @@ CreateAuctionKMS operation
 
 [✨ View "createAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -925,7 +925,7 @@ Create an NFT auction
 
 [✨ View "generateAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -961,7 +961,7 @@ GenerateAuctionCelo operation
 
 [✨ View "generateAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -997,7 +997,7 @@ GenerateAuctionCeloKMS operation
 
 [✨ View "generateAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1033,7 +1033,7 @@ GenerateAuctionKMS operation
 
 [✨ View "generateAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1081,7 +1081,7 @@ Get information about an auctioned asset at the NFT auction
 
 [✨ View "getAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1127,7 +1127,7 @@ Get the NFT auction fee
 
 [✨ View "getAuctionFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFee.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1173,7 +1173,7 @@ Get the recipient of the NFT auction fee
 
 [✨ View "getAuctionFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFeeRecipient.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1233,7 +1233,7 @@ Both seller and buyer can settle the auction.
 
 [✨ View "settleAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1269,7 +1269,7 @@ SettleAuctionCelo operation
 
 [✨ View "settleAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1305,7 +1305,7 @@ SettleAuctionCeloKMS operation
 
 [✨ View "settleAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1341,7 +1341,7 @@ SettleAuctionKMS operation
 
 [✨ View "settleAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1393,7 +1393,7 @@ Update the NFT auction fee
 
 [✨ View "updateFeeAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1429,7 +1429,7 @@ UpdateFeeAuctionCelo operation
 
 [✨ View "updateFeeAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1465,7 +1465,7 @@ UpdateFeeAuctionCeloKMS operation
 
 [✨ View "updateFeeAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1501,5 +1501,5 @@ UpdateFeeAuctionKMS operation
 
 [✨ View "updateFeeAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

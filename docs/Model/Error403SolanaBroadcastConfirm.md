@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unexpected error occurred. Reason: ${error}. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getAuthRevocable()** | **bool** | If set to true, this account can freeze the balance of a holder of an asset issued by this account. | [optional]
 **getAuthImmutable()** | **bool** | If set to true, none of the following flags can be changed. | [optional]
 
-[[Back to Index]](../index.md)

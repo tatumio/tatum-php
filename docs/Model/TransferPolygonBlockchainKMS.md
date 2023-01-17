@@ -12,9 +12,8 @@ Method name | Return type | Description | Notes
 **getNonce()** | **float** | Nonce to be set to Polygon transaction. If not present, last known nonce will be used. | [optional]
 **getTo()** | **string** | Blockchain address to send assets |
 **getCurrency()** | **string** | Currency to transfer from Polygon Blockchain Account. ERC20 tokens BETH, BBTC, BADA, WMATIC, BDOT, BXRP, BLTC, BBCH are available only for mainnet use. |
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 **getAmount()** | **string** | Amount to be sent. |
 **getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 **getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 
-[[Back to Index]](../index.md)

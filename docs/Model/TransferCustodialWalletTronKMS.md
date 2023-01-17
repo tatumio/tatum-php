@@ -20,4 +20,3 @@ Method name | Return type | Description | Notes
 **getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the "master address" | [optional]
 **getFeeLimit()** | **float** | The maximum amount to be paid as the gas fee (in TRX) |
 
-[[Back to Index]](../index.md)

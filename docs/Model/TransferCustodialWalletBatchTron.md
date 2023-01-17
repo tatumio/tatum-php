@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getFromPrivateKey()** | **string** | The private key of the blockchain address that owns the gas pump address ("master address") |
 **getFeeLimit()** | **float** | The maximum amount to be paid as the gas fee (in TRX) |
 
-[[Back to Index]](../index.md)

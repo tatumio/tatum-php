@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getTokenId()** | **string** | ID of the token. |
-**getMetadata()** | [**\Tatum\Model\NftTokenByCollectionErc721TokenMetadata**](NftTokenByCollectionErc721TokenMetadata.md) |  | [optional]
+**getMetadata()** | [**\Tatum\Model\NftTokenByCollectionErc721TokenMetadata**](../NftTokenByCollectionErc721TokenMetadata) |  | [optional]
 
-[[Back to Index]](../index.md)

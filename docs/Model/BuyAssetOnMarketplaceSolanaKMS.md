@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getAuthoritySignatureId()** | **string** | The KMS identifier of the private key used for signing transactions as authority; required if <code>requiresSignOff</code> is set to "true" for the marketplace | [optional]
 **getSignatureId()** | **string** | The KMS identifier of the private key of the buyer |
 
-[[Back to Index]](../index.md)

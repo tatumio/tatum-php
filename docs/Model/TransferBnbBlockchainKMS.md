@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getFromAddress()** | **string** | Blockchain address to send from |
 **getMessage()** | **string** | Message to recipient. | [optional]
 
-[[Back to Index]](../index.md)

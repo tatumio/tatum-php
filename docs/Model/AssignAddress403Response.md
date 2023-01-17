@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Offchain not supported for account with ${account.currency} currency. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

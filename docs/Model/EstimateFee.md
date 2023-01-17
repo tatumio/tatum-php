@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getContractAddress()** | **string** | Contract address of ERC20 token, if type is TRANSFER_ERC20 | [optional]
 **getAmount()** | **string** | Amount to be sent in ERC20, if type is TRANSFER_ERC20 | [optional]
 
-[[Back to Index]](../index.md)

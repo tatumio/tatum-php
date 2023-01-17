@@ -73,7 +73,7 @@ Access Algorand Algod GET node endpoints
 
 [✨ View "algoNodeGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodeGetDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -119,7 +119,7 @@ Access Algorand Indexer GET node endpoints
 
 [✨ View "algoNodeIndexerGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodeIndexerGetDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -167,7 +167,7 @@ Access Algorand Algod POST node endpoints
 
 [✨ View "algoNodePostDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodePostDriver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -205,7 +205,7 @@ Broadcast signed Algorand transaction
 
 [✨ View "algoandBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoandBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -243,7 +243,7 @@ Generate Algorand account address from private key
 
 [✨ View "algorandGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -281,7 +281,7 @@ Tatum supports Algorand wallets.
 
 [✨ View "algorandGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -319,7 +319,7 @@ Get Algorand Account balance
 
 [✨ View "algorandGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -357,7 +357,7 @@ Get Algorand block by block round number.
 
 [✨ View "algorandGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -392,7 +392,7 @@ Get Algorand current block number. This is the number of the latest block in the
 
 [✨ View "algorandGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -438,7 +438,7 @@ Get Algorand Transactions between from and to
 
 [✨ View "algorandGetPayTransactionsByFromTo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetPayTransactionsByFromTo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -476,7 +476,7 @@ Get Algorand transaction by transaction id.
 
 [✨ View "algorandGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -516,7 +516,7 @@ Enable receiving asset on account
 
 [✨ View "receiveAlgorandAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/receiveAlgorandAsset.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -552,7 +552,7 @@ ReceiveAlgorandAssetKMS operation
 
 [✨ View "receiveAlgorandAssetKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/receiveAlgorandAssetKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -598,7 +598,7 @@ Send Algos to an Algorand account
 
 [✨ View "transferAlgorandBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/transferAlgorandBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -634,5 +634,5 @@ TransferAlgorandBlockchainKMS operation
 
 [✨ View "transferAlgorandBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/transferAlgorandBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

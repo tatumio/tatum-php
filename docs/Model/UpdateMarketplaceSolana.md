@@ -18,4 +18,3 @@ Method name | Return type | Description | Notes
 **getCanChangeSalePrice()** | **bool** | Set to "true" to allow the marketplace to change the sale price that the seller intentionally set to 0; if not set, defaults to "false" (the marketplace cannot change the sale price) | [optional]
 **getFromPrivateKey()** | **string** | The private key of the marketplace authority |
 
-[[Back to Index]](../index.md)

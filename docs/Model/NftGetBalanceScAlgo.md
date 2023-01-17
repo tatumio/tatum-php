@@ -8,6 +8,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | [**\Tatum\Model\NftGetBalanceScAlgoDataInner[]**](NftGetBalanceScAlgoDataInner.md) |  | [optional]
+**getData()** | [**\Tatum\Model\NftGetBalanceScAlgoDataInner[]**](../NftGetBalanceScAlgoDataInner) |  | [optional]
 
-[[Back to Index]](../index.md)

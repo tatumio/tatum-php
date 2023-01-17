@@ -25,7 +25,6 @@ Method name | Return type | Description | Notes
 **getStateRoot()** | **string** | The root of the final state trie of the block. | [optional]
 **getTimestamp()** | **float** | The unix timestamp for when the block was collated. | [optional]
 **getTotalDifficulty()** | **string** | Total difficulty of the chain until this block. | [optional]
-**getTransactions()** | [**\Tatum\Model\KlaytnTx[]**](KlaytnTx.md) | Array of transactions. | [optional]
+**getTransactions()** | [**\Tatum\Model\KlaytnTx[]**](../KlaytnTx) | Array of transactions. | [optional]
 **getTransactionsRoot()** | **string** | The root of the transaction trie of the block. | [optional]
 
-[[Back to Index]](../index.md)

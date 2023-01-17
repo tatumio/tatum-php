@@ -67,7 +67,7 @@ Send XLM from address to address
 
 [✨ View "transferXlmBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -103,7 +103,7 @@ TransferXlmBlockchainAsset operation
 
 [✨ View "transferXlmBlockchainAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainAsset.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -139,7 +139,7 @@ TransferXlmBlockchainKMS operation
 
 [✨ View "transferXlmBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -175,7 +175,7 @@ TransferXlmBlockchainKMSAsset operation
 
 [✨ View "transferXlmBlockchainKMSAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMSAsset.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -215,7 +215,7 @@ Create / Update / Delete XLM trust line
 
 [✨ View "trustLineXlmBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -251,7 +251,7 @@ TrustLineXlmBlockchainKMS operation
 
 [✨ View "trustLineXlmBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -289,7 +289,7 @@ Broadcast signed XLM transaction
 
 [✨ View "xlmBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -327,7 +327,7 @@ Get XLM Account detail.
 
 [✨ View "xlmGetAccountInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountInfo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -367,7 +367,7 @@ List all XLM account transactions.
 
 [✨ View "xlmGetAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountTx.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -402,7 +402,7 @@ Get XLM Blockchain fee in 1/10000000 of XLM (stroop)
 
 [✨ View "xlmGetFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetFee.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -437,7 +437,7 @@ Get XLM Blockchain last closed ledger.
 
 [✨ View "xlmGetLastClosedLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLastClosedLedger.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -475,7 +475,7 @@ Get XLM Blockchain ledger for ledger sequence.
 
 [✨ View "xlmGetLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedger.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -513,7 +513,7 @@ Get XLM Blockchain transactions in the ledger.
 
 [✨ View "xlmGetLedgerTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedgerTx.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -551,7 +551,7 @@ Get XLM Transaction by transaction hash.
 
 [✨ View "xlmGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -586,5 +586,5 @@ Generate XLM account
 
 [✨ View "xlmWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

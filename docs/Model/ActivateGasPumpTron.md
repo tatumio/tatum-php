@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getFeeLimit()** | **float** | The maximum amount to be paid as the gas fee (in TRX) |
 **getFromPrivateKey()** | **string** | The private key of the blockchain address that will pay the gas fee for the activation transaction |
 
-[[Back to Index]](../index.md)

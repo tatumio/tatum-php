@@ -16,6 +16,5 @@ Method name | Return type | Description | Notes
 **getData()** | **string** | Data in bytes | [optional]
 **getAmount()** | **string** | amount of token to be destroyed. |
 **getNonce()** | **float** | Nonce to be set to transaction. If not present, last known nonce will be used. | [optional]
-**getFee()** | [**\Tatum\Model\DeployErc20Fee**](DeployErc20Fee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\DeployErc20Fee**](../DeployErc20Fee) |  | [optional]
 
-[[Back to Index]](../index.md)

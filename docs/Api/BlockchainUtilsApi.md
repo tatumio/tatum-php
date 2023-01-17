@@ -62,7 +62,7 @@ Estimate the block height for a future point in time
 
 [✨ View "getAuctionEstimatedTime.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -108,5 +108,5 @@ Get the blockchain address of a smart contract by the deployment transaction ID
 
 [✨ View "sCGetContractAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/sCGetContractAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

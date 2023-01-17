@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getFromSecret()** | **string** | Secret for account. Secret, or signature Id must be present. |
 **getLimit()** | **string** | Amount of the assets to be permitted to send over this trust line. 0 means deletion of the trust line. When no limit is specified, maximum amount available is permitted. | [optional]
 
-[[Back to Index]](../index.md)

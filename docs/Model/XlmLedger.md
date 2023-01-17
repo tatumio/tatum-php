@@ -24,4 +24,3 @@ Method name | Return type | Description | Notes
 **getProtocolVersion()** | **float** | The protocol version that the Stellar network was running when this ledger was committed. | [optional]
 **getHeaderXdr()** | **string** | A base64 encoded string of the raw LedgerHeader xdr struct for this ledger. | [optional]
 
-[[Back to Index]](../index.md)

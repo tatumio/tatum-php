@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getFast()** | **string** | Fast gas price in wei. |
 **getBaseFee()** | **string** | Base fee for EIP-1559 transactions in wei. |
 
-[[Back to Index]](../index.md)

@@ -15,6 +15,5 @@ Method name | Return type | Description | Notes
 **getContractAddress()** | **string** | The blockchain address of the smart contract from which the asset (NFT or Multi Token) was minted |
 **getFromPrivateKey()** | **string** | The private key of the blockchain address from which the fee will be deducted |
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

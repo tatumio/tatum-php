@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
 **getIndex()** | **int** | Derivation index of sender address. | [optional]
 
-[[Back to Index]](../index.md)

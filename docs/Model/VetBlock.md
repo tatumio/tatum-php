@@ -24,4 +24,3 @@ Method name | Return type | Description | Notes
 **getSigner()** | **string** | the one who signed this block | [optional]
 **getTransactions()** | **string[]** | transactions IDs | [optional]
 
-[[Back to Index]](../index.md)

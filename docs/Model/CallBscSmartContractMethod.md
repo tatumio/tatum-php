@@ -15,6 +15,5 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | Amount of the assets to be sent. | [optional]
 **getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
 **getNonce()** | **float** | Nonce to be set to BSC transaction. If not present, last known nonce will be used. | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

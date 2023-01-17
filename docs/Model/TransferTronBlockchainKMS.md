@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | Amount to be sent in TRX. |
 **getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
 
-[[Back to Index]](../index.md)

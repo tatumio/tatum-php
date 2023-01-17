@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Wallet Model ([**\Tatum\Model\Wallet**](../../../Model/Wallet.md))
+Wallet Model ([**\Tatum\Model\Wallet**](../../../Model/Wallet))
 
 ### Description
 
@@ -43,7 +43,7 @@ Generate wallet
 
 [✨ View "generateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 # `generateAddressFromXpub()`
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAddressBtc.md))
+Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAddressBtc))
 
 ### Description
 
@@ -76,7 +76,7 @@ Generate address from xPub and index
 
 [✨ View "generateAddressFromXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateAddressFromXpub.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 # `generateAddressFromPrivateKey()`
@@ -93,11 +93,11 @@ $sdk->{mainnet/testnet}()->local()->wallet()->bitcoinCash()->generateAddressFrom
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**$privateKey** | [**\Tatum\Model\PrivKey**](../../../Model/PrivKey.md) | Private Key | 
+**$privateKey** | [**\Tatum\Model\PrivKey**](../../../Model/PrivKey) | Private Key | 
 
 ### Return type
 
-Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAddressBtc.md))
+Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAddressBtc))
 
 ### Description
 
@@ -107,7 +107,7 @@ Generate address from xPub and index
 
 [✨ View "generateAddressFromPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateAddressFromPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 # `generatePrivateKey()`
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-Private Key ([**\Tatum\Model\PrivKey**](../../../Model/PrivKey.md))
+Private Key ([**\Tatum\Model\PrivKey**](../../../Model/PrivKey))
 
 ### Description
 
@@ -140,5 +140,5 @@ Generate private key from mnemonic and index
 
 [✨ View "generatePrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generatePrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to deactivate customer, accounts not deactivated. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

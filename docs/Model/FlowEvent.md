@@ -15,6 +15,5 @@ Method name | Return type | Description | Notes
 **getTransactionId()** | **string** |  | [optional]
 **getTransactionIndex()** | **float** |  | [optional]
 **getEventIndex()** | **float** |  | [optional]
-**getPayload()** | [**\Tatum\Model\FlowEventPayload**](FlowEventPayload.md) |  | [optional]
+**getPayload()** | [**\Tatum\Model\FlowEventPayload**](../FlowEventPayload) |  | [optional]
 
-[[Back to Index]](../index.md)

@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getCustomerCountry()** | **string** | Country customer has to be compliant with. If not set, it will not be updated. ISO-3166-1. | [optional]
 **getProviderCountry()** | **string** | Country service provider has to be compliant with. If not set, it will not be updated. ISO-3166-1 | [optional]
 
-[[Back to Index]](../index.md)

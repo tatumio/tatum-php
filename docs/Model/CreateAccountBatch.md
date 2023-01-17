@@ -8,6 +8,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAccounts()** | [**\Tatum\Model\CreateAccount[]**](CreateAccount.md) |  |
+**getAccounts()** | [**\Tatum\Model\CreateAccount[]**](../CreateAccount) |  |
 
-[[Back to Index]](../index.md)

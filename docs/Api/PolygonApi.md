@@ -65,7 +65,7 @@ CallPolygonSmartContractMethod operation
 
 [✨ View "callPolygonSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -101,7 +101,7 @@ CallPolygonSmartContractMethodCaller operation
 
 [✨ View "callPolygonSmartContractMethodCaller.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodCaller.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -137,7 +137,7 @@ CallPolygonSmartContractMethodKMS operation
 
 [✨ View "callPolygonSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -201,7 +201,7 @@ However, because this API can be run against any smart contract on the blockchai
 
 [✨ View "callPolygonSmartContractReadMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractReadMethod.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -239,7 +239,7 @@ Broadcast signed Polygon transaction
 
 [✨ View "polygonBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -279,7 +279,7 @@ Generate Polygon account address from Extended public key
 
 [✨ View "polygonGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -317,7 +317,7 @@ Generate Polygon private key
 
 [✨ View "polygonGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddressPrivateKey.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -361,7 +361,7 @@ Tatum follows BIP44 specification and generates for Polygon wallet with derivati
 
 [✨ View "polygonGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -399,7 +399,7 @@ Get Polygon Account balance
 
 [✨ View "polygonGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -437,7 +437,7 @@ Get Polygon block by hash
 
 [✨ View "polygonGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -472,7 +472,7 @@ Get current block number
 
 [✨ View "polygonGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetCurrentBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -510,7 +510,7 @@ Get Polygon Transaction
 
 [✨ View "polygonGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -558,7 +558,7 @@ Get Polygon transactions by address
 
 [✨ View "polygonGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -596,7 +596,7 @@ Get count of outgoing Polygon transactions
 
 [✨ View "polygonGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -638,7 +638,7 @@ Web3 HTTP driver
 
 [✨ View "polygonWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonWeb3Driver.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -684,7 +684,7 @@ Send MATIC from account to account
 
 [✨ View "transferPolygonBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -720,5 +720,5 @@ TransferPolygonBlockchainKMS operation
 
 [✨ View "transferPolygonBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Xrp submit tx failed. ${error} |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

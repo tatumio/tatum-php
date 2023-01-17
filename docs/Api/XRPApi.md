@@ -69,7 +69,7 @@ Modify XRP account
 
 [✨ View "accountSettingsXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/accountSettingsXrpBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -105,7 +105,7 @@ AccountSettingsXrpBlockchainKMS operation
 
 [✨ View "accountSettingsXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/accountSettingsXrpBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -145,7 +145,7 @@ Send XRP from address to address
 
 [✨ View "transferXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -181,7 +181,7 @@ TransferXrpBlockchainAsset operation
 
 [✨ View "transferXrpBlockchainAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainAsset.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -217,7 +217,7 @@ TransferXrpBlockchainAssetKMS operation
 
 [✨ View "transferXrpBlockchainAssetKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainAssetKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -253,7 +253,7 @@ TransferXrpBlockchainKMS operation
 
 [✨ View "transferXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -295,7 +295,7 @@ Create / Update / Delete XRP trust line
 
 [✨ View "trustLineXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/trustLineXrpBlockchain.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -331,7 +331,7 @@ TrustLineXrpBlockchainKMS operation
 
 [✨ View "trustLineXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/trustLineXrpBlockchainKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -369,7 +369,7 @@ Broadcast signed XRP transaction
 
 [✨ View "xrpBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpBroadcast.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -407,7 +407,7 @@ Get XRP Account Balance. Obtain balance of the XRP and other assets on the accou
 
 [✨ View "xrpGetAccountBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -445,7 +445,7 @@ Get XRP Account info.
 
 [✨ View "xrpGetAccountInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountInfo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -487,7 +487,7 @@ List all Account transactions.
 
 [✨ View "xrpGetAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountTx.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -522,7 +522,7 @@ Get actual Blockchain fee
 
 [✨ View "xrpGetFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetFee.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -557,7 +557,7 @@ Get XRP Blockchain last closed ledger index and hash.
 
 [✨ View "xrpGetLastClosedLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetLastClosedLedger.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -595,7 +595,7 @@ Get ledger by sequence.
 
 [✨ View "xrpGetLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetLedger.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -633,7 +633,7 @@ Get XRP Transaction by transaction hash.
 
 [✨ View "xrpGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -668,5 +668,5 @@ Generate XRP account
 
 [✨ View "xrpWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpWallet.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

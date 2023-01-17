@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Unable to cancel withdrawal ${id}, it is impossible to create refund transaction. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

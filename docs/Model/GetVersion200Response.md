@@ -19,4 +19,3 @@ Method name | Return type | Description | Notes
 **getUsage()** | **float** |  | [optional]
 **getRolloverDay()** | **float** |  | [optional]
 
-[[Back to Index]](../index.md)

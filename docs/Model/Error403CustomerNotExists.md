@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | No customer with given external ID ${externalId} exists. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

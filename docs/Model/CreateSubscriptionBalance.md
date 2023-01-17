@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionBalanceAttr**](CreateSubscriptionBalanceAttr.md) |  |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionBalanceAttr**](../CreateSubscriptionBalanceAttr) |  |
 
-[[Back to Index]](../index.md)

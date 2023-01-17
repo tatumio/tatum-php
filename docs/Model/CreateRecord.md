@@ -16,6 +16,5 @@ Method name | Return type | Description | Notes
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **getFromShardId()** | **float** | (Harmony only) The ID of the shard from which the data should be read | [optional]
 **getToShardId()** | **float** | (Harmony only) The ID of the shard to which the data should be recorded | [optional]
-**getEthFee()** | [**\Tatum\Model\CustomFee**](CustomFee.md) |  | [optional]
+**getEthFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
 
-[[Back to Index]](../index.md)

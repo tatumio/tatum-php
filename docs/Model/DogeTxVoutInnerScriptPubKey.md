@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getType()** | **string** |  | [optional]
 **getAddresses()** | **string[]** |  | [optional]
 
-[[Back to Index]](../index.md)

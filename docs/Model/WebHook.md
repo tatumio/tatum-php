@@ -17,6 +17,5 @@ Method name | Return type | Description | Notes
 **getTimestamp()** | **float** | Webhook execution time | [optional]
 **getRetryCount()** | **float** | Number | [optional]
 **getFailed()** | **bool** | Flag indicating whether this webhook was successful or not |
-**getResponse()** | [**\Tatum\Model\WebHookResponse**](WebHookResponse.md) |  |
+**getResponse()** | [**\Tatum\Model\WebHookResponse**](../WebHookResponse) |  |
 
-[[Back to Index]](../index.md)

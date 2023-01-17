@@ -109,7 +109,7 @@ Withdraw funds from the marketplace treasury account on Solana
 
 [✨ View "bloMarWithdrawFromMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -145,7 +145,7 @@ WithdrawFromMarketplaceSolanaKMS operation
 
 [✨ View "bloMarWithdrawFromMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -209,7 +209,7 @@ Buy an asset on the NFT marketplace
 
 [✨ View "buyAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -245,7 +245,7 @@ BuyAssetOnMarketplaceCelo operation
 
 [✨ View "buyAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -281,7 +281,7 @@ BuyAssetOnMarketplaceCeloKMS operation
 
 [✨ View "buyAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -317,7 +317,7 @@ BuyAssetOnMarketplaceKMS operation
 
 [✨ View "buyAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -353,7 +353,7 @@ BuyAssetOnMarketplaceSolana operation
 
 [✨ View "buyAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -389,7 +389,7 @@ BuyAssetOnMarketplaceSolanaKMS operation
 
 [✨ View "buyAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -451,7 +451,7 @@ Cancel the selling of an asset on the NFT marketplace
 
 [✨ View "cancelSellAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -487,7 +487,7 @@ CancelSellAssetOnMarketplaceCelo operation
 
 [✨ View "cancelSellAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -523,7 +523,7 @@ CancelSellAssetOnMarketplaceCeloKMS operation
 
 [✨ View "cancelSellAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -559,7 +559,7 @@ CancelSellAssetOnMarketplaceKMS operation
 
 [✨ View "cancelSellAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -595,7 +595,7 @@ CancelSellAssetOnMarketplaceSolana operation
 
 [✨ View "cancelSellAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -631,7 +631,7 @@ CancelSellAssetOnMarketplaceSolanaKMS operation
 
 [✨ View "cancelSellAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -697,7 +697,7 @@ Create an NFT marketplace
 
 [✨ View "generateMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplace.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -733,7 +733,7 @@ GenerateMarketplaceCelo operation
 
 [✨ View "generateMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -769,7 +769,7 @@ GenerateMarketplaceCeloKMS operation
 
 [✨ View "generateMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -805,7 +805,7 @@ GenerateMarketplaceKMS operation
 
 [✨ View "generateMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -841,7 +841,7 @@ GenerateMarketplaceSolana operation
 
 [✨ View "generateMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -877,7 +877,7 @@ GenerateMarketplaceSolanaKMS operation
 
 [✨ View "generateMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -923,7 +923,7 @@ Get the NFT marketplace fee
 
 [✨ View "getMarketplaceFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFee.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -969,7 +969,7 @@ Get the recipient of the NFT marketplace fee
 
 [✨ View "getMarketplaceFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1011,7 +1011,7 @@ Get information about an NFT marketplace on Solana
 
 [✨ View "getMarketplaceInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceInfo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1059,7 +1059,7 @@ Get information about a listing on the NFT marketplace
 
 [✨ View "getMarketplaceListing.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListing.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1107,7 +1107,7 @@ Get the listings of a certain type from the NFT marketplace
 
 [✨ View "getMarketplaceListings.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListings.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1169,7 +1169,7 @@ Sell an asset on the NFT marketplace
 
 [✨ View "sellAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1205,7 +1205,7 @@ SellAssetOnMarketplaceCelo operation
 
 [✨ View "sellAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1241,7 +1241,7 @@ SellAssetOnMarketplaceCeloKMS operation
 
 [✨ View "sellAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1277,7 +1277,7 @@ SellAssetOnMarketplaceKMS operation
 
 [✨ View "sellAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1313,7 +1313,7 @@ SellAssetOnMarketplaceSolana operation
 
 [✨ View "sellAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1349,7 +1349,7 @@ SellAssetOnMarketplaceSolanaKMS operation
 
 [✨ View "sellAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1403,7 +1403,7 @@ Update the NFT marketplace fee
 
 [✨ View "updateFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFee.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1439,7 +1439,7 @@ UpdateFeeCelo operation
 
 [✨ View "updateFeeCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1475,7 +1475,7 @@ UpdateFeeCeloKMS operation
 
 [✨ View "updateFeeCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1511,7 +1511,7 @@ UpdateFeeKMS operation
 
 [✨ View "updateFeeKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1565,7 +1565,7 @@ Update the recipient of the NFT marketplace fee
 
 [✨ View "updateFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipient.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1601,7 +1601,7 @@ UpdateFeeRecipientCelo operation
 
 [✨ View "updateFeeRecipientCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1637,7 +1637,7 @@ UpdateFeeRecipientCeloKMS operation
 
 [✨ View "updateFeeRecipientCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1673,7 +1673,7 @@ UpdateFeeRecipientKMS operation
 
 [✨ View "updateFeeRecipientKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1709,7 +1709,7 @@ UpdateFeeRecipientSolana operation
 
 [✨ View "updateFeeRecipientSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1745,7 +1745,7 @@ UpdateFeeRecipientSolanaKMS operation
 
 [✨ View "updateFeeRecipientSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1781,7 +1781,7 @@ UpdateFeeSolana operation
 
 [✨ View "updateFeeSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1817,7 +1817,7 @@ UpdateFeeSolanaKMS operation
 
 [✨ View "updateFeeSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1867,7 +1867,7 @@ Update an NFT marketplace on Solana
 
 [✨ View "updateMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1903,7 +1903,7 @@ UpdateMarketplaceSolanaKMS operation
 
 [✨ View "updateMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1953,7 +1953,7 @@ Withdraw funds from the marketplace fee account on Solana
 
 [✨ View "withdrawFromMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1989,5 +1989,5 @@ WithdrawFromMarketplaceSolanaKMS operation
 
 [✨ View "withdrawFromMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

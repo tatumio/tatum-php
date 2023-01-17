@@ -15,4 +15,3 @@ Method name | Return type | Description | Notes
 **getFeePayer()** | **string** | Blockchain address to pay the fee for the transaction from | [optional]
 **getFeePayerSignatureId()** | **string** | Identifier of the private key used for paying the gas costs in signing application. Defaults to the signatureId. | [optional]
 
-[[Back to Index]](../index.md)

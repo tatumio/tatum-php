@@ -28,4 +28,3 @@ Method name | Return type | Description | Notes
 **getMemoType()** | **string** | The type of memo. | [optional]
 **getSignatures()** | **string[]** | An array of signatures used to sign this transaction. | [optional]
 
-[[Back to Index]](../index.md)

@@ -71,7 +71,7 @@ CreateSubscriptionBalance operation
 
 [✨ View "createSubscriptionBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -109,7 +109,7 @@ CreateSubscriptionContractLogEvent operation
 
 [✨ View "createSubscriptionContractLogEvent.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionContractLogEvent.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -147,7 +147,7 @@ CreateSubscriptionIncoming operation
 
 [✨ View "createSubscriptionIncoming.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionIncoming.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -185,7 +185,7 @@ CreateSubscriptionInterval operation
 
 [✨ View "createSubscriptionInterval.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionInterval.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -223,7 +223,7 @@ CreateSubscriptionKMSError operation
 
 [✨ View "createSubscriptionKMSError.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionKMSError.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -261,7 +261,7 @@ CreateSubscriptionKMSSuccess operation
 
 [✨ View "createSubscriptionKMSSuccess.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionKMSSuccess.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -299,7 +299,7 @@ CreateSubscriptionMultiTokenTransferEvent operation
 
 [✨ View "createSubscriptionMultiTokenTransferEvent.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionMultiTokenTransferEvent.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -337,7 +337,7 @@ CreateSubscriptionNftTransferEvent operation
 
 [✨ View "createSubscriptionNftTransferEvent.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionNftTransferEvent.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -539,7 +539,7 @@ Create a subscription
 
 [✨ View "createSubscriptionNotification.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionNotification.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -577,7 +577,7 @@ CreateSubscriptionPartialTradeMatch operation
 
 [✨ View "createSubscriptionPartialTradeMatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionPartialTradeMatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -615,7 +615,7 @@ CreateSubscriptionPending operation
 
 [✨ View "createSubscriptionPending.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionPending.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -653,7 +653,7 @@ CreateSubscriptionTradeMatch operation
 
 [✨ View "createSubscriptionTradeMatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionTradeMatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -691,7 +691,7 @@ CreateSubscriptionTxInTheBlock operation
 
 [✨ View "createSubscriptionTxInTheBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionTxInTheBlock.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -729,7 +729,7 @@ Cancel existing subscription.
 
 [✨ View "deleteSubscription.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/deleteSubscription.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -764,7 +764,7 @@ Disable HMAC hash ID on the fired webhooks from Tatum API.
 
 [✨ View "disableWebHookHmac.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/disableWebHookHmac.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -806,7 +806,7 @@ Enable HMAC hash ID on the fired webhooks from Tatum API. In order to make sure 
 
 [✨ View "enableWebHookHmac.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/enableWebHookHmac.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -850,7 +850,7 @@ List all webhooks.
 
 [✨ View "getAllWebhooks.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getAllWebhooks.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -894,7 +894,7 @@ Count of webhooks that were found from /v3/subscription/webhook
 
 [✨ View "getAllWebhooksCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getAllWebhooksCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -934,7 +934,7 @@ Obtain report for subscription
 
 [✨ View "getSubscriptionReport.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptionReport.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -976,7 +976,7 @@ List all active subscriptions.
 
 [✨ View "getSubscriptions.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptions.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1018,5 +1018,5 @@ Count of subscriptions that were found from /v3/subscription
 
 [✨ View "getSubscriptionsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptionsCount.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

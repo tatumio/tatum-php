@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getScript()** | **string** | Transaction script. | [optional]
 **getAddress()** | **string** | Recipient address. | [optional]
 
-[[Back to Index]](../index.md)

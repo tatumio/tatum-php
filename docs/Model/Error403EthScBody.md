@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Invalid parameters for smart contract invocation. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

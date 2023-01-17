@@ -25,7 +25,6 @@ Method name | Return type | Description | Notes
 **getGasLimit()** | **float** | The maximum gas allowed in this block. | [optional]
 **getGasUsed()** | **float** | The total used gas by all transactions in this block. | [optional]
 **getTimestamp()** | **float** | The unix timestamp for when the block was collated. | [optional]
-**getTransactions()** | [**\Tatum\Model\XdcTx[]**](XdcTx.md) | Array of transactions. | [optional]
+**getTransactions()** | [**\Tatum\Model\XdcTx[]**](../XdcTx) | Array of transactions. | [optional]
 **getUncles()** | **string[]** | Array of uncle hashes. | [optional]
 
-[[Back to Index]](../index.md)

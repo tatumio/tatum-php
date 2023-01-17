@@ -23,6 +23,5 @@ Method name | Return type | Description | Notes
 **getGasUsed()** | **float** | The amount of gas used by this specific transaction alone. | [optional]
 **getCumulativeGasUsed()** | **float** | The total amount of gas used when this transaction was executed in the block. | [optional]
 **getContractAddress()** | **string** | The contract address created, if the transaction was a contract creation, otherwise null. | [optional]
-**getLogs()** | [**\Tatum\Model\KlaytnTxLogsInner[]**](KlaytnTxLogsInner.md) | Log events, that happened in this transaction. | [optional]
+**getLogs()** | [**\Tatum\Model\KlaytnTxLogsInner[]**](../KlaytnTxLogsInner) | Log events, that happened in this transaction. | [optional]
 
-[[Back to Index]](../index.md)

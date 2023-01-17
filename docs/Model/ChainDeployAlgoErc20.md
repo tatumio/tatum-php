@@ -19,4 +19,3 @@ Method name | Return type | Description | Notes
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 **getFee()** | **string** | The transaction fee in ALGO |
 
-[[Back to Index]](../index.md)

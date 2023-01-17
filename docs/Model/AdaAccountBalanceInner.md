@@ -8,7 +8,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getCurrency()** | [**\Tatum\Model\AdaAccountBalanceInnerCurrency**](AdaAccountBalanceInnerCurrency.md) |  | [optional]
+**getCurrency()** | [**\Tatum\Model\AdaAccountBalanceInnerCurrency**](../AdaAccountBalanceInnerCurrency) |  | [optional]
 **getValue()** | **string** | Quantity of the asset. | [optional]
 
-[[Back to Index]](../index.md)

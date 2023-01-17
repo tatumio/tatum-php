@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Xpub not compatible with account currency. |
 **getStatusCode()** | **float** | 403 |
 
-[[Back to Index]](../index.md)

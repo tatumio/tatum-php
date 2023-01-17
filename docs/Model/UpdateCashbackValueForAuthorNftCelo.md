@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getFromPrivateKey()** | **string** | The private key of the NFT author's address |
 **getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
 
-[[Back to Index]](../index.md)

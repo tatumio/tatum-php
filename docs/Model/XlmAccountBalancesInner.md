@@ -16,4 +16,3 @@ Method name | Return type | Description | Notes
 **getAssetCode()** | **string** | The code for this asset. | [optional]
 **getAssetIssuer()** | **string** | The Stellar address of this asset’s issuer. | [optional]
 
-[[Back to Index]](../index.md)

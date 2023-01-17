@@ -12,4 +12,3 @@ Method name | Return type | Description | Notes
 **getMessage()** | **string** | Subscription not active anymore. |
 **getStatusCode()** | **float** | 401 |
 
-[[Back to Index]](../index.md)

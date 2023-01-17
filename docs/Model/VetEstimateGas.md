@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getData()** | **string** | Data to send to Smart Contract | [optional]
 **getNonce()** | **float** | Nonce | [optional]
 
-[[Back to Index]](../index.md)

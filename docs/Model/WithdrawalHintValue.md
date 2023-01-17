@@ -8,7 +8,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | [**\Tatum\Model\Address**](Address.md) |  | [optional]
+**getAddress()** | [**\Tatum\Model\Address**](../Address) |  | [optional]
 **getAmount()** | **string** | Balance for address. | [optional]
 
-[[Back to Index]](../index.md)

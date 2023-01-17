@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getEvents()** | **object[]** |  | [optional]
-**getTransfers()** | [**\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]**](VetTxReceiptOutputsInnerTransfersInner.md) |  | [optional]
+**getTransfers()** | [**\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]**](../VetTxReceiptOutputsInnerTransfersInner) |  | [optional]
 
-[[Back to Index]](../index.md)

@@ -8,6 +8,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddresses()** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](OffchainAddressesAddressesInner.md) |  |
+**getAddresses()** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](../OffchainAddressesAddressesInner) |  |
 
-[[Back to Index]](../index.md)

@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getToAddress()** | **string** | Recipient address. |
 **getFromAddress()** | **string** | Sender address. |
 
-[[Back to Index]](../index.md)

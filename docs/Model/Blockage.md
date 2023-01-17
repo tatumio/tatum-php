@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getType()** | **string** | The type of the blockage | [optional]
 **getDescription()** | **string** | The description of the blockage | [optional]
 
-[[Back to Index]](../index.md)

@@ -57,7 +57,7 @@ Activated customer is able to do any operation.
 
 [✨ View "activateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/activateCustomer.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -95,7 +95,7 @@ Deactivate customer is not able to do any operation. Customer can be deactivated
 
 [✨ View "deactivateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/deactivateCustomer.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -133,7 +133,7 @@ Disabled customer cannot perform end-user operations, such as create new account
 
 [✨ View "disableCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/disableCustomer.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -171,7 +171,7 @@ Enabled customer can perform all operations. By default all customers are enable
 
 [✨ View "enableCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/enableCustomer.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -211,7 +211,7 @@ List all customers
 
 [✨ View "findAllCustomers.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/findAllCustomers.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -249,7 +249,7 @@ Using anonymized external ID or internal customer ID you can access customer det
 
 [✨ View "getCustomerByExternalOrInternalId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/getCustomerByExternalOrInternalId.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -289,5 +289,5 @@ This method is helpful in case your primary system will change ID's or customer 
 
 [✨ View "updateCustomer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/updateCustomer.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

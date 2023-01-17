@@ -24,6 +24,5 @@ Method name | Return type | Description | Notes
 **getTotalCoins()** | **string** |  | [optional]
 **getTotalCoins()** | **string** | Total number of XRP drops in the network, as a quoted integer. (This decreases as transaction costs destroy XRP.) | [optional]
 **getTransactionHash()** | **string** | Hash of the transaction information included in this ledger, as hex. | [optional]
-**getTransactions()** | [**\Tatum\Model\XrpTx[]**](XrpTx.md) |  | [optional]
+**getTransactions()** | [**\Tatum\Model\XrpTx[]**](../XrpTx) |  | [optional]
 
-[[Back to Index]](../index.md)

@@ -19,4 +19,3 @@ Method name | Return type | Description | Notes
 **getSeller()** | **string** | Address of the seller. | [optional]
 **getHighestBid()** | **string** | Current highest bid of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field. | [optional]
 
-[[Back to Index]](../index.md)

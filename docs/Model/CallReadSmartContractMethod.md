@@ -13,4 +13,3 @@ Method name | Return type | Description | Notes
 **getMethodAbi()** | **object** | ABI of the method to invoke. |
 **getParams()** | **object[]** | Parameters of the method to be invoked. |
 
-[[Back to Index]](../index.md)

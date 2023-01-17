@@ -9,6 +9,5 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionPartialTradeMatchAttr**](CreateSubscriptionPartialTradeMatchAttr.md) |  |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionPartialTradeMatchAttr**](../CreateSubscriptionPartialTradeMatchAttr) |  |
 
-[[Back to Index]](../index.md)

@@ -17,4 +17,3 @@ Method name | Return type | Description | Notes
 **getFeeAccountId()** | **string** | ID of the account where fee will be paid, if any. If trade is a BUY or FUTURE_BUY type, feeAccountId must have same currency as a currency of currency2AccountId, and vice versa if trade is a SELL or FUTURE_SELL type, feeAccountId must have same currency as a currency of currency1AccountId. | [optional]
 **getFee()** | **float** | Percentage of the trade amount to be paid as a fee. | [optional]
 
-[[Back to Index]](../index.md)

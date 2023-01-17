@@ -19,4 +19,3 @@ Method name | Return type | Description | Notes
 **getPublicMint()** | **bool** | True if the contract is publicMint type. False by default. | [optional]
 **getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
 
-[[Back to Index]](../index.md)

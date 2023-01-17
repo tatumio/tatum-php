@@ -103,7 +103,7 @@ Add a Multi Token minter
 
 [✨ View "addMultiTokenMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -141,7 +141,7 @@ AddMultiTokenMinterKMS operation
 
 [✨ View "addMultiTokenMinterKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinterKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -195,7 +195,7 @@ Burn a Multi Token
 
 [✨ View "burnMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -249,7 +249,7 @@ Burn multiple Multi Tokens
 
 [✨ View "burnMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -287,7 +287,7 @@ BurnMultiTokenBatchCelo operation
 
 [✨ View "burnMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -325,7 +325,7 @@ BurnMultiTokenBatchKMS operation
 
 [✨ View "burnMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -363,7 +363,7 @@ BurnMultiTokenBatchKMSCelo operation
 
 [✨ View "burnMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -401,7 +401,7 @@ BurnMultiTokenCelo operation
 
 [✨ View "burnMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -439,7 +439,7 @@ BurnMultiTokenKMS operation
 
 [✨ View "burnMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -477,7 +477,7 @@ BurnMultiTokenKMSCelo operation
 
 [✨ View "burnMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -531,7 +531,7 @@ Deploy a Multi Token smart contract
 
 [✨ View "deployMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -569,7 +569,7 @@ DeployMultiTokenCelo operation
 
 [✨ View "deployMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -607,7 +607,7 @@ DeployMultiTokenCeloKMS operation
 
 [✨ View "deployMultiTokenCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCeloKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -645,7 +645,7 @@ DeployMultiTokenKMS operation
 
 [✨ View "deployMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -699,7 +699,7 @@ Mint a Multi Token
 
 [✨ View "mintMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -753,7 +753,7 @@ Mint multiple Multi Tokens
 
 [✨ View "mintMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -791,7 +791,7 @@ MintMultiTokenBatchCelo operation
 
 [✨ View "mintMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -829,7 +829,7 @@ MintMultiTokenBatchKMS operation
 
 [✨ View "mintMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -867,7 +867,7 @@ MintMultiTokenBatchKMSCelo operation
 
 [✨ View "mintMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -905,7 +905,7 @@ MintMultiTokenCelo operation
 
 [✨ View "mintMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -943,7 +943,7 @@ MintMultiTokenKMS operation
 
 [✨ View "mintMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -981,7 +981,7 @@ MintMultiTokenKMSCelo operation
 
 [✨ View "mintMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1029,7 +1029,7 @@ Get all Multi Tokens that a blockchain address holds
 
 [✨ View "multiTokenGetAddressBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1081,7 +1081,7 @@ Get the amount of a specific MultiToken that a blockchain address holds
 
 [✨ View "multiTokenGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1133,7 +1133,7 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 [✨ View "multiTokenGetBalanceBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1185,7 +1185,7 @@ This endpoint is deprecated. Do not use it.
 
 [✨ View "multiTokenGetContractAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetContractAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1235,7 +1235,7 @@ Get Multi Token metadata
 
 [✨ View "multiTokenGetMetadata.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1283,7 +1283,7 @@ Get a Multi Token transaction by its hash
 
 [✨ View "multiTokenGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1339,7 +1339,7 @@ Get Multi Token transactions on a blockchain address
 
 [✨ View "multiTokenGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1395,7 +1395,7 @@ Transfer a Multi Token
 
 [✨ View "transferMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1449,7 +1449,7 @@ Transfer multiple Multi Tokens
 
 [✨ View "transferMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1487,7 +1487,7 @@ TransferMultiTokenBatchCelo operation
 
 [✨ View "transferMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1525,7 +1525,7 @@ TransferMultiTokenBatchKMS operation
 
 [✨ View "transferMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1563,7 +1563,7 @@ TransferMultiTokenBatchKMSCelo operation
 
 [✨ View "transferMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1601,7 +1601,7 @@ TransferMultiTokenCelo operation
 
 [✨ View "transferMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1639,7 +1639,7 @@ TransferMultiTokenKMS operation
 
 [✨ View "transferMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMS.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 
 
 
@@ -1677,5 +1677,5 @@ TransferMultiTokenKMSCelo operation
 
 [✨ View "transferMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMSCelo.php)
 
-[[Back to top]](#top)
+[Back to top](#top)
 

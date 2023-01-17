@@ -14,7 +14,7 @@ Method name | Return type | Description | Notes
 **getAmount()** | **string** | Amount in account's currency |
 **getAnonymous()** | **bool** | Whether the transaction is anonymous. If true, counter account owner does not see source account. |
 **getCreated()** | **float** | Time in UTC of transaction. |
-**getMarketValue()** | [**\Tatum\Model\MarketValue**](MarketValue.md) |  |
+**getMarketValue()** | [**\Tatum\Model\MarketValue**](../MarketValue) |  |
 **getOperationType()** | **string** | Type of operation. |
 **getTransactionType()** | **string** | Type of payment. |
 **getReference()** | **string** | Transaction internal reference - unique identifier within Tatum ledger. In order of failure, use this value to search for problems. |
@@ -26,4 +26,3 @@ Method name | Return type | Description | Notes
 **getAddress()** | **string** | For operationType DEPOSIT it represents address, on which was deposit credited for the account. | [optional]
 **getTxId()** | **string** | For operationType DEPOSIT, BLOCKCHAIN_TRANSACTION it represents transaction id, for which deposit occured. | [optional]
 
-[[Back to Index]](../index.md)

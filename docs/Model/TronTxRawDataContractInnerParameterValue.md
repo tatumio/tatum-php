@@ -14,4 +14,3 @@ Method name | Return type | Description | Notes
 **getOwnerAddressBase58()** | **string** | Address of the sender in Base58 encoding. | [optional]
 **getToAddressBase58()** | **string** | Address of the recipient in Base58 encoding. | [optional]
 
-[[Back to Index]](../index.md)
