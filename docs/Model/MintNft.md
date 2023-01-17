@@ -1,6 +1,10 @@
-# Model/MintNft
+---
+title: MintNft
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

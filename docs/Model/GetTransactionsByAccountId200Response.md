@@ -1,6 +1,10 @@
-# Model/GetTransactionsByAccountId200Response
+---
+title: GetTransactionsByAccountId200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

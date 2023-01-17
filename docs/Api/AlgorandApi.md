@@ -1,3 +1,9 @@
+---
+title: Algorand
+parent: API
+layout: page
+---
+
 # Api/AlgorandApi
 
 ## References

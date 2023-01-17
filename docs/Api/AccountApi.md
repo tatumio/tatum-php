@@ -1,3 +1,9 @@
+---
+title: Account
+parent: API
+layout: page
+---
+
 # Api/AccountApi
 
 ## References

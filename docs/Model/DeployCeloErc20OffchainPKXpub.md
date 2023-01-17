@@ -1,6 +1,10 @@
-# Model/DeployCeloErc20OffchainPKXpub
+---
+title: DeployCeloErc20OffchainPKXpub
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

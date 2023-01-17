@@ -1,3 +1,9 @@
+---
+title: KuCoin
+parent: API
+layout: page
+---
+
 # Api/KuCoinApi
 
 ## References

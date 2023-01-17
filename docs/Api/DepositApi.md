@@ -1,3 +1,9 @@
+---
+title: Deposit
+parent: API
+layout: page
+---
+
 # Api/DepositApi
 
 ## References

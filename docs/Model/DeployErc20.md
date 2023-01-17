@@ -1,6 +1,10 @@
-# Model/DeployErc20
+---
+title: DeployErc20
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

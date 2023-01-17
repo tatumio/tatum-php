@@ -1,3 +1,9 @@
+---
+title: VeChain
+parent: API
+layout: page
+---
+
 # Api/VeChainApi
 
 ## References

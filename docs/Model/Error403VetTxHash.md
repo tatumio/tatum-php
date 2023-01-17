@@ -1,6 +1,10 @@
-# Model/Error403VetTxHash
+---
+title: Error403VetTxHash
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

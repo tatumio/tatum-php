@@ -1,6 +1,10 @@
-# Model/CallSmartContractMethod403Response
+---
+title: CallSmartContractMethod403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

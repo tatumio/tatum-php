@@ -1,6 +1,10 @@
-# Model/AdaTransactionFromAddressInner
+---
+title: AdaTransactionFromAddressInner
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403TxSenderCustomerDisabled
+---
+title: Error403TxSenderCustomerDisabled
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

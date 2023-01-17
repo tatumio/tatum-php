@@ -1,6 +1,10 @@
-# Model/TransferXrpBlockchain403Response
+---
+title: TransferXrpBlockchain403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

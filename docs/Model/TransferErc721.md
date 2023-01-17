@@ -1,6 +1,10 @@
-# Model/TransferErc721
+---
+title: TransferErc721
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

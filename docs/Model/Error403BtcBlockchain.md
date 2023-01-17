@@ -1,6 +1,10 @@
-# Model/Error403BtcBlockchain
+---
+title: Error403BtcBlockchain
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

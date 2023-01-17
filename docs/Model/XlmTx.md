@@ -1,6 +1,10 @@
-# Model/XlmTx
+---
+title: XlmTx
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

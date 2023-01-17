@@ -1,3 +1,9 @@
+---
+title: Solana
+parent: API
+layout: page
+---
+
 # Api/SolanaApi
 
 ## References

@@ -1,6 +1,10 @@
-# Model/Error403BcashBroadcast
+---
+title: Error403BcashBroadcast
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

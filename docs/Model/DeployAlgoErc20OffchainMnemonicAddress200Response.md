@@ -1,6 +1,10 @@
-# Model/DeployAlgoErc20OffchainMnemonicAddress200Response
+---
+title: DeployAlgoErc20OffchainMnemonicAddress200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

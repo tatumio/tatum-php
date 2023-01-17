@@ -1,3 +1,9 @@
+---
+title: Stellar
+parent: API
+layout: page
+---
+
 # Api/StellarApi
 
 ## References

@@ -1,6 +1,10 @@
-# Model/XrpTxMeta
+---
+title: XrpTxMeta
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/KlaytnEstimateGas
+---
+title: KlaytnEstimateGas
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

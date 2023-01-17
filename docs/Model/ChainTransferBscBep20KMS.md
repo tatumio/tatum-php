@@ -1,6 +1,10 @@
-# Model/ChainTransferBscBep20KMS
+---
+title: ChainTransferBscBep20KMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

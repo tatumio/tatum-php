@@ -1,6 +1,10 @@
-# Model/BchTransaction403Response
+---
+title: BchTransaction403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

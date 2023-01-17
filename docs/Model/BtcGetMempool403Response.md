@@ -1,6 +1,10 @@
-# Model/BtcGetMempool403Response
+---
+title: BtcGetMempool403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

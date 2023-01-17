@@ -1,6 +1,10 @@
-# Model/MultiTokenGetTransactionByAddress200ResponseInner
+---
+title: MultiTokenGetTransactionByAddress200ResponseInner
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

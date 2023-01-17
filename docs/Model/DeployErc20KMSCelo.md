@@ -1,6 +1,10 @@
-# Model/DeployErc20KMSCelo
+---
+title: DeployErc20KMSCelo
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

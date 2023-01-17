@@ -1,3 +1,9 @@
+---
+title: BNB Smart Chain
+parent: API
+layout: page
+---
+
 # Api/BNBSmartChainApi
 
 ## References

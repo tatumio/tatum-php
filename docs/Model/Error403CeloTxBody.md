@@ -1,6 +1,10 @@
-# Model/Error403CeloTxBody
+---
+title: Error403CeloTxBody
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

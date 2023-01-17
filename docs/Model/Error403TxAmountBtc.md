@@ -1,6 +1,10 @@
-# Model/Error403TxAmountBtc
+---
+title: Error403TxAmountBtc
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

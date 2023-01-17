@@ -1,6 +1,10 @@
-# Model/Error403KlaytnKlay20NotFound
+---
+title: Error403KlaytnKlay20NotFound
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

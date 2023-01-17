@@ -1,6 +1,10 @@
-# Model/Error403ComplianceBtc
+---
+title: Error403ComplianceBtc
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

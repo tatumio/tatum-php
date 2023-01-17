@@ -1,6 +1,10 @@
-# Model/BnbTxTxValueSignaturesInnerPubKey
+---
+title: BnbTxTxValueSignaturesInnerPubKey
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

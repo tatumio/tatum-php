@@ -1,6 +1,10 @@
-# Model/DeployCeloErc20OffchainMnemonicAddress
+---
+title: DeployCeloErc20OffchainMnemonicAddress
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

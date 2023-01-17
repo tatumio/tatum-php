@@ -1,6 +1,10 @@
-# Model/Error403OrderCurrency2Frozen
+---
+title: Error403OrderCurrency2Frozen
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

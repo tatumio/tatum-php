@@ -1,6 +1,10 @@
-# Model/Error403BscErc20TxSign
+---
+title: Error403BscErc20TxSign
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

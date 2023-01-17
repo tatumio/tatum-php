@@ -1,6 +1,10 @@
-# Model/Erc20Response
+---
+title: Erc20Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

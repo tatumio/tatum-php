@@ -1,6 +1,10 @@
-# Model/DeployErc20OffchainMnemonicAddress403Response
+---
+title: DeployErc20OffchainMnemonicAddress403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

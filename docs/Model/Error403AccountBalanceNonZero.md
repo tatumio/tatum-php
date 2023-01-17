@@ -1,6 +1,10 @@
-# Model/Error403AccountBalanceNonZero
+---
+title: Error403AccountBalanceNonZero
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

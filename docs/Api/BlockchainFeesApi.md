@@ -1,3 +1,9 @@
+---
+title: Blockchain fees
+parent: API
+layout: page
+---
+
 # Api/BlockchainFeesApi
 
 ## References

@@ -1,6 +1,10 @@
-# Model/TransferCustodialWalletCeloKMS
+---
+title: TransferCustodialWalletCeloKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

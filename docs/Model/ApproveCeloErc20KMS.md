@@ -1,6 +1,10 @@
-# Model/ApproveCeloErc20KMS
+---
+title: ApproveCeloErc20KMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

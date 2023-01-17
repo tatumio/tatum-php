@@ -1,6 +1,10 @@
-# Model/XdcGetTransaction403Response
+---
+title: XdcGetTransaction403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

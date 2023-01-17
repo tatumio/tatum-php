@@ -1,6 +1,10 @@
-# Model/AlgoTx
+---
+title: AlgoTx
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

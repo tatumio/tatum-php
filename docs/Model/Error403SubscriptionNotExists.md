@@ -1,6 +1,10 @@
-# Model/Error403SubscriptionNotExists
+---
+title: Error403SubscriptionNotExists
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,3 +1,9 @@
+---
+title: NFT (ERC-721 or compatible)
+parent: API
+layout: page
+---
+
 # Api/NFTERC721OrCompatibleApi
 
 ## References

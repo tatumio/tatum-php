@@ -1,6 +1,10 @@
-# Model/AlgorandGetBalance200ResponseAssetsInner
+---
+title: AlgorandGetBalance200ResponseAssetsInner
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

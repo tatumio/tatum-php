@@ -1,6 +1,10 @@
-# Model/TransferErc20Blockchain
+---
+title: TransferErc20Blockchain
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

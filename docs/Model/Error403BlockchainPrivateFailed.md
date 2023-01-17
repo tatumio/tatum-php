@@ -1,6 +1,10 @@
-# Model/Error403BlockchainPrivateFailed
+---
+title: Error403BlockchainPrivateFailed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

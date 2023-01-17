@@ -1,6 +1,10 @@
-# Model/CustomerRegistration
+---
+title: CustomerRegistration
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403BlockDelete
+---
+title: Error403BlockDelete
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,3 +1,9 @@
+---
+title: BNB Beacon Chain
+parent: API
+layout: page
+---
+
 # Api/BNBBeaconChainApi
 
 ## References

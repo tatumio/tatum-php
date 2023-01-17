@@ -1,3 +1,9 @@
+---
+title: Malicious address
+parent: API
+layout: page
+---
+
 # Api/MaliciousAddressApi
 
 ## References

@@ -1,6 +1,10 @@
-# Model/Error403OrderFeeNotFound
+---
+title: Error403OrderFeeNotFound
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

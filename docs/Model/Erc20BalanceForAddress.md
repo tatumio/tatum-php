@@ -1,6 +1,10 @@
-# Model/Erc20BalanceForAddress
+---
+title: Erc20BalanceForAddress
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

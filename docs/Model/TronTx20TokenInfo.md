@@ -1,6 +1,10 @@
-# Model/TronTx20TokenInfo
+---
+title: TronTx20TokenInfo
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

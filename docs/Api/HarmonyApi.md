@@ -1,3 +1,9 @@
+---
+title: Harmony
+parent: API
+layout: page
+---
+
 # Api/HarmonyApi
 
 ## References

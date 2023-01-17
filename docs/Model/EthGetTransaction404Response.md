@@ -1,6 +1,10 @@
-# Model/EthGetTransaction404Response
+---
+title: EthGetTransaction404Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

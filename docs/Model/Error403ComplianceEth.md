@@ -1,6 +1,10 @@
-# Model/Error403ComplianceEth
+---
+title: Error403ComplianceEth
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/AdaTxInputsInner
+---
+title: AdaTxInputsInner
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

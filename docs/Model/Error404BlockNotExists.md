@@ -1,6 +1,10 @@
-# Model/Error404BlockNotExists
+---
+title: Error404BlockNotExists
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

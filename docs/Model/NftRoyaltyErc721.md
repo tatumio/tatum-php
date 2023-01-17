@@ -1,6 +1,10 @@
-# Model/NftRoyaltyErc721
+---
+title: NftRoyaltyErc721
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/UnfreezeAccount403Response
+---
+title: UnfreezeAccount403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/CreateSubscriptionTradeMatchAttr
+---
+title: CreateSubscriptionTradeMatchAttr
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

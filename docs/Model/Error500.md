@@ -1,6 +1,10 @@
-# Model/Error500
+---
+title: Error500
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403CustomerDisabled
+---
+title: Error403CustomerDisabled
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

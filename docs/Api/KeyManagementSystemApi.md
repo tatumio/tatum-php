@@ -1,3 +1,9 @@
+---
+title: Key Management System
+parent: API
+layout: page
+---
+
 # Api/KeyManagementSystemApi
 
 ## References

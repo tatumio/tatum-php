@@ -1,6 +1,10 @@
-# Model/EgldEstimateGas200Response
+---
+title: EgldEstimateGas200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

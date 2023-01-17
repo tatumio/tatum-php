@@ -1,6 +1,10 @@
-# Model/DeployCeloErc20OffchainMnemXpub
+---
+title: DeployCeloErc20OffchainMnemXpub
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

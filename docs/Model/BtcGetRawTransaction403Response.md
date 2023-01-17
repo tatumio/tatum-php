@@ -1,6 +1,10 @@
-# Model/BtcGetRawTransaction403Response
+---
+title: BtcGetRawTransaction403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

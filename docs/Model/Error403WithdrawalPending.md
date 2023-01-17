@@ -1,6 +1,10 @@
-# Model/Error403WithdrawalPending
+---
+title: Error403WithdrawalPending
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

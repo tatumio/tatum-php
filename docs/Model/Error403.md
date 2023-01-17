@@ -1,6 +1,10 @@
-# Model/Error403
+---
+title: Error403
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

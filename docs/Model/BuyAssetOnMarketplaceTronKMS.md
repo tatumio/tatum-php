@@ -1,6 +1,10 @@
-# Model/BuyAssetOnMarketplaceTronKMS
+---
+title: BuyAssetOnMarketplaceTronKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

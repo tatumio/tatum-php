@@ -1,6 +1,10 @@
-# Model/Error403BscGasPrice
+---
+title: Error403BscGasPrice
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

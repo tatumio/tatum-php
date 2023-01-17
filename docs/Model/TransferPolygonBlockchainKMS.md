@@ -1,6 +1,10 @@
-# Model/TransferPolygonBlockchainKMS
+---
+title: TransferPolygonBlockchainKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

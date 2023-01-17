@@ -1,6 +1,10 @@
-# Model/Error403AccountCurrency
+---
+title: Error403AccountCurrency
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

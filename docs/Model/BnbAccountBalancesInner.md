@@ -1,6 +1,10 @@
-# Model/BnbAccountBalancesInner
+---
+title: BnbAccountBalancesInner
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

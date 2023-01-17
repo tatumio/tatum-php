@@ -1,6 +1,10 @@
-# Model/MultiTokenGetAddressBalance200ResponseInnerBalancesInner
+---
+title: MultiTokenGetAddressBalance200ResponseInnerBalancesInner
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

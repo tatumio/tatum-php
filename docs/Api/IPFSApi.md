@@ -1,3 +1,9 @@
+---
+title: IPFS
+parent: API
+layout: page
+---
+
 # Api/IPFSApi
 
 ## References

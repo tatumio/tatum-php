@@ -1,6 +1,10 @@
-# Model/CreateTronTrc20BlockchainKMS
+---
+title: CreateTronTrc20BlockchainKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

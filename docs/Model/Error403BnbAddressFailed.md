@@ -1,6 +1,10 @@
-# Model/Error403BnbAddressFailed
+---
+title: Error403BnbAddressFailed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

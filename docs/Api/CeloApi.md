@@ -1,3 +1,9 @@
+---
+title: Celo
+parent: API
+layout: page
+---
+
 # Api/CeloApi
 
 ## References

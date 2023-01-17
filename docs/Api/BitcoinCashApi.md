@@ -1,3 +1,9 @@
+---
+title: Bitcoin Cash
+parent: API
+layout: page
+---
+
 # Api/BitcoinCashApi
 
 ## References

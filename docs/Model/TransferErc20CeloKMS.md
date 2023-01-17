@@ -1,6 +1,10 @@
-# Model/TransferErc20CeloKMS
+---
+title: TransferErc20CeloKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

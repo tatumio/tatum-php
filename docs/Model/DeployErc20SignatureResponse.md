@@ -1,6 +1,10 @@
-# Model/DeployErc20SignatureResponse
+---
+title: DeployErc20SignatureResponse
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

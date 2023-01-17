@@ -1,6 +1,10 @@
-# Model/TransferBep20Blockchain
+---
+title: TransferBep20Blockchain
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

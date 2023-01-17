@@ -1,6 +1,10 @@
-# Model/Error403XrpFee
+---
+title: Error403XrpFee
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

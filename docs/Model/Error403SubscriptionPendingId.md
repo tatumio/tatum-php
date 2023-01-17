@@ -1,6 +1,10 @@
-# Model/Error403SubscriptionPendingId
+---
+title: Error403SubscriptionPendingId
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

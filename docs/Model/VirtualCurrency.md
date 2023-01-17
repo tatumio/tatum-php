@@ -1,6 +1,10 @@
-# Model/VirtualCurrency
+---
+title: VirtualCurrency
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

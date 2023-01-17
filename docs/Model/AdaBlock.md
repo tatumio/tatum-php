@@ -1,6 +1,10 @@
-# Model/AdaBlock
+---
+title: AdaBlock
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

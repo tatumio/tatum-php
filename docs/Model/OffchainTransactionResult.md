@@ -1,6 +1,10 @@
-# Model/OffchainTransactionResult
+---
+title: OffchainTransactionResult
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

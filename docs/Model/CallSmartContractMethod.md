@@ -1,6 +1,10 @@
-# Model/CallSmartContractMethod
+---
+title: CallSmartContractMethod
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

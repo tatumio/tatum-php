@@ -1,3 +1,9 @@
+---
+title: Auction
+parent: API
+layout: page
+---
+
 # Api/AuctionApi
 
 ## References

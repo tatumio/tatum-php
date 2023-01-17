@@ -1,6 +1,10 @@
-# Model/BtcTransactionFromUTXOKMSTarget
+---
+title: BtcTransactionFromUTXOKMSTarget
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

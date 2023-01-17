@@ -1,6 +1,10 @@
-# Model/MintMultipleErc721KMSCelo
+---
+title: MintMultipleErc721KMSCelo
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

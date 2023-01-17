@@ -1,3 +1,9 @@
+---
+title: Fungible Tokens (ERC-20 or compatible)
+parent: API
+layout: page
+---
+
 # Api/FungibleTokensERC20OrCompatibleApi
 
 ## References

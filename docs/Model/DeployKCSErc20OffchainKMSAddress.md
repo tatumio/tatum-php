@@ -1,6 +1,10 @@
-# Model/DeployKCSErc20OffchainKMSAddress
+---
+title: DeployKCSErc20OffchainKMSAddress
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

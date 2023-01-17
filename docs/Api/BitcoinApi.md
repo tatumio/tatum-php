@@ -1,3 +1,9 @@
+---
+title: Bitcoin
+parent: API
+layout: page
+---
+
 # Api/BitcoinApi
 
 ## References

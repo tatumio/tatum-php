@@ -1,6 +1,10 @@
-# Model/VetGetBalance200Response
+---
+title: VetGetBalance200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

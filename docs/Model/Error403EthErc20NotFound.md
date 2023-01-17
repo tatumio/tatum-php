@@ -1,6 +1,10 @@
-# Model/Error403EthErc20NotFound
+---
+title: Error403EthErc20NotFound
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,3 +1,9 @@
+---
+title: BitcoinCash
+parent: Local/Transaction
+layout: page
+---
+
 # Local/Transaction/BitcoinCash
 
 Bitcoin Cash Transaction
@@ -6,9 +12,9 @@ Method | Description
 ------------- | -------------
 [**sign()**](#sign) | Sign transaction
 
-## `sign()`
+# `sign()`
 
-### Type signature
+## Type signature
 
 ```php
 $sdk->{mainnet/testnet}()->local()->transaction()->bitcoinCash()->sign(

@@ -1,6 +1,10 @@
-# Model/TransferSol403Response
+---
+title: TransferSol403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

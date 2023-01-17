@@ -1,6 +1,10 @@
-# Model/Error403SubscriptionCurrency
+---
+title: Error403SubscriptionCurrency
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/CreateTrade403Response
+---
+title: CreateTrade403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

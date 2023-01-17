@@ -1,6 +1,10 @@
-# Model/Error403EthTxBody
+---
+title: Error403EthTxBody
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

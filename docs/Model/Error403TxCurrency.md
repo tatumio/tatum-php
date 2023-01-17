@@ -1,6 +1,10 @@
-# Model/Error403TxCurrency
+---
+title: Error403TxCurrency
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/MintErc20Celo
+---
+title: MintErc20Celo
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

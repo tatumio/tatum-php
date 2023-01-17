@@ -1,6 +1,10 @@
-# Model/Error403XrpMultiple
+---
+title: Error403XrpMultiple
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

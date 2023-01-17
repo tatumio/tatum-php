@@ -1,3 +1,9 @@
+---
+title: Notification subscriptions
+parent: API
+layout: page
+---
+
 # Api/NotificationSubscriptionsApi
 
 ## References

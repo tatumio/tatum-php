@@ -1,3 +1,9 @@
+---
+title: XDC
+parent: Local/Wallet
+layout: page
+---
+
 # Local/Wallet/XDC
 
 XDC HD Wallet
@@ -9,9 +15,9 @@ Method | Description
 [**generateAddressFromPrivateKey()**](#generateaddressfromprivatekey) | Generate address from xPub and index
 [**generatePrivateKey()**](#generateprivatekey) | Generate private key from mnemonic and index
 
-## `generateWallet()`
+# `generateWallet()`
 
-### Type signature
+## Type signature
 
 ```php
 $sdk->{mainnet/testnet}()->local()->wallet()->xdc()->generateWallet(
@@ -40,9 +46,9 @@ Generate wallet
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
 
-## `generateAddressFromXpub()`
+# `generateAddressFromXpub()`
 
-### Type signature
+## Type signature
 
 ```php
 $sdk->{mainnet/testnet}()->local()->wallet()->xdc()->generateAddressFromXpub(
@@ -73,9 +79,9 @@ Generate address from xPub and index
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
 
-## `generateAddressFromPrivateKey()`
+# `generateAddressFromPrivateKey()`
 
-### Type signature
+## Type signature
 
 ```php
 $sdk->{mainnet/testnet}()->local()->wallet()->xdc()->generateAddressFromPrivateKey(
@@ -104,9 +110,9 @@ Generate address from xPub and index
 [[Back to top]](#) | [[Back to Local Wallet]](../../index.md#local-wallet)
 
 
-## `generatePrivateKey()`
+# `generatePrivateKey()`
 
-### Type signature
+## Type signature
 
 ```php
 $sdk->{mainnet/testnet}()->local()->wallet()->xdc()->generatePrivateKey(

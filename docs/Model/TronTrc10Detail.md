@@ -1,6 +1,10 @@
-# Model/TronTrc10Detail
+---
+title: TronTrc10Detail
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

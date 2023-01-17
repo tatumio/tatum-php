@@ -1,6 +1,10 @@
-# Model/BidOnAuctionCeloKMS
+---
+title: BidOnAuctionCeloKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

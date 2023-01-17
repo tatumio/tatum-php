@@ -1,6 +1,10 @@
-# Model/NftTokenByAddressErc721TokenMetadata
+---
+title: NftTokenByAddressErc721TokenMetadata
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

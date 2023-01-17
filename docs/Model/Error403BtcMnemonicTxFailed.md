@@ -1,6 +1,10 @@
-# Model/Error403BtcMnemonicTxFailed
+---
+title: Error403BtcMnemonicTxFailed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

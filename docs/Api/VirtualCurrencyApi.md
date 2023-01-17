@@ -1,3 +1,9 @@
+---
+title: Virtual Currency
+parent: API
+layout: page
+---
+
 # Api/VirtualCurrencyApi
 
 ## References

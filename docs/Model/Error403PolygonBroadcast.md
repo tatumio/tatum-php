@@ -1,6 +1,10 @@
-# Model/Error403PolygonBroadcast
+---
+title: Error403PolygonBroadcast
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

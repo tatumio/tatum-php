@@ -1,3 +1,9 @@
+---
+title: Ethereum
+parent: API
+layout: page
+---
+
 # Api/EthereumApi
 
 ## References

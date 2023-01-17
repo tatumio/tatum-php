@@ -1,6 +1,10 @@
-# Model/Trc20Response
+---
+title: Trc20Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

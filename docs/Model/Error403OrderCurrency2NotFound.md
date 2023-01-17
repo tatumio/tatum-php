@@ -1,6 +1,10 @@
-# Model/Error403OrderCurrency2NotFound
+---
+title: Error403OrderCurrency2NotFound
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

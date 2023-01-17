@@ -1,3 +1,9 @@
+---
+title: Litecoin
+parent: Local/Transaction
+layout: page
+---
+
 # Local/Transaction/Litecoin
 
 Litecoin Transaction
@@ -6,9 +12,9 @@ Method | Description
 ------------- | -------------
 [**sign()**](#sign) | Sign transaction
 
-## `sign()`
+# `sign()`
 
-### Type signature
+## Type signature
 
 ```php
 $sdk->{mainnet/testnet}()->local()->transaction()->litecoin()->sign(

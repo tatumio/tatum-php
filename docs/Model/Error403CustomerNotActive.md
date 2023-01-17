@@ -1,6 +1,10 @@
-# Model/Error403CustomerNotActive
+---
+title: Error403CustomerNotActive
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

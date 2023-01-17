@@ -1,6 +1,10 @@
-# Model/Error403BscBep20Set
+---
+title: Error403BscBep20Set
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403VCDuplicate
+---
+title: Error403VCDuplicate
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

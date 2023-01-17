@@ -1,3 +1,9 @@
+---
+title: Multi Tokens (ERC-1155 or compatible)
+parent: API
+layout: page
+---
+
 # Api/MultiTokensERC1155OrCompatibleApi
 
 ## References

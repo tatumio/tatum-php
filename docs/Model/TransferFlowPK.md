@@ -1,6 +1,10 @@
-# Model/TransferFlowPK
+---
+title: TransferFlowPK
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

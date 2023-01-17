@@ -1,6 +1,10 @@
-# Model/Error403AddressAccountXpubUsed
+---
+title: Error403AddressAccountXpubUsed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

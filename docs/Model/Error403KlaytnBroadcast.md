@@ -1,6 +1,10 @@
-# Model/Error403KlaytnBroadcast
+---
+title: Error403KlaytnBroadcast
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

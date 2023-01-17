@@ -1,3 +1,9 @@
+---
+title: Exchange rate
+parent: API
+layout: page
+---
+
 # Api/ExchangeRateApi
 
 ## References

@@ -1,6 +1,10 @@
-# Model/CheckMalicousAddress200Response
+---
+title: CheckMalicousAddress200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

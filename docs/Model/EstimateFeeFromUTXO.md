@@ -1,6 +1,10 @@
-# Model/EstimateFeeFromUTXO
+---
+title: EstimateFeeFromUTXO
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

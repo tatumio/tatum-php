@@ -1,6 +1,10 @@
-# Model/AdaTransactionFromUTXOKMSFromUTXOInner
+---
+title: AdaTransactionFromUTXOKMSFromUTXOInner
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/DeployMultiTokenCeloKMS
+---
+title: DeployMultiTokenCeloKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

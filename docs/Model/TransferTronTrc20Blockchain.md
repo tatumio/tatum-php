@@ -1,6 +1,10 @@
-# Model/TransferTronTrc20Blockchain
+---
+title: TransferTronTrc20Blockchain
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

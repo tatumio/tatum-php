@@ -1,6 +1,10 @@
-# Model/Error403BtcTxUtxoFailed
+---
+title: Error403BtcTxUtxoFailed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

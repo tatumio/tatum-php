@@ -1,6 +1,10 @@
-# Model/Error403XdcBroadcast
+---
+title: Error403XdcBroadcast
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

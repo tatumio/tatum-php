@@ -1,6 +1,10 @@
-# Model/Error403AccountNotExists
+---
+title: Error403AccountNotExists
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

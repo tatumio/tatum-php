@@ -1,3 +1,9 @@
+---
+title: Blockchain utils
+parent: API
+layout: page
+---
+
 # Api/BlockchainUtilsApi
 
 ## References

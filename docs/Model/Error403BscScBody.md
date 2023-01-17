@@ -1,6 +1,10 @@
-# Model/Error403BscScBody
+---
+title: Error403BscScBody
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

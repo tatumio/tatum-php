@@ -1,6 +1,10 @@
-# Model/TransferEgldBlockchain
+---
+title: TransferEgldBlockchain
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/TransferNftSolanaKMS
+---
+title: TransferNftSolanaKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

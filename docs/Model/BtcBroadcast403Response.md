@@ -1,6 +1,10 @@
-# Model/BtcBroadcast403Response
+---
+title: BtcBroadcast403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

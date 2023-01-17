@@ -1,6 +1,10 @@
-# Model/Error403Erc20Prefix
+---
+title: Error403Erc20Prefix
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/TransferBchMnemonic403Response
+---
+title: TransferBchMnemonic403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

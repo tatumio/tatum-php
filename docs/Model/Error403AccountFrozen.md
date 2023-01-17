@@ -1,6 +1,10 @@
-# Model/Error403AccountFrozen
+---
+title: Error403AccountFrozen
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

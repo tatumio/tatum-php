@@ -1,3 +1,9 @@
+---
+title: Blockchain storage
+parent: API
+layout: page
+---
+
 # Api/BlockchainStorageApi
 
 ## References

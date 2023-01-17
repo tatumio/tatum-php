@@ -1,6 +1,10 @@
-# Model/CreateSubscriptionKMSSuccessAttr
+---
+title: CreateSubscriptionKMSSuccessAttr
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

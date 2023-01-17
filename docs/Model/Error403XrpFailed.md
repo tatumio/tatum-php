@@ -1,6 +1,10 @@
-# Model/Error403XrpFailed
+---
+title: Error403XrpFailed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

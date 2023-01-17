@@ -1,6 +1,10 @@
-# Model/LtcTransactionAddress403Response
+---
+title: LtcTransactionAddress403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

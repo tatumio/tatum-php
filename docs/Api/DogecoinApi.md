@@ -1,3 +1,9 @@
+---
+title: Dogecoin
+parent: API
+layout: page
+---
+
 # Api/DogecoinApi
 
 ## References

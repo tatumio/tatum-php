@@ -1,6 +1,10 @@
-# Model/PolygonEstimateGas200Response
+---
+title: PolygonEstimateGas200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

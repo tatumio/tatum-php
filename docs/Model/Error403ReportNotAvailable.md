@@ -1,6 +1,10 @@
-# Model/Error403ReportNotAvailable
+---
+title: Error403ReportNotAvailable
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

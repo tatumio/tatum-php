@@ -1,6 +1,10 @@
-# Model/BtcUTXO
+---
+title: BtcUTXO
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

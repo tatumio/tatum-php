@@ -1,6 +1,10 @@
-# Model/Error403Erc20XpubMissing
+---
+title: Error403Erc20XpubMissing
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

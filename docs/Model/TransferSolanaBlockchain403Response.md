@@ -1,6 +1,10 @@
-# Model/TransferSolanaBlockchain403Response
+---
+title: TransferSolanaBlockchain403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

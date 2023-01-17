@@ -1,6 +1,10 @@
-# Model/TransferBchKMS
+---
+title: TransferBchKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

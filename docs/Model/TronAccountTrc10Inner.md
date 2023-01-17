@@ -1,6 +1,10 @@
-# Model/TronAccountTrc10Inner
+---
+title: TronAccountTrc10Inner
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

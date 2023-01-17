@@ -1,6 +1,10 @@
-# Model/Error403SolanaBroadcast
+---
+title: Error403SolanaBroadcast
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

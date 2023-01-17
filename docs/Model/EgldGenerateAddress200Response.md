@@ -1,6 +1,10 @@
-# Model/EgldGenerateAddress200Response
+---
+title: EgldGenerateAddress200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

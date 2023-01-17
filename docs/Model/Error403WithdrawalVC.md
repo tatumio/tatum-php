@@ -1,6 +1,10 @@
-# Model/Error403WithdrawalVC
+---
+title: Error403WithdrawalVC
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

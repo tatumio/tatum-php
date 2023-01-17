@@ -1,6 +1,10 @@
-# Model/MintNftExpressAlgorand
+---
+title: MintNftExpressAlgorand
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/DeployErc20OffchainPKAddress
+---
+title: DeployErc20OffchainPKAddress
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

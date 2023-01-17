@@ -1,6 +1,10 @@
-# Model/BurnErc20KMSCelo
+---
+title: BurnErc20KMSCelo
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

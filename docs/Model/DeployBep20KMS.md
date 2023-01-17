@@ -1,6 +1,10 @@
-# Model/DeployBep20KMS
+---
+title: DeployBep20KMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

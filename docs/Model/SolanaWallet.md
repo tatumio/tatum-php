@@ -1,6 +1,10 @@
-# Model/SolanaWallet
+---
+title: SolanaWallet
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

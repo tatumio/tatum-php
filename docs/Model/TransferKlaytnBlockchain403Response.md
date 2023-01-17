@@ -1,6 +1,10 @@
-# Model/TransferKlaytnBlockchain403Response
+---
+title: TransferKlaytnBlockchain403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

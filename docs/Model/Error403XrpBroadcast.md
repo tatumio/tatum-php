@@ -1,6 +1,10 @@
-# Model/Error403XrpBroadcast
+---
+title: Error403XrpBroadcast
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

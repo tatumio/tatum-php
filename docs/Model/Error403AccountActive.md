@@ -1,6 +1,10 @@
-# Model/Error403AccountActive
+---
+title: Error403AccountActive
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

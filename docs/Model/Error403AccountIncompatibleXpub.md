@@ -1,6 +1,10 @@
-# Model/Error403AccountIncompatibleXpub
+---
+title: Error403AccountIncompatibleXpub
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

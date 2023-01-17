@@ -1,6 +1,10 @@
-# Model/TransferErc721KMSCelo
+---
+title: TransferErc721KMSCelo
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403TxNotFound
+---
+title: Error403TxNotFound
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

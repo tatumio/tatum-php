@@ -1,6 +1,10 @@
-# Model/ActivateAccount403Response
+---
+title: ActivateAccount403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

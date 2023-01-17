@@ -1,6 +1,10 @@
-# Model/Error403KcsTxSign
+---
+title: Error403KcsTxSign
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

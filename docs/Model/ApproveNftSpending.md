@@ -1,6 +1,10 @@
-# Model/ApproveNftSpending
+---
+title: ApproveNftSpending
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

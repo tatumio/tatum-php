@@ -1,6 +1,10 @@
-# Model/Error403CustomerInternalNotExists
+---
+title: Error403CustomerInternalNotExists
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

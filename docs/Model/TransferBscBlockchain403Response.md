@@ -1,6 +1,10 @@
-# Model/TransferBscBlockchain403Response
+---
+title: TransferBscBlockchain403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

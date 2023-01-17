@@ -1,6 +1,10 @@
-# Model/Error403PolygonTxSign
+---
+title: Error403PolygonTxSign
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

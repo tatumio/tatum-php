@@ -1,3 +1,9 @@
+---
+title: Customer
+parent: API
+layout: page
+---
+
 # Api/CustomerApi
 
 ## References

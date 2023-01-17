@@ -1,3 +1,9 @@
+---
+title: Withdrawal
+parent: API
+layout: page
+---
+
 # Api/WithdrawalApi
 
 ## References

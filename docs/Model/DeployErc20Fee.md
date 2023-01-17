@@ -1,6 +1,10 @@
-# Model/DeployErc20Fee
+---
+title: DeployErc20Fee
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

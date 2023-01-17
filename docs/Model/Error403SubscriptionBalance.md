@@ -1,6 +1,10 @@
-# Model/Error403SubscriptionBalance
+---
+title: Error403SubscriptionBalance
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

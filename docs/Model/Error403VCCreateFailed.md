@@ -1,6 +1,10 @@
-# Model/Error403VCCreateFailed
+---
+title: Error403VCCreateFailed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

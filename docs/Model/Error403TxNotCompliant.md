@@ -1,6 +1,10 @@
-# Model/Error403TxNotCompliant
+---
+title: Error403TxNotCompliant
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403PolygonBep20Set
+---
+title: Error403PolygonBep20Set
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

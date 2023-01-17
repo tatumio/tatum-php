@@ -1,6 +1,10 @@
-# Model/Error403KlaytnMnemonicPrivateKey
+---
+title: Error403KlaytnMnemonicPrivateKey
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

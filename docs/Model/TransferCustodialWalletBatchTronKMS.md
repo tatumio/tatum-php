@@ -1,6 +1,10 @@
-# Model/TransferCustodialWalletBatchTronKMS
+---
+title: TransferCustodialWalletBatchTronKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,3 +1,9 @@
+---
+title: Order Book
+parent: API
+layout: page
+---
+
 # Api/OrderBookApi
 
 ## References

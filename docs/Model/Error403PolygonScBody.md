@@ -1,6 +1,10 @@
-# Model/Error403PolygonScBody
+---
+title: Error403PolygonScBody
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

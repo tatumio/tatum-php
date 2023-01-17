@@ -1,6 +1,10 @@
-# Model/Error403Erc20NameDuplicate
+---
+title: Error403Erc20NameDuplicate
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

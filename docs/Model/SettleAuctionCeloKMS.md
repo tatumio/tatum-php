@@ -1,6 +1,10 @@
-# Model/SettleAuctionCeloKMS
+---
+title: SettleAuctionCeloKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

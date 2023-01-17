@@ -1,6 +1,10 @@
-# Model/DeletePendingTransactionToSign403Response
+---
+title: DeletePendingTransactionToSign403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

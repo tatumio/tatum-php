@@ -1,3 +1,9 @@
+---
+title: Litecoin
+parent: API
+layout: page
+---
+
 # Api/LitecoinApi
 
 ## References

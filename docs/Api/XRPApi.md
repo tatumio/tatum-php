@@ -1,3 +1,9 @@
+---
+title: XRP
+parent: API
+layout: page
+---
+
 # Api/XRPApi
 
 ## References

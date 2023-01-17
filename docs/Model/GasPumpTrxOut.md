@@ -1,6 +1,10 @@
-# Model/GasPumpTrxOut
+---
+title: GasPumpTrxOut
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

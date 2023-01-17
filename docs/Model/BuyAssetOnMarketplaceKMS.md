@@ -1,6 +1,10 @@
-# Model/BuyAssetOnMarketplaceKMS
+---
+title: BuyAssetOnMarketplaceKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

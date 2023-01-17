@@ -1,6 +1,10 @@
-# Model/Error403TxSenderFrozen
+---
+title: Error403TxSenderFrozen
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

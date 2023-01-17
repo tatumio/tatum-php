@@ -1,6 +1,10 @@
-# Model/GenerateDepositAddress403Response
+---
+title: GenerateDepositAddress403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

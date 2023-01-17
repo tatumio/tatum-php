@@ -1,6 +1,10 @@
-# Model/Error403OneBep20Unsupported
+---
+title: Error403OneBep20Unsupported
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/CancelSellAssetOnMarketplaceSolanaKMS
+---
+title: CancelSellAssetOnMarketplaceSolanaKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

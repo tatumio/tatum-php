@@ -1,6 +1,10 @@
-# Model/Error403EthErc721Call
+---
+title: Error403EthErc721Call
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

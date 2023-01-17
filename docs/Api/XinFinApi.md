@@ -1,3 +1,9 @@
+---
+title: XinFin
+parent: API
+layout: page
+---
+
 # Api/XinFinApi
 
 ## References

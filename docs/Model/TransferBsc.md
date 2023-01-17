@@ -1,6 +1,10 @@
-# Model/TransferBsc
+---
+title: TransferBsc
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

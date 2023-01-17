@@ -1,3 +1,9 @@
+---
+title: Blockchain operations
+parent: API
+layout: page
+---
+
 # Api/BlockchainOperationsApi
 
 ## References

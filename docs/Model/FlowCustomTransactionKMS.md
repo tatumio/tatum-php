@@ -1,6 +1,10 @@
-# Model/FlowCustomTransactionKMS
+---
+title: FlowCustomTransactionKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

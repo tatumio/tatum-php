@@ -1,6 +1,10 @@
-# Model/Erc20Address
+---
+title: Erc20Address
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

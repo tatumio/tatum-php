@@ -1,6 +1,10 @@
-# Model/DeployNftCeloKMS
+---
+title: DeployNftCeloKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/TronAccountTx20200Response
+---
+title: TronAccountTx20200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/XdcEstimateGas
+---
+title: XdcEstimateGas
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

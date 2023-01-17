@@ -1,6 +1,10 @@
-# Model/Error403OneBroadcast
+---
+title: Error403OneBroadcast
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

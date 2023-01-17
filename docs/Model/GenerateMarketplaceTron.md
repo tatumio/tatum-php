@@ -1,6 +1,10 @@
-# Model/GenerateMarketplaceTron
+---
+title: GenerateMarketplaceTron
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

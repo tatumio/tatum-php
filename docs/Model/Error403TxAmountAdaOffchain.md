@@ -1,6 +1,10 @@
-# Model/Error403TxAmountAdaOffchain
+---
+title: Error403TxAmountAdaOffchain
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403OneScBody
+---
+title: Error403OneScBody
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

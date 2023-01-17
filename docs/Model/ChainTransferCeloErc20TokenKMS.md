@@ -1,6 +1,10 @@
-# Model/ChainTransferCeloErc20TokenKMS
+---
+title: ChainTransferCeloErc20TokenKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

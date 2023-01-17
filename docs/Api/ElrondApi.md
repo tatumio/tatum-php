@@ -1,3 +1,9 @@
+---
+title: Elrond
+parent: API
+layout: page
+---
+
 # Api/ElrondApi
 
 ## References

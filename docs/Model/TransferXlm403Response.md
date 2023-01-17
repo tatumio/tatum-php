@@ -1,6 +1,10 @@
-# Model/TransferXlm403Response
+---
+title: TransferXlm403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

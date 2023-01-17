@@ -1,6 +1,10 @@
-# Model/ChainMintCeloErc20KMS
+---
+title: ChainMintCeloErc20KMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

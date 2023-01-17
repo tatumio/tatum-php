@@ -1,6 +1,10 @@
-# Model/CreateSubscriptionKMSErrorAttr
+---
+title: CreateSubscriptionKMSErrorAttr
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

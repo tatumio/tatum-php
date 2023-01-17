@@ -1,6 +1,10 @@
-# Model/Error403TxSenderNotFound
+---
+title: Error403TxSenderNotFound
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403OrderFeeIncompatible
+---
+title: Error403OrderFeeIncompatible
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

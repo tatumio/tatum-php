@@ -1,3 +1,9 @@
+---
+title: Blockchain addresses
+parent: API
+layout: page
+---
+
 # Api/BlockchainAddressesApi
 
 ## References

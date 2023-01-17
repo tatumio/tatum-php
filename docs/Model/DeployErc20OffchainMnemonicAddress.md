@@ -1,6 +1,10 @@
-# Model/DeployErc20OffchainMnemonicAddress
+---
+title: DeployErc20OffchainMnemonicAddress
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

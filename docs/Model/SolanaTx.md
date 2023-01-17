@@ -1,6 +1,10 @@
-# Model/SolanaTx
+---
+title: SolanaTx
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

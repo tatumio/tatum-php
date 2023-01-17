@@ -1,6 +1,10 @@
-# Model/GetMarketplaceFeeRecipient200Response
+---
+title: GetMarketplaceFeeRecipient200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

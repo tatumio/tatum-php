@@ -1,6 +1,10 @@
-# Model/Error403VetGas
+---
+title: Error403VetGas
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

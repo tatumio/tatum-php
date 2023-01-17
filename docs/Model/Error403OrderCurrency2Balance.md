@@ -1,6 +1,10 @@
-# Model/Error403OrderCurrency2Balance
+---
+title: Error403OrderCurrency2Balance
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

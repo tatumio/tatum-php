@@ -1,6 +1,10 @@
-# Model/Error403VCRevokeBalance
+---
+title: Error403VCRevokeBalance
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

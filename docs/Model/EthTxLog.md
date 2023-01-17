@@ -1,6 +1,10 @@
-# Model/EthTxLog
+---
+title: EthTxLog
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

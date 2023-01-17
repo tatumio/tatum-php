@@ -1,6 +1,10 @@
-# Model/Error403RecipientFormat
+---
+title: Error403RecipientFormat
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

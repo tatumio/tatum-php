@@ -1,6 +1,10 @@
-# Model/Error403AddressNotFound
+---
+title: Error403AddressNotFound
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

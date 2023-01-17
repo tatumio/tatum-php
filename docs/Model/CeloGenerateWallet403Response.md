@@ -1,6 +1,10 @@
-# Model/CeloGenerateWallet403Response
+---
+title: CeloGenerateWallet403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403AccountIncompatibleXpubBtc
+---
+title: Error403AccountIncompatibleXpubBtc
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/ChainTransferCeloErc20Token
+---
+title: ChainTransferCeloErc20Token
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

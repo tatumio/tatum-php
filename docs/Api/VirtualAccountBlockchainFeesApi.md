@@ -1,3 +1,9 @@
+---
+title: Virtual account blockchain fees
+parent: API
+layout: page
+---
+
 # Api/VirtualAccountBlockchainFeesApi
 
 ## References

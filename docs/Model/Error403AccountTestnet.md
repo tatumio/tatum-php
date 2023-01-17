@@ -1,6 +1,10 @@
-# Model/Error403AccountTestnet
+---
+title: Error403AccountTestnet
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

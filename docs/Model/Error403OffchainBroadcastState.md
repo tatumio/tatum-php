@@ -1,6 +1,10 @@
-# Model/Error403OffchainBroadcastState
+---
+title: Error403OffchainBroadcastState
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

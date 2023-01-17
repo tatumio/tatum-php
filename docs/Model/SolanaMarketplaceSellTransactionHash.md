@@ -1,6 +1,10 @@
-# Model/SolanaMarketplaceSellTransactionHash
+---
+title: SolanaMarketplaceSellTransactionHash
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

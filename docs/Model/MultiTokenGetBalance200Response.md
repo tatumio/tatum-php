@@ -1,6 +1,10 @@
-# Model/MultiTokenGetBalance200Response
+---
+title: MultiTokenGetBalance200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

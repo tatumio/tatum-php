@@ -1,6 +1,10 @@
-# Model/DeployKCSErc20OffchainKMSXpub
+---
+title: DeployKCSErc20OffchainKMSXpub
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -1,6 +1,10 @@
-# Model/Error403AddressIndexUsed
+---
+title: Error403AddressIndexUsed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

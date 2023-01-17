@@ -1,6 +1,10 @@
-# Model/Error403TxBalance
+---
+title: Error403TxBalance
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

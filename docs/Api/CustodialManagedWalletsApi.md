@@ -1,3 +1,9 @@
+---
+title: Custodial managed wallets
+parent: API
+layout: page
+---
+
 # Api/CustodialManagedWalletsApi
 
 ## References

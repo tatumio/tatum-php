@@ -1,6 +1,10 @@
-# Model/GetLog403Response
+---
+title: GetLog403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

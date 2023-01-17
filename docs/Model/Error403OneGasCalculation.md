@@ -1,6 +1,10 @@
-# Model/Error403OneGasCalculation
+---
+title: Error403OneGasCalculation
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

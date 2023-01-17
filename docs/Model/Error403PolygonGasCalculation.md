@@ -1,6 +1,10 @@
-# Model/Error403PolygonGasCalculation
+---
+title: Error403PolygonGasCalculation
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

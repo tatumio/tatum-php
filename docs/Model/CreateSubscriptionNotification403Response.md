@@ -1,6 +1,10 @@
-# Model/CreateSubscriptionNotification403Response
+---
+title: CreateSubscriptionNotification403Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

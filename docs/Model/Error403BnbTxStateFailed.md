@@ -1,6 +1,10 @@
-# Model/Error403BnbTxStateFailed
+---
+title: Error403BnbTxStateFailed
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

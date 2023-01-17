@@ -1,6 +1,10 @@
-# Model/Error403EgldTxHash
+---
+title: Error403EgldTxHash
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

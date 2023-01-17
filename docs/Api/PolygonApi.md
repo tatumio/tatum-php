@@ -1,3 +1,9 @@
+---
+title: Polygon
+parent: API
+layout: page
+---
+
 # Api/PolygonApi
 
 ## References

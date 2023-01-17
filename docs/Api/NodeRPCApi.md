@@ -1,3 +1,9 @@
+---
+title: Node RPC
+parent: API
+layout: page
+---
+
 # Api/NodeRPCApi
 
 ## References

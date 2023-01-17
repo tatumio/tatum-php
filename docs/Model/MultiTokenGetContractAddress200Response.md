@@ -1,6 +1,10 @@
-# Model/MultiTokenGetContractAddress200Response
+---
+title: MultiTokenGetContractAddress200Response
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

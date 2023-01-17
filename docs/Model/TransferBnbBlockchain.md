@@ -1,6 +1,10 @@
-# Model/TransferBnbBlockchain
+---
+title: TransferBnbBlockchain
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

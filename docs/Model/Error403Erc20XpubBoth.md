@@ -1,6 +1,10 @@
-# Model/Error403Erc20XpubBoth
+---
+title: Error403Erc20XpubBoth
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

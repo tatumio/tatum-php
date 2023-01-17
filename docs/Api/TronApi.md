@@ -1,3 +1,9 @@
+---
+title: Tron
+parent: API
+layout: page
+---
+
 # Api/TronApi
 
 ## References

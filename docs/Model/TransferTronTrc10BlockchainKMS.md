@@ -1,6 +1,10 @@
-# Model/TransferTronTrc10BlockchainKMS
+---
+title: TransferTronTrc10BlockchainKMS
+parent: Model
+layout: page
+---
 
-## Getters
+# Model Getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
