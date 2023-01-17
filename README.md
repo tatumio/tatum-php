@@ -416,7 +416,7 @@ Body: ( binary data )
 
 [badge-downloads]: https://img.shields.io/packagist/dt/tatumio/tatum-php.svg?style=flat&colorB=green
 [badge-release]: https://img.shields.io/packagist/v/tatumio/tatum-php.svg?style=flat&label=release&color=blue
-[badge-php]: https://img.shields.io/packagist/php-v/tatumio/tatum-php.svg?style=flat
+[badge-php]: https://img.shields.io/badge/php->=7.3%20(64bit)-blue
 [badge-license]: https://img.shields.io/packagist/l/tatumio/tatum-php.svg?style=flat&color=blue
 [badge-api]: https://img.shields.io/badge/api-v3.17.2-blue
 
