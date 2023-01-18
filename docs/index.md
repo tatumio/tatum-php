@@ -24,10 +24,10 @@ building your application without having to go back to the documentation.
 
 ```mermaid
 stateDiagram-v2
-    label: Tatum PHP SDK - Fluent Interface
+    label: Tatum PHP SDK - 💦 Fluent Interface
 
     state label {
-        sdk: (new \Tatum\Sdk( keyMainNet, keyTestNet ))
+        sdk: new \Tatum\Sdk ( key-MainNet, key-TestNet )
         [*] --> sdk
         sdk --> testnet()
         sdk --> mainnet()
@@ -253,7 +253,7 @@ $sdk->{mainnet/testnet}()->config()->setDebugSanitizer(false);
 <details>
 <summary>👓 GET Request</summary>
 
-<code>
+<pre class="highlight"><code>
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X GET \
   'https://api.tatum.io/v3/bitcoin/wallet?mnemonic=******&type=testnet' \
@@ -294,13 +294,14 @@ Body:
     "xpub": "tpubDExxmbZbZ8hvcykrL66zGKsWy8p8CUmV4vUErffboQoahPr4goABNmaZnnRgmh8ePRcJ3eHuivEG87HBdsquU3FQJstbxJjKwhtjGiWrpB2"
 }
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
-</code>
+</code></pre>
+
 </details>
 
 <details>
 <summary>📦 POST/PUT Request</summary>
 
-<code>
+<pre class="highlight"><code>
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X POST \
   'https://api.tatum.io/v3/bitcoin/wallet/priv?type=testnet' \
@@ -344,13 +345,14 @@ Body:
     "key": "******"
 }
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
-</code>
+</code></pre>
+
 </details>
 
 <details>
 <summary>📤 File Upload</summary>
 
-<code>
+<pre class="highlight"><code>
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST MainNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X POST \
   'https://api.tatum.io/v3/ipfs' \
@@ -391,13 +393,14 @@ Body:
     "ipfsHash": "bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4"
 }
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE MainNet <<<<<<<<<<<<<<<<<<<<<<<<<<
-</code>
+</code></pre>
+
 </details>
 
 <details>
 <summary>📥 File Download</summary>
 
-<code>
+<pre class="highlight"><code>
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X GET \
   'https://api.tatum.io/v3/ipfs/bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4?type=testnet' \
@@ -434,11 +437,14 @@ Headers:
 * CF-RAY: 78559f5688da0a5d-AMS
 Body: ( binary data )
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
-</code>
+</code></pre>
+
 </details>
 
-> 🐛
+---
+
+> &nbsp;
 > 
-> Providing these logs to [Tatum Support](https://discord.com/invite/tatum) can help us identify and fix issues faster.
-> 
-> 🦋
+> **🐛 Notice**: Providing these logs to [Tatum Support](https://discord.com/invite/tatum) can help us identify and fix issues faster.
+>
+> &nbsp;
