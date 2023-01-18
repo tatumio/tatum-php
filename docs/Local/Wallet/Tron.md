@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Tron
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->tron()
+```
+
 Tron HD Wallet
 
 Method | Description

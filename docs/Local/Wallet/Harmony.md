@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Harmony
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->harmony()
+```
+
 Harmony HD Wallet
 
 Method | Description

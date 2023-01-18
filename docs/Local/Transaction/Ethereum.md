@@ -6,6 +6,10 @@ layout: page
 
 # Local/Transaction/Ethereum
 
+```php
+$sdk->{mainnet/testnet}()->local()->transaction()->ethereum()
+```
+
 Ethereum Transaction
 
 Method | Description

@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# FlowCustomTransactionPKArgsInner model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

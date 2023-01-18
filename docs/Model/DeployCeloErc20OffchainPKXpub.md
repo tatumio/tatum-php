@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# DeployCeloErc20OffchainPKXpub model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

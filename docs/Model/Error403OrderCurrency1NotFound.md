@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# Error403OrderCurrency1NotFound model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# Error403AccountIncompatibleXpub model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

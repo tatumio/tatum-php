@@ -6,9 +6,11 @@ layout: page
 
 # Api/LitecoinApi
 
-## References
+[Litecoin API Reference](https://apidoc.tatum.io/tag/Litecoin/)
 
-[Litecoin API documentation](https://apidoc.tatum.io/tag/Litecoin/)
+```php
+$sdk->{mainnet/testnet}()->api()->litecoin()
+```
 
 ## Methods
 

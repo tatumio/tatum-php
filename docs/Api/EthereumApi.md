@@ -6,9 +6,11 @@ layout: page
 
 # Api/EthereumApi
 
-## References
+[Ethereum API Reference](https://apidoc.tatum.io/tag/Ethereum/)
 
-[Ethereum API documentation](https://apidoc.tatum.io/tag/Ethereum/)
+```php
+$sdk->{mainnet/testnet}()->api()->ethereum()
+```
 
 ## Methods
 

@@ -6,9 +6,11 @@ layout: page
 
 # Api/PolygonApi
 
-## References
+[Polygon API Reference](https://apidoc.tatum.io/tag/Polygon/)
 
-[Polygon API documentation](https://apidoc.tatum.io/tag/Polygon/)
+```php
+$sdk->{mainnet/testnet}()->api()->polygon()
+```
 
 ## Methods
 

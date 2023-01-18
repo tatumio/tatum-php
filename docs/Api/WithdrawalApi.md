@@ -6,9 +6,11 @@ layout: page
 
 # Api/WithdrawalApi
 
-## References
+[Withdrawal API Reference](https://apidoc.tatum.io/tag/Withdrawal/)
 
-[Withdrawal API documentation](https://apidoc.tatum.io/tag/Withdrawal/)
+```php
+$sdk->{mainnet/testnet}()->api()->withdrawal()
+```
 
 ## Methods
 

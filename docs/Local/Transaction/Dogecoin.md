@@ -6,6 +6,10 @@ layout: page
 
 # Local/Transaction/Dogecoin
 
+```php
+$sdk->{mainnet/testnet}()->local()->transaction()->dogecoin()
+```
+
 Dogecoin Transaction
 
 Method | Description

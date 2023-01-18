@@ -6,9 +6,11 @@ layout: page
 
 # Api/ServiceUtilsApi
 
-## References
+[Service utils API Reference](https://apidoc.tatum.io/tag/Service-utils/)
 
-[Service utils API documentation](https://apidoc.tatum.io/tag/Service-utils/)
+```php
+$sdk->{mainnet/testnet}()->api()->serviceUtils()
+```
 
 ## Methods
 

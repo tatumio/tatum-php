@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/KCS
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->kcs()
+```
+
 KCS HD Wallet
 
 Method | Description

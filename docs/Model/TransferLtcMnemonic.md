@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# TransferLtcMnemonic model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

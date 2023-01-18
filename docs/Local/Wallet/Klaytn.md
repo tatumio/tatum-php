@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Klaytn
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->klaytn()
+```
+
 Klaytn HD Wallet
 
 Method | Description

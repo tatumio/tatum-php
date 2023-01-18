@@ -6,9 +6,11 @@ layout: page
 
 # Api/BlockchainOperationsApi
 
-## References
+[Blockchain operations API Reference](https://apidoc.tatum.io/tag/Blockchain-operations/)
 
-[Blockchain operations API documentation](https://apidoc.tatum.io/tag/Blockchain-operations/)
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainOperations()
+```
 
 ## Methods
 

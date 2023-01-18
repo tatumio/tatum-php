@@ -6,9 +6,11 @@ layout: page
 
 # Api/MultiTokensERC1155OrCompatibleApi
 
-## References
+[Multi Tokens (ERC-1155 or compatible) API Reference](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/)
 
-[Multi Tokens (ERC-1155 or compatible) API documentation](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/)
+```php
+$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()
+```
 
 ## Methods
 

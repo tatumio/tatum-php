@@ -6,9 +6,11 @@ layout: page
 
 # Api/VeChainApi
 
-## References
+[VeChain API Reference](https://apidoc.tatum.io/tag/VeChain/)
 
-[VeChain API documentation](https://apidoc.tatum.io/tag/VeChain/)
+```php
+$sdk->{mainnet/testnet}()->api()->veChain()
+```
 
 ## Methods
 

@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# Chart model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

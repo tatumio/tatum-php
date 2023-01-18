@@ -6,9 +6,11 @@ layout: page
 
 # Api/BlockchainFeesApi
 
-## References
+[Blockchain fees API Reference](https://apidoc.tatum.io/tag/Blockchain-fees/)
 
-[Blockchain fees API documentation](https://apidoc.tatum.io/tag/Blockchain-fees/)
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainFees()
+```
 
 ## Methods
 

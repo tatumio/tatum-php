@@ -6,9 +6,11 @@ layout: page
 
 # Api/TransactionApi
 
-## References
+[Transaction API Reference](https://apidoc.tatum.io/tag/Transaction/)
 
-[Transaction API documentation](https://apidoc.tatum.io/tag/Transaction/)
+```php
+$sdk->{mainnet/testnet}()->api()->transaction()
+```
 
 ## Methods
 

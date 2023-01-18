@@ -6,9 +6,11 @@ layout: page
 
 # Api/BNBSmartChainApi
 
-## References
+[BNB Smart Chain API Reference](https://apidoc.tatum.io/tag/BNB-Smart-Chain/)
 
-[BNB Smart Chain API documentation](https://apidoc.tatum.io/tag/BNB-Smart-Chain/)
+```php
+$sdk->{mainnet/testnet}()->api()->bNBSmartChain()
+```
 
 ## Methods
 

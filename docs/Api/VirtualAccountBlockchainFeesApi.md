@@ -6,9 +6,11 @@ layout: page
 
 # Api/VirtualAccountBlockchainFeesApi
 
-## References
+[Virtual account blockchain fees API Reference](https://apidoc.tatum.io/tag/Virtual-account-blockchain-fees/)
 
-[Virtual account blockchain fees API documentation](https://apidoc.tatum.io/tag/Virtual-account-blockchain-fees/)
+```php
+$sdk->{mainnet/testnet}()->api()->virtualAccountBlockchainFees()
+```
 
 ## Methods
 

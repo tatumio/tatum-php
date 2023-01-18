@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# MultiTokenGetTransactionByAddress200ResponseInner model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

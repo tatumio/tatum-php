@@ -6,9 +6,11 @@ layout: page
 
 # Api/NFTERC721OrCompatibleApi
 
-## References
+[NFT (ERC-721 or compatible) API Reference](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/)
 
-[NFT (ERC-721 or compatible) API documentation](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/)
+```php
+$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()
+```
 
 ## Methods
 

@@ -6,9 +6,11 @@ layout: page
 
 # Api/BNBBeaconChainApi
 
-## References
+[BNB Beacon Chain API Reference](https://apidoc.tatum.io/tag/BNB-Beacon-Chain/)
 
-[BNB Beacon Chain API documentation](https://apidoc.tatum.io/tag/BNB-Beacon-Chain/)
+```php
+$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()
+```
 
 ## Methods
 

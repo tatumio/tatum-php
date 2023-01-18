@@ -6,9 +6,11 @@ layout: page
 
 # Api/HarmonyApi
 
-## References
+[Harmony API Reference](https://apidoc.tatum.io/tag/Harmony/)
 
-[Harmony API documentation](https://apidoc.tatum.io/tag/Harmony/)
+```php
+$sdk->{mainnet/testnet}()->api()->harmony()
+```
 
 ## Methods
 

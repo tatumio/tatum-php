@@ -6,9 +6,11 @@ layout: page
 
 # Api/ExchangeRateApi
 
-## References
+[Exchange rate API Reference](https://apidoc.tatum.io/tag/Exchange-rate/)
 
-[Exchange rate API documentation](https://apidoc.tatum.io/tag/Exchange-rate/)
+```php
+$sdk->{mainnet/testnet}()->api()->exchangeRate()
+```
 
 ## Methods
 

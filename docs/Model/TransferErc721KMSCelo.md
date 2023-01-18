@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# TransferErc721KMSCelo model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

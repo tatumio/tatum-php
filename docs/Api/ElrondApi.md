@@ -6,9 +6,11 @@ layout: page
 
 # Api/ElrondApi
 
-## References
+[Elrond API Reference](https://apidoc.tatum.io/tag/Elrond/)
 
-[Elrond API documentation](https://apidoc.tatum.io/tag/Elrond/)
+```php
+$sdk->{mainnet/testnet}()->api()->elrond()
+```
 
 ## Methods
 

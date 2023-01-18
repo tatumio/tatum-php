@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# UnblockAmount model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

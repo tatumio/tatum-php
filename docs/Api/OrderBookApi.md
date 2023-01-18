@@ -6,9 +6,11 @@ layout: page
 
 # Api/OrderBookApi
 
-## References
+[Order Book API Reference](https://apidoc.tatum.io/tag/Order-Book/)
 
-[Order Book API documentation](https://apidoc.tatum.io/tag/Order-Book/)
+```php
+$sdk->{mainnet/testnet}()->api()->orderBook()
+```
 
 ## Methods
 

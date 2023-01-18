@@ -6,9 +6,11 @@ layout: page
 
 # Api/BlockchainStorageApi
 
-## References
+[Blockchain storage API Reference](https://apidoc.tatum.io/tag/Blockchain-storage/)
 
-[Blockchain storage API documentation](https://apidoc.tatum.io/tag/Blockchain-storage/)
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainStorage()
+```
 
 ## Methods
 

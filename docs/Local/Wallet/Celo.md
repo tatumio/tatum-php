@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Celo
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->celo()
+```
+
 Celo HD Wallet
 
 Method | Description

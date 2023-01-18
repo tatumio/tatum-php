@@ -6,9 +6,11 @@ layout: page
 
 # Api/AccountApi
 
-## References
+[Account API Reference](https://apidoc.tatum.io/tag/Account/)
 
-[Account API documentation](https://apidoc.tatum.io/tag/Account/)
+```php
+$sdk->{mainnet/testnet}()->api()->account()
+```
 
 ## Methods
 

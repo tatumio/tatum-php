@@ -6,9 +6,11 @@ layout: page
 
 # Api/VirtualCurrencyApi
 
-## References
+[Virtual Currency API Reference](https://apidoc.tatum.io/tag/Virtual-Currency/)
 
-[Virtual Currency API documentation](https://apidoc.tatum.io/tag/Virtual-Currency/)
+```php
+$sdk->{mainnet/testnet}()->api()->virtualCurrency()
+```
 
 ## Methods
 

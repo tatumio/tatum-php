@@ -6,9 +6,11 @@ layout: page
 
 # Api/MaliciousAddressApi
 
-## References
+[Malicious address API Reference](https://apidoc.tatum.io/tag/Malicious-address/)
 
-[Malicious address API documentation](https://apidoc.tatum.io/tag/Malicious-address/)
+```php
+$sdk->{mainnet/testnet}()->api()->maliciousAddress()
+```
 
 ## Methods
 

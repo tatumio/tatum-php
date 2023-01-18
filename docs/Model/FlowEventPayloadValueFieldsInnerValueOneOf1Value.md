@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# FlowEventPayloadValueFieldsInnerValueOneOf1Value model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

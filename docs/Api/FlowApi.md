@@ -6,9 +6,11 @@ layout: page
 
 # Api/FlowApi
 
-## References
+[Flow API Reference](https://apidoc.tatum.io/tag/Flow/)
 
-[Flow API documentation](https://apidoc.tatum.io/tag/Flow/)
+```php
+$sdk->{mainnet/testnet}()->api()->flow()
+```
 
 ## Methods
 

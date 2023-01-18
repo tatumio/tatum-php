@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Dogecoin
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->dogecoin()
+```
+
 Dogecoin HD Wallet
 
 Method | Description

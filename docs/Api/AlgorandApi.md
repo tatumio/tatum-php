@@ -6,9 +6,11 @@ layout: page
 
 # Api/AlgorandApi
 
-## References
+[Algorand API Reference](https://apidoc.tatum.io/tag/Algorand/)
 
-[Algorand API documentation](https://apidoc.tatum.io/tag/Algorand/)
+```php
+$sdk->{mainnet/testnet}()->api()->algorand()
+```
 
 ## Methods
 

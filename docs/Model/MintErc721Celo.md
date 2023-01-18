@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# MintErc721Celo model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

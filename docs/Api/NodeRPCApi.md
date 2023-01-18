@@ -6,9 +6,11 @@ layout: page
 
 # Api/NodeRPCApi
 
-## References
+[Node RPC API Reference](https://apidoc.tatum.io/tag/Node-RPC/)
 
-[Node RPC API documentation](https://apidoc.tatum.io/tag/Node-RPC/)
+```php
+$sdk->{mainnet/testnet}()->api()->nodeRPC()
+```
 
 ## Methods
 

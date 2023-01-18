@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# ChainTransferEthErc20 model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

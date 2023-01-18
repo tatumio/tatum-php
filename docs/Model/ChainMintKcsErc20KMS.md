@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# ChainMintKcsErc20KMS model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Polygon
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->polygon()
+```
+
 Polygon HD Wallet
 
 Method | Description

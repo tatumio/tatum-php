@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/VeChain
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->vechain()
+```
+
 VeChain HD Wallet
 
 Method | Description

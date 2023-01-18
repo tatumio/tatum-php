@@ -6,9 +6,11 @@ layout: page
 
 # Api/MarketplaceApi
 
-## References
+[Marketplace API Reference](https://apidoc.tatum.io/tag/Marketplace/)
 
-[Marketplace API documentation](https://apidoc.tatum.io/tag/Marketplace/)
+```php
+$sdk->{mainnet/testnet}()->api()->marketplace()
+```
 
 ## Methods
 

@@ -6,9 +6,11 @@ layout: page
 
 # Api/CustomerApi
 
-## References
+[Customer API Reference](https://apidoc.tatum.io/tag/Customer/)
 
-[Customer API documentation](https://apidoc.tatum.io/tag/Customer/)
+```php
+$sdk->{mainnet/testnet}()->api()->customer()
+```
 
 ## Methods
 

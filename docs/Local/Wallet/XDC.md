@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/XDC
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->xdc()
+```
+
 XDC HD Wallet
 
 Method | Description

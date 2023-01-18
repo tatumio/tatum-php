@@ -6,9 +6,11 @@ layout: page
 
 # Api/TronApi
 
-## References
+[Tron API Reference](https://apidoc.tatum.io/tag/Tron/)
 
-[Tron API documentation](https://apidoc.tatum.io/tag/Tron/)
+```php
+$sdk->{mainnet/testnet}()->api()->tron()
+```
 
 ## Methods
 

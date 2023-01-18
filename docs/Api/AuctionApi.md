@@ -6,9 +6,11 @@ layout: page
 
 # Api/AuctionApi
 
-## References
+[Auction API Reference](https://apidoc.tatum.io/tag/Auction/)
 
-[Auction API documentation](https://apidoc.tatum.io/tag/Auction/)
+```php
+$sdk->{mainnet/testnet}()->api()->auction()
+```
 
 ## Methods
 

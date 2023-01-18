@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# TronTx20TokenInfo model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

@@ -6,9 +6,11 @@ layout: page
 
 # Api/CustodialManagedWalletsApi
 
-## References
+[Custodial managed wallets API Reference](https://apidoc.tatum.io/tag/Custodial-managed-wallets/)
 
-[Custodial managed wallets API documentation](https://apidoc.tatum.io/tag/Custodial-managed-wallets/)
+```php
+$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()
+```
 
 ## Methods
 

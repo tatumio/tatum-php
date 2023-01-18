@@ -6,9 +6,11 @@ layout: page
 
 # Api/BlockchainUtilsApi
 
-## References
+[Blockchain utils API Reference](https://apidoc.tatum.io/tag/Blockchain-utils/)
 
-[Blockchain utils API documentation](https://apidoc.tatum.io/tag/Blockchain-utils/)
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainUtils()
+```
 
 ## Methods
 

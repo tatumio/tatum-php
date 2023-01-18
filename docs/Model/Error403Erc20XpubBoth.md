@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# Error403Erc20XpubBoth model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

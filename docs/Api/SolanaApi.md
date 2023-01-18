@@ -6,9 +6,11 @@ layout: page
 
 # Api/SolanaApi
 
-## References
+[Solana API Reference](https://apidoc.tatum.io/tag/Solana/)
 
-[Solana API documentation](https://apidoc.tatum.io/tag/Solana/)
+```php
+$sdk->{mainnet/testnet}()->api()->solana()
+```
 
 ## Methods
 

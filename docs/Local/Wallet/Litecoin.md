@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Litecoin
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->litecoin()
+```
+
 Litecoin HD Wallet
 
 Method | Description

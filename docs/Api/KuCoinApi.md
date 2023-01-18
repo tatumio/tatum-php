@@ -6,9 +6,11 @@ layout: page
 
 # Api/KuCoinApi
 
-## References
+[KuCoin API Reference](https://apidoc.tatum.io/tag/KuCoin/)
 
-[KuCoin API documentation](https://apidoc.tatum.io/tag/KuCoin/)
+```php
+$sdk->{mainnet/testnet}()->api()->kuCoin()
+```
 
 ## Methods
 

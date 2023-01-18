@@ -6,9 +6,11 @@ layout: page
 
 # Api/KeyManagementSystemApi
 
-## References
+[Key Management System API Reference](https://apidoc.tatum.io/tag/Key-Management-System/)
 
-[Key Management System API documentation](https://apidoc.tatum.io/tag/Key-Management-System/)
+```php
+$sdk->{mainnet/testnet}()->api()->keyManagementSystem()
+```
 
 ## Methods
 

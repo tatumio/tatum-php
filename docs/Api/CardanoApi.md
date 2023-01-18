@@ -6,9 +6,11 @@ layout: page
 
 # Api/CardanoApi
 
-## References
+[Cardano API Reference](https://apidoc.tatum.io/tag/Cardano/)
 
-[Cardano API documentation](https://apidoc.tatum.io/tag/Cardano/)
+```php
+$sdk->{mainnet/testnet}()->api()->cardano()
+```
 
 ## Methods
 

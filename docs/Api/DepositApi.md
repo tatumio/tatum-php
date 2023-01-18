@@ -6,9 +6,11 @@ layout: page
 
 # Api/DepositApi
 
-## References
+[Deposit API Reference](https://apidoc.tatum.io/tag/Deposit/)
 
-[Deposit API documentation](https://apidoc.tatum.io/tag/Deposit/)
+```php
+$sdk->{mainnet/testnet}()->api()->deposit()
+```
 
 ## Methods
 

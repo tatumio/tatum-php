@@ -6,9 +6,11 @@ layout: page
 
 # Api/BitcoinCashApi
 
-## References
+[Bitcoin Cash API Reference](https://apidoc.tatum.io/tag/Bitcoin-Cash/)
 
-[Bitcoin Cash API documentation](https://apidoc.tatum.io/tag/Bitcoin-Cash/)
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoinCash()
+```
 
 ## Methods
 

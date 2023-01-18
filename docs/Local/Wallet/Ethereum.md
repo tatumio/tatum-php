@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Ethereum
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->ethereum()
+```
+
 Ethereum HD Wallet
 
 Method | Description

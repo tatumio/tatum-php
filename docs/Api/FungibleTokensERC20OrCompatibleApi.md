@@ -6,9 +6,11 @@ layout: page
 
 # Api/FungibleTokensERC20OrCompatibleApi
 
-## References
+[Fungible Tokens (ERC-20 or compatible) API Reference](https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/)
 
-[Fungible Tokens (ERC-20 or compatible) API documentation](https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/)
+```php
+$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()
+```
 
 ## Methods
 

@@ -6,6 +6,10 @@ layout: page
 
 # Local/Transaction/BitcoinCash
 
+```php
+$sdk->{mainnet/testnet}()->local()->transaction()->bitcoinCash()
+```
+
 Bitcoin Cash Transaction
 
 Method | Description

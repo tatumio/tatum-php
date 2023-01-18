@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/BSC
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->bsc()
+```
+
 BSC HD Wallet
 
 Method | Description

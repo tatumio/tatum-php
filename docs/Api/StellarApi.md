@@ -6,9 +6,11 @@ layout: page
 
 # Api/StellarApi
 
-## References
+[Stellar API Reference](https://apidoc.tatum.io/tag/Stellar/)
 
-[Stellar API documentation](https://apidoc.tatum.io/tag/Stellar/)
+```php
+$sdk->{mainnet/testnet}()->api()->stellar()
+```
 
 ## Methods
 

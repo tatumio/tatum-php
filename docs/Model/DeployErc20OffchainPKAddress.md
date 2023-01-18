@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# DeployErc20OffchainPKAddress model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

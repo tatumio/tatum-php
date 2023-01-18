@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# TronTxRawDataContractInnerParameter model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

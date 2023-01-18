@@ -6,9 +6,11 @@ layout: page
 
 # Api/BitcoinApi
 
-## References
+[Bitcoin API Reference](https://apidoc.tatum.io/tag/Bitcoin/)
 
-[Bitcoin API documentation](https://apidoc.tatum.io/tag/Bitcoin/)
+```php
+$sdk->{mainnet/testnet}()->api()->bitcoin()
+```
 
 ## Methods
 

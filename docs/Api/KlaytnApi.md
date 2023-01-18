@@ -6,9 +6,11 @@ layout: page
 
 # Api/KlaytnApi
 
-## References
+[Klaytn API Reference](https://apidoc.tatum.io/tag/Klaytn/)
 
-[Klaytn API documentation](https://apidoc.tatum.io/tag/Klaytn/)
+```php
+$sdk->{mainnet/testnet}()->api()->klaytn()
+```
 
 ## Methods
 

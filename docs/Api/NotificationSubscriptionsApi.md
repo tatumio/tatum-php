@@ -6,9 +6,11 @@ layout: page
 
 # Api/NotificationSubscriptionsApi
 
-## References
+[Notification subscriptions API Reference](https://apidoc.tatum.io/tag/Notification-subscriptions/)
 
-[Notification subscriptions API documentation](https://apidoc.tatum.io/tag/Notification-subscriptions/)
+```php
+$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()
+```
 
 ## Methods
 

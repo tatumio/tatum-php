@@ -6,9 +6,11 @@ layout: page
 
 # Api/IPFSApi
 
-## References
+[IPFS API Reference](https://apidoc.tatum.io/tag/IPFS/)
 
-[IPFS API documentation](https://apidoc.tatum.io/tag/IPFS/)
+```php
+$sdk->{mainnet/testnet}()->api()->iPFS()
+```
 
 ## Methods
 

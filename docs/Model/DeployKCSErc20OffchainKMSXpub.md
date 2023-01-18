@@ -4,7 +4,7 @@ parent: Model
 layout: page
 ---
 
-# Model Getters
+# DeployKCSErc20OffchainKMSXpub model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

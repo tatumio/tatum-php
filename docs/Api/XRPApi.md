@@ -6,9 +6,11 @@ layout: page
 
 # Api/XRPApi
 
-## References
+[XRP API Reference](https://apidoc.tatum.io/tag/XRP/)
 
-[XRP API documentation](https://apidoc.tatum.io/tag/XRP/)
+```php
+$sdk->{mainnet/testnet}()->api()->xRP()
+```
 
 ## Methods
 

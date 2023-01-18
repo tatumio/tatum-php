@@ -6,9 +6,11 @@ layout: page
 
 # Api/DogecoinApi
 
-## References
+[Dogecoin API Reference](https://apidoc.tatum.io/tag/Dogecoin/)
 
-[Dogecoin API documentation](https://apidoc.tatum.io/tag/Dogecoin/)
+```php
+$sdk->{mainnet/testnet}()->api()->dogecoin()
+```
 
 ## Methods
 

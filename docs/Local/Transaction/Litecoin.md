@@ -6,6 +6,10 @@ layout: page
 
 # Local/Transaction/Litecoin
 
+```php
+$sdk->{mainnet/testnet}()->local()->transaction()->litecoin()
+```
+
 Litecoin Transaction
 
 Method | Description

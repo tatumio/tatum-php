@@ -6,9 +6,11 @@ layout: page
 
 # Api/GasPumpApi
 
-## References
+[Gas pump API Reference](https://apidoc.tatum.io/tag/Gas-pump/)
 
-[Gas pump API documentation](https://apidoc.tatum.io/tag/Gas-pump/)
+```php
+$sdk->{mainnet/testnet}()->api()->gasPump()
+```
 
 ## Methods
 

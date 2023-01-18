@@ -6,9 +6,11 @@ layout: page
 
 # Api/BlockchainAddressesApi
 
-## References
+[Blockchain addresses API Reference](https://apidoc.tatum.io/tag/Blockchain-addresses/)
 
-[Blockchain addresses API documentation](https://apidoc.tatum.io/tag/Blockchain-addresses/)
+```php
+$sdk->{mainnet/testnet}()->api()->blockchainAddresses()
+```
 
 ## Methods
 

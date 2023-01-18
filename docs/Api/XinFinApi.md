@@ -6,9 +6,11 @@ layout: page
 
 # Api/XinFinApi
 
-## References
+[XinFin API Reference](https://apidoc.tatum.io/tag/XinFin/)
 
-[XinFin API documentation](https://apidoc.tatum.io/tag/XinFin/)
+```php
+$sdk->{mainnet/testnet}()->api()->xinFin()
+```
 
 ## Methods
 

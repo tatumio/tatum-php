@@ -6,6 +6,10 @@ layout: page
 
 # Local/Wallet/Bitcoin
 
+```php
+$sdk->{mainnet/testnet}()->local()->wallet()->bitcoin()
+```
+
 Bitcoin HD Wallet
 
 Method | Description

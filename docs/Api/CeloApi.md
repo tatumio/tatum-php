@@ -6,9 +6,11 @@ layout: page
 
 # Api/CeloApi
 
-## References
+[Celo API Reference](https://apidoc.tatum.io/tag/Celo/)
 
-[Celo API documentation](https://apidoc.tatum.io/tag/Celo/)
+```php
+$sdk->{mainnet/testnet}()->api()->celo()
+```
 
 ## Methods
 
