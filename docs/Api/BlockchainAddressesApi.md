@@ -102,7 +102,7 @@ Assign a blockchain address to a virtual account
 
  Assign an existing blockchain address to a virtual account. The blockchain address becomes a deposit address associated with this account.
 
-Use this API when the <a href="https://apidoc.tatum.io/tag/Account#operation/createAccount" target="_blank">virtual account has no default extended public key</a> (`xpub`) and deposit addresses are handled manually.
+Use this API when the <a href="https://apidoc.tatum.io/tag/Account#operation/createAccount" target="_blank">virtual account has no default extended public key</a> (<code>xpub</code>) and deposit addresses are handled manually.
 
  You can assign multiple blockchain addresses to one virtual account. When you have multiple blockchain addresses assigned to the same virtual account, you aggregate various blockchain transactions from different addresses under a single account.
 

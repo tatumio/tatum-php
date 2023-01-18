@@ -263,7 +263,7 @@ Bid for an asset at the NFT auction
 
  **NOTE:** When making this API call, you may get the following message:
 
- `Although one or more Error Occurred [execution reverted] Contract Execution Completed`
+ <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
  This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 
@@ -593,7 +593,7 @@ Cancel the selling of an asset at the NFT auction
 
  **NOTE:** When making this API call, you may get the following message:
 
- `Although one or more Error Occurred [execution reverted] Contract Execution Completed`
+ <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
  This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 
@@ -1219,7 +1219,7 @@ Both seller and buyer can settle the auction.
 
  **NOTE:** When making this API call, you may get the following message:
 
- `Although one or more Error Occurred [execution reverted] Contract Execution Completed`
+ <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
  This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 

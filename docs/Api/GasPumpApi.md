@@ -232,7 +232,7 @@ Activate gas pump addresses
 
  Activate the precalulated gas pump addresses. Activating a gas pump address allows this address to send funds to other addresses.
 
- You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the `from` and `to` request body parameters) and then make another API call with the remaining 230 addresses.
+ You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the <code>from</code> and <code>to</code> request body parameters) and then make another API call with the remaining 230 addresses.
 
  **When to activate a gas pump address**
 
@@ -256,7 +256,7 @@ Activate gas pump addresses
 
 <ul> <li>When **paying the gas fees yourself**, you must sign the transaction with either the private key of the blockchain address from which you want to pay the fees or the signature ID of that private key (if you use <a href="https://apidoc.tatum.io/tag/Key-Management-System" target="_blank">Key Management System</a>, KMS).
 
- To pay the fees yourself, use this API with any schema of the request body except for `ActivateGasPumpTatum`. For example, if you are activating gas pump addresses on Ethereum and you use KMS, use the `ActivateGasPumpKMS` schema. </li> <li>If you want **Tatum to cover the fees**, use this API with the `ActivateGasPumpTatum` schema of the request body. 
+ To pay the fees yourself, use this API with any schema of the request body except for <code>ActivateGasPumpTatum</code>. For example, if you are activating gas pump addresses on Ethereum and you use KMS, use the <code>ActivateGasPumpKMS</code> schema. </li> <li>If you want **Tatum to cover the fees**, use this API with the <code>ActivateGasPumpTatum</code> schema of the request body. 
 
 <ul> <li>On the **mainnet**, you have to have a <a href="https://tatum.io/pricing" target="_blank">paid pricing plan</a>.
 
@@ -386,7 +386,7 @@ Get the results of the address activation transaction
 
  
 
-<ul> <li>`valid`, with the activated gas pump addresses</li> <li>`invalid`, with the gas pump addresses that for some reason did not get activated together with the reason why</li> </ul>
+<ul> <li><code>valid</code>, with the activated gas pump addresses</li> <li><code>invalid</code>, with the gas pump addresses that for some reason did not get activated together with the reason why</li> </ul>
 
  If the transaction is still being processed, the API returns an error message. In this case, repeat the call later.
 
@@ -432,7 +432,7 @@ Approve the transfer of an asset from a gas pump address
 
 **2 credits per API call**
 
- Allow another blockchain address (the `spender` parameter in the request body) to transfer the asset from a gas pump address on behalf of the master address.
+ Allow another blockchain address (the <code>spender</code> parameter in the request body) to transfer the asset from a gas pump address on behalf of the master address.
 
  Use this API when the customer using the gas pump address sells assets on a marketplace or auction. After the customer creates a listing of the asset, they have to allow the marketplace/auction smart contract to transfer the asset to the buyer after the asset has been bought.
 
@@ -1184,7 +1184,7 @@ Precalculate gas pump addresses
 
  **Address index**
 
- Each address should be associated with its own index. Use the `from` and `to` request body parameters to set a range of index values for the addresses to precalculate. You can start with any number, but we recommend that you start from 0.
+ Each address should be associated with its own index. Use the <code>from</code> and <code>to</code> request body parameters to set a range of index values for the addresses to precalculate. You can start with any number, but we recommend that you start from 0.
 
  In one API call, you can precalculate:
 
@@ -1198,7 +1198,7 @@ Precalculate gas pump addresses
 
 For example, you precalculated three gas pump addresses with a range of index values from 3 to 5. The first address in the returned arrray is assigned the index value "3", the second one - "4", and the third one - "5".
 
- ` [ "0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea", // index is 3 "0x5c6079c14e9cd3d2ea8cb76aed9c5e336ef96126", // index is 4 "0xc5e336ef9612614e9cd3d2ea8cb76aed95c6079c" // index is 5 ] ` **The owner of the gas pump addresses**
+ <pre> [ "0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea", // index is 3 "0x5c6079c14e9cd3d2ea8cb76aed9c5e336ef96126", // index is 4 "0xc5e336ef9612614e9cd3d2ea8cb76aed95c6079c" // index is 5 ] </pre> **The owner of the gas pump addresses**
 
  The owner (also referred to as "master address") is the blockchain address that will own the precalculated gas pump addresses. The owner will also be paying gas fees for operations made on the gas pump addresses. You have to make sure that the owner always has enough funds to cover these gas fees.
 

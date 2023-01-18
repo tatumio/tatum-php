@@ -128,7 +128,7 @@ Add a blockchain address as an NFT minter to an NFT smart contract
 
 **2 credits per API call**
 
- Allow a blockchain address (the `minter` parameter in the request body) to mint NFTs on your NFT smart contract (the `contractAddress` parameter in the request body).
+ Allow a blockchain address (the <code>minter</code> parameter in the request body) to mint NFTs on your NFT smart contract (the <code>contractAddress</code> parameter in the request body).
 
  **NOTE:** Use this API **only** when you are using NFT Express with your own smart contract. For more information, see "Use your own smart contract to mint NFTs" in Mint an NFT.
 
@@ -236,7 +236,7 @@ Burn an NFT
 
  **Burning NFTs on Algorand**
 
- You can burn only the NFTs that were minted with the address of the manager account specified in the `manager` parameter in the minting call (see the `MintNftExpressAlgorand`, `MintNftAlgorand`, and `MintNftAlgorandKMS` schemas of the request body).
+ You can burn only the NFTs that were minted with the address of the manager account specified in the <code>manager</code> parameter in the minting call (see the <code>MintNftExpressAlgorand</code>, <code>MintNftAlgorand</code>, and <code>MintNftAlgorandKMS</code> schemas of the request body).
 
  **Signing a transaction**
 
@@ -640,21 +640,21 @@ Deploy an NFT smart contract
 
  **General NFT smart contracts**
 
- By default, an NFT smart contract is deployed as a **general NFT smart contract compatible with OpenSea royalties**. This is a standard NFT contract with `AccessControl` and `Ownable`, enhanced with NFT batch minting. NFTs minted on this smart contract are compatible with OpenSea and its royalty structure. **Cashback and provenance NFT smart contracts**
+ By default, an NFT smart contract is deployed as a **general NFT smart contract compatible with OpenSea royalties**. This is a standard NFT contract with <code>AccessControl</code> and <code>Ownable</code>, enhanced with NFT batch minting. NFTs minted on this smart contract are compatible with OpenSea and its royalty structure. **Cashback and provenance NFT smart contracts**
 
  In addition to the general NFT contract, you can deploy the following types of NFT smart contracts for the supported blockchains **except for Flow and TRON**: 
 
 <ul> <li>**Cashback NFT smart contract** is an NFT smart contract that forces on-chain royalties to be paid every time an NFT is transferred, and the royalties are defined as a **fixed value**. The royalties are **not** OpenSea-compatible.
 
- To deploy an NFT smart contract as a cashback contract, deploy the contract with the `cashback` parameter set to `true` in the request body.</li> <li>**Provenance NFT smart contract** is an NFT smart contract that forces on-chain royalties to be paid every time an NFT is transferred, and the royalties are defined as a **percentage of the NFT price**. The royalties are **not** OpenSea-compatible.
+ To deploy an NFT smart contract as a cashback contract, deploy the contract with the <code>cashback</code> parameter set to <code>true</code> in the request body.</li> <li>**Provenance NFT smart contract** is an NFT smart contract that forces on-chain royalties to be paid every time an NFT is transferred, and the royalties are defined as a **percentage of the NFT price**. The royalties are **not** OpenSea-compatible.
 
- To deploy an NFT smart contract as a provenance contract, deploy the contract with the `provenance` parameter set to `true` in the request body.</li> </ul>
+ To deploy an NFT smart contract as a provenance contract, deploy the contract with the <code>provenance</code> parameter set to <code>true</code> in the request body.</li> </ul>
 
- You can enable **public minting** for cashback and provenance smart contracts. By default, public minting is disabled, which means that only the blockchain address whose private key was used to create the smart contract or the blockchain addresses added to the smart contract as NFT minters will be able to mint NFTs for the contract. To enable public minting and allow anyone to mint NFTs on top of the smart contract, deploy the contract with the `publicMint` parameter set to `true` in the request body.
+ You can enable **public minting** for cashback and provenance smart contracts. By default, public minting is disabled, which means that only the blockchain address whose private key was used to create the smart contract or the blockchain addresses added to the smart contract as NFT minters will be able to mint NFTs for the contract. To enable public minting and allow anyone to mint NFTs on top of the smart contract, deploy the contract with the <code>publicMint</code> parameter set to <code>true</code> in the request body.
 
  **NFT smart contracts and NFT Express**
 
- If you want to use NFT Express to mint NFTs on the deployed smart contract, deploy the smart contract as a general NFT smart contract (that is, deploy the contract with the `cashback`, `provenance`, and `publicMint` parameters either set to `false` or not set at all in the request body).
+ If you want to use NFT Express to mint NFTs on the deployed smart contract, deploy the smart contract as a general NFT smart contract (that is, deploy the contract with the <code>cashback</code>, <code>provenance</code>, and <code>publicMint</code> parameters either set to <code>false</code> or not set at all in the request body).
 
  After you have deployed the NFT smart contract, add the Tatum minter address as an NFT minter to your smart contract.
 
@@ -1326,7 +1326,7 @@ Mint multiple NFTs
 
  This operation works in two modes. First mode works just like other NFT endpoints. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. Second mode enables you to mint on any custom NFT ERC-721 smart contract, on which specified minter address is approved as a minter. You don't specify private key or signatureId, only minter address, from which the NFT will be minted.
 
- It means you perform mint multiple NFT request with following body: `{ "to": ["0x80d8bac9a6901698b3749fe336bbd1385c1f98f2"], "url": ["ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj"], "tokenId": ["9876541124516"], "contractAddress":"0xcd2ada00c48a27faa5cc67f9a1ed55b89ddf7f77", "minter": "0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5", "chain": "MATIC" }` The blockchain fee of the performed transaction is paid from the address connected with built-in private key and is debited in form of credits. The credits are debited only if NFT mint requests are performed with paid API key plan. We transform fee to the credits in accordance to the rates provided by the Tatum. If you want to batch mint on ERC-721 contract which is not deployed via Tatum API, your smart contract must contain this method: `mintMultiple(address[] to, uint256[] tokenId, string[] uri): boolean` You can use addresses specified in the bellow table to be used as a minter. 
+ It means you perform mint multiple NFT request with following body: <pre>{ "to": ["0x80d8bac9a6901698b3749fe336bbd1385c1f98f2"], "url": ["ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj"], "tokenId": ["9876541124516"], "contractAddress":"0xcd2ada00c48a27faa5cc67f9a1ed55b89ddf7f77", "minter": "0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5", "chain": "MATIC" }</pre> The blockchain fee of the performed transaction is paid from the address connected with built-in private key and is debited in form of credits. The credits are debited only if NFT mint requests are performed with paid API key plan. We transform fee to the credits in accordance to the rates provided by the Tatum. If you want to batch mint on ERC-721 contract which is not deployed via Tatum API, your smart contract must contain this method: <pre>mintMultiple(address[] to, uint256[] tokenId, string[] uri): boolean</pre> You can use addresses specified in the bellow table to be used as a minter. 
 
 <table> 
 <tr> <th>Chain</th> <th>Testnet address</th> <th>Mainnet Address</th> </tr>
@@ -1420,7 +1420,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNft` schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your private key.
+The <code>MintNft</code> schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your private key.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1460,7 +1460,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftAlgorand` schema lets you mint NFTs natively on Algorand and sign the transaction with your private key.
+The <code>MintNftAlgorand</code> schema lets you mint NFTs natively on Algorand and sign the transaction with your private key.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1500,7 +1500,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftAlgorandKMS` schema lets you mint NFTs natively on Algorand and sign the transaction with your signature ID.
+The <code>MintNftAlgorandKMS</code> schema lets you mint NFTs natively on Algorand and sign the transaction with your signature ID.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1540,7 +1540,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftCelo` schema lets you mint NFTs natively on Celo and sign the transaction with your private key.
+The <code>MintNftCelo</code> schema lets you mint NFTs natively on Celo and sign the transaction with your private key.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1580,7 +1580,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftExpress` schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using **NTF Express** with the pre-built smart contract provided by Tatum.
+The <code>MintNftExpress</code> schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using **NTF Express** with the pre-built smart contract provided by Tatum.
 
 For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in Mint an NFT.
 
@@ -1620,7 +1620,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftExpressAlgorand` schema lets you mint NFTs on Algorand using **NTF Express** with the pre-built smart contract provided by Tatum.
+The <code>MintNftExpressAlgorand</code> schema lets you mint NFTs on Algorand using **NTF Express** with the pre-built smart contract provided by Tatum.
 
 For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in Mint an NFT.
 
@@ -1660,7 +1660,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftExpressSolana` schema lets you mint NFTs on Solana using **NTF Express** with the pre-built smart contract provided by Tatum.
+The <code>MintNftExpressSolana</code> schema lets you mint NFTs on Solana using **NTF Express** with the pre-built smart contract provided by Tatum.
 
 For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in Mint an NFT.
 
@@ -1700,7 +1700,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftFlowKMS` schema lets you mint NFTs natively on Flow and sign the transaction with your signature ID.
+The <code>MintNftFlowKMS</code> schema lets you mint NFTs natively on Flow and sign the transaction with your signature ID.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1740,7 +1740,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftFlowMnemonic` schema lets you mint NFTs natively on Flow and sign the transaction with your wallet mnemonic.
+The <code>MintNftFlowMnemonic</code> schema lets you mint NFTs natively on Flow and sign the transaction with your wallet mnemonic.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1780,7 +1780,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftFlowPK` schema lets you mint NFTs natively on Flow and sign the transaction with your private key.
+The <code>MintNftFlowPK</code> schema lets you mint NFTs natively on Flow and sign the transaction with your private key.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1820,7 +1820,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftKMS` schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your signature ID.
+The <code>MintNftKMS</code> schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your signature ID.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1860,7 +1860,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftKMSCelo` schema lets you mint NFTs natively on Celo and sign the transaction with your signature ID.
+The <code>MintNftKMSCelo</code> schema lets you mint NFTs natively on Celo and sign the transaction with your signature ID.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1900,7 +1900,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftKMSTron` schema lets you mint NFTs natively on TRON and sign the transaction with your signature ID.
+The <code>MintNftKMSTron</code> schema lets you mint NFTs natively on TRON and sign the transaction with your signature ID.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -1940,7 +1940,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftMinter` schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using the **NTF minter**, a special blockchain address provided by Tatum that will cover the minting fees.
+The <code>MintNftMinter</code> schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using the **NTF minter**, a special blockchain address provided by Tatum that will cover the minting fees.
 
 For more information, see "Use your own smart contract to mint NFTs" in Mint an NFT.
 
@@ -1980,7 +1980,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftSolana` schema lets you mint NFTs natively on Solana and sign the transaction with your private key.
+The <code>MintNftSolana</code> schema lets you mint NFTs natively on Solana and sign the transaction with your private key.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -2020,7 +2020,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftSolanaKMS` schema lets you mint NFTs natively on Solana and sign the transaction with your signature ID.
+The <code>MintNftSolanaKMS</code> schema lets you mint NFTs natively on Solana and sign the transaction with your signature ID.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -2060,7 +2060,7 @@ Name | Type | Description  | Notes
 
 Mint an NFT
 
-The `MintNftTron` schema lets you mint NFTs natively on TRON and sign the transaction with your private key.
+The <code>MintNftTron</code> schema lets you mint NFTs natively on TRON and sign the transaction with your private key.
 
 For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT.
 
@@ -2106,7 +2106,7 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 
 **1 credit per API call**
 
- Get the NFTs minted on a specific smart contract (the `contractAddress` path parameter in the request endpoint URL) that a blockchain address holds.
+ Get the NFTs minted on a specific smart contract (the <code>contractAddress</code> path parameter in the request endpoint URL) that a blockchain address holds.
 
  **NOTE:** This API works only for the NFT smart contracts deployed using the Tatum smart contract API.
 
@@ -2620,7 +2620,7 @@ Transfer an NFT
 
  2 credits per API call on the other blockchains**
 
- Transfer an NFT from the smart contract (the `contractAddress` parameter in the request body) to the specified blockchain address (the `to` parameter in the request body).
+ Transfer an NFT from the smart contract (the <code>contractAddress</code> parameter in the request body) to the specified blockchain address (the <code>to</code> parameter in the request body).
 
  In one API call, you can transfer only one NFT.
 
@@ -2630,21 +2630,21 @@ Transfer an NFT
 
 <ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>
 
- For Ethereum, Celo, and BNB Smart Chain, transferring NFTs invokes the `safeTransfer()` method.
+ For Ethereum, Celo, and BNB Smart Chain, transferring NFTs invokes the <code>safeTransfer()</code> method.
 
  **Transferring NFTs on Algorand**
 
  
 
-<ul> <li>On Algorand, the recipient has to agree in advance to receive your NFT because Algorand charges users for storing NFTs on their addresses, and an Algorand blockchain address by default does not receive NFTs unless explicitly agreed. Before transferring an NFT, make sure that the recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">has agreed to receive the NFT</a> to their address.</li> <li>If you want to transfer an NFT that was minted using NFT Express, use the `transferNftAlgoExpress` schema of the request body.
+<ul> <li>On Algorand, the recipient has to agree in advance to receive your NFT because Algorand charges users for storing NFTs on their addresses, and an Algorand blockchain address by default does not receive NFTs unless explicitly agreed. Before transferring an NFT, make sure that the recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">has agreed to receive the NFT</a> to their address.</li> <li>If you want to transfer an NFT that was minted using NFT Express, use the <code>transferNftAlgoExpress</code> schema of the request body.
 
 **NOTE:** On the **mainnet**, Tatum covers your transaction fees for the NFT transfer and pays for them from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. On the **testnet**, no credits are deducted from the monthly credit allowance.</li> </ul>
 
  **Transferring NFTs on Solana**
 
- If you want to transfer an NFT that was minted using NFT Express, use the `transferNftSolana` or `transferNftSolanaKMS` schema of the request body. In the request body: 
+ If you want to transfer an NFT that was minted using NFT Express, use the <code>transferNftSolana</code> or <code>transferNftSolanaKMS</code> schema of the request body. In the request body: 
 
-<ul> <li>Set the `from` parameter to the address that you used in the `to` parameter in the request body of the minting call.</li> <li>Set the `to` parameter to the recipient's address.</li> <li>Set the `contractAddress` parameter to the address from the `nftAddress` parameter returned in the response body of the minting call.</li> <li>Set the `fromPrivateKey`/`signatureId` parameter to the private key/signature ID of the blockchain address that you specified in the `from` parameter.</li> </ul>
+<ul> <li>Set the <code>from</code> parameter to the address that you used in the <code>to</code> parameter in the request body of the minting call.</li> <li>Set the <code>to</code> parameter to the recipient's address.</li> <li>Set the <code>contractAddress</code> parameter to the address from the <code>nftAddress</code> parameter returned in the response body of the minting call.</li> <li>Set the <code>fromPrivateKey</code>/<code>signatureId</code> parameter to the private key/signature ID of the blockchain address that you specified in the <code>from</code> parameter.</li> </ul>
 
  **Signing a transaction**
 
@@ -3436,7 +3436,7 @@ Verify an NFT in an NFT collection on Solana
 
 **2 credits per API call**
 
- Verify an NFT in an NFT collection on Solana. Verifying an NFT sets the `Verified` parameter to `true` for the NFT, which means that the NFT is really a part of the collection. To know more about Solana collections and verification, refer to the <a href="https://docs.metaplex.com/programs/token-metadata/certified-collections" target="_blank">Solana user documentation</a>.
+ Verify an NFT in an NFT collection on Solana. Verifying an NFT sets the <code>Verified</code> parameter to <code>true</code> for the NFT, which means that the NFT is really a part of the collection. To know more about Solana collections and verification, refer to the <a href="https://docs.metaplex.com/programs/token-metadata/certified-collections" target="_blank">Solana user documentation</a>.
 
  The collection must be a sized collection that was introduced in <a href="https://docs.metaplex.com/programs/token-metadata/changelog/v1.3" target="_blank">Version 1.3</a> of the Metaplex Token Metadata program. The NFT must have been minted in this collection.
 

@@ -611,11 +611,11 @@ Get all transactions for a TRON account
 
  Get all transactions for a TRON account.
 
- This API returns up to 200 transactions in one API call. If there are more than 200 transactions for the TRON account, the response body will contain the `next` parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list.
+ This API returns up to 200 transactions in one API call. If there are more than 200 transactions for the TRON account, the response body will contain the <code>next</code> parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list.
 
- To get the next 200 transactions, make another call using this API, but this time add the `next` parameter the endpoint URL and set it to the transaction fingerprint from the `next` parameter in the response, for example:
+ To get the next 200 transactions, make another call using this API, but this time add the <code>next</code> parameter the endpoint URL and set it to the transaction fingerprint from the <code>next</code> parameter in the response, for example:
 
- `https://api.tatum.io/v3/tron/transaction/account/{address}?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991`
+ <code>https://api.tatum.io/v3/tron/transaction/account/{address}?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code>
 
 ### Example
 
@@ -657,11 +657,11 @@ Get TRC-20 transactions for a TRON account
 
  Get TRC-20 transactions for a TRON account.
 
- This API returns up to 200 transactions in one API call. If there are more than 200 transactions for the TRON account, the response body will contain the `next` parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list.
+ This API returns up to 200 transactions in one API call. If there are more than 200 transactions for the TRON account, the response body will contain the <code>next</code> parameter with the fingerprint of the transaction that follows the last (200<sup>th</sup>) transaction in the returned list.
 
- To get the next 200 transactions, make another call using this API, but this time add the `next` parameter the endpoint URL and set it to the transaction fingerprint from the `next` parameter in the response, for example:
+ To get the next 200 transactions, make another call using this API, but this time add the <code>next</code> parameter the endpoint URL and set it to the transaction fingerprint from the <code>next</code> parameter in the response, for example:
 
- `https://api.tatum.io/v3/tron/transaction/account/{address}/trc20?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991`
+ <code>https://api.tatum.io/v3/tron/transaction/account/{address}/trc20?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code>
 
 ### Example
 

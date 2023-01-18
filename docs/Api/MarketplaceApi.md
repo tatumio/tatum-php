@@ -185,7 +185,7 @@ Buy an asset on the NFT marketplace
 
  
 
-<ul> <li>If you want to pay for the asset with the **native blockchain currency**, send the required amount plus the marketplace fee right in the API call (in the `amount` request body parameter).</li> <li>If you want to pay with the **fungible tokens**, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access your tokens</a> before making the purchase. When you make the API call, the marketplace smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul>
+<ul> <li>If you want to pay for the asset with the **native blockchain currency**, send the required amount plus the marketplace fee right in the API call (in the <code>amount</code> request body parameter).</li> <li>If you want to pay with the **fungible tokens**, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access your tokens</a> before making the purchase. When you make the API call, the marketplace smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul>
 
  This API is supported for the following blockchains:
 
@@ -195,7 +195,7 @@ Buy an asset on the NFT marketplace
 
  **NOTE:** When making this API call, you may get the following message:
 
- `Although one or more Error Occurred [execution reverted] Contract Execution Completed`
+ <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
  This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 
@@ -437,7 +437,7 @@ Cancel the selling of an asset on the NFT marketplace
 
  **NOTE:** When making this API call, you may get the following message:
 
- `Although one or more Error Occurred [execution reverted] Contract Execution Completed`
+ <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
  This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 
@@ -673,9 +673,9 @@ Create an NFT marketplace
 
 <ol> <li>The seller creates a listing for an asset on the NFT marketplace. The listing can be offered for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.</li> <li>The seller <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allows the marketplace smart contract to transfer the asset that they are selling</a>.</li> <li>A buyer buys the asset. 
 
-<ul><li>If the buyer wants to pay with the **native blockchain assets**, they make the purchase (the `buyAssetFromListing()` method is called against the marketplace smart contract) and send the required amount of the native assets to the marketplace smart contract.</li> <li>If the buyer wants to pay with the **fungible tokens**: 
+<ul><li>If the buyer wants to pay with the **native blockchain assets**, they make the purchase (the <code>buyAssetFromListing()</code> method is called against the marketplace smart contract) and send the required amount of the native assets to the marketplace smart contract.</li> <li>If the buyer wants to pay with the **fungible tokens**: 
 
-<ol><li>The buyer <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allows the marketplace smart contract to access their tokens</a> and makes the purchase (the `buyAssetFromListing()` method is called against the marketplace smart contract).</li> <li>The marketplace smart contract deducts the required amount of tokens from the smart contract where the buyer holds the tokens.</li></ol>
+<ol><li>The buyer <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allows the marketplace smart contract to access their tokens</a> and makes the purchase (the <code>buyAssetFromListing()</code> method is called against the marketplace smart contract).</li> <li>The marketplace smart contract deducts the required amount of tokens from the smart contract where the buyer holds the tokens.</li></ol>
 
 </li></ul>
 
@@ -1155,7 +1155,7 @@ Sell an asset on the NFT marketplace
 
  **NOTE:** When making this API call, you may get the following message:
 
- `Although one or more Error Occurred [execution reverted] Contract Execution Completed`
+ <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
  This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 

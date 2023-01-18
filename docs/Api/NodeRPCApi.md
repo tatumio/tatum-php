@@ -71,13 +71,13 @@ Connect to the blockchain node through an RPC driver
 
  Connect directly to the blockchain node provided by Tatum.
 
- The `POST` method is used. The API endpoint URL acts as an HTTP-based RPC driver.
+ The <code>POST</code> method is used. The API endpoint URL acts as an HTTP-based RPC driver.
 
  In the request body, provide valid Web3 RPC method content, for example:
 
- ` { "jsonrpc": "2.0", "id": 1, "method": "method_name", "params": [] } ` For the blockchains using the JSON-RPC 2.0 specification, you can submit multiple RPC methods in one API call:
+ <pre> { "jsonrpc": "2.0", "id": 1, "method": "method_name", "params": [] } </pre> For the blockchains using the JSON-RPC 2.0 specification, you can submit multiple RPC methods in one API call:
 
- ` [ { "jsonrpc": "2.0", "id": 1, "method": "method_1_name", "params": [] }, { "jsonrpc": "2.0", "id": 2, "method": "method_2_name", "params": [] }, ... ] ` This API is supported for the following blockchains:
+ <pre> [ { "jsonrpc": "2.0", "id": 1, "method": "method_1_name", "params": [] }, { "jsonrpc": "2.0", "id": 2, "method": "method_2_name", "params": [] }, ... ] </pre> This API is supported for the following blockchains:
 
  
 
@@ -127,7 +127,7 @@ Connect to the blockchain node through an RPC driver
 
  Connect directly to the blockchain node provided by Tatum.
 
- The `GET` method is used. The API endpoint URL acts as an HTTP-based RPC driver.
+ The <code>GET</code> method is used. The API endpoint URL acts as an HTTP-based RPC driver.
 
  This API is supported for the following blockchains:
 
@@ -181,13 +181,13 @@ Connect to the blockchain node through an RPC driver
 
  Connect directly to the blockchain node provided by Tatum.
 
- The `PUT` method is used. The API endpoint URL acts as an HTTP-based RPC driver.
+ The <code>PUT</code> method is used. The API endpoint URL acts as an HTTP-based RPC driver.
 
  In the request body, provide valid Web3 RPC method content, for example:
 
- ` { "jsonrpc": "2.0", "id": 1, "method": "method_name", "params": [] } ` For the blockchains using the JSON-RPC 2.0 specification, you can submit multiple RPC methods in one API call:
+ <pre> { "jsonrpc": "2.0", "id": 1, "method": "method_name", "params": [] } </pre> For the blockchains using the JSON-RPC 2.0 specification, you can submit multiple RPC methods in one API call:
 
- ` [ { "jsonrpc": "2.0", "id": 1, "method": "method_1_name", "params": [] }, { "jsonrpc": "2.0", "id": 2, "method": "method_2_name", "params": [] }, ... ] ` This API is supported for the following blockchains:
+ <pre> [ { "jsonrpc": "2.0", "id": 1, "method": "method_1_name", "params": [] }, { "jsonrpc": "2.0", "id": 2, "method": "method_2_name", "params": [] }, ... ] </pre> This API is supported for the following blockchains:
 
  
 

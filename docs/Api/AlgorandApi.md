@@ -69,7 +69,7 @@ Access Algorand Algod GET node endpoints
 
  Example call for Get Block is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround</a>. 
 
- URL used for this call would be `https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/blocks/16775567`
+ URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/blocks/16775567</pre>
 
 ### Example
 
@@ -115,7 +115,7 @@ Access Algorand Indexer GET node endpoints
 
  Example call for Get Tx By ID is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/indexer/#get-v2transactionstxid" target="_blank">https://developer.algorand.org/docs/rest-apis/indexer/#get-v2transactionstxid</a>. 
 
- URL used for this call would be `https://api.tatum.io/v3/algorand/node/indexer/YOUR_API_KEY/v2/transactions/HNIQ76UTJYPOLZP5FWODYABBJPYPGJNEM2QEJSMDMQRWEKHEYJHQ`
+ URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/indexer/YOUR_API_KEY/v2/transactions/HNIQ76UTJYPOLZP5FWODYABBJPYPGJNEM2QEJSMDMQRWEKHEYJHQ</pre>
 
 ### Example
 
@@ -163,7 +163,7 @@ Access Algorand Algod POST node endpoints
 
  Example call for Broadcast a raw transaction is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions</a>. 
 
- URL used for this call would be `https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/transactions`
+ URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/transactions</pre>
 
 ### Example
 

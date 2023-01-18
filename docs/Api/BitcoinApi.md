@@ -225,7 +225,7 @@ Get the balance of a Bitcoin address
 
  Get the balance of a Bitcoin address.
 
- The API returns the balance only if the address has up to 50,000 UTXOs (Unspent Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns an error with the `403` response code.
+ The API returns the balance only if the address has up to 50,000 UTXOs (Unspent Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns an error with the <code>403</code> response code.
 
 ### Example
 
@@ -497,7 +497,7 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 
  
 
-<ul> <li>If the transaction output is an UTXO, the API returns data about it.</li> <li>If the transaction output has been spent and there is no UTXO to return, the API returns an error with the `404` response code.</li> </ul>
+<ul> <li>If the transaction output is an UTXO, the API returns data about it.</li> <li>If the transaction output has been spent and there is no UTXO to return, the API returns an error with the <code>404</code> response code.</li> </ul>
 
 ### Example
 
@@ -589,21 +589,21 @@ Send BTC to Bitcoin addresses
 
 The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.
 
- To use this method, use the `BtcTransactionFromAddress` or `BtcTransactionFromAddressKMS` schema of the request body.</li> <li>**Sending BTC from UTXOs**
+ To use this method, use the <code>BtcTransactionFromAddress</code> or <code>BtcTransactionFromAddressKMS</code> schema of the request body.</li> <li>**Sending BTC from UTXOs**
 
 The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.
 
- To use this method, use the `BtcTransactionFromUTXO` or `BtcTransactionFromUTXOKMS` schema of the request body.</li> </ul>
+ To use this method, use the <code>BtcTransactionFromUTXO</code> or <code>BtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul>
 
  When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 BTC and T2 with 2 BTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 BTC to spend:
 
-`1 BTC (from T1) + 2 BTC (from T2) = 3 BTC (to spend in total)`
+<code>1 BTC (from T1) + 2 BTC (from T2) = 3 BTC (to spend in total)</code>
 
  You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.
 
  **Paying the gas fee and receiving the change**
 
- When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the `fee` and `changeAddress` parameters in the request body, correspondingly).
+ When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).
 
  **Signing a transaction**
 

@@ -3395,7 +3395,7 @@ Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 
  
 
-<ul> <li>For **Algorand**, the contract address is the asset ID (`assetId`), for example, `55351976`.</li> <li>For **TRON**, the contract address is the token ID (`tokenId`), for example, `1234567`.</li> </ul>
+<ul> <li>For **Algorand**, the contract address is the asset ID (<code>assetId</code>), for example, <code>55351976</code>.</li> <li>For **TRON**, the contract address is the token ID (<code>tokenId</code>), for example, <code>1234567</code>.</li> </ul>
 
 ### Example
 

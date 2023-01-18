@@ -1071,7 +1071,7 @@ Get the amount of a specific MultiToken that a blockchain address holds
 
 **1 credit per API call**
 
- Get the amount of a specific Multi Token (minted on the smart contract specified by the `contractAddress` path parameter in the request endpoint URL) that a blockchain address holds.
+ Get the amount of a specific Multi Token (minted on the smart contract specified by the <code>contractAddress</code> path parameter in the request endpoint URL) that a blockchain address holds.
 
  This API is supported for the following blockchains:
 
@@ -1123,7 +1123,7 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 **1 credit per API call**
 
- For multiple blockchain addresses, get the amount of one or multiple Multi Tokens (minted on the smart contract specified by the `contractAddress` path parameter in the request endpoint URL) that those addresses hold.
+ For multiple blockchain addresses, get the amount of one or multiple Multi Tokens (minted on the smart contract specified by the <code>contractAddress</code> path parameter in the request endpoint URL) that those addresses hold.
 
  This API is supported for the following blockchains:
 

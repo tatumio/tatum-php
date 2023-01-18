@@ -165,7 +165,7 @@ Allow a blockchain address to transfer and burn fungible tokens
 
 **2 credits per API call**
 
- Allow a blockchain address (the `spender` parameter in the request body) to transfer and burn fungible tokens on behalf of the smart contract owner.
+ Allow a blockchain address (the <code>spender</code> parameter in the request body) to transfer and burn fungible tokens on behalf of the smart contract owner.
 
  This API is supported for the following blockchains:
 
@@ -333,7 +333,7 @@ Burn fungible tokens
 
 **2 credits per API call**
 
- Burn fungible tokens. Burning fungible tokens deletes the specified supply of the tokens (the `amount` parameter in the request body) from the smart contract (the `contractAddress` parameter in the request body).
+ Burn fungible tokens. Burning fungible tokens deletes the specified supply of the tokens (the <code>amount</code> parameter in the request body) from the smart contract (the <code>contractAddress</code> parameter in the request body).
 
  This API is supported for the following blockchains:
 
@@ -653,7 +653,7 @@ Deploy a fungible token smart contract
 
 **2 credits per API call**
 
- Deploy a fungible token smart contract on the blockchain. In a deployed smart contract, you can mint and burn fungible tokens. The whole supply of fungible tokens (the `supply` parameter in the request body) will be transferred to the specified blockchain address (the `address` parameter in the request body).
+ Deploy a fungible token smart contract on the blockchain. In a deployed smart contract, you can mint and burn fungible tokens. The whole supply of fungible tokens (the <code>supply</code> parameter in the request body) will be transferred to the specified blockchain address (the <code>address</code> parameter in the request body).
 
  Smart contracts are standardized and audited.
 
@@ -977,7 +977,7 @@ Mint fungible tokens
 
 **2 credits per API call**
 
- Create new fungible tokens in the smart contract (the `contractAddress` parameter in the request body) and transfer them to the specified blockchain address (the `to` parameter in the request body). You can mint new fungible tokens only if the current supply of tokens in the smart contract is lower than the total supply set for this contract.
+ Create new fungible tokens in the smart contract (the <code>contractAddress</code> parameter in the request body) and transfer them to the specified blockchain address (the <code>to</code> parameter in the request body). You can mint new fungible tokens only if the current supply of tokens in the smart contract is lower than the total supply set for this contract.
 
  This API is supported for the following blockchains:
 
@@ -1373,9 +1373,9 @@ Transfer fungible tokens
 
 **2 credits per API call**
 
- Transfer a supply of fungible tokens existing in the smart contract (the `contractAddress` parameter in the request body) to the specified blockchain address (the `to` parameter in the request body).
+ Transfer a supply of fungible tokens existing in the smart contract (the <code>contractAddress</code> parameter in the request body) to the specified blockchain address (the <code>to</code> parameter in the request body).
 
- Transferring fungible tokens invokes the `transfer()` method.
+ Transferring fungible tokens invokes the <code>transfer()</code> method.
 
  This API is supported for the following blockchains:
 
@@ -1633,7 +1633,7 @@ Get the number of fungible tokens that a blockchain address holds in a smart con
 
 **1 credit per API call**
 
- Get the number of the fungible tokens minted on a specific smart contract (the `contractAddress` path parameter in the request endpoint URL) that a blockchain address holds.
+ Get the number of the fungible tokens minted on a specific smart contract (the <code>contractAddress</code> path parameter in the request endpoint URL) that a blockchain address holds.
 
  This API is supported for the following blockchains:
 

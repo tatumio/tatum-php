@@ -645,7 +645,7 @@ Send ONE from account to account
 
  Send ONE from account to account.
 
- The default shard `0` is used for the sender and the recipient.
+ The default shard <code>0</code> is used for the sender and the recipient.
 
  **Signing a transaction**
 

@@ -22,6 +22,41 @@ A flexible framework to build, run, and scale blockchain apps with PHP
 The Tatum SDK uses a [fluent interface](https://en.wikipedia.org/wiki/Fluent_interface) so that you can jump right into 
 building your application without having to go back to the documentation.
 
+```mermaid
+stateDiagram-v2
+    label: Tatum PHP SDK - Fluent Interface
+
+    state label {
+        sdk: (new \Tatum\Sdk( keyMainNet, keyTestNet ))
+        [*] --> sdk
+        sdk --> testnet()
+        sdk --> mainnet()
+
+        state testnet() {
+            [*] --> config()
+            [*] --> local()
+            [*] --> api()
+            
+            local() --> wallet()
+            local() --> transaction()
+        }
+
+        state mainnet() {
+            mConfig(): config()
+            mLocal(): local()
+            mApi(): api()
+            mWallet(): wallet()
+            mTransaction(): transaction()
+
+            [*] --> mApi()
+            [*] --> mLocal()
+            [*] --> mConfig()
+            mLocal() --> mWallet()
+            mLocal() --> mTransaction()
+        }
+    }
+```
+
 The SDK is built like a tree with its root in ```new \Tatum\Sdk()```. 
 
 Tree branches are populated as needed just-in-time so the memory footprint is tiny.
@@ -218,7 +253,7 @@ $sdk->{mainnet/testnet}()->config()->setDebugSanitizer(false);
 <details>
 <summary>👓 GET Request</summary>
 
-<pre>
+<code>
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X GET \
   'https://api.tatum.io/v3/bitcoin/wallet?mnemonic=******&type=testnet' \
@@ -259,13 +294,13 @@ Body:
     "xpub": "tpubDExxmbZbZ8hvcykrL66zGKsWy8p8CUmV4vUErffboQoahPr4goABNmaZnnRgmh8ePRcJ3eHuivEG87HBdsquU3FQJstbxJjKwhtjGiWrpB2"
 }
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
-</pre>
+</code>
 </details>
 
 <details>
 <summary>📦 POST/PUT Request</summary>
 
-<pre>
+<code>
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X POST \
   'https://api.tatum.io/v3/bitcoin/wallet/priv?type=testnet' \
@@ -309,13 +344,13 @@ Body:
     "key": "******"
 }
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
-</pre>
+</code>
 </details>
 
 <details>
 <summary>📤 File Upload</summary>
 
-<pre>
+<code>
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST MainNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X POST \
   'https://api.tatum.io/v3/ipfs' \
@@ -356,13 +391,13 @@ Body:
     "ipfsHash": "bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4"
 }
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE MainNet <<<<<<<<<<<<<<<<<<<<<<<<<<
-</pre>
+</code>
 </details>
 
 <details>
 <summary>📥 File Download</summary>
 
-<pre>
+<code>
 >>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
 curl -i -X GET \
   'https://api.tatum.io/v3/ipfs/bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4?type=testnet' \
@@ -399,7 +434,7 @@ Headers:
 * CF-RAY: 78559f5688da0a5d-AMS
 Body: ( binary data )
 <<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
-</pre>
+</code>
 </details>
 
 > 🐛

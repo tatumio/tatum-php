@@ -505,21 +505,21 @@ Send ADA to Cardano addresses
 
 The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.
 
- To use this method, use the `AdaTransactionFromAddress` or `AdaTransactionFromAddressKMS` schema of the request body.</li> <li>**Sending ADA from UTXOs**
+ To use this method, use the <code>AdaTransactionFromAddress</code> or <code>AdaTransactionFromAddressKMS</code> schema of the request body.</li> <li>**Sending ADA from UTXOs**
 
 The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.
 
- To use this method, use the `AdaTransactionFromUTXO` or `AdaTransactionFromUTXOKMS` schema of the request body.</li> </ul>
+ To use this method, use the <code>AdaTransactionFromUTXO</code> or <code>AdaTransactionFromUTXOKMS</code> schema of the request body.</li> </ul>
 
  When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 ADA and T2 with 2 ADA. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 ADA to spend:
 
-`1 ADA (from T1) + 2 ADA (from T2) = 3 ADA (to spend in total)`
+<code>1 ADA (from T1) + 2 ADA (from T2) = 3 ADA (to spend in total)</code>
 
  You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.
 
  **Paying the gas fee and receiving the change**
 
- When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the `fee` and `changeAddress` parameters in the request body, correspondingly).
+ When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).
 
  **Signing a transaction**
 
