@@ -9,7 +9,13 @@ layout: page
 [Customer API Reference](https://apidoc.tatum.io/tag/Customer/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->customer()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->customer();
+
+// TestNet API Call
+$sdk->testnet()->api()->customer();
 ```
 
 ## Methods
@@ -32,7 +38,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->customer()->activateCustomer(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->customer()->activateCustomer(
     string $id
 )
 ```
@@ -70,7 +76,7 @@ Activated customer is able to do any operation.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->customer()->deactivateCustomer(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->customer()->deactivateCustomer(
     string $id
 )
 ```
@@ -108,7 +114,7 @@ Deactivate customer is not able to do any operation. Customer can be deactivated
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->customer()->disableCustomer(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->customer()->disableCustomer(
     string $id
 )
 ```
@@ -146,7 +152,7 @@ Disabled customer cannot perform end-user operations, such as create new account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->customer()->enableCustomer(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->customer()->enableCustomer(
     string $id
 )
 ```
@@ -184,7 +190,7 @@ Enabled customer can perform all operations. By default all customers are enable
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->customer()->findAllCustomers(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->customer()->findAllCustomers(
     float $page_size,
     [ float $offset ]
 ): \Tatum\Model\Customer[]
@@ -224,7 +230,7 @@ List all customers
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->customer()->getCustomerByExternalOrInternalId(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->customer()->getCustomerByExternalOrInternalId(
     string $id
 ): \Tatum\Model\Customer
 ```
@@ -262,7 +268,7 @@ Using anonymized external ID or internal customer ID you can access customer det
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->customer()->updateCustomer(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->customer()->updateCustomer(
     string $id,
     \Tatum\Model\CustomerUpdate $customer_update
 ): \Tatum\Model\Customer

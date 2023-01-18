@@ -7,7 +7,13 @@ layout: page
 # Local/Wallet/Dogecoin
 
 ```php
-$sdk->{mainnet/testnet}()->local()->wallet()->dogecoin()
+$sdk = new \Tatum\Sdk();
+
+// MainNet Local/Wallet/Dogecoin
+$sdk->mainnet()->local()->wallet()->dogecoin();
+
+// TestNet Local/Wallet/Dogecoin
+$sdk->testnet()->local()->wallet()->dogecoin();
 ```
 
 Dogecoin HD Wallet
@@ -24,7 +30,7 @@ Method | Description
 ## Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->local()->wallet()->dogecoin()->generateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->local()->wallet()->dogecoin()->generateWallet(
     [ string $mnemonic = null ]
 ): \Tatum\Model\Wallet
 ```
@@ -55,7 +61,7 @@ Generate wallet
 ## Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->local()->wallet()->dogecoin()->generateAddressFromXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->local()->wallet()->dogecoin()->generateAddressFromXpub(
     string $xpub,
     int $index
 ): \Tatum\Model\GeneratedAddressBtc
@@ -88,7 +94,7 @@ Generate address from xPub and index
 ## Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->local()->wallet()->dogecoin()->generateAddressFromPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->local()->wallet()->dogecoin()->generateAddressFromPrivateKey(
     \Tatum\Model\PrivKey $privateKey
 ): \Tatum\Model\GeneratedAddressBtc
 ```
@@ -119,7 +125,7 @@ Generate address from xPub and index
 ## Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->local()->wallet()->dogecoin()->generatePrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->local()->wallet()->dogecoin()->generatePrivateKey(
     string $mnemonic,
     int $index
 ): \Tatum\Model\PrivKey

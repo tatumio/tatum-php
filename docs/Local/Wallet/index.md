@@ -9,5 +9,11 @@ Local wallet operations:
 
 ```php
 <?php
-(new \Tatum\Sdk())->{testnet/mainnet}()->local()->wallet();
+$sdk = new \Tatum\Sdk();
+
+// MainNet Local Wallet Operations
+$sdk->mainnet()->local()->wallet();
+
+// TestNet Local Wallet Operations
+$sdk->testnet()->local()->wallet();
 ```

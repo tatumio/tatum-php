@@ -9,7 +9,13 @@ layout: page
 [Cardano API Reference](https://apidoc.tatum.io/tag/Cardano/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->cardano();
+
+// TestNet API Call
+$sdk->testnet()->api()->cardano();
 ```
 
 ## Methods
@@ -39,7 +45,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -81,7 +87,7 @@ Broadcast signed Ada transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\AdaGenerateAddress200Response
@@ -125,7 +131,7 @@ Generate Ada deposit address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -167,7 +173,7 @@ Generate Ada private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -215,7 +221,7 @@ Tatum follows BIP44 specification and generates for ADA wallet with derivation p
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGetAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGetAccount(
     string $address
 ): array[]
 ```
@@ -257,7 +263,7 @@ Gets a Ada account by address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGetBlock(
     string $hash
 ): \Tatum\Model\AdaBlock
 ```
@@ -299,7 +305,7 @@ Gets Ada block detail by block hash or height.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGetBlockChainInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGetBlockChainInfo(
 ): \Tatum\Model\AdaInfo
 ```
 
@@ -338,7 +344,7 @@ Gets Ada blockchain information. Obtains basic info like the testnet / mainnet v
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGetRawTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGetRawTransaction(
     string $hash
 ): \Tatum\Model\AdaTx
 ```
@@ -380,7 +386,7 @@ Get Ada Transaction detail by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGetTxByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGetTxByAddress(
     string $address,
     float $page_size,
     [ float $offset ]
@@ -426,7 +432,7 @@ Gets a Ada transaction by address.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaGetUTXOByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaGetUTXOByAddress(
     string $address
 ): \Tatum\Model\AdaUTXO[]
 ```
@@ -468,7 +474,7 @@ Gets a Ada UTXOs by address.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaTransactionFromAddress(
     \Tatum\Model\AdaTransactionFromAddress $ada_transaction_from_address
 ): \Tatum\Model\TransactionSigned
 ```
@@ -544,7 +550,7 @@ The assets are sent from a list of UTXOs. Each UTXO is included in the transacti
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromAddressKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaTransactionFromAddressKMS(
     \Tatum\Model\AdaTransactionFromAddressKMS $ada_transaction_from_address_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -580,7 +586,7 @@ AdaTransactionFromAddressKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromUTXO(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaTransactionFromUTXO(
     \Tatum\Model\AdaTransactionFromUTXO $ada_transaction_from_utxo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -616,7 +622,7 @@ AdaTransactionFromUTXO operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->cardano()->adaTransactionFromUTXOKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->cardano()->adaTransactionFromUTXOKMS(
     \Tatum\Model\AdaTransactionFromUTXOKMS $ada_transaction_from_utxokms
 ): \Tatum\Model\TransactionSigned
 ```

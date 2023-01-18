@@ -9,7 +9,13 @@ layout: page
 [Blockchain utils API Reference](https://apidoc.tatum.io/tag/Blockchain-utils/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainUtils()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->blockchainUtils();
+
+// TestNet API Call
+$sdk->testnet()->api()->blockchainUtils();
 ```
 
 ## Methods
@@ -27,7 +33,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainUtils()->getAuctionEstimatedTime(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainUtils()->getAuctionEstimatedTime(
     string $chain,
     string $date
 ): float
@@ -75,7 +81,7 @@ Estimate the block height for a future point in time
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainUtils()->sCGetContractAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainUtils()->sCGetContractAddress(
     string $chain,
     string $hash
 ): \Tatum\Model\SCGetContractAddress200Response

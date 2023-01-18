@@ -9,7 +9,13 @@ layout: page
 [Harmony API Reference](https://apidoc.tatum.io/tag/Harmony/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->harmony();
+
+// TestNet API Call
+$sdk->testnet()->api()->harmony();
 ```
 
 ## Methods
@@ -41,7 +47,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->callOneReadSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->callOneReadSmartContractMethod(
     \Tatum\Model\CallOneReadSmartContractMethod $call_one_read_smart_contract_method,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\CallSmartContractMethod200Response
@@ -105,7 +111,7 @@ However, because this API can be run against any smart contract on the blockchai
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->callOneSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->callOneSmartContractMethod(
     \Tatum\Model\CallOneSmartContractMethod $call_one_smart_contract_method,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\CallSmartContractMethod200Response
@@ -143,7 +149,7 @@ CallOneSmartContractMethod operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->callOneSmartContractMethodKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->callOneSmartContractMethodKMS(
     \Tatum\Model\CallOneSmartContractMethodKMS $call_one_smart_contract_method_kms,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\CallSmartContractMethod200Response
@@ -181,7 +187,7 @@ CallOneSmartContractMethodKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\TransactionHash
@@ -221,7 +227,7 @@ Broadcast signed ONE transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneFormatAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneFormatAddress(
     string $address
 ): \Tatum\Model\GeneratedAddressOne
 ```
@@ -259,7 +265,7 @@ Transform HEX address to Bech32 ONE address format
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\GeneratedAddressOne
@@ -299,7 +305,7 @@ Generate ONE account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -337,7 +343,7 @@ Generate ONE private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -381,7 +387,7 @@ Tatum follows BIP44 specification and generates for ONE wallet with derivation p
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGetBalance(
     string $address,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\OneBalance
@@ -421,7 +427,7 @@ Get ONE Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGetBlock(
     string $hash,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\EthBlock
@@ -461,7 +467,7 @@ Get ONE block by hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGetCurrentBlock(
 ): \Tatum\Model\OneBlockCurrent[]
 ```
 
@@ -496,7 +502,7 @@ Get current block number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGetTransaction(
     string $hash,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\OneTx
@@ -536,7 +542,7 @@ Get ONE Transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGetTransactionCount(
     string $address,
     [ float $shard_id = 0 ]
 ): float
@@ -576,7 +582,7 @@ Get count of outgoing ONE transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->oneWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneWeb3Driver(
     string $x_api_key,
     object $body,
     [ float $shard_id = 0 ]
@@ -620,7 +626,7 @@ Web3 HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->transferOneBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->transferOneBlockchain(
     \Tatum\Model\TransferOneBlockchain $transfer_one_blockchain,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\TransactionSigned
@@ -672,7 +678,7 @@ Send ONE from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->harmony()->transferOneBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->transferOneBlockchainKMS(
     \Tatum\Model\TransferOneBlockchainKMS $transfer_one_blockchain_kms,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\TransactionSigned

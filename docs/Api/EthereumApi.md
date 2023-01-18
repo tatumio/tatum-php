@@ -9,7 +9,13 @@ layout: page
 [Ethereum API Reference](https://apidoc.tatum.io/tag/Ethereum/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->ethereum();
+
+// TestNet API Call
+$sdk->testnet()->api()->ethereum();
 ```
 
 ## Methods
@@ -42,7 +48,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->callReadSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->callReadSmartContractMethod(
     \Tatum\Model\CallReadSmartContractMethod $call_read_smart_contract_method,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\CallSmartContractMethod200Response
@@ -80,7 +86,7 @@ CallReadSmartContractMethod operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->callSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->callSmartContractMethod(
     \Tatum\Model\CallSmartContractMethod $call_smart_contract_method,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\CallSmartContractMethod200Response
@@ -144,7 +150,7 @@ However, because this API can be run against any smart contract on the blockchai
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->callSmartContractMethodKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->callSmartContractMethodKMS(
     \Tatum\Model\CallSmartContractMethodKMS $call_smart_contract_method_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\CallSmartContractMethod200Response
@@ -182,7 +188,7 @@ CallSmartContractMethodKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionHash
@@ -222,7 +228,7 @@ Broadcast signed Ethereum transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddress(
     string $xpub,
     float $index,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
@@ -264,7 +270,7 @@ Generate Ethereum account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\PrivKey
@@ -304,7 +310,7 @@ Generate Ethereum private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGenerateWallet(
     [ string $mnemonic, ]
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Wallet
@@ -350,7 +356,7 @@ Tatum follows the BIP44 specification and generates for Ethereum wallets with th
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGetBalance(
     string $address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthBalance
@@ -392,7 +398,7 @@ Get the ETH balance of an Ethereum account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGetBlock(
     string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthBlock
@@ -432,7 +438,7 @@ Gets an Ethereum block-by-block hash or block number.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGetCurrentBlock(
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): float
 ```
@@ -470,7 +476,7 @@ Gets the current Ethereum block number. This is the number of the latest block i
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetInternalTransactionByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGetInternalTransactionByAddress(
     string $address,
     float $page_size,
     [ float $offset, ]
@@ -514,7 +520,7 @@ Get Ethereum internal transactions by address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGetTransaction(
     string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthTx
@@ -554,7 +560,7 @@ Get Ethereum transaction by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionByAddress(
     string $address,
     float $page_size,
     [ float $offset, ]
@@ -604,7 +610,7 @@ Get Ethereum transactions by address. This includes incoming and outgoing transa
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethGetTransactionCount(
     string $address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): float
@@ -644,7 +650,7 @@ Get count of outgoing Ethereum transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->ethWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->ethWeb3Driver(
     string $x_api_key,
     object $body,
     [ string $testnet_type = 'ethereum-sepolia' ]
@@ -688,7 +694,7 @@ Web3 HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->transferEthBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->transferEthBlockchain(
     \Tatum\Model\TransferEthBlockchain $transfer_eth_blockchain,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -736,7 +742,7 @@ Send Ethereum / ERC20 from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->ethereum()->transferEthBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->ethereum()->transferEthBlockchainKMS(
     \Tatum\Model\TransferEthBlockchainKMS $transfer_eth_blockchain_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned

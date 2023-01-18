@@ -9,7 +9,13 @@ layout: page
 [XRP API Reference](https://apidoc.tatum.io/tag/XRP/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->xRP();
+
+// TestNet API Call
+$sdk->testnet()->api()->xRP();
 ```
 
 ## Methods
@@ -42,7 +48,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->accountSettingsXrpBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->accountSettingsXrpBlockchain(
     \Tatum\Model\AccountSettingsXrpBlockchain $account_settings_xrp_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -82,7 +88,7 @@ Modify XRP account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->accountSettingsXrpBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->accountSettingsXrpBlockchainKMS(
     \Tatum\Model\AccountSettingsXrpBlockchainKMS $account_settings_xrp_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -118,7 +124,7 @@ AccountSettingsXrpBlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchain(
     \Tatum\Model\TransferXrpBlockchain $transfer_xrp_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -158,7 +164,7 @@ Send XRP from address to address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainAsset(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainAsset(
     \Tatum\Model\TransferXrpBlockchainAsset $transfer_xrp_blockchain_asset
 ): \Tatum\Model\TransactionSigned
 ```
@@ -194,7 +200,7 @@ TransferXrpBlockchainAsset operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainAssetKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainAssetKMS(
     \Tatum\Model\TransferXrpBlockchainAssetKMS $transfer_xrp_blockchain_asset_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -230,7 +236,7 @@ TransferXrpBlockchainAssetKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->transferXrpBlockchainKMS(
     \Tatum\Model\TransferXrpBlockchainKMS $transfer_xrp_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -266,7 +272,7 @@ TransferXrpBlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->trustLineXrpBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->trustLineXrpBlockchain(
     \Tatum\Model\TrustLineXrpBlockchain $trust_line_xrp_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -308,7 +314,7 @@ Create / Update / Delete XRP trust line
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->trustLineXrpBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->trustLineXrpBlockchainKMS(
     \Tatum\Model\TrustLineXrpBlockchainKMS $trust_line_xrp_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -344,7 +350,7 @@ TrustLineXrpBlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -382,7 +388,7 @@ Broadcast signed XRP transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetAccountBalance(
     string $account
 ): \Tatum\Model\XrpAccountBalance
 ```
@@ -420,7 +426,7 @@ Get XRP Account Balance. Obtain balance of the XRP and other assets on the accou
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetAccountInfo(
     string $account
 ): \Tatum\Model\XrpAccount
 ```
@@ -458,7 +464,7 @@ Get XRP Account info.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetAccountTx(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetAccountTx(
     string $account,
     [ float $min, ]
     [ string $marker ]
@@ -500,7 +506,7 @@ List all Account transactions.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetFee(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetFee(
 ): \Tatum\Model\XrpFee
 ```
 
@@ -535,7 +541,7 @@ Get actual Blockchain fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetLastClosedLedger(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetLastClosedLedger(
 ): \Tatum\Model\XrpInfo
 ```
 
@@ -570,7 +576,7 @@ Get XRP Blockchain last closed ledger index and hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetLedger(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetLedger(
     float $i
 ): \Tatum\Model\XrpLedger
 ```
@@ -608,7 +614,7 @@ Get ledger by sequence.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetTransaction(
     string $hash
 ): \Tatum\Model\XrpTx
 ```
@@ -646,7 +652,7 @@ Get XRP Transaction by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xRP()->xrpWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpWallet(
 ): \Tatum\Model\XrpWallet
 ```
 

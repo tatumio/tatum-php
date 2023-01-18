@@ -9,7 +9,13 @@ layout: page
 [Deposit API Reference](https://apidoc.tatum.io/tag/Deposit/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->deposit()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->deposit();
+
+// TestNet API Call
+$sdk->testnet()->api()->deposit();
 ```
 
 ## Methods
@@ -27,7 +33,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->deposit()->getDeposits(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->deposit()->getDeposits(
     [ float $page_size, ]
     [ float $page, ]
     [ string $sort, ]
@@ -79,7 +85,7 @@ Lists all deposits for API key.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->deposit()->getDepositsCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->deposit()->getDepositsCount(
     [ float $page_size, ]
     [ float $page, ]
     [ string $sort, ]

@@ -9,7 +9,13 @@ layout: page
 [Blockchain fees API Reference](https://apidoc.tatum.io/tag/Blockchain-fees/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->blockchainFees();
+
+// TestNet API Call
+$sdk->testnet()->api()->blockchainFees();
 ```
 
 ## Methods
@@ -42,7 +48,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->bscEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->bscEstimateGas(
     \Tatum\Model\BscEstimateGas $bsc_estimate_gas
 ): \Tatum\Model\PolygonEstimateGas200Response
 ```
@@ -82,7 +88,7 @@ Estimate BNB Smart Chain transaction fees
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->celoEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->celoEstimateGas(
     \Tatum\Model\CeloEstimateGas $celo_estimate_gas
 ): \Tatum\Model\CeloEstimateGas200Response
 ```
@@ -122,7 +128,7 @@ Estimate Celo Chain transaction fees
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->egldEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->egldEstimateGas(
     \Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain
 ): \Tatum\Model\EgldEstimateGas200Response
 ```
@@ -160,7 +166,7 @@ Estimate EGLD transaction fees
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFee(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->estimateFee(
     \Tatum\Model\EstimateFee $estimate_fee
 ): \Tatum\Model\EstimateFee200Response
 ```
@@ -202,7 +208,7 @@ Estimate the fee for a transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeBatchMintNft(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeBatchMintNft(
     \Tatum\Model\EstimateFeeBatchMintNft $estimate_fee_batch_mint_nft
 ): \Tatum\Model\EstimateFee200Response
 ```
@@ -238,7 +244,7 @@ EstimateFeeBatchMintNft operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeDeployCustodialWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeDeployCustodialWallet(
     \Tatum\Model\EstimateFeeDeployCustodialWallet $estimate_fee_deploy_custodial_wallet
 ): \Tatum\Model\EstimateFee200Response
 ```
@@ -274,7 +280,7 @@ EstimateFeeDeployCustodialWallet operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeFromAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeFromAddress(
     \Tatum\Model\EstimateFeeFromAddress $estimate_fee_from_address
 ): \Tatum\Model\EstimateFee200Response
 ```
@@ -310,7 +316,7 @@ EstimateFeeFromAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeFromUTXO(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeFromUTXO(
     \Tatum\Model\EstimateFeeFromUTXO $estimate_fee_from_utxo
 ): \Tatum\Model\EstimateFee200Response
 ```
@@ -346,7 +352,7 @@ EstimateFeeFromUTXO operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeTransferFromCustodial(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->estimateFeeTransferFromCustodial(
     \Tatum\Model\EstimateFeeTransferFromCustodial $estimate_fee_transfer_from_custodial
 ): \Tatum\Model\EstimateFee200Response
 ```
@@ -382,7 +388,7 @@ EstimateFeeTransferFromCustodial operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGas(
     \Tatum\Model\EthEstimateGas $eth_estimate_gas,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthGasEstimation
@@ -422,7 +428,7 @@ Estimate Ethereum transaction fees
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGasBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->ethEstimateGasBatch(
     \Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\EthGasEstimationBatch
@@ -464,7 +470,7 @@ Estimate multiple Ethereum transaction fees
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->getBlockchainFee(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->getBlockchainFee(
     string $chain
 ): \Tatum\Model\BlockchainFee
 ```
@@ -502,7 +508,7 @@ Get recommended blockchain fee / gas price
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->kcsEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->kcsEstimateGas(
     \Tatum\Model\KcsEstimateGas $kcs_estimate_gas
 ): \Tatum\Model\PolygonEstimateGas200Response
 ```
@@ -542,7 +548,7 @@ Estimate KuCoin Community Chain transaction fees
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->klaytnEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->klaytnEstimateGas(
     \Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas
 ): \Tatum\Model\KlaytnEstimateGas200Response
 ```
@@ -580,7 +586,7 @@ Estimate Klaytn transaction fees
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->polygonEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->polygonEstimateGas(
     \Tatum\Model\PolygonEstimateGas $polygon_estimate_gas
 ): \Tatum\Model\PolygonEstimateGas200Response
 ```
@@ -620,7 +626,7 @@ Estimate Polygon transaction fees
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->vetEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->vetEstimateGas(
     \Tatum\Model\VetEstimateGas $vet_estimate_gas
 ): float
 ```
@@ -658,7 +664,7 @@ Estimate gas required for transaction.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainFees()->xdcEstimateGas(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->xdcEstimateGas(
     \Tatum\Model\XdcEstimateGas $xdc_estimate_gas
 ): \Tatum\Model\PolygonEstimateGas200Response
 ```

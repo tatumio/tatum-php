@@ -9,7 +9,13 @@ layout: page
 [Solana API Reference](https://apidoc.tatum.io/tag/Solana/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->solana();
+
+// TestNet API Call
+$sdk->testnet()->api()->solana();
 ```
 
 ## Methods
@@ -34,7 +40,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaBroadcastConfirm(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaBroadcastConfirm(
     \Tatum\Model\SolanaBroadcastConfirm $solana_broadcast_confirm
 ): \Tatum\Model\SolanaTransactionHashWithConfirm
 ```
@@ -72,7 +78,7 @@ Broadcast and confirm signed Solana transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGenerateWallet(
 ): \Tatum\Model\SolanaWallet
 ```
 
@@ -107,7 +113,7 @@ Generate Solana wallet
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGetBalance(
     string $address
 ): \Tatum\Model\SolBalance
 ```
@@ -145,7 +151,7 @@ Get Solana account balance in SOL. This method does not prints any balance of th
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGetBlock(
     float $height
 ): \Tatum\Model\SolanaBlock
 ```
@@ -185,7 +191,7 @@ Get Solana block by number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGetCurrentBlock(
 ): float
 ```
 
@@ -220,7 +226,7 @@ Get Solana current block number. This is the number of the latest block in the b
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGetTransaction(
     string $hash,
     [ string $commitment ]
 ): \Tatum\Model\SolanaTx
@@ -262,7 +268,7 @@ Get Solana transaction by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->solanaWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaWeb3Driver(
     string $x_api_key,
     object $body
 ): object
@@ -304,7 +310,7 @@ JSON RPC HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->transferSolanaBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->transferSolanaBlockchain(
     \Tatum\Model\TransferSolanaBlockchain $transfer_solana_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -344,7 +350,7 @@ Send SOL from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->solana()->transferSolanaBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->transferSolanaBlockchainKMS(
     \Tatum\Model\TransferSolanaBlockchainKMS $transfer_solana_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```

@@ -9,7 +9,13 @@ layout: page
 [Transaction API Reference](https://apidoc.tatum.io/tag/Transaction/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->transaction()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->transaction();
+
+// TestNet API Call
+$sdk->testnet()->api()->transaction();
 ```
 
 ## Methods
@@ -31,7 +37,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->transaction()->getTransactions(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->transaction()->getTransactions(
     \Tatum\Model\TransactionFilterLedger $transaction_filter_ledger,
     [ float $page_size, ]
     [ float $offset, ]
@@ -75,7 +81,7 @@ Find transactions across whole ledger.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByAccountId(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->transaction()->getTransactionsByAccountId(
     \Tatum\Model\TransactionFilter $transaction_filter,
     [ float $page_size, ]
     [ float $offset, ]
@@ -119,7 +125,7 @@ Finds transactions for the account identified by the given account ID.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByCustomerId(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->transaction()->getTransactionsByCustomerId(
     \Tatum\Model\TransactionFilterCustomer $transaction_filter_customer,
     [ float $page_size, ]
     [ float $offset, ]
@@ -163,7 +169,7 @@ Finds transactions for all accounts of the customer identified by the given inte
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->transaction()->getTransactionsByReference(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->transaction()->getTransactionsByReference(
     string $reference
 ): \Tatum\Model\Transaction[]
 ```
@@ -201,7 +207,7 @@ Finds transactions for all accounts with the given reference.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->transaction()->sendTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->transaction()->sendTransaction(
     \Tatum\Model\CreateTransaction $create_transaction
 ): \Tatum\Model\TransactionResult
 ```
@@ -249,7 +255,7 @@ Send payment
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->transaction()->sendTransactionBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->transaction()->sendTransactionBatch(
     \Tatum\Model\BatchCreateTransaction $batch_create_transaction
 ): string[]
 ```

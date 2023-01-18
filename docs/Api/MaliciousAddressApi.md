@@ -9,7 +9,13 @@ layout: page
 [Malicious address API Reference](https://apidoc.tatum.io/tag/Malicious-address/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->maliciousAddress()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->maliciousAddress();
+
+// TestNet API Call
+$sdk->testnet()->api()->maliciousAddress();
 ```
 
 ## Methods
@@ -26,7 +32,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->maliciousAddress()->checkMalicousAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->maliciousAddress()->checkMalicousAddress(
     string $address
 ): \Tatum\Model\CheckMalicousAddress200Response
 ```

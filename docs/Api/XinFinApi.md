@@ -9,7 +9,13 @@ layout: page
 [XinFin API Reference](https://apidoc.tatum.io/tag/XinFin/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->xinFin();
+
+// TestNet API Call
+$sdk->testnet()->api()->xinFin();
 ```
 
 ## Methods
@@ -40,7 +46,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->callXdcReadSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->callXdcReadSmartContractMethod(
     \Tatum\Model\CallXdcReadSmartContractMethod $call_xdc_read_smart_contract_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -102,7 +108,7 @@ However, because this API can be run against any smart contract on the blockchai
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->callXdcSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->callXdcSmartContractMethod(
     \Tatum\Model\CallXdcSmartContractMethod $call_xdc_smart_contract_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -138,7 +144,7 @@ CallXdcSmartContractMethod operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->callXdcSmartContractMethodKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->callXdcSmartContractMethodKMS(
     \Tatum\Model\CallXdcSmartContractMethodKMS $call_xdc_smart_contract_method_kms
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -174,7 +180,7 @@ CallXdcSmartContractMethodKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->transferXdcBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->transferXdcBlockchain(
     \Tatum\Model\TransferXdcBlockchain $transfer_xdc_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -222,7 +228,7 @@ Send XDC / ERC20 from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->transferXdcBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->transferXdcBlockchainKMS(
     \Tatum\Model\TransferXdcBlockchainKMS $transfer_xdc_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -258,7 +264,7 @@ TransferXdcBlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -296,7 +302,7 @@ Broadcast signed XDC transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\XdcGenerateAddress200Response
@@ -336,7 +342,7 @@ Generate XDC account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -374,7 +380,7 @@ Generate XDC private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -420,7 +426,7 @@ Generate XDC wallet
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGetBalance(
     string $address
 ): \Tatum\Model\XdcGetBalance200Response
 ```
@@ -458,7 +464,7 @@ Get XDC Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGetBlock(
     string $hash
 ): \Tatum\Model\XdcBlock
 ```
@@ -496,7 +502,7 @@ Get XDC block by hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGetCurrentBlock(
 ): float
 ```
 
@@ -531,7 +537,7 @@ Get current block number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGetTransaction(
     string $hash
 ): \Tatum\Model\XdcTx
 ```
@@ -569,7 +575,7 @@ Get XDC Transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGetTransactionCount(
     string $address
 ): float
 ```
@@ -607,7 +613,7 @@ Get count of outgoing XDC transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->xinFin()->xdcWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcWeb3Driver(
     string $x_api_key,
     object $body
 ): object

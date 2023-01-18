@@ -9,7 +9,13 @@ layout: page
 [IPFS API Reference](https://apidoc.tatum.io/tag/IPFS/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->iPFS()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->iPFS();
+
+// TestNet API Call
+$sdk->testnet()->api()->iPFS();
 ```
 
 ## Methods
@@ -27,7 +33,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->iPFS()->getIPFSData(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->iPFS()->getIPFSData(
     string $id
 ): \SplFileObject
 ```
@@ -65,7 +71,7 @@ Gets data from the IPFS.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->iPFS()->storeIPFS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->iPFS()->storeIPFS(
     [ \SplFileObject $file ]
 ): \Tatum\Model\StoreIPFS200Response
 ```

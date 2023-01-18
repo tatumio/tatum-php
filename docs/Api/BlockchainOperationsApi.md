@@ -9,7 +9,13 @@ layout: page
 [Blockchain operations API Reference](https://apidoc.tatum.io/tag/Blockchain-operations/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->blockchainOperations();
+
+// TestNet API Call
+$sdk->testnet()->api()->blockchainOperations();
 ```
 
 ## Methods
@@ -158,7 +164,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->bnbAssetOffchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->bnbAssetOffchain(
     \Tatum\Model\CreateBnbAsset $create_bnb_asset
 )
 ```
@@ -198,7 +204,7 @@ Create a BNB-based asset
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainKMSAddress(
     \Tatum\Model\DeployAlgoErc20OffchainKMSAddress $deploy_algo_erc20_offchain_kms_address
 ): \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
 ```
@@ -234,7 +240,7 @@ DeployAlgoErc20OffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress $deploy_algo_erc20_offchain_mnemonic_address
 ): \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
 ```
@@ -282,7 +288,7 @@ Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virt
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployAlgoErc20OffchainPKAddress(
     \Tatum\Model\DeployAlgoErc20OffchainPKAddress $deploy_algo_erc20_offchain_pk_address
 ): \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
 ```
@@ -318,7 +324,7 @@ DeployAlgoErc20OffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainKMSAddress(
     \Tatum\Model\DeployCeloErc20OffchainKMSAddress $deploy_celo_erc20_offchain_kms_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -354,7 +360,7 @@ DeployCeloErc20OffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainKMSXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainKMSXpub(
     \Tatum\Model\DeployCeloErc20OffchainKMSXpub $deploy_celo_erc20_offchain_kms_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -390,7 +396,7 @@ DeployCeloErc20OffchainKMSXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainMnemXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainMnemXpub(
     \Tatum\Model\DeployCeloErc20OffchainMnemXpub $deploy_celo_erc20_offchain_mnem_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -426,7 +432,7 @@ DeployCeloErc20OffchainMnemXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployCeloErc20OffchainMnemonicAddress $deploy_celo_erc20_offchain_mnemonic_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -474,7 +480,7 @@ Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual a
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainPKAddress(
     \Tatum\Model\DeployCeloErc20OffchainPKAddress $deploy_celo_erc20_offchain_pk_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -510,7 +516,7 @@ DeployCeloErc20OffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainPKXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployCeloErc20OffchainPKXpub(
     \Tatum\Model\DeployCeloErc20OffchainPKXpub $deploy_celo_erc20_offchain_pk_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -546,7 +552,7 @@ DeployCeloErc20OffchainPKXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -582,7 +588,7 @@ DeployErc20OffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainKMSXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -618,7 +624,7 @@ DeployErc20OffchainKMSXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainMnemXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -654,7 +660,7 @@ DeployErc20OffchainMnemXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -702,7 +708,7 @@ Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -738,7 +744,7 @@ DeployErc20OffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainPKXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -774,7 +780,7 @@ DeployErc20OffchainPKXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainKMSAddress(
     \Tatum\Model\DeployTrcOffchainKMSAddress $deploy_trc_offchain_kms_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -810,7 +816,7 @@ DeployTrcOffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainKMSXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainKMSXpub(
     \Tatum\Model\DeployTrcOffchainKMSXpub $deploy_trc_offchain_kms_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -846,7 +852,7 @@ DeployTrcOffchainKMSXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainMnemXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainMnemXpub(
     \Tatum\Model\DeployTrcOffchainMnemXpub $deploy_trc_offchain_mnem_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -882,7 +888,7 @@ DeployTrcOffchainMnemXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainMnemonicAddress(
     \Tatum\Model\DeployTrcOffchainMnemonicAddress $deploy_trc_offchain_mnemonic_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -930,7 +936,7 @@ Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual ac
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainPKAddress(
     \Tatum\Model\DeployTrcOffchainPKAddress $deploy_trc_offchain_pk_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -966,7 +972,7 @@ DeployTrcOffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainPKXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->deployTrcOffchainPKXpub(
     \Tatum\Model\DeployTrcOffchainPKXpub $deploy_trc_offchain_pk_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1002,7 +1008,7 @@ DeployTrcOffchainPKXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->erc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->erc20(
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
 ```
@@ -1058,7 +1064,7 @@ Use this method instead.**
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->erc20Address(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->erc20Address(
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
 ```
@@ -1094,7 +1100,7 @@ Erc20Address operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1130,7 +1136,7 @@ DeployErc20OffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainKMSXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1166,7 +1172,7 @@ DeployErc20OffchainKMSXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainMnemXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1202,7 +1208,7 @@ DeployErc20OffchainMnemXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1250,7 +1256,7 @@ Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual a
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1286,7 +1292,7 @@ DeployErc20OffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainPKXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offBscDeployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1322,7 +1328,7 @@ DeployErc20OffchainPKXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offBscErc20(
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
 ```
@@ -1382,7 +1388,7 @@ Use this method instead.**
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offBscErc20Address(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offBscErc20Address(
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
 ```
@@ -1418,7 +1424,7 @@ Erc20Address operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offCelErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offCelErc20(
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
 ```
@@ -1478,7 +1484,7 @@ Use this method instead.**
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offCelErc20Address(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offCelErc20Address(
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
 ```
@@ -1514,7 +1520,7 @@ Erc20Address operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEth(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEth(
     \Tatum\Model\TransferEth $transfer_eth
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -1562,7 +1568,7 @@ Send EGLD from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEthKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -1598,7 +1604,7 @@ TransferEthKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEthMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offEglTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -1634,7 +1640,7 @@ TransferEthMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1670,7 +1676,7 @@ DeployErc20OffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainKMSXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1706,7 +1712,7 @@ DeployErc20OffchainKMSXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainMnemXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1742,7 +1748,7 @@ DeployErc20OffchainMnemXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1790,7 +1796,7 @@ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the bl
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1826,7 +1832,7 @@ DeployErc20OffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainPKXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKcsDeployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1862,7 +1868,7 @@ DeployErc20OffchainPKXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1898,7 +1904,7 @@ DeployErc20OffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainKMSXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1934,7 +1940,7 @@ DeployErc20OffchainKMSXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainMnemXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -1970,7 +1976,7 @@ DeployErc20OffchainMnemXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -2018,7 +2024,7 @@ Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -2054,7 +2060,7 @@ DeployErc20OffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainPKXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaDeployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -2090,7 +2096,7 @@ DeployErc20OffchainPKXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEth(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEth(
     \Tatum\Model\TransferEth $transfer_eth
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -2138,7 +2144,7 @@ Send KLAY from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEthKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -2174,7 +2180,7 @@ TransferEthKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEthMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offKlaTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -2210,7 +2216,7 @@ TransferEthMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
@@ -2248,7 +2254,7 @@ DeployErc20OffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainKMSXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
@@ -2286,7 +2292,7 @@ DeployErc20OffchainKMSXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainMnemXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
@@ -2324,7 +2330,7 @@ DeployErc20OffchainMnemXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
@@ -2374,7 +2380,7 @@ Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
@@ -2412,7 +2418,7 @@ DeployErc20OffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainPKXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneDeployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
@@ -2450,7 +2456,7 @@ DeployErc20OffchainPKXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneErc20(
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
 ```
@@ -2510,7 +2516,7 @@ Use this method instead.**
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneErc20Address(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneErc20Address(
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
 ```
@@ -2546,7 +2552,7 @@ Erc20Address operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEth(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEth(
     \Tatum\Model\TransferEth $transfer_eth,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\TransferBtcMnemonic200Response
@@ -2596,7 +2602,7 @@ Send ONE from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEthKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\TransferBtcMnemonic200Response
@@ -2634,7 +2640,7 @@ TransferEthKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEthMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offOneTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic,
     [ float $shard_id = 0 ]
 ): \Tatum\Model\TransferBtcMnemonic200Response
@@ -2672,7 +2678,7 @@ TransferEthMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEth(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEth(
     \Tatum\Model\TransferEth $transfer_eth
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -2716,7 +2722,7 @@ Send MATIC from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEthKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -2752,7 +2758,7 @@ TransferEthKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEthMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offPolTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -2788,7 +2794,7 @@ TransferEthMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20(
     string $chain,
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
@@ -2844,7 +2850,7 @@ Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20Address(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20Address(
     string $chain,
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
@@ -2882,7 +2888,7 @@ Erc20Address operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainKMSAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainKMSAddress(
     \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -2918,7 +2924,7 @@ DeployErc20OffchainKMSAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainKMSXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainKMSXpub(
     \Tatum\Model\DeployErc20OffchainKMSXpub $deploy_erc20_offchain_kms_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -2954,7 +2960,7 @@ DeployErc20OffchainKMSXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainMnemXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainMnemXpub(
     \Tatum\Model\DeployErc20OffchainMnemXpub $deploy_erc20_offchain_mnem_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -2990,7 +2996,7 @@ DeployErc20OffchainMnemXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainMnemonicAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainMnemonicAddress(
     \Tatum\Model\DeployErc20OffchainMnemonicAddress $deploy_erc20_offchain_mnemonic_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -3038,7 +3044,7 @@ Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainPKAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainPKAddress(
     \Tatum\Model\DeployErc20OffchainPKAddress $deploy_erc20_offchain_pk_address
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -3074,7 +3080,7 @@ DeployErc20OffchainPKAddress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainPKXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcDeployErc20OffchainPKXpub(
     \Tatum\Model\DeployErc20OffchainPKXpub $deploy_erc20_offchain_pk_xpub
 ): \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
 ```
@@ -3110,7 +3116,7 @@ DeployErc20OffchainPKXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcErc20(
     \Tatum\Model\Erc20 $erc20
 ): \Tatum\Model\Erc20Response
 ```
@@ -3166,7 +3172,7 @@ Use this method instead.**
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcErc20Address(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcErc20Address(
     \Tatum\Model\Erc20Address $erc20_address
 ): \Tatum\Model\Erc20Response
 ```
@@ -3202,7 +3208,7 @@ Erc20Address operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEth(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEth(
     \Tatum\Model\TransferEth $transfer_eth
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3250,7 +3256,7 @@ Send XDC from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEthKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3286,7 +3292,7 @@ TransferEthKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEthMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offXdcTransferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3322,7 +3328,7 @@ TransferEthMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeCeloErc20Address(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->storeCeloErc20Address(
     string $address,
     string $name
 )
@@ -3364,7 +3370,7 @@ Use this method instead.**
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTokenAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->storeTokenAddress(
     string $address,
     string $name
 )
@@ -3412,7 +3418,7 @@ Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->storeTrcAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->storeTrcAddress(
     string $address,
     string $name
 )
@@ -3454,7 +3460,7 @@ Use this method instead.**
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaKMS(
     \Tatum\Model\TransferAdaKMS $transfer_ada_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3490,7 +3496,7 @@ TransferAdaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaKeyPair(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaKeyPair(
     \Tatum\Model\TransferAdaKeyPair $transfer_ada_key_pair
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3536,7 +3542,7 @@ Send ADA (Cardano) from a virtual account to the blockchain. This will create Ta
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferAdaMnemonic(
     \Tatum\Model\TransferAdaMnemonic $transfer_ada_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3572,7 +3578,7 @@ TransferAdaMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgo(
     \Tatum\Model\TransferAlgo $transfer_algo
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3626,7 +3632,7 @@ Send ALGO from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgoErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgoErc20(
     \Tatum\Model\TransferAlgoErc20 $transfer_algo_erc20
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3662,7 +3668,7 @@ TransferAlgoErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgoKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferAlgoKMS(
     \Tatum\Model\TransferAlgoKMS $transfer_algo_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3698,7 +3704,7 @@ TransferAlgoKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBchKMS(
     \Tatum\Model\TransferBchKMS $transfer_bch_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3734,7 +3740,7 @@ TransferBchKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchKeyPair(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBchKeyPair(
     \Tatum\Model\TransferBchKeyPair $transfer_bch_key_pair
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3770,7 +3776,7 @@ TransferBchKeyPair operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBchMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBchMnemonic(
     \Tatum\Model\TransferBchMnemonic $transfer_bch_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3822,7 +3828,7 @@ Send BCH from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBnb(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBnb(
     \Tatum\Model\TransferBnb $transfer_bnb
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3866,7 +3872,7 @@ Send BNB from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBnbKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBnbKMS(
     \Tatum\Model\TransferBnbKMS $transfer_bnb_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3902,7 +3908,7 @@ TransferBnbKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBsc(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBsc(
     \Tatum\Model\TransferBsc $transfer_bsc
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3950,7 +3956,7 @@ Send BSC from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBscKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBscKMS(
     \Tatum\Model\TransferBscKMS $transfer_bsc_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -3986,7 +3992,7 @@ TransferBscKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBscMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBscMnemonic(
     \Tatum\Model\TransferBscMnemonic $transfer_bsc_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4022,7 +4028,7 @@ TransferBscMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcKMS(
     \Tatum\Model\TransferBtcKMS $transfer_btc_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4058,7 +4064,7 @@ TransferBtcKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcKeyPair(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcKeyPair(
     \Tatum\Model\TransferBtcKeyPair $transfer_btc_key_pair
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4094,7 +4100,7 @@ TransferBtcKeyPair operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferBtcMnemonic(
     \Tatum\Model\TransferBtcMnemonic $transfer_btc_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4146,7 +4152,7 @@ Send BTC from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferCelo(
     \Tatum\Model\TransferCelo $transfer_celo
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4194,7 +4200,7 @@ Send CELO from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferCeloKMS(
     \Tatum\Model\TransferCeloKMS $transfer_celo_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4230,7 +4236,7 @@ TransferCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferCeloMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferCeloMnemonic(
     \Tatum\Model\TransferCeloMnemonic $transfer_celo_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4266,7 +4272,7 @@ TransferCeloMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeKMS(
     \Tatum\Model\TransferDogeKMS $transfer_doge_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4302,7 +4308,7 @@ TransferDogeKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeKeyPair(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeKeyPair(
     \Tatum\Model\TransferDogeKeyPair $transfer_doge_key_pair
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4338,7 +4344,7 @@ TransferDogeKeyPair operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferDogeMnemonic(
     \Tatum\Model\TransferDogeMnemonic $transfer_doge_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4390,7 +4396,7 @@ Send DOGE from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20(
     \Tatum\Model\TransferErc20 $transfer_erc20
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4434,7 +4440,7 @@ Send Ethereum ERC-20 tokens from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20KMS(
     \Tatum\Model\TransferErc20KMS $transfer_erc20_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4470,7 +4476,7 @@ TransferErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20Mnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferErc20Mnemonic(
     \Tatum\Model\TransferErc20Mnemonic $transfer_erc20_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4506,7 +4512,7 @@ TransferErc20Mnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEth(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferEth(
     \Tatum\Model\TransferEth $transfer_eth
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4550,7 +4556,7 @@ Send ETH from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEthKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferEthKMS(
     \Tatum\Model\TransferEthKMS $transfer_eth_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4586,7 +4592,7 @@ TransferEthKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferEthMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferEthMnemonic(
     \Tatum\Model\TransferEthMnemonic $transfer_eth_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4622,7 +4628,7 @@ TransferEthMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowKMS(
     \Tatum\Model\TransferFlowKMS $transfer_flow_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4658,7 +4664,7 @@ TransferFlowKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowMnemonic(
     \Tatum\Model\TransferFlowMnemonic $transfer_flow_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4710,7 +4716,7 @@ Send FLOW from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowPK(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferFlowPK(
     \Tatum\Model\TransferFlowPK $transfer_flow_pk
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4746,7 +4752,7 @@ TransferFlowPK operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferKCS(
     \Tatum\Model\TransferKCS $transfer_kcs
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4790,7 +4796,7 @@ Send KCS from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCSKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferKCSKMS(
     \Tatum\Model\TransferKCSKMS $transfer_kcskms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4826,7 +4832,7 @@ TransferKCSKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferKCSMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferKCSMnemonic(
     \Tatum\Model\TransferKCSMnemonic $transfer_kcs_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4862,7 +4868,7 @@ TransferKCSMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcKMS(
     \Tatum\Model\TransferLtcKMS $transfer_ltc_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4898,7 +4904,7 @@ TransferLtcKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcKeyPair(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcKeyPair(
     \Tatum\Model\TransferLtcKeyPair $transfer_ltc_key_pair
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4934,7 +4940,7 @@ TransferLtcKeyPair operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferLtcMnemonic(
     \Tatum\Model\TransferLtcMnemonic $transfer_ltc_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -4986,7 +4992,7 @@ Send LTC from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferSol(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferSol(
     \Tatum\Model\TransferSol $transfer_sol
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5030,7 +5036,7 @@ Send SOL from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferSolKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferSolKMS(
     \Tatum\Model\TransferSolKMS $transfer_sol_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5066,7 +5072,7 @@ TransferSolKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferTron(
     \Tatum\Model\TransferTron $transfer_tron
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5110,7 +5116,7 @@ Send TRON or TRX assets from a virtual account to the blockchain. This will crea
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTronKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferTronKMS(
     \Tatum\Model\TransferTronKMS $transfer_tron_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5146,7 +5152,7 @@ TransferTronKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferTronMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferTronMnemonic(
     \Tatum\Model\TransferTronMnemonic $transfer_tron_mnemonic
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5182,7 +5188,7 @@ TransferTronMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXlm(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferXlm(
     \Tatum\Model\TransferXlm $transfer_xlm
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5226,7 +5232,7 @@ Send XLM from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXlmKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferXlmKMS(
     \Tatum\Model\TransferXlmKMS $transfer_xlm_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5262,7 +5268,7 @@ TransferXlmKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXrp(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferXrp(
     \Tatum\Model\TransferXrp $transfer_xrp
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5306,7 +5312,7 @@ Send XRP from a virtual account to the blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->transferXrpKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->transferXrpKMS(
     \Tatum\Model\TransferXrpKMS $transfer_xrp_kms
 ): \Tatum\Model\TransferBtcMnemonic200Response
 ```
@@ -5342,7 +5348,7 @@ TransferXrpKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->trcAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->trcAddress(
     \Tatum\Model\TrcAddress $trc_address
 ): \Tatum\Model\Trc20Response
 ```
@@ -5392,7 +5398,7 @@ Register a new TRON TRC-10 or TRC-20 token in the virtual account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->trcXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->trcXpub(
     \Tatum\Model\TrcXpub $trc_xpub
 ): \Tatum\Model\Trc20Response
 ```
@@ -5428,7 +5434,7 @@ TrcXpub operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->xlmAssetOffchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->xlmAssetOffchain(
     \Tatum\Model\CreateXlmAsset $create_xlm_asset
 )
 ```
@@ -5468,7 +5474,7 @@ Create an XLM-based asset
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainOperations()->xrpAssetOffchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->xrpAssetOffchain(
     \Tatum\Model\CreateXrpAsset $create_xrp_asset
 )
 ```

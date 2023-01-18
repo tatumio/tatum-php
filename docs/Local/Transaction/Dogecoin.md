@@ -7,7 +7,13 @@ layout: page
 # Local/Transaction/Dogecoin
 
 ```php
-$sdk->{mainnet/testnet}()->local()->transaction()->dogecoin()
+$sdk = new \Tatum\Sdk();
+
+// MainNet Local/Transaction/Dogecoin
+$sdk->mainnet()->local()->transaction()->dogecoin();
+
+// TestNet Local/Transaction/Dogecoin
+$sdk->testnet()->local()->transaction()->dogecoin();
 ```
 
 Dogecoin Transaction
@@ -21,7 +27,7 @@ Method | Description
 ## Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->local()->transaction()->dogecoin()->sign(
+(new \Tatum\Sdk())->{mainnet/testnet}()->local()->transaction()->dogecoin()->sign(
     \Tatum\Local\Transaction\Bitcoin\Transfer $transfer
 ): string
 ```

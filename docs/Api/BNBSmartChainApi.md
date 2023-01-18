@@ -9,7 +9,13 @@ layout: page
 [BNB Smart Chain API Reference](https://apidoc.tatum.io/tag/BNB-Smart-Chain/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->bNBSmartChain();
+
+// TestNet API Call
+$sdk->testnet()->api()->bNBSmartChain();
 ```
 
 ## Methods
@@ -40,7 +46,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -78,7 +84,7 @@ Broadcast signed BSC transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\GeneratedAddressBsc
@@ -118,7 +124,7 @@ Generate BSC account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -156,7 +162,7 @@ Generate BSC private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -200,7 +206,7 @@ Tatum follows BIP44 specification and generates for BSC wallet with derivation p
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBalance(
     string $address
 ): \Tatum\Model\BscBalance
 ```
@@ -238,7 +244,7 @@ Get BSC Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetBlock(
     string $hash
 ): \Tatum\Model\EthBlock
 ```
@@ -276,7 +282,7 @@ Get BSC block by hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetCurrentBlock(
 ): float
 ```
 
@@ -311,7 +317,7 @@ Get current block number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransaction(
     string $hash
 ): \Tatum\Model\BscTx
 ```
@@ -349,7 +355,7 @@ Get BSC Transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetTransactionCount(
     string $address
 ): float
 ```
@@ -387,7 +393,7 @@ Get count of outgoing BSC transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->bscWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscWeb3Driver(
     string $x_api_key,
     object $body
 ): object
@@ -429,7 +435,7 @@ Web3 HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractMethod(
     \Tatum\Model\CallBscSmartContractMethod $call_bsc_smart_contract_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -465,7 +471,7 @@ CallBscSmartContractMethod operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractMethodKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractMethodKMS(
     \Tatum\Model\CallBscSmartContractMethodKMS $call_bsc_smart_contract_method_kms
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -501,7 +507,7 @@ CallBscSmartContractMethodKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractReadMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->callBscSmartContractReadMethod(
     \Tatum\Model\CallBscSmartContractReadMethod $call_bsc_smart_contract_read_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -563,7 +569,7 @@ However, because this API can be run against any smart contract on the blockchai
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->transferBscBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->transferBscBlockchain(
     \Tatum\Model\TransferBscBlockchain $transfer_bsc_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -609,7 +615,7 @@ Send BSC / BEP20 from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBSmartChain()->transferBscBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->transferBscBlockchainKMS(
     \Tatum\Model\TransferBscBlockchainKMS $transfer_bsc_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```

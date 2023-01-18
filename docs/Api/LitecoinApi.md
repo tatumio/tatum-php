@@ -9,7 +9,13 @@ layout: page
 [Litecoin API Reference](https://apidoc.tatum.io/tag/Litecoin/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->litecoin();
+
+// TestNet API Call
+$sdk->testnet()->api()->litecoin();
 ```
 
 ## Methods
@@ -42,7 +48,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -80,7 +86,7 @@ Broadcast signed Litecoin transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\LtcGenerateAddress200Response
@@ -120,7 +126,7 @@ Generate Litecoin deposit address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -158,7 +164,7 @@ Generate Litecoin private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -202,7 +208,7 @@ Tatum follows BIP44 specification and generates for Litecoin wallet with derivat
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBalanceOfAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetBalanceOfAddress(
     string $address
 ): \Tatum\Model\BtcBasedBalance
 ```
@@ -242,7 +248,7 @@ Get the balance of a Litecoin address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetBlock(
     string $hash
 ): \Tatum\Model\LtcBlock
 ```
@@ -280,7 +286,7 @@ Get Litecoin Block detail by block hash or height.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockChainInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockChainInfo(
 ): \Tatum\Model\LtcInfo
 ```
 
@@ -315,7 +321,7 @@ Get Litecoin Blockchain Information. Obtain basic info like testnet / mainnet ve
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockHash(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockHash(
     float $i
 ): \Tatum\Model\LtcGetBlockHash200Response
 ```
@@ -353,7 +359,7 @@ Get Litecoin Block hash. Returns hash of the block to get the block detail.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetMempool(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetMempool(
 ): string[]
 ```
 
@@ -388,7 +394,7 @@ Get Litecoin Transaction ids in the mempool.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetRawTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetRawTransaction(
     string $hash
 ): \Tatum\Model\LtcTx
 ```
@@ -426,7 +432,7 @@ Get Litecoin Transaction detail by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetTxByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetTxByAddress(
     string $address,
     float $page_size,
     [ float $offset ]
@@ -468,7 +474,7 @@ Get Litecoin Transaction by address.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcGetUTXO(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetUTXO(
     string $hash,
     float $index
 ): \Tatum\Model\LtcUTXO
@@ -514,7 +520,7 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcRpcDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcRpcDriver(
     \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
 ): object
 ```
@@ -554,7 +560,7 @@ JSON RPC HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcTransactionAddress(
     \Tatum\Model\LtcTransactionAddress $ltc_transaction_address
 ): \Tatum\Model\TransactionSigned
 ```
@@ -626,7 +632,7 @@ The assets are sent from a list of UTXOs. Each UTXO is included in the transacti
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionAddressKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcTransactionAddressKMS(
     \Tatum\Model\LtcTransactionAddressKMS $ltc_transaction_address_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -662,7 +668,7 @@ LtcTransactionAddressKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionUTXO(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcTransactionUTXO(
     \Tatum\Model\LtcTransactionUTXO $ltc_transaction_utxo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -698,7 +704,7 @@ LtcTransactionUTXO operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->litecoin()->ltcTransactionUTXOKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcTransactionUTXOKMS(
     \Tatum\Model\LtcTransactionUTXOKMS $ltc_transaction_utxokms
 ): \Tatum\Model\TransactionSigned
 ```

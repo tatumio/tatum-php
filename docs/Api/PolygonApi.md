@@ -9,7 +9,13 @@ layout: page
 [Polygon API Reference](https://apidoc.tatum.io/tag/Polygon/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->polygon();
+
+// TestNet API Call
+$sdk->testnet()->api()->polygon();
 ```
 
 ## Methods
@@ -42,7 +48,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethod(
     \Tatum\Model\CallPolygonSmartContractMethod $call_polygon_smart_contract_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -78,7 +84,7 @@ CallPolygonSmartContractMethod operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethodCaller(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethodCaller(
     \Tatum\Model\CallPolygonSmartContractMethodCaller $call_polygon_smart_contract_method_caller
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -114,7 +120,7 @@ CallPolygonSmartContractMethodCaller operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethodKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractMethodKMS(
     \Tatum\Model\CallPolygonSmartContractMethodKMS $call_polygon_smart_contract_method_kms
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -150,7 +156,7 @@ CallPolygonSmartContractMethodKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractReadMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->callPolygonSmartContractReadMethod(
     \Tatum\Model\CallPolygonSmartContractReadMethod $call_polygon_smart_contract_read_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -214,7 +220,7 @@ However, because this API can be run against any smart contract on the blockchai
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -252,7 +258,7 @@ Broadcast signed Polygon transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\GeneratedAddressMatic
@@ -292,7 +298,7 @@ Generate Polygon account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -330,7 +336,7 @@ Generate Polygon private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -374,7 +380,7 @@ Tatum follows BIP44 specification and generates for Polygon wallet with derivati
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGetBalance(
     string $address
 ): \Tatum\Model\MaticBalance
 ```
@@ -412,7 +418,7 @@ Get Polygon Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGetBlock(
     string $hash
 ): \Tatum\Model\EthBlock
 ```
@@ -450,7 +456,7 @@ Get Polygon block by hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGetCurrentBlock(
 ): float
 ```
 
@@ -485,7 +491,7 @@ Get current block number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGetTransaction(
     string $hash
 ): \Tatum\Model\PolygonTx
 ```
@@ -523,7 +529,7 @@ Get Polygon Transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetTransactionByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGetTransactionByAddress(
     string $address,
     float $page_size,
     [ float $offset, ]
@@ -571,7 +577,7 @@ Get Polygon transactions by address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGetTransactionCount(
     string $address
 ): float
 ```
@@ -609,7 +615,7 @@ Get count of outgoing Polygon transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->polygonWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonWeb3Driver(
     string $x_api_key,
     object $body
 ): object
@@ -651,7 +657,7 @@ Web3 HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->transferPolygonBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->transferPolygonBlockchain(
     \Tatum\Model\TransferPolygonBlockchain $transfer_polygon_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -697,7 +703,7 @@ Send MATIC from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->polygon()->transferPolygonBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->transferPolygonBlockchainKMS(
     \Tatum\Model\TransferPolygonBlockchainKMS $transfer_polygon_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```

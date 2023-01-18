@@ -9,7 +9,13 @@ layout: page
 [Withdrawal API Reference](https://apidoc.tatum.io/tag/Withdrawal/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->withdrawal()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->withdrawal();
+
+// TestNet API Call
+$sdk->testnet()->api()->withdrawal();
 ```
 
 ## Methods
@@ -30,7 +36,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->withdrawal()->broadcastBlockchainTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->withdrawal()->broadcastBlockchainTransaction(
     \Tatum\Model\BroadcastWithdrawal $broadcast_withdrawal
 ): \Tatum\Model\BroadcastResponse
 ```
@@ -68,7 +74,7 @@ Broadcast signed transaction and complete withdrawal
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->withdrawal()->cancelInProgressWithdrawal(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->withdrawal()->cancelInProgressWithdrawal(
     string $id,
     [ bool $revert = true ]
 )
@@ -110,7 +116,7 @@ Cancel withdrawal
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->withdrawal()->completeWithdrawal(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->withdrawal()->completeWithdrawal(
     string $id,
     string $tx_id
 )
@@ -150,7 +156,7 @@ Complete withdrawal
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->withdrawal()->getWithdrawals(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->withdrawal()->getWithdrawals(
     float $page_size,
     [ string $currency, ]
     [ string $status, ]
@@ -194,7 +200,7 @@ Get withdrawals.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->withdrawal()->storeWithdrawal(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->withdrawal()->storeWithdrawal(
     \Tatum\Model\Withdrawal $withdrawal
 ): \Tatum\Model\WithdrawalResponse
 ```

@@ -9,7 +9,13 @@ layout: page
 [Account API Reference](https://apidoc.tatum.io/tag/Account/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->account();
+
+// TestNet API Call
+$sdk->testnet()->api()->account();
 ```
 
 ## Methods
@@ -44,7 +50,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->activateAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->activateAccount(
     string $id
 )
 ```
@@ -82,7 +88,7 @@ Activates an account.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->blockAmount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->blockAmount(
     string $id,
     \Tatum\Model\BlockAmount $block_amount
 ): \Tatum\Model\Id
@@ -122,7 +128,7 @@ Block an amount in an account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->createAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->createAccount(
     \Tatum\Model\CreateAccount $create_account
 ): \Tatum\Model\Account
 ```
@@ -158,7 +164,7 @@ CreateAccount operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->createAccountBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->createAccountBatch(
     \Tatum\Model\CreateAccountBatch $create_account_batch
 ): \Tatum\Model\Account[]
 ```
@@ -196,7 +202,7 @@ Create multiple accounts in a batch call
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->createAccountXpub(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->createAccountXpub(
     \Tatum\Model\CreateAccountXpub $create_account_xpub
 ): \Tatum\Model\Account
 ```
@@ -270,7 +276,7 @@ Blockchain addresses on Elrond are generated based on the mnemonic of an Elrond 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->deactivateAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->deactivateAccount(
     string $id
 )
 ```
@@ -308,7 +314,7 @@ Deactivates an account. Only accounts with account and available balances of zer
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->deleteAllBlockAmount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->deleteAllBlockAmount(
     string $id
 )
 ```
@@ -346,7 +352,7 @@ Unblocks previously blocked amounts in an account. Increases the available balan
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->deleteBlockAmount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->deleteBlockAmount(
     string $id
 )
 ```
@@ -384,7 +390,7 @@ Unblocks a previously blocked amount in an account. Increases the available bala
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->freezeAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->freezeAccount(
     string $id
 )
 ```
@@ -422,7 +428,7 @@ Disables all outgoing transactions. Incoming transactions to the account are ava
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->getAccountBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->getAccountBalance(
     string $id
 ): \Tatum\Model\AccountBalance
 ```
@@ -460,7 +466,7 @@ Get balance for the account.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->getAccountByAccountId(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->getAccountByAccountId(
     string $id
 ): \Tatum\Model\Account
 ```
@@ -498,7 +504,7 @@ Gets active account by ID. Displays all information regarding the given account.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->getAccounts(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->getAccounts(
     [ float $page_size, ]
     [ float $page, ]
     [ string $sort, ]
@@ -552,7 +558,7 @@ Lists all accounts. Inactive accounts are also visible.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->getAccountsByCustomerId(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->getAccountsByCustomerId(
     float $page_size,
     string $id,
     [ float $offset, ]
@@ -596,7 +602,7 @@ Lists all accounts associated with a customer. Only active accounts are visible.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->getAccountsCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->getAccountsCount(
     [ float $page_size, ]
     [ float $page, ]
     [ string $sort, ]
@@ -650,7 +656,7 @@ Count of accounts that were found from /v3/ledger/account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->getBlockAmount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->getBlockAmount(
     string $id,
     float $page_size,
     [ float $offset ]
@@ -692,7 +698,7 @@ Gets blocked amounts for an account.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->getBlockAmountById(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->getBlockAmountById(
     string $id
 ): \Tatum\Model\Blockage
 ```
@@ -730,7 +736,7 @@ Gets blocked amount by id.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->unblockAmountWithTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->unblockAmountWithTransaction(
     string $id,
     \Tatum\Model\UnblockAmount $unblock_amount
 ): \Tatum\Model\TransactionResult
@@ -770,7 +776,7 @@ Unblock an amount in an account and perform a transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->unfreezeAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->unfreezeAccount(
     string $id
 )
 ```
@@ -808,7 +814,7 @@ Unfreezes a previously frozen account. Unfreezing a non-frozen account not affec
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->account()->updateAccountByAccountId(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->account()->updateAccountByAccountId(
     string $id,
     \Tatum\Model\UpdateAccount $update_account
 )

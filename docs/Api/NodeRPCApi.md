@@ -9,7 +9,13 @@ layout: page
 [Node RPC API Reference](https://apidoc.tatum.io/tag/Node-RPC/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nodeRPC()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->nodeRPC();
+
+// TestNet API Call
+$sdk->testnet()->api()->nodeRPC();
 ```
 
 ## Methods
@@ -28,7 +34,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonPostRpcDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonPostRpcDriver(
     string $chain,
     object $body,
     [ string $x_api_key, ]
@@ -98,7 +104,7 @@ Connect to the blockchain node through an RPC driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcGetDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcGetDriver(
     string $chain,
     [ string $x_api_key, ]
     [ string $node_type, ]
@@ -150,7 +156,7 @@ Connect to the blockchain node through an RPC driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcPutDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nodeRPC()->nodeJsonRpcPutDriver(
     string $chain,
     object $body,
     [ string $x_api_key, ]

@@ -7,7 +7,13 @@ layout: page
 # Local/Transaction/Ethereum
 
 ```php
-$sdk->{mainnet/testnet}()->local()->transaction()->ethereum()
+$sdk = new \Tatum\Sdk();
+
+// MainNet Local/Transaction/Ethereum
+$sdk->mainnet()->local()->transaction()->ethereum();
+
+// TestNet Local/Transaction/Ethereum
+$sdk->testnet()->local()->transaction()->ethereum();
 ```
 
 Ethereum Transaction
@@ -21,7 +27,7 @@ Method | Description
 ## Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->local()->transaction()->ethereum()->sign(
+(new \Tatum\Sdk())->{mainnet/testnet}()->local()->transaction()->ethereum()->sign(
     \Tatum\Model\TransferEthBlockchain $transfer
 ): string
 ```

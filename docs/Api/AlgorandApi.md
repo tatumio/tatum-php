@@ -9,7 +9,13 @@ layout: page
 [Algorand API Reference](https://apidoc.tatum.io/tag/Algorand/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->algorand();
+
+// TestNet API Call
+$sdk->testnet()->api()->algorand();
 ```
 
 ## Methods
@@ -40,7 +46,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algoNodeGetDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algoNodeGetDriver(
     string $x_api_key,
     string $algod_path
 ): \Tatum\Model\AlgoBlock
@@ -86,7 +92,7 @@ Access Algorand Algod GET node endpoints
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algoNodeIndexerGetDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algoNodeIndexerGetDriver(
     string $x_api_key,
     string $indexer_path
 ): \Tatum\Model\AlgoTx
@@ -132,7 +138,7 @@ Access Algorand Indexer GET node endpoints
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algoNodePostDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algoNodePostDriver(
     string $x_api_key,
     string $algod_path,
     \Tatum\Model\AlgoNodePostDriverRequest $algo_node_post_driver_request
@@ -180,7 +186,7 @@ Access Algorand Algod POST node endpoints
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algoandBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algoandBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\AlgoTransactionHashKMS
 ```
@@ -218,7 +224,7 @@ Broadcast signed Algorand transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGenerateAddress(
     string $priv
 ): \Tatum\Model\AlgorandGenerateAddress200Response
 ```
@@ -256,7 +262,7 @@ Generate Algorand account address from private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\AlgoWallet
 ```
@@ -294,7 +300,7 @@ Tatum supports Algorand wallets.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGetBalance(
     string $address
 ): \Tatum\Model\AlgorandGetBalance200Response
 ```
@@ -332,7 +338,7 @@ Get Algorand Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGetBlock(
     float $round_number
 ): \Tatum\Model\AlgoBlock
 ```
@@ -370,7 +376,7 @@ Get Algorand block by block round number.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGetCurrentBlock(
 ): float
 ```
 
@@ -405,7 +411,7 @@ Get Algorand current block number. This is the number of the latest block in the
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetPayTransactionsByFromTo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGetPayTransactionsByFromTo(
     string $from,
     string $to,
     [ string $limit, ]
@@ -451,7 +457,7 @@ Get Algorand Transactions between from and to
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->algorandGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGetTransaction(
     string $txid
 ): \Tatum\Model\AlgoTx
 ```
@@ -489,7 +495,7 @@ Get Algorand transaction by transaction id.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->receiveAlgorandAsset(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->receiveAlgorandAsset(
     \Tatum\Model\ReceiveAlgorandAsset $receive_algorand_asset
 ): \Tatum\Model\TransactionSigned
 ```
@@ -529,7 +535,7 @@ Enable receiving asset on account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->receiveAlgorandAssetKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->receiveAlgorandAssetKMS(
     \Tatum\Model\ReceiveAlgorandAssetKMS $receive_algorand_asset_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -565,7 +571,7 @@ ReceiveAlgorandAssetKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->transferAlgorandBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->transferAlgorandBlockchain(
     \Tatum\Model\TransferAlgorandBlockchain $transfer_algorand_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -611,7 +617,7 @@ Send Algos to an Algorand account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->algorand()->transferAlgorandBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->transferAlgorandBlockchainKMS(
     \Tatum\Model\TransferAlgorandBlockchainKMS $transfer_algorand_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```

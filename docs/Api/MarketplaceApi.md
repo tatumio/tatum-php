@@ -9,7 +9,13 @@ layout: page
 [Marketplace API Reference](https://apidoc.tatum.io/tag/Marketplace/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->marketplace();
+
+// TestNet API Call
+$sdk->testnet()->api()->marketplace();
 ```
 
 ## Methods
@@ -72,7 +78,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->bloMarWithdrawFromMarketplaceSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->bloMarWithdrawFromMarketplaceSolana(
     \Tatum\Model\WithdrawFromMarketplaceSolana $withdraw_from_marketplace_solana
 ): \Tatum\Model\TransactionSigned
 ```
@@ -122,7 +128,7 @@ Withdraw funds from the marketplace treasury account on Solana
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->bloMarWithdrawFromMarketplaceSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->bloMarWithdrawFromMarketplaceSolanaKMS(
     \Tatum\Model\WithdrawFromMarketplaceSolanaKMS $withdraw_from_marketplace_solana_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -158,7 +164,7 @@ WithdrawFromMarketplaceSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplace(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplace(
     \Tatum\Model\BuyAssetOnMarketplace $buy_asset_on_marketplace
 ): \Tatum\Model\TransactionSigned
 ```
@@ -222,7 +228,7 @@ Buy an asset on the NFT marketplace
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceCelo(
     \Tatum\Model\BuyAssetOnMarketplaceCelo $buy_asset_on_marketplace_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -258,7 +264,7 @@ BuyAssetOnMarketplaceCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceCeloKMS(
     \Tatum\Model\BuyAssetOnMarketplaceCeloKMS $buy_asset_on_marketplace_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -294,7 +300,7 @@ BuyAssetOnMarketplaceCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceKMS(
     \Tatum\Model\BuyAssetOnMarketplaceKMS $buy_asset_on_marketplace_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -330,7 +336,7 @@ BuyAssetOnMarketplaceKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceSolana(
     \Tatum\Model\BuyAssetOnMarketplaceSolana $buy_asset_on_marketplace_solana
 ): \Tatum\Model\TransactionSigned
 ```
@@ -366,7 +372,7 @@ BuyAssetOnMarketplaceSolana operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->buyAssetOnMarketplaceSolanaKMS(
     \Tatum\Model\BuyAssetOnMarketplaceSolanaKMS $buy_asset_on_marketplace_solana_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -402,7 +408,7 @@ BuyAssetOnMarketplaceSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplace(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplace(
     \Tatum\Model\CancelSellAssetOnMarketplace $cancel_sell_asset_on_marketplace
 ): \Tatum\Model\TransactionSigned
 ```
@@ -464,7 +470,7 @@ Cancel the selling of an asset on the NFT marketplace
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceCelo(
     \Tatum\Model\CancelSellAssetOnMarketplaceCelo $cancel_sell_asset_on_marketplace_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -500,7 +506,7 @@ CancelSellAssetOnMarketplaceCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceCeloKMS(
     \Tatum\Model\CancelSellAssetOnMarketplaceCeloKMS $cancel_sell_asset_on_marketplace_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -536,7 +542,7 @@ CancelSellAssetOnMarketplaceCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceKMS(
     \Tatum\Model\CancelSellAssetOnMarketplaceKMS $cancel_sell_asset_on_marketplace_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -572,7 +578,7 @@ CancelSellAssetOnMarketplaceKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceSolana(
     \Tatum\Model\CancelSellAssetOnMarketplaceSolana $cancel_sell_asset_on_marketplace_solana
 ): \Tatum\Model\TransactionSigned
 ```
@@ -608,7 +614,7 @@ CancelSellAssetOnMarketplaceSolana operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->cancelSellAssetOnMarketplaceSolanaKMS(
     \Tatum\Model\CancelSellAssetOnMarketplaceSolanaKMS $cancel_sell_asset_on_marketplace_solana_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -644,7 +650,7 @@ CancelSellAssetOnMarketplaceSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplace(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->generateMarketplace(
     \Tatum\Model\GenerateMarketplace $generate_marketplace
 ): \Tatum\Model\GenerateMarketplace200Response
 ```
@@ -710,7 +716,7 @@ Create an NFT marketplace
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceCelo(
     \Tatum\Model\GenerateMarketplaceCelo $generate_marketplace_celo
 ): \Tatum\Model\GenerateMarketplace200Response
 ```
@@ -746,7 +752,7 @@ GenerateMarketplaceCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceCeloKMS(
     \Tatum\Model\GenerateMarketplaceCeloKMS $generate_marketplace_celo_kms
 ): \Tatum\Model\GenerateMarketplace200Response
 ```
@@ -782,7 +788,7 @@ GenerateMarketplaceCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceKMS(
     \Tatum\Model\GenerateMarketplaceKMS $generate_marketplace_kms
 ): \Tatum\Model\GenerateMarketplace200Response
 ```
@@ -818,7 +824,7 @@ GenerateMarketplaceKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceSolana(
     \Tatum\Model\GenerateMarketplaceSolana $generate_marketplace_solana
 ): \Tatum\Model\GenerateMarketplace200Response
 ```
@@ -854,7 +860,7 @@ GenerateMarketplaceSolana operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->generateMarketplaceSolanaKMS(
     \Tatum\Model\GenerateMarketplaceSolanaKMS $generate_marketplace_solana_kms
 ): \Tatum\Model\GenerateMarketplace200Response
 ```
@@ -890,7 +896,7 @@ GenerateMarketplaceSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFee(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFee(
     string $chain,
     string $contract_address
 ): float
@@ -936,7 +942,7 @@ Get the NFT marketplace fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFeeRecipient(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->getMarketplaceFeeRecipient(
     string $chain,
     string $contract_address
 ): \Tatum\Model\GetMarketplaceFeeRecipient200Response
@@ -982,7 +988,7 @@ Get the recipient of the NFT marketplace fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->getMarketplaceInfo(
     string $chain,
     string $contract_address
 ): \Tatum\Model\GetMarketplaceInfo200Response
@@ -1024,7 +1030,7 @@ Get information about an NFT marketplace on Solana
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListing(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListing(
     string $chain,
     string $contract_address,
     string $id
@@ -1072,7 +1078,7 @@ Get information about a listing on the NFT marketplace
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListings(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->getMarketplaceListings(
     string $chain,
     string $contract_address,
     string $type
@@ -1120,7 +1126,7 @@ Get the listings of a certain type from the NFT marketplace
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplace(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplace(
     \Tatum\Model\SellAssetOnMarketplace $sell_asset_on_marketplace
 ): \Tatum\Model\SellAssetOnMarketplace200Response
 ```
@@ -1182,7 +1188,7 @@ Sell an asset on the NFT marketplace
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceCelo(
     \Tatum\Model\SellAssetOnMarketplaceCelo $sell_asset_on_marketplace_celo
 ): \Tatum\Model\SellAssetOnMarketplace200Response
 ```
@@ -1218,7 +1224,7 @@ SellAssetOnMarketplaceCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceCeloKMS(
     \Tatum\Model\SellAssetOnMarketplaceCeloKMS $sell_asset_on_marketplace_celo_kms
 ): \Tatum\Model\SellAssetOnMarketplace200Response
 ```
@@ -1254,7 +1260,7 @@ SellAssetOnMarketplaceCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceKMS(
     \Tatum\Model\SellAssetOnMarketplaceKMS $sell_asset_on_marketplace_kms
 ): \Tatum\Model\SellAssetOnMarketplace200Response
 ```
@@ -1290,7 +1296,7 @@ SellAssetOnMarketplaceKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceSolana(
     \Tatum\Model\SellAssetOnMarketplaceSolana $sell_asset_on_marketplace_solana
 ): \Tatum\Model\SellAssetOnMarketplace200Response
 ```
@@ -1326,7 +1332,7 @@ SellAssetOnMarketplaceSolana operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->sellAssetOnMarketplaceSolanaKMS(
     \Tatum\Model\SellAssetOnMarketplaceSolanaKMS $sell_asset_on_marketplace_solana_kms
 ): \Tatum\Model\SellAssetOnMarketplace200Response
 ```
@@ -1362,7 +1368,7 @@ SellAssetOnMarketplaceSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFee(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFee(
     \Tatum\Model\UpdateFee $update_fee
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1416,7 +1422,7 @@ Update the NFT marketplace fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeCelo(
     \Tatum\Model\UpdateFeeCelo $update_fee_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1452,7 +1458,7 @@ UpdateFeeCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeCeloKMS(
     \Tatum\Model\UpdateFeeCeloKMS $update_fee_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1488,7 +1494,7 @@ UpdateFeeCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeKMS(
     \Tatum\Model\UpdateFeeKMS $update_fee_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1524,7 +1530,7 @@ UpdateFeeKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipient(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipient(
     \Tatum\Model\UpdateFeeRecipient $update_fee_recipient
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1578,7 +1584,7 @@ Update the recipient of the NFT marketplace fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientCelo(
     \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1614,7 +1620,7 @@ UpdateFeeRecipientCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientCeloKMS(
     \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1650,7 +1656,7 @@ UpdateFeeRecipientCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientKMS(
     \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1686,7 +1692,7 @@ UpdateFeeRecipientKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientSolana(
     \Tatum\Model\UpdateFeeRecipientSolana $update_fee_recipient_solana
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1722,7 +1728,7 @@ UpdateFeeRecipientSolana operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeRecipientSolanaKMS(
     \Tatum\Model\UpdateFeeRecipientSolanaKMS $update_fee_recipient_solana_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1758,7 +1764,7 @@ UpdateFeeRecipientSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeSolana(
     \Tatum\Model\UpdateFeeSolana $update_fee_solana
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1794,7 +1800,7 @@ UpdateFeeSolana operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateFeeSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateFeeSolanaKMS(
     \Tatum\Model\UpdateFeeSolanaKMS $update_fee_solana_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1830,7 +1836,7 @@ UpdateFeeSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplaceSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateMarketplaceSolana(
     \Tatum\Model\UpdateMarketplaceSolana $update_marketplace_solana
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1880,7 +1886,7 @@ Update an NFT marketplace on Solana
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->updateMarketplaceSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->updateMarketplaceSolanaKMS(
     \Tatum\Model\UpdateMarketplaceSolanaKMS $update_marketplace_solana_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1916,7 +1922,7 @@ UpdateMarketplaceSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFromMarketplaceSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->withdrawFromMarketplaceSolana(
     \Tatum\Model\WithdrawFromMarketplaceSolana $withdraw_from_marketplace_solana
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1966,7 +1972,7 @@ Withdraw funds from the marketplace fee account on Solana
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->marketplace()->withdrawFromMarketplaceSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->marketplace()->withdrawFromMarketplaceSolanaKMS(
     \Tatum\Model\WithdrawFromMarketplaceSolanaKMS $withdraw_from_marketplace_solana_kms
 ): \Tatum\Model\TransactionSigned
 ```

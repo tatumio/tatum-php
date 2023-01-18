@@ -9,7 +9,13 @@ layout: page
 [NFT (ERC-721 or compatible) API Reference](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->nFTERC721OrCompatible();
+
+// TestNet API Call
+$sdk->testnet()->api()->nFTERC721OrCompatible();
 ```
 
 ## Methods
@@ -105,7 +111,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->addNftMinter(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->addNftMinter(
     \Tatum\Model\AddNftMinter $add_nft_minter,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -163,7 +169,7 @@ Add a blockchain address as an NFT minter to an NFT smart contract
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->addNftMinterKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->addNftMinterKMS(
     \Tatum\Model\AddNftMinterKMS $add_nft_minter_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -201,7 +207,7 @@ AddNftMinterKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNft(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNft(
     \Tatum\Model\BurnNft $burn_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -261,7 +267,7 @@ Burn an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftAlgo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftAlgo(
     \Tatum\Model\BurnNftAlgo $burn_nft_algo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -299,7 +305,7 @@ BurnNftAlgo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftCelo(
     \Tatum\Model\BurnNftCelo $burn_nft_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -337,7 +343,7 @@ BurnNftCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowKMS(
     \Tatum\Model\BurnNftFlowKMS $burn_nft_flow_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -375,7 +381,7 @@ BurnNftFlowKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowMnemonic(
     \Tatum\Model\BurnNftFlowMnemonic $burn_nft_flow_mnemonic,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -413,7 +419,7 @@ BurnNftFlowMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowPK(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftFlowPK(
     \Tatum\Model\BurnNftFlowPK $burn_nft_flow_pk,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -451,7 +457,7 @@ BurnNftFlowPK operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMS(
     \Tatum\Model\BurnNftKMS $burn_nft_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -489,7 +495,7 @@ BurnNftKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMSCelo(
     \Tatum\Model\BurnNftKMSCelo $burn_nft_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -527,7 +533,7 @@ BurnNftKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMSTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftKMSTron(
     \Tatum\Model\BurnNftKMSTron $burn_nft_kms_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -565,7 +571,7 @@ BurnNftKMSTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->burnNftTron(
     \Tatum\Model\BurnNftTron $burn_nft_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -603,7 +609,7 @@ BurnNftTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNft(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNft(
     \Tatum\Model\DeployNft $deploy_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -683,7 +689,7 @@ Deploy an NFT smart contract
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftCelo(
     \Tatum\Model\DeployNftCelo $deploy_nft_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -721,7 +727,7 @@ DeployNftCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftCeloKMS(
     \Tatum\Model\DeployNftCeloKMS $deploy_nft_celo_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -759,7 +765,7 @@ DeployNftCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowKMS(
     \Tatum\Model\DeployNftFlowKMS $deploy_nft_flow_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -797,7 +803,7 @@ DeployNftFlowKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowMnemonic(
     \Tatum\Model\DeployNftFlowMnemonic $deploy_nft_flow_mnemonic,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -835,7 +841,7 @@ DeployNftFlowMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowPK(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftFlowPK(
     \Tatum\Model\DeployNftFlowPK $deploy_nft_flow_pk,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -873,7 +879,7 @@ DeployNftFlowPK operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftKMS(
     \Tatum\Model\DeployNftKMS $deploy_nft_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -911,7 +917,7 @@ DeployNftKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftTron(
     \Tatum\Model\DeployNftTron $deploy_nft_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -949,7 +955,7 @@ DeployNftTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftTronKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->deployNftTronKMS(
     \Tatum\Model\DeployNftTronKMS $deploy_nft_tron_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -987,7 +993,7 @@ DeployNftTronKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNft(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNft(
     \Tatum\Model\MintMultipleNft $mint_multiple_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1025,7 +1031,7 @@ MintMultipleNft operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftCelo(
     \Tatum\Model\MintMultipleNftCelo $mint_multiple_nft_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1063,7 +1069,7 @@ MintMultipleNftCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowKMS(
     \Tatum\Model\MintMultipleNftFlowKMS $mint_multiple_nft_flow_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1101,7 +1107,7 @@ MintMultipleNftFlowKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowMnemonic(
     \Tatum\Model\MintMultipleNftFlowMnemonic $mint_multiple_nft_flow_mnemonic,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1139,7 +1145,7 @@ MintMultipleNftFlowMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowPK(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftFlowPK(
     \Tatum\Model\MintMultipleNftFlowPK $mint_multiple_nft_flow_pk,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1177,7 +1183,7 @@ MintMultipleNftFlowPK operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMS(
     \Tatum\Model\MintMultipleNftKMS $mint_multiple_nft_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1215,7 +1221,7 @@ MintMultipleNftKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMSCelo(
     \Tatum\Model\MintMultipleNftKMSCelo $mint_multiple_nft_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1253,7 +1259,7 @@ MintMultipleNftKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMSTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftKMSTron(
     \Tatum\Model\MintMultipleNftKMSTron $mint_multiple_nft_kms_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1291,7 +1297,7 @@ MintMultipleNftKMSTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftMinter(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftMinter(
     \Tatum\Model\MintMultipleNftMinter $mint_multiple_nft_minter,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1361,7 +1367,7 @@ Mint multiple NFTs
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintMultipleNftTron(
     \Tatum\Model\MintMultipleNftTron $mint_multiple_nft_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintMultipleNftMinter200Response
@@ -1399,7 +1405,7 @@ MintMultipleNftTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNft(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNft(
     \Tatum\Model\MintNft $mint_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1439,7 +1445,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftAlgorand(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftAlgorand(
     \Tatum\Model\MintNftAlgorand $mint_nft_algorand,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1479,7 +1485,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftAlgorandKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftAlgorandKMS(
     \Tatum\Model\MintNftAlgorandKMS $mint_nft_algorand_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1519,7 +1525,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftCelo(
     \Tatum\Model\MintNftCelo $mint_nft_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1559,7 +1565,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpress(
     \Tatum\Model\MintNftExpress $mint_nft_express,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1599,7 +1605,7 @@ For more information, see "Use the pre-built smart contract provided by Tatum to
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpressAlgorand(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpressAlgorand(
     \Tatum\Model\MintNftExpressAlgorand $mint_nft_express_algorand,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1639,7 +1645,7 @@ For more information, see "Use the pre-built smart contract provided by Tatum to
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpressSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftExpressSolana(
     \Tatum\Model\MintNftExpressSolana $mint_nft_express_solana,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1679,7 +1685,7 @@ For more information, see "Use the pre-built smart contract provided by Tatum to
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowKMS(
     \Tatum\Model\MintNftFlowKMS $mint_nft_flow_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1719,7 +1725,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowMnemonic(
     \Tatum\Model\MintNftFlowMnemonic $mint_nft_flow_mnemonic,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1759,7 +1765,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowPK(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftFlowPK(
     \Tatum\Model\MintNftFlowPK $mint_nft_flow_pk,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1799,7 +1805,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMS(
     \Tatum\Model\MintNftKMS $mint_nft_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1839,7 +1845,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMSCelo(
     \Tatum\Model\MintNftKMSCelo $mint_nft_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1879,7 +1885,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMSTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftKMSTron(
     \Tatum\Model\MintNftKMSTron $mint_nft_kms_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1919,7 +1925,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftMinter(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftMinter(
     \Tatum\Model\MintNftMinter $mint_nft_minter,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1959,7 +1965,7 @@ For more information, see "Use your own smart contract to mint NFTs" in Mint an 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftSolana(
     \Tatum\Model\MintNftSolana $mint_nft_solana,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -1999,7 +2005,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftSolanaKMS(
     \Tatum\Model\MintNftSolanaKMS $mint_nft_solana_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -2039,7 +2045,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->mintNftTron(
     \Tatum\Model\MintNftTron $mint_nft_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\MintNftExpress200Response
@@ -2079,7 +2085,7 @@ For more information, see "Minting NFTs natively on a blockchain" in Mint an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetBalanceErc721(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetBalanceErc721(
     string $chain,
     string $address,
     string $contract_address,
@@ -2131,7 +2137,7 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetContractAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetContractAddress(
     string $chain,
     string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
@@ -2183,7 +2189,7 @@ This endpoint is deprecated. Do not use it.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetMetadataErc721(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetMetadataErc721(
     string $chain,
     string $contract_address,
     string $token_id,
@@ -2235,7 +2241,7 @@ Get NFT metadata
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetProvenanceDataErc721(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetProvenanceDataErc721(
     string $chain,
     string $contract_address,
     string $token_id,
@@ -2287,7 +2293,7 @@ Get NFT provenance information
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetRoyaltyErc721(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetRoyaltyErc721(
     string $chain,
     string $contract_address,
     string $token_id,
@@ -2337,7 +2343,7 @@ Get NFT royalty information
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByAddressErc721(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByAddressErc721(
     string $chain,
     string $address
 ): \Tatum\Model\NftTokenByAddressErc721[]
@@ -2385,7 +2391,7 @@ Get all NFTs that a blockchain address holds
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTokensByCollectionErc721(
     string $chain,
     float $page_size,
     string $address,
@@ -2435,7 +2441,7 @@ Get all NFTs from a collection
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactErc721(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactErc721(
     string $chain,
     string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
@@ -2483,7 +2489,7 @@ Get an NFT transaction by its hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByAddress(
     string $chain,
     string $address,
     string $token_address,
@@ -2539,7 +2545,7 @@ Get NFT transactions on a blockchain address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByToken(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetTransactionByToken(
     string $chain,
     string $token_id,
     string $token_address,
@@ -2595,7 +2601,7 @@ Get NFT transactions for an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNft(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNft(
     \Tatum\Model\TransferNft $transfer_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2671,7 +2677,7 @@ Transfer an NFT
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgo(
     \Tatum\Model\TransferNftAlgo $transfer_nft_algo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2709,7 +2715,7 @@ TransferNftAlgo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgoExpress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgoExpress(
     \Tatum\Model\TransferNftAlgoExpress $transfer_nft_algo_express,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2747,7 +2753,7 @@ TransferNftAlgoExpress operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgoKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftAlgoKMS(
     \Tatum\Model\TransferNftAlgoKMS $transfer_nft_algo_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2785,7 +2791,7 @@ TransferNftAlgoKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftCelo(
     \Tatum\Model\TransferNftCelo $transfer_nft_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2823,7 +2829,7 @@ TransferNftCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowKMS(
     \Tatum\Model\TransferNftFlowKMS $transfer_nft_flow_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2861,7 +2867,7 @@ TransferNftFlowKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowMnemonic(
     \Tatum\Model\TransferNftFlowMnemonic $transfer_nft_flow_mnemonic,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2899,7 +2905,7 @@ TransferNftFlowMnemonic operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowPK(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftFlowPK(
     \Tatum\Model\TransferNftFlowPK $transfer_nft_flow_pk,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2937,7 +2943,7 @@ TransferNftFlowPK operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMS(
     \Tatum\Model\TransferNftKMS $transfer_nft_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -2975,7 +2981,7 @@ TransferNftKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMSCelo(
     \Tatum\Model\TransferNftKMSCelo $transfer_nft_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3013,7 +3019,7 @@ TransferNftKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMSTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftKMSTron(
     \Tatum\Model\TransferNftKMSTron $transfer_nft_kms_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3051,7 +3057,7 @@ TransferNftKMSTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftSolana(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftSolana(
     \Tatum\Model\TransferNftSolana $transfer_nft_solana,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3089,7 +3095,7 @@ TransferNftSolana operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftSolanaKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftSolanaKMS(
     \Tatum\Model\TransferNftSolanaKMS $transfer_nft_solana_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3127,7 +3133,7 @@ TransferNftSolanaKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->transferNftTron(
     \Tatum\Model\TransferNftTron $transfer_nft_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3165,7 +3171,7 @@ TransferNftTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNft(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNft(
     \Tatum\Model\UpdateCashbackValueForAuthorNft $update_cashback_value_for_author_nft,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3225,7 +3231,7 @@ Update NFT royalty information
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftCelo(
     \Tatum\Model\UpdateCashbackValueForAuthorNftCelo $update_cashback_value_for_author_nft_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3263,7 +3269,7 @@ UpdateCashbackValueForAuthorNftCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMS(
     \Tatum\Model\UpdateCashbackValueForAuthorNftKMS $update_cashback_value_for_author_nft_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3301,7 +3307,7 @@ UpdateCashbackValueForAuthorNftKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSCelo(
     \Tatum\Model\UpdateCashbackValueForAuthorNftKMSCelo $update_cashback_value_for_author_nft_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3339,7 +3345,7 @@ UpdateCashbackValueForAuthorNftKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftKMSTron(
     \Tatum\Model\UpdateCashbackValueForAuthorNftKMSTron $update_cashback_value_for_author_nft_kms_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3377,7 +3383,7 @@ UpdateCashbackValueForAuthorNftKMSTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->updateCashbackValueForAuthorNftTron(
     \Tatum\Model\UpdateCashbackValueForAuthorNftTron $update_cashback_value_for_author_nft_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -3415,7 +3421,7 @@ UpdateCashbackValueForAuthorNftTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->verifySolanaNFT(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->verifySolanaNFT(
     \Tatum\Model\VerifySolanaNFT $verify_solana_nft
 ): \Tatum\Model\TransactionSigned
 ```
@@ -3465,7 +3471,7 @@ Verify an NFT in an NFT collection on Solana
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->verifySolanaNFTKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->verifySolanaNFTKMS(
     \Tatum\Model\VerifySolanaNFTKMS $verify_solana_nftkms
 ): \Tatum\Model\TransactionSigned
 ```

@@ -9,7 +9,13 @@ layout: page
 [Dogecoin API Reference](https://apidoc.tatum.io/tag/Dogecoin/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->dogecoin();
+
+// TestNet API Call
+$sdk->testnet()->api()->dogecoin();
 ```
 
 ## Methods
@@ -38,7 +44,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -76,7 +82,7 @@ Broadcast signed Dogecoin transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\DogeGenerateAddress200Response
@@ -116,7 +122,7 @@ Generate Dogecoin deposit address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -154,7 +160,7 @@ Generate Dogecoin private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -198,7 +204,7 @@ Tatum follows BIP44 specification and generates for Dogecoin wallet with derivat
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlock(
     string $hash
 ): \Tatum\Model\DogeBlock
 ```
@@ -236,7 +242,7 @@ Get Dogecoin Block detail by block hash or height.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockChainInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockChainInfo(
 ): \Tatum\Model\DogeInfo
 ```
 
@@ -271,7 +277,7 @@ Get Dogecoin Blockchain Information. Obtain basic info like testnet / mainnet ve
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockHash(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockHash(
     float $i
 ): \Tatum\Model\LtcGetBlockHash200Response
 ```
@@ -309,7 +315,7 @@ Get Dogecoin Block hash. Returns hash of the block to get the block detail.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetMempool(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetMempool(
 ): string[]
 ```
 
@@ -344,7 +350,7 @@ Get Dogecoin Transaction ids in the mempool.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetRawTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetRawTransaction(
     string $hash
 ): \Tatum\Model\DogeTx
 ```
@@ -382,7 +388,7 @@ Get Dogecoin Transaction detail by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeGetUTXO(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetUTXO(
     string $hash,
     float $index
 ): \Tatum\Model\DogeUTXO
@@ -428,7 +434,7 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeRpcDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeRpcDriver(
     \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
 ): object
 ```
@@ -468,7 +474,7 @@ JSON RPC HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransactionUTXO(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeTransactionUTXO(
     \Tatum\Model\DogeTransactionUTXO $doge_transaction_utxo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -528,7 +534,7 @@ Send DOGE to Dogecoin addresses
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->dogecoin()->dogeTransactionUTXOKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeTransactionUTXOKMS(
     \Tatum\Model\DogeTransactionUTXOKMS $doge_transaction_utxokms
 ): \Tatum\Model\TransactionSigned
 ```

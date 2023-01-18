@@ -9,7 +9,13 @@ layout: page
 [VeChain API Reference](https://apidoc.tatum.io/tag/VeChain/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->veChain();
+
+// TestNet API Call
+$sdk->testnet()->api()->veChain();
 ```
 
 ## Methods
@@ -37,7 +43,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->transferVetBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->transferVetBlockchain(
     \Tatum\Model\TransferVetBlockchain $transfer_vet_blockchain
 ): \Tatum\Model\TransactionHash
 ```
@@ -77,7 +83,7 @@ Send VeChain from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->transferVetBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->transferVetBlockchainKMS(
     \Tatum\Model\TransferVetBlockchainKMS $transfer_vet_blockchain_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -113,7 +119,7 @@ TransferVetBlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -151,7 +157,7 @@ Broadcast signed VeChain transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\VetGenerateAddress200Response
@@ -191,7 +197,7 @@ Generate VeChain account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -229,7 +235,7 @@ Generate VeChain private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -273,7 +279,7 @@ Tatum follows BIP44 specification and generates for VeChain wallet with derivati
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGetBalance(
     string $address
 ): \Tatum\Model\VetGetBalance200Response
 ```
@@ -311,7 +317,7 @@ Get VeChain Account balance in VET.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGetBlock(
     string $hash
 ): \Tatum\Model\VetBlock
 ```
@@ -349,7 +355,7 @@ Get VeChain Block by block hash or block number.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGetCurrentBlock(
 ): float
 ```
 
@@ -384,7 +390,7 @@ Get VeChain current block number.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGetEnergy(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGetEnergy(
     string $address
 ): \Tatum\Model\VetGetEnergy200Response
 ```
@@ -422,7 +428,7 @@ Get VeChain Account energy in VTHO. VTHO is used for paying for the transaction 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGetTransaction(
     string $hash
 ): \Tatum\Model\VetTx
 ```
@@ -460,7 +466,7 @@ Get VeChain Transaction by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->veChain()->vetGetTransactionReceipt(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGetTransactionReceipt(
     string $hash
 ): \Tatum\Model\VetTxReceipt
 ```

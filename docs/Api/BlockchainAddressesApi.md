@@ -9,7 +9,13 @@ layout: page
 [Blockchain addresses API Reference](https://apidoc.tatum.io/tag/Blockchain-addresses/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainAddresses()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->blockchainAddresses();
+
+// TestNet API Call
+$sdk->testnet()->api()->blockchainAddresses();
 ```
 
 ## Methods
@@ -31,7 +37,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->addressExists(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainAddresses()->addressExists(
     string $currency,
     string $address,
     [ float $index ]
@@ -75,7 +81,7 @@ Check whether a blockchain address is assigned to a virtual account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->assignAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainAddresses()->assignAddress(
     string $id,
     string $address,
     [ float $index ]
@@ -131,7 +137,7 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddress(
     string $id,
     [ float $index ]
 ): \Tatum\Model\Address
@@ -197,7 +203,7 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddressesBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainAddresses()->generateDepositAddressesBatch(
     \Tatum\Model\OffchainAddresses $offchain_addresses
 ): \Tatum\Model\Address[]
 ```
@@ -261,7 +267,7 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->getAllDepositAddresses(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainAddresses()->getAllDepositAddresses(
     string $id
 ): \Tatum\Model\Address[]
 ```
@@ -299,7 +305,7 @@ Get all deposit addresses for a virtual account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainAddresses()->removeAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainAddresses()->removeAddress(
     string $id,
     string $address,
     [ float $index ]

@@ -9,7 +9,13 @@ layout: page
 [BNB Beacon Chain API Reference](https://apidoc.tatum.io/tag/BNB-Beacon-Chain/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->bNBBeaconChain();
+
+// TestNet API Call
+$sdk->testnet()->api()->bNBBeaconChain();
 ```
 
 ## Methods
@@ -34,7 +40,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbBroadcast(
     \Tatum\Model\Broadcast $broadcast
 ): \Tatum\Model\TransactionHash
 ```
@@ -72,7 +78,7 @@ Broadcast signed BNB transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGenerateWallet(
 ): \Tatum\Model\BnbWallet
 ```
 
@@ -107,7 +113,7 @@ Generate Binance wallet
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetAccount(
     string $address
 ): \Tatum\Model\BnbAccount
 ```
@@ -145,7 +151,7 @@ Get Binance Account Detail by address.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetBlock(
     float $height
 ): \Tatum\Model\BnbBlock
 ```
@@ -183,7 +189,7 @@ Get Transactions in block by block height.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetCurrentBlock(
 ): float
 ```
 
@@ -218,7 +224,7 @@ Get Binance current block number.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTransaction(
     string $hash
 ): \Tatum\Model\BnbTx
 ```
@@ -256,7 +262,7 @@ Get Binance Transaction by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTxByAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetTxByAccount(
     string $address,
     float $start_time,
     float $end_time,
@@ -306,7 +312,7 @@ Get Binance Transactions by address.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->transferBnbBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->transferBnbBlockchain(
     \Tatum\Model\TransferBnbBlockchain $transfer_bnb_blockchain
 ): \Tatum\Model\TransactionHash
 ```
@@ -346,7 +352,7 @@ Send Binance / Binance Token from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bNBBeaconChain()->transferBnbBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->transferBnbBlockchainKMS(
     \Tatum\Model\TransferBnbBlockchainKMS $transfer_bnb_blockchain_kms
 ): \Tatum\Model\TransactionHash
 ```

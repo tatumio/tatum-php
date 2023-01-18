@@ -9,7 +9,13 @@ layout: page
 [Elrond API Reference](https://apidoc.tatum.io/tag/Elrond/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->elrond();
+
+// TestNet API Call
+$sdk->testnet()->api()->elrond();
 ```
 
 ## Methods
@@ -39,7 +45,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->eGldGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->eGldGetCurrentBlock(
 ): float
 ```
 
@@ -74,7 +80,7 @@ Get current block number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -112,7 +118,7 @@ Broadcast signed EGLD transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldGenerateAddress(
     string $mnemonic,
     float $index
 ): \Tatum\Model\EgldGenerateAddress200Response
@@ -152,7 +158,7 @@ Generate EGLD account address from mnemonic
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -190,7 +196,7 @@ Generate EGLD private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\EgldGenerateWallet200Response
 ```
@@ -236,7 +242,7 @@ Generate EGLD wallet
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldGetBalance(
     string $address
 ): \Tatum\Model\EgldGetBalance200Response
 ```
@@ -274,7 +280,7 @@ Get EGLD Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldGetBlock(
     string $hash
 ): \Tatum\Model\EgldBlock
 ```
@@ -312,7 +318,7 @@ Get EGLD block by hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldGetTransaction(
     string $hash
 ): \Tatum\Model\EgldTx
 ```
@@ -350,7 +356,7 @@ Get EGLD Transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransactionAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldGetTransactionAddress(
     string $address
 ): object[]
 ```
@@ -388,7 +394,7 @@ Get count of outgoing EGLD transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldGetTransactionCount(
     string $address
 ): float
 ```
@@ -426,7 +432,7 @@ Get count of outgoing EGLD transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldNodeGet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldNodeGet(
     string $x_api_key
 ): object
 ```
@@ -466,7 +472,7 @@ Node HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->egldNodePost(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldNodePost(
     string $x_api_key,
     object $body
 ): object
@@ -508,7 +514,7 @@ Node HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->transferEgldBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->transferEgldBlockchain(
     \Tatum\Model\TransferEgldBlockchain $transfer_egld_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -548,7 +554,7 @@ Send EGLD from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->elrond()->transferEgldBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->transferEgldBlockchainKMS(
     \Tatum\Model\TransferEgldBlockchainKMS $transfer_egld_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```

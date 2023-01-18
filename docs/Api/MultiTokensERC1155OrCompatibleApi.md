@@ -9,7 +9,13 @@ layout: page
 [Multi Tokens (ERC-1155 or compatible) API Reference](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->multiTokensERC1155OrCompatible();
+
+// TestNet API Call
+$sdk->testnet()->api()->multiTokensERC1155OrCompatible();
 ```
 
 ## Methods
@@ -62,7 +68,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiTokenMinter(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiTokenMinter(
     \Tatum\Model\AddMultiTokenMinter $add_multi_token_minter,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -116,7 +122,7 @@ Add a Multi Token minter
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiTokenMinterKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->addMultiTokenMinterKMS(
     \Tatum\Model\AddMultiTokenMinterKMS $add_multi_token_minter_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -154,7 +160,7 @@ AddMultiTokenMinterKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiToken(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiToken(
     \Tatum\Model\BurnMultiToken $burn_multi_token,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -208,7 +214,7 @@ Burn a Multi Token
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatch(
     \Tatum\Model\BurnMultiTokenBatch $burn_multi_token_batch,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -262,7 +268,7 @@ Burn multiple Multi Tokens
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatchCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatchCelo(
     \Tatum\Model\BurnMultiTokenBatchCelo $burn_multi_token_batch_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -300,7 +306,7 @@ BurnMultiTokenBatchCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatchKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatchKMS(
     \Tatum\Model\BurnMultiTokenBatchKMS $burn_multi_token_batch_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -338,7 +344,7 @@ BurnMultiTokenBatchKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatchKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenBatchKMSCelo(
     \Tatum\Model\BurnMultiTokenBatchKMSCelo $burn_multi_token_batch_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -376,7 +382,7 @@ BurnMultiTokenBatchKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenCelo(
     \Tatum\Model\BurnMultiTokenCelo $burn_multi_token_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -414,7 +420,7 @@ BurnMultiTokenCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenKMS(
     \Tatum\Model\BurnMultiTokenKMS $burn_multi_token_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -452,7 +458,7 @@ BurnMultiTokenKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->burnMultiTokenKMSCelo(
     \Tatum\Model\BurnMultiTokenKMSCelo $burn_multi_token_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -490,7 +496,7 @@ BurnMultiTokenKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiToken(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiToken(
     \Tatum\Model\DeployMultiToken $deploy_multi_token,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -544,7 +550,7 @@ Deploy a Multi Token smart contract
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiTokenCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiTokenCelo(
     \Tatum\Model\DeployMultiTokenCelo $deploy_multi_token_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -582,7 +588,7 @@ DeployMultiTokenCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiTokenCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiTokenCeloKMS(
     \Tatum\Model\DeployMultiTokenCeloKMS $deploy_multi_token_celo_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -620,7 +626,7 @@ DeployMultiTokenCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiTokenKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->deployMultiTokenKMS(
     \Tatum\Model\DeployMultiTokenKMS $deploy_multi_token_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -658,7 +664,7 @@ DeployMultiTokenKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiToken(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiToken(
     \Tatum\Model\MintMultiToken $mint_multi_token,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -712,7 +718,7 @@ Mint a Multi Token
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatch(
     \Tatum\Model\MintMultiTokenBatch $mint_multi_token_batch,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -766,7 +772,7 @@ Mint multiple Multi Tokens
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatchCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatchCelo(
     \Tatum\Model\MintMultiTokenBatchCelo $mint_multi_token_batch_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -804,7 +810,7 @@ MintMultiTokenBatchCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatchKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatchKMS(
     \Tatum\Model\MintMultiTokenBatchKMS $mint_multi_token_batch_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -842,7 +848,7 @@ MintMultiTokenBatchKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatchKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenBatchKMSCelo(
     \Tatum\Model\MintMultiTokenBatchKMSCelo $mint_multi_token_batch_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -880,7 +886,7 @@ MintMultiTokenBatchKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenCelo(
     \Tatum\Model\MintMultiTokenCelo $mint_multi_token_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -918,7 +924,7 @@ MintMultiTokenCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenKMS(
     \Tatum\Model\MintMultiTokenKMS $mint_multi_token_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -956,7 +962,7 @@ MintMultiTokenKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->mintMultiTokenKMSCelo(
     \Tatum\Model\MintMultiTokenKMSCelo $mint_multi_token_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -994,7 +1000,7 @@ MintMultiTokenKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetAddressBalance(
     string $chain,
     string $address,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
@@ -1042,7 +1048,7 @@ Get all Multi Tokens that a blockchain address holds
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetBalance(
     string $chain,
     string $address,
     string $contract_address,
@@ -1094,7 +1100,7 @@ Get the amount of a specific MultiToken that a blockchain address holds
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetBalanceBatch(
     string $chain,
     string $contract_address,
     string $token_id,
@@ -1146,7 +1152,7 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(
     string $chain,
     string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
@@ -1198,7 +1204,7 @@ This endpoint is deprecated. Do not use it.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetMetadata(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetMetadata(
     string $chain,
     string $token,
     string $contract_address,
@@ -1248,7 +1254,7 @@ Get Multi Token metadata
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetTransaction(
     string $chain,
     string $hash,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
@@ -1296,7 +1302,7 @@ Get a Multi Token transaction by its hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetTransactionByAddress(
     string $chain,
     string $address,
     string $token_address,
@@ -1352,7 +1358,7 @@ Get Multi Token transactions on a blockchain address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiToken(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiToken(
     \Tatum\Model\TransferMultiToken $transfer_multi_token,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1408,7 +1414,7 @@ Transfer a Multi Token
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatch(
     \Tatum\Model\TransferMultiTokenBatch $transfer_multi_token_batch,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1462,7 +1468,7 @@ Transfer multiple Multi Tokens
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatchCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatchCelo(
     \Tatum\Model\TransferMultiTokenBatchCelo $transfer_multi_token_batch_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1500,7 +1506,7 @@ TransferMultiTokenBatchCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatchKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatchKMS(
     \Tatum\Model\TransferMultiTokenBatchKMS $transfer_multi_token_batch_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1538,7 +1544,7 @@ TransferMultiTokenBatchKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatchKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenBatchKMSCelo(
     \Tatum\Model\TransferMultiTokenBatchKMSCelo $transfer_multi_token_batch_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1576,7 +1582,7 @@ TransferMultiTokenBatchKMSCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenCelo(
     \Tatum\Model\TransferMultiTokenCelo $transfer_multi_token_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1614,7 +1620,7 @@ TransferMultiTokenCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenKMS(
     \Tatum\Model\TransferMultiTokenKMS $transfer_multi_token_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1652,7 +1658,7 @@ TransferMultiTokenKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenKMSCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->transferMultiTokenKMSCelo(
     \Tatum\Model\TransferMultiTokenKMSCelo $transfer_multi_token_kms_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned

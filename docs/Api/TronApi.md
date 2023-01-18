@@ -9,7 +9,13 @@ layout: page
 [Tron API Reference](https://apidoc.tatum.io/tag/Tron/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->tron();
+
+// TestNet API Call
+$sdk->testnet()->api()->tron();
 ```
 
 ## Methods
@@ -48,7 +54,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->createTronTrc10Blockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->createTronTrc10Blockchain(
     \Tatum\Model\CreateTronTrc10Blockchain $create_tron_trc10_blockchain
 ): \Tatum\Model\TransactionHash
 ```
@@ -96,7 +102,7 @@ Create a TRC-10 token
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->createTronTrc10BlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->createTronTrc10BlockchainKMS(
     \Tatum\Model\CreateTronTrc10BlockchainKMS $create_tron_trc10_blockchain_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -132,7 +138,7 @@ CreateTronTrc10BlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->createTronTrc20Blockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->createTronTrc20Blockchain(
     \Tatum\Model\CreateTronTrc20Blockchain $create_tron_trc20_blockchain
 ): \Tatum\Model\TransactionHash
 ```
@@ -178,7 +184,7 @@ Create a TRC-20 token
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->createTronTrc20BlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->createTronTrc20BlockchainKMS(
     \Tatum\Model\CreateTronTrc20BlockchainKMS $create_tron_trc20_blockchain_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -214,7 +220,7 @@ CreateTronTrc20BlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->freezeTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->freezeTron(
     \Tatum\Model\FreezeTron $freeze_tron
 ): \Tatum\Model\TransactionHash
 ```
@@ -260,7 +266,7 @@ Freeze the balance of a TRON account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->freezeTronKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->freezeTronKMS(
     \Tatum\Model\FreezeTronKMS $freeze_tron_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -296,7 +302,7 @@ FreezeTronKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->generateTronwallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->generateTronwallet(
     [ string $mnemonic ]
 ): \Tatum\Model\TronWallet
 ```
@@ -340,7 +346,7 @@ Tatum follows BIP44 specification and generates for Bitcoin wallet with derivati
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->transferTronBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->transferTronBlockchain(
     \Tatum\Model\TransferTronBlockchain $transfer_tron_blockchain
 ): \Tatum\Model\TransactionHash
 ```
@@ -386,7 +392,7 @@ Send TRX to a TRON account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->transferTronBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->transferTronBlockchainKMS(
     \Tatum\Model\TransferTronBlockchainKMS $transfer_tron_blockchain_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -422,7 +428,7 @@ TransferTronBlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc10Blockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->transferTronTrc10Blockchain(
     \Tatum\Model\TransferTronTrc10Blockchain $transfer_tron_trc10_blockchain
 ): \Tatum\Model\TransactionHash
 ```
@@ -468,7 +474,7 @@ Send TRC-10 tokens to a TRON account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc10BlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->transferTronTrc10BlockchainKMS(
     \Tatum\Model\TransferTronTrc10BlockchainKMS $transfer_tron_trc10_blockchain_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -504,7 +510,7 @@ TransferTronTrc10BlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc20Blockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->transferTronTrc20Blockchain(
     \Tatum\Model\TransferTronTrc20Blockchain $transfer_tron_trc20_blockchain
 ): \Tatum\Model\TransactionHash
 ```
@@ -550,7 +556,7 @@ Send TRC-20 tokens to a TRON account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->transferTronTrc20BlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->transferTronTrc20BlockchainKMS(
     \Tatum\Model\TransferTronTrc20BlockchainKMS $transfer_tron_trc20_blockchain_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -586,7 +592,7 @@ TransferTronTrc20BlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronAccountTx(
     string $address,
     [ string $next ]
 ): \Tatum\Model\TronAccountTx200Response
@@ -632,7 +638,7 @@ Get all transactions for a TRON account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronAccountTx20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronAccountTx20(
     string $address,
     [ string $next ]
 ): \Tatum\Model\TronAccountTx20200Response
@@ -678,7 +684,7 @@ Get TRC-20 transactions for a TRON account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronBroadcast(
     \Tatum\Model\TronBroadcast $tron_broadcast
 ): \Tatum\Model\TransactionHash
 ```
@@ -716,7 +722,7 @@ Broadcast a TRON transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\TronGenerateAddress200Response
@@ -756,7 +762,7 @@ Generate a TRON address from the wallet's extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -794,7 +800,7 @@ Generate the private key for a TRON address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronGetAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronGetAccount(
     string $address
 ): \Tatum\Model\TronAccount
 ```
@@ -832,7 +838,7 @@ Get the TRON account by its address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronGetBlock(
     string $hash
 ): \Tatum\Model\TronBlock
 ```
@@ -870,7 +876,7 @@ Get a TRON block by its hash or height
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronGetCurrentBlock(
 ): \Tatum\Model\TronGetCurrentBlock200Response
 ```
 
@@ -905,7 +911,7 @@ Get the current TRON block
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronGetTransaction(
     string $hash
 ): \Tatum\Model\TronTx
 ```
@@ -943,7 +949,7 @@ Get a TRON transaction by its hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->tron()->tronTrc10Detail(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronTrc10Detail(
     string $id_or_owner_address
 ): \Tatum\Model\TronTrc10Detail
 ```

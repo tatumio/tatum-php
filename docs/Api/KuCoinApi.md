@@ -9,7 +9,13 @@ layout: page
 [KuCoin API Reference](https://apidoc.tatum.io/tag/KuCoin/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->kuCoin();
+
+// TestNet API Call
+$sdk->testnet()->api()->kuCoin();
 ```
 
 ## Methods
@@ -40,7 +46,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractMethod(
     \Tatum\Model\CallKcsSmartContractMethod $call_kcs_smart_contract_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -76,7 +82,7 @@ CallKcsSmartContractMethod operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractMethodKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractMethodKMS(
     \Tatum\Model\CallKcsSmartContractMethodKMS $call_kcs_smart_contract_method_kms
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -112,7 +118,7 @@ CallKcsSmartContractMethodKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractReadMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->callKcsSmartContractReadMethod(
     \Tatum\Model\CallKcsSmartContractReadMethod $call_kcs_smart_contract_read_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -174,7 +180,7 @@ However, because this API can be run against any smart contract on the blockchai
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -212,7 +218,7 @@ Broadcast signed Kcs transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\KcsGenerateAddress200Response
@@ -252,7 +258,7 @@ Generate Kcs account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -290,7 +296,7 @@ Generate Kcs private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -334,7 +340,7 @@ Tatum follows BIP44 specification and generates for Kcs wallet with derivation p
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGetBalance(
     string $address
 ): \Tatum\Model\KcsGetBalance200Response
 ```
@@ -372,7 +378,7 @@ Get Kcs Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGetBlock(
     string $hash
 ): \Tatum\Model\EthBlock
 ```
@@ -410,7 +416,7 @@ Get Kcs block by hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGetCurrentBlock(
 ): float
 ```
 
@@ -445,7 +451,7 @@ Get current block number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGetTransaction(
     string $hash
 ): \Tatum\Model\KcsTx
 ```
@@ -483,7 +489,7 @@ Get Kcs Transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGetTransactionCount(
     string $address
 ): float
 ```
@@ -521,7 +527,7 @@ Get count of outgoing Kcs transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->kcsWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsWeb3Driver(
     string $x_api_key,
     object $body
 ): object
@@ -563,7 +569,7 @@ Web3 HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->transferKcsBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->transferKcsBlockchain(
     \Tatum\Model\TransferKcsBlockchain $transfer_kcs_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -611,7 +617,7 @@ Send KCS from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->kuCoin()->transferKcsBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->transferKcsBlockchainKMS(
     \Tatum\Model\TransferKcsBlockchainKMS $transfer_kcs_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```

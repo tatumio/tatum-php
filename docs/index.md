@@ -187,7 +187,12 @@ vendor/bin/phpunit
 MainNet and TestNet operations have their own configuration object:
 
 ```php
+$sdk = new \Tatum\Sdk();
+
+// MainNet Configuration
 $sdk->mainnet()->config();
+
+// TestNet Configuration
 $sdk->testnet()->config();
 ```
 
@@ -219,7 +224,13 @@ The debugger allows you to get detailed information on API requests made by the 
 Debugging is disabled by default but you can enable it with ease:
 
 ```php
-$sdk->{mainnet/testnet}()->config()->setDebug(true);
+$sdk = new \Tatum\Sdk();
+
+// Enable debugging on MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
+// Enable debugging on TestNet
+$sdk->testnet()->config()->setDebug(true);
 ```
 
 Notice that the debugger functionality is strictly tied to your `$sdk` instance and you can have
@@ -234,7 +245,13 @@ By default, the write location for the `debugger` is your standard CLI output, o
 You can redirect the output of the debugger to any other file:
 
 ```php
-$sdk->{mainnet/testnet}()->config()->setDebugFile('/path/to/file.log');
+$sdk = new \Tatum\Sdk();
+
+// Set debug output on MainNet
+$sdk->mainnet()->config()->setDebugFile('/path/to/file.log');
+
+// Set debug output on TestNet
+$sdk->testnet()->config()->setDebugFile('/path/to/file.log');
 ```
 
 #### Disable sanitizer
@@ -245,7 +262,13 @@ You can disable this functionality for local testing only.
 **WARNING**: Never share logs that were produced with the `debug sanitizer` turned off!
 
 ```php
-$sdk->{mainnet/testnet}()->config()->setDebugSanitizer(false);
+$sdk = new \Tatum\Sdk();
+
+// Disable debug sanitizer on MainNet
+$sdk->mainnet()->config()->setDebugSanitizer(false);
+
+// Disable debug sanitizer on TestNet
+$sdk->testnet()->config()->setDebugSanitizer(false);
 ```
 
 #### Example output

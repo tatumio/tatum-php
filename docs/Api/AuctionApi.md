@@ -9,7 +9,13 @@ layout: page
 [Auction API Reference](https://apidoc.tatum.io/tag/Auction/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->auction();
+
+// TestNet API Call
+$sdk->testnet()->api()->auction();
 ```
 
 ## Methods
@@ -60,7 +66,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->approveNftSpending(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->approveNftSpending(
     \Tatum\Model\ApproveNftSpending $approve_nft_spending
 ): \Tatum\Model\TransactionSigned
 ```
@@ -114,7 +120,7 @@ The auction/marketplace smart contract will transfer the asset to the buyer afte
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->approveNftSpendingCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->approveNftSpendingCelo(
     \Tatum\Model\ApproveNftSpendingCelo $approve_nft_spending_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -150,7 +156,7 @@ ApproveNftSpendingCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->approveNftSpendingCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->approveNftSpendingCeloKMS(
     \Tatum\Model\ApproveNftSpendingCeloKMS $approve_nft_spending_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -186,7 +192,7 @@ ApproveNftSpendingCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->approveNftSpendingKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->approveNftSpendingKMS(
     \Tatum\Model\ApproveNftSpendingKMS $approve_nft_spending_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -222,7 +228,7 @@ ApproveNftSpendingKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bidOnAuction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->bidOnAuction(
     \Tatum\Model\BidOnAuction $bid_on_auction
 ): \Tatum\Model\TransactionSigned
 ```
@@ -290,7 +296,7 @@ Bid for an asset at the NFT auction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bidOnAuctionCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->bidOnAuctionCelo(
     \Tatum\Model\BidOnAuctionCelo $bid_on_auction_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -326,7 +332,7 @@ BidOnAuctionCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bidOnAuctionCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->bidOnAuctionCeloKMS(
     \Tatum\Model\BidOnAuctionCeloKMS $bid_on_auction_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -362,7 +368,7 @@ BidOnAuctionCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bidOnAuctionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->bidOnAuctionKMS(
     \Tatum\Model\BidOnAuctionKMS $bid_on_auction_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -398,7 +404,7 @@ BidOnAuctionKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipient(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipient(
     \Tatum\Model\UpdateFeeRecipient $update_fee_recipient
 ): \Tatum\Model\TransactionSigned
 ```
@@ -450,7 +456,7 @@ Update the recipient of the NFT auction fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientCelo(
     \Tatum\Model\UpdateFeeRecipientCelo $update_fee_recipient_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -486,7 +492,7 @@ UpdateFeeRecipientCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientCeloKMS(
     \Tatum\Model\UpdateFeeRecipientCeloKMS $update_fee_recipient_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -522,7 +528,7 @@ UpdateFeeRecipientCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->bloAucUpdateFeeRecipientKMS(
     \Tatum\Model\UpdateFeeRecipientKMS $update_fee_recipient_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -558,7 +564,7 @@ UpdateFeeRecipientKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->cancelAuction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->cancelAuction(
     \Tatum\Model\CancelAuction $cancel_auction
 ): \Tatum\Model\TransactionSigned
 ```
@@ -620,7 +626,7 @@ Cancel the selling of an asset at the NFT auction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->cancelAuctionCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->cancelAuctionCelo(
     \Tatum\Model\CancelAuctionCelo $cancel_auction_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -656,7 +662,7 @@ CancelAuctionCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->cancelAuctionCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->cancelAuctionCeloKMS(
     \Tatum\Model\CancelAuctionCeloKMS $cancel_auction_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -692,7 +698,7 @@ CancelAuctionCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->cancelAuctionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->cancelAuctionKMS(
     \Tatum\Model\CancelAuctionKMS $cancel_auction_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -728,7 +734,7 @@ CancelAuctionKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->createAuction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->createAuction(
     \Tatum\Model\CreateAuction $create_auction
 ): \Tatum\Model\TransactionSigned
 ```
@@ -778,7 +784,7 @@ Sell an asset at the NFT auction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->createAuctionCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->createAuctionCelo(
     \Tatum\Model\CreateAuctionCelo $create_auction_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -814,7 +820,7 @@ CreateAuctionCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->createAuctionCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->createAuctionCeloKMS(
     \Tatum\Model\CreateAuctionCeloKMS $create_auction_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -850,7 +856,7 @@ CreateAuctionCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->createAuctionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->createAuctionKMS(
     \Tatum\Model\CreateAuctionKMS $create_auction_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -886,7 +892,7 @@ CreateAuctionKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->generateAuction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->generateAuction(
     \Tatum\Model\GenerateAuction $generate_auction
 ): \Tatum\Model\TransactionSigned
 ```
@@ -938,7 +944,7 @@ Create an NFT auction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->generateAuctionCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->generateAuctionCelo(
     \Tatum\Model\GenerateAuctionCelo $generate_auction_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -974,7 +980,7 @@ GenerateAuctionCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->generateAuctionCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->generateAuctionCeloKMS(
     \Tatum\Model\GenerateAuctionCeloKMS $generate_auction_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1010,7 +1016,7 @@ GenerateAuctionCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->generateAuctionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->generateAuctionKMS(
     \Tatum\Model\GenerateAuctionKMS $generate_auction_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1046,7 +1052,7 @@ GenerateAuctionKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->getAuction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->getAuction(
     string $chain,
     string $contract_address,
     string $id
@@ -1094,7 +1100,7 @@ Get information about an auctioned asset at the NFT auction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->getAuctionFee(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->getAuctionFee(
     string $chain,
     string $contract_address
 ): float
@@ -1140,7 +1146,7 @@ Get the NFT auction fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->getAuctionFeeRecipient(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->getAuctionFeeRecipient(
     string $chain,
     string $contract_address
 ): \Tatum\Model\GetAuctionFeeRecipient200Response
@@ -1186,7 +1192,7 @@ Get the recipient of the NFT auction fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->settleAuction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->settleAuction(
     \Tatum\Model\SettleAuction $settle_auction
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1246,7 +1252,7 @@ Both seller and buyer can settle the auction.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->settleAuctionCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->settleAuctionCelo(
     \Tatum\Model\SettleAuctionCelo $settle_auction_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1282,7 +1288,7 @@ SettleAuctionCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->settleAuctionCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->settleAuctionCeloKMS(
     \Tatum\Model\SettleAuctionCeloKMS $settle_auction_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1318,7 +1324,7 @@ SettleAuctionCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->settleAuctionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->settleAuctionKMS(
     \Tatum\Model\SettleAuctionKMS $settle_auction_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1354,7 +1360,7 @@ SettleAuctionKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->updateFeeAuction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->updateFeeAuction(
     \Tatum\Model\UpdateFeeAuction $update_fee_auction
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1406,7 +1412,7 @@ Update the NFT auction fee
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->updateFeeAuctionCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->updateFeeAuctionCelo(
     \Tatum\Model\UpdateFeeAuctionCelo $update_fee_auction_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1442,7 +1448,7 @@ UpdateFeeAuctionCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->updateFeeAuctionCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->updateFeeAuctionCeloKMS(
     \Tatum\Model\UpdateFeeAuctionCeloKMS $update_fee_auction_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1478,7 +1484,7 @@ UpdateFeeAuctionCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->auction()->updateFeeAuctionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->auction()->updateFeeAuctionKMS(
     \Tatum\Model\UpdateFeeAuctionKMS $update_fee_auction_kms
 ): \Tatum\Model\TransactionSigned
 ```

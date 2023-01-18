@@ -7,7 +7,13 @@ layout: page
 # Local/Transaction/Bitcoin
 
 ```php
-$sdk->{mainnet/testnet}()->local()->transaction()->bitcoin()
+$sdk = new \Tatum\Sdk();
+
+// MainNet Local/Transaction/Bitcoin
+$sdk->mainnet()->local()->transaction()->bitcoin();
+
+// TestNet Local/Transaction/Bitcoin
+$sdk->testnet()->local()->transaction()->bitcoin();
 ```
 
 Bitcoin Transaction
@@ -21,7 +27,7 @@ Method | Description
 ## Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->local()->transaction()->bitcoin()->sign(
+(new \Tatum\Sdk())->{mainnet/testnet}()->local()->transaction()->bitcoin()->sign(
     \Tatum\Local\Transaction\Bitcoin\Transfer $transfer
 ): string
 ```

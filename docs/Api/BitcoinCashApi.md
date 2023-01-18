@@ -9,7 +9,13 @@ layout: page
 [Bitcoin Cash API Reference](https://apidoc.tatum.io/tag/Bitcoin-Cash/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->bitcoinCash();
+
+// TestNet API Call
+$sdk->testnet()->api()->bitcoinCash();
 ```
 
 ## Methods
@@ -37,7 +43,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -75,7 +81,7 @@ Broadcast signed Bitcoin Cash transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\BchGenerateAddress200Response
@@ -115,7 +121,7 @@ Generate Bitcoin Cash deposit address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -153,7 +159,7 @@ Generate Bitcoin Cash private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -197,7 +203,7 @@ Tatum follows BIP44 specification and generates for Bitcoin Cash wallet with der
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlock(
     string $hash
 ): \Tatum\Model\BchBlock
 ```
@@ -235,7 +241,7 @@ Get Bitcoin Cash Block detail by block hash or height.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockChainInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockChainInfo(
 ): \Tatum\Model\BchInfo
 ```
 
@@ -270,7 +276,7 @@ Get Bitcoin Cash Blockchain Information. Obtain basic info like testnet / mainne
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockHash(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockHash(
     float $i
 ): \Tatum\Model\BchGetBlockHash200Response
 ```
@@ -308,7 +314,7 @@ Get Bitcoin Cash Block hash. Returns hash of the block to get the block detail.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetRawTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGetRawTransaction(
     string $hash
 ): \Tatum\Model\BchTx
 ```
@@ -346,7 +352,7 @@ Get Bitcoin Cash Transaction by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchGetTxByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGetTxByAddress(
     string $address,
     [ int $skip ]
 ): \Tatum\Model\BchTx[]
@@ -386,7 +392,7 @@ Get Bitcoin Cash Transaction by address. Limit is 50 transaction per response.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchRpcDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchRpcDriver(
     \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
 ): object
 ```
@@ -426,7 +432,7 @@ JSON RPC HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchTransaction(
     \Tatum\Model\BchTransaction $bch_transaction
 ): \Tatum\Model\TransactionSigned
 ```
@@ -486,7 +492,7 @@ Send BCH to Bitcoin Cash addresses
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoinCash()->bchTransactionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchTransactionKMS(
     \Tatum\Model\BchTransactionKMS $bch_transaction_kms
 ): \Tatum\Model\TransactionSigned
 ```

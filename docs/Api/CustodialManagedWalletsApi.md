@@ -9,7 +9,13 @@ layout: page
 [Custodial managed wallets API Reference](https://apidoc.tatum.io/tag/Custodial-managed-wallets/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->custodialManagedWallets();
+
+// TestNet API Call
+$sdk->testnet()->api()->custodialManagedWallets();
 ```
 
 ## Methods
@@ -30,7 +36,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialCreateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialCreateWallet(
     [ \Tatum\Model\CustodialCreateWalletRequest $custodial_create_wallet_request ]
 ): \Tatum\Model\CustodialManagedAddress
 ```
@@ -70,7 +76,7 @@ Create managed address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialDeleteWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialDeleteWallet(
     string $id
 )
 ```
@@ -108,7 +114,7 @@ Delete managed address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallet(
     string $id,
     [ bool $export = false ]
 ): \Tatum\Model\CustodialManagedAddress[]
@@ -148,7 +154,7 @@ Get managed address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallets(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallets(
 ): \Tatum\Model\CustodialManagedAddress[]
 ```
 
@@ -183,7 +189,7 @@ Get managed addresses
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialTransferManagedAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialTransferManagedAddress(
     [ \Tatum\Model\TransferManagedAddress $transfer_managed_address ]
 ): \Tatum\Model\TransactionHash
 ```

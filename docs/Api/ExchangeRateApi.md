@@ -9,7 +9,13 @@ layout: page
 [Exchange rate API Reference](https://apidoc.tatum.io/tag/Exchange-rate/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->exchangeRate()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->exchangeRate();
+
+// TestNet API Call
+$sdk->testnet()->api()->exchangeRate();
 ```
 
 ## Methods
@@ -26,7 +32,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->exchangeRate()->getExchangeRate(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->exchangeRate()->getExchangeRate(
     string $currency,
     [ string $base_pair = 'EUR' ]
 ): \Tatum\Model\ExchangeRate

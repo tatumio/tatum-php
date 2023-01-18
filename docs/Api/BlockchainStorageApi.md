@@ -9,7 +9,13 @@ layout: page
 [Blockchain storage API Reference](https://apidoc.tatum.io/tag/Blockchain-storage/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainStorage()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->blockchainStorage();
+
+// TestNet API Call
+$sdk->testnet()->api()->blockchainStorage();
 ```
 
 ## Methods
@@ -29,7 +35,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainStorage()->createRecord(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainStorage()->createRecord(
     \Tatum\Model\CreateRecord $create_record
 ): \Tatum\Model\TransactionHash
 ```
@@ -77,7 +83,7 @@ Store a log record
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainStorage()->createRecordCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainStorage()->createRecordCelo(
     \Tatum\Model\CreateRecordCelo $create_record_celo
 ): \Tatum\Model\TransactionHash
 ```
@@ -113,7 +119,7 @@ CreateRecordCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainStorage()->createRecordKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainStorage()->createRecordKMS(
     \Tatum\Model\CreateRecordKMS $create_record_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -149,7 +155,7 @@ CreateRecordKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->blockchainStorage()->getLog(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainStorage()->getLog(
     string $chain,
     string $id
 ): \Tatum\Model\GetLog200Response

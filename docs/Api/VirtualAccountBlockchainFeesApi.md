@@ -9,7 +9,13 @@ layout: page
 [Virtual account blockchain fees API Reference](https://apidoc.tatum.io/tag/Virtual-account-blockchain-fees/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->virtualAccountBlockchainFees()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->virtualAccountBlockchainFees();
+
+// TestNet API Call
+$sdk->testnet()->api()->virtualAccountBlockchainFees();
 ```
 
 ## Methods
@@ -26,7 +32,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->virtualAccountBlockchainFees()->offchainEstimateFee(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->virtualAccountBlockchainFees()->offchainEstimateFee(
     \Tatum\Model\OffchainEstimateFee $offchain_estimate_fee
 ): \Tatum\Model\FeeBtc
 ```

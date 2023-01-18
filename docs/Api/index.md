@@ -9,5 +9,11 @@ You can access any of the Tatum API endpoints with the following syntax:
 
 ```php
 <?php
-(new \Tatum\Sdk())->{testnet/mainnet}()->api();
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Operations
+$sdk->mainnet()->api();
+
+// TestNet API Operations
+$sdk->testnet()->api();
 ```

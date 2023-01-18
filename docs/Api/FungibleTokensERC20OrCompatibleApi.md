@@ -9,7 +9,13 @@ layout: page
 [Fungible Tokens (ERC-20 or compatible) API Reference](https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->fungibleTokensERC20OrCompatible();
+
+// TestNet API Call
+$sdk->testnet()->api()->fungibleTokensERC20OrCompatible();
 ```
 
 ## Methods
@@ -66,7 +72,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveCeloErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveCeloErc20(
     \Tatum\Model\ApproveCeloErc20 $approve_celo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -104,7 +110,7 @@ ApproveCeloErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveCeloErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveCeloErc20KMS(
     \Tatum\Model\ApproveCeloErc20KMS $approve_celo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -142,7 +148,7 @@ ApproveCeloErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveErc20(
     \Tatum\Model\ApproveErc20 $approve_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -196,7 +202,7 @@ Allow a blockchain address to transfer and burn fungible tokens
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->approveErc20KMS(
     \Tatum\Model\ApproveErc20KMS $approve_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -234,7 +240,7 @@ ApproveErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnCeloErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnCeloErc20(
     \Tatum\Model\ChainBurnCeloErc20 $chain_burn_celo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -272,7 +278,7 @@ ChainBurnCeloErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnCeloErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnCeloErc20KMS(
     \Tatum\Model\ChainBurnCeloErc20KMS $chain_burn_celo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -310,7 +316,7 @@ ChainBurnCeloErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnErc20(
     \Tatum\Model\ChainBurnErc20 $chain_burn_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -364,7 +370,7 @@ Burn fungible tokens
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnErc20KMS(
     \Tatum\Model\ChainBurnErc20KMS $chain_burn_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -402,7 +408,7 @@ ChainBurnErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnKcsErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnKcsErc20(
     \Tatum\Model\ChainBurnKcsErc20 $chain_burn_kcs_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -440,7 +446,7 @@ ChainBurnKcsErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnKcsErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainBurnKcsErc20KMS(
     \Tatum\Model\ChainBurnKcsErc20KMS $chain_burn_kcs_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -478,7 +484,7 @@ ChainBurnKcsErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployAlgoErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployAlgoErc20(
     \Tatum\Model\ChainDeployAlgoErc20 $chain_deploy_algo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -516,7 +522,7 @@ ChainDeployAlgoErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployAlgoErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployAlgoErc20KMS(
     \Tatum\Model\ChainDeployAlgoErc20KMS $chain_deploy_algo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -554,7 +560,7 @@ ChainDeployAlgoErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployCeloErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployCeloErc20(
     \Tatum\Model\ChainDeployCeloErc20 $chain_deploy_celo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -592,7 +598,7 @@ ChainDeployCeloErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployCeloErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployCeloErc20KMS(
     \Tatum\Model\ChainDeployCeloErc20KMS $chain_deploy_celo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -630,7 +636,7 @@ ChainDeployCeloErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployErc20(
     \Tatum\Model\ChainDeployErc20 $chain_deploy_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -688,7 +694,7 @@ Deploy a fungible token smart contract
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployErc20KMS(
     \Tatum\Model\ChainDeployErc20KMS $chain_deploy_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -726,7 +732,7 @@ ChainDeployErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20(
     \Tatum\Model\ChainDeployKcsErc20 $chain_deploy_kcs_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -764,7 +770,7 @@ ChainDeployKcsErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeployKcsErc20KMS(
     \Tatum\Model\ChainDeployKcsErc20KMS $chain_deploy_kcs_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -802,7 +808,7 @@ ChainDeployKcsErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploySolanaSpl(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploySolanaSpl(
     \Tatum\Model\ChainDeploySolanaSpl $chain_deploy_solana_spl,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -840,7 +846,7 @@ ChainDeploySolanaSpl operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploySolanaSplKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainDeploySolanaSplKMS(
     \Tatum\Model\ChainDeploySolanaSplKMS $chain_deploy_solana_spl_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -878,7 +884,7 @@ ChainDeploySolanaSplKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintCeloErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintCeloErc20(
     \Tatum\Model\ChainMintCeloErc20 $chain_mint_celo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -916,7 +922,7 @@ ChainMintCeloErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintCeloErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintCeloErc20KMS(
     \Tatum\Model\ChainMintCeloErc20KMS $chain_mint_celo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -954,7 +960,7 @@ ChainMintCeloErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintErc20(
     \Tatum\Model\ChainMintErc20 $chain_mint_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1008,7 +1014,7 @@ Mint fungible tokens
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintErc20KMS(
     \Tatum\Model\ChainMintErc20KMS $chain_mint_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1046,7 +1052,7 @@ ChainMintErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintKcsErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintKcsErc20(
     \Tatum\Model\ChainMintKcsErc20 $chain_mint_kcs_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1084,7 +1090,7 @@ ChainMintKcsErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintKcsErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainMintKcsErc20KMS(
     \Tatum\Model\ChainMintKcsErc20KMS $chain_mint_kcs_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1122,7 +1128,7 @@ ChainMintKcsErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferAlgoErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferAlgoErc20(
     \Tatum\Model\ChainTransferAlgoErc20 $chain_transfer_algo_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1160,7 +1166,7 @@ ChainTransferAlgoErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferAlgoErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferAlgoErc20KMS(
     \Tatum\Model\ChainTransferAlgoErc20KMS $chain_transfer_algo_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1198,7 +1204,7 @@ ChainTransferAlgoErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferBscBep20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferBscBep20(
     \Tatum\Model\ChainTransferBscBep20 $chain_transfer_bsc_bep20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1236,7 +1242,7 @@ ChainTransferBscBep20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferBscBep20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferBscBep20KMS(
     \Tatum\Model\ChainTransferBscBep20KMS $chain_transfer_bsc_bep20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1274,7 +1280,7 @@ ChainTransferBscBep20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferCeloErc20Token(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferCeloErc20Token(
     \Tatum\Model\ChainTransferCeloErc20Token $chain_transfer_celo_erc20_token,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1312,7 +1318,7 @@ ChainTransferCeloErc20Token operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferCeloErc20TokenKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferCeloErc20TokenKMS(
     \Tatum\Model\ChainTransferCeloErc20TokenKMS $chain_transfer_celo_erc20_token_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1350,7 +1356,7 @@ ChainTransferCeloErc20TokenKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20(
     \Tatum\Model\ChainTransferEthErc20 $chain_transfer_eth_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1416,7 +1422,7 @@ Transfer fungible tokens
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferEthErc20KMS(
     \Tatum\Model\ChainTransferEthErc20KMS $chain_transfer_eth_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1454,7 +1460,7 @@ ChainTransferEthErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferKcsEthErc20(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferKcsEthErc20(
     \Tatum\Model\ChainTransferKcsEthErc20 $chain_transfer_kcs_eth_erc20,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1492,7 +1498,7 @@ ChainTransferKcsEthErc20 operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferKcsEthErc20KMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferKcsEthErc20KMS(
     \Tatum\Model\ChainTransferKcsEthErc20KMS $chain_transfer_kcs_eth_erc20_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1530,7 +1536,7 @@ ChainTransferKcsEthErc20KMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSpl(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSpl(
     \Tatum\Model\ChainTransferSolanaSpl $chain_transfer_solana_spl,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1568,7 +1574,7 @@ ChainTransferSolanaSpl operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSplKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->chainTransferSolanaSplKMS(
     \Tatum\Model\ChainTransferSolanaSplKMS $chain_transfer_solana_spl_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -1606,7 +1612,7 @@ ChainTransferSolanaSplKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalance(
     string $chain,
     string $address,
     string $contract_address,
@@ -1656,7 +1662,7 @@ Get the number of fungible tokens that a blockchain address holds in a smart con
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetBalanceAddress(
     string $chain,
     string $address
 ): \Tatum\Model\Erc20BalanceForAddress[]
@@ -1702,7 +1708,7 @@ Get the total number of fungible tokens that a blockchain address holds
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->fungibleTokensERC20OrCompatible()->erc20GetTransactionByAddress(
     string $chain,
     string $address,
     string $token_address,

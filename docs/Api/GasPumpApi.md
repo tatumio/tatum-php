@@ -9,7 +9,13 @@ layout: page
 [Gas pump API Reference](https://apidoc.tatum.io/tag/Gas-pump/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->gasPump();
+
+// TestNet API Call
+$sdk->testnet()->api()->gasPump();
 ```
 
 ## Methods
@@ -65,7 +71,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPump(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->activateGasPump(
     \Tatum\Model\ActivateGasPump $activate_gas_pump
 ): \Tatum\Model\TransactionSigned
 ```
@@ -101,7 +107,7 @@ ActivateGasPump operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->activateGasPumpCelo(
     \Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -137,7 +143,7 @@ ActivateGasPumpCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->activateGasPumpCeloKMS(
     \Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -173,7 +179,7 @@ ActivateGasPumpCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->activateGasPumpKMS(
     \Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -209,7 +215,7 @@ ActivateGasPumpKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTatum(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTatum(
     \Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum
 ): \Tatum\Model\TransactionSigned
 ```
@@ -285,7 +291,7 @@ Activate gas pump addresses
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTron(
     \Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron
 ): \Tatum\Model\TransactionSigned
 ```
@@ -321,7 +327,7 @@ ActivateGasPumpTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTronKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->activateGasPumpTronKMS(
     \Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -357,7 +363,7 @@ ActivateGasPumpTronKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->activatedNotActivatedGasPumpAddresses(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->activatedNotActivatedGasPumpAddresses(
     string $chain,
     string $tx_id
 ): \Tatum\Model\GasPumpTrxOut
@@ -411,7 +417,7 @@ Get the results of the address activation transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWallet(
     \Tatum\Model\ApproveTransferCustodialWallet $approve_transfer_custodial_wallet
 ): \Tatum\Model\TransactionSigned
 ```
@@ -471,7 +477,7 @@ Approve the transfer of an asset from a gas pump address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletCelo(
     \Tatum\Model\ApproveTransferCustodialWalletCelo $approve_transfer_custodial_wallet_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -507,7 +513,7 @@ ApproveTransferCustodialWalletCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletCeloKMS(
     \Tatum\Model\ApproveTransferCustodialWalletCeloKMS $approve_transfer_custodial_wallet_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -543,7 +549,7 @@ ApproveTransferCustodialWalletCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->approveTransferCustodialWalletKMS(
     \Tatum\Model\ApproveTransferCustodialWalletKMS $approve_transfer_custodial_wallet_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -579,7 +585,7 @@ ApproveTransferCustodialWalletKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->gasPumpAddressesActivatedOrNot(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->gasPumpAddressesActivatedOrNot(
     string $chain,
     string $owner,
     float $index
@@ -629,7 +635,7 @@ Check whether the gas pump address with a specified index is activated
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWallet(
     \Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet
 ): \Tatum\Model\TransactionSigned
 ```
@@ -691,7 +697,7 @@ To start with the gas pump, use the API for precalculating the gas pump addresse
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatch(
     \Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -729,7 +735,7 @@ GenerateCustodialWalletBatch operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCelo(
     \Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -767,7 +773,7 @@ GenerateCustodialWalletBatchCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCeloKMS(
     \Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -805,7 +811,7 @@ GenerateCustodialWalletBatchCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchKMS(
     \Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -843,7 +849,7 @@ GenerateCustodialWalletBatchKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchPayer(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchPayer(
     \Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -895,7 +901,7 @@ To start with the gas pump, use the API for precalculating the gas pump addresse
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTron(
     \Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -933,7 +939,7 @@ GenerateCustodialWalletBatchTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTronKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTronKMS(
     \Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms,
     [ string $x_testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\TransactionSigned
@@ -971,7 +977,7 @@ GenerateCustodialWalletBatchTronKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCelo(
     \Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1007,7 +1013,7 @@ GenerateCustodialWalletCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCeloKMS(
     \Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1043,7 +1049,7 @@ GenerateCustodialWalletCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletKMS(
     \Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1079,7 +1085,7 @@ GenerateCustodialWalletKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTron(
     \Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1115,7 +1121,7 @@ GenerateCustodialWalletTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTronKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTronKMS(
     \Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1151,7 +1157,7 @@ GenerateCustodialWalletTronKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->precalculateGasPumpAddresses(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->precalculateGasPumpAddresses(
     [ \Tatum\Model\CreateGasPump $create_gas_pump ]
 ): string[]
 ```
@@ -1221,7 +1227,7 @@ For example, you precalculated three gas pump addresses with a range of index va
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->sCGetCustodialAddresses(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->sCGetCustodialAddresses(
     string $chain,
     string $hash
 ): string[]
@@ -1273,7 +1279,7 @@ To start with the gas pump, use the API for precalculating the gas pump addresse
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWallet(
     \Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1339,7 +1345,7 @@ To check whether the gas pump address is activated, use this API.</li> <li>The g
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatch(
     \Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1405,7 +1411,7 @@ To check whether the gas pump address is activated, use this API.</li> <li>The g
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchCelo(
     \Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1441,7 +1447,7 @@ TransferCustodialWalletBatchCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchCeloKMS(
     \Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1477,7 +1483,7 @@ TransferCustodialWalletBatchCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchKMS(
     \Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1513,7 +1519,7 @@ TransferCustodialWalletBatchKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchTron(
     \Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1549,7 +1555,7 @@ TransferCustodialWalletBatchTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchTronKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletBatchTronKMS(
     \Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1585,7 +1591,7 @@ TransferCustodialWalletBatchTronKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletCelo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletCelo(
     \Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1621,7 +1627,7 @@ TransferCustodialWalletCelo operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletCeloKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletCeloKMS(
     \Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1657,7 +1663,7 @@ TransferCustodialWalletCeloKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletKMS(
     \Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1693,7 +1699,7 @@ TransferCustodialWalletKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletTron(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletTron(
     \Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron
 ): \Tatum\Model\TransactionSigned
 ```
@@ -1729,7 +1735,7 @@ TransferCustodialWalletTron operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletTronKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->transferCustodialWalletTronKMS(
     \Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms
 ): \Tatum\Model\TransactionSigned
 ```

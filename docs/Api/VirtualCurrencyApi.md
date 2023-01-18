@@ -9,7 +9,13 @@ layout: page
 [Virtual Currency API Reference](https://apidoc.tatum.io/tag/Virtual-Currency/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->virtualCurrency()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->virtualCurrency();
+
+// TestNet API Call
+$sdk->testnet()->api()->virtualCurrency();
 ```
 
 ## Methods
@@ -30,7 +36,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->virtualCurrency()->createCurrency(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->virtualCurrency()->createCurrency(
     \Tatum\Model\VirtualCurrency $virtual_currency
 ): \Tatum\Model\Account
 ```
@@ -74,7 +80,7 @@ Create new virtual currency
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->virtualCurrency()->getCurrency(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->virtualCurrency()->getCurrency(
     string $name
 ): \Tatum\Model\VC
 ```
@@ -112,7 +118,7 @@ Get detail of virtual currency.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->virtualCurrency()->mintCurrency(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->virtualCurrency()->mintCurrency(
     \Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
 ): \Tatum\Model\TransactionResult
 ```
@@ -152,7 +158,7 @@ Create new supply of virtual currency
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->virtualCurrency()->revokeCurrency(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->virtualCurrency()->revokeCurrency(
     \Tatum\Model\VirtualCurrencyOperation $virtual_currency_operation
 ): \Tatum\Model\TransactionResult
 ```
@@ -192,7 +198,7 @@ Destroy supply of virtual currency
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->virtualCurrency()->updateCurrency(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->virtualCurrency()->updateCurrency(
     \Tatum\Model\VirtualCurrencyUpdate $virtual_currency_update
 )
 ```

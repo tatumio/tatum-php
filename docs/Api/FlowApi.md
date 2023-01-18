@@ -9,7 +9,13 @@ layout: page
 [Flow API Reference](https://apidoc.tatum.io/tag/Flow/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->flow();
+
+// TestNet API Call
+$sdk->testnet()->api()->flow();
 ```
 
 ## Methods
@@ -46,7 +52,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeyMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowAddPubKeyMnemonic(
     \Tatum\Model\FlowAddPubKeyMnemonic $flow_add_pub_key_mnemonic
 ): \Tatum\Model\TransactionSigned
 ```
@@ -88,7 +94,7 @@ Add public key to Flow address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeySecret(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowAddPubKeySecret(
     \Tatum\Model\FlowAddPubKeySecret $flow_add_pub_key_secret
 ): \Tatum\Model\TransactionSigned
 ```
@@ -124,7 +130,7 @@ FlowAddPubKeySecret operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowAddPubKeySecretKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowAddPubKeySecretKMS(
     \Tatum\Model\FlowAddPubKeySecretKMS $flow_add_pub_key_secret_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -160,7 +166,7 @@ FlowAddPubKeySecretKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeyKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeyKMS(
     \Tatum\Model\FlowCreateAddressFromPubKeyKMS $flow_create_address_from_pub_key_kms
 ): \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
 ```
@@ -196,7 +202,7 @@ FlowCreateAddressFromPubKeyKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeyMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeyMnemonic(
     \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic $flow_create_address_from_pub_key_mnemonic
 ): \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
 ```
@@ -238,7 +244,7 @@ Create Flow address from public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeySecret(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowCreateAddressFromPubKeySecret(
     \Tatum\Model\FlowCreateAddressFromPubKeySecret $flow_create_address_from_pub_key_secret
 ): \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
 ```
@@ -274,7 +280,7 @@ FlowCreateAddressFromPubKeySecret operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowCustomTransactionKMS(
     \Tatum\Model\FlowCustomTransactionKMS $flow_custom_transaction_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -310,7 +316,7 @@ FlowCustomTransactionKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowCustomTransactionMnemonic(
     \Tatum\Model\FlowCustomTransactionMnemonic $flow_custom_transaction_mnemonic
 ): \Tatum\Model\TransactionSigned
 ```
@@ -354,7 +360,7 @@ Send arbitrary transaction to blockchain
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowCustomTransactionPK(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowCustomTransactionPK(
     \Tatum\Model\FlowCustomTransactionPK $flow_custom_transaction_pk
 ): \Tatum\Model\TransactionSigned
 ```
@@ -390,7 +396,7 @@ FlowCustomTransactionPK operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\FlowGenerateAddress200Response
@@ -432,7 +438,7 @@ Generate Flow address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGeneratePubKey(
     string $xpub,
     float $index
 ): \Tatum\Model\FlowGeneratePubKey200Response
@@ -472,7 +478,7 @@ Generate Flow public key from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGeneratePubKeyPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGeneratePubKeyPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -510,7 +516,7 @@ Generate Flow private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -554,7 +560,7 @@ Tatum follows BIP44 specification and generates for Dogecoin wallet with derivat
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGetAccount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGetAccount(
     string $address
 ): \Tatum\Model\FlowAccount
 ```
@@ -592,7 +598,7 @@ Get Flow account details.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGetBlock(
     string $hash
 ): \Tatum\Model\FlowBlock
 ```
@@ -630,7 +636,7 @@ Get Flow Block detail by block hash or height.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGetBlockChainInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGetBlockChainInfo(
 ): float
 ```
 
@@ -665,7 +671,7 @@ Get Flow current block number.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGetBlockEvents(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGetBlockEvents(
     string $type,
     float $from,
     float $to
@@ -707,7 +713,7 @@ Get Flow events from block.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowGetRawTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGetRawTransaction(
     string $hash
 ): \Tatum\Model\FlowTx
 ```
@@ -745,7 +751,7 @@ Get Flow Transaction detail by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowTransactionKMS(
     \Tatum\Model\FlowTransactionKMS $flow_transaction_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -781,7 +787,7 @@ FlowTransactionKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionMnemonic(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowTransactionMnemonic(
     \Tatum\Model\FlowTransactionMnemonic $flow_transaction_mnemonic
 ): \Tatum\Model\TransactionSigned
 ```
@@ -825,7 +831,7 @@ Send Flow to blockchain addresses
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->flow()->flowTransactionPK(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowTransactionPK(
     \Tatum\Model\FlowTransactionPK $flow_transaction_pk
 ): \Tatum\Model\TransactionSigned
 ```

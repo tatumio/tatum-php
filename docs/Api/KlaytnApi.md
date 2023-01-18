@@ -9,7 +9,13 @@ layout: page
 [Klaytn API Reference](https://apidoc.tatum.io/tag/Klaytn/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->klaytn();
+
+// TestNet API Call
+$sdk->testnet()->api()->klaytn();
 ```
 
 ## Methods
@@ -40,7 +46,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractMethod(
     \Tatum\Model\CallKlaytnSmartContractMethod $call_klaytn_smart_contract_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -76,7 +82,7 @@ CallKlaytnSmartContractMethod operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractMethodKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractMethodKMS(
     \Tatum\Model\CallKlaytnSmartContractMethodKMS $call_klaytn_smart_contract_method_kms
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -112,7 +118,7 @@ CallKlaytnSmartContractMethodKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractReadMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->callKlaytnSmartContractReadMethod(
     \Tatum\Model\CallKlaytnSmartContractReadMethod $call_klaytn_smart_contract_read_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -174,7 +180,7 @@ However, because this API can be run against any smart contract on the blockchai
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -212,7 +218,7 @@ Broadcast signed Klaytn transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\KlaytnGenerateAddress200Response
@@ -252,7 +258,7 @@ Generate Klaytn account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -290,7 +296,7 @@ Generate Klaytn private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -334,7 +340,7 @@ Tatum follows BIP44 specification and generates for Klaytn wallet with derivatio
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGetBalance(
     string $address
 ): \Tatum\Model\KlaytnGetBalance200Response
 ```
@@ -372,7 +378,7 @@ Get Klaytn Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGetBlock(
     string $hash
 ): \Tatum\Model\KlaytnBlock
 ```
@@ -410,7 +416,7 @@ Get Klaytn block by hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGetCurrentBlock(
 ): float
 ```
 
@@ -445,7 +451,7 @@ Get current block number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGetTransaction(
     string $hash
 ): \Tatum\Model\KlaytnTx
 ```
@@ -483,7 +489,7 @@ Get Klaytn Transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGetTransactionCount(
     string $address
 ): float
 ```
@@ -521,7 +527,7 @@ Get count of outgoing Klaytn transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->klaytnWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnWeb3Driver(
     string $x_api_key,
     object $body
 ): object
@@ -563,7 +569,7 @@ Web3 HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->transferKlaytnBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->transferKlaytnBlockchain(
     \Tatum\Model\TransferKlaytnBlockchain $transfer_klaytn_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -609,7 +615,7 @@ Send KLAY from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->klaytn()->transferKlaytnBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->transferKlaytnBlockchainKMS(
     \Tatum\Model\TransferKlaytnBlockchainKMS $transfer_klaytn_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```

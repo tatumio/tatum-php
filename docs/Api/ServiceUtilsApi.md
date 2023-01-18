@@ -9,7 +9,13 @@ layout: page
 [Service utils API Reference](https://apidoc.tatum.io/tag/Service-utils/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->serviceUtils()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->serviceUtils();
+
+// TestNet API Call
+$sdk->testnet()->api()->serviceUtils();
 ```
 
 ## Methods
@@ -29,7 +35,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->serviceUtils()->freezeApiKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->freezeApiKey(
 )
 ```
 
@@ -64,7 +70,7 @@ Freeze the API Key. It's not possible to perform sensitive operations like send 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->serviceUtils()->getCredits(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->getCredits(
 ): \Tatum\Model\Consumption[]
 ```
 
@@ -99,7 +105,7 @@ Get information about your credit consumption for the last month
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->serviceUtils()->getVersion(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->getVersion(
 ): \Tatum\Model\GetVersion200Response
 ```
 
@@ -134,7 +140,7 @@ Get current version of the API.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->serviceUtils()->unfreezeApiKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->unfreezeApiKey(
 )
 ```
 

@@ -9,7 +9,13 @@ layout: page
 [Bitcoin API Reference](https://apidoc.tatum.io/tag/Bitcoin/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->bitcoin();
+
+// TestNet API Call
+$sdk->testnet()->api()->bitcoin();
 ```
 
 ## Methods
@@ -42,7 +48,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -80,7 +86,7 @@ Broadcast a signed Bitcoin transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\GeneratedAddressBtc
@@ -120,7 +126,7 @@ Generate a Bitcoin address from the wallet's extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -158,7 +164,7 @@ Generate the private key for a Bitcoin address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -202,7 +208,7 @@ Tatum follows BIP44 specification and generates for Bitcoin wallet with derivati
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBalanceOfAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetBalanceOfAddress(
     string $address
 ): \Tatum\Model\BtcBasedBalance
 ```
@@ -242,7 +248,7 @@ Get the balance of a Bitcoin address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetBlock(
     string $hash
 ): \Tatum\Model\BtcBlock
 ```
@@ -280,7 +286,7 @@ Get a Bitcoin block by its hash or height
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockChainInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockChainInfo(
 ): \Tatum\Model\BtcInfo
 ```
 
@@ -315,7 +321,7 @@ Get Bitcoin blockchain information
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockHash(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockHash(
     float $i
 ): \Tatum\Model\BtcBlockHash
 ```
@@ -353,7 +359,7 @@ Get the hash of a Bitcoin block
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetMempool(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetMempool(
 ): string[]
 ```
 
@@ -388,7 +394,7 @@ Get transactions from the Bitcoin mempool
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetRawTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetRawTransaction(
     string $hash
 ): \Tatum\Model\BtcTx
 ```
@@ -426,7 +432,7 @@ Get a Bitcoin transaction by its hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetTxByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetTxByAddress(
     string $address,
     float $page_size,
     [ float $offset ]
@@ -468,7 +474,7 @@ Get all transactions for a Bitcoin address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcGetUTXO(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetUTXO(
     string $hash,
     float $index
 ): \Tatum\Model\BtcUTXO
@@ -514,7 +520,7 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcRpcDriver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcRpcDriver(
     \Tatum\Model\BtcRpcDriverRequest $btc_rpc_driver_request
 ): object
 ```
@@ -556,7 +562,7 @@ This endpoint is deprecated. Do not use it.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromAddress(
     \Tatum\Model\BtcTransactionFromAddress $btc_transaction_from_address
 ): \Tatum\Model\TransactionSigned
 ```
@@ -628,7 +634,7 @@ The assets are sent from a list of UTXOs. Each UTXO is included in the transacti
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromAddressKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromAddressKMS(
     \Tatum\Model\BtcTransactionFromAddressKMS $btc_transaction_from_address_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -664,7 +670,7 @@ BtcTransactionFromAddressKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromUTXO(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromUTXO(
     \Tatum\Model\BtcTransactionFromUTXO $btc_transaction_from_utxo
 ): \Tatum\Model\TransactionSigned
 ```
@@ -700,7 +706,7 @@ BtcTransactionFromUTXO operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromUTXOKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcTransactionFromUTXOKMS(
     \Tatum\Model\BtcTransactionFromUTXOKMS $btc_transaction_from_utxokms
 ): \Tatum\Model\TransactionSigned
 ```

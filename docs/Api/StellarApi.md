@@ -9,7 +9,13 @@ layout: page
 [Stellar API Reference](https://apidoc.tatum.io/tag/Stellar/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->stellar();
+
+// TestNet API Call
+$sdk->testnet()->api()->stellar();
 ```
 
 ## Methods
@@ -40,7 +46,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchain(
     \Tatum\Model\TransferXlmBlockchain $transfer_xlm_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -80,7 +86,7 @@ Send XLM from address to address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainAsset(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainAsset(
     \Tatum\Model\TransferXlmBlockchainAsset $transfer_xlm_blockchain_asset
 ): \Tatum\Model\TransactionSigned
 ```
@@ -116,7 +122,7 @@ TransferXlmBlockchainAsset operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainKMS(
     \Tatum\Model\TransferXlmBlockchainKMS $transfer_xlm_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -152,7 +158,7 @@ TransferXlmBlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainKMSAsset(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->transferXlmBlockchainKMSAsset(
     \Tatum\Model\TransferXlmBlockchainKMSAsset $transfer_xlm_blockchain_kms_asset
 ): \Tatum\Model\TransactionSigned
 ```
@@ -188,7 +194,7 @@ TransferXlmBlockchainKMSAsset operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->trustLineXlmBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->trustLineXlmBlockchain(
     \Tatum\Model\TrustLineXlmBlockchain $trust_line_xlm_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -228,7 +234,7 @@ Create / Update / Delete XLM trust line
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->trustLineXlmBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->trustLineXlmBlockchainKMS(
     \Tatum\Model\TrustLineXlmBlockchainKMS $trust_line_xlm_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```
@@ -264,7 +270,7 @@ TrustLineXlmBlockchainKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -302,7 +308,7 @@ Broadcast signed XLM transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountInfo(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetAccountInfo(
     string $account
 ): \Tatum\Model\XlmAccount
 ```
@@ -340,7 +346,7 @@ Get XLM Account detail.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetAccountTx(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetAccountTx(
     string $account,
     [ string $pagination ]
 ): \Tatum\Model\XlmTx[]
@@ -380,7 +386,7 @@ List all XLM account transactions.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetFee(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetFee(
 ): float
 ```
 
@@ -415,7 +421,7 @@ Get XLM Blockchain fee in 1/10000000 of XLM (stroop)
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLastClosedLedger(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetLastClosedLedger(
 ): \Tatum\Model\XlmLedger
 ```
 
@@ -450,7 +456,7 @@ Get XLM Blockchain last closed ledger.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLedger(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetLedger(
     string $sequence
 ): \Tatum\Model\XlmLedger
 ```
@@ -488,7 +494,7 @@ Get XLM Blockchain ledger for ledger sequence.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetLedgerTx(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetLedgerTx(
     string $sequence
 ): \Tatum\Model\XlmTx[]
 ```
@@ -526,7 +532,7 @@ Get XLM Blockchain transactions in the ledger.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetTransaction(
     string $hash
 ): \Tatum\Model\XlmTx
 ```
@@ -564,7 +570,7 @@ Get XLM Transaction by transaction hash.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->stellar()->xlmWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmWallet(
 ): \Tatum\Model\XlmWallet
 ```
 

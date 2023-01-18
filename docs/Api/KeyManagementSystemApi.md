@@ -9,7 +9,13 @@ layout: page
 [Key Management System API Reference](https://apidoc.tatum.io/tag/Key-Management-System/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->keyManagementSystem()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->keyManagementSystem();
+
+// TestNet API Call
+$sdk->testnet()->api()->keyManagementSystem();
 ```
 
 ## Methods
@@ -30,7 +36,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->completePendingSignature(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->keyManagementSystem()->completePendingSignature(
     string $id,
     string $tx_id
 )
@@ -70,7 +76,7 @@ Complete pending transaction to sign
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->deletePendingTransactionToSign(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->keyManagementSystem()->deletePendingTransactionToSign(
     string $id,
     [ bool $revert = true ]
 )
@@ -110,7 +116,7 @@ Delete transaction to be signed. When deleting offchain transaction, linked with
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionToSign(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionToSign(
     string $id
 ): \Tatum\Model\PendingTransaction
 ```
@@ -148,7 +154,7 @@ Get detail of transaction to be signed / that was already signed and contains tr
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionsToSign(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->keyManagementSystem()->getPendingTransactionsToSign(
     string $chain,
     [ string $signatures ]
 ): \Tatum\Model\PendingTransaction[]
@@ -188,7 +194,7 @@ Get pending transactions to sign
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->keyManagementSystem()->receivePendingTransactionsToSign(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->keyManagementSystem()->receivePendingTransactionsToSign(
     string $chain,
     [ \Tatum\Model\KmsSignatureIds $kms_signature_ids ]
 ): \Tatum\Model\PendingTransaction[]

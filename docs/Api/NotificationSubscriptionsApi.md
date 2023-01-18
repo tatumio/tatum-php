@@ -9,7 +9,13 @@ layout: page
 [Notification subscriptions API Reference](https://apidoc.tatum.io/tag/Notification-subscriptions/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->notificationSubscriptions();
+
+// TestNet API Call
+$sdk->testnet()->api()->notificationSubscriptions();
 ```
 
 ## Methods
@@ -46,7 +52,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionBalance(
     \Tatum\Model\CreateSubscriptionBalance $create_subscription_balance,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -84,7 +90,7 @@ CreateSubscriptionBalance operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionContractLogEvent(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionContractLogEvent(
     \Tatum\Model\CreateSubscriptionContractLogEvent $create_subscription_contract_log_event,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -122,7 +128,7 @@ CreateSubscriptionContractLogEvent operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionIncoming(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionIncoming(
     \Tatum\Model\CreateSubscriptionIncoming $create_subscription_incoming,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -160,7 +166,7 @@ CreateSubscriptionIncoming operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionInterval(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionInterval(
     \Tatum\Model\CreateSubscriptionInterval $create_subscription_interval,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -198,7 +204,7 @@ CreateSubscriptionInterval operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionKMSError(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionKMSError(
     \Tatum\Model\CreateSubscriptionKMSError $create_subscription_kms_error,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -236,7 +242,7 @@ CreateSubscriptionKMSError operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionKMSSuccess(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionKMSSuccess(
     \Tatum\Model\CreateSubscriptionKMSSuccess $create_subscription_kms_success,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -274,7 +280,7 @@ CreateSubscriptionKMSSuccess operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionMultiTokenTransferEvent(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionMultiTokenTransferEvent(
     \Tatum\Model\CreateSubscriptionMultiTokenTransferEvent $create_subscription_multi_token_transfer_event,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -312,7 +318,7 @@ CreateSubscriptionMultiTokenTransferEvent operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionNftTransferEvent(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionNftTransferEvent(
     \Tatum\Model\CreateSubscriptionNftTransferEvent $create_subscription_nft_transfer_event,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -350,7 +356,7 @@ CreateSubscriptionNftTransferEvent operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionNotification(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionNotification(
     \Tatum\Model\CreateSubscriptionNotification $create_subscription_notification,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -552,7 +558,7 @@ Create a subscription
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionPartialTradeMatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionPartialTradeMatch(
     \Tatum\Model\CreateSubscriptionPartialTradeMatch $create_subscription_partial_trade_match,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -590,7 +596,7 @@ CreateSubscriptionPartialTradeMatch operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionPending(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionPending(
     \Tatum\Model\CreateSubscriptionPending $create_subscription_pending,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -628,7 +634,7 @@ CreateSubscriptionPending operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionTradeMatch(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionTradeMatch(
     \Tatum\Model\CreateSubscriptionTradeMatch $create_subscription_trade_match,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -666,7 +672,7 @@ CreateSubscriptionTradeMatch operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionTxInTheBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->createSubscriptionTxInTheBlock(
     \Tatum\Model\CreateSubscriptionTxInTheBlock $create_subscription_tx_in_the_block,
     [ string $testnet_type = 'ethereum-sepolia' ]
 ): \Tatum\Model\Id
@@ -704,7 +710,7 @@ CreateSubscriptionTxInTheBlock operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->deleteSubscription(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->deleteSubscription(
     string $id
 )
 ```
@@ -742,7 +748,7 @@ Cancel existing subscription.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->disableWebHookHmac(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->disableWebHookHmac(
 )
 ```
 
@@ -777,7 +783,7 @@ Disable HMAC hash ID on the fired webhooks from Tatum API.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->enableWebHookHmac(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->enableWebHookHmac(
     \Tatum\Model\HmacWebHook $hmac_web_hook
 )
 ```
@@ -819,7 +825,7 @@ Enable HMAC hash ID on the fired webhooks from Tatum API. In order to make sure 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooks(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooks(
     float $page_size,
     [ float $offset, ]
     [ string $direction, ]
@@ -863,7 +869,7 @@ List all webhooks.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooksCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->getAllWebhooksCount(
     float $page_size,
     [ float $offset, ]
     [ string $direction, ]
@@ -907,7 +913,7 @@ Count of webhooks that were found from /v3/subscription/webhook
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionReport(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionReport(
     string $id
 ): \Tatum\Model\GetSubscriptionReport200Response
 ```
@@ -947,7 +953,7 @@ Obtain report for subscription
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptions(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptions(
     float $page_size,
     [ float $offset, ]
     [ string $address ]
@@ -989,7 +995,7 @@ List all active subscriptions.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionsCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->getSubscriptionsCount(
     float $page_size,
     [ float $offset, ]
     [ string $address ]

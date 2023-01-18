@@ -9,5 +9,11 @@ Local transaction signing operations:
 
 ```php
 <?php
-(new \Tatum\Sdk())->{testnet/mainnet}()->local()->transaction();
+$sdk = new \Tatum\Sdk();
+
+// MainNet Local Transaction Operations
+$sdk->mainnet()->local()->transaction();
+
+// TestNet Local Transaction Operations
+$sdk->testnet()->local()->transaction();
 ```

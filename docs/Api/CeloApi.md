@@ -9,7 +9,13 @@ layout: page
 [Celo API Reference](https://apidoc.tatum.io/tag/Celo/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->celo();
+
+// TestNet API Call
+$sdk->testnet()->api()->celo();
 ```
 
 ## Methods
@@ -41,7 +47,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->callCeloReadSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->callCeloReadSmartContractMethod(
     \Tatum\Model\CallCeloReadSmartContractMethod $call_celo_read_smart_contract_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -103,7 +109,7 @@ However, because this API can be run against any smart contract on the blockchai
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->callCeloSmartContractMethod(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->callCeloSmartContractMethod(
     \Tatum\Model\CallCeloSmartContractMethod $call_celo_smart_contract_method
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -139,7 +145,7 @@ CallCeloSmartContractMethod operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->callCeloSmartContractMethodKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->callCeloSmartContractMethodKMS(
     \Tatum\Model\CallCeloSmartContractMethodKMS $call_celo_smart_contract_method_kms
 ): \Tatum\Model\CallSmartContractMethod200Response
 ```
@@ -175,7 +181,7 @@ CallCeloSmartContractMethodKMS operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\TransactionHash
 ```
@@ -213,7 +219,7 @@ Broadcast signed Celo transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGenerateAddress(
     string $xpub,
     float $index
 ): \Tatum\Model\CeloGenerateAddress200Response
@@ -253,7 +259,7 @@ Generate Celo account address from Extended public key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGenerateAddressPrivateKey(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGenerateAddressPrivateKey(
     \Tatum\Model\PrivKeyRequest $priv_key_request
 ): \Tatum\Model\PrivKey
 ```
@@ -291,7 +297,7 @@ Generate Celo private key
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGenerateWallet(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGenerateWallet(
     [ string $mnemonic ]
 ): \Tatum\Model\Wallet
 ```
@@ -335,7 +341,7 @@ Tatum follows BIP44 specification and generates for Celo wallet with derivation 
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGetBalance(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGetBalance(
     string $address
 ): \Tatum\Model\CeloGetBalance200Response
 ```
@@ -373,7 +379,7 @@ Get Celo Account balance
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGetBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGetBlock(
     string $hash
 ): \Tatum\Model\CeloBlock
 ```
@@ -411,7 +417,7 @@ Get Celo block by hash
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGetCurrentBlock(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGetCurrentBlock(
 ): float
 ```
 
@@ -446,7 +452,7 @@ Get current block number
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGetTransaction(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGetTransaction(
     string $hash
 ): \Tatum\Model\CeloTx
 ```
@@ -484,7 +490,7 @@ Get Celo Transaction
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionByAddress(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGetTransactionByAddress(
     string $address,
     float $page_size,
     [ float $offset, ]
@@ -532,7 +538,7 @@ Get Celo transactions by address
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoGetTransactionCount(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGetTransactionCount(
     string $address
 ): float
 ```
@@ -570,7 +576,7 @@ Get count of outgoing Celo transactions
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->celoWeb3Driver(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoWeb3Driver(
     string $x_api_key,
     object $body
 ): object
@@ -612,7 +618,7 @@ Web3 HTTP driver
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->transferCeloBlockchain(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->transferCeloBlockchain(
     \Tatum\Model\TransferCeloBlockchain $transfer_celo_blockchain
 ): \Tatum\Model\TransactionSigned
 ```
@@ -658,7 +664,7 @@ Send Celo / ERC20 from account to account
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->celo()->transferCeloBlockchainKMS(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->transferCeloBlockchainKMS(
     \Tatum\Model\TransferCeloBlockchainKMS $transfer_celo_blockchain_kms
 ): \Tatum\Model\TransactionSigned
 ```

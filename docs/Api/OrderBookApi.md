@@ -9,7 +9,13 @@ layout: page
 [Order Book API Reference](https://apidoc.tatum.io/tag/Order-Book/)
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()
+$sdk = new \Tatum\Sdk();
+
+// MainNet API Call
+$sdk->mainnet()->api()->orderBook();
+
+// TestNet API Call
+$sdk->testnet()->api()->orderBook();
 ```
 
 ## Methods
@@ -38,7 +44,7 @@ Method | Description
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->chartRequest(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->chartRequest(
     \Tatum\Model\ChartRequest $chart_request
 ): \Tatum\Model\Chart[]
 ```
@@ -76,7 +82,7 @@ Obtain chart data from historical closed trades
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->createFutureTrade(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->createFutureTrade(
     \Tatum\Model\CreateFutureTrade $create_future_trade
 ): \Tatum\Model\Id
 ```
@@ -112,7 +118,7 @@ CreateFutureTrade operation
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->createTrade(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->createTrade(
     \Tatum\Model\CreateTrade $create_trade
 ): \Tatum\Model\Id
 ```
@@ -170,7 +176,7 @@ Store buy / sell trade
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->deleteAccountTrades(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->deleteAccountTrades(
     string $id
 )
 ```
@@ -208,7 +214,7 @@ Cancel all trades for account.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->deleteTrade(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->deleteTrade(
     string $id
 )
 ```
@@ -246,7 +252,7 @@ Cancel existing trade.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTrades(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getBuyTrades(
     float $page_size,
     [ string $id, ]
     [ string $customer_id, ]
@@ -296,7 +302,7 @@ List all active buy trades.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->getBuyTradesBody(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getBuyTradesBody(
     \Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body
 ): \Tatum\Model\Trade[]
 ```
@@ -334,7 +340,7 @@ List all active buy trades.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTrades(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getHistoricalTrades(
     float $page_size,
     [ string $id, ]
     [ string $pair, ]
@@ -382,7 +388,7 @@ List all historical trades. It is possible to list all trades, trades for specif
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->getHistoricalTradesBody(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getHistoricalTradesBody(
     [ \Tatum\Model\ListOderBookHistoryBody $list_oder_book_history_body ]
 ): \Tatum\Model\Trade[]
 ```
@@ -420,7 +426,7 @@ List all historical trades. It is possible to list all trades, trades for specif
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->getMatchedTrades(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getMatchedTrades(
     \Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body
 ): \Tatum\Model\Trade[]
 ```
@@ -458,7 +464,7 @@ List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->getSellTrades(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getSellTrades(
     float $page_size,
     [ string $id, ]
     [ string $customer_id, ]
@@ -508,7 +514,7 @@ List all active sell trades.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->getSellTradesBody(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getSellTradesBody(
     \Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body
 ): \Tatum\Model\Trade[]
 ```
@@ -546,7 +552,7 @@ List all active sell trades.
 ### Type signature
 
 ```php
-$sdk->{mainnet/testnet}()->api()->orderBook()->getTradeById(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getTradeById(
     string $id
 ): \Tatum\Model\Trade
 ```
