@@ -15,7 +15,7 @@
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 $arg_sell_asset_on_marketplace_kms = (new \Tatum\Model\SellAssetOnMarketplaceKMS())
     

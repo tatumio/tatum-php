@@ -15,7 +15,7 @@
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 $arg_deploy_erc20_offchain_kms_address = (new \Tatum\Model\DeployErc20OffchainKMSAddress())
     

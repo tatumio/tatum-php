@@ -15,7 +15,7 @@
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 // Extended public key of a wallet.
 $arg_xpub = "30e96a57be6235c686da968c1860f69d1871a692b29626b7ebb923aff8c6731cb9fef3a26b7eba8a07653483d06427d0c07966c5f81c69a7925d714530bedb1ef9e9103547b54ad0954b3569785ca70e1fd08313f92a3a9d31efa216b2b9adac4678455e66c97b53cd589f9da70a14265cf15cd4c1e0ce914407008f4a65f316";

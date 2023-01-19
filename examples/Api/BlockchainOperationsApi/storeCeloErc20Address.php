@@ -15,7 +15,7 @@
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 // ERC-20 contract address
 $arg_address = "0x687422eEA2cB73B5d3e242bA5456b782919AFc85";

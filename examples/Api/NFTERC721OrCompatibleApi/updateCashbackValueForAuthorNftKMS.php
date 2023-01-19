@@ -15,7 +15,7 @@
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 $arg_update_cashback_value_for_author_nft_kms = (new \Tatum\Model\UpdateCashbackValueForAuthorNftKMS())
     

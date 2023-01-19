@@ -109,7 +109,7 @@ Please follow the [installation procedure](#installation--usage) then create an 
 require_once(__DIR__ . '/autoload.php');
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 try {
     /** @var $walletTestnet \Tatum\Model\Wallet */

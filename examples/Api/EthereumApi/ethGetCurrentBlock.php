@@ -15,7 +15,7 @@
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
 $arg_x_testnet_type = 'ethereum-sepolia';

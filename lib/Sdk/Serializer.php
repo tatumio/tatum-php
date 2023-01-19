@@ -247,6 +247,7 @@ class Serializer {
 
             if (is_bool($value)) {
                 $result = $value ? "true" : "false";
+                break;
             }
 
             $result = "$value";

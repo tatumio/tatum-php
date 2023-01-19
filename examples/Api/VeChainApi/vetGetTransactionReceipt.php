@@ -15,7 +15,7 @@
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 // Transaction hash
 $arg_hash = "0x24f691abab680972437028af22bc7a43c3fbe8d6d7eefc420dea2daf554758a7";

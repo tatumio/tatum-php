@@ -58,10 +58,17 @@ abstract class AbstractApi {
      * @return \Tatum\Model\ModelInterface|\Tatum\Sdk\Psr7\Http\ResponseInterface
      */
     protected function exec(Request $request, ?string $returnType = null) {
-        // Set the user agent and API key
+        // Set the user agent
         $request->setHeader("User-Agent", $this->_caller->config()->getUserAgent());
+
+        // Set the API key
         if (strlen($this->_caller->config()->getApiKey())) {
             $request->setHeader("x-api-key", $this->_caller->config()->getApiKey());
+        }
+
+        // Accept gzip compression
+        if (!$this->_caller->config()->getDebug()) {
+            $request->setHeader("Accept-Encoding", "gzip");
         }
 
         try {

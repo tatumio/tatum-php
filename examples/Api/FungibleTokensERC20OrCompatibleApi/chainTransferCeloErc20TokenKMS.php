@@ -15,7 +15,7 @@
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
 // Tatum SDK
-$sdk = new \Tatum\Sdk();
+$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
 
 $arg_chain_transfer_celo_erc20_token_kms = (new \Tatum\Model\ChainTransferCeloErc20TokenKMS())
     

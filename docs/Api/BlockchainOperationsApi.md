@@ -5289,7 +5289,7 @@ Send XRP from a virtual account to the blockchain
 
 <h4>10 credits per API call.</h4>
 
- Send XRP (Ripple) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. 
+ Send XRP from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. When every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. 
 
 <ul> <li>If XRP server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul>
 
@@ -5495,7 +5495,7 @@ Create XRP based Asset
 
 <h4>2 credits per API call.</h4>
 
- Create an XRP-based asset in a virtual account. The asset must be created and configured on the Ripple blockchain before <a href="https://apidoc.tatum.io/tag/XRP#operation/XrpTrustLineBlockchain">creating a trust line</a>.
+ Create an XRP-based asset in a virtual account. The asset must be created and configured on the XRPL blockchain before <a href="https://apidoc.tatum.io/tag/XRP#operation/XrpTrustLineBlockchain">creating a trust line</a>.
 
  This API call will create an internal virtual currency. You can create virtual accounts with off-chain support.
 
