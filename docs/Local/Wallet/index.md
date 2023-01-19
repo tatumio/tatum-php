@@ -8,7 +8,6 @@ nav_order: 3
 Local wallet operations:
 
 ```php
-<?php
 $sdk = new \Tatum\Sdk();
 
 // MainNet Local Wallet Operations

@@ -8,7 +8,6 @@ nav_order: 4
 Local transaction signing operations:
 
 ```php
-<?php
 $sdk = new \Tatum\Sdk();
 
 // MainNet Local Transaction Operations

@@ -24,10 +24,10 @@ building your application without having to go back to the documentation.
 
 ```mermaid
 stateDiagram-v2
-    label: Tatum PHP SDK - 💦 Fluent Interface
+    label: Tatum PHP SDK 💦 Fluent Interface
 
     state label {
-        sdk: new \Tatum\Sdk ( key-MainNet, key-TestNet )
+        sdk: new Sdk ( API-KEY-MAINNET, API-KEY-TESTNET )
         [*] --> sdk
         sdk --> testnet()
         sdk --> mainnet()
@@ -36,7 +36,6 @@ stateDiagram-v2
             [*] --> config()
             [*] --> local()
             [*] --> api()
-            
             local() --> wallet()
             local() --> transaction()
         }
@@ -48,9 +47,9 @@ stateDiagram-v2
             mWallet(): wallet()
             mTransaction(): transaction()
 
-            [*] --> mApi()
-            [*] --> mLocal()
             [*] --> mConfig()
+            [*] --> mLocal()
+            [*] --> mApi()
             mLocal() --> mWallet()
             mLocal() --> mTransaction()
         }
