@@ -23,13 +23,6 @@ namespace Tatum\Model;
  */
 interface ModelInterface {
     /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName(): string;
-
-    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array<string, string|class-string>
@@ -65,6 +58,20 @@ interface ModelInterface {
     public static function getters(): array;
 
     /**
+     * The original name of the model
+     *
+     * @return string
+     */
+    public function modelName(): string;
+
+    /**
+     * Validate all the properties in the model return true if all passed
+     *
+     * @return bool
+     */
+    public function valid(): bool;
+
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return string[]
@@ -72,36 +79,17 @@ interface ModelInterface {
     public function listInvalidProperties(): array;
 
     /**
-     * Validate all the properties in the model
-     * return true if all passed
+     * Get list of additional properties for the model
      *
-     * @return bool
+     * @return mixed[] List of additional properties
      */
-    public function valid(): bool;
+    public function listAdditionalProperties(): array;
 
     /**
-     * Set list of additional properties for the model.
+     * Set an additional property for the model
      *
-     * @param mixed[] $fields
-     *   List of additional properties
+     * @param string $property Property name
+     * @param mixed  $value    Value of the property
      */
-    public function setAdditionalProperties(array $fields);
-
-    /**
-     * Set an additional property for the model.
-     *
-     * @param string $property
-     *   Property name.
-     * @param mixed $value
-     *   Value of the property.
-     */
-    public function setAdditionalProperty(string $property, $value);
-
-    /**
-     * Get list of additional properties for the model.
-     *
-     * @return mixed[]
-     *   List of additional properties
-     */
-    public function getAdditionalProperties(): array;
+    public function additionalPropertySet(string $property, $value);
 }

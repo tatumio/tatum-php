@@ -276,7 +276,7 @@ $sdk->testnet()->config()->setDebugSanitizer(false);
 <summary>👓 GET Request</summary>
 
 <pre class="highlight"><code>
->>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>
 curl -i -X GET \
   'https://api.tatum.io/v3/bitcoin/wallet?mnemonic=******&type=testnet' \
   -H 'Host: api.tatum.io' \
@@ -284,8 +284,8 @@ curl -i -X GET \
   -H 'Accept: application/json' \
   -H 'x-api-key: abc******xyz_100' \
   -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
->>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>
-<<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>
+<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<
 Status code: 200
 Headers:
 * Date: Fri, 06 Jan 2023 15:52:36 GMT
@@ -315,7 +315,7 @@ Body:
     "mnemonic": "******",
     "xpub": "tpubDExxmbZbZ8hvcykrL66zGKsWy8p8CUmV4vUErffboQoahPr4goABNmaZnnRgmh8ePRcJ3eHuivEG87HBdsquU3FQJstbxJjKwhtjGiWrpB2"
 }
-<<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<
 </code></pre>
 
 </details>
@@ -324,7 +324,7 @@ Body:
 <summary>📦 POST/PUT Request</summary>
 
 <pre class="highlight"><code>
->>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>
 curl -i -X POST \
   'https://api.tatum.io/v3/bitcoin/wallet/priv?type=testnet' \
   -H 'Host: api.tatum.io' \
@@ -336,8 +336,8 @@ curl -i -X POST \
     "index": 1,
     "mnemonic": "******"
 }' 
->>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>
-<<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>
+<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<
 Status code: 200
 Headers:
 * Date: Fri, 06 Jan 2023 15:52:38 GMT
@@ -366,7 +366,7 @@ Body:
 {
     "key": "******"
 }
-<<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<
 </code></pre>
 
 </details>
@@ -375,7 +375,7 @@ Body:
 <summary>📤 File Upload</summary>
 
 <pre class="highlight"><code>
->>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST MainNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>> Tatum API REQUEST MainNet >>>>>>>>>>>>
 curl -i -X POST \
   'https://api.tatum.io/v3/ipfs' \
   -H 'Host: api.tatum.io' \
@@ -384,8 +384,8 @@ curl -i -X POST \
   -H 'x-api-key: abc******xyz_100' \
   -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
   -F file=@screen-dev-mode.png 
->>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST MainNet >>>>>>>>>>>>>>>>>>>>>>>>>>
-<<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE MainNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>> /Tatum API REQUEST MainNet >>>>>>>>>>>
+<<<<<<<<<<< Tatum API RESPONSE MainNet <<<<<<<<<<<
 Status code: 201
 Headers:
 * Date: Fri, 06 Jan 2023 15:52:42 GMT
@@ -414,7 +414,7 @@ Body:
 {
     "ipfsHash": "bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4"
 }
-<<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE MainNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+<<<<<<<<<< /Tatum API RESPONSE MainNet <<<<<<<<<<<
 </code></pre>
 
 </details>
@@ -423,7 +423,7 @@ Body:
 <summary>📥 File Download</summary>
 
 <pre class="highlight"><code>
->>>>>>>>>>>>>>>>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>> Tatum API REQUEST TestNet >>>>>>>>>>>>
 curl -i -X GET \
   'https://api.tatum.io/v3/ipfs/bafkreihjtmd4gg5cujvhzdvg2jx7xawwjpmee74bkcf5pgpw6yu6n6nka4?type=testnet' \
   -H 'Host: api.tatum.io' \
@@ -431,8 +431,8 @@ curl -i -X GET \
   -H 'Accept: application/json' \
   -H 'x-api-key: abc******xyz_100' \
   -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
->>>>>>>>>>>>>>>>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>>>>>>>>>>>>>>>>
-<<<<<<<<<<<<<<<<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>
+<<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<
 Status code: 200
 Headers:
 * Date: Fri, 06 Jan 2023 15:52:48 GMT
@@ -458,7 +458,7 @@ Headers:
 * Server: cloudflare
 * CF-RAY: 78559f5688da0a5d-AMS
 Body: ( binary data )
-<<<<<<<<<<<<<<<<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<<<<<<<<<<<<<<<<
+<<<<<<<<<< /Tatum API RESPONSE TestNet <<<<<<<<<<<
 </code></pre>
 
 </details>

@@ -170,7 +170,7 @@ class Debugger {
      * @return string
      */
     protected function _getLogTag(string $tag, string $character = "#") {
-        return str_pad(" $tag ", 80, $character, STR_PAD_BOTH) . PHP_EOL;
+        return str_pad(" $tag ", 50, $character, STR_PAD_BOTH) . PHP_EOL;
     }
 
     /**
@@ -209,7 +209,7 @@ class Debugger {
         }
 
         // Body
-        if ("POST" === $request->getMethod()) {
+        if ("GET" !== $request->getMethod()) {
             // Multi-part form data
             if (count($request->getFiles())) {
                 foreach ($request->getFiles() as $fieldName => $fileObject) {
@@ -272,8 +272,8 @@ class Debugger {
             $response .= "Body: ( binary data )";
         } else {
             // JSON payload
-            $response .= "Body:\n";
-            $responseBody = "";
+            $response .= "Body: ";
+            $responseBody = "( empty )";
 
             // Attempt decoding
             $bodyJson = @json_decode($body, true);
@@ -291,7 +291,9 @@ class Debugger {
 
                 $responseBody = json_encode($bodyJson, JSON_PRETTY_PRINT);
             } else {
-                $responseBody = $body;
+                if (strlen(trim($body))) {
+                    $responseBody = $body;
+                }
             }
 
             // Trim to 2048

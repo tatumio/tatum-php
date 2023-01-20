@@ -103,7 +103,7 @@ abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function getModelName(): string {
+    public function modelName(): string {
         return static::$_name;
     }
 
@@ -239,25 +239,7 @@ abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return $this
      */
-    public function setAdditionalProperties(array $fields) {
-        $fields = array_diff_key($fields, static::attributeMap());
-        foreach ($this->_props as $prop) {
-            unset($this->_data[$prop]);
-        }
-
-        $this->_data += $fields;
-        $keys = array_keys($fields);
-        $this->_props = array_combine($keys, $keys);
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @return $this
-     */
-    public function setAdditionalProperty($property, $value) {
+    public function additionalPropertySet($property, $value) {
         if (isset(static::$_definition[$property])) {
             throw new InvalidArgumentException();
         }
@@ -270,7 +252,7 @@ abstract class AbstractModel implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * {@inheritdoc}
      */
-    public function getAdditionalProperties(): array {
+    public function listAdditionalProperties(): array {
         $data = $this->_data;
 
         return array_map(function ($key) use ($data) {
