@@ -518,18 +518,20 @@ class Serializer {
     /**
      * Create a request from relevant values
      *
-     * @param \Tatum\Sdk\Config          $config  Configuration object
-     * @param string                     $method  Request method type
-     * @param string                     $uri     Request uri
-     * @param array<array-key, mixed>    $query   Query parameters
-     * @param array<string, string|null> $headers Headers
-     * @param array<string|resource[]>   $form    Form parameters
-     * @param mixed                      $body    (optional) Body object; default <b>empty string</b>
+     * @param \Tatum\Sdk\Config          $config      Configuration object
+     * @param string                     $method      Request method type
+     * @param string                     $url         Request URL
+     * @param string                     $urlTemplate Request URL template
+     * @param array<array-key, mixed>    $query       Query parameters
+     * @param array<string, string|null> $headers     Headers
+     * @param array<string|resource[]>   $form        Form parameters
+     * @param mixed                      $body        (optional) Body object; default <b>empty string</b>
      */
     public static function createRequest(
         $config,
         string $method,
-        string $uri,
+        string $url,
+        string $urlTemplate,
         array $query,
         array $headers,
         array $form,
@@ -586,11 +588,13 @@ class Serializer {
         }
 
         // Preapre request
-        return new Request(
-            $method,
-            $config->getHost() . $uri . ($queryString ? "?{$queryString}" : ""),
-            $headers,
-            $multipart ? $form : (!empty($body) ? self::toBodyValue($body, $headers["Content-Type"] ?? "") : "")
-        );
+        return (
+            new Request(
+                $method,
+                $config->getHost() . $url . ($queryString ? "?{$queryString}" : ""),
+                $headers,
+                $multipart ? $form : (!empty($body) ? self::toBodyValue($body, $headers["Content-Type"] ?? "") : "")
+            )
+        )->setTemplate($urlTemplate);
     }
 }

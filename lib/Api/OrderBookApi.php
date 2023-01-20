@@ -31,13 +31,13 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Chart[]
      */
-    public function chartRequest(\Tatum\Model\ChartRequest $chart_request) {
+    public function chartRequest($chart_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Chart[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/trade/chart", [], $rHeaders, [], $chart_request
+                $this->_caller->config(), "POST", "/v3/trade/chart", "/v3/trade/chart", [], $rHeaders, [], $chart_request
             ), 
             "\Tatum\Model\Chart[]"
         );
@@ -54,13 +54,13 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createFutureTrade(\Tatum\Model\CreateFutureTrade $create_future_trade) {
+    public function createFutureTrade($create_future_trade) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/trade", [], $rHeaders, [], $create_future_trade
+                $this->_caller->config(), "POST", "/v3/trade", "/v3/trade", [], $rHeaders, [], $create_future_trade
             ), 
             "\Tatum\Model\Id"
         );
@@ -77,13 +77,13 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createTrade(\Tatum\Model\CreateTrade $create_trade) {
+    public function createTrade($create_trade) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/trade", [], $rHeaders, [], $create_trade
+                $this->_caller->config(), "POST", "/v3/trade", "/v3/trade", [], $rHeaders, [], $create_trade
             ), 
             "\Tatum\Model\Id"
         );
@@ -100,12 +100,12 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deleteAccountTrades(string $id) {
+    public function deleteAccountTrades($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/trade/account/{id}", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "DELETE", S::parse("/v3/trade/account/{id}", ["id" => $id]), "/v3/trade/account/{id}", [], $rHeaders, []
             )
         );
     }
@@ -119,12 +119,12 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deleteTrade(string $id) {
+    public function deleteTrade($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/trade/{id}", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "DELETE", S::parse("/v3/trade/{id}", ["id" => $id]), "/v3/trade/{id}", [], $rHeaders, []
             )
         );
     }
@@ -144,7 +144,7 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getBuyTrades(float $page_size, string $id = null, string $customer_id = null, float $offset = null, string $pair = null, bool $count = null, string $trade_type = null) {
+    public function getBuyTrades($page_size, $id = null, $customer_id = null, $offset = null, $pair = null, $count = null, $trade_type = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getBuyTrades, must be smaller than or equal to 50');
         }
@@ -170,7 +170,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/trade/buy", [
+                $this->_caller->config(), "GET", "/v3/trade/buy", "/v3/trade/buy", [
                     "id" => isset($id) ? S::toQueryValue($id) : null,
                     "customerId" => isset($customer_id) ? S::toQueryValue($customer_id) : null,
                     "pageSize" => S::toQueryValue($page_size),
@@ -195,13 +195,13 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getBuyTradesBody(\Tatum\Model\ListOderBookActiveBuyBody $list_oder_book_active_buy_body) {
+    public function getBuyTradesBody($list_oder_book_active_buy_body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/trade/buy", [], $rHeaders, [], $list_oder_book_active_buy_body
+                $this->_caller->config(), "POST", "/v3/trade/buy", "/v3/trade/buy", [], $rHeaders, [], $list_oder_book_active_buy_body
             ), 
             "\Tatum\Model\Trade[]"
         );
@@ -223,7 +223,7 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getHistoricalTrades(float $page_size, string $id = null, string $pair = null, float $offset = null, bool $count = null, array $types = null) {
+    public function getHistoricalTrades($page_size, $id = null, $pair = null, $offset = null, $count = null, array $types = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getHistoricalTrades, must be smaller than or equal to 50');
         }
@@ -249,7 +249,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/trade/history", [
+                $this->_caller->config(), "GET", "/v3/trade/history", "/v3/trade/history", [
                     "id" => isset($id) ? S::toQueryValue($id) : null,
                     "pair" => isset($pair) ? S::toQueryValue($pair) : null,
                     "pageSize" => S::toQueryValue($page_size),
@@ -273,13 +273,13 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getHistoricalTradesBody(\Tatum\Model\ListOderBookHistoryBody $list_oder_book_history_body = null) {
+    public function getHistoricalTradesBody($list_oder_book_history_body = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/trade/history", [], $rHeaders, [], $list_oder_book_history_body
+                $this->_caller->config(), "POST", "/v3/trade/history", "/v3/trade/history", [], $rHeaders, [], $list_oder_book_history_body
             ), 
             "\Tatum\Model\Trade[]"
         );
@@ -296,13 +296,13 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getMatchedTrades(\Tatum\Model\ListOderBookMatchedBody $list_oder_book_matched_body) {
+    public function getMatchedTrades($list_oder_book_matched_body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/trade/matched", [], $rHeaders, [], $list_oder_book_matched_body
+                $this->_caller->config(), "POST", "/v3/trade/matched", "/v3/trade/matched", [], $rHeaders, [], $list_oder_book_matched_body
             ), 
             "\Tatum\Model\Trade[]"
         );
@@ -325,7 +325,7 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getSellTrades(float $page_size, string $id = null, string $customer_id = null, float $offset = null, string $pair = null, bool $count = null, string $trade_type = null) {
+    public function getSellTrades($page_size, $id = null, $customer_id = null, $offset = null, $pair = null, $count = null, $trade_type = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling OrderBookApi.getSellTrades, must be smaller than or equal to 50');
         }
@@ -351,7 +351,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/trade/sell", [
+                $this->_caller->config(), "GET", "/v3/trade/sell", "/v3/trade/sell", [
                     "id" => isset($id) ? S::toQueryValue($id) : null,
                     "customerId" => isset($customer_id) ? S::toQueryValue($customer_id) : null,
                     "pageSize" => S::toQueryValue($page_size),
@@ -376,13 +376,13 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getSellTradesBody(\Tatum\Model\ListOderBookActiveSellBody $list_oder_book_active_sell_body) {
+    public function getSellTradesBody($list_oder_book_active_sell_body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/trade/sell", [], $rHeaders, [], $list_oder_book_active_sell_body
+                $this->_caller->config(), "POST", "/v3/trade/sell", "/v3/trade/sell", [], $rHeaders, [], $list_oder_book_active_sell_body
             ), 
             "\Tatum\Model\Trade[]"
         );
@@ -399,13 +399,13 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade
      */
-    public function getTradeById(string $id) {
+    public function getTradeById($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\Trade $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/trade/{id}", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/trade/{id}", ["id" => $id]), "/v3/trade/{id}", [], $rHeaders, []
             ), 
             "\Tatum\Model\Trade"
         );

@@ -38,7 +38,7 @@ class DepositApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Deposit[]
      */
-    public function getDeposits(float $page_size = null, float $page = null, string $sort = null, string $status = null, string $currency = null, string $tx_id = null, string $to = null, string $account_id = null) {
+    public function getDeposits($page_size = null, $page = null, $sort = null, $status = null, $currency = null, $tx_id = null, $to = null, $account_id = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling DepositApi.getDeposits, must be smaller than or equal to 50');
         }
@@ -60,7 +60,7 @@ class DepositApi extends AbstractApi {
         /** @var \Tatum\Model\Deposit[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ledger/deposits", [
+                $this->_caller->config(), "GET", "/v3/ledger/deposits", "/v3/ledger/deposits", [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "page" => isset($page) ? S::toQueryValue($page) : null,
                     "sort" => isset($sort) ? S::toQueryValue($sort) : null,
@@ -93,7 +93,7 @@ class DepositApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EntitiesCount
      */
-    public function getDepositsCount(float $page_size = null, float $page = null, string $sort = null, string $status = null, string $currency = null, string $tx_id = null, string $to = null, string $account_id = null) {
+    public function getDepositsCount($page_size = null, $page = null, $sort = null, $status = null, $currency = null, $tx_id = null, $to = null, $account_id = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling DepositApi.getDepositsCount, must be smaller than or equal to 50');
         }
@@ -115,7 +115,7 @@ class DepositApi extends AbstractApi {
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ledger/deposits/count", [
+                $this->_caller->config(), "GET", "/v3/ledger/deposits/count", "/v3/ledger/deposits/count", [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "page" => isset($page) ? S::toQueryValue($page) : null,
                     "sort" => isset($sort) ? S::toQueryValue($sort) : null,

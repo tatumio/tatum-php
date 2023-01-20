@@ -123,7 +123,7 @@ trait MessageTrait {
         }
 
         $new = clone $this;
-        $new->stream = $body;
+        $new->_stream = $body;
         return $new;
     }
 

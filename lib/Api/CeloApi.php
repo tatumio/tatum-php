@@ -31,13 +31,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callCeloReadSmartContractMethod(\Tatum\Model\CallCeloReadSmartContractMethod $call_celo_read_smart_contract_method) {
+    public function callCeloReadSmartContractMethod($call_celo_read_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/smartcontract", [], $rHeaders, [], $call_celo_read_smart_contract_method
+                $this->_caller->config(), "POST", "/v3/celo/smartcontract", "/v3/celo/smartcontract", [], $rHeaders, [], $call_celo_read_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -54,13 +54,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callCeloSmartContractMethod(\Tatum\Model\CallCeloSmartContractMethod $call_celo_smart_contract_method) {
+    public function callCeloSmartContractMethod($call_celo_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/smartcontract", [], $rHeaders, [], $call_celo_smart_contract_method
+                $this->_caller->config(), "POST", "/v3/celo/smartcontract", "/v3/celo/smartcontract", [], $rHeaders, [], $call_celo_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -77,13 +77,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callCeloSmartContractMethodKMS(\Tatum\Model\CallCeloSmartContractMethodKMS $call_celo_smart_contract_method_kms) {
+    public function callCeloSmartContractMethodKMS($call_celo_smart_contract_method_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/smartcontract", [], $rHeaders, [], $call_celo_smart_contract_method_kms
+                $this->_caller->config(), "POST", "/v3/celo/smartcontract", "/v3/celo/smartcontract", [], $rHeaders, [], $call_celo_smart_contract_method_kms
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -100,13 +100,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function celoBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+    public function celoBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", "/v3/celo/broadcast", "/v3/celo/broadcast", [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -124,13 +124,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloGenerateAddress200Response
      */
-    public function celoGenerateAddress(string $xpub, float $index) {
+    public function celoGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\CeloGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/celo/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/celo/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/celo/address/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\CeloGenerateAddress200Response"
         );
@@ -147,13 +147,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function celoGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+    public function celoGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", "/v3/celo/wallet/priv", "/v3/celo/wallet/priv", [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -170,7 +170,7 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function celoGenerateWallet(string $mnemonic = null) {
+    public function celoGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling CeloApi.celoGenerateWallet, must be smaller than or equal to 500');
         }
@@ -180,7 +180,7 @@ class CeloApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/celo/wallet", [
+                $this->_caller->config(), "GET", "/v3/celo/wallet", "/v3/celo/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -199,13 +199,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloGetBalance200Response
      */
-    public function celoGetBalance(string $address) {
+    public function celoGetBalance($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\CeloGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/celo/account/balance/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/celo/account/balance/{address}", ["address" => $address]), "/v3/celo/account/balance/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\CeloGetBalance200Response"
         );
@@ -222,13 +222,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloBlock
      */
-    public function celoGetBlock(string $hash) {
+    public function celoGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\CeloBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/celo/block/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/celo/block/{hash}", ["hash" => $hash]), "/v3/celo/block/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\CeloBlock"
         );
@@ -249,7 +249,7 @@ class CeloApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/celo/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/celo/block/current", "/v3/celo/block/current", [], $rHeaders, []
             ), 
             "float"
         );
@@ -266,13 +266,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloTx
      */
-    public function celoGetTransaction(string $hash) {
+    public function celoGetTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\CeloTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/celo/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/celo/transaction/{hash}", ["hash" => $hash]), "/v3/celo/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\CeloTx"
         );
@@ -294,7 +294,7 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloTx[]
      */
-    public function celoGetTransactionByAddress(string $address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC') {
+    public function celoGetTransactionByAddress($address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC') {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling CeloApi.celoGetTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -316,7 +316,7 @@ class CeloApi extends AbstractApi {
         /** @var \Tatum\Model\CeloTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/celo/account/transaction/{address}", ["address" => $address]), [
+                $this->_caller->config(), "GET", S::parse("/v3/celo/account/transaction/{address}", ["address" => $address]), "/v3/celo/account/transaction/{address}", [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,
@@ -339,7 +339,7 @@ class CeloApi extends AbstractApi {
      * 
      * @return float
      */
-    public function celoGetTransactionCount(string $address) {
+    public function celoGetTransactionCount($address) {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling CeloApi.celoGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -353,7 +353,7 @@ class CeloApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/celo/transaction/count/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/celo/transaction/count/{address}", ["address" => $address]), "/v3/celo/transaction/count/{address}", [], $rHeaders, []
             ), 
             "float"
         );
@@ -371,13 +371,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return object
      */
-    public function celoWeb3Driver(string $x_api_key, object $body) {
+    public function celoWeb3Driver($x_api_key, $body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/celo/web3/{xApiKey}", ["xApiKey" => $x_api_key]), [], $rHeaders, [], $body
+                $this->_caller->config(), "POST", S::parse("/v3/celo/web3/{xApiKey}", ["xApiKey" => $x_api_key]), "/v3/celo/web3/{xApiKey}", [], $rHeaders, [], $body
             ), 
             "object"
         );
@@ -394,13 +394,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCeloBlockchain(\Tatum\Model\TransferCeloBlockchain $transfer_celo_blockchain) {
+    public function transferCeloBlockchain($transfer_celo_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/transaction", [], $rHeaders, [], $transfer_celo_blockchain
+                $this->_caller->config(), "POST", "/v3/celo/transaction", "/v3/celo/transaction", [], $rHeaders, [], $transfer_celo_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -417,13 +417,13 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCeloBlockchainKMS(\Tatum\Model\TransferCeloBlockchainKMS $transfer_celo_blockchain_kms) {
+    public function transferCeloBlockchainKMS($transfer_celo_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/transaction", [], $rHeaders, [], $transfer_celo_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/celo/transaction", "/v3/celo/transaction", [], $rHeaders, [], $transfer_celo_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

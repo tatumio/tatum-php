@@ -31,13 +31,13 @@ class MaliciousAddressApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CheckMalicousAddress200Response
      */
-    public function checkMalicousAddress(string $address) {
+    public function checkMalicousAddress($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\CheckMalicousAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/security/address/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/security/address/{address}", ["address" => $address]), "/v3/security/address/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\CheckMalicousAddress200Response"
         );

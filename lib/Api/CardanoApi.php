@@ -31,13 +31,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function adaBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+    public function adaBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", "/v3/ada/broadcast", "/v3/ada/broadcast", [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -55,7 +55,7 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AdaGenerateAddress200Response
      */
-    public function adaGenerateAddress(string $xpub, float $index) {
+    public function adaGenerateAddress($xpub, $index) {
         if ($index < 0) {
             throw new IAE('Invalid value for "$index" when calling CardanoApi.adaGenerateAddress, must be bigger than or equal to 0.');
         }
@@ -65,7 +65,7 @@ class CardanoApi extends AbstractApi {
         /** @var \Tatum\Model\AdaGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ada/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/ada/address/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AdaGenerateAddress200Response"
         );
@@ -82,13 +82,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function adaGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+    public function adaGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", "/v3/ada/wallet/priv", "/v3/ada/wallet/priv", [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -105,7 +105,7 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function adaGenerateWallet(string $mnemonic = null) {
+    public function adaGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling CardanoApi.adaGenerateWallet, must be smaller than or equal to 500');
         }
@@ -115,7 +115,7 @@ class CardanoApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ada/wallet", [
+                $this->_caller->config(), "GET", "/v3/ada/wallet", "/v3/ada/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -134,13 +134,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return array[]
      */
-    public function adaGetAccount(string $address) {
+    public function adaGetAccount($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var array[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/account/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ada/account/{address}", ["address" => $address]), "/v3/ada/account/{address}", [], $rHeaders, []
             ), 
             "array[]"
         );
@@ -157,13 +157,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AdaBlock
      */
-    public function adaGetBlock(string $hash) {
+    public function adaGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AdaBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/block/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ada/block/{hash}", ["hash" => $hash]), "/v3/ada/block/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AdaBlock"
         );
@@ -184,7 +184,7 @@ class CardanoApi extends AbstractApi {
         /** @var \Tatum\Model\AdaInfo $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ada/info", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/ada/info", "/v3/ada/info", [], $rHeaders, []
             ), 
             "\Tatum\Model\AdaInfo"
         );
@@ -201,13 +201,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AdaTx
      */
-    public function adaGetRawTransaction(string $hash) {
+    public function adaGetRawTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AdaTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ada/transaction/{hash}", ["hash" => $hash]), "/v3/ada/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AdaTx"
         );
@@ -226,7 +226,7 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AdaTx[]
      */
-    public function adaGetTxByAddress(string $address, float $page_size, float $offset = null) {
+    public function adaGetTxByAddress($address, $page_size, $offset = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling CardanoApi.adaGetTxByAddress, must be smaller than or equal to 50');
         }
@@ -240,7 +240,7 @@ class CardanoApi extends AbstractApi {
         /** @var \Tatum\Model\AdaTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/transaction/address/{address}", ["address" => $address]), [
+                $this->_caller->config(), "GET", S::parse("/v3/ada/transaction/address/{address}", ["address" => $address]), "/v3/ada/transaction/address/{address}", [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -260,13 +260,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AdaUTXO[]
      */
-    public function adaGetUTXOByAddress(string $address) {
+    public function adaGetUTXOByAddress($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AdaUTXO[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/{address}/utxos", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ada/{address}/utxos", ["address" => $address]), "/v3/ada/{address}/utxos", [], $rHeaders, []
             ), 
             "\Tatum\Model\AdaUTXO[]"
         );
@@ -283,13 +283,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function adaTransactionFromAddress(\Tatum\Model\AdaTransactionFromAddress $ada_transaction_from_address) {
+    public function adaTransactionFromAddress($ada_transaction_from_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_address
+                $this->_caller->config(), "POST", "/v3/ada/transaction", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_address
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -306,13 +306,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function adaTransactionFromAddressKMS(\Tatum\Model\AdaTransactionFromAddressKMS $ada_transaction_from_address_kms) {
+    public function adaTransactionFromAddressKMS($ada_transaction_from_address_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_address_kms
+                $this->_caller->config(), "POST", "/v3/ada/transaction", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_address_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -329,13 +329,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function adaTransactionFromUTXO(\Tatum\Model\AdaTransactionFromUTXO $ada_transaction_from_utxo) {
+    public function adaTransactionFromUTXO($ada_transaction_from_utxo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_utxo
+                $this->_caller->config(), "POST", "/v3/ada/transaction", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_utxo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -352,13 +352,13 @@ class CardanoApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function adaTransactionFromUTXOKMS(\Tatum\Model\AdaTransactionFromUTXOKMS $ada_transaction_from_utxokms) {
+    public function adaTransactionFromUTXOKMS($ada_transaction_from_utxokms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_utxokms
+                $this->_caller->config(), "POST", "/v3/ada/transaction", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_utxokms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

@@ -32,13 +32,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoBlock
      */
-    public function algoNodeGetDriver(string $x_api_key, string $algod_path) {
+    public function algoNodeGetDriver($x_api_key, $algod_path) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AlgoBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/algorand/node/algod/{xApiKey}/{algodPath}", ["xApiKey" => $x_api_key, "algodPath" => $algod_path]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/algorand/node/algod/{xApiKey}/{algodPath}", ["xApiKey" => $x_api_key, "algodPath" => $algod_path]), "/v3/algorand/node/algod/{xApiKey}/{algodPath}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgoBlock"
         );
@@ -56,13 +56,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoTx
      */
-    public function algoNodeIndexerGetDriver(string $x_api_key, string $indexer_path) {
+    public function algoNodeIndexerGetDriver($x_api_key, $indexer_path) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AlgoTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/algorand/node/indexer/{xApiKey}/{indexerPath}", ["xApiKey" => $x_api_key, "indexerPath" => $indexer_path]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/algorand/node/indexer/{xApiKey}/{indexerPath}", ["xApiKey" => $x_api_key, "indexerPath" => $indexer_path]), "/v3/algorand/node/indexer/{xApiKey}/{indexerPath}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgoTx"
         );
@@ -81,13 +81,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoNodePostDriver200Response
      */
-    public function algoNodePostDriver(string $x_api_key, string $algod_path, \Tatum\Model\AlgoNodePostDriverRequest $algo_node_post_driver_request) {
+    public function algoNodePostDriver($x_api_key, $algod_path, $algo_node_post_driver_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\AlgoNodePostDriver200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/algorand/node/algod/{xApiKey}/{algodPath}", ["xApiKey" => $x_api_key, "algodPath" => $algod_path]), [], $rHeaders, [], $algo_node_post_driver_request
+                $this->_caller->config(), "POST", S::parse("/v3/algorand/node/algod/{xApiKey}/{algodPath}", ["xApiKey" => $x_api_key, "algodPath" => $algod_path]), "/v3/algorand/node/algod/{xApiKey}/{algodPath}", [], $rHeaders, [], $algo_node_post_driver_request
             ), 
             "\Tatum\Model\AlgoNodePostDriver200Response"
         );
@@ -104,13 +104,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoTransactionHashKMS
      */
-    public function algoandBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+    public function algoandBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\AlgoTransactionHashKMS $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/algorand/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", "/v3/algorand/broadcast", "/v3/algorand/broadcast", [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\AlgoTransactionHashKMS"
         );
@@ -127,13 +127,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgorandGenerateAddress200Response
      */
-    public function algorandGenerateAddress(string $priv) {
+    public function algorandGenerateAddress($priv) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AlgorandGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/algorand/address/{priv}", ["priv" => $priv]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/algorand/address/{priv}", ["priv" => $priv]), "/v3/algorand/address/{priv}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgorandGenerateAddress200Response"
         );
@@ -150,7 +150,7 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoWallet
      */
-    public function algorandGenerateWallet(string $mnemonic = null) {
+    public function algorandGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling AlgorandApi.algorandGenerateWallet, must be smaller than or equal to 500');
         }
@@ -160,7 +160,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\AlgoWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/algorand/wallet", [
+                $this->_caller->config(), "GET", "/v3/algorand/wallet", "/v3/algorand/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -179,13 +179,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgorandGetBalance200Response
      */
-    public function algorandGetBalance(string $address) {
+    public function algorandGetBalance($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AlgorandGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/algorand/account/balance/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/algorand/account/balance/{address}", ["address" => $address]), "/v3/algorand/account/balance/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgorandGetBalance200Response"
         );
@@ -202,13 +202,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoBlock
      */
-    public function algorandGetBlock(float $round_number) {
+    public function algorandGetBlock($round_number) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AlgoBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/algorand/block/{roundNumber}", ["roundNumber" => $round_number]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/algorand/block/{roundNumber}", ["roundNumber" => $round_number]), "/v3/algorand/block/{roundNumber}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgoBlock"
         );
@@ -229,7 +229,7 @@ class AlgorandApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/algorand/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/algorand/block/current", "/v3/algorand/block/current", [], $rHeaders, []
             ), 
             "float"
         );
@@ -249,13 +249,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoTxsWithPagination
      */
-    public function algorandGetPayTransactionsByFromTo(string $from, string $to, string $limit = null, string $next = null) {
+    public function algorandGetPayTransactionsByFromTo($from, $to, $limit = null, $next = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AlgoTxsWithPagination $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/algorand/transactions/{from}/{to}", ["from" => $from, "to" => $to]), [
+                $this->_caller->config(), "GET", S::parse("/v3/algorand/transactions/{from}/{to}", ["from" => $from, "to" => $to]), "/v3/algorand/transactions/{from}/{to}", [
                     "limit" => isset($limit) ? S::toQueryValue($limit) : null,
                     "next" => isset($next) ? S::toQueryValue($next) : null,
                 ], $rHeaders, []
@@ -275,13 +275,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoTx
      */
-    public function algorandGetTransaction(string $txid) {
+    public function algorandGetTransaction($txid) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\AlgoTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/algorand/transaction/{txid}", ["txid" => $txid]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/algorand/transaction/{txid}", ["txid" => $txid]), "/v3/algorand/transaction/{txid}", [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgoTx"
         );
@@ -298,13 +298,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function receiveAlgorandAsset(\Tatum\Model\ReceiveAlgorandAsset $receive_algorand_asset) {
+    public function receiveAlgorandAsset($receive_algorand_asset) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/algorand/asset/receive", [], $rHeaders, [], $receive_algorand_asset
+                $this->_caller->config(), "POST", "/v3/algorand/asset/receive", "/v3/algorand/asset/receive", [], $rHeaders, [], $receive_algorand_asset
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -321,13 +321,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function receiveAlgorandAssetKMS(\Tatum\Model\ReceiveAlgorandAssetKMS $receive_algorand_asset_kms) {
+    public function receiveAlgorandAssetKMS($receive_algorand_asset_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/algorand/asset/receive", [], $rHeaders, [], $receive_algorand_asset_kms
+                $this->_caller->config(), "POST", "/v3/algorand/asset/receive", "/v3/algorand/asset/receive", [], $rHeaders, [], $receive_algorand_asset_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -344,13 +344,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferAlgorandBlockchain(\Tatum\Model\TransferAlgorandBlockchain $transfer_algorand_blockchain) {
+    public function transferAlgorandBlockchain($transfer_algorand_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/algorand/transaction", [], $rHeaders, [], $transfer_algorand_blockchain
+                $this->_caller->config(), "POST", "/v3/algorand/transaction", "/v3/algorand/transaction", [], $rHeaders, [], $transfer_algorand_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -367,13 +367,13 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferAlgorandBlockchainKMS(\Tatum\Model\TransferAlgorandBlockchainKMS $transfer_algorand_blockchain_kms) {
+    public function transferAlgorandBlockchainKMS($transfer_algorand_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/algorand/transaction", [], $rHeaders, [], $transfer_algorand_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/algorand/transaction", "/v3/algorand/transaction", [], $rHeaders, [], $transfer_algorand_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

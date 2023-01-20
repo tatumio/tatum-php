@@ -31,13 +31,13 @@ class CustodialManagedWalletsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CustodialManagedAddress
      */
-    public function custodialCreateWallet(\Tatum\Model\CustodialCreateWalletRequest $custodial_create_wallet_request = null) {
+    public function custodialCreateWallet($custodial_create_wallet_request = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CustodialManagedAddress $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/custodial/wallet", [], $rHeaders, [], $custodial_create_wallet_request
+                $this->_caller->config(), "POST", "/v3/custodial/wallet", "/v3/custodial/wallet", [], $rHeaders, [], $custodial_create_wallet_request
             ), 
             "\Tatum\Model\CustodialManagedAddress"
         );
@@ -54,12 +54,12 @@ class CustodialManagedWalletsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function custodialDeleteWallet(string $id) {
+    public function custodialDeleteWallet($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/custodial/wallet/{id}", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "DELETE", S::parse("/v3/custodial/wallet/{id}", ["id" => $id]), "/v3/custodial/wallet/{id}", [], $rHeaders, []
             )
         );
     }
@@ -74,13 +74,13 @@ class CustodialManagedWalletsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CustodialManagedAddress[]
      */
-    public function custodialGetWallet(string $id, bool $export = false) {
+    public function custodialGetWallet($id, $export = false) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\CustodialManagedAddress[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/custodial/wallet/{id}", ["id" => $id]), [
+                $this->_caller->config(), "GET", S::parse("/v3/custodial/wallet/{id}", ["id" => $id]), "/v3/custodial/wallet/{id}", [
                     "export" => S::toQueryValue($export),
                 ], $rHeaders, []
             ), 
@@ -103,7 +103,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
         /** @var \Tatum\Model\CustodialManagedAddress[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/custodial/wallet", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/custodial/wallet", "/v3/custodial/wallet", [], $rHeaders, []
             ), 
             "\Tatum\Model\CustodialManagedAddress[]"
         );
@@ -120,13 +120,13 @@ class CustodialManagedWalletsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function custodialTransferManagedAddress(\Tatum\Model\TransferManagedAddress $transfer_managed_address = null) {
+    public function custodialTransferManagedAddress($transfer_managed_address = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/custodial/transaction", [], $rHeaders, [], $transfer_managed_address
+                $this->_caller->config(), "POST", "/v3/custodial/transaction", "/v3/custodial/transaction", [], $rHeaders, [], $transfer_managed_address
             ), 
             "\Tatum\Model\TransactionHash"
         );

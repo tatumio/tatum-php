@@ -31,13 +31,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function bscBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+    public function bscBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", "/v3/bsc/broadcast", "/v3/bsc/broadcast", [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -55,13 +55,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GeneratedAddressBsc
      */
-    public function bscGenerateAddress(string $xpub, float $index) {
+    public function bscGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\GeneratedAddressBsc $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bsc/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bsc/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/bsc/address/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\GeneratedAddressBsc"
         );
@@ -78,13 +78,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function bscGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+    public function bscGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", "/v3/bsc/wallet/priv", "/v3/bsc/wallet/priv", [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -101,7 +101,7 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function bscGenerateWallet(string $mnemonic = null) {
+    public function bscGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling BNBSmartChainApi.bscGenerateWallet, must be smaller than or equal to 500');
         }
@@ -111,7 +111,7 @@ class BNBSmartChainApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/bsc/wallet", [
+                $this->_caller->config(), "GET", "/v3/bsc/wallet", "/v3/bsc/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -130,13 +130,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BscBalance
      */
-    public function bscGetBalance(string $address) {
+    public function bscGetBalance($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\BscBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bsc/account/balance/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bsc/account/balance/{address}", ["address" => $address]), "/v3/bsc/account/balance/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\BscBalance"
         );
@@ -153,13 +153,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthBlock
      */
-    public function bscGetBlock(string $hash) {
+    public function bscGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\EthBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bsc/block/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bsc/block/{hash}", ["hash" => $hash]), "/v3/bsc/block/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\EthBlock"
         );
@@ -180,7 +180,7 @@ class BNBSmartChainApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/bsc/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/bsc/block/current", "/v3/bsc/block/current", [], $rHeaders, []
             ), 
             "float"
         );
@@ -197,13 +197,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BscTx
      */
-    public function bscGetTransaction(string $hash) {
+    public function bscGetTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\BscTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bsc/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bsc/transaction/{hash}", ["hash" => $hash]), "/v3/bsc/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\BscTx"
         );
@@ -220,7 +220,7 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return float
      */
-    public function bscGetTransactionCount(string $address) {
+    public function bscGetTransactionCount($address) {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling BNBSmartChainApi.bscGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -234,7 +234,7 @@ class BNBSmartChainApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bsc/transaction/count/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bsc/transaction/count/{address}", ["address" => $address]), "/v3/bsc/transaction/count/{address}", [], $rHeaders, []
             ), 
             "float"
         );
@@ -252,13 +252,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return object
      */
-    public function bscWeb3Driver(string $x_api_key, object $body) {
+    public function bscWeb3Driver($x_api_key, $body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/bsc/web3/{xApiKey}", ["xApiKey" => $x_api_key]), [], $rHeaders, [], $body
+                $this->_caller->config(), "POST", S::parse("/v3/bsc/web3/{xApiKey}", ["xApiKey" => $x_api_key]), "/v3/bsc/web3/{xApiKey}", [], $rHeaders, [], $body
             ), 
             "object"
         );
@@ -275,13 +275,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callBscSmartContractMethod(\Tatum\Model\CallBscSmartContractMethod $call_bsc_smart_contract_method) {
+    public function callBscSmartContractMethod($call_bsc_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/smartcontract", [], $rHeaders, [], $call_bsc_smart_contract_method
+                $this->_caller->config(), "POST", "/v3/bsc/smartcontract", "/v3/bsc/smartcontract", [], $rHeaders, [], $call_bsc_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -298,13 +298,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callBscSmartContractMethodKMS(\Tatum\Model\CallBscSmartContractMethodKMS $call_bsc_smart_contract_method_kms) {
+    public function callBscSmartContractMethodKMS($call_bsc_smart_contract_method_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/smartcontract", [], $rHeaders, [], $call_bsc_smart_contract_method_kms
+                $this->_caller->config(), "POST", "/v3/bsc/smartcontract", "/v3/bsc/smartcontract", [], $rHeaders, [], $call_bsc_smart_contract_method_kms
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -321,13 +321,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callBscSmartContractReadMethod(\Tatum\Model\CallBscSmartContractReadMethod $call_bsc_smart_contract_read_method) {
+    public function callBscSmartContractReadMethod($call_bsc_smart_contract_read_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/smartcontract", [], $rHeaders, [], $call_bsc_smart_contract_read_method
+                $this->_caller->config(), "POST", "/v3/bsc/smartcontract", "/v3/bsc/smartcontract", [], $rHeaders, [], $call_bsc_smart_contract_read_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -344,13 +344,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferBscBlockchain(\Tatum\Model\TransferBscBlockchain $transfer_bsc_blockchain) {
+    public function transferBscBlockchain($transfer_bsc_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/transaction", [], $rHeaders, [], $transfer_bsc_blockchain
+                $this->_caller->config(), "POST", "/v3/bsc/transaction", "/v3/bsc/transaction", [], $rHeaders, [], $transfer_bsc_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -367,13 +367,13 @@ class BNBSmartChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferBscBlockchainKMS(\Tatum\Model\TransferBscBlockchainKMS $transfer_bsc_blockchain_kms) {
+    public function transferBscBlockchainKMS($transfer_bsc_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/transaction", [], $rHeaders, [], $transfer_bsc_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/bsc/transaction", "/v3/bsc/transaction", [], $rHeaders, [], $transfer_bsc_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

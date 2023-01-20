@@ -31,13 +31,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPump(\Tatum\Model\ActivateGasPump $activate_gas_pump) {
+    public function activateGasPump($activate_gas_pump) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -54,13 +54,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpCelo(\Tatum\Model\ActivateGasPumpCelo $activate_gas_pump_celo) {
+    public function activateGasPumpCelo($activate_gas_pump_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_celo
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -77,13 +77,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpCeloKMS(\Tatum\Model\ActivateGasPumpCeloKMS $activate_gas_pump_celo_kms) {
+    public function activateGasPumpCeloKMS($activate_gas_pump_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_celo_kms
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -100,13 +100,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpKMS(\Tatum\Model\ActivateGasPumpKMS $activate_gas_pump_kms) {
+    public function activateGasPumpKMS($activate_gas_pump_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_kms
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -123,13 +123,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpTatum(\Tatum\Model\ActivateGasPumpTatum $activate_gas_pump_tatum) {
+    public function activateGasPumpTatum($activate_gas_pump_tatum) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tatum
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tatum
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -146,13 +146,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpTron(\Tatum\Model\ActivateGasPumpTron $activate_gas_pump_tron) {
+    public function activateGasPumpTron($activate_gas_pump_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tron
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -169,13 +169,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpTronKMS(\Tatum\Model\ActivateGasPumpTronKMS $activate_gas_pump_tron_kms) {
+    public function activateGasPumpTronKMS($activate_gas_pump_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tron_kms
+                $this->_caller->config(), "POST", "/v3/gas-pump/activate", "/v3/gas-pump/activate", [], $rHeaders, [], $activate_gas_pump_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -193,7 +193,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GasPumpTrxOut
      */
-    public function activatedNotActivatedGasPumpAddresses(string $chain, string $tx_id) {
+    public function activatedNotActivatedGasPumpAddresses($chain, $tx_id) {
         if (strlen($tx_id) > 80) {
             throw new IAE('Invalid length for "$tx_id" when calling GasPumpApi.activatedNotActivatedGasPumpAddresses, must be smaller than or equal to 80');
         }
@@ -207,7 +207,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\GasPumpTrxOut $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/gas-pump/address/{chain}/{txId}", ["chain" => $chain, "txId" => $tx_id]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/gas-pump/address/{chain}/{txId}", ["chain" => $chain, "txId" => $tx_id]), "/v3/gas-pump/address/{chain}/{txId}", [], $rHeaders, []
             ), 
             "\Tatum\Model\GasPumpTrxOut"
         );
@@ -224,13 +224,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveTransferCustodialWallet(\Tatum\Model\ApproveTransferCustodialWallet $approve_transfer_custodial_wallet) {
+    public function approveTransferCustodialWallet($approve_transfer_custodial_wallet) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -247,13 +247,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveTransferCustodialWalletCelo(\Tatum\Model\ApproveTransferCustodialWalletCelo $approve_transfer_custodial_wallet_celo) {
+    public function approveTransferCustodialWalletCelo($approve_transfer_custodial_wallet_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_celo
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -270,13 +270,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveTransferCustodialWalletCeloKMS(\Tatum\Model\ApproveTransferCustodialWalletCeloKMS $approve_transfer_custodial_wallet_celo_kms) {
+    public function approveTransferCustodialWalletCeloKMS($approve_transfer_custodial_wallet_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_celo_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -293,13 +293,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveTransferCustodialWalletKMS(\Tatum\Model\ApproveTransferCustodialWalletKMS $approve_transfer_custodial_wallet_kms) {
+    public function approveTransferCustodialWalletKMS($approve_transfer_custodial_wallet_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/approve", "/v3/blockchain/sc/custodial/approve", [], $rHeaders, [], $approve_transfer_custodial_wallet_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -318,13 +318,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Activated
      */
-    public function gasPumpAddressesActivatedOrNot(string $chain, string $owner, float $index) {
+    public function gasPumpAddressesActivatedOrNot($chain, $owner, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\Activated $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/gas-pump/activated/{chain}/{owner}/{index}", ["chain" => $chain, "owner" => $owner, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/gas-pump/activated/{chain}/{owner}/{index}", ["chain" => $chain, "owner" => $owner, "index" => $index]), "/v3/gas-pump/activated/{chain}/{owner}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\Activated"
         );
@@ -341,13 +341,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWallet(\Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet) {
+    public function generateCustodialWallet($generate_custodial_wallet) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -365,7 +365,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletBatch(\Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch, string $x_testnet_type = 'ethereum-sepolia') {
+    public function generateCustodialWalletBatch($generate_custodial_wallet_batch, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -377,7 +377,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -395,7 +395,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletBatchCelo(\Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo, string $x_testnet_type = 'ethereum-sepolia') {
+    public function generateCustodialWalletBatchCelo($generate_custodial_wallet_batch_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -407,7 +407,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_celo
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -425,7 +425,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletBatchCeloKMS(\Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function generateCustodialWalletBatchCeloKMS($generate_custodial_wallet_batch_celo_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -437,7 +437,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_celo_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -455,7 +455,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletBatchKMS(\Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function generateCustodialWalletBatchKMS($generate_custodial_wallet_batch_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -467,7 +467,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -485,7 +485,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletBatchPayer(\Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer, string $x_testnet_type = 'ethereum-sepolia') {
+    public function generateCustodialWalletBatchPayer($generate_custodial_wallet_batch_payer, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -497,7 +497,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_payer
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_payer
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -515,7 +515,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletBatchTron(\Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron, string $x_testnet_type = 'ethereum-sepolia') {
+    public function generateCustodialWalletBatchTron($generate_custodial_wallet_batch_tron, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -527,7 +527,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_tron
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -545,7 +545,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletBatchTronKMS(\Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function generateCustodialWalletBatchTronKMS($generate_custodial_wallet_batch_tron_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -557,7 +557,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_tron_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/batch", "/v3/blockchain/sc/custodial/batch", [], $rHeaders, [], $generate_custodial_wallet_batch_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -574,13 +574,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletCelo(\Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo) {
+    public function generateCustodialWalletCelo($generate_custodial_wallet_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_celo
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -597,13 +597,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletCeloKMS(\Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms) {
+    public function generateCustodialWalletCeloKMS($generate_custodial_wallet_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_celo_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -620,13 +620,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletKMS(\Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms) {
+    public function generateCustodialWalletKMS($generate_custodial_wallet_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -643,13 +643,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletTron(\Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron) {
+    public function generateCustodialWalletTron($generate_custodial_wallet_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_tron
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -666,13 +666,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function generateCustodialWalletTronKMS(\Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms) {
+    public function generateCustodialWalletTronKMS($generate_custodial_wallet_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_tron_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial", "/v3/blockchain/sc/custodial", [], $rHeaders, [], $generate_custodial_wallet_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -689,13 +689,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function precalculateGasPumpAddresses(\Tatum\Model\CreateGasPump $create_gas_pump = null) {
+    public function precalculateGasPumpAddresses($create_gas_pump = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/gas-pump", [], $rHeaders, [], $create_gas_pump
+                $this->_caller->config(), "POST", "/v3/gas-pump", "/v3/gas-pump", [], $rHeaders, [], $create_gas_pump
             ), 
             "string[]"
         );
@@ -713,13 +713,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function sCGetCustodialAddresses(string $chain, string $hash) {
+    public function sCGetCustodialAddresses($chain, $hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/sc/custodial/{chain}/{hash}", ["chain" => $chain, "hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/blockchain/sc/custodial/{chain}/{hash}", ["chain" => $chain, "hash" => $hash]), "/v3/blockchain/sc/custodial/{chain}/{hash}", [], $rHeaders, []
             ), 
             "string[]"
         );
@@ -736,13 +736,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWallet(\Tatum\Model\TransferCustodialWallet $transfer_custodial_wallet) {
+    public function transferCustodialWallet($transfer_custodial_wallet) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -759,13 +759,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatch(\Tatum\Model\TransferCustodialWalletBatch $transfer_custodial_wallet_batch) {
+    public function transferCustodialWalletBatch($transfer_custodial_wallet_batch) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -782,13 +782,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchCelo(\Tatum\Model\TransferCustodialWalletBatchCelo $transfer_custodial_wallet_batch_celo) {
+    public function transferCustodialWalletBatchCelo($transfer_custodial_wallet_batch_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_celo
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -805,13 +805,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchCeloKMS(\Tatum\Model\TransferCustodialWalletBatchCeloKMS $transfer_custodial_wallet_batch_celo_kms) {
+    public function transferCustodialWalletBatchCeloKMS($transfer_custodial_wallet_batch_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_celo_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -828,13 +828,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchKMS(\Tatum\Model\TransferCustodialWalletBatchKMS $transfer_custodial_wallet_batch_kms) {
+    public function transferCustodialWalletBatchKMS($transfer_custodial_wallet_batch_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -851,13 +851,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchTron(\Tatum\Model\TransferCustodialWalletBatchTron $transfer_custodial_wallet_batch_tron) {
+    public function transferCustodialWalletBatchTron($transfer_custodial_wallet_batch_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_tron
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -874,13 +874,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchTronKMS(\Tatum\Model\TransferCustodialWalletBatchTronKMS $transfer_custodial_wallet_batch_tron_kms) {
+    public function transferCustodialWalletBatchTronKMS($transfer_custodial_wallet_batch_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_tron_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer/batch", "/v3/blockchain/sc/custodial/transfer/batch", [], $rHeaders, [], $transfer_custodial_wallet_batch_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -897,13 +897,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletCelo(\Tatum\Model\TransferCustodialWalletCelo $transfer_custodial_wallet_celo) {
+    public function transferCustodialWalletCelo($transfer_custodial_wallet_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_celo
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -920,13 +920,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletCeloKMS(\Tatum\Model\TransferCustodialWalletCeloKMS $transfer_custodial_wallet_celo_kms) {
+    public function transferCustodialWalletCeloKMS($transfer_custodial_wallet_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_celo_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -943,13 +943,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletKMS(\Tatum\Model\TransferCustodialWalletKMS $transfer_custodial_wallet_kms) {
+    public function transferCustodialWalletKMS($transfer_custodial_wallet_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -966,13 +966,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletTron(\Tatum\Model\TransferCustodialWalletTron $transfer_custodial_wallet_tron) {
+    public function transferCustodialWalletTron($transfer_custodial_wallet_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_tron
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -989,13 +989,13 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletTronKMS(\Tatum\Model\TransferCustodialWalletTronKMS $transfer_custodial_wallet_tron_kms) {
+    public function transferCustodialWalletTronKMS($transfer_custodial_wallet_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_tron_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/sc/custodial/transfer", "/v3/blockchain/sc/custodial/transfer", [], $rHeaders, [], $transfer_custodial_wallet_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

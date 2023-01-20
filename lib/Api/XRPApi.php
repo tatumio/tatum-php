@@ -31,13 +31,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function accountSettingsXrpBlockchain(\Tatum\Model\AccountSettingsXrpBlockchain $account_settings_xrp_blockchain) {
+    public function accountSettingsXrpBlockchain($account_settings_xrp_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/account/settings", [], $rHeaders, [], $account_settings_xrp_blockchain
+                $this->_caller->config(), "POST", "/v3/xrp/account/settings", "/v3/xrp/account/settings", [], $rHeaders, [], $account_settings_xrp_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -54,13 +54,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function accountSettingsXrpBlockchainKMS(\Tatum\Model\AccountSettingsXrpBlockchainKMS $account_settings_xrp_blockchain_kms) {
+    public function accountSettingsXrpBlockchainKMS($account_settings_xrp_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/account/settings", [], $rHeaders, [], $account_settings_xrp_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/xrp/account/settings", "/v3/xrp/account/settings", [], $rHeaders, [], $account_settings_xrp_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -77,13 +77,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXrpBlockchain(\Tatum\Model\TransferXrpBlockchain $transfer_xrp_blockchain) {
+    public function transferXrpBlockchain($transfer_xrp_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/transaction", [], $rHeaders, [], $transfer_xrp_blockchain
+                $this->_caller->config(), "POST", "/v3/xrp/transaction", "/v3/xrp/transaction", [], $rHeaders, [], $transfer_xrp_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -100,13 +100,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXrpBlockchainAsset(\Tatum\Model\TransferXrpBlockchainAsset $transfer_xrp_blockchain_asset) {
+    public function transferXrpBlockchainAsset($transfer_xrp_blockchain_asset) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/transaction", [], $rHeaders, [], $transfer_xrp_blockchain_asset
+                $this->_caller->config(), "POST", "/v3/xrp/transaction", "/v3/xrp/transaction", [], $rHeaders, [], $transfer_xrp_blockchain_asset
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -123,13 +123,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXrpBlockchainAssetKMS(\Tatum\Model\TransferXrpBlockchainAssetKMS $transfer_xrp_blockchain_asset_kms) {
+    public function transferXrpBlockchainAssetKMS($transfer_xrp_blockchain_asset_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/transaction", [], $rHeaders, [], $transfer_xrp_blockchain_asset_kms
+                $this->_caller->config(), "POST", "/v3/xrp/transaction", "/v3/xrp/transaction", [], $rHeaders, [], $transfer_xrp_blockchain_asset_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -146,13 +146,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXrpBlockchainKMS(\Tatum\Model\TransferXrpBlockchainKMS $transfer_xrp_blockchain_kms) {
+    public function transferXrpBlockchainKMS($transfer_xrp_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/transaction", [], $rHeaders, [], $transfer_xrp_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/xrp/transaction", "/v3/xrp/transaction", [], $rHeaders, [], $transfer_xrp_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -169,13 +169,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function trustLineXrpBlockchain(\Tatum\Model\TrustLineXrpBlockchain $trust_line_xrp_blockchain) {
+    public function trustLineXrpBlockchain($trust_line_xrp_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/trust", [], $rHeaders, [], $trust_line_xrp_blockchain
+                $this->_caller->config(), "POST", "/v3/xrp/trust", "/v3/xrp/trust", [], $rHeaders, [], $trust_line_xrp_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -192,13 +192,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function trustLineXrpBlockchainKMS(\Tatum\Model\TrustLineXrpBlockchainKMS $trust_line_xrp_blockchain_kms) {
+    public function trustLineXrpBlockchainKMS($trust_line_xrp_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/trust", [], $rHeaders, [], $trust_line_xrp_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/xrp/trust", "/v3/xrp/trust", [], $rHeaders, [], $trust_line_xrp_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -215,13 +215,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function xrpBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+    public function xrpBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xrp/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", "/v3/xrp/broadcast", "/v3/xrp/broadcast", [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -238,13 +238,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XrpAccountBalance
      */
-    public function xrpGetAccountBalance(string $account) {
+    public function xrpGetAccountBalance($account) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\XrpAccountBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xrp/account/{account}/balance", ["account" => $account]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xrp/account/{account}/balance", ["account" => $account]), "/v3/xrp/account/{account}/balance", [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpAccountBalance"
         );
@@ -261,13 +261,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XrpAccount
      */
-    public function xrpGetAccountInfo(string $account) {
+    public function xrpGetAccountInfo($account) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\XrpAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xrp/account/{account}", ["account" => $account]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xrp/account/{account}", ["account" => $account]), "/v3/xrp/account/{account}", [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpAccount"
         );
@@ -286,13 +286,13 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XrpAccountTx
      */
-    public function xrpGetAccountTx(string $account, float $min = null, string $marker = null) {
+    public function xrpGetAccountTx($account, $min = null, $marker = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\XrpAccountTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xrp/account/tx/{account}", ["account" => $account]), [
+                $this->_caller->config(), "GET", S::parse("/v3/xrp/account/tx/{account}", ["account" => $account]), "/v3/xrp/account/tx/{account}", [
                     "min" => isset($min) ? S::toQueryValue($min) : null,
                     "marker" => isset($marker) ? S::toQueryValue($marker) : null,
                 ], $rHeaders, []
@@ -316,7 +316,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpFee $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/xrp/fee", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/xrp/fee", "/v3/xrp/fee", [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpFee"
         );
@@ -337,7 +337,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpInfo $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/xrp/info", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/xrp/info", "/v3/xrp/info", [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpInfo"
         );
@@ -354,7 +354,7 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XrpLedger
      */
-    public function xrpGetLedger(float $i) {
+    public function xrpGetLedger($i) {
         if ($i < 0) {
             throw new IAE('Invalid value for "$i" when calling XRPApi.xrpGetLedger, must be bigger than or equal to 0.');
         }
@@ -364,7 +364,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpLedger $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xrp/ledger/{i}", ["i" => $i]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xrp/ledger/{i}", ["i" => $i]), "/v3/xrp/ledger/{i}", [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpLedger"
         );
@@ -381,7 +381,7 @@ class XRPApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XrpTx
      */
-    public function xrpGetTransaction(string $hash) {
+    public function xrpGetTransaction($hash) {
         if (strlen($hash) > 64) {
             throw new IAE('Invalid length for "$hash" when calling XRPApi.xrpGetTransaction, must be smaller than or equal to 64');
         }
@@ -395,7 +395,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xrp/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xrp/transaction/{hash}", ["hash" => $hash]), "/v3/xrp/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpTx"
         );
@@ -416,7 +416,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/xrp/account", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/xrp/account", "/v3/xrp/account", [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpWallet"
         );

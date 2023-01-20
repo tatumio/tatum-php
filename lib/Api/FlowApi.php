@@ -31,13 +31,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowAddPubKeyMnemonic(\Tatum\Model\FlowAddPubKeyMnemonic $flow_add_pub_key_mnemonic) {
+    public function flowAddPubKeyMnemonic($flow_add_pub_key_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/flow/account", [], $rHeaders, [], $flow_add_pub_key_mnemonic
+                $this->_caller->config(), "PUT", "/v3/flow/account", "/v3/flow/account", [], $rHeaders, [], $flow_add_pub_key_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -54,13 +54,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowAddPubKeySecret(\Tatum\Model\FlowAddPubKeySecret $flow_add_pub_key_secret) {
+    public function flowAddPubKeySecret($flow_add_pub_key_secret) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/flow/account", [], $rHeaders, [], $flow_add_pub_key_secret
+                $this->_caller->config(), "PUT", "/v3/flow/account", "/v3/flow/account", [], $rHeaders, [], $flow_add_pub_key_secret
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -77,13 +77,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowAddPubKeySecretKMS(\Tatum\Model\FlowAddPubKeySecretKMS $flow_add_pub_key_secret_kms) {
+    public function flowAddPubKeySecretKMS($flow_add_pub_key_secret_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/flow/account", [], $rHeaders, [], $flow_add_pub_key_secret_kms
+                $this->_caller->config(), "PUT", "/v3/flow/account", "/v3/flow/account", [], $rHeaders, [], $flow_add_pub_key_secret_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -100,13 +100,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
      */
-    public function flowCreateAddressFromPubKeyKMS(\Tatum\Model\FlowCreateAddressFromPubKeyKMS $flow_create_address_from_pub_key_kms) {
+    public function flowCreateAddressFromPubKeyKMS($flow_create_address_from_pub_key_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/account", [], $rHeaders, [], $flow_create_address_from_pub_key_kms
+                $this->_caller->config(), "POST", "/v3/flow/account", "/v3/flow/account", [], $rHeaders, [], $flow_create_address_from_pub_key_kms
             ), 
             "\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response"
         );
@@ -123,13 +123,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
      */
-    public function flowCreateAddressFromPubKeyMnemonic(\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic $flow_create_address_from_pub_key_mnemonic) {
+    public function flowCreateAddressFromPubKeyMnemonic($flow_create_address_from_pub_key_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/account", [], $rHeaders, [], $flow_create_address_from_pub_key_mnemonic
+                $this->_caller->config(), "POST", "/v3/flow/account", "/v3/flow/account", [], $rHeaders, [], $flow_create_address_from_pub_key_mnemonic
             ), 
             "\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response"
         );
@@ -146,13 +146,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response
      */
-    public function flowCreateAddressFromPubKeySecret(\Tatum\Model\FlowCreateAddressFromPubKeySecret $flow_create_address_from_pub_key_secret) {
+    public function flowCreateAddressFromPubKeySecret($flow_create_address_from_pub_key_secret) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/account", [], $rHeaders, [], $flow_create_address_from_pub_key_secret
+                $this->_caller->config(), "POST", "/v3/flow/account", "/v3/flow/account", [], $rHeaders, [], $flow_create_address_from_pub_key_secret
             ), 
             "\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response"
         );
@@ -169,13 +169,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowCustomTransactionKMS(\Tatum\Model\FlowCustomTransactionKMS $flow_custom_transaction_kms) {
+    public function flowCustomTransactionKMS($flow_custom_transaction_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/transaction/custom", [], $rHeaders, [], $flow_custom_transaction_kms
+                $this->_caller->config(), "POST", "/v3/flow/transaction/custom", "/v3/flow/transaction/custom", [], $rHeaders, [], $flow_custom_transaction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -192,13 +192,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowCustomTransactionMnemonic(\Tatum\Model\FlowCustomTransactionMnemonic $flow_custom_transaction_mnemonic) {
+    public function flowCustomTransactionMnemonic($flow_custom_transaction_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/transaction/custom", [], $rHeaders, [], $flow_custom_transaction_mnemonic
+                $this->_caller->config(), "POST", "/v3/flow/transaction/custom", "/v3/flow/transaction/custom", [], $rHeaders, [], $flow_custom_transaction_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -215,13 +215,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowCustomTransactionPK(\Tatum\Model\FlowCustomTransactionPK $flow_custom_transaction_pk) {
+    public function flowCustomTransactionPK($flow_custom_transaction_pk) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/transaction/custom", [], $rHeaders, [], $flow_custom_transaction_pk
+                $this->_caller->config(), "POST", "/v3/flow/transaction/custom", "/v3/flow/transaction/custom", [], $rHeaders, [], $flow_custom_transaction_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -239,13 +239,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowGenerateAddress200Response
      */
-    public function flowGenerateAddress(string $xpub, float $index) {
+    public function flowGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\FlowGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/flow/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/flow/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/flow/address/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowGenerateAddress200Response"
         );
@@ -263,13 +263,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowGeneratePubKey200Response
      */
-    public function flowGeneratePubKey(string $xpub, float $index) {
+    public function flowGeneratePubKey($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\FlowGeneratePubKey200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/flow/pubkey/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/flow/pubkey/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/flow/pubkey/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowGeneratePubKey200Response"
         );
@@ -286,13 +286,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function flowGeneratePubKeyPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+    public function flowGeneratePubKeyPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", "/v3/flow/wallet/priv", "/v3/flow/wallet/priv", [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -309,7 +309,7 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function flowGenerateWallet(string $mnemonic = null) {
+    public function flowGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling FlowApi.flowGenerateWallet, must be smaller than or equal to 500');
         }
@@ -319,7 +319,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/flow/wallet", [
+                $this->_caller->config(), "GET", "/v3/flow/wallet", "/v3/flow/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -338,13 +338,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowAccount
      */
-    public function flowGetAccount(string $address) {
+    public function flowGetAccount($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\FlowAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/flow/account/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/flow/account/{address}", ["address" => $address]), "/v3/flow/account/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowAccount"
         );
@@ -361,13 +361,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowBlock
      */
-    public function flowGetBlock(string $hash) {
+    public function flowGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\FlowBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/flow/block/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/flow/block/{hash}", ["hash" => $hash]), "/v3/flow/block/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowBlock"
         );
@@ -388,7 +388,7 @@ class FlowApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/flow/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/flow/block/current", "/v3/flow/block/current", [], $rHeaders, []
             ), 
             "float"
         );
@@ -407,13 +407,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowEvent[]
      */
-    public function flowGetBlockEvents(string $type, float $from, float $to) {
+    public function flowGetBlockEvents($type, $from, $to) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\FlowEvent[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/flow/block/events", [
+                $this->_caller->config(), "GET", "/v3/flow/block/events", "/v3/flow/block/events", [
                     "type" => S::toQueryValue($type),
                     "from" => S::toQueryValue($from),
                     "to" => S::toQueryValue($to),
@@ -434,13 +434,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FlowTx
      */
-    public function flowGetRawTransaction(string $hash) {
+    public function flowGetRawTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\FlowTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/flow/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/flow/transaction/{hash}", ["hash" => $hash]), "/v3/flow/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowTx"
         );
@@ -457,13 +457,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowTransactionKMS(\Tatum\Model\FlowTransactionKMS $flow_transaction_kms) {
+    public function flowTransactionKMS($flow_transaction_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/transaction", [], $rHeaders, [], $flow_transaction_kms
+                $this->_caller->config(), "POST", "/v3/flow/transaction", "/v3/flow/transaction", [], $rHeaders, [], $flow_transaction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -480,13 +480,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowTransactionMnemonic(\Tatum\Model\FlowTransactionMnemonic $flow_transaction_mnemonic) {
+    public function flowTransactionMnemonic($flow_transaction_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/transaction", [], $rHeaders, [], $flow_transaction_mnemonic
+                $this->_caller->config(), "POST", "/v3/flow/transaction", "/v3/flow/transaction", [], $rHeaders, [], $flow_transaction_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -503,13 +503,13 @@ class FlowApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function flowTransactionPK(\Tatum\Model\FlowTransactionPK $flow_transaction_pk) {
+    public function flowTransactionPK($flow_transaction_pk) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/flow/transaction", [], $rHeaders, [], $flow_transaction_pk
+                $this->_caller->config(), "POST", "/v3/flow/transaction", "/v3/flow/transaction", [], $rHeaders, [], $flow_transaction_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );

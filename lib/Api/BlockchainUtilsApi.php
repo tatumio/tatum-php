@@ -32,13 +32,13 @@ class BlockchainUtilsApi extends AbstractApi {
      * 
      * @return float
      */
-    public function getAuctionEstimatedTime(string $chain, string $date) {
+    public function getAuctionEstimatedTime($chain, $date) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/auction/time/{chain}/{date}", ["chain" => $chain, "date" => $date]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/blockchain/auction/time/{chain}/{date}", ["chain" => $chain, "date" => $date]), "/v3/blockchain/auction/time/{chain}/{date}", [], $rHeaders, []
             ), 
             "float"
         );
@@ -56,13 +56,13 @@ class BlockchainUtilsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SCGetContractAddress200Response
      */
-    public function sCGetContractAddress(string $chain, string $hash) {
+    public function sCGetContractAddress($chain, $hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\SCGetContractAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/sc/address/{chain}/{hash}", ["chain" => $chain, "hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/blockchain/sc/address/{chain}/{hash}", ["chain" => $chain, "hash" => $hash]), "/v3/blockchain/sc/address/{chain}/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\SCGetContractAddress200Response"
         );

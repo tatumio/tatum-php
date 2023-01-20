@@ -32,13 +32,13 @@ class ExchangeRateApi extends AbstractApi {
      * 
      * @return \Tatum\Model\ExchangeRate
      */
-    public function getExchangeRate(string $currency, string $base_pair = 'EUR') {
+    public function getExchangeRate($currency, $base_pair = 'EUR') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\ExchangeRate $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/tatum/rate/{currency}", ["currency" => $currency]), [
+                $this->_caller->config(), "GET", S::parse("/v3/tatum/rate/{currency}", ["currency" => $currency]), "/v3/tatum/rate/{currency}", [
                     "basePair" => S::toQueryValue($base_pair),
                 ], $rHeaders, []
             ), 

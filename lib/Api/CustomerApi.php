@@ -31,7 +31,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return void
      */
-    public function activateCustomer(string $id) {
+    public function activateCustomer($id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.activateCustomer, must be smaller than or equal to 50');
         }
@@ -44,7 +44,7 @@ class CustomerApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}/activate", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}/activate", ["id" => $id]), "/v3/ledger/customer/{id}/activate", [], $rHeaders, []
             )
         );
     }
@@ -58,7 +58,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deactivateCustomer(string $id) {
+    public function deactivateCustomer($id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.deactivateCustomer, must be smaller than or equal to 50');
         }
@@ -71,7 +71,7 @@ class CustomerApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}/deactivate", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}/deactivate", ["id" => $id]), "/v3/ledger/customer/{id}/deactivate", [], $rHeaders, []
             )
         );
     }
@@ -85,7 +85,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return void
      */
-    public function disableCustomer(string $id) {
+    public function disableCustomer($id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.disableCustomer, must be smaller than or equal to 50');
         }
@@ -98,7 +98,7 @@ class CustomerApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}/disable", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}/disable", ["id" => $id]), "/v3/ledger/customer/{id}/disable", [], $rHeaders, []
             )
         );
     }
@@ -112,7 +112,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return void
      */
-    public function enableCustomer(string $id) {
+    public function enableCustomer($id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.enableCustomer, must be smaller than or equal to 50');
         }
@@ -125,7 +125,7 @@ class CustomerApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}/enable", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}/enable", ["id" => $id]), "/v3/ledger/customer/{id}/enable", [], $rHeaders, []
             )
         );
     }
@@ -140,7 +140,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Customer[]
      */
-    public function findAllCustomers(float $page_size, float $offset = null) {
+    public function findAllCustomers($page_size, $offset = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling CustomerApi.findAllCustomers, must be smaller than or equal to 50');
         }
@@ -154,7 +154,7 @@ class CustomerApi extends AbstractApi {
         /** @var \Tatum\Model\Customer[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ledger/customer", [
+                $this->_caller->config(), "GET", "/v3/ledger/customer", "/v3/ledger/customer", [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -174,7 +174,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Customer
      */
-    public function getCustomerByExternalOrInternalId(string $id) {
+    public function getCustomerByExternalOrInternalId($id) {
         if (strlen($id) > 100) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.getCustomerByExternalOrInternalId, must be smaller than or equal to 100');
         }
@@ -188,7 +188,7 @@ class CustomerApi extends AbstractApi {
         /** @var \Tatum\Model\Customer $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ledger/customer/{id}", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ledger/customer/{id}", ["id" => $id]), "/v3/ledger/customer/{id}", [], $rHeaders, []
             ), 
             "\Tatum\Model\Customer"
         );
@@ -206,7 +206,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Customer
      */
-    public function updateCustomer(string $id, \Tatum\Model\CustomerUpdate $customer_update) {
+    public function updateCustomer($id, $customer_update) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.updateCustomer, must be smaller than or equal to 50');
         }
@@ -220,7 +220,7 @@ class CustomerApi extends AbstractApi {
         /** @var \Tatum\Model\Customer $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}", ["id" => $id]), [], $rHeaders, [], $customer_update
+                $this->_caller->config(), "PUT", S::parse("/v3/ledger/customer/{id}", ["id" => $id]), "/v3/ledger/customer/{id}", [], $rHeaders, [], $customer_update
             ), 
             "\Tatum\Model\Customer"
         );

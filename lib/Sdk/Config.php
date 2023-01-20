@@ -152,6 +152,18 @@ class Config {
     }
 
     /**
+     * Set the host
+     *
+     * @param string $host Host
+     * @return $this
+     */
+    public function setHost(string $host) {
+        $this->_host = trim($host);
+
+        return $this;
+    }
+
+    /**
      * Get the User Agent
      *
      * @return string User agent

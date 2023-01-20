@@ -31,13 +31,13 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BroadcastResponse
      */
-    public function broadcastBlockchainTransaction(\Tatum\Model\BroadcastWithdrawal $broadcast_withdrawal) {
+    public function broadcastBlockchainTransaction($broadcast_withdrawal) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\BroadcastResponse $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/withdrawal/broadcast", [], $rHeaders, [], $broadcast_withdrawal
+                $this->_caller->config(), "POST", "/v3/offchain/withdrawal/broadcast", "/v3/offchain/withdrawal/broadcast", [], $rHeaders, [], $broadcast_withdrawal
             ), 
             "\Tatum\Model\BroadcastResponse"
         );
@@ -55,7 +55,7 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return void
      */
-    public function cancelInProgressWithdrawal(string $id, bool $revert = true) {
+    public function cancelInProgressWithdrawal($id, $revert = true) {
         if (strlen($id) > 24) {
             throw new IAE('Invalid length for "$id" when calling WithdrawalApi.cancelInProgressWithdrawal, must be smaller than or equal to 24');
         }
@@ -68,7 +68,7 @@ class WithdrawalApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/offchain/withdrawal/{id}", ["id" => $id]), [
+                $this->_caller->config(), "DELETE", S::parse("/v3/offchain/withdrawal/{id}", ["id" => $id]), "/v3/offchain/withdrawal/{id}", [
                     "revert" => S::toQueryValue($revert),
                 ], $rHeaders, []
             )
@@ -85,7 +85,7 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return void
      */
-    public function completeWithdrawal(string $id, string $tx_id) {
+    public function completeWithdrawal($id, $tx_id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling WithdrawalApi.completeWithdrawal, must be smaller than or equal to 50');
         }
@@ -106,7 +106,7 @@ class WithdrawalApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/offchain/withdrawal/{id}/{txId}", ["id" => $id, "txId" => $tx_id]), [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse("/v3/offchain/withdrawal/{id}/{txId}", ["id" => $id, "txId" => $tx_id]), "/v3/offchain/withdrawal/{id}/{txId}", [], $rHeaders, []
             )
         );
     }
@@ -123,7 +123,7 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return \Tatum\Model\WithdrawalObject[]
      */
-    public function getWithdrawals(float $page_size, string $currency = null, string $status = null, float $offset = null) {
+    public function getWithdrawals($page_size, $currency = null, $status = null, $offset = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling WithdrawalApi.getWithdrawals, must be smaller than or equal to 50');
         }
@@ -145,7 +145,7 @@ class WithdrawalApi extends AbstractApi {
         /** @var \Tatum\Model\WithdrawalObject[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/offchain/withdrawal", [
+                $this->_caller->config(), "GET", "/v3/offchain/withdrawal", "/v3/offchain/withdrawal", [
                     "currency" => isset($currency) ? S::toQueryValue($currency) : null,
                     "status" => isset($status) ? S::toQueryValue($status) : null,
                     "pageSize" => S::toQueryValue($page_size),
@@ -167,13 +167,13 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return \Tatum\Model\WithdrawalResponse
      */
-    public function storeWithdrawal(\Tatum\Model\Withdrawal $withdrawal) {
+    public function storeWithdrawal($withdrawal) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\WithdrawalResponse $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/withdrawal", [], $rHeaders, [], $withdrawal
+                $this->_caller->config(), "POST", "/v3/offchain/withdrawal", "/v3/offchain/withdrawal", [], $rHeaders, [], $withdrawal
             ), 
             "\Tatum\Model\WithdrawalResponse"
         );

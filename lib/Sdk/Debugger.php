@@ -19,6 +19,7 @@ class Debugger {
     const SANITIZE_QUERY = "query";
     const SANITIZE_HEADERS = "headers";
     const SANITIZE_BODY = "body";
+    const SANITIZE_URL = "url";
 
     /**
      * Configuration object
@@ -83,38 +84,53 @@ class Debugger {
      * @return void
      */
     public function log(Request $request, int $resCode, $resHeaders, $resBody, $resError) {
-        $network = $this->_config->isMainNet() ? "MainNet" : "TestNet";
+        if ($this->_config->getDebug()) {
+            $network = $this->_config->isMainNet() ? "MainNet" : "TestNet";
 
-        // Log the request
-        $entry = $this->_getLogTag("Tatum API REQUEST {$network}", ">");
-        $entry .= $this->_getLogRequest($request);
-        $entry .= $this->_getLogTag("/Tatum API REQUEST {$network}", ">");
+            // Log the request
+            $entry = $this->_getLogTag("Tatum API REQUEST {$network}", ">");
+            $entry .= $this->_getLogRequest($request);
+            $entry .= $this->_getLogTag("/Tatum API REQUEST {$network}", ">");
 
-        // Log the response
-        $entry .= $this->_getLogTag("Tatum API RESPONSE {$network}", "<");
-        $entry .= $this->_getLogResponse($request, $resCode, $resHeaders, $resBody, $resError);
-        $entry .= $this->_getLogTag("/Tatum API RESPONSE {$network}", "<");
+            // Log the response
+            $entry .= $this->_getLogTag("Tatum API RESPONSE {$network}", "<");
+            $entry .= $this->_getLogResponse($request, $resCode, $resHeaders, $resBody, $resError);
+            $entry .= $this->_getLogTag("/Tatum API RESPONSE {$network}", "<");
 
-        // Print entry
-        $this->print($entry);
+            // Print entry
+            $this->print($entry);
+        }
     }
 
     /**
      * Sanitize URLs
      *
-     * @param string $url URL
+     * @param string $url         URL
+     * @param string $urlTemplate URL Template
      * @return string
      */
-    protected function _sanitizeUrl($url) {
-        // Hide private key and mnemonic for egld and algorand
-        $regExes = ["(?<=\/v3\/egld\/address\/)(.*?)(?=\/|$)", "(?<=\/v3\/algorand\/address\/)(.*?)(?=\/|$)"];
-        foreach ($regExes as $regEx) {
-            if (preg_match("%{$regEx}%i", $url)) {
-                $url = preg_replace("%{$regEx}%i", str_repeat("*", 6), $url);
-            }
-        }
+    protected function _sanitizeUrl($url, $urlTemplate) {
+        // Named capturing groups where available
+        $regEx = preg_replace("%\\\{(\w+)\\\}%", '(?<$1>.+?(?=\/|$))', preg_quote($urlTemplate));
 
-        return $url;
+        // Use capturing group names to hint the sanitizer
+        return preg_replace_callback(
+            "%$regEx%i",
+            function ($item) use ($urlTemplate) {
+                // Sanitize values
+                $this->_sanitize($item, self::SANITIZE_URL);
+
+                // Prepare the new URL from template
+                $newString = $urlTemplate;
+                foreach ($item as $iKey => $iValue) {
+                    if (is_string($iKey)) {
+                        $newString = str_replace("{" . $iKey . "}", $iValue, $newString);
+                    }
+                }
+                return $newString;
+            },
+            $url
+        );
     }
 
     /**
@@ -134,10 +150,12 @@ class Debugger {
          */
         $cleanUp = function ($key, $string) {
             do {
-                if (preg_match("%x-api-key%i", $key)) {
+                if (preg_match("%x-?api-?key%i", $key)) {
+                    $suffix = preg_replace('%^.*?((?:_\w+)?)$%', '$1', $string);
+                    $string = preg_replace('%^(.*?)_\w+$%', '$1', $string);
                     $result =
                         strlen($string) >= 10
-                            ? preg_replace('%^(\w{3}).*(\w{3}(?:_\w+)?)$%', '$1******$2', $string)
+                            ? preg_replace('%^(\w{3}).*(\w{3})$%', '$1******$2', $string) . $suffix
                             : str_repeat("*", 6);
                     break;
                 }
@@ -150,7 +168,7 @@ class Debugger {
 
         // Go throught the data
         foreach ($data as $key => &$value) {
-            if (preg_match("%^(?:mnemonic|x-api-key|key|.*?(?:private|secret).*?)$%i", $key)) {
+            if (preg_match("%^(?:mnemonic|x-?api-?key|key|.*?(?:private|secret).*?)$%i", $key)) {
                 if (self::SANITIZE_HEADERS === $source || is_array($value)) {
                     foreach ($value as $vKey => $vData) {
                         $value[$vKey] = $cleanUp($key, $vData);
@@ -170,7 +188,7 @@ class Debugger {
      * @return string
      */
     protected function _getLogTag(string $tag, string $character = "#") {
-        return str_pad(" $tag ", 50, $character, STR_PAD_BOTH) . PHP_EOL;
+        return str_pad(" $tag ", 80, $character, STR_PAD_BOTH) . PHP_EOL;
     }
 
     /**
@@ -188,7 +206,7 @@ class Debugger {
         // Sanitize URL
         if ($this->_config->getDebugSanitizer()) {
             // Filter-out sensitive data in paths
-            $url = $this->_sanitizeUrl($url);
+            $url = $this->_sanitizeUrl($url, $request->getTemplate());
 
             // Clean-up query arguments
             parse_str($request->getUri()->getQuery(), $queryData);
@@ -297,7 +315,10 @@ class Debugger {
             }
 
             // Trim to 2048
-            $response .= strlen($responseBody) > 2048 ? substr($responseBody, 0, 2045) . "..." : $responseBody;
+            $response .=
+                strlen($responseBody) > 2048
+                    ? substr($responseBody, 0, 2045) . "... (" . number_format(strlen($responseBody) / 1024) . " kB)"
+                    : $responseBody;
         }
 
         return $response . PHP_EOL;

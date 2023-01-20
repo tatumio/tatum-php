@@ -34,7 +34,7 @@ class ServiceUtilsApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/tatum/freeze", [], $rHeaders, []
+                $this->_caller->config(), "PUT", "/v3/tatum/freeze", "/v3/tatum/freeze", [], $rHeaders, []
             )
         );
     }
@@ -52,7 +52,7 @@ class ServiceUtilsApi extends AbstractApi {
         /** @var \Tatum\Model\Consumption[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/tatum/usage", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/tatum/usage", "/v3/tatum/usage", [], $rHeaders, []
             ), 
             "\Tatum\Model\Consumption[]"
         );
@@ -73,7 +73,7 @@ class ServiceUtilsApi extends AbstractApi {
         /** @var \Tatum\Model\GetVersion200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/tatum/version", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/tatum/version", "/v3/tatum/version", [], $rHeaders, []
             ), 
             "\Tatum\Model\GetVersion200Response"
         );
@@ -93,7 +93,7 @@ class ServiceUtilsApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", "/v3/tatum/freeze", [], $rHeaders, []
+                $this->_caller->config(), "DELETE", "/v3/tatum/freeze", "/v3/tatum/freeze", [], $rHeaders, []
             )
         );
     }

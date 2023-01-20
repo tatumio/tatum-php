@@ -31,13 +31,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callXdcReadSmartContractMethod(\Tatum\Model\CallXdcReadSmartContractMethod $call_xdc_read_smart_contract_method) {
+    public function callXdcReadSmartContractMethod($call_xdc_read_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/smartcontract", [], $rHeaders, [], $call_xdc_read_smart_contract_method
+                $this->_caller->config(), "POST", "/v3/xdc/smartcontract", "/v3/xdc/smartcontract", [], $rHeaders, [], $call_xdc_read_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -54,13 +54,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callXdcSmartContractMethod(\Tatum\Model\CallXdcSmartContractMethod $call_xdc_smart_contract_method) {
+    public function callXdcSmartContractMethod($call_xdc_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/smartcontract", [], $rHeaders, [], $call_xdc_smart_contract_method
+                $this->_caller->config(), "POST", "/v3/xdc/smartcontract", "/v3/xdc/smartcontract", [], $rHeaders, [], $call_xdc_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -77,13 +77,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callXdcSmartContractMethodKMS(\Tatum\Model\CallXdcSmartContractMethodKMS $call_xdc_smart_contract_method_kms) {
+    public function callXdcSmartContractMethodKMS($call_xdc_smart_contract_method_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/smartcontract", [], $rHeaders, [], $call_xdc_smart_contract_method_kms
+                $this->_caller->config(), "POST", "/v3/xdc/smartcontract", "/v3/xdc/smartcontract", [], $rHeaders, [], $call_xdc_smart_contract_method_kms
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -100,13 +100,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXdcBlockchain(\Tatum\Model\TransferXdcBlockchain $transfer_xdc_blockchain) {
+    public function transferXdcBlockchain($transfer_xdc_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/transaction", [], $rHeaders, [], $transfer_xdc_blockchain
+                $this->_caller->config(), "POST", "/v3/xdc/transaction", "/v3/xdc/transaction", [], $rHeaders, [], $transfer_xdc_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -123,13 +123,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXdcBlockchainKMS(\Tatum\Model\TransferXdcBlockchainKMS $transfer_xdc_blockchain_kms) {
+    public function transferXdcBlockchainKMS($transfer_xdc_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/transaction", [], $rHeaders, [], $transfer_xdc_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/xdc/transaction", "/v3/xdc/transaction", [], $rHeaders, [], $transfer_xdc_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -146,13 +146,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function xdcBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+    public function xdcBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", "/v3/xdc/broadcast", "/v3/xdc/broadcast", [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -170,13 +170,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XdcGenerateAddress200Response
      */
-    public function xdcGenerateAddress(string $xpub, float $index) {
+    public function xdcGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\XdcGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xdc/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xdc/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/xdc/address/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\XdcGenerateAddress200Response"
         );
@@ -193,13 +193,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function xdcGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+    public function xdcGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", "/v3/xdc/wallet/priv", "/v3/xdc/wallet/priv", [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -216,7 +216,7 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function xdcGenerateWallet(string $mnemonic = null) {
+    public function xdcGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling XinFinApi.xdcGenerateWallet, must be smaller than or equal to 500');
         }
@@ -226,7 +226,7 @@ class XinFinApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/xdc/wallet", [
+                $this->_caller->config(), "GET", "/v3/xdc/wallet", "/v3/xdc/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -245,13 +245,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XdcGetBalance200Response
      */
-    public function xdcGetBalance(string $address) {
+    public function xdcGetBalance($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\XdcGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xdc/account/balance/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xdc/account/balance/{address}", ["address" => $address]), "/v3/xdc/account/balance/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\XdcGetBalance200Response"
         );
@@ -268,13 +268,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XdcBlock
      */
-    public function xdcGetBlock(string $hash) {
+    public function xdcGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\XdcBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xdc/block/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xdc/block/{hash}", ["hash" => $hash]), "/v3/xdc/block/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\XdcBlock"
         );
@@ -295,7 +295,7 @@ class XinFinApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/xdc/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/xdc/block/current", "/v3/xdc/block/current", [], $rHeaders, []
             ), 
             "float"
         );
@@ -312,13 +312,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XdcTx
      */
-    public function xdcGetTransaction(string $hash) {
+    public function xdcGetTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\XdcTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xdc/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xdc/transaction/{hash}", ["hash" => $hash]), "/v3/xdc/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\XdcTx"
         );
@@ -335,7 +335,7 @@ class XinFinApi extends AbstractApi {
      * 
      * @return float
      */
-    public function xdcGetTransactionCount(string $address) {
+    public function xdcGetTransactionCount($address) {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling XinFinApi.xdcGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -349,7 +349,7 @@ class XinFinApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xdc/transaction/count/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/xdc/transaction/count/{address}", ["address" => $address]), "/v3/xdc/transaction/count/{address}", [], $rHeaders, []
             ), 
             "float"
         );
@@ -367,13 +367,13 @@ class XinFinApi extends AbstractApi {
      * 
      * @return object
      */
-    public function xdcWeb3Driver(string $x_api_key, object $body) {
+    public function xdcWeb3Driver($x_api_key, $body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/xdc/web3/{xApiKey}", ["xApiKey" => $x_api_key]), [], $rHeaders, [], $body
+                $this->_caller->config(), "POST", S::parse("/v3/xdc/web3/{xApiKey}", ["xApiKey" => $x_api_key]), "/v3/xdc/web3/{xApiKey}", [], $rHeaders, [], $body
             ), 
             "object"
         );

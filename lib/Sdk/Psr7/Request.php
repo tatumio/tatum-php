@@ -11,24 +11,31 @@ use Tatum\Sdk\Psr7\Http\StreamInterface;
 use Tatum\Sdk\Psr7\Http\UriInterface;
 
 /**
- * PSR-7 request implementation.
+ * PSR-7 request implementation
  */
 class Request implements RequestInterface {
     use MessageTrait;
 
+    /**
+     * URL template
+     *
+     * @var string|null
+     */
+    protected $_template = null;
+
     /** @var string */
-    private $method;
+    private $_method;
 
     /** @var string|null */
-    private $requestTarget;
+    private $_requestTarget;
 
     /** @var UriInterface */
     private $uri;
 
     /** @var StreamInterface|null */
-    private $stream = null;
+    private $_stream = null;
 
-    private $files = [];
+    private $_files = [];
 
     /**
      * @param string                               $method  HTTP method
@@ -40,7 +47,7 @@ class Request implements RequestInterface {
     public function __construct(string $method, $uri, array $headers = [], $body = null, string $version = "1.1") {
         $this->assertMethod($method);
 
-        $this->method = strtoupper($method);
+        $this->_method = strtoupper($method);
         $this->uri = $uri instanceof UriInterface ? $uri : new Uri($uri);
         $this->setHeaders($headers);
 
@@ -51,12 +58,12 @@ class Request implements RequestInterface {
         do {
             // File upload
             if (is_array($body) && current($body) instanceof \CURLFile) {
-                $this->files = $body;
+                $this->_files = $body;
                 break;
             }
 
             // Regular stream
-            $this->stream = Utils::streamFor($body);
+            $this->_stream = Utils::streamFor($body);
         } while (false);
 
         $this->protocol = $version;
@@ -82,12 +89,33 @@ class Request implements RequestInterface {
     }
 
     /**
+     * Set the URL template
+     *
+     * @param string|null $template URL Template
+     * @return $this
+     */
+    public function setTemplate(?string $template) {
+        $this->_template = null !== $template ? trim($template) : $template;
+
+        return $this;
+    }
+
+    /**
+     * Get the URL template
+     *
+     * @return string
+     */
+    public function getTemplate() {
+        return $this->_template;
+    }
+
+    /**
      * Associative array of ["file name" => {CURLFile object}]
      *
      * @return \CURLFile[]
      */
     public function getFiles() {
-        return $this->files;
+        return $this->_files;
     }
 
     /**
@@ -96,12 +124,12 @@ class Request implements RequestInterface {
      * @return StreamInterface|null
      */
     public function getStream() {
-        return $this->stream;
+        return $this->_stream;
     }
 
     public function getRequestTarget(): string {
-        if ($this->requestTarget !== null) {
-            return $this->requestTarget;
+        if ($this->_requestTarget !== null) {
+            return $this->_requestTarget;
         }
 
         $target = $this->uri->getPath();
@@ -121,18 +149,18 @@ class Request implements RequestInterface {
         }
 
         $new = clone $this;
-        $new->requestTarget = $requestTarget;
+        $new->_requestTarget = $requestTarget;
         return $new;
     }
 
     public function getMethod(): string {
-        return $this->method;
+        return $this->_method;
     }
 
     public function withMethod($method): RequestInterface {
         $this->assertMethod($method);
         $new = clone $this;
-        $new->method = strtoupper($method);
+        $new->_method = strtoupper($method);
         return $new;
     }
 

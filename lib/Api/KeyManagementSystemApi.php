@@ -32,7 +32,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return void
      */
-    public function completePendingSignature(string $id, string $tx_id) {
+    public function completePendingSignature($id, $tx_id) {
         if (strlen($id) > 24) {
             throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.completePendingSignature, must be smaller than or equal to 24');
         }
@@ -53,7 +53,7 @@ class KeyManagementSystemApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/kms/{id}/{txId}", ["id" => $id, "txId" => $tx_id]), [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse("/v3/kms/{id}/{txId}", ["id" => $id, "txId" => $tx_id]), "/v3/kms/{id}/{txId}", [], $rHeaders, []
             )
         );
     }
@@ -68,7 +68,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deletePendingTransactionToSign(string $id, bool $revert = true) {
+    public function deletePendingTransactionToSign($id, $revert = true) {
         if (strlen($id) > 24) {
             throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.deletePendingTransactionToSign, must be smaller than or equal to 24');
         }
@@ -81,7 +81,7 @@ class KeyManagementSystemApi extends AbstractApi {
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/kms/{id}", ["id" => $id]), [
+                $this->_caller->config(), "DELETE", S::parse("/v3/kms/{id}", ["id" => $id]), "/v3/kms/{id}", [
                     "revert" => S::toQueryValue($revert),
                 ], $rHeaders, []
             )
@@ -97,7 +97,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PendingTransaction
      */
-    public function getPendingTransactionToSign(string $id) {
+    public function getPendingTransactionToSign($id) {
         if (strlen($id) > 24) {
             throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.getPendingTransactionToSign, must be smaller than or equal to 24');
         }
@@ -111,7 +111,7 @@ class KeyManagementSystemApi extends AbstractApi {
         /** @var \Tatum\Model\PendingTransaction $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/kms/{id}", ["id" => $id]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/kms/{id}", ["id" => $id]), "/v3/kms/{id}", [], $rHeaders, []
             ), 
             "\Tatum\Model\PendingTransaction"
         );
@@ -129,7 +129,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PendingTransaction[]
      */
-    public function getPendingTransactionsToSign(string $chain, string $signatures = null) {
+    public function getPendingTransactionsToSign($chain, $signatures = null) {
         if (strlen($chain) > 24) {
             throw new IAE('Invalid length for "$chain" when calling KeyManagementSystemApi.getPendingTransactionsToSign, must be smaller than or equal to 24');
         }
@@ -143,7 +143,7 @@ class KeyManagementSystemApi extends AbstractApi {
         /** @var \Tatum\Model\PendingTransaction[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/kms/pending/{chain}", ["chain" => $chain]), [
+                $this->_caller->config(), "GET", S::parse("/v3/kms/pending/{chain}", ["chain" => $chain]), "/v3/kms/pending/{chain}", [
                     "signatures" => isset($signatures) ? S::toQueryValue($signatures) : null,
                 ], $rHeaders, []
             ), 
@@ -163,7 +163,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PendingTransaction[]
      */
-    public function receivePendingTransactionsToSign(string $chain, \Tatum\Model\KmsSignatureIds $kms_signature_ids = null) {
+    public function receivePendingTransactionsToSign($chain, $kms_signature_ids = null) {
         if (strlen($chain) > 24) {
             throw new IAE('Invalid length for "$chain" when calling KeyManagementSystemApi.receivePendingTransactionsToSign, must be smaller than or equal to 24');
         }
@@ -177,7 +177,7 @@ class KeyManagementSystemApi extends AbstractApi {
         /** @var \Tatum\Model\PendingTransaction[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/kms/pending/{chain}", ["chain" => $chain]), [], $rHeaders, [], $kms_signature_ids
+                $this->_caller->config(), "POST", S::parse("/v3/kms/pending/{chain}", ["chain" => $chain]), "/v3/kms/pending/{chain}", [], $rHeaders, [], $kms_signature_ids
             ), 
             "\Tatum\Model\PendingTransaction[]"
         );

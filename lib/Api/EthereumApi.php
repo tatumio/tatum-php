@@ -32,7 +32,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callReadSmartContractMethod(\Tatum\Model\CallReadSmartContractMethod $call_read_smart_contract_method, string $x_testnet_type = 'ethereum-sepolia') {
+    public function callReadSmartContractMethod($call_read_smart_contract_method, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -44,7 +44,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract", [], $rHeaders, [], $call_read_smart_contract_method
+                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract", "/v3/ethereum/smartcontract", [], $rHeaders, [], $call_read_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -62,7 +62,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callSmartContractMethod(\Tatum\Model\CallSmartContractMethod $call_smart_contract_method, string $x_testnet_type = 'ethereum-sepolia') {
+    public function callSmartContractMethod($call_smart_contract_method, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -74,7 +74,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract", [], $rHeaders, [], $call_smart_contract_method
+                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract", "/v3/ethereum/smartcontract", [], $rHeaders, [], $call_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -92,7 +92,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callSmartContractMethodKMS(\Tatum\Model\CallSmartContractMethodKMS $call_smart_contract_method_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function callSmartContractMethodKMS($call_smart_contract_method_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -104,7 +104,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract", [], $rHeaders, [], $call_smart_contract_method_kms
+                $this->_caller->config(), "POST", "/v3/ethereum/smartcontract", "/v3/ethereum/smartcontract", [], $rHeaders, [], $call_smart_contract_method_kms
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -122,7 +122,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function ethBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethBroadcast($broadcast_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -134,7 +134,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", "/v3/ethereum/broadcast", "/v3/ethereum/broadcast", [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -153,7 +153,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GeneratedAddressEth
      */
-    public function ethGenerateAddress(string $xpub, float $index, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGenerateAddress($xpub, $index, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -165,7 +165,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\GeneratedAddressEth $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ethereum/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ethereum/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/ethereum/address/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\GeneratedAddressEth"
         );
@@ -183,7 +183,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function ethGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGenerateAddressPrivateKey($priv_key_request, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -195,7 +195,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", "/v3/ethereum/wallet/priv", "/v3/ethereum/wallet/priv", [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -213,7 +213,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function ethGenerateWallet(string $mnemonic = null, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGenerateWallet($mnemonic = null, $x_testnet_type = 'ethereum-sepolia') {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling EthereumApi.ethGenerateWallet, must be smaller than or equal to 500');
         }
@@ -229,7 +229,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ethereum/wallet", [
+                $this->_caller->config(), "GET", "/v3/ethereum/wallet", "/v3/ethereum/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -249,7 +249,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthBalance
      */
-    public function ethGetBalance(string $address, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGetBalance($address, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -261,7 +261,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\EthBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ethereum/account/balance/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ethereum/account/balance/{address}", ["address" => $address]), "/v3/ethereum/account/balance/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\EthBalance"
         );
@@ -279,7 +279,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthBlock
      */
-    public function ethGetBlock(string $hash, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGetBlock($hash, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -291,7 +291,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\EthBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ethereum/block/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ethereum/block/{hash}", ["hash" => $hash]), "/v3/ethereum/block/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\EthBlock"
         );
@@ -308,7 +308,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return float
      */
-    public function ethGetCurrentBlock(string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGetCurrentBlock($x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -320,7 +320,7 @@ class EthereumApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ethereum/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/ethereum/block/current", "/v3/ethereum/block/current", [], $rHeaders, []
             ), 
             "float"
         );
@@ -340,7 +340,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthTxInternal[]
      */
-    public function ethGetInternalTransactionByAddress(string $address, float $page_size, float $offset = null, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGetInternalTransactionByAddress($address, $page_size, $offset = null, $x_testnet_type = 'ethereum-sepolia') {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling EthereumApi.ethGetInternalTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -360,7 +360,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\EthTxInternal[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ethereum/account/transaction/erc20/internal/{address}", ["address" => $address]), [
+                $this->_caller->config(), "GET", S::parse("/v3/ethereum/account/transaction/erc20/internal/{address}", ["address" => $address]), "/v3/ethereum/account/transaction/erc20/internal/{address}", [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -381,7 +381,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthTx
      */
-    public function ethGetTransaction(string $hash, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGetTransaction($hash, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -393,7 +393,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\EthTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ethereum/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ethereum/transaction/{hash}", ["hash" => $hash]), "/v3/ethereum/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\EthTx"
         );
@@ -416,7 +416,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthTx[]
      */
-    public function ethGetTransactionByAddress(string $address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC', string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGetTransactionByAddress($address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC', $x_testnet_type = 'ethereum-sepolia') {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling EthereumApi.ethGetTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -444,7 +444,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\EthTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ethereum/account/transaction/{address}", ["address" => $address]), [
+                $this->_caller->config(), "GET", S::parse("/v3/ethereum/account/transaction/{address}", ["address" => $address]), "/v3/ethereum/account/transaction/{address}", [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,
@@ -468,7 +468,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return float
      */
-    public function ethGetTransactionCount(string $address, string $x_testnet_type = 'ethereum-sepolia') {
+    public function ethGetTransactionCount($address, $x_testnet_type = 'ethereum-sepolia') {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling EthereumApi.ethGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -488,7 +488,7 @@ class EthereumApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ethereum/transaction/count/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ethereum/transaction/count/{address}", ["address" => $address]), "/v3/ethereum/transaction/count/{address}", [], $rHeaders, []
             ), 
             "float"
         );
@@ -507,13 +507,13 @@ class EthereumApi extends AbstractApi {
      * 
      * @return object
      */
-    public function ethWeb3Driver(string $x_api_key, object $body, string $testnet_type = 'ethereum-sepolia') {
+    public function ethWeb3Driver($x_api_key, $body, $testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/ethereum/web3/{xApiKey}", ["xApiKey" => $x_api_key]), [
+                $this->_caller->config(), "POST", S::parse("/v3/ethereum/web3/{xApiKey}", ["xApiKey" => $x_api_key]), "/v3/ethereum/web3/{xApiKey}", [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $body
             ), 
@@ -533,7 +533,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferEthBlockchain(\Tatum\Model\TransferEthBlockchain $transfer_eth_blockchain, string $x_testnet_type = 'ethereum-sepolia') {
+    public function transferEthBlockchain($transfer_eth_blockchain, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -545,7 +545,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/transaction", [], $rHeaders, [], $transfer_eth_blockchain
+                $this->_caller->config(), "POST", "/v3/ethereum/transaction", "/v3/ethereum/transaction", [], $rHeaders, [], $transfer_eth_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -563,7 +563,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferEthBlockchainKMS(\Tatum\Model\TransferEthBlockchainKMS $transfer_eth_blockchain_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function transferEthBlockchainKMS($transfer_eth_blockchain_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -575,7 +575,7 @@ class EthereumApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/transaction", [], $rHeaders, [], $transfer_eth_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/ethereum/transaction", "/v3/ethereum/transaction", [], $rHeaders, [], $transfer_eth_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

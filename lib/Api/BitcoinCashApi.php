@@ -31,13 +31,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function bchBroadcast(\Tatum\Model\BroadcastKMS $broadcast_kms) {
+    public function bchBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bcash/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", "/v3/bcash/broadcast", "/v3/bcash/broadcast", [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -55,13 +55,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchGenerateAddress200Response
      */
-    public function bchGenerateAddress(string $xpub, float $index) {
+    public function bchGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\BchGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bcash/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bcash/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/bcash/address/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\BchGenerateAddress200Response"
         );
@@ -78,13 +78,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function bchGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+    public function bchGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bcash/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", "/v3/bcash/wallet/priv", "/v3/bcash/wallet/priv", [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -101,7 +101,7 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function bchGenerateWallet(string $mnemonic = null) {
+    public function bchGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling BitcoinCashApi.bchGenerateWallet, must be smaller than or equal to 500');
         }
@@ -111,7 +111,7 @@ class BitcoinCashApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/bcash/wallet", [
+                $this->_caller->config(), "GET", "/v3/bcash/wallet", "/v3/bcash/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -130,13 +130,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchBlock
      */
-    public function bchGetBlock(string $hash) {
+    public function bchGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\BchBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bcash/block/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bcash/block/{hash}", ["hash" => $hash]), "/v3/bcash/block/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\BchBlock"
         );
@@ -157,7 +157,7 @@ class BitcoinCashApi extends AbstractApi {
         /** @var \Tatum\Model\BchInfo $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/bcash/info", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/bcash/info", "/v3/bcash/info", [], $rHeaders, []
             ), 
             "\Tatum\Model\BchInfo"
         );
@@ -174,13 +174,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchGetBlockHash200Response
      */
-    public function bchGetBlockHash(float $i) {
+    public function bchGetBlockHash($i) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\BchGetBlockHash200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bcash/block/hash/{i}", ["i" => $i]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bcash/block/hash/{i}", ["i" => $i]), "/v3/bcash/block/hash/{i}", [], $rHeaders, []
             ), 
             "\Tatum\Model\BchGetBlockHash200Response"
         );
@@ -197,13 +197,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchTx
      */
-    public function bchGetRawTransaction(string $hash) {
+    public function bchGetRawTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\BchTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bcash/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/bcash/transaction/{hash}", ["hash" => $hash]), "/v3/bcash/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\BchTx"
         );
@@ -221,13 +221,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchTx[]
      */
-    public function bchGetTxByAddress(string $address, int $skip = null) {
+    public function bchGetTxByAddress($address, $skip = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\BchTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/bcash/transaction/address/{address}", ["address" => $address]), [
+                $this->_caller->config(), "GET", S::parse("/v3/bcash/transaction/address/{address}", ["address" => $address]), "/v3/bcash/transaction/address/{address}", [
                     "skip" => isset($skip) ? S::toQueryValue($skip) : null,
                 ], $rHeaders, []
             ), 
@@ -246,13 +246,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return object
      */
-    public function bchRpcDriver(\Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request) {
+    public function bchRpcDriver($bch_rpc_driver_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bcash/node", [], $rHeaders, [], $bch_rpc_driver_request
+                $this->_caller->config(), "POST", "/v3/bcash/node", "/v3/bcash/node", [], $rHeaders, [], $bch_rpc_driver_request
             ), 
             "object"
         );
@@ -269,13 +269,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function bchTransaction(\Tatum\Model\BchTransaction $bch_transaction) {
+    public function bchTransaction($bch_transaction) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bcash/transaction", [], $rHeaders, [], $bch_transaction
+                $this->_caller->config(), "POST", "/v3/bcash/transaction", "/v3/bcash/transaction", [], $rHeaders, [], $bch_transaction
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -292,13 +292,13 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function bchTransactionKMS(\Tatum\Model\BchTransactionKMS $bch_transaction_kms) {
+    public function bchTransactionKMS($bch_transaction_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bcash/transaction", [], $rHeaders, [], $bch_transaction_kms
+                $this->_caller->config(), "POST", "/v3/bcash/transaction", "/v3/bcash/transaction", [], $rHeaders, [], $bch_transaction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

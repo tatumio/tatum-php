@@ -31,13 +31,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createTronTrc10Blockchain(\Tatum\Model\CreateTronTrc10Blockchain $create_tron_trc10_blockchain) {
+    public function createTronTrc10Blockchain($create_tron_trc10_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/trc10/deploy", [], $rHeaders, [], $create_tron_trc10_blockchain
+                $this->_caller->config(), "POST", "/v3/tron/trc10/deploy", "/v3/tron/trc10/deploy", [], $rHeaders, [], $create_tron_trc10_blockchain
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -54,13 +54,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createTronTrc10BlockchainKMS(\Tatum\Model\CreateTronTrc10BlockchainKMS $create_tron_trc10_blockchain_kms) {
+    public function createTronTrc10BlockchainKMS($create_tron_trc10_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/trc10/deploy", [], $rHeaders, [], $create_tron_trc10_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/tron/trc10/deploy", "/v3/tron/trc10/deploy", [], $rHeaders, [], $create_tron_trc10_blockchain_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -77,13 +77,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createTronTrc20Blockchain(\Tatum\Model\CreateTronTrc20Blockchain $create_tron_trc20_blockchain) {
+    public function createTronTrc20Blockchain($create_tron_trc20_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/trc20/deploy", [], $rHeaders, [], $create_tron_trc20_blockchain
+                $this->_caller->config(), "POST", "/v3/tron/trc20/deploy", "/v3/tron/trc20/deploy", [], $rHeaders, [], $create_tron_trc20_blockchain
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -100,13 +100,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createTronTrc20BlockchainKMS(\Tatum\Model\CreateTronTrc20BlockchainKMS $create_tron_trc20_blockchain_kms) {
+    public function createTronTrc20BlockchainKMS($create_tron_trc20_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/trc20/deploy", [], $rHeaders, [], $create_tron_trc20_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/tron/trc20/deploy", "/v3/tron/trc20/deploy", [], $rHeaders, [], $create_tron_trc20_blockchain_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -123,13 +123,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function freezeTron(\Tatum\Model\FreezeTron $freeze_tron) {
+    public function freezeTron($freeze_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/freezeBalance", [], $rHeaders, [], $freeze_tron
+                $this->_caller->config(), "POST", "/v3/tron/freezeBalance", "/v3/tron/freezeBalance", [], $rHeaders, [], $freeze_tron
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -146,13 +146,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function freezeTronKMS(\Tatum\Model\FreezeTronKMS $freeze_tron_kms) {
+    public function freezeTronKMS($freeze_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/freezeBalance", [], $rHeaders, [], $freeze_tron_kms
+                $this->_caller->config(), "POST", "/v3/tron/freezeBalance", "/v3/tron/freezeBalance", [], $rHeaders, [], $freeze_tron_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -169,7 +169,7 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TronWallet
      */
-    public function generateTronwallet(string $mnemonic = null) {
+    public function generateTronwallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling TronApi.generateTronwallet, must be smaller than or equal to 500');
         }
@@ -179,7 +179,7 @@ class TronApi extends AbstractApi {
         /** @var \Tatum\Model\TronWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/tron/wallet", [
+                $this->_caller->config(), "GET", "/v3/tron/wallet", "/v3/tron/wallet", [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -198,13 +198,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function transferTronBlockchain(\Tatum\Model\TransferTronBlockchain $transfer_tron_blockchain) {
+    public function transferTronBlockchain($transfer_tron_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/transaction", [], $rHeaders, [], $transfer_tron_blockchain
+                $this->_caller->config(), "POST", "/v3/tron/transaction", "/v3/tron/transaction", [], $rHeaders, [], $transfer_tron_blockchain
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -221,13 +221,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function transferTronBlockchainKMS(\Tatum\Model\TransferTronBlockchainKMS $transfer_tron_blockchain_kms) {
+    public function transferTronBlockchainKMS($transfer_tron_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/transaction", [], $rHeaders, [], $transfer_tron_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/tron/transaction", "/v3/tron/transaction", [], $rHeaders, [], $transfer_tron_blockchain_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -244,13 +244,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function transferTronTrc10Blockchain(\Tatum\Model\TransferTronTrc10Blockchain $transfer_tron_trc10_blockchain) {
+    public function transferTronTrc10Blockchain($transfer_tron_trc10_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/trc10/transaction", [], $rHeaders, [], $transfer_tron_trc10_blockchain
+                $this->_caller->config(), "POST", "/v3/tron/trc10/transaction", "/v3/tron/trc10/transaction", [], $rHeaders, [], $transfer_tron_trc10_blockchain
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -267,13 +267,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function transferTronTrc10BlockchainKMS(\Tatum\Model\TransferTronTrc10BlockchainKMS $transfer_tron_trc10_blockchain_kms) {
+    public function transferTronTrc10BlockchainKMS($transfer_tron_trc10_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/trc10/transaction", [], $rHeaders, [], $transfer_tron_trc10_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/tron/trc10/transaction", "/v3/tron/trc10/transaction", [], $rHeaders, [], $transfer_tron_trc10_blockchain_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -290,13 +290,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function transferTronTrc20Blockchain(\Tatum\Model\TransferTronTrc20Blockchain $transfer_tron_trc20_blockchain) {
+    public function transferTronTrc20Blockchain($transfer_tron_trc20_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/trc20/transaction", [], $rHeaders, [], $transfer_tron_trc20_blockchain
+                $this->_caller->config(), "POST", "/v3/tron/trc20/transaction", "/v3/tron/trc20/transaction", [], $rHeaders, [], $transfer_tron_trc20_blockchain
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -313,13 +313,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function transferTronTrc20BlockchainKMS(\Tatum\Model\TransferTronTrc20BlockchainKMS $transfer_tron_trc20_blockchain_kms) {
+    public function transferTronTrc20BlockchainKMS($transfer_tron_trc20_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/trc20/transaction", [], $rHeaders, [], $transfer_tron_trc20_blockchain_kms
+                $this->_caller->config(), "POST", "/v3/tron/trc20/transaction", "/v3/tron/trc20/transaction", [], $rHeaders, [], $transfer_tron_trc20_blockchain_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -337,13 +337,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TronAccountTx200Response
      */
-    public function tronAccountTx(string $address, string $next = null) {
+    public function tronAccountTx($address, $next = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\TronAccountTx200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/tron/transaction/account/{address}", ["address" => $address]), [
+                $this->_caller->config(), "GET", S::parse("/v3/tron/transaction/account/{address}", ["address" => $address]), "/v3/tron/transaction/account/{address}", [
                     "next" => isset($next) ? S::toQueryValue($next) : null,
                 ], $rHeaders, []
             ), 
@@ -363,13 +363,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TronAccountTx20200Response
      */
-    public function tronAccountTx20(string $address, string $next = null) {
+    public function tronAccountTx20($address, $next = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\TronAccountTx20200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/tron/transaction/account/{address}/trc20", ["address" => $address]), [
+                $this->_caller->config(), "GET", S::parse("/v3/tron/transaction/account/{address}/trc20", ["address" => $address]), "/v3/tron/transaction/account/{address}/trc20", [
                     "next" => isset($next) ? S::toQueryValue($next) : null,
                 ], $rHeaders, []
             ), 
@@ -388,13 +388,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function tronBroadcast(\Tatum\Model\TronBroadcast $tron_broadcast) {
+    public function tronBroadcast($tron_broadcast) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/broadcast", [], $rHeaders, [], $tron_broadcast
+                $this->_caller->config(), "POST", "/v3/tron/broadcast", "/v3/tron/broadcast", [], $rHeaders, [], $tron_broadcast
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -412,7 +412,7 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TronGenerateAddress200Response
      */
-    public function tronGenerateAddress(string $xpub, float $index) {
+    public function tronGenerateAddress($xpub, $index) {
         if ($index < 0) {
             throw new IAE('Invalid value for "$index" when calling TronApi.tronGenerateAddress, must be bigger than or equal to 0.');
         }
@@ -422,7 +422,7 @@ class TronApi extends AbstractApi {
         /** @var \Tatum\Model\TronGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/tron/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/tron/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/tron/address/{xpub}/{index}", [], $rHeaders, []
             ), 
             "\Tatum\Model\TronGenerateAddress200Response"
         );
@@ -439,13 +439,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function tronGenerateAddressPrivateKey(\Tatum\Model\PrivKeyRequest $priv_key_request) {
+    public function tronGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/tron/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", "/v3/tron/wallet/priv", "/v3/tron/wallet/priv", [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -462,13 +462,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TronAccount
      */
-    public function tronGetAccount(string $address) {
+    public function tronGetAccount($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\TronAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/tron/account/{address}", ["address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/tron/account/{address}", ["address" => $address]), "/v3/tron/account/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\TronAccount"
         );
@@ -485,13 +485,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TronBlock
      */
-    public function tronGetBlock(string $hash) {
+    public function tronGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\TronBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/tron/block/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/tron/block/{hash}", ["hash" => $hash]), "/v3/tron/block/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\TronBlock"
         );
@@ -512,7 +512,7 @@ class TronApi extends AbstractApi {
         /** @var \Tatum\Model\TronGetCurrentBlock200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/tron/info", [], $rHeaders, []
+                $this->_caller->config(), "GET", "/v3/tron/info", "/v3/tron/info", [], $rHeaders, []
             ), 
             "\Tatum\Model\TronGetCurrentBlock200Response"
         );
@@ -529,13 +529,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TronTx
      */
-    public function tronGetTransaction(string $hash) {
+    public function tronGetTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\TronTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/tron/transaction/{hash}", ["hash" => $hash]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/tron/transaction/{hash}", ["hash" => $hash]), "/v3/tron/transaction/{hash}", [], $rHeaders, []
             ), 
             "\Tatum\Model\TronTx"
         );
@@ -552,13 +552,13 @@ class TronApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TronTrc10Detail
      */
-    public function tronTrc10Detail(string $id_or_owner_address) {
+    public function tronTrc10Detail($id_or_owner_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\TronTrc10Detail $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/tron/trc10/detail/{idOrOwnerAddress}", ["idOrOwnerAddress" => $id_or_owner_address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/tron/trc10/detail/{idOrOwnerAddress}", ["idOrOwnerAddress" => $id_or_owner_address]), "/v3/tron/trc10/detail/{idOrOwnerAddress}", [], $rHeaders, []
             ), 
             "\Tatum\Model\TronTrc10Detail"
         );

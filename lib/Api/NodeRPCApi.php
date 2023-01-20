@@ -37,13 +37,13 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonPostRpcDriver(string $chain, object $body, string $x_api_key = null, string $node_type = null, string $testnet_type = 'ethereum-sepolia', string $chain_type = 'avax-c', string $rpc_path = null) {
+    public function nodeJsonPostRpcDriver($chain, $body, $x_api_key = null, $node_type = null, $testnet_type = 'ethereum-sepolia', $chain_type = 'avax-c', $rpc_path = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), [
+                $this->_caller->config(), "POST", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                     "testnetType" => S::toQueryValue($testnet_type),
                     "chainType" => S::toQueryValue($chain_type),
@@ -67,13 +67,13 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonRpcGetDriver(string $chain, string $x_api_key = null, string $node_type = null, string $rpc_path = null) {
+    public function nodeJsonRpcGetDriver($chain, $x_api_key = null, $node_type = null, $rpc_path = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), [
+                $this->_caller->config(), "GET", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                 ], $rHeaders, []
             ), 
@@ -96,13 +96,13 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonRpcPutDriver(string $chain, object $body, string $x_api_key = null, string $node_type = null, string $rpc_path = null) {
+    public function nodeJsonRpcPutDriver($chain, $body, $x_api_key = null, $node_type = null, $rpc_path = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), [
+                $this->_caller->config(), "PUT", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                 ], $rHeaders, [], $body
             ), 

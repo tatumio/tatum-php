@@ -32,7 +32,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveCeloErc20(\Tatum\Model\ApproveCeloErc20 $approve_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function approveCeloErc20($approve_celo_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -44,7 +44,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_celo_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_celo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -62,7 +62,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveCeloErc20KMS(\Tatum\Model\ApproveCeloErc20KMS $approve_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function approveCeloErc20KMS($approve_celo_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -74,7 +74,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_celo_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_celo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -92,7 +92,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveErc20(\Tatum\Model\ApproveErc20 $approve_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function approveErc20($approve_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -104,7 +104,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -122,7 +122,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveErc20KMS(\Tatum\Model\ApproveErc20KMS $approve_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function approveErc20KMS($approve_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -134,7 +134,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/approve", "/v3/blockchain/token/approve", [], $rHeaders, [], $approve_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -152,7 +152,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainBurnCeloErc20(\Tatum\Model\ChainBurnCeloErc20 $chain_burn_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnCeloErc20($chain_burn_celo_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -164,7 +164,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_celo_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_celo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -182,7 +182,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainBurnCeloErc20KMS(\Tatum\Model\ChainBurnCeloErc20KMS $chain_burn_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnCeloErc20KMS($chain_burn_celo_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -194,7 +194,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_celo_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_celo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -212,7 +212,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainBurnErc20(\Tatum\Model\ChainBurnErc20 $chain_burn_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnErc20($chain_burn_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -224,7 +224,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -242,7 +242,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainBurnErc20KMS(\Tatum\Model\ChainBurnErc20KMS $chain_burn_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnErc20KMS($chain_burn_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -254,7 +254,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -272,7 +272,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainBurnKcsErc20(\Tatum\Model\ChainBurnKcsErc20 $chain_burn_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnKcsErc20($chain_burn_kcs_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -284,7 +284,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_kcs_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_kcs_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -302,7 +302,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainBurnKcsErc20KMS(\Tatum\Model\ChainBurnKcsErc20KMS $chain_burn_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainBurnKcsErc20KMS($chain_burn_kcs_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -314,7 +314,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_kcs_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/burn", "/v3/blockchain/token/burn", [], $rHeaders, [], $chain_burn_kcs_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -332,7 +332,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeployAlgoErc20(\Tatum\Model\ChainDeployAlgoErc20 $chain_deploy_algo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployAlgoErc20($chain_deploy_algo_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -344,7 +344,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_algo_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_algo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -362,7 +362,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeployAlgoErc20KMS(\Tatum\Model\ChainDeployAlgoErc20KMS $chain_deploy_algo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployAlgoErc20KMS($chain_deploy_algo_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -374,7 +374,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_algo_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_algo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -392,7 +392,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeployCeloErc20(\Tatum\Model\ChainDeployCeloErc20 $chain_deploy_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployCeloErc20($chain_deploy_celo_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -404,7 +404,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_celo_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_celo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -422,7 +422,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeployCeloErc20KMS(\Tatum\Model\ChainDeployCeloErc20KMS $chain_deploy_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployCeloErc20KMS($chain_deploy_celo_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -434,7 +434,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_celo_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_celo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -452,7 +452,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeployErc20(\Tatum\Model\ChainDeployErc20 $chain_deploy_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployErc20($chain_deploy_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -464,7 +464,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -482,7 +482,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeployErc20KMS(\Tatum\Model\ChainDeployErc20KMS $chain_deploy_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployErc20KMS($chain_deploy_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -494,7 +494,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -512,7 +512,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeployKcsErc20(\Tatum\Model\ChainDeployKcsErc20 $chain_deploy_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployKcsErc20($chain_deploy_kcs_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -524,7 +524,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_kcs_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_kcs_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -542,7 +542,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeployKcsErc20KMS(\Tatum\Model\ChainDeployKcsErc20KMS $chain_deploy_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeployKcsErc20KMS($chain_deploy_kcs_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -554,7 +554,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_kcs_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_kcs_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -572,7 +572,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeploySolanaSpl(\Tatum\Model\ChainDeploySolanaSpl $chain_deploy_solana_spl, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeploySolanaSpl($chain_deploy_solana_spl, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -584,7 +584,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_solana_spl
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_solana_spl
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -602,7 +602,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainDeploySolanaSplKMS(\Tatum\Model\ChainDeploySolanaSplKMS $chain_deploy_solana_spl_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainDeploySolanaSplKMS($chain_deploy_solana_spl_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -614,7 +614,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_solana_spl_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/deploy", "/v3/blockchain/token/deploy", [], $rHeaders, [], $chain_deploy_solana_spl_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -632,7 +632,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainMintCeloErc20(\Tatum\Model\ChainMintCeloErc20 $chain_mint_celo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintCeloErc20($chain_mint_celo_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -644,7 +644,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_celo_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_celo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -662,7 +662,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainMintCeloErc20KMS(\Tatum\Model\ChainMintCeloErc20KMS $chain_mint_celo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintCeloErc20KMS($chain_mint_celo_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -674,7 +674,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_celo_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_celo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -692,7 +692,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainMintErc20(\Tatum\Model\ChainMintErc20 $chain_mint_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintErc20($chain_mint_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -704,7 +704,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -722,7 +722,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainMintErc20KMS(\Tatum\Model\ChainMintErc20KMS $chain_mint_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintErc20KMS($chain_mint_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -734,7 +734,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -752,7 +752,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainMintKcsErc20(\Tatum\Model\ChainMintKcsErc20 $chain_mint_kcs_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintKcsErc20($chain_mint_kcs_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -764,7 +764,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_kcs_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_kcs_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -782,7 +782,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainMintKcsErc20KMS(\Tatum\Model\ChainMintKcsErc20KMS $chain_mint_kcs_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainMintKcsErc20KMS($chain_mint_kcs_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -794,7 +794,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_kcs_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/mint", "/v3/blockchain/token/mint", [], $rHeaders, [], $chain_mint_kcs_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -812,7 +812,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferAlgoErc20(\Tatum\Model\ChainTransferAlgoErc20 $chain_transfer_algo_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferAlgoErc20($chain_transfer_algo_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -824,7 +824,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_algo_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_algo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -842,7 +842,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferAlgoErc20KMS(\Tatum\Model\ChainTransferAlgoErc20KMS $chain_transfer_algo_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferAlgoErc20KMS($chain_transfer_algo_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -854,7 +854,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_algo_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_algo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -872,7 +872,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferBscBep20(\Tatum\Model\ChainTransferBscBep20 $chain_transfer_bsc_bep20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferBscBep20($chain_transfer_bsc_bep20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -884,7 +884,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_bsc_bep20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_bsc_bep20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -902,7 +902,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferBscBep20KMS(\Tatum\Model\ChainTransferBscBep20KMS $chain_transfer_bsc_bep20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferBscBep20KMS($chain_transfer_bsc_bep20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -914,7 +914,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_bsc_bep20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_bsc_bep20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -932,7 +932,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferCeloErc20Token(\Tatum\Model\ChainTransferCeloErc20Token $chain_transfer_celo_erc20_token, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferCeloErc20Token($chain_transfer_celo_erc20_token, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -944,7 +944,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_celo_erc20_token
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_celo_erc20_token
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -962,7 +962,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferCeloErc20TokenKMS(\Tatum\Model\ChainTransferCeloErc20TokenKMS $chain_transfer_celo_erc20_token_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferCeloErc20TokenKMS($chain_transfer_celo_erc20_token_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -974,7 +974,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_celo_erc20_token_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_celo_erc20_token_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -992,7 +992,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferEthErc20(\Tatum\Model\ChainTransferEthErc20 $chain_transfer_eth_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferEthErc20($chain_transfer_eth_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1004,7 +1004,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_eth_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_eth_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1022,7 +1022,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferEthErc20KMS(\Tatum\Model\ChainTransferEthErc20KMS $chain_transfer_eth_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferEthErc20KMS($chain_transfer_eth_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1034,7 +1034,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_eth_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_eth_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1052,7 +1052,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferKcsEthErc20(\Tatum\Model\ChainTransferKcsEthErc20 $chain_transfer_kcs_eth_erc20, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferKcsEthErc20($chain_transfer_kcs_eth_erc20, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1064,7 +1064,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_kcs_eth_erc20
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_kcs_eth_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1082,7 +1082,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferKcsEthErc20KMS(\Tatum\Model\ChainTransferKcsEthErc20KMS $chain_transfer_kcs_eth_erc20_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferKcsEthErc20KMS($chain_transfer_kcs_eth_erc20_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1094,7 +1094,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_kcs_eth_erc20_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_kcs_eth_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1112,7 +1112,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferSolanaSpl(\Tatum\Model\ChainTransferSolanaSpl $chain_transfer_solana_spl, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferSolanaSpl($chain_transfer_solana_spl, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1124,7 +1124,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_solana_spl
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_solana_spl
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1142,7 +1142,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function chainTransferSolanaSplKMS(\Tatum\Model\ChainTransferSolanaSplKMS $chain_transfer_solana_spl_kms, string $x_testnet_type = 'ethereum-sepolia') {
+    public function chainTransferSolanaSplKMS($chain_transfer_solana_spl_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1154,7 +1154,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_solana_spl_kms
+                $this->_caller->config(), "POST", "/v3/blockchain/token/transaction", "/v3/blockchain/token/transaction", [], $rHeaders, [], $chain_transfer_solana_spl_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1174,7 +1174,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Erc20Balance
      */
-    public function erc20GetBalance(string $chain, string $address, string $contract_address, string $x_testnet_type = 'ethereum-sepolia') {
+    public function erc20GetBalance($chain, $address, $contract_address, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -1186,7 +1186,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\Erc20Balance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/token/balance/{chain}/{contractAddress}/{address}", ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/blockchain/token/balance/{chain}/{contractAddress}/{address}", ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address]), "/v3/blockchain/token/balance/{chain}/{contractAddress}/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\Erc20Balance"
         );
@@ -1204,13 +1204,13 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Erc20BalanceForAddress[]
      */
-    public function erc20GetBalanceAddress(string $chain, string $address) {
+    public function erc20GetBalanceAddress($chain, $address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         /** @var \Tatum\Model\Erc20BalanceForAddress[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/token/address/{chain}/{address}", ["chain" => $chain, "address" => $address]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/blockchain/token/address/{chain}/{address}", ["chain" => $chain, "address" => $address]), "/v3/blockchain/token/address/{chain}/{address}", [], $rHeaders, []
             ), 
             "\Tatum\Model\Erc20BalanceForAddress[]"
         );
@@ -1234,7 +1234,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FungibleTx[]
      */
-    public function erc20GetTransactionByAddress(string $chain, string $address, string $token_address, float $page_size, float $offset = null, float $from = null, float $to = null, string $sort = 'DESC') {
+    public function erc20GetTransactionByAddress($chain, $address, $token_address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC') {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling FungibleTokensERC20OrCompatibleApi.erc20GetTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -1256,7 +1256,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\FungibleTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}", ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), [
+                $this->_caller->config(), "GET", S::parse("/v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}", ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), "/v3/blockchain/token/transaction/{chain}/{address}/{tokenAddress}", [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,

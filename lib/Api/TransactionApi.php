@@ -34,7 +34,7 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactions(\Tatum\Model\TransactionFilterLedger $transaction_filter_ledger, float $page_size = null, float $offset = null, bool $count = null) {
+    public function getTransactions($transaction_filter_ledger, $page_size = null, $offset = null, $count = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactions, must be smaller than or equal to 50');
         }
@@ -48,7 +48,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/transaction/ledger", [
+                $this->_caller->config(), "POST", "/v3/ledger/transaction/ledger", "/v3/ledger/transaction/ledger", [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "count" => isset($count) ? S::toQueryValue($count) : null,
@@ -72,7 +72,7 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactionsByAccountId(\Tatum\Model\TransactionFilter $transaction_filter, float $page_size = null, float $offset = null, bool $count = null) {
+    public function getTransactionsByAccountId($transaction_filter, $page_size = null, $offset = null, $count = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByAccountId, must be smaller than or equal to 50');
         }
@@ -86,7 +86,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/transaction/account", [
+                $this->_caller->config(), "POST", "/v3/ledger/transaction/account", "/v3/ledger/transaction/account", [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "count" => isset($count) ? S::toQueryValue($count) : null,
@@ -110,7 +110,7 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactionsByCustomerId(\Tatum\Model\TransactionFilterCustomer $transaction_filter_customer, float $page_size = null, float $offset = null, bool $count = null) {
+    public function getTransactionsByCustomerId($transaction_filter_customer, $page_size = null, $offset = null, $count = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByCustomerId, must be smaller than or equal to 50');
         }
@@ -124,7 +124,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/transaction/customer", [
+                $this->_caller->config(), "POST", "/v3/ledger/transaction/customer", "/v3/ledger/transaction/customer", [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "count" => isset($count) ? S::toQueryValue($count) : null,
@@ -145,7 +145,7 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Transaction[]
      */
-    public function getTransactionsByReference(string $reference) {
+    public function getTransactionsByReference($reference) {
         if (strlen($reference) > 100) {
             throw new IAE('Invalid length for "$reference" when calling TransactionApi.getTransactionsByReference, must be smaller than or equal to 100');
         }
@@ -159,7 +159,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\Transaction[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ledger/transaction/reference/{reference}", ["reference" => $reference]), [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse("/v3/ledger/transaction/reference/{reference}", ["reference" => $reference]), "/v3/ledger/transaction/reference/{reference}", [], $rHeaders, []
             ), 
             "\Tatum\Model\Transaction[]"
         );
@@ -176,13 +176,13 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionResult
      */
-    public function sendTransaction(\Tatum\Model\CreateTransaction $create_transaction) {
+    public function sendTransaction($create_transaction) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/transaction", [], $rHeaders, [], $create_transaction
+                $this->_caller->config(), "POST", "/v3/ledger/transaction", "/v3/ledger/transaction", [], $rHeaders, [], $create_transaction
             ), 
             "\Tatum\Model\TransactionResult"
         );
@@ -199,13 +199,13 @@ class TransactionApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function sendTransactionBatch(\Tatum\Model\BatchCreateTransaction $batch_create_transaction) {
+    public function sendTransactionBatch($batch_create_transaction) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/transaction/batch", [], $rHeaders, [], $batch_create_transaction
+                $this->_caller->config(), "POST", "/v3/ledger/transaction/batch", "/v3/ledger/transaction/batch", [], $rHeaders, [], $batch_create_transaction
             ), 
             "string[]"
         );
