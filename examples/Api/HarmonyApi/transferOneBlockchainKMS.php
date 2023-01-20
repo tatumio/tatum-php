@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_one_blockchain_kms = (new \Tatum\Model\TransferOneBlockchainKMS())
     
@@ -34,7 +34,7 @@ $arg_transfer_one_blockchain_kms = (new \Tatum\Model\TransferOneBlockchainKMS())
     // (optional) (Only if the signature ID is mnemonic-based) The index of the address from which the fee will be ...
     ->setIndex(null)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null)
     
     // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
@@ -48,7 +48,11 @@ $arg_shard_id = 0;
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/one/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->harmony()

@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $arg_address = "tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn";
 
 try {
 
-    /** @var \Tatum\Model\BnbAccount $response */
+    /**
+     * GET /v3/bnb/account/{address}
+     * 
+     * @var \Tatum\Model\BnbAccount $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bNBBeaconChain()

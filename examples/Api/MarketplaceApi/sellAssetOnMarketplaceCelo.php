@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_sell_asset_on_marketplace_celo = (new \Tatum\Model\SellAssetOnMarketplaceCelo())
     
@@ -58,12 +58,16 @@ $arg_sell_asset_on_marketplace_celo = (new \Tatum\Model\SellAssetOnMarketplaceCe
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
     ->setNonce(1)
     
-    // (optional) 
+    // (optional) \Tatum\Model\DeployErc20Fee
     ->setFee(null);
 
 try {
 
-    /** @var \Tatum\Model\SellAssetOnMarketplace200Response $response */
+    /**
+     * POST /v3/blockchain/marketplace/listing/sell
+     * 
+     * @var \Tatum\Model\SellAssetOnMarketplace200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->marketplace()

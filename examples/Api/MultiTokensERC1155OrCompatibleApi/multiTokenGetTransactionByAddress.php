@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $arg_chain = "CELO";
@@ -40,7 +40,11 @@ $arg_to = 1087823;
 
 try {
 
-    /** @var \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[] $response */
+    /**
+     * GET /v3/multitoken/transaction/{chain}/{address}/{tokenAddress}
+     * 
+     * @var \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->multiTokensERC1155OrCompatible()

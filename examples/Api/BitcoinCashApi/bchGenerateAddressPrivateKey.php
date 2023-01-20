@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
     
@@ -27,7 +27,11 @@ $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
 
 try {
 
-    /** @var \Tatum\Model\PrivKey $response */
+    /**
+     * POST /v3/bcash/wallet/priv
+     * 
+     * @var \Tatum\Model\PrivKey $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bitcoinCash()

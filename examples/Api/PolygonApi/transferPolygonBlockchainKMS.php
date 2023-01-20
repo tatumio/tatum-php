@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_polygon_blockchain_kms = (new \Tatum\Model\TransferPolygonBlockchainKMS())
     
@@ -31,7 +31,7 @@ $arg_transfer_polygon_blockchain_kms = (new \Tatum\Model\TransferPolygonBlockcha
     // Currency to transfer from Polygon Blockchain Account. ERC20 tokens BETH, BBTC, BADA, WMATIC, BDOT...
     ->setCurrency('MATIC')
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null)
     
     // Amount to be sent.
@@ -45,7 +45,11 @@ $arg_transfer_polygon_blockchain_kms = (new \Tatum\Model\TransferPolygonBlockcha
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/polygon/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->polygon()

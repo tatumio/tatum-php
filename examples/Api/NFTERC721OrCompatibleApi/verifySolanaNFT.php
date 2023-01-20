@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_verify_solana_nft = (new \Tatum\Model\VerifySolanaNFT())
     
@@ -36,7 +36,11 @@ $arg_verify_solana_nft = (new \Tatum\Model\VerifySolanaNFT())
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/nft/verify
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()

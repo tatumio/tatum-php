@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Sequence of XRP ledger.
 $arg_i = 3.4;
 
 try {
 
-    /** @var \Tatum\Model\XrpLedger $response */
+    /**
+     * GET /v3/xrp/ledger/{i}
+     * 
+     * @var \Tatum\Model\XrpLedger $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->xRP()

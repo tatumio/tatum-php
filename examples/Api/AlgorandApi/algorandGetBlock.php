@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block round number
 $arg_round_number = 16775567;
 
 try {
 
-    /** @var \Tatum\Model\AlgoBlock $response */
+    /**
+     * GET /v3/algorand/block/{roundNumber}
+     * 
+     * @var \Tatum\Model\AlgoBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->algorand()

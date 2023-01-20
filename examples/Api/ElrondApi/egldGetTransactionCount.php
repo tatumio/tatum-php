@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // address
 $arg_address = "erd17k95m339aqzxzyvjjjfa3lka0yyeqgcsda50tw5z9g73ycfe2caq9e6jq7";
 
 try {
 
-    /** @var float $response */
+    /**
+     * GET /v3/egld/transaction/count/{address}
+     * 
+     * @var float $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->elrond()

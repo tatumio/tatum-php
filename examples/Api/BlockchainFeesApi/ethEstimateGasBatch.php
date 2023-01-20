@@ -14,12 +14,12 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_eth_estimate_gas_array = (new \Tatum\Model\EthEstimateGasArray())
     
-    // 
+    // \Tatum\Model\EthEstimateGas[]
     ->setEstimations(null);
 
 // Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -27,7 +27,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\EthGasEstimationBatch $response */
+    /**
+     * POST /v3/ethereum/gas/batch
+     * 
+     * @var \Tatum\Model\EthGasEstimationBatch $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainFees()

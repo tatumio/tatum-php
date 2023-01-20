@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // WalletID of the managed address
 $arg_id = "3ad54647-4166-4d34-9186-fd46caaba945";
@@ -25,7 +25,11 @@ $arg_export = false;
 
 try {
 
-    /** @var \Tatum\Model\CustodialManagedAddress[] $response */
+    /**
+     * GET /v3/custodial/wallet/{id}
+     * 
+     * @var \Tatum\Model\CustodialManagedAddress[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->custodialManagedWallets()

@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height
 $arg_hash = "00000000000000cfb22714715f09b3721f89819a325f7f4d39b2c22a061d1be8";
 
 try {
 
-    /** @var \Tatum\Model\BchBlock $response */
+    /**
+     * GET /v3/bcash/block/{hash}
+     * 
+     * @var \Tatum\Model\BchBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bitcoinCash()

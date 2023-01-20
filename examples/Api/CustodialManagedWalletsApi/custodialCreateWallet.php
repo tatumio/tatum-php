@@ -14,17 +14,21 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_custodial_create_wallet_request = (new \Tatum\Model\CustodialCreateWalletRequest())
     
-    // 
+    // string
     ->setChain('SOL');
 
 try {
 
-    /** @var \Tatum\Model\CustodialManagedAddress $response */
+    /**
+     * POST /v3/custodial/wallet
+     * 
+     * @var \Tatum\Model\CustodialManagedAddress $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->custodialManagedWallets()

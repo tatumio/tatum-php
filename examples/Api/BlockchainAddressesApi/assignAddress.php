@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The ID of the virtual account to assign a blockchain address to
 $arg_id = "5e68c66581f2ee32bc354087";
@@ -28,7 +28,11 @@ $arg_index = 1;
 
 try {
 
-    /** @var \Tatum\Model\Address $response */
+    /**
+     * POST /v3/offchain/account/{id}/address/{address}
+     * 
+     * @var \Tatum\Model\Address $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainAddresses()

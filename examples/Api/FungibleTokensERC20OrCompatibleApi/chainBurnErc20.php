@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_chain_burn_erc20 = (new \Tatum\Model\ChainBurnErc20())
     
@@ -31,7 +31,7 @@ $arg_chain_burn_erc20 = (new \Tatum\Model\ChainBurnErc20())
     // Private key of sender address. Private key, or signature Id must be present.
     ->setFromPrivateKey('0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2')
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null)
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -42,7 +42,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/blockchain/token/burn
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->fungibleTokensERC20OrCompatible()

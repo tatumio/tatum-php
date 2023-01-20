@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $arg_hash = "1451692ebbfbea1a2d2ec6fe6782596b6aa2e46c0589d04c406f491b5b46bc6a";
 
 try {
 
-    /** @var \Tatum\Model\AdaTx $response */
+    /**
+     * GET /v3/ada/transaction/{hash}
+     * 
+     * @var \Tatum\Model\AdaTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->cardano()

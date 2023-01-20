@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $arg_page_size = 20;
@@ -43,7 +43,11 @@ $arg_account_id = "628bae6095e9ad06b52eb229";
 
 try {
 
-    /** @var \Tatum\Model\EntitiesCount $response */
+    /**
+     * GET /v3/ledger/deposits/count
+     * 
+     * @var \Tatum\Model\EntitiesCount $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->deposit()

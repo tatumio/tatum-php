@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_klaytn_estimate_gas = (new \Tatum\Model\KlaytnEstimateGas())
     
@@ -33,7 +33,11 @@ $arg_klaytn_estimate_gas = (new \Tatum\Model\KlaytnEstimateGas())
 
 try {
 
-    /** @var \Tatum\Model\KlaytnEstimateGas200Response $response */
+    /**
+     * POST /v3/klaytn/gas
+     * 
+     * @var \Tatum\Model\KlaytnEstimateGas200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainFees()

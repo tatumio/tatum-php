@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of address.
 $arg_mnemonic = "quantum tobacco key they maid mean crime youth chief jungle mind design broken tilt bus shoulder leaf good forward erupt split divert bread kitten";
@@ -25,7 +25,11 @@ $arg_index = 1;
 
 try {
 
-    /** @var \Tatum\Model\EgldGenerateAddress200Response $response */
+    /**
+     * GET /v3/egld/address/{mnemonic}/{index}
+     * 
+     * @var \Tatum\Model\EgldGenerateAddress200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->elrond()

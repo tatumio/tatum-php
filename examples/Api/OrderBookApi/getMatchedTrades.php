@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_list_oder_book_matched_body = (new \Tatum\Model\ListOderBookMatchedBody())
     
@@ -57,7 +57,11 @@ $arg_list_oder_book_matched_body = (new \Tatum\Model\ListOderBookMatchedBody())
 
 try {
 
-    /** @var \Tatum\Model\Trade[] $response */
+    /**
+     * POST /v3/trade/matched
+     * 
+     * @var \Tatum\Model\Trade[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->orderBook()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The transaction hash
 $arg_hash = "53faa103e8217e1520f5149a4e8c84aeb58e55bdab11164a95e69a8ca50f8fcc";
@@ -25,7 +25,11 @@ $arg_index = 0;
 
 try {
 
-    /** @var \Tatum\Model\BtcUTXO $response */
+    /**
+     * GET /v3/bitcoin/utxo/{hash}/{index}
+     * 
+     * @var \Tatum\Model\BtcUTXO $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bitcoin()

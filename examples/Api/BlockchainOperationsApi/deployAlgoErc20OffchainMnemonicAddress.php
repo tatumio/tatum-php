@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_deploy_algo_erc20_offchain_mnemonic_address = (new \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress())
     
@@ -43,12 +43,16 @@ $arg_deploy_algo_erc20_offchain_mnemonic_address = (new \Tatum\Model\DeployAlgoE
     // (optional) The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <c...
     ->setBaseRate(1)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomerRegistration
     ->setCustomer(null);
 
 try {
 
-    /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $response */
+    /**
+     * POST /v3/offchain/algo/erc20/deploy
+     * 
+     * @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()

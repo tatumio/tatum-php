@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Event type to search for
 $arg_type = "A.7e60df042a9c0868.FlowToken.TokensWithdrawn";
@@ -28,7 +28,11 @@ $arg_to = 654326;
 
 try {
 
-    /** @var \Tatum\Model\FlowEvent[] $response */
+    /**
+     * GET /v3/flow/block/events
+     * 
+     * @var \Tatum\Model\FlowEvent[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->flow()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_create_account_xpub = (new \Tatum\Model\CreateAccountXpub())
     
@@ -25,7 +25,7 @@ $arg_create_account_xpub = (new \Tatum\Model\CreateAccountXpub())
     // Extended public key to generate addresses from.
     ->setXpub('xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid')
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomerRegistration
     ->setCustomer(null)
     
     // (optional) Enable compliant checks. If this is enabled, it is impossible to create account if compliant chec...
@@ -42,7 +42,11 @@ $arg_create_account_xpub = (new \Tatum\Model\CreateAccountXpub())
 
 try {
 
-    /** @var \Tatum\Model\Account $response */
+    /**
+     * POST /v3/ledger/account
+     * 
+     * @var \Tatum\Model\Account $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->account()

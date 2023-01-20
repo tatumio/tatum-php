@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The transaction hash
 $arg_hash = "5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a";
@@ -25,7 +25,11 @@ $arg_index = 0;
 
 try {
 
-    /** @var \Tatum\Model\LtcUTXO $response */
+    /**
+     * GET /v3/litecoin/utxo/{hash}/{index}
+     * 
+     * @var \Tatum\Model\LtcUTXO $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->litecoin()

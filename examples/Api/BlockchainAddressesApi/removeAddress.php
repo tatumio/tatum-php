@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $arg_id = "5e68c66581f2ee32bc354087";
@@ -28,6 +28,9 @@ $arg_index = 1;
 
 try {
 
+    /**
+     * DELETE /v3/offchain/account/{id}/address/{address}
+     */
     $sdk->mainnet()
         ->api()
         ->blockchainAddresses()

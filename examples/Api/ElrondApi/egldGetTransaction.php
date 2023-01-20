@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $arg_hash = "99996224823736c1e9b8484ed74c1573049478f871d6f94b86811fb1c7b2addd";
 
 try {
 
-    /** @var \Tatum\Model\EgldTx $response */
+    /**
+     * GET /v3/egld/transaction/{hash}
+     * 
+     * @var \Tatum\Model\EgldTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->elrond()

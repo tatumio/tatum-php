@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $arg_hash = "5oSXZkPregqGhHrTcbWhgHQJETvBHtBYssuuCMJ3qroAgHsHndsr8fyY8kY76AgwmMaZBZW8ThHAXwjDaUSweApS";
@@ -25,7 +25,11 @@ $arg_commitment = 'commitment_example';
 
 try {
 
-    /** @var \Tatum\Model\SolanaTx $response */
+    /**
+     * GET /v3/solana/transaction/{hash}
+     * 
+     * @var \Tatum\Model\SolanaTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->solana()

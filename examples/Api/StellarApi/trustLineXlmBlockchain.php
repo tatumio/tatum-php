@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_trust_line_xlm_blockchain = (new \Tatum\Model\TrustLineXlmBlockchain())
     
@@ -36,7 +36,11 @@ $arg_trust_line_xlm_blockchain = (new \Tatum\Model\TrustLineXlmBlockchain())
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/xlm/trust
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->stellar()

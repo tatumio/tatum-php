@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // TRC-10 Token ID or TRC-20 contract address
 $arg_address = "TVAEYCmc15awaDRAjUZ1kvcHwQQaoPw2CW";
@@ -25,6 +25,9 @@ $arg_name = "MY_TOKEN";
 
 try {
 
+    /**
+     * POST /v3/offchain/tron/trc/{name}/{address}
+     */
     $sdk->mainnet()
         ->api()
         ->blockchainOperations()

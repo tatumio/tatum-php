@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $arg_chain = "ETH";
@@ -28,7 +28,11 @@ $arg_index = 3.4;
 
 try {
 
-    /** @var \Tatum\Model\Activated $response */
+    /**
+     * GET /v3/gas-pump/activated/{chain}/{owner}/{index}
+     * 
+     * @var \Tatum\Model\Activated $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->gasPump()

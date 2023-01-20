@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_mint_multiple_nft = (new \Tatum\Model\MintMultipleNft())
     
@@ -46,7 +46,7 @@ $arg_mint_multiple_nft = (new \Tatum\Model\MintMultipleNft())
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
     ->setNonce(null)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -54,7 +54,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\MintMultipleNftMinter200Response $response */
+    /**
+     * POST /v3/nft/mint/batch
+     * 
+     * @var \Tatum\Model\MintMultipleNftMinter200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()

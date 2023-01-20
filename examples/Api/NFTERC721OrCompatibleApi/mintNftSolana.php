@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_mint_nft_solana = (new \Tatum\Model\MintNftSolana())
     
@@ -34,7 +34,7 @@ $arg_mint_nft_solana = (new \Tatum\Model\MintNftSolana())
     // (optional) The private key of the collection verifier (owner) who will verify the NFT in the NFT collection ...
     ->setCollectionVerifierPrivateKey('3abc79a31093e4cfa4a724e94a44906cbbc3a32e2f75f985a28616676a5dbaf1de8d82a7e1d0561bb0e1b729c7a9b9b1708cf2803ad0ca928a332587ace391ad')
     
-    // 
+    // \Tatum\Model\SolanaNftMetadata
     ->setMetadata(null);
 
 // Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
@@ -42,7 +42,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\MintNftExpress200Response $response */
+    /**
+     * POST /v3/nft/mint
+     * 
+     * @var \Tatum\Model\MintNftExpress200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()

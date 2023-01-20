@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Mnemonic to use for generation of extended public and private keys.
 $arg_mnemonic = 'police hat quantum advance enroll glove thank build warfare inject invite obscure enable inflict seek web cable answer chest suspect comfort tent source seven';
 
 try {
 
-    /** @var \Tatum\Model\Wallet $response */
+    /**
+     * GET /v3/litecoin/wallet
+     * 
+     * @var \Tatum\Model\Wallet $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->litecoin()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The extended public key of the wallet; can be in the base58 format (111 characters) or the hexadecimal format (130 characters)
 $arg_xpub = "0244b3f40c6e570ae0032f6d7be87737a6c4e5314a4a1a82e22d0460a0d0cd794936c61f0c80dc74ace4cd04690d4eeb1aa6555883be006e1748306faa7ed3a26a";
@@ -25,7 +25,11 @@ $arg_index = 1;
 
 try {
 
-    /** @var \Tatum\Model\TronGenerateAddress200Response $response */
+    /**
+     * GET /v3/tron/address/{xpub}/{index}
+     * 
+     * @var \Tatum\Model\TronGenerateAddress200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->tron()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The address of the TRON account to get all transactions for
 $arg_address = "TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8";
@@ -25,7 +25,11 @@ $arg_next = "81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991";
 
 try {
 
-    /** @var \Tatum\Model\TronAccountTx200Response $response */
+    /**
+     * GET /v3/tron/transaction/account/{address}
+     * 
+     * @var \Tatum\Model\TronAccountTx200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->tron()

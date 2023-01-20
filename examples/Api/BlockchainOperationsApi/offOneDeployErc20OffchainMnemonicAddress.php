@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_deploy_erc20_offchain_mnemonic_address = (new \Tatum\Model\DeployErc20OffchainMnemonicAddress())
     
@@ -46,7 +46,7 @@ $arg_deploy_erc20_offchain_mnemonic_address = (new \Tatum\Model\DeployErc20Offch
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
     ->setNonce(null)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomerRegistration
     ->setCustomer(null);
 
 // The ID of the shard to operate
@@ -54,7 +54,11 @@ $arg_shard_id = 0;
 
 try {
 
-    /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response */
+    /**
+     * POST /v3/offchain/one/hrm20/deploy
+     * 
+     * @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()

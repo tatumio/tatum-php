@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_batch_create_transaction = (new \Tatum\Model\BatchCreateTransaction())
     
@@ -27,7 +27,11 @@ $arg_batch_create_transaction = (new \Tatum\Model\BatchCreateTransaction())
 
 try {
 
-    /** @var string[] $response */
+    /**
+     * POST /v3/ledger/transaction/batch
+     * 
+     * @var string[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->transaction()

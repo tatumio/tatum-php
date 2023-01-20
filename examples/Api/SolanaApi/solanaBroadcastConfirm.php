@@ -14,20 +14,24 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_solana_broadcast_confirm = (new \Tatum\Model\SolanaBroadcastConfirm())
     
     // Raw signed transaction to be published to network.
     ->setTxData('01de391b34567fc65080dfe9e27170e2f9ac1cd1719878719feb74bb422d1795201df71fcf7349f5')
     
-    // (optional) 
+    // (optional) \Tatum\Model\SolanaBroadcastConfirmOptions
     ->setOptions(null);
 
 try {
 
-    /** @var \Tatum\Model\SolanaTransactionHashWithConfirm $response */
+    /**
+     * POST /v3/solana/broadcast/confirm
+     * 
+     * @var \Tatum\Model\SolanaTransactionHashWithConfirm $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->solana()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Account address
 $arg_address = "tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn";
@@ -40,7 +40,11 @@ $arg_address_type = "FROM";
 
 try {
 
-    /** @var \Tatum\Model\BnbTxInAccount $response */
+    /**
+     * GET /v3/bnb/account/transaction/{address}
+     * 
+     * @var \Tatum\Model\BnbTxInAccount $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bNBBeaconChain()

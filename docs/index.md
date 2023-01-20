@@ -108,8 +108,8 @@ Please follow the [installation procedure](#installation--usage) then create an 
 // Import a PSR-4 autoloader
 require_once(__DIR__ . '/autoload.php');
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 try {
     /** @var $walletTestnet \Tatum\Model\Wallet */

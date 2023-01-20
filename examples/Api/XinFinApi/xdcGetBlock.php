@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block hash or block number
 $arg_hash = "647065";
 
 try {
 
-    /** @var \Tatum\Model\XdcBlock $response */
+    /**
+     * GET /v3/xdc/block/{hash}
+     * 
+     * @var \Tatum\Model\XdcBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->xinFin()

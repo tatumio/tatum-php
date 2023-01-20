@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $arg_address = "TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4";
 
 try {
 
-    /** @var \Tatum\Model\AlgorandGetBalance200Response $response */
+    /**
+     * GET /v3/algorand/account/balance/{address}
+     * 
+     * @var \Tatum\Model\AlgorandGetBalance200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->algorand()

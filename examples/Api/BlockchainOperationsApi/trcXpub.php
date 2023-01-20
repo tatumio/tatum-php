@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_trc_xpub = (new \Tatum\Model\TrcXpub())
     
@@ -49,7 +49,7 @@ $arg_trc_xpub = (new \Tatum\Model\TrcXpub())
     // (optional) (TRC-10 tokens only) The URL of the project that the token is created for<br/>Use this parameter ...
     ->setUrl('https://mytoken.com')
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomerRegistration
     ->setCustomer(null)
     
     // (optional) The ISO 4217 code of the currency in which all transactions for the created virtual account will ...
@@ -57,7 +57,11 @@ $arg_trc_xpub = (new \Tatum\Model\TrcXpub())
 
 try {
 
-    /** @var \Tatum\Model\Trc20Response $response */
+    /**
+     * POST /v3/offchain/tron/trc
+     * 
+     * @var \Tatum\Model\Trc20Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()

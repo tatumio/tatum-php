@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_multi_token = (new \Tatum\Model\TransferMultiToken())
     
@@ -43,7 +43,7 @@ $arg_transfer_multi_token = (new \Tatum\Model\TransferMultiToken())
     // (optional) Nonce to be set to transaction. If not present, last known nonce will be used.
     ->setNonce(1)
     
-    // (optional) 
+    // (optional) \Tatum\Model\DeployErc20Fee
     ->setFee(null);
 
 // Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
@@ -51,7 +51,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/multitoken/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->multiTokensERC1155OrCompatible()

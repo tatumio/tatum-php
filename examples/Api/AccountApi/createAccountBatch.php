@@ -14,17 +14,21 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_create_account_batch = (new \Tatum\Model\CreateAccountBatch())
     
-    // 
+    // \Tatum\Model\CreateAccount[]
     ->setAccounts(null);
 
 try {
 
-    /** @var \Tatum\Model\Account[] $response */
+    /**
+     * POST /v3/ledger/account/batch
+     * 
+     * @var \Tatum\Model\Account[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->account()

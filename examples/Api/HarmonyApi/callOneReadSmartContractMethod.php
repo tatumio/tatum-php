@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_call_one_read_smart_contract_method = (new \Tatum\Model\CallOneReadSmartContractMethod())
     
@@ -32,7 +32,7 @@ $arg_call_one_read_smart_contract_method = (new \Tatum\Model\CallOneReadSmartCon
         )
     )
     
-    // 
+    // string[]
     ->setParams(["0x632"]);
 
 // Shard to read data from
@@ -40,7 +40,11 @@ $arg_shard_id = 0;
 
 try {
 
-    /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
+    /**
+     * POST /v3/one/smartcontract
+     * 
+     * @var \Tatum\Model\CallSmartContractMethod200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->harmony()

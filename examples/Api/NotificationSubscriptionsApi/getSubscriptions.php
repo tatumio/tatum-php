@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $arg_page_size = 10;
@@ -28,7 +28,11 @@ $arg_address = 'address_example';
 
 try {
 
-    /** @var \Tatum\Model\Subscription[] $response */
+    /**
+     * GET /v3/subscription
+     * 
+     * @var \Tatum\Model\Subscription[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->notificationSubscriptions()

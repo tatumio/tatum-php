@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $arg_chain = 'chain_example';
@@ -31,7 +31,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\NftProvenanceDataErc721[] $response */
+    /**
+     * GET /v3/nft/provenance/{chain}/{contractAddress}/{tokenId}
+     * 
+     * @var \Tatum\Model\NftProvenanceDataErc721[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()

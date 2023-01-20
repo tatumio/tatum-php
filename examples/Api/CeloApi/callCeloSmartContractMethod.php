@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_call_celo_smart_contract_method = (new \Tatum\Model\CallCeloSmartContractMethod())
     
@@ -44,7 +44,7 @@ $arg_call_celo_smart_contract_method = (new \Tatum\Model\CallCeloSmartContractMe
     // (optional) Nonce to be set to transaction. If not present, last known nonce will be used.
     ->setNonce(null)
     
-    // (optional) 
+    // (optional) \Tatum\Model\DeployErc20Fee
     ->setFee(null)
     
     // Currency to pay for transaction gas
@@ -52,7 +52,11 @@ $arg_call_celo_smart_contract_method = (new \Tatum\Model\CallCeloSmartContractMe
 
 try {
 
-    /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
+    /**
+     * POST /v3/celo/smartcontract
+     * 
+     * @var \Tatum\Model\CallSmartContractMethod200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->celo()

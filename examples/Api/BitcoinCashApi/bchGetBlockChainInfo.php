@@ -14,12 +14,16 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 try {
 
-    /** @var \Tatum\Model\BchInfo $response */
+    /**
+     * GET /v3/bcash/info
+     * 
+     * @var \Tatum\Model\BchInfo $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bitcoinCash()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
     
@@ -30,7 +30,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\PrivKey $response */
+    /**
+     * POST /v3/ethereum/wallet/priv
+     * 
+     * @var \Tatum\Model\PrivKey $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->ethereum()

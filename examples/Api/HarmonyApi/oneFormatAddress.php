@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Address in HEX (ETH compatible) format.
 $arg_address = "0xa7673161CbfE0116A4De9E341f8465940c2211d4";
 
 try {
 
-    /** @var \Tatum\Model\GeneratedAddressOne $response */
+    /**
+     * GET /v3/one/address/format/{address}
+     * 
+     * @var \Tatum\Model\GeneratedAddressOne $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->harmony()

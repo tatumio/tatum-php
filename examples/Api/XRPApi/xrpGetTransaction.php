@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $arg_hash = "1A32A054B04AC9D6814710DDCA416E72C4CD2D78D6C3DFC06CC9369CC4F6B250";
 
 try {
 
-    /** @var \Tatum\Model\XrpTx $response */
+    /**
+     * GET /v3/xrp/transaction/{hash}
+     * 
+     * @var \Tatum\Model\XrpTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->xRP()

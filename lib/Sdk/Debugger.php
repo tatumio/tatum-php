@@ -92,7 +92,7 @@ class Debugger {
 
         // Log the response
         $entry .= $this->_getLogTag("Tatum API RESPONSE {$network}", "<");
-        $entry .= $this->_getLogResponse($resCode, $resHeaders, $resBody, $resError);
+        $entry .= $this->_getLogResponse($request, $resCode, $resHeaders, $resBody, $resError);
         $entry .= $this->_getLogTag("/Tatum API RESPONSE {$network}", "<");
 
         // Print entry
@@ -241,28 +241,22 @@ class Debugger {
     /**
      * Log a cURL response
      *
-     * @param int    $statusCode
-     * @param array  $headers
-     * @param string $body
-     * @param string $error
+     * @param \Tatum\Sdk\Psr7\Request $request    Request object
+     * @param int                     $statusCode
+     * @param array                   $headers
+     * @param string                  $body
+     * @param string                  $error
      * @return string
      */
-    protected function _getLogResponse(int $statusCode, $headers, $body, $error) {
+    protected function _getLogResponse($request, int $statusCode, $headers, $body, $error) {
         // Status code
         $response = "Status code: $statusCode\n";
-
-        // File download
-        $fileDownload = false;
 
         // Response headers
         $response .= "Headers:\n";
         foreach ($headers as $headerName => $headerValue) {
             if (preg_match("%^(?:content-security-policy|report-to)%i", $headerName)) {
                 continue;
-            }
-
-            if ("transfer-encoding" === strtolower(trim($headerName)) && "chunked" === strtolower(trim($headerValue))) {
-                $fileDownload = true;
             }
 
             $response .= " * {$headerName}: {$headerValue}\n";
@@ -274,7 +268,7 @@ class Debugger {
         }
 
         // File download
-        if ($fileDownload) {
+        if ($this->_isFileDownload($request)) {
             $response .= "Body: ( binary data )";
         } else {
             // JSON payload
@@ -305,5 +299,22 @@ class Debugger {
         }
 
         return $response . PHP_EOL;
+    }
+
+    /**
+     * Expecting file download?
+     *
+     * @param \Tatum\Sdk\Psr7\Request $request Request object
+     * @return bool
+     */
+    protected function _isFileDownload($request) {
+        $result = false;
+
+        // IPFS download
+        if ("GET" === $request->getMethod() && preg_match("%^\/v3\/ipfs\/.+%i", $request->getUri()->getPath())) {
+            $result = true;
+        }
+
+        return $result;
     }
 }

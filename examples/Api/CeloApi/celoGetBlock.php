@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block hash or block number
 $arg_hash = "6470657";
 
 try {
 
-    /** @var \Tatum\Model\CeloBlock $response */
+    /**
+     * GET /v3/celo/block/{hash}
+     * 
+     * @var \Tatum\Model\CeloBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->celo()

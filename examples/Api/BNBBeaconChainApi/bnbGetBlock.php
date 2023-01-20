@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block height
 $arg_height = 6470657;
 
 try {
 
-    /** @var \Tatum\Model\BnbBlock $response */
+    /**
+     * GET /v3/bnb/block/{height}
+     * 
+     * @var \Tatum\Model\BnbBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bNBBeaconChain()

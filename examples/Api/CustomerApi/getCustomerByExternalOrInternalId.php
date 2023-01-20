@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Customer external or internal ID
 $arg_id = 'id_example';
 
 try {
 
-    /** @var \Tatum\Model\Customer $response */
+    /**
+     * GET /v3/ledger/customer/{id}
+     * 
+     * @var \Tatum\Model\Customer $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->customer()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_erc20_address = (new \Tatum\Model\Erc20Address())
     
@@ -40,7 +40,7 @@ $arg_erc20_address = (new \Tatum\Model\Erc20Address())
     // (optional) The exchange rate for the base pair; one unit of the created virtual currency equals 1 unit of <c...
     ->setBaseRate(1)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomerRegistration
     ->setCustomer(null)
     
     // (optional) AThe ISO 4217 code of the currency in which all transactions for the created virtual account will...
@@ -48,7 +48,11 @@ $arg_erc20_address = (new \Tatum\Model\Erc20Address())
 
 try {
 
-    /** @var \Tatum\Model\Erc20Response $response */
+    /**
+     * POST /v3/offchain/xdc/erc20
+     * 
+     * @var \Tatum\Model\Erc20Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()

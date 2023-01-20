@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_create_tron_trc20_blockchain = (new \Tatum\Model\CreateTronTrc20Blockchain())
     
@@ -39,7 +39,11 @@ $arg_create_tron_trc20_blockchain = (new \Tatum\Model\CreateTronTrc20Blockchain(
 
 try {
 
-    /** @var \Tatum\Model\TransactionHash $response */
+    /**
+     * POST /v3/tron/trc20/deploy
+     * 
+     * @var \Tatum\Model\TransactionHash $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->tron()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to get pending transactions for.
 $arg_chain = 'chain_example';
@@ -25,7 +25,11 @@ $arg_signatures = "6d78dad2-518f-4e76-8255-8f1df0de6884,6d78dad2-518f-4e76-8255-
 
 try {
 
-    /** @var \Tatum\Model\PendingTransaction[] $response */
+    /**
+     * GET /v3/kms/pending/{chain}
+     * 
+     * @var \Tatum\Model\PendingTransaction[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->keyManagementSystem()

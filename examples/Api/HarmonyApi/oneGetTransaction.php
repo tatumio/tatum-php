@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $arg_hash = "0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7";
@@ -25,7 +25,11 @@ $arg_shard_id = 0;
 
 try {
 
-    /** @var \Tatum\Model\OneTx $response */
+    /**
+     * GET /v3/one/transaction/{hash}
+     * 
+     * @var \Tatum\Model\OneTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->harmony()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_xrp_blockchain_asset = (new \Tatum\Model\TransferXrpBlockchainAsset())
     
@@ -48,7 +48,11 @@ $arg_transfer_xrp_blockchain_asset = (new \Tatum\Model\TransferXrpBlockchainAsse
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/xrp/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->xRP()

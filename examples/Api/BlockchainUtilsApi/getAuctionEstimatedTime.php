@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $arg_chain = 'chain_example';
@@ -25,7 +25,11 @@ $arg_date = "2021-09-17T07:55:54Z";
 
 try {
 
-    /** @var float $response */
+    /**
+     * GET /v3/blockchain/auction/time/{chain}/{date}
+     * 
+     * @var float $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainUtils()

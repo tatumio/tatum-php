@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Max number of items per page is 50.
 $arg_page_size = 10;
@@ -25,7 +25,11 @@ $arg_offset = 0;
 
 try {
 
-    /** @var \Tatum\Model\Customer[] $response */
+    /**
+     * GET /v3/ledger/customer
+     * 
+     * @var \Tatum\Model\Customer[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->customer()

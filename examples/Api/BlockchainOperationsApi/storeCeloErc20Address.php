@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // ERC-20 contract address
 $arg_address = "0x687422eEA2cB73B5d3e242bA5456b782919AFc85";
@@ -25,6 +25,9 @@ $arg_name = "MY_TOKEN";
 
 try {
 
+    /**
+     * POST /v3/offchain/celo/erc20/{name}/{address}
+     */
     $sdk->mainnet()
         ->api()
         ->blockchainOperations()

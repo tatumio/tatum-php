@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Blockchain to work with
 $arg_chain = "ETH";
@@ -28,7 +28,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[] $response */
+    /**
+     * GET /v3/multitoken/address/balance/{chain}/{address}
+     * 
+     * @var \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->multiTokensERC1155OrCompatible()

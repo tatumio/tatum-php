@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_call_polygon_smart_contract_method_caller = (new \Tatum\Model\CallPolygonSmartContractMethodCaller())
     
@@ -38,15 +38,19 @@ $arg_call_polygon_smart_contract_method_caller = (new \Tatum\Model\CallPolygonSm
         )
     )
     
-    // 
+    // string[]
     ->setParams(["0x632"])
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null);
 
 try {
 
-    /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
+    /**
+     * POST /v3/polygon/smartcontract
+     * 
+     * @var \Tatum\Model\CallSmartContractMethod200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->polygon()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_vet_blockchain = (new \Tatum\Model\TransferVetBlockchain())
     
@@ -31,12 +31,16 @@ $arg_transfer_vet_blockchain = (new \Tatum\Model\TransferVetBlockchain())
     // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
     ->setData('4d79206e6f746520746f2074686520726563697069656e74')
     
-    // (optional) 
+    // (optional) \Tatum\Model\TransferVetBlockchainFee
     ->setFee(null);
 
 try {
 
-    /** @var \Tatum\Model\TransactionHash $response */
+    /**
+     * POST /v3/vet/transaction
+     * 
+     * @var \Tatum\Model\TransactionHash $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->veChain()

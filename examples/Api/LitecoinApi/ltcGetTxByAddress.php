@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Address
 $arg_address = "n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or";
@@ -28,7 +28,11 @@ $arg_offset = 0;
 
 try {
 
-    /** @var \Tatum\Model\LtcTx[] $response */
+    /**
+     * GET /v3/litecoin/transaction/address/{address}
+     * 
+     * @var \Tatum\Model\LtcTx[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->litecoin()

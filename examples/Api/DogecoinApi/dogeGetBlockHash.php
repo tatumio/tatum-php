@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The number of blocks preceding a particular block on a block chain.
 $arg_i = 1234314;
 
 try {
 
-    /** @var \Tatum\Model\LtcGetBlockHash200Response $response */
+    /**
+     * GET /v3/dogecoin/block/hash/{i}
+     * 
+     * @var \Tatum\Model\LtcGetBlockHash200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->dogecoin()

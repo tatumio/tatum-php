@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Transaction id
 $arg_txid = "LXEBXIBDAIF72NRI76SU252QSOGFCKEHTG7AI4P6W25V35PETU3Q";
 
 try {
 
-    /** @var \Tatum\Model\AlgoTx $response */
+    /**
+     * GET /v3/algorand/transaction/{txid}
+     * 
+     * @var \Tatum\Model\AlgoTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->algorand()

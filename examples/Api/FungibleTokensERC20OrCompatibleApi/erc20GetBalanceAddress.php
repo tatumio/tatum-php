@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Network name
 $arg_chain = "CELO";
@@ -25,7 +25,11 @@ $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 
 try {
 
-    /** @var \Tatum\Model\Erc20BalanceForAddress[] $response */
+    /**
+     * GET /v3/blockchain/token/address/{chain}/{address}
+     * 
+     * @var \Tatum\Model\Erc20BalanceForAddress[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->fungibleTokensERC20OrCompatible()

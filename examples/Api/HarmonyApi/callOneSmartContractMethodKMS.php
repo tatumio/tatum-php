@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_call_one_smart_contract_method_kms = (new \Tatum\Model\CallOneSmartContractMethodKMS())
     
@@ -44,7 +44,7 @@ $arg_call_one_smart_contract_method_kms = (new \Tatum\Model\CallOneSmartContract
     // (optional) Nonce to be set to ONE transaction. If not present, last known nonce will be used.
     ->setNonce(null)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null);
 
 // Shard to read data from
@@ -52,7 +52,11 @@ $arg_shard_id = 0;
 
 try {
 
-    /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
+    /**
+     * POST /v3/one/smartcontract
+     * 
+     * @var \Tatum\Model\CallSmartContractMethod200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->harmony()

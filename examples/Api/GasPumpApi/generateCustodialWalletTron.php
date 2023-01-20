@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_generate_custodial_wallet_tron = (new \Tatum\Model\GenerateCustodialWalletTron())
     
@@ -42,7 +42,11 @@ $arg_generate_custodial_wallet_tron = (new \Tatum\Model\GenerateCustodialWalletT
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/blockchain/sc/custodial
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->gasPump()

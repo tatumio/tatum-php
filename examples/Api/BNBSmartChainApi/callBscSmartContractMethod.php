@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_call_bsc_smart_contract_method = (new \Tatum\Model\CallBscSmartContractMethod())
     
@@ -32,7 +32,7 @@ $arg_call_bsc_smart_contract_method = (new \Tatum\Model\CallBscSmartContractMeth
         )
     )
     
-    // 
+    // string[]
     ->setParams(["0x632"])
     
     // (optional) Amount of the assets to be sent.
@@ -44,12 +44,16 @@ $arg_call_bsc_smart_contract_method = (new \Tatum\Model\CallBscSmartContractMeth
     // (optional) Nonce to be set to BSC transaction. If not present, last known nonce will be used.
     ->setNonce(null)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null);
 
 try {
 
-    /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
+    /**
+     * POST /v3/bsc/smartcontract
+     * 
+     * @var \Tatum\Model\CallSmartContractMethod200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bNBSmartChain()

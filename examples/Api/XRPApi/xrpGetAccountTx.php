@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Address of XRP account.
 $arg_account = 'account_example';
@@ -28,7 +28,11 @@ $arg_marker = 'marker_example';
 
 try {
 
-    /** @var \Tatum\Model\XrpAccountTx $response */
+    /**
+     * GET /v3/xrp/account/tx/{account}
+     * 
+     * @var \Tatum\Model\XrpAccountTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->xRP()

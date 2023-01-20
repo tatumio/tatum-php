@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Address
 $arg_address = "2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb";
@@ -28,7 +28,11 @@ $arg_offset = 0;
 
 try {
 
-    /** @var \Tatum\Model\BtcTx[] $response */
+    /**
+     * GET /v3/bitcoin/transaction/address/{address}
+     * 
+     * @var \Tatum\Model\BtcTx[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bitcoin()

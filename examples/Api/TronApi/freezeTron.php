@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_freeze_tron = (new \Tatum\Model\FreezeTron())
     
@@ -36,7 +36,11 @@ $arg_freeze_tron = (new \Tatum\Model\FreezeTron())
 
 try {
 
-    /** @var \Tatum\Model\TransactionHash $response */
+    /**
+     * POST /v3/tron/freezeBalance
+     * 
+     * @var \Tatum\Model\TransactionHash $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->tron()

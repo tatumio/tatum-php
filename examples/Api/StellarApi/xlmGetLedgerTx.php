@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Sequence of the ledger.
 $arg_sequence = "1";
 
 try {
 
-    /** @var \Tatum\Model\XlmTx[] $response */
+    /**
+     * GET /v3/xlm/ledger/{sequence}/transaction
+     * 
+     * @var \Tatum\Model\XlmTx[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->stellar()

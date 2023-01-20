@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_bsc_blockchain_kms = (new \Tatum\Model\TransferBscBlockchainKMS())
     
@@ -31,7 +31,7 @@ $arg_transfer_bsc_blockchain_kms = (new \Tatum\Model\TransferBscBlockchainKMS())
     // Currency to transfer from BSC Blockchain Account. BEP20 tokens BETH, BBTC, BADA, WBNB, BDOT, BXRP...
     ->setCurrency('BSC')
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null)
     
     // Amount to be sent.
@@ -45,7 +45,11 @@ $arg_transfer_bsc_blockchain_kms = (new \Tatum\Model\TransferBscBlockchainKMS())
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/bsc/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bNBSmartChain()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_xdc_blockchain = (new \Tatum\Model\TransferXdcBlockchain())
     
@@ -31,7 +31,7 @@ $arg_transfer_xdc_blockchain = (new \Tatum\Model\TransferXdcBlockchain())
     // Blockchain address to send assets
     ->setTo('xdc687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) 
+    // (optional) \Tatum\Model\DeployErc20Fee
     ->setFee(null)
     
     // Amount to be sent.
@@ -42,7 +42,11 @@ $arg_transfer_xdc_blockchain = (new \Tatum\Model\TransferXdcBlockchain())
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/xdc/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->xinFin()

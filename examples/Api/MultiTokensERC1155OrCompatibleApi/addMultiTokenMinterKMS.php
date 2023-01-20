@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_add_multi_token_minter_kms = (new \Tatum\Model\AddMultiTokenMinterKMS())
     
@@ -37,7 +37,7 @@ $arg_add_multi_token_minter_kms = (new \Tatum\Model\AddMultiTokenMinterKMS())
     // (optional) Nonce to be set to Ethereum transaction. If not present, last known nonce will be used.
     ->setNonce(null)
     
-    // (optional) 
+    // (optional) \Tatum\Model\DeployErc20Fee
     ->setFee(null)
     
     // (optional) Currency to pay for transaction gas, only valid for CELO chain.
@@ -48,7 +48,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/multitoken/mint/add
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->multiTokensERC1155OrCompatible()

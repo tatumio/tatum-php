@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_klaytn_blockchain_kms = (new \Tatum\Model\TransferKlaytnBlockchainKMS())
     
@@ -31,7 +31,7 @@ $arg_transfer_klaytn_blockchain_kms = (new \Tatum\Model\TransferKlaytnBlockchain
     // Currency to transfer from Klaytn Blockchain Account.
     ->setCurrency('KLAY')
     
-    // (optional) 
+    // (optional) \Tatum\Model\TransferKlay20BlockchainFee
     ->setFee(null)
     
     // Amount to be sent in Ether.
@@ -45,7 +45,11 @@ $arg_transfer_klaytn_blockchain_kms = (new \Tatum\Model\TransferKlaytnBlockchain
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/klaytn/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->klaytn()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Account address you want to get balance of
 $arg_address = "0x8ce4e40889a13971681391aad29e88efaf91f784";
@@ -40,7 +40,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\EthTx[] $response */
+    /**
+     * GET /v3/ethereum/account/transaction/{address}
+     * 
+     * @var \Tatum\Model\EthTx[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->ethereum()

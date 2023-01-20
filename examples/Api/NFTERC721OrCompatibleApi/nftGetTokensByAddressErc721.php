@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The blockchain to work with
 $arg_chain = "SOL";
@@ -25,7 +25,11 @@ $arg_address = "FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ";
 
 try {
 
-    /** @var \Tatum\Model\NftTokenByAddressErc721[] $response */
+    /**
+     * GET /v3/nft/address/balance/{chain}/{address}
+     * 
+     * @var \Tatum\Model\NftTokenByAddressErc721[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()

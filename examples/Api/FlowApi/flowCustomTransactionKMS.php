@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_flow_custom_transaction_kms = (new \Tatum\Model\FlowCustomTransactionKMS())
     
@@ -30,7 +30,7 @@ $arg_flow_custom_transaction_kms = (new \Tatum\Model\FlowCustomTransactionKMS())
 }
 ')
     
-    // 
+    // \Tatum\Model\FlowCustomTransactionPKArgsInner[]
     ->setArgs(null)
     
     // Identifier of the secret associated in signing application. Secret, or signature Id must be present.
@@ -41,7 +41,11 @@ $arg_flow_custom_transaction_kms = (new \Tatum\Model\FlowCustomTransactionKMS())
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/flow/transaction/custom
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->flow()

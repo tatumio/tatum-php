@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Address
 $arg_address = "Ae2tdPwUPEZMmrkRoduJW9w7wRvnTcdeMbw7yyyjwPqo6zuaeJaDEkHUJSz";
 
 try {
 
-    /** @var array[] $response */
+    /**
+     * GET /v3/ada/account/{address}
+     * 
+     * @var array[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->cardano()

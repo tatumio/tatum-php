@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_mint_multiple_nft_celo = (new \Tatum\Model\MintMultipleNftCelo())
     
@@ -54,7 +54,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\MintMultipleNftMinter200Response $response */
+    /**
+     * POST /v3/nft/mint/batch
+     * 
+     * @var \Tatum\Model\MintMultipleNftMinter200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->nFTERC721OrCompatible()

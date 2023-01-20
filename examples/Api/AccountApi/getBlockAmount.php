@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Account ID
 $arg_id = "5e6be89ee6aa436299950c3f";
@@ -28,7 +28,11 @@ $arg_offset = 0;
 
 try {
 
-    /** @var \Tatum\Model\Blockage[] $response */
+    /**
+     * GET /v3/ledger/account/block/{id}
+     * 
+     * @var \Tatum\Model\Blockage[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->account()

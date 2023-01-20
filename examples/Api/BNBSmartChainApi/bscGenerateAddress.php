@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Extended public key of wallet.
 $arg_xpub = "xpub6EsCk1uU6cJzqvP9CdsTiJwT2rF748YkPnhv5Qo8q44DG7nn2vbyt48YRsNSUYS44jFCW9gwvD9kLQu9AuqXpTpM1c5hgg9PsuBLdeNncid";
@@ -25,7 +25,11 @@ $arg_index = 1;
 
 try {
 
-    /** @var \Tatum\Model\GeneratedAddressBsc $response */
+    /**
+     * GET /v3/bsc/address/{xpub}/{index}
+     * 
+     * @var \Tatum\Model\GeneratedAddressBsc $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bNBSmartChain()

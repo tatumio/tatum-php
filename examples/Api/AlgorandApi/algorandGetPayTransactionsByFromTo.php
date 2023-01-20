@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Start timestamp in specified period of time
 $arg_from = "2021-05-01T20:44:39Z";
@@ -31,7 +31,11 @@ $arg_next = "ywAAAAAAAAAAAAAA";
 
 try {
 
-    /** @var \Tatum\Model\AlgoTxsWithPagination $response */
+    /**
+     * GET /v3/algorand/transactions/{from}/{to}
+     * 
+     * @var \Tatum\Model\AlgoTxsWithPagination $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->algorand()

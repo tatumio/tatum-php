@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // ID of pending transaction
 $arg_id = "f91827364f91827364ajdur7";
@@ -25,6 +25,9 @@ $arg_tx_id = "0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326";
 
 try {
 
+    /**
+     * PUT /v3/kms/{id}/{txId}
+     */
     $sdk->mainnet()
         ->api()
         ->keyManagementSystem()

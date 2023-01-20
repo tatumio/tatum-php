@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_eth_blockchain_kms = (new \Tatum\Model\TransferEthBlockchainKMS())
     
@@ -31,7 +31,7 @@ $arg_transfer_eth_blockchain_kms = (new \Tatum\Model\TransferEthBlockchainKMS())
     // Currency to transfer from Ethereum Blockchain Account.
     ->setCurrency('ETH')
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null)
     
     // Amount to be sent
@@ -48,7 +48,11 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/ethereum/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->ethereum()

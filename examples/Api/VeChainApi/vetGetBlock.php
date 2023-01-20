@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block hash or block number
 $arg_hash = "325324";
 
 try {
 
-    /** @var \Tatum\Model\VetBlock $response */
+    /**
+     * GET /v3/vet/block/{hash}
+     * 
+     * @var \Tatum\Model\VetBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->veChain()

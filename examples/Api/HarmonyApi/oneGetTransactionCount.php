@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // address
 $arg_address = "0xdac17f958d2ee523a2206206994597c13d831ec7";
@@ -25,7 +25,11 @@ $arg_shard_id = 0;
 
 try {
 
-    /** @var float $response */
+    /**
+     * GET /v3/one/transaction/count/{address}
+     * 
+     * @var float $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->harmony()

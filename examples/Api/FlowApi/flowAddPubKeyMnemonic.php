@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_flow_add_pub_key_mnemonic = (new \Tatum\Model\FlowAddPubKeyMnemonic())
     
@@ -36,7 +36,11 @@ $arg_flow_add_pub_key_mnemonic = (new \Tatum\Model\FlowAddPubKeyMnemonic())
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * PUT /v3/flow/account
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->flow()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block hash or block number
 $arg_hash = "6470657";
@@ -25,7 +25,11 @@ $arg_shard_id = 0;
 
 try {
 
-    /** @var \Tatum\Model\EthBlock $response */
+    /**
+     * GET /v3/one/block/{hash}
+     * 
+     * @var \Tatum\Model\EthBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->harmony()

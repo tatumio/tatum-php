@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_kcs_blockchain_kms = (new \Tatum\Model\TransferKcsBlockchainKMS())
     
@@ -31,7 +31,7 @@ $arg_transfer_kcs_blockchain_kms = (new \Tatum\Model\TransferKcsBlockchainKMS())
     // Currency to transfer from Kcs Blockchain Account. ERC20 tokens BETH, BBTC, BADA, WMATIC, BDOT, BX...
     ->setCurrency('KCS')
     
-    // (optional) 
+    // (optional) \Tatum\Model\DeployErc20Fee
     ->setFee(null)
     
     // Amount to be sent.
@@ -45,7 +45,11 @@ $arg_transfer_kcs_blockchain_kms = (new \Tatum\Model\TransferKcsBlockchainKMS())
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/kcs/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->kuCoin()

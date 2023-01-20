@@ -67,9 +67,7 @@ abstract class AbstractApi {
         }
 
         // Accept gzip compression
-        if (!$this->_caller->config()->getDebug()) {
-            $request->setHeader("Accept-Encoding", "gzip");
-        }
+        $request->setHeader("Accept-Encoding", "gzip");
 
         try {
             $response = Client::send($request, $this->_caller->config());

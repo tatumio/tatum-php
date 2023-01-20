@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_create_future_trade = (new \Tatum\Model\CreateFutureTrade())
     
@@ -43,12 +43,16 @@ $arg_create_future_trade = (new \Tatum\Model\CreateFutureTrade())
     // (optional) Percentage of the trade amount to be paid as a fee.
     ->setFee(1.5)
     
-    // 
+    // \Tatum\Model\CreateFutureTradeAttr
     ->setAttr(null);
 
 try {
 
-    /** @var \Tatum\Model\Id $response */
+    /**
+     * POST /v3/trade
+     * 
+     * @var \Tatum\Model\Id $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->orderBook()

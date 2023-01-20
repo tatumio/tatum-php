@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height.
 $arg_hash = "000000000195a8cfe2ea4ca60ce921b30e95980a96c6bb1da4a35aa03da9c5a8";
 
 try {
 
-    /** @var \Tatum\Model\TronBlock $response */
+    /**
+     * GET /v3/tron/block/{hash}
+     * 
+     * @var \Tatum\Model\TronBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->tron()

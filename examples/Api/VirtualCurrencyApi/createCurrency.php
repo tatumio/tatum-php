@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
     
@@ -31,7 +31,7 @@ $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
     // (optional) Exchange rate of the base pair. Each unit of the created curency will represent value of baseRate...
     ->setBaseRate(1)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomerRegistration
     ->setCustomer(null)
     
     // (optional) Used as a description within Tatum system.
@@ -48,7 +48,11 @@ $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
 
 try {
 
-    /** @var \Tatum\Model\Account $response */
+    /**
+     * POST /v3/ledger/virtualCurrency
+     * 
+     * @var \Tatum\Model\Account $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->virtualCurrency()

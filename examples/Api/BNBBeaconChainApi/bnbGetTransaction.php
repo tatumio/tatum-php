@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $arg_hash = "4B944BBF78F3ADE3A377551B5EA7AD0FEDBDA13165D932F94B106EF7A8E16C1A";
 
 try {
 
-    /** @var \Tatum\Model\BnbTx $response */
+    /**
+     * GET /v3/bnb/transaction/{hash}
+     * 
+     * @var \Tatum\Model\BnbTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bNBBeaconChain()

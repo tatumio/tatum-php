@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_custodial_wallet_celo = (new \Tatum\Model\TransferCustodialWalletCelo())
     
@@ -49,12 +49,16 @@ $arg_transfer_custodial_wallet_celo = (new \Tatum\Model\TransferCustodialWalletC
     // (optional) The nonce to be set to the transfer transaction; if not present, the last known nonce will be used
     ->setNonce(1)
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomFee
     ->setFee(null);
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/blockchain/sc/custodial/transfer
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->gasPump()

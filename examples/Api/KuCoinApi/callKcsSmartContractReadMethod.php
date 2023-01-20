@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_call_kcs_smart_contract_read_method = (new \Tatum\Model\CallKcsSmartContractReadMethod())
     
@@ -32,12 +32,16 @@ $arg_call_kcs_smart_contract_read_method = (new \Tatum\Model\CallKcsSmartContrac
         )
     )
     
-    // 
+    // string[]
     ->setParams(["0x632"]);
 
 try {
 
-    /** @var \Tatum\Model\CallSmartContractMethod200Response $response */
+    /**
+     * POST /v3/kcs/smartcontract
+     * 
+     * @var \Tatum\Model\CallSmartContractMethod200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->kuCoin()

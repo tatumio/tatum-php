@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_estimate_fee_deploy_custodial_wallet = (new \Tatum\Model\EstimateFeeDeployCustodialWallet())
     
@@ -30,7 +30,11 @@ $arg_estimate_fee_deploy_custodial_wallet = (new \Tatum\Model\EstimateFeeDeployC
 
 try {
 
-    /** @var \Tatum\Model\EstimateFee200Response $response */
+    /**
+     * POST /v3/blockchain/estimate
+     * 
+     * @var \Tatum\Model\EstimateFee200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->blockchainFees()

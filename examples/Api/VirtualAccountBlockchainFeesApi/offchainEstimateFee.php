@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_offchain_estimate_fee = (new \Tatum\Model\OffchainEstimateFee())
     
@@ -39,7 +39,11 @@ $arg_offchain_estimate_fee = (new \Tatum\Model\OffchainEstimateFee())
 
 try {
 
-    /** @var \Tatum\Model\FeeBtc $response */
+    /**
+     * POST /v3/offchain/blockchain/estimate
+     * 
+     * @var \Tatum\Model\FeeBtc $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->virtualAccountBlockchainFees()

@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block hash or nonce
 $arg_hash = "a6f2ac15a6b1bafdde9afff2297cef49c4c523c516f8ee12fed54be070e9512b";
 
 try {
 
-    /** @var \Tatum\Model\EgldBlock $response */
+    /**
+     * GET /v3/egld/block/{hash}
+     * 
+     * @var \Tatum\Model\EgldBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->elrond()

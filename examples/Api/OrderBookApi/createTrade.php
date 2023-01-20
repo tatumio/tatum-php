@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_create_trade = (new \Tatum\Model\CreateTrade())
     
@@ -45,7 +45,11 @@ $arg_create_trade = (new \Tatum\Model\CreateTrade())
 
 try {
 
-    /** @var \Tatum\Model\Id $response */
+    /**
+     * POST /v3/trade
+     * 
+     * @var \Tatum\Model\Id $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->orderBook()

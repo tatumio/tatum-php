@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The blockchain address to get the balance for
 $arg_address = "2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb";
 
 try {
 
-    /** @var \Tatum\Model\BtcBasedBalance $response */
+    /**
+     * GET /v3/bitcoin/address/balance/{address}
+     * 
+     * @var \Tatum\Model\BtcBasedBalance $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bitcoin()

@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_bnb_blockchain = (new \Tatum\Model\TransferBnbBlockchain())
     
@@ -36,7 +36,11 @@ $arg_transfer_bnb_blockchain = (new \Tatum\Model\TransferBnbBlockchain())
 
 try {
 
-    /** @var \Tatum\Model\TransactionHash $response */
+    /**
+     * POST /v3/bnb/transaction
+     * 
+     * @var \Tatum\Model\TransactionHash $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->bNBBeaconChain()

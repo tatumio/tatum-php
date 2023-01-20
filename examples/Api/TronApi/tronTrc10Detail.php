@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // The ID of the TRC-10 token or the address of the token's owner
 $arg_id_or_owner_address = "1000540";
 
 try {
 
-    /** @var \Tatum\Model\TronTrc10Detail $response */
+    /**
+     * GET /v3/tron/trc10/detail/{idOrOwnerAddress}
+     * 
+     * @var \Tatum\Model\TronTrc10Detail $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->tron()

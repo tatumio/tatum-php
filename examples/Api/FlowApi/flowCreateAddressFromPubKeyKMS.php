@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_flow_create_address_from_pub_key_kms = (new \Tatum\Model\FlowCreateAddressFromPubKeyKMS())
     
@@ -33,7 +33,11 @@ $arg_flow_create_address_from_pub_key_kms = (new \Tatum\Model\FlowCreateAddressF
 
 try {
 
-    /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $response */
+    /**
+     * POST /v3/flow/account
+     * 
+     * @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->flow()

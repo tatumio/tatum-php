@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Address of XLM account.
 $arg_account = "GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H";
@@ -25,7 +25,11 @@ $arg_pagination = "1348087155011584";
 
 try {
 
-    /** @var \Tatum\Model\XlmTx[] $response */
+    /**
+     * GET /v3/xlm/account/tx/{account}
+     * 
+     * @var \Tatum\Model\XlmTx[] $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->stellar()

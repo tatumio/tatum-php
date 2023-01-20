@@ -14,15 +14,15 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_create_account = (new \Tatum\Model\CreateAccount())
     
     // <p>The currency for the virtual account</p> <ul> <li><b>Native blockchain assets:</b> ALGO, BCH, ...
     ->setCurrency('BTC')
     
-    // (optional) 
+    // (optional) \Tatum\Model\CustomerRegistration
     ->setCustomer(null)
     
     // (optional) Enable compliant checks. If this is enabled, it is impossible to create account if compliant chec...
@@ -39,7 +39,11 @@ $arg_create_account = (new \Tatum\Model\CreateAccount())
 
 try {
 
-    /** @var \Tatum\Model\Account $response */
+    /**
+     * POST /v3/ledger/account
+     * 
+     * @var \Tatum\Model\Account $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->account()

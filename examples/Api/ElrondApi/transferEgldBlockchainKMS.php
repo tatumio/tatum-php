@@ -14,8 +14,8 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 $arg_transfer_egld_blockchain_kms = (new \Tatum\Model\TransferEgldBlockchainKMS())
     
@@ -28,7 +28,7 @@ $arg_transfer_egld_blockchain_kms = (new \Tatum\Model\TransferEgldBlockchainKMS(
     // Value to be sent.
     ->setAmount('0')
     
-    // (optional) 
+    // (optional) \Tatum\Model\TransferEgldBlockchainKMSFee
     ->setFee(null)
     
     // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
@@ -42,7 +42,11 @@ $arg_transfer_egld_blockchain_kms = (new \Tatum\Model\TransferEgldBlockchainKMS(
 
 try {
 
-    /** @var \Tatum\Model\TransactionSigned $response */
+    /**
+     * POST /v3/egld/transaction
+     * 
+     * @var \Tatum\Model\TransactionSigned $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->elrond()

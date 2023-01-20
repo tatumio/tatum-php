@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Transaction hash
 $arg_hash = "749e4f8933221b9942ef38a02856803f379789ec8d971f1f60535db70135673e";
 
 try {
 
-    /** @var \Tatum\Model\XlmTx $response */
+    /**
+     * GET /v3/xlm/transaction/{hash}
+     * 
+     * @var \Tatum\Model\XlmTx $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->stellar()

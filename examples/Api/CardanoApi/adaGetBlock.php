@@ -14,15 +14,19 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 3) . "/autoload.php";
 
-// Tatum SDK
-$sdk = new \Tatum\Sdk(); /* <<< Set your API keys here */
+// Set your API Keys 👇 here
+$sdk = new \Tatum\Sdk();
 
 // Block hash or height.
 $arg_hash = "00000000ca231a439a5c0a86a5a5dd6dc1918a8e897b96522fa9499288e70183";
 
 try {
 
-    /** @var \Tatum\Model\AdaBlock $response */
+    /**
+     * GET /v3/ada/block/{hash}
+     * 
+     * @var \Tatum\Model\AdaBlock $response
+     */
     $response = $sdk->mainnet()
         ->api()
         ->cardano()
