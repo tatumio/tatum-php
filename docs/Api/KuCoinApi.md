@@ -35,7 +35,6 @@ Method | Description
 [**kcsGetCurrentBlock()**](#kcsgetcurrentblock) | Get current block number
 [**kcsGetTransaction()**](#kcsgettransaction) | Get Kcs Transaction
 [**kcsGetTransactionCount()**](#kcsgettransactioncount) | Get count of outgoing Kcs transactions
-[**~~kcsWeb3Driver()~~**](#kcsweb3driver) | (`deprecated`)
 [**transferKcsBlockchain()**](#transferkcsblockchain) | Send KCS from account to account
 [**transferKcsBlockchainKMS()**](#transferkcsblockchainkms) | Send KCS from account to account
 
@@ -516,31 +515,6 @@ Get count of outgoing Kcs transactions
 ### Example
 
 [✨ View "kcsGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetTransactionCount.php)
-
-[Back to top](#top)
-
-
-
-## ~~`kcsWeb3Driver()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/kcs/web3/{xApiKey}`~~
-> 
-> This method is no longer supported.
-
-Web3 HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based web3 driver to connect directly to the Kcs node provided by Tatum. To learn more about Kcs Web3, visit the <a href="https://docs.kcc.io/" target="_blank">Kcs developer's guide</a>.
-
 
 [Back to top](#top)
 

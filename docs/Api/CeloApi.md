@@ -36,7 +36,6 @@ Method | Description
 [**celoGetTransaction()**](#celogettransaction) | Get Celo Transaction
 [**celoGetTransactionByAddress()**](#celogettransactionbyaddress) | Get Celo transactions by address
 [**celoGetTransactionCount()**](#celogettransactioncount) | Get count of outgoing Celo transactions
-[**~~celoWeb3Driver()~~**](#celoweb3driver) | (`deprecated`)
 [**transferCeloBlockchain()**](#transferceloblockchain) | Send Celo / ERC20 from account to account
 [**transferCeloBlockchainKMS()**](#transferceloblockchainkms) | Send Celo / ERC20 from account to account
 
@@ -565,31 +564,6 @@ Get count of outgoing Celo transactions
 ### Example
 
 [✨ View "celoGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionCount.php)
-
-[Back to top](#top)
-
-
-
-## ~~`celoWeb3Driver()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/celo/web3/{xApiKey}`~~
-> 
-> This method is no longer supported.
-
-Web3 HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based web3 driver to connect directly to the Celo node provided by Tatum. To learn more about Celo Web3, visit the <a href="https://explorer.celo.org/api-docs" target="_blank">Celo developer's guide</a>.
-
 
 [Back to top](#top)
 

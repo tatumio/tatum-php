@@ -33,7 +33,6 @@ Method | Description
 [**dogeGetMempool()**](#dogegetmempool) | Get Mempool Transactions
 [**dogeGetRawTransaction()**](#dogegetrawtransaction) | Get Dogecoin Transaction by hash
 [**dogeGetUTXO()**](#dogegetutxo) | Get information about a transaction output (UTXO) in a Dogecoin transaction
-[**~~dogeRpcDriver()~~**](#dogerpcdriver) | (`deprecated`)
 [**dogeTransactionUTXO()**](#dogetransactionutxo) | Send DOGE to Dogecoin addresses
 [**dogeTransactionUTXOKMS()**](#dogetransactionutxokms) | Send DOGE to Dogecoin addresses
 
@@ -428,31 +427,6 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 
 
 
-## ~~`dogeRpcDriver()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/dogecoin/node`~~
-> 
-> This method is no longer supported.
-
-JSON RPC HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum.
-
-
-[Back to top](#top)
-
-
-
 ## `dogeTransactionUTXO()`
 
 > **POST** `/v3/dogecoin/transaction`
@@ -483,7 +457,7 @@ Send DOGE to Dogecoin addresses
 
  Send DOGE to blockchain addresses.
 
- Dogecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of DOGE that remains at a Bitcoin Cash address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the API for getting information about a transaction output (UTXO) in a Dogecoin transaction
+ Dogecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of DOGE that remains at a Bitcoin Cash address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#dogegetutxo">API for getting information about a transaction output (UTXO) in a Dogecoin transaction</a>
 
  You build a DOGE transaction by sending DOGE from UTXOs. Each UTXO is included in the transaction.
 

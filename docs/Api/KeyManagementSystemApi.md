@@ -220,7 +220,7 @@ Get pending transactions to sign
 
  Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.
 
- **NOTE:** This API works only in KMS v5.0 or later. If you use KMS older than v5.0, use this API instead.
+ **NOTE:** This API works only in KMS v5.0 or later. If you use KMS older than v5.0, use <a href="#getpendingtransactionstosign">this API</a> instead.
 
 ### Example
 

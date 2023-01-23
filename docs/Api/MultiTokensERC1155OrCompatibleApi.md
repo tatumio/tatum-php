@@ -48,7 +48,6 @@ Method | Description
 [**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | Get all Multi Tokens that a blockchain address holds
 [**multiTokenGetBalance()**](#multitokengetbalance) | Get the amount of a specific MultiToken that a blockchain address holds
 [**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
-[**~~multiTokenGetContractAddress()~~**](#multitokengetcontractaddress) | (`deprecated`)
 [**multiTokenGetMetadata()**](#multitokengetmetadata) | Get Multi Token metadata
 [**multiTokenGetTransaction()**](#multitokengettransaction) | Get a Multi Token transaction by its hash
 [**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | Get Multi Token transactions on a blockchain address
@@ -1141,39 +1140,6 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 ### Example
 
 [✨ View "multiTokenGetBalanceBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
-
-[Back to top](#top)
-
-
-
-## ~~`multiTokenGetContractAddress()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/multitoken/address/{chain}/{hash}`~~
-> 
-> This method is no longer supported.
-
-Get the address of a Multi Token smart contract by its transaction hash
-
-This endpoint is deprecated. Do not use it.
-
- Instead, use <a href="https://apidoc.tatum.io/tag/Blockchain-utils#operation/SCGetContractAddress" target="_blank">this API</a>.**
-
- **1 credit per API call**
-
- Get Multi Token contract address from deploy transaction.
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
-
 
 [Back to top](#top)
 

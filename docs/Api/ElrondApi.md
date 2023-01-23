@@ -33,8 +33,6 @@ Method | Description
 [**egldGetTransaction()**](#egldgettransaction) | Get EGLD Transaction
 [**egldGetTransactionAddress()**](#egldgettransactionaddress) | Get count of outgoing EGLD transactions
 [**egldGetTransactionCount()**](#egldgettransactioncount) | Get count of outgoing EGLD transactions
-[**~~egldNodeGet()~~**](#egldnodeget) | (`deprecated`)
-[**~~egldNodePost()~~**](#egldnodepost) | (`deprecated`)
 [**transferEgldBlockchain()**](#transferegldblockchain) | Send EGLD from account to account
 [**transferEgldBlockchainKMS()**](#transferegldblockchainkms) | Send EGLD from account to account
 
@@ -421,56 +419,6 @@ Get count of outgoing EGLD transactions
 ### Example
 
 [✨ View "egldGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransactionCount.php)
-
-[Back to top](#top)
-
-
-
-## ~~`egldNodeGet()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/egld/node/{xApiKey}/*`~~
-> 
-> This method is no longer supported.
-
-Node HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based driver to connect directly to the EGLD node provided by Tatum. To learn more about EGLD, visit the <a href="https://docs.elrond.com/sdk-and-tools/rest-api/nodes/" target="_blank">EGLD developer's guide</a>.
-
-
-[Back to top](#top)
-
-
-
-## ~~`egldNodePost()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/egld/node/{xApiKey}/*`~~
-> 
-> This method is no longer supported.
-
-Node HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based driver to connect directly to the EGLD node provided by Tatum. To learn more about EGLD, visit the <a href="https://docs.elrond.com/sdk-and-tools/rest-api/nodes/" target="_blank">EGLD developer's guide</a>.
-
 
 [Back to top](#top)
 

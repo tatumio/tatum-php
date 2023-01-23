@@ -32,7 +32,6 @@ Method | Description
 [**bscGetCurrentBlock()**](#bscgetcurrentblock) | Get current block number
 [**bscGetTransaction()**](#bscgettransaction) | Get BSC Transaction
 [**bscGetTransactionCount()**](#bscgettransactioncount) | Get count of outgoing BSC transactions
-[**~~bscWeb3Driver()~~**](#bscweb3driver) | (`deprecated`)
 [**callBscSmartContractMethod()**](#callbscsmartcontractmethod) | Invoke a method in a smart contract on BNB Smart Chain
 [**callBscSmartContractMethodKMS()**](#callbscsmartcontractmethodkms) | Invoke a method in a smart contract on BNB Smart Chain
 [**callBscSmartContractReadMethod()**](#callbscsmartcontractreadmethod) | Invoke a method in a smart contract on BNB Smart Chain
@@ -382,31 +381,6 @@ Get count of outgoing BSC transactions
 ### Example
 
 [✨ View "bscGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetTransactionCount.php)
-
-[Back to top](#top)
-
-
-
-## ~~`bscWeb3Driver()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/bsc/web3/{xApiKey}`~~
-> 
-> This method is no longer supported.
-
-Web3 HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based web3 driver to connect directly to the BSC node provided by Tatum. To learn more about BSC Web3, visit the <a href="https://bsc.org/en/developers/" target="_blank">BSC developer's guide.</a>
-
 
 [Back to top](#top)
 

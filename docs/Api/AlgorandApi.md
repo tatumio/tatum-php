@@ -23,108 +23,17 @@ $sdk->testnet()->api()->algorand();
 
 Method | Description
 ------------- | -------------
-[**~~algoNodeGetDriver()~~**](#algonodegetdriver) | (`deprecated`)
-[**~~algoNodeIndexerGetDriver()~~**](#algonodeindexergetdriver) | (`deprecated`)
-[**~~algoNodePostDriver()~~**](#algonodepostdriver) | (`deprecated`)
 [**algoandBroadcast()**](#algoandbroadcast) | Broadcast signed Algorand transaction
 [**algorandGenerateAddress()**](#algorandgenerateaddress) | Generate Algorand account address from private key
 [**algorandGenerateWallet()**](#algorandgeneratewallet) | Generate Algorand wallet
 [**algorandGetBalance()**](#algorandgetbalance) | Get Algorand Account balance
 [**algorandGetBlock()**](#algorandgetblock) | Get Algorand block by block round number
 [**algorandGetCurrentBlock()**](#algorandgetcurrentblock) | Get current block number
-[**~~algorandGetPayTransactionsByFromTo()~~**](#algorandgetpaytransactionsbyfromto) | (`deprecated`)
 [**algorandGetTransaction()**](#algorandgettransaction) | Get Algorand Transaction
 [**receiveAlgorandAsset()**](#receivealgorandasset) | Enable receiving asset on account
 [**receiveAlgorandAssetKMS()**](#receivealgorandassetkms) | Enable receiving asset on account
 [**transferAlgorandBlockchain()**](#transferalgorandblockchain) | Send Algos to an Algorand account
 [**transferAlgorandBlockchainKMS()**](#transferalgorandblockchainkms) | Send Algos to an Algorand account
-
-
-## ~~`algoNodeGetDriver()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`~~
-> 
-> This method is no longer supported.
-
-Access Algorand Algod GET node endpoints
-
-**1 credit per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>. 
-
- Example call for Get Block is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround</a>. 
-
- URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/blocks/16775567</pre>
-
-
-[Back to top](#top)
-
-
-
-## ~~`algoNodeIndexerGetDriver()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/algorand/node/indexer/{xApiKey}/{indexerPath}`~~
-> 
-> This method is no longer supported.
-
-Access Algorand Indexer GET node endpoints
-
-**1 credit per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check all available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/indexer/" target="_blank">https://developer.algorand.org/docs/rest-apis/indexer/</a>. 
-
- Example call for Get Tx By ID is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/indexer/#get-v2transactionstxid" target="_blank">https://developer.algorand.org/docs/rest-apis/indexer/#get-v2transactionstxid</a>. 
-
- URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/indexer/YOUR_API_KEY/v2/transactions/HNIQ76UTJYPOLZP5FWODYABBJPYPGJNEM2QEJSMDMQRWEKHEYJHQ</pre>
-
-
-[Back to top](#top)
-
-
-
-## ~~`algoNodePostDriver()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`~~
-> 
-> This method is no longer supported.
-
-Access Algorand Algod POST node endpoints
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>. 
-
- Example call for Broadcast a raw transaction is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions</a>. 
-
- URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/transactions</pre>
-
-
-[Back to top](#top)
-
 
 
 ## `algoandBroadcast()`
@@ -347,31 +256,6 @@ Get Algorand current block number. This is the number of the latest block in the
 ### Example
 
 [✨ View "algorandGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetCurrentBlock.php)
-
-[Back to top](#top)
-
-
-
-## ~~`algorandGetPayTransactionsByFromTo()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/algorand/transactions/{from}/{to}`~~
-> 
-> This method is no longer supported.
-
-Get Algorand Transactions between from and to
-
-**1 credit per API call**
-
- **This endpoint is deprecated.**
-
- Get Algorand transaction by specified period of time.
-
 
 [Back to top](#top)
 

@@ -36,21 +36,7 @@ Method | Description
 [**approveTransferCustodialWalletCeloKMS()**](#approvetransfercustodialwalletcelokms) | Approve the transfer of an asset from a gas pump address
 [**approveTransferCustodialWalletKMS()**](#approvetransfercustodialwalletkms) | Approve the transfer of an asset from a gas pump address
 [**gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) | Check whether the gas pump address with a specified index is activated
-[**~~generateCustodialWallet()~~**](#generatecustodialwallet) | (`deprecated`)
-[**~~generateCustodialWalletBatch()~~**](#generatecustodialwalletbatch) | (`deprecated`)
-[**~~generateCustodialWalletBatchCelo()~~**](#generatecustodialwalletbatchcelo) | (`deprecated`)
-[**~~generateCustodialWalletBatchCeloKMS()~~**](#generatecustodialwalletbatchcelokms) | (`deprecated`)
-[**~~generateCustodialWalletBatchKMS()~~**](#generatecustodialwalletbatchkms) | (`deprecated`)
-[**~~generateCustodialWalletBatchPayer()~~**](#generatecustodialwalletbatchpayer) | (`deprecated`)
-[**~~generateCustodialWalletBatchTron()~~**](#generatecustodialwalletbatchtron) | (`deprecated`)
-[**~~generateCustodialWalletBatchTronKMS()~~**](#generatecustodialwalletbatchtronkms) | (`deprecated`)
-[**~~generateCustodialWalletCelo()~~**](#generatecustodialwalletcelo) | (`deprecated`)
-[**~~generateCustodialWalletCeloKMS()~~**](#generatecustodialwalletcelokms) | (`deprecated`)
-[**~~generateCustodialWalletKMS()~~**](#generatecustodialwalletkms) | (`deprecated`)
-[**~~generateCustodialWalletTron()~~**](#generatecustodialwallettron) | (`deprecated`)
-[**~~generateCustodialWalletTronKMS()~~**](#generatecustodialwallettronkms) | (`deprecated`)
 [**precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) | Precalculate gas pump addresses
-[**~~sCGetCustodialAddresses()~~**](#scgetcustodialaddresses) | (`deprecated`)
 [**transferCustodialWallet()**](#transfercustodialwallet) | Transfer an asset from a gas pump address
 [**transferCustodialWalletBatch()**](#transfercustodialwalletbatch) | Transfer multiple assets from a gas pump address
 [**transferCustodialWalletBatchCelo()**](#transfercustodialwalletbatchcelo) | Transfer multiple assets from a gas pump address
@@ -237,7 +223,7 @@ Activate gas pump addresses
 
 **2 credits per API call**
 
- Activate the precalulated gas pump addresses. Activating a gas pump address allows this address to send funds to other addresses.
+ Activate the <a href="#precalculategaspumpaddresses">precalulated gas pump addresses</a>. Activating a gas pump address allows this address to send funds to other addresses.
 
  You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the <code>from</code> and <code>to</code> request body parameters) and then make another API call with the remaining 230 addresses.
 
@@ -253,7 +239,7 @@ Activate gas pump addresses
 
 <ul> <li>When it receives an asset for the first time</li> <li>When the customer tries to send an asset from this address for the first time</li> </ul>
 
- After you make an API call to activate gas pump addresses, use the API for getting the results of the address activation transaction.
+ After you make an API call to activate gas pump addresses, use the <a href="#activatednotactivatedgaspumpaddresses">API for getting the results of the address activation transaction</a>.
 
  **Paying the gas fee for activating gas pump addresses**
 
@@ -387,7 +373,7 @@ Get the results of the address activation transaction
 
 **1 credit per API call**
 
- Get the results of the activation transaction after activating gas pump addresses.
+ Get the results of the activation transaction after <a href="#activategaspumpaddresses">activating gas pump addresses</a>.
 
  If the activation transaction got recorded into a block, the API returns two arrays:
 
@@ -611,7 +597,7 @@ Check whether the gas pump address with a specified index is activated
 
 **1 credit per API call**
 
- Check whether the gas pump address with a specified index is activated and can send funds to other addresses.
+ Check whether the gas pump address with a specified index is <a href="#activategaspumpaddresses">activated</a> and can send funds to other addresses.
 
  You can use this API when a customer initiates a fund transfer and you need to check whether their gas pump address is allowed to send funds.
 
@@ -624,319 +610,6 @@ Check whether the gas pump address with a specified index is activated
 ### Example
 
 [✨ View "gasPumpAddressesActivatedOrNot.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php)
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWallet()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial`~~
-> 
-> This method is no longer supported.
-
-Generate a custodial wallet address
-
-**This API is deprecated.
-
-To start with the gas pump, use the API for precalculating the gas pump addresses.**
-
- **If you built your gas pump solution using this API and the API for generating a gas pump wallet address, you can still use this API for creating more custodial addresses for your solution. However, we recommend that you switch to the API for precalculating the gas pump addresses**.
-
- **2 credits per API call**
-
- Generate new gas pump smart contract address on the blockchain. It's possible to enable tokens, which should be detected and supported on that address. This address enables custodial providers to receive native assets, ERC20 / ERC721 / ERC1155 tokens on behalf of their customers on dedicated blockchain address, but in the same time it can initiate transfer of those assets away.
-
- Gas required for the transfer from that address is going to be deducted from the providers address - the one, which was used to generate the address on the blockchain.
-
- There are multiple options, how this address can be setup - it cannot be changed in the future:
-
- 
-
-<ul> <li>Native assets only - ETH, BSC, CELO, MATIC, ONE, TRX</li> <li>Native assets + ERC20 tokens</li> <li>Native assets + ERC721 tokens</li> <li>Native assets + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC20 + ERC721 tokens</li> <li>Native assets + ERC20 + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC721 + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC20 + ERC721 + ERC1155 tokens - TRON does not support 1155 standard</li> </ul>
-
- All of these options could be enabled with a batch mode as well - in 1 transaction, it is possible to transfer multiple different assets from that address, e.g. ETH + USDC + ERC721 token. Without batch mode, 3 separate transaction must have been performed.
-
- This operation deploys a smart contract on the blockchain. More assets you will support, more intial gas will be used for address creation. Batch mode adds more gas for every type.
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> <li>TRON (except for Multi Tokens)</li> </ul>
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletBatch()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
-> 
-> This method is no longer supported.
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatch operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletBatchCelo()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
-> 
-> This method is no longer supported.
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchCelo operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletBatchCeloKMS()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
-> 
-> This method is no longer supported.
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchCeloKMS operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletBatchKMS()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
-> 
-> This method is no longer supported.
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchKMS operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletBatchPayer()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
-> 
-> This method is no longer supported.
-
-Generate a gas pump wallet address
-
-**This API is deprecated.
-
-To start with the gas pump, use the API for precalculating the gas pump addresses.**
-
- **2 credits per API call**
-
- Generate new gas pump smart contract address on the blockchain. This address enables custodial providers to receive native assets, ERC20 / ERC721 / ERC1155 tokens on behalf of their customers on dedicated blockchain address, but in the same time it can initiate transfer of those assets away. Gas required for the transfer from that address is going to be deducted from the providers address - the one, which was used to generate the address on the blockchain.
-
- This operation deploys a smart contract on the blockchain.
-
- For paid plans, it is possible to pay for the gas costs - you don't have to provide private key or signatureId. Blockchain fees will be covered by your credits. This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletBatchTron()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
-> 
-> This method is no longer supported.
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchTron operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletBatchTronKMS()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
-> 
-> This method is no longer supported.
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchTronKMS operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletCelo()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial`~~
-> 
-> This method is no longer supported.
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletCelo operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletCeloKMS()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial`~~
-> 
-> This method is no longer supported.
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletCeloKMS operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletKMS()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial`~~
-> 
-> This method is no longer supported.
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletKMS operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletTron()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial`~~
-> 
-> This method is no longer supported.
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletTron operation
-
-
-[Back to top](#top)
-
-
-
-## ~~`generateCustodialWalletTronKMS()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/blockchain/sc/custodial`~~
-> 
-> This method is no longer supported.
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletTronKMS operation
-
 
 [Back to top](#top)
 
@@ -1002,46 +675,11 @@ For example, you precalculated three gas pump addresses with a range of index va
 
  **Activated and not activated addresses**
 
- The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, activate them.
+ The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, <a href="#activategaspumpaddresses">activate them</a>.
 
 ### Example
 
 [✨ View "precalculateGasPumpAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/precalculateGasPumpAddresses.php)
-
-[Back to top](#top)
-
-
-
-## ~~`sCGetCustodialAddresses()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/blockchain/sc/custodial/{chain}/{hash}`~~
-> 
-> This method is no longer supported.
-
-Get the custodial wallet address from the transaction
-
-**This API is deprecated.
-
-To start with the gas pump, use the API for precalculating the gas pump addresses.**
-
- **If you built your gas pump solution using the API for generating a gas pump wallet address and API for generating a custodial wallet address, you can still use this API for getting the custodial wallet address from the transaction. However, we recommend that you switch to the API for precalculating the gas pump addresses**.
-
- **1 credit per API call**
-
- Get gas pump smart contract addresses from deploy transaction.
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
-
 
 [Back to top](#top)
 
@@ -1085,11 +723,11 @@ Transfer an asset from a gas pump address
 
  
 
-<ul> <li>The gas pump address must be activated.
+<ul> <li>The gas pump address must be <a href="#activategaspumpaddresses">activated</a>.
 
-To check whether the gas pump address is activated, use this API.</li> <li>The gas pump address must be the owner of the asset.</li> </ul>
+To check whether the gas pump address is activated, use <a href="#gaspumpaddressesactivatedornot">this API</a>.</li> <li>The gas pump address must be the owner of the asset.</li> </ul>
 
- With this API, you can send only one asset per API call. If you want to send multiple assets, use the API for transferring multiple assets from a gas pump account.
+ With this API, you can send only one asset per API call. If you want to send multiple assets, use the <a href="#transfercustodialwalletbatch">API for transferring multiple assets from a gas pump account</a>.
 
  This API is supported for the following blockchains:
 
@@ -1151,11 +789,11 @@ Transfer multiple assets from a gas pump address
 
  
 
-<ul> <li>The gas pump address must be activated.
+<ul> <li>The gas pump address must be <a href="#activategaspumpaddresses">activated</a>.
 
-To check whether the gas pump address is activated, use this API.</li> <li>The gas pump address must be the owner of the assets.</li> </ul>
+To check whether the gas pump address is activated, use <a href="#gaspumpaddressesactivatedornot">this API</a>.</li> <li>The gas pump address must be the owner of the assets.</li> </ul>
 
- If you want to send only one asset, you can also use the API for transferring an asset from a gas pump account.
+ If you want to send only one asset, you can also use the <a href="#transfercustodialwallet">API for transferring an asset from a gas pump account</a>.
 
  This API is supported for the following blockchains:
 

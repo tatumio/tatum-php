@@ -35,7 +35,6 @@ Method | Description
 [**ltcGetRawTransaction()**](#ltcgetrawtransaction) | Get Litecoin Transaction by hash
 [**ltcGetTxByAddress()**](#ltcgettxbyaddress) | Get Litecoin Transactions by address
 [**ltcGetUTXO()**](#ltcgetutxo) | Get information about a transaction output (UTXO) in a Litecoin transaction
-[**~~ltcRpcDriver()~~**](#ltcrpcdriver) | (`deprecated`)
 [**ltcTransactionAddress()**](#ltctransactionaddress) | Send LTC to Litecoin addresses
 [**ltcTransactionAddressKMS()**](#ltctransactionaddresskms) | Send LTC to Litecoin addresses
 [**ltcTransactionUTXO()**](#ltctransactionutxo) | Send LTC to Litecoin addresses
@@ -514,31 +513,6 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 
 
 
-## ~~`ltcRpcDriver()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**POST** `/v3/litecoin/node`~~
-> 
-> This method is no longer supported.
-
-JSON RPC HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum.
-
-
-[Back to top](#top)
-
-
-
 ## `ltcTransactionAddress()`
 
 > **POST** `/v3/litecoin/transaction`
@@ -569,7 +543,7 @@ Send LTC to Litecoin addresses
 
  Send LTC to blockchain addresses.
 
- Litecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the API for getting information about a transaction output (UTXO) in a Litecoin transaction.
+ Litecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#ltcgetutxo">API for getting information about a transaction output (UTXO) in a Litecoin transaction</a>.
 
  You can build a LTC transaction by one of the following methods:
 

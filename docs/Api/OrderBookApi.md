@@ -28,12 +28,9 @@ Method | Description
 [**createTrade()**](#createtrade) | Store buy / sell trade
 [**deleteAccountTrades()**](#deleteaccounttrades) | Cancel all existing trades for account
 [**deleteTrade()**](#deletetrade) | Cancel existing trade
-[**~~getBuyTrades()~~**](#getbuytrades) | (`deprecated`)
 [**getBuyTradesBody()**](#getbuytradesbody) | List all active buy trades
-[**~~getHistoricalTrades()~~**](#gethistoricaltrades) | (`deprecated`)
 [**getHistoricalTradesBody()**](#gethistoricaltradesbody) | List all historical trades
 [**getMatchedTrades()**](#getmatchedtrades) | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
-[**~~getSellTrades()~~**](#getselltrades) | (`deprecated`)
 [**getSellTradesBody()**](#getselltradesbody) | List all active sell trades
 [**getTradeById()**](#gettradebyid) | Get existing trade
 
@@ -246,29 +243,6 @@ Cancel existing trade.
 
 
 
-## ~~`getBuyTrades()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/trade/buy`~~
-> 
-> This method is no longer supported.
-
-List all active buy trades
-
-<h4>1 credit per API call.</h4>
-
-List all active buy trades.
-
-
-[Back to top](#top)
-
-
-
 ## `getBuyTradesBody()`
 
 > **POST** `/v3/trade/buy`
@@ -302,29 +276,6 @@ List all active buy trades.
 ### Example
 
 [✨ View "getBuyTradesBody.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getBuyTradesBody.php)
-
-[Back to top](#top)
-
-
-
-## ~~`getHistoricalTrades()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/trade/history`~~
-> 
-> This method is no longer supported.
-
-List all historical trades
-
-<h4>1 credit per API call.</h4>
-
-List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
-
 
 [Back to top](#top)
 
@@ -401,29 +352,6 @@ List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
 ### Example
 
 [✨ View "getMatchedTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getMatchedTrades.php)
-
-[Back to top](#top)
-
-
-
-## ~~`getSellTrades()`~~
-
-
-### Description
-
-{: .warning }
-> 🚫 **DEPRECATED**
-> 
-> ~~**GET** `/v3/trade/sell`~~
-> 
-> This method is no longer supported.
-
-List all active sell trades
-
-<h4>1 credit per API call.</h4>
-
-List all active sell trades.
-
 
 [Back to top](#top)
 
