@@ -263,7 +263,12 @@ Get Solana transaction by transaction hash.
 
 ## `solanaWeb3Driver()`
 
+{: .warning }
+> Deprecated
+> 
 > **POST** `/v3/solana/web3/{xApiKey}`
+> 
+> This method is no longer supported by the API
 
 ### Type signature
 
