@@ -9,6 +9,7 @@ layout: page
 [Fungible Tokens (ERC-20 or compatible) API Reference](https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

@@ -32,7 +32,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return void
      */
-    public function completePendingSignature($id, $tx_id) { 
+    public function completePendingSignature($id, $tx_id) {
         if (strlen($id) > 24) {
             throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.completePendingSignature, must be smaller than or equal to 24');
         }
@@ -53,14 +53,13 @@ class KeyManagementSystemApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/kms/{id}/{txId}";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id, "txId" => $tx_id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * Delete transaction
      *
@@ -71,7 +70,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deletePendingTransactionToSign($id, $revert = true) { 
+    public function deletePendingTransactionToSign($id, $revert = true) {
         if (strlen($id) > 24) {
             throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.deletePendingTransactionToSign, must be smaller than or equal to 24');
         }
@@ -84,7 +83,6 @@ class KeyManagementSystemApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/kms/{id}";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [
@@ -93,7 +91,7 @@ class KeyManagementSystemApi extends AbstractApi {
             )
         );
     }
-
+    
     /**
      * Get transaction details
      *
@@ -103,7 +101,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PendingTransaction
      */
-    public function getPendingTransactionToSign($id) { 
+    public function getPendingTransactionToSign($id) {
         if (strlen($id) > 24) {
             throw new IAE('Invalid length for "$id" when calling KeyManagementSystemApi.getPendingTransactionToSign, must be smaller than or equal to 24');
         }
@@ -116,7 +114,6 @@ class KeyManagementSystemApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/kms/{id}";
-
         /** @var \Tatum\Model\PendingTransaction $result */
         $result = $this->exec(
             S::createRequest(
@@ -127,7 +124,7 @@ class KeyManagementSystemApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get pending transactions to sign
      *
@@ -138,7 +135,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PendingTransaction[]
      */
-    public function getPendingTransactionsToSign($chain, $signatures = null) { 
+    public function getPendingTransactionsToSign($chain, $signatures = null) {
         if (strlen($chain) > 24) {
             throw new IAE('Invalid length for "$chain" when calling KeyManagementSystemApi.getPendingTransactionsToSign, must be smaller than or equal to 24');
         }
@@ -151,7 +148,6 @@ class KeyManagementSystemApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/kms/pending/{chain}";
-
         /** @var \Tatum\Model\PendingTransaction[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -164,7 +160,7 @@ class KeyManagementSystemApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get pending transactions to sign
      *
@@ -175,7 +171,7 @@ class KeyManagementSystemApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PendingTransaction[]
      */
-    public function receivePendingTransactionsToSign($chain, $kms_signature_ids = null) { 
+    public function receivePendingTransactionsToSign($chain, $kms_signature_ids = null) {
         if (strlen($chain) > 24) {
             throw new IAE('Invalid length for "$chain" when calling KeyManagementSystemApi.receivePendingTransactionsToSign, must be smaller than or equal to 24');
         }
@@ -188,7 +184,6 @@ class KeyManagementSystemApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/kms/pending/{chain}";
-
         /** @var \Tatum\Model\PendingTransaction[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -199,5 +194,5 @@ class KeyManagementSystemApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

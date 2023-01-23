@@ -9,6 +9,7 @@ layout: page
 [Order Book API Reference](https://apidoc.tatum.io/tag/Order-Book/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -27,12 +28,12 @@ Method | Description
 [**createTrade()**](#createtrade) | Store buy / sell trade
 [**deleteAccountTrades()**](#deleteaccounttrades) | Cancel all existing trades for account
 [**deleteTrade()**](#deletetrade) | Cancel existing trade
-[**getBuyTrades()**](#getbuytrades) | List all active buy trades
+[**~~getBuyTrades()~~**](#getbuytrades) | (`deprecated`)
 [**getBuyTradesBody()**](#getbuytradesbody) | List all active buy trades
-[**getHistoricalTrades()**](#gethistoricaltrades) | List all historical trades
+[**~~getHistoricalTrades()~~**](#gethistoricaltrades) | (`deprecated`)
 [**getHistoricalTradesBody()**](#gethistoricaltradesbody) | List all historical trades
 [**getMatchedTrades()**](#getmatchedtrades) | List all matched orders from FUTURE_SELL/FUTURE_BUY trades
-[**getSellTrades()**](#getselltrades) | List all active sell trades
+[**~~getSellTrades()~~**](#getselltrades) | (`deprecated`)
 [**getSellTradesBody()**](#getselltradesbody) | List all active sell trades
 [**getTradeById()**](#gettradebyid) | Get existing trade
 
@@ -245,51 +246,16 @@ Cancel existing trade.
 
 
 
-## `getBuyTrades()`
+## ~~`getBuyTrades()`~~
 
-> **GET** `/v3/trade/buy`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/trade/buy`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getBuyTrades(
-    float $page_size,
-    [ string $id, ]
-    [ string $customer_id, ]
-    [ float $offset, ]
-    [ string $pair, ]
-    [ bool $count, ]
-    [ string $trade_type ]
-): \Tatum\Model\Trade[]
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$page_size** | **float**  | Max number of items per page is 50. |
- **$id** | **string**  | Account ID. If present, list current active buy trades for that account. | [optional]
- **$customer_id** | **string**  | Customer ID. If present, list current active buy trades for that customer. | [optional]
- **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
- **$pair** | **string**  | Trade pair. If present, list current active buy trades for that pair. | [optional]
- **$count** | **bool**  | Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$trade_type** | **string**  | Trade type. | [optional]
-
-### Return type
-
-[**\Tatum\Model\Trade[]**](../../Model/Trade)
-
-### Description
-
-List all active buy trades
-
-<h4>1 credit per API call.</h4>
-
-List all active buy trades.
-
-### Example
-
-[✨ View "getBuyTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getBuyTrades.php)
 
 [Back to top](#top)
 
@@ -333,49 +299,16 @@ List all active buy trades.
 
 
 
-## `getHistoricalTrades()`
+## ~~`getHistoricalTrades()`~~
 
-> **GET** `/v3/trade/history`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/trade/history`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getHistoricalTrades(
-    float $page_size,
-    [ string $id, ]
-    [ string $pair, ]
-    [ float $offset, ]
-    [ bool $count, ]
-    [ string[] $types ]
-): \Tatum\Model\Trade[]
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$page_size** | **float**  | Max number of items per page is 50. |
- **$id** | **string**  | Account ID. If present, only closed trades for given account will be present. | [optional]
- **$pair** | **string**  | Trade pair. If present, only closed trades on given trade pair will be present. | [optional]
- **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
- **$count** | **bool**  | Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$types** | [**string[]**](../../Model/string) | Trade types. | [optional]
-
-### Return type
-
-[**\Tatum\Model\Trade[]**](../../Model/Trade)
-
-### Description
-
-List all historical trades
-
-<h4>1 credit per API call.</h4>
-
-List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
-
-### Example
-
-[✨ View "getHistoricalTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getHistoricalTrades.php)
 
 [Back to top](#top)
 
@@ -457,51 +390,16 @@ List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
 
 
 
-## `getSellTrades()`
+## ~~`getSellTrades()`~~
 
-> **GET** `/v3/trade/sell`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/trade/sell`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->orderBook()->getSellTrades(
-    float $page_size,
-    [ string $id, ]
-    [ string $customer_id, ]
-    [ float $offset, ]
-    [ string $pair, ]
-    [ bool $count, ]
-    [ string $trade_type ]
-): \Tatum\Model\Trade[]
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$page_size** | **float**  | Max number of items per page is 50. |
- **$id** | **string**  | Account ID. If present, list current active sell trades for that account. | [optional]
- **$customer_id** | **string**  | Customer ID. If present, list current active buy trades for that customer. | [optional]
- **$offset** | **float**  | Offset to obtain next page of the data. | [optional]
- **$pair** | **string**  | Trade pair. If present, list current active sell trades for that pair. | [optional]
- **$count** | **bool**  | Get the total trade pair count based on the filter. Either count or pageSize is accepted. | [optional]
- **$trade_type** | **string**  | Trade type. | [optional]
-
-### Return type
-
-[**\Tatum\Model\Trade[]**](../../Model/Trade)
-
-### Description
-
-List all active sell trades
-
-<h4>1 credit per API call.</h4>
-
-List all active sell trades.
-
-### Example
-
-[✨ View "getSellTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getSellTrades.php)
 
 [Back to top](#top)
 

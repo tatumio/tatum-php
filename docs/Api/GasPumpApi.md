@@ -9,6 +9,7 @@ layout: page
 [Gas pump API Reference](https://apidoc.tatum.io/tag/Gas-pump/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -35,21 +36,21 @@ Method | Description
 [**approveTransferCustodialWalletCeloKMS()**](#approvetransfercustodialwalletcelokms) | Approve the transfer of an asset from a gas pump address
 [**approveTransferCustodialWalletKMS()**](#approvetransfercustodialwalletkms) | Approve the transfer of an asset from a gas pump address
 [**gasPumpAddressesActivatedOrNot()**](#gaspumpaddressesactivatedornot) | Check whether the gas pump address with a specified index is activated
-[**generateCustodialWallet()**](#generatecustodialwallet) | Generate a custodial wallet address
-[**generateCustodialWalletBatch()**](#generatecustodialwalletbatch) | Generate a gas pump wallet address
-[**generateCustodialWalletBatchCelo()**](#generatecustodialwalletbatchcelo) | Generate a gas pump wallet address
-[**generateCustodialWalletBatchCeloKMS()**](#generatecustodialwalletbatchcelokms) | Generate a gas pump wallet address
-[**generateCustodialWalletBatchKMS()**](#generatecustodialwalletbatchkms) | Generate a gas pump wallet address
-[**generateCustodialWalletBatchPayer()**](#generatecustodialwalletbatchpayer) | Generate a gas pump wallet address
-[**generateCustodialWalletBatchTron()**](#generatecustodialwalletbatchtron) | Generate a gas pump wallet address
-[**generateCustodialWalletBatchTronKMS()**](#generatecustodialwalletbatchtronkms) | Generate a gas pump wallet address
-[**generateCustodialWalletCelo()**](#generatecustodialwalletcelo) | Generate a custodial wallet address
-[**generateCustodialWalletCeloKMS()**](#generatecustodialwalletcelokms) | Generate a custodial wallet address
-[**generateCustodialWalletKMS()**](#generatecustodialwalletkms) | Generate a custodial wallet address
-[**generateCustodialWalletTron()**](#generatecustodialwallettron) | Generate a custodial wallet address
-[**generateCustodialWalletTronKMS()**](#generatecustodialwallettronkms) | Generate a custodial wallet address
+[**~~generateCustodialWallet()~~**](#generatecustodialwallet) | (`deprecated`)
+[**~~generateCustodialWalletBatch()~~**](#generatecustodialwalletbatch) | (`deprecated`)
+[**~~generateCustodialWalletBatchCelo()~~**](#generatecustodialwalletbatchcelo) | (`deprecated`)
+[**~~generateCustodialWalletBatchCeloKMS()~~**](#generatecustodialwalletbatchcelokms) | (`deprecated`)
+[**~~generateCustodialWalletBatchKMS()~~**](#generatecustodialwalletbatchkms) | (`deprecated`)
+[**~~generateCustodialWalletBatchPayer()~~**](#generatecustodialwalletbatchpayer) | (`deprecated`)
+[**~~generateCustodialWalletBatchTron()~~**](#generatecustodialwalletbatchtron) | (`deprecated`)
+[**~~generateCustodialWalletBatchTronKMS()~~**](#generatecustodialwalletbatchtronkms) | (`deprecated`)
+[**~~generateCustodialWalletCelo()~~**](#generatecustodialwalletcelo) | (`deprecated`)
+[**~~generateCustodialWalletCeloKMS()~~**](#generatecustodialwalletcelokms) | (`deprecated`)
+[**~~generateCustodialWalletKMS()~~**](#generatecustodialwalletkms) | (`deprecated`)
+[**~~generateCustodialWalletTron()~~**](#generatecustodialwallettron) | (`deprecated`)
+[**~~generateCustodialWalletTronKMS()~~**](#generatecustodialwallettronkms) | (`deprecated`)
 [**precalculateGasPumpAddresses()**](#precalculategaspumpaddresses) | Precalculate gas pump addresses
-[**sCGetCustodialAddresses()**](#scgetcustodialaddresses) | Get the custodial wallet address from the transaction
+[**~~sCGetCustodialAddresses()~~**](#scgetcustodialaddresses) | (`deprecated`)
 [**transferCustodialWallet()**](#transfercustodialwallet) | Transfer an asset from a gas pump address
 [**transferCustodialWalletBatch()**](#transfercustodialwalletbatch) | Transfer multiple assets from a gas pump address
 [**transferCustodialWalletBatchCelo()**](#transfercustodialwalletbatchcelo) | Transfer multiple assets from a gas pump address
@@ -628,523 +629,196 @@ Check whether the gas pump address with a specified index is activated
 
 
 
-## `generateCustodialWallet()`
+## ~~`generateCustodialWallet()`~~
 
-> **POST** `/v3/blockchain/sc/custodial`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWallet(
-    \Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet** | [**\Tatum\Model\GenerateCustodialWallet**](../../Model/GenerateCustodialWallet) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a custodial wallet address
-
-**This API is deprecated.
-
-To start with the gas pump, use the API for precalculating the gas pump addresses.**
-
- **If you built your gas pump solution using this API and the API for generating a gas pump wallet address, you can still use this API for creating more custodial addresses for your solution. However, we recommend that you switch to the API for precalculating the gas pump addresses**.
-
- **2 credits per API call**
-
- Generate new gas pump smart contract address on the blockchain. It's possible to enable tokens, which should be detected and supported on that address. This address enables custodial providers to receive native assets, ERC20 / ERC721 / ERC1155 tokens on behalf of their customers on dedicated blockchain address, but in the same time it can initiate transfer of those assets away.
-
- Gas required for the transfer from that address is going to be deducted from the providers address - the one, which was used to generate the address on the blockchain.
-
- There are multiple options, how this address can be setup - it cannot be changed in the future:
-
- 
-
-<ul> <li>Native assets only - ETH, BSC, CELO, MATIC, ONE, TRX</li> <li>Native assets + ERC20 tokens</li> <li>Native assets + ERC721 tokens</li> <li>Native assets + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC20 + ERC721 tokens</li> <li>Native assets + ERC20 + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC721 + ERC1155 tokens - TRON does not support 1155 standard</li> <li>Native assets + ERC20 + ERC721 + ERC1155 tokens - TRON does not support 1155 standard</li> </ul>
-
- All of these options could be enabled with a batch mode as well - in 1 transaction, it is possible to transfer multiple different assets from that address, e.g. ETH + USDC + ERC721 token. Without batch mode, 3 separate transaction must have been performed.
-
- This operation deploys a smart contract on the blockchain. More assets you will support, more intial gas will be used for address creation. Batch mode adds more gas for every type.
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> <li>TRON (except for Multi Tokens)</li> </ul>
-
-### Example
-
-[✨ View "generateCustodialWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWallet.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletBatch()`
+## ~~`generateCustodialWalletBatch()`~~
 
-> **POST** `/v3/blockchain/sc/custodial/batch`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatch(
-    \Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch** | [**\Tatum\Model\GenerateCustodialWalletBatch**](../../Model/GenerateCustodialWalletBatch) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatch operation
-
-### Example
-
-[✨ View "generateCustodialWalletBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatch.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletBatchCelo()`
+## ~~`generateCustodialWalletBatchCelo()`~~
 
-> **POST** `/v3/blockchain/sc/custodial/batch`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCelo(
-    \Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_celo** | [**\Tatum\Model\GenerateCustodialWalletBatchCelo**](../../Model/GenerateCustodialWalletBatchCelo) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchCelo operation
-
-### Example
-
-[✨ View "generateCustodialWalletBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchCelo.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletBatchCeloKMS()`
+## ~~`generateCustodialWalletBatchCeloKMS()`~~
 
-> **POST** `/v3/blockchain/sc/custodial/batch`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchCeloKMS(
-    \Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchCeloKMS**](../../Model/GenerateCustodialWalletBatchCeloKMS) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchCeloKMS operation
-
-### Example
-
-[✨ View "generateCustodialWalletBatchCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchCeloKMS.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletBatchKMS()`
+## ~~`generateCustodialWalletBatchKMS()`~~
 
-> **POST** `/v3/blockchain/sc/custodial/batch`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchKMS(
-    \Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchKMS**](../../Model/GenerateCustodialWalletBatchKMS) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchKMS operation
-
-### Example
-
-[✨ View "generateCustodialWalletBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchKMS.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletBatchPayer()`
+## ~~`generateCustodialWalletBatchPayer()`~~
 
-> **POST** `/v3/blockchain/sc/custodial/batch`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchPayer(
-    \Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_payer** | [**\Tatum\Model\GenerateCustodialWalletBatchPayer**](../../Model/GenerateCustodialWalletBatchPayer) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a gas pump wallet address
-
-**This API is deprecated.
-
-To start with the gas pump, use the API for precalculating the gas pump addresses.**
-
- **2 credits per API call**
-
- Generate new gas pump smart contract address on the blockchain. This address enables custodial providers to receive native assets, ERC20 / ERC721 / ERC1155 tokens on behalf of their customers on dedicated blockchain address, but in the same time it can initiate transfer of those assets away. Gas required for the transfer from that address is going to be deducted from the providers address - the one, which was used to generate the address on the blockchain.
-
- This operation deploys a smart contract on the blockchain.
-
- For paid plans, it is possible to pay for the gas costs - you don't have to provide private key or signatureId. Blockchain fees will be covered by your credits. This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
-
-### Example
-
-[✨ View "generateCustodialWalletBatchPayer.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchPayer.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletBatchTron()`
+## ~~`generateCustodialWalletBatchTron()`~~
 
-> **POST** `/v3/blockchain/sc/custodial/batch`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTron(
-    \Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_tron** | [**\Tatum\Model\GenerateCustodialWalletBatchTron**](../../Model/GenerateCustodialWalletBatchTron) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchTron operation
-
-### Example
-
-[✨ View "generateCustodialWalletBatchTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchTron.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletBatchTronKMS()`
+## ~~`generateCustodialWalletBatchTronKMS()`~~
 
-> **POST** `/v3/blockchain/sc/custodial/batch`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial/batch`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletBatchTronKMS(
-    \Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_batch_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletBatchTronKMS**](../../Model/GenerateCustodialWalletBatchTronKMS) |  |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to ethereum-sepolia. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a gas pump wallet address
-
-GenerateCustodialWalletBatchTronKMS operation
-
-### Example
-
-[✨ View "generateCustodialWalletBatchTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletBatchTronKMS.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletCelo()`
+## ~~`generateCustodialWalletCelo()`~~
 
-> **POST** `/v3/blockchain/sc/custodial`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCelo(
-    \Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_celo** | [**\Tatum\Model\GenerateCustodialWalletCelo**](../../Model/GenerateCustodialWalletCelo) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletCelo operation
-
-### Example
-
-[✨ View "generateCustodialWalletCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletCelo.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletCeloKMS()`
+## ~~`generateCustodialWalletCeloKMS()`~~
 
-> **POST** `/v3/blockchain/sc/custodial`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletCeloKMS(
-    \Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_celo_kms** | [**\Tatum\Model\GenerateCustodialWalletCeloKMS**](../../Model/GenerateCustodialWalletCeloKMS) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletCeloKMS operation
-
-### Example
-
-[✨ View "generateCustodialWalletCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletCeloKMS.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletKMS()`
+## ~~`generateCustodialWalletKMS()`~~
 
-> **POST** `/v3/blockchain/sc/custodial`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletKMS(
-    \Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_kms** | [**\Tatum\Model\GenerateCustodialWalletKMS**](../../Model/GenerateCustodialWalletKMS) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletKMS operation
-
-### Example
-
-[✨ View "generateCustodialWalletKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletKMS.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletTron()`
+## ~~`generateCustodialWalletTron()`~~
 
-> **POST** `/v3/blockchain/sc/custodial`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTron(
-    \Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_tron** | [**\Tatum\Model\GenerateCustodialWalletTron**](../../Model/GenerateCustodialWalletTron) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletTron operation
-
-### Example
-
-[✨ View "generateCustodialWalletTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletTron.php)
 
 [Back to top](#top)
 
 
 
-## `generateCustodialWalletTronKMS()`
+## ~~`generateCustodialWalletTronKMS()`~~
 
-> **POST** `/v3/blockchain/sc/custodial`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/blockchain/sc/custodial`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->generateCustodialWalletTronKMS(
-    \Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms
-): \Tatum\Model\TransactionSigned
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$generate_custodial_wallet_tron_kms** | [**\Tatum\Model\GenerateCustodialWalletTronKMS**](../../Model/GenerateCustodialWalletTronKMS) |  |
-
-### Return type
-
-[**\Tatum\Model\TransactionSigned**](../../Model/TransactionSigned)
-
-### Description
-
-Generate a custodial wallet address
-
-GenerateCustodialWalletTronKMS operation
-
-### Example
-
-[✨ View "generateCustodialWalletTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/generateCustodialWalletTronKMS.php)
 
 [Back to top](#top)
 
@@ -1220,53 +894,16 @@ For example, you precalculated three gas pump addresses with a range of index va
 
 
 
-## `sCGetCustodialAddresses()`
+## ~~`sCGetCustodialAddresses()`~~
 
-> **GET** `/v3/blockchain/sc/custodial/{chain}/{hash}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/blockchain/sc/custodial/{chain}/{hash}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->gasPump()->sCGetCustodialAddresses(
-    string $chain,
-    string $hash
-): string[]
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**  | Blockchain to work with |
- **$hash** | **string**  | Transaction hash |
-
-### Return type
-
-**string[]**
-
-### Description
-
-Get the custodial wallet address from the transaction
-
-**This API is deprecated.
-
-To start with the gas pump, use the API for precalculating the gas pump addresses.**
-
- **If you built your gas pump solution using the API for generating a gas pump wallet address and API for generating a custodial wallet address, you can still use this API for getting the custodial wallet address from the transaction. However, we recommend that you switch to the API for precalculating the gas pump addresses**.
-
- **1 credit per API call**
-
- Get gas pump smart contract addresses from deploy transaction.
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
-
-### Example
-
-[✨ View "sCGetCustodialAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/sCGetCustodialAddresses.php)
 
 [Back to top](#top)
 

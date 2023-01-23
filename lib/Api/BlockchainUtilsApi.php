@@ -32,12 +32,11 @@ class BlockchainUtilsApi extends AbstractApi {
      * 
      * @return float
      */
-    public function getAuctionEstimatedTime($chain, $date) { 
+    public function getAuctionEstimatedTime($chain, $date) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/blockchain/auction/time/{chain}/{date}";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -48,7 +47,7 @@ class BlockchainUtilsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get the blockchain address of a smart contract by the deployment transaction ID
      *
@@ -59,12 +58,11 @@ class BlockchainUtilsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SCGetContractAddress200Response
      */
-    public function sCGetContractAddress($chain, $hash) { 
+    public function sCGetContractAddress($chain, $hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/blockchain/sc/address/{chain}/{hash}";
-
         /** @var \Tatum\Model\SCGetContractAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -75,5 +73,5 @@ class BlockchainUtilsApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

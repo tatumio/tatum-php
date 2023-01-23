@@ -186,6 +186,7 @@ vendor/bin/phpunit
 MainNet and TestNet operations have their own configuration object:
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet Configuration
@@ -223,6 +224,7 @@ The debugger allows you to get detailed information on API requests made by the 
 Debugging is disabled by default but you can enable it with ease:
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // Enable debugging on MainNet
@@ -244,6 +246,7 @@ By default, the write location for the `debugger` is your standard CLI output, o
 You can redirect the output of the debugger to any other file:
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // Set debug output on MainNet
@@ -261,6 +264,7 @@ You can disable this functionality for local testing only.
 **WARNING**: Never share logs that were produced with the `debug sanitizer` turned off!
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // Disable debug sanitizer on MainNet

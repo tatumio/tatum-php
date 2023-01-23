@@ -31,12 +31,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPump($activate_gas_pump) { 
+    public function activateGasPump($activate_gas_pump) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/gas-pump/activate";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Activate gas pump addresses
      *
@@ -57,12 +56,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpCelo($activate_gas_pump_celo) { 
+    public function activateGasPumpCelo($activate_gas_pump_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/gas-pump/activate";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -73,7 +71,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Activate gas pump addresses
      *
@@ -83,12 +81,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpCeloKMS($activate_gas_pump_celo_kms) { 
+    public function activateGasPumpCeloKMS($activate_gas_pump_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/gas-pump/activate";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -99,7 +96,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Activate gas pump addresses
      *
@@ -109,12 +106,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpKMS($activate_gas_pump_kms) { 
+    public function activateGasPumpKMS($activate_gas_pump_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/gas-pump/activate";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -125,7 +121,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Activate gas pump addresses
      *
@@ -135,12 +131,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpTatum($activate_gas_pump_tatum) { 
+    public function activateGasPumpTatum($activate_gas_pump_tatum) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/gas-pump/activate";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -151,7 +146,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Activate gas pump addresses
      *
@@ -161,12 +156,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpTron($activate_gas_pump_tron) { 
+    public function activateGasPumpTron($activate_gas_pump_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/gas-pump/activate";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -177,7 +171,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Activate gas pump addresses
      *
@@ -187,12 +181,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function activateGasPumpTronKMS($activate_gas_pump_tron_kms) { 
+    public function activateGasPumpTronKMS($activate_gas_pump_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/gas-pump/activate";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -203,7 +196,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get the results of the address activation transaction
      *
@@ -214,7 +207,7 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GasPumpTrxOut
      */
-    public function activatedNotActivatedGasPumpAddresses($chain, $tx_id) { 
+    public function activatedNotActivatedGasPumpAddresses($chain, $tx_id) {
         if (strlen($tx_id) > 80) {
             throw new IAE('Invalid length for "$tx_id" when calling GasPumpApi.activatedNotActivatedGasPumpAddresses, must be smaller than or equal to 80');
         }
@@ -227,7 +220,6 @@ class GasPumpApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/gas-pump/address/{chain}/{txId}";
-
         /** @var \Tatum\Model\GasPumpTrxOut $result */
         $result = $this->exec(
             S::createRequest(
@@ -238,7 +230,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Approve the transfer of an asset from a gas pump address
      *
@@ -248,12 +240,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveTransferCustodialWallet($approve_transfer_custodial_wallet) { 
+    public function approveTransferCustodialWallet($approve_transfer_custodial_wallet) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/approve";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -264,7 +255,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Approve the transfer of an asset from a gas pump address
      *
@@ -274,12 +265,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveTransferCustodialWalletCelo($approve_transfer_custodial_wallet_celo) { 
+    public function approveTransferCustodialWalletCelo($approve_transfer_custodial_wallet_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/approve";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -290,7 +280,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Approve the transfer of an asset from a gas pump address
      *
@@ -300,12 +290,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveTransferCustodialWalletCeloKMS($approve_transfer_custodial_wallet_celo_kms) { 
+    public function approveTransferCustodialWalletCeloKMS($approve_transfer_custodial_wallet_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/approve";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -316,7 +305,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Approve the transfer of an asset from a gas pump address
      *
@@ -326,12 +315,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function approveTransferCustodialWalletKMS($approve_transfer_custodial_wallet_kms) { 
+    public function approveTransferCustodialWalletKMS($approve_transfer_custodial_wallet_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/approve";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -342,24 +330,23 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Check whether the gas pump address with a specified index is activated
      *
      * @param string $chain The blockchain to work with
-     * @param string $owner The blockchain address that owns the gas pump address to check; can be referred to as \"master address\"
+     * @param string $owner The blockchain address that owns the gas pump address to check; can be referred to as \&quot;master address\&quot;
      * @param float $index The index of the gas pump address to check
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Activated
      */
-    public function gasPumpAddressesActivatedOrNot($chain, $owner, $index) { 
+    public function gasPumpAddressesActivatedOrNot($chain, $owner, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/gas-pump/activated/{chain}/{owner}/{index}";
-
         /** @var \Tatum\Model\Activated $result */
         $result = $this->exec(
             S::createRequest(
@@ -370,143 +357,6 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWallet $generate_custodial_wallet 
-     * 
-     * @return void
-     */
-    public function generateCustodialWallet($generate_custodial_wallet) {}
-    
-    /**
-     * @deprecated
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatch $generate_custodial_wallet_batch 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletBatch($generate_custodial_wallet_batch, $x_testnet_type = 'ethereum-sepolia') {}
-    
-    /**
-     * @deprecated
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchCelo $generate_custodial_wallet_batch_celo 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletBatchCelo($generate_custodial_wallet_batch_celo, $x_testnet_type = 'ethereum-sepolia') {}
-    
-    /**
-     * @deprecated
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchCeloKMS $generate_custodial_wallet_batch_celo_kms 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletBatchCeloKMS($generate_custodial_wallet_batch_celo_kms, $x_testnet_type = 'ethereum-sepolia') {}
-    
-    /**
-     * @deprecated
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchKMS $generate_custodial_wallet_batch_kms 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletBatchKMS($generate_custodial_wallet_batch_kms, $x_testnet_type = 'ethereum-sepolia') {}
-    
-    /**
-     * @deprecated
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchPayer $generate_custodial_wallet_batch_payer 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletBatchPayer($generate_custodial_wallet_batch_payer, $x_testnet_type = 'ethereum-sepolia') {}
-    
-    /**
-     * @deprecated
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchTron $generate_custodial_wallet_batch_tron 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletBatchTron($generate_custodial_wallet_batch_tron, $x_testnet_type = 'ethereum-sepolia') {}
-    
-    /**
-     * @deprecated
-     * Generate a gas pump wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletBatchTronKMS $generate_custodial_wallet_batch_tron_kms 
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletBatchTronKMS($generate_custodial_wallet_batch_tron_kms, $x_testnet_type = 'ethereum-sepolia') {}
-    
-    /**
-     * @deprecated
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletCelo $generate_custodial_wallet_celo 
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletCelo($generate_custodial_wallet_celo) {}
-    
-    /**
-     * @deprecated
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletCeloKMS $generate_custodial_wallet_celo_kms 
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletCeloKMS($generate_custodial_wallet_celo_kms) {}
-    
-    /**
-     * @deprecated
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletKMS $generate_custodial_wallet_kms 
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletKMS($generate_custodial_wallet_kms) {}
-    
-    /**
-     * @deprecated
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletTron $generate_custodial_wallet_tron 
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletTron($generate_custodial_wallet_tron) {}
-    
-    /**
-     * @deprecated
-     * Generate a custodial wallet address
-     *
-     * @param \Tatum\Model\GenerateCustodialWalletTronKMS $generate_custodial_wallet_tron_kms 
-     * 
-     * @return void
-     */
-    public function generateCustodialWalletTronKMS($generate_custodial_wallet_tron_kms) {}
     
     /**
      * Precalculate gas pump addresses
@@ -517,12 +367,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function precalculateGasPumpAddresses($create_gas_pump = null) { 
+    public function precalculateGasPumpAddresses($create_gas_pump = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/gas-pump";
-
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -533,17 +382,6 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Get the custodial wallet address from the transaction
-     *
-     * @param string $chain Blockchain to work with
-     * @param string $hash Transaction hash
-     * 
-     * @return void
-     */
-    public function sCGetCustodialAddresses($chain, $hash) {}
     
     /**
      * Transfer an asset from a gas pump address
@@ -554,12 +392,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWallet($transfer_custodial_wallet) { 
+    public function transferCustodialWallet($transfer_custodial_wallet) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -570,7 +407,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple assets from a gas pump address
      *
@@ -580,12 +417,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatch($transfer_custodial_wallet_batch) { 
+    public function transferCustodialWalletBatch($transfer_custodial_wallet_batch) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -596,7 +432,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple assets from a gas pump address
      *
@@ -606,12 +442,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchCelo($transfer_custodial_wallet_batch_celo) { 
+    public function transferCustodialWalletBatchCelo($transfer_custodial_wallet_batch_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -622,7 +457,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple assets from a gas pump address
      *
@@ -632,12 +467,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchCeloKMS($transfer_custodial_wallet_batch_celo_kms) { 
+    public function transferCustodialWalletBatchCeloKMS($transfer_custodial_wallet_batch_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -648,7 +482,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple assets from a gas pump address
      *
@@ -658,12 +492,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchKMS($transfer_custodial_wallet_batch_kms) { 
+    public function transferCustodialWalletBatchKMS($transfer_custodial_wallet_batch_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -674,7 +507,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple assets from a gas pump address
      *
@@ -684,12 +517,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchTron($transfer_custodial_wallet_batch_tron) { 
+    public function transferCustodialWalletBatchTron($transfer_custodial_wallet_batch_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -700,7 +532,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple assets from a gas pump address
      *
@@ -710,12 +542,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletBatchTronKMS($transfer_custodial_wallet_batch_tron_kms) { 
+    public function transferCustodialWalletBatchTronKMS($transfer_custodial_wallet_batch_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -726,7 +557,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer an asset from a gas pump address
      *
@@ -736,12 +567,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletCelo($transfer_custodial_wallet_celo) { 
+    public function transferCustodialWalletCelo($transfer_custodial_wallet_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -752,7 +582,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer an asset from a gas pump address
      *
@@ -762,12 +592,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletCeloKMS($transfer_custodial_wallet_celo_kms) { 
+    public function transferCustodialWalletCeloKMS($transfer_custodial_wallet_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -778,7 +607,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer an asset from a gas pump address
      *
@@ -788,12 +617,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletKMS($transfer_custodial_wallet_kms) { 
+    public function transferCustodialWalletKMS($transfer_custodial_wallet_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -804,7 +632,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer an asset from a gas pump address
      *
@@ -814,12 +642,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletTron($transfer_custodial_wallet_tron) { 
+    public function transferCustodialWalletTron($transfer_custodial_wallet_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -830,7 +657,7 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer an asset from a gas pump address
      *
@@ -840,12 +667,11 @@ class GasPumpApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCustodialWalletTronKMS($transfer_custodial_wallet_tron_kms) { 
+    public function transferCustodialWalletTronKMS($transfer_custodial_wallet_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/sc/custodial/transfer";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -856,5 +682,5 @@ class GasPumpApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

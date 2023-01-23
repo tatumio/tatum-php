@@ -38,7 +38,7 @@ class DepositApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Deposit[]
      */
-    public function getDeposits($page_size = null, $page = null, $sort = null, $status = null, $currency = null, $tx_id = null, $to = null, $account_id = null) { 
+    public function getDeposits($page_size = null, $page = null, $sort = null, $status = null, $currency = null, $tx_id = null, $to = null, $account_id = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling DepositApi.getDeposits, must be smaller than or equal to 50');
         }
@@ -59,7 +59,6 @@ class DepositApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/deposits";
-
         /** @var \Tatum\Model\Deposit[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -79,7 +78,7 @@ class DepositApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Count of found entities for get deposits request
      *
@@ -96,7 +95,7 @@ class DepositApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EntitiesCount
      */
-    public function getDepositsCount($page_size = null, $page = null, $sort = null, $status = null, $currency = null, $tx_id = null, $to = null, $account_id = null) { 
+    public function getDepositsCount($page_size = null, $page = null, $sort = null, $status = null, $currency = null, $tx_id = null, $to = null, $account_id = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling DepositApi.getDepositsCount, must be smaller than or equal to 50');
         }
@@ -117,7 +116,6 @@ class DepositApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/deposits/count";
-
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
@@ -137,5 +135,5 @@ class DepositApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

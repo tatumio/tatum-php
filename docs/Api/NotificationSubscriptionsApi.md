@@ -9,6 +9,7 @@ layout: page
 [Notification subscriptions API Reference](https://apidoc.tatum.io/tag/Notification-subscriptions/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

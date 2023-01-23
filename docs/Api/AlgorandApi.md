@@ -9,6 +9,7 @@ layout: page
 [Algorand API Reference](https://apidoc.tatum.io/tag/Algorand/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -22,16 +23,16 @@ $sdk->testnet()->api()->algorand();
 
 Method | Description
 ------------- | -------------
-[**algoNodeGetDriver()**](#algonodegetdriver) | Access Algorand Algod GET node endpoints
-[**algoNodeIndexerGetDriver()**](#algonodeindexergetdriver) | Access Algorand Indexer GET node endpoints
-[**algoNodePostDriver()**](#algonodepostdriver) | Access Algorand Algod POST node endpoints
+[**~~algoNodeGetDriver()~~**](#algonodegetdriver) | (`deprecated`)
+[**~~algoNodeIndexerGetDriver()~~**](#algonodeindexergetdriver) | (`deprecated`)
+[**~~algoNodePostDriver()~~**](#algonodepostdriver) | (`deprecated`)
 [**algoandBroadcast()**](#algoandbroadcast) | Broadcast signed Algorand transaction
 [**algorandGenerateAddress()**](#algorandgenerateaddress) | Generate Algorand account address from private key
 [**algorandGenerateWallet()**](#algorandgeneratewallet) | Generate Algorand wallet
 [**algorandGetBalance()**](#algorandgetbalance) | Get Algorand Account balance
 [**algorandGetBlock()**](#algorandgetblock) | Get Algorand block by block round number
 [**algorandGetCurrentBlock()**](#algorandgetcurrentblock) | Get current block number
-[**algorandGetPayTransactionsByFromTo()**](#algorandgetpaytransactionsbyfromto) | Get Algorand Transactions between from and to
+[**~~algorandGetPayTransactionsByFromTo()~~**](#algorandgetpaytransactionsbyfromto) | (`deprecated`)
 [**algorandGetTransaction()**](#algorandgettransaction) | Get Algorand Transaction
 [**receiveAlgorandAsset()**](#receivealgorandasset) | Enable receiving asset on account
 [**receiveAlgorandAssetKMS()**](#receivealgorandassetkms) | Enable receiving asset on account
@@ -39,141 +40,46 @@ Method | Description
 [**transferAlgorandBlockchainKMS()**](#transferalgorandblockchainkms) | Send Algos to an Algorand account
 
 
-## `algoNodeGetDriver()`
+## ~~`algoNodeGetDriver()`~~
 
-> **GET** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algoNodeGetDriver(
-    string $x_api_key,
-    string $algod_path
-): \Tatum\Model\AlgoBlock
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$algod_path** | **string**  | &#x60;**&#x60; path of algod. |
-
-### Return type
-
-[**\Tatum\Model\AlgoBlock**](../../Model/AlgoBlock)
-
-### Description
-
-Access Algorand Algod GET node endpoints
-
-**1 credit per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>. 
-
- Example call for Get Block is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#get-v2blocksround</a>. 
-
- URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/blocks/16775567</pre>
-
-### Example
-
-[✨ View "algoNodeGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodeGetDriver.php)
 
 [Back to top](#top)
 
 
 
-## `algoNodeIndexerGetDriver()`
+## ~~`algoNodeIndexerGetDriver()`~~
 
-> **GET** `/v3/algorand/node/indexer/{xApiKey}/{indexerPath}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/algorand/node/indexer/{xApiKey}/{indexerPath}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algoNodeIndexerGetDriver(
-    string $x_api_key,
-    string $indexer_path
-): \Tatum\Model\AlgoTx
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$indexer_path** | **string**  | &#x60;**&#x60; path of indexer. |
-
-### Return type
-
-[**\Tatum\Model\AlgoTx**](../../Model/AlgoTx)
-
-### Description
-
-Access Algorand Indexer GET node endpoints
-
-**1 credit per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check all available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/indexer/" target="_blank">https://developer.algorand.org/docs/rest-apis/indexer/</a>. 
-
- Example call for Get Tx By ID is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/indexer/#get-v2transactionstxid" target="_blank">https://developer.algorand.org/docs/rest-apis/indexer/#get-v2transactionstxid</a>. 
-
- URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/indexer/YOUR_API_KEY/v2/transactions/HNIQ76UTJYPOLZP5FWODYABBJPYPGJNEM2QEJSMDMQRWEKHEYJHQ</pre>
-
-### Example
-
-[✨ View "algoNodeIndexerGetDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodeIndexerGetDriver.php)
 
 [Back to top](#top)
 
 
 
-## `algoNodePostDriver()`
+## ~~`algoNodePostDriver()`~~
 
-> **POST** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/algorand/node/algod/{xApiKey}/{algodPath}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algoNodePostDriver(
-    string $x_api_key,
-    string $algod_path,
-    \Tatum\Model\AlgoNodePostDriverRequest $algo_node_post_driver_request
-): \Tatum\Model\AlgoNodePostDriver200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$algod_path** | **string**  | &#x60;**&#x60; path of algod. |
- **$algo_node_post_driver_request** | [**\Tatum\Model\AlgoNodePostDriverRequest**](../../Model/AlgoNodePostDriverRequest) |  |
-
-### Return type
-
-[**\Tatum\Model\AlgoNodePostDriver200Response**](../../Model/AlgoNodePostDriver200Response)
-
-### Description
-
-Access Algorand Algod POST node endpoints
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based url to connect directly to the Algorand node provided by Tatum. You can check al available APIs here - <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/</a>. 
-
- Example call for Broadcast a raw transaction is described in the response. <a href="https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions" target="_blank">https://developer.algorand.org/docs/rest-apis/algod/v2/#post-v2transactions</a>. 
-
- URL used for this call would be <pre>https://api.tatum.io/v3/algorand/node/algod/YOUR_API_KEY/v2/transactions</pre>
-
-### Example
-
-[✨ View "algoNodePostDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoNodePostDriver.php)
 
 [Back to top](#top)
 
@@ -404,47 +310,16 @@ Get Algorand current block number. This is the number of the latest block in the
 
 
 
-## `algorandGetPayTransactionsByFromTo()`
+## ~~`algorandGetPayTransactionsByFromTo()`~~
 
-> **GET** `/v3/algorand/transactions/{from}/{to}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/algorand/transactions/{from}/{to}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGetPayTransactionsByFromTo(
-    string $from,
-    string $to,
-    [ string $limit, ]
-    [ string $next ]
-): \Tatum\Model\AlgoTxsWithPagination
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$from** | **string**  | Start timestamp in specified period of time |
- **$to** | **string**  | End timestamp in specified period of time |
- **$limit** | **string**  | page size for pagination | [optional]
- **$next** | **string**  | Algorand Next Token for getting the next page results | [optional]
-
-### Return type
-
-[**\Tatum\Model\AlgoTxsWithPagination**](../../Model/AlgoTxsWithPagination)
-
-### Description
-
-Get Algorand Transactions between from and to
-
-**1 credit per API call**
-
- **This endpoint is deprecated.**
-
- Get Algorand transaction by specified period of time.
-
-### Example
-
-[✨ View "algorandGetPayTransactionsByFromTo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetPayTransactionsByFromTo.php)
 
 [Back to top](#top)
 

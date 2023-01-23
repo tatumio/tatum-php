@@ -9,6 +9,7 @@ layout: page
 [Custodial managed wallets API Reference](https://apidoc.tatum.io/tag/Custodial-managed-wallets/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

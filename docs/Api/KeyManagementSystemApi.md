@@ -9,6 +9,7 @@ layout: page
 [Key Management System API Reference](https://apidoc.tatum.io/tag/Key-Management-System/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

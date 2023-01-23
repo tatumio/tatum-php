@@ -8,6 +8,7 @@ nav_order: 3
 Local wallet operations:
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet Local Wallet Operations

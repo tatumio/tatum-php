@@ -9,6 +9,7 @@ layout: page
 [Polygon API Reference](https://apidoc.tatum.io/tag/Polygon/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -36,7 +37,7 @@ Method | Description
 [**polygonGetTransaction()**](#polygongettransaction) | Get Polygon Transaction
 [**polygonGetTransactionByAddress()**](#polygongettransactionbyaddress) | Get Polygon transactions by address
 [**polygonGetTransactionCount()**](#polygongettransactioncount) | Get count of outgoing Polygon transactions
-[**polygonWeb3Driver()**](#polygonweb3driver) | Web3 HTTP driver
+[**~~polygonWeb3Driver()~~**](#polygonweb3driver) | (`deprecated`)
 [**transferPolygonBlockchain()**](#transferpolygonblockchain) | Send MATIC from account to account
 [**transferPolygonBlockchainKMS()**](#transferpolygonblockchainkms) | Send MATIC from account to account
 
@@ -608,43 +609,16 @@ Get count of outgoing Polygon transactions
 
 
 
-## `polygonWeb3Driver()`
+## ~~`polygonWeb3Driver()`~~
 
-> **POST** `/v3/polygon/web3/{xApiKey}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/polygon/web3/{xApiKey}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonWeb3Driver(
-    string $x_api_key,
-    object $body
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$body** | **object**  |  |
-
-### Return type
-
-**object**
-
-### Description
-
-Web3 HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based web3 driver to connect directly to the Polygon node provided by Tatum. To learn more about Polygon Web3, visit the <a href="https://docs.matic.network/" target="_blank">Polygon developer's guide</a>.
-
-### Example
-
-[✨ View "polygonWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonWeb3Driver.php)
 
 [Back to top](#top)
 

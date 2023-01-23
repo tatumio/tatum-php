@@ -29,19 +29,18 @@ class ServiceUtilsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function freezeApiKey() { 
+    public function freezeApiKey() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/tatum/freeze";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * Get information about your credit consumption for the last month
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -49,12 +48,11 @@ class ServiceUtilsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Consumption[]
      */
-    public function getCredits() { 
+    public function getCredits() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/tatum/usage";
-
         /** @var \Tatum\Model\Consumption[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -65,7 +63,7 @@ class ServiceUtilsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get API version
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -73,12 +71,11 @@ class ServiceUtilsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetVersion200Response
      */
-    public function getVersion() { 
+    public function getVersion() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/tatum/version";
-
         /** @var \Tatum\Model\GetVersion200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -89,7 +86,7 @@ class ServiceUtilsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Unfreeze API Key
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -97,17 +94,16 @@ class ServiceUtilsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function unfreezeApiKey() { 
+    public function unfreezeApiKey() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/tatum/freeze";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "DELETE", $rPath, $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
 }

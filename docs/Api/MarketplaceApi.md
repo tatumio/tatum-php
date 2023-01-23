@@ -9,6 +9,7 @@ layout: page
 [Marketplace API Reference](https://apidoc.tatum.io/tag/Marketplace/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

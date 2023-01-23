@@ -9,6 +9,7 @@ layout: page
 [Celo API Reference](https://apidoc.tatum.io/tag/Celo/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -35,7 +36,7 @@ Method | Description
 [**celoGetTransaction()**](#celogettransaction) | Get Celo Transaction
 [**celoGetTransactionByAddress()**](#celogettransactionbyaddress) | Get Celo transactions by address
 [**celoGetTransactionCount()**](#celogettransactioncount) | Get count of outgoing Celo transactions
-[**celoWeb3Driver()**](#celoweb3driver) | Web3 HTTP driver
+[**~~celoWeb3Driver()~~**](#celoweb3driver) | (`deprecated`)
 [**transferCeloBlockchain()**](#transferceloblockchain) | Send Celo / ERC20 from account to account
 [**transferCeloBlockchainKMS()**](#transferceloblockchainkms) | Send Celo / ERC20 from account to account
 
@@ -569,43 +570,16 @@ Get count of outgoing Celo transactions
 
 
 
-## `celoWeb3Driver()`
+## ~~`celoWeb3Driver()`~~
 
-> **POST** `/v3/celo/web3/{xApiKey}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/celo/web3/{xApiKey}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoWeb3Driver(
-    string $x_api_key,
-    object $body
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$body** | **object**  |  |
-
-### Return type
-
-**object**
-
-### Description
-
-Web3 HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based web3 driver to connect directly to the Celo node provided by Tatum. To learn more about Celo Web3, visit the <a href="https://explorer.celo.org/api-docs" target="_blank">Celo developer's guide</a>.
-
-### Example
-
-[✨ View "celoWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoWeb3Driver.php)
 
 [Back to top](#top)
 

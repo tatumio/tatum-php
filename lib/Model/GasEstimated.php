@@ -1,7 +1,7 @@
 <?php
 
 /**
- * KlaytnEstimateGas_200_response Model
+ * GasEstimated Model
  *
  * @copyright (c) 2022-2023 tatum.io
  * @license   MIT
@@ -17,19 +17,19 @@ namespace Tatum\Model;
 !defined("TATUM-SDK") && exit();
 
 /**
- * KlaytnEstimateGas_200_response Model
+ * GasEstimated Model
  */
-class KlaytnEstimateGas200Response extends AbstractModel {
+class GasEstimated extends AbstractModel {
 
     public const _D = null;
-    protected static $_name = "KlaytnEstimateGas_200_response";
+    protected static $_name = "GasEstimated";
     protected static $_definition = [
         "gas_price" => ["gasPrice", "string", null, "getGasPrice", "setGasPrice", null, ["r" => 1]], 
         "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null, ["r" => 1]]
     ];
 
     /**
-     * KlaytnEstimateGas200Response
+     * GasEstimated
      *
      * @param mixed[] $data Model data
      */
@@ -52,7 +52,7 @@ class KlaytnEstimateGas200Response extends AbstractModel {
     /**
      * Set gas_price
      * 
-     * @param string $gas_price The estimated price for one gas unit (in peb)
+     * @param string $gas_price The estimated price for one gas unit (in wei)
      * @throws \InvalidArgumentException
      * @return $this
      */

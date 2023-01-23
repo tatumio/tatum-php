@@ -31,12 +31,11 @@ class VirtualAccountBlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\FeeBtc
      */
-    public function offchainEstimateFee($offchain_estimate_fee) { 
+    public function offchainEstimateFee($offchain_estimate_fee) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/blockchain/estimate";
-
         /** @var \Tatum\Model\FeeBtc $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,5 +46,5 @@ class VirtualAccountBlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

@@ -9,6 +9,7 @@ layout: page
 [XinFin API Reference](https://apidoc.tatum.io/tag/XinFin/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -36,7 +37,7 @@ Method | Description
 [**xdcGetCurrentBlock()**](#xdcgetcurrentblock) | Get current block number
 [**xdcGetTransaction()**](#xdcgettransaction) | Get XDC Transaction
 [**xdcGetTransactionCount()**](#xdcgettransactioncount) | Get count of outgoing XDC transactions
-[**xdcWeb3Driver()**](#xdcweb3driver) | Web3 HTTP driver
+[**~~xdcWeb3Driver()~~**](#xdcweb3driver) | (`deprecated`)
 
 
 ## `callXdcReadSmartContractMethod()`
@@ -606,43 +607,16 @@ Get count of outgoing XDC transactions
 
 
 
-## `xdcWeb3Driver()`
+## ~~`xdcWeb3Driver()`~~
 
-> **POST** `/v3/xdc/web3/{xApiKey}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/xdc/web3/{xApiKey}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcWeb3Driver(
-    string $x_api_key,
-    object $body
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$body** | **object**  |  |
-
-### Return type
-
-**object**
-
-### Description
-
-Web3 HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based web3 driver to connect directly to the XDC node provided by Tatum. To learn more about XDC Web3, visit the <a href="https://howto.xinfin.org/" target="_blank">XDC developer's guide</a>.
-
-### Example
-
-[✨ View "xdcWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcWeb3Driver.php)
 
 [Back to top](#top)
 

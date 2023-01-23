@@ -14,7 +14,7 @@
 // Use any PSR-4 autoloader
 require_once dirname(__DIR__, 4) . "/autoload.php";
 
-// Tatum SDK
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // 24-word mnemonic

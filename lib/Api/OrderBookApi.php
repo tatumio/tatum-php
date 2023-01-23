@@ -31,12 +31,11 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Chart[]
      */
-    public function chartRequest($chart_request) { 
+    public function chartRequest($chart_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/trade/chart";
-
         /** @var \Tatum\Model\Chart[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class OrderBookApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Store buy / sell trade
      *
@@ -57,12 +56,11 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createFutureTrade($create_future_trade) { 
+    public function createFutureTrade($create_future_trade) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/trade";
-
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
@@ -73,7 +71,7 @@ class OrderBookApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Store buy / sell trade
      *
@@ -83,12 +81,11 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createTrade($create_trade) { 
+    public function createTrade($create_trade) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/trade";
-
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
@@ -99,7 +96,7 @@ class OrderBookApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Cancel all existing trades for account
      *
@@ -109,19 +106,18 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deleteAccountTrades($id) { 
+    public function deleteAccountTrades($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/trade/account/{id}";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * Cancel existing trade
      *
@@ -131,34 +127,17 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deleteTrade($id) { 
+    public function deleteTrade($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/trade/{id}";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
-    /**
-     * @deprecated
-     * List all active buy trades
-     *
-     * @param float $page_size Max number of items per page is 50.
-     * @param string|null $id Account ID. If present, list current active buy trades for that account.
-     * @param string|null $customer_id Customer ID. If present, list current active buy trades for that customer.
-     * @param float|null $offset Offset to obtain next page of the data.
-     * @param string|null $pair Trade pair. If present, list current active buy trades for that pair.
-     * @param bool|null $count Get the total trade pair count based on the filter. Either count or pageSize is accepted.
-     * @param string|null $trade_type Trade type.
-     * 
-     * @return void
-     */
-    public function getBuyTrades($page_size, $id = null, $customer_id = null, $offset = null, $pair = null, $count = null, $trade_type = null) {}
     
     /**
      * List all active buy trades
@@ -169,12 +148,11 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getBuyTradesBody($list_oder_book_active_buy_body) { 
+    public function getBuyTradesBody($list_oder_book_active_buy_body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/trade/buy";
-
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -185,21 +163,6 @@ class OrderBookApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * List all historical trades
-     *
-     * @param float $page_size Max number of items per page is 50.
-     * @param string|null $id Account ID. If present, only closed trades for given account will be present.
-     * @param string|null $pair Trade pair. If present, only closed trades on given trade pair will be present.
-     * @param float|null $offset Offset to obtain next page of the data.
-     * @param bool|null $count Get the total trade pair count based on the filter. Either count or pageSize is accepted.
-     * @param string[]|null $types Trade types.
-     * 
-     * @return void
-     */
-    public function getHistoricalTrades($page_size, $id = null, $pair = null, $offset = null, $count = null, array $types = null) {}
     
     /**
      * List all historical trades
@@ -210,12 +173,11 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getHistoricalTradesBody($list_oder_book_history_body = null) { 
+    public function getHistoricalTradesBody($list_oder_book_history_body = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/trade/history";
-
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -226,7 +188,7 @@ class OrderBookApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * List all matched orders from FUTURE_SELL/FUTURE_BUY trades
      *
@@ -236,12 +198,11 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getMatchedTrades($list_oder_book_matched_body) { 
+    public function getMatchedTrades($list_oder_book_matched_body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/trade/matched";
-
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -252,22 +213,6 @@ class OrderBookApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * List all active sell trades
-     *
-     * @param float $page_size Max number of items per page is 50.
-     * @param string|null $id Account ID. If present, list current active sell trades for that account.
-     * @param string|null $customer_id Customer ID. If present, list current active buy trades for that customer.
-     * @param float|null $offset Offset to obtain next page of the data.
-     * @param string|null $pair Trade pair. If present, list current active sell trades for that pair.
-     * @param bool|null $count Get the total trade pair count based on the filter. Either count or pageSize is accepted.
-     * @param string|null $trade_type Trade type.
-     * 
-     * @return void
-     */
-    public function getSellTrades($page_size, $id = null, $customer_id = null, $offset = null, $pair = null, $count = null, $trade_type = null) {}
     
     /**
      * List all active sell trades
@@ -278,12 +223,11 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade[]
      */
-    public function getSellTradesBody($list_oder_book_active_sell_body) { 
+    public function getSellTradesBody($list_oder_book_active_sell_body) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/trade/sell";
-
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -294,7 +238,7 @@ class OrderBookApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get existing trade
      *
@@ -304,12 +248,11 @@ class OrderBookApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trade
      */
-    public function getTradeById($id) { 
+    public function getTradeById($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/trade/{id}";
-
         /** @var \Tatum\Model\Trade $result */
         $result = $this->exec(
             S::createRequest(
@@ -320,5 +263,5 @@ class OrderBookApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

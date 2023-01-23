@@ -9,6 +9,7 @@ layout: page
 [Litecoin API Reference](https://apidoc.tatum.io/tag/Litecoin/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -34,7 +35,7 @@ Method | Description
 [**ltcGetRawTransaction()**](#ltcgetrawtransaction) | Get Litecoin Transaction by hash
 [**ltcGetTxByAddress()**](#ltcgettxbyaddress) | Get Litecoin Transactions by address
 [**ltcGetUTXO()**](#ltcgetutxo) | Get information about a transaction output (UTXO) in a Litecoin transaction
-[**ltcRpcDriver()**](#ltcrpcdriver) | JSON RPC HTTP driver
+[**~~ltcRpcDriver()~~**](#ltcrpcdriver) | (`deprecated`)
 [**ltcTransactionAddress()**](#ltctransactionaddress) | Send LTC to Litecoin addresses
 [**ltcTransactionAddressKMS()**](#ltctransactionaddresskms) | Send LTC to Litecoin addresses
 [**ltcTransactionUTXO()**](#ltctransactionutxo) | Send LTC to Litecoin addresses
@@ -513,41 +514,16 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 
 
 
-## `ltcRpcDriver()`
+## ~~`ltcRpcDriver()`~~
 
-> **POST** `/v3/litecoin/node`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/litecoin/node`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcRpcDriver(
-    \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../../Model/BchRpcDriverRequest) |  |
-
-### Return type
-
-**object**
-
-### Description
-
-JSON RPC HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum.
-
-### Example
-
-[✨ View "ltcRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcRpcDriver.php)
 
 [Back to top](#top)
 

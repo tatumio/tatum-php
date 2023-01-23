@@ -31,19 +31,18 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function bnbAssetOffchain($create_bnb_asset) { 
+    public function bnbAssetOffchain($create_bnb_asset) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bnb/asset";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_bnb_asset
             )
         );
     }
-
+    
     /**
      * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -53,12 +52,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
      */
-    public function deployAlgoErc20OffchainKMSAddress($deploy_algo_erc20_offchain_kms_address) { 
+    public function deployAlgoErc20OffchainKMSAddress($deploy_algo_erc20_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/algo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -69,7 +67,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -79,12 +77,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
      */
-    public function deployAlgoErc20OffchainMnemonicAddress($deploy_algo_erc20_offchain_mnemonic_address) { 
+    public function deployAlgoErc20OffchainMnemonicAddress($deploy_algo_erc20_offchain_mnemonic_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/algo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -95,7 +92,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -105,12 +102,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response
      */
-    public function deployAlgoErc20OffchainPKAddress($deploy_algo_erc20_offchain_pk_address) { 
+    public function deployAlgoErc20OffchainPKAddress($deploy_algo_erc20_offchain_pk_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/algo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -121,7 +117,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -131,12 +127,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployCeloErc20OffchainKMSAddress($deploy_celo_erc20_offchain_kms_address) { 
+    public function deployCeloErc20OffchainKMSAddress($deploy_celo_erc20_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -147,7 +142,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -157,12 +152,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployCeloErc20OffchainKMSXpub($deploy_celo_erc20_offchain_kms_xpub) { 
+    public function deployCeloErc20OffchainKMSXpub($deploy_celo_erc20_offchain_kms_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -173,7 +167,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -183,12 +177,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployCeloErc20OffchainMnemXpub($deploy_celo_erc20_offchain_mnem_xpub) { 
+    public function deployCeloErc20OffchainMnemXpub($deploy_celo_erc20_offchain_mnem_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -199,7 +192,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -209,12 +202,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployCeloErc20OffchainMnemonicAddress($deploy_celo_erc20_offchain_mnemonic_address) { 
+    public function deployCeloErc20OffchainMnemonicAddress($deploy_celo_erc20_offchain_mnemonic_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -225,7 +217,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -235,12 +227,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployCeloErc20OffchainPKAddress($deploy_celo_erc20_offchain_pk_address) { 
+    public function deployCeloErc20OffchainPKAddress($deploy_celo_erc20_offchain_pk_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -251,7 +242,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -261,12 +252,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployCeloErc20OffchainPKXpub($deploy_celo_erc20_offchain_pk_xpub) { 
+    public function deployCeloErc20OffchainPKXpub($deploy_celo_erc20_offchain_pk_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -277,7 +267,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
      *
@@ -287,12 +277,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) { 
+    public function deployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -303,7 +292,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
      *
@@ -313,12 +302,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) { 
+    public function deployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -329,7 +317,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
      *
@@ -339,12 +327,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) { 
+    public function deployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -355,7 +342,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
      *
@@ -365,12 +352,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) { 
+    public function deployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -381,7 +367,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
      *
@@ -391,12 +377,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) { 
+    public function deployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -407,7 +392,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
      *
@@ -417,12 +402,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) { 
+    public function deployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -433,7 +417,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
      *
@@ -443,12 +427,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployTrcOffchainKMSAddress($deploy_trc_offchain_kms_address) { 
+    public function deployTrcOffchainKMSAddress($deploy_trc_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/trc/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -459,7 +442,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
      *
@@ -469,12 +452,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployTrcOffchainKMSXpub($deploy_trc_offchain_kms_xpub) { 
+    public function deployTrcOffchainKMSXpub($deploy_trc_offchain_kms_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/trc/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -485,7 +467,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
      *
@@ -495,12 +477,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployTrcOffchainMnemXpub($deploy_trc_offchain_mnem_xpub) { 
+    public function deployTrcOffchainMnemXpub($deploy_trc_offchain_mnem_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/trc/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -511,7 +492,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
      *
@@ -521,12 +502,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployTrcOffchainMnemonicAddress($deploy_trc_offchain_mnemonic_address) { 
+    public function deployTrcOffchainMnemonicAddress($deploy_trc_offchain_mnemonic_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/trc/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -537,7 +517,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
      *
@@ -547,12 +527,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployTrcOffchainPKAddress($deploy_trc_offchain_pk_address) { 
+    public function deployTrcOffchainPKAddress($deploy_trc_offchain_pk_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/trc/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -563,7 +542,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
      *
@@ -573,12 +552,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function deployTrcOffchainPKXpub($deploy_trc_offchain_pk_xpub) { 
+    public function deployTrcOffchainPKXpub($deploy_trc_offchain_pk_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/trc/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -589,26 +567,6 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Register a new Ethereum ERC-20 token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20 $erc20 
-     * 
-     * @return void
-     */
-    public function erc20($erc20) {}
-    
-    /**
-     * @deprecated
-     * Register a new Ethereum ERC-20 token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20Address $erc20_address 
-     * 
-     * @return void
-     */
-    public function erc20Address($erc20_address) {}
     
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
@@ -619,12 +577,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offBscDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) { 
+    public function offBscDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/bep20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -635,7 +592,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
      *
@@ -645,12 +602,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offBscDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) { 
+    public function offBscDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/bep20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -661,7 +617,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
      *
@@ -671,12 +627,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offBscDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) { 
+    public function offBscDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/bep20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -687,7 +642,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
      *
@@ -697,12 +652,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offBscDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) { 
+    public function offBscDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/bep20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -713,7 +667,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
      *
@@ -723,12 +677,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offBscDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) { 
+    public function offBscDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/bep20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -739,7 +692,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
      *
@@ -749,12 +702,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offBscDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) { 
+    public function offBscDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/bep20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -765,46 +717,6 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Register a new BNB Smart Chain BEP-20 token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20 $erc20 
-     * 
-     * @return void
-     */
-    public function offBscErc20($erc20) {}
-    
-    /**
-     * @deprecated
-     * Register a new BNB Smart Chain BEP-20 token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20Address $erc20_address 
-     * 
-     * @return void
-     */
-    public function offBscErc20Address($erc20_address) {}
-    
-    /**
-     * @deprecated
-     * Register a new Celo ERC-20-equivalent token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20 $erc20 
-     * 
-     * @return void
-     */
-    public function offCelErc20($erc20) {}
-    
-    /**
-     * @deprecated
-     * Register a new Celo ERC-20-equivalent token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20Address $erc20_address 
-     * 
-     * @return void
-     */
-    public function offCelErc20Address($erc20_address) {}
     
     /**
      * Send EGLD from a virtual account to the blockchain
@@ -815,12 +727,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offEglTransferEth($transfer_eth) { 
+    public function offEglTransferEth($transfer_eth) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/egld/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -831,7 +742,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send EGLD from a virtual account to the blockchain
      *
@@ -841,12 +752,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offEglTransferEthKMS($transfer_eth_kms) { 
+    public function offEglTransferEthKMS($transfer_eth_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/egld/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -857,7 +767,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send EGLD from a virtual account to the blockchain
      *
@@ -867,12 +777,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offEglTransferEthMnemonic($transfer_eth_mnemonic) { 
+    public function offEglTransferEthMnemonic($transfer_eth_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/egld/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -883,7 +792,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -893,12 +802,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKcsDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) { 
+    public function offKcsDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -909,7 +817,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -919,12 +827,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKcsDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) { 
+    public function offKcsDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -935,7 +842,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -945,12 +852,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKcsDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) { 
+    public function offKcsDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -961,7 +867,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -971,12 +877,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKcsDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) { 
+    public function offKcsDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -987,7 +892,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -997,12 +902,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKcsDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) { 
+    public function offKcsDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1013,7 +917,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1023,12 +927,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKcsDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) { 
+    public function offKcsDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1039,7 +942,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1049,12 +952,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKlaDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) { 
+    public function offKlaDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1065,7 +967,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1075,12 +977,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKlaDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) { 
+    public function offKlaDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1091,7 +992,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1101,12 +1002,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKlaDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) { 
+    public function offKlaDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1117,7 +1017,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1127,12 +1027,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKlaDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) { 
+    public function offKlaDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1143,7 +1042,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1153,12 +1052,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKlaDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) { 
+    public function offKlaDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1169,7 +1067,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1179,12 +1077,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offKlaDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) { 
+    public function offKlaDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1195,7 +1092,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send KLAY from a virtual account to the blockchain
      *
@@ -1205,12 +1102,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offKlaTransferEth($transfer_eth) { 
+    public function offKlaTransferEth($transfer_eth) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1221,7 +1117,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send KLAY from a virtual account to the blockchain
      *
@@ -1231,12 +1127,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offKlaTransferEthKMS($transfer_eth_kms) { 
+    public function offKlaTransferEthKMS($transfer_eth_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1247,7 +1142,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send KLAY from a virtual account to the blockchain
      *
@@ -1257,12 +1152,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offKlaTransferEthMnemonic($transfer_eth_mnemonic) { 
+    public function offKlaTransferEthMnemonic($transfer_eth_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/klaytn/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1273,7 +1167,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
@@ -1284,12 +1178,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offOneDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address, $shard_id = 0) { 
+    public function offOneDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/hrm20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1302,7 +1195,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
@@ -1313,12 +1206,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offOneDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub, $shard_id = 0) { 
+    public function offOneDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/hrm20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1331,7 +1223,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
@@ -1342,12 +1234,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offOneDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub, $shard_id = 0) { 
+    public function offOneDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/hrm20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1360,7 +1251,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
@@ -1371,12 +1262,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offOneDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address, $shard_id = 0) { 
+    public function offOneDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/hrm20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1389,7 +1279,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
@@ -1400,12 +1290,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offOneDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address, $shard_id = 0) { 
+    public function offOneDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/hrm20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1418,7 +1307,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
      *
@@ -1429,12 +1318,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offOneDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub, $shard_id = 0) { 
+    public function offOneDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/hrm20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1447,26 +1335,6 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Register a new Harmony HRM-20 token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20 $erc20 
-     * 
-     * @return void
-     */
-    public function offOneErc20($erc20) {}
-    
-    /**
-     * @deprecated
-     * Register a new Harmony HRM-20 token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20Address $erc20_address 
-     * 
-     * @return void
-     */
-    public function offOneErc20Address($erc20_address) {}
     
     /**
      * Send ONE from a virtual account to the blockchain
@@ -1478,12 +1346,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offOneTransferEth($transfer_eth, $shard_id = 0) { 
+    public function offOneTransferEth($transfer_eth, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1496,7 +1363,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send ONE from a virtual account to the blockchain
      *
@@ -1507,12 +1374,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offOneTransferEthKMS($transfer_eth_kms, $shard_id = 0) { 
+    public function offOneTransferEthKMS($transfer_eth_kms, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1525,7 +1391,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send ONE from a virtual account to the blockchain
      *
@@ -1536,12 +1402,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offOneTransferEthMnemonic($transfer_eth_mnemonic, $shard_id = 0) { 
+    public function offOneTransferEthMnemonic($transfer_eth_mnemonic, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/one/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1554,7 +1419,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send MATIC from a virtual account to the blockchain
      *
@@ -1564,12 +1429,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offPolTransferEth($transfer_eth) { 
+    public function offPolTransferEth($transfer_eth) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/polygon/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1580,7 +1444,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send MATIC from a virtual account to the blockchain
      *
@@ -1590,12 +1454,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offPolTransferEthKMS($transfer_eth_kms) { 
+    public function offPolTransferEthKMS($transfer_eth_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/polygon/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1606,7 +1469,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send MATIC from a virtual account to the blockchain
      *
@@ -1616,12 +1479,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offPolTransferEthMnemonic($transfer_eth_mnemonic) { 
+    public function offPolTransferEthMnemonic($transfer_eth_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/polygon/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1632,7 +1494,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
      *
@@ -1643,12 +1505,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function offTokErc20($chain, $erc20) { 
+    public function offTokErc20($chain, $erc20) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/token/{chain}";
-
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1659,7 +1520,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
      *
@@ -1670,12 +1531,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Erc20Response
      */
-    public function offTokErc20Address($chain, $erc20_address) { 
+    public function offTokErc20Address($chain, $erc20_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/token/{chain}";
-
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1686,7 +1546,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1696,12 +1556,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offXdcDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) { 
+    public function offXdcDeployErc20OffchainKMSAddress($deploy_erc20_offchain_kms_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1712,7 +1571,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1722,12 +1581,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offXdcDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) { 
+    public function offXdcDeployErc20OffchainKMSXpub($deploy_erc20_offchain_kms_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1738,7 +1596,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1748,12 +1606,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offXdcDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) { 
+    public function offXdcDeployErc20OffchainMnemXpub($deploy_erc20_offchain_mnem_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1764,7 +1621,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1774,12 +1631,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offXdcDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) { 
+    public function offXdcDeployErc20OffchainMnemonicAddress($deploy_erc20_offchain_mnemonic_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1790,7 +1646,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1800,12 +1656,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offXdcDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) { 
+    public function offXdcDeployErc20OffchainPKAddress($deploy_erc20_offchain_pk_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1816,7 +1671,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
      *
@@ -1826,12 +1681,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response
      */
-    public function offXdcDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) { 
+    public function offXdcDeployErc20OffchainPKXpub($deploy_erc20_offchain_pk_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/erc20/deploy";
-
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1842,26 +1696,6 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Register a new XinFin ERC-20-equivalent token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20 $erc20 
-     * 
-     * @return void
-     */
-    public function offXdcErc20($erc20) {}
-    
-    /**
-     * @deprecated
-     * Register a new XinFin ERC-20-equivalent token in the virtual account
-     *
-     * @param \Tatum\Model\Erc20Address $erc20_address 
-     * 
-     * @return void
-     */
-    public function offXdcErc20Address($erc20_address) {}
     
     /**
      * Send XDC from a virtual account to the blockchain
@@ -1872,12 +1706,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offXdcTransferEth($transfer_eth) { 
+    public function offXdcTransferEth($transfer_eth) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1888,7 +1721,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send XDC from a virtual account to the blockchain
      *
@@ -1898,12 +1731,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offXdcTransferEthKMS($transfer_eth_kms) { 
+    public function offXdcTransferEthKMS($transfer_eth_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1914,7 +1746,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send XDC from a virtual account to the blockchain
      *
@@ -1924,12 +1756,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function offXdcTransferEthMnemonic($transfer_eth_mnemonic) { 
+    public function offXdcTransferEthMnemonic($transfer_eth_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xdc/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -1940,17 +1771,6 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Set the contract address of a Celo ERC-20-equivalent token
-     *
-     * @param string $address ERC-20 contract address
-     * @param string $name ERC-20 symbol name.
-     * 
-     * @return void
-     */
-    public function storeCeloErc20Address($address, $name) {}
     
     /**
      * Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
@@ -1962,7 +1782,7 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function storeTokenAddress($address, $name) { 
+    public function storeTokenAddress($address, $name) {
         if (strlen($address) > 100) {
             throw new IAE('Invalid length for "$address" when calling BlockchainOperationsApi.storeTokenAddress, must be smaller than or equal to 100');
         }
@@ -1987,54 +1807,12 @@ class BlockchainOperationsApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/offchain/token/{name}/{address}";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", S::parse($rPath, ["address" => $address, "name" => $name]), $rPath, [], $rHeaders, []
             )
         );
     }
-
-    /**
-     * @deprecated
-     * Set the contract address of a TRC-10 or TRC-20 token
-     *
-     * @param string $address TRC-10 Token ID or TRC-20 contract address
-     * @param string $name TRC 10/20 symbol name.
-     * 
-     * @return void
-     */
-    public function storeTrcAddress($address, $name) {}
-    
-    /**
-     * @deprecated
-     * Send ADA from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\TransferAdaKMS $transfer_ada_kms 
-     * 
-     * @return void
-     */
-    public function transferAdaKMS($transfer_ada_kms) {}
-    
-    /**
-     * @deprecated
-     * Send ADA from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\TransferAdaKeyPair $transfer_ada_key_pair 
-     * 
-     * @return void
-     */
-    public function transferAdaKeyPair($transfer_ada_key_pair) {}
-    
-    /**
-     * @deprecated
-     * Send ADA from a virtual account to the blockchain
-     *
-     * @param \Tatum\Model\TransferAdaMnemonic $transfer_ada_mnemonic 
-     * 
-     * @return void
-     */
-    public function transferAdaMnemonic($transfer_ada_mnemonic) {}
     
     /**
      * Send ALGO from a virtual account to the blockchain
@@ -2045,12 +1823,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferAlgo($transfer_algo) { 
+    public function transferAlgo($transfer_algo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/algorand/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2061,7 +1838,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send ALGO from a virtual account to the blockchain
      *
@@ -2071,12 +1848,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferAlgoErc20($transfer_algo_erc20) { 
+    public function transferAlgoErc20($transfer_algo_erc20) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/algorand/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2087,7 +1863,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send ALGO from a virtual account to the blockchain
      *
@@ -2097,12 +1873,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferAlgoKMS($transfer_algo_kms) { 
+    public function transferAlgoKMS($transfer_algo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/algorand/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2113,7 +1888,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BCH from a virtual account to the blockchain
      *
@@ -2123,12 +1898,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBchKMS($transfer_bch_kms) { 
+    public function transferBchKMS($transfer_bch_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bcash/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2139,7 +1913,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BCH from a virtual account to the blockchain
      *
@@ -2149,12 +1923,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBchKeyPair($transfer_bch_key_pair) { 
+    public function transferBchKeyPair($transfer_bch_key_pair) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bcash/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2165,7 +1938,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BCH from a virtual account to the blockchain
      *
@@ -2175,12 +1948,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBchMnemonic($transfer_bch_mnemonic) { 
+    public function transferBchMnemonic($transfer_bch_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bcash/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2191,7 +1963,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BNB from a virtual account to the blockchain
      *
@@ -2201,12 +1973,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBnb($transfer_bnb) { 
+    public function transferBnb($transfer_bnb) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bnb/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2217,7 +1988,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BNB from a virtual account to the blockchain
      *
@@ -2227,12 +1998,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBnbKMS($transfer_bnb_kms) { 
+    public function transferBnbKMS($transfer_bnb_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bnb/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2243,7 +2013,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BSC from a virtual account to the blockchain
      *
@@ -2253,12 +2023,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBsc($transfer_bsc) { 
+    public function transferBsc($transfer_bsc) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2269,7 +2038,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BSC from a virtual account to the blockchain
      *
@@ -2279,12 +2048,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBscKMS($transfer_bsc_kms) { 
+    public function transferBscKMS($transfer_bsc_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2295,7 +2063,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BSC from a virtual account to the blockchain
      *
@@ -2305,12 +2073,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBscMnemonic($transfer_bsc_mnemonic) { 
+    public function transferBscMnemonic($transfer_bsc_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bsc/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2321,7 +2088,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BTC from a virtual account to the blockchain
      *
@@ -2331,12 +2098,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBtcKMS($transfer_btc_kms) { 
+    public function transferBtcKMS($transfer_btc_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bitcoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2347,7 +2113,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BTC from a virtual account to the blockchain
      *
@@ -2357,12 +2123,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBtcKeyPair($transfer_btc_key_pair) { 
+    public function transferBtcKeyPair($transfer_btc_key_pair) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bitcoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2373,7 +2138,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BTC from a virtual account to the blockchain
      *
@@ -2383,12 +2148,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferBtcMnemonic($transfer_btc_mnemonic) { 
+    public function transferBtcMnemonic($transfer_btc_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/bitcoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2399,7 +2163,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send CELO from a virtual account to the blockchain
      *
@@ -2409,12 +2173,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferCelo($transfer_celo) { 
+    public function transferCelo($transfer_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2425,7 +2188,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send CELO from a virtual account to the blockchain
      *
@@ -2435,12 +2198,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferCeloKMS($transfer_celo_kms) { 
+    public function transferCeloKMS($transfer_celo_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2451,7 +2213,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send CELO from a virtual account to the blockchain
      *
@@ -2461,12 +2223,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferCeloMnemonic($transfer_celo_mnemonic) { 
+    public function transferCeloMnemonic($transfer_celo_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/celo/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2477,7 +2238,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send DOGE from a virtual account to the blockchain
      *
@@ -2487,12 +2248,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferDogeKMS($transfer_doge_kms) { 
+    public function transferDogeKMS($transfer_doge_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/dogecoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2503,7 +2263,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send DOGE from a virtual account to the blockchain
      *
@@ -2513,12 +2273,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferDogeKeyPair($transfer_doge_key_pair) { 
+    public function transferDogeKeyPair($transfer_doge_key_pair) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/dogecoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2529,7 +2288,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send DOGE from a virtual account to the blockchain
      *
@@ -2539,12 +2298,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferDogeMnemonic($transfer_doge_mnemonic) { 
+    public function transferDogeMnemonic($transfer_doge_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/dogecoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2555,7 +2313,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
      *
@@ -2565,12 +2323,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferErc20($transfer_erc20) { 
+    public function transferErc20($transfer_erc20) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2581,7 +2338,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
      *
@@ -2591,12 +2348,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferErc20KMS($transfer_erc20_kms) { 
+    public function transferErc20KMS($transfer_erc20_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2607,7 +2363,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send Ethereum ERC-20 tokens from a virtual account to the blockchain
      *
@@ -2617,12 +2373,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferErc20Mnemonic($transfer_erc20_mnemonic) { 
+    public function transferErc20Mnemonic($transfer_erc20_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/erc20/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2633,7 +2388,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send ETH from a virtual account to the blockchain
      *
@@ -2643,12 +2398,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferEth($transfer_eth) { 
+    public function transferEth($transfer_eth) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2659,7 +2413,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send ETH from a virtual account to the blockchain
      *
@@ -2669,12 +2423,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferEthKMS($transfer_eth_kms) { 
+    public function transferEthKMS($transfer_eth_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2685,7 +2438,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send ETH from a virtual account to the blockchain
      *
@@ -2695,12 +2448,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferEthMnemonic($transfer_eth_mnemonic) { 
+    public function transferEthMnemonic($transfer_eth_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/ethereum/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2711,7 +2463,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send FLOW from a virtual account to the blockchain
      *
@@ -2721,12 +2473,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferFlowKMS($transfer_flow_kms) { 
+    public function transferFlowKMS($transfer_flow_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/flow/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2737,7 +2488,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send FLOW from a virtual account to the blockchain
      *
@@ -2747,12 +2498,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferFlowMnemonic($transfer_flow_mnemonic) { 
+    public function transferFlowMnemonic($transfer_flow_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/flow/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2763,7 +2513,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send FLOW from a virtual account to the blockchain
      *
@@ -2773,12 +2523,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferFlowPK($transfer_flow_pk) { 
+    public function transferFlowPK($transfer_flow_pk) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/flow/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2789,7 +2538,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send KCS from a virtual account to the blockchain
      *
@@ -2799,12 +2548,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferKCS($transfer_kcs) { 
+    public function transferKCS($transfer_kcs) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2815,7 +2563,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send KCS from a virtual account to the blockchain
      *
@@ -2825,12 +2573,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferKCSKMS($transfer_kcskms) { 
+    public function transferKCSKMS($transfer_kcskms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2841,7 +2588,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send KCS from a virtual account to the blockchain
      *
@@ -2851,12 +2598,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferKCSMnemonic($transfer_kcs_mnemonic) { 
+    public function transferKCSMnemonic($transfer_kcs_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/kcs/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2867,7 +2613,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send LTC from a virtual account to the blockchain
      *
@@ -2877,12 +2623,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferLtcKMS($transfer_ltc_kms) { 
+    public function transferLtcKMS($transfer_ltc_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/litecoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2893,7 +2638,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send LTC from a virtual account to the blockchain
      *
@@ -2903,12 +2648,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferLtcKeyPair($transfer_ltc_key_pair) { 
+    public function transferLtcKeyPair($transfer_ltc_key_pair) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/litecoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2919,7 +2663,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send LTC from a virtual account to the blockchain
      *
@@ -2929,12 +2673,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferLtcMnemonic($transfer_ltc_mnemonic) { 
+    public function transferLtcMnemonic($transfer_ltc_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/litecoin/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2945,7 +2688,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send SOL from a virtual account to the blockchain
      *
@@ -2955,12 +2698,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferSol($transfer_sol) { 
+    public function transferSol($transfer_sol) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/solana/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2971,7 +2713,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send SOL from a virtual account to the blockchain
      *
@@ -2981,12 +2723,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferSolKMS($transfer_sol_kms) { 
+    public function transferSolKMS($transfer_sol_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/solana/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -2997,7 +2738,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send TRON from a virtual account to the blockchain
      *
@@ -3007,12 +2748,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferTron($transfer_tron) { 
+    public function transferTron($transfer_tron) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3023,7 +2763,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send TRON from a virtual account to the blockchain
      *
@@ -3033,12 +2773,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferTronKMS($transfer_tron_kms) { 
+    public function transferTronKMS($transfer_tron_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3049,7 +2788,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send TRON from a virtual account to the blockchain
      *
@@ -3059,12 +2798,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferTronMnemonic($transfer_tron_mnemonic) { 
+    public function transferTronMnemonic($transfer_tron_mnemonic) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3075,7 +2813,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send XLM from a virtual account to the blockchain
      *
@@ -3085,12 +2823,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferXlm($transfer_xlm) { 
+    public function transferXlm($transfer_xlm) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xlm/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3101,7 +2838,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send XLM from a virtual account to the blockchain
      *
@@ -3111,12 +2848,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferXlmKMS($transfer_xlm_kms) { 
+    public function transferXlmKMS($transfer_xlm_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xlm/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3127,7 +2863,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send XRP from a virtual account to the blockchain
      *
@@ -3137,12 +2873,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferXrp($transfer_xrp) { 
+    public function transferXrp($transfer_xrp) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xrp/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3153,7 +2888,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send XRP from a virtual account to the blockchain
      *
@@ -3163,12 +2898,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransferBtcMnemonic200Response
      */
-    public function transferXrpKMS($transfer_xrp_kms) { 
+    public function transferXrpKMS($transfer_xrp_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xrp/transfer";
-
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3179,7 +2913,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Register a new TRON TRC-10 or TRC-20 token in the virtual account
      *
@@ -3189,12 +2923,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trc20Response
      */
-    public function trcAddress($trc_address) { 
+    public function trcAddress($trc_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/trc";
-
         /** @var \Tatum\Model\Trc20Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3205,7 +2938,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Register a new TRON TRC-10 or TRC-20 token in the virtual account
      *
@@ -3215,12 +2948,11 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Trc20Response
      */
-    public function trcXpub($trc_xpub) { 
+    public function trcXpub($trc_xpub) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/tron/trc";
-
         /** @var \Tatum\Model\Trc20Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -3231,7 +2963,7 @@ class BlockchainOperationsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Create an XLM-based asset
      *
@@ -3241,19 +2973,18 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function xlmAssetOffchain($create_xlm_asset) { 
+    public function xlmAssetOffchain($create_xlm_asset) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xlm/asset";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_xlm_asset
             )
         );
     }
-
+    
     /**
      * Create XRP based Asset
      *
@@ -3263,17 +2994,16 @@ class BlockchainOperationsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function xrpAssetOffchain($create_xrp_asset) { 
+    public function xrpAssetOffchain($create_xrp_asset) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/xrp/asset";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_xrp_asset
             )
         );
     }
-
+    
 }

@@ -9,6 +9,7 @@ layout: page
 [Withdrawal API Reference](https://apidoc.tatum.io/tag/Withdrawal/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

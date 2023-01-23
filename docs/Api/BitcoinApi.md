@@ -9,6 +9,7 @@ layout: page
 [Bitcoin API Reference](https://apidoc.tatum.io/tag/Bitcoin/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -34,7 +35,7 @@ Method | Description
 [**btcGetRawTransaction()**](#btcgetrawtransaction) | Get a Bitcoin transaction by its hash
 [**btcGetTxByAddress()**](#btcgettxbyaddress) | Get all transactions for a Bitcoin address
 [**btcGetUTXO()**](#btcgetutxo) | Get information about a transaction output (UTXO) in a Bitcoin transaction
-[**btcRpcDriver()**](#btcrpcdriver) | Connect to a Bitcoin node through an RPC driver
+[**~~btcRpcDriver()~~**](#btcrpcdriver) | (`deprecated`)
 [**btcTransactionFromAddress()**](#btctransactionfromaddress) | Send BTC to Bitcoin addresses
 [**btcTransactionFromAddressKMS()**](#btctransactionfromaddresskms) | Send BTC to Bitcoin addresses
 [**btcTransactionFromUTXO()**](#btctransactionfromutxo) | Send BTC to Bitcoin addresses
@@ -513,43 +514,16 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 
 
 
-## `btcRpcDriver()`
+## ~~`btcRpcDriver()`~~
 
-> **POST** `/v3/bitcoin/node`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/bitcoin/node`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcRpcDriver(
-    \Tatum\Model\BtcRpcDriverRequest $btc_rpc_driver_request
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$btc_rpc_driver_request** | [**\Tatum\Model\BtcRpcDriverRequest**](../../Model/BtcRpcDriverRequest) |  |
-
-### Return type
-
-**object**
-
-### Description
-
-Connect to a Bitcoin node through an RPC driver
-
-This endpoint is deprecated. Do not use it.
-
- Instead, use <a href="https://apidoc.tatum.io/tag/Node-RPC#operation/NodeJsonPostRpcDriver" target="_blank">this API</a>.**
-
- **2 credits per API call**
-
- Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum. To learn more about JSON RPC, visit the <a href="https://developer.bitcoin.org/reference/rpc/index.html" target="_blank">Bitcoin developers' guide</a>.
-
-### Example
-
-[✨ View "btcRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinApi/btcRpcDriver.php)
 
 [Back to top](#top)
 

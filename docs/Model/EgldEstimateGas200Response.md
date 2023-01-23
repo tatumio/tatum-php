@@ -8,6 +8,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getGasLimit()** | **float** | Gas limit for transaction in gas price. |
-**getGasPrice()** | **float** | Gas price. |
+**getGasPrice()** | **float** | The estimated price for one gas unit |
+**getGasLimit()** | **float** | The number of the gas units needed to process the transaction at the estimated gas price |
 

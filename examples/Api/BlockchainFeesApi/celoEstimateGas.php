@@ -36,7 +36,7 @@ try {
     /**
      * POST /v3/celo/gas
      * 
-     * @var \Tatum\Model\CeloEstimateGas200Response $response
+     * @var \Tatum\Model\GasEstimated $response
      */
     $response = $sdk->mainnet()
         ->api()

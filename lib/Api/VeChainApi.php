@@ -31,12 +31,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function transferVetBlockchain($transfer_vet_blockchain) { 
+    public function transferVetBlockchain($transfer_vet_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/vet/transaction";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send VeChain from account to account
      *
@@ -57,12 +56,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function transferVetBlockchainKMS($transfer_vet_blockchain_kms) { 
+    public function transferVetBlockchainKMS($transfer_vet_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/vet/transaction";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -73,7 +71,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Broadcast signed VeChain transaction
      *
@@ -83,12 +81,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function vetBroadcast($broadcast_kms) { 
+    public function vetBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/vet/broadcast";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -99,7 +96,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate VeChain account address from Extended public key
      *
@@ -110,12 +107,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\VetGenerateAddress200Response
      */
-    public function vetGenerateAddress($xpub, $index) { 
+    public function vetGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/vet/address/{xpub}/{index}";
-
         /** @var \Tatum\Model\VetGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -126,7 +122,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate VeChain private key
      *
@@ -136,12 +132,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function vetGenerateAddressPrivateKey($priv_key_request) { 
+    public function vetGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/vet/wallet/priv";
-
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
@@ -152,7 +147,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate VeChain wallet
      *
@@ -162,7 +157,7 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function vetGenerateWallet($mnemonic = null) { 
+    public function vetGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling VeChainApi.vetGenerateWallet, must be smaller than or equal to 500');
         }
@@ -171,7 +166,6 @@ class VeChainApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/vet/wallet";
-
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
@@ -184,7 +178,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get VeChain Account balance
      *
@@ -194,12 +188,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\VetGetBalance200Response
      */
-    public function vetGetBalance($address) { 
+    public function vetGetBalance($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/vet/account/balance/{address}";
-
         /** @var \Tatum\Model\VetGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -210,7 +203,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get VeChain Block by hash
      *
@@ -220,12 +213,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\VetBlock
      */
-    public function vetGetBlock($hash) { 
+    public function vetGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/vet/block/{hash}";
-
         /** @var \Tatum\Model\VetBlock $result */
         $result = $this->exec(
             S::createRequest(
@@ -236,7 +228,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get VeChain current block
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -244,12 +236,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return float
      */
-    public function vetGetCurrentBlock() { 
+    public function vetGetCurrentBlock() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/vet/block/current";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -260,7 +251,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get VeChain Account energy (VTHO)
      *
@@ -270,12 +261,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\VetGetEnergy200Response
      */
-    public function vetGetEnergy($address) { 
+    public function vetGetEnergy($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/vet/account/energy/{address}";
-
         /** @var \Tatum\Model\VetGetEnergy200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -286,7 +276,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get VeChain Transaction
      *
@@ -296,12 +286,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\VetTx
      */
-    public function vetGetTransaction($hash) { 
+    public function vetGetTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/vet/transaction/{hash}";
-
         /** @var \Tatum\Model\VetTx $result */
         $result = $this->exec(
             S::createRequest(
@@ -312,7 +301,7 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get VeChain Transaction Receipt
      *
@@ -322,12 +311,11 @@ class VeChainApi extends AbstractApi {
      * 
      * @return \Tatum\Model\VetTxReceipt
      */
-    public function vetGetTransactionReceipt($hash) { 
+    public function vetGetTransactionReceipt($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/vet/transaction/{hash}/receipt";
-
         /** @var \Tatum\Model\VetTxReceipt $result */
         $result = $this->exec(
             S::createRequest(
@@ -338,5 +326,5 @@ class VeChainApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

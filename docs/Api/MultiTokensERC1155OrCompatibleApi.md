@@ -9,6 +9,7 @@ layout: page
 [Multi Tokens (ERC-1155 or compatible) API Reference](https://apidoc.tatum.io/tag/Multi-Tokens-(ERC-1155-or-compatible)/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -47,7 +48,7 @@ Method | Description
 [**multiTokenGetAddressBalance()**](#multitokengetaddressbalance) | Get all Multi Tokens that a blockchain address holds
 [**multiTokenGetBalance()**](#multitokengetbalance) | Get the amount of a specific MultiToken that a blockchain address holds
 [**multiTokenGetBalanceBatch()**](#multitokengetbalancebatch) | Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
-[**multiTokenGetContractAddress()**](#multitokengetcontractaddress) | Get the address of a Multi Token smart contract by its transaction hash
+[**~~multiTokenGetContractAddress()~~**](#multitokengetcontractaddress) | (`deprecated`)
 [**multiTokenGetMetadata()**](#multitokengetmetadata) | Get Multi Token metadata
 [**multiTokenGetTransaction()**](#multitokengettransaction) | Get a Multi Token transaction by its hash
 [**multiTokenGetTransactionByAddress()**](#multitokengettransactionbyaddress) | Get Multi Token transactions on a blockchain address
@@ -1145,53 +1146,16 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 
 
-## `multiTokenGetContractAddress()`
+## ~~`multiTokenGetContractAddress()`~~
 
-> **GET** `/v3/multitoken/address/{chain}/{hash}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/multitoken/address/{chain}/{hash}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->multiTokensERC1155OrCompatible()->multiTokenGetContractAddress(
-    string $chain,
-    string $hash,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\MultiTokenGetContractAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**  | Blockchain to work with |
- **$hash** | **string**  | Transaction hash |
- **$x_testnet_type** | **string**  | Type of testnet. Defaults to Sepolia. Valid only for ETH invocations. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\MultiTokenGetContractAddress200Response**](../../Model/MultiTokenGetContractAddress200Response)
-
-### Description
-
-Get the address of a Multi Token smart contract by its transaction hash
-
-This endpoint is deprecated. Do not use it.
-
- Instead, use <a href="https://apidoc.tatum.io/tag/Blockchain-utils#operation/SCGetContractAddress" target="_blank">this API</a>.**
-
- **1 credit per API call**
-
- Get Multi Token contract address from deploy transaction.
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
-
-### Example
-
-[✨ View "multiTokenGetContractAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetContractAddress.php)
 
 [Back to top](#top)
 

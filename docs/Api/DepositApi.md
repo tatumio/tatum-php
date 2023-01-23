@@ -9,6 +9,7 @@ layout: page
 [Deposit API Reference](https://apidoc.tatum.io/tag/Deposit/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

@@ -7,6 +7,7 @@ layout: page
 # Local/Wallet/Dogecoin
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet Local/Wallet/Dogecoin

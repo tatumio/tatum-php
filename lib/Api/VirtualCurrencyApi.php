@@ -31,12 +31,11 @@ class VirtualCurrencyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Account
      */
-    public function createCurrency($virtual_currency) { 
+    public function createCurrency($virtual_currency) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/ledger/virtualCurrency";
-
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class VirtualCurrencyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get virtual currency
      *
@@ -57,7 +56,7 @@ class VirtualCurrencyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\VC
      */
-    public function getCurrency($name) { 
+    public function getCurrency($name) {
         if (strlen($name) > 100) {
             throw new IAE('Invalid length for "$name" when calling VirtualCurrencyApi.getCurrency, must be smaller than or equal to 100');
         }
@@ -70,7 +69,6 @@ class VirtualCurrencyApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/virtualCurrency/{name}";
-
         /** @var \Tatum\Model\VC $result */
         $result = $this->exec(
             S::createRequest(
@@ -81,7 +79,7 @@ class VirtualCurrencyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Create new supply of virtual currency
      *
@@ -91,12 +89,11 @@ class VirtualCurrencyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionResult
      */
-    public function mintCurrency($virtual_currency_operation) { 
+    public function mintCurrency($virtual_currency_operation) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/ledger/virtualCurrency/mint";
-
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
@@ -107,7 +104,7 @@ class VirtualCurrencyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Destroy supply of virtual currency
      *
@@ -117,12 +114,11 @@ class VirtualCurrencyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionResult
      */
-    public function revokeCurrency($virtual_currency_operation) { 
+    public function revokeCurrency($virtual_currency_operation) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/ledger/virtualCurrency/revoke";
-
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
@@ -133,7 +129,7 @@ class VirtualCurrencyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Update virtual currency
      *
@@ -143,17 +139,16 @@ class VirtualCurrencyApi extends AbstractApi {
      * 
      * @return void
      */
-    public function updateCurrency($virtual_currency_update) { 
+    public function updateCurrency($virtual_currency_update) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/ledger/virtualCurrency";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $virtual_currency_update
             )
         );
     }
-
+    
 }

@@ -24,8 +24,8 @@ class EgldEstimateGas200Response extends AbstractModel {
     public const _D = null;
     protected static $_name = "EgldEstimateGas_200_response";
     protected static $_definition = [
-        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null, ["r" => 1]], 
-        "gas_price" => ["gasPrice", "float", null, "getGasPrice", "setGasPrice", null, ["r" => 1]]
+        "gas_price" => ["gasPrice", "float", null, "getGasPrice", "setGasPrice", null, ["r" => 1]], 
+        "gas_limit" => ["gasLimit", "float", null, "getGasLimit", "setGasLimit", null, ["r" => 1]]
     ];
 
     /**
@@ -41,26 +41,6 @@ class EgldEstimateGas200Response extends AbstractModel {
 
 
     /**
-     * Get gas_limit
-     *
-     * @return float
-     */
-    public function getGasLimit(): float {
-        return $this->_data["gas_limit"];
-    }
-
-    /**
-     * Set gas_limit
-     * 
-     * @param float $gas_limit Gas limit for transaction in gas price.
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setGasLimit(float $gas_limit) {
-        return $this->_set("gas_limit", $gas_limit);
-    }
-
-    /**
      * Get gas_price
      *
      * @return float
@@ -72,11 +52,31 @@ class EgldEstimateGas200Response extends AbstractModel {
     /**
      * Set gas_price
      * 
-     * @param float $gas_price Gas price.
+     * @param float $gas_price The estimated price for one gas unit
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setGasPrice(float $gas_price) {
         return $this->_set("gas_price", $gas_price);
+    }
+
+    /**
+     * Get gas_limit
+     *
+     * @return float
+     */
+    public function getGasLimit(): float {
+        return $this->_data["gas_limit"];
+    }
+
+    /**
+     * Set gas_limit
+     * 
+     * @param float $gas_limit The number of the gas units needed to process the transaction at the estimated gas price
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setGasLimit(float $gas_limit) {
+        return $this->_set("gas_limit", $gas_limit);
     }
 }

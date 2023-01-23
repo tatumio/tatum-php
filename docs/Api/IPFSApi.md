@@ -9,6 +9,7 @@ layout: page
 [IPFS API Reference](https://apidoc.tatum.io/tag/IPFS/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

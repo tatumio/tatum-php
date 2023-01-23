@@ -31,12 +31,11 @@ class CustodialManagedWalletsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CustodialManagedAddress
      */
-    public function custodialCreateWallet($custodial_create_wallet_request = null) { 
+    public function custodialCreateWallet($custodial_create_wallet_request = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/custodial/wallet";
-
         /** @var \Tatum\Model\CustodialManagedAddress $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Delete managed address
      *
@@ -57,35 +56,33 @@ class CustodialManagedWalletsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function custodialDeleteWallet($id) { 
+    public function custodialDeleteWallet($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/custodial/wallet/{id}";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * Get managed address
      *
      * @param string $id WalletID of the managed address
-     * @param bool|false $export If set to \"true\", returns the private key in the response; if not set, defaults to \"false\" (the private key is not included in the response)
+     * @param bool|false $export If set to \&quot;true\&quot;, returns the private key in the response; if not set, defaults to \&quot;false\&quot; (the private key is not included in the response)
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\CustodialManagedAddress[]
      */
-    public function custodialGetWallet($id, $export = false) { 
+    public function custodialGetWallet($id, $export = false) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/custodial/wallet/{id}";
-
         /** @var \Tatum\Model\CustodialManagedAddress[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -98,7 +95,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get managed addresses
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -106,12 +103,11 @@ class CustodialManagedWalletsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CustodialManagedAddress[]
      */
-    public function custodialGetWallets() { 
+    public function custodialGetWallets() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/custodial/wallet";
-
         /** @var \Tatum\Model\CustodialManagedAddress[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -122,7 +118,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Sign and transfer using managed address
      *
@@ -132,12 +128,11 @@ class CustodialManagedWalletsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function custodialTransferManagedAddress($transfer_managed_address = null) { 
+    public function custodialTransferManagedAddress($transfer_managed_address = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/custodial/transaction";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -148,5 +143,5 @@ class CustodialManagedWalletsApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

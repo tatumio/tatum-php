@@ -31,12 +31,11 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BroadcastResponse
      */
-    public function broadcastBlockchainTransaction($broadcast_withdrawal) { 
+    public function broadcastBlockchainTransaction($broadcast_withdrawal) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/withdrawal/broadcast";
-
         /** @var \Tatum\Model\BroadcastResponse $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class WithdrawalApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Cancel withdrawal
      *
@@ -58,7 +57,7 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return void
      */
-    public function cancelInProgressWithdrawal($id, $revert = true) { 
+    public function cancelInProgressWithdrawal($id, $revert = true) {
         if (strlen($id) > 24) {
             throw new IAE('Invalid length for "$id" when calling WithdrawalApi.cancelInProgressWithdrawal, must be smaller than or equal to 24');
         }
@@ -71,7 +70,6 @@ class WithdrawalApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/offchain/withdrawal/{id}";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [
@@ -80,7 +78,7 @@ class WithdrawalApi extends AbstractApi {
             )
         );
     }
-
+    
     /**
      * Complete withdrawal
      *
@@ -91,7 +89,7 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return void
      */
-    public function completeWithdrawal($id, $tx_id) { 
+    public function completeWithdrawal($id, $tx_id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling WithdrawalApi.completeWithdrawal, must be smaller than or equal to 50');
         }
@@ -112,14 +110,13 @@ class WithdrawalApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/offchain/withdrawal/{id}/{txId}";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id, "txId" => $tx_id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * Get withdrawals
      *
@@ -132,7 +129,7 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return \Tatum\Model\WithdrawalObject[]
      */
-    public function getWithdrawals($page_size, $currency = null, $status = null, $offset = null) { 
+    public function getWithdrawals($page_size, $currency = null, $status = null, $offset = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling WithdrawalApi.getWithdrawals, must be smaller than or equal to 50');
         }
@@ -153,7 +150,6 @@ class WithdrawalApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/offchain/withdrawal";
-
         /** @var \Tatum\Model\WithdrawalObject[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -169,7 +165,7 @@ class WithdrawalApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Store withdrawal
      *
@@ -179,12 +175,11 @@ class WithdrawalApi extends AbstractApi {
      * 
      * @return \Tatum\Model\WithdrawalResponse
      */
-    public function storeWithdrawal($withdrawal) { 
+    public function storeWithdrawal($withdrawal) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/offchain/withdrawal";
-
         /** @var \Tatum\Model\WithdrawalResponse $result */
         $result = $this->exec(
             S::createRequest(
@@ -195,5 +190,5 @@ class WithdrawalApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

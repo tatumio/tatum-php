@@ -23,59 +23,57 @@ use Tatum\Sdk\Serializer as S;
  */
 class BlockchainFeesApi extends AbstractApi {
     /**
-     * Estimate BNB Smart Chain transaction fees
+     * Estimate the fee for a BNB Smart Chain transaction
      *
      * @param \Tatum\Model\BscEstimateGas $bsc_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\PolygonEstimateGas200Response
+     * @return \Tatum\Model\GasEstimated
      */
-    public function bscEstimateGas($bsc_estimate_gas) { 
+    public function bscEstimateGas($bsc_estimate_gas) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/bsc/gas";
-
-        /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
+        /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $bsc_estimate_gas
             ), 
-            "\Tatum\Model\PolygonEstimateGas200Response"
+            "\Tatum\Model\GasEstimated"
         );
             
         return $result;
     }
-
+    
     /**
-     * Estimate Celo Chain transaction fees
+     * Estimate the fee for a Celo transaction
      *
      * @param \Tatum\Model\CeloEstimateGas $celo_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\CeloEstimateGas200Response
+     * @return \Tatum\Model\GasEstimated
      */
-    public function celoEstimateGas($celo_estimate_gas) { 
+    public function celoEstimateGas($celo_estimate_gas) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/celo/gas";
-
-        /** @var \Tatum\Model\CeloEstimateGas200Response $result */
+        /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $celo_estimate_gas
             ), 
-            "\Tatum\Model\CeloEstimateGas200Response"
+            "\Tatum\Model\GasEstimated"
         );
             
         return $result;
     }
-
+    
     /**
-     * Estimate EGLD transaction fees
+     * Estimate the fee for an Elrond transaction
      *
      * @param \Tatum\Model\TransactionFeeEgldBlockchain $transaction_fee_egld_blockchain 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -83,12 +81,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EgldEstimateGas200Response
      */
-    public function egldEstimateGas($transaction_fee_egld_blockchain) { 
+    public function egldEstimateGas($transaction_fee_egld_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/egld/gas";
-
         /** @var \Tatum\Model\EgldEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -99,9 +96,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate the fee for a transaction
+     * Estimate the fee for a transaction on a blockchain
      *
      * @param \Tatum\Model\EstimateFee $estimate_fee 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -109,12 +106,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFee($estimate_fee) { 
+    public function estimateFee($estimate_fee) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/estimate";
-
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -125,9 +121,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate the fee for a transaction
+     * Estimate the fee for a transaction on a blockchain
      *
      * @param \Tatum\Model\EstimateFeeBatchMintNft $estimate_fee_batch_mint_nft 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -135,12 +131,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeBatchMintNft($estimate_fee_batch_mint_nft) { 
+    public function estimateFeeBatchMintNft($estimate_fee_batch_mint_nft) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/estimate";
-
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -151,9 +146,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate the fee for a transaction
+     * Estimate the fee for a transaction on a blockchain
      *
      * @param \Tatum\Model\EstimateFeeDeployCustodialWallet $estimate_fee_deploy_custodial_wallet 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -161,12 +156,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeDeployCustodialWallet($estimate_fee_deploy_custodial_wallet) { 
+    public function estimateFeeDeployCustodialWallet($estimate_fee_deploy_custodial_wallet) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/estimate";
-
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -177,9 +171,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate the fee for a transaction
+     * Estimate the fee for a transaction on a blockchain
      *
      * @param \Tatum\Model\EstimateFeeFromAddress $estimate_fee_from_address 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -187,12 +181,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeFromAddress($estimate_fee_from_address) { 
+    public function estimateFeeFromAddress($estimate_fee_from_address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/estimate";
-
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -203,9 +196,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate the fee for a transaction
+     * Estimate the fee for a transaction on a blockchain
      *
      * @param \Tatum\Model\EstimateFeeFromUTXO $estimate_fee_from_utxo 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -213,12 +206,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeFromUTXO($estimate_fee_from_utxo) { 
+    public function estimateFeeFromUTXO($estimate_fee_from_utxo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/estimate";
-
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -229,9 +221,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate the fee for a transaction
+     * Estimate the fee for a transaction on a blockchain
      *
      * @param \Tatum\Model\EstimateFeeTransferFromCustodial $estimate_fee_transfer_from_custodial 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -239,12 +231,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeTransferFromCustodial($estimate_fee_transfer_from_custodial) { 
+    public function estimateFeeTransferFromCustodial($estimate_fee_transfer_from_custodial) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/estimate";
-
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -255,9 +246,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate Ethereum transaction fees
+     * Estimate the fee for an Ethereum transaction
      *
      * @param \Tatum\Model\EthEstimateGas $eth_estimate_gas 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -266,7 +257,7 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthGasEstimation
      */
-    public function ethEstimateGas($eth_estimate_gas, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethEstimateGas($eth_estimate_gas, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -277,7 +268,6 @@ class BlockchainFeesApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/gas";
-
         /** @var \Tatum\Model\EthGasEstimation $result */
         $result = $this->exec(
             S::createRequest(
@@ -288,9 +278,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate multiple Ethereum transaction fees
+     * Estimate the fee for multiple Ethereum transactions
      *
      * @param \Tatum\Model\EthEstimateGasArray $eth_estimate_gas_array 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -299,7 +289,7 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthGasEstimationBatch
      */
-    public function ethEstimateGasBatch($eth_estimate_gas_array, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethEstimateGasBatch($eth_estimate_gas_array, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -310,7 +300,6 @@ class BlockchainFeesApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/gas/batch";
-
         /** @var \Tatum\Model\EthGasEstimationBatch $result */
         $result = $this->exec(
             S::createRequest(
@@ -321,9 +310,9 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Get recommended blockchain fee / gas price
+     * Get the recommended fee/gas price for a blockchain
      *
      * @param string $chain Chain
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -331,12 +320,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BlockchainFee
      */
-    public function getBlockchainFee($chain) { 
+    public function getBlockchainFee($chain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/blockchain/fee/{chain}";
-
         /** @var \Tatum\Model\BlockchainFee $result */
         $result = $this->exec(
             S::createRequest(
@@ -347,35 +335,34 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate KuCoin Community Chain transaction fees
+     * Estimate the fee for a KuCoin Community Chain transaction
      *
      * @param \Tatum\Model\KcsEstimateGas $kcs_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\PolygonEstimateGas200Response
+     * @return \Tatum\Model\GasEstimated
      */
-    public function kcsEstimateGas($kcs_estimate_gas) { 
+    public function kcsEstimateGas($kcs_estimate_gas) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/kcs/gas";
-
-        /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
+        /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $kcs_estimate_gas
             ), 
-            "\Tatum\Model\PolygonEstimateGas200Response"
+            "\Tatum\Model\GasEstimated"
         );
             
         return $result;
     }
-
+    
     /**
-     * Estimate Klaytn transaction fees
+     * Estimate the fee for a Klaytn transaction
      *
      * @param \Tatum\Model\KlaytnEstimateGas $klaytn_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -383,12 +370,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KlaytnEstimateGas200Response
      */
-    public function klaytnEstimateGas($klaytn_estimate_gas) { 
+    public function klaytnEstimateGas($klaytn_estimate_gas) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/klaytn/gas";
-
         /** @var \Tatum\Model\KlaytnEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -399,35 +385,34 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate Polygon transaction fees
+     * Estimate the fee for a Polygon transaction
      *
      * @param \Tatum\Model\PolygonEstimateGas $polygon_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\PolygonEstimateGas200Response
+     * @return \Tatum\Model\GasEstimated
      */
-    public function polygonEstimateGas($polygon_estimate_gas) { 
+    public function polygonEstimateGas($polygon_estimate_gas) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/polygon/gas";
-
-        /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
+        /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $polygon_estimate_gas
             ), 
-            "\Tatum\Model\PolygonEstimateGas200Response"
+            "\Tatum\Model\GasEstimated"
         );
             
         return $result;
     }
-
+    
     /**
-     * Estimate VeChain Gas for transaction
+     * Estimate the gas needed for a VeChain transaction
      *
      * @param \Tatum\Model\VetEstimateGas $vet_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -435,12 +420,11 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return float
      */
-    public function vetEstimateGas($vet_estimate_gas) { 
+    public function vetEstimateGas($vet_estimate_gas) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/vet/transaction/gas";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -451,31 +435,30 @@ class BlockchainFeesApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
-     * Estimate XinFin transaction fees
+     * Estimate the fee for a XinFin transaction
      *
      * @param \Tatum\Model\XdcEstimateGas $xdc_estimate_gas 
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\PolygonEstimateGas200Response
+     * @return \Tatum\Model\GasEstimated
      */
-    public function xdcEstimateGas($xdc_estimate_gas) { 
+    public function xdcEstimateGas($xdc_estimate_gas) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/xdc/gas";
-
-        /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
+        /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $xdc_estimate_gas
             ), 
-            "\Tatum\Model\PolygonEstimateGas200Response"
+            "\Tatum\Model\GasEstimated"
         );
             
         return $result;
     }
-
+    
 }

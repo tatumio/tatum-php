@@ -37,12 +37,11 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonPostRpcDriver($chain, $body, $x_api_key = null, $node_type = null, $testnet_type = 'ethereum-sepolia', $chain_type = 'avax-c', $rpc_path = null) { 
+    public function nodeJsonPostRpcDriver($chain, $body, $x_api_key = null, $node_type = null, $testnet_type = 'ethereum-sepolia', $chain_type = 'avax-c', $rpc_path = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}";
-
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
@@ -57,7 +56,7 @@ class NodeRPCApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Connect to the blockchain node through an RPC driver
      *
@@ -70,12 +69,11 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonRpcGetDriver($chain, $x_api_key = null, $node_type = null, $rpc_path = null) { 
+    public function nodeJsonRpcGetDriver($chain, $x_api_key = null, $node_type = null, $rpc_path = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}";
-
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
@@ -88,7 +86,7 @@ class NodeRPCApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Connect to the blockchain node through an RPC driver
      *
@@ -102,12 +100,11 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonRpcPutDriver($chain, $body, $x_api_key = null, $node_type = null, $rpc_path = null) { 
+    public function nodeJsonRpcPutDriver($chain, $body, $x_api_key = null, $node_type = null, $rpc_path = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}";
-
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
@@ -120,5 +117,5 @@ class NodeRPCApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

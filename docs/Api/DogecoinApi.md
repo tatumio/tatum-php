@@ -9,6 +9,7 @@ layout: page
 [Dogecoin API Reference](https://apidoc.tatum.io/tag/Dogecoin/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -32,7 +33,7 @@ Method | Description
 [**dogeGetMempool()**](#dogegetmempool) | Get Mempool Transactions
 [**dogeGetRawTransaction()**](#dogegetrawtransaction) | Get Dogecoin Transaction by hash
 [**dogeGetUTXO()**](#dogegetutxo) | Get information about a transaction output (UTXO) in a Dogecoin transaction
-[**dogeRpcDriver()**](#dogerpcdriver) | JSON RPC HTTP driver
+[**~~dogeRpcDriver()~~**](#dogerpcdriver) | (`deprecated`)
 [**dogeTransactionUTXO()**](#dogetransactionutxo) | Send DOGE to Dogecoin addresses
 [**dogeTransactionUTXOKMS()**](#dogetransactionutxokms) | Send DOGE to Dogecoin addresses
 
@@ -427,41 +428,16 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 
 
 
-## `dogeRpcDriver()`
+## ~~`dogeRpcDriver()`~~
 
-> **POST** `/v3/dogecoin/node`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/dogecoin/node`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeRpcDriver(
-    \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../../Model/BchRpcDriverRequest) |  |
-
-### Return type
-
-**object**
-
-### Description
-
-JSON RPC HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum.
-
-### Example
-
-[✨ View "dogeRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeRpcDriver.php)
 
 [Back to top](#top)
 

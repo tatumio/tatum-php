@@ -9,6 +9,7 @@ layout: page
 [Auction API Reference](https://apidoc.tatum.io/tag/Auction/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

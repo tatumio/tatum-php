@@ -9,6 +9,7 @@ layout: page
 [Tron API Reference](https://apidoc.tatum.io/tag/Tron/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

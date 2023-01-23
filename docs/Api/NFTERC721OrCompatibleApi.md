@@ -9,6 +9,7 @@ layout: page
 [NFT (ERC-721 or compatible) API Reference](https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -71,7 +72,7 @@ Method | Description
 [**mintNftSolanaKMS()**](#mintnftsolanakms) | Mint an NFT
 [**mintNftTron()**](#mintnfttron) | Mint an NFT
 [**nftGetBalanceErc721()**](#nftgetbalanceerc721) | Get the NFTs from a specific smart contract that a blockchain address holds
-[**nftGetContractAddress()**](#nftgetcontractaddress) | Get the address of an NFT smart contract by its transaction hash
+[**~~nftGetContractAddress()~~**](#nftgetcontractaddress) | (`deprecated`)
 [**nftGetMetadataErc721()**](#nftgetmetadataerc721) | Get NFT metadata
 [**nftGetProvenanceDataErc721()**](#nftgetprovenancedataerc721) | Get NFT provenance information
 [**nftGetRoyaltyErc721()**](#nftgetroyaltyerc721) | Get NFT royalty information
@@ -2130,53 +2131,16 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 
 
 
-## `nftGetContractAddress()`
+## ~~`nftGetContractAddress()`~~
 
-> **GET** `/v3/nft/address/{chain}/{hash}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/nft/address/{chain}/{hash}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->nFTERC721OrCompatible()->nftGetContractAddress(
-    string $chain,
-    string $hash,
-    [ string $x_testnet_type = 'ethereum-sepolia' ]
-): \Tatum\Model\NftGetContractAddress200Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**  | The blockchain to work with |
- **$hash** | **string**  | Transaction hash |
- **$x_testnet_type** | **string**  | Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored. | [optional] [default to &#39;ethereum-sepolia&#39;]
-
-### Return type
-
-[**\Tatum\Model\NftGetContractAddress200Response**](../../Model/NftGetContractAddress200Response)
-
-### Description
-
-Get the address of an NFT smart contract by its transaction hash
-
-This endpoint is deprecated. Do not use it.
-
- Instead, use <a href="https://apidoc.tatum.io/tag/Blockchain-utils#operation/SCGetContractAddress" target="_blank">this API</a>.**
-
- **1 credit per API call**
-
- Get NFT contract address from deploy transaction.
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>TRON</li> </ul>
-
-### Example
-
-[✨ View "nftGetContractAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetContractAddress.php)
 
 [Back to top](#top)
 

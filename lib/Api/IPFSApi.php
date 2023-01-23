@@ -31,12 +31,11 @@ class IPFSApi extends AbstractApi {
      * 
      * @return \SplFileObject
      */
-    public function getIPFSData($id) { 
+    public function getIPFSData($id) {
         $rHeaders = $this->_headerSelector->selectHeaders(["*", "application/json"], []);
 
         // Path template
         $rPath = "/v3/ipfs/{id}";
-
         /** @var \SplFileObject $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class IPFSApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Store data to IPFS
      *
@@ -57,12 +56,11 @@ class IPFSApi extends AbstractApi {
      * 
      * @return \Tatum\Model\StoreIPFS200Response
      */
-    public function storeIPFS($file = null) { 
+    public function storeIPFS($file = null) {
         $rHeaders = $this->_headerSelector->selectHeadersForMultipart(["application/json"]);
 
         // Path template
         $rPath = "/v3/ipfs";
-
         /** @var \Tatum\Model\StoreIPFS200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -73,5 +71,5 @@ class IPFSApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

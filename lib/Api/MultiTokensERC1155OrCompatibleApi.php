@@ -32,7 +32,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function addMultiTokenMinter($add_multi_token_minter, $x_testnet_type = 'ethereum-sepolia') { 
+    public function addMultiTokenMinter($add_multi_token_minter, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -43,7 +43,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint/add";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -54,7 +53,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Add a Multi Token minter
      *
@@ -65,7 +64,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function addMultiTokenMinterKMS($add_multi_token_minter_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function addMultiTokenMinterKMS($add_multi_token_minter_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -76,7 +75,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint/add";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -87,7 +85,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Burn a Multi Token
      *
@@ -98,7 +96,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnMultiToken($burn_multi_token, $x_testnet_type = 'ethereum-sepolia') { 
+    public function burnMultiToken($burn_multi_token, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -109,7 +107,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/burn";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -120,7 +117,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Burn multiple Multi Tokens
      *
@@ -131,7 +128,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnMultiTokenBatch($burn_multi_token_batch, $x_testnet_type = 'ethereum-sepolia') { 
+    public function burnMultiTokenBatch($burn_multi_token_batch, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -142,7 +139,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/burn/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -153,7 +149,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Burn multiple Multi Tokens
      *
@@ -164,7 +160,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnMultiTokenBatchCelo($burn_multi_token_batch_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function burnMultiTokenBatchCelo($burn_multi_token_batch_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -175,7 +171,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/burn/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -186,7 +181,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Burn multiple Multi Tokens
      *
@@ -197,7 +192,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnMultiTokenBatchKMS($burn_multi_token_batch_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function burnMultiTokenBatchKMS($burn_multi_token_batch_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -208,7 +203,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/burn/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -219,7 +213,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Burn multiple Multi Tokens
      *
@@ -230,7 +224,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnMultiTokenBatchKMSCelo($burn_multi_token_batch_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function burnMultiTokenBatchKMSCelo($burn_multi_token_batch_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -241,7 +235,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/burn/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -252,7 +245,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Burn a Multi Token
      *
@@ -263,7 +256,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnMultiTokenCelo($burn_multi_token_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function burnMultiTokenCelo($burn_multi_token_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -274,7 +267,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/burn";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -285,7 +277,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Burn a Multi Token
      *
@@ -296,7 +288,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnMultiTokenKMS($burn_multi_token_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function burnMultiTokenKMS($burn_multi_token_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -307,7 +299,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/burn";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -318,7 +309,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Burn a Multi Token
      *
@@ -329,7 +320,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnMultiTokenKMSCelo($burn_multi_token_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function burnMultiTokenKMSCelo($burn_multi_token_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -340,7 +331,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/burn";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -351,7 +341,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Multi Token smart contract
      *
@@ -362,7 +352,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployMultiToken($deploy_multi_token, $x_testnet_type = 'ethereum-sepolia') { 
+    public function deployMultiToken($deploy_multi_token, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -373,7 +363,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/deploy";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -384,7 +373,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Multi Token smart contract
      *
@@ -395,7 +384,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployMultiTokenCelo($deploy_multi_token_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function deployMultiTokenCelo($deploy_multi_token_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -406,7 +395,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/deploy";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -417,7 +405,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Multi Token smart contract
      *
@@ -428,7 +416,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployMultiTokenCeloKMS($deploy_multi_token_celo_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function deployMultiTokenCeloKMS($deploy_multi_token_celo_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -439,7 +427,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/deploy";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -450,7 +437,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Deploy a Multi Token smart contract
      *
@@ -461,7 +448,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployMultiTokenKMS($deploy_multi_token_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function deployMultiTokenKMS($deploy_multi_token_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -472,7 +459,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/deploy";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -483,7 +469,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Mint a Multi Token
      *
@@ -494,7 +480,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function mintMultiToken($mint_multi_token, $x_testnet_type = 'ethereum-sepolia') { 
+    public function mintMultiToken($mint_multi_token, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -505,7 +491,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -516,7 +501,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Mint multiple Multi Tokens
      *
@@ -527,7 +512,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function mintMultiTokenBatch($mint_multi_token_batch, $x_testnet_type = 'ethereum-sepolia') { 
+    public function mintMultiTokenBatch($mint_multi_token_batch, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -538,7 +523,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -549,7 +533,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Mint multiple Multi Tokens
      *
@@ -560,7 +544,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function mintMultiTokenBatchCelo($mint_multi_token_batch_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function mintMultiTokenBatchCelo($mint_multi_token_batch_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -571,7 +555,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -582,7 +565,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Mint multiple Multi Tokens
      *
@@ -593,7 +576,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function mintMultiTokenBatchKMS($mint_multi_token_batch_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function mintMultiTokenBatchKMS($mint_multi_token_batch_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -604,7 +587,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -615,7 +597,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Mint multiple Multi Tokens
      *
@@ -626,7 +608,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function mintMultiTokenBatchKMSCelo($mint_multi_token_batch_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function mintMultiTokenBatchKMSCelo($mint_multi_token_batch_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -637,7 +619,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -648,7 +629,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Mint a Multi Token
      *
@@ -659,7 +640,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function mintMultiTokenCelo($mint_multi_token_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function mintMultiTokenCelo($mint_multi_token_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -670,7 +651,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -681,7 +661,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Mint a Multi Token
      *
@@ -692,7 +672,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function mintMultiTokenKMS($mint_multi_token_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function mintMultiTokenKMS($mint_multi_token_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -703,7 +683,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -714,7 +693,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Mint a Multi Token
      *
@@ -725,7 +704,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function mintMultiTokenKMSCelo($mint_multi_token_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function mintMultiTokenKMSCelo($mint_multi_token_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -736,7 +715,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/mint";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -747,7 +725,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get all Multi Tokens that a blockchain address holds
      *
@@ -759,7 +737,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]
      */
-    public function multiTokenGetAddressBalance($chain, $address, $x_testnet_type = 'ethereum-sepolia') { 
+    public function multiTokenGetAddressBalance($chain, $address, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -770,7 +748,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/address/balance/{chain}/{address}";
-
         /** @var \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -781,7 +758,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get the amount of a specific MultiToken that a blockchain address holds
      *
@@ -795,7 +772,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MultiTokenGetBalance200Response
      */
-    public function multiTokenGetBalance($chain, $address, $contract_address, $token_id, $x_testnet_type = 'ethereum-sepolia') { 
+    public function multiTokenGetBalance($chain, $address, $contract_address, $token_id, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -806,7 +783,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}";
-
         /** @var \Tatum\Model\MultiTokenGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -817,7 +793,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
      *
@@ -831,7 +807,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function multiTokenGetBalanceBatch($chain, $contract_address, $token_id, $address, $x_testnet_type = 'ethereum-sepolia') { 
+    public function multiTokenGetBalanceBatch($chain, $contract_address, $token_id, $address, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -842,7 +818,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/balance/batch/{chain}/{contractAddress}";
-
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -856,18 +831,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Get the address of a Multi Token smart contract by its transaction hash
-     *
-     * @param string $chain Blockchain to work with
-     * @param string $hash Transaction hash
-     * @param string|'ethereum-sepolia' $x_testnet_type Type of testnet. Defaults to Sepolia. Valid only for ETH invocations.
-     * 
-     * @return void
-     */
-    public function multiTokenGetContractAddress($chain, $hash, $x_testnet_type = 'ethereum-sepolia') {}
     
     /**
      * Get Multi Token metadata
@@ -881,7 +844,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MultiTokenGetMetadata200Response
      */
-    public function multiTokenGetMetadata($chain, $token, $contract_address, $x_testnet_type = 'ethereum-sepolia') { 
+    public function multiTokenGetMetadata($chain, $token, $contract_address, $x_testnet_type = 'ethereum-sepolia') {
         if (strlen($token) > 32) {
             throw new IAE('Invalid length for "$token" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetMetadata, must be smaller than or equal to 32');
         }
@@ -896,7 +859,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/metadata/{chain}/{contractAddress}/{token}";
-
         /** @var \Tatum\Model\MultiTokenGetMetadata200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -907,7 +869,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get a Multi Token transaction by its hash
      *
@@ -919,7 +881,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MultiTokenGetTransaction200Response
      */
-    public function multiTokenGetTransaction($chain, $hash, $x_testnet_type = 'ethereum-sepolia') { 
+    public function multiTokenGetTransaction($chain, $hash, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -930,7 +892,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction/{chain}/{hash}";
-
         /** @var \Tatum\Model\MultiTokenGetTransaction200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -941,7 +902,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Multi Token transactions on a blockchain address
      *
@@ -957,7 +918,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[]
      */
-    public function multiTokenGetTransactionByAddress($chain, $address, $token_address, $page_size, $offset = null, $from = null, $to = null) { 
+    public function multiTokenGetTransactionByAddress($chain, $address, $token_address, $page_size, $offset = null, $from = null, $to = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling MultiTokensERC1155OrCompatibleApi.multiTokenGetTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -978,7 +939,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}";
-
         /** @var \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -994,7 +954,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer a Multi Token
      *
@@ -1005,7 +965,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferMultiToken($transfer_multi_token, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferMultiToken($transfer_multi_token, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1016,7 +976,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -1027,7 +986,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple Multi Tokens
      *
@@ -1038,7 +997,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferMultiTokenBatch($transfer_multi_token_batch, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferMultiTokenBatch($transfer_multi_token_batch, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1049,7 +1008,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -1060,7 +1018,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple Multi Tokens
      *
@@ -1071,7 +1029,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferMultiTokenBatchCelo($transfer_multi_token_batch_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferMultiTokenBatchCelo($transfer_multi_token_batch_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1082,7 +1040,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -1093,7 +1050,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple Multi Tokens
      *
@@ -1104,7 +1061,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferMultiTokenBatchKMS($transfer_multi_token_batch_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferMultiTokenBatchKMS($transfer_multi_token_batch_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1115,7 +1072,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -1126,7 +1082,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer multiple Multi Tokens
      *
@@ -1137,7 +1093,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferMultiTokenBatchKMSCelo($transfer_multi_token_batch_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferMultiTokenBatchKMSCelo($transfer_multi_token_batch_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1148,7 +1104,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction/batch";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -1159,7 +1114,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer a Multi Token
      *
@@ -1170,7 +1125,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferMultiTokenCelo($transfer_multi_token_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferMultiTokenCelo($transfer_multi_token_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1181,7 +1136,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -1192,7 +1146,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer a Multi Token
      *
@@ -1203,7 +1157,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferMultiTokenKMS($transfer_multi_token_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferMultiTokenKMS($transfer_multi_token_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1214,7 +1168,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -1225,7 +1178,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transfer a Multi Token
      *
@@ -1236,7 +1189,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferMultiTokenKMSCelo($transfer_multi_token_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferMultiTokenKMSCelo($transfer_multi_token_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1247,7 +1200,6 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/multitoken/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -1258,5 +1210,5 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

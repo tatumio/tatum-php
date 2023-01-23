@@ -31,12 +31,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callKlaytnSmartContractMethod($call_klaytn_smart_contract_method) { 
+    public function callKlaytnSmartContractMethod($call_klaytn_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/klaytn/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on Klaytn
      *
@@ -57,12 +56,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callKlaytnSmartContractMethodKMS($call_klaytn_smart_contract_method_kms) { 
+    public function callKlaytnSmartContractMethodKMS($call_klaytn_smart_contract_method_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/klaytn/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -73,7 +71,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on Klaytn
      *
@@ -83,12 +81,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callKlaytnSmartContractReadMethod($call_klaytn_smart_contract_read_method) { 
+    public function callKlaytnSmartContractReadMethod($call_klaytn_smart_contract_read_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/klaytn/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -99,7 +96,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Broadcast signed Klaytn transaction
      *
@@ -109,12 +106,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function klaytnBroadcast($broadcast_kms) { 
+    public function klaytnBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/klaytn/broadcast";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -125,7 +121,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Klaytn account address from Extended public key
      *
@@ -136,12 +132,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KlaytnGenerateAddress200Response
      */
-    public function klaytnGenerateAddress($xpub, $index) { 
+    public function klaytnGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/klaytn/address/{xpub}/{index}";
-
         /** @var \Tatum\Model\KlaytnGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -152,7 +147,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Klaytn private key
      *
@@ -162,12 +157,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function klaytnGenerateAddressPrivateKey($priv_key_request) { 
+    public function klaytnGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/klaytn/wallet/priv";
-
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
@@ -178,7 +172,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Klaytn wallet
      *
@@ -188,7 +182,7 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function klaytnGenerateWallet($mnemonic = null) { 
+    public function klaytnGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling KlaytnApi.klaytnGenerateWallet, must be smaller than or equal to 500');
         }
@@ -197,7 +191,6 @@ class KlaytnApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/klaytn/wallet";
-
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
@@ -210,7 +203,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Klaytn Account balance
      *
@@ -220,12 +213,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KlaytnGetBalance200Response
      */
-    public function klaytnGetBalance($address) { 
+    public function klaytnGetBalance($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/klaytn/account/balance/{address}";
-
         /** @var \Tatum\Model\KlaytnGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -236,7 +228,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Klaytn block by hash
      *
@@ -246,12 +238,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KlaytnBlock
      */
-    public function klaytnGetBlock($hash) { 
+    public function klaytnGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/klaytn/block/{hash}";
-
         /** @var \Tatum\Model\KlaytnBlock $result */
         $result = $this->exec(
             S::createRequest(
@@ -262,7 +253,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get current block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -270,12 +261,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return float
      */
-    public function klaytnGetCurrentBlock() { 
+    public function klaytnGetCurrentBlock() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/klaytn/block/current";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -286,7 +276,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Klaytn Transaction
      *
@@ -296,12 +286,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KlaytnTx
      */
-    public function klaytnGetTransaction($hash) { 
+    public function klaytnGetTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/klaytn/transaction/{hash}";
-
         /** @var \Tatum\Model\KlaytnTx $result */
         $result = $this->exec(
             S::createRequest(
@@ -312,7 +301,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get count of outgoing Klaytn transactions
      *
@@ -322,7 +311,7 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return float
      */
-    public function klaytnGetTransactionCount($address) { 
+    public function klaytnGetTransactionCount($address) {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling KlaytnApi.klaytnGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -335,7 +324,6 @@ class KlaytnApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/klaytn/transaction/count/{address}";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -346,17 +334,6 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Web3 HTTP driver
-     *
-     * @param string $x_api_key Tatum X-API-Key used for authorization.
-     * @param object $body 
-     * 
-     * @return void
-     */
-    public function klaytnWeb3Driver($x_api_key, $body) {}
     
     /**
      * Send KLAY from account to account
@@ -367,12 +344,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferKlaytnBlockchain($transfer_klaytn_blockchain) { 
+    public function transferKlaytnBlockchain($transfer_klaytn_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/klaytn/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -383,7 +359,7 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send KLAY from account to account
      *
@@ -393,12 +369,11 @@ class KlaytnApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferKlaytnBlockchainKMS($transfer_klaytn_blockchain_kms) { 
+    public function transferKlaytnBlockchainKMS($transfer_klaytn_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/klaytn/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -409,5 +384,5 @@ class KlaytnApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

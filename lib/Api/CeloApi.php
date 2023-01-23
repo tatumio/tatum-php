@@ -31,12 +31,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callCeloReadSmartContractMethod($call_celo_read_smart_contract_method) { 
+    public function callCeloReadSmartContractMethod($call_celo_read_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/celo/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on Celo
      *
@@ -57,12 +56,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callCeloSmartContractMethod($call_celo_smart_contract_method) { 
+    public function callCeloSmartContractMethod($call_celo_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/celo/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -73,7 +71,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on Celo
      *
@@ -83,12 +81,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callCeloSmartContractMethodKMS($call_celo_smart_contract_method_kms) { 
+    public function callCeloSmartContractMethodKMS($call_celo_smart_contract_method_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/celo/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -99,7 +96,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Broadcast signed Celo transaction
      *
@@ -109,12 +106,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function celoBroadcast($broadcast_kms) { 
+    public function celoBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/celo/broadcast";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -125,7 +121,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Celo account address from Extended public key
      *
@@ -136,12 +132,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloGenerateAddress200Response
      */
-    public function celoGenerateAddress($xpub, $index) { 
+    public function celoGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/celo/address/{xpub}/{index}";
-
         /** @var \Tatum\Model\CeloGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -152,7 +147,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Celo private key
      *
@@ -162,12 +157,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function celoGenerateAddressPrivateKey($priv_key_request) { 
+    public function celoGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/celo/wallet/priv";
-
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
@@ -178,7 +172,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Celo wallet
      *
@@ -188,7 +182,7 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function celoGenerateWallet($mnemonic = null) { 
+    public function celoGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling CeloApi.celoGenerateWallet, must be smaller than or equal to 500');
         }
@@ -197,7 +191,6 @@ class CeloApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/celo/wallet";
-
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
@@ -210,7 +203,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Celo Account balance
      *
@@ -220,12 +213,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloGetBalance200Response
      */
-    public function celoGetBalance($address) { 
+    public function celoGetBalance($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/celo/account/balance/{address}";
-
         /** @var \Tatum\Model\CeloGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -236,7 +228,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Celo block by hash
      *
@@ -246,12 +238,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloBlock
      */
-    public function celoGetBlock($hash) { 
+    public function celoGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/celo/block/{hash}";
-
         /** @var \Tatum\Model\CeloBlock $result */
         $result = $this->exec(
             S::createRequest(
@@ -262,7 +253,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get current block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -270,12 +261,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return float
      */
-    public function celoGetCurrentBlock() { 
+    public function celoGetCurrentBlock() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/celo/block/current";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -286,7 +276,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Celo Transaction
      *
@@ -296,12 +286,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloTx
      */
-    public function celoGetTransaction($hash) { 
+    public function celoGetTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/celo/transaction/{hash}";
-
         /** @var \Tatum\Model\CeloTx $result */
         $result = $this->exec(
             S::createRequest(
@@ -312,7 +301,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Celo transactions by address
      *
@@ -327,7 +316,7 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloTx[]
      */
-    public function celoGetTransactionByAddress($address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC') { 
+    public function celoGetTransactionByAddress($address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC') {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling CeloApi.celoGetTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -348,7 +337,6 @@ class CeloApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/celo/account/transaction/{address}";
-
         /** @var \Tatum\Model\CeloTx[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -365,7 +353,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get count of outgoing Celo transactions
      *
@@ -375,7 +363,7 @@ class CeloApi extends AbstractApi {
      * 
      * @return float
      */
-    public function celoGetTransactionCount($address) { 
+    public function celoGetTransactionCount($address) {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling CeloApi.celoGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -388,7 +376,6 @@ class CeloApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/celo/transaction/count/{address}";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -399,17 +386,6 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Web3 HTTP driver
-     *
-     * @param string $x_api_key Tatum X-API-Key used for authorization.
-     * @param object $body 
-     * 
-     * @return void
-     */
-    public function celoWeb3Driver($x_api_key, $body) {}
     
     /**
      * Send Celo / ERC20 from account to account
@@ -420,12 +396,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCeloBlockchain($transfer_celo_blockchain) { 
+    public function transferCeloBlockchain($transfer_celo_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/celo/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -436,7 +411,7 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send Celo / ERC20 from account to account
      *
@@ -446,12 +421,11 @@ class CeloApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferCeloBlockchainKMS($transfer_celo_blockchain_kms) { 
+    public function transferCeloBlockchainKMS($transfer_celo_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/celo/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -462,5 +436,5 @@ class CeloApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

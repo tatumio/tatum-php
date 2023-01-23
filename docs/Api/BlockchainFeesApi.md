@@ -9,6 +9,7 @@ layout: page
 [Blockchain fees API Reference](https://apidoc.tatum.io/tag/Blockchain-fees/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -22,23 +23,23 @@ $sdk->testnet()->api()->blockchainFees();
 
 Method | Description
 ------------- | -------------
-[**bscEstimateGas()**](#bscestimategas) | Estimate BNB Smart Chain transaction fees
-[**celoEstimateGas()**](#celoestimategas) | Estimate Celo Chain transaction fees
-[**egldEstimateGas()**](#egldestimategas) | Estimate EGLD transaction fees
-[**estimateFee()**](#estimatefee) | Estimate the fee for a transaction
-[**estimateFeeBatchMintNft()**](#estimatefeebatchmintnft) | Estimate the fee for a transaction
-[**estimateFeeDeployCustodialWallet()**](#estimatefeedeploycustodialwallet) | Estimate the fee for a transaction
-[**estimateFeeFromAddress()**](#estimatefeefromaddress) | Estimate the fee for a transaction
-[**estimateFeeFromUTXO()**](#estimatefeefromutxo) | Estimate the fee for a transaction
-[**estimateFeeTransferFromCustodial()**](#estimatefeetransferfromcustodial) | Estimate the fee for a transaction
-[**ethEstimateGas()**](#ethestimategas) | Estimate Ethereum transaction fees
-[**ethEstimateGasBatch()**](#ethestimategasbatch) | Estimate multiple Ethereum transaction fees
-[**getBlockchainFee()**](#getblockchainfee) | Get recommended blockchain fee / gas price
-[**kcsEstimateGas()**](#kcsestimategas) | Estimate KuCoin Community Chain transaction fees
-[**klaytnEstimateGas()**](#klaytnestimategas) | Estimate Klaytn transaction fees
-[**polygonEstimateGas()**](#polygonestimategas) | Estimate Polygon transaction fees
-[**vetEstimateGas()**](#vetestimategas) | Estimate VeChain Gas for transaction
-[**xdcEstimateGas()**](#xdcestimategas) | Estimate XinFin transaction fees
+[**bscEstimateGas()**](#bscestimategas) | Estimate the fee for a BNB Smart Chain transaction
+[**celoEstimateGas()**](#celoestimategas) | Estimate the fee for a Celo transaction
+[**egldEstimateGas()**](#egldestimategas) | Estimate the fee for an Elrond transaction
+[**estimateFee()**](#estimatefee) | Estimate the fee for a transaction on a blockchain
+[**estimateFeeBatchMintNft()**](#estimatefeebatchmintnft) | Estimate the fee for a transaction on a blockchain
+[**estimateFeeDeployCustodialWallet()**](#estimatefeedeploycustodialwallet) | Estimate the fee for a transaction on a blockchain
+[**estimateFeeFromAddress()**](#estimatefeefromaddress) | Estimate the fee for a transaction on a blockchain
+[**estimateFeeFromUTXO()**](#estimatefeefromutxo) | Estimate the fee for a transaction on a blockchain
+[**estimateFeeTransferFromCustodial()**](#estimatefeetransferfromcustodial) | Estimate the fee for a transaction on a blockchain
+[**ethEstimateGas()**](#ethestimategas) | Estimate the fee for an Ethereum transaction
+[**ethEstimateGasBatch()**](#ethestimategasbatch) | Estimate the fee for multiple Ethereum transactions
+[**getBlockchainFee()**](#getblockchainfee) | Get the recommended fee/gas price for a blockchain
+[**kcsEstimateGas()**](#kcsestimategas) | Estimate the fee for a KuCoin Community Chain transaction
+[**klaytnEstimateGas()**](#klaytnestimategas) | Estimate the fee for a Klaytn transaction
+[**polygonEstimateGas()**](#polygonestimategas) | Estimate the fee for a Polygon transaction
+[**vetEstimateGas()**](#vetestimategas) | Estimate the gas needed for a VeChain transaction
+[**xdcEstimateGas()**](#xdcestimategas) | Estimate the fee for a XinFin transaction
 
 
 ## `bscEstimateGas()`
@@ -50,7 +51,7 @@ Method | Description
 ```php
 (new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->bscEstimateGas(
     \Tatum\Model\BscEstimateGas $bsc_estimate_gas
-): \Tatum\Model\PolygonEstimateGas200Response
+): \Tatum\Model\GasEstimated
 ```
 
 ### Parameters
@@ -61,17 +62,17 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../../Model/PolygonEstimateGas200Response)
+[**\Tatum\Model\GasEstimated**](../../Model/GasEstimated)
 
 ### Description
 
-Estimate BNB Smart Chain transaction fees
+Estimate the fee for a BNB Smart Chain transaction
 
 **2 credits per API call**
 
  Get an estimated gas price and the number of gas units needed for a BNB Smart Chain transaction. The gas price is obtained from <a href="https://explorer.bitquery.io/bsc/gas" target="_blank">https://explorer.bitquery.io/bsc/gas</a>.
 
- **NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/BNB-Smart-Chain#operation/BscBlockchainTransfer" target="_blank">making the transaction itself</a>, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/BNB-Smart-Chain#operation/BscBlockchainTransfer" target="_blank">making the transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
 
 ### Example
 
@@ -90,7 +91,7 @@ Estimate BNB Smart Chain transaction fees
 ```php
 (new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->celoEstimateGas(
     \Tatum\Model\CeloEstimateGas $celo_estimate_gas
-): \Tatum\Model\CeloEstimateGas200Response
+): \Tatum\Model\GasEstimated
 ```
 
 ### Parameters
@@ -101,17 +102,17 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\CeloEstimateGas200Response**](../../Model/CeloEstimateGas200Response)
+[**\Tatum\Model\GasEstimated**](../../Model/GasEstimated)
 
 ### Description
 
-Estimate Celo Chain transaction fees
+Estimate the fee for a Celo transaction
 
 **2 credits per API call**
 
  Get an estimated gas price and the number of gas units needed for a Celo transaction. The gas price is obtained from <a href="https://explorer.bitquery.io/celo_rc1/gas" target="_blank">https://explorer.bitquery.io/celo_rc1/gas</a>.
 
- **NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/Celo#operation/CeloBlockchainTransfer" target="_blank">making the transaction itself</a>, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/Celo#operation/CeloBlockchainTransfer" target="_blank">making the transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
 
 ### Example
 
@@ -145,11 +146,11 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate EGLD transaction fees
+Estimate the fee for an Elrond transaction
 
-<h4>2 credits per API call.</h4>
+**2 credits per API call**
 
- Estimate gasLimit and gasPrice of the EGLD transaction. Gas limit is obtained from <a href="https://gateway.elrond.com/transaction/cost" target="_blank">https://gateway.elrond.com/transaction/cost</a>. Gas price is obtained from <a href="https://gateway.elrond.com/network/config" target="_blank">https://gateway.elrond.com/network/config</a>.
+ Get an estimated gas price and the number of gas units needed for an Elrond transaction. The gas price is obtained from <a href="https://gateway.elrond.com/network/config" target="_blank">https://gateway.elrond.com/network/config</a>. The gas limit is obtains from <a href="https://gateway.elrond.com/transaction/cost" target="_blank">https://gateway.elrond.com/transaction/cost</a>.
 
 ### Example
 
@@ -183,15 +184,17 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate the fee for a transaction
+Estimate the fee for a transaction on a blockchain
 
-<h4>10 credits per API call.</h4>
+**10 credits per API call**
 
- Estimate current transaction fee for different operations.
+ Estimate the current fee for different types of transactions.
 
- Supported blockchains: 
+ This API is supported for the following blockchains:
 
-<ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Harmony.ONE</li> <li>The XDC Network</li> <li>Ethereum</li> <li>Celo</li> <li>Klaytn</li> <li>Binance Smart Chain</li> <li>Polygon</li> </ul>
+ 
+
+<ul> <li>Bitcoin</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Litecoin</li> <li>Polygon</li> <li>XinFin</li> </ul>
 
 ### Example
 
@@ -225,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate the fee for a transaction
+Estimate the fee for a transaction on a blockchain
 
 EstimateFeeBatchMintNft operation
 
@@ -261,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate the fee for a transaction
+Estimate the fee for a transaction on a blockchain
 
 EstimateFeeDeployCustodialWallet operation
 
@@ -297,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate the fee for a transaction
+Estimate the fee for a transaction on a blockchain
 
 EstimateFeeFromAddress operation
 
@@ -333,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate the fee for a transaction
+Estimate the fee for a transaction on a blockchain
 
 EstimateFeeFromUTXO operation
 
@@ -369,7 +372,7 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate the fee for a transaction
+Estimate the fee for a transaction on a blockchain
 
 EstimateFeeTransferFromCustodial operation
 
@@ -407,11 +410,15 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate Ethereum transaction fees
+Estimate the fee for an Ethereum transaction
 
-<h4>10 credits per API call.</h4>
+**10 credits per API call**
 
- Estimate gasLimit and gasPrice of the Ethereum transaction. Gas price is obtained from multiple sources + calculated based on the latest N blocks and the current mempool state. The **fast** one is used by default.
+ Get an estimated gas price and the number of gas units needed for an Ethereum transaction. The gas price is obtained from multiple sources and calculated based on the latest N blocks and the current mempool state.
+
+ The <code>fast</code> gas price is used by default.
+
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer" target="_blank">making the transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
 
 ### Example
 
@@ -447,13 +454,15 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate multiple Ethereum transaction fees
+Estimate the fee for multiple Ethereum transactions
 
-<h4>10 credits per API call + 10 credits per each gas estimation.</h4>
+**10 credits per API call + 10 credits per each gas estimation**
 
- Estimate gasLimit and gasPrice of the Ethereum transaction. Gas price is obtained from multiple sources + calculated based on the latest N blocks and the current mempool state. The **fast** one is used by default.
+ Get an estimated gas price and the number of gas units needed for multiple Ethereum transactions. The gas price is obtained from multiple sources and calculated based on the latest N blocks and the current mempool state.
 
- Result is calculated in the order of the request array items.
+ The estimations are returned in the same order as the transactions were submitted in the request. The <code>fast</code> gas price is used by default.
+
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer" target="_blank">making a transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
 
 ### Example
 
@@ -487,11 +496,17 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get recommended blockchain fee / gas price
+Get the recommended fee/gas price for a blockchain
 
 **1 credit per API call**
 
- Get recommended blockchain fee / gas price
+ Get the recommended fee/gas price for a blockchain.
+
+ This API is supported for the following blockchains:
+
+ 
+
+<ul> <li>Bitcoin</li> <li>Dogecoin</li> <li>Ethereum</li> <li>Litecoin</li> </ul>
 
 ### Example
 
@@ -510,7 +525,7 @@ Get recommended blockchain fee / gas price
 ```php
 (new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->kcsEstimateGas(
     \Tatum\Model\KcsEstimateGas $kcs_estimate_gas
-): \Tatum\Model\PolygonEstimateGas200Response
+): \Tatum\Model\GasEstimated
 ```
 
 ### Parameters
@@ -521,17 +536,17 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../../Model/PolygonEstimateGas200Response)
+[**\Tatum\Model\GasEstimated**](../../Model/GasEstimated)
 
 ### Description
 
-Estimate KuCoin Community Chain transaction fees
+Estimate the fee for a KuCoin Community Chain transaction
 
 **2 credits per API call**
 
  Get an estimated gas price and the number of gas units needed for a KuCoin Community Chain transaction.
 
- **NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/KuCoin#operation/KcsBlockchainTransfer" target="_blank">making the transaction itself</a>, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/KuCoin#operation/KcsBlockchainTransfer" target="_blank">making the transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
 
 ### Example
 
@@ -565,11 +580,13 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate Klaytn transaction fees
+Estimate the fee for a Klaytn transaction
 
-<h4>2 credits per API call.</h4>
+**2 credits per API call**
 
- Estimate gasLimit and gasPrice of the Klaytn transaction. Gas price is obtained from <a href="https://explorer.bitquery.io/klaytn/gas" target="_blank">https://explorer.bitquery.io/klaytn/gas</a>.
+ Get an estimated gas price and the number of gas units needed for a Klaytn transaction. The gas price is obtained from <a href="https://explorer.bitquery.io/klaytn/gas" target="_blank">https://explorer.bitquery.io/klaytn/gas</a>.
+
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **peb**. However, when <a href="https://apidoc.tatum.io/tag/Klaytn#operation/KlaytnBlockchainTransfer" target="_blank">making the transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gpeb**. Make sure to convert the estimated gas price from peb to Gpeb before submitting your transaction.
 
 ### Example
 
@@ -588,7 +605,7 @@ Estimate Klaytn transaction fees
 ```php
 (new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->polygonEstimateGas(
     \Tatum\Model\PolygonEstimateGas $polygon_estimate_gas
-): \Tatum\Model\PolygonEstimateGas200Response
+): \Tatum\Model\GasEstimated
 ```
 
 ### Parameters
@@ -599,17 +616,17 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../../Model/PolygonEstimateGas200Response)
+[**\Tatum\Model\GasEstimated**](../../Model/GasEstimated)
 
 ### Description
 
-Estimate Polygon transaction fees
+Estimate the fee for a Polygon transaction
 
 **2 credits per API call**
 
  Get an estimated gas price and the number of gas units needed for a Polygon transaction. The gas price is obtained from <a href="https://gasstation-mainnet.matic.network/" target="_blank">https://gasstation-mainnet.matic.network/</a>.
 
- **NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/Polygon#operation/PolygonBlockchainTransfer" target="_blank">making the transaction itself</a>, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/Polygon#operation/PolygonBlockchainTransfer" target="_blank">making the transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
 
 ### Example
 
@@ -643,11 +660,11 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate VeChain Gas for transaction
+Estimate the gas needed for a VeChain transaction
 
-<h4>5 credits per API call.</h4>
+**5 credits per API call**
 
-Estimate gas required for transaction.
+ Get an estimated amount of gas needed for a VeChain transaction.
 
 ### Example
 
@@ -666,7 +683,7 @@ Estimate gas required for transaction.
 ```php
 (new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainFees()->xdcEstimateGas(
     \Tatum\Model\XdcEstimateGas $xdc_estimate_gas
-): \Tatum\Model\PolygonEstimateGas200Response
+): \Tatum\Model\GasEstimated
 ```
 
 ### Parameters
@@ -677,17 +694,17 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Tatum\Model\PolygonEstimateGas200Response**](../../Model/PolygonEstimateGas200Response)
+[**\Tatum\Model\GasEstimated**](../../Model/GasEstimated)
 
 ### Description
 
-Estimate XinFin transaction fees
+Estimate the fee for a XinFin transaction
 
 **2 credits per API call**
 
  Get an estimated gas price and the number of gas units needed for a XinFin transaction. The gas price is obtained from <a href="https://rpc.xinfin.network/gasPrice" target="_blank">https://rpc.xinfin.network/gasPrice</a>.
 
- **NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/XinFin#operation/XdcBlockchainTransfer" target="_blank">making the transaction itself</a>, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/XinFin#operation/XdcBlockchainTransfer" target="_blank">making the transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
 
 ### Example
 

@@ -9,6 +9,7 @@ layout: page
 [Klaytn API Reference](https://apidoc.tatum.io/tag/Klaytn/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -34,7 +35,7 @@ Method | Description
 [**klaytnGetCurrentBlock()**](#klaytngetcurrentblock) | Get current block number
 [**klaytnGetTransaction()**](#klaytngettransaction) | Get Klaytn Transaction
 [**klaytnGetTransactionCount()**](#klaytngettransactioncount) | Get count of outgoing Klaytn transactions
-[**klaytnWeb3Driver()**](#klaytnweb3driver) | Web3 HTTP driver
+[**~~klaytnWeb3Driver()~~**](#klaytnweb3driver) | (`deprecated`)
 [**transferKlaytnBlockchain()**](#transferklaytnblockchain) | Send KLAY from account to account
 [**transferKlaytnBlockchainKMS()**](#transferklaytnblockchainkms) | Send KLAY from account to account
 
@@ -520,43 +521,16 @@ Get count of outgoing Klaytn transactions
 
 
 
-## `klaytnWeb3Driver()`
+## ~~`klaytnWeb3Driver()`~~
 
-> **POST** `/v3/klaytn/web3/{xApiKey}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/klaytn/web3/{xApiKey}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnWeb3Driver(
-    string $x_api_key,
-    object $body
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$body** | **object**  |  |
-
-### Return type
-
-**object**
-
-### Description
-
-Web3 HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based web3 driver to connect directly to the Klaytn node provided by Tatum. To learn more about Klaytn Web3, visit the <a href="https://docs.klaytn.foundation/dapp/json-rpc" target="_blank">Klaytn developer's guide</a>.
-
-### Example
-
-[✨ View "klaytnWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnWeb3Driver.php)
 
 [Back to top](#top)
 

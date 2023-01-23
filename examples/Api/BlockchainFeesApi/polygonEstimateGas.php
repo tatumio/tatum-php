@@ -36,7 +36,7 @@ try {
     /**
      * POST /v3/polygon/gas
      * 
-     * @var \Tatum\Model\PolygonEstimateGas200Response $response
+     * @var \Tatum\Model\GasEstimated $response
      */
     $response = $sdk->mainnet()
         ->api()

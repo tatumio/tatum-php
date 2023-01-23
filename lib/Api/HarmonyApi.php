@@ -32,12 +32,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callOneReadSmartContractMethod($call_one_read_smart_contract_method, $shard_id = 0) { 
+    public function callOneReadSmartContractMethod($call_one_read_smart_contract_method, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/one/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -50,7 +49,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on Harmony
      *
@@ -61,12 +60,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callOneSmartContractMethod($call_one_smart_contract_method, $shard_id = 0) { 
+    public function callOneSmartContractMethod($call_one_smart_contract_method, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/one/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -79,7 +77,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on Harmony
      *
@@ -90,12 +88,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callOneSmartContractMethodKMS($call_one_smart_contract_method_kms, $shard_id = 0) { 
+    public function callOneSmartContractMethodKMS($call_one_smart_contract_method_kms, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/one/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -108,7 +105,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Broadcast signed ONE transaction
      *
@@ -119,12 +116,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function oneBroadcast($broadcast_kms, $shard_id = 0) { 
+    public function oneBroadcast($broadcast_kms, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/one/broadcast";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -137,7 +133,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Transform HEX address to Bech32 ONE address format
      *
@@ -147,12 +143,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GeneratedAddressOne
      */
-    public function oneFormatAddress($address) { 
+    public function oneFormatAddress($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/one/address/format/{address}";
-
         /** @var \Tatum\Model\GeneratedAddressOne $result */
         $result = $this->exec(
             S::createRequest(
@@ -163,7 +158,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate ONE account address from Extended public key
      *
@@ -174,12 +169,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GeneratedAddressOne
      */
-    public function oneGenerateAddress($xpub, $index) { 
+    public function oneGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/one/address/{xpub}/{index}";
-
         /** @var \Tatum\Model\GeneratedAddressOne $result */
         $result = $this->exec(
             S::createRequest(
@@ -190,7 +184,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate ONE private key
      *
@@ -200,12 +194,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function oneGenerateAddressPrivateKey($priv_key_request) { 
+    public function oneGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/one/wallet/priv";
-
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
@@ -216,7 +209,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate ONE wallet
      *
@@ -226,7 +219,7 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function oneGenerateWallet($mnemonic = null) { 
+    public function oneGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling HarmonyApi.oneGenerateWallet, must be smaller than or equal to 500');
         }
@@ -235,7 +228,6 @@ class HarmonyApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/one/wallet";
-
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
@@ -248,7 +240,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get ONE Account balance
      *
@@ -259,12 +251,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\OneBalance
      */
-    public function oneGetBalance($address, $shard_id = 0) { 
+    public function oneGetBalance($address, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/one/account/balance/{address}";
-
         /** @var \Tatum\Model\OneBalance $result */
         $result = $this->exec(
             S::createRequest(
@@ -277,7 +268,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get ONE block by hash
      *
@@ -288,12 +279,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthBlock
      */
-    public function oneGetBlock($hash, $shard_id = 0) { 
+    public function oneGetBlock($hash, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/one/block/{hash}";
-
         /** @var \Tatum\Model\EthBlock $result */
         $result = $this->exec(
             S::createRequest(
@@ -306,7 +296,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get current block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -314,12 +304,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\OneBlockCurrent[]
      */
-    public function oneGetCurrentBlock() { 
+    public function oneGetCurrentBlock() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/one/block/current";
-
         /** @var \Tatum\Model\OneBlockCurrent[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -330,7 +319,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get ONE Transaction
      *
@@ -341,12 +330,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\OneTx
      */
-    public function oneGetTransaction($hash, $shard_id = 0) { 
+    public function oneGetTransaction($hash, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/one/transaction/{hash}";
-
         /** @var \Tatum\Model\OneTx $result */
         $result = $this->exec(
             S::createRequest(
@@ -359,7 +347,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get count of outgoing ONE transactions
      *
@@ -370,7 +358,7 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return float
      */
-    public function oneGetTransactionCount($address, $shard_id = 0) { 
+    public function oneGetTransactionCount($address, $shard_id = 0) {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling HarmonyApi.oneGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -383,7 +371,6 @@ class HarmonyApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/one/transaction/count/{address}";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -396,18 +383,6 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Web3 HTTP driver
-     *
-     * @param string $x_api_key Tatum X-API-Key used for authorization.
-     * @param object $body 
-     * @param float|0 $shard_id Shard to read data from
-     * 
-     * @return void
-     */
-    public function oneWeb3Driver($x_api_key, $body, $shard_id = 0) {}
     
     /**
      * Send ONE from account to account
@@ -419,12 +394,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferOneBlockchain($transfer_one_blockchain, $shard_id = 0) { 
+    public function transferOneBlockchain($transfer_one_blockchain, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/one/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -437,7 +411,7 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send ONE from account to account
      *
@@ -448,12 +422,11 @@ class HarmonyApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferOneBlockchainKMS($transfer_one_blockchain_kms, $shard_id = 0) { 
+    public function transferOneBlockchainKMS($transfer_one_blockchain_kms, $shard_id = 0) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/one/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -466,5 +439,5 @@ class HarmonyApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

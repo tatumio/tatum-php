@@ -34,7 +34,7 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactions($transaction_filter_ledger, $page_size = null, $offset = null, $count = null) { 
+    public function getTransactions($transaction_filter_ledger, $page_size = null, $offset = null, $count = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactions, must be smaller than or equal to 50');
         }
@@ -47,7 +47,6 @@ class TransactionApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/transaction/ledger";
-
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -62,7 +61,7 @@ class TransactionApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Find transactions for account.
      *
@@ -75,7 +74,7 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactionsByAccountId($transaction_filter, $page_size = null, $offset = null, $count = null) { 
+    public function getTransactionsByAccountId($transaction_filter, $page_size = null, $offset = null, $count = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByAccountId, must be smaller than or equal to 50');
         }
@@ -88,7 +87,6 @@ class TransactionApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/transaction/account";
-
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -103,7 +101,7 @@ class TransactionApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Find transactions for a customer across all of the customer's accounts.
      *
@@ -116,7 +114,7 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetTransactionsByAccountId200Response
      */
-    public function getTransactionsByCustomerId($transaction_filter_customer, $page_size = null, $offset = null, $count = null) { 
+    public function getTransactionsByCustomerId($transaction_filter_customer, $page_size = null, $offset = null, $count = null) {
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling TransactionApi.getTransactionsByCustomerId, must be smaller than or equal to 50');
         }
@@ -129,7 +127,6 @@ class TransactionApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/transaction/customer";
-
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -144,7 +141,7 @@ class TransactionApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Find transactions with a given reference across all accounts.
      *
@@ -154,7 +151,7 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Transaction[]
      */
-    public function getTransactionsByReference($reference) { 
+    public function getTransactionsByReference($reference) {
         if (strlen($reference) > 100) {
             throw new IAE('Invalid length for "$reference" when calling TransactionApi.getTransactionsByReference, must be smaller than or equal to 100');
         }
@@ -167,7 +164,6 @@ class TransactionApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/transaction/reference/{reference}";
-
         /** @var \Tatum\Model\Transaction[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -178,7 +174,7 @@ class TransactionApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send payment
      *
@@ -188,12 +184,11 @@ class TransactionApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionResult
      */
-    public function sendTransaction($create_transaction) { 
+    public function sendTransaction($create_transaction) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/ledger/transaction";
-
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
@@ -204,7 +199,7 @@ class TransactionApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send payment in batch
      *
@@ -214,12 +209,11 @@ class TransactionApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function sendTransactionBatch($batch_create_transaction) { 
+    public function sendTransactionBatch($batch_create_transaction) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/ledger/transaction/batch";
-
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -230,5 +224,5 @@ class TransactionApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

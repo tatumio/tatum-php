@@ -9,6 +9,7 @@ layout: page
 [BNB Beacon Chain API Reference](https://apidoc.tatum.io/tag/BNB-Beacon-Chain/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

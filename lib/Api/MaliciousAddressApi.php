@@ -31,12 +31,11 @@ class MaliciousAddressApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CheckMalicousAddress200Response
      */
-    public function checkMalicousAddress($address) { 
+    public function checkMalicousAddress($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/security/address/{address}";
-
         /** @var \Tatum\Model\CheckMalicousAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,5 +46,5 @@ class MaliciousAddressApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

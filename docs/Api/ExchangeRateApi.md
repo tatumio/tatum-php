@@ -9,6 +9,7 @@ layout: page
 [Exchange rate API Reference](https://apidoc.tatum.io/tag/Exchange-rate/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

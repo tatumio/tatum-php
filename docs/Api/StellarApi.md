@@ -9,6 +9,7 @@ layout: page
 [Stellar API Reference](https://apidoc.tatum.io/tag/Stellar/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

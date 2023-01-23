@@ -32,7 +32,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callReadSmartContractMethod($call_read_smart_contract_method, $x_testnet_type = 'ethereum-sepolia') { 
+    public function callReadSmartContractMethod($call_read_smart_contract_method, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -43,7 +43,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -54,7 +53,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on Ethereum
      *
@@ -65,7 +64,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callSmartContractMethod($call_smart_contract_method, $x_testnet_type = 'ethereum-sepolia') { 
+    public function callSmartContractMethod($call_smart_contract_method, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -76,7 +75,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -87,7 +85,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on Ethereum
      *
@@ -98,7 +96,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callSmartContractMethodKMS($call_smart_contract_method_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function callSmartContractMethodKMS($call_smart_contract_method_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -109,7 +107,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -120,7 +117,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Broadcast signed Ethereum transaction
      *
@@ -131,7 +128,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function ethBroadcast($broadcast_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethBroadcast($broadcast_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -142,7 +139,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/broadcast";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -153,7 +149,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Ethereum account address from Extended public key
      *
@@ -165,7 +161,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GeneratedAddressEth
      */
-    public function ethGenerateAddress($xpub, $index, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGenerateAddress($xpub, $index, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -176,7 +172,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/address/{xpub}/{index}";
-
         /** @var \Tatum\Model\GeneratedAddressEth $result */
         $result = $this->exec(
             S::createRequest(
@@ -187,7 +182,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Ethereum private key
      *
@@ -198,7 +193,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function ethGenerateAddressPrivateKey($priv_key_request, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGenerateAddressPrivateKey($priv_key_request, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -209,7 +204,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/wallet/priv";
-
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
@@ -220,7 +214,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Ethereum wallet
      *
@@ -231,7 +225,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function ethGenerateWallet($mnemonic = null, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGenerateWallet($mnemonic = null, $x_testnet_type = 'ethereum-sepolia') {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling EthereumApi.ethGenerateWallet, must be smaller than or equal to 500');
         }
@@ -246,7 +240,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/wallet";
-
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
@@ -259,7 +252,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get the ETH balance of an Ethereum account
      *
@@ -270,7 +263,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthBalance
      */
-    public function ethGetBalance($address, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetBalance($address, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -281,7 +274,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/account/balance/{address}";
-
         /** @var \Tatum\Model\EthBalance $result */
         $result = $this->exec(
             S::createRequest(
@@ -292,7 +284,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Ethereum block by hash
      *
@@ -303,7 +295,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthBlock
      */
-    public function ethGetBlock($hash, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetBlock($hash, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -314,7 +306,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/block/{hash}";
-
         /** @var \Tatum\Model\EthBlock $result */
         $result = $this->exec(
             S::createRequest(
@@ -325,7 +316,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get current block number
      *
@@ -335,7 +326,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return float
      */
-    public function ethGetCurrentBlock($x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetCurrentBlock($x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -346,7 +337,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/block/current";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -357,7 +347,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Ethereum internal transactions by address
      *
@@ -370,7 +360,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthTxInternal[]
      */
-    public function ethGetInternalTransactionByAddress($address, $page_size, $offset = null, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetInternalTransactionByAddress($address, $page_size, $offset = null, $x_testnet_type = 'ethereum-sepolia') {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling EthereumApi.ethGetInternalTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -389,7 +379,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/account/transaction/erc20/internal/{address}";
-
         /** @var \Tatum\Model\EthTxInternal[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -403,7 +392,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Ethereum Transaction
      *
@@ -414,7 +403,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthTx
      */
-    public function ethGetTransaction($hash, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetTransaction($hash, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -425,7 +414,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/transaction/{hash}";
-
         /** @var \Tatum\Model\EthTx $result */
         $result = $this->exec(
             S::createRequest(
@@ -436,7 +424,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Ethereum transactions by address
      *
@@ -452,7 +440,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthTx[]
      */
-    public function ethGetTransactionByAddress($address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC', $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetTransactionByAddress($address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC', $x_testnet_type = 'ethereum-sepolia') {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling EthereumApi.ethGetTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -479,7 +467,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/account/transaction/{address}";
-
         /** @var \Tatum\Model\EthTx[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -496,7 +483,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get count of outgoing Ethereum transactions
      *
@@ -507,7 +494,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return float
      */
-    public function ethGetTransactionCount($address, $x_testnet_type = 'ethereum-sepolia') { 
+    public function ethGetTransactionCount($address, $x_testnet_type = 'ethereum-sepolia') {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling EthereumApi.ethGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -526,7 +513,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/transaction/count/{address}";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -537,18 +523,6 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Web3 HTTP driver
-     *
-     * @param string $x_api_key Tatum X-API-Key used for authorization.
-     * @param object $body 
-     * @param string|'ethereum-sepolia' $testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
-     * 
-     * @return void
-     */
-    public function ethWeb3Driver($x_api_key, $body, $testnet_type = 'ethereum-sepolia') {}
     
     /**
      * Send Ethereum / ERC20 from account to account
@@ -560,7 +534,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferEthBlockchain($transfer_eth_blockchain, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferEthBlockchain($transfer_eth_blockchain, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -571,7 +545,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -582,7 +555,7 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send Ethereum / ERC20 from account to account
      *
@@ -593,7 +566,7 @@ class EthereumApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferEthBlockchainKMS($transfer_eth_blockchain_kms, $x_testnet_type = 'ethereum-sepolia') { 
+    public function transferEthBlockchainKMS($transfer_eth_blockchain_kms, $x_testnet_type = 'ethereum-sepolia') {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -604,7 +577,6 @@ class EthereumApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ethereum/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -615,5 +587,5 @@ class EthereumApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

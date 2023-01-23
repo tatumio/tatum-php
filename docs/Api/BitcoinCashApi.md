@@ -9,6 +9,7 @@ layout: page
 [Bitcoin Cash API Reference](https://apidoc.tatum.io/tag/Bitcoin-Cash/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -31,7 +32,7 @@ Method | Description
 [**bchGetBlockHash()**](#bchgetblockhash) | Get Bitcoin Cash Block hash
 [**bchGetRawTransaction()**](#bchgetrawtransaction) | Get Bitcoin Cash Transaction by hash
 [**bchGetTxByAddress()**](#bchgettxbyaddress) | Get Bitcoin Cash Transactions by address
-[**bchRpcDriver()**](#bchrpcdriver) | JSON RPC HTTP driver
+[**~~bchRpcDriver()~~**](#bchrpcdriver) | (`deprecated`)
 [**bchTransaction()**](#bchtransaction) | Send BCH to Bitcoin Cash addresses
 [**bchTransactionKMS()**](#bchtransactionkms) | Send BCH to Bitcoin Cash addresses
 
@@ -385,41 +386,16 @@ Get Bitcoin Cash Transaction by address. Limit is 50 transaction per response.
 
 
 
-## `bchRpcDriver()`
+## ~~`bchRpcDriver()`~~
 
-> **POST** `/v3/bcash/node`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/bcash/node`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchRpcDriver(
-    \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$bch_rpc_driver_request** | [**\Tatum\Model\BchRpcDriverRequest**](../../Model/BchRpcDriverRequest) |  |
-
-### Return type
-
-**object**
-
-### Description
-
-JSON RPC HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum. To learn more about JSON RPC, visit <a href="https://github.com/gcash/bchd/blob/master/docs/json_rpc_api.md#Methods" target="_blank">Bitcoin Cash developers' guide</a>.
-
-### Example
-
-[✨ View "bchRpcDriver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchRpcDriver.php)
 
 [Back to top](#top)
 

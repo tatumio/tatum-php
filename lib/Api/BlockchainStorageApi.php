@@ -31,12 +31,11 @@ class BlockchainStorageApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createRecord($create_record) { 
+    public function createRecord($create_record) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/record";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class BlockchainStorageApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Store a log record
      *
@@ -57,12 +56,11 @@ class BlockchainStorageApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createRecordCelo($create_record_celo) { 
+    public function createRecordCelo($create_record_celo) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/record";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -73,7 +71,7 @@ class BlockchainStorageApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Store a log record
      *
@@ -83,12 +81,11 @@ class BlockchainStorageApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createRecordKMS($create_record_kms) { 
+    public function createRecordKMS($create_record_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/record";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -99,7 +96,7 @@ class BlockchainStorageApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get a log record
      *
@@ -110,7 +107,7 @@ class BlockchainStorageApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetLog200Response
      */
-    public function getLog($chain, $id) { 
+    public function getLog($chain, $id) {
         if (strlen($id) > 100) {
             throw new IAE('Invalid length for "$id" when calling BlockchainStorageApi.getLog, must be smaller than or equal to 100');
         }
@@ -123,7 +120,6 @@ class BlockchainStorageApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/record";
-
         /** @var \Tatum\Model\GetLog200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -137,5 +133,5 @@ class BlockchainStorageApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

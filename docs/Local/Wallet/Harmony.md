@@ -7,6 +7,7 @@ layout: page
 # Local/Wallet/Harmony
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet Local/Wallet/Harmony

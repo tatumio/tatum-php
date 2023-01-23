@@ -31,7 +31,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return void
      */
-    public function activateCustomer($id) { 
+    public function activateCustomer($id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.activateCustomer, must be smaller than or equal to 50');
         }
@@ -44,14 +44,13 @@ class CustomerApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/customer/{id}/activate";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * Deactivate customer
      *
@@ -61,7 +60,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deactivateCustomer($id) { 
+    public function deactivateCustomer($id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.deactivateCustomer, must be smaller than or equal to 50');
         }
@@ -74,14 +73,13 @@ class CustomerApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/customer/{id}/deactivate";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * Disable customer
      *
@@ -91,7 +89,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return void
      */
-    public function disableCustomer($id) { 
+    public function disableCustomer($id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.disableCustomer, must be smaller than or equal to 50');
         }
@@ -104,14 +102,13 @@ class CustomerApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/customer/{id}/disable";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * Enable customer
      *
@@ -121,7 +118,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return void
      */
-    public function enableCustomer($id) { 
+    public function enableCustomer($id) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.enableCustomer, must be smaller than or equal to 50');
         }
@@ -134,14 +131,13 @@ class CustomerApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/customer/{id}/enable";
-
         $this->exec(
             S::createRequest(
                 $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-
+    
     /**
      * List all customers
      *
@@ -152,7 +148,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Customer[]
      */
-    public function findAllCustomers($page_size, $offset = null) { 
+    public function findAllCustomers($page_size, $offset = null) {
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling CustomerApi.findAllCustomers, must be smaller than or equal to 50');
         }
@@ -165,7 +161,6 @@ class CustomerApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/customer";
-
         /** @var \Tatum\Model\Customer[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -179,7 +174,7 @@ class CustomerApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get customer details
      *
@@ -189,7 +184,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Customer
      */
-    public function getCustomerByExternalOrInternalId($id) { 
+    public function getCustomerByExternalOrInternalId($id) {
         if (strlen($id) > 100) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.getCustomerByExternalOrInternalId, must be smaller than or equal to 100');
         }
@@ -202,7 +197,6 @@ class CustomerApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/customer/{id}";
-
         /** @var \Tatum\Model\Customer $result */
         $result = $this->exec(
             S::createRequest(
@@ -213,7 +207,7 @@ class CustomerApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Update customer
      *
@@ -224,7 +218,7 @@ class CustomerApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Customer
      */
-    public function updateCustomer($id, $customer_update) { 
+    public function updateCustomer($id, $customer_update) {
         if (strlen($id) > 50) {
             throw new IAE('Invalid length for "$id" when calling CustomerApi.updateCustomer, must be smaller than or equal to 50');
         }
@@ -237,7 +231,6 @@ class CustomerApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/ledger/customer/{id}";
-
         /** @var \Tatum\Model\Customer $result */
         $result = $this->exec(
             S::createRequest(
@@ -248,5 +241,5 @@ class CustomerApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

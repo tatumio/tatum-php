@@ -9,6 +9,7 @@ layout: page
 [Service utils API Reference](https://apidoc.tatum.io/tag/Service-utils/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

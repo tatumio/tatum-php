@@ -31,12 +31,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function bchBroadcast($broadcast_kms) { 
+    public function bchBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/bcash/broadcast";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Bitcoin Cash deposit address from Extended public key
      *
@@ -58,12 +57,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchGenerateAddress200Response
      */
-    public function bchGenerateAddress($xpub, $index) { 
+    public function bchGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/bcash/address/{xpub}/{index}";
-
         /** @var \Tatum\Model\BchGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -74,7 +72,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Bitcoin Cash private key
      *
@@ -84,12 +82,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function bchGenerateAddressPrivateKey($priv_key_request) { 
+    public function bchGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/bcash/wallet/priv";
-
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
@@ -100,7 +97,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate Bitcoin Cash wallet
      *
@@ -110,7 +107,7 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function bchGenerateWallet($mnemonic = null) { 
+    public function bchGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling BitcoinCashApi.bchGenerateWallet, must be smaller than or equal to 500');
         }
@@ -119,7 +116,6 @@ class BitcoinCashApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/bcash/wallet";
-
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
@@ -132,7 +128,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Bitcoin Cash Block by hash
      *
@@ -142,12 +138,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchBlock
      */
-    public function bchGetBlock($hash) { 
+    public function bchGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/bcash/block/{hash}";
-
         /** @var \Tatum\Model\BchBlock $result */
         $result = $this->exec(
             S::createRequest(
@@ -158,7 +153,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Bitcoin Cash Blockchain Information
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -166,12 +161,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchInfo
      */
-    public function bchGetBlockChainInfo() { 
+    public function bchGetBlockChainInfo() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/bcash/info";
-
         /** @var \Tatum\Model\BchInfo $result */
         $result = $this->exec(
             S::createRequest(
@@ -182,7 +176,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Bitcoin Cash Block hash
      *
@@ -192,12 +186,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchGetBlockHash200Response
      */
-    public function bchGetBlockHash($i) { 
+    public function bchGetBlockHash($i) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/bcash/block/hash/{i}";
-
         /** @var \Tatum\Model\BchGetBlockHash200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -208,7 +201,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Bitcoin Cash Transaction by hash
      *
@@ -218,12 +211,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchTx
      */
-    public function bchGetRawTransaction($hash) { 
+    public function bchGetRawTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/bcash/transaction/{hash}";
-
         /** @var \Tatum\Model\BchTx $result */
         $result = $this->exec(
             S::createRequest(
@@ -234,7 +226,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get Bitcoin Cash Transactions by address
      *
@@ -245,12 +237,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BchTx[]
      */
-    public function bchGetTxByAddress($address, $skip = null) { 
+    public function bchGetTxByAddress($address, $skip = null) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/bcash/transaction/address/{address}";
-
         /** @var \Tatum\Model\BchTx[] $result */
         $result = $this->exec(
             S::createRequest(
@@ -263,16 +254,6 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * JSON RPC HTTP driver
-     *
-     * @param \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request 
-     * 
-     * @return void
-     */
-    public function bchRpcDriver($bch_rpc_driver_request) {}
     
     /**
      * Send BCH to Bitcoin Cash addresses
@@ -283,12 +264,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function bchTransaction($bch_transaction) { 
+    public function bchTransaction($bch_transaction) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/bcash/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -299,7 +279,7 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send BCH to Bitcoin Cash addresses
      *
@@ -309,12 +289,11 @@ class BitcoinCashApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function bchTransactionKMS($bch_transaction_kms) { 
+    public function bchTransactionKMS($bch_transaction_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/bcash/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -325,5 +304,5 @@ class BitcoinCashApi extends AbstractApi {
             
         return $result;
     }
-
+    
 }

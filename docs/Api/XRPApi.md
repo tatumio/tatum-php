@@ -9,6 +9,7 @@ layout: page
 [XRP API Reference](https://apidoc.tatum.io/tag/XRP/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

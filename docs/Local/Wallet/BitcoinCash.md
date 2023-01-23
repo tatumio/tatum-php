@@ -7,6 +7,7 @@ layout: page
 # Local/Wallet/BitcoinCash
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet Local/Wallet/BitcoinCash

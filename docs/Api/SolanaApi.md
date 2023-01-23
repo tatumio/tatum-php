@@ -9,6 +9,7 @@ layout: page
 [Solana API Reference](https://apidoc.tatum.io/tag/Solana/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -28,7 +29,7 @@ Method | Description
 [**solanaGetBlock()**](#solanagetblock) | Get Solana block by number
 [**solanaGetCurrentBlock()**](#solanagetcurrentblock) | Get current block number
 [**solanaGetTransaction()**](#solanagettransaction) | Get Solana Transaction
-[**solanaWeb3Driver()**](#solanaweb3driver) | JSON RPC HTTP driver
+[**~~solanaWeb3Driver()~~**](#solanaweb3driver) | (`deprecated`)
 [**transferSolanaBlockchain()**](#transfersolanablockchain) | Send SOL from account to account
 [**transferSolanaBlockchainKMS()**](#transfersolanablockchainkms) | Send SOL from account to account
 
@@ -261,48 +262,16 @@ Get Solana transaction by transaction hash.
 
 
 
-## `solanaWeb3Driver()`
+## ~~`solanaWeb3Driver()`~~
+
 
 {: .warning }
-> Deprecated
+> 🚫 **DEPRECATED**
 > 
-> **POST** `/v3/solana/web3/{xApiKey}`
+> ~~**POST** `/v3/solana/web3/{xApiKey}`~~
 > 
-> This method is no longer supported by the API
+> This method is no longer supported.
 
-### Type signature
-
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaWeb3Driver(
-    string $x_api_key,
-    object $body
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$body** | **object**  |  |
-
-### Return type
-
-**object**
-
-### Description
-
-JSON RPC HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based JSON RPC driver to connect directly to the Solana node provided by Tatum. To learn more about Solana JSON RPC, visit the <a href="https://docs.solana.com/developing/clients/jsonrpc-api" target="_blank">Solana developer's guide</a>.
-
-### Example
-
-[✨ View "solanaWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaWeb3Driver.php)
 
 [Back to top](#top)
 

@@ -9,6 +9,7 @@ layout: page
 [BNB Smart Chain API Reference](https://apidoc.tatum.io/tag/BNB-Smart-Chain/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -31,7 +32,7 @@ Method | Description
 [**bscGetCurrentBlock()**](#bscgetcurrentblock) | Get current block number
 [**bscGetTransaction()**](#bscgettransaction) | Get BSC Transaction
 [**bscGetTransactionCount()**](#bscgettransactioncount) | Get count of outgoing BSC transactions
-[**bscWeb3Driver()**](#bscweb3driver) | Web3 HTTP driver
+[**~~bscWeb3Driver()~~**](#bscweb3driver) | (`deprecated`)
 [**callBscSmartContractMethod()**](#callbscsmartcontractmethod) | Invoke a method in a smart contract on BNB Smart Chain
 [**callBscSmartContractMethodKMS()**](#callbscsmartcontractmethodkms) | Invoke a method in a smart contract on BNB Smart Chain
 [**callBscSmartContractReadMethod()**](#callbscsmartcontractreadmethod) | Invoke a method in a smart contract on BNB Smart Chain
@@ -386,43 +387,16 @@ Get count of outgoing BSC transactions
 
 
 
-## `bscWeb3Driver()`
+## ~~`bscWeb3Driver()`~~
 
-> **POST** `/v3/bsc/web3/{xApiKey}`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/bsc/web3/{xApiKey}`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscWeb3Driver(
-    string $x_api_key,
-    object $body
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$body** | **object**  |  |
-
-### Return type
-
-**object**
-
-### Description
-
-Web3 HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based web3 driver to connect directly to the BSC node provided by Tatum. To learn more about BSC Web3, visit the <a href="https://bsc.org/en/developers/" target="_blank">BSC developer's guide.</a>
-
-### Example
-
-[✨ View "bscWeb3Driver.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscWeb3Driver.php)
 
 [Back to top](#top)
 

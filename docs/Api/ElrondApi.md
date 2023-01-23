@@ -9,6 +9,7 @@ layout: page
 [Elrond API Reference](https://apidoc.tatum.io/tag/Elrond/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call
@@ -32,8 +33,8 @@ Method | Description
 [**egldGetTransaction()**](#egldgettransaction) | Get EGLD Transaction
 [**egldGetTransactionAddress()**](#egldgettransactionaddress) | Get count of outgoing EGLD transactions
 [**egldGetTransactionCount()**](#egldgettransactioncount) | Get count of outgoing EGLD transactions
-[**egldNodeGet()**](#egldnodeget) | Node HTTP driver
-[**egldNodePost()**](#egldnodepost) | Node HTTP driver
+[**~~egldNodeGet()~~**](#egldnodeget) | (`deprecated`)
+[**~~egldNodePost()~~**](#egldnodepost) | (`deprecated`)
 [**transferEgldBlockchain()**](#transferegldblockchain) | Send EGLD from account to account
 [**transferEgldBlockchainKMS()**](#transferegldblockchainkms) | Send EGLD from account to account
 
@@ -425,83 +426,31 @@ Get count of outgoing EGLD transactions
 
 
 
-## `egldNodeGet()`
+## ~~`egldNodeGet()`~~
 
-> **GET** `/v3/egld/node/{xApiKey}/*`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**GET** `/v3/egld/node/{xApiKey}/*`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldNodeGet(
-    string $x_api_key
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
-
-### Return type
-
-**object**
-
-### Description
-
-Node HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based driver to connect directly to the EGLD node provided by Tatum. To learn more about EGLD, visit the <a href="https://docs.elrond.com/sdk-and-tools/rest-api/nodes/" target="_blank">EGLD developer's guide</a>.
-
-### Example
-
-[✨ View "egldNodeGet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldNodeGet.php)
 
 [Back to top](#top)
 
 
 
-## `egldNodePost()`
+## ~~`egldNodePost()`~~
 
-> **POST** `/v3/egld/node/{xApiKey}/*`
 
-### Type signature
+{: .warning }
+> 🚫 **DEPRECATED**
+> 
+> ~~**POST** `/v3/egld/node/{xApiKey}/*`~~
+> 
+> This method is no longer supported.
 
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->egldNodePost(
-    string $x_api_key,
-    object $body
-): object
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$x_api_key** | **string**  | Tatum X-API-Key used for authorization. |
- **$body** | **object**  |  |
-
-### Return type
-
-**object**
-
-### Description
-
-Node HTTP driver
-
-**2 credits per API call**
-
- **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
-
- Use this endpoint URL as a http-based driver to connect directly to the EGLD node provided by Tatum. To learn more about EGLD, visit the <a href="https://docs.elrond.com/sdk-and-tools/rest-api/nodes/" target="_blank">EGLD developer's guide</a>.
-
-### Example
-
-[✨ View "egldNodePost.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldNodePost.php)
 
 [Back to top](#top)
 

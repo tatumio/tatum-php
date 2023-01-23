@@ -9,6 +9,7 @@ layout: page
 [Blockchain storage API Reference](https://apidoc.tatum.io/tag/Blockchain-storage/)
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet API Call

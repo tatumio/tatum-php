@@ -8,6 +8,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getGasLimit()** | **string** | Gas limit for transaction in gas price. |
-**getGasPrice()** | **string** | Gas price in peb. |
+**getGasPrice()** | **string** | The estimated price for one gas unit (in peb) |
+**getGasLimit()** | **float** | The number of the gas units needed to process the transaction at the estimated gas price |
 

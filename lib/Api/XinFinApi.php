@@ -31,12 +31,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callXdcReadSmartContractMethod($call_xdc_read_smart_contract_method) { 
+    public function callXdcReadSmartContractMethod($call_xdc_read_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/xdc/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -47,7 +46,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on XinFin
      *
@@ -57,12 +56,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callXdcSmartContractMethod($call_xdc_smart_contract_method) { 
+    public function callXdcSmartContractMethod($call_xdc_smart_contract_method) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/xdc/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -73,7 +71,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Invoke a method in a smart contract on XinFin
      *
@@ -83,12 +81,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callXdcSmartContractMethodKMS($call_xdc_smart_contract_method_kms) { 
+    public function callXdcSmartContractMethodKMS($call_xdc_smart_contract_method_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/xdc/smartcontract";
-
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -99,7 +96,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send XDC / ERC20 from account to account
      *
@@ -109,12 +106,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXdcBlockchain($transfer_xdc_blockchain) { 
+    public function transferXdcBlockchain($transfer_xdc_blockchain) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/xdc/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -125,7 +121,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Send XDC / ERC20 from account to account
      *
@@ -135,12 +131,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXdcBlockchainKMS($transfer_xdc_blockchain_kms) { 
+    public function transferXdcBlockchainKMS($transfer_xdc_blockchain_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/xdc/transaction";
-
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
@@ -151,7 +146,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Broadcast signed XDC transaction
      *
@@ -161,12 +156,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function xdcBroadcast($broadcast_kms) { 
+    public function xdcBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/xdc/broadcast";
-
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
@@ -177,7 +171,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate XDC account address from Extended public key
      *
@@ -188,12 +182,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XdcGenerateAddress200Response
      */
-    public function xdcGenerateAddress($xpub, $index) { 
+    public function xdcGenerateAddress($xpub, $index) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/xdc/address/{xpub}/{index}";
-
         /** @var \Tatum\Model\XdcGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -204,7 +197,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate XDC private key
      *
@@ -214,12 +207,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function xdcGenerateAddressPrivateKey($priv_key_request) { 
+    public function xdcGenerateAddressPrivateKey($priv_key_request) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template
         $rPath = "/v3/xdc/wallet/priv";
-
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
@@ -230,7 +222,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Generate XDC wallet
      *
@@ -240,7 +232,7 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function xdcGenerateWallet($mnemonic = null) { 
+    public function xdcGenerateWallet($mnemonic = null) {
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling XinFinApi.xdcGenerateWallet, must be smaller than or equal to 500');
         }
@@ -249,7 +241,6 @@ class XinFinApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/xdc/wallet";
-
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
@@ -262,7 +253,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get XDC Account balance
      *
@@ -272,12 +263,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XdcGetBalance200Response
      */
-    public function xdcGetBalance($address) { 
+    public function xdcGetBalance($address) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/xdc/account/balance/{address}";
-
         /** @var \Tatum\Model\XdcGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
@@ -288,7 +278,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get XDC block by hash
      *
@@ -298,12 +288,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XdcBlock
      */
-    public function xdcGetBlock($hash) { 
+    public function xdcGetBlock($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/xdc/block/{hash}";
-
         /** @var \Tatum\Model\XdcBlock $result */
         $result = $this->exec(
             S::createRequest(
@@ -314,7 +303,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get current block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -322,12 +311,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return float
      */
-    public function xdcGetCurrentBlock() { 
+    public function xdcGetCurrentBlock() {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/xdc/block/current";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -338,7 +326,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get XDC Transaction
      *
@@ -348,12 +336,11 @@ class XinFinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XdcTx
      */
-    public function xdcGetTransaction($hash) { 
+    public function xdcGetTransaction($hash) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
         // Path template
         $rPath = "/v3/xdc/transaction/{hash}";
-
         /** @var \Tatum\Model\XdcTx $result */
         $result = $this->exec(
             S::createRequest(
@@ -364,7 +351,7 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
+    
     /**
      * Get count of outgoing XDC transactions
      *
@@ -374,7 +361,7 @@ class XinFinApi extends AbstractApi {
      * 
      * @return float
      */
-    public function xdcGetTransactionCount($address) { 
+    public function xdcGetTransactionCount($address) {
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling XinFinApi.xdcGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -387,7 +374,6 @@ class XinFinApi extends AbstractApi {
 
         // Path template
         $rPath = "/v3/xdc/transaction/count/{address}";
-
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
@@ -398,16 +384,5 @@ class XinFinApi extends AbstractApi {
             
         return $result;
     }
-
-    /**
-     * @deprecated
-     * Web3 HTTP driver
-     *
-     * @param string $x_api_key Tatum X-API-Key used for authorization.
-     * @param object $body 
-     * 
-     * @return void
-     */
-    public function xdcWeb3Driver($x_api_key, $body) {}
     
 }

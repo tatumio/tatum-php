@@ -7,6 +7,7 @@ layout: page
 # Local/Wallet/Ethereum
 
 ```php
+// Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
 // MainNet Local/Wallet/Ethereum
