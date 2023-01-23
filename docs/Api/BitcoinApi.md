@@ -517,12 +517,24 @@ Get information about a transaction output (UTXO) in a Bitcoin transaction
 ## ~~`btcRpcDriver()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/bitcoin/node`~~
 > 
 > This method is no longer supported.
+
+Connect to a Bitcoin node through an RPC driver
+
+This endpoint is deprecated. Do not use it.
+
+ Instead, use <a href="https://apidoc.tatum.io/tag/Node-RPC#operation/NodeJsonPostRpcDriver" target="_blank">this API</a>.**
+
+ **2 credits per API call**
+
+ Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum. To learn more about JSON RPC, visit the <a href="https://developer.bitcoin.org/reference/rpc/index.html" target="_blank">Bitcoin developers' guide</a>.
 
 
 [Back to top](#top)

@@ -389,12 +389,22 @@ Get Bitcoin Cash Transaction by address. Limit is 50 transaction per response.
 ## ~~`bchRpcDriver()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/bcash/node`~~
 > 
 > This method is no longer supported.
+
+JSON RPC HTTP driver
+
+**2 credits per API call**
+
+ **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
+
+ Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum. To learn more about JSON RPC, visit <a href="https://github.com/gcash/bchd/blob/master/docs/json_rpc_api.md#Methods" target="_blank">Bitcoin Cash developers' guide</a>.
 
 
 [Back to top](#top)

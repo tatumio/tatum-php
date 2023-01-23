@@ -265,12 +265,22 @@ Get Solana transaction by transaction hash.
 ## ~~`solanaWeb3Driver()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/solana/web3/{xApiKey}`~~
 > 
 > This method is no longer supported.
+
+JSON RPC HTTP driver
+
+**2 credits per API call**
+
+ **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
+
+ Use this endpoint URL as a http-based JSON RPC driver to connect directly to the Solana node provided by Tatum. To learn more about Solana JSON RPC, visit the <a href="https://docs.solana.com/developing/clients/jsonrpc-api" target="_blank">Solana developer's guide</a>.
 
 
 [Back to top](#top)

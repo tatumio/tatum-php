@@ -429,12 +429,22 @@ Get count of outgoing EGLD transactions
 ## ~~`egldNodeGet()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**GET** `/v3/egld/node/{xApiKey}/*`~~
 > 
 > This method is no longer supported.
+
+Node HTTP driver
+
+**2 credits per API call**
+
+ **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
+
+ Use this endpoint URL as a http-based driver to connect directly to the EGLD node provided by Tatum. To learn more about EGLD, visit the <a href="https://docs.elrond.com/sdk-and-tools/rest-api/nodes/" target="_blank">EGLD developer's guide</a>.
 
 
 [Back to top](#top)
@@ -444,12 +454,22 @@ Get count of outgoing EGLD transactions
 ## ~~`egldNodePost()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/egld/node/{xApiKey}/*`~~
 > 
 > This method is no longer supported.
+
+Node HTTP driver
+
+**2 credits per API call**
+
+ **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
+
+ Use this endpoint URL as a http-based driver to connect directly to the EGLD node provided by Tatum. To learn more about EGLD, visit the <a href="https://docs.elrond.com/sdk-and-tools/rest-api/nodes/" target="_blank">EGLD developer's guide</a>.
 
 
 [Back to top](#top)

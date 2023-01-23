@@ -249,12 +249,20 @@ Cancel existing trade.
 ## ~~`getBuyTrades()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**GET** `/v3/trade/buy`~~
 > 
 > This method is no longer supported.
+
+List all active buy trades
+
+<h4>1 credit per API call.</h4>
+
+List all active buy trades.
 
 
 [Back to top](#top)
@@ -302,12 +310,20 @@ List all active buy trades.
 ## ~~`getHistoricalTrades()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**GET** `/v3/trade/history`~~
 > 
 > This method is no longer supported.
+
+List all historical trades
+
+<h4>1 credit per API call.</h4>
+
+List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
 
 
 [Back to top](#top)
@@ -393,12 +409,20 @@ List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
 ## ~~`getSellTrades()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**GET** `/v3/trade/sell`~~
 > 
 > This method is no longer supported.
+
+List all active sell trades
+
+<h4>1 credit per API call.</h4>
+
+List all active sell trades.
 
 
 [Back to top](#top)

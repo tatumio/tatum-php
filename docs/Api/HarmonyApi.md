@@ -579,12 +579,22 @@ Get count of outgoing ONE transactions
 ## ~~`oneWeb3Driver()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/one/web3/{xApiKey}`~~
 > 
 > This method is no longer supported.
+
+Web3 HTTP driver
+
+**2 credits per API call**
+
+ **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
+
+ Use this endpoint URL as a http-based web3 driver to connect directly to the ONE node provided by Tatum. To learn more about ONE Web3, visit the <a href="https://docs.harmony.one/home/developers/api" target="_blank">ONE developer's guide</a>.
 
 
 [Back to top](#top)

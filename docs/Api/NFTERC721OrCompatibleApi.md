@@ -2134,12 +2134,30 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 ## ~~`nftGetContractAddress()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**GET** `/v3/nft/address/{chain}/{hash}`~~
 > 
 > This method is no longer supported.
+
+Get the address of an NFT smart contract by its transaction hash
+
+This endpoint is deprecated. Do not use it.
+
+ Instead, use <a href="https://apidoc.tatum.io/tag/Blockchain-utils#operation/SCGetContractAddress" target="_blank">this API</a>.**
+
+ **1 credit per API call**
+
+ Get NFT contract address from deploy transaction.
+
+ This API is supported for the following blockchains:
+
+ 
+
+<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>TRON</li> </ul>
 
 
 [Back to top](#top)

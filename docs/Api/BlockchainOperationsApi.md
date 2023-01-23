@@ -1005,12 +1005,38 @@ DeployTrcOffchainPKXpub operation
 ## ~~`erc20()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/ethereum/erc20`~~
 > 
 > This method is no longer supported.
+
+Register a new Ethereum ERC-20 token in the virtual account
+
+**This method is deprecated.
+
+Use this method instead.**
+
+ <h4>2 credits per API call.</h4>
+
+ First step to create new ERC20 token with given supply on Ethereum blockchain with support of Tatum's private ledger.
+
+ This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.
+
+ The whole supply of ERC20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with ERC20 token name as account's currency.
+
+ Newly created account is frozen until the specific ERC20 smart contract address is linked with the Tatum virtual currency, representing the token.
+
+ Order of the steps to create ERC20 smart contract with Tatum private ledger support: 
+
+<ol> <li>Create ERC20 token - creates a virtual currency within Tatum</li> <li>Deploy ERC20 smart contract - create new ERC20 smart contract on the blockchain</li> <li>Store ERC20 smart contract address - link newly created ERC20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for ERC20 Tatum accounts</li> </ol>
+
+ There is a helper method Deploy Ethereum ERC20 Smart Contract to Blockchain and Ledger, which wraps first 2 steps into 1 method.
+
+ Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub.
 
 
 [Back to top](#top)
@@ -1020,12 +1046,18 @@ DeployTrcOffchainPKXpub operation
 ## ~~`erc20Address()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/ethereum/erc20`~~
 > 
 > This method is no longer supported.
+
+Register a new Ethereum ERC-20 token in the virtual account
+
+Erc20Address operation
 
 
 [Back to top](#top)
@@ -1263,12 +1295,42 @@ DeployErc20OffchainPKXpub operation
 ## ~~`offBscErc20()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/bsc/bep20`~~
 > 
 > This method is no longer supported.
+
+Register a new BNB Smart Chain BEP-20 token in the virtual account
+
+**This method is deprecated.
+
+Use this method instead.**
+
+ <h4>2 credits per API call.</h4>
+
+ First step to create new BEP20 token with given supply on BSC blockchain with support of Tatum's private ledger.
+
+ 
+
+ 
+
+ This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.
+
+ The whole supply of BEP20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with BEP20 token name as account's currency.
+
+ Newly created account is frozen until the specific BEP20 smart contract address is linked with the Tatum virtual currency, representing the token.
+
+ Order of the steps to create BEP20 smart contract with Tatum private ledger support: 
+
+<ol> <li>Register BEP20 token - creates a virtual currency within Tatum</li> <li>Deploy BEP20 smart contract - create new BEP20 smart contract on the blockchain</li> <li>Store BEP20 smart contract address - link newly created BEP20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for BEP20 Tatum accounts</li> </ol>
+
+ There is a helper method Deploy BSC BEP20 Smart Contract to Blockchain and Ledger, which wraps first 2 steps into 1 method.
+
+ Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub.
 
 
 [Back to top](#top)
@@ -1278,12 +1340,18 @@ DeployErc20OffchainPKXpub operation
 ## ~~`offBscErc20Address()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/bsc/bep20`~~
 > 
 > This method is no longer supported.
+
+Register a new BNB Smart Chain BEP-20 token in the virtual account
+
+Erc20Address operation
 
 
 [Back to top](#top)
@@ -1293,12 +1361,42 @@ DeployErc20OffchainPKXpub operation
 ## ~~`offCelErc20()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/celo/erc20`~~
 > 
 > This method is no longer supported.
+
+Register a new Celo ERC-20-equivalent token in the virtual account
+
+**This method is deprecated.
+
+Use this method instead.**
+
+ <h4>2 credits per API call.</h4>
+
+ First step to create new ERC-20 token with given supply on Celo blockchain with support of Tatum's private ledger.
+
+ 
+
+ 
+
+ This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.
+
+ The whole supply of ERC-20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with ERC-20 token name as account's currency.
+
+ Newly created account is frozen until the specific ERC-20 smart contract address is linked with the Tatum virtual currency, representing the token.
+
+ Order of the steps to create ERC-20 smart contract with Tatum private ledger support: 
+
+<ol> <li>Register Celo ERC-20 token - creates a virtual currency within Tatum</li> <li>Deploy Celo ERC-20 smart contract - create new ERC-20 smart contract on the blockchain</li> <li>Store Celo ERC-20 smart contract address - link newly created ERC-20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for ERC-20 Tatum accounts</li> </ol>
+
+ There is a helper method Deploy Celo ERC-20 Smart Contract to Blockchain and Ledger, which wraps first 2 steps into 1 method.
+
+ Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub.
 
 
 [Back to top](#top)
@@ -1308,12 +1406,18 @@ DeployErc20OffchainPKXpub operation
 ## ~~`offCelErc20Address()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/celo/erc20`~~
 > 
 > This method is no longer supported.
+
+Register a new Celo ERC-20-equivalent token in the virtual account
+
+Erc20Address operation
 
 
 [Back to top](#top)
@@ -2259,12 +2363,42 @@ DeployErc20OffchainPKXpub operation
 ## ~~`offOneErc20()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/one/hrm20`~~
 > 
 > This method is no longer supported.
+
+Register a new Harmony HRM-20 token in the virtual account
+
+**This method is deprecated.
+
+Use this method instead.**
+
+ <h4>2 credits per API call.</h4>
+
+ First step to create new HRM20 token with given supply on ONE blockchain with support of Tatum's private ledger.
+
+ 
+
+ 
+
+ This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.
+
+ The whole supply of HRM20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with HRM20 token name as account's currency.
+
+ Newly created account is frozen until the specific HRM20 smart contract address is linked with the Tatum virtual currency, representing the token.
+
+ Order of the steps to create HRM20 smart contract with Tatum private ledger support: 
+
+<ol> <li>Register HRM20 token - creates a virtual currency within Tatum</li> <li>Deploy HRM20 smart contract - create new HRM20 smart contract on the blockchain</li> <li>Store HRM20 smart contract address - link newly created HRM20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for HRM20 Tatum accounts</li> </ol>
+
+ There is a helper method Deploy ONE HRM20 Smart Contract to Blockchain and Ledger, which wraps first 2 steps into 1 method.
+
+ Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub.
 
 
 [Back to top](#top)
@@ -2274,12 +2408,18 @@ DeployErc20OffchainPKXpub operation
 ## ~~`offOneErc20Address()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/one/hrm20`~~
 > 
 > This method is no longer supported.
+
+Register a new Harmony HRM-20 token in the virtual account
+
+Erc20Address operation
 
 
 [Back to top](#top)
@@ -2853,12 +2993,38 @@ DeployErc20OffchainPKXpub operation
 ## ~~`offXdcErc20()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/xdc/erc20`~~
 > 
 > This method is no longer supported.
+
+Register a new XinFin ERC-20-equivalent token in the virtual account
+
+**This method is deprecated.
+
+Use this method instead.**
+
+ <h4>2 credits per API call.</h4>
+
+ First step to create new ERC20 token with given supply on XDC blockchain with support of Tatum's private ledger.
+
+ This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.
+
+ The whole supply of ERC20 token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with ERC20 token name as account's currency.
+
+ Newly created account is frozen until the specific ERC20 smart contract address is linked with the Tatum virtual currency, representing the token.
+
+ Order of the steps to create ERC20 smart contract with Tatum private ledger support: 
+
+<ol> <li>Register ERC20 token - creates a virtual currency within Tatum</li> <li>Deploy ERC20 smart contract - create new ERC20 smart contract on the blockchain</li> <li>Store ERC20 smart contract address - link newly created ERC20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for ERC20 Tatum accounts</li> </ol>
+
+ There is a helper method Deploy XDC ERC20 Smart Contract to Blockchain and Ledger, which wraps first 2 steps into 1 method.
+
+ Address on the blockchain, where all initial supply will be transferred, can be defined via the address or xpub and derivationIndex. When xpub is present, the account connected to this virtualCurrency will be set as the account's xpub.
 
 
 [Back to top](#top)
@@ -2868,12 +3034,18 @@ DeployErc20OffchainPKXpub operation
 ## ~~`offXdcErc20Address()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/xdc/erc20`~~
 > 
 > This method is no longer supported.
+
+Register a new XinFin ERC-20-equivalent token in the virtual account
+
+Erc20Address operation
 
 
 [Back to top](#top)
@@ -3003,12 +3175,22 @@ TransferEthMnemonic operation
 ## ~~`storeCeloErc20Address()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/celo/erc20/{name}/{address}`~~
 > 
 > This method is no longer supported.
+
+Set the contract address of a Celo ERC-20-equivalent token
+
+**This method is deprecated.
+
+Use this method instead.**
+
+ <h4>2 credits per API call.</h4>
 
 
 [Back to top](#top)
@@ -3066,12 +3248,22 @@ Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 ## ~~`storeTrcAddress()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/tron/trc/{name}/{address}`~~
 > 
 > This method is no longer supported.
+
+Set the contract address of a TRC-10 or TRC-20 token
+
+**This method is deprecated.
+
+Use this method instead.**
+
+ <h4>2 credits per API call.</h4>
 
 
 [Back to top](#top)
@@ -3081,12 +3273,18 @@ Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 ## ~~`transferAdaKMS()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/ada/transfer`~~
 > 
 > This method is no longer supported.
+
+Send ADA from a virtual account to the blockchain
+
+TransferAdaKMS operation
 
 
 [Back to top](#top)
@@ -3096,12 +3294,28 @@ Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 ## ~~`transferAdaKeyPair()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/ada/transfer`~~
 > 
 > This method is no longer supported.
+
+Send ADA from a virtual account to the blockchain
+
+**Support for Cardano is deprecated.**
+
+ <h4>10 credits per API call.</h4>
+
+Send ADA (Cardano) from a virtual account to the blockchain. This will create Tatum internal withdrawal request with ID. If every system works as expected, withdrawal request is marked as complete and transaction id is assigned to it. 
+
+<ul> <li>If ADA server connection is unavailable, withdrawal request is cancelled.</li> <li>If blockchain transfer is successful, but is it not possible to reach Tatum, transaction id of blockchain transaction is returned and withdrawal request must be completed manually, otherwise all other withdrawals will be pending.</li> </ul>
+
+ It is possible to perform ledger to blockchain transaction for ledger accounts without blockchain address assigned to them.
+
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 
 [Back to top](#top)
@@ -3111,12 +3325,18 @@ Set the contract address of an ERC-20, ERC-20-equivalent, or TRC-10 token
 ## ~~`transferAdaMnemonic()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/offchain/ada/transfer`~~
 > 
 > This method is no longer supported.
+
+Send ADA from a virtual account to the blockchain
+
+TransferAdaMnemonic operation
 
 
 [Back to top](#top)

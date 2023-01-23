@@ -517,12 +517,22 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 ## ~~`ltcRpcDriver()`~~
 
 
+### Description
+
 {: .warning }
 > 🚫 **DEPRECATED**
 > 
 > ~~**POST** `/v3/litecoin/node`~~
 > 
 > This method is no longer supported.
+
+JSON RPC HTTP driver
+
+**2 credits per API call**
+
+ **This endpoint is deprecated. Use the <a href="https://apidoc.tatum.io/tag/Node-RPC" target="_blank">HTTP-based JSON RPC driver</a> instead.**
+
+ Use this endpoint URL as an http-based JSON RPC driver to connect directly to the node provided by Tatum.
 
 
 [Back to top](#top)
