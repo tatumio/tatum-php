@@ -22,7 +22,7 @@ $arg_transfer_custodial_wallet_batch_tron_kms = (new \Tatum\Model\TransferCustod
     // The blockchain to work with
     ->setChain('TRON')
     
-    // The gas pump address that transfers the assets; this is the address that you <a href="#operation/...
+    // The gas pump address that transfers the assets; this is the address that you precalculated and ac...
     ->setCustodialAddress('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
     
     // The blockchain address that owns the gas pump address ("master address") in the Base58 format

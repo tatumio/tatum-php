@@ -22,7 +22,7 @@ $arg_transfer_custodial_wallet_tron = (new \Tatum\Model\TransferCustodialWalletT
     // The blockchain to work with
     ->setChain('TRON')
     
-    // The gas pump address that transfers the asset; this is the address that you <a href="#operation/P...
+    // The gas pump address that transfers the asset; this is the address that you precalculated and act...
     ->setCustodialAddress('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
     
     // The blockchain address that receives the asset

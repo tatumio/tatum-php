@@ -40,7 +40,7 @@ $arg_mint_nft = (new \Tatum\Model\MintNft())
     // (optional) The blockchain address of the custom fungible token
     ->setErc20('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) Set to "true" if the NFT smart contract is of the <a href="#operation/NftDeployErc721">provenance...
+    // (optional) Set to "true" if the NFT smart contract is of the provenance type; otherwise, set to "false".
     ->setProvenance(true)
     
     // (optional) The blockchain addresses where the royalties will be sent every time the minted NFT is transferre...

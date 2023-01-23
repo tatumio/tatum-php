@@ -223,7 +223,7 @@ Activate gas pump addresses
 
 **2 credits per API call**
 
- Activate the <a href="#precalculategaspumpaddresses">precalulated gas pump addresses</a>. Activating a gas pump address allows this address to send funds to other addresses.
+ Activate the <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/precalculategaspumpaddresses">precalulated gas pump addresses</a>. Activating a gas pump address allows this address to send funds to other addresses.
 
  You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the <code>from</code> and <code>to</code> request body parameters) and then make another API call with the remaining 230 addresses.
 
@@ -239,7 +239,7 @@ Activate gas pump addresses
 
 <ul> <li>When it receives an asset for the first time</li> <li>When the customer tries to send an asset from this address for the first time</li> </ul>
 
- After you make an API call to activate gas pump addresses, use the <a href="#activatednotactivatedgaspumpaddresses">API for getting the results of the address activation transaction</a>.
+ After you make an API call to activate gas pump addresses, use the <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activatednotactivatedgaspumpaddresses">API for getting the results of the address activation transaction</a>.
 
  **Paying the gas fee for activating gas pump addresses**
 
@@ -373,7 +373,7 @@ Get the results of the address activation transaction
 
 **1 credit per API call**
 
- Get the results of the activation transaction after <a href="#activategaspumpaddresses">activating gas pump addresses</a>.
+ Get the results of the activation transaction after <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activating gas pump addresses</a>.
 
  If the activation transaction got recorded into a block, the API returns two arrays:
 
@@ -597,7 +597,7 @@ Check whether the gas pump address with a specified index is activated
 
 **1 credit per API call**
 
- Check whether the gas pump address with a specified index is <a href="#activategaspumpaddresses">activated</a> and can send funds to other addresses.
+ Check whether the gas pump address with a specified index is <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activated</a> and can send funds to other addresses.
 
  You can use this API when a customer initiates a fund transfer and you need to check whether their gas pump address is allowed to send funds.
 
@@ -675,7 +675,7 @@ For example, you precalculated three gas pump addresses with a range of index va
 
  **Activated and not activated addresses**
 
- The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, <a href="#activategaspumpaddresses">activate them</a>.
+ The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activate them</a>.
 
 ### Example
 
@@ -723,11 +723,11 @@ Transfer an asset from a gas pump address
 
  
 
-<ul> <li>The gas pump address must be <a href="#activategaspumpaddresses">activated</a>.
+<ul> <li>The gas pump address must be <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activated</a>.
 
-To check whether the gas pump address is activated, use <a href="#gaspumpaddressesactivatedornot">this API</a>.</li> <li>The gas pump address must be the owner of the asset.</li> </ul>
+To check whether the gas pump address is activated, use <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot">this API</a>.</li> <li>The gas pump address must be the owner of the asset.</li> </ul>
 
- With this API, you can send only one asset per API call. If you want to send multiple assets, use the <a href="#transfercustodialwalletbatch">API for transferring multiple assets from a gas pump account</a>.
+ With this API, you can send only one asset per API call. If you want to send multiple assets, use the <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/transfercustodialwalletbatch">API for transferring multiple assets from a gas pump account</a>.
 
  This API is supported for the following blockchains:
 
@@ -789,11 +789,11 @@ Transfer multiple assets from a gas pump address
 
  
 
-<ul> <li>The gas pump address must be <a href="#activategaspumpaddresses">activated</a>.
+<ul> <li>The gas pump address must be <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activated</a>.
 
-To check whether the gas pump address is activated, use <a href="#gaspumpaddressesactivatedornot">this API</a>.</li> <li>The gas pump address must be the owner of the assets.</li> </ul>
+To check whether the gas pump address is activated, use <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot">this API</a>.</li> <li>The gas pump address must be the owner of the assets.</li> </ul>
 
- If you want to send only one asset, you can also use the <a href="#transfercustodialwallet">API for transferring an asset from a gas pump account</a>.
+ If you want to send only one asset, you can also use the <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/transfercustodialwallet">API for transferring an asset from a gas pump account</a>.
 
  This API is supported for the following blockchains:
 

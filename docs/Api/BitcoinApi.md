@@ -543,7 +543,7 @@ Send BTC to Bitcoin addresses
 
  Send BTC to blockchain addresses.
 
- Bitcoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of BTC/satoshis that remains at a Bitcoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about Bitcoin transactions and UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#btcgetutxo">API for getting information about a transaction output (UTXO) in a Bitcoin transaction</a>.
+ Bitcoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of BTC/satoshis that remains at a Bitcoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about Bitcoin transactions and UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="https://apidoc.tatum.io/tag/Bitcoin/#operation/btcgetutxo">API for getting information about a transaction output (UTXO) in a Bitcoin transaction</a>.
 
  You can build a BTC transaction by one of the following methods:
 

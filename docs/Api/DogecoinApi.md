@@ -457,7 +457,7 @@ Send DOGE to Dogecoin addresses
 
  Send DOGE to blockchain addresses.
 
- Dogecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of DOGE that remains at a Bitcoin Cash address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="#dogegetutxo">API for getting information about a transaction output (UTXO) in a Dogecoin transaction</a>
+ Dogecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of DOGE that remains at a Bitcoin Cash address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="https://apidoc.tatum.io/tag/Dogecoin/#operation/dogegetutxo">API for getting information about a transaction output (UTXO) in a Dogecoin transaction</a>
 
  You build a DOGE transaction by sending DOGE from UTXOs. Each UTXO is included in the transaction.
 

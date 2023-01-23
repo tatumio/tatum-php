@@ -22,7 +22,7 @@ $arg_transfer_custodial_wallet_celo = (new \Tatum\Model\TransferCustodialWalletC
     // The blockchain to work with
     ->setChain('CELO')
     
-    // The gas pump address that transfers the asset; this is the address that you <a href="#operation/P...
+    // The gas pump address that transfers the asset; this is the address that you precalculated and act...
     ->setCustodialAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
     // The blockchain address that receives the asset

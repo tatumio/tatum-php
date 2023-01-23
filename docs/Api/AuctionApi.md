@@ -258,9 +258,9 @@ Bid for an asset at the NFT auction
 
 <ul> <li>If you want to pay for the asset with the **native assets**, send the required amount of the assets with the API call.</li> <li>If you want to pay with the **fungible tokens**, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the auction smart contract to access your tokens</a> before bidding for the asset. When you make the API call, the auction smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul>
 
- After you have purchased the asset, it is in a pending state until <a href="#settleauction">the auction is settled</a>. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.
+ After you have purchased the asset, it is in a pending state until <a href="https://apidoc.tatum.io/tag/Auction/#operation/settleauction">the auction is settled</a>. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.
 
- For the complete information about how the bidding/purchase process at an auction works, see the API for <a href="#generateauction">creating an NFT auction</a>.
+ For the complete information about how the bidding/purchase process at an auction works, see the API for <a href="https://apidoc.tatum.io/tag/Auction/#operation/generateauction">creating an NFT auction</a>.
 
  This API is supported for the following blockchains:
 
@@ -756,7 +756,7 @@ Sell an asset at the NFT auction
 
 **2 credits per API call**
 
- Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="#approvenftauctionspending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset. This API is supported for the following blockchains:
+ Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="https://apidoc.tatum.io/tag/Auction/#operation/approvenftauctionspending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset. This API is supported for the following blockchains:
 
  
 

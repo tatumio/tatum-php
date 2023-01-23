@@ -247,7 +247,7 @@ Deploy an Algorand ERC-20-equivalent smart contract to the blockchain and a virt
 
 **4 credits per API call**
 
- Deploy an Algorand ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#registererc20token">Register new Algorand ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+ Deploy an Algorand ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registererc20token">Register new Algorand ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -439,7 +439,7 @@ Deploy a Celo ERC-20-equivalent smart contract to the blockchain and a virtual a
 
 **4 credits per API call**
 
- Deploy a Celo ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#registererc20token">Register new Celo ERC-20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+ Deploy a Celo ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registererc20token">Register new Celo ERC-20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -667,7 +667,7 @@ Deploy an Ethereum ERC-20 smart contract to the blockchain and a virtual account
 
 **4 credits per API call**
 
- Deploy an Ethereum ERC-20 smart contract. This is a helper method, which is combination of <a href="#registererc20token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+ Deploy an Ethereum ERC-20 smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registererc20token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -895,7 +895,7 @@ Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual ac
 
 **10 credits per API call**
 
- Deploy a TRON TRC-10 or TRC-20 smart contract. This is a helper method, which is combination of <a href="#createtrc">Register new TRC-10/20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">Deploy blockchain TRC20</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy blockchain TRC10</a>.
+ Deploy a TRON TRC-10 or TRC-20 smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/createtrc">Register new TRC-10/20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">Deploy blockchain TRC20</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy blockchain TRC10</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -1123,7 +1123,7 @@ Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual a
 
 **4 credits per API call**
 
- Deploy a BNB Smart Chain BEP-20 smart contract. This is a helper method, which is combination of <a href="#registererc20token">Register new BEP20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+ Deploy a BNB Smart Chain BEP-20 smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registererc20token">Register new BEP20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -1471,7 +1471,7 @@ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract to the bl
 
 **4 credits per API call**
 
- Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#registererc20token">Register new Kcs ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+ Deploy a KuCoin Community Chain (KCC) ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registererc20token">Register new Kcs ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -1699,7 +1699,7 @@ Deploy a Klaytn ERC-20-equivalent smart contract to the blockchain and a virtual
 
 **4 credits per API call**
 
- Deploy a Klaytn ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#registererc20token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+ Deploy a Klaytn ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registererc20token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -2055,7 +2055,7 @@ Deploy a Harmony HRM-20 smart contract to the blockchain and a virtual account
 
 **4 credits per API call**
 
- Deploy a Harmony HRM-20 smart contract. This is a helper method, which is combination of <a href="#registererc20token">Register new HRM20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+ Deploy a Harmony HRM-20 smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registererc20token">Register new HRM20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -2437,7 +2437,7 @@ Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 
  Order of the steps to create smart contract with Tatum private ledger support: 
 
-<ol> <li>Register token</a> (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy smart contract</a> - create new smart contract on the blockchain</li> <li><a href="#storetokenaddress">Store smart contract address</a> - link newly created smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for Tatum accounts</li> </ol>
+<ol> <li>Register token</a> (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy smart contract</a> - create new smart contract on the blockchain</li> <li><a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/storetokenaddress">Store smart contract address</a> - link newly created smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for Tatum accounts</li> </ol>
 
  Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex.
 
@@ -2623,7 +2623,7 @@ Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual
 
 **4 credits per API call**
 
- Deploy a XinFin ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="#registererc20token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
+ Deploy a XinFin ERC-20-equivalent smart contract. This is a helper method, which is combination of <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/registererc20token">Register new ERC20 token in the ledger</a> and <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy blockchain ERC20</a>.
 
  After deploying a contract to blockchain, the contract address will become available and must be stored within Tatum. Otherwise, it will not be possible to interact with it and starts automatic blockchain synchronization.
 
@@ -4691,9 +4691,9 @@ Register a new TRON TRC-10 or TRC-20 token in the virtual account
 
  Order of the steps to create TRC 10/20 smart contract with Tatum private ledger support: 
 
-<ol> <li>Create TRC 10/20 token (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy TRC 10</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">TRC 20 smart contract</a> - create new TRC 10/20 smart contract on the blockchain</li> <li><a href="#storetokenaddress">Store TRC 10/20 smart contract address</a> - link newly created TRC 10/20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for TRC 10/20 Tatum accounts</li> </ol>
+<ol> <li>Create TRC 10/20 token (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc10">Deploy TRC 10</a> or <a href="https://apidoc.tatum.io/tag/Tron#operation/TronCreateTrc20">TRC 20 smart contract</a> - create new TRC 10/20 smart contract on the blockchain</li> <li><a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/storetokenaddress">Store TRC 10/20 smart contract address</a> - link newly created TRC 10/20 smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for TRC 10/20 Tatum accounts</li> </ol>
 
- Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex. There is a helper method <a href="#trondeploytrc">Deploy TRC 10/20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.
+ Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex. There is a helper method <a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/trondeploytrc">Deploy TRC 10/20 Smart Contract to Blockchain and Ledger</a>, which wraps first 2 steps into 1 method.
 
 ### Example
 
