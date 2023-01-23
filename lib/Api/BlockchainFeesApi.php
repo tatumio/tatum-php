@@ -31,20 +31,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PolygonEstimateGas200Response
      */
-    public function bscEstimateGas($bsc_estimate_gas) {
+    public function bscEstimateGas($bsc_estimate_gas) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/bsc/gas";
 
         /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/bsc/gas", "/v3/bsc/gas", [], $rHeaders, [], $bsc_estimate_gas
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $bsc_estimate_gas
             ), 
             "\Tatum\Model\PolygonEstimateGas200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate Celo Chain transaction fees
      *
@@ -54,20 +57,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CeloEstimateGas200Response
      */
-    public function celoEstimateGas($celo_estimate_gas) {
+    public function celoEstimateGas($celo_estimate_gas) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/celo/gas";
 
         /** @var \Tatum\Model\CeloEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/celo/gas", "/v3/celo/gas", [], $rHeaders, [], $celo_estimate_gas
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $celo_estimate_gas
             ), 
             "\Tatum\Model\CeloEstimateGas200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate EGLD transaction fees
      *
@@ -77,20 +83,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EgldEstimateGas200Response
      */
-    public function egldEstimateGas($transaction_fee_egld_blockchain) {
+    public function egldEstimateGas($transaction_fee_egld_blockchain) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/egld/gas";
 
         /** @var \Tatum\Model\EgldEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/egld/gas", "/v3/egld/gas", [], $rHeaders, [], $transaction_fee_egld_blockchain
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transaction_fee_egld_blockchain
             ), 
             "\Tatum\Model\EgldEstimateGas200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate the fee for a transaction
      *
@@ -100,20 +109,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFee($estimate_fee) {
+    public function estimateFee($estimate_fee) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/estimate";
 
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/estimate", "/v3/blockchain/estimate", [], $rHeaders, [], $estimate_fee
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate the fee for a transaction
      *
@@ -123,20 +135,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeBatchMintNft($estimate_fee_batch_mint_nft) {
+    public function estimateFeeBatchMintNft($estimate_fee_batch_mint_nft) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/estimate";
 
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/estimate", "/v3/blockchain/estimate", [], $rHeaders, [], $estimate_fee_batch_mint_nft
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_batch_mint_nft
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate the fee for a transaction
      *
@@ -146,20 +161,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeDeployCustodialWallet($estimate_fee_deploy_custodial_wallet) {
+    public function estimateFeeDeployCustodialWallet($estimate_fee_deploy_custodial_wallet) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/estimate";
 
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/estimate", "/v3/blockchain/estimate", [], $rHeaders, [], $estimate_fee_deploy_custodial_wallet
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_deploy_custodial_wallet
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate the fee for a transaction
      *
@@ -169,20 +187,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeFromAddress($estimate_fee_from_address) {
+    public function estimateFeeFromAddress($estimate_fee_from_address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/estimate";
 
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/estimate", "/v3/blockchain/estimate", [], $rHeaders, [], $estimate_fee_from_address
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_from_address
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate the fee for a transaction
      *
@@ -192,20 +213,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeFromUTXO($estimate_fee_from_utxo) {
+    public function estimateFeeFromUTXO($estimate_fee_from_utxo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/estimate";
 
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/estimate", "/v3/blockchain/estimate", [], $rHeaders, [], $estimate_fee_from_utxo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_from_utxo
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate the fee for a transaction
      *
@@ -215,20 +239,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EstimateFee200Response
      */
-    public function estimateFeeTransferFromCustodial($estimate_fee_transfer_from_custodial) {
+    public function estimateFeeTransferFromCustodial($estimate_fee_transfer_from_custodial) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/estimate";
 
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/estimate", "/v3/blockchain/estimate", [], $rHeaders, [], $estimate_fee_transfer_from_custodial
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_transfer_from_custodial
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate Ethereum transaction fees
      *
@@ -239,7 +266,7 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthGasEstimation
      */
-    public function ethEstimateGas($eth_estimate_gas, $x_testnet_type = 'ethereum-sepolia') {
+    public function ethEstimateGas($eth_estimate_gas, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -248,17 +275,20 @@ class BlockchainFeesApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/ethereum/gas";
+
         /** @var \Tatum\Model\EthGasEstimation $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/gas", "/v3/ethereum/gas", [], $rHeaders, [], $eth_estimate_gas
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $eth_estimate_gas
             ), 
             "\Tatum\Model\EthGasEstimation"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate multiple Ethereum transaction fees
      *
@@ -269,7 +299,7 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthGasEstimationBatch
      */
-    public function ethEstimateGasBatch($eth_estimate_gas_array, $x_testnet_type = 'ethereum-sepolia') {
+    public function ethEstimateGasBatch($eth_estimate_gas_array, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -278,17 +308,20 @@ class BlockchainFeesApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/ethereum/gas/batch";
+
         /** @var \Tatum\Model\EthGasEstimationBatch $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ethereum/gas/batch", "/v3/ethereum/gas/batch", [], $rHeaders, [], $eth_estimate_gas_array
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $eth_estimate_gas_array
             ), 
             "\Tatum\Model\EthGasEstimationBatch"
         );
             
         return $result;
     }
-    
+
     /**
      * Get recommended blockchain fee / gas price
      *
@@ -298,20 +331,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BlockchainFee
      */
-    public function getBlockchainFee($chain) {
+    public function getBlockchainFee($chain) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/fee/{chain}";
 
         /** @var \Tatum\Model\BlockchainFee $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/fee/{chain}", ["chain" => $chain]), "/v3/blockchain/fee/{chain}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BlockchainFee"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate KuCoin Community Chain transaction fees
      *
@@ -321,20 +357,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PolygonEstimateGas200Response
      */
-    public function kcsEstimateGas($kcs_estimate_gas) {
+    public function kcsEstimateGas($kcs_estimate_gas) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/kcs/gas";
 
         /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/gas", "/v3/kcs/gas", [], $rHeaders, [], $kcs_estimate_gas
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $kcs_estimate_gas
             ), 
             "\Tatum\Model\PolygonEstimateGas200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate Klaytn transaction fees
      *
@@ -344,20 +383,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KlaytnEstimateGas200Response
      */
-    public function klaytnEstimateGas($klaytn_estimate_gas) {
+    public function klaytnEstimateGas($klaytn_estimate_gas) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/klaytn/gas";
 
         /** @var \Tatum\Model\KlaytnEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/klaytn/gas", "/v3/klaytn/gas", [], $rHeaders, [], $klaytn_estimate_gas
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $klaytn_estimate_gas
             ), 
             "\Tatum\Model\KlaytnEstimateGas200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate Polygon transaction fees
      *
@@ -367,20 +409,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PolygonEstimateGas200Response
      */
-    public function polygonEstimateGas($polygon_estimate_gas) {
+    public function polygonEstimateGas($polygon_estimate_gas) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/gas";
 
         /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/gas", "/v3/polygon/gas", [], $rHeaders, [], $polygon_estimate_gas
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $polygon_estimate_gas
             ), 
             "\Tatum\Model\PolygonEstimateGas200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate VeChain Gas for transaction
      *
@@ -390,20 +435,23 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return float
      */
-    public function vetEstimateGas($vet_estimate_gas) {
+    public function vetEstimateGas($vet_estimate_gas) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/vet/transaction/gas";
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/vet/transaction/gas", "/v3/vet/transaction/gas", [], $rHeaders, [], $vet_estimate_gas
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $vet_estimate_gas
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
      * Estimate XinFin transaction fees
      *
@@ -413,18 +461,21 @@ class BlockchainFeesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PolygonEstimateGas200Response
      */
-    public function xdcEstimateGas($xdc_estimate_gas) {
+    public function xdcEstimateGas($xdc_estimate_gas) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/xdc/gas";
 
         /** @var \Tatum\Model\PolygonEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xdc/gas", "/v3/xdc/gas", [], $rHeaders, [], $xdc_estimate_gas
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $xdc_estimate_gas
             ), 
             "\Tatum\Model\PolygonEstimateGas200Response"
         );
             
         return $result;
     }
-    
+
 }

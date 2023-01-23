@@ -31,20 +31,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function ltcBroadcast($broadcast_kms) {
+    public function ltcBroadcast($broadcast_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/litecoin/broadcast";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/litecoin/broadcast", "/v3/litecoin/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Litecoin deposit address from Extended public key
      *
@@ -55,20 +58,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\LtcGenerateAddress200Response
      */
-    public function ltcGenerateAddress($xpub, $index) {
+    public function ltcGenerateAddress($xpub, $index) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/litecoin/address/{xpub}/{index}";
 
         /** @var \Tatum\Model\LtcGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/litecoin/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/litecoin/address/{xpub}/{index}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\LtcGenerateAddress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Litecoin private key
      *
@@ -78,20 +84,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function ltcGenerateAddressPrivateKey($priv_key_request) {
+    public function ltcGenerateAddressPrivateKey($priv_key_request) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/litecoin/wallet/priv";
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/litecoin/wallet/priv", "/v3/litecoin/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Litecoin wallet
      *
@@ -101,17 +110,20 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function ltcGenerateWallet($mnemonic = null) {
+    public function ltcGenerateWallet($mnemonic = null) { 
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling LitecoinApi.ltcGenerateWallet, must be smaller than or equal to 500');
         }
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/litecoin/wallet";
+
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/litecoin/wallet", "/v3/litecoin/wallet", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -120,7 +132,7 @@ class LitecoinApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get the balance of a Litecoin address
      *
@@ -130,20 +142,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\BtcBasedBalance
      */
-    public function ltcGetBalanceOfAddress($address) {
+    public function ltcGetBalanceOfAddress($address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/litecoin/address/balance/{address}";
 
         /** @var \Tatum\Model\BtcBasedBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/litecoin/address/balance/{address}", ["address" => $address]), "/v3/litecoin/address/balance/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BtcBasedBalance"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Litecoin Block by hash or height
      *
@@ -153,20 +168,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\LtcBlock
      */
-    public function ltcGetBlock($hash) {
+    public function ltcGetBlock($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/litecoin/block/{hash}";
 
         /** @var \Tatum\Model\LtcBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/litecoin/block/{hash}", ["hash" => $hash]), "/v3/litecoin/block/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\LtcBlock"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Litecoin Blockchain Information
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -174,20 +192,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\LtcInfo
      */
-    public function ltcGetBlockChainInfo() {
+    public function ltcGetBlockChainInfo() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/litecoin/info";
 
         /** @var \Tatum\Model\LtcInfo $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/litecoin/info", "/v3/litecoin/info", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\LtcInfo"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Litecoin Block hash
      *
@@ -197,20 +218,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\LtcGetBlockHash200Response
      */
-    public function ltcGetBlockHash($i) {
+    public function ltcGetBlockHash($i) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/litecoin/block/hash/{i}";
 
         /** @var \Tatum\Model\LtcGetBlockHash200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/litecoin/block/hash/{i}", ["i" => $i]), "/v3/litecoin/block/hash/{i}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["i" => $i]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\LtcGetBlockHash200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Mempool Transactions
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -218,20 +242,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function ltcGetMempool() {
+    public function ltcGetMempool() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/litecoin/mempool";
 
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/litecoin/mempool", "/v3/litecoin/mempool", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "string[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Litecoin Transaction by hash
      *
@@ -241,20 +268,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\LtcTx
      */
-    public function ltcGetRawTransaction($hash) {
+    public function ltcGetRawTransaction($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/litecoin/transaction/{hash}";
 
         /** @var \Tatum\Model\LtcTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/litecoin/transaction/{hash}", ["hash" => $hash]), "/v3/litecoin/transaction/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\LtcTx"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Litecoin Transactions by address
      *
@@ -266,7 +296,7 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\LtcTx[]
      */
-    public function ltcGetTxByAddress($address, $page_size, $offset = null) {
+    public function ltcGetTxByAddress($address, $page_size, $offset = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling LitecoinApi.ltcGetTxByAddress, must be smaller than or equal to 50');
         }
@@ -277,10 +307,13 @@ class LitecoinApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/litecoin/transaction/address/{address}";
+
         /** @var \Tatum\Model\LtcTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/litecoin/transaction/address/{address}", ["address" => $address]), "/v3/litecoin/transaction/address/{address}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -290,7 +323,7 @@ class LitecoinApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get information about a transaction output (UTXO) in a Litecoin transaction
      *
@@ -301,7 +334,7 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\LtcUTXO
      */
-    public function ltcGetUTXO($hash, $index) {
+    public function ltcGetUTXO($hash, $index) { 
         if (strlen($hash) > 64) {
             throw new IAE('Invalid length for "$hash" when calling LitecoinApi.ltcGetUTXO, must be smaller than or equal to 64');
         }
@@ -316,39 +349,29 @@ class LitecoinApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/litecoin/utxo/{hash}/{index}";
+
         /** @var \Tatum\Model\LtcUTXO $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/litecoin/utxo/{hash}/{index}", ["hash" => $hash, "index" => $index]), "/v3/litecoin/utxo/{hash}/{index}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\LtcUTXO"
         );
             
         return $result;
     }
-    
+
     /**
+     * @deprecated
      * JSON RPC HTTP driver
      *
      * @param \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return object
+     * @return void
      */
-    public function ltcRpcDriver($bch_rpc_driver_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var object $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/litecoin/node", "/v3/litecoin/node", [], $rHeaders, [], $bch_rpc_driver_request
-            ), 
-            "object"
-        );
-            
-        return $result;
-    }
+    public function ltcRpcDriver($bch_rpc_driver_request) {}
     
     /**
      * Send LTC to Litecoin addresses
@@ -359,20 +382,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function ltcTransactionAddress($ltc_transaction_address) {
+    public function ltcTransactionAddress($ltc_transaction_address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/litecoin/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/litecoin/transaction", "/v3/litecoin/transaction", [], $rHeaders, [], $ltc_transaction_address
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $ltc_transaction_address
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send LTC to Litecoin addresses
      *
@@ -382,20 +408,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function ltcTransactionAddressKMS($ltc_transaction_address_kms) {
+    public function ltcTransactionAddressKMS($ltc_transaction_address_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/litecoin/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/litecoin/transaction", "/v3/litecoin/transaction", [], $rHeaders, [], $ltc_transaction_address_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $ltc_transaction_address_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send LTC to Litecoin addresses
      *
@@ -405,20 +434,23 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function ltcTransactionUTXO($ltc_transaction_utxo) {
+    public function ltcTransactionUTXO($ltc_transaction_utxo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/litecoin/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/litecoin/transaction", "/v3/litecoin/transaction", [], $rHeaders, [], $ltc_transaction_utxo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $ltc_transaction_utxo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send LTC to Litecoin addresses
      *
@@ -428,18 +460,21 @@ class LitecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function ltcTransactionUTXOKMS($ltc_transaction_utxokms) {
+    public function ltcTransactionUTXOKMS($ltc_transaction_utxokms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/litecoin/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/litecoin/transaction", "/v3/litecoin/transaction", [], $rHeaders, [], $ltc_transaction_utxokms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $ltc_transaction_utxokms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
 }

@@ -31,20 +31,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXlmBlockchain($transfer_xlm_blockchain) {
+    public function transferXlmBlockchain($transfer_xlm_blockchain) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/xlm/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/transaction", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send XLM from address to address
      *
@@ -54,20 +57,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXlmBlockchainAsset($transfer_xlm_blockchain_asset) {
+    public function transferXlmBlockchainAsset($transfer_xlm_blockchain_asset) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/xlm/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/transaction", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_asset
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_asset
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send XLM from address to address
      *
@@ -77,20 +83,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXlmBlockchainKMS($transfer_xlm_blockchain_kms) {
+    public function transferXlmBlockchainKMS($transfer_xlm_blockchain_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/xlm/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/transaction", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send XLM from address to address
      *
@@ -100,20 +109,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferXlmBlockchainKMSAsset($transfer_xlm_blockchain_kms_asset) {
+    public function transferXlmBlockchainKMSAsset($transfer_xlm_blockchain_kms_asset) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/xlm/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/transaction", "/v3/xlm/transaction", [], $rHeaders, [], $transfer_xlm_blockchain_kms_asset
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_kms_asset
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Create / Update / Delete XLM trust line
      *
@@ -123,20 +135,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function trustLineXlmBlockchain($trust_line_xlm_blockchain) {
+    public function trustLineXlmBlockchain($trust_line_xlm_blockchain) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/xlm/trust";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/trust", "/v3/xlm/trust", [], $rHeaders, [], $trust_line_xlm_blockchain
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xlm_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Create / Update / Delete XLM trust line
      *
@@ -146,20 +161,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function trustLineXlmBlockchainKMS($trust_line_xlm_blockchain_kms) {
+    public function trustLineXlmBlockchainKMS($trust_line_xlm_blockchain_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/xlm/trust";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/trust", "/v3/xlm/trust", [], $rHeaders, [], $trust_line_xlm_blockchain_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xlm_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Broadcast signed XLM transaction
      *
@@ -169,20 +187,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function xlmBroadcast($broadcast_kms) {
+    public function xlmBroadcast($broadcast_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/xlm/broadcast";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/xlm/broadcast", "/v3/xlm/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Get XLM Account info
      *
@@ -192,20 +213,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XlmAccount
      */
-    public function xlmGetAccountInfo($account) {
+    public function xlmGetAccountInfo($account) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/xlm/account/{account}";
 
         /** @var \Tatum\Model\XlmAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xlm/account/{account}", ["account" => $account]), "/v3/xlm/account/{account}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["account" => $account]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmAccount"
         );
             
         return $result;
     }
-    
+
     /**
      * Get XLM Account transactions
      *
@@ -216,13 +240,16 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XlmTx[]
      */
-    public function xlmGetAccountTx($account, $pagination = null) {
+    public function xlmGetAccountTx($account, $pagination = null) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/xlm/account/tx/{account}";
 
         /** @var \Tatum\Model\XlmTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xlm/account/tx/{account}", ["account" => $account]), "/v3/xlm/account/tx/{account}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["account" => $account]), $rPath, [
                     "pagination" => isset($pagination) ? S::toQueryValue($pagination) : null,
                 ], $rHeaders, []
             ), 
@@ -231,7 +258,7 @@ class StellarApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get actual XLM fee
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -239,20 +266,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return float
      */
-    public function xlmGetFee() {
+    public function xlmGetFee() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/xlm/fee";
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/xlm/fee", "/v3/xlm/fee", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
      * Get XLM Blockchain Information
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -260,20 +290,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XlmLedger
      */
-    public function xlmGetLastClosedLedger() {
+    public function xlmGetLastClosedLedger() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/xlm/info";
 
         /** @var \Tatum\Model\XlmLedger $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/xlm/info", "/v3/xlm/info", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmLedger"
         );
             
         return $result;
     }
-    
+
     /**
      * Get XLM Blockchain Ledger by sequence
      *
@@ -283,20 +316,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XlmLedger
      */
-    public function xlmGetLedger($sequence) {
+    public function xlmGetLedger($sequence) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/xlm/ledger/{sequence}";
 
         /** @var \Tatum\Model\XlmLedger $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xlm/ledger/{sequence}", ["sequence" => $sequence]), "/v3/xlm/ledger/{sequence}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["sequence" => $sequence]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmLedger"
         );
             
         return $result;
     }
-    
+
     /**
      * Get XLM Blockchain Transactions in Ledger
      *
@@ -306,20 +342,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XlmTx[]
      */
-    public function xlmGetLedgerTx($sequence) {
+    public function xlmGetLedgerTx($sequence) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/xlm/ledger/{sequence}/transaction";
 
         /** @var \Tatum\Model\XlmTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xlm/ledger/{sequence}/transaction", ["sequence" => $sequence]), "/v3/xlm/ledger/{sequence}/transaction", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["sequence" => $sequence]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmTx[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Get XLM Transaction by hash
      *
@@ -329,20 +368,23 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XlmTx
      */
-    public function xlmGetTransaction($hash) {
+    public function xlmGetTransaction($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/xlm/transaction/{hash}";
 
         /** @var \Tatum\Model\XlmTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/xlm/transaction/{hash}", ["hash" => $hash]), "/v3/xlm/transaction/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmTx"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate XLM account
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -350,18 +392,21 @@ class StellarApi extends AbstractApi {
      * 
      * @return \Tatum\Model\XlmWallet
      */
-    public function xlmWallet() {
+    public function xlmWallet() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/xlm/account";
 
         /** @var \Tatum\Model\XlmWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/xlm/account", "/v3/xlm/account", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmWallet"
         );
             
         return $result;
     }
-    
+
 }

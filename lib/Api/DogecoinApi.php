@@ -31,20 +31,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function dogeBroadcast($broadcast_kms) {
+    public function dogeBroadcast($broadcast_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/dogecoin/broadcast";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/dogecoin/broadcast", "/v3/dogecoin/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Dogecoin deposit address from Extended public key
      *
@@ -55,20 +58,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DogeGenerateAddress200Response
      */
-    public function dogeGenerateAddress($xpub, $index) {
+    public function dogeGenerateAddress($xpub, $index) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/dogecoin/address/{xpub}/{index}";
 
         /** @var \Tatum\Model\DogeGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/dogecoin/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/dogecoin/address/{xpub}/{index}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\DogeGenerateAddress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Dogecoin private key
      *
@@ -78,20 +84,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function dogeGenerateAddressPrivateKey($priv_key_request) {
+    public function dogeGenerateAddressPrivateKey($priv_key_request) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/dogecoin/wallet/priv";
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/dogecoin/wallet/priv", "/v3/dogecoin/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Dogecoin wallet
      *
@@ -101,17 +110,20 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function dogeGenerateWallet($mnemonic = null) {
+    public function dogeGenerateWallet($mnemonic = null) { 
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling DogecoinApi.dogeGenerateWallet, must be smaller than or equal to 500');
         }
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/dogecoin/wallet";
+
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/dogecoin/wallet", "/v3/dogecoin/wallet", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -120,7 +132,7 @@ class DogecoinApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get Dogecoin Block by hash or height
      *
@@ -130,20 +142,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DogeBlock
      */
-    public function dogeGetBlock($hash) {
+    public function dogeGetBlock($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/dogecoin/block/{hash}";
 
         /** @var \Tatum\Model\DogeBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/dogecoin/block/{hash}", ["hash" => $hash]), "/v3/dogecoin/block/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\DogeBlock"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Dogecoin Blockchain Information
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -151,20 +166,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DogeInfo
      */
-    public function dogeGetBlockChainInfo() {
+    public function dogeGetBlockChainInfo() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/dogecoin/info";
 
         /** @var \Tatum\Model\DogeInfo $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/dogecoin/info", "/v3/dogecoin/info", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\DogeInfo"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Dogecoin Block hash
      *
@@ -174,20 +192,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\LtcGetBlockHash200Response
      */
-    public function dogeGetBlockHash($i) {
+    public function dogeGetBlockHash($i) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/dogecoin/block/hash/{i}";
 
         /** @var \Tatum\Model\LtcGetBlockHash200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/dogecoin/block/hash/{i}", ["i" => $i]), "/v3/dogecoin/block/hash/{i}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["i" => $i]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\LtcGetBlockHash200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Mempool Transactions
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -195,20 +216,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function dogeGetMempool() {
+    public function dogeGetMempool() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/dogecoin/mempool";
 
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/dogecoin/mempool", "/v3/dogecoin/mempool", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "string[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Dogecoin Transaction by hash
      *
@@ -218,20 +242,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DogeTx
      */
-    public function dogeGetRawTransaction($hash) {
+    public function dogeGetRawTransaction($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/dogecoin/transaction/{hash}";
 
         /** @var \Tatum\Model\DogeTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/dogecoin/transaction/{hash}", ["hash" => $hash]), "/v3/dogecoin/transaction/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\DogeTx"
         );
             
         return $result;
     }
-    
+
     /**
      * Get information about a transaction output (UTXO) in a Dogecoin transaction
      *
@@ -242,7 +269,7 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\DogeUTXO
      */
-    public function dogeGetUTXO($hash, $index) {
+    public function dogeGetUTXO($hash, $index) { 
         if (strlen($hash) > 64) {
             throw new IAE('Invalid length for "$hash" when calling DogecoinApi.dogeGetUTXO, must be smaller than or equal to 64');
         }
@@ -257,39 +284,29 @@ class DogecoinApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/dogecoin/utxo/{hash}/{index}";
+
         /** @var \Tatum\Model\DogeUTXO $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/dogecoin/utxo/{hash}/{index}", ["hash" => $hash, "index" => $index]), "/v3/dogecoin/utxo/{hash}/{index}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\DogeUTXO"
         );
             
         return $result;
     }
-    
+
     /**
+     * @deprecated
      * JSON RPC HTTP driver
      *
      * @param \Tatum\Model\BchRpcDriverRequest $bch_rpc_driver_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return object
+     * @return void
      */
-    public function dogeRpcDriver($bch_rpc_driver_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var object $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/dogecoin/node", "/v3/dogecoin/node", [], $rHeaders, [], $bch_rpc_driver_request
-            ), 
-            "object"
-        );
-            
-        return $result;
-    }
+    public function dogeRpcDriver($bch_rpc_driver_request) {}
     
     /**
      * Send DOGE to Dogecoin addresses
@@ -300,20 +317,23 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function dogeTransactionUTXO($doge_transaction_utxo) {
+    public function dogeTransactionUTXO($doge_transaction_utxo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/dogecoin/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/dogecoin/transaction", "/v3/dogecoin/transaction", [], $rHeaders, [], $doge_transaction_utxo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $doge_transaction_utxo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send DOGE to Dogecoin addresses
      *
@@ -323,18 +343,21 @@ class DogecoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function dogeTransactionUTXOKMS($doge_transaction_utxokms) {
+    public function dogeTransactionUTXOKMS($doge_transaction_utxokms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/dogecoin/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/dogecoin/transaction", "/v3/dogecoin/transaction", [], $rHeaders, [], $doge_transaction_utxokms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $doge_transaction_utxokms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
 }

@@ -33,13 +33,16 @@ class BlockchainAddressesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Account
      */
-    public function addressExists($currency, $address, $index = null) {
+    public function addressExists($currency, $address, $index = null) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/offchain/account/address/{address}/{currency}";
 
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/offchain/account/address/{address}/{currency}", ["currency" => $currency, "address" => $address]), "/v3/offchain/account/address/{address}/{currency}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["currency" => $currency, "address" => $address]), $rPath, [
                     "index" => isset($index) ? S::toQueryValue($index) : null,
                 ], $rHeaders, []
             ), 
@@ -48,7 +51,7 @@ class BlockchainAddressesApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Assign a blockchain address to a virtual account
      *
@@ -60,17 +63,20 @@ class BlockchainAddressesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Address
      */
-    public function assignAddress($id, $address, $index = null) {
+    public function assignAddress($id, $address, $index = null) { 
         if (isset($index) && $index < 1) {
             throw new IAE('Invalid value for "$index" when calling BlockchainAddressesApi.assignAddress, must be bigger than or equal to 1.');
         }
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/offchain/account/{id}/address/{address}";
+
         /** @var \Tatum\Model\Address $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/offchain/account/{id}/address/{address}", ["id" => $id, "address" => $address]), "/v3/offchain/account/{id}/address/{address}", [
+                $this->_caller->config(), "POST", S::parse($rPath, ["id" => $id, "address" => $address]), $rPath, [
                     "index" => isset($index) ? S::toQueryValue($index) : null,
                 ], $rHeaders, []
             ), 
@@ -79,24 +85,27 @@ class BlockchainAddressesApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a deposit address for a virtual account
      *
      * @param string $id Account ID
-     * @param float|null $index &lt;p&gt;Derivation path index for specific address. If not present, last used index for given xpub of account + 1 is used. We recommend not to pass this value manually, since when some of the indexes are skipped, it is not possible to use them lately to generate address from it.&lt;/p&gt;
+     * @param float|null $index <p>Derivation path index for specific address. If not present, last used index for given xpub of account + 1 is used. We recommend not to pass this value manually, since when some of the indexes are skipped, it is not possible to use them lately to generate address from it.</p>
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\Address
      */
-    public function generateDepositAddress($id, $index = null) {
+    public function generateDepositAddress($id, $index = null) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/offchain/account/{id}/address";
 
         /** @var \Tatum\Model\Address $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/offchain/account/{id}/address", ["id" => $id]), "/v3/offchain/account/{id}/address", [
+                $this->_caller->config(), "POST", S::parse($rPath, ["id" => $id]), $rPath, [
                     "index" => isset($index) ? S::toQueryValue($index) : null,
                 ], $rHeaders, []
             ), 
@@ -105,7 +114,7 @@ class BlockchainAddressesApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create multiple deposit addresses for a virtual account
      *
@@ -115,20 +124,23 @@ class BlockchainAddressesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Address[]
      */
-    public function generateDepositAddressesBatch($offchain_addresses) {
+    public function generateDepositAddressesBatch($offchain_addresses) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/offchain/account/address/batch";
 
         /** @var \Tatum\Model\Address[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/offchain/account/address/batch", "/v3/offchain/account/address/batch", [], $rHeaders, [], $offchain_addresses
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $offchain_addresses
             ), 
             "\Tatum\Model\Address[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Get all deposit addresses for a virtual account
      *
@@ -138,20 +150,23 @@ class BlockchainAddressesApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Address[]
      */
-    public function getAllDepositAddresses($id) {
+    public function getAllDepositAddresses($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/offchain/account/{id}/address";
 
         /** @var \Tatum\Model\Address[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/offchain/account/{id}/address", ["id" => $id]), "/v3/offchain/account/{id}/address", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Address[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Remove a deposit address from a virtual account
      *
@@ -163,20 +178,23 @@ class BlockchainAddressesApi extends AbstractApi {
      * 
      * @return void
      */
-    public function removeAddress($id, $address, $index = null) {
+    public function removeAddress($id, $address, $index = null) { 
         if (isset($index) && $index < 1) {
             throw new IAE('Invalid value for "$index" when calling BlockchainAddressesApi.removeAddress, must be bigger than or equal to 1.');
         }
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/offchain/account/{id}/address/{address}";
+
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/offchain/account/{id}/address/{address}", ["id" => $id, "address" => $address]), "/v3/offchain/account/{id}/address/{address}", [
+                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id, "address" => $address]), $rPath, [
                     "index" => isset($index) ? S::toQueryValue($index) : null,
                 ], $rHeaders, []
             )
         );
     }
-    
+
 }

@@ -37,13 +37,16 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonPostRpcDriver($chain, $body, $x_api_key = null, $node_type = null, $testnet_type = 'ethereum-sepolia', $chain_type = 'avax-c', $rpc_path = null) {
+    public function nodeJsonPostRpcDriver($chain, $body, $x_api_key = null, $node_type = null, $testnet_type = 'ethereum-sepolia', $chain_type = 'avax-c', $rpc_path = null) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}";
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", [
+                $this->_caller->config(), "POST", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                     "testnetType" => S::toQueryValue($testnet_type),
                     "chainType" => S::toQueryValue($chain_type),
@@ -54,7 +57,7 @@ class NodeRPCApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Connect to the blockchain node through an RPC driver
      *
@@ -67,13 +70,16 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonRpcGetDriver($chain, $x_api_key = null, $node_type = null, $rpc_path = null) {
+    public function nodeJsonRpcGetDriver($chain, $x_api_key = null, $node_type = null, $rpc_path = null) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}";
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                 ], $rHeaders, []
             ), 
@@ -82,7 +88,7 @@ class NodeRPCApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Connect to the blockchain node through an RPC driver
      *
@@ -96,13 +102,16 @@ class NodeRPCApi extends AbstractApi {
      * 
      * @return object
      */
-    public function nodeJsonRpcPutDriver($chain, $body, $x_api_key = null, $node_type = null, $rpc_path = null) {
+    public function nodeJsonRpcPutDriver($chain, $body, $x_api_key = null, $node_type = null, $rpc_path = null) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}";
 
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), "/v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}", [
+                $this->_caller->config(), "PUT", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                 ], $rHeaders, [], $body
             ), 
@@ -111,5 +120,5 @@ class NodeRPCApi extends AbstractApi {
             
         return $result;
     }
-    
+
 }

@@ -32,20 +32,23 @@ class BlockchainUtilsApi extends AbstractApi {
      * 
      * @return float
      */
-    public function getAuctionEstimatedTime($chain, $date) {
+    public function getAuctionEstimatedTime($chain, $date) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/auction/time/{chain}/{date}";
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/auction/time/{chain}/{date}", ["chain" => $chain, "date" => $date]), "/v3/blockchain/auction/time/{chain}/{date}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "date" => $date]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
      * Get the blockchain address of a smart contract by the deployment transaction ID
      *
@@ -56,18 +59,21 @@ class BlockchainUtilsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SCGetContractAddress200Response
      */
-    public function sCGetContractAddress($chain, $hash) {
+    public function sCGetContractAddress($chain, $hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/sc/address/{chain}/{hash}";
 
         /** @var \Tatum\Model\SCGetContractAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/sc/address/{chain}/{hash}", ["chain" => $chain, "hash" => $hash]), "/v3/blockchain/sc/address/{chain}/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\SCGetContractAddress200Response"
         );
             
         return $result;
     }
-    
+
 }

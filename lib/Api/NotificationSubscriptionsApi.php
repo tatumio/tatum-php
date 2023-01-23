@@ -32,13 +32,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionBalance($create_subscription_balance, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionBalance($create_subscription_balance, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_balance
             ), 
@@ -47,7 +50,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -58,13 +61,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionContractLogEvent($create_subscription_contract_log_event, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionContractLogEvent($create_subscription_contract_log_event, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_contract_log_event
             ), 
@@ -73,7 +79,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -84,13 +90,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionIncoming($create_subscription_incoming, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionIncoming($create_subscription_incoming, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_incoming
             ), 
@@ -99,7 +108,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -110,13 +119,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionInterval($create_subscription_interval, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionInterval($create_subscription_interval, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_interval
             ), 
@@ -125,7 +137,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -136,13 +148,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionKMSError($create_subscription_kms_error, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionKMSError($create_subscription_kms_error, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_kms_error
             ), 
@@ -151,7 +166,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -162,13 +177,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionKMSSuccess($create_subscription_kms_success, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionKMSSuccess($create_subscription_kms_success, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_kms_success
             ), 
@@ -177,7 +195,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -188,13 +206,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionMultiTokenTransferEvent($create_subscription_multi_token_transfer_event, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionMultiTokenTransferEvent($create_subscription_multi_token_transfer_event, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_multi_token_transfer_event
             ), 
@@ -203,7 +224,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -214,13 +235,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionNftTransferEvent($create_subscription_nft_transfer_event, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionNftTransferEvent($create_subscription_nft_transfer_event, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_nft_transfer_event
             ), 
@@ -229,7 +253,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -240,13 +264,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionNotification($create_subscription_notification, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionNotification($create_subscription_notification, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_notification
             ), 
@@ -255,7 +282,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -266,13 +293,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionPartialTradeMatch($create_subscription_partial_trade_match, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionPartialTradeMatch($create_subscription_partial_trade_match, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_partial_trade_match
             ), 
@@ -281,7 +311,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -292,13 +322,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionPending($create_subscription_pending, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionPending($create_subscription_pending, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_pending
             ), 
@@ -307,7 +340,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -318,13 +351,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionTradeMatch($create_subscription_trade_match, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionTradeMatch($create_subscription_trade_match, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_trade_match
             ), 
@@ -333,7 +369,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Create a subscription
      *
@@ -344,13 +380,16 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function createSubscriptionTxInTheBlock($create_subscription_tx_in_the_block, $testnet_type = 'ethereum-sepolia') {
+    public function createSubscriptionTxInTheBlock($create_subscription_tx_in_the_block, $testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_tx_in_the_block
             ), 
@@ -359,7 +398,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Cancel existing subscription
      *
@@ -369,16 +408,19 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deleteSubscription($id) {
+    public function deleteSubscription($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/subscription/{id}";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/subscription/{id}", ["id" => $id]), "/v3/subscription/{id}", [], $rHeaders, []
+                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-    
+
     /**
      * Disable HMAC webhook digest
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -386,16 +428,19 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function disableWebHookHmac() {
+    public function disableWebHookHmac() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", "/v3/subscription", "/v3/subscription", [], $rHeaders, []
+                $this->_caller->config(), "DELETE", $rPath, $rPath, [], $rHeaders, []
             )
         );
     }
-    
+
     /**
      * Enable HMAC webhook digest
      *
@@ -405,16 +450,19 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return void
      */
-    public function enableWebHookHmac($hmac_web_hook) {
+    public function enableWebHookHmac($hmac_web_hook) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/subscription";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/subscription", "/v3/subscription", [], $rHeaders, [], $hmac_web_hook
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $hmac_web_hook
             )
         );
     }
-    
+
     /**
      * List all executed webhooks
      *
@@ -427,7 +475,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\WebHook[]
      */
-    public function getAllWebhooks($page_size, $offset = null, $direction = null, $failed = null) {
+    public function getAllWebhooks($page_size, $offset = null, $direction = null, $failed = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling NotificationSubscriptionsApi.getAllWebhooks, must be smaller than or equal to 50');
         }
@@ -438,10 +486,13 @@ class NotificationSubscriptionsApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/subscription/webhook";
+
         /** @var \Tatum\Model\WebHook[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/subscription/webhook", "/v3/subscription/webhook", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "direction" => isset($direction) ? S::toQueryValue($direction) : null,
@@ -453,7 +504,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Count of found entities for get webhook request
      *
@@ -466,7 +517,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EntitiesCount
      */
-    public function getAllWebhooksCount($page_size, $offset = null, $direction = null, $failed = null) {
+    public function getAllWebhooksCount($page_size, $offset = null, $direction = null, $failed = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling NotificationSubscriptionsApi.getAllWebhooksCount, must be smaller than or equal to 50');
         }
@@ -477,10 +528,13 @@ class NotificationSubscriptionsApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/subscription/webhook/count";
+
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/subscription/webhook/count", "/v3/subscription/webhook/count", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "direction" => isset($direction) ? S::toQueryValue($direction) : null,
@@ -492,7 +546,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Obtain report for subscription
      *
@@ -502,20 +556,23 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetSubscriptionReport200Response
      */
-    public function getSubscriptionReport($id) {
+    public function getSubscriptionReport($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/subscription/report/{id}";
 
         /** @var \Tatum\Model\GetSubscriptionReport200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/subscription/report/{id}", ["id" => $id]), "/v3/subscription/report/{id}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetSubscriptionReport200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * List all active subscriptions
      *
@@ -527,7 +584,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Subscription[]
      */
-    public function getSubscriptions($page_size, $offset = null, $address = null) {
+    public function getSubscriptions($page_size, $offset = null, $address = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling NotificationSubscriptionsApi.getSubscriptions, must be smaller than or equal to 50');
         }
@@ -538,10 +595,13 @@ class NotificationSubscriptionsApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/subscription";
+
         /** @var \Tatum\Model\Subscription[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/subscription", "/v3/subscription", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "address" => isset($address) ? S::toQueryValue($address) : null,
@@ -552,7 +612,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Count of found entities for get webhook request
      *
@@ -564,7 +624,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EntitiesCount
      */
-    public function getSubscriptionsCount($page_size, $offset = null, $address = null) {
+    public function getSubscriptionsCount($page_size, $offset = null, $address = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling NotificationSubscriptionsApi.getSubscriptionsCount, must be smaller than or equal to 50');
         }
@@ -575,10 +635,13 @@ class NotificationSubscriptionsApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/subscription/count";
+
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/subscription/count", "/v3/subscription/count", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "address" => isset($address) ? S::toQueryValue($address) : null,
@@ -589,5 +652,5 @@ class NotificationSubscriptionsApi extends AbstractApi {
             
         return $result;
     }
-    
+
 }

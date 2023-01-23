@@ -31,20 +31,23 @@ class BlockchainStorageApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createRecord($create_record) {
+    public function createRecord($create_record) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/record";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/record", "/v3/record", [], $rHeaders, [], $create_record
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_record
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Store a log record
      *
@@ -54,20 +57,23 @@ class BlockchainStorageApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createRecordCelo($create_record_celo) {
+    public function createRecordCelo($create_record_celo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/record";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/record", "/v3/record", [], $rHeaders, [], $create_record_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_record_celo
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Store a log record
      *
@@ -77,20 +83,23 @@ class BlockchainStorageApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function createRecordKMS($create_record_kms) {
+    public function createRecordKMS($create_record_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/record";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/record", "/v3/record", [], $rHeaders, [], $create_record_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_record_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Get a log record
      *
@@ -101,7 +110,7 @@ class BlockchainStorageApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetLog200Response
      */
-    public function getLog($chain, $id) {
+    public function getLog($chain, $id) { 
         if (strlen($id) > 100) {
             throw new IAE('Invalid length for "$id" when calling BlockchainStorageApi.getLog, must be smaller than or equal to 100');
         }
@@ -112,10 +121,13 @@ class BlockchainStorageApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/record";
+
         /** @var \Tatum\Model\GetLog200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/record", "/v3/record", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "chain" => S::toQueryValue($chain),
                     "id" => S::toQueryValue($id),
                 ], $rHeaders, []
@@ -125,5 +137,5 @@ class BlockchainStorageApi extends AbstractApi {
             
         return $result;
     }
-    
+
 }

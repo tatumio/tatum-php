@@ -31,20 +31,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function bloMarWithdrawFromMarketplaceSolana($withdraw_from_marketplace_solana) {
+    public function bloMarWithdrawFromMarketplaceSolana($withdraw_from_marketplace_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/withdraw/treasury";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/withdraw/treasury", "/v3/blockchain/marketplace/withdraw/treasury", [], $rHeaders, [], $withdraw_from_marketplace_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Withdraw funds from the marketplace treasury account on Solana
      *
@@ -54,20 +57,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function bloMarWithdrawFromMarketplaceSolanaKMS($withdraw_from_marketplace_solana_kms) {
+    public function bloMarWithdrawFromMarketplaceSolanaKMS($withdraw_from_marketplace_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/withdraw/treasury";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/withdraw/treasury", "/v3/blockchain/marketplace/withdraw/treasury", [], $rHeaders, [], $withdraw_from_marketplace_solana_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Buy an asset on the NFT marketplace
      *
@@ -77,20 +83,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function buyAssetOnMarketplace($buy_asset_on_marketplace) {
+    public function buyAssetOnMarketplace($buy_asset_on_marketplace) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/buy";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/buy", "/v3/blockchain/marketplace/listing/buy", [], $rHeaders, [], $buy_asset_on_marketplace
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Buy an asset on the NFT marketplace
      *
@@ -100,20 +109,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function buyAssetOnMarketplaceCelo($buy_asset_on_marketplace_celo) {
+    public function buyAssetOnMarketplaceCelo($buy_asset_on_marketplace_celo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/buy";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/buy", "/v3/blockchain/marketplace/listing/buy", [], $rHeaders, [], $buy_asset_on_marketplace_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Buy an asset on the NFT marketplace
      *
@@ -123,20 +135,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function buyAssetOnMarketplaceCeloKMS($buy_asset_on_marketplace_celo_kms) {
+    public function buyAssetOnMarketplaceCeloKMS($buy_asset_on_marketplace_celo_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/buy";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/buy", "/v3/blockchain/marketplace/listing/buy", [], $rHeaders, [], $buy_asset_on_marketplace_celo_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Buy an asset on the NFT marketplace
      *
@@ -146,20 +161,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function buyAssetOnMarketplaceKMS($buy_asset_on_marketplace_kms) {
+    public function buyAssetOnMarketplaceKMS($buy_asset_on_marketplace_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/buy";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/buy", "/v3/blockchain/marketplace/listing/buy", [], $rHeaders, [], $buy_asset_on_marketplace_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Buy an asset on the NFT marketplace
      *
@@ -169,20 +187,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function buyAssetOnMarketplaceSolana($buy_asset_on_marketplace_solana) {
+    public function buyAssetOnMarketplaceSolana($buy_asset_on_marketplace_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/buy";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/buy", "/v3/blockchain/marketplace/listing/buy", [], $rHeaders, [], $buy_asset_on_marketplace_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Buy an asset on the NFT marketplace
      *
@@ -192,20 +213,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function buyAssetOnMarketplaceSolanaKMS($buy_asset_on_marketplace_solana_kms) {
+    public function buyAssetOnMarketplaceSolanaKMS($buy_asset_on_marketplace_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/buy";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/buy", "/v3/blockchain/marketplace/listing/buy", [], $rHeaders, [], $buy_asset_on_marketplace_solana_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Cancel the selling of an asset on the NFT marketplace
      *
@@ -215,20 +239,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function cancelSellAssetOnMarketplace($cancel_sell_asset_on_marketplace) {
+    public function cancelSellAssetOnMarketplace($cancel_sell_asset_on_marketplace) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/cancel";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/cancel", "/v3/blockchain/marketplace/listing/cancel", [], $rHeaders, [], $cancel_sell_asset_on_marketplace
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Cancel the selling of an asset on the NFT marketplace
      *
@@ -238,20 +265,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function cancelSellAssetOnMarketplaceCelo($cancel_sell_asset_on_marketplace_celo) {
+    public function cancelSellAssetOnMarketplaceCelo($cancel_sell_asset_on_marketplace_celo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/cancel";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/cancel", "/v3/blockchain/marketplace/listing/cancel", [], $rHeaders, [], $cancel_sell_asset_on_marketplace_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Cancel the selling of an asset on the NFT marketplace
      *
@@ -261,20 +291,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function cancelSellAssetOnMarketplaceCeloKMS($cancel_sell_asset_on_marketplace_celo_kms) {
+    public function cancelSellAssetOnMarketplaceCeloKMS($cancel_sell_asset_on_marketplace_celo_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/cancel";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/cancel", "/v3/blockchain/marketplace/listing/cancel", [], $rHeaders, [], $cancel_sell_asset_on_marketplace_celo_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Cancel the selling of an asset on the NFT marketplace
      *
@@ -284,20 +317,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function cancelSellAssetOnMarketplaceKMS($cancel_sell_asset_on_marketplace_kms) {
+    public function cancelSellAssetOnMarketplaceKMS($cancel_sell_asset_on_marketplace_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/cancel";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/cancel", "/v3/blockchain/marketplace/listing/cancel", [], $rHeaders, [], $cancel_sell_asset_on_marketplace_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Cancel the selling of an asset on the NFT marketplace
      *
@@ -307,20 +343,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function cancelSellAssetOnMarketplaceSolana($cancel_sell_asset_on_marketplace_solana) {
+    public function cancelSellAssetOnMarketplaceSolana($cancel_sell_asset_on_marketplace_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/cancel";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/cancel", "/v3/blockchain/marketplace/listing/cancel", [], $rHeaders, [], $cancel_sell_asset_on_marketplace_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Cancel the selling of an asset on the NFT marketplace
      *
@@ -330,20 +369,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function cancelSellAssetOnMarketplaceSolanaKMS($cancel_sell_asset_on_marketplace_solana_kms) {
+    public function cancelSellAssetOnMarketplaceSolanaKMS($cancel_sell_asset_on_marketplace_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/cancel";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/cancel", "/v3/blockchain/marketplace/listing/cancel", [], $rHeaders, [], $cancel_sell_asset_on_marketplace_solana_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Create an NFT marketplace
      *
@@ -353,20 +395,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GenerateMarketplace200Response
      */
-    public function generateMarketplace($generate_marketplace) {
+    public function generateMarketplace($generate_marketplace) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing";
 
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $generate_marketplace
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Create an NFT marketplace
      *
@@ -376,20 +421,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GenerateMarketplace200Response
      */
-    public function generateMarketplaceCelo($generate_marketplace_celo) {
+    public function generateMarketplaceCelo($generate_marketplace_celo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing";
 
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $generate_marketplace_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_celo
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Create an NFT marketplace
      *
@@ -399,20 +447,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GenerateMarketplace200Response
      */
-    public function generateMarketplaceCeloKMS($generate_marketplace_celo_kms) {
+    public function generateMarketplaceCeloKMS($generate_marketplace_celo_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing";
 
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $generate_marketplace_celo_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_celo_kms
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Create an NFT marketplace
      *
@@ -422,20 +473,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GenerateMarketplace200Response
      */
-    public function generateMarketplaceKMS($generate_marketplace_kms) {
+    public function generateMarketplaceKMS($generate_marketplace_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing";
 
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $generate_marketplace_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_kms
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Create an NFT marketplace
      *
@@ -445,20 +499,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GenerateMarketplace200Response
      */
-    public function generateMarketplaceSolana($generate_marketplace_solana) {
+    public function generateMarketplaceSolana($generate_marketplace_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing";
 
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $generate_marketplace_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_solana
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Create an NFT marketplace
      *
@@ -468,20 +525,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GenerateMarketplace200Response
      */
-    public function generateMarketplaceSolanaKMS($generate_marketplace_solana_kms) {
+    public function generateMarketplaceSolanaKMS($generate_marketplace_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing";
 
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $generate_marketplace_solana_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_solana_kms
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get the NFT marketplace fee
      *
@@ -492,20 +552,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return float
      */
-    public function getMarketplaceFee($chain, $contract_address) {
+    public function getMarketplaceFee($chain, $contract_address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee";
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee", ["chain" => $chain, "contractAddress" => $contract_address]), "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
      * Get the recipient of the NFT marketplace fee
      *
@@ -516,20 +579,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetMarketplaceFeeRecipient200Response
      */
-    public function getMarketplaceFeeRecipient($chain, $contract_address) {
+    public function getMarketplaceFeeRecipient($chain, $contract_address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient";
 
         /** @var \Tatum\Model\GetMarketplaceFeeRecipient200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient", ["chain" => $chain, "contractAddress" => $contract_address]), "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetMarketplaceFeeRecipient200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get information about an NFT marketplace on Solana
      *
@@ -540,20 +606,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetMarketplaceInfo200Response
      */
-    public function getMarketplaceInfo($chain, $contract_address) {
+    public function getMarketplaceInfo($chain, $contract_address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}";
 
         /** @var \Tatum\Model\GetMarketplaceInfo200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/marketplace/listing/{chain}/{contractAddress}", ["chain" => $chain, "contractAddress" => $contract_address]), "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetMarketplaceInfo200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get information about a listing on the NFT marketplace
      *
@@ -565,20 +634,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GetMarketplaceListing200Response
      */
-    public function getMarketplaceListing($chain, $contract_address, $id) {
+    public function getMarketplaceListing($chain, $contract_address, $id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}";
 
         /** @var \Tatum\Model\GetMarketplaceListing200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}", ["chain" => $chain, "contractAddress" => $contract_address, "id" => $id]), "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetMarketplaceListing200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get the listings of a certain type from the NFT marketplace
      *
@@ -590,20 +662,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return string[]
      */
-    public function getMarketplaceListings($chain, $contract_address, $type) {
+    public function getMarketplaceListings($chain, $contract_address, $type) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}";
 
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}", ["chain" => $chain, "contractAddress" => $contract_address, "type" => $type]), "/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "type" => $type]), $rPath, [], $rHeaders, []
             ), 
             "string[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Sell an asset on the NFT marketplace
      *
@@ -613,20 +688,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SellAssetOnMarketplace200Response
      */
-    public function sellAssetOnMarketplace($sell_asset_on_marketplace) {
+    public function sellAssetOnMarketplace($sell_asset_on_marketplace) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/sell";
 
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/sell", "/v3/blockchain/marketplace/listing/sell", [], $rHeaders, [], $sell_asset_on_marketplace
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Sell an asset on the NFT marketplace
      *
@@ -636,20 +714,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SellAssetOnMarketplace200Response
      */
-    public function sellAssetOnMarketplaceCelo($sell_asset_on_marketplace_celo) {
+    public function sellAssetOnMarketplaceCelo($sell_asset_on_marketplace_celo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/sell";
 
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/sell", "/v3/blockchain/marketplace/listing/sell", [], $rHeaders, [], $sell_asset_on_marketplace_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_celo
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Sell an asset on the NFT marketplace
      *
@@ -659,20 +740,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SellAssetOnMarketplace200Response
      */
-    public function sellAssetOnMarketplaceCeloKMS($sell_asset_on_marketplace_celo_kms) {
+    public function sellAssetOnMarketplaceCeloKMS($sell_asset_on_marketplace_celo_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/sell";
 
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/sell", "/v3/blockchain/marketplace/listing/sell", [], $rHeaders, [], $sell_asset_on_marketplace_celo_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_celo_kms
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Sell an asset on the NFT marketplace
      *
@@ -682,20 +766,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SellAssetOnMarketplace200Response
      */
-    public function sellAssetOnMarketplaceKMS($sell_asset_on_marketplace_kms) {
+    public function sellAssetOnMarketplaceKMS($sell_asset_on_marketplace_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/sell";
 
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/sell", "/v3/blockchain/marketplace/listing/sell", [], $rHeaders, [], $sell_asset_on_marketplace_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_kms
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Sell an asset on the NFT marketplace
      *
@@ -705,20 +792,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SellAssetOnMarketplace200Response
      */
-    public function sellAssetOnMarketplaceSolana($sell_asset_on_marketplace_solana) {
+    public function sellAssetOnMarketplaceSolana($sell_asset_on_marketplace_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/sell";
 
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/sell", "/v3/blockchain/marketplace/listing/sell", [], $rHeaders, [], $sell_asset_on_marketplace_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_solana
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Sell an asset on the NFT marketplace
      *
@@ -728,20 +818,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SellAssetOnMarketplace200Response
      */
-    public function sellAssetOnMarketplaceSolanaKMS($sell_asset_on_marketplace_solana_kms) {
+    public function sellAssetOnMarketplaceSolanaKMS($sell_asset_on_marketplace_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/sell";
 
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/listing/sell", "/v3/blockchain/marketplace/listing/sell", [], $rHeaders, [], $sell_asset_on_marketplace_solana_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_solana_kms
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the NFT marketplace fee
      *
@@ -751,20 +844,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFee($update_fee) {
+    public function updateFee($update_fee) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/fee";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the NFT marketplace fee
      *
@@ -774,20 +870,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeCelo($update_fee_celo) {
+    public function updateFeeCelo($update_fee_celo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/fee";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_celo
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the NFT marketplace fee
      *
@@ -797,20 +896,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeCeloKMS($update_fee_celo_kms) {
+    public function updateFeeCeloKMS($update_fee_celo_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/fee";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_celo_kms
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the NFT marketplace fee
      *
@@ -820,20 +922,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeKMS($update_fee_kms) {
+    public function updateFeeKMS($update_fee_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/fee";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_kms
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the recipient of the NFT marketplace fee
      *
@@ -843,20 +948,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeRecipient($update_fee_recipient) {
+    public function updateFeeRecipient($update_fee_recipient) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/recipient";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the recipient of the NFT marketplace fee
      *
@@ -866,20 +974,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeRecipientCelo($update_fee_recipient_celo) {
+    public function updateFeeRecipientCelo($update_fee_recipient_celo) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/recipient";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_celo
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the recipient of the NFT marketplace fee
      *
@@ -889,20 +1000,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeRecipientCeloKMS($update_fee_recipient_celo_kms) {
+    public function updateFeeRecipientCeloKMS($update_fee_recipient_celo_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/recipient";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_celo_kms
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the recipient of the NFT marketplace fee
      *
@@ -912,20 +1026,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeRecipientKMS($update_fee_recipient_kms) {
+    public function updateFeeRecipientKMS($update_fee_recipient_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/recipient";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_kms
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the recipient of the NFT marketplace fee
      *
@@ -935,20 +1052,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeRecipientSolana($update_fee_recipient_solana) {
+    public function updateFeeRecipientSolana($update_fee_recipient_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/recipient";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_solana
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the recipient of the NFT marketplace fee
      *
@@ -958,20 +1078,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeRecipientSolanaKMS($update_fee_recipient_solana_kms) {
+    public function updateFeeRecipientSolanaKMS($update_fee_recipient_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/recipient";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/recipient", "/v3/blockchain/marketplace/listing/recipient", [], $rHeaders, [], $update_fee_recipient_solana_kms
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the NFT marketplace fee
      *
@@ -981,20 +1104,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeSolana($update_fee_solana) {
+    public function updateFeeSolana($update_fee_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/fee";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_solana
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update the NFT marketplace fee
      *
@@ -1004,20 +1130,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateFeeSolanaKMS($update_fee_solana_kms) {
+    public function updateFeeSolanaKMS($update_fee_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing/fee";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing/fee", "/v3/blockchain/marketplace/listing/fee", [], $rHeaders, [], $update_fee_solana_kms
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update an NFT marketplace on Solana
      *
@@ -1027,20 +1156,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateMarketplaceSolana($update_marketplace_solana) {
+    public function updateMarketplaceSolana($update_marketplace_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $update_marketplace_solana
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update an NFT marketplace on Solana
      *
@@ -1050,20 +1182,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateMarketplaceSolanaKMS($update_marketplace_solana_kms) {
+    public function updateMarketplaceSolanaKMS($update_marketplace_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/listing";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/blockchain/marketplace/listing", "/v3/blockchain/marketplace/listing", [], $rHeaders, [], $update_marketplace_solana_kms
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Withdraw funds from the marketplace fee account on Solana
      *
@@ -1073,20 +1208,23 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function withdrawFromMarketplaceSolana($withdraw_from_marketplace_solana) {
+    public function withdrawFromMarketplaceSolana($withdraw_from_marketplace_solana) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/withdraw/fee";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/withdraw/fee", "/v3/blockchain/marketplace/withdraw/fee", [], $rHeaders, [], $withdraw_from_marketplace_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Withdraw funds from the marketplace fee account on Solana
      *
@@ -1096,18 +1234,21 @@ class MarketplaceApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function withdrawFromMarketplaceSolanaKMS($withdraw_from_marketplace_solana_kms) {
+    public function withdrawFromMarketplaceSolanaKMS($withdraw_from_marketplace_solana_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/blockchain/marketplace/withdraw/fee";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/blockchain/marketplace/withdraw/fee", "/v3/blockchain/marketplace/withdraw/fee", [], $rHeaders, [], $withdraw_from_marketplace_solana_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
 }

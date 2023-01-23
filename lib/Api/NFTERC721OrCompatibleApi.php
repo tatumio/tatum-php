@@ -32,7 +32,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function addNftMinter($add_nft_minter, $x_testnet_type = 'ethereum-sepolia') {
+    public function addNftMinter($add_nft_minter, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -41,17 +41,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/add";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/add", "/v3/nft/mint/add", [], $rHeaders, [], $add_nft_minter
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $add_nft_minter
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Add a blockchain address as an NFT minter to an NFT smart contract
      *
@@ -62,7 +65,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function addNftMinterKMS($add_nft_minter_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function addNftMinterKMS($add_nft_minter_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -71,17 +74,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/add";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/add", "/v3/nft/mint/add", [], $rHeaders, [], $add_nft_minter_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $add_nft_minter_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -92,7 +98,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNft($burn_nft, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNft($burn_nft, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -101,17 +107,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -122,7 +131,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftAlgo($burn_nft_algo, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftAlgo($burn_nft_algo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -131,17 +140,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_algo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_algo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -152,7 +164,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftCelo($burn_nft_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftCelo($burn_nft_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -161,17 +173,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -182,7 +197,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftFlowKMS($burn_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftFlowKMS($burn_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -191,17 +206,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_flow_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -212,7 +230,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftFlowMnemonic($burn_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftFlowMnemonic($burn_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -221,17 +239,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_flow_mnemonic
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -242,7 +263,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftFlowPK($burn_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftFlowPK($burn_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -251,17 +272,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_flow_pk
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -272,7 +296,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftKMS($burn_nft_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftKMS($burn_nft_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -281,17 +305,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -302,7 +329,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftKMSCelo($burn_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftKMSCelo($burn_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -311,17 +338,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_kms_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -332,7 +362,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftKMSTron($burn_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftKMSTron($burn_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -341,17 +371,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_kms_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Burn an NFT
      *
@@ -362,7 +395,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function burnNftTron($burn_nft_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function burnNftTron($burn_nft_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -371,17 +404,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/burn";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/burn", "/v3/nft/burn", [], $rHeaders, [], $burn_nft_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -392,7 +428,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNft($deploy_nft, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNft($deploy_nft, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -401,17 +437,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -422,7 +461,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNftCelo($deploy_nft_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNftCelo($deploy_nft_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -431,17 +470,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -452,7 +494,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNftCeloKMS($deploy_nft_celo_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNftCeloKMS($deploy_nft_celo_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -461,17 +503,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft_celo_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -482,7 +527,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNftFlowKMS($deploy_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNftFlowKMS($deploy_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -491,17 +536,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft_flow_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -512,7 +560,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNftFlowMnemonic($deploy_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNftFlowMnemonic($deploy_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -521,17 +569,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft_flow_mnemonic
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -542,7 +593,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNftFlowPK($deploy_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNftFlowPK($deploy_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -551,17 +602,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft_flow_pk
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -572,7 +626,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNftKMS($deploy_nft_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNftKMS($deploy_nft_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -581,17 +635,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -602,7 +659,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNftTron($deploy_nft_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNftTron($deploy_nft_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -611,17 +668,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Deploy an NFT smart contract
      *
@@ -632,7 +692,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function deployNftTronKMS($deploy_nft_tron_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function deployNftTronKMS($deploy_nft_tron_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -641,17 +701,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/deploy";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/deploy", "/v3/nft/deploy", [], $rHeaders, [], $deploy_nft_tron_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -662,7 +725,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNft($mint_multiple_nft, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNft($mint_multiple_nft, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -671,17 +734,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -692,7 +758,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftCelo($mint_multiple_nft_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftCelo($mint_multiple_nft_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -701,17 +767,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_celo
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -722,7 +791,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftFlowKMS($mint_multiple_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftFlowKMS($mint_multiple_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -731,17 +800,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_flow_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_kms
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -752,7 +824,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftFlowMnemonic($mint_multiple_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftFlowMnemonic($mint_multiple_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -761,17 +833,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_flow_mnemonic
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_mnemonic
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -782,7 +857,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftFlowPK($mint_multiple_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftFlowPK($mint_multiple_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -791,17 +866,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_flow_pk
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_pk
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -812,7 +890,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftKMS($mint_multiple_nft_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftKMS($mint_multiple_nft_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -821,17 +899,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -842,7 +923,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftKMSCelo($mint_multiple_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftKMSCelo($mint_multiple_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -851,17 +932,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_kms_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms_celo
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -872,7 +956,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftKMSTron($mint_multiple_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftKMSTron($mint_multiple_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -881,17 +965,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_kms_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms_tron
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -902,7 +989,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftMinter($mint_multiple_nft_minter, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftMinter($mint_multiple_nft_minter, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -911,17 +998,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_minter
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_minter
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint multiple NFTs
      *
@@ -932,7 +1022,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintMultipleNftMinter200Response
      */
-    public function mintMultipleNftTron($mint_multiple_nft_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintMultipleNftTron($mint_multiple_nft_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -941,17 +1031,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint/batch";
+
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint/batch", "/v3/nft/mint/batch", [], $rHeaders, [], $mint_multiple_nft_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_tron
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -962,7 +1055,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNft($mint_nft, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNft($mint_nft, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -971,17 +1064,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -992,7 +1088,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftAlgorand($mint_nft_algorand, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftAlgorand($mint_nft_algorand, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1001,17 +1097,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_algorand
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_algorand
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1022,7 +1121,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftAlgorandKMS($mint_nft_algorand_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftAlgorandKMS($mint_nft_algorand_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1031,17 +1130,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_algorand_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_algorand_kms
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1052,7 +1154,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftCelo($mint_nft_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftCelo($mint_nft_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1061,17 +1163,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_celo
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1082,7 +1187,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftExpress($mint_nft_express, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftExpress($mint_nft_express, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1091,17 +1196,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_express
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1112,7 +1220,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftExpressAlgorand($mint_nft_express_algorand, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftExpressAlgorand($mint_nft_express_algorand, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1121,17 +1229,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_express_algorand
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express_algorand
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1142,7 +1253,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftExpressSolana($mint_nft_express_solana, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftExpressSolana($mint_nft_express_solana, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1151,17 +1262,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_express_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express_solana
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1172,7 +1286,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftFlowKMS($mint_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftFlowKMS($mint_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1181,17 +1295,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_flow_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_kms
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1202,7 +1319,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftFlowMnemonic($mint_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftFlowMnemonic($mint_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1211,17 +1328,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_flow_mnemonic
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_mnemonic
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1232,7 +1352,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftFlowPK($mint_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftFlowPK($mint_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1241,17 +1361,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_flow_pk
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_pk
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1262,7 +1385,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftKMS($mint_nft_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftKMS($mint_nft_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1271,17 +1394,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1292,7 +1418,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftKMSCelo($mint_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftKMSCelo($mint_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1301,17 +1427,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_kms_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms_celo
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1322,7 +1451,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftKMSTron($mint_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftKMSTron($mint_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1331,17 +1460,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_kms_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms_tron
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1352,7 +1484,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftMinter($mint_nft_minter, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftMinter($mint_nft_minter, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1361,17 +1493,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_minter
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_minter
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1382,7 +1517,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftSolana($mint_nft_solana, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftSolana($mint_nft_solana, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1391,17 +1526,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_solana
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1412,7 +1550,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftSolanaKMS($mint_nft_solana_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftSolanaKMS($mint_nft_solana_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1421,17 +1559,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_solana_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_solana_kms
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Mint an NFT
      *
@@ -1442,7 +1583,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MintNftExpress200Response
      */
-    public function mintNftTron($mint_nft_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function mintNftTron($mint_nft_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1451,17 +1592,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/mint";
+
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/mint", "/v3/nft/mint", [], $rHeaders, [], $mint_nft_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_tron
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get the NFTs from a specific smart contract that a blockchain address holds
      *
@@ -1474,7 +1618,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\NftGetBalanceErc721200Response
      */
-    public function nftGetBalanceErc721($chain, $address, $contract_address, $x_testnet_type = 'ethereum-sepolia') {
+    public function nftGetBalanceErc721($chain, $address, $contract_address, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -1483,54 +1627,38 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/balance/{chain}/{contractAddress}/{address}";
+
         /** @var \Tatum\Model\NftGetBalanceErc721200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/balance/{chain}/{contractAddress}/{address}", ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address]), "/v3/nft/balance/{chain}/{contractAddress}/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftGetBalanceErc721200Response"
         );
             
         return $result;
     }
-    
+
     /**
+     * @deprecated
      * Get the address of an NFT smart contract by its transaction hash
      *
      * @param string $chain The blockchain to work with
      * @param string $hash Transaction hash
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\NftGetContractAddress200Response
+     * @return void
      */
-    public function nftGetContractAddress($chain, $hash, $x_testnet_type = 'ethereum-sepolia') {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-        $rHeaders = array_merge(
-            [
-                "x-testnet-type" => isset($x_testnet_type) ? S::toHeaderValue($x_testnet_type) : null,
-            ], 
-            $rHeaders
-        );
-
-        /** @var \Tatum\Model\NftGetContractAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/address/{chain}/{hash}", ["chain" => $chain, "hash" => $hash]), "/v3/nft/address/{chain}/{hash}", [], $rHeaders, []
-            ), 
-            "\Tatum\Model\NftGetContractAddress200Response"
-        );
-            
-        return $result;
-    }
+    public function nftGetContractAddress($chain, $hash, $x_testnet_type = 'ethereum-sepolia') {}
     
     /**
      * Get NFT metadata
      *
      * @param string $chain The blockchain to work with
      * @param string $contract_address The blockchain address of the NFT to get metadata for
-     * @param string $token_id The ID of the NFT to get metadata for&lt;br/&gt;Do &lt;b&gt;not&lt;/b&gt; use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana.
+     * @param string $token_id The ID of the NFT to get metadata for<br/>Do <b>not</b> use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana.
      * @param string|null $account (Flow only) The account that holds the NFT
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -1538,7 +1666,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\NftMetadataErc721
      */
-    public function nftGetMetadataErc721($chain, $contract_address, $token_id, $account = null, $x_testnet_type = 'ethereum-sepolia') {
+    public function nftGetMetadataErc721($chain, $contract_address, $token_id, $account = null, $x_testnet_type = 'ethereum-sepolia') { 
         if (strlen($token_id) > 78) {
             throw new IAE('Invalid length for "$token_id" when calling NFTERC721OrCompatibleApi.nftGetMetadataErc721, must be smaller than or equal to 78');
         }
@@ -1551,10 +1679,13 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}";
+
         /** @var \Tatum\Model\NftMetadataErc721 $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}", ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), "/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [
                     "account" => isset($account) ? S::toQueryValue($account) : null,
                 ], $rHeaders, []
             ), 
@@ -1563,7 +1694,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get NFT provenance information
      *
@@ -1576,7 +1707,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\NftProvenanceDataErc721[]
      */
-    public function nftGetProvenanceDataErc721($chain, $contract_address, $token_id, $x_testnet_type = 'ethereum-sepolia') {
+    public function nftGetProvenanceDataErc721($chain, $contract_address, $token_id, $x_testnet_type = 'ethereum-sepolia') { 
         if (strlen($token_id) > 78) {
             throw new IAE('Invalid length for "$token_id" when calling NFTERC721OrCompatibleApi.nftGetProvenanceDataErc721, must be smaller than or equal to 78');
         }
@@ -1589,30 +1720,33 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/provenance/{chain}/{contractAddress}/{tokenId}";
+
         /** @var \Tatum\Model\NftProvenanceDataErc721[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/provenance/{chain}/{contractAddress}/{tokenId}", ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), "/v3/nft/provenance/{chain}/{contractAddress}/{tokenId}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftProvenanceDataErc721[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Get NFT royalty information
      *
      * @param string $chain The blockchain to work with
      * @param string $contract_address The blockchain address of the NFT to get royalty information for
-     * @param string $token_id The ID of the NFT to get royalty information for&lt;br/&gt;Do &lt;b&gt;not&lt;/b&gt; use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana.
+     * @param string $token_id The ID of the NFT to get royalty information for<br/>Do <b>not</b> use this parameter if you are getting metadata for an NFT on Solana, this parameter is irrelevant on Solana.
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to Sepolia. Valid only for ETH invocations for testnet API Key. For mainnet API Key, this value is ignored.
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 
      * @return \Tatum\Model\NftRoyaltyErc721
      */
-    public function nftGetRoyaltyErc721($chain, $contract_address, $token_id, $x_testnet_type = 'ethereum-sepolia') {
+    public function nftGetRoyaltyErc721($chain, $contract_address, $token_id, $x_testnet_type = 'ethereum-sepolia') { 
         if (strlen($token_id) > 78) {
             throw new IAE('Invalid length for "$token_id" when calling NFTERC721OrCompatibleApi.nftGetRoyaltyErc721, must be smaller than or equal to 78');
         }
@@ -1625,17 +1759,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/royalty/{chain}/{contractAddress}/{tokenId}";
+
         /** @var \Tatum\Model\NftRoyaltyErc721 $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/royalty/{chain}/{contractAddress}/{tokenId}", ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), "/v3/nft/royalty/{chain}/{contractAddress}/{tokenId}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftRoyaltyErc721"
         );
             
         return $result;
     }
-    
+
     /**
      * Get all NFTs that a blockchain address holds
      *
@@ -1646,20 +1783,23 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\NftTokenByAddressErc721[]
      */
-    public function nftGetTokensByAddressErc721($chain, $address) {
+    public function nftGetTokensByAddressErc721($chain, $address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/nft/address/balance/{chain}/{address}";
 
         /** @var \Tatum\Model\NftTokenByAddressErc721[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/address/balance/{chain}/{address}", ["chain" => $chain, "address" => $address]), "/v3/nft/address/balance/{chain}/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftTokenByAddressErc721[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Get all NFTs from a collection
      *
@@ -1672,7 +1812,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\NftTokenByCollectionErc721[]
      */
-    public function nftGetTokensByCollectionErc721($chain, $page_size, $address, $offset = null) {
+    public function nftGetTokensByCollectionErc721($chain, $page_size, $address, $offset = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling NFTERC721OrCompatibleApi.nftGetTokensByCollectionErc721, must be smaller than or equal to 50');
         }
@@ -1683,10 +1823,13 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/nft/collection/{chain}/{address}";
+
         /** @var \Tatum\Model\NftTokenByCollectionErc721[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/collection/{chain}/{address}", ["chain" => $chain, "address" => $address]), "/v3/nft/collection/{chain}/{address}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -1696,7 +1839,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get an NFT transaction by its hash
      *
@@ -1708,7 +1851,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\NftGetTransactErc721200Response
      */
-    public function nftGetTransactErc721($chain, $hash, $x_testnet_type = 'ethereum-sepolia') {
+    public function nftGetTransactErc721($chain, $hash, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
         $rHeaders = array_merge(
             [
@@ -1717,17 +1860,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction/{chain}/{hash}";
+
         /** @var \Tatum\Model\NftGetTransactErc721200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/transaction/{chain}/{hash}", ["chain" => $chain, "hash" => $hash]), "/v3/nft/transaction/{chain}/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftGetTransactErc721200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get NFT transactions on a blockchain address
      *
@@ -1743,7 +1889,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\NftTx[]
      */
-    public function nftGetTransactionByAddress($chain, $address, $token_address, $page_size, $offset = null, $from = null, $to = null) {
+    public function nftGetTransactionByAddress($chain, $address, $token_address, $page_size, $offset = null, $from = null, $to = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling NFTERC721OrCompatibleApi.nftGetTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -1762,10 +1908,13 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/nft/transaction/{chain}/{address}/{tokenAddress}";
+
         /** @var \Tatum\Model\NftTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/transaction/{chain}/{address}/{tokenAddress}", ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), "/v3/nft/transaction/{chain}/{address}/{tokenAddress}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,
@@ -1777,7 +1926,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get NFT transactions for an NFT
      *
@@ -1793,7 +1942,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\NftTx[]
      */
-    public function nftGetTransactionByToken($chain, $token_id, $token_address, $page_size, $offset = null, $from = null, $to = null) {
+    public function nftGetTransactionByToken($chain, $token_id, $token_address, $page_size, $offset = null, $from = null, $to = null) { 
         if (strlen($token_id) > 78) {
             throw new IAE('Invalid length for "$token_id" when calling NFTERC721OrCompatibleApi.nftGetTransactionByToken, must be smaller than or equal to 78');
         }
@@ -1816,10 +1965,13 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}";
+
         /** @var \Tatum\Model\NftTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}", ["chain" => $chain, "tokenId" => $token_id, "tokenAddress" => $token_address]), "/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "tokenId" => $token_id, "tokenAddress" => $token_address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,
@@ -1831,7 +1983,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -1842,7 +1994,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNft($transfer_nft, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNft($transfer_nft, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1851,17 +2003,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -1872,7 +2027,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftAlgo($transfer_nft_algo, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftAlgo($transfer_nft_algo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1881,17 +2036,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_algo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -1902,7 +2060,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftAlgoExpress($transfer_nft_algo_express, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftAlgoExpress($transfer_nft_algo_express, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1911,17 +2069,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_algo_express
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo_express
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -1932,7 +2093,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftAlgoKMS($transfer_nft_algo_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftAlgoKMS($transfer_nft_algo_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1941,17 +2102,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_algo_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -1962,7 +2126,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftCelo($transfer_nft_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftCelo($transfer_nft_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -1971,17 +2135,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -1992,7 +2159,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftFlowKMS($transfer_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftFlowKMS($transfer_nft_flow_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2001,17 +2168,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_flow_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -2022,7 +2192,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftFlowMnemonic($transfer_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftFlowMnemonic($transfer_nft_flow_mnemonic, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2031,17 +2201,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_flow_mnemonic
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -2052,7 +2225,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftFlowPK($transfer_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftFlowPK($transfer_nft_flow_pk, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2061,17 +2234,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_flow_pk
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -2082,7 +2258,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftKMS($transfer_nft_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftKMS($transfer_nft_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2091,17 +2267,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -2112,7 +2291,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftKMSCelo($transfer_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftKMSCelo($transfer_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2121,17 +2300,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_kms_celo
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -2142,7 +2324,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftKMSTron($transfer_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftKMSTron($transfer_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2151,17 +2333,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_kms_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -2172,7 +2357,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftSolana($transfer_nft_solana, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftSolana($transfer_nft_solana, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2181,17 +2366,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_solana
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -2202,7 +2390,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftSolanaKMS($transfer_nft_solana_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftSolanaKMS($transfer_nft_solana_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2211,17 +2399,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_solana_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Transfer an NFT
      *
@@ -2232,7 +2423,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferNftTron($transfer_nft_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function transferNftTron($transfer_nft_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2241,17 +2432,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/transaction";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/transaction", "/v3/nft/transaction", [], $rHeaders, [], $transfer_nft_tron
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update NFT royalty information
      *
@@ -2262,7 +2456,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateCashbackValueForAuthorNft($update_cashback_value_for_author_nft, $x_testnet_type = 'ethereum-sepolia') {
+    public function updateCashbackValueForAuthorNft($update_cashback_value_for_author_nft, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2271,17 +2465,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/royalty";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update NFT royalty information
      *
@@ -2292,7 +2489,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateCashbackValueForAuthorNftCelo($update_cashback_value_for_author_nft_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function updateCashbackValueForAuthorNftCelo($update_cashback_value_for_author_nft_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2301,17 +2498,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/royalty";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft_celo
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update NFT royalty information
      *
@@ -2322,7 +2522,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateCashbackValueForAuthorNftKMS($update_cashback_value_for_author_nft_kms, $x_testnet_type = 'ethereum-sepolia') {
+    public function updateCashbackValueForAuthorNftKMS($update_cashback_value_for_author_nft_kms, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2331,17 +2531,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/royalty";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft_kms
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update NFT royalty information
      *
@@ -2352,7 +2555,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateCashbackValueForAuthorNftKMSCelo($update_cashback_value_for_author_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') {
+    public function updateCashbackValueForAuthorNftKMSCelo($update_cashback_value_for_author_nft_kms_celo, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2361,17 +2564,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/royalty";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_celo
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update NFT royalty information
      *
@@ -2382,7 +2588,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateCashbackValueForAuthorNftKMSTron($update_cashback_value_for_author_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function updateCashbackValueForAuthorNftKMSTron($update_cashback_value_for_author_nft_kms_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2391,17 +2597,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/royalty";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_tron
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Update NFT royalty information
      *
@@ -2412,7 +2621,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function updateCashbackValueForAuthorNftTron($update_cashback_value_for_author_nft_tron, $x_testnet_type = 'ethereum-sepolia') {
+    public function updateCashbackValueForAuthorNftTron($update_cashback_value_for_author_nft_tron, $x_testnet_type = 'ethereum-sepolia') { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
         $rHeaders = array_merge(
             [
@@ -2421,17 +2630,20 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
             $rHeaders
         );
 
+        // Path template
+        $rPath = "/v3/nft/royalty";
+
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", "/v3/nft/royalty", "/v3/nft/royalty", [], $rHeaders, [], $update_cashback_value_for_author_nft_tron
+                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Verify an NFT in an NFT collection on Solana
      *
@@ -2441,20 +2653,23 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function verifySolanaNFT($verify_solana_nft) {
+    public function verifySolanaNFT($verify_solana_nft) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/nft/verify";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/verify", "/v3/nft/verify", [], $rHeaders, [], $verify_solana_nft
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $verify_solana_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Verify an NFT in an NFT collection on Solana
      *
@@ -2464,18 +2679,21 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function verifySolanaNFTKMS($verify_solana_nftkms) {
+    public function verifySolanaNFTKMS($verify_solana_nftkms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/nft/verify";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/nft/verify", "/v3/nft/verify", [], $rHeaders, [], $verify_solana_nftkms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $verify_solana_nftkms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
 }

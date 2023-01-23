@@ -31,20 +31,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callKcsSmartContractMethod($call_kcs_smart_contract_method) {
+    public function callKcsSmartContractMethod($call_kcs_smart_contract_method) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/kcs/smartcontract";
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_method
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_kcs_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Invoke a method in a smart contract on KuCoin Community Chain
      *
@@ -54,20 +57,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callKcsSmartContractMethodKMS($call_kcs_smart_contract_method_kms) {
+    public function callKcsSmartContractMethodKMS($call_kcs_smart_contract_method_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/kcs/smartcontract";
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_method_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_kcs_smart_contract_method_kms
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Invoke a method in a smart contract on KuCoin Community Chain
      *
@@ -77,20 +83,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callKcsSmartContractReadMethod($call_kcs_smart_contract_read_method) {
+    public function callKcsSmartContractReadMethod($call_kcs_smart_contract_read_method) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/kcs/smartcontract";
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/smartcontract", "/v3/kcs/smartcontract", [], $rHeaders, [], $call_kcs_smart_contract_read_method
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_kcs_smart_contract_read_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Broadcast signed Kcs transaction
      *
@@ -100,20 +109,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function kcsBroadcast($broadcast_kms) {
+    public function kcsBroadcast($broadcast_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/kcs/broadcast";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/broadcast", "/v3/kcs/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Kcs account address from Extended public key
      *
@@ -124,20 +136,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KcsGenerateAddress200Response
      */
-    public function kcsGenerateAddress($xpub, $index) {
+    public function kcsGenerateAddress($xpub, $index) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/kcs/address/{xpub}/{index}";
 
         /** @var \Tatum\Model\KcsGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/kcs/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/kcs/address/{xpub}/{index}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\KcsGenerateAddress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Kcs private key
      *
@@ -147,20 +162,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function kcsGenerateAddressPrivateKey($priv_key_request) {
+    public function kcsGenerateAddressPrivateKey($priv_key_request) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/kcs/wallet/priv";
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/wallet/priv", "/v3/kcs/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Kcs wallet
      *
@@ -170,17 +188,20 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function kcsGenerateWallet($mnemonic = null) {
+    public function kcsGenerateWallet($mnemonic = null) { 
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling KuCoinApi.kcsGenerateWallet, must be smaller than or equal to 500');
         }
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/kcs/wallet";
+
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/kcs/wallet", "/v3/kcs/wallet", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -189,7 +210,7 @@ class KuCoinApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get Kcs Account balance
      *
@@ -199,20 +220,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KcsGetBalance200Response
      */
-    public function kcsGetBalance($address) {
+    public function kcsGetBalance($address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/kcs/account/balance/{address}";
 
         /** @var \Tatum\Model\KcsGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/kcs/account/balance/{address}", ["address" => $address]), "/v3/kcs/account/balance/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\KcsGetBalance200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Kcs block by hash
      *
@@ -222,20 +246,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthBlock
      */
-    public function kcsGetBlock($hash) {
+    public function kcsGetBlock($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/kcs/block/{hash}";
 
         /** @var \Tatum\Model\EthBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/kcs/block/{hash}", ["hash" => $hash]), "/v3/kcs/block/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\EthBlock"
         );
             
         return $result;
     }
-    
+
     /**
      * Get current block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -243,20 +270,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return float
      */
-    public function kcsGetCurrentBlock() {
+    public function kcsGetCurrentBlock() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/kcs/block/current";
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/kcs/block/current", "/v3/kcs/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Kcs Transaction
      *
@@ -266,20 +296,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\KcsTx
      */
-    public function kcsGetTransaction($hash) {
+    public function kcsGetTransaction($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/kcs/transaction/{hash}";
 
         /** @var \Tatum\Model\KcsTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/kcs/transaction/{hash}", ["hash" => $hash]), "/v3/kcs/transaction/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\KcsTx"
         );
             
         return $result;
     }
-    
+
     /**
      * Get count of outgoing Kcs transactions
      *
@@ -289,7 +322,7 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return float
      */
-    public function kcsGetTransactionCount($address) {
+    public function kcsGetTransactionCount($address) { 
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling KuCoinApi.kcsGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -300,40 +333,30 @@ class KuCoinApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/kcs/transaction/count/{address}";
+
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/kcs/transaction/count/{address}", ["address" => $address]), "/v3/kcs/transaction/count/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
+     * @deprecated
      * Web3 HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return object
+     * @return void
      */
-    public function kcsWeb3Driver($x_api_key, $body) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var object $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/kcs/web3/{xApiKey}", ["xApiKey" => $x_api_key]), "/v3/kcs/web3/{xApiKey}", [], $rHeaders, [], $body
-            ), 
-            "object"
-        );
-            
-        return $result;
-    }
+    public function kcsWeb3Driver($x_api_key, $body) {}
     
     /**
      * Send KCS from account to account
@@ -344,20 +367,23 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferKcsBlockchain($transfer_kcs_blockchain) {
+    public function transferKcsBlockchain($transfer_kcs_blockchain) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/kcs/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/transaction", "/v3/kcs/transaction", [], $rHeaders, [], $transfer_kcs_blockchain
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_kcs_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send KCS from account to account
      *
@@ -367,18 +393,21 @@ class KuCoinApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferKcsBlockchainKMS($transfer_kcs_blockchain_kms) {
+    public function transferKcsBlockchainKMS($transfer_kcs_blockchain_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/kcs/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/kcs/transaction", "/v3/kcs/transaction", [], $rHeaders, [], $transfer_kcs_blockchain_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_kcs_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
 }

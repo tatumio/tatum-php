@@ -29,20 +29,23 @@ class ElrondApi extends AbstractApi {
      * 
      * @return float
      */
-    public function eGldGetCurrentBlock() {
+    public function eGldGetCurrentBlock() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/egld/block/current";
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/egld/block/current", "/v3/egld/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
      * Broadcast signed EGLD transaction
      *
@@ -52,20 +55,23 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function egldBroadcast($broadcast_kms) {
+    public function egldBroadcast($broadcast_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/egld/broadcast";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/egld/broadcast", "/v3/egld/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate EGLD account address from mnemonic
      *
@@ -76,20 +82,23 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EgldGenerateAddress200Response
      */
-    public function egldGenerateAddress($mnemonic, $index) {
+    public function egldGenerateAddress($mnemonic, $index) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/egld/address/{mnemonic}/{index}";
 
         /** @var \Tatum\Model\EgldGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/egld/address/{mnemonic}/{index}", ["mnemonic" => $mnemonic, "index" => $index]), "/v3/egld/address/{mnemonic}/{index}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["mnemonic" => $mnemonic, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\EgldGenerateAddress200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate EGLD private key
      *
@@ -99,20 +108,23 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function egldGenerateAddressPrivateKey($priv_key_request) {
+    public function egldGenerateAddressPrivateKey($priv_key_request) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/egld/wallet/priv";
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/egld/wallet/priv", "/v3/egld/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate EGLD wallet
      *
@@ -122,17 +134,20 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EgldGenerateWallet200Response
      */
-    public function egldGenerateWallet($mnemonic = null) {
+    public function egldGenerateWallet($mnemonic = null) { 
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling ElrondApi.egldGenerateWallet, must be smaller than or equal to 500');
         }
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/egld/wallet";
+
         /** @var \Tatum\Model\EgldGenerateWallet200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/egld/wallet", "/v3/egld/wallet", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -141,7 +156,7 @@ class ElrondApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get EGLD Account balance
      *
@@ -151,20 +166,23 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EgldGetBalance200Response
      */
-    public function egldGetBalance($address) {
+    public function egldGetBalance($address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/egld/account/balance/{address}";
 
         /** @var \Tatum\Model\EgldGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/egld/account/balance/{address}", ["address" => $address]), "/v3/egld/account/balance/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\EgldGetBalance200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Get EGLD block by hash
      *
@@ -174,20 +192,23 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EgldBlock
      */
-    public function egldGetBlock($hash) {
+    public function egldGetBlock($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/egld/block/{hash}";
 
         /** @var \Tatum\Model\EgldBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/egld/block/{hash}", ["hash" => $hash]), "/v3/egld/block/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\EgldBlock"
         );
             
         return $result;
     }
-    
+
     /**
      * Get EGLD Transaction
      *
@@ -197,20 +218,23 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EgldTx
      */
-    public function egldGetTransaction($hash) {
+    public function egldGetTransaction($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/egld/transaction/{hash}";
 
         /** @var \Tatum\Model\EgldTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/egld/transaction/{hash}", ["hash" => $hash]), "/v3/egld/transaction/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\EgldTx"
         );
             
         return $result;
     }
-    
+
     /**
      * Get count of outgoing EGLD transactions
      *
@@ -220,7 +244,7 @@ class ElrondApi extends AbstractApi {
      * 
      * @return object[]
      */
-    public function egldGetTransactionAddress($address) {
+    public function egldGetTransactionAddress($address) { 
         if (strlen($address) > 62) {
             throw new IAE('Invalid length for "$address" when calling ElrondApi.egldGetTransactionAddress, must be smaller than or equal to 62');
         }
@@ -231,17 +255,20 @@ class ElrondApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/egld/transaction/address/{address}";
+
         /** @var object[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/egld/transaction/address/{address}", ["address" => $address]), "/v3/egld/transaction/address/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "object[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Get count of outgoing EGLD transactions
      *
@@ -251,7 +278,7 @@ class ElrondApi extends AbstractApi {
      * 
      * @return float
      */
-    public function egldGetTransactionCount($address) {
+    public function egldGetTransactionCount($address) { 
         if (strlen($address) > 62) {
             throw new IAE('Invalid length for "$address" when calling ElrondApi.egldGetTransactionCount, must be smaller than or equal to 62');
         }
@@ -262,63 +289,40 @@ class ElrondApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/egld/transaction/count/{address}";
+
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/egld/transaction/count/{address}", ["address" => $address]), "/v3/egld/transaction/count/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
+     * @deprecated
      * Node HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return object
+     * @return void
      */
-    public function egldNodeGet($x_api_key) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var object $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/egld/node/{xApiKey}/*", ["xApiKey" => $x_api_key]), "/v3/egld/node/{xApiKey}/*", [], $rHeaders, []
-            ), 
-            "object"
-        );
-            
-        return $result;
-    }
+    public function egldNodeGet($x_api_key) {}
     
     /**
+     * @deprecated
      * Node HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return object
+     * @return void
      */
-    public function egldNodePost($x_api_key, $body) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var object $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/egld/node/{xApiKey}/*", ["xApiKey" => $x_api_key]), "/v3/egld/node/{xApiKey}/*", [], $rHeaders, [], $body
-            ), 
-            "object"
-        );
-            
-        return $result;
-    }
+    public function egldNodePost($x_api_key, $body) {}
     
     /**
      * Send EGLD from account to account
@@ -329,20 +333,23 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferEgldBlockchain($transfer_egld_blockchain) {
+    public function transferEgldBlockchain($transfer_egld_blockchain) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/egld/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/egld/transaction", "/v3/egld/transaction", [], $rHeaders, [], $transfer_egld_blockchain
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_egld_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send EGLD from account to account
      *
@@ -352,18 +359,21 @@ class ElrondApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferEgldBlockchainKMS($transfer_egld_blockchain_kms) {
+    public function transferEgldBlockchainKMS($transfer_egld_blockchain_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/egld/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/egld/transaction", "/v3/egld/transaction", [], $rHeaders, [], $transfer_egld_blockchain_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_egld_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
 }

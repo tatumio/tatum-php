@@ -31,20 +31,23 @@ class SolanaApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SolanaTransactionHashWithConfirm
      */
-    public function solanaBroadcastConfirm($solana_broadcast_confirm) {
+    public function solanaBroadcastConfirm($solana_broadcast_confirm) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/solana/broadcast/confirm";
 
         /** @var \Tatum\Model\SolanaTransactionHashWithConfirm $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/solana/broadcast/confirm", "/v3/solana/broadcast/confirm", [], $rHeaders, [], $solana_broadcast_confirm
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $solana_broadcast_confirm
             ), 
             "\Tatum\Model\SolanaTransactionHashWithConfirm"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Solana wallet
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -52,20 +55,23 @@ class SolanaApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SolanaWallet
      */
-    public function solanaGenerateWallet() {
+    public function solanaGenerateWallet() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/solana/wallet";
 
         /** @var \Tatum\Model\SolanaWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/solana/wallet", "/v3/solana/wallet", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\SolanaWallet"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Solana Account balance
      *
@@ -75,20 +81,23 @@ class SolanaApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SolBalance
      */
-    public function solanaGetBalance($address) {
+    public function solanaGetBalance($address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/solana/account/balance/{address}";
 
         /** @var \Tatum\Model\SolBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/solana/account/balance/{address}", ["address" => $address]), "/v3/solana/account/balance/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\SolBalance"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Solana block by number
      *
@@ -98,20 +107,23 @@ class SolanaApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SolanaBlock
      */
-    public function solanaGetBlock($height) {
+    public function solanaGetBlock($height) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/solana/block/{height}";
 
         /** @var \Tatum\Model\SolanaBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/solana/block/{height}", ["height" => $height]), "/v3/solana/block/{height}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["height" => $height]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\SolanaBlock"
         );
             
         return $result;
     }
-    
+
     /**
      * Get current block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -119,20 +131,23 @@ class SolanaApi extends AbstractApi {
      * 
      * @return float
      */
-    public function solanaGetCurrentBlock() {
+    public function solanaGetCurrentBlock() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/solana/block/current";
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/solana/block/current", "/v3/solana/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Solana Transaction
      *
@@ -143,13 +158,16 @@ class SolanaApi extends AbstractApi {
      * 
      * @return \Tatum\Model\SolanaTx
      */
-    public function solanaGetTransaction($hash, $commitment = null) {
+    public function solanaGetTransaction($hash, $commitment = null) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/solana/transaction/{hash}";
 
         /** @var \Tatum\Model\SolanaTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/solana/transaction/{hash}", ["hash" => $hash]), "/v3/solana/transaction/{hash}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [
                     "commitment" => isset($commitment) ? S::toQueryValue($commitment) : null,
                 ], $rHeaders, []
             ), 
@@ -158,30 +176,17 @@ class SolanaApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
+     * @deprecated
      * JSON RPC HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return object
+     * @return void
      */
-    public function solanaWeb3Driver($x_api_key, $body) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var object $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/solana/web3/{xApiKey}", ["xApiKey" => $x_api_key]), "/v3/solana/web3/{xApiKey}", [], $rHeaders, [], $body
-            ), 
-            "object"
-        );
-            
-        return $result;
-    }
+    public function solanaWeb3Driver($x_api_key, $body) {}
     
     /**
      * Send SOL from account to account
@@ -192,20 +197,23 @@ class SolanaApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferSolanaBlockchain($transfer_solana_blockchain) {
+    public function transferSolanaBlockchain($transfer_solana_blockchain) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/solana/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/solana/transaction", "/v3/solana/transaction", [], $rHeaders, [], $transfer_solana_blockchain
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_solana_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send SOL from account to account
      *
@@ -215,18 +223,21 @@ class SolanaApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferSolanaBlockchainKMS($transfer_solana_blockchain_kms) {
+    public function transferSolanaBlockchainKMS($transfer_solana_blockchain_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/solana/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/solana/transaction", "/v3/solana/transaction", [], $rHeaders, [], $transfer_solana_blockchain_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_solana_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
 }

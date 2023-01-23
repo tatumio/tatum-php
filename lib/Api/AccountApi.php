@@ -31,16 +31,19 @@ class AccountApi extends AbstractApi {
      * 
      * @return void
      */
-    public function activateAccount($id) {
+    public function activateAccount($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/{id}/activate";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/account/{id}/activate", ["id" => $id]), "/v3/ledger/account/{id}/activate", [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-    
+
     /**
      * Block an amount in an account
      *
@@ -51,20 +54,23 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Id
      */
-    public function blockAmount($id, $block_amount) {
+    public function blockAmount($id, $block_amount) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/ledger/account/block/{id}";
 
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/ledger/account/block/{id}", ["id" => $id]), "/v3/ledger/account/block/{id}", [], $rHeaders, [], $block_amount
+                $this->_caller->config(), "POST", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $block_amount
             ), 
             "\Tatum\Model\Id"
         );
             
         return $result;
     }
-    
+
     /**
      * Create a virtual account
      *
@@ -74,20 +80,23 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Account
      */
-    public function createAccount($create_account) {
+    public function createAccount($create_account) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/ledger/account";
 
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/account", "/v3/ledger/account", [], $rHeaders, [], $create_account
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_account
             ), 
             "\Tatum\Model\Account"
         );
             
         return $result;
     }
-    
+
     /**
      * Create multiple accounts in a batch call
      *
@@ -97,20 +106,23 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Account[]
      */
-    public function createAccountBatch($create_account_batch) {
+    public function createAccountBatch($create_account_batch) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/ledger/account/batch";
 
         /** @var \Tatum\Model\Account[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/account/batch", "/v3/ledger/account/batch", [], $rHeaders, [], $create_account_batch
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_account_batch
             ), 
             "\Tatum\Model\Account[]"
         );
             
         return $result;
     }
-    
+
     /**
      * Create a virtual account
      *
@@ -120,20 +132,23 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Account
      */
-    public function createAccountXpub($create_account_xpub) {
+    public function createAccountXpub($create_account_xpub) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/ledger/account";
 
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ledger/account", "/v3/ledger/account", [], $rHeaders, [], $create_account_xpub
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_account_xpub
             ), 
             "\Tatum\Model\Account"
         );
             
         return $result;
     }
-    
+
     /**
      * Deactivate account
      *
@@ -143,16 +158,19 @@ class AccountApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deactivateAccount($id) {
+    public function deactivateAccount($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/{id}/deactivate";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/account/{id}/deactivate", ["id" => $id]), "/v3/ledger/account/{id}/deactivate", [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-    
+
     /**
      * Unblock all blocked amounts in an account
      *
@@ -162,16 +180,19 @@ class AccountApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deleteAllBlockAmount($id) {
+    public function deleteAllBlockAmount($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/block/account/{id}";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/ledger/account/block/account/{id}", ["id" => $id]), "/v3/ledger/account/block/account/{id}", [], $rHeaders, []
+                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-    
+
     /**
      * Unblock a blocked amount in an account
      *
@@ -181,16 +202,19 @@ class AccountApi extends AbstractApi {
      * 
      * @return void
      */
-    public function deleteBlockAmount($id) {
+    public function deleteBlockAmount($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/block/{id}";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse("/v3/ledger/account/block/{id}", ["id" => $id]), "/v3/ledger/account/block/{id}", [], $rHeaders, []
+                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-    
+
     /**
      * Freeze account
      *
@@ -200,16 +224,19 @@ class AccountApi extends AbstractApi {
      * 
      * @return void
      */
-    public function freezeAccount($id) {
+    public function freezeAccount($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/{id}/freeze";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/account/{id}/freeze", ["id" => $id]), "/v3/ledger/account/{id}/freeze", [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-    
+
     /**
      * Get account balance
      *
@@ -219,20 +246,23 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AccountBalance
      */
-    public function getAccountBalance($id) {
+    public function getAccountBalance($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/{id}/balance";
 
         /** @var \Tatum\Model\AccountBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ledger/account/{id}/balance", ["id" => $id]), "/v3/ledger/account/{id}/balance", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\AccountBalance"
         );
             
         return $result;
     }
-    
+
     /**
      * Get account by ID
      *
@@ -242,20 +272,23 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Account
      */
-    public function getAccountByAccountId($id) {
+    public function getAccountByAccountId($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/{id}";
 
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ledger/account/{id}", ["id" => $id]), "/v3/ledger/account/{id}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Account"
         );
             
         return $result;
     }
-    
+
     /**
      * List all accounts
      *
@@ -273,7 +306,7 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Account[]
      */
-    public function getAccounts($page_size = null, $page = null, $sort = null, $sort_by = null, $active = null, $only_non_zero_balance = null, $frozen = null, $currency = null, $account_number = null) {
+    public function getAccounts($page_size = null, $page = null, $sort = null, $sort_by = null, $active = null, $only_non_zero_balance = null, $frozen = null, $currency = null, $account_number = null) { 
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccounts, must be smaller than or equal to 50');
         }
@@ -292,10 +325,13 @@ class AccountApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/ledger/account";
+
         /** @var \Tatum\Model\Account[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ledger/account", "/v3/ledger/account", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "page" => isset($page) ? S::toQueryValue($page) : null,
                     "sort" => isset($sort) ? S::toQueryValue($sort) : null,
@@ -312,7 +348,7 @@ class AccountApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * List all customer accounts
      *
@@ -325,7 +361,7 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Account[]
      */
-    public function getAccountsByCustomerId($page_size, $id, $offset = null, $account_code = null) {
+    public function getAccountsByCustomerId($page_size, $id, $offset = null, $account_code = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccountsByCustomerId, must be smaller than or equal to 50');
         }
@@ -344,10 +380,13 @@ class AccountApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/ledger/account/customer/{id}";
+
         /** @var \Tatum\Model\Account[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ledger/account/customer/{id}", ["id" => $id]), "/v3/ledger/account/customer/{id}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "accountCode" => isset($account_code) ? S::toQueryValue($account_code) : null,
@@ -358,7 +397,7 @@ class AccountApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Count of found entities for get accounts request
      *
@@ -376,7 +415,7 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EntitiesCount
      */
-    public function getAccountsCount($page_size = null, $page = null, $sort = null, $sort_by = null, $active = null, $only_non_zero_balance = null, $frozen = null, $currency = null, $account_number = null) {
+    public function getAccountsCount($page_size = null, $page = null, $sort = null, $sort_by = null, $active = null, $only_non_zero_balance = null, $frozen = null, $currency = null, $account_number = null) { 
         if (isset($page_size) && $page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling AccountApi.getAccountsCount, must be smaller than or equal to 50');
         }
@@ -395,10 +434,13 @@ class AccountApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/ledger/account/count";
+
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ledger/account/count", "/v3/ledger/account/count", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "page" => isset($page) ? S::toQueryValue($page) : null,
                     "sort" => isset($sort) ? S::toQueryValue($sort) : null,
@@ -415,7 +457,7 @@ class AccountApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get blocked amounts in an account
      *
@@ -427,7 +469,7 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Blockage[]
      */
-    public function getBlockAmount($id, $page_size, $offset = null) {
+    public function getBlockAmount($id, $page_size, $offset = null) { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling AccountApi.getBlockAmount, must be smaller than or equal to 50');
         }
@@ -438,10 +480,13 @@ class AccountApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/ledger/account/block/{id}";
+
         /** @var \Tatum\Model\Blockage[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ledger/account/block/{id}", ["id" => $id]), "/v3/ledger/account/block/{id}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -451,7 +496,7 @@ class AccountApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get blocked amount by ID
      *
@@ -461,20 +506,23 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Blockage
      */
-    public function getBlockAmountById($id) {
+    public function getBlockAmountById($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/block/{id}/detail";
 
         /** @var \Tatum\Model\Blockage $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ledger/account/block/{id}/detail", ["id" => $id]), "/v3/ledger/account/block/{id}/detail", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Blockage"
         );
             
         return $result;
     }
-    
+
     /**
      * Unblock an amount in an account and perform a transaction
      *
@@ -485,20 +533,23 @@ class AccountApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionResult
      */
-    public function unblockAmountWithTransaction($id, $unblock_amount) {
+    public function unblockAmountWithTransaction($id, $unblock_amount) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/ledger/account/block/{id}";
 
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/account/block/{id}", ["id" => $id]), "/v3/ledger/account/block/{id}", [], $rHeaders, [], $unblock_amount
+                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $unblock_amount
             ), 
             "\Tatum\Model\TransactionResult"
         );
             
         return $result;
     }
-    
+
     /**
      * Unfreeze account
      *
@@ -508,16 +559,19 @@ class AccountApi extends AbstractApi {
      * 
      * @return void
      */
-    public function unfreezeAccount($id) {
+    public function unfreezeAccount($id) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/ledger/account/{id}/unfreeze";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/account/{id}/unfreeze", ["id" => $id]), "/v3/ledger/account/{id}/unfreeze", [], $rHeaders, []
+                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
-    
+
     /**
      * Update account
      *
@@ -528,14 +582,17 @@ class AccountApi extends AbstractApi {
      * 
      * @return void
      */
-    public function updateAccountByAccountId($id, $update_account) {
+    public function updateAccountByAccountId($id, $update_account) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/ledger/account/{id}";
 
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse("/v3/ledger/account/{id}", ["id" => $id]), "/v3/ledger/account/{id}", [], $rHeaders, [], $update_account
+                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $update_account
             )
         );
     }
-    
+
 }

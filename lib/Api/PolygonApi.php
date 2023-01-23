@@ -31,20 +31,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callPolygonSmartContractMethod($call_polygon_smart_contract_method) {
+    public function callPolygonSmartContractMethod($call_polygon_smart_contract_method) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/smartcontract";
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_polygon_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Invoke a method in a smart contract on Polygon
      *
@@ -54,20 +57,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callPolygonSmartContractMethodCaller($call_polygon_smart_contract_method_caller) {
+    public function callPolygonSmartContractMethodCaller($call_polygon_smart_contract_method_caller) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/smartcontract";
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method_caller
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_polygon_smart_contract_method_caller
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Invoke a method in a smart contract on Polygon
      *
@@ -77,20 +83,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callPolygonSmartContractMethodKMS($call_polygon_smart_contract_method_kms) {
+    public function callPolygonSmartContractMethodKMS($call_polygon_smart_contract_method_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/smartcontract";
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_method_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_polygon_smart_contract_method_kms
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Invoke a method in a smart contract on Polygon
      *
@@ -100,20 +109,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\CallSmartContractMethod200Response
      */
-    public function callPolygonSmartContractReadMethod($call_polygon_smart_contract_read_method) {
+    public function callPolygonSmartContractReadMethod($call_polygon_smart_contract_read_method) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/smartcontract";
 
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/smartcontract", "/v3/polygon/smartcontract", [], $rHeaders, [], $call_polygon_smart_contract_read_method
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_polygon_smart_contract_read_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
             
         return $result;
     }
-    
+
     /**
      * Broadcast signed Polygon transaction
      *
@@ -123,20 +135,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionHash
      */
-    public function polygonBroadcast($broadcast_kms) {
+    public function polygonBroadcast($broadcast_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/broadcast";
 
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/broadcast", "/v3/polygon/broadcast", [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Polygon account address from Extended public key
      *
@@ -147,20 +162,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\GeneratedAddressMatic
      */
-    public function polygonGenerateAddress($xpub, $index) {
+    public function polygonGenerateAddress($xpub, $index) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/polygon/address/{xpub}/{index}";
 
         /** @var \Tatum\Model\GeneratedAddressMatic $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/polygon/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/polygon/address/{xpub}/{index}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GeneratedAddressMatic"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Polygon private key
      *
@@ -170,20 +188,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PrivKey
      */
-    public function polygonGenerateAddressPrivateKey($priv_key_request) {
+    public function polygonGenerateAddressPrivateKey($priv_key_request) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/wallet/priv";
 
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/wallet/priv", "/v3/polygon/wallet/priv", [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
             
         return $result;
     }
-    
+
     /**
      * Generate Polygon wallet
      *
@@ -193,17 +214,20 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\Wallet
      */
-    public function polygonGenerateWallet($mnemonic = null) {
+    public function polygonGenerateWallet($mnemonic = null) { 
         if (isset($mnemonic) && strlen($mnemonic) > 500) {
             throw new IAE('Invalid length for "$mnemonic" when calling PolygonApi.polygonGenerateWallet, must be smaller than or equal to 500');
         }
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/polygon/wallet";
+
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/polygon/wallet", "/v3/polygon/wallet", [
+                $this->_caller->config(), "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -212,7 +236,7 @@ class PolygonApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get Polygon Account balance
      *
@@ -222,20 +246,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\MaticBalance
      */
-    public function polygonGetBalance($address) {
+    public function polygonGetBalance($address) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/polygon/account/balance/{address}";
 
         /** @var \Tatum\Model\MaticBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/polygon/account/balance/{address}", ["address" => $address]), "/v3/polygon/account/balance/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\MaticBalance"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Polygon block by hash
      *
@@ -245,20 +272,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\EthBlock
      */
-    public function polygonGetBlock($hash) {
+    public function polygonGetBlock($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/polygon/block/{hash}";
 
         /** @var \Tatum\Model\EthBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/polygon/block/{hash}", ["hash" => $hash]), "/v3/polygon/block/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\EthBlock"
         );
             
         return $result;
     }
-    
+
     /**
      * Get current block number
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -266,20 +296,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return float
      */
-    public function polygonGetCurrentBlock() {
+    public function polygonGetCurrentBlock() { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/polygon/block/current";
 
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", "/v3/polygon/block/current", "/v3/polygon/block/current", [], $rHeaders, []
+                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Polygon Transaction
      *
@@ -289,20 +322,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PolygonTx
      */
-    public function polygonGetTransaction($hash) {
+    public function polygonGetTransaction($hash) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
+
+        // Path template
+        $rPath = "/v3/polygon/transaction/{hash}";
 
         /** @var \Tatum\Model\PolygonTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/polygon/transaction/{hash}", ["hash" => $hash]), "/v3/polygon/transaction/{hash}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\PolygonTx"
         );
             
         return $result;
     }
-    
+
     /**
      * Get Polygon transactions by address
      *
@@ -317,7 +353,7 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\PolygonTx[]
      */
-    public function polygonGetTransactionByAddress($address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC') {
+    public function polygonGetTransactionByAddress($address, $page_size, $offset = null, $from = null, $to = null, $sort = 'DESC') { 
         if ($page_size > 50) {
             throw new IAE('Invalid value for "$page_size" when calling PolygonApi.polygonGetTransactionByAddress, must be smaller than or equal to 50');
         }
@@ -336,10 +372,13 @@ class PolygonApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/polygon/account/transaction/{address}";
+
         /** @var \Tatum\Model\PolygonTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/polygon/account/transaction/{address}", ["address" => $address]), "/v3/polygon/account/transaction/{address}", [
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,
@@ -352,7 +391,7 @@ class PolygonApi extends AbstractApi {
             
         return $result;
     }
-    
+
     /**
      * Get count of outgoing Polygon transactions
      *
@@ -362,7 +401,7 @@ class PolygonApi extends AbstractApi {
      * 
      * @return float
      */
-    public function polygonGetTransactionCount($address) {
+    public function polygonGetTransactionCount($address) { 
         if (strlen($address) > 42) {
             throw new IAE('Invalid length for "$address" when calling PolygonApi.polygonGetTransactionCount, must be smaller than or equal to 42');
         }
@@ -373,40 +412,30 @@ class PolygonApi extends AbstractApi {
 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
 
+        // Path template
+        $rPath = "/v3/polygon/transaction/count/{address}";
+
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/polygon/transaction/count/{address}", ["address" => $address]), "/v3/polygon/transaction/count/{address}", [], $rHeaders, []
+                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
             
         return $result;
     }
-    
+
     /**
+     * @deprecated
      * Web3 HTTP driver
      *
      * @param string $x_api_key Tatum X-API-Key used for authorization.
      * @param object $body 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return object
+     * @return void
      */
-    public function polygonWeb3Driver($x_api_key, $body) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var object $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", S::parse("/v3/polygon/web3/{xApiKey}", ["xApiKey" => $x_api_key]), "/v3/polygon/web3/{xApiKey}", [], $rHeaders, [], $body
-            ), 
-            "object"
-        );
-            
-        return $result;
-    }
+    public function polygonWeb3Driver($x_api_key, $body) {}
     
     /**
      * Send MATIC from account to account
@@ -417,20 +446,23 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferPolygonBlockchain($transfer_polygon_blockchain) {
+    public function transferPolygonBlockchain($transfer_polygon_blockchain) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/transaction", "/v3/polygon/transaction", [], $rHeaders, [], $transfer_polygon_blockchain
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_polygon_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
     /**
      * Send MATIC from account to account
      *
@@ -440,18 +472,21 @@ class PolygonApi extends AbstractApi {
      * 
      * @return \Tatum\Model\TransactionSigned
      */
-    public function transferPolygonBlockchainKMS($transfer_polygon_blockchain_kms) {
+    public function transferPolygonBlockchainKMS($transfer_polygon_blockchain_kms) { 
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/polygon/transaction";
 
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", "/v3/polygon/transaction", "/v3/polygon/transaction", [], $rHeaders, [], $transfer_polygon_blockchain_kms
+                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_polygon_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
             
         return $result;
     }
-    
+
 }

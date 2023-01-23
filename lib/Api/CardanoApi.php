@@ -23,347 +23,144 @@ use Tatum\Sdk\Serializer as S;
  */
 class CardanoApi extends AbstractApi {
     /**
+     * @deprecated
      * Broadcast signed Ada transaction
      *
      * @param \Tatum\Model\BroadcastKMS $broadcast_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\TransactionHash
+     * @return void
      */
-    public function adaBroadcast($broadcast_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionHash $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/broadcast", "/v3/ada/broadcast", [], $rHeaders, [], $broadcast_kms
-            ), 
-            "\Tatum\Model\TransactionHash"
-        );
-            
-        return $result;
-    }
+    public function adaBroadcast($broadcast_kms) {}
     
     /**
+     * @deprecated
      * Generate Ada deposit address from Extended public key
      *
      * @param string $xpub Extended public key of a wallet.
      * @param float $index Derivation index of the desired address to be generated.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\AdaGenerateAddress200Response
+     * @return void
      */
-    public function adaGenerateAddress($xpub, $index) {
-        if ($index < 0) {
-            throw new IAE('Invalid value for "$index" when calling CardanoApi.adaGenerateAddress, must be bigger than or equal to 0.');
-        }
-
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var \Tatum\Model\AdaGenerateAddress200Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/address/{xpub}/{index}", ["xpub" => $xpub, "index" => $index]), "/v3/ada/address/{xpub}/{index}", [], $rHeaders, []
-            ), 
-            "\Tatum\Model\AdaGenerateAddress200Response"
-        );
-            
-        return $result;
-    }
+    public function adaGenerateAddress($xpub, $index) {}
     
     /**
+     * @deprecated
      * Generate Ada private key
      *
      * @param \Tatum\Model\PrivKeyRequest $priv_key_request 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\PrivKey
+     * @return void
      */
-    public function adaGenerateAddressPrivateKey($priv_key_request) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\PrivKey $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/wallet/priv", "/v3/ada/wallet/priv", [], $rHeaders, [], $priv_key_request
-            ), 
-            "\Tatum\Model\PrivKey"
-        );
-            
-        return $result;
-    }
+    public function adaGenerateAddressPrivateKey($priv_key_request) {}
     
     /**
+     * @deprecated
      * Generate Ada wallet
      *
      * @param string|null $mnemonic Mnemonic to use for generation of extended public and private keys.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\Wallet
+     * @return void
      */
-    public function adaGenerateWallet($mnemonic = null) {
-        if (isset($mnemonic) && strlen($mnemonic) > 500) {
-            throw new IAE('Invalid length for "$mnemonic" when calling CardanoApi.adaGenerateWallet, must be smaller than or equal to 500');
-        }
-
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var \Tatum\Model\Wallet $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ada/wallet", "/v3/ada/wallet", [
-                    "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
-                ], $rHeaders, []
-            ), 
-            "\Tatum\Model\Wallet"
-        );
-            
-        return $result;
-    }
+    public function adaGenerateWallet($mnemonic = null) {}
     
     /**
+     * @deprecated
      * Gets a Ada account by address
      *
      * @param string $address Address
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return array[]
+     * @return void
      */
-    public function adaGetAccount($address) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var array[] $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/account/{address}", ["address" => $address]), "/v3/ada/account/{address}", [], $rHeaders, []
-            ), 
-            "array[]"
-        );
-            
-        return $result;
-    }
+    public function adaGetAccount($address) {}
     
     /**
+     * @deprecated
      * Get Block by hash or height
      *
      * @param string $hash Block hash or height.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\AdaBlock
+     * @return void
      */
-    public function adaGetBlock($hash) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var \Tatum\Model\AdaBlock $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/block/{hash}", ["hash" => $hash]), "/v3/ada/block/{hash}", [], $rHeaders, []
-            ), 
-            "\Tatum\Model\AdaBlock"
-        );
-            
-        return $result;
-    }
+    public function adaGetBlock($hash) {}
     
     /**
+     * @deprecated
      * Get Blockchain information
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\AdaInfo
+     * @return void
      */
-    public function adaGetBlockChainInfo() {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var \Tatum\Model\AdaInfo $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", "/v3/ada/info", "/v3/ada/info", [], $rHeaders, []
-            ), 
-            "\Tatum\Model\AdaInfo"
-        );
-            
-        return $result;
-    }
+    public function adaGetBlockChainInfo() {}
     
     /**
+     * @deprecated
      * Get transaction by hash
      *
      * @param string $hash Transaction hash
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\AdaTx
+     * @return void
      */
-    public function adaGetRawTransaction($hash) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var \Tatum\Model\AdaTx $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/transaction/{hash}", ["hash" => $hash]), "/v3/ada/transaction/{hash}", [], $rHeaders, []
-            ), 
-            "\Tatum\Model\AdaTx"
-        );
-            
-        return $result;
-    }
+    public function adaGetRawTransaction($hash) {}
     
     /**
+     * @deprecated
      * Get transactions by address
      *
      * @param string $address Address
      * @param float $page_size Max number of items per page is 50.
      * @param float|null $offset Offset to obtain the next page of data.
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\AdaTx[]
+     * @return void
      */
-    public function adaGetTxByAddress($address, $page_size, $offset = null) {
-        if ($page_size > 50) {
-            throw new IAE('Invalid value for "$page_size" when calling CardanoApi.adaGetTxByAddress, must be smaller than or equal to 50');
-        }
-
-        if ($page_size < 1) {
-            throw new IAE('Invalid value for "$page_size" when calling CardanoApi.adaGetTxByAddress, must be bigger than or equal to 1.');
-        }
-
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var \Tatum\Model\AdaTx[] $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/transaction/address/{address}", ["address" => $address]), "/v3/ada/transaction/address/{address}", [
-                    "pageSize" => S::toQueryValue($page_size),
-                    "offset" => isset($offset) ? S::toQueryValue($offset) : null,
-                ], $rHeaders, []
-            ), 
-            "\Tatum\Model\AdaTx[]"
-        );
-            
-        return $result;
-    }
+    public function adaGetTxByAddress($address, $page_size, $offset = null) {}
     
     /**
+     * @deprecated
      * Get UTXOs by address
      *
      * @param string $address Address
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\AdaUTXO[]
+     * @return void
      */
-    public function adaGetUTXOByAddress($address) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], []);
-
-        /** @var \Tatum\Model\AdaUTXO[] $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "GET", S::parse("/v3/ada/{address}/utxos", ["address" => $address]), "/v3/ada/{address}/utxos", [], $rHeaders, []
-            ), 
-            "\Tatum\Model\AdaUTXO[]"
-        );
-            
-        return $result;
-    }
+    public function adaGetUTXOByAddress($address) {}
     
     /**
+     * @deprecated
      * Send ADA to Cardano addresses
      *
      * @param \Tatum\Model\AdaTransactionFromAddress $ada_transaction_from_address 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\TransactionSigned
+     * @return void
      */
-    public function adaTransactionFromAddress($ada_transaction_from_address) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionSigned $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_address
-            ), 
-            "\Tatum\Model\TransactionSigned"
-        );
-            
-        return $result;
-    }
+    public function adaTransactionFromAddress($ada_transaction_from_address) {}
     
     /**
+     * @deprecated
      * Send ADA to Cardano addresses
      *
      * @param \Tatum\Model\AdaTransactionFromAddressKMS $ada_transaction_from_address_kms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\TransactionSigned
+     * @return void
      */
-    public function adaTransactionFromAddressKMS($ada_transaction_from_address_kms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionSigned $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_address_kms
-            ), 
-            "\Tatum\Model\TransactionSigned"
-        );
-            
-        return $result;
-    }
+    public function adaTransactionFromAddressKMS($ada_transaction_from_address_kms) {}
     
     /**
+     * @deprecated
      * Send ADA to Cardano addresses
      *
      * @param \Tatum\Model\AdaTransactionFromUTXO $ada_transaction_from_utxo 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\TransactionSigned
+     * @return void
      */
-    public function adaTransactionFromUTXO($ada_transaction_from_utxo) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionSigned $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_utxo
-            ), 
-            "\Tatum\Model\TransactionSigned"
-        );
-            
-        return $result;
-    }
+    public function adaTransactionFromUTXO($ada_transaction_from_utxo) {}
     
     /**
+     * @deprecated
      * Send ADA to Cardano addresses
      *
      * @param \Tatum\Model\AdaTransactionFromUTXOKMS $ada_transaction_from_utxokms 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
      * 
-     * @return \Tatum\Model\TransactionSigned
+     * @return void
      */
-    public function adaTransactionFromUTXOKMS($ada_transaction_from_utxokms) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        /** @var \Tatum\Model\TransactionSigned $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", "/v3/ada/transaction", "/v3/ada/transaction", [], $rHeaders, [], $ada_transaction_from_utxokms
-            ), 
-            "\Tatum\Model\TransactionSigned"
-        );
-            
-        return $result;
-    }
+    public function adaTransactionFromUTXOKMS($ada_transaction_from_utxokms) {}
     
 }
