@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/KeyManagementSystemApi.md#deletependingtransactiontosign
+ * @link    https://tatumio.github.io/tatum-php/Api/KeyManagementSystemApi/#deletependingtransactiontosign
  * @license MIT
  * @author  Mark Jivko
  * 

@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/AccountApi.md#getblockamount
+ * @link    https://tatumio.github.io/tatum-php/Api/AccountApi/#getblockamount
  * @license MIT
  * @author  Mark Jivko
  * 

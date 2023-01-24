@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/ElrondApi.md#transferegldblockchain
+ * @link    https://tatumio.github.io/tatum-php/Api/ElrondApi/#transferegldblockchain
  * @license MIT
  * @author  Mark Jivko
  * 

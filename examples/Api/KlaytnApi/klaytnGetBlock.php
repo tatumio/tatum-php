@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/KlaytnApi.md#klaytngetblock
+ * @link    https://tatumio.github.io/tatum-php/Api/KlaytnApi/#klaytngetblock
  * @license MIT
  * @author  Mark Jivko
  * 

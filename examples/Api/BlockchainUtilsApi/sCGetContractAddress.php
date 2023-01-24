@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainUtilsApi.md#scgetcontractaddress
+ * @link    https://tatumio.github.io/tatum-php/Api/BlockchainUtilsApi/#scgetcontractaddress
  * @license MIT
  * @author  Mark Jivko
  * 

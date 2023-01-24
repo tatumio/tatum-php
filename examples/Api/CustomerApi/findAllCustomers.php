@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/CustomerApi.md#findallcustomers
+ * @link    https://tatumio.github.io/tatum-php/Api/CustomerApi/#findallcustomers
  * @license MIT
  * @author  Mark Jivko
  * 

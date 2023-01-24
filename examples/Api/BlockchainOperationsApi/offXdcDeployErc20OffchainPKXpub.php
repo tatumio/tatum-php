@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainOperationsApi.md#offxdcdeployerc20offchainpkxpub
+ * @link    https://tatumio.github.io/tatum-php/Api/BlockchainOperationsApi/#offxdcdeployerc20offchainpkxpub
  * @license MIT
  * @author  Mark Jivko
  * 

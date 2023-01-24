@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/LitecoinApi.md#ltctransactionaddresskms
+ * @link    https://tatumio.github.io/tatum-php/Api/LitecoinApi/#ltctransactionaddresskms
  * @license MIT
  * @author  Mark Jivko
  * 

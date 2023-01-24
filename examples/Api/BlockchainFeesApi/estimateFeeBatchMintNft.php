@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainFeesApi.md#estimatefeebatchmintnft
+ * @link    https://tatumio.github.io/tatum-php/Api/BlockchainFeesApi/#estimatefeebatchmintnft
  * @license MIT
  * @author  Mark Jivko
  * 

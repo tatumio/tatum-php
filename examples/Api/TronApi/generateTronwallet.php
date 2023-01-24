@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/TronApi.md#generatetronwallet
+ * @link    https://tatumio.github.io/tatum-php/Api/TronApi/#generatetronwallet
  * @license MIT
  * @author  Mark Jivko
  * 

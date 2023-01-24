@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/CustomerApi.md#getcustomerbyexternalorinternalid
+ * @link    https://tatumio.github.io/tatum-php/Api/CustomerApi/#getcustomerbyexternalorinternalid
  * @license MIT
  * @author  Mark Jivko
  * 

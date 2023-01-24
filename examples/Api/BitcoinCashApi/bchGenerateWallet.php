@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BitcoinCashApi.md#bchgeneratewallet
+ * @link    https://tatumio.github.io/tatum-php/Api/BitcoinCashApi/#bchgeneratewallet
  * @license MIT
  * @author  Mark Jivko
  * 

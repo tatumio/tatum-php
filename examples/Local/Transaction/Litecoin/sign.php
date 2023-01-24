@@ -1,10 +1,10 @@
 <?php
 /**
- * Copyright 
+ * Copyright (c) 2022-2023 tatum.io
  * 
+ * @link    https://tatumio.github.io/tatum-php/Local/Transaction/Litecoin/#sign
  * @license MIT
  * @author  Mark Jivko
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Local/Transaction/Litecoin.md#sign
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!

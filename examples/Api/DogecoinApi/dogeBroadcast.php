@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/DogecoinApi.md#dogebroadcast
+ * @link    https://tatumio.github.io/tatum-php/Api/DogecoinApi/#dogebroadcast
  * @license MIT
  * @author  Mark Jivko
  * 
