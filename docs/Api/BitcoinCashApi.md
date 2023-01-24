@@ -241,8 +241,7 @@ Get Bitcoin Cash Block detail by block hash or height.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockChainInfo(
-): \Tatum\Model\BchInfo
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoinCash()->bchGetBlockChainInfo(): \Tatum\Model\BchInfo
 ```
 
 ### Parameters

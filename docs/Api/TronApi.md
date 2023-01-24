@@ -877,8 +877,7 @@ Get a TRON block by its hash or height
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronGetCurrentBlock(
-): \Tatum\Model\TronGetCurrentBlock200Response
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->tron()->tronGetCurrentBlock(): \Tatum\Model\TronGetCurrentBlock200Response
 ```
 
 ### Parameters

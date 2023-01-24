@@ -2,9 +2,9 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/GasPumpApi.md#activategaspumpcelokms
  * @license MIT
  * @author  Mark Jivko
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/GasPumpApi.md#activategaspumpcelokms
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!

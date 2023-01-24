@@ -417,8 +417,7 @@ Get Celo block by hash
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->celo()->celoGetCurrentBlock(): float
 ```
 
 ### Parameters

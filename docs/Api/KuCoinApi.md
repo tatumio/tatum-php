@@ -416,8 +416,7 @@ Get Kcs block by hash
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->kuCoin()->kcsGetCurrentBlock(): float
 ```
 
 ### Parameters

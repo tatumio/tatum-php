@@ -78,8 +78,7 @@ Broadcast and confirm signed Solana transaction
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGenerateWallet(
-): \Tatum\Model\SolanaWallet
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGenerateWallet(): \Tatum\Model\SolanaWallet
 ```
 
 ### Parameters
@@ -191,8 +190,7 @@ Get Solana block by number
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->solana()->solanaGetCurrentBlock(): float
 ```
 
 ### Parameters

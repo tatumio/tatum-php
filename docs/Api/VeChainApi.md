@@ -356,8 +356,7 @@ Get VeChain Block by block hash or block number.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->veChain()->vetGetCurrentBlock(): float
 ```
 
 ### Parameters

@@ -282,8 +282,7 @@ Get BSC block by hash
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBSmartChain()->bscGetCurrentBlock(): float
 ```
 
 ### Parameters

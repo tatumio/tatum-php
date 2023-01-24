@@ -502,8 +502,7 @@ Get XDC block by hash
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xinFin()->xdcGetCurrentBlock(): float
 ```
 
 ### Parameters

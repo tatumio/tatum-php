@@ -2,9 +2,9 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/FungibleTokensERC20OrCompatibleApi.md#chainminterc20kms
  * @license MIT
  * @author  Mark Jivko
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/FungibleTokensERC20OrCompatibleApi.md#chainminterc20kms
  * 
  * SECURITY WARNING
  * Execute this file in CLI mode only!

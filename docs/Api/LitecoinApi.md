@@ -286,8 +286,7 @@ Get Litecoin Block detail by block hash or height.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockChainInfo(
-): \Tatum\Model\LtcInfo
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetBlockChainInfo(): \Tatum\Model\LtcInfo
 ```
 
 ### Parameters
@@ -359,8 +358,7 @@ Get Litecoin Block hash. Returns hash of the block to get the block detail.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetMempool(
-): string[]
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->litecoin()->ltcGetMempool(): string[]
 ```
 
 ### Parameters

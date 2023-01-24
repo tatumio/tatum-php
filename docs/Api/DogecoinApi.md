@@ -242,8 +242,7 @@ Get Dogecoin Block detail by block hash or height.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockChainInfo(
-): \Tatum\Model\DogeInfo
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetBlockChainInfo(): \Tatum\Model\DogeInfo
 ```
 
 ### Parameters
@@ -315,8 +314,7 @@ Get Dogecoin Block hash. Returns hash of the block to get the block detail.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetMempool(
-): string[]
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->dogecoin()->dogeGetMempool(): string[]
 ```
 
 ### Parameters

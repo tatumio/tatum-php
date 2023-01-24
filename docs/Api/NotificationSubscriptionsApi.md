@@ -749,8 +749,7 @@ Cancel existing subscription.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->disableWebHookHmac(
-)
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->notificationSubscriptions()->disableWebHookHmac()
 ```
 
 ### Parameters

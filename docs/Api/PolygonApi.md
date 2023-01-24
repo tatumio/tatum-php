@@ -456,8 +456,7 @@ Get Polygon block by hash
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->polygon()->polygonGetCurrentBlock(): float
 ```
 
 ### Parameters

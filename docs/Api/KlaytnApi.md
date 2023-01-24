@@ -416,8 +416,7 @@ Get Klaytn block by hash
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->klaytn()->klaytnGetCurrentBlock(): float
 ```
 
 ### Parameters

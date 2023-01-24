@@ -79,8 +79,7 @@ Broadcast signed BNB transaction
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGenerateWallet(
-): \Tatum\Model\BnbWallet
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGenerateWallet(): \Tatum\Model\BnbWallet
 ```
 
 ### Parameters
@@ -190,8 +189,7 @@ Get Transactions in block by block height.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bNBBeaconChain()->bnbGetCurrentBlock(): float
 ```
 
 ### Parameters

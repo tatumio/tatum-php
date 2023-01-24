@@ -286,8 +286,7 @@ Get a Bitcoin block by its hash or height
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockChainInfo(
-): \Tatum\Model\BtcInfo
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetBlockChainInfo(): \Tatum\Model\BtcInfo
 ```
 
 ### Parameters
@@ -359,8 +358,7 @@ Get the hash of a Bitcoin block
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetMempool(
-): string[]
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->bitcoin()->btcGetMempool(): string[]
 ```
 
 ### Parameters

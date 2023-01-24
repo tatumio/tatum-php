@@ -44,8 +44,7 @@ Method | Description
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->eGldGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->elrond()->eGldGetCurrentBlock(): float
 ```
 
 ### Parameters

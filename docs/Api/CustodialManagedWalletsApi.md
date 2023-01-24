@@ -155,8 +155,7 @@ Get managed address
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallets(
-): \Tatum\Model\CustodialManagedAddress[]
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->custodialManagedWallets()->custodialGetWallets(): \Tatum\Model\CustodialManagedAddress[]
 ```
 
 ### Parameters

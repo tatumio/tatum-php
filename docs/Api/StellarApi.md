@@ -387,8 +387,7 @@ List all XLM account transactions.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetFee(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetFee(): float
 ```
 
 ### Parameters
@@ -422,8 +421,7 @@ Get XLM Blockchain fee in 1/10000000 of XLM (stroop)
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetLastClosedLedger(
-): \Tatum\Model\XlmLedger
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmGetLastClosedLedger(): \Tatum\Model\XlmLedger
 ```
 
 ### Parameters
@@ -571,8 +569,7 @@ Get XLM Transaction by transaction hash.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmWallet(
-): \Tatum\Model\XlmWallet
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->stellar()->xlmWallet(): \Tatum\Model\XlmWallet
 ```
 
 ### Parameters

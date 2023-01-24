@@ -467,8 +467,7 @@ Get ONE block by hash
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGetCurrentBlock(
-): \Tatum\Model\OneBlockCurrent[]
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->harmony()->oneGetCurrentBlock(): \Tatum\Model\OneBlockCurrent[]
 ```
 
 ### Parameters

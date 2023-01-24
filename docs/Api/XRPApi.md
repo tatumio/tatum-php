@@ -507,8 +507,7 @@ List all Account transactions.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetFee(
-): \Tatum\Model\XrpFee
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetFee(): \Tatum\Model\XrpFee
 ```
 
 ### Parameters
@@ -542,8 +541,7 @@ Get actual Blockchain fee
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetLastClosedLedger(
-): \Tatum\Model\XrpInfo
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpGetLastClosedLedger(): \Tatum\Model\XrpInfo
 ```
 
 ### Parameters
@@ -653,8 +651,7 @@ Get XRP Transaction by transaction hash.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpWallet(
-): \Tatum\Model\XrpWallet
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->xRP()->xrpWallet(): \Tatum\Model\XrpWallet
 ```
 
 ### Parameters

@@ -637,8 +637,7 @@ Get Flow Block detail by block hash or height.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGetBlockChainInfo(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->flow()->flowGetBlockChainInfo(): float
 ```
 
 ### Parameters

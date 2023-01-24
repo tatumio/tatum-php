@@ -36,8 +36,7 @@ Method | Description
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->freezeApiKey(
-)
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->freezeApiKey()
 ```
 
 ### Parameters
@@ -71,8 +70,7 @@ Freeze the API Key. It's not possible to perform sensitive operations like send 
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->getCredits(
-): \Tatum\Model\Consumption[]
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->getCredits(): \Tatum\Model\Consumption[]
 ```
 
 ### Parameters
@@ -106,8 +104,7 @@ Get information about your credit consumption for the last month
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->getVersion(
-): \Tatum\Model\GetVersion200Response
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->getVersion(): \Tatum\Model\GetVersion200Response
 ```
 
 ### Parameters
@@ -141,8 +138,7 @@ Get current version of the API.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->unfreezeApiKey(
-)
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->serviceUtils()->unfreezeApiKey()
 ```
 
 ### Parameters

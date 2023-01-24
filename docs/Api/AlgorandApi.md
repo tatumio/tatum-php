@@ -233,8 +233,7 @@ Get Algorand block by block round number.
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGetCurrentBlock(
-): float
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandGetCurrentBlock(): float
 ```
 
 ### Parameters
