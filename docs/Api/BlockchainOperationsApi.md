@@ -45,6 +45,8 @@ Method | Description
 [**deployTrcOffchainMnemonicAddress()**](#deploytrcoffchainmnemonicaddress) | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
 [**deployTrcOffchainPKAddress()**](#deploytrcoffchainpkaddress) | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
 [**deployTrcOffchainPKXpub()**](#deploytrcoffchainpkxpub) | Deploy a TRON TRC-10 or TRC-20 smart contract to the blockchain and a virtual account
+[**erc20()**](#erc20) | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+[**erc20Address()**](#erc20address) | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 [**offBscDeployErc20OffchainKMSAddress()**](#offbscdeployerc20offchainkmsaddress) | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 [**offBscDeployErc20OffchainKMSXpub()**](#offbscdeployerc20offchainkmsxpub) | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
 [**offBscDeployErc20OffchainMnemXpub()**](#offbscdeployerc20offchainmnemxpub) | Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
@@ -81,8 +83,6 @@ Method | Description
 [**offPolTransferEth()**](#offpoltransfereth) | Send MATIC from a virtual account to the blockchain
 [**offPolTransferEthKMS()**](#offpoltransferethkms) | Send MATIC from a virtual account to the blockchain
 [**offPolTransferEthMnemonic()**](#offpoltransferethmnemonic) | Send MATIC from a virtual account to the blockchain
-[**offTokErc20()**](#offtokerc20) | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-[**offTokErc20Address()**](#offtokerc20address) | Register a new ERC-20 or ERC-20-equivalent token in the virtual account
 [**offXdcDeployErc20OffchainKMSAddress()**](#offxdcdeployerc20offchainkmsaddress) | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 [**offXdcDeployErc20OffchainKMSXpub()**](#offxdcdeployerc20offchainkmsxpub) | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
 [**offXdcDeployErc20OffchainMnemXpub()**](#offxdcdeployerc20offchainmnemxpub) | Deploy a XinFin ERC-20-equivalent smart contract to the blockchain and a virtual account
@@ -982,6 +982,100 @@ DeployTrcOffchainPKXpub operation
 ### Example
 
 [✨ View "deployTrcOffchainPKXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/deployTrcOffchainPKXpub.php)
+
+[Back to top](#top)
+
+
+
+## `erc20()`
+
+> **POST** `/v3/offchain/token/{chain}`
+
+### Type signature
+
+```php
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->erc20(
+    string $chain,
+    \Tatum\Model\Erc20 $erc20
+): \Tatum\Model\Erc20Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**  | Blockchain to work with |
+ **$erc20** | [**\Tatum\Model\Erc20**](../../Model/Erc20) |  |
+
+### Return type
+
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
+
+### Description
+
+Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+
+<h4>2 credits per API call.</h4>
+
+ This is the first step to create a new ERC-20 or ERC-20 equivalent token with some supply in a virtual account.
+
+ 
+
+ 
+
+ This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.
+
+ The whole supply of token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with token name as account's currency.
+
+ Newly created account is frozen until the specific smart contract address is linked with the Tatum virtual currency, representing the token.
+
+ Order of the steps to create smart contract with Tatum private ledger support: 
+
+<ol> <li>Register token</a> (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy smart contract</a> - create new smart contract on the blockchain</li> <li><a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/storetokenaddress">Store smart contract address</a> - link newly created smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for Tatum accounts</li> </ol>
+
+ Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex.
+
+### Example
+
+[✨ View "erc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/erc20.php)
+
+[Back to top](#top)
+
+
+
+## `erc20Address()`
+
+> **POST** `/v3/offchain/token/{chain}`
+
+### Type signature
+
+```php
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->erc20Address(
+    string $chain,
+    \Tatum\Model\Erc20Address $erc20_address
+): \Tatum\Model\Erc20Response
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$chain** | **string**  | Blockchain to work with |
+ **$erc20_address** | [**\Tatum\Model\Erc20Address**](../../Model/Erc20Address) |  |
+
+### Return type
+
+[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
+
+### Description
+
+Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+
+Erc20Address operation
+
+### Example
+
+[✨ View "erc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/erc20Address.php)
 
 [Back to top](#top)
 
@@ -2388,100 +2482,6 @@ TransferEthMnemonic operation
 ### Example
 
 [✨ View "offPolTransferEthMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offPolTransferEthMnemonic.php)
-
-[Back to top](#top)
-
-
-
-## `offTokErc20()`
-
-> **POST** `/v3/offchain/token/{chain}`
-
-### Type signature
-
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20(
-    string $chain,
-    \Tatum\Model\Erc20 $erc20
-): \Tatum\Model\Erc20Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**  | Blockchain to work with |
- **$erc20** | [**\Tatum\Model\Erc20**](../../Model/Erc20) |  |
-
-### Return type
-
-[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
-
-### Description
-
-Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-
-<h4>2 credits per API call.</h4>
-
- This is the first step to create a new ERC-20 or ERC-20 equivalent token with some supply in a virtual account.
-
- 
-
- 
-
- This method only creates Tatum Private ledger virtual currency with predefined parameters. It will not generate any blockchain smart contract.
-
- The whole supply of token is stored in the customer's newly created account. Then it is possible to create new Tatum accounts with token name as account's currency.
-
- Newly created account is frozen until the specific smart contract address is linked with the Tatum virtual currency, representing the token.
-
- Order of the steps to create smart contract with Tatum private ledger support: 
-
-<ol> <li>Register token</a> (this API) - creates a virtual currency within Tatum</li> <li><a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy">Deploy smart contract</a> - create new smart contract on the blockchain</li> <li><a href="https://apidoc.tatum.io/tag/Blockchain-operations/#operation/storetokenaddress">Store smart contract address</a> - link newly created smart contract address with Tatum virtual currency - this operation enables frozen account and enables ledger synchronization for Tatum accounts</li> </ol>
-
- Blockchain address will be assigned to the virtual account as a deposit address. It can be defined via the address explicitly or by using xpub and derivationIndex.
-
-### Example
-
-[✨ View "offTokErc20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offTokErc20.php)
-
-[Back to top](#top)
-
-
-
-## `offTokErc20Address()`
-
-> **POST** `/v3/offchain/token/{chain}`
-
-### Type signature
-
-```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->blockchainOperations()->offTokErc20Address(
-    string $chain,
-    \Tatum\Model\Erc20Address $erc20_address
-): \Tatum\Model\Erc20Response
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **$chain** | **string**  | Blockchain to work with |
- **$erc20_address** | [**\Tatum\Model\Erc20Address**](../../Model/Erc20Address) |  |
-
-### Return type
-
-[**\Tatum\Model\Erc20Response**](../../Model/Erc20Response)
-
-### Description
-
-Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-
-Erc20Address operation
-
-### Example
-
-[✨ View "offTokErc20Address.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainOperationsApi/offTokErc20Address.php)
 
 [Back to top](#top)
 

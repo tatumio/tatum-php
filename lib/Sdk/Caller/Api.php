@@ -112,13 +112,6 @@ class Api {
     protected $_blockchainUtilsApi = null;
 
     /**
-     * Cardano API
-     *
-     * @var \Tatum\Api\CardanoApi
-     */
-    protected $_cardanoApi = null;
-
-    /**
      * Celo API
      *
      * @var \Tatum\Api\CeloApi
@@ -533,19 +526,6 @@ class Api {
         }
 
         return $this->_blockchainUtilsApi;
-    }
-    
-    /**
-     * Cardano API
-     * 
-     * @return \Tatum\Api\CardanoApi
-     */
-    public function cardano(): A\CardanoApi {
-        if (null === $this->_cardanoApi) {
-            $this->_cardanoApi = new A\CardanoApi($this->_caller);
-        }
-
-        return $this->_cardanoApi;
     }
     
     /**

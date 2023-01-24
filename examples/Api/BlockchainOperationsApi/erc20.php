@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainOperationsApi.md#offtokerc20
+ * @see     SDK docs: https://github.com/tatumio/tatum-php/tree/master/docs/Api/BlockchainOperationsApi.md#erc20
  * @license MIT
  * @author  Mark Jivko
  * 
@@ -62,18 +62,18 @@ try {
     $response = $sdk->mainnet()
         ->api()
         ->blockchainOperations()
-        ->offTokErc20($arg_chain, $arg_erc20);
+        ->erc20($arg_chain, $arg_erc20);
 
     var_dump($response);
 
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo sprintf(
-        "API Exception when calling api()->blockchainOperations()->offTokErc20(): %s\n", 
+        "API Exception when calling api()->blockchainOperations()->erc20(): %s\n", 
         var_export($apiExc->getResponseObject(), true)
     );
 } catch (\Exception $exc) {
     echo sprintf(
-        "Exception when calling api()->blockchainOperations()->offTokErc20(): %s\n", 
+        "Exception when calling api()->blockchainOperations()->erc20(): %s\n", 
         $exc->getMessage()
     );
 }

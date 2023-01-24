@@ -569,6 +569,58 @@ class BlockchainOperationsApi extends AbstractApi {
     }
     
     /**
+     * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+     *
+     * @param string $chain Blockchain to work with
+     * @param \Tatum\Model\Erc20 $erc20 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Erc20Response
+     */
+    public function erc20($chain, $erc20) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/offchain/token/{chain}";
+        /** @var \Tatum\Model\Erc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $erc20
+            ), 
+            "\Tatum\Model\Erc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
+     * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
+     *
+     * @param string $chain Blockchain to work with
+     * @param \Tatum\Model\Erc20Address $erc20_address 
+     * @throws \Tatum\Sdk\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * 
+     * @return \Tatum\Model\Erc20Response
+     */
+    public function erc20Address($chain, $erc20_address) {
+        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
+
+        // Path template
+        $rPath = "/v3/offchain/token/{chain}";
+        /** @var \Tatum\Model\Erc20Response $result */
+        $result = $this->exec(
+            S::createRequest(
+                $this->_caller->config(), "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $erc20_address
+            ), 
+            "\Tatum\Model\Erc20Response"
+        );
+            
+        return $result;
+    }
+    
+    /**
      * Deploy a BNB Smart Chain BEP-20 smart contract to the blockchain and a virtual account
      *
      * @param \Tatum\Model\DeployErc20OffchainKMSAddress $deploy_erc20_offchain_kms_address 
@@ -1490,58 +1542,6 @@ class BlockchainOperationsApi extends AbstractApi {
                 $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-     *
-     * @param string $chain Blockchain to work with
-     * @param \Tatum\Model\Erc20 $erc20 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Erc20Response
-     */
-    public function offTokErc20($chain, $erc20) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        // Path template
-        $rPath = "/v3/offchain/token/{chain}";
-        /** @var \Tatum\Model\Erc20Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $erc20
-            ), 
-            "\Tatum\Model\Erc20Response"
-        );
-            
-        return $result;
-    }
-    
-    /**
-     * Register a new ERC-20 or ERC-20-equivalent token in the virtual account
-     *
-     * @param string $chain Blockchain to work with
-     * @param \Tatum\Model\Erc20Address $erc20_address 
-     * @throws \Tatum\Sdk\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * 
-     * @return \Tatum\Model\Erc20Response
-     */
-    public function offTokErc20Address($chain, $erc20_address) {
-        $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
-
-        // Path template
-        $rPath = "/v3/offchain/token/{chain}";
-        /** @var \Tatum\Model\Erc20Response $result */
-        $result = $this->exec(
-            S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $erc20_address
-            ), 
-            "\Tatum\Model\Erc20Response"
         );
             
         return $result;
