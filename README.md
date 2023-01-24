@@ -1,5 +1,9 @@
 # Tatum - PHP SDK
 
+<p align="center">
+    <img src="https://repository-images.githubusercontent.com/364242763/d637cddc-cf10-4992-9058-8339bd3e2239"/>
+</p>
+
 [![Total Downloads][badge-downloads]][packagist]
 [![Release Version][badge-release]][packagist]
 [![OpenAPI Version][badge-api]][api]
