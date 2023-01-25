@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for XRP
  */
 class XRPApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "XRP";
+
     /**
      * Modify XRP account
      *
@@ -39,7 +45,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $account_settings_xrp_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $account_settings_xrp_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -64,7 +70,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $account_settings_xrp_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $account_settings_xrp_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -89,7 +95,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -114,7 +120,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_blockchain_asset
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_blockchain_asset
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -139,7 +145,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_blockchain_asset_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_blockchain_asset_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -164,7 +170,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -189,7 +195,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xrp_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xrp_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -214,7 +220,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xrp_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xrp_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -239,7 +245,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -264,7 +270,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpAccountBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["account" => $account]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["account" => $account]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpAccountBalance"
         );
@@ -289,7 +295,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["account" => $account]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["account" => $account]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpAccount"
         );
@@ -316,7 +322,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpAccountTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["account" => $account]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["account" => $account]), $rPath, [
                     "min" => isset($min) ? S::toQueryValue($min) : null,
                     "marker" => isset($marker) ? S::toQueryValue($marker) : null,
                 ], $rHeaders, []
@@ -342,7 +348,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpFee $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpFee"
         );
@@ -365,7 +371,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpInfo $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpInfo"
         );
@@ -394,7 +400,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpLedger $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["i" => $i]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["i" => $i]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpLedger"
         );
@@ -427,7 +433,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpTx"
         );
@@ -450,7 +456,7 @@ class XRPApi extends AbstractApi {
         /** @var \Tatum\Model\XrpWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XrpWallet"
         );

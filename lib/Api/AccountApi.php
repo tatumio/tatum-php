@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Account
  */
 class AccountApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Account";
+
     /**
      * Activate account
      *
@@ -38,7 +44,7 @@ class AccountApi extends AbstractApi {
         $rPath = "/v3/ledger/account/{id}/activate";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -61,7 +67,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $block_amount
+                $this->_caller->config(), self::PKG, "POST", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $block_amount
             ), 
             "\Tatum\Model\Id"
         );
@@ -86,7 +92,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_account
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_account
             ), 
             "\Tatum\Model\Account"
         );
@@ -111,7 +117,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Account[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_account_batch
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_account_batch
             ), 
             "\Tatum\Model\Account[]"
         );
@@ -136,7 +142,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_account_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_account_xpub
             ), 
             "\Tatum\Model\Account"
         );
@@ -160,7 +166,7 @@ class AccountApi extends AbstractApi {
         $rPath = "/v3/ledger/account/{id}/deactivate";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -181,7 +187,7 @@ class AccountApi extends AbstractApi {
         $rPath = "/v3/ledger/account/block/account/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -202,7 +208,7 @@ class AccountApi extends AbstractApi {
         $rPath = "/v3/ledger/account/block/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -223,7 +229,7 @@ class AccountApi extends AbstractApi {
         $rPath = "/v3/ledger/account/{id}/freeze";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -245,7 +251,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\AccountBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\AccountBalance"
         );
@@ -270,7 +276,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Account"
         );
@@ -319,7 +325,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Account[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "page" => isset($page) ? S::toQueryValue($page) : null,
                     "sort" => isset($sort) ? S::toQueryValue($sort) : null,
@@ -373,7 +379,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Account[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "accountCode" => isset($account_code) ? S::toQueryValue($account_code) : null,
@@ -426,7 +432,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "page" => isset($page) ? S::toQueryValue($page) : null,
                     "sort" => isset($sort) ? S::toQueryValue($sort) : null,
@@ -471,7 +477,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Blockage[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -499,7 +505,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\Blockage $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Blockage"
         );
@@ -525,7 +531,7 @@ class AccountApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $unblock_amount
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $unblock_amount
             ), 
             "\Tatum\Model\TransactionResult"
         );
@@ -549,7 +555,7 @@ class AccountApi extends AbstractApi {
         $rPath = "/v3/ledger/account/{id}/unfreeze";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -571,7 +577,7 @@ class AccountApi extends AbstractApi {
         $rPath = "/v3/ledger/account/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $update_account
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $update_account
             )
         );
     }

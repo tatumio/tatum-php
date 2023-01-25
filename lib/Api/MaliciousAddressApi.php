@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for MaliciousAddress
  */
 class MaliciousAddressApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Malicious address";
+
     /**
      * Check malicous address
      *
@@ -39,7 +45,7 @@ class MaliciousAddressApi extends AbstractApi {
         /** @var \Tatum\Model\CheckMalicousAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\CheckMalicousAddress200Response"
         );

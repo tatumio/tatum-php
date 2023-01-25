@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Klaytn
  */
 class KlaytnApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Klaytn";
+
     /**
      * Invoke a method in a smart contract on Klaytn
      *
@@ -39,7 +45,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_klaytn_smart_contract_method
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $call_klaytn_smart_contract_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -64,7 +70,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_klaytn_smart_contract_method_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $call_klaytn_smart_contract_method_kms
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -89,7 +95,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $call_klaytn_smart_contract_read_method
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $call_klaytn_smart_contract_read_method
             ), 
             "\Tatum\Model\CallSmartContractMethod200Response"
         );
@@ -114,7 +120,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -140,7 +146,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\KlaytnGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\KlaytnGenerateAddress200Response"
         );
@@ -165,7 +171,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -194,7 +200,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -221,7 +227,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\KlaytnGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\KlaytnGetBalance200Response"
         );
@@ -246,7 +252,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\KlaytnBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\KlaytnBlock"
         );
@@ -269,7 +275,7 @@ class KlaytnApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -294,7 +300,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\KlaytnTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\KlaytnTx"
         );
@@ -327,7 +333,7 @@ class KlaytnApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -352,7 +358,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_klaytn_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_klaytn_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -377,7 +383,7 @@ class KlaytnApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_klaytn_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_klaytn_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

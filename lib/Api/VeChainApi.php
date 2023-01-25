@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for VeChain
  */
 class VeChainApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "VeChain";
+
     /**
      * Send VeChain from account to account
      *
@@ -39,7 +45,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_vet_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_vet_blockchain
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -64,7 +70,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_vet_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_vet_blockchain_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -89,7 +95,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -115,7 +121,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\VetGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\VetGenerateAddress200Response"
         );
@@ -140,7 +146,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -169,7 +175,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -196,7 +202,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\VetGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\VetGetBalance200Response"
         );
@@ -221,7 +227,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\VetBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\VetBlock"
         );
@@ -244,7 +250,7 @@ class VeChainApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -269,7 +275,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\VetGetEnergy200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\VetGetEnergy200Response"
         );
@@ -294,7 +300,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\VetTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\VetTx"
         );
@@ -319,7 +325,7 @@ class VeChainApi extends AbstractApi {
         /** @var \Tatum\Model\VetTxReceipt $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\VetTxReceipt"
         );

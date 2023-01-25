@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Customer
  */
 class CustomerApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Customer";
+
     /**
      * Activate customer
      *
@@ -46,7 +52,7 @@ class CustomerApi extends AbstractApi {
         $rPath = "/v3/ledger/customer/{id}/activate";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -75,7 +81,7 @@ class CustomerApi extends AbstractApi {
         $rPath = "/v3/ledger/customer/{id}/deactivate";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -104,7 +110,7 @@ class CustomerApi extends AbstractApi {
         $rPath = "/v3/ledger/customer/{id}/disable";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -133,7 +139,7 @@ class CustomerApi extends AbstractApi {
         $rPath = "/v3/ledger/customer/{id}/enable";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -164,7 +170,7 @@ class CustomerApi extends AbstractApi {
         /** @var \Tatum\Model\Customer[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -200,7 +206,7 @@ class CustomerApi extends AbstractApi {
         /** @var \Tatum\Model\Customer $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Customer"
         );
@@ -234,7 +240,7 @@ class CustomerApi extends AbstractApi {
         /** @var \Tatum\Model\Customer $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $customer_update
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, [], $customer_update
             ), 
             "\Tatum\Model\Customer"
         );

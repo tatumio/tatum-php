@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for IPFS
  */
 class IPFSApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "IPFS";
+
     /**
      * Get file from IPFS
      *
@@ -39,7 +45,7 @@ class IPFSApi extends AbstractApi {
         /** @var \SplFileObject $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\SplFileObject"
         );
@@ -64,7 +70,7 @@ class IPFSApi extends AbstractApi {
         /** @var \Tatum\Model\StoreIPFS200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, ["file" => S::fileToFormValue($file),]
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, ["file" => S::fileToFormValue($file),]
             ), 
             "\Tatum\Model\StoreIPFS200Response"
         );

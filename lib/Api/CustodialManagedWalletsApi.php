@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for CustodialManagedWallets
  */
 class CustodialManagedWalletsApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Custodial managed wallets";
+
     /**
      * Create managed address
      *
@@ -39,7 +45,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
         /** @var \Tatum\Model\CustodialManagedAddress $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $custodial_create_wallet_request
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $custodial_create_wallet_request
             ), 
             "\Tatum\Model\CustodialManagedAddress"
         );
@@ -63,7 +69,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
         $rPath = "/v3/custodial/wallet/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -86,7 +92,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
         /** @var \Tatum\Model\CustodialManagedAddress[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [
                     "export" => S::toQueryValue($export),
                 ], $rHeaders, []
             ), 
@@ -111,7 +117,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
         /** @var \Tatum\Model\CustodialManagedAddress[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\CustodialManagedAddress[]"
         );
@@ -136,7 +142,7 @@ class CustodialManagedWalletsApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_managed_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_managed_address
             ), 
             "\Tatum\Model\TransactionHash"
         );

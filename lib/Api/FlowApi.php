@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Flow
  */
 class FlowApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Flow";
+
     /**
      * Add public key to Flow address
      *
@@ -39,7 +45,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $flow_add_pub_key_mnemonic
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $flow_add_pub_key_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -64,7 +70,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $flow_add_pub_key_secret
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $flow_add_pub_key_secret
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -89,7 +95,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $flow_add_pub_key_secret_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $flow_add_pub_key_secret_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -114,7 +120,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_create_address_from_pub_key_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_create_address_from_pub_key_kms
             ), 
             "\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response"
         );
@@ -139,7 +145,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_create_address_from_pub_key_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_create_address_from_pub_key_mnemonic
             ), 
             "\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response"
         );
@@ -164,7 +170,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_create_address_from_pub_key_secret
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_create_address_from_pub_key_secret
             ), 
             "\Tatum\Model\FlowCreateAddressFromPubKeyMnemonic200Response"
         );
@@ -189,7 +195,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_custom_transaction_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_custom_transaction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -214,7 +220,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_custom_transaction_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_custom_transaction_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -239,7 +245,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_custom_transaction_pk
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_custom_transaction_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -265,7 +271,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowGenerateAddress200Response"
         );
@@ -291,7 +297,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowGeneratePubKey200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowGeneratePubKey200Response"
         );
@@ -316,7 +322,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -345,7 +351,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -372,7 +378,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowAccount"
         );
@@ -397,7 +403,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowBlock"
         );
@@ -420,7 +426,7 @@ class FlowApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -447,7 +453,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowEvent[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "type" => S::toQueryValue($type),
                     "from" => S::toQueryValue($from),
                     "to" => S::toQueryValue($to),
@@ -476,7 +482,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\FlowTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\FlowTx"
         );
@@ -501,7 +507,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_transaction_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_transaction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -526,7 +532,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_transaction_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_transaction_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -551,7 +557,7 @@ class FlowApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $flow_transaction_pk
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $flow_transaction_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );

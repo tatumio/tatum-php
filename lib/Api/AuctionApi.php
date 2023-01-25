@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Auction
  */
 class AuctionApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Auction";
+
     /**
      * Allow the NFT auction or marketplace to transfer an asset
      *
@@ -39,7 +45,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_nft_spending
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_nft_spending
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -64,7 +70,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_nft_spending_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_nft_spending_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -89,7 +95,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_nft_spending_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_nft_spending_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -114,7 +120,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_nft_spending_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_nft_spending_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -139,7 +145,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $bid_on_auction
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $bid_on_auction
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -164,7 +170,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $bid_on_auction_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $bid_on_auction_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -189,7 +195,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $bid_on_auction_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $bid_on_auction_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -214,7 +220,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $bid_on_auction_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $bid_on_auction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -239,7 +245,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -264,7 +270,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -289,7 +295,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -314,7 +320,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -339,7 +345,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_auction
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_auction
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -364,7 +370,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_auction_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_auction_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -389,7 +395,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_auction_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_auction_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -414,7 +420,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_auction_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_auction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -439,7 +445,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_auction
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_auction
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -464,7 +470,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_auction_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_auction_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -489,7 +495,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_auction_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_auction_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -514,7 +520,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_auction_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_auction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -539,7 +545,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_auction
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_auction
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -564,7 +570,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_auction_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_auction_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -589,7 +595,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_auction_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_auction_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -614,7 +620,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_auction_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_auction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -641,7 +647,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\GetAuction200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetAuction200Response"
         );
@@ -667,7 +673,7 @@ class AuctionApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -693,7 +699,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\GetAuctionFeeRecipient200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetAuctionFeeRecipient200Response"
         );
@@ -718,7 +724,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $settle_auction
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $settle_auction
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -743,7 +749,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $settle_auction_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $settle_auction_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -768,7 +774,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $settle_auction_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $settle_auction_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -793,7 +799,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $settle_auction_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $settle_auction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -818,7 +824,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_auction
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_auction
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -843,7 +849,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_auction_celo
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_auction_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -868,7 +874,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_auction_celo_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_auction_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -893,7 +899,7 @@ class AuctionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_auction_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_auction_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

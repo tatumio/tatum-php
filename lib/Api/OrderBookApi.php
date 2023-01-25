@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for OrderBook
  */
 class OrderBookApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Order Book";
+
     /**
      * Obtain chart data from historical closed trades
      *
@@ -39,7 +45,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Chart[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chart_request
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chart_request
             ), 
             "\Tatum\Model\Chart[]"
         );
@@ -64,7 +70,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_future_trade
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_future_trade
             ), 
             "\Tatum\Model\Id"
         );
@@ -89,7 +95,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_trade
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_trade
             ), 
             "\Tatum\Model\Id"
         );
@@ -113,7 +119,7 @@ class OrderBookApi extends AbstractApi {
         $rPath = "/v3/trade/account/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -134,7 +140,7 @@ class OrderBookApi extends AbstractApi {
         $rPath = "/v3/trade/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -156,7 +162,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $list_oder_book_active_buy_body
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $list_oder_book_active_buy_body
             ), 
             "\Tatum\Model\Trade[]"
         );
@@ -181,7 +187,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $list_oder_book_history_body
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $list_oder_book_history_body
             ), 
             "\Tatum\Model\Trade[]"
         );
@@ -206,7 +212,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $list_oder_book_matched_body
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $list_oder_book_matched_body
             ), 
             "\Tatum\Model\Trade[]"
         );
@@ -231,7 +237,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Trade[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $list_oder_book_active_sell_body
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $list_oder_book_active_sell_body
             ), 
             "\Tatum\Model\Trade[]"
         );
@@ -256,7 +262,7 @@ class OrderBookApi extends AbstractApi {
         /** @var \Tatum\Model\Trade $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Trade"
         );

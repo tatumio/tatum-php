@@ -519,6 +519,7 @@ class Serializer {
      * Create a request from relevant values
      *
      * @param \Tatum\Sdk\Config          $config      Configuration object
+     * @param string                     $package     Request package
      * @param string                     $method      Request method type
      * @param string                     $url         Request URL
      * @param string                     $urlTemplate Request URL template
@@ -529,6 +530,7 @@ class Serializer {
      */
     public static function createRequest(
         $config,
+        string $package,
         string $method,
         string $url,
         string $urlTemplate,
@@ -595,6 +597,8 @@ class Serializer {
                 $headers,
                 $multipart ? $form : (!empty($body) ? self::toBodyValue($body, $headers["Content-Type"] ?? "") : "")
             )
-        )->setTemplate($urlTemplate);
+        )
+            ->setTemplate($urlTemplate)
+            ->setPackage($package);
     }
 }

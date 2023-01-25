@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Bitcoin
  */
 class BitcoinApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Bitcoin";
+
     /**
      * Broadcast a signed Bitcoin transaction
      *
@@ -39,7 +45,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -69,7 +75,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\GeneratedAddressBtc $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GeneratedAddressBtc"
         );
@@ -94,7 +100,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -123,7 +129,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -150,7 +156,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\BtcBasedBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BtcBasedBalance"
         );
@@ -175,7 +181,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\BtcBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BtcBlock"
         );
@@ -198,7 +204,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\BtcInfo $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BtcInfo"
         );
@@ -223,7 +229,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\BtcBlockHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["i" => $i]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["i" => $i]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BtcBlockHash"
         );
@@ -246,7 +252,7 @@ class BitcoinApi extends AbstractApi {
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "string[]"
         );
@@ -271,7 +277,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\BtcTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BtcTx"
         );
@@ -306,7 +312,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\BtcTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -347,7 +353,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\BtcUTXO $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash, "index" => $index]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BtcUTXO"
         );
@@ -372,7 +378,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $btc_transaction_from_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $btc_transaction_from_address
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -397,7 +403,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $btc_transaction_from_address_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $btc_transaction_from_address_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -422,7 +428,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $btc_transaction_from_utxo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $btc_transaction_from_utxo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -447,7 +453,7 @@ class BitcoinApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $btc_transaction_from_utxokms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $btc_transaction_from_utxokms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

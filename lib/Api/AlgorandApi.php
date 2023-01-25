@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Algorand
  */
 class AlgorandApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Algorand";
+
     /**
      * Broadcast signed Algorand transaction
      *
@@ -39,7 +45,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\AlgoTransactionHashKMS $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\AlgoTransactionHashKMS"
         );
@@ -64,7 +70,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\AlgorandGenerateAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["priv" => $priv]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["priv" => $priv]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgorandGenerateAddress200Response"
         );
@@ -93,7 +99,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\AlgoWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -120,7 +126,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\AlgorandGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgorandGetBalance200Response"
         );
@@ -145,7 +151,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\AlgoBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["roundNumber" => $round_number]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["roundNumber" => $round_number]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgoBlock"
         );
@@ -168,7 +174,7 @@ class AlgorandApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -193,7 +199,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\AlgoTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["txid" => $txid]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["txid" => $txid]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\AlgoTx"
         );
@@ -218,7 +224,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $receive_algorand_asset
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $receive_algorand_asset
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -243,7 +249,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $receive_algorand_asset_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $receive_algorand_asset_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -268,7 +274,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algorand_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algorand_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -293,7 +299,7 @@ class AlgorandApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algorand_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algorand_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

@@ -169,9 +169,7 @@ class Config {
      * @return string User agent
      */
     public function getUserAgent(): string {
-        return $this->getDebug() 
-            ? preg_replace("%^(\w+)\/%", "$1_DebugMode/", $this->_userAgent) 
-            : $this->_userAgent;
+        return $this->_userAgent;
     }
 
     /**

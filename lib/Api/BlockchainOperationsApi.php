@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for BlockchainOperations
  */
 class BlockchainOperationsApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Blockchain operations";
+
     /**
      * Create a BNB-based asset
      *
@@ -38,7 +44,7 @@ class BlockchainOperationsApi extends AbstractApi {
         $rPath = "/v3/offchain/bnb/asset";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_bnb_asset
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_bnb_asset
             )
         );
     }
@@ -60,7 +66,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_algo_erc20_offchain_kms_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_algo_erc20_offchain_kms_address
             ), 
             "\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response"
         );
@@ -85,7 +91,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_algo_erc20_offchain_mnemonic_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_algo_erc20_offchain_mnemonic_address
             ), 
             "\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response"
         );
@@ -110,7 +116,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_algo_erc20_offchain_pk_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_algo_erc20_offchain_pk_address
             ), 
             "\Tatum\Model\DeployAlgoErc20OffchainMnemonicAddress200Response"
         );
@@ -135,7 +141,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_kms_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_kms_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -160,7 +166,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_kms_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_kms_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -185,7 +191,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_mnem_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_mnem_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -210,7 +216,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_mnemonic_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_mnemonic_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -235,7 +241,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_pk_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_pk_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -260,7 +266,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_pk_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_celo_erc20_offchain_pk_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -285,7 +291,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -310,7 +316,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -335,7 +341,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -360,7 +366,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -385,7 +391,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -410,7 +416,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -435,7 +441,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_kms_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_kms_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -460,7 +466,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_kms_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_kms_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -485,7 +491,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_mnem_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_mnem_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -510,7 +516,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_mnemonic_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_mnemonic_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -535,7 +541,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_pk_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_pk_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -560,7 +566,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_pk_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_trc_offchain_pk_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -586,7 +592,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $erc20
+                $this->_caller->config(), self::PKG, "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $erc20
             ), 
             "\Tatum\Model\Erc20Response"
         );
@@ -612,7 +618,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\Erc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $erc20_address
+                $this->_caller->config(), self::PKG, "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $erc20_address
             ), 
             "\Tatum\Model\Erc20Response"
         );
@@ -637,7 +643,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -662,7 +668,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -687,7 +693,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -712,7 +718,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -737,7 +743,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -762,7 +768,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -787,7 +793,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -812,7 +818,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -837,7 +843,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -862,7 +868,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -887,7 +893,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -912,7 +918,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -937,7 +943,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -962,7 +968,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -987,7 +993,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1012,7 +1018,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1037,7 +1043,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1062,7 +1068,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1087,7 +1093,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1112,7 +1118,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1137,7 +1143,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1162,7 +1168,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1187,7 +1193,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1212,7 +1218,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1238,7 +1244,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $deploy_erc20_offchain_kms_address
             ), 
@@ -1266,7 +1272,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
             ), 
@@ -1294,7 +1300,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
             ), 
@@ -1322,7 +1328,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
             ), 
@@ -1350,7 +1356,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $deploy_erc20_offchain_pk_address
             ), 
@@ -1378,7 +1384,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
             ), 
@@ -1406,7 +1412,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $transfer_eth
             ), 
@@ -1434,7 +1440,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $transfer_eth_kms
             ), 
@@ -1462,7 +1468,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $transfer_eth_mnemonic
             ), 
@@ -1489,7 +1495,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1514,7 +1520,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1539,7 +1545,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1564,7 +1570,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1589,7 +1595,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_kms_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1614,7 +1620,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnem_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1639,7 +1645,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_mnemonic_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1664,7 +1670,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_address
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1689,7 +1695,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\DeployErc20OffchainMnemonicAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_erc20_offchain_pk_xpub
             ), 
             "\Tatum\Model\DeployErc20OffchainMnemonicAddress200Response"
         );
@@ -1714,7 +1720,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1739,7 +1745,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1764,7 +1770,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1809,7 +1815,7 @@ class BlockchainOperationsApi extends AbstractApi {
         $rPath = "/v3/offchain/token/{name}/{address}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["address" => $address, "name" => $name]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "POST", S::parse($rPath, ["address" => $address, "name" => $name]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -1831,7 +1837,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algo
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1856,7 +1862,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algo_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algo_erc20
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1881,7 +1887,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_algo_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1906,7 +1912,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bch_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bch_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1931,7 +1937,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bch_key_pair
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bch_key_pair
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1956,7 +1962,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bch_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bch_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -1981,7 +1987,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bnb
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bnb
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2006,7 +2012,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bnb_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bnb_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2031,7 +2037,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bsc
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bsc
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2056,7 +2062,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bsc_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bsc_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2081,7 +2087,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bsc_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bsc_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2106,7 +2112,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_btc_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_btc_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2131,7 +2137,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_btc_key_pair
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_btc_key_pair
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2156,7 +2162,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_btc_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_btc_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2181,7 +2187,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_celo
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2206,7 +2212,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_celo_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2231,7 +2237,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_celo_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_celo_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2256,7 +2262,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_doge_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_doge_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2281,7 +2287,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_doge_key_pair
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_doge_key_pair
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2306,7 +2312,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_doge_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_doge_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2331,7 +2337,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_erc20
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2356,7 +2362,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_erc20_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2381,7 +2387,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_erc20_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_erc20_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2406,7 +2412,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2431,7 +2437,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2456,7 +2462,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_eth_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2481,7 +2487,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_flow_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_flow_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2506,7 +2512,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_flow_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_flow_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2531,7 +2537,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_flow_pk
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_flow_pk
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2556,7 +2562,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_kcs
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_kcs
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2581,7 +2587,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_kcskms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_kcskms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2606,7 +2612,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_kcs_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_kcs_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2631,7 +2637,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_ltc_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_ltc_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2656,7 +2662,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_ltc_key_pair
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_ltc_key_pair
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2681,7 +2687,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_ltc_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_ltc_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2706,7 +2712,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_sol
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_sol
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2731,7 +2737,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_sol_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_sol_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2756,7 +2762,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_tron
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2781,7 +2787,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_tron_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_tron_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2806,7 +2812,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_tron_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_tron_mnemonic
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2831,7 +2837,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2856,7 +2862,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2881,7 +2887,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2906,7 +2912,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\TransferBtcMnemonic200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xrp_kms
             ), 
             "\Tatum\Model\TransferBtcMnemonic200Response"
         );
@@ -2931,7 +2937,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\Trc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $trc_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $trc_address
             ), 
             "\Tatum\Model\Trc20Response"
         );
@@ -2956,7 +2962,7 @@ class BlockchainOperationsApi extends AbstractApi {
         /** @var \Tatum\Model\Trc20Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $trc_xpub
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $trc_xpub
             ), 
             "\Tatum\Model\Trc20Response"
         );
@@ -2980,7 +2986,7 @@ class BlockchainOperationsApi extends AbstractApi {
         $rPath = "/v3/offchain/xlm/asset";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_xlm_asset
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_xlm_asset
             )
         );
     }
@@ -3001,7 +3007,7 @@ class BlockchainOperationsApi extends AbstractApi {
         $rPath = "/v3/offchain/xrp/asset";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_xrp_asset
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_xrp_asset
             )
         );
     }

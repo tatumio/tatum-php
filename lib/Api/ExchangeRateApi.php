@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for ExchangeRate
  */
 class ExchangeRateApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Exchange rate";
+
     /**
      * Get the current exchange rate for exchanging fiat/crypto assets
      *
@@ -40,7 +46,7 @@ class ExchangeRateApi extends AbstractApi {
         /** @var \Tatum\Model\ExchangeRate $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["currency" => $currency]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["currency" => $currency]), $rPath, [
                     "basePair" => S::toQueryValue($base_pair),
                 ], $rHeaders, []
             ), 

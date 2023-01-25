@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Deposit
  */
 class DepositApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Deposit";
+
     /**
      * List all deposits for product
      *
@@ -62,7 +68,7 @@ class DepositApi extends AbstractApi {
         /** @var \Tatum\Model\Deposit[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "page" => isset($page) ? S::toQueryValue($page) : null,
                     "sort" => isset($sort) ? S::toQueryValue($sort) : null,
@@ -119,7 +125,7 @@ class DepositApi extends AbstractApi {
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "page" => isset($page) ? S::toQueryValue($page) : null,
                     "sort" => isset($sort) ? S::toQueryValue($sort) : null,

@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Withdrawal
  */
 class WithdrawalApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Withdrawal";
+
     /**
      * Broadcast signed transaction and complete withdrawal
      *
@@ -39,7 +45,7 @@ class WithdrawalApi extends AbstractApi {
         /** @var \Tatum\Model\BroadcastResponse $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_withdrawal
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_withdrawal
             ), 
             "\Tatum\Model\BroadcastResponse"
         );
@@ -72,7 +78,7 @@ class WithdrawalApi extends AbstractApi {
         $rPath = "/v3/offchain/withdrawal/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [
                     "revert" => S::toQueryValue($revert),
                 ], $rHeaders, []
             )
@@ -112,7 +118,7 @@ class WithdrawalApi extends AbstractApi {
         $rPath = "/v3/offchain/withdrawal/{id}/{txId}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id, "txId" => $tx_id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id, "txId" => $tx_id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -153,7 +159,7 @@ class WithdrawalApi extends AbstractApi {
         /** @var \Tatum\Model\WithdrawalObject[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "currency" => isset($currency) ? S::toQueryValue($currency) : null,
                     "status" => isset($status) ? S::toQueryValue($status) : null,
                     "pageSize" => S::toQueryValue($page_size),
@@ -183,7 +189,7 @@ class WithdrawalApi extends AbstractApi {
         /** @var \Tatum\Model\WithdrawalResponse $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdrawal
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $withdrawal
             ), 
             "\Tatum\Model\WithdrawalResponse"
         );

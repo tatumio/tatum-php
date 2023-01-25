@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for KeyManagementSystem
  */
 class KeyManagementSystemApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Key Management System";
+
     /**
      * Complete pending transaction to sign
      *
@@ -55,7 +61,7 @@ class KeyManagementSystemApi extends AbstractApi {
         $rPath = "/v3/kms/{id}/{txId}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["id" => $id, "txId" => $tx_id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["id" => $id, "txId" => $tx_id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -85,7 +91,7 @@ class KeyManagementSystemApi extends AbstractApi {
         $rPath = "/v3/kms/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [
                     "revert" => S::toQueryValue($revert),
                 ], $rHeaders, []
             )
@@ -117,7 +123,7 @@ class KeyManagementSystemApi extends AbstractApi {
         /** @var \Tatum\Model\PendingTransaction $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\PendingTransaction"
         );
@@ -151,7 +157,7 @@ class KeyManagementSystemApi extends AbstractApi {
         /** @var \Tatum\Model\PendingTransaction[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain]), $rPath, [
                     "signatures" => isset($signatures) ? S::toQueryValue($signatures) : null,
                 ], $rHeaders, []
             ), 
@@ -187,7 +193,7 @@ class KeyManagementSystemApi extends AbstractApi {
         /** @var \Tatum\Model\PendingTransaction[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $kms_signature_ids
+                $this->_caller->config(), self::PKG, "POST", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, [], $kms_signature_ids
             ), 
             "\Tatum\Model\PendingTransaction[]"
         );

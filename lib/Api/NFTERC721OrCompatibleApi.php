@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for NFTERC721OrCompatible
  */
 class NFTERC721OrCompatibleApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "NFT (ERC-721 or compatible)";
+
     /**
      * Add a blockchain address as an NFT minter to an NFT smart contract
      *
@@ -46,7 +52,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $add_nft_minter
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $add_nft_minter
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -78,7 +84,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $add_nft_minter_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $add_nft_minter_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -110,7 +116,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -142,7 +148,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_algo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_algo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -174,7 +180,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -206,7 +212,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -238,7 +244,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -270,7 +276,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_pk
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_flow_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -302,7 +308,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -334,7 +340,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -366,7 +372,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_kms_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -398,7 +404,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_nft_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -430,7 +436,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -462,7 +468,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -494,7 +500,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -526,7 +532,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -558,7 +564,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -590,7 +596,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_pk
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_flow_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -622,7 +628,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -654,7 +660,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -686,7 +692,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_tron_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_nft_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -718,7 +724,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -750,7 +756,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_celo
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -782,7 +788,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_kms
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -814,7 +820,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_mnemonic
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -846,7 +852,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_pk
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_flow_pk
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -878,7 +884,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -910,7 +916,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms_celo
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -942,7 +948,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_kms_tron
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -974,7 +980,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_minter
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_minter
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -1006,7 +1012,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintMultipleNftMinter200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multiple_nft_tron
             ), 
             "\Tatum\Model\MintMultipleNftMinter200Response"
         );
@@ -1038,7 +1044,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1070,7 +1076,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_algorand
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_algorand
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1102,7 +1108,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_algorand_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_algorand_kms
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1134,7 +1140,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_celo
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1166,7 +1172,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1198,7 +1204,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express_algorand
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express_algorand
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1230,7 +1236,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_express_solana
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1262,7 +1268,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_kms
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1294,7 +1300,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_mnemonic
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1326,7 +1332,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_pk
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_flow_pk
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1358,7 +1364,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1390,7 +1396,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms_celo
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1422,7 +1428,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_kms_tron
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1454,7 +1460,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_minter
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_minter
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1486,7 +1492,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_solana
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1518,7 +1524,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_solana_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_solana_kms
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1550,7 +1556,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MintNftExpress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_nft_tron
             ), 
             "\Tatum\Model\MintNftExpress200Response"
         );
@@ -1584,7 +1590,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftGetBalanceErc721200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftGetBalanceErc721200Response"
         );
@@ -1623,7 +1629,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftMetadataErc721 $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [
                     "account" => isset($account) ? S::toQueryValue($account) : null,
                 ], $rHeaders, []
             ), 
@@ -1663,7 +1669,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftProvenanceDataErc721[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftProvenanceDataErc721[]"
         );
@@ -1701,7 +1707,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftRoyaltyErc721 $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftRoyaltyErc721"
         );
@@ -1727,7 +1733,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftTokenByAddressErc721[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftTokenByAddressErc721[]"
         );
@@ -1763,7 +1769,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftTokenByCollectionErc721[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                 ], $rHeaders, []
@@ -1799,7 +1805,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftGetTransactErc721200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\NftGetTransactErc721200Response"
         );
@@ -1846,7 +1852,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,
@@ -1902,7 +1908,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\NftTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "tokenId" => $token_id, "tokenAddress" => $token_address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "tokenId" => $token_id, "tokenAddress" => $token_address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,
@@ -1939,7 +1945,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1971,7 +1977,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2003,7 +2009,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo_express
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo_express
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2035,7 +2041,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_algo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2067,7 +2073,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2099,7 +2105,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2131,7 +2137,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_mnemonic
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_mnemonic
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2163,7 +2169,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_pk
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_flow_pk
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2195,7 +2201,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2227,7 +2233,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2259,7 +2265,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_kms_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2291,7 +2297,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2323,7 +2329,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_solana_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2355,7 +2361,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_nft_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2387,7 +2393,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2419,7 +2425,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_celo
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2451,7 +2457,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2483,7 +2489,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_celo
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2515,7 +2521,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_tron
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_kms_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2547,7 +2553,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_tron
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_cashback_value_for_author_nft_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2572,7 +2578,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $verify_solana_nft
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $verify_solana_nft
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -2597,7 +2603,7 @@ class NFTERC721OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $verify_solana_nftkms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $verify_solana_nftkms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

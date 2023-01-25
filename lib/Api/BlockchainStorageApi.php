@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for BlockchainStorage
  */
 class BlockchainStorageApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Blockchain storage";
+
     /**
      * Store a log record
      *
@@ -39,7 +45,7 @@ class BlockchainStorageApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_record
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_record
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -64,7 +70,7 @@ class BlockchainStorageApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_record_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_record_celo
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -89,7 +95,7 @@ class BlockchainStorageApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_record_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_record_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -123,7 +129,7 @@ class BlockchainStorageApi extends AbstractApi {
         /** @var \Tatum\Model\GetLog200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "chain" => S::toQueryValue($chain),
                     "id" => S::toQueryValue($id),
                 ], $rHeaders, []

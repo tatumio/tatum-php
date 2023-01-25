@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for BNBBeaconChain
  */
 class BNBBeaconChainApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "BNB Beacon Chain";
+
     /**
      * Broadcast signed BNB transaction
      *
@@ -39,7 +45,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -62,7 +68,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var \Tatum\Model\BnbWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BnbWallet"
         );
@@ -87,7 +93,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var \Tatum\Model\BnbAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BnbAccount"
         );
@@ -112,7 +118,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var \Tatum\Model\BnbBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["height" => $height]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["height" => $height]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BnbBlock"
         );
@@ -135,7 +141,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -160,7 +166,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var \Tatum\Model\BnbTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BnbTx"
         );
@@ -211,7 +217,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var \Tatum\Model\BnbTxInAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [
                     "startTime" => S::toQueryValue($start_time),
                     "endTime" => S::toQueryValue($end_time),
                     "limit" => isset($limit) ? S::toQueryValue($limit) : null,
@@ -243,7 +249,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bnb_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bnb_blockchain
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -268,7 +274,7 @@ class BNBBeaconChainApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bnb_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_bnb_blockchain_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );

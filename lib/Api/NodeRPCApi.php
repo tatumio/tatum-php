@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for NodeRPC
  */
 class NodeRPCApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Node RPC";
+
     /**
      * Connect to the blockchain node through an RPC driver
      *
@@ -45,7 +51,7 @@ class NodeRPCApi extends AbstractApi {
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
+                $this->_caller->config(), self::PKG, "POST", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                     "testnetType" => S::toQueryValue($testnet_type),
                     "chainType" => S::toQueryValue($chain_type),
@@ -77,7 +83,7 @@ class NodeRPCApi extends AbstractApi {
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                 ], $rHeaders, []
             ), 
@@ -108,7 +114,7 @@ class NodeRPCApi extends AbstractApi {
         /** @var object $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
+                $this->_caller->config(), self::PKG, "PUT", S::parse($rPath, ["xApiKey" => $x_api_key, "chain" => $chain, "rpcPath" => $rpc_path]), $rPath, [
                     "nodeType" => isset($node_type) ? S::toQueryValue($node_type) : null,
                 ], $rHeaders, [], $body
             ), 

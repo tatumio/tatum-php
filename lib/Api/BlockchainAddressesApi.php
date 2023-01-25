@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for BlockchainAddresses
  */
 class BlockchainAddressesApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Blockchain addresses";
+
     /**
      * Check whether a blockchain address is assigned to a virtual account
      *
@@ -41,7 +47,7 @@ class BlockchainAddressesApi extends AbstractApi {
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["currency" => $currency, "address" => $address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["currency" => $currency, "address" => $address]), $rPath, [
                     "index" => isset($index) ? S::toQueryValue($index) : null,
                 ], $rHeaders, []
             ), 
@@ -74,7 +80,7 @@ class BlockchainAddressesApi extends AbstractApi {
         /** @var \Tatum\Model\Address $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["id" => $id, "address" => $address]), $rPath, [
+                $this->_caller->config(), self::PKG, "POST", S::parse($rPath, ["id" => $id, "address" => $address]), $rPath, [
                     "index" => isset($index) ? S::toQueryValue($index) : null,
                 ], $rHeaders, []
             ), 
@@ -102,7 +108,7 @@ class BlockchainAddressesApi extends AbstractApi {
         /** @var \Tatum\Model\Address $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", S::parse($rPath, ["id" => $id]), $rPath, [
+                $this->_caller->config(), self::PKG, "POST", S::parse($rPath, ["id" => $id]), $rPath, [
                     "index" => isset($index) ? S::toQueryValue($index) : null,
                 ], $rHeaders, []
             ), 
@@ -129,7 +135,7 @@ class BlockchainAddressesApi extends AbstractApi {
         /** @var \Tatum\Model\Address[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $offchain_addresses
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $offchain_addresses
             ), 
             "\Tatum\Model\Address[]"
         );
@@ -154,7 +160,7 @@ class BlockchainAddressesApi extends AbstractApi {
         /** @var \Tatum\Model\Address[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Address[]"
         );
@@ -184,7 +190,7 @@ class BlockchainAddressesApi extends AbstractApi {
         $rPath = "/v3/offchain/account/{id}/address/{address}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id, "address" => $address]), $rPath, [
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id, "address" => $address]), $rPath, [
                     "index" => isset($index) ? S::toQueryValue($index) : null,
                 ], $rHeaders, []
             )

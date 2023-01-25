@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for NotificationSubscriptions
  */
 class NotificationSubscriptionsApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Notification subscriptions";
+
     /**
      * Create a subscription
      *
@@ -40,7 +46,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_balance
             ), 
@@ -68,7 +74,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_contract_log_event
             ), 
@@ -96,7 +102,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_incoming
             ), 
@@ -124,7 +130,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_interval
             ), 
@@ -152,7 +158,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_kms_error
             ), 
@@ -180,7 +186,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_kms_success
             ), 
@@ -208,7 +214,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_multi_token_transfer_event
             ), 
@@ -236,7 +242,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_nft_transfer_event
             ), 
@@ -264,7 +270,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_notification
             ), 
@@ -292,7 +298,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_partial_trade_match
             ), 
@@ -320,7 +326,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_pending
             ), 
@@ -348,7 +354,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_trade_match
             ), 
@@ -376,7 +382,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Id $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "testnetType" => S::toQueryValue($testnet_type),
                 ], $rHeaders, [], $create_subscription_tx_in_the_block
             ), 
@@ -402,7 +408,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         $rPath = "/v3/subscription/{id}";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "DELETE", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             )
         );
     }
@@ -421,7 +427,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         $rPath = "/v3/subscription";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "DELETE", $rPath, $rPath, [], $rHeaders, []
             )
         );
     }
@@ -442,7 +448,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         $rPath = "/v3/subscription";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $hmac_web_hook
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $hmac_web_hook
             )
         );
     }
@@ -475,7 +481,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\WebHook[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "direction" => isset($direction) ? S::toQueryValue($direction) : null,
@@ -516,7 +522,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "direction" => isset($direction) ? S::toQueryValue($direction) : null,
@@ -546,7 +552,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\GetSubscriptionReport200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetSubscriptionReport200Response"
         );
@@ -581,7 +587,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\Subscription[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "address" => isset($address) ? S::toQueryValue($address) : null,
@@ -620,7 +626,7 @@ class NotificationSubscriptionsApi extends AbstractApi {
         /** @var \Tatum\Model\EntitiesCount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "address" => isset($address) ? S::toQueryValue($address) : null,

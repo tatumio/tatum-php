@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Harmony
  */
 class HarmonyApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Harmony";
+
     /**
      * Invoke a method in a smart contract on Harmony
      *
@@ -40,7 +46,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $call_one_read_smart_contract_method
             ), 
@@ -68,7 +74,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $call_one_smart_contract_method
             ), 
@@ -96,7 +102,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\CallSmartContractMethod200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $call_one_smart_contract_method_kms
             ), 
@@ -124,7 +130,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $broadcast_kms
             ), 
@@ -151,7 +157,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\GeneratedAddressOne $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GeneratedAddressOne"
         );
@@ -177,7 +183,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\GeneratedAddressOne $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["xpub" => $xpub, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GeneratedAddressOne"
         );
@@ -202,7 +208,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\PrivKey $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $priv_key_request
             ), 
             "\Tatum\Model\PrivKey"
         );
@@ -231,7 +237,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\Wallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [
                     "mnemonic" => isset($mnemonic) ? S::toQueryValue($mnemonic) : null,
                 ], $rHeaders, []
             ), 
@@ -259,7 +265,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\OneBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, []
             ), 
@@ -287,7 +293,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\EthBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, []
             ), 
@@ -312,7 +318,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\OneBlockCurrent[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\OneBlockCurrent[]"
         );
@@ -338,7 +344,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\OneTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, []
             ), 
@@ -374,7 +380,7 @@ class HarmonyApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, []
             ), 
@@ -402,7 +408,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $transfer_one_blockchain
             ), 
@@ -430,7 +436,7 @@ class HarmonyApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "shardID" => S::toQueryValue($shard_id),
                 ], $rHeaders, [], $transfer_one_blockchain_kms
             ), 

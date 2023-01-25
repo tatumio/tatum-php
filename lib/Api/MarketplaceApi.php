@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Marketplace
  */
 class MarketplaceApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Marketplace";
+
     /**
      * Withdraw funds from the marketplace treasury account on Solana
      *
@@ -39,7 +45,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -64,7 +70,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -89,7 +95,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -114,7 +120,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -139,7 +145,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -164,7 +170,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -189,7 +195,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -214,7 +220,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_solana_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $buy_asset_on_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -239,7 +245,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -264,7 +270,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -289,7 +295,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -314,7 +320,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -339,7 +345,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -364,7 +370,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_solana_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $cancel_sell_asset_on_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -389,7 +395,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
@@ -414,7 +420,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_celo
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
@@ -439,7 +445,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_celo_kms
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
@@ -464,7 +470,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_kms
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
@@ -489,7 +495,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_solana
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
@@ -514,7 +520,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GenerateMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_solana_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $generate_marketplace_solana_kms
             ), 
             "\Tatum\Model\GenerateMarketplace200Response"
         );
@@ -540,7 +546,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -566,7 +572,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GetMarketplaceFeeRecipient200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetMarketplaceFeeRecipient200Response"
         );
@@ -592,7 +598,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GetMarketplaceInfo200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetMarketplaceInfo200Response"
         );
@@ -619,7 +625,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\GetMarketplaceListing200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "id" => $id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "id" => $id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetMarketplaceListing200Response"
         );
@@ -646,7 +652,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "type" => $type]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address, "type" => $type]), $rPath, [], $rHeaders, []
             ), 
             "string[]"
         );
@@ -671,7 +677,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
@@ -696,7 +702,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_celo
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
@@ -721,7 +727,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_celo_kms
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
@@ -746,7 +752,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_kms
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
@@ -771,7 +777,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_solana
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
@@ -796,7 +802,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\SellAssetOnMarketplace200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_solana_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $sell_asset_on_marketplace_solana_kms
             ), 
             "\Tatum\Model\SellAssetOnMarketplace200Response"
         );
@@ -821,7 +827,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -846,7 +852,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_celo
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -871,7 +877,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_celo_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -896,7 +902,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -921,7 +927,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -946,7 +952,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -971,7 +977,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -996,7 +1002,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1021,7 +1027,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_solana
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1046,7 +1052,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_solana_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_recipient_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1071,7 +1077,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_solana
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1096,7 +1102,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_solana_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_fee_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1121,7 +1127,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_marketplace_solana
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1146,7 +1152,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $update_marketplace_solana_kms
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $update_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1171,7 +1177,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1196,7 +1202,7 @@ class MarketplaceApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $withdraw_from_marketplace_solana_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

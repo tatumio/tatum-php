@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for BlockchainFees
  */
 class BlockchainFeesApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Blockchain fees";
+
     /**
      * Estimate the fee for a BNB Smart Chain transaction
      *
@@ -39,7 +45,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $bsc_estimate_gas
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $bsc_estimate_gas
             ), 
             "\Tatum\Model\GasEstimated"
         );
@@ -64,7 +70,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $celo_estimate_gas
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $celo_estimate_gas
             ), 
             "\Tatum\Model\GasEstimated"
         );
@@ -89,7 +95,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EgldEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transaction_fee_egld_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transaction_fee_egld_blockchain
             ), 
             "\Tatum\Model\EgldEstimateGas200Response"
         );
@@ -114,7 +120,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
@@ -139,7 +145,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_batch_mint_nft
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_batch_mint_nft
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
@@ -164,7 +170,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_deploy_custodial_wallet
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_deploy_custodial_wallet
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
@@ -189,7 +195,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_from_address
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_from_address
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
@@ -214,7 +220,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_from_utxo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_from_utxo
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
@@ -239,7 +245,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EstimateFee200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_transfer_from_custodial
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $estimate_fee_transfer_from_custodial
             ), 
             "\Tatum\Model\EstimateFee200Response"
         );
@@ -271,7 +277,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EthGasEstimation $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $eth_estimate_gas
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $eth_estimate_gas
             ), 
             "\Tatum\Model\EthGasEstimation"
         );
@@ -303,7 +309,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\EthGasEstimationBatch $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $eth_estimate_gas_array
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $eth_estimate_gas_array
             ), 
             "\Tatum\Model\EthGasEstimationBatch"
         );
@@ -328,7 +334,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\BlockchainFee $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\BlockchainFee"
         );
@@ -353,7 +359,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $kcs_estimate_gas
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $kcs_estimate_gas
             ), 
             "\Tatum\Model\GasEstimated"
         );
@@ -378,7 +384,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\KlaytnEstimateGas200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $klaytn_estimate_gas
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $klaytn_estimate_gas
             ), 
             "\Tatum\Model\KlaytnEstimateGas200Response"
         );
@@ -403,7 +409,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $polygon_estimate_gas
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $polygon_estimate_gas
             ), 
             "\Tatum\Model\GasEstimated"
         );
@@ -428,7 +434,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $vet_estimate_gas
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $vet_estimate_gas
             ), 
             "float"
         );
@@ -453,7 +459,7 @@ class BlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\GasEstimated $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $xdc_estimate_gas
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $xdc_estimate_gas
             ), 
             "\Tatum\Model\GasEstimated"
         );

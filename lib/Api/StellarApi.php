@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Stellar
  */
 class StellarApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Stellar";
+
     /**
      * Send XLM from address to address
      *
@@ -39,7 +45,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -64,7 +70,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_asset
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_asset
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -89,7 +95,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -114,7 +120,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_kms_asset
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_xlm_blockchain_kms_asset
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -139,7 +145,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xlm_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xlm_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -164,7 +170,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xlm_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $trust_line_xlm_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -189,7 +195,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionHash $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $broadcast_kms
             ), 
             "\Tatum\Model\TransactionHash"
         );
@@ -214,7 +220,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\XlmAccount $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["account" => $account]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["account" => $account]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmAccount"
         );
@@ -240,7 +246,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\XlmTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["account" => $account]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["account" => $account]), $rPath, [
                     "pagination" => isset($pagination) ? S::toQueryValue($pagination) : null,
                 ], $rHeaders, []
             ), 
@@ -265,7 +271,7 @@ class StellarApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -288,7 +294,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\XlmLedger $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmLedger"
         );
@@ -313,7 +319,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\XlmLedger $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["sequence" => $sequence]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["sequence" => $sequence]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmLedger"
         );
@@ -338,7 +344,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\XlmTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["sequence" => $sequence]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["sequence" => $sequence]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmTx[]"
         );
@@ -363,7 +369,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\XlmTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmTx"
         );
@@ -386,7 +392,7 @@ class StellarApi extends AbstractApi {
         /** @var \Tatum\Model\XlmWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\XlmWallet"
         );

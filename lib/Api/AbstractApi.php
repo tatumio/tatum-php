@@ -58,8 +58,19 @@ abstract class AbstractApi {
      * @return \Tatum\Model\ModelInterface|\Tatum\Sdk\Psr7\Http\ResponseInterface
      */
     protected function exec(Request $request, ?string $returnType = null) {
-        // Set the user agent
-        $request->setHeader("User-Agent", $this->_caller->config()->getUserAgent());
+        // Prepare user agent info
+        $userAgentExtra = [$request->getPackage()];
+
+        // Debug mode
+        if ($this->_caller->config()->getDebug()) {
+            $userAgentExtra[] = "DEBUG";
+        }
+
+        // Set the user-agent header
+        $request->setHeader(
+            "User-Agent",
+            sprintf("%s (%s)", $this->_caller->config()->getUserAgent(), implode(", ", $userAgentExtra))
+        );
 
         // Set the API key
         if (strlen($this->_caller->config()->getApiKey())) {

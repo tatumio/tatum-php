@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for BlockchainUtils
  */
 class BlockchainUtilsApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Blockchain utils";
+
     /**
      * Estimate the block height for a future point in time
      *
@@ -40,7 +46,7 @@ class BlockchainUtilsApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "date" => $date]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "date" => $date]), $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -66,7 +72,7 @@ class BlockchainUtilsApi extends AbstractApi {
         /** @var \Tatum\Model\SCGetContractAddress200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\SCGetContractAddress200Response"
         );

@@ -23,6 +23,13 @@ class Request implements RequestInterface {
      */
     protected $_template = null;
 
+    /**
+     * API package
+     *
+     * @var string
+     */
+    protected $_package = "Core";
+
     /** @var string */
     private $_method;
 
@@ -103,10 +110,32 @@ class Request implements RequestInterface {
     /**
      * Get the URL template
      *
-     * @return string
+     * @return string|null
      */
     public function getTemplate() {
         return $this->_template;
+    }
+
+    /**
+     * Set the API package
+     *
+     * @param string $package Package
+     * @return $this
+     */
+    public function setPackage(string $package) {
+        // Remove paranthesis contents
+        $this->_package = trim(preg_replace("%\s*\([^\)]*\)%", "", $package));
+
+        return $this;
+    }
+
+    /**
+     * Get the API package
+     *
+     * @return string
+     */
+    public function getPackage() {
+        return $this->_package;
     }
 
     /**

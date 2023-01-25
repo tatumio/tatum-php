@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for VirtualAccountBlockchainFees
  */
 class VirtualAccountBlockchainFeesApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Virtual account blockchain fees";
+
     /**
      * Estimate ledger to blockchain transaction fee
      *
@@ -39,7 +45,7 @@ class VirtualAccountBlockchainFeesApi extends AbstractApi {
         /** @var \Tatum\Model\FeeBtc $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $offchain_estimate_fee
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $offchain_estimate_fee
             ), 
             "\Tatum\Model\FeeBtc"
         );

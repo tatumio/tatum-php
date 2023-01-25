@@ -287,7 +287,7 @@ curl -i -X GET \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: abc******xyz_100' \
-  -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
+  -H 'User-Agent: Tatum_SDK_PHP/2.0.0 (Bitcoin, DEBUG)' 
 >>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>
 <<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<
 Status code: 200
@@ -335,7 +335,7 @@ curl -i -X POST \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: abc******xyz_100' \
-  -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
+  -H 'User-Agent: Tatum_SDK_PHP/2.0.0 (Bitcoin, DEBUG)' \
   -d '{
     "index": 1,
     "mnemonic": "******"
@@ -386,7 +386,7 @@ curl -i -X POST \
   -H 'Accept: application/json' \
   -H 'Content-Type: multipart/form-data' \
   -H 'x-api-key: abc******xyz_100' \
-  -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' \
+  -H 'User-Agent: Tatum_SDK_PHP/2.0.0 (IPFS, DEBUG)' \
   -F file=@screen-dev-mode.png 
 >>>>>>>>>>> /Tatum API REQUEST MainNet >>>>>>>>>>>
 <<<<<<<<<<< Tatum API RESPONSE MainNet <<<<<<<<<<<
@@ -434,7 +434,7 @@ curl -i -X GET \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -H 'x-api-key: abc******xyz_100' \
-  -H 'User-Agent: Tatum_SDK_PHP_DebugMode/2.0.0' 
+  -H 'User-Agent: Tatum_SDK_PHP/2.0.0 (IPFS, DEBUG)' 
 >>>>>>>>>>> /Tatum API REQUEST TestNet >>>>>>>>>>>
 <<<<<<<<<<< Tatum API RESPONSE TestNet <<<<<<<<<<<
 Status code: 200

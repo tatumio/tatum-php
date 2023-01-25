@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for GasPump
  */
 class GasPumpApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Gas pump";
+
     /**
      * Activate gas pump addresses
      *
@@ -39,7 +45,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -64,7 +70,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -89,7 +95,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -114,7 +120,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -139,7 +145,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_tatum
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_tatum
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -164,7 +170,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -189,7 +195,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_tron_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $activate_gas_pump_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -223,7 +229,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\GasPumpTrxOut $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "txId" => $tx_id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "txId" => $tx_id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GasPumpTrxOut"
         );
@@ -248,7 +254,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_transfer_custodial_wallet
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_transfer_custodial_wallet
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -273,7 +279,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_transfer_custodial_wallet_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_transfer_custodial_wallet_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -298,7 +304,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_transfer_custodial_wallet_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_transfer_custodial_wallet_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -323,7 +329,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_transfer_custodial_wallet_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_transfer_custodial_wallet_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -350,7 +356,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\Activated $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "owner" => $owner, "index" => $index]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "owner" => $owner, "index" => $index]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Activated"
         );
@@ -375,7 +381,7 @@ class GasPumpApi extends AbstractApi {
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_gas_pump
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_gas_pump
             ), 
             "string[]"
         );
@@ -400,7 +406,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -425,7 +431,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -450,7 +456,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -475,7 +481,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -500,7 +506,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -525,7 +531,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -550,7 +556,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_tron_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_batch_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -575,7 +581,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -600,7 +606,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -625,7 +631,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -650,7 +656,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_tron
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_tron
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -675,7 +681,7 @@ class GasPumpApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_tron_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_custodial_wallet_tron_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );

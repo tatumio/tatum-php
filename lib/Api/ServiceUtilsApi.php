@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for ServiceUtils
  */
 class ServiceUtilsApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Service utils";
+
     /**
      * Freeze API Key
      * @throws \Tatum\Sdk\ApiException on non-2xx response
@@ -36,7 +42,7 @@ class ServiceUtilsApi extends AbstractApi {
         $rPath = "/v3/tatum/freeze";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, []
             )
         );
     }
@@ -56,7 +62,7 @@ class ServiceUtilsApi extends AbstractApi {
         /** @var \Tatum\Model\Consumption[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Consumption[]"
         );
@@ -79,7 +85,7 @@ class ServiceUtilsApi extends AbstractApi {
         /** @var \Tatum\Model\GetVersion200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\GetVersion200Response"
         );
@@ -101,7 +107,7 @@ class ServiceUtilsApi extends AbstractApi {
         $rPath = "/v3/tatum/freeze";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "DELETE", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "DELETE", $rPath, $rPath, [], $rHeaders, []
             )
         );
     }

@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for FungibleTokensERC20OrCompatible
  */
 class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Fungible Tokens (ERC-20 or compatible)";
+
     /**
      * Allow a blockchain address to transfer and burn fungible tokens
      *
@@ -46,7 +52,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_celo_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_celo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -78,7 +84,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_celo_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_celo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -110,7 +116,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -142,7 +148,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $approve_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $approve_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -174,7 +180,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_celo_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_celo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -206,7 +212,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_celo_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_celo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -238,7 +244,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -270,7 +276,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -302,7 +308,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_kcs_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_kcs_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -334,7 +340,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_kcs_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_burn_kcs_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -366,7 +372,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_algo_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_algo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -398,7 +404,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_algo_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_algo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -430,7 +436,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_celo_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_celo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -462,7 +468,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_celo_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_celo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -494,7 +500,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -526,7 +532,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -558,7 +564,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_kcs_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_kcs_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -590,7 +596,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_kcs_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_kcs_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -622,7 +628,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_solana_spl
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_solana_spl
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -654,7 +660,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_solana_spl_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_deploy_solana_spl_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -686,7 +692,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_celo_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_celo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -718,7 +724,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_celo_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_celo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -750,7 +756,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -782,7 +788,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -814,7 +820,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_kcs_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_kcs_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -846,7 +852,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_kcs_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_mint_kcs_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -878,7 +884,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_algo_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_algo_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -910,7 +916,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_algo_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_algo_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -942,7 +948,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_bsc_bep20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_bsc_bep20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -974,7 +980,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_bsc_bep20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_bsc_bep20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1006,7 +1012,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_celo_erc20_token
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_celo_erc20_token
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1038,7 +1044,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_celo_erc20_token_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_celo_erc20_token_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1070,7 +1076,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_eth_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_eth_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1102,7 +1108,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_eth_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_eth_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1134,7 +1140,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_kcs_eth_erc20
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_kcs_eth_erc20
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1166,7 +1172,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_kcs_eth_erc20_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_kcs_eth_erc20_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1198,7 +1204,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_solana_spl
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_solana_spl
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1230,7 +1236,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_solana_spl_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $chain_transfer_solana_spl_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1264,7 +1270,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\Erc20Balance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Erc20Balance"
         );
@@ -1290,7 +1296,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\Erc20BalanceForAddress[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Erc20BalanceForAddress[]"
         );
@@ -1338,7 +1344,7 @@ class FungibleTokensERC20OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\FungibleTx[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,

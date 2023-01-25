@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Transaction
  */
 class TransactionApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Transaction";
+
     /**
      * Find transactions within the ledger.
      *
@@ -50,7 +56,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "count" => isset($count) ? S::toQueryValue($count) : null,
@@ -90,7 +96,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "count" => isset($count) ? S::toQueryValue($count) : null,
@@ -130,7 +136,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\GetTransactionsByAccountId200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [
                     "pageSize" => isset($page_size) ? S::toQueryValue($page_size) : null,
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "count" => isset($count) ? S::toQueryValue($count) : null,
@@ -167,7 +173,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\Transaction[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["reference" => $reference]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["reference" => $reference]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\Transaction[]"
         );
@@ -192,7 +198,7 @@ class TransactionApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $create_transaction
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $create_transaction
             ), 
             "\Tatum\Model\TransactionResult"
         );
@@ -217,7 +223,7 @@ class TransactionApi extends AbstractApi {
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $batch_create_transaction
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $batch_create_transaction
             ), 
             "string[]"
         );

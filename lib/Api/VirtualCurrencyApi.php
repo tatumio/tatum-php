@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for VirtualCurrency
  */
 class VirtualCurrencyApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Virtual Currency";
+
     /**
      * Create new virtual currency
      *
@@ -39,7 +45,7 @@ class VirtualCurrencyApi extends AbstractApi {
         /** @var \Tatum\Model\Account $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $virtual_currency
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $virtual_currency
             ), 
             "\Tatum\Model\Account"
         );
@@ -72,7 +78,7 @@ class VirtualCurrencyApi extends AbstractApi {
         /** @var \Tatum\Model\VC $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["name" => $name]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["name" => $name]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\VC"
         );
@@ -97,7 +103,7 @@ class VirtualCurrencyApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $virtual_currency_operation
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $virtual_currency_operation
             ), 
             "\Tatum\Model\TransactionResult"
         );
@@ -122,7 +128,7 @@ class VirtualCurrencyApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionResult $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $virtual_currency_operation
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $virtual_currency_operation
             ), 
             "\Tatum\Model\TransactionResult"
         );
@@ -146,7 +152,7 @@ class VirtualCurrencyApi extends AbstractApi {
         $rPath = "/v3/ledger/virtualCurrency";
         $this->exec(
             S::createRequest(
-                $this->_caller->config(), "PUT", $rPath, $rPath, [], $rHeaders, [], $virtual_currency_update
+                $this->_caller->config(), self::PKG, "PUT", $rPath, $rPath, [], $rHeaders, [], $virtual_currency_update
             )
         );
     }

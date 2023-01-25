@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for MultiTokensERC1155OrCompatible
  */
 class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Multi Tokens (ERC-1155 or compatible)";
+
     /**
      * Add a Multi Token minter
      *
@@ -46,7 +52,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $add_multi_token_minter
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $add_multi_token_minter
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -78,7 +84,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $add_multi_token_minter_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $add_multi_token_minter_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -110,7 +116,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -142,7 +148,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_batch
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_batch
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -174,7 +180,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_batch_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_batch_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -206,7 +212,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_batch_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_batch_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -238,7 +244,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_batch_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_batch_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -270,7 +276,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -302,7 +308,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -334,7 +340,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $burn_multi_token_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -366,7 +372,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_multi_token
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_multi_token
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -398,7 +404,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_multi_token_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_multi_token_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -430,7 +436,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_multi_token_celo_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_multi_token_celo_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -462,7 +468,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_multi_token_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $deploy_multi_token_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -494,7 +500,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -526,7 +532,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_batch
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_batch
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -558,7 +564,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_batch_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_batch_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -590,7 +596,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_batch_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_batch_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -622,7 +628,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_batch_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_batch_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -654,7 +660,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -686,7 +692,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -718,7 +724,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $mint_multi_token_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -751,7 +757,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\MultiTokenGetAddressBalance200ResponseInner[]"
         );
@@ -786,7 +792,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MultiTokenGetBalance200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "contractAddress" => $contract_address, "tokenId" => $token_id]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\MultiTokenGetBalance200Response"
         );
@@ -821,7 +827,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var string[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "contractAddress" => $contract_address]), $rPath, [
                     "tokenId" => S::toQueryValue($token_id),
                     "address" => S::toQueryValue($address),
                 ], $rHeaders, []
@@ -862,7 +868,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MultiTokenGetMetadata200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "token" => $token, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "token" => $token, "contractAddress" => $contract_address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\MultiTokenGetMetadata200Response"
         );
@@ -895,7 +901,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MultiTokenGetTransaction200Response $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "hash" => $hash]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "hash" => $hash]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\MultiTokenGetTransaction200Response"
         );
@@ -942,7 +948,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\MultiTokenGetTransactionByAddress200ResponseInner[] $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["chain" => $chain, "address" => $address, "tokenAddress" => $token_address]), $rPath, [
                     "pageSize" => S::toQueryValue($page_size),
                     "offset" => isset($offset) ? S::toQueryValue($offset) : null,
                     "from" => isset($from) ? S::toQueryValue($from) : null,
@@ -979,7 +985,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1011,7 +1017,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_batch
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_batch
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1043,7 +1049,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_batch_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_batch_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1075,7 +1081,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_batch_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_batch_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1107,7 +1113,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_batch_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_batch_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1139,7 +1145,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1171,7 +1177,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -1203,7 +1209,7 @@ class MultiTokensERC1155OrCompatibleApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_kms_celo
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_multi_token_kms_celo
             ), 
             "\Tatum\Model\TransactionSigned"
         );

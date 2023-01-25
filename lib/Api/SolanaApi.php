@@ -22,6 +22,12 @@ use Tatum\Sdk\Serializer as S;
  * API for Solana
  */
 class SolanaApi extends AbstractApi {
+    
+    /**
+     * API package
+     */
+    const PKG = "Solana";
+
     /**
      * Broadcast and confirm signed Solana transaction
      *
@@ -39,7 +45,7 @@ class SolanaApi extends AbstractApi {
         /** @var \Tatum\Model\SolanaTransactionHashWithConfirm $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $solana_broadcast_confirm
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $solana_broadcast_confirm
             ), 
             "\Tatum\Model\SolanaTransactionHashWithConfirm"
         );
@@ -62,7 +68,7 @@ class SolanaApi extends AbstractApi {
         /** @var \Tatum\Model\SolanaWallet $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\SolanaWallet"
         );
@@ -87,7 +93,7 @@ class SolanaApi extends AbstractApi {
         /** @var \Tatum\Model\SolBalance $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["address" => $address]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\SolBalance"
         );
@@ -112,7 +118,7 @@ class SolanaApi extends AbstractApi {
         /** @var \Tatum\Model\SolanaBlock $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["height" => $height]), $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["height" => $height]), $rPath, [], $rHeaders, []
             ), 
             "\Tatum\Model\SolanaBlock"
         );
@@ -135,7 +141,7 @@ class SolanaApi extends AbstractApi {
         /** @var float $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", $rPath, $rPath, [], $rHeaders, []
+                $this->_caller->config(), self::PKG, "GET", $rPath, $rPath, [], $rHeaders, []
             ), 
             "float"
         );
@@ -161,7 +167,7 @@ class SolanaApi extends AbstractApi {
         /** @var \Tatum\Model\SolanaTx $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [
+                $this->_caller->config(), self::PKG, "GET", S::parse($rPath, ["hash" => $hash]), $rPath, [
                     "commitment" => isset($commitment) ? S::toQueryValue($commitment) : null,
                 ], $rHeaders, []
             ), 
@@ -188,7 +194,7 @@ class SolanaApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_solana_blockchain
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_solana_blockchain
             ), 
             "\Tatum\Model\TransactionSigned"
         );
@@ -213,7 +219,7 @@ class SolanaApi extends AbstractApi {
         /** @var \Tatum\Model\TransactionSigned $result */
         $result = $this->exec(
             S::createRequest(
-                $this->_caller->config(), "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_solana_blockchain_kms
+                $this->_caller->config(), self::PKG, "POST", $rPath, $rPath, [], $rHeaders, [], $transfer_solana_blockchain_kms
             ), 
             "\Tatum\Model\TransactionSigned"
         );
