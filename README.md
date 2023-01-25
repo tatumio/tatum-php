@@ -3,14 +3,13 @@
 <p align="center">
     <a href="https://tatumio.github.io/tatum-php/" target="_blank">
         <img src="https://repository-images.githubusercontent.com/364242763/d637cddc-cf10-4992-9058-8339bd3e2239"/>
-    </a>
+    </a><br/><br/>
+    <a href="https://packagist.org/packages/tatumio/tatum-php" rel="nofollow"><img src="https://img.shields.io/packagist/dt/tatumio/tatum-php.svg?style=flat&colorB=green" alt="Total Downloads" style="max-width: 100%;"></a>
+    <a href="https://packagist.org/packages/tatumio/tatum-php" rel="nofollow"><img src="https://img.shields.io/packagist/v/tatumio/tatum-php.svg?style=flat&label=release&color=blue" alt="Release Version" style="max-width: 100%;"></a>
+    <a href="https://apidoc.tatum.io" rel="nofollow"><img src="https://img.shields.io/badge/api-v3.17.2-blue" alt="OpenAPI Version" style="max-width: 100%;"></a>
+    <a href="https://www.php.net/supported-versions.php" rel="nofollow"><img src="https://img.shields.io/badge/php-%3E=7.3%20(64bit)-blue" alt="PHP Version" style="max-width: 100%;"></a>
+    <a href="https://github.com/tatumio/tatum-php/blob/master/LICENSE.txt"><img src="https://img.shields.io/packagist/l/tatumio/tatum-php.svg?style=flat&color=blue" alt="Software License" style="max-width: 100%;"></a>
 </p>
-
-[![Total Downloads][badge-downloads]][packagist]
-[![Release Version][badge-release]][packagist]
-[![OpenAPI Version][badge-api]][api]
-[![PHP Version][badge-php]][php]
-[![Software License][badge-license]][license]
 
 ## Table of Contents
 - [Welcome!](#welcome)
@@ -47,14 +46,3 @@ composer require tatumio/tatum-php
 ```
 
 More information is available in the [SDK documentation](https://tatumio.github.io/tatum-php/).
-
-[badge-downloads]: https://img.shields.io/packagist/dt/tatumio/tatum-php.svg?style=flat&colorB=green
-[badge-release]: https://img.shields.io/packagist/v/tatumio/tatum-php.svg?style=flat&label=release&color=blue
-[badge-php]: https://img.shields.io/badge/php->=7.3%20(64bit)-blue
-[badge-license]: https://img.shields.io/packagist/l/tatumio/tatum-php.svg?style=flat&color=blue
-[badge-api]: https://img.shields.io/badge/api-v3.17.2-blue
-
-[packagist]: https://packagist.org/packages/tatumio/tatum-php
-[php]: https://www.php.net/supported-versions.php
-[license]: https://github.com/tatumio/tatum-php/blob/master/LICENSE.txt
-[api]: https://apidoc.tatum.io
