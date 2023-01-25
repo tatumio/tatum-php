@@ -768,6 +768,14 @@ Sell an asset at the NFT auction
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
 
+ **A known issue on Harmony**
+
+ On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following:
+
+ <code>Error reverted:x0</code>
+
+ This is a known issue with the Harmony Blockchain Explorer. This status does not mean that the transaction failed. You can safely ignore it.
+
  **Signing a transaction**
 
  When selling an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.

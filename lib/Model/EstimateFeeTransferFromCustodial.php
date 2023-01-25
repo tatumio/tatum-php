@@ -229,7 +229,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param string $amount <ul><li>If the asset to transfer is a fungible token, Multi Token, or a native blockchain currency, set this parameter to the amount to transfer</li> <li>If the asset to transfer is an NFT, set this parameter to <code>1</code>.</li></ul>
+     * @param string $amount <ul><li>If the asset to transfer is a fungible token, Multi Token, or a native blockchain currency, set this parameter to the amount to transfer.</li> <li>If the asset to transfer is an NFT, set this parameter to <code>1</code>.</li></ul>
      * @throws \InvalidArgumentException
      * @return $this
      */
