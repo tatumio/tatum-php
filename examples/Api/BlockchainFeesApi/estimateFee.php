@@ -19,22 +19,22 @@ $sdk = new \Tatum\Sdk();
 
 $arg_estimate_fee = (new \Tatum\Model\EstimateFee())
     
-    // Blockchain to estimate fee for.
+    // The blockchain to estimate the fee for
     ->setChain('null')
     
-    // Type of transaction
+    // The type of the transaction
     ->setType('null')
     
-    // (optional) Sender address, if type is TRANSFER_ERC20
+    // (optional) (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the sender address
     ->setSender('0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef')
     
-    // (optional) Blockchain address to send assets, if type is TRANSFER_ERC20
+    // (optional) (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the recipient address
     ->setRecipient('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) Contract address of ERC20 token, if type is TRANSFER_ERC20
+    // (optional) (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the smart address of the fun...
     ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // (optional) Amount to be sent in ERC20, if type is TRANSFER_ERC20
+    // (optional) (Only if <code>type=TRANSFER_ERC20</code>) The amount of the fungible token to be sent
     ->setAmount('100000');
 
 try {

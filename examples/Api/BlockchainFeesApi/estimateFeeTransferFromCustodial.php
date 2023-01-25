@@ -19,29 +19,29 @@ $sdk = new \Tatum\Sdk();
 
 $arg_estimate_fee_transfer_from_custodial = (new \Tatum\Model\EstimateFeeTransferFromCustodial())
     
-    // Blockchain to estimate fee for.
+    // The blockchain to estimate the fee for
     ->setChain('null')
     
-    // Type of transaction
+    // The type of the transaction
     ->setType('null')
     
-    // Sender address
+    // The blockchain address of the sender
     ->setSender('0xfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef')
     
-    // Blockchain address to send assets
+    // The blockchain address of the recipient
     ->setRecipient('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // Contract address of the token
-    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
-    
-    // Contract address of custodial wallet contract
+    // The blockchain address of the custodial wallet contract
     ->setCustodialAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85')
     
-    // Amount to be sent in native asset, ERC20 or ERC1155
+    // The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent),...
+    ->setTokenType(0)
+    
+    // <ul><li>If the asset to transfer is a fungible token, Multi Token, or a native blockchain currenc...
     ->setAmount('100000')
     
-    // Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - nativ...
-    ->setTokenType(0);
+    // (optional) (Only if the asset to transfer is a fungible token) The address of the smart contract of the token
+    ->setContractAddress('0x687422eEA2cB73B5d3e242bA5456b782919AFc85');
 
 try {
 

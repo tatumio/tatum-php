@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 Store withdrawal
 
-<h4>2 credits per API call.</h4>
+<h4>2 credits per API call</h4>
 
  Create a withdrawal from Tatum Ledger account to the blockchain.
 
@@ -241,8 +241,6 @@ Store withdrawal
  <h4>XLM</h4>
 
  XLM withdrawal can contain memo except of address, which is placed in attr parameter of withdrawal request. XLM blockchain does not have possibility to enter source account information. It is possible to create memo in format 'destination|source', which is supported way of memo in Tatum and also there is information about the sender account in the blockchain. 
-
- 
 
  When withdrawal is created, all other withdrawals with the same currency are pending, unless the current one is marked as complete or cancelled.
 

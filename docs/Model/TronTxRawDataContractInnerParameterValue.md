@@ -8,6 +8,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**getData()** | **string** | The amount transferred within the transaction. | [optional]
 **getAmount()** | **float** | The amount transferred within the transaction. | [optional]
 **getOwnerAddress()** | **string** | Address of the sender. | [optional]
 **getToAddress()** | **string** | Address of the recipient. | [optional]

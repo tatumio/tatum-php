@@ -460,7 +460,9 @@ Estimate the fee for multiple Ethereum transactions
 
  Get an estimated gas price and the number of gas units needed for multiple Ethereum transactions. The gas price is obtained from multiple sources and calculated based on the latest N blocks and the current mempool state.
 
- The estimations are returned in the same order as the transactions were submitted in the request. The <code>fast</code> gas price is used by default.
+ The estimations are returned in the same order as the transactions were submitted in the request.
+
+ The <code>fast</code> gas price is used by default.
 
  <p style="border:4px solid DeepSkyBlue;">**NOTE:** The estimated gas price is returned in **wei**. However, when <a href="https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer" target="_blank">making a transaction itself</a> and providing the custom fee, you have to provide the gas price in **Gwei**. Make sure to convert the estimated gas price from wei to Gwei before submitting your transaction.
 

@@ -525,7 +525,7 @@ class EthereumApi extends AbstractApi {
     }
     
     /**
-     * Send Ethereum / ERC20 from account to account
+     * Send ETH or fungible tokens (ERC-20) from account to account
      *
      * @param \Tatum\Model\TransferEthBlockchain $transfer_eth_blockchain 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.
@@ -557,7 +557,7 @@ class EthereumApi extends AbstractApi {
     }
     
     /**
-     * Send Ethereum / ERC20 from account to account
+     * Send ETH or fungible tokens (ERC-20) from account to account
      *
      * @param \Tatum\Model\TransferEthBlockchainKMS $transfer_eth_blockchain_kms 
      * @param string|'ethereum-sepolia' $x_testnet_type Type of Ethereum testnet. Defaults to ethereum-sepolia.

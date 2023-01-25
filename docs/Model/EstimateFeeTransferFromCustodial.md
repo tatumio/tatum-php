@@ -8,12 +8,12 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | Blockchain to estimate fee for. |
-**getType()** | **string** | Type of transaction |
-**getSender()** | **string** | Sender address |
-**getRecipient()** | **string** | Blockchain address to send assets |
-**getContractAddress()** | **string** | Contract address of the token |
-**getCustodialAddress()** | **string** | Contract address of custodial wallet contract |
-**getAmount()** | **string** | Amount to be sent in native asset, ERC20 or ERC1155 |
-**getTokenType()** | **float** | Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - native asset |
+**getChain()** | **string** | The blockchain to estimate the fee for |
+**getType()** | **string** | The type of the transaction |
+**getSender()** | **string** | The blockchain address of the sender |
+**getRecipient()** | **string** | The blockchain address of the recipient |
+**getCustodialAddress()** | **string** | The blockchain address of the custodial wallet contract |
+**getTokenType()** | **float** | The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent), <code>2</code> for Multi Tokens (ERC-1155 or equivalent), or <code>3</code> for native blockchain currencies. |
+**getAmount()** | **string** | If the asset to transfer is a fungible token, Multi Token, or a native blockchain currency, set this parameter to the amount to transfer If the asset to transfer is an NFT, set this parameter to <code>1</code>. |
+**getContractAddress()** | **string** | (Only if the asset to transfer is a fungible token) The address of the smart contract of the token | [optional]
 

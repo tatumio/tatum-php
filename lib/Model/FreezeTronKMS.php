@@ -30,7 +30,7 @@ class FreezeTronKMS extends AbstractModel {
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]], 
         "index" => ["index", "float", null, "getIndex", "setIndex", null, ["r" => 0, "n" => [0]]], 
         "receiver" => ["receiver", "string", null, "getReceiver", "setReceiver", null, ["r" => 1, "nl" => 34, "xl" => 34]], 
-        "duration" => ["duration", "float", null, "getDuration", "setDuration", null, ["r" => 1, "n" => [3]]], 
+        "duration" => ["duration", "float", null, "getDuration", "setDuration", null, ["r" => 1, "n" => [3], "x" => [3]]], 
         "resource" => ["resource", "string", null, "getResource", "setResource", null, ["r" => 1, "e" => 1]], 
         "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]]
     ];
@@ -150,7 +150,7 @@ class FreezeTronKMS extends AbstractModel {
     /**
      * Set duration
      * 
-     * @param float $duration Duration of frozen funds, in days.
+     * @param float $duration Duration of frozen funds, in days<br/>Set this parameter to 3.
      * @throws \InvalidArgumentException
      * @return $this
      */

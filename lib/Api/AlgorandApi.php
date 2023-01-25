@@ -31,7 +31,7 @@ class AlgorandApi extends AbstractApi {
      * 
      * @return \Tatum\Model\AlgoTransactionHashKMS
      */
-    public function algoandBroadcast($broadcast_kms) {
+    public function algorandBroadcast($broadcast_kms) {
         $rHeaders = $this->_headerSelector->selectHeaders(["application/json"], ["application/json"]);
 
         // Path template

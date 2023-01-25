@@ -200,7 +200,9 @@ Buy an asset on the NFT marketplace
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
 
- **NOTE:** When making this API call, you may get the following message:
+ **The "execution reverted" message**
+
+ When making this API call, you may get the following message:
 
  <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
@@ -442,7 +444,9 @@ Cancel the selling of an asset on the NFT marketplace
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
 
- **NOTE:** When making this API call, you may get the following message:
+ **The "execution reverted" message**
+
+ When making this API call, you may get the following message:
 
  <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
@@ -1160,7 +1164,17 @@ Sell an asset on the NFT marketplace
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
 
- **NOTE:** When making this API call, you may get the following message:
+ **A known issue on Harmony**
+
+ On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following:
+
+ <code>Error reverted:x0</code>
+
+ This is a known issue with the Harmony Blockchain Explorer. This status does not mean that the transaction failed. You can safely ignore it.
+
+ **The "execution reverted" message**
+
+ When making this API call, you may get the following message:
 
  <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 

@@ -268,7 +268,9 @@ Bid for an asset at the NFT auction
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
 
- **NOTE:** When making this API call, you may get the following message:
+ **The "execution reverted" message**
+
+ When making this API call, you may get the following message:
 
  <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
@@ -598,7 +600,9 @@ Cancel the selling of an asset at the NFT auction
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
 
- **NOTE:** When making this API call, you may get the following message:
+ **The "execution reverted" message**
+
+ When making this API call, you may get the following message:
 
  <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 
@@ -756,7 +760,9 @@ Sell an asset at the NFT auction
 
 **2 credits per API call**
 
- Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="https://apidoc.tatum.io/tag/Auction/#operation/approvenftauctionspending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset. This API is supported for the following blockchains:
+ Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="https://apidoc.tatum.io/tag/Auction/#operation/approvenftauctionspending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset.
+
+ This API is supported for the following blockchains:
 
  
 
@@ -916,7 +922,9 @@ Create an NFT auction
 
  Deploy new smart contract for NFT auction logic. Smart contract enables auction operator to create new auction for NFT (ERC-721/1155). Operator can set a fee in percentage, which will be paid on top of the price of the asset. can be offered for native asset - ETH, BSC, etc. - or any ERC20 token - this is configurable during auction creation. Before auction is created, seller must approve transfer of the NFT to the auction contract. Buyer will bid for the asset from the auction using native asset - send assets along the gid() smart contract call, or via ERC20 token. Buyer of the auction must perform approval for the smart contract to access ERC20 token, before the actual bid() method is called. Once there is higher bid then the actual one, the previous bidder's funds will be returned to him and new bidder will be the current winning one. When auction ends, anyone can settle the auction - NFT will be sent to the bidder, assets to the seller and fee to the operator.
 
- This operation deploys a smart contract on the blockchain. This API is supported for the following blockchains:
+ This operation deploys a smart contract on the blockchain.
+
+ This API is supported for the following blockchains:
 
  
 
@@ -1224,7 +1232,9 @@ Both seller and buyer can settle the auction.
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
 
- **NOTE:** When making this API call, you may get the following message:
+ **The "execution reverted" message**
+
+ When making this API call, you may get the following message:
 
  <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
 

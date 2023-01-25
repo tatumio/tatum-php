@@ -37,8 +37,8 @@ Method | Description
 [**ethGetTransaction()**](#ethgettransaction) | Get Ethereum Transaction
 [**ethGetTransactionByAddress()**](#ethgettransactionbyaddress) | Get Ethereum transactions by address
 [**ethGetTransactionCount()**](#ethgettransactioncount) | Get count of outgoing Ethereum transactions
-[**transferEthBlockchain()**](#transferethblockchain) | Send Ethereum / ERC20 from account to account
-[**transferEthBlockchainKMS()**](#transferethblockchainkms) | Send Ethereum / ERC20 from account to account
+[**transferEthBlockchain()**](#transferethblockchain) | Send ETH or fungible tokens (ERC-20) from account to account
+[**transferEthBlockchainKMS()**](#transferethblockchainkms) | Send ETH or fungible tokens (ERC-20) from account to account
 
 
 ## `callReadSmartContractMethod()`
@@ -541,9 +541,9 @@ Name | Type | Description  | Notes
 
 Get Ethereum Transaction
 
-<h4>1 credit per API call.</h4>
+**1 credit per API call**
 
-Get Ethereum transaction by transaction hash.
+ Get Ethereum transaction by transaction hash.
 
 ### Example
 
@@ -669,11 +669,13 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Ethereum / ERC20 from account to account
+Send ETH or fungible tokens (ERC-20) from account to account
 
 **2 credits per API call**
 
- Send Ethereum or Tatum supported ERC20 token from account to account.
+ Send ETH or Tatum-supported fungible tokens (ERC-20) from account to account.
+
+ <p style="border:4px solid DeepSkyBlue;">**NOTE:** Sending the fungible tokens is supported only on the mainnet.
 
  **Signing a transaction**
 
@@ -717,7 +719,7 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Ethereum / ERC20 from account to account
+Send ETH or fungible tokens (ERC-20) from account to account
 
 TransferEthBlockchainKMS operation
 

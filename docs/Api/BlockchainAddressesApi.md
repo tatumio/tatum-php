@@ -179,7 +179,9 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
  **Virtual account cryptocurrency**
 
- Depending on the cryptocurrency of the virtual account, this API generates: 
+ Depending on the cryptocurrency of the virtual account, this API generates:
+
+ 
 
 <ul> <li>**Public address** for BTC, BCH, ETH, or LTC</li> <li>**DestinationTag** for XRP</li> <li>**Message** for XLM</li> </ul>
 
@@ -243,7 +245,9 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
  **Virtual account cryptocurrency**
 
- Depending on the cryptocurrency of the virtual account, this API generates: 
+ Depending on the cryptocurrency of the virtual account, this API generates:
+
+ 
 
 <ul> <li>**Public address** for BTC, BCH, ETH, or LTC</li> <li>**DestinationTag** for XRP</li> <li>**Message** for XLM</li> </ul>
 

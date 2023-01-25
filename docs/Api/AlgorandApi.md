@@ -23,7 +23,7 @@ $sdk->testnet()->api()->algorand();
 
 Method | Description
 ------------- | -------------
-[**algoandBroadcast()**](#algoandbroadcast) | Broadcast signed Algorand transaction
+[**algorandBroadcast()**](#algorandbroadcast) | Broadcast signed Algorand transaction
 [**algorandGenerateAddress()**](#algorandgenerateaddress) | Generate Algorand account address from private key
 [**algorandGenerateWallet()**](#algorandgeneratewallet) | Generate Algorand wallet
 [**algorandGetBalance()**](#algorandgetbalance) | Get Algorand Account balance
@@ -36,14 +36,14 @@ Method | Description
 [**transferAlgorandBlockchainKMS()**](#transferalgorandblockchainkms) | Send Algos to an Algorand account
 
 
-## `algoandBroadcast()`
+## `algorandBroadcast()`
 
 > **POST** `/v3/algorand/broadcast`
 
 ### Type signature
 
 ```php
-(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algoandBroadcast(
+(new \Tatum\Sdk())->{mainnet/testnet}()->api()->algorand()->algorandBroadcast(
     \Tatum\Model\BroadcastKMS $broadcast_kms
 ): \Tatum\Model\AlgoTransactionHashKMS
 ```
@@ -68,7 +68,7 @@ Broadcast signed Algorand transaction
 
 ### Example
 
-[✨ View "algoandBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algoandBroadcast.php)
+[✨ View "algorandBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandBroadcast.php)
 
 [Back to top](#top)
 

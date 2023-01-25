@@ -104,7 +104,7 @@ class EstimateFee extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to estimate fee for.
+     * @param string $chain The blockchain to estimate the fee for
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -124,7 +124,7 @@ class EstimateFee extends AbstractModel {
     /**
      * Set type
      * 
-     * @param string $type Type of transaction
+     * @param string $type The type of the transaction
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -144,7 +144,7 @@ class EstimateFee extends AbstractModel {
     /**
      * Set sender
      * 
-     * @param string|null $sender Sender address, if type is TRANSFER_ERC20
+     * @param string|null $sender (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the sender address
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -164,7 +164,7 @@ class EstimateFee extends AbstractModel {
     /**
      * Set recipient
      * 
-     * @param string|null $recipient Blockchain address to send assets, if type is TRANSFER_ERC20
+     * @param string|null $recipient (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the recipient address
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -184,7 +184,7 @@ class EstimateFee extends AbstractModel {
     /**
      * Set contract_address
      * 
-     * @param string|null $contract_address Contract address of ERC20 token, if type is TRANSFER_ERC20
+     * @param string|null $contract_address (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the smart address of the fungible token
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -204,7 +204,7 @@ class EstimateFee extends AbstractModel {
     /**
      * Set amount
      * 
-     * @param string|null $amount Amount to be sent in ERC20, if type is TRANSFER_ERC20
+     * @param string|null $amount (Only if <code>type=TRANSFER_ERC20</code>) The amount of the fungible token to be sent
      * @throws \InvalidArgumentException
      * @return $this
      */

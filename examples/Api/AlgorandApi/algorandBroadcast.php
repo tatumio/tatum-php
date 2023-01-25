@@ -2,7 +2,7 @@
 /**
  * Copyright (c) 2022-2023 tatum.io
  * 
- * @link    https://tatumio.github.io/tatum-php/Api/AlgorandApi/#algoandbroadcast
+ * @link    https://tatumio.github.io/tatum-php/Api/AlgorandApi/#algorandbroadcast
  * @license MIT
  * @author  Mark Jivko
  * 
@@ -35,18 +35,18 @@ try {
     $response = $sdk->mainnet()
         ->api()
         ->algorand()
-        ->algoandBroadcast($arg_broadcast_kms);
+        ->algorandBroadcast($arg_broadcast_kms);
 
     var_dump($response);
 
 } catch (\Tatum\Sdk\ApiException $apiExc) {
     echo sprintf(
-        "API Exception when calling api()->algorand()->algoandBroadcast(): %s\n", 
+        "API Exception when calling api()->algorand()->algorandBroadcast(): %s\n", 
         var_export($apiExc->getResponseObject(), true)
     );
 } catch (\Exception $exc) {
     echo sprintf(
-        "Exception when calling api()->algorand()->algoandBroadcast(): %s\n", 
+        "Exception when calling api()->algorand()->algorandBroadcast(): %s\n", 
         $exc->getMessage()
     );
 }

@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 Create new virtual currency
 
-<h4>2 credits per API call.</h4>
+**2 credits per API call**
 
  Create new virtual currency with given supply stored in account. This will create Tatum internal virtual currency. Every virtual currency must be prefixed with **VC_**.
 
@@ -100,9 +100,9 @@ Name | Type | Description  | Notes
 
 Get virtual currency
 
-<h4>1 credit per API call.</h4>
+**1 credit per API call**
 
-Get detail of virtual currency.
+ Get detail of virtual currency.
 
 ### Example
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 Create new supply of virtual currency
 
-<h4>2 credits per API call.</h4>
+**2 credits per API call**
 
  Create new supply of virtual currency linked on the given accountId. Method increases the total supply of the currency.
 

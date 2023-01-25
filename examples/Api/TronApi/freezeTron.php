@@ -25,7 +25,7 @@ $arg_freeze_tron = (new \Tatum\Model\FreezeTron())
     // Recipient address of frozen BANDWIDTH or ENERGY.
     ->setReceiver('TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh')
     
-    // Duration of frozen funds, in days.
+    // Duration of frozen funds, in days<br/>Set this parameter to 3.
     ->setDuration(3)
     
     // Resource to obtain, BANDWIDTH or ENERGY.

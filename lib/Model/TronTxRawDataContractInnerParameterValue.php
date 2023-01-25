@@ -24,6 +24,7 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
     public const _D = null;
     protected static $_name = "TronTx_rawData_contract_inner_parameter_value";
     protected static $_definition = [
+        "data" => ["data", "string", 'hex', "getData", "setData", null, ["r" => 0]], 
         "amount" => ["amount", "float", null, "getAmount", "setAmount", null, ["r" => 0]], 
         "owner_address" => ["owner_address", "string", null, "getOwnerAddress", "setOwnerAddress", null, ["r" => 0]], 
         "to_address" => ["to_address", "string", null, "getToAddress", "setToAddress", null, ["r" => 0]], 
@@ -42,6 +43,26 @@ class TronTxRawDataContractInnerParameterValue extends AbstractModel {
         }
     }
 
+
+    /**
+     * Get data
+     *
+     * @return string|null
+     */
+    public function getData(): ?string {
+        return $this->_data["data"];
+    }
+
+    /**
+     * Set data
+     * 
+     * @param string|null $data The amount transferred within the transaction.
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setData(?string $data) {
+        return $this->_set("data", $data);
+    }
 
     /**
      * Get amount

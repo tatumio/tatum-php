@@ -8,10 +8,10 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | Blockchain to estimate fee for. |
-**getType()** | **string** | Type of transaction |
-**getSender()** | **string** | Sender address, if type is TRANSFER_ERC20 | [optional]
-**getRecipient()** | **string** | Blockchain address to send assets, if type is TRANSFER_ERC20 | [optional]
-**getContractAddress()** | **string** | Contract address of ERC20 token, if type is TRANSFER_ERC20 | [optional]
-**getAmount()** | **string** | Amount to be sent in ERC20, if type is TRANSFER_ERC20 | [optional]
+**getChain()** | **string** | The blockchain to estimate the fee for |
+**getType()** | **string** | The type of the transaction |
+**getSender()** | **string** | (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the sender address | [optional]
+**getRecipient()** | **string** | (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the recipient address | [optional]
+**getContractAddress()** | **string** | (Only if <code>type=TRANSFER_ERC20</code>) The blockchain address of the smart address of the fungible token | [optional]
+**getAmount()** | **string** | (Only if <code>type=TRANSFER_ERC20</code>) The amount of the fungible token to be sent | [optional]
 

@@ -30,16 +30,20 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     public const CHAIN_ONE = 'ONE';
     public const CHAIN_MATIC = 'MATIC';
     public const TYPE_TRANSFER_CUSTODIAL = 'TRANSFER_CUSTODIAL';
+    public const TOKEN_TYPE_0 = 0;
+    public const TOKEN_TYPE_1 = 1;
+    public const TOKEN_TYPE_2 = 2;
+    public const TOKEN_TYPE_3 = 3;
     protected static $_name = "EstimateFeeTransferFromCustodial";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
         "type" => ["type", "string", null, "getType", "setType", null, ["r" => 1, "e" => 1]], 
         "sender" => ["sender", "string", null, "getSender", "setSender", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
         "recipient" => ["recipient", "string", null, "getRecipient", "setRecipient", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
         "custodial_address" => ["custodialAddress", "string", null, "getCustodialAddress", "setCustodialAddress", null, ["r" => 1, "nl" => 42, "xl" => 42]], 
+        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType", null, ["r" => 1, "e" => 1]], 
         "amount" => ["amount", "string", null, "getAmount", "setAmount", null, ["r" => 1, "p" => "/^[+]?((\\d+(\\.\\d*)?)|(\\.\\d+))$/"]], 
-        "token_type" => ["tokenType", "float", null, "getTokenType", "setTokenType", null, ["r" => 1, "n" => [0], "x" => [3]]]
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 0, "nl" => 42, "xl" => 42]]
     ];
 
     /**
@@ -79,6 +83,19 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
             self::TYPE_TRANSFER_CUSTODIAL,
         ];
     }
+    /**
+     * Get allowable values
+     *
+     * @return string[]
+     */
+    public function getTokenTypeAllowableValues(): array {
+        return [
+            self::TOKEN_TYPE_0,
+            self::TOKEN_TYPE_1,
+            self::TOKEN_TYPE_2,
+            self::TOKEN_TYPE_3,
+        ];
+    }
 
     /**
      * Get chain
@@ -92,7 +109,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Set chain
      * 
-     * @param string $chain Blockchain to estimate fee for.
+     * @param string $chain The blockchain to estimate the fee for
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -112,7 +129,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Set type
      * 
-     * @param string $type Type of transaction
+     * @param string $type The type of the transaction
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -132,7 +149,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Set sender
      * 
-     * @param string $sender Sender address
+     * @param string $sender The blockchain address of the sender
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -152,32 +169,12 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Set recipient
      * 
-     * @param string $recipient Blockchain address to send assets
+     * @param string $recipient The blockchain address of the recipient
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setRecipient(string $recipient) {
         return $this->_set("recipient", $recipient);
-    }
-
-    /**
-     * Get contract_address
-     *
-     * @return string
-     */
-    public function getContractAddress(): string {
-        return $this->_data["contract_address"];
-    }
-
-    /**
-     * Set contract_address
-     * 
-     * @param string $contract_address Contract address of the token
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setContractAddress(string $contract_address) {
-        return $this->_set("contract_address", $contract_address);
     }
 
     /**
@@ -192,32 +189,12 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Set custodial_address
      * 
-     * @param string $custodial_address Contract address of custodial wallet contract
+     * @param string $custodial_address The blockchain address of the custodial wallet contract
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setCustodialAddress(string $custodial_address) {
         return $this->_set("custodial_address", $custodial_address);
-    }
-
-    /**
-     * Get amount
-     *
-     * @return string
-     */
-    public function getAmount(): string {
-        return $this->_data["amount"];
-    }
-
-    /**
-     * Set amount
-     * 
-     * @param string $amount Amount to be sent in native asset, ERC20 or ERC1155
-     * @throws \InvalidArgumentException
-     * @return $this
-     */
-    public function setAmount(string $amount) {
-        return $this->_set("amount", $amount);
     }
 
     /**
@@ -232,11 +209,51 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Set token_type
      * 
-     * @param float $token_type Type of the token to transfer from gas pump wallet. 0 - ERC20, 1 - ERC721, 2 - ERC1155, 3 - native asset
+     * @param float $token_type The type of the asset to transfer. Set <code>0</code> for fungible tokens (ERC-20 or equivalent), <code>1</code> for NFTs (ERC-721 or equivalent), <code>2</code> for Multi Tokens (ERC-1155 or equivalent), or <code>3</code> for native blockchain currencies.
      * @throws \InvalidArgumentException
      * @return $this
      */
     public function setTokenType(float $token_type) {
         return $this->_set("token_type", $token_type);
+    }
+
+    /**
+     * Get amount
+     *
+     * @return string
+     */
+    public function getAmount(): string {
+        return $this->_data["amount"];
+    }
+
+    /**
+     * Set amount
+     * 
+     * @param string $amount <ul><li>If the asset to transfer is a fungible token, Multi Token, or a native blockchain currency, set this parameter to the amount to transfer</li> <li>If the asset to transfer is an NFT, set this parameter to <code>1</code>.</li></ul>
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setAmount(string $amount) {
+        return $this->_set("amount", $amount);
+    }
+
+    /**
+     * Get contract_address
+     *
+     * @return string|null
+     */
+    public function getContractAddress(): ?string {
+        return $this->_data["contract_address"];
+    }
+
+    /**
+     * Set contract_address
+     * 
+     * @param string|null $contract_address (Only if the asset to transfer is a fungible token) The address of the smart contract of the token
+     * @throws \InvalidArgumentException
+     * @return $this
+     */
+    public function setContractAddress(?string $contract_address) {
+        return $this->_set("contract_address", $contract_address);
     }
 }
