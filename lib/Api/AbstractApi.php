@@ -63,7 +63,7 @@ abstract class AbstractApi {
 
         // Debug mode
         if ($this->_caller->config()->getDebug()) {
-            $userAgentExtra[] = "DEBUG";
+            $userAgentExtra[] = "@DEBUG";
         }
 
         // Set the user-agent header

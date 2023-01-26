@@ -188,7 +188,7 @@ class Debugger {
      * @return string
      */
     protected function _getLogTag(string $tag, string $character = "#") {
-        return str_pad(" $tag ", 80, $character, STR_PAD_BOTH) . PHP_EOL;
+        return str_pad(" $tag ", 60, $character, STR_PAD_BOTH) . PHP_EOL;
     }
 
     /**

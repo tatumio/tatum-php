@@ -123,8 +123,8 @@ class Request implements RequestInterface {
      * @return $this
      */
     public function setPackage(string $package) {
-        // Remove paranthesis contents
-        $this->_package = trim(preg_replace("%\s*\([^\)]*\)%", "", $package));
+        // Remove paranthesis contents and the @ character
+        $this->_package = trim(preg_replace("%\s*\([^\)]*\)|[@]+%", "", $package));
 
         return $this;
     }
