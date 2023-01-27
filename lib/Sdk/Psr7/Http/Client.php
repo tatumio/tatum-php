@@ -61,8 +61,8 @@ class Client {
                 : CURL_HTTP_VERSION_NONE
         ];
 
-        // POST payload
-        if ("POST" === $request->getMethod()) {
+        // Payload
+        if ("GET" !== $request->getMethod()) {
             $options[CURLOPT_POSTFIELDS] = count($request->getFiles())
                 ? $request->getFiles()
                 : strval($request->getStream());
