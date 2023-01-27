@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | blockage.amount.exceeded | ex.: `blockage.amount.exceeded`
-**getMessage()** | **string** | Amount to transfer is greater then amount of the blockage. | ex.: `Amount to transfer is greater then amount of the blockage.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | blockage.amount.exceeded <br>Example: `blockage.amount.exceeded` |
+**getMessage()** | **string** | Amount to transfer is greater then amount of the blockage. <br>Example: `Amount to transfer is greater then amount of the blockage.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

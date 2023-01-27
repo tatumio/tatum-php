@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** |  | ex.: `99871290963167451`
-**getSequence()** | **float** |  | ex.: `118697`
+**getBalance()** | **string** |  <br>Example: `99871290963167451` |
+**getSequence()** | **float** |  <br>Example: `118697` |
 

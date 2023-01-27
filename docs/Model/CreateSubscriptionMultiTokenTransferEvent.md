@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `CONTRACT_MULTITOKEN_TXS_PER_BLOCK`
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr**](../CreateSubscriptionMultiTokenTransferEventAttr) |  | ex.: `null`
+**getType()** | **string** | Type of the subscription. <br>Example: `CONTRACT_MULTITOKEN_TXS_PER_BLOCK` |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr**](../CreateSubscriptionMultiTokenTransferEventAttr) |  <br>Example: `null` |
 

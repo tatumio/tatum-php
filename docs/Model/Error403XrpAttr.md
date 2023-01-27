@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | attr.wrong.format | ex.: `attr.wrong.format`
-**getMessage()** | **string** | Wrong attr of withdrawal, should be of uint32 type. | ex.: `Wrong attr of withdrawal, should be of uint32 type.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | attr.wrong.format <br>Example: `attr.wrong.format` |
+**getMessage()** | **string** | Wrong attr of withdrawal, should be of uint32 type. <br>Example: `Wrong attr of withdrawal, should be of uint32 type.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

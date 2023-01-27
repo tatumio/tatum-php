@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | trade.feeAccount | ex.: `trade.feeAccount`
-**getMessage()** | **string** | Unable to find fee account ${trade.feeAccountId}. | ex.: `Unable to find fee account ${trade.feeAccountId}.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | trade.feeAccount <br>Example: `trade.feeAccount` |
+**getMessage()** | **string** | Unable to find fee account ${trade.feeAccountId}. <br>Example: `Unable to find fee account ${trade.feeAccountId}.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

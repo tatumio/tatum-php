@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | subscription.not.exists | ex.: `subscription.not.exists`
-**getMessage()** | **string** | No such subscription. | ex.: `No such subscription.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | subscription.not.exists <br>Example: `subscription.not.exists` |
+**getMessage()** | **string** | No such subscription. <br>Example: `No such subscription.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

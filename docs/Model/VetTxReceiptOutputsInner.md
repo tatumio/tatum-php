@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getEvents()** | **object[]** |  | ex.: `[]` [optional]
-**getTransfers()** | [**\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]**](../VetTxReceiptOutputsInnerTransfersInner) |  | ex.: `null` [optional]
+**getEvents()** | **object[]** |  <br>Example: `[]` | [optional]
+**getTransfers()** | [**\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]**](../VetTxReceiptOutputsInnerTransfersInner) |  <br>Example: `null` | [optional]
 

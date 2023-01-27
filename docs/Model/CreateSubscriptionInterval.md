@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `TRANSACTION_HISTORY_REPORT`
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionIntervalAttr**](../CreateSubscriptionIntervalAttr) |  | ex.: `null`
+**getType()** | **string** | Type of the subscription. <br>Example: `TRANSACTION_HISTORY_REPORT` |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionIntervalAttr**](../CreateSubscriptionIntervalAttr) |  <br>Example: `null` |
 

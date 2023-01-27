@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getIpfsHash()** | **string** | IPFS CID identifier of the stored file. | ex.: `null` [optional]
+**getIpfsHash()** | **string** | IPFS CID identifier of the stored file. <br>Example: `null` | [optional]
 

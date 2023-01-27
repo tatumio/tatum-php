@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | trade.currency2AccountId.frozen | ex.: `trade.currency2AccountId.frozen`
-**getMessage()** | **string** | Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade. | ex.: `Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | trade.currency2AccountId.frozen <br>Example: `trade.currency2AccountId.frozen` |
+**getMessage()** | **string** | Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade. <br>Example: `Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

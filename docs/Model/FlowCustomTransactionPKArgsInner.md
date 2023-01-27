@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getValue()** | [**\Tatum\Model\FlowCustomTransactionPKArgsInnerValue**](../FlowCustomTransactionPKArgsInnerValue) |  | ex.: `null`
-**getType()** | **string** | Type of the argument | ex.: `null`
-**getSubType()** | **string** | Type of the argument | ex.: `null` [optional]
+**getValue()** | [**\Tatum\Model\FlowCustomTransactionPKArgsInnerValue**](../FlowCustomTransactionPKArgsInnerValue) |  <br>Example: `null` |
+**getType()** | **string** | Type of the argument <br>Example: `null` |
+**getSubType()** | **string** | Type of the argument <br>Example: `null` | [optional]
 

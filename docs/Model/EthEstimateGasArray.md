@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getEstimations()** | [**\Tatum\Model\EthEstimateGas[]**](../EthEstimateGas) |  | ex.: `null`
+**getEstimations()** | [**\Tatum\Model\EthEstimateGas[]**](../EthEstimateGas) |  <br>Example: `null` |
 

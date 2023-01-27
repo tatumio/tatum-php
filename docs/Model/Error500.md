@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMessage()** | **string** | Internal server error | ex.: `Internal server error`
-**getStatusCode()** | **float** | 500 | ex.: `500`
+**getMessage()** | **string** | Internal server error <br>Example: `Internal server error` |
+**getStatusCode()** | **float** | 500 <br>Example: `500` |
 

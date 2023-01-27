@@ -10,14 +10,14 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getVersion()** | **string** |  | ex.: `3.0.2` [optional]
-**getStatus()** | **string** |  | ex.: `ACTIVE` [optional]
-**getTestnet()** | **bool** |  | ex.: `true` [optional]
-**getPlanName()** | **string** |  | ex.: `Free` [optional]
-**getPlanCode()** | **string** |  | ex.: `FREE` [optional]
-**getPrice()** | **float** |  | ex.: `9` [optional]
-**getExpiration()** | **float** |  | ex.: `4113115784397` [optional]
-**getCreditLimit()** | **float** |  | ex.: `1000000000` [optional]
-**getUsage()** | **float** |  | ex.: `25656634` [optional]
-**getRolloverDay()** | **float** |  | ex.: `4` [optional]
+**getVersion()** | **string** |  <br>Example: `3.0.2` | [optional]
+**getStatus()** | **string** |  <br>Example: `ACTIVE` | [optional]
+**getTestnet()** | **bool** |  <br>Example: `true` | [optional]
+**getPlanName()** | **string** |  <br>Example: `Free` | [optional]
+**getPlanCode()** | **string** |  <br>Example: `FREE` | [optional]
+**getPrice()** | **float** |  <br>Example: `9` | [optional]
+**getExpiration()** | **float** |  <br>Example: `4113115784397` | [optional]
+**getCreditLimit()** | **float** |  <br>Example: `1000000000` | [optional]
+**getUsage()** | **float** |  <br>Example: `25656634` | [optional]
+**getRolloverDay()** | **float** |  <br>Example: `4` | [optional]
 

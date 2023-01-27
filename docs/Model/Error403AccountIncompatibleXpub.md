@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | account.xpub.incompatible | ex.: `account.xpub.incompatible`
-**getMessage()** | **string** | Xpub not compatible with account currency. | ex.: `Xpub not compatible with account currency.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | account.xpub.incompatible <br>Example: `account.xpub.incompatible` |
+**getMessage()** | **string** | Xpub not compatible with account currency. <br>Example: `Xpub not compatible with account currency.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

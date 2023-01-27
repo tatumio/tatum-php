@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | solana.transaction.body | ex.: `Solana.transaction.body`
-**getMessage()** | **string** | Either currency, or tokenAddress must be defined. | ex.: `Either currency, or tokenAddress must be defined.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | solana.transaction.body <br>Example: `Solana.transaction.body` |
+**getMessage()** | **string** | Either currency, or tokenAddress must be defined. <br>Example: `Either currency, or tokenAddress must be defined.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

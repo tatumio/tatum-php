@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | customer.not.active | ex.: `customer.not.active`
-**getMessage()** | **string** | Customer not active. | ex.: `Customer not active.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | customer.not.active <br>Example: `customer.not.active` |
+**getMessage()** | **string** | Customer not active. <br>Example: `Customer not active.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

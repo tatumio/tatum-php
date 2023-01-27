@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | customer.internal.not.exists | ex.: `customer.internal.not.exists`
-**getMessage()** | **string** | No such customer. | ex.: `No such customer.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | customer.internal.not.exists <br>Example: `customer.internal.not.exists` |
+**getMessage()** | **string** | No such customer. <br>Example: `No such customer.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

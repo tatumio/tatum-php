@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | account.not.frozen | ex.: `account.not.frozen`
-**getMessage()** | **string** | Unable to unfreeze unfrozen account. | ex.: `Unable to unfreeze unfrozen account.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | account.not.frozen <br>Example: `account.not.frozen` |
+**getMessage()** | **string** | Unable to unfreeze unfrozen account. <br>Example: `Unable to unfreeze unfrozen account.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

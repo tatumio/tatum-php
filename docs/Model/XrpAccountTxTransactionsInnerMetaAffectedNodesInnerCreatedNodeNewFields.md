@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAccount()** | **string** |  | ex.: `rGenhJmoWHqD6tgmUyxQHLQH8sPuRGtUcv` [optional]
-**getBalance()** | **string** |  | ex.: `1000000000` [optional]
-**getSequence()** | **float** |  | ex.: `1` [optional]
+**getAccount()** | **string** |  <br>Example: `rGenhJmoWHqD6tgmUyxQHLQH8sPuRGtUcv` | [optional]
+**getBalance()** | **string** |  <br>Example: `1000000000` | [optional]
+**getSequence()** | **float** |  <br>Example: `1` | [optional]
 

@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | customer.inactive | ex.: `customer.inactive`
-**getMessage()** | **string** | Unable to perform operation on inactive customer. | ex.: `Unable to perform operation on inactive customer.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | customer.inactive <br>Example: `customer.inactive` |
+**getMessage()** | **string** | Unable to perform operation on inactive customer. <br>Example: `Unable to perform operation on inactive customer.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

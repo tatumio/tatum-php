@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | senderAccount.customer.disabled | ex.: `senderAccount.customer.disabled`
-**getMessage()** | **string** | Sender accounts customer ${senderAccount.customerId} is disabled, unable to perform payment. | ex.: `Sender accounts customer ${senderAccount.customerId} is disabled, unable to perform payment.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | senderAccount.customer.disabled <br>Example: `senderAccount.customer.disabled` |
+**getMessage()** | **string** | Sender accounts customer ${senderAccount.customerId} is disabled, unable to perform payment. <br>Example: `Sender accounts customer ${senderAccount.customerId} is disabled, unable to perform payment.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

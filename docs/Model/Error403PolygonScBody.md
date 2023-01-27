@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | polygon.sc.invalid | ex.: `polygon.sc.invalid`
-**getMessage()** | **string** | Invalid parameters for smart contract invocation. | ex.: `Invalid parameters for smart contract invocation.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | polygon.sc.invalid <br>Example: `polygon.sc.invalid` |
+**getMessage()** | **string** | Invalid parameters for smart contract invocation. <br>Example: `Invalid parameters for smart contract invocation.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

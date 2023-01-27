@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Flow address | ex.: `0x4f09d8d43e4967b7` [optional]
+**getAddress()** | **string** | Flow address <br>Example: `0x4f09d8d43e4967b7` | [optional]
 

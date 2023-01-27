@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getUrl()** | **string** | QR Code as data URL | ex.: `null` [optional]
+**getUrl()** | **string** | QR Code as data URL <br>Example: `null` | [optional]
 

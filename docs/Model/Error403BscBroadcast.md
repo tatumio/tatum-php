@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | bsc.broadcast.failed | ex.: `bsc.broadcast.failed`
-**getMessage()** | **string** | Unable to broadcast transaction due to ${error}. | ex.: `Unable to broadcast transaction due to ${error}.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | bsc.broadcast.failed <br>Example: `bsc.broadcast.failed` |
+**getMessage()** | **string** | Unable to broadcast transaction due to ${error}. <br>Example: `Unable to broadcast transaction due to ${error}.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

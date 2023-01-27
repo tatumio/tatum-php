@@ -10,8 +10,8 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAmount()** | **string** | Value of transaction in given base pair. | ex.: `1235.56`
-**getCurrency()** | **string** | Base pair. | ex.: `EUR`
-**getSourceDate()** | **float** | Date of validity of rate in UTC. | ex.: `1572031674384`
-**getSource()** | **string** | Source of base pair. | ex.: `fixer.io`
+**getAmount()** | **string** | Value of transaction in given base pair. <br>Example: `1235.56` |
+**getCurrency()** | **string** | Base pair. <br>Example: `EUR` |
+**getSourceDate()** | **float** | Date of validity of rate in UTC. <br>Example: `1572031674384` |
+**getSource()** | **string** | Source of base pair. <br>Example: `fixer.io` |
 

@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getLimit()** | **string** | Limit to filter accounts with balance above it. | ex.: `15000`
-**getTypeOfBalance()** | **string** | Type of balance to filter. | ex.: `null`
+**getLimit()** | **string** | Limit to filter accounts with balance above it. <br>Example: `15000` |
+**getTypeOfBalance()** | **string** | Type of balance to filter. <br>Example: `null` |
 

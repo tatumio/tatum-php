@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | broadcast.failed.withdrawalId | ex.: `broadcast.failed.withdrawalId`
-**getMessage()** | **string** | WithdrawalId must be present. | ex.: `WithdrawalId must be present.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | broadcast.failed.withdrawalId <br>Example: `broadcast.failed.withdrawalId` |
+**getMessage()** | **string** | WithdrawalId must be present. <br>Example: `WithdrawalId must be present.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

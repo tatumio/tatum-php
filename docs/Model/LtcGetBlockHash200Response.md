@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getHash()** | **string** | Block hash | ex.: `6178dda07b94becb118f67b21aa72f60d85c1029e9e9b8ae56a25d684de66078` [optional]
+**getHash()** | **string** | Block hash <br>Example: `6178dda07b94becb118f67b21aa72f60d85c1029e9e9b8ae56a25d684de66078` | [optional]
 

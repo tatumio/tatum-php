@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | **string** | The amount of the specified Multi Token | ex.: `10` [optional]
+**getData()** | **string** | The amount of the specified Multi Token <br>Example: `10` | [optional]
 

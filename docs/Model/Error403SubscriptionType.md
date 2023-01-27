@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | subscription.type.invalid | ex.: `subscription.type.invalid`
-**getMessage()** | **string** | Invalid subscription type. | ex.: `Invalid subscription type.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | subscription.type.invalid <br>Example: `subscription.type.invalid` |
+**getMessage()** | **string** | Invalid subscription type. <br>Example: `Invalid subscription type.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

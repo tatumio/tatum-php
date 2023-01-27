@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAmount()** | **string** |  | ex.: `20000000000` [optional]
-**getDenom()** | **string** |  | ex.: `BNB` [optional]
+**getAmount()** | **string** |  <br>Example: `20000000000` | [optional]
+**getDenom()** | **string** |  <br>Example: `BNB` | [optional]
 

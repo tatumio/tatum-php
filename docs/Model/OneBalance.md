@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in ONE | ex.: `10.52` [optional]
+**getBalance()** | **string** | Balance in ONE <br>Example: `10.52` | [optional]
 

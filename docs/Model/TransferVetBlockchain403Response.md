@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | vet.transaction.hash | ex.: `vet.transaction.hash`
-**getMessage()** | **string** | Unable to calculate transaction hash. | ex.: `Unable to calculate transaction hash.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | vet.transaction.hash <br>Example: `vet.transaction.hash` |
+**getMessage()** | **string** | Unable to calculate transaction hash. <br>Example: `Unable to calculate transaction hash.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | trade.currency1.balance | ex.: `trade.currency1.balance`
-**getMessage()** | **string** | Insufficient balance on currency1 account ${trade.currency1AccountId}. | ex.: `Insufficient balance on currency1 account ${trade.currency1AccountId}.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | trade.currency1.balance <br>Example: `trade.currency1.balance` |
+**getMessage()** | **string** | Insufficient balance on currency1 account ${trade.currency1AccountId}. <br>Example: `Insufficient balance on currency1 account ${trade.currency1AccountId}.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

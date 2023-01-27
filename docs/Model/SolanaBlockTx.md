@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMeta()** | [**\Tatum\Model\SolanaTxMeta**](../SolanaTxMeta) |  | ex.: `null` [optional]
-**getTransaction()** | [**\Tatum\Model\SolanaTxTransaction**](../SolanaTxTransaction) |  | ex.: `null` [optional]
+**getMeta()** | [**\Tatum\Model\SolanaTxMeta**](../SolanaTxMeta) |  <br>Example: `null` | [optional]
+**getTransaction()** | [**\Tatum\Model\SolanaTxTransaction**](../SolanaTxTransaction) |  <br>Example: `null` | [optional]
 

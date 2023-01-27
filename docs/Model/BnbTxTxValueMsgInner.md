@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** |  | ex.: `cosmos-sdk/Send` [optional]
-**getValue()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValue**](../BnbTxTxValueMsgInnerValue) |  | ex.: `null` [optional]
+**getType()** | **string** |  <br>Example: `cosmos-sdk/Send` | [optional]
+**getValue()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValue**](../BnbTxTxValueMsgInnerValue) |  <br>Example: `null` | [optional]
 

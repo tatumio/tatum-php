@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | solana.broadcast.confirm.failed | ex.: `Solana.broadcast.confirm.failed`
-**getMessage()** | **string** | Unexpected error occurred. Reason: ${error}. | ex.: `Unexpected error occurred. Reason: ${error}.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | solana.broadcast.confirm.failed <br>Example: `Solana.broadcast.confirm.failed` |
+**getMessage()** | **string** | Unexpected error occurred. Reason: ${error}. <br>Example: `Unexpected error occurred. Reason: ${error}.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

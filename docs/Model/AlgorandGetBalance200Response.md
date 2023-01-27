@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAssets()** | [**\Tatum\Model\AlgorandGetBalance200ResponseAssetsInner[]**](../AlgorandGetBalance200ResponseAssetsInner) |  | ex.: `null` [optional]
-**getBalance()** | **float** | Balance in ALGO | ex.: `1000` [optional]
+**getAssets()** | [**\Tatum\Model\AlgorandGetBalance200ResponseAssetsInner[]**](../AlgorandGetBalance200ResponseAssetsInner) |  <br>Example: `null` | [optional]
+**getBalance()** | **float** | Balance in ALGO <br>Example: `1000` | [optional]
 

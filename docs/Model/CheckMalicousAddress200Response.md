@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getStatus()** | **string** | Whether address is malicous or not | ex.: `valid` [optional]
+**getStatus()** | **string** | Whether address is malicous or not <br>Example: `valid` | [optional]
 

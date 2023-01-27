@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getEnergy()** | **string** | Balance in VTHO | ex.: `10.52` [optional]
+**getEnergy()** | **string** | Balance in VTHO <br>Example: `10.52` | [optional]
 

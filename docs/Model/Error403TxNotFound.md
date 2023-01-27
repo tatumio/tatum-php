@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | tx.missing | ex.: `tx.missing`
-**getMessage()** | **string** | No such tx. | ex.: `No such tx.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | tx.missing <br>Example: `tx.missing` |
+**getMessage()** | **string** | No such tx. <br>Example: `No such tx.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getNumber()** | **float** | Last epoch number. | ex.: `143` [optional]
+**getNumber()** | **float** | Last epoch number. <br>Example: `143` | [optional]
 

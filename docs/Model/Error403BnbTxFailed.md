@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | bnb.transfer.failed | ex.: `bnb.transfer.failed`
-**getMessage()** | **string** | Unable to transfer funds. ${error} | ex.: `Unable to transfer funds. ${error}`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | bnb.transfer.failed <br>Example: `bnb.transfer.failed` |
+**getMessage()** | **string** | Unable to transfer funds. ${error} <br>Example: `Unable to transfer funds. ${error}` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

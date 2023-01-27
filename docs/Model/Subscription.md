@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `ACCOUNT_BALANCE_LIMIT`
-**getId()** | **string** | ID of the subscription | ex.: `7c21ed165e294db78b95f0f1`
-**getAttr()** | **object** | Additional attributes based on the subscription type. | ex.: `null` [optional]
+**getType()** | **string** | Type of the subscription. <br>Example: `ACCOUNT_BALANCE_LIMIT` |
+**getId()** | **string** | ID of the subscription <br>Example: `7c21ed165e294db78b95f0f1` |
+**getAttr()** | **object** | Additional attributes based on the subscription type. <br>Example: `null` | [optional]
 

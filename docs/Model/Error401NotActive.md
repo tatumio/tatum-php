@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | subscription.not.active | ex.: `subscription.not.active`
-**getMessage()** | **string** | Subscription not active anymore. | ex.: `Subscription not active anymore.`
-**getStatusCode()** | **float** | 401 | ex.: `401`
+**getErrorCode()** | **string** | subscription.not.active <br>Example: `subscription.not.active` |
+**getMessage()** | **string** | Subscription not active anymore. <br>Example: `Subscription not active anymore.` |
+**getStatusCode()** | **float** | 401 <br>Example: `401` |
 

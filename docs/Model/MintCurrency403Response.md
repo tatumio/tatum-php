@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | account.not.exists | ex.: `account.not.exists`
-**getMessage()** | **string** | No such account. | ex.: `No such account.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | account.not.exists <br>Example: `account.not.exists` |
+**getMessage()** | **string** | No such account. <br>Example: `No such account.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | account.active | ex.: `account.active`
-**getMessage()** | **string** | Unable to activate active account. | ex.: `Unable to activate active account.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | account.active <br>Example: `account.active` |
+**getMessage()** | **string** | Unable to activate active account. <br>Example: `Unable to activate active account.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

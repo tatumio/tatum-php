@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getFrom()** | **string** | Sender address. | ex.: `xdcfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef`
-**getTo()** | **string** | Blockchain address to send assets | ex.: `xdc687422eEA2cB73B5d3e242bA5456b782919AFc85`
-**getAmount()** | **string** | Amount to be sent in XDC. | ex.: `100000`
+**getFrom()** | **string** | Sender address. <br>Example: `xdcfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef` |
+**getTo()** | **string** | Blockchain address to send assets <br>Example: `xdc687422eEA2cB73B5d3e242bA5456b782919AFc85` |
+**getAmount()** | **string** | Amount to be sent in XDC. <br>Example: `100000` |
 

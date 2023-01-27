@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | virtual.duplicate | ex.: `virtual.duplicate`
-**getMessage()** | **string** | Virtual currency with given name already exists. | ex.: `Virtual currency with given name already exists.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | virtual.duplicate <br>Example: `virtual.duplicate` |
+**getMessage()** | **string** | Virtual currency with given name already exists. <br>Example: `Virtual currency with given name already exists.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

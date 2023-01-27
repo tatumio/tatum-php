@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | **string** | The data stored in the requested record | ex.: `My example log data`
+**getData()** | **string** | The data stored in the requested record <br>Example: `My example log data` |
 

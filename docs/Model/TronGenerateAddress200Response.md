@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Tron address | ex.: `TFFBpkRNro4Pe4154ayGWx7C6Ev7BvQZ6t` [optional]
+**getAddress()** | **string** | Tron address <br>Example: `TFFBpkRNro4Pe4154ayGWx7C6Ev7BvQZ6t` | [optional]
 

@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Litecoin address | ex.: `n36h3pAH7sC3z8KMB47BjbqvW2aJd2oTi7` [optional]
+**getAddress()** | **string** | Litecoin address <br>Example: `n36h3pAH7sC3z8KMB47BjbqvW2aJd2oTi7` | [optional]
 

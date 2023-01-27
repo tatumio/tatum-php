@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getSenderAccountId()** | **string** | Internal sender account ID within Tatum platform | ex.: `5e6645712b55823de7ea82f1`
-**getTransaction()** | [**\Tatum\Model\BatchCreateTransactionTransactionInner[]**](../BatchCreateTransactionTransactionInner) | Array of block seals. | ex.: `null` [optional]
+**getSenderAccountId()** | **string** | Internal sender account ID within Tatum platform <br>Example: `5e6645712b55823de7ea82f1` |
+**getTransaction()** | [**\Tatum\Model\BatchCreateTransactionTransactionInner[]**](../BatchCreateTransactionTransactionInner) | Array of block seals. <br>Example: `null` | [optional]
 

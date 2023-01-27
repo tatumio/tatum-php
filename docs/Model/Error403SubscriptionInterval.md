@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | subscription.attr.interval.invalid | ex.: `subscription.attr.interval.invalid`
-**getMessage()** | **string** | Invalid subscription attribute 'interval'. | ex.: `Invalid subscription attribute &#39;interval&#39;.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | subscription.attr.interval.invalid <br>Example: `subscription.attr.interval.invalid` |
+**getMessage()** | **string** | Invalid subscription attribute 'interval'. <br>Example: `Invalid subscription attribute &#39;interval&#39;.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

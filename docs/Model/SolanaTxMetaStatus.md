@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getOk()** | **string** |  | ex.: `null` [optional]
+**getOk()** | **string** |  <br>Example: `null` | [optional]
 

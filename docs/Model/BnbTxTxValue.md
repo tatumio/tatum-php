@@ -10,8 +10,8 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMemo()** | **string** |  | ex.: `` [optional]
-**getMsg()** | [**\Tatum\Model\BnbTxTxValueMsgInner[]**](../BnbTxTxValueMsgInner) |  | ex.: `null` [optional]
-**getSignatures()** | [**\Tatum\Model\BnbTxTxValueSignaturesInner[]**](../BnbTxTxValueSignaturesInner) |  | ex.: `null` [optional]
-**getSource()** | **string** |  | ex.: `0` [optional]
+**getMemo()** | **string** |  <br>Example: `` | [optional]
+**getMsg()** | [**\Tatum\Model\BnbTxTxValueMsgInner[]**](../BnbTxTxValueMsgInner) |  <br>Example: `null` | [optional]
+**getSignatures()** | [**\Tatum\Model\BnbTxTxValueSignaturesInner[]**](../BnbTxTxValueSignaturesInner) |  <br>Example: `null` | [optional]
+**getSource()** | **string** |  <br>Example: `0` | [optional]
 

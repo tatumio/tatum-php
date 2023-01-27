@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getActivated()** | **bool** | If set to "true", the gas pump address has been activated | ex.: `true` [optional]
+**getActivated()** | **bool** | If set to "true", the gas pump address has been activated <br>Example: `true` | [optional]
 

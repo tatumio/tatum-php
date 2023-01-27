@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in MATIC | ex.: `10.52` [optional]
+**getBalance()** | **string** | Balance in MATIC <br>Example: `10.52` | [optional]
 

@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | tron.failed | ex.: `tron.failed`
-**getMessage()** | **string** | Unable to communicate to blockchain. ${error} | ex.: `Unable to communicate to blockchain. ${error}`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | tron.failed <br>Example: `tron.failed` |
+**getMessage()** | **string** | Unable to communicate to blockchain. ${error} <br>Example: `Unable to communicate to blockchain. ${error}` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

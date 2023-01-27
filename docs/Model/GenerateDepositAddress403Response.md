@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | Address.used | ex.: `address.used`
-**getMessage()** | **string** | Address and currency already in use. | ex.: `Address and currency already in use.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | Address.used <br>Example: `address.used` |
+**getMessage()** | **string** | Address and currency already in use. <br>Example: `Address and currency already in use.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

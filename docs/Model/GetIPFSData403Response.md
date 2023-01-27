@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMessage()** | **string** | Forbidden | ex.: `Forbidden`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getMessage()** | **string** | Forbidden <br>Example: `Forbidden` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

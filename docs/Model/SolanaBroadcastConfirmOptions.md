@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getCommitment()** | **string** | Commitment to waiting for transaction confirmation | ex.: `confirmed` [optional]
-**getPreflightCommitment()** | **string** | Preflight Commitment. | ex.: `finalized` [optional]
+**getCommitment()** | **string** | Commitment to waiting for transaction confirmation <br>Example: `confirmed` | [optional]
+**getPreflightCommitment()** | **string** | Preflight Commitment. <br>Example: `finalized` | [optional]
 

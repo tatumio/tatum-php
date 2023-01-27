@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | withdrawal.account.virtual | ex.: `withdrawal.account.virtual`
-**getMessage()** | **string** | Sender account cannot be virtual. | ex.: `Sender account cannot be virtual.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | withdrawal.account.virtual <br>Example: `withdrawal.account.virtual` |
+**getMessage()** | **string** | Sender account cannot be virtual. <br>Example: `Sender account cannot be virtual.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

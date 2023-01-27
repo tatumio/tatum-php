@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | customer.blockage.inactive | ex.: `customer.blockage.inactive`
-**getMessage()** | **string** | Unable to delete blockages on account for inactive customer. | ex.: `Unable to delete blockages on account for inactive customer.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | customer.blockage.inactive <br>Example: `customer.blockage.inactive` |
+**getMessage()** | **string** | Unable to delete blockages on account for inactive customer. <br>Example: `Unable to delete blockages on account for inactive customer.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of payload. | ex.: `null` [optional]
-**getValue()** | [**\Tatum\Model\FlowEventPayloadValue**](../FlowEventPayloadValue) |  | ex.: `null` [optional]
+**getType()** | **string** | Type of payload. <br>Example: `null` | [optional]
+**getValue()** | [**\Tatum\Model\FlowEventPayloadValue**](../FlowEventPayloadValue) |  <br>Example: `null` | [optional]
 

@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAccountCode()** | **string** | For bookkeeping to distinct account purpose. | ex.: `AC_1011_B` [optional]
-**getAccountNumber()** | **string** | Account number from external system. | ex.: `123456` [optional]
+**getAccountCode()** | **string** | For bookkeeping to distinct account purpose. <br>Example: `AC_1011_B` | [optional]
+**getAccountNumber()** | **string** | Account number from external system. <br>Example: `123456` | [optional]
 

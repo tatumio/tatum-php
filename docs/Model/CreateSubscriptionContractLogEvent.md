@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `CONTRACT_LOG_EVENT`
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionContractLogEventAttr**](../CreateSubscriptionContractLogEventAttr) |  | ex.: `null`
+**getType()** | **string** | Type of the subscription. <br>Example: `CONTRACT_LOG_EVENT` |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionContractLogEventAttr**](../CreateSubscriptionContractLogEventAttr) |  <br>Example: `null` |
 

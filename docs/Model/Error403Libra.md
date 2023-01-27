@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | libra.request.failed | ex.: `libra.request.failed`
-**getMessage()** | **string** | ${error} | ex.: `${error}`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | libra.request.failed <br>Example: `libra.request.failed` |
+**getMessage()** | **string** | ${error} <br>Example: `${error}` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

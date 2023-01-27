@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | subscription.attr.currency.invalid | ex.: `subscription.attr.currency.invalid`
-**getMessage()** | **string** | Invalid subscription attribute 'currency'. | ex.: `Invalid subscription attribute &#39;currency&#39;.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | subscription.attr.currency.invalid <br>Example: `subscription.attr.currency.invalid` |
+**getMessage()** | **string** | Invalid subscription attribute 'currency'. <br>Example: `Invalid subscription attribute &#39;currency&#39;.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getContractAddress()** | **string** | The address of the smart contract that the fungible tokens were minted on | ex.: `null` [optional]
-**getAmount()** | **string** | The number of the fungible tokens | ex.: `10` [optional]
+**getContractAddress()** | **string** | The address of the smart contract that the fungible tokens were minted on <br>Example: `null` | [optional]
+**getAmount()** | **string** | The number of the fungible tokens <br>Example: `10` | [optional]
 

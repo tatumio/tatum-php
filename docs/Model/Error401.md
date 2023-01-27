@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMessage()** | **string** | Unauthorized | ex.: `Unauthorized`
-**getStatusCode()** | **float** | 401 | ex.: `401`
+**getMessage()** | **string** | Unauthorized <br>Example: `Unauthorized` |
+**getStatusCode()** | **float** | 401 <br>Example: `401` |
 

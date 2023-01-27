@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getOp()** | **string** | Filtering operation. | ex.: `gte`
-**getValue()** | **string** | Value of the operation. | ex.: `1.5`
+**getOp()** | **string** | Filtering operation. <br>Example: `gte` |
+**getValue()** | **string** | Value of the operation. <br>Example: `1.5` |
 

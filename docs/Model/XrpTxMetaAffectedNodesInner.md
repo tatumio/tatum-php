@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getModifiedNode()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode**](../XrpTxMetaAffectedNodesInnerModifiedNode) |  | ex.: `null` [optional]
+**getModifiedNode()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode**](../XrpTxMetaAffectedNodesInnerModifiedNode) |  <br>Example: `null` | [optional]
 

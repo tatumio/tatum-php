@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | eth.transaction.hash | ex.: `eth.transaction.hash`
-**getMessage()** | **string** | Unable to calculate transaction hash. ${error} | ex.: `Unable to calculate transaction hash. ${error}`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | eth.transaction.hash <br>Example: `eth.transaction.hash` |
+**getMessage()** | **string** | Unable to calculate transaction hash. ${error} <br>Example: `Unable to calculate transaction hash. ${error}` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

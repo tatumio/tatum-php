@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | tx.hash.index.spent | ex.: `tx.hash.index.spent`
-**getMessage()** | **string** | No such UTXO for transaction and index. | ex.: `No such UTXO for transaction and index.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | tx.hash.index.spent <br>Example: `tx.hash.index.spent` |
+**getMessage()** | **string** | No such UTXO for transaction and index. <br>Example: `No such UTXO for transaction and index.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

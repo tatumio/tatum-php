@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid | ex.: `null`
+**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid <br>Example: `null` |
 

@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getGasLimit()** | **float** | Gas limit for transaction in gas price. | ex.: `40000`
-**getGasPrice()** | **float** | Gas price in Gwei. | ex.: `20`
+**getGasLimit()** | **float** | Gas limit for transaction in gas price. <br>Example: `40000` |
+**getGasPrice()** | **float** | Gas price in Gwei. <br>Example: `20` |
 

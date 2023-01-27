@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `CUSTOMER_PARTIAL_TRADE_MATCH`
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionPartialTradeMatchAttr**](../CreateSubscriptionPartialTradeMatchAttr) |  | ex.: `null`
+**getType()** | **string** | Type of the subscription. <br>Example: `CUSTOMER_PARTIAL_TRADE_MATCH` |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionPartialTradeMatchAttr**](../CreateSubscriptionPartialTradeMatchAttr) |  <br>Example: `null` |
 

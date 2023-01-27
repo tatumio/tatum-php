@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | offchain.not.supported | ex.: `offchain.not.supported`
-**getMessage()** | **string** | Offchain not supported for account with ${account.currency} currency. | ex.: `Offchain not supported for account with ${account.currency} currency.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | offchain.not.supported <br>Example: `offchain.not.supported` |
+**getMessage()** | **string** | Offchain not supported for account with ${account.currency} currency. <br>Example: `Offchain not supported for account with ${account.currency} currency.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

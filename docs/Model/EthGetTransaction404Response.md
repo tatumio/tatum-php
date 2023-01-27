@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | tx.not.found | ex.: `tx.not.found`
-**getMessage()** | **string** | Transaction not found. Possible not exists or is still pending. | ex.: `Transaction not found. Possible not exists or is still pending.`
-**getStatusCode()** | **float** | 404 | ex.: `404`
+**getErrorCode()** | **string** | tx.not.found <br>Example: `tx.not.found` |
+**getMessage()** | **string** | Transaction not found. Possible not exists or is still pending. <br>Example: `Transaction not found. Possible not exists or is still pending.` |
+**getStatusCode()** | **float** | 404 <br>Example: `404` |
 

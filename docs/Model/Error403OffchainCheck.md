@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | withdrawal.check.currency | ex.: `withdrawal.check.currency`
-**getMessage()** | **string** | Withdrawal check available only for ETH based currencies. | ex.: `Withdrawal check available only for ETH based currencies.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | withdrawal.check.currency <br>Example: `withdrawal.check.currency` |
+**getMessage()** | **string** | Withdrawal check available only for ETH based currencies. <br>Example: `Withdrawal check available only for ETH based currencies.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

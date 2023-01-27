@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | transaction.currency.incompatible | ex.: `transaction.currency.incompatible`
-**getMessage()** | **string** | Incompatible currencies for sender account ${transaction.senderAccountId} and recipient account ${transaction.recipientAccountId}. | ex.: `Incompatible currencies for sender account ${transaction.senderAccountId} and recipient account ${transaction.recipientAccountId}.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | transaction.currency.incompatible <br>Example: `transaction.currency.incompatible` |
+**getMessage()** | **string** | Incompatible currencies for sender account ${transaction.senderAccountId} and recipient account ${transaction.recipientAccountId}. <br>Example: `Incompatible currencies for sender account ${transaction.senderAccountId} and recipient account ${transaction.recipientAccountId}.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

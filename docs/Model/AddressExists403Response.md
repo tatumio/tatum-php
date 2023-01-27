@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | Address.not.found | ex.: `address.not.found`
-**getMessage()** | **string** | No such address exists. | ex.: `No such address exists.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | Address.not.found <br>Example: `address.not.found` |
+**getMessage()** | **string** | No such address exists. <br>Example: `No such address exists.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

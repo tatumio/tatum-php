@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTotal()** | **float** |  | ex.: `10` [optional]
-**getTx()** | [**\Tatum\Model\BnbTransaction[]**](../BnbTransaction) |  | ex.: `null` [optional]
+**getTotal()** | **float** |  <br>Example: `10` | [optional]
+**getTx()** | [**\Tatum\Model\BnbTransaction[]**](../BnbTransaction) |  <br>Example: `null` | [optional]
 

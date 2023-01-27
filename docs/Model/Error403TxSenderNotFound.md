@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | senderAccount.not.exists | ex.: `senderAccount.not.exists`
-**getMessage()** | **string** | Unable to find sender account ${transaction.senderAccountId}. | ex.: `Unable to find sender account ${transaction.senderAccountId}.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | senderAccount.not.exists <br>Example: `senderAccount.not.exists` |
+**getMessage()** | **string** | Unable to find sender account ${transaction.senderAccountId}. <br>Example: `Unable to find sender account ${transaction.senderAccountId}.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

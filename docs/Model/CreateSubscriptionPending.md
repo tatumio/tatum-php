@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION`
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionPendingAttr**](../CreateSubscriptionPendingAttr) |  | ex.: `null`
+**getType()** | **string** | Type of the subscription. <br>Example: `ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION` |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionPendingAttr**](../CreateSubscriptionPendingAttr) |  <br>Example: `null` |
 

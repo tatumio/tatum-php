@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | report.invalid | ex.: `report.invalid`
-**getMessage()** | **string** | Unsupported report type. | ex.: `Unsupported report type.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | report.invalid <br>Example: `report.invalid` |
+**getMessage()** | **string** | Unsupported report type. <br>Example: `Unsupported report type.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

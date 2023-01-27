@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | The blockchain address to send the assets from | ex.: `2N9bBiH2qrTDrPCzrNhaFGdkNKS86PJAAAS`
-**getSignatureId()** | **string** | The KMS identifier of the private key of the address to send the assets from | ex.: `1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6`
-**getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic | ex.: `0` [optional]
+**getAddress()** | **string** | The blockchain address to send the assets from <br>Example: `2N9bBiH2qrTDrPCzrNhaFGdkNKS86PJAAAS` |
+**getSignatureId()** | **string** | The KMS identifier of the private key of the address to send the assets from <br>Example: `1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6` |
+**getIndex()** | **float** | (Only if the signature ID is mnemonic-based) The index of the specific address from the mnemonic <br>Example: `0` | [optional]
 

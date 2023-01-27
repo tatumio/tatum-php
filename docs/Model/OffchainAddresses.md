@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddresses()** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](../OffchainAddressesAddressesInner) |  | ex.: `null`
+**getAddresses()** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](../OffchainAddressesAddressesInner) |  <br>Example: `null` |
 

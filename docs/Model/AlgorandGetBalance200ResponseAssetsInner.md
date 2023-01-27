@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAmount()** | **float** | Balance in asset unit | ex.: `1000` [optional]
-**getAssetIndex()** | **float** | Asset Index of ASA | ex.: `87748168` [optional]
+**getAmount()** | **float** | Balance in asset unit <br>Example: `1000` | [optional]
+**getAssetIndex()** | **float** | Asset Index of ASA <br>Example: `87748168` | [optional]
 

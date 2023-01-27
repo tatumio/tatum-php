@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | erc20.address.xpub.missing | ex.: `erc20.address.xpub.missing`
-**getMessage()** | **string** | Either xpub or address must be present. | ex.: `Either xpub or address must be present.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | erc20.address.xpub.missing <br>Example: `erc20.address.xpub.missing` |
+**getMessage()** | **string** | Either xpub or address must be present. <br>Example: `Either xpub or address must be present.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

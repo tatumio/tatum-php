@@ -10,14 +10,14 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErr()** | **object** |  | ex.: `null` [optional]
-**getFee()** | **float** |  | ex.: `5000` [optional]
-**getInnerInstructions()** | **object[]** |  | ex.: `null` [optional]
-**getLogMessages()** | **string[]** |  | ex.: `null` [optional]
-**getPostBalances()** | **float[]** |  | ex.: `null` [optional]
-**getPostTokenBalances()** | [**\Tatum\Model\TokenBalance[]**](../TokenBalance) |  | ex.: `null` [optional]
-**getPreBalances()** | **float[]** |  | ex.: `null` [optional]
-**getPreTokenBalances()** | [**\Tatum\Model\TokenBalance[]**](../TokenBalance) |  | ex.: `null` [optional]
-**getRewards()** | **object[]** |  | ex.: `null` [optional]
-**getStatus()** | [**\Tatum\Model\SolanaTxMetaStatus**](../SolanaTxMetaStatus) |  | ex.: `null` [optional]
+**getErr()** | **object** |  <br>Example: `null` | [optional]
+**getFee()** | **float** |  <br>Example: `5000` | [optional]
+**getInnerInstructions()** | **object[]** |  <br>Example: `null` | [optional]
+**getLogMessages()** | **string[]** |  <br>Example: `null` | [optional]
+**getPostBalances()** | **float[]** |  <br>Example: `null` | [optional]
+**getPostTokenBalances()** | [**\Tatum\Model\TokenBalance[]**](../TokenBalance) |  <br>Example: `null` | [optional]
+**getPreBalances()** | **float[]** |  <br>Example: `null` | [optional]
+**getPreTokenBalances()** | [**\Tatum\Model\TokenBalance[]**](../TokenBalance) |  <br>Example: `null` | [optional]
+**getRewards()** | **object[]** |  <br>Example: `null` | [optional]
+**getStatus()** | [**\Tatum\Model\SolanaTxMetaStatus**](../SolanaTxMetaStatus) |  <br>Example: `null` | [optional]
 

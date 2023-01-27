@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | virtual.account.notValid | ex.: `virtual.account.notValid`
-**getMessage()** | **string** | Unable to perform operation on virtual currency, account does not exists. | ex.: `Unable to perform operation on virtual currency, account does not exists.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | virtual.account.notValid <br>Example: `virtual.account.notValid` |
+**getMessage()** | **string** | Unable to perform operation on virtual currency, account does not exists. <br>Example: `Unable to perform operation on virtual currency, account does not exists.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

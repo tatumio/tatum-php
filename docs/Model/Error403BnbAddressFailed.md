@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | Address.bnb.generation.failed.wrong.xpub | ex.: `address.bnb.generation.failed.wrong.xpub`
-**getMessage()** | **string** | Unable to generate BNB address, wrong xpub and account type. | ex.: `Unable to generate BNB address, wrong xpub and account type.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | Address.bnb.generation.failed.wrong.xpub <br>Example: `address.bnb.generation.failed.wrong.xpub` |
+**getMessage()** | **string** | Unable to generate BNB address, wrong xpub and account type. <br>Example: `Unable to generate BNB address, wrong xpub and account type.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

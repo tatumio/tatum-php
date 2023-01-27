@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in ETH | ex.: `10.52` [optional]
+**getBalance()** | **string** | Balance in ETH <br>Example: `10.52` | [optional]
 

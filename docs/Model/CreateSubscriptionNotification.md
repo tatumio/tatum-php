@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `ADDRESS_TRANSACTION`
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionNotificationAttr**](../CreateSubscriptionNotificationAttr) |  | ex.: `null`
+**getType()** | **string** | Type of the subscription. <br>Example: `ADDRESS_TRANSACTION` |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionNotificationAttr**](../CreateSubscriptionNotificationAttr) |  <br>Example: `null` |
 

@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTotal()** | **float** | Total entities | ex.: `20` [optional]
+**getTotal()** | **float** | Total entities <br>Example: `20` | [optional]
 

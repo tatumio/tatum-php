@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | trade.currency.fee | ex.: `trade.currency.fee`
-**getMessage()** | **string** | Incompatible currencies for currency1 and fee account. | ex.: `Incompatible currencies for currency1 and fee account.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | trade.currency.fee <br>Example: `trade.currency.fee` |
+**getMessage()** | **string** | Incompatible currencies for currency1 and fee account. <br>Example: `Incompatible currencies for currency1 and fee account.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

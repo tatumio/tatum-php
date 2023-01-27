@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getError()** | **bool** | If all estimations succeeded. | ex.: `false`
-**getResult()** | [**\Tatum\Model\EthGasEstimationBatchResult[]**](../EthGasEstimationBatchResult) |  | ex.: `null`
+**getError()** | **bool** | If all estimations succeeded. <br>Example: `false` |
+**getResult()** | [**\Tatum\Model\EthGasEstimationBatchResult[]**](../EthGasEstimationBatchResult) |  <br>Example: `null` |
 

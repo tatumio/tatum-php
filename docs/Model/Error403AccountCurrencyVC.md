@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | account.currency.missing | ex.: `account.currency.missing`
-**getMessage()** | **string** | No such virtual currency ${currency} for account ${account}. | ex.: `No such virtual currency ${currency} for account ${account}.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | account.currency.missing <br>Example: `account.currency.missing` |
+**getMessage()** | **string** | No such virtual currency ${currency} for account ${account}. <br>Example: `No such virtual currency ${currency} for account ${account}.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

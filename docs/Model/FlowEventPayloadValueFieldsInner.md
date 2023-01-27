@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getName()** | **string** | Name of the property | ex.: `name` [optional]
-**getValue()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInnerValue**](../FlowEventPayloadValueFieldsInnerValue) |  | ex.: `null` [optional]
+**getName()** | **string** | Name of the property <br>Example: `name` | [optional]
+**getValue()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInnerValue**](../FlowEventPayloadValueFieldsInnerValue) |  <br>Example: `null` | [optional]
 

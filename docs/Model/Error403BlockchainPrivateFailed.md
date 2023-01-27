@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | key.generation.failed.wrong.mnemonic | ex.: `key.generation.failed.wrong.mnemonic`
-**getMessage()** | **string** | Unable to generate address, wrong mnemonic and index. | ex.: `Unable to generate address, wrong mnemonic and index.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | key.generation.failed.wrong.mnemonic <br>Example: `key.generation.failed.wrong.mnemonic` |
+**getMessage()** | **string** | Unable to generate address, wrong mnemonic and index. <br>Example: `Unable to generate address, wrong mnemonic and index.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

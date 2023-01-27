@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | blockage.not.exists | ex.: `blockage.not.exists`
-**getMessage()** | **string** | No such blockage. | ex.: `No such blockage.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | blockage.not.exists <br>Example: `blockage.not.exists` |
+**getMessage()** | **string** | No such blockage. <br>Example: `No such blockage.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the value | ex.: `UFix64` [optional]
-**getValue()** | **string** | Value | ex.: `0.001` [optional]
+**getType()** | **string** | Type of the value <br>Example: `UFix64` | [optional]
+**getValue()** | **string** | Value <br>Example: `0.001` | [optional]
 

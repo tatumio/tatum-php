@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `KMS_COMPLETED_TX`
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSSuccessAttr**](../CreateSubscriptionKMSSuccessAttr) |  | ex.: `null`
+**getType()** | **string** | Type of the subscription. <br>Example: `KMS_COMPLETED_TX` |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSSuccessAttr**](../CreateSubscriptionKMSSuccessAttr) |  <br>Example: `null` |
 

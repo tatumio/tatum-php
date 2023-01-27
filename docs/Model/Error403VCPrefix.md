@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | virtual.name.prefix | ex.: `virtual.name.prefix`
-**getMessage()** | **string** | Virtual currency has wrong name, must start with VC_. | ex.: `Virtual currency has wrong name, must start with VC_.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | virtual.name.prefix <br>Example: `virtual.name.prefix` |
+**getMessage()** | **string** | Virtual currency has wrong name, must start with VC_. <br>Example: `Virtual currency has wrong name, must start with VC_.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

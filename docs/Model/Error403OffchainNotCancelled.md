@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | withdrawal.not.cancelled.transaction.failed | ex.: `withdrawal.not.cancelled.transaction.failed`
-**getMessage()** | **string** | Unable to broadcast transaction, and impossible to cancel withdrawal. ID is attached, "${withdrawalId}", cancel it manually. | ex.: `Unable to broadcast transaction, and impossible to cancel withdrawal. ID is attached, &quot;${withdrawalId}&quot;, cancel it manually.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | withdrawal.not.cancelled.transaction.failed <br>Example: `withdrawal.not.cancelled.transaction.failed` |
+**getMessage()** | **string** | Unable to broadcast transaction, and impossible to cancel withdrawal. ID is attached, "${withdrawalId}", cancel it manually. <br>Example: `Unable to broadcast transaction, and impossible to cancel withdrawal. ID is attached, &quot;${withdrawalId}&quot;, cancel it manually.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Generated account address. | ex.: `rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV`
-**getSecret()** | **string** | Generated secret for account. | ex.: `snSFTHdvSYQKKkYntvEt8cnmZuPJB`
+**getAddress()** | **string** | Generated account address. <br>Example: `rPRxSZzTFd6Yez3UMxFUPJvnhUhjewpjfV` |
+**getSecret()** | **string** | Generated secret for account. <br>Example: `snSFTHdvSYQKKkYntvEt8cnmZuPJB` |
 

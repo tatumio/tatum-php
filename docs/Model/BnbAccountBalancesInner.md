@@ -10,8 +10,8 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getFree()** | **string** |  | ex.: `207.00000000` [optional]
-**getFrozen()** | **string** |  | ex.: `0.00000000` [optional]
-**getLocked()** | **string** |  | ex.: `0.00000000` [optional]
-**getSymbol()** | **string** |  | ex.: `BNB` [optional]
+**getFree()** | **string** |  <br>Example: `207.00000000` | [optional]
+**getFrozen()** | **string** |  <br>Example: `0.00000000` | [optional]
+**getLocked()** | **string** |  <br>Example: `0.00000000` | [optional]
+**getSymbol()** | **string** |  <br>Example: `BNB` | [optional]
 

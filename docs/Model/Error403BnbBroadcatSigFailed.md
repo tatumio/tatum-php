@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | bnb.broadcast.bad.signature | ex.: `bnb.broadcast.bad.signature`
-**getMessage()** | **string** | Unable to broadcast BNB transaction, bad signature. | ex.: `Unable to broadcast BNB transaction, bad signature.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | bnb.broadcast.bad.signature <br>Example: `bnb.broadcast.bad.signature` |
+**getMessage()** | **string** | Unable to broadcast BNB transaction, bad signature. <br>Example: `Unable to broadcast BNB transaction, bad signature.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | account.xpub.present | ex.: `account.xpub.present`
-**getMessage()** | **string** | Unable to create ${account.currency} account with xpub. | ex.: `Unable to create ${account.currency} account with xpub.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | account.xpub.present <br>Example: `account.xpub.present` |
+**getMessage()** | **string** | Unable to create ${account.currency} account with xpub. <br>Example: `Unable to create ${account.currency} account with xpub.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

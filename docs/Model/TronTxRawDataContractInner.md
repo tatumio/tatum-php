@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getParameter()** | [**\Tatum\Model\TronTxRawDataContractInnerParameter**](../TronTxRawDataContractInnerParameter) |  | ex.: `null` [optional]
-**getType()** | **string** | Type of the Smart contract. | ex.: `TriggerSmartContract` [optional]
+**getParameter()** | [**\Tatum\Model\TronTxRawDataContractInnerParameter**](../TronTxRawDataContractInnerParameter) |  <br>Example: `null` | [optional]
+**getType()** | **string** | Type of the Smart contract. <br>Example: `TriggerSmartContract` | [optional]
 

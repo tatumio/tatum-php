@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTimestamp()** | **float** |  | ex.: `1651145988650` [optional]
-**getBlockHeight()** | **float** |  | ex.: `44925860` [optional]
-**getTx()** | [**\Tatum\Model\BnbTransaction[]**](../BnbTransaction) |  | ex.: `null` [optional]
+**getTimestamp()** | **float** |  <br>Example: `1651145988650` | [optional]
+**getBlockHeight()** | **float** |  <br>Example: `44925860` | [optional]
+**getTx()** | [**\Tatum\Model\BnbTransaction[]**](../BnbTransaction) |  <br>Example: `null` | [optional]
 

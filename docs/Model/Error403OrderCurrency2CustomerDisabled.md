@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | trade.currency2AccountId.customer.disabled | ex.: `trade.currency2AccountId.customer.disabled`
-**getMessage()** | **string** | Currency2 account's customer ${currency2Account.customerId} is disabled, unable to perform exchange trade. | ex.: `Currency2 account&#39;s customer ${currency2Account.customerId} is disabled, unable to perform exchange trade.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | trade.currency2AccountId.customer.disabled <br>Example: `trade.currency2AccountId.customer.disabled` |
+**getMessage()** | **string** | Currency2 account's customer ${currency2Account.customerId} is disabled, unable to perform exchange trade. <br>Example: `Currency2 account&#39;s customer ${currency2Account.customerId} is disabled, unable to perform exchange trade.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

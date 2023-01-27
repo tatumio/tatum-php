@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | transaction.preparation.failed | ex.: `transaction.preparation.failed`
-**getMessage()** | **string** | Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present. | ex.: `Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | transaction.preparation.failed <br>Example: `transaction.preparation.failed` |
+**getMessage()** | **string** | Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present. <br>Example: `Impossible to prepare transaction. Either mnemonic or keyPair and attr must be present.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

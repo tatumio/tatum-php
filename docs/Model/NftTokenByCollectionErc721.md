@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTokenId()** | **string** | ID of the token. | ex.: `123`
-**getMetadata()** | [**\Tatum\Model\NftTokenByCollectionErc721TokenMetadata**](../NftTokenByCollectionErc721TokenMetadata) |  | ex.: `null` [optional]
+**getTokenId()** | **string** | ID of the token. <br>Example: `123` |
+**getMetadata()** | [**\Tatum\Model\NftTokenByCollectionErc721TokenMetadata**](../NftTokenByCollectionErc721TokenMetadata) |  <br>Example: `null` | [optional]
 

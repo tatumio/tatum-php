@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | [**\Tatum\Model\DataData**](../DataData) |  | ex.: `null`
+**getData()** | [**\Tatum\Model\DataData**](../DataData) |  <br>Example: `null` |
 

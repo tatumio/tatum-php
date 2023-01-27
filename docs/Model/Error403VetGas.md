@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | vet.transaction.gas | ex.: `vet.transaction.gas`
-**getMessage()** | **string** | Unable to calculate gas limit for transaction. ${error} | ex.: `Unable to calculate gas limit for transaction. ${error}`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | vet.transaction.gas <br>Example: `vet.transaction.gas` |
+**getMessage()** | **string** | Unable to calculate gas limit for transaction. ${error} <br>Example: `Unable to calculate gas limit for transaction. ${error}` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

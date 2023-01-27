@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** |  | ex.: `SOL`
+**getChain()** | **string** |  <br>Example: `SOL` |
 

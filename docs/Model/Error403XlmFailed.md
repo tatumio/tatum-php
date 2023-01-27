@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | xlm.failed | ex.: `xlm.failed`
-**getMessage()** | **string** | Unable to communicate with blockchain. ${error} | ex.: `Unable to communicate with blockchain. ${error}`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | xlm.failed <br>Example: `xlm.failed` |
+**getMessage()** | **string** | Unable to communicate with blockchain. ${error} <br>Example: `Unable to communicate with blockchain. ${error}` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

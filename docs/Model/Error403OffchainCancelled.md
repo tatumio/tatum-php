@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | withdrawal.prepare.failed | ex.: `withdrawal.prepare.failed`
-**getMessage()** | **string** | Unable to prepare transaction, withdrawal cancelled. | ex.: `Unable to prepare transaction, withdrawal cancelled.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | withdrawal.prepare.failed <br>Example: `withdrawal.prepare.failed` |
+**getMessage()** | **string** | Unable to prepare transaction, withdrawal cancelled. <br>Example: `Unable to prepare transaction, withdrawal cancelled.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

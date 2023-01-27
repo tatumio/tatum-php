@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | [**\Tatum\Model\NftGetBalanceScAlgoDataInner[]**](../NftGetBalanceScAlgoDataInner) |  | ex.: `null` [optional]
+**getData()** | [**\Tatum\Model\NftGetBalanceScAlgoDataInner[]**](../NftGetBalanceScAlgoDataInner) |  <br>Example: `null` | [optional]
 

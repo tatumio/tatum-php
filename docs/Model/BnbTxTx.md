@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** |  | ex.: `auth/StdTx` [optional]
-**getValue()** | [**\Tatum\Model\BnbTxTxValue**](../BnbTxTxValue) |  | ex.: `null` [optional]
+**getType()** | **string** |  <br>Example: `auth/StdTx` | [optional]
+**getValue()** | [**\Tatum\Model\BnbTxTxValue**](../BnbTxTxValue) |  <br>Example: `null` | [optional]
 

@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAccounts()** | [**\Tatum\Model\CreateAccount[]**](../CreateAccount) |  | ex.: `null`
+**getAccounts()** | [**\Tatum\Model\CreateAccount[]**](../CreateAccount) |  <br>Example: `null` |
 

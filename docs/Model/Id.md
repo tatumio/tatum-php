@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getId()** | **string** | ID of the entity. | ex.: `5e68c66581f2ee32bc354087` [optional]
+**getId()** | **string** | ID of the entity. <br>Example: `5e68c66581f2ee32bc354087` | [optional]
 

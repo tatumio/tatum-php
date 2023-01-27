@@ -10,6 +10,6 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. | ex.: `ACCOUNT_BALANCE_LIMIT`
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionBalanceAttr**](../CreateSubscriptionBalanceAttr) |  | ex.: `null`
+**getType()** | **string** | Type of the subscription. <br>Example: `ACCOUNT_BALANCE_LIMIT` |
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionBalanceAttr**](../CreateSubscriptionBalanceAttr) |  <br>Example: `null` |
 

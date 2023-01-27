@@ -10,5 +10,5 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getGasLimit()** | **string** | Gas limit for transaction. | ex.: `40000`
+**getGasLimit()** | **string** | Gas limit for transaction. <br>Example: `40000` |
 

@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | customer.deactivate.account.active | ex.: `customer.deactivate.account.active`
-**getMessage()** | **string** | Unable to deactivate customer, accounts not deactivated. | ex.: `Unable to deactivate customer, accounts not deactivated.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | customer.deactivate.account.active <br>Example: `customer.deactivate.account.active` |
+**getMessage()** | **string** | Unable to deactivate customer, accounts not deactivated. <br>Example: `Unable to deactivate customer, accounts not deactivated.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 

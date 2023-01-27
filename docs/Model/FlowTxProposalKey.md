@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** |  | ex.: `21cbd745a4df66f1` [optional]
-**getKeyId()** | **float** |  | ex.: `0` [optional]
-**getSequenceNumber()** | **float** |  | ex.: `20` [optional]
+**getAddress()** | **string** |  <br>Example: `21cbd745a4df66f1` | [optional]
+**getKeyId()** | **float** |  <br>Example: `0` | [optional]
+**getSequenceNumber()** | **float** |  <br>Example: `20` | [optional]
 

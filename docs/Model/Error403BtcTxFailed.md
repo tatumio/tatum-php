@@ -10,7 +10,7 @@ layout: page
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | transaction.failed | ex.: `transaction.failed`
-**getMessage()** | **string** | No spendable inputs. | ex.: `No spendable inputs.`
-**getStatusCode()** | **float** | 403 | ex.: `403`
+**getErrorCode()** | **string** | transaction.failed <br>Example: `transaction.failed` |
+**getMessage()** | **string** | No spendable inputs. <br>Example: `No spendable inputs.` |
+**getStatusCode()** | **float** | 403 <br>Example: `403` |
 
