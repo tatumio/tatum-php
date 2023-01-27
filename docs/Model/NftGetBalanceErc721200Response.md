@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# NftGetBalanceErc721200Response model getters
+# NftGetBalanceErc721200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | **string[]** | The array returning the ID of the NFTs | [optional]
+**getData()** | **string[]** | The array returning the ID of the NFTs | ex.: `null` [optional]
 

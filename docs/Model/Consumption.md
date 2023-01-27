@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# Consumption model getters
+# Consumption
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getDay()** | **string** | The date in the MM/DD/YYYY format | [optional]
-**getUsage()** | **float** | The number of credits used on the specified day | [optional]
+**getDay()** | **string** | The date in the MM/DD/YYYY format | ex.: `10/25/2020` [optional]
+**getUsage()** | **float** | The number of credits used on the specified day | ex.: `123` [optional]
 

@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# KlaytnGetBalance200Response model getters
+# KlaytnGetBalance200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in KLAY | [optional]
+**getBalance()** | **string** | Balance in KLAY | ex.: `10.52` [optional]
 

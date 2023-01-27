@@ -4,17 +4,19 @@ parent: Model
 layout: page
 ---
 
-# TransferNftKMSTron model getters
+# TransferNftKMSTron
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getValue()** | **string** | If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token. | [optional]
-**getChain()** | **string** | The blockchain to work with |
-**getAccount()** | **string** | Blockchain address to perform transaction from |
-**getTo()** | **string** | Blockchain address to send NFT token to |
-**getTokenId()** | **string** | ID of the token. |
-**getContractAddress()** | **string** | Address of NFT token |
-**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
-**getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
-**getFeeLimit()** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
+**getValue()** | **string** | If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token. | ex.: `1` [optional]
+**getChain()** | **string** | The blockchain to work with | ex.: `TRON`
+**getAccount()** | **string** | Blockchain address to perform transaction from | ex.: `TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ`
+**getTo()** | **string** | Blockchain address to send NFT token to | ex.: `TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ`
+**getTokenId()** | **string** | ID of the token. | ex.: `123`
+**getContractAddress()** | **string** | Address of NFT token | ex.: `TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ`
+**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | ex.: `null` [optional]
+**getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. | ex.: `26d3883e-4e17-48b3-a0ee-09a3e484ac83`
+**getFeeLimit()** | **float** | The maximum amount to be paid as the transaction fee (in TRX) | ex.: `600`
 

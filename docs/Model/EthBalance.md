@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# EthBalance model getters
+# EthBalance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in ETH | [optional]
+**getBalance()** | **string** | Balance in ETH | ex.: `10.52` [optional]
 

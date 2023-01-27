@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403OffchainCancelled model getters
+# Error403OffchainCancelled
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | withdrawal.prepare.failed |
-**getMessage()** | **string** | Unable to prepare transaction, withdrawal cancelled. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | withdrawal.prepare.failed | ex.: `withdrawal.prepare.failed`
+**getMessage()** | **string** | Unable to prepare transaction, withdrawal cancelled. | ex.: `Unable to prepare transaction, withdrawal cancelled.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# BchGenerateAddress200Response model getters
+# BchGenerateAddress200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Bitcoin Cash address | [optional]
+**getAddress()** | **string** | Bitcoin Cash address | ex.: `bitcoincash:qrd9khmeg4nqag3h5gzu8vjt537pm7le85lcauzezc` [optional]
 

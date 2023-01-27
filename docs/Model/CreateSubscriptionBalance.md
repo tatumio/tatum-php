@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# CreateSubscriptionBalance model getters
+# CreateSubscriptionBalance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionBalanceAttr**](../CreateSubscriptionBalanceAttr) |  |
+**getType()** | **string** | Type of the subscription. | ex.: `ACCOUNT_BALANCE_LIMIT`
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionBalanceAttr**](../CreateSubscriptionBalanceAttr) |  | ex.: `null`
 

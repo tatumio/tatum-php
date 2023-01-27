@@ -4,16 +4,18 @@ parent: Model
 layout: page
 ---
 
-# BurnMultiTokenBatchCelo model getters
+# BurnMultiTokenBatchCelo
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | Chain to work with. |
-**getAccount()** | **string** | Address of holder |
-**getTokenId()** | **string[]** | The IDs of the Multi Tokens to be destroyed. |
-**getAmounts()** | **string[]** | The amounts of the Multi Tokens to be destroyed. |
-**getContractAddress()** | **string** | The address of the Multi Token smart contract |
-**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**getNonce()** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
-**getFeeCurrency()** | **string** | Currency to pay for transaction gas |
+**getChain()** | **string** | Chain to work with. | ex.: `CELO`
+**getAccount()** | **string** | Address of holder | ex.: `0x4b812a77b109A150C2Fc89eD133EaBC78bC9EC8f`
+**getTokenId()** | **string[]** | The IDs of the Multi Tokens to be destroyed. | ex.: `[&quot;100000&quot;]`
+**getAmounts()** | **string[]** | The amounts of the Multi Tokens to be destroyed. | ex.: `[&quot;100000&quot;]`
+**getContractAddress()** | **string** | The address of the Multi Token smart contract | ex.: `0x687422eEA2cB73B5d3e242bA5456b782919AFc85`
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. | ex.: `0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2`
+**getNonce()** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | ex.: `null` [optional]
+**getFeeCurrency()** | **string** | Currency to pay for transaction gas | ex.: `null`
 

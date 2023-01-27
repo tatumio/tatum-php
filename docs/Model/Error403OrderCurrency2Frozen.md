@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403OrderCurrency2Frozen model getters
+# Error403OrderCurrency2Frozen
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | trade.currency2AccountId.frozen |
-**getMessage()** | **string** | Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | trade.currency2AccountId.frozen | ex.: `trade.currency2AccountId.frozen`
+**getMessage()** | **string** | Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade. | ex.: `Currency2 account ${trade.currency2AccountId} is frozen, unable to perform trade.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# TronTxRawDataContractInner model getters
+# TronTxRawDataContractInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getParameter()** | [**\Tatum\Model\TronTxRawDataContractInnerParameter**](../TronTxRawDataContractInnerParameter) |  | [optional]
-**getType()** | **string** | Type of the Smart contract. | [optional]
+**getParameter()** | [**\Tatum\Model\TronTxRawDataContractInnerParameter**](../TronTxRawDataContractInnerParameter) |  | ex.: `null` [optional]
+**getType()** | **string** | Type of the Smart contract. | ex.: `TriggerSmartContract` [optional]
 

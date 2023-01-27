@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# XdcGenerateAddress200Response model getters
+# XdcGenerateAddress200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | XDC address | [optional]
+**getAddress()** | **string** | XDC address | ex.: `xdca7673161CbfE0116A4De9E341f8465940c2211d4` [optional]
 

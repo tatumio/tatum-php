@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# DeployCeloErc20OffchainMnemXpubAllOf model getters
+# DeployCeloErc20OffchainMnemXpubAllOf
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid |
+**getFeeCurrency()** | **string** | The currency in which the transaction fee will be paid | ex.: `null`
 

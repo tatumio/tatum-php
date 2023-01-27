@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# AdaInfoTipEpoch model getters
+# AdaInfoTipEpoch
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getNumber()** | **float** | Last epoch number. | [optional]
+**getNumber()** | **float** | Last epoch number. | ex.: `143` [optional]
 

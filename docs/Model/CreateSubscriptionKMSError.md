@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# CreateSubscriptionKMSError model getters
+# CreateSubscriptionKMSError
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSErrorAttr**](../CreateSubscriptionKMSErrorAttr) |  |
+**getType()** | **string** | Type of the subscription. | ex.: `KMS_FAILED_TX`
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionKMSErrorAttr**](../CreateSubscriptionKMSErrorAttr) |  | ex.: `null`
 

@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# EstimateFeeDeployCustodialWallet model getters
+# EstimateFeeDeployCustodialWallet
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | Blockchain to estimate fee for. |
-**getType()** | **string** | Type of transaction |
-**getBatchCount()** | **float** | Number of addresses to create |
+**getChain()** | **string** | Blockchain to estimate fee for. | ex.: `null`
+**getType()** | **string** | Type of transaction | ex.: `null`
+**getBatchCount()** | **float** | Number of addresses to create | ex.: `10`
 

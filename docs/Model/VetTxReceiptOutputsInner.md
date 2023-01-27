@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# VetTxReceiptOutputsInner model getters
+# VetTxReceiptOutputsInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getEvents()** | **object[]** |  | [optional]
-**getTransfers()** | [**\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]**](../VetTxReceiptOutputsInnerTransfersInner) |  | [optional]
+**getEvents()** | **object[]** |  | ex.: `[]` [optional]
+**getTransfers()** | [**\Tatum\Model\VetTxReceiptOutputsInnerTransfersInner[]**](../VetTxReceiptOutputsInnerTransfersInner) |  | ex.: `null` [optional]
 

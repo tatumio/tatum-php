@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# EstimateFeeFromAddressToInner model getters
+# EstimateFeeFromAddressToInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Destination address. |
-**getValue()** | **float** | Amount to be sent, in BTC. |
+**getAddress()** | **string** | Destination address. | ex.: `2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7`
+**getValue()** | **float** | Amount to be sent, in BTC. | ex.: `0.02969944`
 

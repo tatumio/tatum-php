@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# EntitiesCount model getters
+# EntitiesCount
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTotal()** | **float** | Total entities | [optional]
+**getTotal()** | **float** | Total entities | ex.: `20` [optional]
 

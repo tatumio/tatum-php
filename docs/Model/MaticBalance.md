@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# MaticBalance model getters
+# MaticBalance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in MATIC | [optional]
+**getBalance()** | **string** | Balance in MATIC | ex.: `10.52` [optional]
 

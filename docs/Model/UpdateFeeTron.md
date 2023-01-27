@@ -4,13 +4,15 @@ parent: Model
 layout: page
 ---
 
-# UpdateFeeTron model getters
+# UpdateFeeTron
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | Blockchain to work with. |
-**getContractAddress()** | **string** | Address of the marketplace smart contract. |
-**getMarketplaceFee()** | **float** | The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on. |
-**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**getFeeLimit()** | **float** | Fee in TRX to be paid. |
+**getChain()** | **string** | Blockchain to work with. | ex.: `TRON`
+**getContractAddress()** | **string** | Address of the marketplace smart contract. | ex.: `TYMwiDu22V6XG3yk6W9cTVBz48okKLRczh`
+**getMarketplaceFee()** | **float** | The percentage of the amount that an NFT was sold for that will be sent to the marketplace as a fee. To set the fee to 1%, set this parameter to <code>100</code>; to set 10%, set this parameter to <code>1000</code>; to set 50%, set this parameter to <code>5000</code>, and so on. | ex.: `150`
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. | ex.: `05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2`
+**getFeeLimit()** | **float** | Fee in TRX to be paid. | ex.: `0.01`
 

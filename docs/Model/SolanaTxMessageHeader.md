@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# SolanaTxMessageHeader model getters
+# SolanaTxMessageHeader
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getNumReadonlySignedAccounts()** | **float** |  | [optional]
-**getNumReadonlyUnsignedAccounts()** | **float** |  | [optional]
-**getNumRequiredSignatures()** | **float** |  | [optional]
+**getNumReadonlySignedAccounts()** | **float** |  | ex.: `0` [optional]
+**getNumReadonlyUnsignedAccounts()** | **float** |  | ex.: `3` [optional]
+**getNumRequiredSignatures()** | **float** |  | ex.: `1` [optional]
 

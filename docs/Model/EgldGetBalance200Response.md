@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# EgldGetBalance200Response model getters
+# EgldGetBalance200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in EGLD | [optional]
+**getBalance()** | **string** | Balance in EGLD | ex.: `10.52` [optional]
 

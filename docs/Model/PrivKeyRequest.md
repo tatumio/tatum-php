@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# PrivKeyRequest model getters
+# PrivKeyRequest
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getIndex()** | **int** | Derivation index of private key to generate. |
-**getMnemonic()** | **string** | Mnemonic to generate private key from. |
+**getIndex()** | **int** | Derivation index of private key to generate. | ex.: `0`
+**getMnemonic()** | **string** | Mnemonic to generate private key from. | ex.: `urge pulp usage sister evidence arrest palm math please chief egg abuse`
 

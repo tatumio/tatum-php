@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# BnbTxTxValueMsgInnerValueInputsInnerCoinsInner model getters
+# BnbTxTxValueMsgInnerValueInputsInnerCoinsInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAmount()** | **string** |  | [optional]
-**getDenom()** | **string** |  | [optional]
+**getAmount()** | **string** |  | ex.: `20000000000` [optional]
+**getDenom()** | **string** |  | ex.: `BNB` [optional]
 

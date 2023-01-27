@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# Data model getters
+# Data
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | [**\Tatum\Model\DataData**](../DataData) |  |
+**getData()** | [**\Tatum\Model\DataData**](../DataData) |  | ex.: `null`
 

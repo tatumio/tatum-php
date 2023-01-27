@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# CustomFee model getters
+# CustomFee
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getGasPrice()** | **string** | The price for one gas unit (in Gwei) |
-**getGasLimit()** | **string** | The maximum number of gas units that you are willing to spend on processing the transaction at the provided gas price |
+**getGasPrice()** | **string** | The price for one gas unit (in Gwei) | ex.: `20`
+**getGasLimit()** | **string** | The maximum number of gas units that you are willing to spend on processing the transaction at the provided gas price | ex.: `40000`
 

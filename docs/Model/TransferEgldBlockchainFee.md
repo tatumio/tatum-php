@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# TransferEgldBlockchainFee model getters
+# TransferEgldBlockchainFee
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getGasLimit()** | **string** | Gas limit for transaction. If transfer to a smart contract, then 500000 + an appropriate amount for the method call | [optional]
-**getGasPrice()** | **string** | Gas price. | [optional]
+**getGasLimit()** | **string** | Gas limit for transaction. If transfer to a smart contract, then 500000 + an appropriate amount for the method call | ex.: `500000` [optional]
+**getGasPrice()** | **string** | Gas price. | ex.: `1000000000` [optional]
 

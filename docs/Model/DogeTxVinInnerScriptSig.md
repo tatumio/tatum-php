@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# DogeTxVinInnerScriptSig model getters
+# DogeTxVinInnerScriptSig
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAsm()** | **string** |  | [optional]
-**getHex()** | **string** |  | [optional]
+**getAsm()** | **string** |  | ex.: `null` [optional]
+**getHex()** | **string** |  | ex.: `null` [optional]
 

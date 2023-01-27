@@ -4,14 +4,16 @@ parent: Model
 layout: page
 ---
 
-# TransferNftAlgoKMS model getters
+# TransferNftAlgoKMS
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | The blockchain to work with |
-**getFrom()** | **string** | The blockchain address to transfer the NFT from |
-**getTo()** | **string** | The blockchain address to transfer the NFT to |
-**getContractAddress()** | **string** | The asset ID (the ID of the NFT) |
-**getSignatureId()** | **string** | The KMS identifier of the private key of the sender's blockchain address |
-**getAmount()** | **float** | (For <a href="https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts" target="_blank">fractional NFTs</a> only) The number of NFT fractions to transfer; if not set, defaults to 1, which means that one fraction of the NFT will be transferred | [optional] [default to 1]
+**getChain()** | **string** | The blockchain to work with | ex.: `ALGO`
+**getFrom()** | **string** | The blockchain address to transfer the NFT from | ex.: `TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4`
+**getTo()** | **string** | The blockchain address to transfer the NFT to | ex.: `TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4`
+**getContractAddress()** | **string** | The asset ID (the ID of the NFT) | ex.: `100000`
+**getSignatureId()** | **string** | The KMS identifier of the private key of the sender's blockchain address | ex.: `26d3883e-4e17-48b3-a0ee-09a3e484ac83`
+**getAmount()** | **float** | (For <a href="https://developer.algorand.org/docs/get-started/tokenization/nft/#fractional-nfts" target="_blank">fractional NFTs</a> only) The number of NFT fractions to transfer; if not set, defaults to 1, which means that one fraction of the NFT will be transferred | ex.: `1` [optional] [default to 1]
 

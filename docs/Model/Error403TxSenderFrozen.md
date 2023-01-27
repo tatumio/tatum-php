@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403TxSenderFrozen model getters
+# Error403TxSenderFrozen
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | senderAccount.frozen |
-**getMessage()** | **string** | Sender account ${transaction.senderAccountId} is frozen, unable to perform payment. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | senderAccount.frozen | ex.: `senderAccount.frozen`
+**getMessage()** | **string** | Sender account ${transaction.senderAccountId} is frozen, unable to perform payment. | ex.: `Sender account ${transaction.senderAccountId} is frozen, unable to perform payment.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

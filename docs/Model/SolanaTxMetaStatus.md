@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# SolanaTxMetaStatus model getters
+# SolanaTxMetaStatus
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getOk()** | **string** |  | [optional]
+**getOk()** | **string** |  | ex.: `null` [optional]
 

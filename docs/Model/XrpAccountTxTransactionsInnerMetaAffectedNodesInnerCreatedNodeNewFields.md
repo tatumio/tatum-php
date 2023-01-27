@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields model getters
+# XrpAccountTxTransactionsInnerMetaAffectedNodesInnerCreatedNodeNewFields
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAccount()** | **string** |  | [optional]
-**getBalance()** | **string** |  | [optional]
-**getSequence()** | **float** |  | [optional]
+**getAccount()** | **string** |  | ex.: `rGenhJmoWHqD6tgmUyxQHLQH8sPuRGtUcv` [optional]
+**getBalance()** | **string** |  | ex.: `1000000000` [optional]
+**getSequence()** | **float** |  | ex.: `1` [optional]
 

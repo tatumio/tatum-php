@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# Activated model getters
+# Activated
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getActivated()** | **bool** | If set to "true", the gas pump address has been activated | [optional]
+**getActivated()** | **bool** | If set to "true", the gas pump address has been activated | ex.: `true` [optional]
 

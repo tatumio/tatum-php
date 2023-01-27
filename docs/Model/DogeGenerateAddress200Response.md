@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# DogeGenerateAddress200Response model getters
+# DogeGenerateAddress200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Dogecoin address | [optional]
+**getAddress()** | **string** | Dogecoin address | ex.: `n36h3pAH7sC3z8KMB47BjbqvW2aJd2oTi7` [optional]
 

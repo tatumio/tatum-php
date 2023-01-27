@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# BscBalance model getters
+# BscBalance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in BNB | [optional]
+**getBalance()** | **string** | Balance in BNB | ex.: `10.52` [optional]
 

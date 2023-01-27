@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# MultiTokenGetBalance200Response model getters
+# MultiTokenGetBalance200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | **string** | The amount of the specified Multi Token | [optional]
+**getData()** | **string** | The amount of the specified Multi Token | ex.: `10` [optional]
 

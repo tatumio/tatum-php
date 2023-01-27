@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# CreateSubscriptionIntervalAttr model getters
+# CreateSubscriptionIntervalAttr
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getInterval()** | **float** | Number of hours to obtain transactions for. |
+**getInterval()** | **float** | Number of hours to obtain transactions for. | ex.: `1`
 

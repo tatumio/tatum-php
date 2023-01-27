@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# SolanaTransactionHashWithConfirm model getters
+# SolanaTransactionHashWithConfirm
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTxId()** | **string** | TX hash of successful transaction. |
-**getConfirmed()** | **bool** | Indicates whether or not the transferred commitment has been fulfilled |
+**getTxId()** | **string** | TX hash of successful transaction. | ex.: `5Sh63rNFg6iR9YUGPwEkbAg4kYSWnf5eRS2wcLG1Gc6psj27SGK3LNuN9jNSPKn3JoChgmq8pSirHWsPPWzy2PFw`
+**getConfirmed()** | **bool** | Indicates whether or not the transferred commitment has been fulfilled | ex.: `false`
 

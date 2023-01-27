@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# NftGetBalanceScAlgo model getters
+# NftGetBalanceScAlgo
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | [**\Tatum\Model\NftGetBalanceScAlgoDataInner[]**](../NftGetBalanceScAlgoDataInner) |  | [optional]
+**getData()** | [**\Tatum\Model\NftGetBalanceScAlgoDataInner[]**](../NftGetBalanceScAlgoDataInner) |  | ex.: `null` [optional]
 

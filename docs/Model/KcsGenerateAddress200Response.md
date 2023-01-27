@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# KcsGenerateAddress200Response model getters
+# KcsGenerateAddress200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Kcs address | [optional]
+**getAddress()** | **string** | Kcs address | ex.: `0xa7673161CbfE0116A4De9E341f8465940c2211d4` [optional]
 

@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403TxNotCompliant model getters
+# Error403TxNotCompliant
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | transaction.not.compliant |
-**getMessage()** | **string** | Transaction not compliant, recipient account customer country is not defined. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | transaction.not.compliant | ex.: `transaction.not.compliant`
+**getMessage()** | **string** | Transaction not compliant, recipient account customer country is not defined. | ex.: `Transaction not compliant, recipient account customer country is not defined.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

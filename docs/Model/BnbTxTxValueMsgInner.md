@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# BnbTxTxValueMsgInner model getters
+# BnbTxTxValueMsgInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** |  | [optional]
-**getValue()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValue**](../BnbTxTxValueMsgInnerValue) |  | [optional]
+**getType()** | **string** |  | ex.: `cosmos-sdk/Send` [optional]
+**getValue()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValue**](../BnbTxTxValueMsgInnerValue) |  | ex.: `null` [optional]
 

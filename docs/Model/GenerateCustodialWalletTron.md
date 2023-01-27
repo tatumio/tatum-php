@@ -4,15 +4,17 @@ parent: Model
 layout: page
 ---
 
-# GenerateCustodialWalletTron model getters
+# GenerateCustodialWalletTron
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | Blockchain to work with. |
-**getFeeLimit()** | **float** | Fee in TRX to be paid. |
-**getFromPrivateKey()** | **string** | Private key of account, from which the transaction will be initiated. |
-**getEnableFungibleTokens()** | **bool** | If address should support ERC20 tokens, it should be marked as true. |
-**getEnableNonFungibleTokens()** | **bool** | If address should support ERC721 tokens, it should be marked as true. |
-**getEnableSemiFungibleTokens()** | **bool** | If address should support ERC1155 tokens, it should be marked as true. Not supported for TRON. |
-**getEnableBatchTransactions()** | **bool** | If address should support batch transfers of the assets, it should be marked as true. |
+**getChain()** | **string** | Blockchain to work with. | ex.: `TRON`
+**getFeeLimit()** | **float** | Fee in TRX to be paid. | ex.: `0.01`
+**getFromPrivateKey()** | **string** | Private key of account, from which the transaction will be initiated. | ex.: `842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701`
+**getEnableFungibleTokens()** | **bool** | If address should support ERC20 tokens, it should be marked as true. | ex.: `false`
+**getEnableNonFungibleTokens()** | **bool** | If address should support ERC721 tokens, it should be marked as true. | ex.: `false`
+**getEnableSemiFungibleTokens()** | **bool** | If address should support ERC1155 tokens, it should be marked as true. Not supported for TRON. | ex.: `false`
+**getEnableBatchTransactions()** | **bool** | If address should support batch transfers of the assets, it should be marked as true. | ex.: `false`
 

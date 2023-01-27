@@ -4,7 +4,9 @@ parent: Model
 layout: page
 ---
 
-# GetSubscriptionReport200Response model getters
+# GetSubscriptionReport200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

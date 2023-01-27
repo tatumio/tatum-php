@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# Error401 model getters
+# Error401
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMessage()** | **string** | Unauthorized |
-**getStatusCode()** | **float** | 401 |
+**getMessage()** | **string** | Unauthorized | ex.: `Unauthorized`
+**getStatusCode()** | **float** | 401 | ex.: `401`
 

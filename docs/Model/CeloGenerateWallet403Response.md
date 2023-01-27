@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# CeloGenerateWallet403Response model getters
+# CeloGenerateWallet403Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | celo.error |
-**getMessage()** | **string** | Unexpected error occurred. Reason: ${reason} |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | celo.error | ex.: `celo.error`
+**getMessage()** | **string** | Unexpected error occurred. Reason: ${reason} | ex.: `Unexpected error occurred. Reason: ${reason}`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

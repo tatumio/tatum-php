@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# OneBalance model getters
+# OneBalance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in ONE | [optional]
+**getBalance()** | **string** | Balance in ONE | ex.: `10.52` [optional]
 

@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# FlowTxArgsInner model getters
+# FlowTxArgsInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** |  | [optional]
-**getValue()** | **string** |  | [optional]
+**getType()** | **string** |  | ex.: `Address` [optional]
+**getValue()** | **string** |  | ex.: `0x21cbd745a4df66f1` [optional]
 

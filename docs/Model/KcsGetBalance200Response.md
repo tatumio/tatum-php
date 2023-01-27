@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# KcsGetBalance200Response model getters
+# KcsGetBalance200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in KCS | [optional]
+**getBalance()** | **string** | Balance in KCS | ex.: `10.52` [optional]
 

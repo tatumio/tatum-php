@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# Erc20Balance model getters
+# Erc20Balance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | The number of fungible tokens in the smallest token unit (for example, if the token has 10 decimal places, the number is returned as 9*10^10) | [optional]
+**getBalance()** | **string** | The number of fungible tokens in the smallest token unit (for example, if the token has 10 decimal places, the number is returned as 9*10^10) | ex.: `10` [optional]
 

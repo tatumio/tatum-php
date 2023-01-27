@@ -4,14 +4,16 @@ parent: Model
 layout: page
 ---
 
-# Chart model getters
+# Chart
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTimestamp()** | **float** | Milliseconds in UTC of the time interval. |
-**getHigh()** | **string** | Highest trade value in the current interval. |
-**getLow()** | **string** | Lowest trade value in the current interval. |
-**getOpen()** | **string** | Open trade value in the current interval. |
-**getClose()** | **string** | Close trade value in the current interval. |
-**getVolume()** | **string** | Total volume of assets traded in the current interval. Volume is in currency1 asset. |
+**getTimestamp()** | **float** | Milliseconds in UTC of the time interval. | ex.: `1613654117167`
+**getHigh()** | **string** | Highest trade value in the current interval. | ex.: `54213.21`
+**getLow()** | **string** | Lowest trade value in the current interval. | ex.: `53213.54`
+**getOpen()** | **string** | Open trade value in the current interval. | ex.: `53513`
+**getClose()** | **string** | Close trade value in the current interval. | ex.: `54113`
+**getVolume()** | **string** | Total volume of assets traded in the current interval. Volume is in currency1 asset. | ex.: `2.423`
 

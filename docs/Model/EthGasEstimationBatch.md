@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# EthGasEstimationBatch model getters
+# EthGasEstimationBatch
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getError()** | **bool** | If all estimations succeeded. |
-**getResult()** | [**\Tatum\Model\EthGasEstimationBatchResult[]**](../EthGasEstimationBatchResult) |  |
+**getError()** | **bool** | If all estimations succeeded. | ex.: `false`
+**getResult()** | [**\Tatum\Model\EthGasEstimationBatchResult[]**](../EthGasEstimationBatchResult) |  | ex.: `null`
 

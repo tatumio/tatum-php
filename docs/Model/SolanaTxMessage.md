@@ -4,13 +4,15 @@ parent: Model
 layout: page
 ---
 
-# SolanaTxMessage model getters
+# SolanaTxMessage
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getHeader()** | [**\Tatum\Model\SolanaTxMessageHeader**](../SolanaTxMessageHeader) |  | [optional]
-**getAccountKeys()** | **string[]** |  | [optional]
-**getRecentBlockhash()** | **string** |  | [optional]
-**getInstructions()** | [**\Tatum\Model\SolanaTxMessageInstruction[]**](../SolanaTxMessageInstruction) |  | [optional]
-**getIndexToProgramIds()** | **object** |  | [optional]
+**getHeader()** | [**\Tatum\Model\SolanaTxMessageHeader**](../SolanaTxMessageHeader) |  | ex.: `null` [optional]
+**getAccountKeys()** | **string[]** |  | ex.: `null` [optional]
+**getRecentBlockhash()** | **string** |  | ex.: `C3vsoVwVWx7yPRhsNoKpcm2CJTrnVcvimdC4bd3jTPbj` [optional]
+**getInstructions()** | [**\Tatum\Model\SolanaTxMessageInstruction[]**](../SolanaTxMessageInstruction) |  | ex.: `null` [optional]
+**getIndexToProgramIds()** | **object** |  | ex.: `null` [optional]
 

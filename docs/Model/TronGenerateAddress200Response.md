@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# TronGenerateAddress200Response model getters
+# TronGenerateAddress200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Tron address | [optional]
+**getAddress()** | **string** | Tron address | ex.: `TFFBpkRNro4Pe4154ayGWx7C6Ev7BvQZ6t` [optional]
 

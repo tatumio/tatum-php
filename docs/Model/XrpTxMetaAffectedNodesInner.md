@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# XrpTxMetaAffectedNodesInner model getters
+# XrpTxMetaAffectedNodesInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getModifiedNode()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode**](../XrpTxMetaAffectedNodesInnerModifiedNode) |  | [optional]
+**getModifiedNode()** | [**\Tatum\Model\XrpTxMetaAffectedNodesInnerModifiedNode**](../XrpTxMetaAffectedNodesInnerModifiedNode) |  | ex.: `null` [optional]
 

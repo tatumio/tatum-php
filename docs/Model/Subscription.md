@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Subscription model getters
+# Subscription
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. |
-**getId()** | **string** | ID of the subscription |
-**getAttr()** | **object** | Additional attributes based on the subscription type. | [optional]
+**getType()** | **string** | Type of the subscription. | ex.: `ACCOUNT_BALANCE_LIMIT`
+**getId()** | **string** | ID of the subscription | ex.: `7c21ed165e294db78b95f0f1`
+**getAttr()** | **object** | Additional attributes based on the subscription type. | ex.: `null` [optional]
 

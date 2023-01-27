@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403CeloTxBody model getters
+# Error403CeloTxBody
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | celo.transaction.body |
-**getMessage()** | **string** | Either currency, or tokenAddress must be defined. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | celo.transaction.body | ex.: `celo.transaction.body`
+**getMessage()** | **string** | Either currency, or tokenAddress must be defined. | ex.: `Either currency, or tokenAddress must be defined.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

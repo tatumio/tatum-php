@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# LtcGenerateAddress200Response model getters
+# LtcGenerateAddress200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Litecoin address | [optional]
+**getAddress()** | **string** | Litecoin address | ex.: `n36h3pAH7sC3z8KMB47BjbqvW2aJd2oTi7` [optional]
 

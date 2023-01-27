@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# BtcBasedBalance model getters
+# BtcBasedBalance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getIncoming()** | **string** | Total sum of the assets that arrives to the address. | [optional]
-**getOutgoing()** | **string** | Total sum of the assets that leaves from the address. | [optional]
+**getIncoming()** | **string** | Total sum of the assets that arrives to the address. | ex.: `0.1234` [optional]
+**getOutgoing()** | **string** | Total sum of the assets that leaves from the address. | ex.: `0.1` [optional]
 

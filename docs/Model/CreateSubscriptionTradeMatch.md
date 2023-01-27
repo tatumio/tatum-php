@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# CreateSubscriptionTradeMatch model getters
+# CreateSubscriptionTradeMatch
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionTradeMatchAttr**](../CreateSubscriptionTradeMatchAttr) |  |
+**getType()** | **string** | Type of the subscription. | ex.: `CUSTOMER_TRADE_MATCH`
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionTradeMatchAttr**](../CreateSubscriptionTradeMatchAttr) |  | ex.: `null`
 

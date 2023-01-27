@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# StoreIPFS200Response model getters
+# StoreIPFS200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getIpfsHash()** | **string** | IPFS CID identifier of the stored file. | [optional]
+**getIpfsHash()** | **string** | IPFS CID identifier of the stored file. | ex.: `null` [optional]
 

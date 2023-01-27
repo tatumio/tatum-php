@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# FlowTxProposalKey model getters
+# FlowTxProposalKey
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** |  | [optional]
-**getKeyId()** | **float** |  | [optional]
-**getSequenceNumber()** | **float** |  | [optional]
+**getAddress()** | **string** |  | ex.: `21cbd745a4df66f1` [optional]
+**getKeyId()** | **float** |  | ex.: `0` [optional]
+**getSequenceNumber()** | **float** |  | ex.: `20` [optional]
 

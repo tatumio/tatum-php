@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# BnbTxTx model getters
+# BnbTxTx
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** |  | [optional]
-**getValue()** | [**\Tatum\Model\BnbTxTxValue**](../BnbTxTxValue) |  | [optional]
+**getType()** | **string** |  | ex.: `auth/StdTx` [optional]
+**getValue()** | [**\Tatum\Model\BnbTxTxValue**](../BnbTxTxValue) |  | ex.: `null` [optional]
 

@@ -4,17 +4,19 @@ parent: Model
 layout: page
 ---
 
-# CallSmartContractMethodKMS model getters
+# CallSmartContractMethodKMS
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getContractAddress()** | **string** | The address of the smart contract |
-**getAmount()** | **string** | Amount of the assets to be sent. | [optional]
-**getMethodName()** | **string** | Name of the method to invoke on smart contract. |
-**getMethodAbi()** | **object** | ABI of the method to invoke. |
-**getParams()** | **object[]** | Parameters of the method to be invoked. |
-**getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
-**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
-**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | [optional]
-**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | [optional]
+**getContractAddress()** | **string** | The address of the smart contract | ex.: `0x687422eEA2cB73B5d3e242bA5456b782919AFc85`
+**getAmount()** | **string** | Amount of the assets to be sent. | ex.: `100000` [optional]
+**getMethodName()** | **string** | Name of the method to invoke on smart contract. | ex.: `transfer`
+**getMethodAbi()** | **object** | ABI of the method to invoke. | ex.: `null`
+**getParams()** | **object[]** | Parameters of the method to be invoked. | ex.: `null`
+**getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. | ex.: `26d3883e-4e17-48b3-a0ee-09a3e484ac83`
+**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | ex.: `null` [optional]
+**getNonce()** | **float** | The nonce to be set to the transaction; if not present, the last known nonce will be used | ex.: `null` [optional]
+**getFee()** | [**\Tatum\Model\CustomFee**](../CustomFee) |  | ex.: `null` [optional]
 

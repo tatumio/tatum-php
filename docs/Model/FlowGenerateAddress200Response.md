@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# FlowGenerateAddress200Response model getters
+# FlowGenerateAddress200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | Flow address | [optional]
+**getAddress()** | **string** | Flow address | ex.: `0x4f09d8d43e4967b7` [optional]
 

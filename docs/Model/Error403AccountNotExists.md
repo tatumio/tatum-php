@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403AccountNotExists model getters
+# Error403AccountNotExists
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | account.not.exists |
-**getMessage()** | **string** | No such account. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | account.not.exists | ex.: `account.not.exists`
+**getMessage()** | **string** | No such account. | ex.: `No such account.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

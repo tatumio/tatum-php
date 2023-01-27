@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# AlgorandGetBalance200ResponseAssetsInner model getters
+# AlgorandGetBalance200ResponseAssetsInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAmount()** | **float** | Balance in asset unit | [optional]
-**getAssetIndex()** | **float** | Asset Index of ASA | [optional]
+**getAmount()** | **float** | Balance in asset unit | ex.: `1000` [optional]
+**getAssetIndex()** | **float** | Asset Index of ASA | ex.: `87748168` [optional]
 

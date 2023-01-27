@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# GetLog200Response model getters
+# GetLog200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | **string** | The data stored in the requested record |
+**getData()** | **string** | The data stored in the requested record | ex.: `My example log data`
 

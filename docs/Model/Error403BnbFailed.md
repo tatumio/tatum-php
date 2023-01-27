@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403BnbFailed model getters
+# Error403BnbFailed
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | bnb.failed |
-**getMessage()** | **string** | Unable to communicate with blockchain. ${error} |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | bnb.failed | ex.: `bnb.failed`
+**getMessage()** | **string** | Unable to communicate with blockchain. ${error} | ex.: `Unable to communicate with blockchain. ${error}`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

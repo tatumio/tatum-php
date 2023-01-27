@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# FlowEventPayloadValue model getters
+# FlowEventPayloadValue
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getId()** | **string** | Event type | [optional]
-**getFields()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInner[]**](../FlowEventPayloadValueFieldsInner) |  | [optional]
+**getId()** | **string** | Event type | ex.: `A.1654653399040a61.FlowToken.TokensWithdrawn` [optional]
+**getFields()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInner[]**](../FlowEventPayloadValueFieldsInner) |  | ex.: `null` [optional]
 

@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# Error500 model getters
+# Error500
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMessage()** | **string** | Internal server error |
-**getStatusCode()** | **float** | 500 |
+**getMessage()** | **string** | Internal server error | ex.: `Internal server error`
+**getStatusCode()** | **float** | 500 | ex.: `500`
 

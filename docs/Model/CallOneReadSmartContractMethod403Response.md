@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# CallOneReadSmartContractMethod403Response model getters
+# CallOneReadSmartContractMethod403Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | bsc.transaction.sign |
-**getMessage()** | **string** | Unable to sign transaction. ${error} |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | bsc.transaction.sign | ex.: `bsc.transaction.sign`
+**getMessage()** | **string** | Unable to sign transaction. ${error} | ex.: `Unable to sign transaction. ${error}`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

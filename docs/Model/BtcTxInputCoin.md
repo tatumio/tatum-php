@@ -4,14 +4,16 @@ parent: Model
 layout: page
 ---
 
-# BtcTxInputCoin model getters
+# BtcTxInputCoin
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getVersion()** | **float** |  | [optional]
-**getBlockNumber()** | **float** |  | [optional]
-**getValue()** | **float** | Amount of the transaction, in Satoshis (1 BTC = 100 000 000 Satoshis) | [optional]
-**getScript()** | **string** |  | [optional]
-**getAddress()** | **string** | Sender address. | [optional]
-**getCoinbase()** | **bool** | Coinbase transaction - miner fee. | [optional]
+**getVersion()** | **float** |  | ex.: `2` [optional]
+**getBlockNumber()** | **float** |  | ex.: `1611608` [optional]
+**getValue()** | **float** | Amount of the transaction, in Satoshis (1 BTC = 100 000 000 Satoshis) | ex.: `1341956178` [optional]
+**getScript()** | **string** |  | ex.: `0014049a97d91d4e1123899bf48c5ba6ce3fd959664e` [optional]
+**getAddress()** | **string** | Sender address. | ex.: `tb1qqjdf0kgafcgj8zvm7jx9hfkw8lv4jejw6wsmjg` [optional]
+**getCoinbase()** | **bool** | Coinbase transaction - miner fee. | ex.: `false` [optional]
 

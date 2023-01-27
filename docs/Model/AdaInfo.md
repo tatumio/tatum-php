@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# AdaInfo model getters
+# AdaInfo
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTestnet()** | **string** | Chain of the blockchain, main or test. | [optional]
-**getTip()** | [**\Tatum\Model\AdaInfoTip**](../AdaInfoTip) |  | [optional]
+**getTestnet()** | **string** | Chain of the blockchain, main or test. | ex.: `test` [optional]
+**getTip()** | [**\Tatum\Model\AdaInfoTip**](../AdaInfoTip) |  | ex.: `null` [optional]
 

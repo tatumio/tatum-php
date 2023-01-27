@@ -4,14 +4,16 @@ parent: Model
 layout: page
 ---
 
-# MintNftAlgorandKMS model getters
+# MintNftAlgorandKMS
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | The blockchain to work with |
-**getUrl()** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> |
-**getName()** | **string** | The name of the NFT |
-**getFrom()** | **string** | The address of the minting account |
-**getSignatureId()** | **string** | The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account |
-**getAttr()** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](../MintNftExpressAlgorandAttr) |  | [optional]
+**getChain()** | **string** | The blockchain to work with | ex.: `ALGO`
+**getUrl()** | **string** | The URL pointing to the NFT metadata; for more information, see <a href="https://eips.ethereum.org/EIPS/eip-721#specification" target="_blank">EIP-721</a> | ex.: `https://my_token_data.com`
+**getName()** | **string** | The name of the NFT | ex.: `My Crazy NFT`
+**getFrom()** | **string** | The address of the minting account | ex.: `TMETT6BXL3QUH7AH5TS6IONU7LVTLKIGG54CFCNPMQXWGRIZFIESZBYWP4`
+**getSignatureId()** | **string** | The KMS identifier of the private key of the minting account; the transaction fee will be paid from this account | ex.: `26d3883e-4e17-48b3-a0ee-09a3e484ac83`
+**getAttr()** | [**\Tatum\Model\MintNftExpressAlgorandAttr**](../MintNftExpressAlgorandAttr) |  | ex.: `null` [optional]
 

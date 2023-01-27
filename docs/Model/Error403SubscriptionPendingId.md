@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403SubscriptionPendingId model getters
+# Error403SubscriptionPendingId
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | subscription.attr.pending.invalid |
-**getMessage()** | **string** | Invalid subscription attribute 'id' or 'url'. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | subscription.attr.pending.invalid | ex.: `subscription.attr.pending.invalid`
+**getMessage()** | **string** | Invalid subscription attribute 'id' or 'url'. | ex.: `Invalid subscription attribute &#39;id&#39; or &#39;url&#39;.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

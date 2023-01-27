@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# AccountBalance model getters
+# AccountBalance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAccountBalance()** | **string** | All assets on the account, both available and blocked |
-**getAvailableBalance()** | **string** | The account balance minus the blocked assets; use the available balance to determine how much a customer can send or withdraw from their virtual account |
+**getAccountBalance()** | **string** | All assets on the account, both available and blocked | ex.: `1000000`
+**getAvailableBalance()** | **string** | The account balance minus the blocked assets; use the available balance to determine how much a customer can send or withdraw from their virtual account | ex.: `1000000`
 

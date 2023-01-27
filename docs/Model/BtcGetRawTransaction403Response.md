@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# BtcGetRawTransaction403Response model getters
+# BtcGetRawTransaction403Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | tx.missing |
-**getMessage()** | **string** | No such tx. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | tx.missing | ex.: `tx.missing`
+**getMessage()** | **string** | No such tx. | ex.: `No such tx.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

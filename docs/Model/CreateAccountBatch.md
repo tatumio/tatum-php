@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# CreateAccountBatch model getters
+# CreateAccountBatch
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAccounts()** | [**\Tatum\Model\CreateAccount[]**](../CreateAccount) |  |
+**getAccounts()** | [**\Tatum\Model\CreateAccount[]**](../CreateAccount) |  | ex.: `null`
 

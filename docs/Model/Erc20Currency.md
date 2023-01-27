@@ -4,7 +4,9 @@ parent: Model
 layout: page
 ---
 
-# Erc20Currency model getters
+# Erc20Currency
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

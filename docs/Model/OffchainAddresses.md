@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# OffchainAddresses model getters
+# OffchainAddresses
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddresses()** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](../OffchainAddressesAddressesInner) |  |
+**getAddresses()** | [**\Tatum\Model\OffchainAddressesAddressesInner[]**](../OffchainAddressesAddressesInner) |  | ex.: `null`
 

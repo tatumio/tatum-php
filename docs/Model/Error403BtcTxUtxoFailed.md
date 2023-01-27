@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# Error403BtcTxUtxoFailed model getters
+# Error403BtcTxUtxoFailed
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getErrorCode()** | **string** | transaction.preparation.failed.utxo |
-**getMessage()** | **string** | Impossible to find last UTXO. |
-**getStatusCode()** | **float** | 403 |
+**getErrorCode()** | **string** | transaction.preparation.failed.utxo | ex.: `transaction.preparation.failed.utxo`
+**getMessage()** | **string** | Impossible to find last UTXO. | ex.: `Impossible to find last UTXO.`
+**getStatusCode()** | **float** | 403 | ex.: `403`
 

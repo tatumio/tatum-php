@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# EthEstimateGasArray model getters
+# EthEstimateGasArray
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getEstimations()** | [**\Tatum\Model\EthEstimateGas[]**](../EthEstimateGas) |  |
+**getEstimations()** | [**\Tatum\Model\EthEstimateGas[]**](../EthEstimateGas) |  | ex.: `null`
 

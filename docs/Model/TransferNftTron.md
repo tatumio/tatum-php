@@ -4,15 +4,17 @@ parent: Model
 layout: page
 ---
 
-# TransferNftTron model getters
+# TransferNftTron
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getValue()** | **string** | If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token. | [optional]
-**getChain()** | **string** | The blockchain to work with |
-**getTo()** | **string** | Blockchain address to send NFT token to |
-**getTokenId()** | **string** | ID of the token. |
-**getContractAddress()** | **string** | Address of NFT token |
-**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. |
-**getFeeLimit()** | **float** | The maximum amount to be paid as the transaction fee (in TRX) |
+**getValue()** | **string** | If token to be transferred is Royalty NFT token, this is a value to be paid as a cashback to the authors of the token. | ex.: `1` [optional]
+**getChain()** | **string** | The blockchain to work with | ex.: `TRON`
+**getTo()** | **string** | Blockchain address to send NFT token to | ex.: `TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ`
+**getTokenId()** | **string** | ID of the token. | ex.: `123`
+**getContractAddress()** | **string** | Address of NFT token | ex.: `TCrmdJmvDUPy8qSTgoVStF51yWm6VUh5yQ`
+**getFromPrivateKey()** | **string** | Private key of sender address. Private key, or signature Id must be present. | ex.: `842E09EB40D8175979EFB0071B28163E11AED0F14BDD84090A4CEFB936EF5701`
+**getFeeLimit()** | **float** | The maximum amount to be paid as the transaction fee (in TRX) | ex.: `600`
 

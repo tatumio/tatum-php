@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# SolanaMarketplaceSellTransactionHash model getters
+# SolanaMarketplaceSellTransactionHash
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTxId()** | **string** | The hash (ID) of the transaction |
-**getListingId()** | **string** | The ID of the listing |
+**getTxId()** | **string** | The hash (ID) of the transaction | ex.: `c83f8818db43d9ba4accfe454aa44fc33123d47a4f89d47b314d6748eb0e9bc9`
+**getListingId()** | **string** | The ID of the listing | ex.: `9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5`
 

@@ -4,14 +4,16 @@ parent: Model
 layout: page
 ---
 
-# TronTxRawDataContractInnerParameterValue model getters
+# TronTxRawDataContractInnerParameterValue
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | **string** | The amount transferred within the transaction. | [optional]
-**getAmount()** | **float** | The amount transferred within the transaction. | [optional]
-**getOwnerAddress()** | **string** | Address of the sender. | [optional]
-**getToAddress()** | **string** | Address of the recipient. | [optional]
-**getOwnerAddressBase58()** | **string** | Address of the sender in Base58 encoding. | [optional]
-**getToAddressBase58()** | **string** | Address of the recipient in Base58 encoding. | [optional]
+**getData()** | **string** | The amount transferred within the transaction. | ex.: `0x000002e917e68b4e` [optional]
+**getAmount()** | **float** | The amount transferred within the transaction. | ex.: `1000000` [optional]
+**getOwnerAddress()** | **string** | Address of the sender. | ex.: `418632237fd33f62c549ee044dd3da779aba947dcc` [optional]
+**getToAddress()** | **string** | Address of the recipient. | ex.: `41a614f803b6fd780986a42c78ec9c7f77e6ded13c` [optional]
+**getOwnerAddressBase58()** | **string** | Address of the sender in Base58 encoding. | ex.: `TNCmcTdyrYKMtmE1KU2itzeCX76jGm5Not` [optional]
+**getToAddressBase58()** | **string** | Address of the recipient in Base58 encoding. | ex.: `TRwS7apsNdRGzMBfhB2hVC4RhqfubUYZ8P` [optional]
 

@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# XdcEstimateGas model getters
+# XdcEstimateGas
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getFrom()** | **string** | Sender address. |
-**getTo()** | **string** | Blockchain address to send assets |
-**getAmount()** | **string** | Amount to be sent in XDC. |
+**getFrom()** | **string** | Sender address. | ex.: `xdcfb99f8ae9b70a0c8cd96ae665bbaf85a7e01a2ef`
+**getTo()** | **string** | Blockchain address to send assets | ex.: `xdc687422eEA2cB73B5d3e242bA5456b782919AFc85`
+**getAmount()** | **string** | Amount to be sent in XDC. | ex.: `100000`
 

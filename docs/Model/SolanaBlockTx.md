@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# SolanaBlockTx model getters
+# SolanaBlockTx
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getMeta()** | [**\Tatum\Model\SolanaTxMeta**](../SolanaTxMeta) |  | [optional]
-**getTransaction()** | [**\Tatum\Model\SolanaTxTransaction**](../SolanaTxTransaction) |  | [optional]
+**getMeta()** | [**\Tatum\Model\SolanaTxMeta**](../SolanaTxMeta) |  | ex.: `null` [optional]
+**getTransaction()** | [**\Tatum\Model\SolanaTxTransaction**](../SolanaTxTransaction) |  | ex.: `null` [optional]
 

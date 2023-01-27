@@ -4,24 +4,26 @@ parent: Model
 layout: page
 ---
 
-# EthTx model getters
+# EthTx
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBlockHash()** | **string** | Hash of the block where this transaction was in. | [optional]
-**getStatus()** | **bool** | TRUE if the transaction was successful, FALSE, if the EVM reverted the transaction. | [optional]
-**getBlockNumber()** | **mixed** | Block number where this transaction was in. | [optional]
-**getFrom()** | **string** | Address of the sender. | [optional]
-**getGas()** | **float** | Gas provided by the sender. | [optional]
-**getGasPrice()** | **string** | Gas price provided by the sender in wei. | [optional]
-**getTransactionHash()** | **string** | Hash of the transaction. | [optional]
-**getInput()** | **string** | The data sent along with the transaction. | [optional]
-**getNonce()** | **float** | The number of transactions made by the sender prior to this one. | [optional]
-**getTo()** | **string** | Address of the receiver. 'null' when its a contract creation transaction. | [optional]
-**getTransactionIndex()** | **mixed** | Integer of the transactions index position in the block. | [optional]
-**getValue()** | **string** | Value transferred in wei. | [optional]
-**getGasUsed()** | **mixed** | The amount of gas used by this specific transaction alone. | [optional]
-**getCumulativeGasUsed()** | **mixed** | The total amount of gas used when this transaction was executed in the block. | [optional]
-**getContractAddress()** | **string** | The contract address created, if the transaction was a contract creation, otherwise null. | [optional]
-**getLogs()** | [**\Tatum\Model\EthTxLog[]**](../EthTxLog) | Log events, that happened in this transaction. | [optional]
+**getBlockHash()** | **string** | Hash of the block where this transaction was in. | ex.: `0xcf2c40f475e78c7c19778e1ae999a0e371c9319b38182ea15dc94536f13f9137` [optional]
+**getStatus()** | **bool** | TRUE if the transaction was successful, FALSE, if the EVM reverted the transaction. | ex.: `true` [optional]
+**getBlockNumber()** | **mixed** | Block number where this transaction was in. | ex.: `6470854` [optional]
+**getFrom()** | **string** | Address of the sender. | ex.: `0x81b7E08F65Bdf5648606c89998A9CC8164397647` [optional]
+**getGas()** | **float** | Gas provided by the sender. | ex.: `21000` [optional]
+**getGasPrice()** | **string** | Gas price provided by the sender in wei. | ex.: `1000000000` [optional]
+**getTransactionHash()** | **string** | Hash of the transaction. | ex.: `0xe6e7340394958674cdf8606936d292f565e4ecc476aaa8b258ec8a141f7c75d7` [optional]
+**getInput()** | **string** | The data sent along with the transaction. | ex.: `0x` [optional]
+**getNonce()** | **float** | The number of transactions made by the sender prior to this one. | ex.: `26836405` [optional]
+**getTo()** | **string** | Address of the receiver. 'null' when its a contract creation transaction. | ex.: `0xbC546fa1716Ed886967cf73f40e8F2F5e623a92d` [optional]
+**getTransactionIndex()** | **mixed** | Integer of the transactions index position in the block. | ex.: `3` [optional]
+**getValue()** | **string** | Value transferred in wei. | ex.: `1000000000000000000` [optional]
+**getGasUsed()** | **mixed** | The amount of gas used by this specific transaction alone. | ex.: `21000` [optional]
+**getCumulativeGasUsed()** | **mixed** | The total amount of gas used when this transaction was executed in the block. | ex.: `314159` [optional]
+**getContractAddress()** | **string** | The contract address created, if the transaction was a contract creation, otherwise null. | ex.: `0x81b7E08F65Bdf5648606c89998A9CC8164397647` [optional]
+**getLogs()** | [**\Tatum\Model\EthTxLog[]**](../EthTxLog) | Log events, that happened in this transaction. | ex.: `null` [optional]
 

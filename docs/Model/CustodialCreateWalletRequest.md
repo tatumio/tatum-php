@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# CustodialCreateWalletRequest model getters
+# CustodialCreateWalletRequest
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** |  |
+**getChain()** | **string** |  | ex.: `SOL`
 

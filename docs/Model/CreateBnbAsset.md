@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# CreateBnbAsset model getters
+# CreateBnbAsset
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getToken()** | **string** | Asset name. |
-**getBasePair()** | **string** | Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR. |
+**getToken()** | **string** | Asset name. | ex.: `NNB-B90`
+**getBasePair()** | **string** | Base pair for Asset. Transaction value will be calculated according to this base pair. e.g. 1 TOKEN123 is equal to 1 EUR, if basePair is set to EUR. | ex.: `EUR`
 

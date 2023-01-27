@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# SolBalance model getters
+# SolBalance
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in SOL | [optional]
+**getBalance()** | **string** | Balance in SOL | ex.: `10.52` [optional]
 

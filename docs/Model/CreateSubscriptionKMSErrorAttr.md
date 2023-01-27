@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# CreateSubscriptionKMSErrorAttr model getters
+# CreateSubscriptionKMSErrorAttr
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getUrl()** | **string** | URL of the endpoint, where HTTP POST request will be sent, when error occurs inside Tatum KMS. |
+**getUrl()** | **string** | URL of the endpoint, where HTTP POST request will be sent, when error occurs inside Tatum KMS. | ex.: `https://dashboard.tatum.io/webhook-handler`
 

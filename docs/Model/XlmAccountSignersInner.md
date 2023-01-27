@@ -4,11 +4,13 @@ parent: Model
 layout: page
 ---
 
-# XlmAccountSignersInner model getters
+# XlmAccountSignersInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getWeight()** | **float** | The numerical weight of a signer. Used to determine if a transaction meets the threshold requirements. | [optional]
-**getKey()** | **string** | A hash of characters dependent on the signer type. | [optional]
-**getType()** | **string** | The type of hash for this signer. | [optional]
+**getWeight()** | **float** | The numerical weight of a signer. Used to determine if a transaction meets the threshold requirements. | ex.: `1` [optional]
+**getKey()** | **string** | A hash of characters dependent on the signer type. | ex.: `GBRPYHIL2CI3FNQ4BXLFMNDLFJUNPU2HY3ZMFSHONUCEOASW7QC7OX2H` [optional]
+**getType()** | **string** | The type of hash for this signer. | ex.: `ed25519_public_key` [optional]
 

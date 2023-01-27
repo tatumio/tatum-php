@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# CheckMalicousAddress200Response model getters
+# CheckMalicousAddress200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getStatus()** | **string** | Whether address is malicous or not | [optional]
+**getStatus()** | **string** | Whether address is malicous or not | ex.: `valid` [optional]
 

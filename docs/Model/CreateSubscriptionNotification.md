@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# CreateSubscriptionNotification model getters
+# CreateSubscriptionNotification
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionNotificationAttr**](../CreateSubscriptionNotificationAttr) |  |
+**getType()** | **string** | Type of the subscription. | ex.: `ADDRESS_TRANSACTION`
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionNotificationAttr**](../CreateSubscriptionNotificationAttr) |  | ex.: `null`
 

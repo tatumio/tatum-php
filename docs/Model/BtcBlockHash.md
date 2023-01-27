@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# BtcBlockHash model getters
+# BtcBlockHash
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getHash()** | **string** | Block hash | [optional]
+**getHash()** | **string** | Block hash | ex.: `0000000053f225e202cf27fe3046e06719efd3b31b5ab75fc5ef7f853c8b246f` [optional]
 

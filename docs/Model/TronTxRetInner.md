@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# TronTxRetInner model getters
+# TronTxRetInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getContractRet()** | **string** | Returns the value of the smart contract invocation. | [optional]
+**getContractRet()** | **string** | Returns the value of the smart contract invocation. | ex.: `SUCCESS` [optional]
 

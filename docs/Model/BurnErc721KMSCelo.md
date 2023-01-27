@@ -4,14 +4,16 @@ parent: Model
 layout: page
 ---
 
-# BurnErc721KMSCelo model getters
+# BurnErc721KMSCelo
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTokenId()** | **string** | ID of token to be destroyed. |
-**getContractAddress()** | **string** | Address of ERC721 token |
-**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | [optional]
-**getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. |
-**getNonce()** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | [optional]
-**getFeeCurrency()** | **string** | Currency to pay for transaction gas |
+**getTokenId()** | **string** | ID of token to be destroyed. | ex.: `100000`
+**getContractAddress()** | **string** | Address of ERC721 token | ex.: `0x687422eEA2cB73B5d3e242bA5456b782919AFc85`
+**getIndex()** | **float** | If signatureId is mnemonic-based, this is the index to the specific address from that mnemonic. | ex.: `null` [optional]
+**getSignatureId()** | **string** | Identifier of the private key associated in signing application. Private key, or signature Id must be present. | ex.: `26d3883e-4e17-48b3-a0ee-09a3e484ac83`
+**getNonce()** | **float** | Nonce to be set to Celo transaction. If not present, last known nonce will be used. | ex.: `null` [optional]
+**getFeeCurrency()** | **string** | Currency to pay for transaction gas | ex.: `null`
 

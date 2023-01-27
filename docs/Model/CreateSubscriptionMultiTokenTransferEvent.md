@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# CreateSubscriptionMultiTokenTransferEvent model getters
+# CreateSubscriptionMultiTokenTransferEvent
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getType()** | **string** | Type of the subscription. |
-**getAttr()** | [**\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr**](../CreateSubscriptionMultiTokenTransferEventAttr) |  |
+**getType()** | **string** | Type of the subscription. | ex.: `CONTRACT_MULTITOKEN_TXS_PER_BLOCK`
+**getAttr()** | [**\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr**](../CreateSubscriptionMultiTokenTransferEventAttr) |  | ex.: `null`
 

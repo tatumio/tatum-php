@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# AdaAccountBalanceInner model getters
+# AdaAccountBalanceInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getCurrency()** | [**\Tatum\Model\AdaAccountBalanceInnerCurrency**](../AdaAccountBalanceInnerCurrency) |  | [optional]
-**getValue()** | **string** | Quantity of the asset. | [optional]
+**getCurrency()** | [**\Tatum\Model\AdaAccountBalanceInnerCurrency**](../AdaAccountBalanceInnerCurrency) |  | ex.: `null` [optional]
+**getValue()** | **string** | Quantity of the asset. | ex.: `null` [optional]
 

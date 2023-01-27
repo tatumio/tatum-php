@@ -4,18 +4,20 @@ parent: Model
 layout: page
 ---
 
-# SolanaListingData model getters
+# SolanaListingData
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAmount()** | **string** | Amount of NFTs to sold in this listing. |
-**getBuyer()** | **string** | Address of the buyer, if exists. | [optional]
-**getListingId()** | **string** | ID of the listing |
-**getNft()** | [**\Tatum\Model\SolanaListingDataNft**](../SolanaListingDataNft) |  |
-**getPrice()** | **string** | Price of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field. |
-**getSeller()** | **string** | Address of the seller. |
-**getState()** | **string** | State of the listing. 0 - available, 1 - sold, 2 - cancelled |
-**getCreatedAt()** | **float** | Timestamp when this listing was created |
-**getPurchasedAt()** | **float** | Timestamp when this listing was purchased | [optional]
-**getCancelledAt()** | **float** | Timestamp when this listing was cancelled | [optional]
+**getAmount()** | **string** | Amount of NFTs to sold in this listing. | ex.: `1`
+**getBuyer()** | **string** | Address of the buyer, if exists. | ex.: `9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5` [optional]
+**getListingId()** | **string** | ID of the listing | ex.: `9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5`
+**getNft()** | [**\Tatum\Model\SolanaListingDataNft**](../SolanaListingDataNft) |  | ex.: `null`
+**getPrice()** | **string** | Price of the NFT asset in native currency or ERC20 token based on the presence of erc20Address field. | ex.: `1.234`
+**getSeller()** | **string** | Address of the seller. | ex.: `9qhKAgVRebMnjVM4AHdHcseYQG47Mns3U8e7dRz24kg5`
+**getState()** | **string** | State of the listing. 0 - available, 1 - sold, 2 - cancelled | ex.: `1`
+**getCreatedAt()** | **float** | Timestamp when this listing was created | ex.: `1669751911`
+**getPurchasedAt()** | **float** | Timestamp when this listing was purchased | ex.: `1669751911` [optional]
+**getCancelledAt()** | **float** | Timestamp when this listing was cancelled | ex.: `1669751911` [optional]
 

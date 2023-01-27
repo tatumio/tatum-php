@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# Broadcast model getters
+# Broadcast
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getTxData()** | **string** | Raw signed transaction to be published to network. |
-**getSignatureId()** | **string** | Identifier of KMS pending transaction ID to be completed with the broadcast. | [optional]
+**getTxData()** | **string** | Raw signed transaction to be published to network. | ex.: `62BD544D1B9031EFC330A3E855CC3A0D51CA5131455C1AB3BCAC6D243F65460D`
+**getSignatureId()** | **string** | Identifier of KMS pending transaction ID to be completed with the broadcast. | ex.: `5e68c66581f2ee32bc354087` [optional]
 

@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# FlowEventPayloadValueFieldsInner model getters
+# FlowEventPayloadValueFieldsInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getName()** | **string** | Name of the property | [optional]
-**getValue()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInnerValue**](../FlowEventPayloadValueFieldsInnerValue) |  | [optional]
+**getName()** | **string** | Name of the property | ex.: `name` [optional]
+**getValue()** | [**\Tatum\Model\FlowEventPayloadValueFieldsInnerValue**](../FlowEventPayloadValueFieldsInnerValue) |  | ex.: `null` [optional]
 

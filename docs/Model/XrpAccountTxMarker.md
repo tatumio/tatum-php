@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# XrpAccountTxMarker model getters
+# XrpAccountTxMarker
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getLedger()** | **float** |  | [optional]
-**getSeq()** | **float** |  | [optional]
+**getLedger()** | **float** |  | ex.: `759571` [optional]
+**getSeq()** | **float** |  | ex.: `2` [optional]
 

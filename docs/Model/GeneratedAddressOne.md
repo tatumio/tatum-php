@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# GeneratedAddressOne model getters
+# GeneratedAddressOne
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** | ONE address | [optional]
+**getAddress()** | **string** | ONE address | ex.: `one15annzcwtlcq3dfx7nc6plpr9jsxzyyw5xc8pjn` [optional]
 

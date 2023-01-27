@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# GasEstimated model getters
+# GasEstimated
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getGasPrice()** | **string** | The estimated price for one gas unit (in wei) |
-**getGasLimit()** | **float** | The number of the gas units needed to process the transaction at the estimated gas price |
+**getGasPrice()** | **string** | The estimated price for one gas unit (in wei) | ex.: `10000000000`
+**getGasLimit()** | **float** | The number of the gas units needed to process the transaction at the estimated gas price | ex.: `21000`
 

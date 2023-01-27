@@ -4,7 +4,9 @@ parent: Model
 layout: page
 ---
 
-# DataData model getters
+# DataData
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------

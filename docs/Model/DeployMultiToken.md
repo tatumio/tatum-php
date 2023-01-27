@@ -4,14 +4,16 @@ parent: Model
 layout: page
 ---
 
-# DeployMultiToken model getters
+# DeployMultiToken
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getChain()** | **string** | Chain to work with. |
-**getUri()** | **string** | URI of the Multi Token token |
-**getFromPrivateKey()** | **string** | Private key of account address, from which gas for deployment of ERC1155 will be paid. Private key, or signature Id must be present. |
-**getPublicMint()** | **bool** | True if the contract is publicMint type | [optional]
-**getNonce()** | **float** | Nonce to be set to transaction. If not present, last known nonce will be used. | [optional]
-**getFee()** | [**\Tatum\Model\DeployErc20Fee**](../DeployErc20Fee) |  | [optional]
+**getChain()** | **string** | Chain to work with. | ex.: `ETH`
+**getUri()** | **string** | URI of the Multi Token token | ex.: `example.com`
+**getFromPrivateKey()** | **string** | Private key of account address, from which gas for deployment of ERC1155 will be paid. Private key, or signature Id must be present. | ex.: `0x05e150c73f1920ec14caa1e0b6aa09940899678051a78542840c2668ce5080c2`
+**getPublicMint()** | **bool** | True if the contract is publicMint type | ex.: `true` [optional]
+**getNonce()** | **float** | Nonce to be set to transaction. If not present, last known nonce will be used. | ex.: `null` [optional]
+**getFee()** | [**\Tatum\Model\DeployErc20Fee**](../DeployErc20Fee) |  | ex.: `null` [optional]
 

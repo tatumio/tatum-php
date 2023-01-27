@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# CreateSubscriptionPendingAttr model getters
+# CreateSubscriptionPendingAttr
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getId()** | **string** | ID of the account, on which the webhook will be applied, when new incoming pending blockchain transaction with 0 confirmations will be credited. |
-**getUrl()** | **string** | URL of the endpoint, where HTTP POST request will be sent, when new incoming pending blockchain transaction with 0 confirmations will be credited. |
+**getId()** | **string** | ID of the account, on which the webhook will be applied, when new incoming pending blockchain transaction with 0 confirmations will be credited. | ex.: `5e6be8e9e6aa436299950c41`
+**getUrl()** | **string** | URL of the endpoint, where HTTP POST request will be sent, when new incoming pending blockchain transaction with 0 confirmations will be credited. | ex.: `https://dashboard.tatum.io/webhook-handler`
 

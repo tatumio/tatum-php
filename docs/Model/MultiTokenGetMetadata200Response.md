@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# MultiTokenGetMetadata200Response model getters
+# MultiTokenGetMetadata200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getData()** | **string** | Metadata associated with token. | [optional]
+**getData()** | **string** | Metadata associated with token. | ex.: `https://my_token_data.com` [optional]
 

@@ -4,10 +4,12 @@ parent: Model
 layout: page
 ---
 
-# BnbTxTxValueMsgInnerValueInputsInner model getters
+# BnbTxTxValueMsgInnerValueInputsInner
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getAddress()** | **string** |  | [optional]
-**getCoins()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValueInputsInnerCoinsInner[]**](../BnbTxTxValueMsgInnerValueInputsInnerCoinsInner) |  | [optional]
+**getAddress()** | **string** |  | ex.: `tbnb138u9djee6fwphhd2a3628q2h0j5w97yx48zqex` [optional]
+**getCoins()** | [**\Tatum\Model\BnbTxTxValueMsgInnerValueInputsInnerCoinsInner[]**](../BnbTxTxValueMsgInnerValueInputsInnerCoinsInner) |  | ex.: `null` [optional]
 

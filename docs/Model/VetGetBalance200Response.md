@@ -4,9 +4,11 @@ parent: Model
 layout: page
 ---
 
-# VetGetBalance200Response model getters
+# VetGetBalance200Response
+
+## Model getters
 
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getBalance()** | **string** | Balance in VET | [optional]
+**getBalance()** | **string** | Balance in VET | ex.: `10.52` [optional]
 
