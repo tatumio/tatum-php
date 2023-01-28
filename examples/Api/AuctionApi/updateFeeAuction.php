@@ -39,6 +39,9 @@ $arg_update_fee_auction = (new \Tatum\Model\UpdateFeeAuction())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/auction/fee
      * 

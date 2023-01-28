@@ -74,6 +74,12 @@ Method | Description
 
 ## `bloMarWithdrawFromMarketplaceSolana()`
 
+### Example
+
+[👉 View "**bloMarWithdrawFromMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php)
+
+### Request
+
 > **POST** `/v3/blockchain/marketplace/withdraw/treasury`
 
 ### Type signature
@@ -114,15 +120,17 @@ Withdraw funds from the marketplace treasury account on Solana
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "bloMarWithdrawFromMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `bloMarWithdrawFromMarketplaceSolanaKMS()`
+
+### Example
+
+[👉 View "**bloMarWithdrawFromMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/withdraw/treasury`
 
@@ -150,15 +158,17 @@ Withdraw funds from the marketplace treasury account on Solana
 
 WithdrawFromMarketplaceSolanaKMS operation
 
-### Example
-
-[✨ View "bloMarWithdrawFromMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `buyAssetOnMarketplace()`
+
+### Example
+
+[👉 View "**buyAssetOnMarketplace.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/buy`
 
@@ -216,15 +226,17 @@ Buy an asset on the NFT marketplace
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "buyAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
-
 [Back to top](#top)
 
 
 
 ## `buyAssetOnMarketplaceCelo()`
+
+### Example
+
+[👉 View "**buyAssetOnMarketplaceCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/buy`
 
@@ -252,15 +264,17 @@ Buy an asset on the NFT marketplace
 
 BuyAssetOnMarketplaceCelo operation
 
-### Example
-
-[✨ View "buyAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `buyAssetOnMarketplaceCeloKMS()`
+
+### Example
+
+[👉 View "**buyAssetOnMarketplaceCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/buy`
 
@@ -288,15 +302,17 @@ Buy an asset on the NFT marketplace
 
 BuyAssetOnMarketplaceCeloKMS operation
 
-### Example
-
-[✨ View "buyAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `buyAssetOnMarketplaceKMS()`
+
+### Example
+
+[👉 View "**buyAssetOnMarketplaceKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/buy`
 
@@ -324,15 +340,17 @@ Buy an asset on the NFT marketplace
 
 BuyAssetOnMarketplaceKMS operation
 
-### Example
-
-[✨ View "buyAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `buyAssetOnMarketplaceSolana()`
+
+### Example
+
+[👉 View "**buyAssetOnMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/buy`
 
@@ -360,15 +378,17 @@ Buy an asset on the NFT marketplace
 
 BuyAssetOnMarketplaceSolana operation
 
-### Example
-
-[✨ View "buyAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `buyAssetOnMarketplaceSolanaKMS()`
+
+### Example
+
+[👉 View "**buyAssetOnMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/buy`
 
@@ -396,15 +416,17 @@ Buy an asset on the NFT marketplace
 
 BuyAssetOnMarketplaceSolanaKMS operation
 
-### Example
-
-[✨ View "buyAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelSellAssetOnMarketplace()`
+
+### Example
+
+[👉 View "**cancelSellAssetOnMarketplace.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/cancel`
 
@@ -460,15 +482,17 @@ Cancel the selling of an asset on the NFT marketplace
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "cancelSellAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelSellAssetOnMarketplaceCelo()`
+
+### Example
+
+[👉 View "**cancelSellAssetOnMarketplaceCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/cancel`
 
@@ -496,15 +520,17 @@ Cancel the selling of an asset on the NFT marketplace
 
 CancelSellAssetOnMarketplaceCelo operation
 
-### Example
-
-[✨ View "cancelSellAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelSellAssetOnMarketplaceCeloKMS()`
+
+### Example
+
+[👉 View "**cancelSellAssetOnMarketplaceCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/cancel`
 
@@ -532,15 +558,17 @@ Cancel the selling of an asset on the NFT marketplace
 
 CancelSellAssetOnMarketplaceCeloKMS operation
 
-### Example
-
-[✨ View "cancelSellAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelSellAssetOnMarketplaceKMS()`
+
+### Example
+
+[👉 View "**cancelSellAssetOnMarketplaceKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/cancel`
 
@@ -568,15 +596,17 @@ Cancel the selling of an asset on the NFT marketplace
 
 CancelSellAssetOnMarketplaceKMS operation
 
-### Example
-
-[✨ View "cancelSellAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelSellAssetOnMarketplaceSolana()`
+
+### Example
+
+[👉 View "**cancelSellAssetOnMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/cancel`
 
@@ -604,15 +634,17 @@ Cancel the selling of an asset on the NFT marketplace
 
 CancelSellAssetOnMarketplaceSolana operation
 
-### Example
-
-[✨ View "cancelSellAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelSellAssetOnMarketplaceSolanaKMS()`
+
+### Example
+
+[👉 View "**cancelSellAssetOnMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/cancel`
 
@@ -640,15 +672,17 @@ Cancel the selling of an asset on the NFT marketplace
 
 CancelSellAssetOnMarketplaceSolanaKMS operation
 
-### Example
-
-[✨ View "cancelSellAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `generateMarketplace()`
+
+### Example
+
+[👉 View "**generateMarketplace.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplace.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing`
 
@@ -706,15 +740,17 @@ Create an NFT marketplace
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "generateMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplace.php)
-
 [Back to top](#top)
 
 
 
 ## `generateMarketplaceCelo()`
+
+### Example
+
+[👉 View "**generateMarketplaceCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing`
 
@@ -742,15 +778,17 @@ Create an NFT marketplace
 
 GenerateMarketplaceCelo operation
 
-### Example
-
-[✨ View "generateMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `generateMarketplaceCeloKMS()`
+
+### Example
+
+[👉 View "**generateMarketplaceCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing`
 
@@ -778,15 +816,17 @@ Create an NFT marketplace
 
 GenerateMarketplaceCeloKMS operation
 
-### Example
-
-[✨ View "generateMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `generateMarketplaceKMS()`
+
+### Example
+
+[👉 View "**generateMarketplaceKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing`
 
@@ -814,15 +854,17 @@ Create an NFT marketplace
 
 GenerateMarketplaceKMS operation
 
-### Example
-
-[✨ View "generateMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `generateMarketplaceSolana()`
+
+### Example
+
+[👉 View "**generateMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolana.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing`
 
@@ -850,15 +892,17 @@ Create an NFT marketplace
 
 GenerateMarketplaceSolana operation
 
-### Example
-
-[✨ View "generateMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `generateMarketplaceSolanaKMS()`
+
+### Example
+
+[👉 View "**generateMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing`
 
@@ -886,15 +930,17 @@ Create an NFT marketplace
 
 GenerateMarketplaceSolanaKMS operation
 
-### Example
-
-[✨ View "generateMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `getMarketplaceFee()`
+
+### Example
+
+[👉 View "**getMarketplaceFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFee.php)
+
+### Request
 
 > **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/fee`
 
@@ -932,15 +978,17 @@ Get the NFT marketplace fee
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
 
-### Example
-
-[✨ View "getMarketplaceFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFee.php)
-
 [Back to top](#top)
 
 
 
 ## `getMarketplaceFeeRecipient()`
+
+### Example
+
+[👉 View "**getMarketplaceFeeRecipient.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
+
+### Request
 
 > **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/recipient`
 
@@ -978,15 +1026,17 @@ Get the recipient of the NFT marketplace fee
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
 
-### Example
-
-[✨ View "getMarketplaceFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
-
 [Back to top](#top)
 
 
 
 ## `getMarketplaceInfo()`
+
+### Example
+
+[👉 View "**getMarketplaceInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceInfo.php)
+
+### Request
 
 > **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}`
 
@@ -1020,15 +1070,17 @@ Get information about an NFT marketplace on Solana
 
  This API is in **alpha** and is supported only for the mainnet on Solana.
 
-### Example
-
-[✨ View "getMarketplaceInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceInfo.php)
-
 [Back to top](#top)
 
 
 
 ## `getMarketplaceListing()`
+
+### Example
+
+[👉 View "**getMarketplaceListing.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListing.php)
+
+### Request
 
 > **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/listing/{id}`
 
@@ -1068,15 +1120,17 @@ Get information about a listing on the NFT marketplace
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
 
-### Example
-
-[✨ View "getMarketplaceListing.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListing.php)
-
 [Back to top](#top)
 
 
 
 ## `getMarketplaceListings()`
+
+### Example
+
+[👉 View "**getMarketplaceListings.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListings.php)
+
+### Request
 
 > **GET** `/v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}`
 
@@ -1116,15 +1170,17 @@ Get the listings of a certain type from the NFT marketplace
 
 <ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
 
-### Example
-
-[✨ View "getMarketplaceListings.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListings.php)
-
 [Back to top](#top)
 
 
 
 ## `sellAssetOnMarketplace()`
+
+### Example
+
+[👉 View "**sellAssetOnMarketplace.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/sell`
 
@@ -1188,15 +1244,17 @@ Sell an asset on the NFT marketplace
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "sellAssetOnMarketplace.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
-
 [Back to top](#top)
 
 
 
 ## `sellAssetOnMarketplaceCelo()`
+
+### Example
+
+[👉 View "**sellAssetOnMarketplaceCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/sell`
 
@@ -1224,15 +1282,17 @@ Sell an asset on the NFT marketplace
 
 SellAssetOnMarketplaceCelo operation
 
-### Example
-
-[✨ View "sellAssetOnMarketplaceCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `sellAssetOnMarketplaceCeloKMS()`
+
+### Example
+
+[👉 View "**sellAssetOnMarketplaceCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/sell`
 
@@ -1260,15 +1320,17 @@ Sell an asset on the NFT marketplace
 
 SellAssetOnMarketplaceCeloKMS operation
 
-### Example
-
-[✨ View "sellAssetOnMarketplaceCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `sellAssetOnMarketplaceKMS()`
+
+### Example
+
+[👉 View "**sellAssetOnMarketplaceKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/sell`
 
@@ -1296,15 +1358,17 @@ Sell an asset on the NFT marketplace
 
 SellAssetOnMarketplaceKMS operation
 
-### Example
-
-[✨ View "sellAssetOnMarketplaceKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `sellAssetOnMarketplaceSolana()`
+
+### Example
+
+[👉 View "**sellAssetOnMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/sell`
 
@@ -1332,15 +1396,17 @@ Sell an asset on the NFT marketplace
 
 SellAssetOnMarketplaceSolana operation
 
-### Example
-
-[✨ View "sellAssetOnMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `sellAssetOnMarketplaceSolanaKMS()`
+
+### Example
+
+[👉 View "**sellAssetOnMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/listing/sell`
 
@@ -1368,15 +1434,17 @@ Sell an asset on the NFT marketplace
 
 SellAssetOnMarketplaceSolanaKMS operation
 
-### Example
-
-[✨ View "sellAssetOnMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFee()`
+
+### Example
+
+[👉 View "**updateFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFee.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/fee`
 
@@ -1422,15 +1490,17 @@ Update the NFT marketplace fee
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "updateFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFee.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeCelo()`
+
+### Example
+
+[👉 View "**updateFeeCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCelo.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/fee`
 
@@ -1458,15 +1528,17 @@ Update the NFT marketplace fee
 
 UpdateFeeCelo operation
 
-### Example
-
-[✨ View "updateFeeCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeCeloKMS()`
+
+### Example
+
+[👉 View "**updateFeeCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCeloKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/fee`
 
@@ -1494,15 +1566,17 @@ Update the NFT marketplace fee
 
 UpdateFeeCeloKMS operation
 
-### Example
-
-[✨ View "updateFeeCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeKMS()`
+
+### Example
+
+[👉 View "**updateFeeKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/fee`
 
@@ -1530,15 +1604,17 @@ Update the NFT marketplace fee
 
 UpdateFeeKMS operation
 
-### Example
-
-[✨ View "updateFeeKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeRecipient()`
+
+### Example
+
+[👉 View "**updateFeeRecipient.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipient.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
@@ -1584,15 +1660,17 @@ Update the recipient of the NFT marketplace fee
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "updateFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipient.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeRecipientCelo()`
+
+### Example
+
+[👉 View "**updateFeeRecipientCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCelo.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
@@ -1620,15 +1698,17 @@ Update the recipient of the NFT marketplace fee
 
 UpdateFeeRecipientCelo operation
 
-### Example
-
-[✨ View "updateFeeRecipientCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeRecipientCeloKMS()`
+
+### Example
+
+[👉 View "**updateFeeRecipientCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
@@ -1656,15 +1736,17 @@ Update the recipient of the NFT marketplace fee
 
 UpdateFeeRecipientCeloKMS operation
 
-### Example
-
-[✨ View "updateFeeRecipientCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeRecipientKMS()`
+
+### Example
+
+[👉 View "**updateFeeRecipientKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
@@ -1692,15 +1774,17 @@ Update the recipient of the NFT marketplace fee
 
 UpdateFeeRecipientKMS operation
 
-### Example
-
-[✨ View "updateFeeRecipientKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeRecipientSolana()`
+
+### Example
+
+[👉 View "**updateFeeRecipientSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolana.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
@@ -1728,15 +1812,17 @@ Update the recipient of the NFT marketplace fee
 
 UpdateFeeRecipientSolana operation
 
-### Example
-
-[✨ View "updateFeeRecipientSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeRecipientSolanaKMS()`
+
+### Example
+
+[👉 View "**updateFeeRecipientSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/recipient`
 
@@ -1764,15 +1850,17 @@ Update the recipient of the NFT marketplace fee
 
 UpdateFeeRecipientSolanaKMS operation
 
-### Example
-
-[✨ View "updateFeeRecipientSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeSolana()`
+
+### Example
+
+[👉 View "**updateFeeSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolana.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/fee`
 
@@ -1800,15 +1888,17 @@ Update the NFT marketplace fee
 
 UpdateFeeSolana operation
 
-### Example
-
-[✨ View "updateFeeSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeSolanaKMS()`
+
+### Example
+
+[👉 View "**updateFeeSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolanaKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing/fee`
 
@@ -1836,15 +1926,17 @@ Update the NFT marketplace fee
 
 UpdateFeeSolanaKMS operation
 
-### Example
-
-[✨ View "updateFeeSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateMarketplaceSolana()`
+
+### Example
+
+[👉 View "**updateMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolana.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing`
 
@@ -1886,15 +1978,17 @@ Update an NFT marketplace on Solana
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "updateMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `updateMarketplaceSolanaKMS()`
+
+### Example
+
+[👉 View "**updateMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/marketplace/listing`
 
@@ -1922,15 +2016,17 @@ Update an NFT marketplace on Solana
 
 UpdateMarketplaceSolanaKMS operation
 
-### Example
-
-[✨ View "updateMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `withdrawFromMarketplaceSolana()`
+
+### Example
+
+[👉 View "**withdrawFromMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/withdraw/fee`
 
@@ -1972,15 +2068,17 @@ Withdraw funds from the marketplace fee account on Solana
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "withdrawFromMarketplaceSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `withdrawFromMarketplaceSolanaKMS()`
+
+### Example
+
+[👉 View "**withdrawFromMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/marketplace/withdraw/fee`
 
@@ -2007,10 +2105,6 @@ Name | Type | Description  | Notes
 Withdraw funds from the marketplace fee account on Solana
 
 WithdrawFromMarketplaceSolanaKMS operation
-
-### Example
-
-[✨ View "withdrawFromMarketplaceSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php)
 
 [Back to top](#top)
 

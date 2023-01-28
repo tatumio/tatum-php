@@ -31,6 +31,12 @@ Method | Description
 
 ## `createRecord()`
 
+### Example
+
+[👉 View "**createRecord.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecord.php)
+
+### Request
+
 > **POST** `/v3/record`
 
 ### Type signature
@@ -69,15 +75,17 @@ Store a log record
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum (only the mainnet or the Sepolia testnet)</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>XDC</li> </ul>
 
-### Example
-
-[✨ View "createRecord.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecord.php)
-
 [Back to top](#top)
 
 
 
 ## `createRecordCelo()`
+
+### Example
+
+[👉 View "**createRecordCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordCelo.php)
+
+### Request
 
 > **POST** `/v3/record`
 
@@ -105,15 +113,17 @@ Store a log record
 
 CreateRecordCelo operation
 
-### Example
-
-[✨ View "createRecordCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `createRecordKMS()`
+
+### Example
+
+[👉 View "**createRecordKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordKMS.php)
+
+### Request
 
 > **POST** `/v3/record`
 
@@ -141,15 +151,17 @@ Store a log record
 
 CreateRecordKMS operation
 
-### Example
-
-[✨ View "createRecordKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `getLog()`
+
+### Example
+
+[👉 View "**getLog.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/getLog.php)
+
+### Request
 
 > **GET** `/v3/record`
 
@@ -180,10 +192,6 @@ Get a log record
 **1 credit per API call**
 
  Get a log data record from the Ethereum blockchain (only the mainnet or the Sepolia testnet).
-
-### Example
-
-[✨ View "getLog.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/getLog.php)
 
 [Back to top](#top)
 

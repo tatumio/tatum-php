@@ -54,6 +54,9 @@ $arg_bid_on_auction_celo_kms = (new \Tatum\Model\BidOnAuctionCeloKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/bid
      * 

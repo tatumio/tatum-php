@@ -22,6 +22,9 @@ $arg_hash = "81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/tron/transaction/{hash}
      * 

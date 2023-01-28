@@ -75,6 +75,9 @@ $arg_count = true;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ledger/transaction/customer
      * 

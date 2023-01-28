@@ -35,6 +35,12 @@ Method | Description
 
 ## `solanaBroadcastConfirm()`
 
+### Example
+
+[👉 View "**solanaBroadcastConfirm.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaBroadcastConfirm.php)
+
+### Request
+
 > **POST** `/v3/solana/broadcast/confirm`
 
 ### Type signature
@@ -63,15 +69,17 @@ Broadcast and confirm signed Solana transaction
 
  Broadcast signed custom transactions to Solana blockchain and waits for transaction confirmation depending on the commitment given. More information about commitment levels <a target="_blank" href="https://docs.solana.com/ru/developing/clients/jsonrpc-api#configuring-state-commitment">here</a>
 
-### Example
-
-[✨ View "solanaBroadcastConfirm.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaBroadcastConfirm.php)
-
 [Back to top](#top)
 
 
 
 ## `solanaGenerateWallet()`
+
+### Example
+
+[👉 View "**solanaGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/solana/wallet`
 
@@ -97,15 +105,17 @@ Generate Solana wallet
 
  Generate Solana private key and account address.
 
-### Example
-
-[✨ View "solanaGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `solanaGetBalance()`
+
+### Example
+
+[👉 View "**solanaGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBalance.php)
+
+### Request
 
 > **GET** `/v3/solana/account/balance/{address}`
 
@@ -135,15 +145,17 @@ Get Solana Account balance
 
 Get Solana account balance in SOL. This method does not prints any balance of the SPL or NFT tokens on the account.
 
-### Example
-
-[✨ View "solanaGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `solanaGetBlock()`
+
+### Example
+
+[👉 View "**solanaGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBlock.php)
+
+### Request
 
 > **GET** `/v3/solana/block/{height}`
 
@@ -175,15 +187,17 @@ Get Solana block by number
 
  You can find full data description here - <a target="blank" href="https://docs.solana.com/developing/clients/jsonrpc-api#getblock">https://docs.solana.com/developing/clients/jsonrpc-api#getblock</a>
 
-### Example
-
-[✨ View "solanaGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `solanaGetCurrentBlock()`
+
+### Example
+
+[👉 View "**solanaGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/solana/block/current`
 
@@ -209,15 +223,17 @@ Get current block number
 
 Get Solana current block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "solanaGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `solanaGetTransaction()`
+
+### Example
+
+[👉 View "**solanaGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/solana/transaction/{hash}`
 
@@ -251,15 +267,17 @@ Get Solana transaction by transaction hash.
 
  You can find full data description here - <a target="blank" href="https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction">https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction</a>
 
-### Example
-
-[✨ View "solanaGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `transferSolanaBlockchain()`
+
+### Example
+
+[👉 View "**transferSolanaBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchain.php)
+
+### Request
 
 > **POST** `/v3/solana/transaction`
 
@@ -291,15 +309,17 @@ Send SOL from account to account
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "transferSolanaBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferSolanaBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferSolanaBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/solana/transaction`
 
@@ -326,10 +346,6 @@ Name | Type | Description  | Notes
 Send SOL from account to account
 
 TransferSolanaBlockchainKMS operation
-
-### Example
-
-[✨ View "transferSolanaBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchainKMS.php)
 
 [Back to top](#top)
 

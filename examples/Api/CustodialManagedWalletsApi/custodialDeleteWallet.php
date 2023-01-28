@@ -22,6 +22,9 @@ $arg_id = "3ad54647-4166-4d34-9186-fd46caaba945";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * DELETE /v3/custodial/wallet/{id}
      */

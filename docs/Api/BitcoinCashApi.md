@@ -38,6 +38,12 @@ Method | Description
 
 ## `bchBroadcast()`
 
+### Example
+
+[👉 View "**bchBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchBroadcast.php)
+
+### Request
+
 > **POST** `/v3/bcash/broadcast`
 
 ### Type signature
@@ -66,15 +72,17 @@ Broadcast signed Bitcoin Cash transaction
 
  Broadcast signed transaction to Bitcoin Cash blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "bchBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `bchGenerateAddress()`
+
+### Example
+
+[👉 View "**bchGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/bcash/address/{xpub}/{index}`
 
@@ -106,15 +114,17 @@ Generate Bitcoin Cash deposit address from Extended public key
 
  Generate Bitcoin Cash deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1. Generates new format of address starting with bitcoincash: in case of mainnet, bchtest: in case of testnet..
 
-### Example
-
-[✨ View "bchGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `bchGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**bchGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/bcash/wallet/priv`
 
@@ -144,15 +154,17 @@ Generate Bitcoin Cash private key
 
  Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "bchGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `bchGenerateWallet()`
+
+### Example
+
+[👉 View "**bchGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/bcash/wallet`
 
@@ -188,15 +200,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for Bitcoin Cash wallet with derivation path m'/44'/145'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Bitcoin Cash wallet.
 
-### Example
-
-[✨ View "bchGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `bchGetBlock()`
+
+### Example
+
+[👉 View "**bchGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlock.php)
+
+### Request
 
 > **GET** `/v3/bcash/block/{hash}`
 
@@ -226,15 +240,17 @@ Get Bitcoin Cash Block by hash
 
 Get Bitcoin Cash Block detail by block hash or height.
 
-### Example
-
-[✨ View "bchGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `bchGetBlockChainInfo()`
+
+### Example
+
+[👉 View "**bchGetBlockChainInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlockChainInfo.php)
+
+### Request
 
 > **GET** `/v3/bcash/info`
 
@@ -260,15 +276,17 @@ Get Bitcoin Cash Blockchain Information
 
 Get Bitcoin Cash Blockchain Information. Obtain basic info like testnet / mainnet version of the chain, current block number and it's hash.
 
-### Example
-
-[✨ View "bchGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlockChainInfo.php)
-
 [Back to top](#top)
 
 
 
 ## `bchGetBlockHash()`
+
+### Example
+
+[👉 View "**bchGetBlockHash.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlockHash.php)
+
+### Request
 
 > **GET** `/v3/bcash/block/hash/{i}`
 
@@ -298,15 +316,17 @@ Get Bitcoin Cash Block hash
 
 Get Bitcoin Cash Block hash. Returns hash of the block to get the block detail.
 
-### Example
-
-[✨ View "bchGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetBlockHash.php)
-
 [Back to top](#top)
 
 
 
 ## `bchGetRawTransaction()`
+
+### Example
+
+[👉 View "**bchGetRawTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetRawTransaction.php)
+
+### Request
 
 > **GET** `/v3/bcash/transaction/{hash}`
 
@@ -336,15 +356,17 @@ Get Bitcoin Cash Transaction by hash
 
 Get Bitcoin Cash Transaction by transaction hash.
 
-### Example
-
-[✨ View "bchGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetRawTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `bchGetTxByAddress()`
+
+### Example
+
+[👉 View "**bchGetTxByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetTxByAddress.php)
+
+### Request
 
 > **GET** `/v3/bcash/transaction/address/{address}`
 
@@ -376,15 +398,17 @@ Get Bitcoin Cash Transactions by address
 
 Get Bitcoin Cash Transaction by address. Limit is 50 transaction per response.
 
-### Example
-
-[✨ View "bchGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchGetTxByAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `bchTransaction()`
+
+### Example
+
+[👉 View "**bchTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchTransaction.php)
+
+### Request
 
 > **POST** `/v3/bcash/transaction`
 
@@ -436,15 +460,17 @@ Send BCH to Bitcoin Cash addresses
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "bchTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `bchTransactionKMS()`
+
+### Example
+
+[👉 View "**bchTransactionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchTransactionKMS.php)
+
+### Request
 
 > **POST** `/v3/bcash/transaction`
 
@@ -471,10 +497,6 @@ Name | Type | Description  | Notes
 Send BCH to Bitcoin Cash addresses
 
 BchTransactionKMS operation
-
-### Example
-
-[✨ View "bchTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BitcoinCashApi/bchTransactionKMS.php)
 
 [Back to top](#top)
 

@@ -51,6 +51,9 @@ $arg_transfer_ltc_key_pair = (new \Tatum\Model\TransferLtcKeyPair())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/litecoin/transfer
      * 

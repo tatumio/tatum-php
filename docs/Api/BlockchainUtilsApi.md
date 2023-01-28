@@ -29,6 +29,12 @@ Method | Description
 
 ## `getAuctionEstimatedTime()`
 
+### Example
+
+[👉 View "**getAuctionEstimatedTime.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php)
+
+### Request
+
 > **GET** `/v3/blockchain/auction/time/{chain}/{date}`
 
 ### Type signature
@@ -67,15 +73,17 @@ Estimate the block height for a future point in time
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "getAuctionEstimatedTime.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php)
-
 [Back to top](#top)
 
 
 
 ## `sCGetContractAddress()`
+
+### Example
+
+[👉 View "**sCGetContractAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/sCGetContractAddress.php)
+
+### Request
 
 > **GET** `/v3/blockchain/sc/address/{chain}/{hash}`
 
@@ -112,10 +120,6 @@ Get the blockchain address of a smart contract by the deployment transaction ID
  
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
-
-### Example
-
-[✨ View "sCGetContractAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/sCGetContractAddress.php)
 
 [Back to top](#top)
 

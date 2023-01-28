@@ -36,6 +36,9 @@ $arg_account_settings_xrp_blockchain_kms = (new \Tatum\Model\AccountSettingsXrpB
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xrp/account/settings
      * 

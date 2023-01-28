@@ -49,6 +49,9 @@ $arg_call_kcs_smart_contract_method_kms = (new \Tatum\Model\CallKcsSmartContract
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/kcs/smartcontract
      * 

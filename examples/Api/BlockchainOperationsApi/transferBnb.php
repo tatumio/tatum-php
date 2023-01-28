@@ -45,6 +45,9 @@ $arg_transfer_bnb = (new \Tatum\Model\TransferBnb())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bnb/transfer
      * 

@@ -43,6 +43,12 @@ Method | Description
 
 ## `callReadSmartContractMethod()`
 
+### Example
+
+[👉 View "**callReadSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callReadSmartContractMethod.php)
+
+### Request
+
 > **POST** `/v3/ethereum/smartcontract`
 
 ### Type signature
@@ -71,15 +77,17 @@ Invoke a method in a smart contract on Ethereum
 
 CallReadSmartContractMethod operation
 
-### Example
-
-[✨ View "callReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callReadSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callSmartContractMethod()`
+
+### Example
+
+[👉 View "**callSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethod.php)
+
+### Request
 
 > **POST** `/v3/ethereum/smartcontract`
 
@@ -135,15 +143,17 @@ However, because this API can be run against any smart contract on the blockchai
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "callSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callSmartContractMethodKMS()`
+
+### Example
+
+[👉 View "**callSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethodKMS.php)
+
+### Request
 
 > **POST** `/v3/ethereum/smartcontract`
 
@@ -173,15 +183,17 @@ Invoke a method in a smart contract on Ethereum
 
 CallSmartContractMethodKMS operation
 
-### Example
-
-[✨ View "callSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/callSmartContractMethodKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `ethBroadcast()`
+
+### Example
+
+[👉 View "**ethBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethBroadcast.php)
+
+### Request
 
 > **POST** `/v3/ethereum/broadcast`
 
@@ -213,15 +225,17 @@ Broadcast signed Ethereum transaction
 
  Broadcast signed transaction to Ethereum blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "ethBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGenerateAddress()`
+
+### Example
+
+[👉 View "**ethGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/ethereum/address/{xpub}/{index}`
 
@@ -255,15 +269,17 @@ Generate Ethereum account address from Extended public key
 
  Generates an Ethereum account deposit address from an Extended public key. The deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "ethGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**ethGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/ethereum/wallet/priv`
 
@@ -295,15 +311,17 @@ Generate Ethereum private key
 
  Generates the private key of an address from a mnemonic for a given derivation path index. The private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "ethGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGenerateWallet()`
+
+### Example
+
+[👉 View "**ethGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/ethereum/wallet`
 
@@ -341,15 +359,17 @@ Each address is identified by 3 main values:
 
 Tatum follows the BIP44 specification and generates for Ethereum wallets with the derivation path m/44'/60'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generates a BIP44 compatible Ethereum wallet.
 
-### Example
-
-[✨ View "ethGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGetBalance()`
+
+### Example
+
+[👉 View "**ethGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBalance.php)
+
+### Request
 
 > **GET** `/v3/ethereum/account/balance/{address}`
 
@@ -383,15 +403,17 @@ Get the ETH balance of an Ethereum account
 
  To get the balance of **tokens**, use the APIs for getting the balance of <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20GetBalanceAddress" target="_blank">fungible tokens (ERC-20)</a> and <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)#operation/NftGetTokensByAddressErc721" target="_blank">NFTs (ERC-721)</a>.
 
-### Example
-
-[✨ View "ethGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGetBlock()`
+
+### Example
+
+[👉 View "**ethGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBlock.php)
+
+### Request
 
 > **GET** `/v3/ethereum/block/{hash}`
 
@@ -423,15 +445,17 @@ Get Ethereum block by hash
 
 Gets an Ethereum block-by-block hash or block number.
 
-### Example
-
-[✨ View "ethGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGetCurrentBlock()`
+
+### Example
+
+[👉 View "**ethGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/ethereum/block/current`
 
@@ -461,15 +485,17 @@ Get current block number
 
 Gets the current Ethereum block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "ethGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGetInternalTransactionByAddress()`
+
+### Example
+
+[👉 View "**ethGetInternalTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
+
+### Request
 
 > **GET** `/v3/ethereum/account/transaction/erc20/internal/{address}`
 
@@ -505,15 +531,17 @@ Get Ethereum internal transactions by address
 
  Get Ethereum internal transactions by address.
 
-### Example
-
-[✨ View "ethGetInternalTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetInternalTransactionByAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGetTransaction()`
+
+### Example
+
+[👉 View "**ethGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/ethereum/transaction/{hash}`
 
@@ -545,15 +573,17 @@ Get Ethereum Transaction
 
  Get Ethereum transaction by transaction hash.
 
-### Example
-
-[✨ View "ethGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGetTransactionByAddress()`
+
+### Example
+
+[👉 View "**ethGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionByAddress.php)
+
+### Request
 
 > **GET** `/v3/ethereum/account/transaction/{address}`
 
@@ -595,15 +625,17 @@ Get Ethereum transactions by address
 
 Get Ethereum transactions by address. This includes incoming and outgoing transactions for the address.
 
-### Example
-
-[✨ View "ethGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionByAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `ethGetTransactionCount()`
+
+### Example
+
+[👉 View "**ethGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionCount.php)
+
+### Request
 
 > **GET** `/v3/ethereum/transaction/count/{address}`
 
@@ -635,15 +667,17 @@ Get count of outgoing Ethereum transactions
 
  Get a number of outgoing Ethereum transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-### Example
-
-[✨ View "ethGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/ethGetTransactionCount.php)
-
 [Back to top](#top)
 
 
 
 ## `transferEthBlockchain()`
+
+### Example
+
+[👉 View "**transferEthBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchain.php)
+
+### Request
 
 > **POST** `/v3/ethereum/transaction`
 
@@ -685,15 +719,17 @@ Send ETH or fungible tokens (ERC-20) from account to account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferEthBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferEthBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferEthBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/ethereum/transaction`
 
@@ -722,10 +758,6 @@ Name | Type | Description  | Notes
 Send ETH or fungible tokens (ERC-20) from account to account
 
 TransferEthBlockchainKMS operation
-
-### Example
-
-[✨ View "transferEthBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/EthereumApi/transferEthBlockchainKMS.php)
 
 [Back to top](#top)
 

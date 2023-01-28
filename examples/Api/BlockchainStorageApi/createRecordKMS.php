@@ -42,6 +42,9 @@ $arg_create_record_kms = (new \Tatum\Model\CreateRecordKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/record
      * 

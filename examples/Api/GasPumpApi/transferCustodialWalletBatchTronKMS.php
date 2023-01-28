@@ -54,6 +54,9 @@ $arg_transfer_custodial_wallet_batch_tron_kms = (new \Tatum\Model\TransferCustod
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/sc/custodial/transfer/batch
      * 

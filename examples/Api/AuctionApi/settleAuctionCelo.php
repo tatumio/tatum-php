@@ -42,6 +42,9 @@ $arg_settle_auction_celo = (new \Tatum\Model\SettleAuctionCelo())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/settle
      * 

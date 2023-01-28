@@ -27,6 +27,9 @@ $arg_batch_create_transaction = (new \Tatum\Model\BatchCreateTransaction())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ledger/transaction/batch
      * 

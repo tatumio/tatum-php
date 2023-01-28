@@ -57,6 +57,9 @@ $arg_transfer_celo_kms = (new \Tatum\Model\TransferCeloKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/celo/transfer
      * 

@@ -48,6 +48,9 @@ $arg_withdrawal = (new \Tatum\Model\Withdrawal())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/withdrawal
      * 

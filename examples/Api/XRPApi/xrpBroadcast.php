@@ -27,6 +27,9 @@ $arg_broadcast_kms = (new \Tatum\Model\BroadcastKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xrp/broadcast
      * 

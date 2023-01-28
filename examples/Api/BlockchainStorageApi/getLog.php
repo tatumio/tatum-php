@@ -25,6 +25,9 @@ $arg_id = "0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/record
      * 

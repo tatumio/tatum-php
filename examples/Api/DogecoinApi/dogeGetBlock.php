@@ -22,6 +22,9 @@ $arg_hash = "1234314";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/dogecoin/block/{hash}
      * 

@@ -54,6 +54,9 @@ $arg_transfer_btc_kms = (new \Tatum\Model\TransferBtcKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bitcoin/transfer
      * 

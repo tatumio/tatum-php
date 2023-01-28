@@ -39,6 +39,12 @@ Method | Description
 
 ## `dogeBroadcast()`
 
+### Example
+
+[👉 View "**dogeBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeBroadcast.php)
+
+### Request
+
 > **POST** `/v3/dogecoin/broadcast`
 
 ### Type signature
@@ -67,15 +73,17 @@ Broadcast signed Dogecoin transaction
 
  Broadcast signed transaction to Dogecoin blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "dogeBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGenerateAddress()`
+
+### Example
+
+[👉 View "**dogeGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/dogecoin/address/{xpub}/{index}`
 
@@ -107,15 +115,17 @@ Generate Dogecoin deposit address from Extended public key
 
  Generate Dogecoin deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "dogeGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**dogeGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/dogecoin/wallet/priv`
 
@@ -145,15 +155,17 @@ Generate Dogecoin private key
 
  Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "dogeGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGenerateWallet()`
+
+### Example
+
+[👉 View "**dogeGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/dogecoin/wallet`
 
@@ -189,15 +201,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for Dogecoin wallet with derivation path m'/44'/3'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki">https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Dogecoin wallet.
 
-### Example
-
-[✨ View "dogeGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGetBlock()`
+
+### Example
+
+[👉 View "**dogeGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlock.php)
+
+### Request
 
 > **GET** `/v3/dogecoin/block/{hash}`
 
@@ -227,15 +241,17 @@ Get Dogecoin Block by hash or height
 
 Get Dogecoin Block detail by block hash or height.
 
-### Example
-
-[✨ View "dogeGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGetBlockChainInfo()`
+
+### Example
+
+[👉 View "**dogeGetBlockChainInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlockChainInfo.php)
+
+### Request
 
 > **GET** `/v3/dogecoin/info`
 
@@ -261,15 +277,17 @@ Get Dogecoin Blockchain Information
 
 Get Dogecoin Blockchain Information. Obtain basic info like testnet / mainnet version of the chain, current block number and it's hash.
 
-### Example
-
-[✨ View "dogeGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlockChainInfo.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGetBlockHash()`
+
+### Example
+
+[👉 View "**dogeGetBlockHash.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlockHash.php)
+
+### Request
 
 > **GET** `/v3/dogecoin/block/hash/{i}`
 
@@ -299,15 +317,17 @@ Get Dogecoin Block hash
 
 Get Dogecoin Block hash. Returns hash of the block to get the block detail.
 
-### Example
-
-[✨ View "dogeGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetBlockHash.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGetMempool()`
+
+### Example
+
+[👉 View "**dogeGetMempool.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetMempool.php)
+
+### Request
 
 > **GET** `/v3/dogecoin/mempool`
 
@@ -333,15 +353,17 @@ Get Mempool Transactions
 
 Get Dogecoin Transaction ids in the mempool.
 
-### Example
-
-[✨ View "dogeGetMempool.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetMempool.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGetRawTransaction()`
+
+### Example
+
+[👉 View "**dogeGetRawTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetRawTransaction.php)
+
+### Request
 
 > **GET** `/v3/dogecoin/transaction/{hash}`
 
@@ -371,15 +393,17 @@ Get Dogecoin Transaction by hash
 
 Get Dogecoin Transaction detail by transaction hash.
 
-### Example
-
-[✨ View "dogeGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetRawTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeGetUTXO()`
+
+### Example
+
+[👉 View "**dogeGetUTXO.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetUTXO.php)
+
+### Request
 
 > **GET** `/v3/dogecoin/utxo/{hash}/{index}`
 
@@ -417,15 +441,17 @@ Get information about a transaction output (UTXO) in a Dogecoin transaction
 
 <ul> <li>If the transaction output is an UTXO, the API returns data about it.</li> <li>If the transaction output has been spent and there is no UTXO to return, the API returns an error with the <code>404</code> response code.</li> </ul>
 
-### Example
-
-[✨ View "dogeGetUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeGetUTXO.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeTransactionUTXO()`
+
+### Example
+
+[👉 View "**dogeTransactionUTXO.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeTransactionUTXO.php)
+
+### Request
 
 > **POST** `/v3/dogecoin/transaction`
 
@@ -477,15 +503,17 @@ Send DOGE to Dogecoin addresses
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "dogeTransactionUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeTransactionUTXO.php)
-
 [Back to top](#top)
 
 
 
 ## `dogeTransactionUTXOKMS()`
+
+### Example
+
+[👉 View "**dogeTransactionUTXOKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeTransactionUTXOKMS.php)
+
+### Request
 
 > **POST** `/v3/dogecoin/transaction`
 
@@ -512,10 +540,6 @@ Name | Type | Description  | Notes
 Send DOGE to Dogecoin addresses
 
 DogeTransactionUTXOKMS operation
-
-### Example
-
-[✨ View "dogeTransactionUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DogecoinApi/dogeTransactionUTXOKMS.php)
 
 [Back to top](#top)
 

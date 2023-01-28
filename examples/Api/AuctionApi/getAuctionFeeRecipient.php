@@ -25,6 +25,9 @@ $arg_contract_address = "0xe6e7340394958674cdf8606936d292f565e4ecc4";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/blockchain/auction/{chain}/{contractAddress}/recipient
      * 

@@ -39,6 +39,9 @@ $arg_generate_auction = (new \Tatum\Model\GenerateAuction())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction
      * 

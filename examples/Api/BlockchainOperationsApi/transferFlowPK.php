@@ -45,6 +45,9 @@ $arg_transfer_flow_pk = (new \Tatum\Model\TransferFlowPK())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/flow/transfer
      * 

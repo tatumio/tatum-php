@@ -42,6 +42,12 @@ Method | Description
 
 ## `callCeloReadSmartContractMethod()`
 
+### Example
+
+[👉 View "**callCeloReadSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloReadSmartContractMethod.php)
+
+### Request
+
 > **POST** `/v3/celo/smartcontract`
 
 ### Type signature
@@ -94,15 +100,17 @@ However, because this API can be run against any smart contract on the blockchai
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "callCeloReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloReadSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callCeloSmartContractMethod()`
+
+### Example
+
+[👉 View "**callCeloSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethod.php)
+
+### Request
 
 > **POST** `/v3/celo/smartcontract`
 
@@ -130,15 +138,17 @@ Invoke a method in a smart contract on Celo
 
 CallCeloSmartContractMethod operation
 
-### Example
-
-[✨ View "callCeloSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callCeloSmartContractMethodKMS()`
+
+### Example
+
+[👉 View "**callCeloSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethodKMS.php)
+
+### Request
 
 > **POST** `/v3/celo/smartcontract`
 
@@ -166,15 +176,17 @@ Invoke a method in a smart contract on Celo
 
 CallCeloSmartContractMethodKMS operation
 
-### Example
-
-[✨ View "callCeloSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethodKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `celoBroadcast()`
+
+### Example
+
+[👉 View "**celoBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoBroadcast.php)
+
+### Request
 
 > **POST** `/v3/celo/broadcast`
 
@@ -204,15 +216,17 @@ Broadcast signed Celo transaction
 
  Broadcast signed transaction to Celo blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "celoBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGenerateAddress()`
+
+### Example
+
+[👉 View "**celoGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/celo/address/{xpub}/{index}`
 
@@ -244,15 +258,17 @@ Generate Celo account address from Extended public key
 
  Generate Celo account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "celoGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**celoGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/celo/wallet/priv`
 
@@ -282,15 +298,17 @@ Generate Celo private key
 
  Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "celoGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGenerateWallet()`
+
+### Example
+
+[👉 View "**celoGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/celo/wallet`
 
@@ -326,15 +344,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for Celo wallet with derivation path m'/44'/52752'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Celo wallet.
 
-### Example
-
-[✨ View "celoGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGetBalance()`
+
+### Example
+
+[👉 View "**celoGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBalance.php)
+
+### Request
 
 > **GET** `/v3/celo/account/balance/{address}`
 
@@ -364,15 +384,17 @@ Get Celo Account balance
 
  Get Celo account balance in ETH. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
-### Example
-
-[✨ View "celoGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGetBlock()`
+
+### Example
+
+[👉 View "**celoGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBlock.php)
+
+### Request
 
 > **GET** `/v3/celo/block/{hash}`
 
@@ -402,15 +424,17 @@ Get Celo block by hash
 
  Get Celo block by block hash or block number.
 
-### Example
-
-[✨ View "celoGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGetCurrentBlock()`
+
+### Example
+
+[👉 View "**celoGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/celo/block/current`
 
@@ -436,15 +460,17 @@ Get current block number
 
  Get Celo current block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "celoGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGetTransaction()`
+
+### Example
+
+[👉 View "**celoGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/celo/transaction/{hash}`
 
@@ -474,15 +500,17 @@ Get Celo Transaction
 
  Get Celo transaction by transaction hash.
 
-### Example
-
-[✨ View "celoGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGetTransactionByAddress()`
+
+### Example
+
+[👉 View "**celoGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionByAddress.php)
+
+### Request
 
 > **GET** `/v3/celo/account/transaction/{address}`
 
@@ -522,15 +550,17 @@ Get Celo transactions by address
 
  Get Celo transactions by address. This includes incoming and outgoing transactions for the address.
 
-### Example
-
-[✨ View "celoGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionByAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `celoGetTransactionCount()`
+
+### Example
+
+[👉 View "**celoGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionCount.php)
+
+### Request
 
 > **GET** `/v3/celo/transaction/count/{address}`
 
@@ -560,15 +590,17 @@ Get count of outgoing Celo transactions
 
  Get a number of outgoing Celo transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-### Example
-
-[✨ View "celoGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionCount.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCeloBlockchain()`
+
+### Example
+
+[👉 View "**transferCeloBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchain.php)
+
+### Request
 
 > **POST** `/v3/celo/transaction`
 
@@ -606,15 +638,17 @@ Send Celo / ERC20 from account to account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferCeloBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCeloBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferCeloBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/celo/transaction`
 
@@ -641,10 +675,6 @@ Name | Type | Description  | Notes
 Send Celo / ERC20 from account to account
 
 TransferCeloBlockchainKMS operation
-
-### Example
-
-[✨ View "transferCeloBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchainKMS.php)
 
 [Back to top](#top)
 

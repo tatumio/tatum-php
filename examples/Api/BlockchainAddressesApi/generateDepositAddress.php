@@ -25,6 +25,9 @@ $arg_index = 2;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/account/{id}/address
      * 

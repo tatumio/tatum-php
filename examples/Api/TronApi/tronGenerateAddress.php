@@ -25,6 +25,9 @@ $arg_index = 1;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/tron/address/{xpub}/{index}
      * 

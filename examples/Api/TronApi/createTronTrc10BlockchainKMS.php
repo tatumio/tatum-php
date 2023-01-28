@@ -51,6 +51,9 @@ $arg_create_tron_trc10_blockchain_kms = (new \Tatum\Model\CreateTronTrc10Blockch
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/tron/trc10/deploy
      * 

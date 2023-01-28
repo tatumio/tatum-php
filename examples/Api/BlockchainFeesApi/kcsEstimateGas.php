@@ -33,6 +33,9 @@ $arg_kcs_estimate_gas = (new \Tatum\Model\KcsEstimateGas())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/kcs/gas
      * 

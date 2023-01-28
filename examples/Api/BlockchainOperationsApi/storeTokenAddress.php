@@ -25,6 +25,9 @@ $arg_name = "MY_TOKEN";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/token/{name}/{address}
      */

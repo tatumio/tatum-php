@@ -42,6 +42,9 @@ $arg_generate_marketplace_kms = (new \Tatum\Model\GenerateMarketplaceKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing
      * 

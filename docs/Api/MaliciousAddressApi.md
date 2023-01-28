@@ -28,6 +28,12 @@ Method | Description
 
 ## `checkMalicousAddress()`
 
+### Example
+
+[👉 View "**checkMalicousAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MaliciousAddressApi/checkMalicousAddress.php)
+
+### Request
+
 > **GET** `/v3/security/address/{address}`
 
 ### Type signature
@@ -57,10 +63,6 @@ Check malicous address
  Check, if the blockchain address is malicous. Malicous address can contain assets from the DarkWeb, is connected to the scam projects or contains stolen funds.
 
  Supported Chains: ETH, BTC, LTC
-
-### Example
-
-[✨ View "checkMalicousAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MaliciousAddressApi/checkMalicousAddress.php)
 
 [Back to top](#top)
 

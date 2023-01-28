@@ -48,6 +48,9 @@ $arg_transfer_flow_kms = (new \Tatum\Model\TransferFlowKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/flow/transfer
      * 

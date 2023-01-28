@@ -28,6 +28,9 @@ $arg_to = 654326;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/flow/block/events
      * 

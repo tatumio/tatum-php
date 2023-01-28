@@ -42,6 +42,9 @@ $arg_estimate_fee_batch_mint_nft = (new \Tatum\Model\EstimateFeeBatchMintNft())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/estimate
      * 

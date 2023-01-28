@@ -33,6 +33,9 @@ $arg_btc_transaction_from_address_kms = (new \Tatum\Model\BtcTransactionFromAddr
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/bitcoin/transaction
      * 

@@ -36,6 +36,9 @@ $arg_vet_estimate_gas = (new \Tatum\Model\VetEstimateGas())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/vet/transaction/gas
      * 

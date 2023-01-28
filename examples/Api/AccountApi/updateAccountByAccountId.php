@@ -30,6 +30,9 @@ $arg_update_account = (new \Tatum\Model\UpdateAccount())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/ledger/account/{id}
      */

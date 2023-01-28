@@ -54,6 +54,9 @@ $arg_deploy_erc20_offchain_kms_xpub = (new \Tatum\Model\DeployErc20OffchainKMSXp
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/ethereum/erc20/deploy
      * 

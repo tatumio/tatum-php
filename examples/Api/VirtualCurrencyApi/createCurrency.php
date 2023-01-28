@@ -48,6 +48,9 @@ $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ledger/virtualCurrency
      * 

@@ -27,6 +27,9 @@ $arg_receive_algorand_asset = (new \Tatum\Model\ReceiveAlgorandAsset())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/algorand/asset/receive
      * 

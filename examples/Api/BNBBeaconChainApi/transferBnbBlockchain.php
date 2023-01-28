@@ -36,6 +36,9 @@ $arg_transfer_bnb_blockchain = (new \Tatum\Model\TransferBnbBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/bnb/transaction
      * 

@@ -36,6 +36,9 @@ $arg_update_fee_solana = (new \Tatum\Model\UpdateFeeSolana())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/marketplace/listing/fee
      * 

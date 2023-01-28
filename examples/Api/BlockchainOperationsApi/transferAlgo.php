@@ -45,6 +45,9 @@ $arg_transfer_algo = (new \Tatum\Model\TransferAlgo())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/algorand/transfer
      * 

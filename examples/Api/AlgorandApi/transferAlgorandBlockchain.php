@@ -39,6 +39,9 @@ $arg_transfer_algorand_blockchain = (new \Tatum\Model\TransferAlgorandBlockchain
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/algorand/transaction
      * 

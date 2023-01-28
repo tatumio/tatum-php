@@ -45,6 +45,9 @@ $arg_update_fee_recipient_celo_kms = (new \Tatum\Model\UpdateFeeRecipientCeloKMS
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/marketplace/listing/recipient
      * 

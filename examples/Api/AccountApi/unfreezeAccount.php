@@ -22,6 +22,9 @@ $arg_id = "5e68c66581f2ee32bc354087";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/ledger/account/{id}/unfreeze
      */

@@ -37,6 +37,9 @@ $arg_call_klaytn_smart_contract_read_method = (new \Tatum\Model\CallKlaytnSmartC
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/klaytn/smartcontract
      * 

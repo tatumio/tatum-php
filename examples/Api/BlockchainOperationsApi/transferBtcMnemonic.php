@@ -54,6 +54,9 @@ $arg_transfer_btc_mnemonic = (new \Tatum\Model\TransferBtcMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bitcoin/transfer
      * 

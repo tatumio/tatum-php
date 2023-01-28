@@ -39,6 +39,9 @@ $arg_flow_transaction_mnemonic = (new \Tatum\Model\FlowTransactionMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/flow/transaction
      * 

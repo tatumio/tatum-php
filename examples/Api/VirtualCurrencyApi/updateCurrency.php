@@ -30,6 +30,9 @@ $arg_virtual_currency_update = (new \Tatum\Model\VirtualCurrencyUpdate())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/ledger/virtualCurrency
      */

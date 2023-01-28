@@ -25,6 +25,9 @@ $arg_pagination = "1348087155011584";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/xlm/account/tx/{account}
      * 

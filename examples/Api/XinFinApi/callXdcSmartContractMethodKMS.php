@@ -49,6 +49,9 @@ $arg_call_xdc_smart_contract_method_kms = (new \Tatum\Model\CallXdcSmartContract
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xdc/smartcontract
      * 

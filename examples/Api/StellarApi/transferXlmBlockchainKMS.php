@@ -39,6 +39,9 @@ $arg_transfer_xlm_blockchain_kms = (new \Tatum\Model\TransferXlmBlockchainKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xlm/transaction
      * 

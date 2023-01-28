@@ -45,6 +45,9 @@ $arg_generate_marketplace_celo_kms = (new \Tatum\Model\GenerateMarketplaceCeloKM
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing
      * 

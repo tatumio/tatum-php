@@ -39,6 +39,12 @@ Method | Description
 
 ## `transferVetBlockchain()`
 
+### Example
+
+[👉 View "**transferVetBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/transferVetBlockchain.php)
+
+### Request
+
 > **POST** `/v3/vet/transaction`
 
 ### Type signature
@@ -69,15 +75,17 @@ Send VeChain from account to account
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "transferVetBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/transferVetBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferVetBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferVetBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/transferVetBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/vet/transaction`
 
@@ -105,15 +113,17 @@ Send VeChain from account to account
 
 TransferVetBlockchainKMS operation
 
-### Example
-
-[✨ View "transferVetBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/transferVetBlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `vetBroadcast()`
+
+### Example
+
+[👉 View "**vetBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetBroadcast.php)
+
+### Request
 
 > **POST** `/v3/vet/broadcast`
 
@@ -143,15 +153,17 @@ Broadcast signed VeChain transaction
 
  Broadcast signed transaction to VeChain blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "vetBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGenerateAddress()`
+
+### Example
+
+[👉 View "**vetGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/vet/address/{xpub}/{index}`
 
@@ -183,15 +195,17 @@ Generate VeChain account address from Extended public key
 
  Generate VeChain account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "vetGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**vetGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/vet/wallet/priv`
 
@@ -221,15 +235,17 @@ Generate VeChain private key
 
  Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "vetGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGenerateWallet()`
+
+### Example
+
+[👉 View "**vetGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/vet/wallet`
 
@@ -265,15 +281,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for VeChain wallet with derivation path m'/44'/818'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible VeChain wallet.
 
-### Example
-
-[✨ View "vetGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGetBalance()`
+
+### Example
+
+[👉 View "**vetGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetBalance.php)
+
+### Request
 
 > **GET** `/v3/vet/account/balance/{address}`
 
@@ -303,15 +321,17 @@ Get VeChain Account balance
 
 Get VeChain Account balance in VET.
 
-### Example
-
-[✨ View "vetGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGetBlock()`
+
+### Example
+
+[👉 View "**vetGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetBlock.php)
+
+### Request
 
 > **GET** `/v3/vet/block/{hash}`
 
@@ -341,15 +361,17 @@ Get VeChain Block by hash
 
 Get VeChain Block by block hash or block number.
 
-### Example
-
-[✨ View "vetGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGetCurrentBlock()`
+
+### Example
+
+[👉 View "**vetGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/vet/block/current`
 
@@ -375,15 +397,17 @@ Get VeChain current block
 
 Get VeChain current block number.
 
-### Example
-
-[✨ View "vetGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGetEnergy()`
+
+### Example
+
+[👉 View "**vetGetEnergy.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetEnergy.php)
+
+### Request
 
 > **GET** `/v3/vet/account/energy/{address}`
 
@@ -413,15 +437,17 @@ Get VeChain Account energy (VTHO)
 
 Get VeChain Account energy in VTHO. VTHO is used for paying for the transaction fee.
 
-### Example
-
-[✨ View "vetGetEnergy.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetEnergy.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGetTransaction()`
+
+### Example
+
+[👉 View "**vetGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/vet/transaction/{hash}`
 
@@ -451,15 +477,17 @@ Get VeChain Transaction
 
 Get VeChain Transaction by transaction hash.
 
-### Example
-
-[✨ View "vetGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `vetGetTransactionReceipt()`
+
+### Example
+
+[👉 View "**vetGetTransactionReceipt.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetTransactionReceipt.php)
+
+### Request
 
 > **GET** `/v3/vet/transaction/{hash}/receipt`
 
@@ -488,10 +516,6 @@ Get VeChain Transaction Receipt
 <h4>5 credits per API call.</h4>
 
  Get VeChain Transaction Receipt by transaction hash. Transaction receipt is available only after transaction is included in the block and contains information about paid fee or created contract address and much more.
-
-### Example
-
-[✨ View "vetGetTransactionReceipt.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VeChainApi/vetGetTransactionReceipt.php)
 
 [Back to top](#top)
 

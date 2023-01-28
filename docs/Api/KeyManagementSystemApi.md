@@ -32,6 +32,12 @@ Method | Description
 
 ## `completePendingSignature()`
 
+### Example
+
+[👉 View "**completePendingSignature.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/completePendingSignature.php)
+
+### Request
+
 > **PUT** `/v3/kms/{id}/{txId}`
 
 ### Type signature
@@ -62,15 +68,17 @@ Complete pending transaction to sign
 
  Mark pending transaction to sign as a complete and update it with a transactionID from the blockchain.
 
-### Example
-
-[✨ View "completePendingSignature.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/completePendingSignature.php)
-
 [Back to top](#top)
 
 
 
 ## `deletePendingTransactionToSign()`
+
+### Example
+
+[👉 View "**deletePendingTransactionToSign.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
+
+### Request
 
 > **DELETE** `/v3/kms/{id}`
 
@@ -102,15 +110,17 @@ Delete transaction
 
 Delete transaction to be signed. When deleting offchain transaction, linked withdrawal will be cancelled automatically.
 
-### Example
-
-[✨ View "deletePendingTransactionToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/deletePendingTransactionToSign.php)
-
 [Back to top](#top)
 
 
 
 ## `getPendingTransactionToSign()`
+
+### Example
+
+[👉 View "**getPendingTransactionToSign.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
+
+### Request
 
 > **GET** `/v3/kms/{id}`
 
@@ -140,15 +150,17 @@ Get transaction details
 
 Get detail of transaction to be signed / that was already signed and contains transactionId.
 
-### Example
-
-[✨ View "getPendingTransactionToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionToSign.php)
-
 [Back to top](#top)
 
 
 
 ## `getPendingTransactionsToSign()`
+
+### Example
+
+[👉 View "**getPendingTransactionsToSign.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
+
+### Request
 
 > **GET** `/v3/kms/pending/{chain}`
 
@@ -180,15 +192,17 @@ Get pending transactions to sign
 
  Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.
 
-### Example
-
-[✨ View "getPendingTransactionsToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/getPendingTransactionsToSign.php)
-
 [Back to top](#top)
 
 
 
 ## `receivePendingTransactionsToSign()`
+
+### Example
+
+[👉 View "**receivePendingTransactionsToSign.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
+
+### Request
 
 > **POST** `/v3/kms/pending/{chain}`
 
@@ -221,10 +235,6 @@ Get pending transactions to sign
  Get the list of pending transactions to sign and broadcast using <a href="https://github.com/tatumio/tatum-kms" target="_blank">KMS</a>.
 
  **NOTE:** This API works only in KMS v5.0 or later. If you use KMS older than v5.0, use <a href="https://apidoc.tatum.io/tag/Key-Management-System/#operation/getpendingtransactionstosign">this API</a> instead.
-
-### Example
-
-[✨ View "receivePendingTransactionsToSign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KeyManagementSystemApi/receivePendingTransactionsToSign.php)
 
 [Back to top](#top)
 

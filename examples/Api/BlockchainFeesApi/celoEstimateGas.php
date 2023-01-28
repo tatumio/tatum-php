@@ -33,6 +33,9 @@ $arg_celo_estimate_gas = (new \Tatum\Model\CeloEstimateGas())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/celo/gas
      * 

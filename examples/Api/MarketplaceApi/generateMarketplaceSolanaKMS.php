@@ -48,6 +48,9 @@ $arg_generate_marketplace_solana_kms = (new \Tatum\Model\GenerateMarketplaceSola
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing
      * 

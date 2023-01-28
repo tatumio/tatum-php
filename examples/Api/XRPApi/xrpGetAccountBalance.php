@@ -22,6 +22,9 @@ $arg_account = "rDA3DJBUBjA1X3PtLLFAEXxX31oA5nL3QF";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/xrp/account/{account}/balance
      * 

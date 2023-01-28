@@ -22,6 +22,9 @@ $arg_id = "5e6be89ee6aa436299950c3f";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * DELETE /v3/ledger/account/block/{id}
      */

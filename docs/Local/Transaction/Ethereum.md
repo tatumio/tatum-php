@@ -25,6 +25,10 @@ Method | Description
 
 # `sign()`
 
+## Example
+
+[👉 View "**sign.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/Ethereum/sign.php)
+
 ## Type signature
 
 ```php
@@ -33,23 +37,19 @@ Method | Description
 ): string
 ```
 
-### Parameters
+## Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **$transfer** | [**\Tatum\Model\TransferEthBlockchain**](../../../Model/TransferEthBlockchain) | Transfer request | 
 
-### Return type
+## Return type
 
 Signed transaction hex (`string`)
 
-### Description
+## Description
 
 Sign transaction
-
-### Example
-
-[✨ View "sign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/Ethereum/sign.php)
 
 [Back to top](#top)
 

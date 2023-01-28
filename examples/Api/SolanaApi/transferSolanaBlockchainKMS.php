@@ -39,6 +39,9 @@ $arg_transfer_solana_blockchain_kms = (new \Tatum\Model\TransferSolanaBlockchain
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/solana/transaction
      * 

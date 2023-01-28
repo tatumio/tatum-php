@@ -30,6 +30,9 @@ $arg_transfer_managed_address = (new \Tatum\Model\TransferManagedAddress())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/custodial/transaction
      * 

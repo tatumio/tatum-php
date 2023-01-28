@@ -43,6 +43,12 @@ Method | Description
 
 ## `ltcBroadcast()`
 
+### Example
+
+[👉 View "**ltcBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcBroadcast.php)
+
+### Request
+
 > **POST** `/v3/litecoin/broadcast`
 
 ### Type signature
@@ -71,15 +77,17 @@ Broadcast signed Litecoin transaction
 
  Broadcast signed transaction to Litecoin blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "ltcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGenerateAddress()`
+
+### Example
+
+[👉 View "**ltcGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/litecoin/address/{xpub}/{index}`
 
@@ -111,15 +119,17 @@ Generate Litecoin deposit address from Extended public key
 
  Generate Litecoin deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "ltcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**ltcGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/litecoin/wallet/priv`
 
@@ -149,15 +159,17 @@ Generate Litecoin private key
 
  Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "ltcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGenerateWallet()`
+
+### Example
+
+[👉 View "**ltcGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/litecoin/wallet`
 
@@ -193,15 +205,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for Litecoin wallet with derivation path m'/44'/2'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki">https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Litecoin wallet.
 
-### Example
-
-[✨ View "ltcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGetBalanceOfAddress()`
+
+### Example
+
+[👉 View "**ltcGetBalanceOfAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBalanceOfAddress.php)
+
+### Request
 
 > **GET** `/v3/litecoin/address/balance/{address}`
 
@@ -233,15 +247,17 @@ Get the balance of a Litecoin address
 
  The API returns the balance only if the address has up to 50,000 UTXOs (Unspent Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns an error with the <code>403</code> response code.
 
-### Example
-
-[✨ View "ltcGetBalanceOfAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBalanceOfAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGetBlock()`
+
+### Example
+
+[👉 View "**ltcGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlock.php)
+
+### Request
 
 > **GET** `/v3/litecoin/block/{hash}`
 
@@ -271,15 +287,17 @@ Get Litecoin Block by hash or height
 
 Get Litecoin Block detail by block hash or height.
 
-### Example
-
-[✨ View "ltcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGetBlockChainInfo()`
+
+### Example
+
+[👉 View "**ltcGetBlockChainInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockChainInfo.php)
+
+### Request
 
 > **GET** `/v3/litecoin/info`
 
@@ -305,15 +323,17 @@ Get Litecoin Blockchain Information
 
 Get Litecoin Blockchain Information. Obtain basic info like testnet / mainnet version of the chain, current block number and it's hash.
 
-### Example
-
-[✨ View "ltcGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockChainInfo.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGetBlockHash()`
+
+### Example
+
+[👉 View "**ltcGetBlockHash.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockHash.php)
+
+### Request
 
 > **GET** `/v3/litecoin/block/hash/{i}`
 
@@ -343,15 +363,17 @@ Get Litecoin Block hash
 
 Get Litecoin Block hash. Returns hash of the block to get the block detail.
 
-### Example
-
-[✨ View "ltcGetBlockHash.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockHash.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGetMempool()`
+
+### Example
+
+[👉 View "**ltcGetMempool.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetMempool.php)
+
+### Request
 
 > **GET** `/v3/litecoin/mempool`
 
@@ -377,15 +399,17 @@ Get Mempool Transactions
 
 Get Litecoin Transaction ids in the mempool.
 
-### Example
-
-[✨ View "ltcGetMempool.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetMempool.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGetRawTransaction()`
+
+### Example
+
+[👉 View "**ltcGetRawTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetRawTransaction.php)
+
+### Request
 
 > **GET** `/v3/litecoin/transaction/{hash}`
 
@@ -415,15 +439,17 @@ Get Litecoin Transaction by hash
 
 Get Litecoin Transaction detail by transaction hash.
 
-### Example
-
-[✨ View "ltcGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetRawTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGetTxByAddress()`
+
+### Example
+
+[👉 View "**ltcGetTxByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetTxByAddress.php)
+
+### Request
 
 > **GET** `/v3/litecoin/transaction/address/{address}`
 
@@ -457,15 +483,17 @@ Get Litecoin Transactions by address
 
 Get Litecoin Transaction by address.
 
-### Example
-
-[✨ View "ltcGetTxByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetTxByAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcGetUTXO()`
+
+### Example
+
+[👉 View "**ltcGetUTXO.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetUTXO.php)
+
+### Request
 
 > **GET** `/v3/litecoin/utxo/{hash}/{index}`
 
@@ -503,15 +531,17 @@ Get information about a transaction output (UTXO) in a Litecoin transaction
 
 <ul> <li>If the transaction output is an UTXO, the API returns data about it.</li> <li>If the transaction output has been spent and there is no UTXO to return, the API returns an error with the <code>404</code> response code.</li> </ul>
 
-### Example
-
-[✨ View "ltcGetUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetUTXO.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcTransactionAddress()`
+
+### Example
+
+[👉 View "**ltcTransactionAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddress.php)
+
+### Request
 
 > **POST** `/v3/litecoin/transaction`
 
@@ -575,15 +605,17 @@ The assets are sent from a list of UTXOs. Each UTXO is included in the transacti
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "ltcTransactionAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcTransactionAddressKMS()`
+
+### Example
+
+[👉 View "**ltcTransactionAddressKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddressKMS.php)
+
+### Request
 
 > **POST** `/v3/litecoin/transaction`
 
@@ -611,15 +643,17 @@ Send LTC to Litecoin addresses
 
 LtcTransactionAddressKMS operation
 
-### Example
-
-[✨ View "ltcTransactionAddressKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddressKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcTransactionUTXO()`
+
+### Example
+
+[👉 View "**ltcTransactionUTXO.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXO.php)
+
+### Request
 
 > **POST** `/v3/litecoin/transaction`
 
@@ -647,15 +681,17 @@ Send LTC to Litecoin addresses
 
 LtcTransactionUTXO operation
 
-### Example
-
-[✨ View "ltcTransactionUTXO.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXO.php)
-
 [Back to top](#top)
 
 
 
 ## `ltcTransactionUTXOKMS()`
+
+### Example
+
+[👉 View "**ltcTransactionUTXOKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXOKMS.php)
+
+### Request
 
 > **POST** `/v3/litecoin/transaction`
 
@@ -682,10 +718,6 @@ Name | Type | Description  | Notes
 Send LTC to Litecoin addresses
 
 LtcTransactionUTXOKMS operation
-
-### Example
-
-[✨ View "ltcTransactionUTXOKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXOKMS.php)
 
 [Back to top](#top)
 

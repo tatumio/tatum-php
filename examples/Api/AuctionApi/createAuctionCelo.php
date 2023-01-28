@@ -63,6 +63,9 @@ $arg_create_auction_celo = (new \Tatum\Model\CreateAuctionCelo())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/sell
      * 

@@ -45,6 +45,9 @@ $arg_estimate_fee_transfer_from_custodial = (new \Tatum\Model\EstimateFeeTransfe
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/estimate
      * 

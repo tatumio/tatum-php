@@ -57,6 +57,9 @@ $arg_deploy_trc_offchain_mnemonic_address = (new \Tatum\Model\DeployTrcOffchainM
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/tron/trc/deploy
      * 

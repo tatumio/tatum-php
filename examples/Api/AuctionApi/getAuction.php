@@ -28,6 +28,9 @@ $arg_id = "123456";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/blockchain/auction/{chain}/{contractAddress}/{id}
      * 

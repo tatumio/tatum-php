@@ -36,6 +36,9 @@ $arg_flow_transaction_pk = (new \Tatum\Model\FlowTransactionPK())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/flow/transaction
      * 

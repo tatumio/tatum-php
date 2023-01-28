@@ -39,6 +39,9 @@ $arg_trust_line_xrp_blockchain_kms = (new \Tatum\Model\TrustLineXrpBlockchainKMS
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xrp/trust
      * 

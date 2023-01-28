@@ -54,6 +54,9 @@ $arg_trc_address = (new \Tatum\Model\TrcAddress())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/tron/trc
      * 

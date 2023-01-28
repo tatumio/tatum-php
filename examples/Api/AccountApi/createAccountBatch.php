@@ -24,6 +24,9 @@ $arg_create_account_batch = (new \Tatum\Model\CreateAccountBatch())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ledger/account/batch
      * 

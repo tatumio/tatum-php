@@ -45,6 +45,9 @@ $arg_transfer_celo_blockchain = (new \Tatum\Model\TransferCeloBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/celo/transaction
      * 

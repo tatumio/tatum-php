@@ -25,6 +25,9 @@ $arg_date = "2021-09-17T07:55:54Z";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/blockchain/auction/time/{chain}/{date}
      * 

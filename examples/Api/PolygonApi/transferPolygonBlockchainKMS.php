@@ -45,6 +45,9 @@ $arg_transfer_polygon_blockchain_kms = (new \Tatum\Model\TransferPolygonBlockcha
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/polygon/transaction
      * 

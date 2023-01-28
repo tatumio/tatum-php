@@ -42,6 +42,9 @@ $arg_transfer_bsc_blockchain = (new \Tatum\Model\TransferBscBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/bsc/transaction
      * 

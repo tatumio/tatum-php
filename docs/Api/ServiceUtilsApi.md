@@ -31,6 +31,12 @@ Method | Description
 
 ## `freezeApiKey()`
 
+### Example
+
+[👉 View "**freezeApiKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/freezeApiKey.php)
+
+### Request
+
 > **PUT** `/v3/tatum/freeze`
 
 ### Type signature
@@ -55,15 +61,17 @@ Freeze API Key
 
 Freeze the API Key. It's not possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage. Only read operations are permitted.
 
-### Example
-
-[✨ View "freezeApiKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/freezeApiKey.php)
-
 [Back to top](#top)
 
 
 
 ## `getCredits()`
+
+### Example
+
+[👉 View "**getCredits.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getCredits.php)
+
+### Request
 
 > **GET** `/v3/tatum/usage`
 
@@ -89,15 +97,17 @@ Get information about your credit consumption for the last month
 
  Get information about your credit consumption for the last month (used credits per day).
 
-### Example
-
-[✨ View "getCredits.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getCredits.php)
-
 [Back to top](#top)
 
 
 
 ## `getVersion()`
+
+### Example
+
+[👉 View "**getVersion.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getVersion.php)
+
+### Request
 
 > **GET** `/v3/tatum/version`
 
@@ -123,15 +133,17 @@ Get API version
 
 Get current version of the API.
 
-### Example
-
-[✨ View "getVersion.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getVersion.php)
-
 [Back to top](#top)
 
 
 
 ## `unfreezeApiKey()`
+
+### Example
+
+[👉 View "**unfreezeApiKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/unfreezeApiKey.php)
+
+### Request
 
 > **DELETE** `/v3/tatum/freeze`
 
@@ -156,10 +168,6 @@ Unfreeze API Key
 <h4>2 credits per API call.</h4>
 
 Unfreeze the API Key. It's possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage again.
-
-### Example
-
-[✨ View "unfreezeApiKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/unfreezeApiKey.php)
 
 [Back to top](#top)
 

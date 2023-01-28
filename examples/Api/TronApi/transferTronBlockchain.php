@@ -30,6 +30,9 @@ $arg_transfer_tron_blockchain = (new \Tatum\Model\TransferTronBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/tron/transaction
      * 

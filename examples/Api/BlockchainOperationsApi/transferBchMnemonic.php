@@ -54,6 +54,9 @@ $arg_transfer_bch_mnemonic = (new \Tatum\Model\TransferBchMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bcash/transfer
      * 

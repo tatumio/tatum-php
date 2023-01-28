@@ -30,6 +30,9 @@ $arg_create_xrp_asset = (new \Tatum\Model\CreateXrpAsset())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/xrp/asset
      */

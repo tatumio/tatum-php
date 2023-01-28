@@ -45,6 +45,9 @@ $arg_transfer_xlm_blockchain_asset = (new \Tatum\Model\TransferXlmBlockchainAsse
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xlm/transaction
      * 

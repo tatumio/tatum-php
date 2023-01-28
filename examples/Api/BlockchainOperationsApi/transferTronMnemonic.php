@@ -48,6 +48,9 @@ $arg_transfer_tron_mnemonic = (new \Tatum\Model\TransferTronMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/tron/transfer
      * 

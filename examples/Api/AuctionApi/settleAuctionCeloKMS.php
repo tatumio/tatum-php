@@ -45,6 +45,9 @@ $arg_settle_auction_celo_kms = (new \Tatum\Model\SettleAuctionCeloKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/settle
      * 

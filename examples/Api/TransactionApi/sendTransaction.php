@@ -51,6 +51,9 @@ $arg_create_transaction = (new \Tatum\Model\CreateTransaction())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ledger/transaction
      * 

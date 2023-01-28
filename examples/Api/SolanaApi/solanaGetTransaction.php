@@ -25,6 +25,9 @@ $arg_commitment = 'commitment_example';
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/solana/transaction/{hash}
      * 

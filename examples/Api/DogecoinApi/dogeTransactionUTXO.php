@@ -33,6 +33,9 @@ $arg_doge_transaction_utxo = (new \Tatum\Model\DogeTransactionUTXO())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/dogecoin/transaction
      * 

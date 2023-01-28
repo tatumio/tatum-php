@@ -22,6 +22,9 @@ $arg_hash = "99996224823736c1e9b8484ed74c1573049478f871d6f94b86811fb1c7b2addd";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/egld/transaction/{hash}
      * 

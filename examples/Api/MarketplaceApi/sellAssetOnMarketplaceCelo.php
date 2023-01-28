@@ -63,6 +63,9 @@ $arg_sell_asset_on_marketplace_celo = (new \Tatum\Model\SellAssetOnMarketplaceCe
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing/sell
      * 

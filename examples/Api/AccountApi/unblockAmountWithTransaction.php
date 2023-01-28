@@ -51,6 +51,9 @@ $arg_unblock_amount = (new \Tatum\Model\UnblockAmount())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/ledger/account/block/{id}
      * 

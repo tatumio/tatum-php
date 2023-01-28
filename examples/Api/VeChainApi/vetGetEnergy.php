@@ -22,6 +22,9 @@ $arg_address = "0x5034aa590125b64023a0262112b98d72e3c8e40e";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/vet/account/energy/{address}
      * 

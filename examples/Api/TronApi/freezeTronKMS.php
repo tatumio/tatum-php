@@ -42,6 +42,9 @@ $arg_freeze_tron_kms = (new \Tatum\Model\FreezeTronKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/tron/freezeBalance
      * 

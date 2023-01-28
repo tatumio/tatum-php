@@ -39,6 +39,9 @@ $arg_offchain_estimate_fee = (new \Tatum\Model\OffchainEstimateFee())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/blockchain/estimate
      * 

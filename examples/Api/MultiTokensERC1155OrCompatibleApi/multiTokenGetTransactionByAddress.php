@@ -40,6 +40,9 @@ $arg_to = 1087823;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/multitoken/transaction/{chain}/{address}/{tokenAddress}
      * 

@@ -54,6 +54,9 @@ $arg_transfer_kcskms = (new \Tatum\Model\TransferKCSKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/kcs/transfer
      * 

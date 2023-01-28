@@ -28,6 +28,9 @@ $arg_index = 3.4;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/gas-pump/activated/{chain}/{owner}/{index}
      * 

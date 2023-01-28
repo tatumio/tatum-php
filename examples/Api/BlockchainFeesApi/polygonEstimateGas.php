@@ -33,6 +33,9 @@ $arg_polygon_estimate_gas = (new \Tatum\Model\PolygonEstimateGas())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/polygon/gas
      * 

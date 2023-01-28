@@ -22,6 +22,9 @@ $arg_chain = "BTC";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/blockchain/fee/{chain}
      * 

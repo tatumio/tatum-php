@@ -36,6 +36,9 @@ $arg_transfer_vet_blockchain = (new \Tatum\Model\TransferVetBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/vet/transaction
      * 

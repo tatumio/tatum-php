@@ -51,6 +51,9 @@ $arg_transfer_btc_key_pair = (new \Tatum\Model\TransferBtcKeyPair())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bitcoin/transfer
      * 

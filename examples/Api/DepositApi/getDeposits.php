@@ -43,6 +43,9 @@ $arg_account_id = "628bae6095e9ad06b52eb229";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/ledger/deposits
      * 

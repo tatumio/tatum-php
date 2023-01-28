@@ -51,6 +51,9 @@ $arg_transfer_doge_key_pair = (new \Tatum\Model\TransferDogeKeyPair())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/dogecoin/transfer
      * 

@@ -53,6 +53,12 @@ Method | Description
 
 ## `activateGasPump()`
 
+### Example
+
+[👉 View "**activateGasPump.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPump.php)
+
+### Request
+
 > **POST** `/v3/gas-pump/activate`
 
 ### Type signature
@@ -79,15 +85,17 @@ Activate gas pump addresses
 
 ActivateGasPump operation
 
-### Example
-
-[✨ View "activateGasPump.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPump.php)
-
 [Back to top](#top)
 
 
 
 ## `activateGasPumpCelo()`
+
+### Example
+
+[👉 View "**activateGasPumpCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCelo.php)
+
+### Request
 
 > **POST** `/v3/gas-pump/activate`
 
@@ -115,15 +123,17 @@ Activate gas pump addresses
 
 ActivateGasPumpCelo operation
 
-### Example
-
-[✨ View "activateGasPumpCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `activateGasPumpCeloKMS()`
+
+### Example
+
+[👉 View "**activateGasPumpCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/gas-pump/activate`
 
@@ -151,15 +161,17 @@ Activate gas pump addresses
 
 ActivateGasPumpCeloKMS operation
 
-### Example
-
-[✨ View "activateGasPumpCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `activateGasPumpKMS()`
+
+### Example
+
+[👉 View "**activateGasPumpKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpKMS.php)
+
+### Request
 
 > **POST** `/v3/gas-pump/activate`
 
@@ -187,15 +199,17 @@ Activate gas pump addresses
 
 ActivateGasPumpKMS operation
 
-### Example
-
-[✨ View "activateGasPumpKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `activateGasPumpTatum()`
+
+### Example
+
+[👉 View "**activateGasPumpTatum.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTatum.php)
+
+### Request
 
 > **POST** `/v3/gas-pump/activate`
 
@@ -263,15 +277,17 @@ Activate gas pump addresses
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
 
-### Example
-
-[✨ View "activateGasPumpTatum.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTatum.php)
-
 [Back to top](#top)
 
 
 
 ## `activateGasPumpTron()`
+
+### Example
+
+[👉 View "**activateGasPumpTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTron.php)
+
+### Request
 
 > **POST** `/v3/gas-pump/activate`
 
@@ -299,15 +315,17 @@ Activate gas pump addresses
 
 ActivateGasPumpTron operation
 
-### Example
-
-[✨ View "activateGasPumpTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTron.php)
-
 [Back to top](#top)
 
 
 
 ## `activateGasPumpTronKMS()`
+
+### Example
+
+[👉 View "**activateGasPumpTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTronKMS.php)
+
+### Request
 
 > **POST** `/v3/gas-pump/activate`
 
@@ -335,15 +353,17 @@ Activate gas pump addresses
 
 ActivateGasPumpTronKMS operation
 
-### Example
-
-[✨ View "activateGasPumpTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTronKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `activatedNotActivatedGasPumpAddresses()`
+
+### Example
+
+[👉 View "**activatedNotActivatedGasPumpAddresses.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activatedNotActivatedGasPumpAddresses.php)
+
+### Request
 
 > **GET** `/v3/gas-pump/address/{chain}/{txId}`
 
@@ -389,15 +409,17 @@ Get the results of the address activation transaction
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
 
-### Example
-
-[✨ View "activatedNotActivatedGasPumpAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activatedNotActivatedGasPumpAddresses.php)
-
 [Back to top](#top)
 
 
 
 ## `approveTransferCustodialWallet()`
+
+### Example
+
+[👉 View "**approveTransferCustodialWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWallet.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/approve`
 
@@ -449,15 +471,17 @@ Approve the transfer of an asset from a gas pump address
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "approveTransferCustodialWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `approveTransferCustodialWalletCelo()`
+
+### Example
+
+[👉 View "**approveTransferCustodialWalletCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/approve`
 
@@ -485,15 +509,17 @@ Approve the transfer of an asset from a gas pump address
 
 ApproveTransferCustodialWalletCelo operation
 
-### Example
-
-[✨ View "approveTransferCustodialWalletCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `approveTransferCustodialWalletCeloKMS()`
+
+### Example
+
+[👉 View "**approveTransferCustodialWalletCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/approve`
 
@@ -521,15 +547,17 @@ Approve the transfer of an asset from a gas pump address
 
 ApproveTransferCustodialWalletCeloKMS operation
 
-### Example
-
-[✨ View "approveTransferCustodialWalletCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `approveTransferCustodialWalletKMS()`
+
+### Example
+
+[👉 View "**approveTransferCustodialWalletKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/approve`
 
@@ -557,15 +585,17 @@ Approve the transfer of an asset from a gas pump address
 
 ApproveTransferCustodialWalletKMS operation
 
-### Example
-
-[✨ View "approveTransferCustodialWalletKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `gasPumpAddressesActivatedOrNot()`
+
+### Example
+
+[👉 View "**gasPumpAddressesActivatedOrNot.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php)
+
+### Request
 
 > **GET** `/v3/gas-pump/activated/{chain}/{owner}/{index}`
 
@@ -607,15 +637,17 @@ Check whether the gas pump address with a specified index is activated
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
 
-### Example
-
-[✨ View "gasPumpAddressesActivatedOrNot.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php)
-
 [Back to top](#top)
 
 
 
 ## `precalculateGasPumpAddresses()`
+
+### Example
+
+[👉 View "**precalculateGasPumpAddresses.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/precalculateGasPumpAddresses.php)
+
+### Request
 
 > **POST** `/v3/gas-pump`
 
@@ -677,15 +709,17 @@ For example, you precalculated three gas pump addresses with a range of index va
 
  The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activate them</a>.
 
-### Example
-
-[✨ View "precalculateGasPumpAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/precalculateGasPumpAddresses.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWallet()`
+
+### Example
+
+[👉 View "**transferCustodialWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWallet.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer`
 
@@ -743,15 +777,17 @@ To check whether the gas pump address is activated, use <a href="https://apidoc.
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferCustodialWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletBatch()`
+
+### Example
+
+[👉 View "**transferCustodialWalletBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatch.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer/batch`
 
@@ -809,15 +845,17 @@ To check whether the gas pump address is activated, use <a href="https://apidoc.
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferCustodialWalletBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatch.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletBatchCelo()`
+
+### Example
+
+[👉 View "**transferCustodialWalletBatchCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer/batch`
 
@@ -845,15 +883,17 @@ Transfer multiple assets from a gas pump address
 
 TransferCustodialWalletBatchCelo operation
 
-### Example
-
-[✨ View "transferCustodialWalletBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletBatchCeloKMS()`
+
+### Example
+
+[👉 View "**transferCustodialWalletBatchCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer/batch`
 
@@ -881,15 +921,17 @@ Transfer multiple assets from a gas pump address
 
 TransferCustodialWalletBatchCeloKMS operation
 
-### Example
-
-[✨ View "transferCustodialWalletBatchCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletBatchKMS()`
+
+### Example
+
+[👉 View "**transferCustodialWalletBatchKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer/batch`
 
@@ -917,15 +959,17 @@ Transfer multiple assets from a gas pump address
 
 TransferCustodialWalletBatchKMS operation
 
-### Example
-
-[✨ View "transferCustodialWalletBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletBatchTron()`
+
+### Example
+
+[👉 View "**transferCustodialWalletBatchTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTron.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer/batch`
 
@@ -953,15 +997,17 @@ Transfer multiple assets from a gas pump address
 
 TransferCustodialWalletBatchTron operation
 
-### Example
-
-[✨ View "transferCustodialWalletBatchTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTron.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletBatchTronKMS()`
+
+### Example
+
+[👉 View "**transferCustodialWalletBatchTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTronKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer/batch`
 
@@ -989,15 +1035,17 @@ Transfer multiple assets from a gas pump address
 
 TransferCustodialWalletBatchTronKMS operation
 
-### Example
-
-[✨ View "transferCustodialWalletBatchTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTronKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletCelo()`
+
+### Example
+
+[👉 View "**transferCustodialWalletCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer`
 
@@ -1025,15 +1073,17 @@ Transfer an asset from a gas pump address
 
 TransferCustodialWalletCelo operation
 
-### Example
-
-[✨ View "transferCustodialWalletCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletCeloKMS()`
+
+### Example
+
+[👉 View "**transferCustodialWalletCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer`
 
@@ -1061,15 +1111,17 @@ Transfer an asset from a gas pump address
 
 TransferCustodialWalletCeloKMS operation
 
-### Example
-
-[✨ View "transferCustodialWalletCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletKMS()`
+
+### Example
+
+[👉 View "**transferCustodialWalletKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer`
 
@@ -1097,15 +1149,17 @@ Transfer an asset from a gas pump address
 
 TransferCustodialWalletKMS operation
 
-### Example
-
-[✨ View "transferCustodialWalletKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletTron()`
+
+### Example
+
+[👉 View "**transferCustodialWalletTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTron.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer`
 
@@ -1133,15 +1187,17 @@ Transfer an asset from a gas pump address
 
 TransferCustodialWalletTron operation
 
-### Example
-
-[✨ View "transferCustodialWalletTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTron.php)
-
 [Back to top](#top)
 
 
 
 ## `transferCustodialWalletTronKMS()`
+
+### Example
+
+[👉 View "**transferCustodialWalletTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTronKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/sc/custodial/transfer`
 
@@ -1168,10 +1224,6 @@ Name | Type | Description  | Notes
 Transfer an asset from a gas pump address
 
 TransferCustodialWalletTronKMS operation
-
-### Example
-
-[✨ View "transferCustodialWalletTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTronKMS.php)
 
 [Back to top](#top)
 

@@ -54,6 +54,9 @@ $arg_buy_asset_on_marketplace_celo_kms = (new \Tatum\Model\BuyAssetOnMarketplace
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing/buy
      * 

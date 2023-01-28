@@ -33,6 +33,9 @@ $arg_ltc_transaction_address_kms = (new \Tatum\Model\LtcTransactionAddressKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/litecoin/transaction
      * 

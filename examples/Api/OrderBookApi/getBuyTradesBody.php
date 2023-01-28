@@ -57,6 +57,9 @@ $arg_list_oder_book_active_buy_body = (new \Tatum\Model\ListOderBookActiveBuyBod
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/trade/buy
      * 

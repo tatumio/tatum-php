@@ -52,6 +52,9 @@ $arg_shard_id = 0;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/one/smartcontract
      * 

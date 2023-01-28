@@ -42,6 +42,9 @@ $arg_transfer_tron_trc20_blockchain_kms = (new \Tatum\Model\TransferTronTrc20Blo
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/tron/trc20/transaction
      * 

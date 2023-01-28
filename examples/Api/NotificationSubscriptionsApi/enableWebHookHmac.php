@@ -24,6 +24,9 @@ $arg_hmac_web_hook = (new \Tatum\Model\HmacWebHook())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/subscription
      */

@@ -106,6 +106,12 @@ Method | Description
 
 ## `addNftMinter()`
 
+### Example
+
+[👉 View "**addNftMinter.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinter.php)
+
+### Request
+
 > **POST** `/v3/nft/mint/add`
 
 ### Type signature
@@ -154,15 +160,17 @@ Add a blockchain address as an NFT minter to an NFT smart contract
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "addNftMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinter.php)
-
 [Back to top](#top)
 
 
 
 ## `addNftMinterKMS()`
+
+### Example
+
+[👉 View "**addNftMinterKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinterKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/add`
 
@@ -192,15 +200,17 @@ Add a blockchain address as an NFT minter to an NFT smart contract
 
 AddNftMinterKMS operation
 
-### Example
-
-[✨ View "addNftMinterKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinterKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNft()`
+
+### Example
+
+[👉 View "**burnNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNft.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -252,15 +262,17 @@ Burn an NFT
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "burnNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNft.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftAlgo()`
+
+### Example
+
+[👉 View "**burnNftAlgo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftAlgo.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -290,15 +302,17 @@ Burn an NFT
 
 BurnNftAlgo operation
 
-### Example
-
-[✨ View "burnNftAlgo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftAlgo.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftCelo()`
+
+### Example
+
+[👉 View "**burnNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -328,15 +342,17 @@ Burn an NFT
 
 BurnNftCelo operation
 
-### Example
-
-[✨ View "burnNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftFlowKMS()`
+
+### Example
+
+[👉 View "**burnNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -366,15 +382,17 @@ Burn an NFT
 
 BurnNftFlowKMS operation
 
-### Example
-
-[✨ View "burnNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftFlowMnemonic()`
+
+### Example
+
+[👉 View "**burnNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowMnemonic.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -404,15 +422,17 @@ Burn an NFT
 
 BurnNftFlowMnemonic operation
 
-### Example
-
-[✨ View "burnNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftFlowPK()`
+
+### Example
+
+[👉 View "**burnNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowPK.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -442,15 +462,17 @@ Burn an NFT
 
 BurnNftFlowPK operation
 
-### Example
-
-[✨ View "burnNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowPK.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftKMS()`
+
+### Example
+
+[👉 View "**burnNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -480,15 +502,17 @@ Burn an NFT
 
 BurnNftKMS operation
 
-### Example
-
-[✨ View "burnNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftKMSCelo()`
+
+### Example
+
+[👉 View "**burnNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -518,15 +542,17 @@ Burn an NFT
 
 BurnNftKMSCelo operation
 
-### Example
-
-[✨ View "burnNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftKMSTron()`
+
+### Example
+
+[👉 View "**burnNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSTron.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -556,15 +582,17 @@ Burn an NFT
 
 BurnNftKMSTron operation
 
-### Example
-
-[✨ View "burnNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSTron.php)
-
 [Back to top](#top)
 
 
 
 ## `burnNftTron()`
+
+### Example
+
+[👉 View "**burnNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftTron.php)
+
+### Request
 
 > **POST** `/v3/nft/burn`
 
@@ -594,15 +622,17 @@ Burn an NFT
 
 BurnNftTron operation
 
-### Example
-
-[✨ View "burnNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftTron.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNft()`
+
+### Example
+
+[👉 View "**deployNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNft.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -674,15 +704,17 @@ Deploy an NFT smart contract
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "deployNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNft.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNftCelo()`
+
+### Example
+
+[👉 View "**deployNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -712,15 +744,17 @@ Deploy an NFT smart contract
 
 DeployNftCelo operation
 
-### Example
-
-[✨ View "deployNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNftCeloKMS()`
+
+### Example
+
+[👉 View "**deployNftCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -750,15 +784,17 @@ Deploy an NFT smart contract
 
 DeployNftCeloKMS operation
 
-### Example
-
-[✨ View "deployNftCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNftFlowKMS()`
+
+### Example
+
+[👉 View "**deployNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -788,15 +824,17 @@ Deploy an NFT smart contract
 
 DeployNftFlowKMS operation
 
-### Example
-
-[✨ View "deployNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNftFlowMnemonic()`
+
+### Example
+
+[👉 View "**deployNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowMnemonic.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -826,15 +864,17 @@ Deploy an NFT smart contract
 
 DeployNftFlowMnemonic operation
 
-### Example
-
-[✨ View "deployNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNftFlowPK()`
+
+### Example
+
+[👉 View "**deployNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowPK.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -864,15 +904,17 @@ Deploy an NFT smart contract
 
 DeployNftFlowPK operation
 
-### Example
-
-[✨ View "deployNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowPK.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNftKMS()`
+
+### Example
+
+[👉 View "**deployNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -902,15 +944,17 @@ Deploy an NFT smart contract
 
 DeployNftKMS operation
 
-### Example
-
-[✨ View "deployNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNftTron()`
+
+### Example
+
+[👉 View "**deployNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTron.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -940,15 +984,17 @@ Deploy an NFT smart contract
 
 DeployNftTron operation
 
-### Example
-
-[✨ View "deployNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTron.php)
-
 [Back to top](#top)
 
 
 
 ## `deployNftTronKMS()`
+
+### Example
+
+[👉 View "**deployNftTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTronKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/deploy`
 
@@ -978,15 +1024,17 @@ Deploy an NFT smart contract
 
 DeployNftTronKMS operation
 
-### Example
-
-[✨ View "deployNftTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTronKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNft()`
+
+### Example
+
+[👉 View "**mintMultipleNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNft.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1016,15 +1064,17 @@ Mint multiple NFTs
 
 MintMultipleNft operation
 
-### Example
-
-[✨ View "mintMultipleNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNft.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftCelo()`
+
+### Example
+
+[👉 View "**mintMultipleNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1054,15 +1104,17 @@ Mint multiple NFTs
 
 MintMultipleNftCelo operation
 
-### Example
-
-[✨ View "mintMultipleNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftFlowKMS()`
+
+### Example
+
+[👉 View "**mintMultipleNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1092,15 +1144,17 @@ Mint multiple NFTs
 
 MintMultipleNftFlowKMS operation
 
-### Example
-
-[✨ View "mintMultipleNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftFlowMnemonic()`
+
+### Example
+
+[👉 View "**mintMultipleNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowMnemonic.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1130,15 +1184,17 @@ Mint multiple NFTs
 
 MintMultipleNftFlowMnemonic operation
 
-### Example
-
-[✨ View "mintMultipleNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftFlowPK()`
+
+### Example
+
+[👉 View "**mintMultipleNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowPK.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1168,15 +1224,17 @@ Mint multiple NFTs
 
 MintMultipleNftFlowPK operation
 
-### Example
-
-[✨ View "mintMultipleNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowPK.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftKMS()`
+
+### Example
+
+[👉 View "**mintMultipleNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1206,15 +1264,17 @@ Mint multiple NFTs
 
 MintMultipleNftKMS operation
 
-### Example
-
-[✨ View "mintMultipleNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftKMSCelo()`
+
+### Example
+
+[👉 View "**mintMultipleNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1244,15 +1304,17 @@ Mint multiple NFTs
 
 MintMultipleNftKMSCelo operation
 
-### Example
-
-[✨ View "mintMultipleNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftKMSTron()`
+
+### Example
+
+[👉 View "**mintMultipleNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSTron.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1282,15 +1344,17 @@ Mint multiple NFTs
 
 MintMultipleNftKMSTron operation
 
-### Example
-
-[✨ View "mintMultipleNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSTron.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftMinter()`
+
+### Example
+
+[👉 View "**mintMultipleNftMinter.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftMinter.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1352,15 +1416,17 @@ Mint multiple NFTs
 
  If there are not enough coins on any testnet address, feel free to send coins there.
 
-### Example
-
-[✨ View "mintMultipleNftMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftMinter.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultipleNftTron()`
+
+### Example
+
+[👉 View "**mintMultipleNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftTron.php)
+
+### Request
 
 > **POST** `/v3/nft/mint/batch`
 
@@ -1390,15 +1456,17 @@ Mint multiple NFTs
 
 MintMultipleNftTron operation
 
-### Example
-
-[✨ View "mintMultipleNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftTron.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNft()`
+
+### Example
+
+[👉 View "**mintNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNft.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1430,15 +1498,17 @@ The <code>MintNft</code> schema lets you mint NFTs natively on BNB Smart Chain, 
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNft.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftAlgorand()`
+
+### Example
+
+[👉 View "**mintNftAlgorand.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorand.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1470,15 +1540,17 @@ The <code>MintNftAlgorand</code> schema lets you mint NFTs natively on Algorand 
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftAlgorand.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorand.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftAlgorandKMS()`
+
+### Example
+
+[👉 View "**mintNftAlgorandKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorandKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1510,15 +1582,17 @@ The <code>MintNftAlgorandKMS</code> schema lets you mint NFTs natively on Algora
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftAlgorandKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorandKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftCelo()`
+
+### Example
+
+[👉 View "**mintNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1550,15 +1624,17 @@ The <code>MintNftCelo</code> schema lets you mint NFTs natively on Celo and sign
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftExpress()`
+
+### Example
+
+[👉 View "**mintNftExpress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpress.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1590,15 +1666,17 @@ The <code>MintNftExpress</code> schema lets you mint NFTs on BNB Smart Chain, Ce
 
 For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftExpress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpress.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftExpressAlgorand()`
+
+### Example
+
+[👉 View "**mintNftExpressAlgorand.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressAlgorand.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1630,15 +1708,17 @@ The <code>MintNftExpressAlgorand</code> schema lets you mint NFTs on Algorand us
 
 For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftExpressAlgorand.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressAlgorand.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftExpressSolana()`
+
+### Example
+
+[👉 View "**mintNftExpressSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressSolana.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1670,15 +1750,17 @@ The <code>MintNftExpressSolana</code> schema lets you mint NFTs on Solana using 
 
 For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftExpressSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftFlowKMS()`
+
+### Example
+
+[👉 View "**mintNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1710,15 +1792,17 @@ The <code>MintNftFlowKMS</code> schema lets you mint NFTs natively on Flow and s
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftFlowMnemonic()`
+
+### Example
+
+[👉 View "**mintNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowMnemonic.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1750,15 +1834,17 @@ The <code>MintNftFlowMnemonic</code> schema lets you mint NFTs natively on Flow 
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftFlowPK()`
+
+### Example
+
+[👉 View "**mintNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowPK.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1790,15 +1876,17 @@ The <code>MintNftFlowPK</code> schema lets you mint NFTs natively on Flow and si
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowPK.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftKMS()`
+
+### Example
+
+[👉 View "**mintNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1830,15 +1918,17 @@ The <code>MintNftKMS</code> schema lets you mint NFTs natively on BNB Smart Chai
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftKMSCelo()`
+
+### Example
+
+[👉 View "**mintNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1870,15 +1960,17 @@ The <code>MintNftKMSCelo</code> schema lets you mint NFTs natively on Celo and s
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftKMSTron()`
+
+### Example
+
+[👉 View "**mintNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSTron.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1910,15 +2002,17 @@ The <code>MintNftKMSTron</code> schema lets you mint NFTs natively on TRON and s
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSTron.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftMinter()`
+
+### Example
+
+[👉 View "**mintNftMinter.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftMinter.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1950,15 +2044,17 @@ The <code>MintNftMinter</code> schema lets you mint NFTs on BNB Smart Chain, Cel
 
 For more information, see "Use your own smart contract to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftMinter.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftSolana()`
+
+### Example
+
+[👉 View "**mintNftSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolana.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -1990,15 +2086,17 @@ The <code>MintNftSolana</code> schema lets you mint NFTs natively on Solana and 
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftSolanaKMS()`
+
+### Example
+
+[👉 View "**mintNftSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolanaKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -2030,15 +2128,17 @@ The <code>MintNftSolanaKMS</code> schema lets you mint NFTs natively on Solana a
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintNftTron()`
+
+### Example
+
+[👉 View "**mintNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftTron.php)
+
+### Request
 
 > **POST** `/v3/nft/mint`
 
@@ -2070,15 +2170,17 @@ The <code>MintNftTron</code> schema lets you mint NFTs natively on TRON and sign
 
 For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
 
-### Example
-
-[✨ View "mintNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftTron.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetBalanceErc721()`
+
+### Example
+
+[👉 View "**nftGetBalanceErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetBalanceErc721.php)
+
+### Request
 
 > **GET** `/v3/nft/balance/{chain}/{contractAddress}/{address}`
 
@@ -2122,15 +2224,17 @@ Get the NFTs from a specific smart contract that a blockchain address holds
 
 <ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>
 
-### Example
-
-[✨ View "nftGetBalanceErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetBalanceErc721.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetMetadataErc721()`
+
+### Example
+
+[👉 View "**nftGetMetadataErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetMetadataErc721.php)
+
+### Request
 
 > **GET** `/v3/nft/metadata/{chain}/{contractAddress}/{tokenId}`
 
@@ -2174,15 +2278,17 @@ Get NFT metadata
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>
 
-### Example
-
-[✨ View "nftGetMetadataErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetMetadataErc721.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetProvenanceDataErc721()`
+
+### Example
+
+[👉 View "**nftGetProvenanceDataErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetProvenanceDataErc721.php)
+
+### Request
 
 > **GET** `/v3/nft/provenance/{chain}/{contractAddress}/{tokenId}`
 
@@ -2226,15 +2332,17 @@ Get NFT provenance information
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "nftGetProvenanceDataErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetProvenanceDataErc721.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetRoyaltyErc721()`
+
+### Example
+
+[👉 View "**nftGetRoyaltyErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetRoyaltyErc721.php)
+
+### Request
 
 > **GET** `/v3/nft/royalty/{chain}/{contractAddress}/{tokenId}`
 
@@ -2276,15 +2384,17 @@ Get NFT royalty information
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>
 
-### Example
-
-[✨ View "nftGetRoyaltyErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetRoyaltyErc721.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetTokensByAddressErc721()`
+
+### Example
+
+[👉 View "**nftGetTokensByAddressErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByAddressErc721.php)
+
+### Request
 
 > **GET** `/v3/nft/address/balance/{chain}/{address}`
 
@@ -2324,15 +2434,17 @@ Get all NFTs that a blockchain address holds
 
  On Solana and Algorand, if a blockchain address holds fewer than 50 NFTs, the API also returns each NFT's metadata. If the metadata is not returned, you can obtain it using the <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetMetadataErc721">API for getting NFT metadata</a>.
 
-### Example
-
-[✨ View "nftGetTokensByAddressErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByAddressErc721.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetTokensByCollectionErc721()`
+
+### Example
+
+[👉 View "**nftGetTokensByCollectionErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByCollectionErc721.php)
+
+### Request
 
 > **GET** `/v3/nft/collection/{chain}/{address}`
 
@@ -2374,15 +2486,17 @@ Get all NFTs from a collection
 
 <ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "nftGetTokensByCollectionErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByCollectionErc721.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetTransactErc721()`
+
+### Example
+
+[👉 View "**nftGetTransactErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactErc721.php)
+
+### Request
 
 > **GET** `/v3/nft/transaction/{chain}/{hash}`
 
@@ -2422,15 +2536,17 @@ Get an NFT transaction by its hash
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>TRON</li> </ul>
 
-### Example
-
-[✨ View "nftGetTransactErc721.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactErc721.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetTransactionByAddress()`
+
+### Example
+
+[👉 View "**nftGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByAddress.php)
+
+### Request
 
 > **GET** `/v3/nft/transaction/{chain}/{address}/{tokenAddress}`
 
@@ -2478,15 +2594,17 @@ Get NFT transactions on a blockchain address
 
 <ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "nftGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `nftGetTransactionByToken()`
+
+### Example
+
+[👉 View "**nftGetTransactionByToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByToken.php)
+
+### Request
 
 > **GET** `/v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}`
 
@@ -2534,15 +2652,17 @@ Get NFT transactions for an NFT
 
 <ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "nftGetTransactionByToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByToken.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNft()`
+
+### Example
+
+[👉 View "**transferNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNft.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2610,15 +2730,17 @@ Transfer an NFT
 
  **NOTE:** This does not apply to transferring NFTs that were minted on Algorand using NFT Express (see earlier in this section).
 
-### Example
-
-[✨ View "transferNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNft.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftAlgo()`
+
+### Example
+
+[👉 View "**transferNftAlgo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgo.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2648,15 +2770,17 @@ Transfer an NFT
 
 TransferNftAlgo operation
 
-### Example
-
-[✨ View "transferNftAlgo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgo.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftAlgoExpress()`
+
+### Example
+
+[👉 View "**transferNftAlgoExpress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoExpress.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2686,15 +2810,17 @@ Transfer an NFT
 
 TransferNftAlgoExpress operation
 
-### Example
-
-[✨ View "transferNftAlgoExpress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoExpress.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftAlgoKMS()`
+
+### Example
+
+[👉 View "**transferNftAlgoKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2724,15 +2850,17 @@ Transfer an NFT
 
 TransferNftAlgoKMS operation
 
-### Example
-
-[✨ View "transferNftAlgoKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftCelo()`
+
+### Example
+
+[👉 View "**transferNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2762,15 +2890,17 @@ Transfer an NFT
 
 TransferNftCelo operation
 
-### Example
-
-[✨ View "transferNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftFlowKMS()`
+
+### Example
+
+[👉 View "**transferNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2800,15 +2930,17 @@ Transfer an NFT
 
 TransferNftFlowKMS operation
 
-### Example
-
-[✨ View "transferNftFlowKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftFlowMnemonic()`
+
+### Example
+
+[👉 View "**transferNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowMnemonic.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2838,15 +2970,17 @@ Transfer an NFT
 
 TransferNftFlowMnemonic operation
 
-### Example
-
-[✨ View "transferNftFlowMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftFlowPK()`
+
+### Example
+
+[👉 View "**transferNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowPK.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2876,15 +3010,17 @@ Transfer an NFT
 
 TransferNftFlowPK operation
 
-### Example
-
-[✨ View "transferNftFlowPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowPK.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftKMS()`
+
+### Example
+
+[👉 View "**transferNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2914,15 +3050,17 @@ Transfer an NFT
 
 TransferNftKMS operation
 
-### Example
-
-[✨ View "transferNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftKMSCelo()`
+
+### Example
+
+[👉 View "**transferNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2952,15 +3090,17 @@ Transfer an NFT
 
 TransferNftKMSCelo operation
 
-### Example
-
-[✨ View "transferNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftKMSTron()`
+
+### Example
+
+[👉 View "**transferNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSTron.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -2990,15 +3130,17 @@ Transfer an NFT
 
 TransferNftKMSTron operation
 
-### Example
-
-[✨ View "transferNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSTron.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftSolana()`
+
+### Example
+
+[👉 View "**transferNftSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolana.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -3028,15 +3170,17 @@ Transfer an NFT
 
 TransferNftSolana operation
 
-### Example
-
-[✨ View "transferNftSolana.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolana.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftSolanaKMS()`
+
+### Example
+
+[👉 View "**transferNftSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolanaKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -3066,15 +3210,17 @@ Transfer an NFT
 
 TransferNftSolanaKMS operation
 
-### Example
-
-[✨ View "transferNftSolanaKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolanaKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferNftTron()`
+
+### Example
+
+[👉 View "**transferNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftTron.php)
+
+### Request
 
 > **POST** `/v3/nft/transaction`
 
@@ -3104,15 +3250,17 @@ Transfer an NFT
 
 TransferNftTron operation
 
-### Example
-
-[✨ View "transferNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftTron.php)
-
 [Back to top](#top)
 
 
 
 ## `updateCashbackValueForAuthorNft()`
+
+### Example
+
+[👉 View "**updateCashbackValueForAuthorNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNft.php)
+
+### Request
 
 > **PUT** `/v3/nft/royalty`
 
@@ -3164,15 +3312,17 @@ Update NFT royalty information
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "updateCashbackValueForAuthorNft.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNft.php)
-
 [Back to top](#top)
 
 
 
 ## `updateCashbackValueForAuthorNftCelo()`
+
+### Example
+
+[👉 View "**updateCashbackValueForAuthorNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftCelo.php)
+
+### Request
 
 > **PUT** `/v3/nft/royalty`
 
@@ -3202,15 +3352,17 @@ Update NFT royalty information
 
 UpdateCashbackValueForAuthorNftCelo operation
 
-### Example
-
-[✨ View "updateCashbackValueForAuthorNftCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `updateCashbackValueForAuthorNftKMS()`
+
+### Example
+
+[👉 View "**updateCashbackValueForAuthorNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMS.php)
+
+### Request
 
 > **PUT** `/v3/nft/royalty`
 
@@ -3240,15 +3392,17 @@ Update NFT royalty information
 
 UpdateCashbackValueForAuthorNftKMS operation
 
-### Example
-
-[✨ View "updateCashbackValueForAuthorNftKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateCashbackValueForAuthorNftKMSCelo()`
+
+### Example
+
+[👉 View "**updateCashbackValueForAuthorNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSCelo.php)
+
+### Request
 
 > **PUT** `/v3/nft/royalty`
 
@@ -3278,15 +3432,17 @@ Update NFT royalty information
 
 UpdateCashbackValueForAuthorNftKMSCelo operation
 
-### Example
-
-[✨ View "updateCashbackValueForAuthorNftKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `updateCashbackValueForAuthorNftKMSTron()`
+
+### Example
+
+[👉 View "**updateCashbackValueForAuthorNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSTron.php)
+
+### Request
 
 > **PUT** `/v3/nft/royalty`
 
@@ -3316,15 +3472,17 @@ Update NFT royalty information
 
 UpdateCashbackValueForAuthorNftKMSTron operation
 
-### Example
-
-[✨ View "updateCashbackValueForAuthorNftKMSTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSTron.php)
-
 [Back to top](#top)
 
 
 
 ## `updateCashbackValueForAuthorNftTron()`
+
+### Example
+
+[👉 View "**updateCashbackValueForAuthorNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftTron.php)
+
+### Request
 
 > **PUT** `/v3/nft/royalty`
 
@@ -3354,15 +3512,17 @@ Update NFT royalty information
 
 UpdateCashbackValueForAuthorNftTron operation
 
-### Example
-
-[✨ View "updateCashbackValueForAuthorNftTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftTron.php)
-
 [Back to top](#top)
 
 
 
 ## `verifySolanaNFT()`
+
+### Example
+
+[👉 View "**verifySolanaNFT.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFT.php)
+
+### Request
 
 > **POST** `/v3/nft/verify`
 
@@ -3404,15 +3564,17 @@ Verify an NFT in an NFT collection on Solana
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "verifySolanaNFT.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFT.php)
-
 [Back to top](#top)
 
 
 
 ## `verifySolanaNFTKMS()`
+
+### Example
+
+[👉 View "**verifySolanaNFTKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFTKMS.php)
+
+### Request
 
 > **POST** `/v3/nft/verify`
 
@@ -3439,10 +3601,6 @@ Name | Type | Description  | Notes
 Verify an NFT in an NFT collection on Solana
 
 VerifySolanaNFTKMS operation
-
-### Example
-
-[✨ View "verifySolanaNFTKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFTKMS.php)
 
 [Back to top](#top)
 

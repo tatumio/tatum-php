@@ -42,6 +42,9 @@ $arg_transfer_xrp_blockchain = (new \Tatum\Model\TransferXrpBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xrp/transaction
      * 

@@ -42,6 +42,9 @@ $arg_transfer_polygon_blockchain = (new \Tatum\Model\TransferPolygonBlockchain()
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/polygon/transaction
      * 

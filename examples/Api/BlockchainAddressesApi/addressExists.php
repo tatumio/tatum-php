@@ -23,10 +23,13 @@ $arg_currency = "BNB";
 // The blockchain address to check
 $arg_address = "tbnb1sfj9981j2eo1ij2e09";
 
-// In case of XLM or XRP, this is a memo or DestinationTag to search for.
+// Only for BNB Beacon Chain, Stellar, or XRPL<ul><li>For <b>BNB Beacon Chain</b>, specify the memo.</li><li>For <b>Stellar</b>, specify the message.</li><li>For <b>XRPL</b>, specify the DestinationTag.</li></ul>
 $arg_index = 1;
 
 try {
+
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/offchain/account/address/{address}/{currency}

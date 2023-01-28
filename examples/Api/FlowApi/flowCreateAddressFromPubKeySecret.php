@@ -30,6 +30,9 @@ $arg_flow_create_address_from_pub_key_secret = (new \Tatum\Model\FlowCreateAddre
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/flow/account
      * 

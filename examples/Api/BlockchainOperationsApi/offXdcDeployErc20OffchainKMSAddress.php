@@ -51,6 +51,9 @@ $arg_deploy_erc20_offchain_kms_address = (new \Tatum\Model\DeployErc20OffchainKM
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/xdc/erc20/deploy
      * 

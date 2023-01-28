@@ -41,6 +41,12 @@ Method | Description
 
 ## `callKlaytnSmartContractMethod()`
 
+### Example
+
+[👉 View "**callKlaytnSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractMethod.php)
+
+### Request
+
 > **POST** `/v3/klaytn/smartcontract`
 
 ### Type signature
@@ -67,15 +73,17 @@ Invoke a method in a smart contract on Klaytn
 
 CallKlaytnSmartContractMethod operation
 
-### Example
-
-[✨ View "callKlaytnSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callKlaytnSmartContractMethodKMS()`
+
+### Example
+
+[👉 View "**callKlaytnSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractMethodKMS.php)
+
+### Request
 
 > **POST** `/v3/klaytn/smartcontract`
 
@@ -103,15 +111,17 @@ Invoke a method in a smart contract on Klaytn
 
 CallKlaytnSmartContractMethodKMS operation
 
-### Example
-
-[✨ View "callKlaytnSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractMethodKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `callKlaytnSmartContractReadMethod()`
+
+### Example
+
+[👉 View "**callKlaytnSmartContractReadMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractReadMethod.php)
+
+### Request
 
 > **POST** `/v3/klaytn/smartcontract`
 
@@ -165,15 +175,17 @@ However, because this API can be run against any smart contract on the blockchai
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "callKlaytnSmartContractReadMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/callKlaytnSmartContractReadMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnBroadcast()`
+
+### Example
+
+[👉 View "**klaytnBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnBroadcast.php)
+
+### Request
 
 > **POST** `/v3/klaytn/broadcast`
 
@@ -203,15 +215,17 @@ Broadcast signed Klaytn transaction
 
  Broadcast signed transaction to Klaytn blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "klaytnBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnGenerateAddress()`
+
+### Example
+
+[👉 View "**klaytnGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/klaytn/address/{xpub}/{index}`
 
@@ -243,15 +257,17 @@ Generate Klaytn account address from Extended public key
 
  Generate Klaytn account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "klaytnGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**klaytnGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/klaytn/wallet/priv`
 
@@ -281,15 +297,17 @@ Generate Klaytn private key
 
  Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "klaytnGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnGenerateWallet()`
+
+### Example
+
+[👉 View "**klaytnGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/klaytn/wallet`
 
@@ -325,15 +343,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for Klaytn wallet with derivation path m'/44'/966'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Klaytn wallet.
 
-### Example
-
-[✨ View "klaytnGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnGetBalance()`
+
+### Example
+
+[👉 View "**klaytnGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetBalance.php)
+
+### Request
 
 > **GET** `/v3/klaytn/account/balance/{address}`
 
@@ -363,15 +383,17 @@ Get Klaytn Account balance
 
  Get Klaytn account balance in KLAY. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
-### Example
-
-[✨ View "klaytnGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnGetBlock()`
+
+### Example
+
+[👉 View "**klaytnGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetBlock.php)
+
+### Request
 
 > **GET** `/v3/klaytn/block/{hash}`
 
@@ -401,15 +423,17 @@ Get Klaytn block by hash
 
  Get Klaytn block by block hash or block number.
 
-### Example
-
-[✨ View "klaytnGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnGetCurrentBlock()`
+
+### Example
+
+[👉 View "**klaytnGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/klaytn/block/current`
 
@@ -435,15 +459,17 @@ Get current block number
 
  Get Klaytn current block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "klaytnGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnGetTransaction()`
+
+### Example
+
+[👉 View "**klaytnGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/klaytn/transaction/{hash}`
 
@@ -473,15 +499,17 @@ Get Klaytn Transaction
 
  Get Klaytn transaction by transaction hash.
 
-### Example
-
-[✨ View "klaytnGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `klaytnGetTransactionCount()`
+
+### Example
+
+[👉 View "**klaytnGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetTransactionCount.php)
+
+### Request
 
 > **GET** `/v3/klaytn/transaction/count/{address}`
 
@@ -511,15 +539,17 @@ Get count of outgoing Klaytn transactions
 
  Get a number of outgoing Klaytn transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-### Example
-
-[✨ View "klaytnGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/klaytnGetTransactionCount.php)
-
 [Back to top](#top)
 
 
 
 ## `transferKlaytnBlockchain()`
+
+### Example
+
+[👉 View "**transferKlaytnBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/transferKlaytnBlockchain.php)
+
+### Request
 
 > **POST** `/v3/klaytn/transaction`
 
@@ -557,15 +587,17 @@ Send KLAY from account to account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferKlaytnBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/transferKlaytnBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferKlaytnBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferKlaytnBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/transferKlaytnBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/klaytn/transaction`
 
@@ -592,10 +624,6 @@ Name | Type | Description  | Notes
 Send KLAY from account to account
 
 TransferKlaytnBlockchainKMS operation
-
-### Example
-
-[✨ View "transferKlaytnBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KlaytnApi/transferKlaytnBlockchainKMS.php)
 
 [Back to top](#top)
 

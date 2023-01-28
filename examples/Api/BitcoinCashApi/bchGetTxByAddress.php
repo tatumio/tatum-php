@@ -25,6 +25,9 @@ $arg_skip = 2;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/bcash/transaction/address/{address}
      * 

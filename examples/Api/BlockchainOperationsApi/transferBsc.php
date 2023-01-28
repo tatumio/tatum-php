@@ -51,6 +51,9 @@ $arg_transfer_bsc = (new \Tatum\Model\TransferBsc())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bsc/transfer
      * 

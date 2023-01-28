@@ -31,6 +31,9 @@ $arg_failed = false;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/subscription/webhook
      * 

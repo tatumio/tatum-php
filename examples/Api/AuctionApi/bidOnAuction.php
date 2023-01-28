@@ -48,6 +48,9 @@ $arg_bid_on_auction = (new \Tatum\Model\BidOnAuction())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/bid
      * 

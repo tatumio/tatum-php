@@ -54,6 +54,9 @@ $arg_transfer_bch_kms = (new \Tatum\Model\TransferBchKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bcash/transfer
      * 

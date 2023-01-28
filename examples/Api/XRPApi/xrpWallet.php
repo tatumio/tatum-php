@@ -19,6 +19,9 @@ $sdk = new \Tatum\Sdk();
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/xrp/account
      * 

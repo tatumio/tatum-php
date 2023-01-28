@@ -36,6 +36,9 @@ $arg_transfer_vet_blockchain_kms = (new \Tatum\Model\TransferVetBlockchainKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/vet/transaction
      * 

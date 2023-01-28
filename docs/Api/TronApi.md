@@ -50,6 +50,12 @@ Method | Description
 
 ## `createTronTrc10Blockchain()`
 
+### Example
+
+[👉 View "**createTronTrc10Blockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc10Blockchain.php)
+
+### Request
+
 > **POST** `/v3/tron/trc10/deploy`
 
 ### Type signature
@@ -88,15 +94,17 @@ Create a TRC-10 token
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "createTronTrc10Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc10Blockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `createTronTrc10BlockchainKMS()`
+
+### Example
+
+[👉 View "**createTronTrc10BlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc10BlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/tron/trc10/deploy`
 
@@ -124,15 +132,17 @@ Create a TRC-10 token
 
 CreateTronTrc10BlockchainKMS operation
 
-### Example
-
-[✨ View "createTronTrc10BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc10BlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `createTronTrc20Blockchain()`
+
+### Example
+
+[👉 View "**createTronTrc20Blockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc20Blockchain.php)
+
+### Request
 
 > **POST** `/v3/tron/trc20/deploy`
 
@@ -170,15 +180,17 @@ Create a TRC-20 token
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "createTronTrc20Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc20Blockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `createTronTrc20BlockchainKMS()`
+
+### Example
+
+[👉 View "**createTronTrc20BlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc20BlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/tron/trc20/deploy`
 
@@ -206,15 +218,17 @@ Create a TRC-20 token
 
 CreateTronTrc20BlockchainKMS operation
 
-### Example
-
-[✨ View "createTronTrc20BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/createTronTrc20BlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `freezeTron()`
+
+### Example
+
+[👉 View "**freezeTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/freezeTron.php)
+
+### Request
 
 > **POST** `/v3/tron/freezeBalance`
 
@@ -252,15 +266,17 @@ Freeze the balance of a TRON account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "freezeTron.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/freezeTron.php)
-
 [Back to top](#top)
 
 
 
 ## `freezeTronKMS()`
+
+### Example
+
+[👉 View "**freezeTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/freezeTronKMS.php)
+
+### Request
 
 > **POST** `/v3/tron/freezeBalance`
 
@@ -288,15 +304,17 @@ Freeze the balance of a TRON account
 
 FreezeTronKMS operation
 
-### Example
-
-[✨ View "freezeTronKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/freezeTronKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `generateTronwallet()`
+
+### Example
+
+[👉 View "**generateTronwallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/generateTronwallet.php)
+
+### Request
 
 > **GET** `/v3/tron/wallet`
 
@@ -332,15 +350,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for Bitcoin wallet with derivation path m'/44'/195'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/tron/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Tron wallet.
 
-### Example
-
-[✨ View "generateTronwallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/generateTronwallet.php)
-
 [Back to top](#top)
 
 
 
 ## `transferTronBlockchain()`
+
+### Example
+
+[👉 View "**transferTronBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronBlockchain.php)
+
+### Request
 
 > **POST** `/v3/tron/transaction`
 
@@ -378,15 +398,17 @@ Send TRX to a TRON account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferTronBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferTronBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferTronBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/tron/transaction`
 
@@ -414,15 +436,17 @@ Send TRX to a TRON account
 
 TransferTronBlockchainKMS operation
 
-### Example
-
-[✨ View "transferTronBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronBlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferTronTrc10Blockchain()`
+
+### Example
+
+[👉 View "**transferTronTrc10Blockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc10Blockchain.php)
+
+### Request
 
 > **POST** `/v3/tron/trc10/transaction`
 
@@ -460,15 +484,17 @@ Send TRC-10 tokens to a TRON account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferTronTrc10Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc10Blockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferTronTrc10BlockchainKMS()`
+
+### Example
+
+[👉 View "**transferTronTrc10BlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc10BlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/tron/trc10/transaction`
 
@@ -496,15 +522,17 @@ Send TRC-10 tokens to a TRON account
 
 TransferTronTrc10BlockchainKMS operation
 
-### Example
-
-[✨ View "transferTronTrc10BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc10BlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferTronTrc20Blockchain()`
+
+### Example
+
+[👉 View "**transferTronTrc20Blockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc20Blockchain.php)
+
+### Request
 
 > **POST** `/v3/tron/trc20/transaction`
 
@@ -542,15 +570,17 @@ Send TRC-20 tokens to a TRON account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferTronTrc20Blockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc20Blockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferTronTrc20BlockchainKMS()`
+
+### Example
+
+[👉 View "**transferTronTrc20BlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc20BlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/tron/trc20/transaction`
 
@@ -578,15 +608,17 @@ Send TRC-20 tokens to a TRON account
 
 TransferTronTrc20BlockchainKMS operation
 
-### Example
-
-[✨ View "transferTronTrc20BlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/transferTronTrc20BlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `tronAccountTx()`
+
+### Example
+
+[👉 View "**tronAccountTx.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronAccountTx.php)
+
+### Request
 
 > **GET** `/v3/tron/transaction/account/{address}`
 
@@ -624,15 +656,17 @@ Get all transactions for a TRON account
 
  <code>https://api.tatum.io/v3/tron/transaction/account/{address}?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code>
 
-### Example
-
-[✨ View "tronAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronAccountTx.php)
-
 [Back to top](#top)
 
 
 
 ## `tronAccountTx20()`
+
+### Example
+
+[👉 View "**tronAccountTx20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronAccountTx20.php)
+
+### Request
 
 > **GET** `/v3/tron/transaction/account/{address}/trc20`
 
@@ -670,15 +704,17 @@ Get TRC-20 transactions for a TRON account
 
  <code>https://api.tatum.io/v3/tron/transaction/account/{address}/trc20?next=81d0524acf5967f3b361e03fd7d141ab511791cd7aad7ae406c4c8d408290991</code>
 
-### Example
-
-[✨ View "tronAccountTx20.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronAccountTx20.php)
-
 [Back to top](#top)
 
 
 
 ## `tronBroadcast()`
+
+### Example
+
+[👉 View "**tronBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronBroadcast.php)
+
+### Request
 
 > **POST** `/v3/tron/broadcast`
 
@@ -708,15 +744,17 @@ Broadcast a TRON transaction
 
  Broadcast Tron transaction. This method is used internally from Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "tronBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `tronGenerateAddress()`
+
+### Example
+
+[👉 View "**tronGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/tron/address/{xpub}/{index}`
 
@@ -748,15 +786,17 @@ Generate a TRON address from the wallet's extended public key
 
  Generate a TRON address from the extended public key of the wallet. The address is generated for the specific index - each extended public key can generate up to 2^32 addresses with the index starting from 0 up to 2^31.
 
-### Example
-
-[✨ View "tronGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `tronGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**tronGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/tron/wallet/priv`
 
@@ -786,15 +826,17 @@ Generate the private key for a TRON address
 
  Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "tronGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `tronGetAccount()`
+
+### Example
+
+[👉 View "**tronGetAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetAccount.php)
+
+### Request
 
 > **GET** `/v3/tron/account/{address}`
 
@@ -824,15 +866,17 @@ Get the TRON account by its address
 
  Get Tron account by address.
 
-### Example
-
-[✨ View "tronGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `tronGetBlock()`
+
+### Example
+
+[👉 View "**tronGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetBlock.php)
+
+### Request
 
 > **GET** `/v3/tron/block/{hash}`
 
@@ -862,15 +906,17 @@ Get a TRON block by its hash or height
 
  Get Tron block by hash or height.
 
-### Example
-
-[✨ View "tronGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `tronGetCurrentBlock()`
+
+### Example
+
+[👉 View "**tronGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/tron/info`
 
@@ -896,15 +942,17 @@ Get the current TRON block
 
  Get current Tron block.
 
-### Example
-
-[✨ View "tronGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `tronGetTransaction()`
+
+### Example
+
+[👉 View "**tronGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/tron/transaction/{hash}`
 
@@ -934,15 +982,17 @@ Get a TRON transaction by its hash
 
  Get Tron transaction by hash.
 
-### Example
-
-[✨ View "tronGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `tronTrc10Detail()`
+
+### Example
+
+[👉 View "**tronTrc10Detail.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronTrc10Detail.php)
+
+### Request
 
 > **GET** `/v3/tron/trc10/detail/{idOrOwnerAddress}`
 
@@ -971,10 +1021,6 @@ Get information about a TRC-10 token
 **5 credits per API call**
 
  Get information about a TRON TRC-10 token.
-
-### Example
-
-[✨ View "tronTrc10Detail.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TronApi/tronTrc10Detail.php)
 
 [Back to top](#top)
 

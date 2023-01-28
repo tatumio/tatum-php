@@ -48,6 +48,9 @@ $arg_transfer_sol = (new \Tatum\Model\TransferSol())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/solana/transfer
      * 

@@ -42,6 +42,9 @@ $arg_update_fee_recipient_celo = (new \Tatum\Model\UpdateFeeRecipientCelo())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/auction/recipient
      * 

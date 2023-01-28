@@ -27,6 +27,9 @@ $arg_solana_broadcast_confirm = (new \Tatum\Model\SolanaBroadcastConfirm())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/solana/broadcast/confirm
      * 

@@ -22,6 +22,9 @@ $arg_id_or_owner_address = "1000540";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/tron/trc10/detail/{idOrOwnerAddress}
      * 

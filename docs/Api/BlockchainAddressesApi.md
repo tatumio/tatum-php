@@ -33,6 +33,12 @@ Method | Description
 
 ## `addressExists()`
 
+### Example
+
+[👉 View "**addressExists.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/addressExists.php)
+
+### Request
+
 > **GET** `/v3/offchain/account/address/{address}/{currency}`
 
 ### Type signature
@@ -51,7 +57,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **$currency** | **string**  | The cryptocurrency of the blockchain address to check |
  **$address** | **string**  | The blockchain address to check |
- **$index** | **float**  | In case of XLM or XRP, this is a memo or DestinationTag to search for. | [optional]
+ **$index** | **float**  | Only for BNB Beacon Chain, Stellar, or XRPL&lt;ul&gt;&lt;li&gt;For &lt;b&gt;BNB Beacon Chain&lt;/b&gt;, specify the memo.&lt;/li&gt;&lt;li&gt;For &lt;b&gt;Stellar&lt;/b&gt;, specify the message.&lt;/li&gt;&lt;li&gt;For &lt;b&gt;XRPL&lt;/b&gt;, specify the DestinationTag.&lt;/li&gt;&lt;/ul&gt; | [optional]
 
 ### Return type
 
@@ -67,15 +73,17 @@ Check whether a blockchain address is assigned to a virtual account
 
  If the blockchain address is assigned to a virtual account, information about this account is returned. Otherwise, an error message is returned.
 
-### Example
-
-[✨ View "addressExists.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/addressExists.php)
-
 [Back to top](#top)
 
 
 
 ## `assignAddress()`
+
+### Example
+
+[👉 View "**assignAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/assignAddress.php)
+
+### Request
 
 > **POST** `/v3/offchain/account/{id}/address/{address}`
 
@@ -123,15 +131,17 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
  If you want to be notified about certain events occurring on the deposit addresses, <a href="https://apidoc.tatum.io/tag/Notification-subscriptions#operation/createSubscription" target="_blank">subscribe for notifications</a>.
 
-### Example
-
-[✨ View "assignAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/assignAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `generateDepositAddress()`
+
+### Example
+
+[👉 View "**generateDepositAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddress.php)
+
+### Request
 
 > **POST** `/v3/offchain/account/{id}/address`
 
@@ -191,15 +201,17 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
  When a new deposit address is generated, the last not used index is used to generate the address. You can skip some addresses to a different index, which means all the skipped addresses will no longer be used.
 
-### Example
-
-[✨ View "generateDepositAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `generateDepositAddressesBatch()`
+
+### Example
+
+[👉 View "**generateDepositAddressesBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
+
+### Request
 
 > **POST** `/v3/offchain/account/address/batch`
 
@@ -257,15 +269,17 @@ Scanning deposit addresses for incoming deposits consumes **20 credits per addre
 
  When a new deposit address is generated, the last not used index is used to generate the address. You can skip some addresses to a different index, which means all the skipped addresses will no longer be used.
 
-### Example
-
-[✨ View "generateDepositAddressesBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/generateDepositAddressesBatch.php)
-
 [Back to top](#top)
 
 
 
 ## `getAllDepositAddresses()`
+
+### Example
+
+[👉 View "**getAllDepositAddresses.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
+
+### Request
 
 > **GET** `/v3/offchain/account/{id}/address`
 
@@ -295,15 +309,17 @@ Get all deposit addresses for a virtual account
 
  Get all deposit addresses generated for a virtual account.
 
-### Example
-
-[✨ View "getAllDepositAddresses.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/getAllDepositAddresses.php)
-
 [Back to top](#top)
 
 
 
 ## `removeAddress()`
+
+### Example
+
+[👉 View "**removeAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/removeAddress.php)
+
+### Request
 
 > **DELETE** `/v3/offchain/account/{id}/address/{address}`
 
@@ -338,10 +354,6 @@ Remove a deposit address from a virtual account
  Remove a deposit address from the virtual account.
 
  The deposit address will no longer be scanned for incoming deposits. You will no longer be able to generate this address again.
-
-### Example
-
-[✨ View "removeAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainAddressesApi/removeAddress.php)
 
 [Back to top](#top)
 

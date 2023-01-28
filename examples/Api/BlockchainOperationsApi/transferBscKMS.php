@@ -54,6 +54,9 @@ $arg_transfer_bsc_kms = (new \Tatum\Model\TransferBscKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bsc/transfer
      * 

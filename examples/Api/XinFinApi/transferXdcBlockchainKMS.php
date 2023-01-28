@@ -45,6 +45,9 @@ $arg_transfer_xdc_blockchain_kms = (new \Tatum\Model\TransferXdcBlockchainKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xdc/transaction
      * 

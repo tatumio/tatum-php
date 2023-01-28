@@ -39,6 +39,9 @@ $arg_rpc_path = "v2/accounts";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}
      * 

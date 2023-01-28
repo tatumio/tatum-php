@@ -54,6 +54,9 @@ $arg_transfer_kcs_mnemonic = (new \Tatum\Model\TransferKCSMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/kcs/transfer
      * 

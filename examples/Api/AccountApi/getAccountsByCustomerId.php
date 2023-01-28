@@ -31,6 +31,9 @@ $arg_account_code = "AC_1011_B";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/ledger/account/customer/{id}
      * 

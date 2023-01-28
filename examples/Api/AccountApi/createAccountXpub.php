@@ -42,6 +42,9 @@ $arg_create_account_xpub = (new \Tatum\Model\CreateAccountXpub())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ledger/account
      * 

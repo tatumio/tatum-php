@@ -51,6 +51,9 @@ $arg_approve_nft_spending_celo_kms = (new \Tatum\Model\ApproveNftSpendingCeloKMS
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/approve
      * 

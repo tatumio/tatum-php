@@ -54,6 +54,9 @@ $arg_transfer_eth_mnemonic = (new \Tatum\Model\TransferEthMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/klaytn/transfer
      * 

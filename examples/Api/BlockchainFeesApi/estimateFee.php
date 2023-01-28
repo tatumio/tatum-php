@@ -39,6 +39,9 @@ $arg_estimate_fee = (new \Tatum\Model\EstimateFee())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/estimate
      * 

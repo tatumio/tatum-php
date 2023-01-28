@@ -28,6 +28,10 @@ Method | Description
 
 # `generateWallet()`
 
+## Example
+
+[👉 View "**generateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/KCS/generateWallet.php)
+
 ## Type signature
 
 ```php
@@ -36,28 +40,28 @@ Method | Description
 ): \Tatum\Model\Wallet
 ```
 
-### Parameters
+## Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **$mnemonic** | `string` | 24-word mnemonic |  [optional] [default to null]
 
-### Return type
+## Return type
 
 Wallet Model ([**\Tatum\Model\Wallet**](../../../Model/Wallet))
 
-### Description
+## Description
 
 Generate wallet
-
-### Example
-
-[✨ View "generateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/KCS/generateWallet.php)
 
 [Back to top](#top)
 
 
 # `generateAddressFromXpub()`
+
+## Example
+
+[👉 View "**generateAddressFromXpub.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/KCS/generateAddressFromXpub.php)
 
 ## Type signature
 
@@ -68,29 +72,29 @@ Generate wallet
 ): \Tatum\Model\GeneratedAddressBtc
 ```
 
-### Parameters
+## Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **$xpub** | `string` | Extended public key | 
 **$index** | `int` | Derivation index | 
 
-### Return type
+## Return type
 
 Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAddressBtc))
 
-### Description
+## Description
 
 Generate address from xPub and index
-
-### Example
-
-[✨ View "generateAddressFromXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/KCS/generateAddressFromXpub.php)
 
 [Back to top](#top)
 
 
 # `generateAddressFromPrivateKey()`
+
+## Example
+
+[👉 View "**generateAddressFromPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/KCS/generateAddressFromPrivateKey.php)
 
 ## Type signature
 
@@ -100,28 +104,28 @@ Generate address from xPub and index
 ): \Tatum\Model\GeneratedAddressBtc
 ```
 
-### Parameters
+## Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **$privateKey** | [**\Tatum\Model\PrivKey**](../../../Model/PrivKey) | Private Key | 
 
-### Return type
+## Return type
 
 Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAddressBtc))
 
-### Description
+## Description
 
 Generate address from xPub and index
-
-### Example
-
-[✨ View "generateAddressFromPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/KCS/generateAddressFromPrivateKey.php)
 
 [Back to top](#top)
 
 
 # `generatePrivateKey()`
+
+## Example
+
+[👉 View "**generatePrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/KCS/generatePrivateKey.php)
 
 ## Type signature
 
@@ -132,24 +136,20 @@ Generate address from xPub and index
 ): \Tatum\Model\PrivKey
 ```
 
-### Parameters
+## Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **$mnemonic** | `string` | 24-word mnemonic | 
 **$index** | `int` | Derivation index | 
 
-### Return type
+## Return type
 
 Private Key ([**\Tatum\Model\PrivKey**](../../../Model/PrivKey))
 
-### Description
+## Description
 
 Generate private key from mnemonic and index
-
-### Example
-
-[✨ View "generatePrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/KCS/generatePrivateKey.php)
 
 [Back to top](#top)
 

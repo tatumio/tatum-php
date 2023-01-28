@@ -28,6 +28,9 @@ $arg_index = 1;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * DELETE /v3/offchain/account/{id}/address/{address}
      */

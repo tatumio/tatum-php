@@ -33,6 +33,9 @@ $arg_transaction_fee_egld_blockchain = (new \Tatum\Model\TransactionFeeEgldBlock
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/egld/gas
      * 

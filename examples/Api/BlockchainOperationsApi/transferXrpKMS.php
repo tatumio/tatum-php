@@ -51,6 +51,9 @@ $arg_transfer_xrp_kms = (new \Tatum\Model\TransferXrpKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/xrp/transfer
      * 

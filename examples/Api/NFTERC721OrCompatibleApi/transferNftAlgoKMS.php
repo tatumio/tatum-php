@@ -42,6 +42,9 @@ $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/nft/transaction
      * 

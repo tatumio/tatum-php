@@ -54,6 +54,9 @@ $arg_transfer_eth_kms = (new \Tatum\Model\TransferEthKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/polygon/transfer
      * 

@@ -37,6 +37,9 @@ $arg_sort = "ASC";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/polygon/account/transaction/{address}
      * 

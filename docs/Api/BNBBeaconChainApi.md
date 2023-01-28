@@ -36,6 +36,12 @@ Method | Description
 
 ## `bnbBroadcast()`
 
+### Example
+
+[👉 View "**bnbBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbBroadcast.php)
+
+### Request
+
 > **POST** `/v3/bnb/broadcast`
 
 ### Type signature
@@ -64,15 +70,17 @@ Broadcast signed BNB transaction
 
  Broadcast signed transaction to Binance blockchain. This method is used internally or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "bnbBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `bnbGenerateWallet()`
+
+### Example
+
+[👉 View "**bnbGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/bnb/account`
 
@@ -98,15 +106,17 @@ Generate Binance wallet
 
  Generate BNB account. Tatum does not support HD wallet for BNB, only specific address and private key can be generated.
 
-### Example
-
-[✨ View "bnbGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `bnbGetAccount()`
+
+### Example
+
+[👉 View "**bnbGetAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetAccount.php)
+
+### Request
 
 > **GET** `/v3/bnb/account/{address}`
 
@@ -136,15 +146,17 @@ Get Binance Account
 
 Get Binance Account Detail by address.
 
-### Example
-
-[✨ View "bnbGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `bnbGetBlock()`
+
+### Example
+
+[👉 View "**bnbGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetBlock.php)
+
+### Request
 
 > **GET** `/v3/bnb/block/{height}`
 
@@ -174,15 +186,17 @@ Get Binance Transactions in Block
 
 Get Transactions in block by block height.
 
-### Example
-
-[✨ View "bnbGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `bnbGetCurrentBlock()`
+
+### Example
+
+[👉 View "**bnbGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/bnb/block/current`
 
@@ -208,15 +222,17 @@ Get Binance current block
 
 Get Binance current block number.
 
-### Example
-
-[✨ View "bnbGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `bnbGetTransaction()`
+
+### Example
+
+[👉 View "**bnbGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/bnb/transaction/{hash}`
 
@@ -246,15 +262,17 @@ Get Binance Transaction
 
 Get Binance Transaction by transaction hash.
 
-### Example
-
-[✨ View "bnbGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `bnbGetTxByAccount()`
+
+### Example
+
+[👉 View "**bnbGetTxByAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
+
+### Request
 
 > **GET** `/v3/bnb/account/transaction/{address}`
 
@@ -296,15 +314,17 @@ Get Binance Transactions By Address
 
 Get Binance Transactions by address.
 
-### Example
-
-[✨ View "bnbGetTxByAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `transferBnbBlockchain()`
+
+### Example
+
+[👉 View "**transferBnbBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchain.php)
+
+### Request
 
 > **POST** `/v3/bnb/transaction`
 
@@ -336,15 +356,17 @@ Send Binance / Binance Token from account to account
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "transferBnbBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferBnbBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferBnbBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/bnb/transaction`
 
@@ -371,10 +393,6 @@ Name | Type | Description  | Notes
 Send Binance / Binance Token from account to account
 
 TransferBnbBlockchainKMS operation
-
-### Example
-
-[✨ View "transferBnbBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchainKMS.php)
 
 [Back to top](#top)
 

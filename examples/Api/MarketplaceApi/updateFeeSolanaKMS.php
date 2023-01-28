@@ -36,6 +36,9 @@ $arg_update_fee_solana_kms = (new \Tatum\Model\UpdateFeeSolanaKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/marketplace/listing/fee
      * 

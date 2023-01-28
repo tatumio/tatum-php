@@ -22,6 +22,9 @@ $arg_hash = "6470657";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/klaytn/block/{hash}
      * 

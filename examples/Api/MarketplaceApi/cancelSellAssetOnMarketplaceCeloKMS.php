@@ -48,6 +48,9 @@ $arg_cancel_sell_asset_on_marketplace_celo_kms = (new \Tatum\Model\CancelSellAss
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing/cancel
      * 

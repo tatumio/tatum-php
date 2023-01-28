@@ -44,6 +44,12 @@ Method | Description
 
 ## `accountSettingsXrpBlockchain()`
 
+### Example
+
+[👉 View "**accountSettingsXrpBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/accountSettingsXrpBlockchain.php)
+
+### Request
+
 > **POST** `/v3/xrp/account/settings`
 
 ### Type signature
@@ -74,15 +80,17 @@ Modify XRP account
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "accountSettingsXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/accountSettingsXrpBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `accountSettingsXrpBlockchainKMS()`
+
+### Example
+
+[👉 View "**accountSettingsXrpBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/accountSettingsXrpBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/xrp/account/settings`
 
@@ -110,15 +118,17 @@ Modify XRP account
 
 AccountSettingsXrpBlockchainKMS operation
 
-### Example
-
-[✨ View "accountSettingsXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/accountSettingsXrpBlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferXrpBlockchain()`
+
+### Example
+
+[👉 View "**transferXrpBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchain.php)
+
+### Request
 
 > **POST** `/v3/xrp/transaction`
 
@@ -150,15 +160,17 @@ Send XRP from address to address
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "transferXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferXrpBlockchainAsset()`
+
+### Example
+
+[👉 View "**transferXrpBlockchainAsset.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainAsset.php)
+
+### Request
 
 > **POST** `/v3/xrp/transaction`
 
@@ -186,15 +198,17 @@ Send XRP from address to address
 
 TransferXrpBlockchainAsset operation
 
-### Example
-
-[✨ View "transferXrpBlockchainAsset.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainAsset.php)
-
 [Back to top](#top)
 
 
 
 ## `transferXrpBlockchainAssetKMS()`
+
+### Example
+
+[👉 View "**transferXrpBlockchainAssetKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainAssetKMS.php)
+
+### Request
 
 > **POST** `/v3/xrp/transaction`
 
@@ -222,15 +236,17 @@ Send XRP from address to address
 
 TransferXrpBlockchainAssetKMS operation
 
-### Example
-
-[✨ View "transferXrpBlockchainAssetKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainAssetKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferXrpBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferXrpBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/xrp/transaction`
 
@@ -258,15 +274,17 @@ Send XRP from address to address
 
 TransferXrpBlockchainKMS operation
 
-### Example
-
-[✨ View "transferXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/transferXrpBlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `trustLineXrpBlockchain()`
+
+### Example
+
+[👉 View "**trustLineXrpBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/trustLineXrpBlockchain.php)
+
+### Request
 
 > **POST** `/v3/xrp/trust`
 
@@ -300,15 +318,17 @@ Create / Update / Delete XRP trust line
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "trustLineXrpBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/trustLineXrpBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `trustLineXrpBlockchainKMS()`
+
+### Example
+
+[👉 View "**trustLineXrpBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/trustLineXrpBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/xrp/trust`
 
@@ -336,15 +356,17 @@ Create / Update / Delete XRP trust line
 
 TrustLineXrpBlockchainKMS operation
 
-### Example
-
-[✨ View "trustLineXrpBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/trustLineXrpBlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpBroadcast()`
+
+### Example
+
+[👉 View "**xrpBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpBroadcast.php)
+
+### Request
 
 > **POST** `/v3/xrp/broadcast`
 
@@ -374,15 +396,17 @@ Broadcast signed XRP transaction
 
  Broadcast signed transaction to XRP blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "xrpBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpGetAccountBalance()`
+
+### Example
+
+[👉 View "**xrpGetAccountBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountBalance.php)
+
+### Request
 
 > **GET** `/v3/xrp/account/{account}/balance`
 
@@ -412,15 +436,17 @@ Get Account Balance
 
 Get XRP Account Balance. Obtain balance of the XRP and other assets on the account.
 
-### Example
-
-[✨ View "xrpGetAccountBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpGetAccountInfo()`
+
+### Example
+
+[👉 View "**xrpGetAccountInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountInfo.php)
+
+### Request
 
 > **GET** `/v3/xrp/account/{account}`
 
@@ -450,15 +476,17 @@ Get Account info
 
 Get XRP Account info.
 
-### Example
-
-[✨ View "xrpGetAccountInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountInfo.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpGetAccountTx()`
+
+### Example
+
+[👉 View "**xrpGetAccountTx.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountTx.php)
+
+### Request
 
 > **GET** `/v3/xrp/account/tx/{account}`
 
@@ -492,15 +520,17 @@ Get Account transactions
 
 List all Account transactions.
 
-### Example
-
-[✨ View "xrpGetAccountTx.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetAccountTx.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpGetFee()`
+
+### Example
+
+[👉 View "**xrpGetFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetFee.php)
+
+### Request
 
 > **GET** `/v3/xrp/fee`
 
@@ -526,15 +556,17 @@ Get actual Blockchain fee
 
  Get XRP Blockchain fee. Standard fee for the transaction is available in the drops.base_fee section and is 10 XRP drops by default. When there is a heavy traffic on the blockchain, fees are increasing according to current traffic.
 
-### Example
-
-[✨ View "xrpGetFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetFee.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpGetLastClosedLedger()`
+
+### Example
+
+[👉 View "**xrpGetLastClosedLedger.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetLastClosedLedger.php)
+
+### Request
 
 > **GET** `/v3/xrp/info`
 
@@ -560,15 +592,17 @@ Get XRP Blockchain Information
 
 Get XRP Blockchain last closed ledger index and hash.
 
-### Example
-
-[✨ View "xrpGetLastClosedLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetLastClosedLedger.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpGetLedger()`
+
+### Example
+
+[👉 View "**xrpGetLedger.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetLedger.php)
+
+### Request
 
 > **GET** `/v3/xrp/ledger/{i}`
 
@@ -598,15 +632,17 @@ Get Ledger
 
 Get ledger by sequence.
 
-### Example
-
-[✨ View "xrpGetLedger.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetLedger.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpGetTransaction()`
+
+### Example
+
+[👉 View "**xrpGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/xrp/transaction/{hash}`
 
@@ -636,15 +672,17 @@ Get XRP Transaction by hash
 
 Get XRP Transaction by transaction hash.
 
-### Example
-
-[✨ View "xrpGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `xrpWallet()`
+
+### Example
+
+[👉 View "**xrpWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpWallet.php)
+
+### Request
 
 > **GET** `/v3/xrp/account`
 
@@ -669,10 +707,6 @@ Generate XRP account
 <h4>5 credits per API call.</h4>
 
  Generate XRP account. Tatum does not support HD wallet for XRP, only specific address and private key can be generated.
-
-### Example
-
-[✨ View "xrpWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XRPApi/xrpWallet.php)
 
 [Back to top](#top)
 

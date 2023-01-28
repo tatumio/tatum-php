@@ -22,6 +22,9 @@ $arg_mnemonic = 'police hat quantum advance enroll glove thank build warfare inj
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/xdc/wallet
      * 

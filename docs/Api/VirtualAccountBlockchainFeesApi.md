@@ -28,6 +28,12 @@ Method | Description
 
 ## `offchainEstimateFee()`
 
+### Example
+
+[👉 View "**offchainEstimateFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualAccountBlockchainFeesApi/offchainEstimateFee.php)
+
+### Request
+
 > **POST** `/v3/offchain/blockchain/estimate`
 
 ### Type signature
@@ -59,10 +65,6 @@ Estimate ledger to blockchain transaction fee
  Supported blockchains: 
 
 <ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Dogecoin</li> </ul>
-
-### Example
-
-[✨ View "offchainEstimateFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualAccountBlockchainFeesApi/offchainEstimateFee.php)
 
 [Back to top](#top)
 

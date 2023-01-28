@@ -39,6 +39,9 @@ $arg_transfer_egld_blockchain = (new \Tatum\Model\TransferEgldBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/egld/transaction
      * 

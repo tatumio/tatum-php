@@ -54,6 +54,9 @@ $arg_transfer_bsc_mnemonic = (new \Tatum\Model\TransferBscMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bsc/transfer
      * 

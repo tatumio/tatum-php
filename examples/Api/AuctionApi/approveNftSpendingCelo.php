@@ -48,6 +48,9 @@ $arg_approve_nft_spending_celo = (new \Tatum\Model\ApproveNftSpendingCelo())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/approve
      * 

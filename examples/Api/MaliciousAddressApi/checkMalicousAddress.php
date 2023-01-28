@@ -22,6 +22,9 @@ $arg_address = "0x002Bf459dC58584D58886169EA0E80f3Ca95FFAF";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/security/address/{address}
      * 

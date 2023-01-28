@@ -37,6 +37,9 @@ $arg_call_xdc_read_smart_contract_method = (new \Tatum\Model\CallXdcReadSmartCon
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xdc/smartcontract
      * 

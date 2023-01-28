@@ -42,6 +42,9 @@ $arg_generate_auction_kms = (new \Tatum\Model\GenerateAuctionKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction
      * 

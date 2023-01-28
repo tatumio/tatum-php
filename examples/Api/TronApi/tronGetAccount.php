@@ -22,6 +22,9 @@ $arg_address = "TGDqQAP5bduoPKVgdbk7fGyW4DwEt3RRn8";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/tron/account/{address}
      * 

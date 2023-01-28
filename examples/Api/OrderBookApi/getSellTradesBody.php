@@ -57,6 +57,9 @@ $arg_list_oder_book_active_sell_body = (new \Tatum\Model\ListOderBookActiveSellB
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/trade/sell
      * 

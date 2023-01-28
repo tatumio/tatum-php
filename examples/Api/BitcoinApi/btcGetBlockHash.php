@@ -22,6 +22,9 @@ $arg_i = 1580117;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/bitcoin/block/hash/{i}
      * 

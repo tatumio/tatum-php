@@ -45,6 +45,9 @@ $arg_virtual_currency_operation = (new \Tatum\Model\VirtualCurrencyOperation())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/ledger/virtualCurrency/revoke
      * 

@@ -36,6 +36,9 @@ $arg_withdraw_from_marketplace_solana_kms = (new \Tatum\Model\WithdrawFromMarket
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/withdraw/fee
      * 

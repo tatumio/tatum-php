@@ -39,6 +39,9 @@ $arg_create_account = (new \Tatum\Model\CreateAccount())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ledger/account
      * 

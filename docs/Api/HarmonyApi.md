@@ -42,6 +42,12 @@ Method | Description
 
 ## `callOneReadSmartContractMethod()`
 
+### Example
+
+[👉 View "**callOneReadSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneReadSmartContractMethod.php)
+
+### Request
+
 > **POST** `/v3/one/smartcontract`
 
 ### Type signature
@@ -96,15 +102,17 @@ However, because this API can be run against any smart contract on the blockchai
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "callOneReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneReadSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callOneSmartContractMethod()`
+
+### Example
+
+[👉 View "**callOneSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethod.php)
+
+### Request
 
 > **POST** `/v3/one/smartcontract`
 
@@ -134,15 +142,17 @@ Invoke a method in a smart contract on Harmony
 
 CallOneSmartContractMethod operation
 
-### Example
-
-[✨ View "callOneSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callOneSmartContractMethodKMS()`
+
+### Example
+
+[👉 View "**callOneSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethodKMS.php)
+
+### Request
 
 > **POST** `/v3/one/smartcontract`
 
@@ -172,15 +182,17 @@ Invoke a method in a smart contract on Harmony
 
 CallOneSmartContractMethodKMS operation
 
-### Example
-
-[✨ View "callOneSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethodKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `oneBroadcast()`
+
+### Example
+
+[👉 View "**oneBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneBroadcast.php)
+
+### Request
 
 > **POST** `/v3/one/broadcast`
 
@@ -212,15 +224,17 @@ Broadcast signed ONE transaction
 
  Broadcast signed transaction to ONE blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "oneBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `oneFormatAddress()`
+
+### Example
+
+[👉 View "**oneFormatAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneFormatAddress.php)
+
+### Request
 
 > **GET** `/v3/one/address/format/{address}`
 
@@ -250,15 +264,17 @@ Transform HEX address to Bech32 ONE address format
 
  Transform HEX address to Bech32 format with one prefix.
 
-### Example
-
-[✨ View "oneFormatAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneFormatAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `oneGenerateAddress()`
+
+### Example
+
+[👉 View "**oneGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/one/address/{xpub}/{index}`
 
@@ -290,15 +306,17 @@ Generate ONE account address from Extended public key
 
  Generate ONE account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "oneGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `oneGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**oneGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/one/wallet/priv`
 
@@ -328,15 +346,17 @@ Generate ONE private key
 
  Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "oneGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `oneGenerateWallet()`
+
+### Example
+
+[👉 View "**oneGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/one/wallet`
 
@@ -372,15 +392,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for ONE wallet with derivation path m'/44'/60'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible ONE wallet.
 
-### Example
-
-[✨ View "oneGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `oneGetBalance()`
+
+### Example
+
+[👉 View "**oneGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBalance.php)
+
+### Request
 
 > **GET** `/v3/one/account/balance/{address}`
 
@@ -412,15 +434,17 @@ Get ONE Account balance
 
  Get ONE account balance in ONE. This method does not prints any balance of the HRM20 or HRM721 tokens on the account.
 
-### Example
-
-[✨ View "oneGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `oneGetBlock()`
+
+### Example
+
+[👉 View "**oneGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBlock.php)
+
+### Request
 
 > **GET** `/v3/one/block/{hash}`
 
@@ -452,15 +476,17 @@ Get ONE block by hash
 
  Get ONE block by block hash or block number.
 
-### Example
-
-[✨ View "oneGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `oneGetCurrentBlock()`
+
+### Example
+
+[👉 View "**oneGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/one/block/current`
 
@@ -486,15 +512,17 @@ Get current block number
 
  Get ONE current block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "oneGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `oneGetTransaction()`
+
+### Example
+
+[👉 View "**oneGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/one/transaction/{hash}`
 
@@ -526,15 +554,17 @@ Get ONE Transaction
 
  Get ONE transaction by transaction hash.
 
-### Example
-
-[✨ View "oneGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `oneGetTransactionCount()`
+
+### Example
+
+[👉 View "**oneGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransactionCount.php)
+
+### Request
 
 > **GET** `/v3/one/transaction/count/{address}`
 
@@ -566,15 +596,17 @@ Get count of outgoing ONE transactions
 
  Get a number of outgoing ONE transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-### Example
-
-[✨ View "oneGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransactionCount.php)
-
 [Back to top](#top)
 
 
 
 ## `transferOneBlockchain()`
+
+### Example
+
+[👉 View "**transferOneBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchain.php)
+
+### Request
 
 > **POST** `/v3/one/transaction`
 
@@ -618,15 +650,17 @@ Send ONE from account to account
 
  Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "transferOneBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferOneBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferOneBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/one/transaction`
 
@@ -655,10 +689,6 @@ Name | Type | Description  | Notes
 Send ONE from account to account
 
 TransferOneBlockchainKMS operation
-
-### Example
-
-[✨ View "transferOneBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchainKMS.php)
 
 [Back to top](#top)
 

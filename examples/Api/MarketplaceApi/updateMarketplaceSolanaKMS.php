@@ -48,6 +48,9 @@ $arg_update_marketplace_solana_kms = (new \Tatum\Model\UpdateMarketplaceSolanaKM
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/marketplace/listing
      * 

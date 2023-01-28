@@ -45,6 +45,9 @@ $arg_transfer_bsc_blockchain_kms = (new \Tatum\Model\TransferBscBlockchainKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/bsc/transaction
      * 

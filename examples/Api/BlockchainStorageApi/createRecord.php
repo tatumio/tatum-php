@@ -48,6 +48,9 @@ $arg_create_record = (new \Tatum\Model\CreateRecord())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/record
      * 

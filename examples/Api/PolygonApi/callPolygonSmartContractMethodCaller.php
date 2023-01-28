@@ -46,6 +46,9 @@ $arg_call_polygon_smart_contract_method_caller = (new \Tatum\Model\CallPolygonSm
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/polygon/smartcontract
      * 

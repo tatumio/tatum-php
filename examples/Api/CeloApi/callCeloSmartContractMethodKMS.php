@@ -52,6 +52,9 @@ $arg_call_celo_smart_contract_method_kms = (new \Tatum\Model\CallCeloSmartContra
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/celo/smartcontract
      * 

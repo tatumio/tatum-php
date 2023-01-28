@@ -25,6 +25,9 @@ $arg_revert = true;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * DELETE /v3/offchain/withdrawal/{id}
      */

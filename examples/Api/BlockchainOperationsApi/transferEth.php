@@ -51,6 +51,9 @@ $arg_transfer_eth = (new \Tatum\Model\TransferEth())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/ethereum/transfer
      * 

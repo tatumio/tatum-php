@@ -33,6 +33,9 @@ $arg_bch_transaction = (new \Tatum\Model\BchTransaction())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/bcash/transaction
      * 

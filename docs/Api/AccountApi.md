@@ -46,6 +46,12 @@ Method | Description
 
 ## `activateAccount()`
 
+### Example
+
+[👉 View "**activateAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php)
+
+### Request
+
 > **PUT** `/v3/ledger/account/{id}/activate`
 
 ### Type signature
@@ -74,15 +80,17 @@ Activate account
 
 Activates an account.
 
-### Example
-
-[✨ View "activateAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `blockAmount()`
+
+### Example
+
+[👉 View "**blockAmount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php)
+
+### Request
 
 > **POST** `/v3/ledger/account/block/{id}`
 
@@ -114,15 +122,17 @@ Block an amount in an account
 
  Blocks an amount in an account. Any number of distinct amounts can be blocked in one account. Every new blockage has its own distinct ID, which is used as a reference. When the amount is blocked, it is debited from the available balance of the account. The account balance remains the same. The account balance represents the total amount of funds in the account. The available balance represents the total amount of funds that can be used to perform transactions. When an account is frozen, the available balance is set to 0 minus all blockages for the account.
 
-### Example
-
-[✨ View "blockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php)
-
 [Back to top](#top)
 
 
 
 ## `createAccount()`
+
+### Example
+
+[👉 View "**createAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccount.php)
+
+### Request
 
 > **POST** `/v3/ledger/account`
 
@@ -150,15 +160,17 @@ Create a virtual account
 
 CreateAccount operation
 
-### Example
-
-[✨ View "createAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `createAccountBatch()`
+
+### Example
+
+[👉 View "**createAccountBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountBatch.php)
+
+### Request
 
 > **POST** `/v3/ledger/account/batch`
 
@@ -188,15 +200,17 @@ Create multiple accounts in a batch call
 
  Creates new accounts for the customer in a batch call.
 
-### Example
-
-[✨ View "createAccountBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountBatch.php)
-
 [Back to top](#top)
 
 
 
 ## `createAccountXpub()`
+
+### Example
+
+[👉 View "**createAccountXpub.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountXpub.php)
+
+### Request
 
 > **POST** `/v3/ledger/account`
 
@@ -262,15 +276,17 @@ Blockchain addresses on Elrond are generated based on the mnemonic of an Elrond 
 
  You can connect multiple blockchain addresses to one virtual account.
 
-### Example
-
-[✨ View "createAccountXpub.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccountXpub.php)
-
 [Back to top](#top)
 
 
 
 ## `deactivateAccount()`
+
+### Example
+
+[👉 View "**deactivateAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deactivateAccount.php)
+
+### Request
 
 > **PUT** `/v3/ledger/account/{id}/deactivate`
 
@@ -300,15 +316,17 @@ Deactivate account
 
 Deactivates an account. Only accounts with account and available balances of zero can be deactivated. Deactivated accounts are not visible in the list of accounts, it is not possible to send funds to these accounts or perform transactions. However, they are still present in the ledger and all transaction histories.
 
-### Example
-
-[✨ View "deactivateAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deactivateAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `deleteAllBlockAmount()`
+
+### Example
+
+[👉 View "**deleteAllBlockAmount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteAllBlockAmount.php)
+
+### Request
 
 > **DELETE** `/v3/ledger/account/block/account/{id}`
 
@@ -338,15 +356,17 @@ Unblock all blocked amounts in an account
 
 Unblocks previously blocked amounts in an account. Increases the available balance in the account where the amount was blocked.
 
-### Example
-
-[✨ View "deleteAllBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteAllBlockAmount.php)
-
 [Back to top](#top)
 
 
 
 ## `deleteBlockAmount()`
+
+### Example
+
+[👉 View "**deleteBlockAmount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteBlockAmount.php)
+
+### Request
 
 > **DELETE** `/v3/ledger/account/block/{id}`
 
@@ -376,15 +396,17 @@ Unblock a blocked amount in an account
 
 Unblocks a previously blocked amount in an account. Increases the available balance in the account where the amount was blocked.
 
-### Example
-
-[✨ View "deleteBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/deleteBlockAmount.php)
-
 [Back to top](#top)
 
 
 
 ## `freezeAccount()`
+
+### Example
+
+[👉 View "**freezeAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/freezeAccount.php)
+
+### Request
 
 > **PUT** `/v3/ledger/account/{id}/freeze`
 
@@ -414,15 +436,17 @@ Freeze account
 
 Disables all outgoing transactions. Incoming transactions to the account are available. When an account is frozen, its available balance is set to 0. This operation will create a new blockage of type ACCOUNT_FROZEN, which is automatically deleted when the account is unfrozen.
 
-### Example
-
-[✨ View "freezeAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/freezeAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `getAccountBalance()`
+
+### Example
+
+[👉 View "**getAccountBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountBalance.php)
+
+### Request
 
 > **GET** `/v3/ledger/account/{id}/balance`
 
@@ -452,15 +476,17 @@ Get account balance
 
 Get balance for the account.
 
-### Example
-
-[✨ View "getAccountBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `getAccountByAccountId()`
+
+### Example
+
+[👉 View "**getAccountByAccountId.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountByAccountId.php)
+
+### Request
 
 > **GET** `/v3/ledger/account/{id}`
 
@@ -490,15 +516,17 @@ Get account by ID
 
 Gets active account by ID. Displays all information regarding the given account.
 
-### Example
-
-[✨ View "getAccountByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountByAccountId.php)
-
 [Back to top](#top)
 
 
 
 ## `getAccounts()`
+
+### Example
+
+[👉 View "**getAccounts.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccounts.php)
+
+### Request
 
 > **GET** `/v3/ledger/account`
 
@@ -544,15 +572,17 @@ List all accounts
 
 Lists all accounts. Inactive accounts are also visible.
 
-### Example
-
-[✨ View "getAccounts.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccounts.php)
-
 [Back to top](#top)
 
 
 
 ## `getAccountsByCustomerId()`
+
+### Example
+
+[👉 View "**getAccountsByCustomerId.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsByCustomerId.php)
+
+### Request
 
 > **GET** `/v3/ledger/account/customer/{id}`
 
@@ -588,15 +618,17 @@ List all customer accounts
 
 Lists all accounts associated with a customer. Only active accounts are visible.
 
-### Example
-
-[✨ View "getAccountsByCustomerId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsByCustomerId.php)
-
 [Back to top](#top)
 
 
 
 ## `getAccountsCount()`
+
+### Example
+
+[👉 View "**getAccountsCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsCount.php)
+
+### Request
 
 > **GET** `/v3/ledger/account/count`
 
@@ -642,15 +674,17 @@ Count of found entities for get accounts request
 
 Count of accounts that were found from /v3/ledger/account
 
-### Example
-
-[✨ View "getAccountsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getAccountsCount.php)
-
 [Back to top](#top)
 
 
 
 ## `getBlockAmount()`
+
+### Example
+
+[👉 View "**getBlockAmount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmount.php)
+
+### Request
 
 > **GET** `/v3/ledger/account/block/{id}`
 
@@ -684,15 +718,17 @@ Get blocked amounts in an account
 
 Gets blocked amounts for an account.
 
-### Example
-
-[✨ View "getBlockAmount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmount.php)
-
 [Back to top](#top)
 
 
 
 ## `getBlockAmountById()`
+
+### Example
+
+[👉 View "**getBlockAmountById.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmountById.php)
+
+### Request
 
 > **GET** `/v3/ledger/account/block/{id}/detail`
 
@@ -722,15 +758,17 @@ Get blocked amount by ID
 
 Gets blocked amount by id.
 
-### Example
-
-[✨ View "getBlockAmountById.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/getBlockAmountById.php)
-
 [Back to top](#top)
 
 
 
 ## `unblockAmountWithTransaction()`
+
+### Example
+
+[👉 View "**unblockAmountWithTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unblockAmountWithTransaction.php)
+
+### Request
 
 > **PUT** `/v3/ledger/account/block/{id}`
 
@@ -762,15 +800,17 @@ Unblock an amount in an account and perform a transaction
 
  Unblocks a previously blocked amount in an account and invokes a ledger transaction from that account to a different recipient. If the request fails, the amount is not unblocked.
 
-### Example
-
-[✨ View "unblockAmountWithTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unblockAmountWithTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `unfreezeAccount()`
+
+### Example
+
+[👉 View "**unfreezeAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unfreezeAccount.php)
+
+### Request
 
 > **PUT** `/v3/ledger/account/{id}/unfreeze`
 
@@ -800,15 +840,17 @@ Unfreeze account
 
 Unfreezes a previously frozen account. Unfreezing a non-frozen account not affect the account.
 
-### Example
-
-[✨ View "unfreezeAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/unfreezeAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `updateAccountByAccountId()`
+
+### Example
+
+[👉 View "**updateAccountByAccountId.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/updateAccountByAccountId.php)
+
+### Request
 
 > **PUT** `/v3/ledger/account/{id}`
 
@@ -839,10 +881,6 @@ Update account
 <h4>2 credits per API call.</h4>
 
 Update account by ID. Only a small number of fields can be updated.
-
-### Example
-
-[✨ View "updateAccountByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/updateAccountByAccountId.php)
 
 [Back to top](#top)
 

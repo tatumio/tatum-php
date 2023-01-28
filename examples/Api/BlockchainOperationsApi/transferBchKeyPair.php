@@ -51,6 +51,9 @@ $arg_transfer_bch_key_pair = (new \Tatum\Model\TransferBchKeyPair())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bcash/transfer
      * 

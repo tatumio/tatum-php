@@ -28,6 +28,9 @@ $arg_kms_signature_ids = (new \Tatum\Model\KmsSignatureIds())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/kms/pending/{chain}
      * 

@@ -48,6 +48,12 @@ Method | Description
 
 ## `createSubscriptionBalance()`
 
+### Example
+
+[👉 View "**createSubscriptionBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionBalance.php)
+
+### Request
+
 > **POST** `/v3/subscription`
 
 ### Type signature
@@ -76,15 +82,17 @@ Create a subscription
 
 CreateSubscriptionBalance operation
 
-### Example
-
-[✨ View "createSubscriptionBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionContractLogEvent()`
+
+### Example
+
+[👉 View "**createSubscriptionContractLogEvent.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionContractLogEvent.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -114,15 +122,17 @@ Create a subscription
 
 CreateSubscriptionContractLogEvent operation
 
-### Example
-
-[✨ View "createSubscriptionContractLogEvent.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionContractLogEvent.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionIncoming()`
+
+### Example
+
+[👉 View "**createSubscriptionIncoming.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionIncoming.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -152,15 +162,17 @@ Create a subscription
 
 CreateSubscriptionIncoming operation
 
-### Example
-
-[✨ View "createSubscriptionIncoming.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionIncoming.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionInterval()`
+
+### Example
+
+[👉 View "**createSubscriptionInterval.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionInterval.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -190,15 +202,17 @@ Create a subscription
 
 CreateSubscriptionInterval operation
 
-### Example
-
-[✨ View "createSubscriptionInterval.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionInterval.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionKMSError()`
+
+### Example
+
+[👉 View "**createSubscriptionKMSError.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionKMSError.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -228,15 +242,17 @@ Create a subscription
 
 CreateSubscriptionKMSError operation
 
-### Example
-
-[✨ View "createSubscriptionKMSError.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionKMSError.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionKMSSuccess()`
+
+### Example
+
+[👉 View "**createSubscriptionKMSSuccess.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionKMSSuccess.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -266,15 +282,17 @@ Create a subscription
 
 CreateSubscriptionKMSSuccess operation
 
-### Example
-
-[✨ View "createSubscriptionKMSSuccess.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionKMSSuccess.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionMultiTokenTransferEvent()`
+
+### Example
+
+[👉 View "**createSubscriptionMultiTokenTransferEvent.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionMultiTokenTransferEvent.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -304,15 +322,17 @@ Create a subscription
 
 CreateSubscriptionMultiTokenTransferEvent operation
 
-### Example
-
-[✨ View "createSubscriptionMultiTokenTransferEvent.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionMultiTokenTransferEvent.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionNftTransferEvent()`
+
+### Example
+
+[👉 View "**createSubscriptionNftTransferEvent.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionNftTransferEvent.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -342,15 +362,17 @@ Create a subscription
 
 CreateSubscriptionNftTransferEvent operation
 
-### Example
-
-[✨ View "createSubscriptionNftTransferEvent.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionNftTransferEvent.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionNotification()`
+
+### Example
+
+[👉 View "**createSubscriptionNotification.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionNotification.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -544,15 +566,17 @@ Create a subscription
 
  Result of the operation is subscription ID, which can be used to cancel subscription or obtain additional data connected to it like reports.
 
-### Example
-
-[✨ View "createSubscriptionNotification.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionNotification.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionPartialTradeMatch()`
+
+### Example
+
+[👉 View "**createSubscriptionPartialTradeMatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionPartialTradeMatch.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -582,15 +606,17 @@ Create a subscription
 
 CreateSubscriptionPartialTradeMatch operation
 
-### Example
-
-[✨ View "createSubscriptionPartialTradeMatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionPartialTradeMatch.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionPending()`
+
+### Example
+
+[👉 View "**createSubscriptionPending.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionPending.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -620,15 +646,17 @@ Create a subscription
 
 CreateSubscriptionPending operation
 
-### Example
-
-[✨ View "createSubscriptionPending.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionPending.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionTradeMatch()`
+
+### Example
+
+[👉 View "**createSubscriptionTradeMatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionTradeMatch.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -658,15 +686,17 @@ Create a subscription
 
 CreateSubscriptionTradeMatch operation
 
-### Example
-
-[✨ View "createSubscriptionTradeMatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionTradeMatch.php)
-
 [Back to top](#top)
 
 
 
 ## `createSubscriptionTxInTheBlock()`
+
+### Example
+
+[👉 View "**createSubscriptionTxInTheBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionTxInTheBlock.php)
+
+### Request
 
 > **POST** `/v3/subscription`
 
@@ -696,15 +726,17 @@ Create a subscription
 
 CreateSubscriptionTxInTheBlock operation
 
-### Example
-
-[✨ View "createSubscriptionTxInTheBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/createSubscriptionTxInTheBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `deleteSubscription()`
+
+### Example
+
+[👉 View "**deleteSubscription.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/deleteSubscription.php)
+
+### Request
 
 > **DELETE** `/v3/subscription/{id}`
 
@@ -734,15 +766,17 @@ Cancel existing subscription
 
 Cancel existing subscription.
 
-### Example
-
-[✨ View "deleteSubscription.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/deleteSubscription.php)
-
 [Back to top](#top)
 
 
 
 ## `disableWebHookHmac()`
+
+### Example
+
+[👉 View "**disableWebHookHmac.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/disableWebHookHmac.php)
+
+### Request
 
 > **DELETE** `/v3/subscription`
 
@@ -768,15 +802,17 @@ Disable HMAC webhook digest
 
 Disable HMAC hash ID on the fired webhooks from Tatum API.
 
-### Example
-
-[✨ View "disableWebHookHmac.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/disableWebHookHmac.php)
-
 [Back to top](#top)
 
 
 
 ## `enableWebHookHmac()`
+
+### Example
+
+[👉 View "**enableWebHookHmac.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/enableWebHookHmac.php)
+
+### Request
 
 > **PUT** `/v3/subscription`
 
@@ -810,15 +846,17 @@ Enable HMAC hash ID on the fired webhooks from Tatum API. In order to make sure 
 
 <ol> <li>Get a webhook **x-payload-hash** header value and payload as it is as a JSON file.</li> <li>Convert the HTTP webhook body to stringify JSON without any spaces. In JavaScript, you would do it like this <pre>JSON.stringify(req.body)</pre></li> <li>Perform calculations on your side to create a digest using Secret Key, webhook payload in bytes and HMAC SHA512 algorithm. JavaScript example: <pre>require('crypto').createHmac('sha512', hmacSecret).update(JSON.stringify(req.body)).digest('base64')</pre>.</li> <li>Compare x-payload-hash header value with calculated digest as a Base64 string.</li>
 
-### Example
-
-[✨ View "enableWebHookHmac.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/enableWebHookHmac.php)
-
 [Back to top](#top)
 
 
 
 ## `getAllWebhooks()`
+
+### Example
+
+[👉 View "**getAllWebhooks.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getAllWebhooks.php)
+
+### Request
 
 > **GET** `/v3/subscription/webhook`
 
@@ -854,15 +892,17 @@ List all executed webhooks
 
 List all webhooks.
 
-### Example
-
-[✨ View "getAllWebhooks.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getAllWebhooks.php)
-
 [Back to top](#top)
 
 
 
 ## `getAllWebhooksCount()`
+
+### Example
+
+[👉 View "**getAllWebhooksCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getAllWebhooksCount.php)
+
+### Request
 
 > **GET** `/v3/subscription/webhook/count`
 
@@ -898,15 +938,17 @@ Count of found entities for get webhook request
 
 Count of webhooks that were found from /v3/subscription/webhook
 
-### Example
-
-[✨ View "getAllWebhooksCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getAllWebhooksCount.php)
-
 [Back to top](#top)
 
 
 
 ## `getSubscriptionReport()`
+
+### Example
+
+[👉 View "**getSubscriptionReport.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptionReport.php)
+
+### Request
 
 > **GET** `/v3/subscription/report/{id}`
 
@@ -938,15 +980,17 @@ Obtain report for subscription
 
 <ul> <li>**ACCOUNT_BALANCE_LIMIT** - obtain list of all ledger accounts with account balance above the limit. 1 credit per 50 returned records is charged.</li> <li>**TRANSACTION_HISTORY_REPORT** - obtain list of all ledger transaction for last X hours from the time of invocation. 1 credit per 50 returned records is charged.</li> </ul>
 
-### Example
-
-[✨ View "getSubscriptionReport.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptionReport.php)
-
 [Back to top](#top)
 
 
 
 ## `getSubscriptions()`
+
+### Example
+
+[👉 View "**getSubscriptions.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptions.php)
+
+### Request
 
 > **GET** `/v3/subscription`
 
@@ -980,15 +1024,17 @@ List all active subscriptions
 
 List all active subscriptions.
 
-### Example
-
-[✨ View "getSubscriptions.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptions.php)
-
 [Back to top](#top)
 
 
 
 ## `getSubscriptionsCount()`
+
+### Example
+
+[👉 View "**getSubscriptionsCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptionsCount.php)
+
+### Request
 
 > **GET** `/v3/subscription/count`
 
@@ -1021,10 +1067,6 @@ Count of found entities for get webhook request
 <h4>1 credit per API call.</h4>
 
 Count of subscriptions that were found from /v3/subscription
-
-### Example
-
-[✨ View "getSubscriptionsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NotificationSubscriptionsApi/getSubscriptionsCount.php)
 
 [Back to top](#top)
 

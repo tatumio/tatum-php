@@ -48,6 +48,9 @@ $arg_cancel_auction_celo_kms = (new \Tatum\Model\CancelAuctionCeloKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/cancel
      * 

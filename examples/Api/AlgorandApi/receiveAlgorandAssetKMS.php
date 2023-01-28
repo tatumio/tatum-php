@@ -30,6 +30,9 @@ $arg_receive_algorand_asset_kms = (new \Tatum\Model\ReceiveAlgorandAssetKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/algorand/asset/receive
      * 

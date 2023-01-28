@@ -51,6 +51,9 @@ $arg_transfer_custodial_wallet = (new \Tatum\Model\TransferCustodialWallet())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/sc/custodial/transfer
      * 

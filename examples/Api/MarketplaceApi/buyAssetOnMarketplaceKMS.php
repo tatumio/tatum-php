@@ -51,6 +51,9 @@ $arg_buy_asset_on_marketplace_kms = (new \Tatum\Model\BuyAssetOnMarketplaceKMS()
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing/buy
      * 

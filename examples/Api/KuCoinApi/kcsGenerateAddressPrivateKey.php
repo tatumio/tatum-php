@@ -27,6 +27,9 @@ $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/kcs/wallet/priv
      * 

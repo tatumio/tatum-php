@@ -33,6 +33,12 @@ Method | Description
 
 ## `getTransactions()`
 
+### Example
+
+[👉 View "**getTransactions.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactions.php)
+
+### Request
+
 > **POST** `/v3/ledger/transaction/ledger`
 
 ### Type signature
@@ -67,15 +73,17 @@ Find transactions within the ledger.
 
 Find transactions across whole ledger.
 
-### Example
-
-[✨ View "getTransactions.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactions.php)
-
 [Back to top](#top)
 
 
 
 ## `getTransactionsByAccountId()`
+
+### Example
+
+[👉 View "**getTransactionsByAccountId.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByAccountId.php)
+
+### Request
 
 > **POST** `/v3/ledger/transaction/account`
 
@@ -111,15 +119,17 @@ Find transactions for account.
 
 Finds transactions for the account identified by the given account ID.
 
-### Example
-
-[✨ View "getTransactionsByAccountId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByAccountId.php)
-
 [Back to top](#top)
 
 
 
 ## `getTransactionsByCustomerId()`
+
+### Example
+
+[👉 View "**getTransactionsByCustomerId.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByCustomerId.php)
+
+### Request
 
 > **POST** `/v3/ledger/transaction/customer`
 
@@ -155,15 +165,17 @@ Find transactions for a customer across all of the customer's accounts.
 
 Finds transactions for all accounts of the customer identified by the given internal customer ID.
 
-### Example
-
-[✨ View "getTransactionsByCustomerId.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByCustomerId.php)
-
 [Back to top](#top)
 
 
 
 ## `getTransactionsByReference()`
+
+### Example
+
+[👉 View "**getTransactionsByReference.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByReference.php)
+
+### Request
 
 > **GET** `/v3/ledger/transaction/reference/{reference}`
 
@@ -193,15 +205,17 @@ Find transactions with a given reference across all accounts.
 
 Finds transactions for all accounts with the given reference.
 
-### Example
-
-[✨ View "getTransactionsByReference.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByReference.php)
-
 [Back to top](#top)
 
 
 
 ## `sendTransaction()`
+
+### Example
+
+[👉 View "**sendTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransaction.php)
+
+### Request
 
 > **POST** `/v3/ledger/transaction`
 
@@ -241,15 +255,17 @@ Send payment
 
  The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
 
-### Example
-
-[✨ View "sendTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `sendTransactionBatch()`
+
+### Example
+
+[👉 View "**sendTransactionBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransactionBatch.php)
+
+### Request
 
 > **POST** `/v3/ledger/transaction/batch`
 
@@ -288,10 +304,6 @@ Send payment in batch
  It is possible to perform an anonymous transaction where the sender account is not visible for the recipient.
 
  The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
-
-### Example
-
-[✨ View "sendTransactionBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransactionBatch.php)
 
 [Back to top](#top)
 

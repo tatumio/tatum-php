@@ -43,6 +43,12 @@ Method | Description
 
 ## `callPolygonSmartContractMethod()`
 
+### Example
+
+[👉 View "**callPolygonSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethod.php)
+
+### Request
+
 > **POST** `/v3/polygon/smartcontract`
 
 ### Type signature
@@ -69,15 +75,17 @@ Invoke a method in a smart contract on Polygon
 
 CallPolygonSmartContractMethod operation
 
-### Example
-
-[✨ View "callPolygonSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callPolygonSmartContractMethodCaller()`
+
+### Example
+
+[👉 View "**callPolygonSmartContractMethodCaller.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodCaller.php)
+
+### Request
 
 > **POST** `/v3/polygon/smartcontract`
 
@@ -105,15 +113,17 @@ Invoke a method in a smart contract on Polygon
 
 CallPolygonSmartContractMethodCaller operation
 
-### Example
-
-[✨ View "callPolygonSmartContractMethodCaller.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodCaller.php)
-
 [Back to top](#top)
 
 
 
 ## `callPolygonSmartContractMethodKMS()`
+
+### Example
+
+[👉 View "**callPolygonSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodKMS.php)
+
+### Request
 
 > **POST** `/v3/polygon/smartcontract`
 
@@ -141,15 +151,17 @@ Invoke a method in a smart contract on Polygon
 
 CallPolygonSmartContractMethodKMS operation
 
-### Example
-
-[✨ View "callPolygonSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `callPolygonSmartContractReadMethod()`
+
+### Example
+
+[👉 View "**callPolygonSmartContractReadMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractReadMethod.php)
+
+### Request
 
 > **POST** `/v3/polygon/smartcontract`
 
@@ -205,15 +217,17 @@ However, because this API can be run against any smart contract on the blockchai
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "callPolygonSmartContractReadMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractReadMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonBroadcast()`
+
+### Example
+
+[👉 View "**polygonBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonBroadcast.php)
+
+### Request
 
 > **POST** `/v3/polygon/broadcast`
 
@@ -243,15 +257,17 @@ Broadcast signed Polygon transaction
 
 ** Broadcast signed transaction to Polygon blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "polygonBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGenerateAddress()`
+
+### Example
+
+[👉 View "**polygonGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/polygon/address/{xpub}/{index}`
 
@@ -283,15 +299,17 @@ Generate Polygon account address from Extended public key
 
 ** Generate Polygon account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "polygonGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**polygonGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/polygon/wallet/priv`
 
@@ -321,15 +339,17 @@ Generate Polygon private key
 
 ** Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "polygonGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGenerateWallet()`
+
+### Example
+
+[👉 View "**polygonGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/polygon/wallet`
 
@@ -365,15 +385,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for Polygon wallet with derivation path m'/44'/966'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Polygon wallet.
 
-### Example
-
-[✨ View "polygonGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGetBalance()`
+
+### Example
+
+[👉 View "**polygonGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBalance.php)
+
+### Request
 
 > **GET** `/v3/polygon/account/balance/{address}`
 
@@ -403,15 +425,17 @@ Get Polygon Account balance
 
 ** Get Polygon account balance in MATIC. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
-### Example
-
-[✨ View "polygonGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGetBlock()`
+
+### Example
+
+[👉 View "**polygonGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBlock.php)
+
+### Request
 
 > **GET** `/v3/polygon/block/{hash}`
 
@@ -441,15 +465,17 @@ Get Polygon block by hash
 
 ** Get Polygon block by block hash or block number.
 
-### Example
-
-[✨ View "polygonGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGetCurrentBlock()`
+
+### Example
+
+[👉 View "**polygonGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/polygon/block/current`
 
@@ -475,15 +501,17 @@ Get current block number
 
 ** Get Polygon current block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "polygonGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGetTransaction()`
+
+### Example
+
+[👉 View "**polygonGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/polygon/transaction/{hash}`
 
@@ -513,15 +541,17 @@ Get Polygon Transaction
 
 ** Get Polygon transaction by transaction hash.
 
-### Example
-
-[✨ View "polygonGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGetTransactionByAddress()`
+
+### Example
+
+[👉 View "**polygonGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionByAddress.php)
+
+### Request
 
 > **GET** `/v3/polygon/account/transaction/{address}`
 
@@ -561,15 +591,17 @@ Get Polygon transactions by address
 
 ** Get Polygon transactions by address. This includes incoming and outgoing transactions for the address.
 
-### Example
-
-[✨ View "polygonGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionByAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `polygonGetTransactionCount()`
+
+### Example
+
+[👉 View "**polygonGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionCount.php)
+
+### Request
 
 > **GET** `/v3/polygon/transaction/count/{address}`
 
@@ -599,15 +631,17 @@ Get count of outgoing Polygon transactions
 
 ** Get a number of outgoing Polygon transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-### Example
-
-[✨ View "polygonGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionCount.php)
-
 [Back to top](#top)
 
 
 
 ## `transferPolygonBlockchain()`
+
+### Example
+
+[👉 View "**transferPolygonBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchain.php)
+
+### Request
 
 > **POST** `/v3/polygon/transaction`
 
@@ -645,15 +679,17 @@ Send MATIC from account to account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferPolygonBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferPolygonBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferPolygonBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/polygon/transaction`
 
@@ -680,10 +716,6 @@ Name | Type | Description  | Notes
 Send MATIC from account to account
 
 TransferPolygonBlockchainKMS operation
-
-### Example
-
-[✨ View "transferPolygonBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchainKMS.php)
 
 [Back to top](#top)
 

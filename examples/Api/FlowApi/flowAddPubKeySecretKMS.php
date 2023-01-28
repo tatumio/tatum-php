@@ -36,6 +36,9 @@ $arg_flow_add_pub_key_secret_kms = (new \Tatum\Model\FlowAddPubKeySecretKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/flow/account
      * 

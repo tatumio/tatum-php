@@ -22,6 +22,9 @@ $arg_address = "0x955cd3f17b2fd8ad";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/flow/account/{address}
      * 

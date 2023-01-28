@@ -25,6 +25,10 @@ Method | Description
 
 # `sign()`
 
+## Example
+
+[👉 View "**sign.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/Dogecoin/sign.php)
+
 ## Type signature
 
 ```php
@@ -33,23 +37,19 @@ Method | Description
 ): string
 ```
 
-### Parameters
+## Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **$transfer** | `\Tatum\Local\Transaction\Bitcoin\Transfer` | Transfer object | 
 
-### Return type
+## Return type
 
 Signed transaction hex (`string`)
 
-### Description
+## Description
 
 Sign transaction
-
-### Example
-
-[✨ View "sign.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/Dogecoin/sign.php)
 
 [Back to top](#top)
 

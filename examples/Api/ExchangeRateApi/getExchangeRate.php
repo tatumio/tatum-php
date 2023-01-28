@@ -25,6 +25,9 @@ $arg_base_pair = "USD";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/tatum/rate/{currency}
      * 

@@ -42,6 +42,9 @@ $arg_update_fee_recipient_kms = (new \Tatum\Model\UpdateFeeRecipientKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/auction/recipient
      * 

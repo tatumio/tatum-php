@@ -22,6 +22,9 @@ $arg_address = "tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/bnb/account/{address}
      * 

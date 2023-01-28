@@ -51,6 +51,9 @@ $arg_approve_transfer_custodial_wallet = (new \Tatum\Model\ApproveTransferCustod
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/sc/custodial/approve
      * 

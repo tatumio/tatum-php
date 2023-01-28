@@ -25,6 +25,9 @@ $arg_contract_address = "3MgkEwYY4b8iSX2yMLnbQ7n8KzNRKNAgTGJwVbEcKkUz";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/blockchain/marketplace/listing/{chain}/{contractAddress}
      * 

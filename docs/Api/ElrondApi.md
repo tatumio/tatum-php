@@ -39,6 +39,12 @@ Method | Description
 
 ## `eGldGetCurrentBlock()`
 
+### Example
+
+[👉 View "**eGldGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/eGldGetCurrentBlock.php)
+
+### Request
+
 > **GET** `/v3/egld/block/current`
 
 ### Type signature
@@ -63,15 +69,17 @@ Get current block number
 
  Get EGLD current block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "eGldGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/eGldGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `egldBroadcast()`
+
+### Example
+
+[👉 View "**egldBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldBroadcast.php)
+
+### Request
 
 > **POST** `/v3/egld/broadcast`
 
@@ -101,15 +109,17 @@ Broadcast signed EGLD transaction
 
  Broadcast signed transaction to EGLD blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "egldBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `egldGenerateAddress()`
+
+### Example
+
+[👉 View "**egldGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/egld/address/{mnemonic}/{index}`
 
@@ -141,15 +151,17 @@ Generate EGLD account address from mnemonic
 
  Generate EGLD account deposit address from mnemonic phrase. Deposit address is generated for the specific index - each mnemonic phrase can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "egldGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `egldGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**egldGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/egld/wallet/priv`
 
@@ -179,15 +191,17 @@ Generate EGLD private key
 
  Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "egldGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `egldGenerateWallet()`
+
+### Example
+
+[👉 View "**egldGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/egld/wallet`
 
@@ -225,15 +239,17 @@ Generate EGLD wallet
 
  Tatum follows BIP44 specification and generates for EGLD wallet with derivation path m'/44'/508'/0'/0'. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible EGLD wallet.
 
-### Example
-
-[✨ View "egldGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `egldGetBalance()`
+
+### Example
+
+[👉 View "**egldGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetBalance.php)
+
+### Request
 
 > **GET** `/v3/egld/account/balance/{address}`
 
@@ -263,15 +279,17 @@ Get EGLD Account balance
 
  Get account balance in EGLD.
 
-### Example
-
-[✨ View "egldGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `egldGetBlock()`
+
+### Example
+
+[👉 View "**egldGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetBlock.php)
+
+### Request
 
 > **GET** `/v3/egld/block/{hash}`
 
@@ -301,15 +319,17 @@ Get EGLD block by hash
 
  Get EGLD block by block hash or block number. <a href='https://docs.elrond.com/sdk-and-tools/rest-api/blocks/' target='_blank'> EGLD docs </a>
 
-### Example
-
-[✨ View "egldGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `egldGetTransaction()`
+
+### Example
+
+[👉 View "**egldGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/egld/transaction/{hash}`
 
@@ -339,15 +359,17 @@ Get EGLD Transaction
 
  Get EGLD transaction by transaction hash. Detail result please find here <a href='https://docs.elrond.com/sdk-and-tools/rest-api/transactions/#get-transaction' target='_blank'> EGLD docs </a>
 
-### Example
-
-[✨ View "egldGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `egldGetTransactionAddress()`
+
+### Example
+
+[👉 View "**egldGetTransactionAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransactionAddress.php)
+
+### Request
 
 > **GET** `/v3/egld/transaction/address/{address}`
 
@@ -377,15 +399,17 @@ Get count of outgoing EGLD transactions
 
  This endpoint allows one to retrieve the latest 20 transactions sent from an address.
 
-### Example
-
-[✨ View "egldGetTransactionAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransactionAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `egldGetTransactionCount()`
+
+### Example
+
+[👉 View "**egldGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransactionCount.php)
+
+### Request
 
 > **GET** `/v3/egld/transaction/count/{address}`
 
@@ -415,15 +439,17 @@ Get count of outgoing EGLD transactions
 
  Get a number of outgoing EGLD transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-### Example
-
-[✨ View "egldGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/egldGetTransactionCount.php)
-
 [Back to top](#top)
 
 
 
 ## `transferEgldBlockchain()`
+
+### Example
+
+[👉 View "**transferEgldBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/transferEgldBlockchain.php)
+
+### Request
 
 > **POST** `/v3/egld/transaction`
 
@@ -455,15 +481,17 @@ Send EGLD from account to account
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on devnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "transferEgldBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/transferEgldBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferEgldBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferEgldBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/transferEgldBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/egld/transaction`
 
@@ -490,10 +518,6 @@ Name | Type | Description  | Notes
 Send EGLD from account to account
 
 TransferEgldBlockchainKMS operation
-
-### Example
-
-[✨ View "transferEgldBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ElrondApi/transferEgldBlockchainKMS.php)
 
 [Back to top](#top)
 

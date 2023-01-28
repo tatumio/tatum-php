@@ -39,6 +39,9 @@ $arg_create_record_celo = (new \Tatum\Model\CreateRecordCelo())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/record
      * 

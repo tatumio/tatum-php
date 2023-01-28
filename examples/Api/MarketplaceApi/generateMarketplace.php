@@ -39,6 +39,9 @@ $arg_generate_marketplace = (new \Tatum\Model\GenerateMarketplace())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing
      * 

@@ -48,6 +48,9 @@ $arg_approve_nft_spending_kms = (new \Tatum\Model\ApproveNftSpendingKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/approve
      * 

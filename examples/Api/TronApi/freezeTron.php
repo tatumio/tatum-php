@@ -36,6 +36,9 @@ $arg_freeze_tron = (new \Tatum\Model\FreezeTron())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/tron/freezeBalance
      * 

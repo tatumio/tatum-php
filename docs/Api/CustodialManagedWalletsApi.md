@@ -32,6 +32,12 @@ Method | Description
 
 ## `custodialCreateWallet()`
 
+### Example
+
+[👉 View "**custodialCreateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php)
+
+### Request
+
 > **POST** `/v3/custodial/wallet`
 
 ### Type signature
@@ -62,15 +68,17 @@ Create managed address
 
  Free users can manage only 10 addresses per API Key.
 
-### Example
-
-[✨ View "custodialCreateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `custodialDeleteWallet()`
+
+### Example
+
+[👉 View "**custodialDeleteWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php)
+
+### Request
 
 > **DELETE** `/v3/custodial/wallet/{id}`
 
@@ -100,15 +108,17 @@ Delete managed address
 
  Delete managed address. Once deleted, the address won't be charged in a daily credit usage, but it **won't be possible to get the private key** for it.
 
-### Example
-
-[✨ View "custodialDeleteWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `custodialGetWallet()`
+
+### Example
+
+[👉 View "**custodialGetWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallet.php)
+
+### Request
 
 > **GET** `/v3/custodial/wallet/{id}`
 
@@ -140,15 +150,17 @@ Get managed address
 
  Get managed address for an API Key. It's possible to export the private key, if query parameter **export** is set to true.
 
-### Example
-
-[✨ View "custodialGetWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `custodialGetWallets()`
+
+### Example
+
+[👉 View "**custodialGetWallets.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallets.php)
+
+### Request
 
 > **GET** `/v3/custodial/wallet`
 
@@ -174,15 +186,17 @@ Get managed addresses
 
  Get all managed addresses for an API Key.
 
-### Example
-
-[✨ View "custodialGetWallets.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallets.php)
-
 [Back to top](#top)
 
 
 
 ## `custodialTransferManagedAddress()`
+
+### Example
+
+[👉 View "**custodialTransferManagedAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php)
+
+### Request
 
 > **POST** `/v3/custodial/transaction`
 
@@ -239,10 +253,6 @@ Sign and transfer using managed address
  **Examples of different transaction payloads.**
 
  1. Send SOL from account HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 to FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU <pre> import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction, Connection } from '@solana/web3.js' const connection = new Connection('https://api.tatum.io/v3/blockchain/node/SOL') const from = 'HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58' const to = 'FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU' const amount = '0.000001' const devnet_fee_payer = '5zPr5331CtBjgVeLedhmJPEpFaUsorLCnb3aCQPsUc9w' const fromPubkey = new PublicKey(from) const transaction = new Transaction({ feePayer: new PublicKey(devnet_fee_payer) }) transaction.add( SystemProgram.transfer({ fromPubkey: fromPubkey, toPubkey: new PublicKey(to), lamports: new BigNumber(amount).multipliedBy(LAMPORTS_PER_SOL).toNumber(), }), ) const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('finalized') transaction.recentBlockhash = blockhash transaction.lastValidBlockHeight = lastValidBlockHeight transaction.partialSign(...signers) return transaction.serialize({ requireAllSignatures: false }).toString('hex') </pre> For the above example, developer have 2 options how to sign transaction - if the sender address HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 is managed using a Tatum managed wallet with id 0b1eae3d-2520-4903-8bbf-5dec3ad2a5d4, the final payload to the custodial/transaction endpoint should look like this: <pre> { "chain": "SOL", "txData": "020001044a22af97a838a504e6f7c0b18d779afcea612da50794cc1dac641861fc1ab14afa5cacaf91c298694e64bb5496916c3c68a32affb92d4bcd2736fbb00169d57bd840de2a454960308f688cd3ee308c1fa01ecfa0b03770aaaf3b52d71d46c31d000000000000000000000000000000000000000000000000000000000000000060d38e0da20dc5900b7e902c918eae6a95e2d90af154b53a422f4ab26b050f4f01030201020c02000000e803000000000000", "walletIds": [ { "key": "0b1eae3d-2520-4903-8bbf-5dec3ad2a5d4", "type": "MANAGED" } ] } </pre> If the sender address is not managed, the transaction could be signed with the private key of that address before the serialization and the payload will look like this: <pre> { "chain": "SOL", "txData": "020001044a22af97a838a504e6f7c0b18d779afcea612da50794cc1dac641861fc1ab14afa5cacaf91c298694e64bb5496916c3c68a32affb92d4bcd2736fbb00169d57bd840de2a454960308f688cd3ee308c1fa01ecfa0b03770aaaf3b52d71d46c31d000000000000000000000000000000000000000000000000000000000000000060d38e0da20dc5900b7e902c918eae6a95e2d90af154b53a422f4ab26b050f4f01030201020c02000000e803000000000000", "walletIds": [] } </pre>
-
-### Example
-
-[✨ View "custodialTransferManagedAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php)
 
 [Back to top](#top)
 

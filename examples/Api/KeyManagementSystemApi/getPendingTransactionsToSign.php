@@ -25,6 +25,9 @@ $arg_signatures = "6d78dad2-518f-4e76-8255-8f1df0de6884,6d78dad2-518f-4e76-8255-
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/kms/pending/{chain}
      * 

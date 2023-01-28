@@ -39,6 +39,9 @@ $arg_activate_gas_pump_kms = (new \Tatum\Model\ActivateGasPumpKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/gas-pump/activate
      * 

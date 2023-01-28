@@ -36,6 +36,9 @@ $arg_verify_solana_nftkms = (new \Tatum\Model\VerifySolanaNFTKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/nft/verify
      * 

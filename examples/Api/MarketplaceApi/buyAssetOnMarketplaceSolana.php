@@ -39,6 +39,9 @@ $arg_buy_asset_on_marketplace_solana = (new \Tatum\Model\BuyAssetOnMarketplaceSo
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/marketplace/listing/buy
      * 

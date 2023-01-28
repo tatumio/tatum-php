@@ -29,6 +29,12 @@ Method | Description
 
 ## `getDeposits()`
 
+### Example
+
+[👉 View "**getDeposits.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDeposits.php)
+
+### Request
+
 > **GET** `/v3/ledger/deposits`
 
 ### Type signature
@@ -71,15 +77,17 @@ List all deposits for product
 
 Lists all deposits for API key.
 
-### Example
-
-[✨ View "getDeposits.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDeposits.php)
-
 [Back to top](#top)
 
 
 
 ## `getDepositsCount()`
+
+### Example
+
+[👉 View "**getDepositsCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDepositsCount.php)
+
+### Request
 
 > **GET** `/v3/ledger/deposits/count`
 
@@ -122,10 +130,6 @@ Count of found entities for get deposits request
 <h4>1 credit per API call.</h4>
 
 Counts total entities found by get deposits request.
-
-### Example
-
-[✨ View "getDepositsCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDepositsCount.php)
 
 [Back to top](#top)
 

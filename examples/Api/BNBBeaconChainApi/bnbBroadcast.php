@@ -27,6 +27,9 @@ $arg_broadcast = (new \Tatum\Model\Broadcast())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/bnb/broadcast
      * 

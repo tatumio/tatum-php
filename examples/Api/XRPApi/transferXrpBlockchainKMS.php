@@ -42,6 +42,9 @@ $arg_transfer_xrp_blockchain_kms = (new \Tatum\Model\TransferXrpBlockchainKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xrp/transaction
      * 

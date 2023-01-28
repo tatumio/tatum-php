@@ -45,6 +45,9 @@ $arg_transfer_tron = (new \Tatum\Model\TransferTron())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/tron/transfer
      * 

@@ -54,6 +54,9 @@ $arg_deploy_trc_offchain_pk_address = (new \Tatum\Model\DeployTrcOffchainPKAddre
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/tron/trc/deploy
      * 

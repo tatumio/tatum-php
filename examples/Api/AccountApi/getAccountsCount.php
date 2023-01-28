@@ -46,6 +46,9 @@ $arg_account_number = "AC_1011_B";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/ledger/account/count
      * 

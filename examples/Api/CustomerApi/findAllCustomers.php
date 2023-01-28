@@ -25,6 +25,9 @@ $arg_offset = 0;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/ledger/customer
      * 

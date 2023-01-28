@@ -33,6 +33,9 @@ $arg_flow_create_address_from_pub_key_mnemonic = (new \Tatum\Model\FlowCreateAdd
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/flow/account
      * 

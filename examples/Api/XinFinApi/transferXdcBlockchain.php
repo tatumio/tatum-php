@@ -42,6 +42,9 @@ $arg_transfer_xdc_blockchain = (new \Tatum\Model\TransferXdcBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xdc/transaction
      * 

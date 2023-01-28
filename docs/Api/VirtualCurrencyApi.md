@@ -32,6 +32,12 @@ Method | Description
 
 ## `createCurrency()`
 
+### Example
+
+[👉 View "**createCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/createCurrency.php)
+
+### Request
+
 > **POST** `/v3/ledger/virtualCurrency`
 
 ### Type signature
@@ -66,15 +72,17 @@ Create new virtual currency
 
  This operation returns the newly created Tatum Ledger account with an initial balance set to the virtual currency's total supply. Total supply can be changed in the future.
 
-### Example
-
-[✨ View "createCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/createCurrency.php)
-
 [Back to top](#top)
 
 
 
 ## `getCurrency()`
+
+### Example
+
+[👉 View "**getCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/getCurrency.php)
+
+### Request
 
 > **GET** `/v3/ledger/virtualCurrency/{name}`
 
@@ -104,15 +112,17 @@ Get virtual currency
 
  Get detail of virtual currency.
 
-### Example
-
-[✨ View "getCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/getCurrency.php)
-
 [Back to top](#top)
 
 
 
 ## `mintCurrency()`
+
+### Example
+
+[👉 View "**mintCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/mintCurrency.php)
+
+### Request
 
 > **PUT** `/v3/ledger/virtualCurrency/mint`
 
@@ -144,15 +154,17 @@ Create new supply of virtual currency
 
  This method creates Ledger transaction with operationType MINT with undefined counterAccountId.
 
-### Example
-
-[✨ View "mintCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/mintCurrency.php)
-
 [Back to top](#top)
 
 
 
 ## `revokeCurrency()`
+
+### Example
+
+[👉 View "**revokeCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/revokeCurrency.php)
+
+### Request
 
 > **PUT** `/v3/ledger/virtualCurrency/revoke`
 
@@ -184,15 +196,17 @@ Destroy supply of virtual currency
 
  This method creates Ledger transaction with operationType REVOKE with undefined counterAccountId.
 
-### Example
-
-[✨ View "revokeCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/revokeCurrency.php)
-
 [Back to top](#top)
 
 
 
 ## `updateCurrency()`
+
+### Example
+
+[👉 View "**updateCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/updateCurrency.php)
+
+### Request
 
 > **PUT** `/v3/ledger/virtualCurrency`
 
@@ -221,10 +235,6 @@ Update virtual currency
 <h4>2 credits per API call.</h4>
 
 Change base pair and/or base rate of existing virtual currency.
-
-### Example
-
-[✨ View "updateCurrency.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/updateCurrency.php)
 
 [Back to top](#top)
 

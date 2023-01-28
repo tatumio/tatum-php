@@ -49,6 +49,9 @@ $arg_call_bsc_smart_contract_method_kms = (new \Tatum\Model\CallBscSmartContract
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/bsc/smartcontract
      * 

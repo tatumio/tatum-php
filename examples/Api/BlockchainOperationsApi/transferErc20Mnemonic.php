@@ -54,6 +54,9 @@ $arg_transfer_erc20_mnemonic = (new \Tatum\Model\TransferErc20Mnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/ethereum/erc20/transfer
      * 

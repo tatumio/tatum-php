@@ -25,6 +25,9 @@ $arg_export = false;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/custodial/wallet/{id}
      * 

@@ -36,6 +36,9 @@ $arg_customer_update = (new \Tatum\Model\CustomerUpdate())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/ledger/customer/{id}
      * 

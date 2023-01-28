@@ -48,6 +48,9 @@ $arg_deploy_erc20_offchain_pk_address = (new \Tatum\Model\DeployErc20OffchainPKA
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/xdc/erc20/deploy
      * 

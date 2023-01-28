@@ -39,6 +39,9 @@ $arg_update_fee_recipient = (new \Tatum\Model\UpdateFeeRecipient())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/marketplace/listing/recipient
      * 

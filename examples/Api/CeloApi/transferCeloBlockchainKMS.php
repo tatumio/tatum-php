@@ -48,6 +48,9 @@ $arg_transfer_celo_blockchain_kms = (new \Tatum\Model\TransferCeloBlockchainKMS(
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/celo/transaction
      * 

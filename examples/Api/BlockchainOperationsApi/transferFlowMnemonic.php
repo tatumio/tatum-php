@@ -48,6 +48,9 @@ $arg_transfer_flow_mnemonic = (new \Tatum\Model\TransferFlowMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/flow/transfer
      * 

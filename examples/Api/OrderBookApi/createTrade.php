@@ -45,6 +45,9 @@ $arg_create_trade = (new \Tatum\Model\CreateTrade())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/trade
      * 

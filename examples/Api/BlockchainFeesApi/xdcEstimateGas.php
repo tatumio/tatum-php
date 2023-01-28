@@ -30,6 +30,9 @@ $arg_xdc_estimate_gas = (new \Tatum\Model\XdcEstimateGas())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xdc/gas
      * 

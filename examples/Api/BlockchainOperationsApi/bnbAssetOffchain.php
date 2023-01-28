@@ -27,6 +27,9 @@ $arg_create_bnb_asset = (new \Tatum\Model\CreateBnbAsset())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/bnb/asset
      */

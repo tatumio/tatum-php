@@ -25,6 +25,9 @@ $arg_shard_id = 0;
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/one/account/balance/{address}
      * 

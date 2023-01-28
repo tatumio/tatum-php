@@ -62,6 +62,12 @@ Method | Description
 
 ## `approveNftSpending()`
 
+### Example
+
+[👉 View "**approveNftSpending.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpending.php)
+
+### Request
+
 > **POST** `/v3/blockchain/auction/approve`
 
 ### Type signature
@@ -106,15 +112,17 @@ The auction/marketplace smart contract will transfer the asset to the buyer afte
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "approveNftSpending.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpending.php)
-
 [Back to top](#top)
 
 
 
 ## `approveNftSpendingCelo()`
+
+### Example
+
+[👉 View "**approveNftSpendingCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/approve`
 
@@ -142,15 +150,17 @@ Allow the NFT auction or marketplace to transfer an asset
 
 ApproveNftSpendingCelo operation
 
-### Example
-
-[✨ View "approveNftSpendingCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `approveNftSpendingCeloKMS()`
+
+### Example
+
+[👉 View "**approveNftSpendingCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/approve`
 
@@ -178,15 +188,17 @@ Allow the NFT auction or marketplace to transfer an asset
 
 ApproveNftSpendingCeloKMS operation
 
-### Example
-
-[✨ View "approveNftSpendingCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `approveNftSpendingKMS()`
+
+### Example
+
+[👉 View "**approveNftSpendingKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/approve`
 
@@ -214,15 +226,17 @@ Allow the NFT auction or marketplace to transfer an asset
 
 ApproveNftSpendingKMS operation
 
-### Example
-
-[✨ View "approveNftSpendingKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `bidOnAuction()`
+
+### Example
+
+[👉 View "**bidOnAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuction.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/bid`
 
@@ -284,15 +298,17 @@ Bid for an asset at the NFT auction
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "bidOnAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuction.php)
-
 [Back to top](#top)
 
 
 
 ## `bidOnAuctionCelo()`
+
+### Example
+
+[👉 View "**bidOnAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/bid`
 
@@ -320,15 +336,17 @@ Bid for an asset at the NFT auction
 
 BidOnAuctionCelo operation
 
-### Example
-
-[✨ View "bidOnAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `bidOnAuctionCeloKMS()`
+
+### Example
+
+[👉 View "**bidOnAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/bid`
 
@@ -356,15 +374,17 @@ Bid for an asset at the NFT auction
 
 BidOnAuctionCeloKMS operation
 
-### Example
-
-[✨ View "bidOnAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `bidOnAuctionKMS()`
+
+### Example
+
+[👉 View "**bidOnAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/bid`
 
@@ -392,15 +412,17 @@ Bid for an asset at the NFT auction
 
 BidOnAuctionKMS operation
 
-### Example
-
-[✨ View "bidOnAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `bloAucUpdateFeeRecipient()`
+
+### Example
+
+[👉 View "**bloAucUpdateFeeRecipient.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipient.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/auction/recipient`
 
@@ -444,15 +466,17 @@ Update the recipient of the NFT auction fee
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "bloAucUpdateFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipient.php)
-
 [Back to top](#top)
 
 
 
 ## `bloAucUpdateFeeRecipientCelo()`
+
+### Example
+
+[👉 View "**bloAucUpdateFeeRecipientCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCelo.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/auction/recipient`
 
@@ -480,15 +504,17 @@ Update the recipient of the NFT auction fee
 
 UpdateFeeRecipientCelo operation
 
-### Example
-
-[✨ View "bloAucUpdateFeeRecipientCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `bloAucUpdateFeeRecipientCeloKMS()`
+
+### Example
+
+[👉 View "**bloAucUpdateFeeRecipientCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCeloKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/auction/recipient`
 
@@ -516,15 +542,17 @@ Update the recipient of the NFT auction fee
 
 UpdateFeeRecipientCeloKMS operation
 
-### Example
-
-[✨ View "bloAucUpdateFeeRecipientCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `bloAucUpdateFeeRecipientKMS()`
+
+### Example
+
+[👉 View "**bloAucUpdateFeeRecipientKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/auction/recipient`
 
@@ -552,15 +580,17 @@ Update the recipient of the NFT auction fee
 
 UpdateFeeRecipientKMS operation
 
-### Example
-
-[✨ View "bloAucUpdateFeeRecipientKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelAuction()`
+
+### Example
+
+[👉 View "**cancelAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuction.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/cancel`
 
@@ -616,15 +646,17 @@ Cancel the selling of an asset at the NFT auction
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "cancelAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuction.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelAuctionCelo()`
+
+### Example
+
+[👉 View "**cancelAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/cancel`
 
@@ -652,15 +684,17 @@ Cancel the selling of an asset at the NFT auction
 
 CancelAuctionCelo operation
 
-### Example
-
-[✨ View "cancelAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelAuctionCeloKMS()`
+
+### Example
+
+[👉 View "**cancelAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/cancel`
 
@@ -688,15 +722,17 @@ Cancel the selling of an asset at the NFT auction
 
 CancelAuctionCeloKMS operation
 
-### Example
-
-[✨ View "cancelAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelAuctionKMS()`
+
+### Example
+
+[👉 View "**cancelAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/cancel`
 
@@ -724,15 +760,17 @@ Cancel the selling of an asset at the NFT auction
 
 CancelAuctionKMS operation
 
-### Example
-
-[✨ View "cancelAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `createAuction()`
+
+### Example
+
+[👉 View "**createAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuction.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/sell`
 
@@ -784,15 +822,17 @@ Sell an asset at the NFT auction
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "createAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuction.php)
-
 [Back to top](#top)
 
 
 
 ## `createAuctionCelo()`
+
+### Example
+
+[👉 View "**createAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/sell`
 
@@ -820,15 +860,17 @@ Sell an asset at the NFT auction
 
 CreateAuctionCelo operation
 
-### Example
-
-[✨ View "createAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `createAuctionCeloKMS()`
+
+### Example
+
+[👉 View "**createAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/sell`
 
@@ -856,15 +898,17 @@ Sell an asset at the NFT auction
 
 CreateAuctionCeloKMS operation
 
-### Example
-
-[✨ View "createAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `createAuctionKMS()`
+
+### Example
+
+[👉 View "**createAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/sell`
 
@@ -892,15 +936,17 @@ Sell an asset at the NFT auction
 
 CreateAuctionKMS operation
 
-### Example
-
-[✨ View "createAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `generateAuction()`
+
+### Example
+
+[👉 View "**generateAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuction.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction`
 
@@ -946,15 +992,17 @@ Create an NFT auction
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "generateAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuction.php)
-
 [Back to top](#top)
 
 
 
 ## `generateAuctionCelo()`
+
+### Example
+
+[👉 View "**generateAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction`
 
@@ -982,15 +1030,17 @@ Create an NFT auction
 
 GenerateAuctionCelo operation
 
-### Example
-
-[✨ View "generateAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `generateAuctionCeloKMS()`
+
+### Example
+
+[👉 View "**generateAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction`
 
@@ -1018,15 +1068,17 @@ Create an NFT auction
 
 GenerateAuctionCeloKMS operation
 
-### Example
-
-[✨ View "generateAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `generateAuctionKMS()`
+
+### Example
+
+[👉 View "**generateAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction`
 
@@ -1054,15 +1106,17 @@ Create an NFT auction
 
 GenerateAuctionKMS operation
 
-### Example
-
-[✨ View "generateAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `getAuction()`
+
+### Example
+
+[👉 View "**getAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuction.php)
+
+### Request
 
 > **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/{id}`
 
@@ -1102,15 +1156,17 @@ Get information about an auctioned asset at the NFT auction
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "getAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuction.php)
-
 [Back to top](#top)
 
 
 
 ## `getAuctionFee()`
+
+### Example
+
+[👉 View "**getAuctionFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFee.php)
+
+### Request
 
 > **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/fee`
 
@@ -1148,15 +1204,17 @@ Get the NFT auction fee
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "getAuctionFee.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFee.php)
-
 [Back to top](#top)
 
 
 
 ## `getAuctionFeeRecipient()`
+
+### Example
+
+[👉 View "**getAuctionFeeRecipient.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFeeRecipient.php)
+
+### Request
 
 > **GET** `/v3/blockchain/auction/{chain}/{contractAddress}/recipient`
 
@@ -1194,15 +1252,17 @@ Get the recipient of the NFT auction fee
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "getAuctionFeeRecipient.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFeeRecipient.php)
-
 [Back to top](#top)
 
 
 
 ## `settleAuction()`
+
+### Example
+
+[👉 View "**settleAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuction.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/settle`
 
@@ -1256,15 +1316,17 @@ Both seller and buyer can settle the auction.
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "settleAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuction.php)
-
 [Back to top](#top)
 
 
 
 ## `settleAuctionCelo()`
+
+### Example
+
+[👉 View "**settleAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCelo.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/settle`
 
@@ -1292,15 +1354,17 @@ Settle an NFT auction
 
 SettleAuctionCelo operation
 
-### Example
-
-[✨ View "settleAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `settleAuctionCeloKMS()`
+
+### Example
+
+[👉 View "**settleAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/settle`
 
@@ -1328,15 +1392,17 @@ Settle an NFT auction
 
 SettleAuctionCeloKMS operation
 
-### Example
-
-[✨ View "settleAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `settleAuctionKMS()`
+
+### Example
+
+[👉 View "**settleAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionKMS.php)
+
+### Request
 
 > **POST** `/v3/blockchain/auction/settle`
 
@@ -1364,15 +1430,17 @@ Settle an NFT auction
 
 SettleAuctionKMS operation
 
-### Example
-
-[✨ View "settleAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeAuction()`
+
+### Example
+
+[👉 View "**updateFeeAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuction.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/auction/fee`
 
@@ -1416,15 +1484,17 @@ Update the NFT auction fee
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "updateFeeAuction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuction.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeAuctionCelo()`
+
+### Example
+
+[👉 View "**updateFeeAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCelo.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/auction/fee`
 
@@ -1452,15 +1522,17 @@ Update the NFT auction fee
 
 UpdateFeeAuctionCelo operation
 
-### Example
-
-[✨ View "updateFeeAuctionCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeAuctionCeloKMS()`
+
+### Example
+
+[👉 View "**updateFeeAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCeloKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/auction/fee`
 
@@ -1488,15 +1560,17 @@ Update the NFT auction fee
 
 UpdateFeeAuctionCeloKMS operation
 
-### Example
-
-[✨ View "updateFeeAuctionCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `updateFeeAuctionKMS()`
+
+### Example
+
+[👉 View "**updateFeeAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionKMS.php)
+
+### Request
 
 > **PUT** `/v3/blockchain/auction/fee`
 
@@ -1523,10 +1597,6 @@ Name | Type | Description  | Notes
 Update the NFT auction fee
 
 UpdateFeeAuctionKMS operation
-
-### Example
-
-[✨ View "updateFeeAuctionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionKMS.php)
 
 [Back to top](#top)
 

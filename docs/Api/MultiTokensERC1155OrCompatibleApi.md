@@ -63,6 +63,12 @@ Method | Description
 
 ## `addMultiTokenMinter()`
 
+### Example
+
+[👉 View "**addMultiTokenMinter.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
+
+### Request
+
 > **POST** `/v3/multitoken/mint/add`
 
 ### Type signature
@@ -107,15 +113,17 @@ Add a Multi Token minter
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "addMultiTokenMinter.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
-
 [Back to top](#top)
 
 
 
 ## `addMultiTokenMinterKMS()`
+
+### Example
+
+[👉 View "**addMultiTokenMinterKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinterKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint/add`
 
@@ -145,15 +153,17 @@ Add a Multi Token minter
 
 AddMultiTokenMinterKMS operation
 
-### Example
-
-[✨ View "addMultiTokenMinterKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinterKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `burnMultiToken()`
+
+### Example
+
+[👉 View "**burnMultiToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
+
+### Request
 
 > **POST** `/v3/multitoken/burn`
 
@@ -199,15 +209,17 @@ Burn a Multi Token
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "burnMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
-
 [Back to top](#top)
 
 
 
 ## `burnMultiTokenBatch()`
+
+### Example
+
+[👉 View "**burnMultiTokenBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
+
+### Request
 
 > **POST** `/v3/multitoken/burn/batch`
 
@@ -253,15 +265,17 @@ Burn multiple Multi Tokens
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "burnMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
-
 [Back to top](#top)
 
 
 
 ## `burnMultiTokenBatchCelo()`
+
+### Example
+
+[👉 View "**burnMultiTokenBatchCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/burn/batch`
 
@@ -291,15 +305,17 @@ Burn multiple Multi Tokens
 
 BurnMultiTokenBatchCelo operation
 
-### Example
-
-[✨ View "burnMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `burnMultiTokenBatchKMS()`
+
+### Example
+
+[👉 View "**burnMultiTokenBatchKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/burn/batch`
 
@@ -329,15 +345,17 @@ Burn multiple Multi Tokens
 
 BurnMultiTokenBatchKMS operation
 
-### Example
-
-[✨ View "burnMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `burnMultiTokenBatchKMSCelo()`
+
+### Example
+
+[👉 View "**burnMultiTokenBatchKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/burn/batch`
 
@@ -367,15 +385,17 @@ Burn multiple Multi Tokens
 
 BurnMultiTokenBatchKMSCelo operation
 
-### Example
-
-[✨ View "burnMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `burnMultiTokenCelo()`
+
+### Example
+
+[👉 View "**burnMultiTokenCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/burn`
 
@@ -405,15 +425,17 @@ Burn a Multi Token
 
 BurnMultiTokenCelo operation
 
-### Example
-
-[✨ View "burnMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `burnMultiTokenKMS()`
+
+### Example
+
+[👉 View "**burnMultiTokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/burn`
 
@@ -443,15 +465,17 @@ Burn a Multi Token
 
 BurnMultiTokenKMS operation
 
-### Example
-
-[✨ View "burnMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `burnMultiTokenKMSCelo()`
+
+### Example
+
+[👉 View "**burnMultiTokenKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/burn`
 
@@ -481,15 +505,17 @@ Burn a Multi Token
 
 BurnMultiTokenKMSCelo operation
 
-### Example
-
-[✨ View "burnMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `deployMultiToken()`
+
+### Example
+
+[👉 View "**deployMultiToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
+
+### Request
 
 > **POST** `/v3/multitoken/deploy`
 
@@ -535,15 +561,17 @@ Deploy a Multi Token smart contract
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "deployMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
-
 [Back to top](#top)
 
 
 
 ## `deployMultiTokenCelo()`
+
+### Example
+
+[👉 View "**deployMultiTokenCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/deploy`
 
@@ -573,15 +601,17 @@ Deploy a Multi Token smart contract
 
 DeployMultiTokenCelo operation
 
-### Example
-
-[✨ View "deployMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `deployMultiTokenCeloKMS()`
+
+### Example
+
+[👉 View "**deployMultiTokenCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCeloKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/deploy`
 
@@ -611,15 +641,17 @@ Deploy a Multi Token smart contract
 
 DeployMultiTokenCeloKMS operation
 
-### Example
-
-[✨ View "deployMultiTokenCeloKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCeloKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `deployMultiTokenKMS()`
+
+### Example
+
+[👉 View "**deployMultiTokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/deploy`
 
@@ -649,15 +681,17 @@ Deploy a Multi Token smart contract
 
 DeployMultiTokenKMS operation
 
-### Example
-
-[✨ View "deployMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultiToken()`
+
+### Example
+
+[👉 View "**mintMultiToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint`
 
@@ -703,15 +737,17 @@ Mint a Multi Token
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "mintMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultiTokenBatch()`
+
+### Example
+
+[👉 View "**mintMultiTokenBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint/batch`
 
@@ -757,15 +793,17 @@ Mint multiple Multi Tokens
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "mintMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultiTokenBatchCelo()`
+
+### Example
+
+[👉 View "**mintMultiTokenBatchCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint/batch`
 
@@ -795,15 +833,17 @@ Mint multiple Multi Tokens
 
 MintMultiTokenBatchCelo operation
 
-### Example
-
-[✨ View "mintMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultiTokenBatchKMS()`
+
+### Example
+
+[👉 View "**mintMultiTokenBatchKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint/batch`
 
@@ -833,15 +873,17 @@ Mint multiple Multi Tokens
 
 MintMultiTokenBatchKMS operation
 
-### Example
-
-[✨ View "mintMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultiTokenBatchKMSCelo()`
+
+### Example
+
+[👉 View "**mintMultiTokenBatchKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint/batch`
 
@@ -871,15 +913,17 @@ Mint multiple Multi Tokens
 
 MintMultiTokenBatchKMSCelo operation
 
-### Example
-
-[✨ View "mintMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultiTokenCelo()`
+
+### Example
+
+[👉 View "**mintMultiTokenCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint`
 
@@ -909,15 +953,17 @@ Mint a Multi Token
 
 MintMultiTokenCelo operation
 
-### Example
-
-[✨ View "mintMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultiTokenKMS()`
+
+### Example
+
+[👉 View "**mintMultiTokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint`
 
@@ -947,15 +993,17 @@ Mint a Multi Token
 
 MintMultiTokenKMS operation
 
-### Example
-
-[✨ View "mintMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `mintMultiTokenKMSCelo()`
+
+### Example
+
+[👉 View "**mintMultiTokenKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/mint`
 
@@ -985,15 +1033,17 @@ Mint a Multi Token
 
 MintMultiTokenKMSCelo operation
 
-### Example
-
-[✨ View "mintMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `multiTokenGetAddressBalance()`
+
+### Example
+
+[👉 View "**multiTokenGetAddressBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php)
+
+### Request
 
 > **GET** `/v3/multitoken/address/balance/{chain}/{address}`
 
@@ -1033,15 +1083,17 @@ Get all Multi Tokens that a blockchain address holds
 
 <ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "multiTokenGetAddressBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `multiTokenGetBalance()`
+
+### Example
+
+[👉 View "**multiTokenGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php)
+
+### Request
 
 > **GET** `/v3/multitoken/balance/{chain}/{contractAddress}/{address}/{tokenId}`
 
@@ -1085,15 +1137,17 @@ Get the amount of a specific MultiToken that a blockchain address holds
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "multiTokenGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `multiTokenGetBalanceBatch()`
+
+### Example
+
+[👉 View "**multiTokenGetBalanceBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
+
+### Request
 
 > **GET** `/v3/multitoken/balance/batch/{chain}/{contractAddress}`
 
@@ -1137,15 +1191,17 @@ Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "multiTokenGetBalanceBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
-
 [Back to top](#top)
 
 
 
 ## `multiTokenGetMetadata()`
+
+### Example
+
+[👉 View "**multiTokenGetMetadata.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php)
+
+### Request
 
 > **GET** `/v3/multitoken/metadata/{chain}/{contractAddress}/{token}`
 
@@ -1187,15 +1243,17 @@ Get Multi Token metadata
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "multiTokenGetMetadata.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php)
-
 [Back to top](#top)
 
 
 
 ## `multiTokenGetTransaction()`
+
+### Example
+
+[👉 View "**multiTokenGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/multitoken/transaction/{chain}/{hash}`
 
@@ -1235,15 +1293,17 @@ Get a Multi Token transaction by its hash
 
 <ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "multiTokenGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `multiTokenGetTransactionByAddress()`
+
+### Example
+
+[👉 View "**multiTokenGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php)
+
+### Request
 
 > **GET** `/v3/multitoken/transaction/{chain}/{address}/{tokenAddress}`
 
@@ -1291,15 +1351,17 @@ Get Multi Token transactions on a blockchain address
 
 <ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
 
-### Example
-
-[✨ View "multiTokenGetTransactionByAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `transferMultiToken()`
+
+### Example
+
+[👉 View "**transferMultiToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
+
+### Request
 
 > **POST** `/v3/multitoken/transaction`
 
@@ -1347,15 +1409,17 @@ Transfer a Multi Token
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferMultiToken.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
-
 [Back to top](#top)
 
 
 
 ## `transferMultiTokenBatch()`
+
+### Example
+
+[👉 View "**transferMultiTokenBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
+
+### Request
 
 > **POST** `/v3/multitoken/transaction/batch`
 
@@ -1401,15 +1465,17 @@ Transfer multiple Multi Tokens
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferMultiTokenBatch.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
-
 [Back to top](#top)
 
 
 
 ## `transferMultiTokenBatchCelo()`
+
+### Example
+
+[👉 View "**transferMultiTokenBatchCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/transaction/batch`
 
@@ -1439,15 +1505,17 @@ Transfer multiple Multi Tokens
 
 TransferMultiTokenBatchCelo operation
 
-### Example
-
-[✨ View "transferMultiTokenBatchCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `transferMultiTokenBatchKMS()`
+
+### Example
+
+[👉 View "**transferMultiTokenBatchKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/transaction/batch`
 
@@ -1477,15 +1545,17 @@ Transfer multiple Multi Tokens
 
 TransferMultiTokenBatchKMS operation
 
-### Example
-
-[✨ View "transferMultiTokenBatchKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferMultiTokenBatchKMSCelo()`
+
+### Example
+
+[👉 View "**transferMultiTokenBatchKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/transaction/batch`
 
@@ -1515,15 +1585,17 @@ Transfer multiple Multi Tokens
 
 TransferMultiTokenBatchKMSCelo operation
 
-### Example
-
-[✨ View "transferMultiTokenBatchKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMSCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `transferMultiTokenCelo()`
+
+### Example
+
+[👉 View "**transferMultiTokenCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/transaction`
 
@@ -1553,15 +1625,17 @@ Transfer a Multi Token
 
 TransferMultiTokenCelo operation
 
-### Example
-
-[✨ View "transferMultiTokenCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenCelo.php)
-
 [Back to top](#top)
 
 
 
 ## `transferMultiTokenKMS()`
+
+### Example
+
+[👉 View "**transferMultiTokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMS.php)
+
+### Request
 
 > **POST** `/v3/multitoken/transaction`
 
@@ -1591,15 +1665,17 @@ Transfer a Multi Token
 
 TransferMultiTokenKMS operation
 
-### Example
-
-[✨ View "transferMultiTokenKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferMultiTokenKMSCelo()`
+
+### Example
+
+[👉 View "**transferMultiTokenKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMSCelo.php)
+
+### Request
 
 > **POST** `/v3/multitoken/transaction`
 
@@ -1628,10 +1704,6 @@ Name | Type | Description  | Notes
 Transfer a Multi Token
 
 TransferMultiTokenKMSCelo operation
-
-### Example
-
-[✨ View "transferMultiTokenKMSCelo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMSCelo.php)
 
 [Back to top](#top)
 

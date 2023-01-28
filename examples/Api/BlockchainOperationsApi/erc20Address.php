@@ -51,6 +51,9 @@ $arg_erc20_address = (new \Tatum\Model\Erc20Address())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/token/{chain}
      * 

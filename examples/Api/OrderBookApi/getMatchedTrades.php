@@ -57,6 +57,9 @@ $arg_list_oder_book_matched_body = (new \Tatum\Model\ListOderBookMatchedBody())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/trade/matched
      * 

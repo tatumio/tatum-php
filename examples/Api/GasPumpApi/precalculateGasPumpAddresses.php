@@ -33,6 +33,9 @@ $arg_create_gas_pump = (new \Tatum\Model\CreateGasPump())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/gas-pump
      * 

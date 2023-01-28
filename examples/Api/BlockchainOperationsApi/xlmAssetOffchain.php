@@ -30,6 +30,9 @@ $arg_create_xlm_asset = (new \Tatum\Model\CreateXlmAsset())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/xlm/asset
      */

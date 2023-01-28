@@ -51,6 +51,9 @@ $arg_transfer_xrp = (new \Tatum\Model\TransferXrp())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/xrp/transfer
      * 

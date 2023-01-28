@@ -54,6 +54,9 @@ $arg_transfer_doge_mnemonic = (new \Tatum\Model\TransferDogeMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/dogecoin/transfer
      * 

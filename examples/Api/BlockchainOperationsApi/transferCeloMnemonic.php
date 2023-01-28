@@ -57,6 +57,9 @@ $arg_transfer_celo_mnemonic = (new \Tatum\Model\TransferCeloMnemonic())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/celo/transfer
      * 

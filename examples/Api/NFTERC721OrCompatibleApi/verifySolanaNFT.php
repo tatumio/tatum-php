@@ -36,6 +36,9 @@ $arg_verify_solana_nft = (new \Tatum\Model\VerifySolanaNFT())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/nft/verify
      * 

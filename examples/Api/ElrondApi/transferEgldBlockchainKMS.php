@@ -42,6 +42,9 @@ $arg_transfer_egld_blockchain_kms = (new \Tatum\Model\TransferEgldBlockchainKMS(
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/egld/transaction
      * 

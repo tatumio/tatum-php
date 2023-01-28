@@ -30,6 +30,9 @@ $arg_estimate_fee_deploy_custodial_wallet = (new \Tatum\Model\EstimateFeeDeployC
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/estimate
      * 

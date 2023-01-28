@@ -51,6 +51,9 @@ $arg_transfer_tron_kms = (new \Tatum\Model\TransferTronKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/tron/transfer
      * 

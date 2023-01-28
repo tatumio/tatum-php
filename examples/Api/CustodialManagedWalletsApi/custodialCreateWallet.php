@@ -24,6 +24,9 @@ $arg_custodial_create_wallet_request = (new \Tatum\Model\CustodialCreateWalletRe
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/custodial/wallet
      * 

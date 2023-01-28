@@ -37,6 +37,9 @@ $arg_call_celo_read_smart_contract_method = (new \Tatum\Model\CallCeloReadSmartC
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/celo/smartcontract
      * 

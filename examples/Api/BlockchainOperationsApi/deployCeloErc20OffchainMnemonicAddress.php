@@ -21,6 +21,9 @@ $arg_deploy_celo_erc20_offchain_mnemonic_address = (new \Tatum\Model\DeployCeloE
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/celo/erc20/deploy
      * 

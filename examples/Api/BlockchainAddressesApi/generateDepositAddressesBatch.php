@@ -24,6 +24,9 @@ $arg_offchain_addresses = (new \Tatum\Model\OffchainAddresses())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/account/address/batch
      * 

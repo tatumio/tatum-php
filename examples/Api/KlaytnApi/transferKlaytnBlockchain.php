@@ -42,6 +42,9 @@ $arg_transfer_klaytn_blockchain = (new \Tatum\Model\TransferKlaytnBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/klaytn/transaction
      * 

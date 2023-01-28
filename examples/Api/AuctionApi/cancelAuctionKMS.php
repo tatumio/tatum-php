@@ -45,6 +45,9 @@ $arg_cancel_auction_kms = (new \Tatum\Model\CancelAuctionKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/blockchain/auction/cancel
      * 

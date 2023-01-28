@@ -22,6 +22,9 @@ $arg_id = 'id_example';
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/ledger/customer/{id}
      * 

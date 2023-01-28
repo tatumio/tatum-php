@@ -24,6 +24,9 @@ $arg_tron_broadcast = (new \Tatum\Model\TronBroadcast())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/tron/broadcast
      * 

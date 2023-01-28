@@ -41,6 +41,12 @@ Method | Description
 
 ## `callXdcReadSmartContractMethod()`
 
+### Example
+
+[👉 View "**callXdcReadSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcReadSmartContractMethod.php)
+
+### Request
+
 > **POST** `/v3/xdc/smartcontract`
 
 ### Type signature
@@ -93,15 +99,17 @@ However, because this API can be run against any smart contract on the blockchai
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "callXdcReadSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcReadSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callXdcSmartContractMethod()`
+
+### Example
+
+[👉 View "**callXdcSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethod.php)
+
+### Request
 
 > **POST** `/v3/xdc/smartcontract`
 
@@ -129,15 +137,17 @@ Invoke a method in a smart contract on XinFin
 
 CallXdcSmartContractMethod operation
 
-### Example
-
-[✨ View "callXdcSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callXdcSmartContractMethodKMS()`
+
+### Example
+
+[👉 View "**callXdcSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethodKMS.php)
+
+### Request
 
 > **POST** `/v3/xdc/smartcontract`
 
@@ -165,15 +175,17 @@ Invoke a method in a smart contract on XinFin
 
 CallXdcSmartContractMethodKMS operation
 
-### Example
-
-[✨ View "callXdcSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethodKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `transferXdcBlockchain()`
+
+### Example
+
+[👉 View "**transferXdcBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchain.php)
+
+### Request
 
 > **POST** `/v3/xdc/transaction`
 
@@ -213,15 +225,17 @@ Send XDC / ERC20 from account to account
 
  Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "transferXdcBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferXdcBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferXdcBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/xdc/transaction`
 
@@ -249,15 +263,17 @@ Send XDC / ERC20 from account to account
 
 TransferXdcBlockchainKMS operation
 
-### Example
-
-[✨ View "transferXdcBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchainKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcBroadcast()`
+
+### Example
+
+[👉 View "**xdcBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcBroadcast.php)
+
+### Request
 
 > **POST** `/v3/xdc/broadcast`
 
@@ -287,15 +303,17 @@ Broadcast signed XDC transaction
 
  Broadcast signed transaction to XDC blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "xdcBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcGenerateAddress()`
+
+### Example
+
+[👉 View "**xdcGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/xdc/address/{xpub}/{index}`
 
@@ -327,15 +345,17 @@ Generate XDC account address from Extended public key
 
  Generate XDC account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "xdcGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**xdcGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/xdc/wallet/priv`
 
@@ -365,15 +385,17 @@ Generate XDC private key
 
  Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "xdcGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcGenerateWallet()`
+
+### Example
+
+[👉 View "**xdcGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/xdc/wallet`
 
@@ -411,15 +433,17 @@ Generate XDC wallet
 
  Tatum follows BIP44 specification and generates for XDC wallet with derivation path m'/44'/550'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible XDC wallet.
 
-### Example
-
-[✨ View "xdcGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcGetBalance()`
+
+### Example
+
+[👉 View "**xdcGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBalance.php)
+
+### Request
 
 > **GET** `/v3/xdc/account/balance/{address}`
 
@@ -449,15 +473,17 @@ Get XDC Account balance
 
  Get account balance in XDC. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
-### Example
-
-[✨ View "xdcGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcGetBlock()`
+
+### Example
+
+[👉 View "**xdcGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBlock.php)
+
+### Request
 
 > **GET** `/v3/xdc/block/{hash}`
 
@@ -487,15 +513,17 @@ Get XDC block by hash
 
  Get XDC block by block hash or block number.
 
-### Example
-
-[✨ View "xdcGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcGetCurrentBlock()`
+
+### Example
+
+[👉 View "**xdcGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/xdc/block/current`
 
@@ -521,15 +549,17 @@ Get current block number
 
  Get XDC current block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "xdcGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcGetTransaction()`
+
+### Example
+
+[👉 View "**xdcGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/xdc/transaction/{hash}`
 
@@ -559,15 +589,17 @@ Get XDC Transaction
 
  Get XDC transaction by transaction hash.
 
-### Example
-
-[✨ View "xdcGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `xdcGetTransactionCount()`
+
+### Example
+
+[👉 View "**xdcGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransactionCount.php)
+
+### Request
 
 > **GET** `/v3/xdc/transaction/count/{address}`
 
@@ -596,10 +628,6 @@ Get count of outgoing XDC transactions
 **1 credit per API call**
 
  Get a number of outgoing XDC transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
-
-### Example
-
-[✨ View "xdcGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransactionCount.php)
 
 [Back to top](#top)
 

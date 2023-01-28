@@ -48,6 +48,9 @@ $arg_transfer_sol_kms = (new \Tatum\Model\TransferSolKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/solana/transfer
      * 

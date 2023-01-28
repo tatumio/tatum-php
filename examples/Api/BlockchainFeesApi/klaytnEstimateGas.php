@@ -33,6 +33,9 @@ $arg_klaytn_estimate_gas = (new \Tatum\Model\KlaytnEstimateGas())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/klaytn/gas
      * 

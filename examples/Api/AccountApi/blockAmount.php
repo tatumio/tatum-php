@@ -33,6 +33,9 @@ $arg_block_amount = (new \Tatum\Model\BlockAmount())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ledger/account/block/{id}
      * 

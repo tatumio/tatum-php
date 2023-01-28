@@ -37,6 +37,12 @@ Method | Description
 
 ## `chartRequest()`
 
+### Example
+
+[👉 View "**chartRequest.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/chartRequest.php)
+
+### Request
+
 > **POST** `/v3/trade/chart`
 
 ### Type signature
@@ -65,15 +71,17 @@ Obtain chart data from historical closed trades
 
  Obtain data from the closed trades for entering in the chart. Time interval is set between __from__ and __to__ and there is defined time frame. There can be obtained at most 200 time points in the time interval.
 
-### Example
-
-[✨ View "chartRequest.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/chartRequest.php)
-
 [Back to top](#top)
 
 
 
 ## `createFutureTrade()`
+
+### Example
+
+[👉 View "**createFutureTrade.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createFutureTrade.php)
+
+### Request
 
 > **POST** `/v3/trade`
 
@@ -101,15 +109,17 @@ Store buy / sell trade
 
 CreateFutureTrade operation
 
-### Example
-
-[✨ View "createFutureTrade.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createFutureTrade.php)
-
 [Back to top](#top)
 
 
 
 ## `createTrade()`
+
+### Example
+
+[👉 View "**createTrade.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createTrade.php)
+
+### Request
 
 > **POST** `/v3/trade`
 
@@ -159,15 +169,17 @@ Store buy / sell trade
 
  The amount received by the maker after the trade is (0.60535 × 60000) + 1069.2 = 37390.2 USDT and the taker receives 0.60535 + 0.03465 = 0.64 BTC.
 
-### Example
-
-[✨ View "createTrade.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createTrade.php)
-
 [Back to top](#top)
 
 
 
 ## `deleteAccountTrades()`
+
+### Example
+
+[👉 View "**deleteAccountTrades.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteAccountTrades.php)
+
+### Request
 
 > **DELETE** `/v3/trade/account/{id}`
 
@@ -197,15 +209,17 @@ Cancel all existing trades for account
 
 Cancel all trades for account.
 
-### Example
-
-[✨ View "deleteAccountTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteAccountTrades.php)
-
 [Back to top](#top)
 
 
 
 ## `deleteTrade()`
+
+### Example
+
+[👉 View "**deleteTrade.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteTrade.php)
+
+### Request
 
 > **DELETE** `/v3/trade/{id}`
 
@@ -235,15 +249,17 @@ Cancel existing trade
 
 Cancel existing trade.
 
-### Example
-
-[✨ View "deleteTrade.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteTrade.php)
-
 [Back to top](#top)
 
 
 
 ## `getBuyTradesBody()`
+
+### Example
+
+[👉 View "**getBuyTradesBody.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getBuyTradesBody.php)
+
+### Request
 
 > **POST** `/v3/trade/buy`
 
@@ -273,15 +289,17 @@ List all active buy trades
 
 List all active buy trades.
 
-### Example
-
-[✨ View "getBuyTradesBody.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getBuyTradesBody.php)
-
 [Back to top](#top)
 
 
 
 ## `getHistoricalTradesBody()`
+
+### Example
+
+[👉 View "**getHistoricalTradesBody.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getHistoricalTradesBody.php)
+
+### Request
 
 > **POST** `/v3/trade/history`
 
@@ -311,15 +329,17 @@ List all historical trades
 
 List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
 
-### Example
-
-[✨ View "getHistoricalTradesBody.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getHistoricalTradesBody.php)
-
 [Back to top](#top)
 
 
 
 ## `getMatchedTrades()`
+
+### Example
+
+[👉 View "**getMatchedTrades.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getMatchedTrades.php)
+
+### Request
 
 > **POST** `/v3/trade/matched`
 
@@ -349,15 +369,17 @@ List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
 List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
 
-### Example
-
-[✨ View "getMatchedTrades.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getMatchedTrades.php)
-
 [Back to top](#top)
 
 
 
 ## `getSellTradesBody()`
+
+### Example
+
+[👉 View "**getSellTradesBody.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getSellTradesBody.php)
+
+### Request
 
 > **POST** `/v3/trade/sell`
 
@@ -387,15 +409,17 @@ List all active sell trades
 
 List all active sell trades.
 
-### Example
-
-[✨ View "getSellTradesBody.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getSellTradesBody.php)
-
 [Back to top](#top)
 
 
 
 ## `getTradeById()`
+
+### Example
+
+[👉 View "**getTradeById.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getTradeById.php)
+
+### Request
 
 > **GET** `/v3/trade/{id}`
 
@@ -424,10 +448,6 @@ Get existing trade
 <h4>1 credit for API call</h4>
 
 Get existing opened trade.
-
-### Example
-
-[✨ View "getTradeById.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getTradeById.php)
 
 [Back to top](#top)
 

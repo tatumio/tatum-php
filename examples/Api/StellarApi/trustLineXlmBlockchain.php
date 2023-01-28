@@ -36,6 +36,9 @@ $arg_trust_line_xlm_blockchain = (new \Tatum\Model\TrustLineXlmBlockchain())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/xlm/trust
      * 

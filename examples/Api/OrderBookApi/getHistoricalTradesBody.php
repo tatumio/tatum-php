@@ -57,6 +57,9 @@ $arg_list_oder_book_history_body = (new \Tatum\Model\ListOderBookHistoryBody())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/trade/history
      * 

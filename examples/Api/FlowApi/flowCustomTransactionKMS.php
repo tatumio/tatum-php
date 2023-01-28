@@ -41,6 +41,9 @@ $arg_flow_custom_transaction_kms = (new \Tatum\Model\FlowCustomTransactionKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/flow/transaction/custom
      * 

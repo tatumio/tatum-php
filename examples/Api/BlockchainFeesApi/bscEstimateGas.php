@@ -33,6 +33,9 @@ $arg_bsc_estimate_gas = (new \Tatum\Model\BscEstimateGas())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/bsc/gas
      * 

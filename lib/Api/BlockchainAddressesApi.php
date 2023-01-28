@@ -33,7 +33,7 @@ class BlockchainAddressesApi extends AbstractApi {
      *
      * @param string $currency The cryptocurrency of the blockchain address to check
      * @param string $address The blockchain address to check
-     * @param float|null $index In case of XLM or XRP, this is a memo or DestinationTag to search for.
+     * @param float|null $index Only for BNB Beacon Chain, Stellar, or XRPL&lt;ul&gt;&lt;li&gt;For &lt;b&gt;BNB Beacon Chain&lt;/b&gt;, specify the memo.&lt;/li&gt;&lt;li&gt;For &lt;b&gt;Stellar&lt;/b&gt;, specify the message.&lt;/li&gt;&lt;li&gt;For &lt;b&gt;XRPL&lt;/b&gt;, specify the DestinationTag.&lt;/li&gt;&lt;/ul&gt;
      * @throws \Tatum\Sdk\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * 

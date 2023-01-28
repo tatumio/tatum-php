@@ -45,6 +45,9 @@ $arg_transfer_kcs_blockchain_kms = (new \Tatum\Model\TransferKcsBlockchainKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/kcs/transaction
      * 

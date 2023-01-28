@@ -28,6 +28,9 @@ $arg_marker = 'marker_example';
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/xrp/account/tx/{account}
      * 

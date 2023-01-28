@@ -22,6 +22,9 @@ $arg_address = "n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/litecoin/address/balance/{address}
      * 

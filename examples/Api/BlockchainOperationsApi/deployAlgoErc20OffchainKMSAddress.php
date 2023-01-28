@@ -48,6 +48,9 @@ $arg_deploy_algo_erc20_offchain_kms_address = (new \Tatum\Model\DeployAlgoErc20O
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/algo/erc20/deploy
      * 

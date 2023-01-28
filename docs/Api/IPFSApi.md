@@ -29,6 +29,12 @@ Method | Description
 
 ## `getIPFSData()`
 
+### Example
+
+[👉 View "**getIPFSData.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/getIPFSData.php)
+
+### Request
+
 > **GET** `/v3/ipfs/{id}`
 
 ### Type signature
@@ -57,15 +63,17 @@ Get file from IPFS
 
 Gets data from the IPFS.
 
-### Example
-
-[✨ View "getIPFSData.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/getIPFSData.php)
-
 [Back to top](#top)
 
 
 
 ## `storeIPFS()`
+
+### Example
+
+[👉 View "**storeIPFS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/storeIPFS.php)
+
+### Request
 
 > **POST** `/v3/ipfs`
 
@@ -94,10 +102,6 @@ Store data to IPFS
 <h4>2 credits per API call. Only files up to 50MB are available for storing.</h4>
 
  Stores file on the IPFS. We are leveraging <a href="https://nft.storage/" target="_blank">nft.storage</a> from <a href="https://protocol.ai/" target="_blank">Protocol Labs</a> for free storage on the IPFS.
-
-### Example
-
-[✨ View "storeIPFS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/storeIPFS.php)
 
 [Back to top](#top)
 

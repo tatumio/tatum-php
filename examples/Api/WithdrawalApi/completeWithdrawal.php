@@ -25,6 +25,9 @@ $arg_tx_id = 'tx_id_example';
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/offchain/withdrawal/{id}/{txId}
      */

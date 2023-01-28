@@ -54,6 +54,9 @@ $arg_transfer_ltc_kms = (new \Tatum\Model\TransferLtcKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/litecoin/transfer
      * 

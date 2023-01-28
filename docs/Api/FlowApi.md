@@ -48,6 +48,12 @@ Method | Description
 
 ## `flowAddPubKeyMnemonic()`
 
+### Example
+
+[👉 View "**flowAddPubKeyMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeyMnemonic.php)
+
+### Request
+
 > **PUT** `/v3/flow/account`
 
 ### Type signature
@@ -80,15 +86,17 @@ Add public key to Flow address
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "flowAddPubKeyMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeyMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `flowAddPubKeySecret()`
+
+### Example
+
+[👉 View "**flowAddPubKeySecret.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecret.php)
+
+### Request
 
 > **PUT** `/v3/flow/account`
 
@@ -116,15 +124,17 @@ Add public key to Flow address
 
 FlowAddPubKeySecret operation
 
-### Example
-
-[✨ View "flowAddPubKeySecret.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecret.php)
-
 [Back to top](#top)
 
 
 
 ## `flowAddPubKeySecretKMS()`
+
+### Example
+
+[👉 View "**flowAddPubKeySecretKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecretKMS.php)
+
+### Request
 
 > **PUT** `/v3/flow/account`
 
@@ -152,15 +162,17 @@ Add public key to Flow address
 
 FlowAddPubKeySecretKMS operation
 
-### Example
-
-[✨ View "flowAddPubKeySecretKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecretKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `flowCreateAddressFromPubKeyKMS()`
+
+### Example
+
+[👉 View "**flowCreateAddressFromPubKeyKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyKMS.php)
+
+### Request
 
 > **POST** `/v3/flow/account`
 
@@ -188,15 +200,17 @@ Create Flow address from public key
 
 FlowCreateAddressFromPubKeyKMS operation
 
-### Example
-
-[✨ View "flowCreateAddressFromPubKeyKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `flowCreateAddressFromPubKeyMnemonic()`
+
+### Example
+
+[👉 View "**flowCreateAddressFromPubKeyMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyMnemonic.php)
+
+### Request
 
 > **POST** `/v3/flow/account`
 
@@ -230,15 +244,17 @@ Create Flow address from public key
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "flowCreateAddressFromPubKeyMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `flowCreateAddressFromPubKeySecret()`
+
+### Example
+
+[👉 View "**flowCreateAddressFromPubKeySecret.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeySecret.php)
+
+### Request
 
 > **POST** `/v3/flow/account`
 
@@ -266,15 +282,17 @@ Create Flow address from public key
 
 FlowCreateAddressFromPubKeySecret operation
 
-### Example
-
-[✨ View "flowCreateAddressFromPubKeySecret.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeySecret.php)
-
 [Back to top](#top)
 
 
 
 ## `flowCustomTransactionKMS()`
+
+### Example
+
+[👉 View "**flowCustomTransactionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionKMS.php)
+
+### Request
 
 > **POST** `/v3/flow/transaction/custom`
 
@@ -302,15 +320,17 @@ Send arbitrary transaction to blockchain
 
 FlowCustomTransactionKMS operation
 
-### Example
-
-[✨ View "flowCustomTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `flowCustomTransactionMnemonic()`
+
+### Example
+
+[👉 View "**flowCustomTransactionMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionMnemonic.php)
+
+### Request
 
 > **POST** `/v3/flow/transaction/custom`
 
@@ -346,15 +366,17 @@ Send arbitrary transaction to blockchain
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "flowCustomTransactionMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `flowCustomTransactionPK()`
+
+### Example
+
+[👉 View "**flowCustomTransactionPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionPK.php)
+
+### Request
 
 > **POST** `/v3/flow/transaction/custom`
 
@@ -382,15 +404,17 @@ Send arbitrary transaction to blockchain
 
 FlowCustomTransactionPK operation
 
-### Example
-
-[✨ View "flowCustomTransactionPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionPK.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGenerateAddress()`
+
+### Example
+
+[👉 View "**flowGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/flow/address/{xpub}/{index}`
 
@@ -424,15 +448,17 @@ Generate Flow address from Extended public key
 
  **This operation is allowed on any Testnet plan and only on Paid Mainnet plans.** Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "flowGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGeneratePubKey()`
+
+### Example
+
+[👉 View "**flowGeneratePubKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKey.php)
+
+### Request
 
 > **GET** `/v3/flow/pubkey/{xpub}/{index}`
 
@@ -464,15 +490,17 @@ Generate Flow public key from Extended public key
 
  Generate Flow public key from Extended public key. This key is added to the address on the blockchain and can control the funds there. Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "flowGeneratePubKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKey.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGeneratePubKeyPrivateKey()`
+
+### Example
+
+[👉 View "**flowGeneratePubKeyPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/flow/wallet/priv`
 
@@ -502,15 +530,17 @@ Generate Flow private key
 
  Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
-### Example
-
-[✨ View "flowGeneratePubKeyPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGenerateWallet()`
+
+### Example
+
+[👉 View "**flowGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/flow/wallet`
 
@@ -546,15 +576,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for Dogecoin wallet with derivation path m'/44'/3'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki">https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Dogecoin wallet.
 
-### Example
-
-[✨ View "flowGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGetAccount()`
+
+### Example
+
+[👉 View "**flowGetAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetAccount.php)
+
+### Request
 
 > **GET** `/v3/flow/account/{address}`
 
@@ -584,15 +616,17 @@ Get the balance of a Flow account
 
 Get Flow account details.
 
-### Example
-
-[✨ View "flowGetAccount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetAccount.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGetBlock()`
+
+### Example
+
+[👉 View "**flowGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlock.php)
+
+### Request
 
 > **GET** `/v3/flow/block/{hash}`
 
@@ -622,15 +656,17 @@ Get Flow Block by hash or height
 
 Get Flow Block detail by block hash or height.
 
-### Example
-
-[✨ View "flowGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGetBlockChainInfo()`
+
+### Example
+
+[👉 View "**flowGetBlockChainInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockChainInfo.php)
+
+### Request
 
 > **GET** `/v3/flow/block/current`
 
@@ -656,15 +692,17 @@ Get Flow current block number
 
 Get Flow current block number.
 
-### Example
-
-[✨ View "flowGetBlockChainInfo.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockChainInfo.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGetBlockEvents()`
+
+### Example
+
+[👉 View "**flowGetBlockEvents.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockEvents.php)
+
+### Request
 
 > **GET** `/v3/flow/block/events`
 
@@ -698,15 +736,17 @@ Get Flow events from blocks
 
 Get Flow events from block.
 
-### Example
-
-[✨ View "flowGetBlockEvents.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockEvents.php)
-
 [Back to top](#top)
 
 
 
 ## `flowGetRawTransaction()`
+
+### Example
+
+[👉 View "**flowGetRawTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetRawTransaction.php)
+
+### Request
 
 > **GET** `/v3/flow/transaction/{hash}`
 
@@ -736,15 +776,17 @@ Get Flow Transaction by hash
 
 Get Flow Transaction detail by transaction hash.
 
-### Example
-
-[✨ View "flowGetRawTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetRawTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `flowTransactionKMS()`
+
+### Example
+
+[👉 View "**flowTransactionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionKMS.php)
+
+### Request
 
 > **POST** `/v3/flow/transaction`
 
@@ -772,15 +814,17 @@ Send Flow to blockchain addresses
 
 FlowTransactionKMS operation
 
-### Example
-
-[✨ View "flowTransactionKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `flowTransactionMnemonic()`
+
+### Example
+
+[👉 View "**flowTransactionMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionMnemonic.php)
+
+### Request
 
 > **POST** `/v3/flow/transaction`
 
@@ -816,15 +860,17 @@ Send Flow to blockchain addresses
 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-### Example
-
-[✨ View "flowTransactionMnemonic.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionMnemonic.php)
-
 [Back to top](#top)
 
 
 
 ## `flowTransactionPK()`
+
+### Example
+
+[👉 View "**flowTransactionPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionPK.php)
+
+### Request
 
 > **POST** `/v3/flow/transaction`
 
@@ -851,10 +897,6 @@ Name | Type | Description  | Notes
 Send Flow to blockchain addresses
 
 FlowTransactionPK operation
-
-### Example
-
-[✨ View "flowTransactionPK.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionPK.php)
 
 [Back to top](#top)
 

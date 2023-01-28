@@ -32,6 +32,12 @@ Method | Description
 
 ## `broadcastBlockchainTransaction()`
 
+### Example
+
+[👉 View "**broadcastBlockchainTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
+
+### Request
+
 > **POST** `/v3/offchain/withdrawal/broadcast`
 
 ### Type signature
@@ -60,15 +66,17 @@ Broadcast signed transaction and complete withdrawal
 
  Broadcast signed raw transaction end complete withdrawal associated with it. When broadcast succeeded but it is impossible to complete withdrawal, transaction id of transaction is returned and withdrawal must be completed manually.
 
-### Example
-
-[✨ View "broadcastBlockchainTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/broadcastBlockchainTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `cancelInProgressWithdrawal()`
+
+### Example
+
+[👉 View "**cancelInProgressWithdrawal.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
+
+### Request
 
 > **DELETE** `/v3/offchain/withdrawal/{id}`
 
@@ -102,15 +110,17 @@ Cancel withdrawal
 
  By default, the transaction fee is included in the reverted transaction. There are situations, like sending ERC20 on ETH, TRC token on TRON, XLM or XRP based assets, when the fee should not be reverted, because e.g. the fee is in calculated in Ethereum and transaction was in ERC20 currency. In this situation, only the transaction amount should be reverted, not the fee.
 
-### Example
-
-[✨ View "cancelInProgressWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/cancelInProgressWithdrawal.php)
-
 [Back to top](#top)
 
 
 
 ## `completeWithdrawal()`
+
+### Example
+
+[👉 View "**completeWithdrawal.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/completeWithdrawal.php)
+
+### Request
 
 > **PUT** `/v3/offchain/withdrawal/{id}/{txId}`
 
@@ -142,15 +152,17 @@ Complete withdrawal
 
  Invoke complete withdrawal as soon as blockchain transaction ID is available. All other withdrawals for the same currency will be pending unless the last one is processed and marked as completed.
 
-### Example
-
-[✨ View "completeWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/completeWithdrawal.php)
-
 [Back to top](#top)
 
 
 
 ## `getWithdrawals()`
+
+### Example
+
+[👉 View "**getWithdrawals.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/getWithdrawals.php)
+
+### Request
 
 > **GET** `/v3/offchain/withdrawal`
 
@@ -186,15 +198,17 @@ Get withdrawals
 
 Get withdrawals.
 
-### Example
-
-[✨ View "getWithdrawals.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/getWithdrawals.php)
-
 [Back to top](#top)
 
 
 
 ## `storeWithdrawal()`
+
+### Example
+
+[👉 View "**storeWithdrawal.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/storeWithdrawal.php)
+
+### Request
 
 > **POST** `/v3/offchain/withdrawal`
 
@@ -245,10 +259,6 @@ Store withdrawal
  When withdrawal is created, all other withdrawals with the same currency are pending, unless the current one is marked as complete or cancelled.
 
  Tatum ledger transaction is created for every withdrawal request with operation type WITHDRAWAL. The value of the transaction is the withdrawal amount + blockchain fee, which should be paid. In the situation, when there is withdrawal for ERC20, XLM, or XRP based custom assets, the fee is not included in the transaction because it is paid in different assets than the withdrawal itself.
-
-### Example
-
-[✨ View "storeWithdrawal.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/WithdrawalApi/storeWithdrawal.php)
 
 [Back to top](#top)
 

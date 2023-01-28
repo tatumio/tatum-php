@@ -41,6 +41,12 @@ Method | Description
 
 ## `bscBroadcast()`
 
+### Example
+
+[👉 View "**bscBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscBroadcast.php)
+
+### Request
+
 > **POST** `/v3/bsc/broadcast`
 
 ### Type signature
@@ -69,15 +75,17 @@ Broadcast signed BSC transaction
 
  Broadcast signed transaction to BSC blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-### Example
-
-[✨ View "bscBroadcast.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscBroadcast.php)
-
 [Back to top](#top)
 
 
 
 ## `bscGenerateAddress()`
+
+### Example
+
+[👉 View "**bscGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateAddress.php)
+
+### Request
 
 > **GET** `/v3/bsc/address/{xpub}/{index}`
 
@@ -109,15 +117,17 @@ Generate BSC account address from Extended public key
 
  Generate BSC account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "bscGenerateAddress.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateAddress.php)
-
 [Back to top](#top)
 
 
 
 ## `bscGenerateAddressPrivateKey()`
+
+### Example
+
+[👉 View "**bscGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateAddressPrivateKey.php)
+
+### Request
 
 > **POST** `/v3/bsc/wallet/priv`
 
@@ -147,15 +157,17 @@ Generate BSC private key
 
  Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-### Example
-
-[✨ View "bscGenerateAddressPrivateKey.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateAddressPrivateKey.php)
-
 [Back to top](#top)
 
 
 
 ## `bscGenerateWallet()`
+
+### Example
+
+[👉 View "**bscGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateWallet.php)
+
+### Request
 
 > **GET** `/v3/bsc/wallet`
 
@@ -191,15 +203,17 @@ Each address is identified by 3 main values:
 
 Tatum follows BIP44 specification and generates for BSC wallet with derivation path m'/44'/60'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible BSC wallet.
 
-### Example
-
-[✨ View "bscGenerateWallet.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGenerateWallet.php)
-
 [Back to top](#top)
 
 
 
 ## `bscGetBalance()`
+
+### Example
+
+[👉 View "**bscGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetBalance.php)
+
+### Request
 
 > **GET** `/v3/bsc/account/balance/{address}`
 
@@ -229,15 +243,17 @@ Get BSC Account balance
 
  Get BSC account balance in BNB. This method does not prints any balance of the BEP20 or BEP721 tokens on the account.
 
-### Example
-
-[✨ View "bscGetBalance.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetBalance.php)
-
 [Back to top](#top)
 
 
 
 ## `bscGetBlock()`
+
+### Example
+
+[👉 View "**bscGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetBlock.php)
+
+### Request
 
 > **GET** `/v3/bsc/block/{hash}`
 
@@ -267,15 +283,17 @@ Get BSC block by hash
 
  Get BSC block by block hash or block number.
 
-### Example
-
-[✨ View "bscGetBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `bscGetCurrentBlock()`
+
+### Example
+
+[👉 View "**bscGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetCurrentBlock.php)
+
+### Request
 
 > **GET** `/v3/bsc/block/current`
 
@@ -301,15 +319,17 @@ Get current block number
 
  Get BSC current block number. This is the number of the latest block in the blockchain.
 
-### Example
-
-[✨ View "bscGetCurrentBlock.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetCurrentBlock.php)
-
 [Back to top](#top)
 
 
 
 ## `bscGetTransaction()`
+
+### Example
+
+[👉 View "**bscGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetTransaction.php)
+
+### Request
 
 > **GET** `/v3/bsc/transaction/{hash}`
 
@@ -339,15 +359,17 @@ Get BSC Transaction
 
  Get BSC transaction by transaction hash.
 
-### Example
-
-[✨ View "bscGetTransaction.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetTransaction.php)
-
 [Back to top](#top)
 
 
 
 ## `bscGetTransactionCount()`
+
+### Example
+
+[👉 View "**bscGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetTransactionCount.php)
+
+### Request
 
 > **GET** `/v3/bsc/transaction/count/{address}`
 
@@ -377,15 +399,17 @@ Get count of outgoing BSC transactions
 
  Get a number of outgoing BSC transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-### Example
-
-[✨ View "bscGetTransactionCount.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/bscGetTransactionCount.php)
-
 [Back to top](#top)
 
 
 
 ## `callBscSmartContractMethod()`
+
+### Example
+
+[👉 View "**callBscSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractMethod.php)
+
+### Request
 
 > **POST** `/v3/bsc/smartcontract`
 
@@ -413,15 +437,17 @@ Invoke a method in a smart contract on BNB Smart Chain
 
 CallBscSmartContractMethod operation
 
-### Example
-
-[✨ View "callBscSmartContractMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `callBscSmartContractMethodKMS()`
+
+### Example
+
+[👉 View "**callBscSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractMethodKMS.php)
+
+### Request
 
 > **POST** `/v3/bsc/smartcontract`
 
@@ -449,15 +475,17 @@ Invoke a method in a smart contract on BNB Smart Chain
 
 CallBscSmartContractMethodKMS operation
 
-### Example
-
-[✨ View "callBscSmartContractMethodKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractMethodKMS.php)
-
 [Back to top](#top)
 
 
 
 ## `callBscSmartContractReadMethod()`
+
+### Example
+
+[👉 View "**callBscSmartContractReadMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractReadMethod.php)
+
+### Request
 
 > **POST** `/v3/bsc/smartcontract`
 
@@ -511,15 +539,17 @@ However, because this API can be run against any smart contract on the blockchai
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "callBscSmartContractReadMethod.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/callBscSmartContractReadMethod.php)
-
 [Back to top](#top)
 
 
 
 ## `transferBscBlockchain()`
+
+### Example
+
+[👉 View "**transferBscBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/transferBscBlockchain.php)
+
+### Request
 
 > **POST** `/v3/bsc/transaction`
 
@@ -557,15 +587,17 @@ Send BSC / BEP20 from account to account
 
  For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
 
-### Example
-
-[✨ View "transferBscBlockchain.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/transferBscBlockchain.php)
-
 [Back to top](#top)
 
 
 
 ## `transferBscBlockchainKMS()`
+
+### Example
+
+[👉 View "**transferBscBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/transferBscBlockchainKMS.php)
+
+### Request
 
 > **POST** `/v3/bsc/transaction`
 
@@ -592,10 +624,6 @@ Name | Type | Description  | Notes
 Send BSC / BEP20 from account to account
 
 TransferBscBlockchainKMS operation
-
-### Example
-
-[✨ View "transferBscBlockchainKMS.php"](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBSmartChainApi/transferBscBlockchainKMS.php)
 
 [Back to top](#top)
 

@@ -42,6 +42,9 @@ $arg_transfer_algo_erc20 = (new \Tatum\Model\TransferAlgoErc20())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/algorand/transfer
      * 

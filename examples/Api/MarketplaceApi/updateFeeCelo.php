@@ -42,6 +42,9 @@ $arg_update_fee_celo = (new \Tatum\Model\UpdateFeeCelo())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/blockchain/marketplace/listing/fee
      * 

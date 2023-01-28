@@ -42,6 +42,9 @@ $arg_activate_gas_pump_celo_kms = (new \Tatum\Model\ActivateGasPumpCeloKMS())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/gas-pump/activate
      * 

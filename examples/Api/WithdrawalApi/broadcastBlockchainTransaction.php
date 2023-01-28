@@ -33,6 +33,9 @@ $arg_broadcast_withdrawal = (new \Tatum\Model\BroadcastWithdrawal())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/offchain/withdrawal/broadcast
      * 

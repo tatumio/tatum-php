@@ -28,6 +28,9 @@ $arg_type = "INITIATED";
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * GET /v3/blockchain/marketplace/listing/{chain}/{contractAddress}/{type}
      * 

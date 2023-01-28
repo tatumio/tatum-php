@@ -22,6 +22,9 @@ $arg_file = new \SplFileObject('/path/to/file.txt');
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * POST /v3/ipfs
      * 

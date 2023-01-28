@@ -33,6 +33,9 @@ $arg_flow_add_pub_key_secret = (new \Tatum\Model\FlowAddPubKeySecret())
 
 try {
 
+    // 🐛 Enable debugging on the MainNet
+    $sdk->mainnet()->config()->setDebug(true);
+
     /**
      * PUT /v3/flow/account
      * 
