@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_burn_nft_flow_kms = (new \Tatum\Model\BurnNftFlowKMS())
     
     // The blockchain to work with
@@ -41,9 +44,6 @@ $arg_burn_nft_flow_kms = (new \Tatum\Model\BurnNftFlowKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/nft/burn

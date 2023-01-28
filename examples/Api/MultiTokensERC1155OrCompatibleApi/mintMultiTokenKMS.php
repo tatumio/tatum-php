@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_mint_multi_token_kms = (new \Tatum\Model\MintMultiTokenKMS())
     
     // Chain to work with.
@@ -53,9 +56,6 @@ $arg_mint_multi_token_kms = (new \Tatum\Model\MintMultiTokenKMS())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/multitoken/mint

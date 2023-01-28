@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_xrp_blockchain_asset = (new \Tatum\Model\TransferXrpBlockchainAsset())
     
     // XRP account address. Must be the one used for generating deposit tags.
@@ -47,9 +50,6 @@ $arg_transfer_xrp_blockchain_asset = (new \Tatum\Model\TransferXrpBlockchainAsse
     ->setToken('DA39A3EE5E6B4B0D3255BFEF95601890AFD80709');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/xrp/transaction

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Account ID
 $arg_id = "5e68c66581f2ee32bc354087";
 
@@ -29,9 +32,6 @@ $arg_update_account = (new \Tatum\Model\UpdateAccount())
     ->setAccountNumber('123456');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/ledger/account/{id}

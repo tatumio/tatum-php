@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_chart_request = (new \Tatum\Model\ChartRequest())
     
     // Trading pair
@@ -32,9 +35,6 @@ $arg_chart_request = (new \Tatum\Model\ChartRequest())
     ->setTimeFrame('MIN_5');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/trade/chart

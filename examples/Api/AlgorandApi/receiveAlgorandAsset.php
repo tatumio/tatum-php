@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_receive_algorand_asset = (new \Tatum\Model\ReceiveAlgorandAsset())
     
     // AssetID of the asset you wanna enable for the sender.
@@ -26,9 +29,6 @@ $arg_receive_algorand_asset = (new \Tatum\Model\ReceiveAlgorandAsset())
     ->setFromPrivateKey('72TCV5BRQPBMSAFPYO3CPWVDBYWNGAYNMTW5QHENOMQF7I6QLNMJWCJZ7A3V5YKD7QD6ZZPEHG2PV2ZVVEDDO6BCRGXWIL3DIUMSUCI');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/algorand/asset/receive

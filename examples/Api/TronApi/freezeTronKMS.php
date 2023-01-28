@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_freeze_tron_kms = (new \Tatum\Model\FreezeTronKMS())
     
     // Sender address of TRON account in Base58 format.
@@ -41,9 +44,6 @@ $arg_freeze_tron_kms = (new \Tatum\Model\FreezeTronKMS())
     ->setAmount('100000');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/tron/freezeBalance

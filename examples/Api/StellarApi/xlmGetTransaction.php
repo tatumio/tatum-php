@@ -17,13 +17,13 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Transaction hash
 $arg_hash = "749e4f8933221b9942ef38a02856803f379789ec8d971f1f60535db70135673e";
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/xlm/transaction/{hash}

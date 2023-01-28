@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_update_fee_solana_kms = (new \Tatum\Model\UpdateFeeSolanaKMS())
     
     // The blockchain to work with
@@ -35,9 +38,6 @@ $arg_update_fee_solana_kms = (new \Tatum\Model\UpdateFeeSolanaKMS())
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/blockchain/marketplace/listing/fee

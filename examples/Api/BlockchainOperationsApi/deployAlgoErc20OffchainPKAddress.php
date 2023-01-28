@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_deploy_algo_erc20_offchain_pk_address = (new \Tatum\Model\DeployAlgoErc20OffchainPKAddress())
     
     // The name of the token; used as an identifier within the Tatum platform and as a currency symbol o...
@@ -44,9 +47,6 @@ $arg_deploy_algo_erc20_offchain_pk_address = (new \Tatum\Model\DeployAlgoErc20Of
     ->setCustomer(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/algo/erc20/deploy

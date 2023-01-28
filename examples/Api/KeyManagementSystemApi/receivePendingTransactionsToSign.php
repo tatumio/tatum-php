@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Blockchain to get pending transactions for.
 $arg_chain = 'chain_example';
 
@@ -27,9 +30,6 @@ $arg_kms_signature_ids = (new \Tatum\Model\KmsSignatureIds())
     ->setSignatureIds(["6d78dad2-518f-4e76-8255-8f1df0de6886","26d3883e-4e17-48b3-a0ee-09a3e484ac83"]);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/kms/pending/{chain}

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_bnb_blockchain = (new \Tatum\Model\TransferBnbBlockchain())
     
     // Blockchain address to send assets.
@@ -35,9 +38,6 @@ $arg_transfer_bnb_blockchain = (new \Tatum\Model\TransferBnbBlockchain())
     ->setMessage('Message to recipient');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/bnb/transaction

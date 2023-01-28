@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_vet_estimate_gas = (new \Tatum\Model\VetEstimateGas())
     
     // Sender account address.
@@ -35,9 +38,6 @@ $arg_vet_estimate_gas = (new \Tatum\Model\VetEstimateGas())
     ->setNonce(12345);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/vet/transaction/gas

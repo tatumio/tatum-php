@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Event type to search for
 $arg_type = "A.7e60df042a9c0868.FlowToken.TokensWithdrawn";
 
@@ -27,9 +30,6 @@ $arg_from = 654321;
 $arg_to = 654326;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/flow/block/events

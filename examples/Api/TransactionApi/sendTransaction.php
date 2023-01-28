@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_create_transaction = (new \Tatum\Model\CreateTransaction())
     
     // Internal sender account ID within Tatum platform
@@ -50,9 +53,6 @@ $arg_create_transaction = (new \Tatum\Model\CreateTransaction())
     ->setSenderNote('Sender note');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/ledger/transaction

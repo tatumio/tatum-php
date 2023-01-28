@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_settle_auction_celo = (new \Tatum\Model\SettleAuctionCelo())
     
     // The blockchain to work with
@@ -41,9 +44,6 @@ $arg_settle_auction_celo = (new \Tatum\Model\SettleAuctionCelo())
     ->setFee(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/auction/settle

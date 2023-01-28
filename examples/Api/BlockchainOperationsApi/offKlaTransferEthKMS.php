@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_eth_kms = (new \Tatum\Model\TransferEthKMS())
     
     // (optional) The nonce to be set to the transaction; if not present, the last known nonce will be used
@@ -53,9 +56,6 @@ $arg_transfer_eth_kms = (new \Tatum\Model\TransferEthKMS())
     ->setGasPrice('20');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/klaytn/transfer

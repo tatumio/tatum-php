@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Address of XRP account.
 $arg_account = 'account_example';
 
@@ -27,9 +30,6 @@ $arg_min = 3.4;
 $arg_marker = 'marker_example';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/xrp/account/tx/{account}

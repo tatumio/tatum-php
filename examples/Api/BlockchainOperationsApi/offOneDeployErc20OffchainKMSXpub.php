@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_deploy_erc20_offchain_kms_xpub = (new \Tatum\Model\DeployErc20OffchainKMSXpub())
     
     // The name of the token; used as an identifier within the Tatum platform and as a currency symbol o...
@@ -56,9 +59,6 @@ $arg_deploy_erc20_offchain_kms_xpub = (new \Tatum\Model\DeployErc20OffchainKMSXp
 $arg_shard_id = 0;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/one/hrm20/deploy

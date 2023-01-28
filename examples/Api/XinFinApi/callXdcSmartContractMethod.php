@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_call_xdc_smart_contract_method = (new \Tatum\Model\CallXdcSmartContractMethod())
     
     // The address of the smart contract
@@ -48,9 +51,6 @@ $arg_call_xdc_smart_contract_method = (new \Tatum\Model\CallXdcSmartContractMeth
     ->setFee(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/xdc/smartcontract

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_xlm_blockchain_asset = (new \Tatum\Model\TransferXlmBlockchainAsset())
     
     // Blockchain account to send assets from
@@ -44,9 +47,6 @@ $arg_transfer_xlm_blockchain_asset = (new \Tatum\Model\TransferXlmBlockchainAsse
     ->setMessage('12355');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/xlm/transaction

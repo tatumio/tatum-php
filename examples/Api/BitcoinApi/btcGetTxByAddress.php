@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Address
 $arg_address = "2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb";
 
@@ -27,9 +30,6 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/bitcoin/transaction/address/{address}

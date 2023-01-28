@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_tron_blockchain_kms = (new \Tatum\Model\TransferTronBlockchainKMS())
     
     // Sender address of TRON account in Base58 format.
@@ -35,9 +38,6 @@ $arg_transfer_tron_blockchain_kms = (new \Tatum\Model\TransferTronBlockchainKMS(
     ->setIndex(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/tron/transaction

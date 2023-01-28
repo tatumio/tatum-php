@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_mint_multiple_nft_kms_tron = (new \Tatum\Model\MintMultipleNftKMSTron())
     
     // The blockchain to work with
@@ -50,9 +53,6 @@ $arg_mint_multiple_nft_kms_tron = (new \Tatum\Model\MintMultipleNftKMSTron())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/nft/mint/batch

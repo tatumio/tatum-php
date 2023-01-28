@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Blockchain to communicate with.
 $arg_chain = "ALGO";
 
@@ -38,9 +41,6 @@ $arg_chain_type = 'avax-c';
 $arg_rpc_path = "v2/accounts";
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/node/{chain}/{xApiKey}/{rpcPath}

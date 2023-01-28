@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_doge_transaction_utxo = (new \Tatum\Model\DogeTransactionUTXO())
     
     // The array of transaction hashes, indexes of its UTXOs, and the private keys of the associated blo...
@@ -32,9 +35,6 @@ $arg_doge_transaction_utxo = (new \Tatum\Model\DogeTransactionUTXO())
     ->setChangeAddress('2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/dogecoin/transaction

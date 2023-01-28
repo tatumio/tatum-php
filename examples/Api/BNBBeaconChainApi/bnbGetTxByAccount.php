@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Account address
 $arg_address = "tbnb185tqzq3j6y7yep85lncaz9qeectjxqe5054cgn";
 
@@ -39,9 +42,6 @@ $arg_asset = "BNB";
 $arg_address_type = "FROM";
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/bnb/account/transaction/{address}

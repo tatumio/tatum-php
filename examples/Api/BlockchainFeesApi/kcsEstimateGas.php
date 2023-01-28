@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_kcs_estimate_gas = (new \Tatum\Model\KcsEstimateGas())
     
     // Sender address.
@@ -32,9 +35,6 @@ $arg_kcs_estimate_gas = (new \Tatum\Model\KcsEstimateGas())
     ->setData('4d79206e6f746520746f2074686520726563697069656e74');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/kcs/gas

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_cancel_auction_kms = (new \Tatum\Model\CancelAuctionKMS())
     
     // The blockchain to work with
@@ -44,9 +47,6 @@ $arg_cancel_auction_kms = (new \Tatum\Model\CancelAuctionKMS())
     ->setErc20Address('0x687422eEA2cB73B5d3e242bA5456b782919AFc85');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/auction/cancel

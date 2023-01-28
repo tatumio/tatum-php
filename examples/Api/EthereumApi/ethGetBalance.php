@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Account address you want to get balance of
 $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 
@@ -24,9 +27,6 @@ $arg_address = "0x3223AEB8404C7525FcAA6C512f91e287AE9FfE7B";
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/ethereum/account/balance/{address}

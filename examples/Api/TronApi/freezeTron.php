@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_freeze_tron = (new \Tatum\Model\FreezeTron())
     
     // Private key of the address, from which the TRX will be sent.
@@ -35,9 +38,6 @@ $arg_freeze_tron = (new \Tatum\Model\FreezeTron())
     ->setAmount('100000');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/tron/freezeBalance

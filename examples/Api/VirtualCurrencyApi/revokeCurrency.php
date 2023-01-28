@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_virtual_currency_operation = (new \Tatum\Model\VirtualCurrencyOperation())
     
     // Ledger account with currency of the virtual currency, on which the operation will be performed.
@@ -44,9 +47,6 @@ $arg_virtual_currency_operation = (new \Tatum\Model\VirtualCurrencyOperation())
     ->setSenderNote('Sender note');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/ledger/virtualCurrency/revoke

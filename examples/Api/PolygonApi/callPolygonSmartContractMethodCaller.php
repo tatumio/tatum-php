@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_call_polygon_smart_contract_method_caller = (new \Tatum\Model\CallPolygonSmartContractMethodCaller())
     
     // The address of the account, which will be sender and fee payer of this transaction
@@ -45,9 +48,6 @@ $arg_call_polygon_smart_contract_method_caller = (new \Tatum\Model\CallPolygonSm
     ->setFee(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/polygon/smartcontract

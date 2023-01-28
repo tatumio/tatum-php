@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Address
 $arg_address = "n4YNG8q5JyxkeWf7zMi1bMyRZbRKK1W7or";
 
@@ -27,9 +30,6 @@ $arg_page_size = 10;
 $arg_offset = 0;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/litecoin/transaction/address/{address}

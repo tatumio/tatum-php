@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_create_bnb_asset = (new \Tatum\Model\CreateBnbAsset())
     
     // Asset name.
@@ -26,9 +29,6 @@ $arg_create_bnb_asset = (new \Tatum\Model\CreateBnbAsset())
     ->setBasePair('EUR');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/bnb/asset

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // The blockchain to work with
 $arg_chain = "ETH";
 
@@ -27,9 +30,6 @@ $arg_owner = 'owner_example';
 $arg_index = 3.4;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/gas-pump/activated/{chain}/{owner}/{index}

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // On Algorand, this is the asset ID; on TRON, this is the token ID; on the other blockchains, this is the address of the smart contract.
 $arg_address = "0x687422eEA2cB73B5d3e242bA5456b782919AFc85";
 
@@ -24,9 +27,6 @@ $arg_address = "0x687422eEA2cB73B5d3e242bA5456b782919AFc85";
 $arg_name = "MY_TOKEN";
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/token/{name}/{address}

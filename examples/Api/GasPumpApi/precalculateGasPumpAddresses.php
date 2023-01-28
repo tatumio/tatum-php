@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_create_gas_pump = (new \Tatum\Model\CreateGasPump())
     
     // The blockchain to work with
@@ -32,9 +35,6 @@ $arg_create_gas_pump = (new \Tatum\Model\CreateGasPump())
     ->setTo(1000);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/gas-pump

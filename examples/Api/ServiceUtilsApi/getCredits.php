@@ -17,10 +17,10 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
-try {
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
 
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
+try {
 
     /**
      * GET /v3/tatum/usage

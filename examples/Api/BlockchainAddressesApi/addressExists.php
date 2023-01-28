@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // The cryptocurrency of the blockchain address to check
 $arg_currency = "BNB";
 
@@ -27,9 +30,6 @@ $arg_address = "tbnb1sfj9981j2eo1ij2e09";
 $arg_index = 1;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/offchain/account/address/{address}/{currency}

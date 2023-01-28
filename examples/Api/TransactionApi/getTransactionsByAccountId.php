@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transaction_filter = (new \Tatum\Model\TransactionFilter())
     
     // Account ID - source of transaction(s).
@@ -71,9 +74,6 @@ $arg_offset = 0;
 $arg_count = true;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/ledger/transaction/account

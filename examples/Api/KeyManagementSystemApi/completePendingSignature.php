@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // ID of pending transaction
 $arg_id = "f91827364f91827364ajdur7";
 
@@ -24,9 +27,6 @@ $arg_id = "f91827364f91827364ajdur7";
 $arg_tx_id = "0x94Ce79B9F001E25BBEbE7C01998A78F7B27D1326";
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/kms/{id}/{txId}

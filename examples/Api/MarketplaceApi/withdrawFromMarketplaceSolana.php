@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_withdraw_from_marketplace_solana = (new \Tatum\Model\WithdrawFromMarketplaceSolana())
     
     // Blockchain to work with.
@@ -35,9 +38,6 @@ $arg_withdraw_from_marketplace_solana = (new \Tatum\Model\WithdrawFromMarketplac
     ->setFromPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/marketplace/withdraw/fee

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // ID of created withdrawal
 $arg_id = 'id_example';
 
@@ -24,9 +27,6 @@ $arg_id = 'id_example';
 $arg_revert = true;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * DELETE /v3/offchain/withdrawal/{id}

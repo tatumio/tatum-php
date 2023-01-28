@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_xdc_estimate_gas = (new \Tatum\Model\XdcEstimateGas())
     
     // Sender address.
@@ -29,9 +32,6 @@ $arg_xdc_estimate_gas = (new \Tatum\Model\XdcEstimateGas())
     ->setAmount('100000');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/xdc/gas

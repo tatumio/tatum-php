@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // The blockchain to work with
 $arg_chain = 'chain_example';
 
@@ -24,9 +27,6 @@ $arg_chain = 'chain_example';
 $arg_date = "2021-09-17T07:55:54Z";
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/blockchain/auction/time/{chain}/{date}

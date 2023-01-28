@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_bch_transaction_kms = (new \Tatum\Model\BchTransactionKMS())
     
     // The array of transaction hashes, indexes of its UTXOs, and the signature IDs of the associated bl...
@@ -32,9 +35,6 @@ $arg_bch_transaction_kms = (new \Tatum\Model\BchTransactionKMS())
     ->setChangeAddress('bitcoincash:qrd9khmeg4nqag3h5gzu8vjt537pm7le85lcauzez');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/bcash/transaction

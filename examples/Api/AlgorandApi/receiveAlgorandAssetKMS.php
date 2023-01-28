@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_receive_algorand_asset_kms = (new \Tatum\Model\ReceiveAlgorandAssetKMS())
     
     // Blockchain sender address.
@@ -29,9 +32,6 @@ $arg_receive_algorand_asset_kms = (new \Tatum\Model\ReceiveAlgorandAssetKMS())
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/algorand/asset/receive

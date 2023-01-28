@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_create_subscription_partial_trade_match = (new \Tatum\Model\CreateSubscriptionPartialTradeMatch())
     
     // Type of the subscription.
@@ -29,9 +32,6 @@ $arg_create_subscription_partial_trade_match = (new \Tatum\Model\CreateSubscript
 $arg_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/subscription

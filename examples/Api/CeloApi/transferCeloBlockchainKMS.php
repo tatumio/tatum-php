@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_celo_blockchain_kms = (new \Tatum\Model\TransferCeloBlockchainKMS())
     
     // (optional) Additional data that can be passed to a blockchain transaction as a data property; must be in the...
@@ -47,9 +50,6 @@ $arg_transfer_celo_blockchain_kms = (new \Tatum\Model\TransferCeloBlockchainKMS(
     ->setSignatureId('26d3883e-4e17-48b3-a0ee-09a3e484ac83');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/celo/transaction

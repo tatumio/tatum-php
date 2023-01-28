@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_flow_custom_transaction_mnemonic = (new \Tatum\Model\FlowCustomTransactionMnemonic())
     
     // Blockchain account to send from
@@ -40,9 +43,6 @@ $arg_flow_custom_transaction_mnemonic = (new \Tatum\Model\FlowCustomTransactionM
     ->setIndex(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/flow/transaction/custom

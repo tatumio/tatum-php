@@ -17,15 +17,15 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_hmac_web_hook = (new \Tatum\Model\HmacWebHook())
     
     // Your HMAC secret password, which is used for signing the webhook payload.
     ->setHmacSecret('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/subscription

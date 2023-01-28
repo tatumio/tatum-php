@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_create_tron_trc10_blockchain = (new \Tatum\Model\CreateTronTrc10Blockchain())
     
     // Private key of the address, from which the TRX will be sent.
@@ -44,9 +47,6 @@ $arg_create_tron_trc10_blockchain = (new \Tatum\Model\CreateTronTrc10Blockchain(
     ->setDecimals(10);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/tron/trc10/deploy

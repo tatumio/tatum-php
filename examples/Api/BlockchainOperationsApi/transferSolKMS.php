@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_sol_kms = (new \Tatum\Model\TransferSolKMS())
     
     // Sender account ID
@@ -47,9 +50,6 @@ $arg_transfer_sol_kms = (new \Tatum\Model\TransferSolKMS())
     ->setSenderNote('Sender note');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/solana/transfer

@@ -111,6 +111,9 @@ require_once(__DIR__ . '/autoload.php');
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 try {
     /** @var $walletTestnet \Tatum\Model\Wallet */
     $walletTestnet = $sdk

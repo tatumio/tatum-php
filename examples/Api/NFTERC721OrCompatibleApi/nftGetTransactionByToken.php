@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // The blockchain to work with
 $arg_chain = "CELO";
 
@@ -39,9 +42,6 @@ $arg_from = 1087623;
 $arg_to = 1087823;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/nft/transaction/tokenId/{chain}/{tokenAddress}/{tokenId}

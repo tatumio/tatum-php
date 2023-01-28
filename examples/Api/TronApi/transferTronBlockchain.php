@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_tron_blockchain = (new \Tatum\Model\TransferTronBlockchain())
     
     // Private key of the address, from which the TRX will be sent.
@@ -29,9 +32,6 @@ $arg_transfer_tron_blockchain = (new \Tatum\Model\TransferTronBlockchain())
     ->setAmount('100000');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/tron/transaction

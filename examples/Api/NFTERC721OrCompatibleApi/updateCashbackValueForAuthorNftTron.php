@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_update_cashback_value_for_author_nft_tron = (new \Tatum\Model\UpdateCashbackValueForAuthorNftTron())
     
     // The blockchain to work with
@@ -41,9 +44,6 @@ $arg_update_cashback_value_for_author_nft_tron = (new \Tatum\Model\UpdateCashbac
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/nft/royalty

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_buy_asset_on_marketplace_solana = (new \Tatum\Model\BuyAssetOnMarketplaceSolana())
     
     // The blockchain to work with
@@ -38,9 +41,6 @@ $arg_buy_asset_on_marketplace_solana = (new \Tatum\Model\BuyAssetOnMarketplaceSo
     ->setFromPrivateKey('zgsAKfjuXrAxEyuYRxbbxPM3rdsPbJPnGreaGMbcdUApJ6wHnCqQnf9b1RNPdeZxsRMkezh4VgXQ7YrbpndGtEv');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/marketplace/listing/buy

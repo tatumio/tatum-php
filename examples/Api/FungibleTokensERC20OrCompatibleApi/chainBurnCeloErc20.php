@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_chain_burn_celo_erc20 = (new \Tatum\Model\ChainBurnCeloErc20())
     
     // The blockchain to work with
@@ -44,9 +47,6 @@ $arg_chain_burn_celo_erc20 = (new \Tatum\Model\ChainBurnCeloErc20())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/token/burn

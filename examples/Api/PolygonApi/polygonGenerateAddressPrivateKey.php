@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
     
     // Derivation index of private key to generate.
@@ -26,9 +29,6 @@ $arg_priv_key_request = (new \Tatum\Model\PrivKeyRequest())
     ->setMnemonic('urge pulp usage sister evidence arrest palm math please chief egg abuse');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/polygon/wallet/priv

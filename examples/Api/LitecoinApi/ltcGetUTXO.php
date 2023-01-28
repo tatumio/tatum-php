@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // The transaction hash
 $arg_hash = "5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a";
 
@@ -24,9 +27,6 @@ $arg_hash = "5f83d51c8d3054012cea3011fa626b85d89442788721afd60719ab1f9ab8f78a";
 $arg_index = 0;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/litecoin/utxo/{hash}/{index}

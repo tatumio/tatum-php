@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_trust_line_xlm_blockchain = (new \Tatum\Model\TrustLineXlmBlockchain())
     
     // XLM account address. Must be the one used for generating deposit tags.
@@ -35,9 +38,6 @@ $arg_trust_line_xlm_blockchain = (new \Tatum\Model\TrustLineXlmBlockchain())
     ->setLimit('10000');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/xlm/trust

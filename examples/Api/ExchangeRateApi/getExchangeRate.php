@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // The fiat or crypto asset to exchange
 $arg_currency = "BTC";
 
@@ -24,9 +27,6 @@ $arg_currency = "BTC";
 $arg_base_pair = "USD";
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/tatum/rate/{currency}

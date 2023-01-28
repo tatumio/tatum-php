@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_btc_transaction_from_utxo = (new \Tatum\Model\BtcTransactionFromUTXO())
     
     // The array of transaction hashes, indexes of its UTXOs, and the private keys of the associated blo...
@@ -32,9 +35,6 @@ $arg_btc_transaction_from_utxo = (new \Tatum\Model\BtcTransactionFromUTXO())
     ->setChangeAddress('2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/bitcoin/transaction

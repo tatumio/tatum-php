@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_bid_on_auction = (new \Tatum\Model\BidOnAuction())
     
     // Blockchain to work with.
@@ -47,9 +50,6 @@ $arg_bid_on_auction = (new \Tatum\Model\BidOnAuction())
     ->setFee(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/auction/bid

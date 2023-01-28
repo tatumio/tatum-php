@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_estimate_fee = (new \Tatum\Model\EstimateFee())
     
     // The blockchain to estimate the fee for
@@ -38,9 +41,6 @@ $arg_estimate_fee = (new \Tatum\Model\EstimateFee())
     ->setAmount('100000');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/estimate

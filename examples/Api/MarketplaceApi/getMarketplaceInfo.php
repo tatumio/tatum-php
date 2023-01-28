@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Blockchain to work with
 $arg_chain = "SOL";
 
@@ -24,9 +27,6 @@ $arg_chain = "SOL";
 $arg_contract_address = "3MgkEwYY4b8iSX2yMLnbQ7n8KzNRKNAgTGJwVbEcKkUz";
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/blockchain/marketplace/listing/{chain}/{contractAddress}

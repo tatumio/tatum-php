@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_ltc_transaction_address = (new \Tatum\Model\LtcTransactionAddress())
     
     // The array of blockchain addresses to send the assets from and their private keys. For each addres...
@@ -32,9 +35,6 @@ $arg_ltc_transaction_address = (new \Tatum\Model\LtcTransactionAddress())
     ->setChangeAddress('2MzNGwuKvMEvKMQogtgzSqJcH2UW3Tc5oc7');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/litecoin/transaction

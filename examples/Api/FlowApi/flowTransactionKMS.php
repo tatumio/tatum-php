@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_flow_transaction_kms = (new \Tatum\Model\FlowTransactionKMS())
     
     // Blockchain account to send from
@@ -38,9 +41,6 @@ $arg_flow_transaction_kms = (new \Tatum\Model\FlowTransactionKMS())
     ->setIndex(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/flow/transaction

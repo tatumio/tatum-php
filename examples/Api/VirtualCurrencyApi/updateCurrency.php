@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_virtual_currency_update = (new \Tatum\Model\VirtualCurrencyUpdate())
     
     // Virtual currency name, which will be updated. It is not possible to update the name of the virtua...
@@ -29,9 +32,6 @@ $arg_virtual_currency_update = (new \Tatum\Model\VirtualCurrencyUpdate())
     ->setBasePair('EUR');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/ledger/virtualCurrency

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
     
     // Virtual currency name. Must be prefixed with 'VC_'.
@@ -47,9 +50,6 @@ $arg_virtual_currency = (new \Tatum\Model\VirtualCurrency())
     ->setAccountingCurrency('USD');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/ledger/virtualCurrency

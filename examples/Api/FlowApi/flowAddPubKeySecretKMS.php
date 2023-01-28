@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_flow_add_pub_key_secret_kms = (new \Tatum\Model\FlowAddPubKeySecretKMS())
     
     // Blockchain account to send from
@@ -35,9 +38,6 @@ $arg_flow_add_pub_key_secret_kms = (new \Tatum\Model\FlowAddPubKeySecretKMS())
     ->setWeight(1000);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/flow/account

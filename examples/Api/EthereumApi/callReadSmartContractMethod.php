@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_call_read_smart_contract_method = (new \Tatum\Model\CallReadSmartContractMethod())
     
     // The address of the smart contract
@@ -39,9 +42,6 @@ $arg_call_read_smart_contract_method = (new \Tatum\Model\CallReadSmartContractMe
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/ethereum/smartcontract

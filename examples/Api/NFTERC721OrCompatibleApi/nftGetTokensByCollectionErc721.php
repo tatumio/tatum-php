@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // The blockchain to work with
 $arg_chain = "ETH";
 
@@ -30,9 +33,6 @@ $arg_address = "0x80d8bac9a6901698b3749fe336bbd1385c1f98f2";
 $arg_offset = 0;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * GET /v3/nft/collection/{chain}/{address}

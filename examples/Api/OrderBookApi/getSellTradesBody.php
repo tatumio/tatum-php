@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_list_oder_book_active_sell_body = (new \Tatum\Model\ListOderBookActiveSellBody())
     
     // (optional) Account ID. If present, list current active sell trades for that account.
@@ -56,9 +59,6 @@ $arg_list_oder_book_active_sell_body = (new \Tatum\Model\ListOderBookActiveSellB
     ->setSort(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/trade/sell

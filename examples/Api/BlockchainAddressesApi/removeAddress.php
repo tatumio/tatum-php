@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 // Account ID
 $arg_id = "5e68c66581f2ee32bc354087";
 
@@ -27,9 +30,6 @@ $arg_address = "2MsM67NLa71fHvTUBqNENW15P68nHB2vVXb";
 $arg_index = 1;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * DELETE /v3/offchain/account/{id}/address/{address}

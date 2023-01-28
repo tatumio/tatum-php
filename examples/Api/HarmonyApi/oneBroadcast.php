@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_broadcast_kms = (new \Tatum\Model\BroadcastKMS())
     
     // Raw signed transaction to be published to network.
@@ -29,9 +32,6 @@ $arg_broadcast_kms = (new \Tatum\Model\BroadcastKMS())
 $arg_shard_id = 0;
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/one/broadcast

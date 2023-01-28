@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_bch_key_pair = (new \Tatum\Model\TransferBchKeyPair())
     
     // Sender account ID
@@ -50,9 +53,6 @@ $arg_transfer_bch_key_pair = (new \Tatum\Model\TransferBchKeyPair())
     ->setSenderNote('Sender note');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/bcash/transfer

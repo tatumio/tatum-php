@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_trust_line_xrp_blockchain = (new \Tatum\Model\TrustLineXrpBlockchain())
     
     // XRP account address. Must be the one used for generating deposit tags.
@@ -38,9 +41,6 @@ $arg_trust_line_xrp_blockchain = (new \Tatum\Model\TrustLineXrpBlockchain())
     ->setFee('10000');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/xrp/trust

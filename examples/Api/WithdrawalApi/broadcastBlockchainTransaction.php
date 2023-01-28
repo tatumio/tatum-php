@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_broadcast_withdrawal = (new \Tatum\Model\BroadcastWithdrawal())
     
     // Currency of signed transaction to be broadcast, BTC, LTC, DOGE, BNB, XLM, TRX, BCH, ETH, XRP, ERC...
@@ -32,9 +35,6 @@ $arg_broadcast_withdrawal = (new \Tatum\Model\BroadcastWithdrawal())
     ->setSignatureId('1f7f7c0c-3906-4aa1-9dfe-4b67c43918f6');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/withdrawal/broadcast

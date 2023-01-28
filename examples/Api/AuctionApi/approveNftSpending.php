@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_approve_nft_spending = (new \Tatum\Model\ApproveNftSpending())
     
     // The blockchain to work with
@@ -44,9 +47,6 @@ $arg_approve_nft_spending = (new \Tatum\Model\ApproveNftSpending())
     ->setFee(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/blockchain/auction/approve

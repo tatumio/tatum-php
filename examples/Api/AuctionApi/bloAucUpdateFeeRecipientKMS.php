@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_update_fee_recipient_kms = (new \Tatum\Model\UpdateFeeRecipientKMS())
     
     // Blockchain to work with.
@@ -41,9 +44,6 @@ $arg_update_fee_recipient_kms = (new \Tatum\Model\UpdateFeeRecipientKMS())
     ->setFee(null);
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * PUT /v3/blockchain/auction/recipient

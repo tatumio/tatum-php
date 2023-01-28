@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_flow_create_address_from_pub_key_secret = (new \Tatum\Model\FlowCreateAddressFromPubKeySecret())
     
     // Blockchain account to send from
@@ -29,9 +32,6 @@ $arg_flow_create_address_from_pub_key_secret = (new \Tatum\Model\FlowCreateAddre
     ->setPrivateKey('37afa218d41d9cd6a2c6f2b96d9eaa3ad96c598252bc50e4d45d62f9356a51f8');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/flow/account

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_deploy_nft_tron = (new \Tatum\Model\DeployNftTron())
     
     // The blockchain to work with
@@ -38,9 +41,6 @@ $arg_deploy_nft_tron = (new \Tatum\Model\DeployNftTron())
 $arg_x_testnet_type = 'ethereum-sepolia';
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/nft/deploy

@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_create_xlm_asset = (new \Tatum\Model\CreateXlmAsset())
     
     // Blockchain address of the issuer of the assets.
@@ -29,9 +32,6 @@ $arg_create_xlm_asset = (new \Tatum\Model\CreateXlmAsset())
     ->setBasePair('EUR');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/xlm/asset

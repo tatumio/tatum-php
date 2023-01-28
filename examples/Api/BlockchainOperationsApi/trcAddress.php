@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_trc_address = (new \Tatum\Model\TrcAddress())
     
     // The name of the token; used as an identifier within the Tatum platform and as a currency symbol o...
@@ -53,9 +56,6 @@ $arg_trc_address = (new \Tatum\Model\TrcAddress())
     ->setAccountingCurrency('USD');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/offchain/tron/trc

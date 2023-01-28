@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_broadcast = (new \Tatum\Model\Broadcast())
     
     // Raw signed transaction to be published to network.
@@ -26,9 +29,6 @@ $arg_broadcast = (new \Tatum\Model\Broadcast())
     ->setSignatureId('5e68c66581f2ee32bc354087');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/bnb/broadcast

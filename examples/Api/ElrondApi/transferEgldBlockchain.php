@@ -17,6 +17,9 @@ require_once dirname(__DIR__, 3) . "/autoload.php";
 // Set your API Keys 👇 here
 $sdk = new \Tatum\Sdk();
 
+// 🐛 Enable debugging on the MainNet
+$sdk->mainnet()->config()->setDebug(true);
+
 $arg_transfer_egld_blockchain = (new \Tatum\Model\TransferEgldBlockchain())
     
     // Account address of the sender
@@ -38,9 +41,6 @@ $arg_transfer_egld_blockchain = (new \Tatum\Model\TransferEgldBlockchain())
     ->setFromPrivateKey('0cd8e6217b4a218807b858ffb508483cdcdadbb7a21196727f764a510a692760');
 
 try {
-
-    // 🐛 Enable debugging on the MainNet
-    $sdk->mainnet()->config()->setDebug(true);
 
     /**
      * POST /v3/egld/transaction
