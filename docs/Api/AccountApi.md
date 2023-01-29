@@ -48,8 +48,9 @@ Method | Description
 
 ### Example
 
-{: .important }
-> [👉 View "**activateAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php){: .btn .btn-primary .fs-5 .mb-4}
+{: .new }
+> View example
+> ["**activateAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php){: .btn .btn-primary .fs-5 .mb-4}
 
 ### Request
 
@@ -89,8 +90,9 @@ Activates an account.
 
 ### Example
 
-{: .important }
-> [👉 View "**blockAmount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php){: .btn .btn-primary .fs-5 .mb-4}
+{: .highlight }
+> View example
+> ["**blockAmount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php){: .btn .btn-primary .fs-5 .mb-4}
 
 ### Request
 
@@ -132,7 +134,10 @@ Block an amount in an account
 
 ### Example
 
-[👉 View "**createAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccount.php)
+{: .new-title }
+> View example
+> 
+> ["**createAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/createAccount.php){: .btn .btn-primary .fs-5 .mb-4}
 
 ### Request
 
