@@ -48,7 +48,8 @@ Method | Description
 
 ### Example
 
-[👉 View "**activateAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php)
+{: .important }
+> [👉 View "**activateAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/activateAccount.php){: .btn .btn-primary .fs-5 .mb-4}
 
 ### Request
 
@@ -88,7 +89,8 @@ Activates an account.
 
 ### Example
 
-[👉 View "**blockAmount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php)
+{: .important }
+> [👉 View "**blockAmount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AccountApi/blockAmount.php){: .btn .btn-primary .fs-5 .mb-4}
 
 ### Request
 
