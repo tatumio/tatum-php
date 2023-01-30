@@ -69,7 +69,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Activated customer is able to do any operation.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -114,7 +113,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Deactivate customer is not able to do any operation. Customer can be deactivated only when all their accounts are already deactivated.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -159,7 +157,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Disabled customer cannot perform end-user operations, such as create new accounts or send transactions. Available balance on all accounts is set to 0\. Account balance will stay untouched.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -204,7 +201,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Enabled customer can perform all operations. By default all customers are enabled. All previously blocked account balances will be unblocked.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -251,7 +247,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 List of all customers. Also inactive an disabled customers are present.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -296,7 +291,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Using anonymized external ID or internal customer ID you can access customer detail information. Internal ID is needed to call other customer related methods.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -343,7 +337,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
 This method is helpful in case your primary system will change ID's or customer will change the country he/she is supposed to be in compliance with.
 
 [Back to top](#top){: .btn .btn-purple }

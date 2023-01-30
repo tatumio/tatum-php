@@ -83,12 +83,9 @@ Name | Type | Description  | Notes
 
 #### 100 credits per API call. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.
 
- 
 Add public key to existing Flow blockchain addresses. Private key for that public key can be used for signing transaction. There are two possibilites how the transaction on the blockchain can be created: 
 * Using mnemonic and index - private key is generated based on the index in the mnemonic.
 * Using secret - private keys is entered manually.
- 
- 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -259,12 +256,9 @@ Name | Type | Description  | Notes
 
 #### 100 credits per API call. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.
 
- 
 Create Flow blockchain addresses from public key. This will generate address on the blockchain with public key. Private key for that public key can be used for signing transaction. There are two possibilites how the transaction on the blockchain can be created: 
 * Using mnemonic and index - private key is generated based on the index in the mnemonic.
 * Using secret - private keys is entered manually.
- 
- 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -393,13 +387,9 @@ Name | Type | Description  | Notes
 
 #### 100 credits per API call.
 
- 
-Send arbitrary blockchain transaction to FLOW blockchain. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans. 
- There are two possibilites how the transaction on the blockchain can be created: 
+Send arbitrary blockchain transaction to FLOW blockchain. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans. There are two possibilites how the transaction on the blockchain can be created: 
 * Using mnemonic and index - private key is generated based on the index in the mnemonic.
 * Using secret - private keys is entered manually.
- 
- 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -488,9 +478,7 @@ Name | Type | Description  | Notes
 
 #### 1 credit for GET operation + 3000 credits per address.
 
- 
-Generate Flow address from Extended public key. This operation internally creates public key and assings it to the newly created address on the blockchain. There is minimal amount, which must be sent to the FLOW address during creation - 0.001 FLOW, which will be used from Tatum service account. 
-**This operation is allowed on any Testnet plan and only on Paid Mainnet plans.** Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
+Generate Flow address from Extended public key. This operation internally creates public key and assings it to the newly created address on the blockchain. There is minimal amount, which must be sent to the FLOW address during creation - 0.001 FLOW, which will be used from Tatum service account.**This operation is allowed on any Testnet plan and only on Paid Mainnet plans.** Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -536,7 +524,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Generate Flow public key from Extended public key. This key is added to the address on the blockchain and can control the funds there. Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -581,7 +568,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
 Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -626,9 +612,7 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
-Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
-Each address is identified by 3 main values:
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. Each address is identified by 3 main values:
 * Private Key - your secret value, which should never be revealed
 * Public Key - public address to be published
 * Derivation index - index of generated address
@@ -677,7 +661,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Flow account details.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -722,7 +705,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Flow Block detail by block hash or height.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -763,7 +745,6 @@ This endpoint does not need any parameter.
 
 #### 1 credit per API call.
 
- 
 Get Flow current block number.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -812,7 +793,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Flow events from block.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -857,7 +837,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Flow Transaction detail by transaction hash.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -944,13 +923,9 @@ Name | Type | Description  | Notes
 
 #### 100 credits per API call.
 
- 
-Send Flow or FUSD to blockchain addresses. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans. 
- There are two possibilites how the transaction on the blockchain can be created: 
+Send Flow or FUSD to blockchain addresses. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans. There are two possibilites how the transaction on the blockchain can be created: 
 * Using mnemonic and index - private key is generated based on the index in the mnemonic.
 * Using secret - private keys is entered manually.
- 
- 
  This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }

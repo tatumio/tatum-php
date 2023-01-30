@@ -74,10 +74,7 @@ Name | Type | Description  | Notes
 
 #### 10 credits per API call.
 
- 
-Send VET from account to account. Fee for the transaction is paid in VTHO. 
- 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+Send VET from account to account. Fee for the transaction is paid in VTHO. This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -163,7 +160,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Broadcast signed transaction to VeChain blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -210,7 +206,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Generate VeChain account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -255,7 +250,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -300,9 +294,7 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
-Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
-Each address is identified by 3 main values:
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. Each address is identified by 3 main values:
 * Private Key - your secret value, which should never be revealed
 * Public Key - public address to be published
 * Derivation index - index of generated address
@@ -351,7 +343,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get VeChain Account balance in VET.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -396,7 +387,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get VeChain Block by block hash or block number.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -437,7 +427,6 @@ This endpoint does not need any parameter.
 
 #### 5 credits per API call.
 
- 
 Get VeChain current block number.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -482,7 +471,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get VeChain Account energy in VTHO. VTHO is used for paying for the transaction fee.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -527,7 +515,6 @@ Name | Type | Description  | Notes
 
 #### 10 credits per API call.
 
- 
 Get VeChain Transaction by transaction hash.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -572,7 +559,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get VeChain Transaction Receipt by transaction hash. Transaction receipt is available only after transaction is included in the block and contains information about paid fee or created contract address and much more.
 
 [Back to top](#top){: .btn .btn-purple }

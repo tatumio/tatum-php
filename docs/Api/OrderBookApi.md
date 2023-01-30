@@ -72,7 +72,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits for API call.
 
- 
 Obtain data from the closed trades for entering in the chart. Time interval is set between _from_ and _to_ and there is defined time frame. There can be obtained at most 200 time points in the time interval.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -159,9 +158,7 @@ Name | Type | Description  | Notes
 
 #### 2 credits for API call, 2 credits for each fill of the counter trade. 1 API call + 2 fills = 6 credits.
 
- 
-Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible. 
- It is possible to charge fees for the trades. Fees are an extra amount on top of the trade amount and are paid in the currency that you going to block e.g.: - BUY BTC/USDT - fees will be paid in USDT - SELL BTC/ETH - fees will be paid in BTC 
+Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible. It is possible to charge fees for the trades. Fees are an extra amount on top of the trade amount and are paid in the currency that you going to block e.g.: - BUY BTC/USDT - fees will be paid in USDT - SELL BTC/ETH - fees will be paid in BTC 
 
  If you fill type of the trade with FUTURE\_BUY or FUTURE\_SELL the trade will behave as a trade future. The trade is concluded now but will be fulfilled in future. The date of fulfillment is by the “Seal Date” field. You can also block a percentage of the amount until the future trade has expired. 
 
@@ -229,7 +226,6 @@ void (empty response body)
 
 #### 1 credit for API call, 1 credit for each cancelled trade. 1 API call + 2 cancellations = 3 credits.
 
- 
 Cancel all trades for account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -274,7 +270,6 @@ void (empty response body)
 
 #### 1 credit for API call
 
- 
 Cancel existing trade.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -319,7 +314,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 List all active buy trades.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -364,7 +358,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -409,7 +402,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 List all matched orders from the FUTURE\_BUY OR FUTURE\_SELL orders.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -454,7 +446,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 List all active sell trades.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -499,7 +490,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit for API call
 
- 
 Get existing opened trade.
 
 [Back to top](#top){: .btn .btn-purple }

@@ -63,10 +63,8 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Check, if the blockchain address is malicous. Malicous address can contain assets from the DarkWeb, is connected to the scam projects or contains stolen funds.
 
- 
 Supported Chains: ETH, BTC, LTC
 
 [Back to top](#top){: .btn .btn-purple }

@@ -68,8 +68,7 @@ Name | Type | Description  | Notes
 
 Store data on the blockchain.
 
-The total cost of a transaction on Ethereum (in credits) depends on the size of the data. The data is stored as a string in the hexadecimal format, and the maximum size of the data is approximately 130 kB on the mainnet and 30 kB on testnet. Every 5 characters cost 1 credit. 
- Therefore, one API call with 1 kB of data (1024 characters) would cost 205 credits.
+The total cost of a transaction on Ethereum (in credits) depends on the size of the data. The data is stored as a string in the hexadecimal format, and the maximum size of the data is approximately 130 kB on the mainnet and 30 kB on testnet. Every 5 characters cost 1 credit. Therefore, one API call with 1 kB of data (1024 characters) would cost 205 credits.
 
 This API is supported for the following blockchains:
 

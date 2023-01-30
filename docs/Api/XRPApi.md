@@ -79,10 +79,7 @@ Name | Type | Description  | Notes
 
 #### 10 credits per API call.
 
- 
-Modify XRP account settings. If an XRP account should be an issuer of the custom asset, this accounts should have rippling enabled to true. In order to support off-chain processing, required destination tag should be set on the account. 
- 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+Modify XRP account settings. If an XRP account should be an issuer of the custom asset, this accounts should have rippling enabled to true. In order to support off-chain processing, required destination tag should be set on the account. This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -168,10 +165,7 @@ Name | Type | Description  | Notes
 
 #### 10 credits per API call.
 
- 
-Send XRP from account to account. 
- 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+Send XRP from account to account. This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -341,11 +335,7 @@ Name | Type | Description  | Notes
 
 #### 10 credits per API call.
 
- 
-Create / Update / Delete XRP trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions. 
- Account setting rippling must be enabled on the issuer account before the trust line creation to asset work correctly. Creating a trust line will cause an additional 5 XRP to be blocked on the account. 
- 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+Create / Update / Delete XRP trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions. Account setting rippling must be enabled on the issuer account before the trust line creation to asset work correctly. Creating a trust line will cause an additional 5 XRP to be blocked on the account. This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -431,7 +421,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Broadcast signed transaction to XRP blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -476,7 +465,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get XRP Account Balance. Obtain balance of the XRP and other assets on the account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -521,7 +509,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get XRP Account info.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -570,7 +557,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 List all Account transactions.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -611,7 +597,6 @@ This endpoint does not need any parameter.
 
 #### 5 credits per API call.
 
- 
 Get XRP Blockchain fee. Standard fee for the transaction is available in the drops.base\_fee section and is 10 XRP drops by default. When there is a heavy traffic on the blockchain, fees are increasing according to current traffic.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -652,7 +637,6 @@ This endpoint does not need any parameter.
 
 #### 5 credits per API call.
 
- 
 Get XRP Blockchain last closed ledger index and hash.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -697,7 +681,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get ledger by sequence.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -742,7 +725,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get XRP Transaction by transaction hash.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -783,7 +765,6 @@ This endpoint does not need any parameter.
 
 #### 5 credits per API call.
 
- 
 Generate XRP account. Tatum does not support HD wallet for XRP, only specific address and private key can be generated.
 
 [Back to top](#top){: .btn .btn-purple }

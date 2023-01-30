@@ -69,7 +69,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Mark pending transaction to sign as a complete and update it with a transactionID from the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -116,7 +115,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Delete transaction to be signed. When deleting offchain transaction, linked withdrawal will be cancelled automatically.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -161,7 +159,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get detail of transaction to be signed / that was already signed and contains transactionId.
 
 [Back to top](#top){: .btn .btn-purple }

@@ -204,8 +204,7 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**Signing a transaction** 
- When allowing a blockchain address to transfer and burn fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When allowing a blockchain address to transfer and burn fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -401,8 +400,7 @@ This API is supported for the following blockchains:
 * Polygon
 * XinFin
 
-**Signing a transaction** 
- When burning fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When burning fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -760,8 +758,7 @@ Name | Type | Description  | Notes
 
 **2 credits per API call**
 
-Deploy a fungible token smart contract on the blockchain. In a deployed smart contract, you can mint and burn fungible tokens. The whole supply of fungible tokens (the `supply` parameter in the request body) will be transferred to the specified blockchain address (the `address` parameter in the request body). 
- Smart contracts are standardized and audited.
+Deploy a fungible token smart contract on the blockchain. In a deployed smart contract, you can mint and burn fungible tokens. The whole supply of fungible tokens (the `supply` parameter in the request body) will be transferred to the specified blockchain address (the `address` parameter in the request body). Smart contracts are standardized and audited.
 
 This API is supported for the following blockchains:
 
@@ -778,8 +775,7 @@ This API is supported for the following blockchains:
 
 You can review the code of a deployed smart contract [here](https://github.com/tatumio/tatum-middleware/blob/master/src/contracts/token.sol).
 
-**Signing a transaction** 
- When deploying a fungible token smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When deploying a fungible token smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -1150,8 +1146,7 @@ This API is supported for the following blockchains:
 * Polygon
 * XinFin
 
-**Signing a transaction** 
- When minting fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When minting fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -1597,8 +1592,7 @@ Name | Type | Description  | Notes
 
 **2 credits per API call**
 
-Transfer a supply of fungible tokens existing in the smart contract (the `contractAddress` parameter in the request body) to the specified blockchain address (the `to` parameter in the request body). 
- Transferring fungible tokens invokes the `transfer()` method.
+Transfer a supply of fungible tokens existing in the smart contract (the `contractAddress` parameter in the request body) to the specified blockchain address (the `to` parameter in the request body). Transferring fungible tokens invokes the `transfer()` method.
 
 This API is supported for the following blockchains:
 
@@ -1613,11 +1607,9 @@ This API is supported for the following blockchains:
 * Solana
 * XinFin
 
-**Transferring fungible tokens on Algorand** 
- On Algorand, the recipient has to agree in advance to receive your fungible tokens because Algorand charges users for storing the tokens on their addresses, and an Algorand blockchain address by default does not receive the tokens unless explicitly agreed. Before transferring the fungible tokens, make sure that the recipient [has agreed to receive the NFT](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset) to their address.
+**Transferring fungible tokens on Algorand** On Algorand, the recipient has to agree in advance to receive your fungible tokens because Algorand charges users for storing the tokens on their addresses, and an Algorand blockchain address by default does not receive the tokens unless explicitly agreed. Before transferring the fungible tokens, make sure that the recipient [has agreed to receive the NFT](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset) to their address.
 
-**Blockchain-specific APIs to transfer fungible tokens** 
- You can also use blockchain-specific APIs for transferring fungible tokens on the following blockchains: 
+**Blockchain-specific APIs to transfer fungible tokens** You can also use blockchain-specific APIs for transferring fungible tokens on the following blockchains: 
 * [BNB Smart Chain](https://apidoc.tatum.io/tag/BNB-Smart-Chain#operation/BscBlockchainTransfer)
 * [Celo](https://apidoc.tatum.io/tag/Celo#operation/CeloBlockchainTransfer)
 * [Ethereum](https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer)
@@ -1626,8 +1618,7 @@ This API is supported for the following blockchains:
 * [Polygon](https://apidoc.tatum.io/tag/Polygon#operation/PolygonBlockchainTransfer)
 * [XinFin](https://apidoc.tatum.io/tag/XinFin#operation/XdcBlockchainTransfer)
 
-**Signing a transaction** 
- When transferring fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When transferring fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 

@@ -70,7 +70,6 @@ Name | Type | Description  | Notes
 
 #### 10 credits per API call.
 
- 
 Broadcast signed custom transactions to Solana blockchain and waits for transaction confirmation depending on the commitment given. More information about commitment levels [here](https://docs.solana.com/ru/developing/clients/jsonrpc-api#configuring-state-commitment)
 
 [Back to top](#top){: .btn .btn-purple }
@@ -111,7 +110,6 @@ This endpoint does not need any parameter.
 
 #### 1 credit per API call.
 
- 
 Generate Solana private key and account address.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -156,7 +154,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Solana account balance in SOL. This method does not prints any balance of the SPL or NFT tokens on the account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -201,9 +198,7 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
-Get Solana block by block hash or block number. 
- You can find full data description here - [https://docs.solana.com/developing/clients/jsonrpc-api#getblock](https://docs.solana.com/developing/clients/jsonrpc-api#getblock)
+Get Solana block by block hash or block number. You can find full data description here - [https://docs.solana.com/developing/clients/jsonrpc-api#getblock](https://docs.solana.com/developing/clients/jsonrpc-api#getblock)
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -243,7 +238,6 @@ This endpoint does not need any parameter.
 
 #### 1 credit per API call.
 
- 
 Get Solana current block number. This is the number of the latest block in the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -290,9 +284,7 @@ Name | Type | Description  | Notes
 
 #### 2 credit per API call.
 
- 
-Get Solana transaction by transaction hash. 
- You can find full data description here - [https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction](https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction)
+Get Solana transaction by transaction hash. You can find full data description here - [https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction](https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction)
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -336,10 +328,7 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
-Send SOL from account to account. 
- 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+Send SOL from account to account. This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
 

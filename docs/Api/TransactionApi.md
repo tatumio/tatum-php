@@ -74,7 +74,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Find transactions across whole ledger.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -125,7 +124,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Finds transactions for the account identified by the given account ID.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -176,7 +174,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Finds transactions for all accounts of the customer identified by the given internal customer ID.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -221,7 +218,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Finds transactions for all accounts with the given reference.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -266,13 +262,7 @@ Name | Type | Description  | Notes
 
 #### 4 credits per API call.
 
- 
-Sends a payment within Tatum Private Ledger. All assets are settled instantly. 
- When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them. 
- This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses. 
- If there is an insufficient balance in the sender account, no transaction is recorded. 
- It is possible to perform an anonymous transaction where the sender account is not visible for the recipient. 
- The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
+Sends a payment within Tatum Private Ledger. All assets are settled instantly. When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them. This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses. If there is an insufficient balance in the sender account, no transaction is recorded. It is possible to perform an anonymous transaction where the sender account is not visible for the recipient. The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -316,13 +306,7 @@ Name | Type | Description  | Notes
 
 #### 2 + 2 \* N per API call. (N - count of transactions)
 
- 
-Sends the N payments within Tatum Private Ledger. All assets are settled instantly. 
- When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them. 
- This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses. 
- If there is an insufficient balance in the sender account, no transaction is recorded. 
- It is possible to perform an anonymous transaction where the sender account is not visible for the recipient. 
- The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
+Sends the N payments within Tatum Private Ledger. All assets are settled instantly. When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them. This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses. If there is an insufficient balance in the sender account, no transaction is recorded. It is possible to perform an anonymous transaction where the sender account is not visible for the recipient. The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
 
 [Back to top](#top){: .btn .btn-purple }
 

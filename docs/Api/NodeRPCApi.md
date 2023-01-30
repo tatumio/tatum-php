@@ -75,11 +75,7 @@ Name | Type | Description  | Notes
 
 > Connect to the blockchain node through an RPC driver
 
-**The number of credits consumed depends on the number of methods submitted in an API call:** 
- **\* 50 credits per debug\*\_/trace\* method (for EVM-based blockchains)** 
- **\* 50 credits per EOS [Trace API](https://developers.eos.io/manuals/eos/v2.0/nodeos/plugins/trace%5Fapi%5Fplugin/api-reference/index) methods** 
- **\* 5 credits per eth\_call method (for EVM-based blockchains)** 
- **\* 2 credits per any other RPC method**
+**The number of credits consumed depends on the number of methods submitted in an API call: \* 50 credits per debug\*\_/trace\* method (for EVM-based blockchains) \* 50 credits per EOS [Trace API](https://developers.eos.io/manuals/eos/v2.0/nodeos/plugins/trace%5Fapi%5Fplugin/api-reference/index) methods \* 5 credits per eth\_call method (for EVM-based blockchains) \* 2 credits per any other RPC method**
 
 Connect directly to the blockchain node provided by Tatum.
 

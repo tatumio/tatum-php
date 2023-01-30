@@ -131,16 +131,13 @@ You can call a read-only or write method.
 * For **read-only** methods, the output of the invoked method is returned.
 * For **write** methods, the ID of the associated transaction is returned.
 
-**Troubleshooting a failed transaction** 
- Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). 
-However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
+**Troubleshooting a failed transaction** Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
 If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
 For more information about invoking methods in smart contracts, see [this article](https://support.tatum.io/support/solutions/articles/80001052441) on our Support Portal.
 
-**Signing a transaction** 
- When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -282,7 +279,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Generates an Ethereum account deposit address from an Extended public key. The deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -329,7 +325,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Generates the private key of an address from a mnemonic for a given derivation path index. The private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -376,9 +371,7 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
-Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from 1 mnemonic phrase, they are very convenient and secure. A mnemonic phrase consists of 24 special words in a defined order and can restore access to all generated addresses and private keys. 
-Each address is identified by 3 main values:
+Tatum supports BIP44 HD wallets. Because they can generate 2^31 addresses from 1 mnemonic phrase, they are very convenient and secure. A mnemonic phrase consists of 24 special words in a defined order and can restore access to all generated addresses and private keys. Each address is identified by 3 main values:
 * Private Key - your secret value which should never be revealed
 * Public Key - a public address to be published
 * Derivation index - an index of generated address
@@ -477,7 +470,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Gets an Ethereum block-by-block hash or block number.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -522,7 +514,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Gets the current Ethereum block number. This is the number of the latest block in the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -573,7 +564,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Ethereum internal transactions by address.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -676,7 +666,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Ethereum transactions by address. This includes incoming and outgoing transactions for the address.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -723,7 +712,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get a number of outgoing Ethereum transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -774,8 +762,7 @@ Send ETH or Tatum-supported fungible tokens (ERC-20) from account to account.
 
 **NOTE:** Sending the fungible tokens is supported only on the mainnet.
 
-**Signing a transaction** 
- When sending ETH, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When sending ETH, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 

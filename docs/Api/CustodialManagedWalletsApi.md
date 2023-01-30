@@ -67,9 +67,7 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call, 10 credits for each managed wallet every day.
 
- 
-Create new managed address for a specific chain. If the address is mainnet or testnet one depends on the API Key - testnet API Key manages testnet addresses, mainnet API Key manages mainnet addresses. Result of the operation is address and walletId, which is used for identifying the wallet later on and/or exporting the private key if needed. 
- Free users can manage only 10 addresses per API Key.
+Create new managed address for a specific chain. If the address is mainnet or testnet one depends on the API Key - testnet API Key manages testnet addresses, mainnet API Key manages mainnet addresses. Result of the operation is address and walletId, which is used for identifying the wallet later on and/or exporting the private key if needed. Free users can manage only 10 addresses per API Key.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -113,7 +111,6 @@ void (empty response body)
 
 #### 1 credit per API call.
 
- 
 Delete managed address. Once deleted, the address won't be charged in a daily credit usage, but it **won't be possible to get the private key** for it.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -160,7 +157,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get managed address for an API Key. It's possible to export the private key, if query parameter **export** is set to true.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -201,7 +197,6 @@ This endpoint does not need any parameter.
 
 #### 1 credit per API call.
 
- 
 Get all managed addresses for an API Key.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -246,26 +241,19 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call, additional credits are charged for each gas covered operation.
 
- 
-Sign transaction and transfer assets from a custodial managed address. 
- Supported chains: 
+Sign transaction and transfer assets from a custodial managed address. Supported chains: 
 * **Solana**
- 
- Logic for **Solana** 
- In Solana, it's possible to cover the fees connected to any arbitrary transaction by a third party. Tatum can cover these fees for any transaction on the Solana blockchain - transfer of SOL, SPL tokens, minting or transferring NFTs or invoking programs. In order to do this, Tatum fee address must be used as a feePayer address during transaction creation: 
+ Logic for **Solana** In Solana, it's possible to cover the fees connected to any arbitrary transaction by a third party. Tatum can cover these fees for any transaction on the Solana blockchain - transfer of SOL, SPL tokens, minting or transferring NFTs or invoking programs. In order to do this, Tatum fee address must be used as a feePayer address during transaction creation: 
+
+---
 
 | **Mainnet address** | **Devnet address** | |
 | ------------------- | -------------------------------------------- | -------------------------------------------- |
 | **Address** | DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF | DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF |
 
- Once transaction is constructed using [Solana SDK](https://github.com/solana-labs/solana-web3.js/), it can be serialized to HEX data string, which is then passed to the API and signed. 
- Transaction could require multiple private keys for signing - fee payer, sender of the SOL assets, minting key during NFT mint operation etc. Some of the keys are used in Tatum - fee payer, or, in case of managed wallet holding SOL assets, the key of that managed wallet - those must be referenced in a list of walletIds to be used. For external keys, which are not managed by Tatum, those could either sign the transaction before it's serialization, or could be passed to the API in it's raw form - this is OK only for keys, which could be exposed and there is no harm of loosing assets on them. 
- How to partially sign the transaction could be found [here](https://solanacookbook.com/references/offline-transactions.html#partial-sign-transaction). 
-**Fee payer key is used by default, doesn't have to be mentioned in the list of wallets used for signing.** 
- 
-**Examples of different transaction payloads.** 
- 
- 1\. Send SOL from account HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 to FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU 
+---
+
+ Once transaction is constructed using [Solana SDK](https://github.com/solana-labs/solana-web3.js/), it can be serialized to HEX data string, which is then passed to the API and signed. Transaction could require multiple private keys for signing - fee payer, sender of the SOL assets, minting key during NFT mint operation etc. Some of the keys are used in Tatum - fee payer, or, in case of managed wallet holding SOL assets, the key of that managed wallet - those must be referenced in a list of walletIds to be used. For external keys, which are not managed by Tatum, those could either sign the transaction before it's serialization, or could be passed to the API in it's raw form - this is OK only for keys, which could be exposed and there is no harm of loosing assets on them. How to partially sign the transaction could be found [here](https://solanacookbook.com/references/offline-transactions.html#partial-sign-transaction).**Fee payer key is used by default, doesn't have to be mentioned in the list of wallets used for signing.** **Examples of different transaction payloads.** 1\. Send SOL from account HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 to FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU 
 
  import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction, Connection } from '@solana/web3.js' const connection = new Connection('https://api.tatum.io/v3/blockchain/node/SOL') const from = 'HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58' const to = 'FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU' const amount = '0.000001' const devnet_fee_payer = '5zPr5331CtBjgVeLedhmJPEpFaUsorLCnb3aCQPsUc9w' const fromPubkey = new PublicKey(from) const transaction = new Transaction({ feePayer: new PublicKey(devnet_fee_payer) }) transaction.add( SystemProgram.transfer({ fromPubkey: fromPubkey, toPubkey: new PublicKey(to), lamports: new BigNumber(amount).multipliedBy(LAMPORTS_PER_SOL).toNumber(), }), ) const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('finalized') transaction.recentBlockhash = blockhash transaction.lastValidBlockHeight = lastValidBlockHeight transaction.partialSign(...signers) return transaction.serialize({ requireAllSignatures: false }).toString('hex') 
 

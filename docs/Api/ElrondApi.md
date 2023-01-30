@@ -70,7 +70,6 @@ This endpoint does not need any parameter.
 
 #### 1 credit per API call.
 
- 
 Get EGLD current block number. This is the number of the latest block in the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -115,7 +114,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
 Broadcast signed transaction to EGLD blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -162,7 +160,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Generate EGLD account deposit address from mnemonic phrase. Deposit address is generated for the specific index - each mnemonic phrase can generate up to 2^31 addresses starting from index 0 until 2^31.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -207,7 +204,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -252,9 +248,7 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
-The Elrond Address format is bech32, specified by the BIP 0173\. The address always starts with an erd1\. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
- Each address is identified by 3 main values: 
+The Elrond Address format is bech32, specified by the BIP 0173\. The address always starts with an erd1\. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. Each address is identified by 3 main values: 
 * Private Key - your secret value, which should never be revealed
 * Public Key - public address to be published
 * Derivation index - index of generated address
@@ -303,7 +297,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get account balance in EGLD.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -348,7 +341,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get EGLD block by block hash or block number. [ EGLD docs ](https://docs.elrond.com/sdk-and-tools/rest-api/blocks/)
 
 [Back to top](#top){: .btn .btn-purple }
@@ -393,7 +385,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get EGLD transaction by transaction hash. Detail result please find here [ EGLD docs ](https://docs.elrond.com/sdk-and-tools/rest-api/transactions/#get-transaction)
 
 [Back to top](#top){: .btn .btn-purple }
@@ -438,7 +429,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 This endpoint allows one to retrieve the latest 20 transactions sent from an address.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -483,7 +473,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get a number of outgoing EGLD transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -528,10 +517,7 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
-Send EGLD from account to account. 
- 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on devnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+Send EGLD from account to account. This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on devnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
 

@@ -71,7 +71,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Broadcast signed transaction to Binance blockchain. This method is used internally or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -112,7 +111,6 @@ This endpoint does not need any parameter.
 
 #### 5 credits per API call.
 
- 
 Generate BNB account. Tatum does not support HD wallet for BNB, only specific address and private key can be generated.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -157,7 +155,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get Binance Account Detail by address.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -202,7 +199,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get Transactions in block by block height.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -243,7 +239,6 @@ This endpoint does not need any parameter.
 
 #### 5 credits per API call.
 
- 
 Get Binance current block number.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -288,7 +283,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get Binance Transaction by transaction hash.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -345,7 +339,6 @@ Name | Type | Description  | Notes
 
 #### 5 credits per API call.
 
- 
 Get Binance Transactions by address.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -390,10 +383,7 @@ Name | Type | Description  | Notes
 
 #### 10 credits per API call.
 
- 
-Send Binance or Binance Token token from account to account. 
- 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+Send Binance or Binance Token token from account to account. This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
 

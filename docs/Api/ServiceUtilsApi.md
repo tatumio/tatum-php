@@ -62,7 +62,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Freeze the API Key. It's not possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage. Only read operations are permitted.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -143,7 +142,6 @@ This endpoint does not need any parameter.
 
 #### 1 credit per API call.
 
- 
 Get current version of the API.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -184,7 +182,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Unfreeze the API Key. It's possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage again.
 
 [Back to top](#top){: .btn .btn-purple }

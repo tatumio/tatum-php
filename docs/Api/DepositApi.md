@@ -78,7 +78,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Lists all deposits for API key.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -137,7 +136,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Counts total entities found by get deposits request.
 
 [Back to top](#top){: .btn .btn-purple }

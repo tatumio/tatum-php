@@ -64,7 +64,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Gets data from the IPFS.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -109,7 +108,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call. Only files up to 50MB are available for storing.
 
- 
 Stores file on the IPFS. We are leveraging [nft.storage](https://nft.storage/) from [Protocol Labs](https://protocol.ai/) for free storage on the IPFS.
 
 [Back to top](#top){: .btn .btn-purple }

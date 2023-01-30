@@ -67,7 +67,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
 Broadcast signed raw transaction end complete withdrawal associated with it. When broadcast succeeded but it is impossible to complete withdrawal, transaction id of transaction is returned and withdrawal must be completed manually.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -114,9 +113,7 @@ void (empty response body)
 
 #### 1 credit per API call.
 
- 
-This method is helpful if you need to cancel the withdrawal if the blockchain transaction fails or is not yet processed. This does not cancel already broadcast blockchain transaction, only Tatum internal withdrawal, and the ledger transaction, that was linked to this withdrawal. 
- By default, the transaction fee is included in the reverted transaction. There are situations, like sending ERC20 on ETH, TRC token on TRON, XLM or XRP based assets, when the fee should not be reverted, because e.g. the fee is in calculated in Ethereum and transaction was in ERC20 currency. In this situation, only the transaction amount should be reverted, not the fee.
+This method is helpful if you need to cancel the withdrawal if the blockchain transaction fails or is not yet processed. This does not cancel already broadcast blockchain transaction, only Tatum internal withdrawal, and the ledger transaction, that was linked to this withdrawal. By default, the transaction fee is included in the reverted transaction. There are situations, like sending ERC20 on ETH, TRC token on TRON, XLM or XRP based assets, when the fee should not be reverted, because e.g. the fee is in calculated in Ethereum and transaction was in ERC20 currency. In this situation, only the transaction amount should be reverted, not the fee.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -162,7 +159,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Invoke complete withdrawal as soon as blockchain transaction ID is available. All other withdrawals for the same currency will be pending unless the last one is processed and marked as completed.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -213,7 +209,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get withdrawals.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -262,8 +257,7 @@ Create a withdrawal from Tatum Ledger account to the blockchain.
 
 #### BTC, LTC, DOGE, BCH
 
- When withdrawal from Tatum is executed, all deposits, which are not processed yet are used as an input and change is moved to pool address 0 of wallet for defined account's xpub. If there are no unspent deposits, only last pool address 0 UTXO is used. If balance of wallet is not sufficient, it is impossible to perform withdrawal from this account -> funds were transferred to another linked wallet within system or outside of Tatum visibility. 
- For the first time of withdrawal from wallet, there must be some deposit made and funds are obtained from that. Since there is no withdrawal, there was no transfer to pool address 0 and thus it is not present in vIn. Pool transfer is identified by missing data.address property in response. When last not cancelled withdrawal is not completed and thus there is no tx id of output transaction given, we cannot perform next withdrawal. 
+ When withdrawal from Tatum is executed, all deposits, which are not processed yet are used as an input and change is moved to pool address 0 of wallet for defined account's xpub. If there are no unspent deposits, only last pool address 0 UTXO is used. If balance of wallet is not sufficient, it is impossible to perform withdrawal from this account -> funds were transferred to another linked wallet within system or outside of Tatum visibility. For the first time of withdrawal from wallet, there must be some deposit made and funds are obtained from that. Since there is no withdrawal, there was no transfer to pool address 0 and thus it is not present in vIn. Pool transfer is identified by missing data.address property in response. When last not cancelled withdrawal is not completed and thus there is no tx id of output transaction given, we cannot perform next withdrawal. 
 
 #### ETH
 

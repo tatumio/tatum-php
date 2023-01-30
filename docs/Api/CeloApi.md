@@ -84,16 +84,13 @@ You can call a read-only or write method.
 * For **read-only** methods, the output of the invoked method is returned.
 * For **write** methods, the ID of the associated transaction is returned.
 
-**Troubleshooting a failed transaction** 
- Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). 
-However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
+**Troubleshooting a failed transaction** Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
 If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
 For more information about invoking methods in smart contracts, see [this article](https://support.tatum.io/support/solutions/articles/80001052441) on our Support Portal.
 
-**Signing a transaction** 
- When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -359,8 +356,7 @@ Name | Type | Description  | Notes
 
 **1 credit per API call**
 
-Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
-Each address is identified by 3 main values:
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. Each address is identified by 3 main values:
 * Private Key - your secret value, which should never be revealed
 * Public Key - public address to be published
 * Derivation index - index of generated address
@@ -679,8 +675,8 @@ Name | Type | Description  | Notes
 
 **2 credits per API call**
 
-Send Celo, cUSD or Tatum supported ERC20 token from account to account. 
- 
+Send Celo, cUSD or Tatum supported ERC20 token from account to account.
+
 **Signing a transaction**
 
 When sending CELO, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.

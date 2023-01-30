@@ -207,9 +207,7 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
-Destroy supply of virtual currency linked on the given accountId. Method decreases the total supply of the currency. 
- This method creates Ledger transaction with operationType REVOKE with undefined counterAccountId.
+Destroy supply of virtual currency linked on the given accountId. Method decreases the total supply of the currency. This method creates Ledger transaction with operationType REVOKE with undefined counterAccountId.
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -253,7 +251,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Change base pair and/or base rate of existing virtual currency.
 
 [Back to top](#top){: .btn .btn-purple }

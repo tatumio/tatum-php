@@ -97,8 +97,7 @@ Name | Type | Description  | Notes
 
 **2 credits per API call**
 
-Allow the NFT auction/marketplace smart contract to transfer the asset (NFT or Multi Token) that is listed for selling. 
-The auction/marketplace smart contract will transfer the asset to the buyer after the asset is purchased.
+Allow the NFT auction/marketplace smart contract to transfer the asset (NFT or Multi Token) that is listed for selling. The auction/marketplace smart contract will transfer the asset to the buyer after the asset is purchased.
 
 This API is supported for the following blockchains:
 
@@ -109,8 +108,7 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**Signing a transaction** 
- When allowing the NFT auction/marketplace smart contract to transfer the asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When allowing the NFT auction/marketplace smart contract to transfer the asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -304,13 +302,9 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**The "execution reverted" message** 
- When making this API call, you may get the following message: 
-`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
- This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
+**The "execution reverted" message** When making this API call, you may get the following message:`Although one or more Error Occurred [execution reverted] Contract Execution Completed` This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 
-**Signing a transaction** 
- When bidding for an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When bidding for an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -495,8 +489,7 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**Signing a transaction** 
- When updating the recipient of the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When updating the recipient of the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -685,13 +678,9 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**The "execution reverted" message** 
- When making this API call, you may get the following message: 
-`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
- This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
+**The "execution reverted" message** When making this API call, you may get the following message:`Although one or more Error Occurred [execution reverted] Contract Execution Completed` This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 
-**Signing a transaction** 
- When cancelling the selling of an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When cancelling the selling of an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -876,13 +865,9 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**A known issue on Harmony** 
- On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following: 
-`Error reverted:x0` 
- This is a known issue with the Harmony Blockchain Explorer. This status does not mean that the transaction failed. You can safely ignore it.
+**A known issue on Harmony** On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following:`Error reverted:x0` This is a known issue with the Harmony Blockchain Explorer. This status does not mean that the transaction failed. You can safely ignore it.
 
-**Signing a transaction** 
- When selling an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When selling an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -1056,8 +1041,7 @@ Name | Type | Description  | Notes
 
 **2 credits per API call**
 
-Deploy new smart contract for NFT auction logic. Smart contract enables auction operator to create new auction for NFT (ERC-721/1155). Operator can set a fee in percentage, which will be paid on top of the price of the asset. can be offered for native asset - ETH, BSC, etc. - or any ERC20 token - this is configurable during auction creation. Before auction is created, seller must approve transfer of the NFT to the auction contract. Buyer will bid for the asset from the auction using native asset - send assets along the gid() smart contract call, or via ERC20 token. Buyer of the auction must perform approval for the smart contract to access ERC20 token, before the actual bid() method is called. Once there is higher bid then the actual one, the previous bidder's funds will be returned to him and new bidder will be the current winning one. When auction ends, anyone can settle the auction - NFT will be sent to the bidder, assets to the seller and fee to the operator. 
- This operation deploys a smart contract on the blockchain.
+Deploy new smart contract for NFT auction logic. Smart contract enables auction operator to create new auction for NFT (ERC-721/1155). Operator can set a fee in percentage, which will be paid on top of the price of the asset. can be offered for native asset - ETH, BSC, etc. - or any ERC20 token - this is configurable during auction creation. Before auction is created, seller must approve transfer of the NFT to the auction contract. Buyer will bid for the asset from the auction using native asset - send assets along the gid() smart contract call, or via ERC20 token. Buyer of the auction must perform approval for the smart contract to access ERC20 token, before the actual bid() method is called. Once there is higher bid then the actual one, the previous bidder's funds will be returned to him and new bidder will be the current winning one. When auction ends, anyone can settle the auction - NFT will be sent to the bidder, assets to the seller and fee to the operator. This operation deploys a smart contract on the blockchain.
 
 This API is supported for the following blockchains:
 
@@ -1068,8 +1052,7 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**Signing a transaction** 
- When creating an NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When creating an NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -1407,8 +1390,7 @@ Name | Type | Description  | Notes
 
 **2 credits per API call**
 
-Settle an auction once it has ended and there is a buyer of the asset at this auction. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction. 
-Both seller and buyer can settle the auction.
+Settle an auction once it has ended and there is a buyer of the asset at this auction. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction. Both seller and buyer can settle the auction.
 
 This API is supported for the following blockchains:
 
@@ -1419,13 +1401,9 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**The "execution reverted" message** 
- When making this API call, you may get the following message: 
-`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
- This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
+**The "execution reverted" message** When making this API call, you may get the following message:`Although one or more Error Occurred [execution reverted] Contract Execution Completed` This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 
-**Signing a transaction** 
- When settling the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When settling the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -1610,8 +1588,7 @@ This API is supported for the following blockchains:
 * Klaytn
 * Polygon
 
-**Signing a transaction** 
- When updating the NFT auction fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When updating the NFT auction fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 

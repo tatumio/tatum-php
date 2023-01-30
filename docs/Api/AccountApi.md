@@ -81,7 +81,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Activates an account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -128,7 +127,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
 Blocks an amount in an account. Any number of distinct amounts can be blocked in one account. Every new blockage has its own distinct ID, which is used as a reference. When the amount is blocked, it is debited from the available balance of the account. The account balance remains the same. The account balance represents the total amount of funds in the account. The available balance represents the total amount of funds that can be used to perform transactions. When an account is frozen, the available balance is set to 0 minus all blockages for the account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -215,7 +213,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call + 1 credit for every account created.
 
- 
 Creates new accounts for the customer in a batch call.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -289,8 +286,7 @@ Not all blockchains provide `xpub` for wallets, or Tatum may not support wallets
 * **BTC:** Obtain `xpub` from the [generated wallet](https://apidoc.tatum.io/tag/Bitcoin#operation/BtcGenerateWallet) instead.
 * **CELO:** Obtain `xpub` from the [generated wallet](https://apidoc.tatum.io/tag/Celo#operation/CeloGenerateWallet).
 * **DOGE:** Obtain `xpub` from the [generated wallet](https://apidoc.tatum.io/tag/Dogecoin#operation/DogeGenerateWallet).
-* **EGLD:** No `xpub` provided; use `address` from the [generated blockchain address](https://apidoc.tatum.io/tag/Elrond#operation/EgldGenerateAddress) instead. 
-Blockchain addresses on Elrond are generated based on the mnemonic of an Elrond wallet. If you do not have an Elrond wallet, [create one](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGenerateWallet).
+* **EGLD:** No `xpub` provided; use `address` from the [generated blockchain address](https://apidoc.tatum.io/tag/Elrond#operation/EgldGenerateAddress) instead. Blockchain addresses on Elrond are generated based on the mnemonic of an Elrond wallet. If you do not have an Elrond wallet, [create one](https://apidoc.tatum.io/tag/Elrond/#operation/EgldGenerateWallet).
 * **ETH:** Obtain `xpub` from the [generated wallet](https://apidoc.tatum.io/tag/Ethereum#operation/EthGenerateWallet).
 * **FLOW:** Obtain `xpub` from the [generated wallet](https://apidoc.tatum.io/tag/Flow#operation/FlowGenerateWallet).
 * **KCS:** Obtain `xpub` from the [generated wallet](https://apidoc.tatum.io/tag/KuCoin#operation/KcsGenerateWallet).
@@ -352,7 +348,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Deactivates an account. Only accounts with account and available balances of zero can be deactivated. Deactivated accounts are not visible in the list of accounts, it is not possible to send funds to these accounts or perform transactions. However, they are still present in the ledger and all transaction histories.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -397,7 +392,6 @@ void (empty response body)
 
 #### 1 credit per API call, 1 credit for each deleted blockage. 1 API call + 2 blockages = 3 credits.
 
- 
 Unblocks previously blocked amounts in an account. Increases the available balance in the account where the amount was blocked.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -442,7 +436,6 @@ void (empty response body)
 
 #### 1 credit per API call.
 
- 
 Unblocks a previously blocked amount in an account. Increases the available balance in the account where the amount was blocked.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -487,7 +480,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Disables all outgoing transactions. Incoming transactions to the account are available. When an account is frozen, its available balance is set to 0\. This operation will create a new blockage of type ACCOUNT\_FROZEN, which is automatically deleted when the account is unfrozen.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -532,7 +524,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get balance for the account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -577,7 +568,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Gets active account by ID. Displays all information regarding the given account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -638,7 +628,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Lists all accounts. Inactive accounts are also visible.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -689,7 +678,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Lists all accounts associated with a customer. Only active accounts are visible.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -750,7 +738,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Count of accounts that were found from /v3/ledger/account
 
 [Back to top](#top){: .btn .btn-purple }
@@ -799,7 +786,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Gets blocked amounts for an account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -844,7 +830,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Gets blocked amount by id.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -891,7 +876,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
 Unblocks a previously blocked amount in an account and invokes a ledger transaction from that account to a different recipient. If the request fails, the amount is not unblocked.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -936,7 +920,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Unfreezes a previously frozen account. Unfreezing a non-frozen account not affect the account.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -983,7 +966,6 @@ void (empty response body)
 
 #### 2 credits per API call.
 
- 
 Update account by ID. Only a small number of fields can be updated.
 
 [Back to top](#top){: .btn .btn-purple }

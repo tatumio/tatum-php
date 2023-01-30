@@ -115,8 +115,7 @@ You can withdraw the funds only if you are the marketplace fee recipient.
 
 This API is in **alpha** and is supported only for the mainnet on Solana.
 
-**Signing a transaction** 
- When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -223,13 +222,9 @@ This API is supported for the following blockchains:
 * Polygon
 * Solana (in **alpha**)
 
-**The "execution reverted" message** 
- When making this API call, you may get the following message: 
-`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
- This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
+**The "execution reverted" message** When making this API call, you may get the following message:`Although one or more Error Occurred [execution reverted] Contract Execution Completed` This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 
-**Signing a transaction** 
- When buying an asset on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When buying an asset on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -503,13 +498,9 @@ This API is supported for the following blockchains:
 * Polygon
 * Solana (in **alpha**)
 
-**The "execution reverted" message** 
- When making this API call, you may get the following message: 
-`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
- This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
+**The "execution reverted" message** When making this API call, you may get the following message:`Although one or more Error Occurred [execution reverted] Contract Execution Completed` This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 
-**Signing a transaction** 
- When cancelling the selling of an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When cancelling the selling of an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -790,8 +781,7 @@ This API is supported for the following blockchains:
 * Polygon
 * Solana (in **alpha**)
 
-**Signing a transaction** 
- When deploying an NFT marketplace smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When deploying an NFT marketplace smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -1338,18 +1328,11 @@ This API is supported for the following blockchains:
 * Polygon
 * Solana (in **alpha**)
 
-**A known issue on Harmony** 
- On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following: 
-`Error reverted:x0` 
- This is a known issue with the Harmony Blockchain Explorer. This status does not mean that the transaction failed. You can safely ignore it.
+**A known issue on Harmony** On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following:`Error reverted:x0` This is a known issue with the Harmony Blockchain Explorer. This status does not mean that the transaction failed. You can safely ignore it.
 
-**The "execution reverted" message** 
- When making this API call, you may get the following message: 
-`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
- This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
+**The "execution reverted" message** When making this API call, you may get the following message:`Although one or more Error Occurred [execution reverted] Contract Execution Completed` This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 
-**Signing a transaction** 
- When creating a new listing on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When creating a new listing on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -1621,8 +1604,7 @@ This API is supported for the following blockchains:
 * Polygon
 * Solana (in **alpha**)
 
-**Signing a transaction** 
- When updating the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When updating the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -1810,8 +1792,7 @@ This API is supported for the following blockchains:
 * Polygon
 * Solana (in **alpha**)
 
-**Signing a transaction** 
- When updating the recipient of the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When updating the recipient of the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -2159,8 +2140,7 @@ You can update it only if you are the marketplace operator.
 
 This API is in **alpha** and is supported only for the mainnet on Solana.
 
-**Signing a transaction** 
- When updating an NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When updating an NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -2256,8 +2236,7 @@ You can withdraw the funds only if you are the marketplace fee recipient.
 
 This API is in **alpha** and is supported only for the mainnet on Solana.
 
-**Signing a transaction** 
- When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 

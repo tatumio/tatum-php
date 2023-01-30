@@ -73,7 +73,6 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
 Broadcast signed transaction to Algorand blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -118,7 +117,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Generate Algorand account deposit address from private key.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -163,7 +161,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Tatum supports Algorand wallets.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -208,7 +205,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Algorand account balance in ALGO.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -253,7 +249,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Algorand block by block round number.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -294,7 +289,6 @@ This endpoint does not need any parameter.
 
 #### 1 credit per API call.
 
- 
 Get Algorand current block number. This is the number of the latest block in the blockchain.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -339,7 +333,6 @@ Name | Type | Description  | Notes
 
 #### 1 credit per API call.
 
- 
 Get Algorand transaction by transaction id.
 
 [Back to top](#top){: .btn .btn-purple }
@@ -384,10 +377,7 @@ Name | Type | Description  | Notes
 
 #### 2 credits per API call.
 
- 
-Enable accepting Algorand asset on the sender account. 
- 
- This operation needs the private key of the blockchain address. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+Enable accepting Algorand asset on the sender account. This operation needs the private key of the blockchain address. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
 [Back to top](#top){: .btn .btn-purple }
 

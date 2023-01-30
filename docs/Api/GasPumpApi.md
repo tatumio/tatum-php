@@ -260,8 +260,7 @@ Activate the [precalulated gas pump addresses](https://apidoc.tatum.io/tag/Gas-p
 
 You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the `from` and `to` request body parameters) and then make another API call with the remaining 230 addresses.
 
-**When to activate a gas pump address** 
- Because activating a gas pump address costs some amount of gas on a blockchain, you want to activate only those addresses that will be used for sending funds to other addresses. If you know that a gas pump address will not be used for sending funds, you can leave this address not activated. The customer who uses this address will still be able to receive funds.
+**When to activate a gas pump address** Because activating a gas pump address costs some amount of gas on a blockchain, you want to activate only those addresses that will be used for sending funds to other addresses. If you know that a gas pump address will not be used for sending funds, you can leave this address not activated. The customer who uses this address will still be able to receive funds.
 
 Depending on your business needs and requirements, you can choose when to activate the gas pump addresses. If you know for sure that all the precalculated addresses will be sending funds, you can activate all the addresses right after they have been precalculated.
 
@@ -272,14 +271,11 @@ Alternatively, you can set up the activation in such a way so that a gas pump ad
 
 After you make an API call to activate gas pump addresses, use the [API for getting the results of the address activation transaction](https://apidoc.tatum.io/tag/Gas-pump/#operation/activatednotactivatedgaspumpaddresses).
 
-**Paying the gas fee for activating gas pump addresses** 
- You can pay the gas fees for each activation transaction yourself, or Tatum can cover it for you.
+**Paying the gas fee for activating gas pump addresses** You can pay the gas fees for each activation transaction yourself, or Tatum can cover it for you.
 
-* When **paying the gas fees yourself**, you must sign the transaction with either the private key of the blockchain address from which you want to pay the fees or the signature ID of that private key (if you use [Key Management System](https://apidoc.tatum.io/tag/Key-Management-System), KMS). 
- To pay the fees yourself, use this API with any schema of the request body except for `ActivateGasPumpTatum`. For example, if you are activating gas pump addresses on Ethereum and you use KMS, use the `ActivateGasPumpKMS` schema.
+* When **paying the gas fees yourself**, you must sign the transaction with either the private key of the blockchain address from which you want to pay the fees or the signature ID of that private key (if you use [Key Management System](https://apidoc.tatum.io/tag/Key-Management-System), KMS). To pay the fees yourself, use this API with any schema of the request body except for `ActivateGasPumpTatum`. For example, if you are activating gas pump addresses on Ethereum and you use KMS, use the `ActivateGasPumpKMS` schema.
 * If you want **Tatum to cover the fees**, use this API with the `ActivateGasPumpTatum` schema of the request body. 
- * On the **mainnet**, you have to have a [paid pricing plan](https://tatum.io/pricing). 
- Tatum pays the fees from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. The transaction fees and the corresponding numbers of credits deducted from your allowance vary depending on what blockchain you activate the addresses. 
+ * On the **mainnet**, you have to have a [paid pricing plan](https://tatum.io/pricing). Tatum pays the fees from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. The transaction fees and the corresponding numbers of credits deducted from your allowance vary depending on what blockchain you activate the addresses. 
  * On the **testnet**, no credits are deducted from the monthly credit allowance. You can activate gas pump addresses regardless of your pricing plan.
 
 This API is supported for the following blockchains:
@@ -501,8 +497,7 @@ This API is supported for the following blockchains:
 * Polygon
 * XinFin
 
-**Signing a transaction** 
- When approving the transfer of an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When approving the transfer of an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -750,8 +745,7 @@ This API is supported for the following blockchains:
 * Polygon
 * TRON
 
-**Address index** 
- Each address should be associated with its own index. Use the `from` and `to` request body parameters to set a range of index values for the addresses to precalculate. You can start with any number, but we recommend that you start from 0.
+**Address index** Each address should be associated with its own index. Use the `from` and `to` request body parameters to set a range of index values for the addresses to precalculate. You can start with any number, but we recommend that you start from 0.
 
 In one API call, you can precalculate:
 
@@ -761,16 +755,13 @@ In one API call, you can precalculate:
 
 If you need more addresses than one API call can precalculate, make several API calls. For example, if you need 10,000 addresses on Ethereum, make an API call with an index range from 0 through 4,999 and then make another API call with an index range from 5,000 through 9,999.
 
-The order in which the precalculated addresses are returned in the API response is the order of the values in the index range, and the index values are assigned to the addresses accordingly. 
-For example, you precalculated three gas pump addresses with a range of index values from 3 to 5\. The first address in the returned arrray is assigned the index value "3", the second one - "4", and the third one - "5".
+The order in which the precalculated addresses are returned in the API response is the order of the values in the index range, and the index values are assigned to the addresses accordingly. For example, you precalculated three gas pump addresses with a range of index values from 3 to 5\. The first address in the returned arrray is assigned the index value "3", the second one - "4", and the third one - "5".
 
  [ "0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea", // index is 3 "0x5c6079c14e9cd3d2ea8cb76aed9c5e336ef96126", // index is 4 "0xc5e336ef9612614e9cd3d2ea8cb76aed95c6079c" // index is 5 ] 
 
-**The owner of the gas pump addresses** 
- The owner (also referred to as "master address") is the blockchain address that will own the precalculated gas pump addresses. The owner will also be paying gas fees for operations made on the gas pump addresses. You have to make sure that the owner always has enough funds to cover these gas fees.
+**The owner of the gas pump addresses** The owner (also referred to as "master address") is the blockchain address that will own the precalculated gas pump addresses. The owner will also be paying gas fees for operations made on the gas pump addresses. You have to make sure that the owner always has enough funds to cover these gas fees.
 
-**Activated and not activated addresses** 
- The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, [activate them](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses).
+**Activated and not activated addresses** The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, [activate them](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses).
 
 [Back to top](#top){: .btn .btn-purple }
 
@@ -822,8 +813,7 @@ The gas fee for sending the asset will be covered by crypto funds on the master 
 
 To be able to send the asset:
 
-* The gas pump address must be [activated](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses). 
-To check whether the gas pump address is activated, use [this API](https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot).
+* The gas pump address must be [activated](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses). To check whether the gas pump address is activated, use [this API](https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot).
 * The gas pump address must be the owner of the asset.
 
 With this API, you can send only one asset per API call. If you want to send multiple assets, use the [API for transferring multiple assets from a gas pump account](https://apidoc.tatum.io/tag/Gas-pump/#operation/transfercustodialwalletbatch).
@@ -839,8 +829,7 @@ This API is supported for the following blockchains:
 * TRON
 * XinFin
 
-**Signing a transaction** 
- When transferring an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When transferring an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
@@ -896,8 +885,7 @@ The gas fee for sending the assets will be covered by crypto funds on the master
 
 To be able to send the assets:
 
-* The gas pump address must be [activated](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses). 
-To check whether the gas pump address is activated, use [this API](https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot).
+* The gas pump address must be [activated](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses). To check whether the gas pump address is activated, use [this API](https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot).
 * The gas pump address must be the owner of the assets.
 
 If you want to send only one asset, you can also use the [API for transferring an asset from a gas pump account](https://apidoc.tatum.io/tag/Gas-pump/#operation/transfercustodialwallet).
@@ -913,8 +901,7 @@ This API is supported for the following blockchains:
 * TRON
 * XinFin
 
-**Signing a transaction** 
- When transferring assets, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+**Signing a transaction** When transferring assets, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
 Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
