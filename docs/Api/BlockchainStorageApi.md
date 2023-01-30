@@ -33,7 +33,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**createRecord.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecord.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createRecord.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecord.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -59,31 +62,39 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Store a log record
+> Store a log record
 
 **2 credits per API call + additional credits based on the size of the stored data and the type of the blockchain**
 
- Store data on the blockchain.
+Store data on the blockchain.
 
- The total cost of a transaction on Ethereum (in credits) depends on the size of the data. The data is stored as a string in the hexadecimal format, and the maximum size of the data is approximately 130 kB on the mainnet and 30 kB on testnet. Every 5 characters cost 1 credit.
-
+The total cost of a transaction on Ethereum (in credits) depends on the size of the data. The data is stored as a string in the hexadecimal format, and the maximum size of the data is approximately 130 kB on the mainnet and 30 kB on testnet. Every 5 characters cost 1 credit. 
  Therefore, one API call with 1 kB of data (1024 characters) would cost 205 credits.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Elrond
+* Ethereum (only the mainnet or the Sepolia testnet)
+* Harmony
+* Klaytn
+* Polygon
+* XDC
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum (only the mainnet or the Sepolia testnet)</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>XDC</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `createRecordCelo()`
 
 ### Example
 
-[👉 View "**createRecordCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createRecordCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -109,19 +120,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Store a log record
+> Store a log record
 
-CreateRecordCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `createRecordKMS()`
 
 ### Example
 
-[👉 View "**createRecordKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createRecordKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/createRecordKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -147,19 +162,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Store a log record
+> Store a log record
 
-CreateRecordKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `getLog()`
 
 ### Example
 
-[👉 View "**getLog.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/getLog.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getLog.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainStorageApi/getLog.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -187,11 +206,12 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get a log record
+> Get a log record
 
 **1 credit per API call**
 
- Get a log data record from the Ethereum blockchain (only the mainnet or the Sepolia testnet).
+Get a log data record from the Ethereum blockchain (only the mainnet or the Sepolia testnet).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

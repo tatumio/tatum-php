@@ -38,7 +38,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**bnbBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bnbBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -64,21 +67,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed BNB transaction
+> Broadcast signed BNB transaction
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
- Broadcast signed transaction to Binance blockchain. This method is used internally or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+ 
+Broadcast signed transaction to Binance blockchain. This method is used internally or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bnbGenerateWallet()`
 
 ### Example
 
-[👉 View "**bnbGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bnbGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -100,21 +108,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Generate Binance wallet
+> Generate Binance wallet
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
- Generate BNB account. Tatum does not support HD wallet for BNB, only specific address and private key can be generated.
+ 
+Generate BNB account. Tatum does not support HD wallet for BNB, only specific address and private key can be generated.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bnbGetAccount()`
 
 ### Example
 
-[👉 View "**bnbGetAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetAccount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bnbGetAccount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetAccount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -140,21 +153,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Binance Account
+> Get Binance Account
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Binance Account Detail by address.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bnbGetBlock()`
 
 ### Example
 
-[👉 View "**bnbGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bnbGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -180,21 +198,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Binance Transactions in Block
+> Get Binance Transactions in Block
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Transactions in block by block height.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bnbGetCurrentBlock()`
 
 ### Example
 
-[👉 View "**bnbGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bnbGetCurrentBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetCurrentBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -216,21 +239,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get Binance current block
+> Get Binance current block
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Binance current block number.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bnbGetTransaction()`
 
 ### Example
 
-[👉 View "**bnbGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bnbGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -256,21 +284,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Binance Transaction
+> Get Binance Transaction
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Binance Transaction by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bnbGetTxByAccount()`
 
 ### Example
 
-[👉 View "**bnbGetTxByAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bnbGetTxByAccount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/bnbGetTxByAccount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -308,21 +341,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Binance Transactions By Address
+> Get Binance Transactions By Address
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Binance Transactions by address.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferBnbBlockchain()`
 
 ### Example
 
-[👉 View "**transferBnbBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferBnbBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -348,23 +386,28 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Binance / Binance Token from account to account
+> Send Binance / Binance Token from account to account
 
-<h4>10 credits per API call.</h4>
+#### 10 credits per API call.
 
- Send Binance or Binance Token token from account to account.
+ 
+Send Binance or Binance Token token from account to account. 
+ 
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferBnbBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferBnbBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferBnbBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BNBBeaconChainApi/transferBnbBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -390,9 +433,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Binance / Binance Token from account to account
+> Send Binance / Binance Token from account to account
 
-TransferBnbBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

@@ -36,7 +36,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**activateCustomer.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/activateCustomer.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activateCustomer.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/activateCustomer.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -62,21 +65,26 @@ void (empty response body)
 
 ### Description
 
-Activate customer
+> Activate customer
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
+ 
 Activated customer is able to do any operation.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `deactivateCustomer()`
 
 ### Example
 
-[👉 View "**deactivateCustomer.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/deactivateCustomer.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deactivateCustomer.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/deactivateCustomer.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -102,21 +110,26 @@ void (empty response body)
 
 ### Description
 
-Deactivate customer
+> Deactivate customer
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
+ 
 Deactivate customer is not able to do any operation. Customer can be deactivated only when all their accounts are already deactivated.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `disableCustomer()`
 
 ### Example
 
-[👉 View "**disableCustomer.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/disableCustomer.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **disableCustomer.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/disableCustomer.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -142,21 +155,26 @@ void (empty response body)
 
 ### Description
 
-Disable customer
+> Disable customer
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
-Disabled customer cannot perform end-user operations, such as create new accounts or send transactions. Available balance on all accounts is set to 0. Account balance will stay untouched.
+ 
+Disabled customer cannot perform end-user operations, such as create new accounts or send transactions. Available balance on all accounts is set to 0\. Account balance will stay untouched.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `enableCustomer()`
 
 ### Example
 
-[👉 View "**enableCustomer.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/enableCustomer.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **enableCustomer.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/enableCustomer.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -182,21 +200,26 @@ void (empty response body)
 
 ### Description
 
-Enable customer
+> Enable customer
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
+ 
 Enabled customer can perform all operations. By default all customers are enabled. All previously blocked account balances will be unblocked.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `findAllCustomers()`
 
 ### Example
 
-[👉 View "**findAllCustomers.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/findAllCustomers.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **findAllCustomers.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/findAllCustomers.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -224,21 +247,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-List all customers
+> List all customers
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- List of all customers. Also inactive an disabled customers are present.
+ 
+List of all customers. Also inactive an disabled customers are present.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getCustomerByExternalOrInternalId()`
 
 ### Example
 
-[👉 View "**getCustomerByExternalOrInternalId.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/getCustomerByExternalOrInternalId.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getCustomerByExternalOrInternalId.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/getCustomerByExternalOrInternalId.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -264,21 +292,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get customer details
+> Get customer details
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Using anonymized external ID or internal customer ID you can access customer detail information. Internal ID is needed to call other customer related methods.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `updateCustomer()`
 
 ### Example
 
-[👉 View "**updateCustomer.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/updateCustomer.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateCustomer.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustomerApi/updateCustomer.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -306,11 +339,13 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update customer
+> Update customer
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
+ 
 This method is helpful in case your primary system will change ID's or customer will change the country he/she is supposed to be in compliance with.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

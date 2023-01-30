@@ -64,7 +64,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**approveNftSpending.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpending.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveNftSpending.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpending.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -90,37 +93,42 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Allow the NFT auction or marketplace to transfer an asset
+> Allow the NFT auction or marketplace to transfer an asset
 
 **2 credits per API call**
 
- Allow the NFT auction/marketplace smart contract to transfer the asset (NFT or Multi Token) that is listed for selling.
-
+Allow the NFT auction/marketplace smart contract to transfer the asset (NFT or Multi Token) that is listed for selling. 
 The auction/marketplace smart contract will transfer the asset to the buyer after the asset is purchased.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When allowing the NFT auction/marketplace smart contract to transfer the asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `approveNftSpendingCelo()`
 
 ### Example
 
-[👉 View "**approveNftSpendingCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveNftSpendingCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -146,19 +154,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Allow the NFT auction or marketplace to transfer an asset
+> Allow the NFT auction or marketplace to transfer an asset
 
-ApproveNftSpendingCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `approveNftSpendingCeloKMS()`
 
 ### Example
 
-[👉 View "**approveNftSpendingCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveNftSpendingCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -184,19 +196,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Allow the NFT auction or marketplace to transfer an asset
+> Allow the NFT auction or marketplace to transfer an asset
 
-ApproveNftSpendingCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `approveNftSpendingKMS()`
 
 ### Example
 
-[👉 View "**approveNftSpendingKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveNftSpendingKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/approveNftSpendingKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -222,19 +238,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Allow the NFT auction or marketplace to transfer an asset
+> Allow the NFT auction or marketplace to transfer an asset
 
-ApproveNftSpendingKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `bidOnAuction()`
 
 ### Example
 
-[👉 View "**bidOnAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bidOnAuction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -260,53 +280,55 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Bid for an asset at the NFT auction
+> Bid for an asset at the NFT auction
 
 **2 credits per API call**
 
- Bid for an asset listed on the NFT auction.
+Bid for an asset listed on the NFT auction.
 
- You can buy the asset either for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.
+You can buy the asset either for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.
 
- 
+* If you want to pay for the asset with the **native assets**, send the required amount of the assets with the API call.
+* If you want to pay with the **fungible tokens**, [allow the auction smart contract to access your tokens](https://apidoc.tatum.io/tag/Fungible-Tokens-%28ERC-20-or-compatible%29#operation/Erc20Approve) before bidding for the asset. When you make the API call, the auction smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.
 
-<ul> <li>If you want to pay for the asset with the **native assets**, send the required amount of the assets with the API call.</li> <li>If you want to pay with the **fungible tokens**, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the auction smart contract to access your tokens</a> before bidding for the asset. When you make the API call, the auction smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul>
+After you have purchased the asset, it is in a pending state until [the auction is settled](https://apidoc.tatum.io/tag/Auction/#operation/settleauction). Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.
 
- After you have purchased the asset, it is in a pending state until <a href="https://apidoc.tatum.io/tag/Auction/#operation/settleauction">the auction is settled</a>. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.
+For the complete information about how the bidding/purchase process at an auction works, see the API for [creating an NFT auction](https://apidoc.tatum.io/tag/Auction/#operation/generateauction).
 
- For the complete information about how the bidding/purchase process at an auction works, see the API for <a href="https://apidoc.tatum.io/tag/Auction/#operation/generateauction">creating an NFT auction</a>.
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **The "execution reverted" message**
-
- When making this API call, you may get the following message:
-
- <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
-
+**The "execution reverted" message** 
+ When making this API call, you may get the following message: 
+`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
  This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When bidding for an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bidOnAuctionCelo()`
 
 ### Example
 
-[👉 View "**bidOnAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bidOnAuctionCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -332,19 +354,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Bid for an asset at the NFT auction
+> Bid for an asset at the NFT auction
 
-BidOnAuctionCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `bidOnAuctionCeloKMS()`
 
 ### Example
 
-[👉 View "**bidOnAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bidOnAuctionCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -370,19 +396,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Bid for an asset at the NFT auction
+> Bid for an asset at the NFT auction
 
-BidOnAuctionCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `bidOnAuctionKMS()`
 
 ### Example
 
-[👉 View "**bidOnAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bidOnAuctionKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bidOnAuctionKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -408,19 +438,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Bid for an asset at the NFT auction
+> Bid for an asset at the NFT auction
 
-BidOnAuctionKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `bloAucUpdateFeeRecipient()`
 
 ### Example
 
-[👉 View "**bloAucUpdateFeeRecipient.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipient.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bloAucUpdateFeeRecipient.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipient.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -446,35 +480,41 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT auction fee
+> Update the recipient of the NFT auction fee
 
 **2 credits per API call**
 
- Update the recipient of the NFT auction fee.
+Update the recipient of the NFT auction fee.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When updating the recipient of the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bloAucUpdateFeeRecipientCelo()`
 
 ### Example
 
-[👉 View "**bloAucUpdateFeeRecipientCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bloAucUpdateFeeRecipientCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -500,19 +540,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT auction fee
+> Update the recipient of the NFT auction fee
 
-UpdateFeeRecipientCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `bloAucUpdateFeeRecipientCeloKMS()`
 
 ### Example
 
-[👉 View "**bloAucUpdateFeeRecipientCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bloAucUpdateFeeRecipientCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -538,19 +582,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT auction fee
+> Update the recipient of the NFT auction fee
 
-UpdateFeeRecipientCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `bloAucUpdateFeeRecipientKMS()`
 
 ### Example
 
-[👉 View "**bloAucUpdateFeeRecipientKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bloAucUpdateFeeRecipientKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/bloAucUpdateFeeRecipientKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -576,19 +624,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT auction fee
+> Update the recipient of the NFT auction fee
 
-UpdateFeeRecipientKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `cancelAuction()`
 
 ### Example
 
-[👉 View "**cancelAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelAuction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -614,47 +666,50 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset at the NFT auction
+> Cancel the selling of an asset at the NFT auction
 
 **2 credits per API call**
 
- Cancel the selling of an asset at the NFT auction.
+Cancel the selling of an asset at the NFT auction.
 
- You can cancel the selling only if you are the seller of the asset or the auction operator. Once the selling is canceled, the asset is returned to the seller.
+You can cancel the selling only if you are the seller of the asset or the auction operator. Once the selling is canceled, the asset is returned to the seller.
 
- You cannot cancel the selling if the asset has already been purchased.
+You cannot cancel the selling if the asset has already been purchased.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **The "execution reverted" message**
-
- When making this API call, you may get the following message:
-
- <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
-
+**The "execution reverted" message** 
+ When making this API call, you may get the following message: 
+`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
  This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When cancelling the selling of an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `cancelAuctionCelo()`
 
 ### Example
 
-[👉 View "**cancelAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelAuctionCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -680,19 +735,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset at the NFT auction
+> Cancel the selling of an asset at the NFT auction
 
-CancelAuctionCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `cancelAuctionCeloKMS()`
 
 ### Example
 
-[👉 View "**cancelAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelAuctionCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -718,19 +777,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset at the NFT auction
+> Cancel the selling of an asset at the NFT auction
 
-CancelAuctionCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `cancelAuctionKMS()`
 
 ### Example
 
-[👉 View "**cancelAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelAuctionKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/cancelAuctionKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -756,19 +819,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset at the NFT auction
+> Cancel the selling of an asset at the NFT auction
 
-CancelAuctionKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `createAuction()`
 
 ### Example
 
-[👉 View "**createAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createAuction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -794,43 +861,46 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset at the NFT auction
+> Sell an asset at the NFT auction
 
 **2 credits per API call**
 
- Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using <a href="https://apidoc.tatum.io/tag/Auction/#operation/approvenftauctionspending">Approve NFT</a>. After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset.
+Create new auction on the auction contract. Before operation, seller must approve spending of the NFT token for the Auction contract using [Approve NFT](https://apidoc.tatum.io/tag/Auction/#operation/approvenftauctionspending). After auction is created, auction contract transfers the asset to the auction smart contract. Only auction for existing NFTs can be created - seller must be owner of the NFT asset.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **A known issue on Harmony**
-
- On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following:
-
- <code>Error reverted:x0</code>
-
+**A known issue on Harmony** 
+ On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following: 
+`Error reverted:x0` 
  This is a known issue with the Harmony Blockchain Explorer. This status does not mean that the transaction failed. You can safely ignore it.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When selling an asset at the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `createAuctionCelo()`
 
 ### Example
 
-[👉 View "**createAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createAuctionCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -856,19 +926,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset at the NFT auction
+> Sell an asset at the NFT auction
 
-CreateAuctionCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `createAuctionCeloKMS()`
 
 ### Example
 
-[👉 View "**createAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createAuctionCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -894,19 +968,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset at the NFT auction
+> Sell an asset at the NFT auction
 
-CreateAuctionCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `createAuctionKMS()`
 
 ### Example
 
-[👉 View "**createAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createAuctionKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/createAuctionKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -932,19 +1010,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset at the NFT auction
+> Sell an asset at the NFT auction
 
-CreateAuctionKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `generateAuction()`
 
 ### Example
 
-[👉 View "**generateAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateAuction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -970,37 +1052,42 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT auction
+> Create an NFT auction
 
 **2 credits per API call**
 
- Deploy new smart contract for NFT auction logic. Smart contract enables auction operator to create new auction for NFT (ERC-721/1155). Operator can set a fee in percentage, which will be paid on top of the price of the asset. can be offered for native asset - ETH, BSC, etc. - or any ERC20 token - this is configurable during auction creation. Before auction is created, seller must approve transfer of the NFT to the auction contract. Buyer will bid for the asset from the auction using native asset - send assets along the gid() smart contract call, or via ERC20 token. Buyer of the auction must perform approval for the smart contract to access ERC20 token, before the actual bid() method is called. Once there is higher bid then the actual one, the previous bidder's funds will be returned to him and new bidder will be the current winning one. When auction ends, anyone can settle the auction - NFT will be sent to the bidder, assets to the seller and fee to the operator.
-
+Deploy new smart contract for NFT auction logic. Smart contract enables auction operator to create new auction for NFT (ERC-721/1155). Operator can set a fee in percentage, which will be paid on top of the price of the asset. can be offered for native asset - ETH, BSC, etc. - or any ERC20 token - this is configurable during auction creation. Before auction is created, seller must approve transfer of the NFT to the auction contract. Buyer will bid for the asset from the auction using native asset - send assets along the gid() smart contract call, or via ERC20 token. Buyer of the auction must perform approval for the smart contract to access ERC20 token, before the actual bid() method is called. Once there is higher bid then the actual one, the previous bidder's funds will be returned to him and new bidder will be the current winning one. When auction ends, anyone can settle the auction - NFT will be sent to the bidder, assets to the seller and fee to the operator. 
  This operation deploys a smart contract on the blockchain.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When creating an NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `generateAuctionCelo()`
 
 ### Example
 
-[👉 View "**generateAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateAuctionCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1026,19 +1113,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT auction
+> Create an NFT auction
 
-GenerateAuctionCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `generateAuctionCeloKMS()`
 
 ### Example
 
-[👉 View "**generateAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateAuctionCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1064,19 +1155,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT auction
+> Create an NFT auction
 
-GenerateAuctionCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `generateAuctionKMS()`
 
 ### Example
 
-[👉 View "**generateAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateAuctionKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/generateAuctionKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1102,19 +1197,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT auction
+> Create an NFT auction
 
-GenerateAuctionKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `getAuction()`
 
 ### Example
 
-[👉 View "**getAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getAuction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1144,27 +1243,33 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get information about an auctioned asset at the NFT auction
+> Get information about an auctioned asset at the NFT auction
 
 **1 credit per API call**
 
- Get information about a specific auctioned asset at the NFT auction.
+Get information about a specific auctioned asset at the NFT auction.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `getAuctionFee()`
 
 ### Example
 
-[👉 View "**getAuctionFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFee.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getAuctionFee.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFee.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1192,27 +1297,33 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the NFT auction fee
+> Get the NFT auction fee
 
 **1 credit per API call**
 
- Get the NFT auction fee.
+Get the NFT auction fee.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `getAuctionFeeRecipient()`
 
 ### Example
 
-[👉 View "**getAuctionFeeRecipient.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFeeRecipient.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getAuctionFeeRecipient.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/getAuctionFeeRecipient.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1240,27 +1351,33 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the recipient of the NFT auction fee
+> Get the recipient of the NFT auction fee
 
 **1 credit per API call**
 
- Get the recipient of the NFT auction fee.
+Get the recipient of the NFT auction fee.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `settleAuction()`
 
 ### Example
 
-[👉 View "**settleAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **settleAuction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1286,45 +1403,47 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Settle an NFT auction
+> Settle an NFT auction
 
 **2 credits per API call**
 
- Settle an auction once it has ended and there is a buyer of the asset at this auction. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction.
-
+Settle an auction once it has ended and there is a buyer of the asset at this auction. Settling the auction means that the asset is transferred to the buyer, the amount is transferred to the seller, and the fee is transferred to the fee recipient of the auction. 
 Both seller and buyer can settle the auction.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **The "execution reverted" message**
-
- When making this API call, you may get the following message:
-
- <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
-
+**The "execution reverted" message** 
+ When making this API call, you may get the following message: 
+`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
  This message is a result of the auction version check and has no impact on completing the API call. You can safely ignore it.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When settling the NFT auction, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `settleAuctionCelo()`
 
 ### Example
 
-[👉 View "**settleAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **settleAuctionCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1350,19 +1469,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Settle an NFT auction
+> Settle an NFT auction
 
-SettleAuctionCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `settleAuctionCeloKMS()`
 
 ### Example
 
-[👉 View "**settleAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **settleAuctionCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1388,19 +1511,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Settle an NFT auction
+> Settle an NFT auction
 
-SettleAuctionCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `settleAuctionKMS()`
 
 ### Example
 
-[👉 View "**settleAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **settleAuctionKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/settleAuctionKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1426,19 +1553,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Settle an NFT auction
+> Settle an NFT auction
 
-SettleAuctionKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeAuction()`
 
 ### Example
 
-[👉 View "**updateFeeAuction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeAuction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1464,35 +1595,41 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT auction fee
+> Update the NFT auction fee
 
 **2 credits per API call**
 
- Update the NFT auction fee.
+Update the NFT auction fee.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When updating the NFT auction fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `updateFeeAuctionCelo()`
 
 ### Example
 
-[👉 View "**updateFeeAuctionCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeAuctionCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1518,19 +1655,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT auction fee
+> Update the NFT auction fee
 
-UpdateFeeAuctionCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeAuctionCeloKMS()`
 
 ### Example
 
-[👉 View "**updateFeeAuctionCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeAuctionCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1556,19 +1697,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT auction fee
+> Update the NFT auction fee
 
-UpdateFeeAuctionCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeAuctionKMS()`
 
 ### Example
 
-[👉 View "**updateFeeAuctionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeAuctionKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AuctionApi/updateFeeAuctionKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1594,9 +1739,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT auction fee
+> Update the NFT auction fee
 
-UpdateFeeAuctionKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

@@ -30,7 +30,10 @@ Method | Description
 
 ## Example
 
-[👉 View "**generateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateWallet.php){: .btn .btn-green .mt-4}
 
 ## Type signature
 
@@ -54,14 +57,19 @@ Wallet Model ([**\Tatum\Model\Wallet**](../../../Model/Wallet))
 
 Generate wallet
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 # `generateAddressFromXpub()`
 
 ## Example
 
-[👉 View "**generateAddressFromXpub.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateAddressFromXpub.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateAddressFromXpub.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateAddressFromXpub.php){: .btn .btn-green .mt-4}
 
 ## Type signature
 
@@ -87,14 +95,19 @@ Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAd
 
 Generate address from xPub and index
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 # `generateAddressFromPrivateKey()`
 
 ## Example
 
-[👉 View "**generateAddressFromPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateAddressFromPrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateAddressFromPrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generateAddressFromPrivateKey.php){: .btn .btn-green .mt-4}
 
 ## Type signature
 
@@ -118,14 +131,19 @@ Address Model ([**\Tatum\Model\GeneratedAddressBtc**](../../../Model/GeneratedAd
 
 Generate address from xPub and index
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 # `generatePrivateKey()`
 
 ## Example
 
-[👉 View "**generatePrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generatePrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generatePrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Wallet/BitcoinCash/generatePrivateKey.php){: .btn .btn-green .mt-4}
 
 ## Type signature
 
@@ -151,5 +169,7 @@ Private Key ([**\Tatum\Model\PrivKey**](../../../Model/PrivKey))
 
 Generate private key from mnemonic and index
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
+
+---
 

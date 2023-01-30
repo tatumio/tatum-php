@@ -35,7 +35,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**getTransactions.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactions.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getTransactions.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactions.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -67,21 +70,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Find transactions within the ledger.
+> Find transactions within the ledger.
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Find transactions across whole ledger.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getTransactionsByAccountId()`
 
 ### Example
 
-[👉 View "**getTransactionsByAccountId.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByAccountId.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getTransactionsByAccountId.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByAccountId.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -113,21 +121,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Find transactions for account.
+> Find transactions for account.
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Finds transactions for the account identified by the given account ID.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getTransactionsByCustomerId()`
 
 ### Example
 
-[👉 View "**getTransactionsByCustomerId.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByCustomerId.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getTransactionsByCustomerId.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByCustomerId.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -159,21 +172,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Find transactions for a customer across all of the customer's accounts.
+> Find transactions for a customer across all of the customer's accounts.
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Finds transactions for all accounts of the customer identified by the given internal customer ID.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getTransactionsByReference()`
 
 ### Example
 
-[👉 View "**getTransactionsByReference.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByReference.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getTransactionsByReference.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/getTransactionsByReference.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -199,21 +217,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Find transactions with a given reference across all accounts.
+> Find transactions with a given reference across all accounts.
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Finds transactions for all accounts with the given reference.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `sendTransaction()`
 
 ### Example
 
-[👉 View "**sendTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sendTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -239,31 +262,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send payment
+> Send payment
 
-<h4>4 credits per API call.</h4>
+#### 4 credits per API call.
 
- Sends a payment within Tatum Private Ledger. All assets are settled instantly.
-
- When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them.
-
- This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses.
-
- If there is an insufficient balance in the sender account, no transaction is recorded.
-
- It is possible to perform an anonymous transaction where the sender account is not visible for the recipient.
-
+ 
+Sends a payment within Tatum Private Ledger. All assets are settled instantly. 
+ When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them. 
+ This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses. 
+ If there is an insufficient balance in the sender account, no transaction is recorded. 
+ It is possible to perform an anonymous transaction where the sender account is not visible for the recipient. 
  The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `sendTransactionBatch()`
 
 ### Example
 
-[👉 View "**sendTransactionBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransactionBatch.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sendTransactionBatch.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/TransactionApi/sendTransactionBatch.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -289,21 +312,18 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send payment in batch
+> Send payment in batch
 
-<h4>2 + 2 * N per API call. (N - count of transactions)</h4>
+#### 2 + 2 \* N per API call. (N - count of transactions)
 
- Sends the N payments within Tatum Private Ledger. All assets are settled instantly.
-
- When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them.
-
- This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses.
-
- If there is an insufficient balance in the sender account, no transaction is recorded.
-
- It is possible to perform an anonymous transaction where the sender account is not visible for the recipient.
-
+ 
+Sends the N payments within Tatum Private Ledger. All assets are settled instantly. 
+ When a transaction is settled, 2 transaction records are created, 1 for each of the participants. These 2 records are connected via a transaction reference, which is the same for both of them. 
+ This method is only used for transferring assets between accounts within Tatum and will not send any funds to blockchain addresses. 
+ If there is an insufficient balance in the sender account, no transaction is recorded. 
+ It is possible to perform an anonymous transaction where the sender account is not visible for the recipient. 
  The FIAT currency value of every transaction is calculated automatically. The FIAT value is based on the accountingCurrency of the account connected to the transaction and is available in the marketValue parameter of the transaction.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

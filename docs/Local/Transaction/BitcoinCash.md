@@ -27,7 +27,10 @@ Method | Description
 
 ## Example
 
-[👉 View "**sign.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/BitcoinCash/sign.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sign.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Local/Transaction/BitcoinCash/sign.php){: .btn .btn-green .mt-4}
 
 ## Type signature
 
@@ -51,5 +54,7 @@ Signed transaction hex (`string`)
 
 Sign transaction
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
+
+---
 

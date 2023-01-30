@@ -37,7 +37,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**solanaBroadcastConfirm.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaBroadcastConfirm.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **solanaBroadcastConfirm.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaBroadcastConfirm.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -63,21 +66,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast and confirm signed Solana transaction
+> Broadcast and confirm signed Solana transaction
 
-<h4>10 credits per API call.</h4>
+#### 10 credits per API call.
 
- Broadcast signed custom transactions to Solana blockchain and waits for transaction confirmation depending on the commitment given. More information about commitment levels <a target="_blank" href="https://docs.solana.com/ru/developing/clients/jsonrpc-api#configuring-state-commitment">here</a>
+ 
+Broadcast signed custom transactions to Solana blockchain and waits for transaction confirmation depending on the commitment given. More information about commitment levels [here](https://docs.solana.com/ru/developing/clients/jsonrpc-api#configuring-state-commitment)
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `solanaGenerateWallet()`
 
 ### Example
 
-[👉 View "**solanaGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **solanaGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -99,21 +107,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Generate Solana wallet
+> Generate Solana wallet
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Generate Solana private key and account address.
+ 
+Generate Solana private key and account address.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `solanaGetBalance()`
 
 ### Example
 
-[👉 View "**solanaGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **solanaGetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -139,21 +152,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Solana Account balance
+> Get Solana Account balance
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Solana account balance in SOL. This method does not prints any balance of the SPL or NFT tokens on the account.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `solanaGetBlock()`
 
 ### Example
 
-[👉 View "**solanaGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **solanaGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -179,23 +197,27 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Solana block by number
+> Get Solana block by number
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Get Solana block by block hash or block number. 
+ 
+Get Solana block by block hash or block number. 
+ You can find full data description here - [https://docs.solana.com/developing/clients/jsonrpc-api#getblock](https://docs.solana.com/developing/clients/jsonrpc-api#getblock)
 
- You can find full data description here - <a target="blank" href="https://docs.solana.com/developing/clients/jsonrpc-api#getblock">https://docs.solana.com/developing/clients/jsonrpc-api#getblock</a>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `solanaGetCurrentBlock()`
 
 ### Example
 
-[👉 View "**solanaGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetCurrentBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **solanaGetCurrentBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetCurrentBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -217,21 +239,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get current block number
+> Get current block number
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Solana current block number. This is the number of the latest block in the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `solanaGetTransaction()`
 
 ### Example
 
-[👉 View "**solanaGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **solanaGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/solanaGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -259,23 +286,27 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Solana Transaction
+> Get Solana Transaction
 
-<h4>2 credit per API call.</h4>
+#### 2 credit per API call.
 
-Get Solana transaction by transaction hash.
+ 
+Get Solana transaction by transaction hash. 
+ You can find full data description here - [https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction](https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction)
 
- You can find full data description here - <a target="blank" href="https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction">https://docs.solana.com/developing/clients/jsonrpc-api#gettransaction</a>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferSolanaBlockchain()`
 
 ### Example
 
-[👉 View "**transferSolanaBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferSolanaBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -301,23 +332,28 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send SOL from account to account
+> Send SOL from account to account
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
- Send SOL from account to account.
+ 
+Send SOL from account to account. 
+ 
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferSolanaBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferSolanaBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferSolanaBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/SolanaApi/transferSolanaBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -343,9 +379,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send SOL from account to account
+> Send SOL from account to account
 
-TransferSolanaBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

@@ -44,7 +44,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**callCeloReadSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloReadSmartContractMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callCeloReadSmartContractMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloReadSmartContractMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -70,45 +73,45 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Celo
+> Invoke a method in a smart contract on Celo
 
 **2 credits per API call**
 
- Invoke a method in an existing smart contract on Celo.
+Invoke a method in an existing smart contract on Celo.
 
- You can call a read-only or write method.
+You can call a read-only or write method.
 
- 
+* For **read-only** methods, the output of the invoked method is returned.
+* For **write** methods, the ID of the associated transaction is returned.
 
-<ul> <li>For **read-only** methods, the output of the invoked method is returned.</li> <li>For **write** methods, the ID of the associated transaction is returned.</li> </ul>
-
- **Troubleshooting a failed transaction**
-
- Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
-
+**Troubleshooting a failed transaction** 
+ Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). 
 However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
- If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
+If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
- For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.
+For more information about invoking methods in smart contracts, see [this article](https://support.tatum.io/support/solutions/articles/80001052441) on our Support Portal.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `callCeloSmartContractMethod()`
 
 ### Example
 
-[👉 View "**callCeloSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callCeloSmartContractMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -134,19 +137,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Celo
+> Invoke a method in a smart contract on Celo
 
-CallCeloSmartContractMethod operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `callCeloSmartContractMethodKMS()`
 
 ### Example
 
-[👉 View "**callCeloSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethodKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callCeloSmartContractMethodKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/callCeloSmartContractMethodKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -172,19 +179,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Celo
+> Invoke a method in a smart contract on Celo
 
-CallCeloSmartContractMethodKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `celoBroadcast()`
 
 ### Example
 
-[👉 View "**celoBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -210,21 +221,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed Celo transaction
+> Broadcast signed Celo transaction
 
 **2 credits per API call**
 
- Broadcast signed transaction to Celo blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+Broadcast signed transaction to Celo blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `celoGenerateAddress()`
 
 ### Example
 
-[👉 View "**celoGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGenerateAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -252,21 +267,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Celo account address from Extended public key
+> Generate Celo account address from Extended public key
 
 **1 credit per API call**
 
- Generate Celo account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
+Generate Celo account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `celoGenerateAddressPrivateKey()`
 
 ### Example
 
-[👉 View "**celoGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddressPrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGenerateAddressPrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateAddressPrivateKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -292,21 +311,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Celo private key
+> Generate Celo private key
 
 **1 credit per API call**
 
- Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
+Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `celoGenerateWallet()`
 
 ### Example
 
-[👉 View "**celoGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -332,27 +355,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Celo wallet
+> Generate Celo wallet
 
 **1 credit per API call**
 
- Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
 Each address is identified by 3 main values:
+* Private Key - your secret value, which should never be revealed
+* Public Key - public address to be published
+* Derivation index - index of generated address
 
-<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+Tatum follows BIP44 specification and generates for Celo wallet with derivation path m'/44'/52752'/0'/0\. More about BIP44 HD wallets can be found here - [https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). Generate BIP44 compatible Celo wallet.
 
-Tatum follows BIP44 specification and generates for Celo wallet with derivation path m'/44'/52752'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Celo wallet.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `celoGetBalance()`
 
 ### Example
 
-[👉 View "**celoGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -378,21 +405,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Celo Account balance
+> Get Celo Account balance
 
 **1 credit per API call**
 
- Get Celo account balance in ETH. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
+Get Celo account balance in ETH. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `celoGetBlock()`
 
 ### Example
 
-[👉 View "**celoGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -418,21 +449,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Celo block by hash
+> Get Celo block by hash
 
 **1 credit per API call**
 
- Get Celo block by block hash or block number.
+Get Celo block by block hash or block number.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `celoGetCurrentBlock()`
 
 ### Example
 
-[👉 View "**celoGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetCurrentBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGetCurrentBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetCurrentBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -454,21 +489,25 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get current block number
+> Get current block number
 
 **1 credit per API call**
 
- Get Celo current block number. This is the number of the latest block in the blockchain.
+Get Celo current block number. This is the number of the latest block in the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `celoGetTransaction()`
 
 ### Example
 
-[👉 View "**celoGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -494,21 +533,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Celo Transaction
+> Get Celo Transaction
 
 **2 credits per API call**
 
- Get Celo transaction by transaction hash.
+Get Celo transaction by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `celoGetTransactionByAddress()`
 
 ### Example
 
-[👉 View "**celoGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionByAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGetTransactionByAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionByAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -544,21 +587,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Celo transactions by address
+> Get Celo transactions by address
 
 **1 credit per API call**
 
- Get Celo transactions by address. This includes incoming and outgoing transactions for the address.
+Get Celo transactions by address. This includes incoming and outgoing transactions for the address.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `celoGetTransactionCount()`
 
 ### Example
 
-[👉 View "**celoGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionCount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **celoGetTransactionCount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/celoGetTransactionCount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -584,21 +631,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get count of outgoing Celo transactions
+> Get count of outgoing Celo transactions
 
 **1 credit per API call**
 
- Get a number of outgoing Celo transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
+Get a number of outgoing Celo transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferCeloBlockchain()`
 
 ### Example
 
-[👉 View "**transferCeloBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCeloBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -624,29 +675,33 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Celo / ERC20 from account to account
+> Send Celo / ERC20 from account to account
 
 **2 credits per API call**
 
- Send Celo, cUSD or Tatum supported ERC20 token from account to account.
+Send Celo, cUSD or Tatum supported ERC20 token from account to account. 
+ 
+**Signing a transaction**
 
- **Signing a transaction**
+When sending CELO, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When sending CELO, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferCeloBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferCeloBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCeloBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CeloApi/transferCeloBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -672,9 +727,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Celo / ERC20 from account to account
+> Send Celo / ERC20 from account to account
 
-TransferCeloBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

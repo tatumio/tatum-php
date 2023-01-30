@@ -30,7 +30,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**checkMalicousAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MaliciousAddressApi/checkMalicousAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **checkMalicousAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MaliciousAddressApi/checkMalicousAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -56,13 +59,16 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Check malicous address
+> Check malicous address
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Check, if the blockchain address is malicous. Malicous address can contain assets from the DarkWeb, is connected to the scam projects or contains stolen funds.
+ 
+Check, if the blockchain address is malicous. Malicous address can contain assets from the DarkWeb, is connected to the scam projects or contains stolen funds.
 
- Supported Chains: ETH, BTC, LTC
+ 
+Supported Chains: ETH, BTC, LTC
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

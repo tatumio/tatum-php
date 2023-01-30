@@ -55,7 +55,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**activateGasPump.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPump.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activateGasPump.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPump.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -81,19 +84,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Activate gas pump addresses
+> Activate gas pump addresses
 
-ActivateGasPump operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `activateGasPumpCelo()`
 
 ### Example
 
-[👉 View "**activateGasPumpCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activateGasPumpCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -119,19 +126,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Activate gas pump addresses
+> Activate gas pump addresses
 
-ActivateGasPumpCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `activateGasPumpCeloKMS()`
 
 ### Example
 
-[👉 View "**activateGasPumpCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activateGasPumpCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -157,19 +168,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Activate gas pump addresses
+> Activate gas pump addresses
 
-ActivateGasPumpCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `activateGasPumpKMS()`
 
 ### Example
 
-[👉 View "**activateGasPumpKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activateGasPumpKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -195,19 +210,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Activate gas pump addresses
+> Activate gas pump addresses
 
-ActivateGasPumpKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `activateGasPumpTatum()`
 
 ### Example
 
-[👉 View "**activateGasPumpTatum.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTatum.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activateGasPumpTatum.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTatum.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -233,59 +252,59 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Activate gas pump addresses
+> Activate gas pump addresses
 
 **2 credits per API call**
 
- Activate the <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/precalculategaspumpaddresses">precalulated gas pump addresses</a>. Activating a gas pump address allows this address to send funds to other addresses.
+Activate the [precalulated gas pump addresses](https://apidoc.tatum.io/tag/Gas-pump/#operation/precalculategaspumpaddresses). Activating a gas pump address allows this address to send funds to other addresses.
 
- You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the <code>from</code> and <code>to</code> request body parameters) and then make another API call with the remaining 230 addresses.
+You can activate up to 270 addresses in one call. If you need to activate more than 270 addresses, make several API calls. For example, if you need to activate 500 addresses, make an API call with 270 addresses (set up the range of their index values accordingly in the `from` and `to` request body parameters) and then make another API call with the remaining 230 addresses.
 
- **When to activate a gas pump address**
-
+**When to activate a gas pump address** 
  Because activating a gas pump address costs some amount of gas on a blockchain, you want to activate only those addresses that will be used for sending funds to other addresses. If you know that a gas pump address will not be used for sending funds, you can leave this address not activated. The customer who uses this address will still be able to receive funds.
 
- Depending on your business needs and requirements, you can choose when to activate the gas pump addresses. If you know for sure that all the precalculated addresses will be sending funds, you can activate all the addresses right after they have been precalculated.
+Depending on your business needs and requirements, you can choose when to activate the gas pump addresses. If you know for sure that all the precalculated addresses will be sending funds, you can activate all the addresses right after they have been precalculated.
 
- Alternatively, you can set up the activation in such a way so that a gas pump address gets activated only when a specific event is triggered. For example, you can activate a gas pump address:
+Alternatively, you can set up the activation in such a way so that a gas pump address gets activated only when a specific event is triggered. For example, you can activate a gas pump address:
 
- 
+* When it receives an asset for the first time
+* When the customer tries to send an asset from this address for the first time
 
-<ul> <li>When it receives an asset for the first time</li> <li>When the customer tries to send an asset from this address for the first time</li> </ul>
+After you make an API call to activate gas pump addresses, use the [API for getting the results of the address activation transaction](https://apidoc.tatum.io/tag/Gas-pump/#operation/activatednotactivatedgaspumpaddresses).
 
- After you make an API call to activate gas pump addresses, use the <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activatednotactivatedgaspumpaddresses">API for getting the results of the address activation transaction</a>.
-
- **Paying the gas fee for activating gas pump addresses**
-
+**Paying the gas fee for activating gas pump addresses** 
  You can pay the gas fees for each activation transaction yourself, or Tatum can cover it for you.
 
- 
+* When **paying the gas fees yourself**, you must sign the transaction with either the private key of the blockchain address from which you want to pay the fees or the signature ID of that private key (if you use [Key Management System](https://apidoc.tatum.io/tag/Key-Management-System), KMS). 
+ To pay the fees yourself, use this API with any schema of the request body except for `ActivateGasPumpTatum`. For example, if you are activating gas pump addresses on Ethereum and you use KMS, use the `ActivateGasPumpKMS` schema.
+* If you want **Tatum to cover the fees**, use this API with the `ActivateGasPumpTatum` schema of the request body. 
+ * On the **mainnet**, you have to have a [paid pricing plan](https://tatum.io/pricing). 
+ Tatum pays the fees from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. The transaction fees and the corresponding numbers of credits deducted from your allowance vary depending on what blockchain you activate the addresses. 
+ * On the **testnet**, no credits are deducted from the monthly credit allowance. You can activate gas pump addresses regardless of your pricing plan.
 
-<ul> <li>When **paying the gas fees yourself**, you must sign the transaction with either the private key of the blockchain address from which you want to pay the fees or the signature ID of that private key (if you use <a href="https://apidoc.tatum.io/tag/Key-Management-System" target="_blank">Key Management System</a>, KMS).
+This API is supported for the following blockchains:
 
- To pay the fees yourself, use this API with any schema of the request body except for <code>ActivateGasPumpTatum</code>. For example, if you are activating gas pump addresses on Ethereum and you use KMS, use the <code>ActivateGasPumpKMS</code> schema. </li> <li>If you want **Tatum to cover the fees**, use this API with the <code>ActivateGasPumpTatum</code> schema of the request body. 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* TRON
 
-<ul> <li>On the **mainnet**, you have to have a <a href="https://tatum.io/pricing" target="_blank">paid pricing plan</a>.
+[Back to top](#top){: .btn .btn-purple }
 
- Tatum pays the fees from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. The transaction fees and the corresponding numbers of credits deducted from your allowance vary depending on what blockchain you activate the addresses.</li> <li>On the **testnet**, no credits are deducted from the monthly credit allowance. You can activate gas pump addresses regardless of your pricing plan.</li> </ul>
-
- </li> </ul>
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
-
-[Back to top](#top)
-
+---
 
 
 ## `activateGasPumpTron()`
 
 ### Example
 
-[👉 View "**activateGasPumpTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activateGasPumpTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -311,19 +330,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Activate gas pump addresses
+> Activate gas pump addresses
 
-ActivateGasPumpTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `activateGasPumpTronKMS()`
 
 ### Example
 
-[👉 View "**activateGasPumpTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTronKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activateGasPumpTronKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activateGasPumpTronKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -349,19 +372,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Activate gas pump addresses
+> Activate gas pump addresses
 
-ActivateGasPumpTronKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `activatedNotActivatedGasPumpAddresses()`
 
 ### Example
 
-[👉 View "**activatedNotActivatedGasPumpAddresses.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activatedNotActivatedGasPumpAddresses.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **activatedNotActivatedGasPumpAddresses.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/activatedNotActivatedGasPumpAddresses.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -389,35 +416,42 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the results of the address activation transaction
+> Get the results of the address activation transaction
 
 **1 credit per API call**
 
- Get the results of the activation transaction after <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activating gas pump addresses</a>.
+Get the results of the activation transaction after [activating gas pump addresses](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses).
 
- If the activation transaction got recorded into a block, the API returns two arrays:
+If the activation transaction got recorded into a block, the API returns two arrays:
 
- 
+* `valid`, with the activated gas pump addresses
+* `invalid`, with the gas pump addresses that for some reason did not get activated together with the reason why
 
-<ul> <li><code>valid</code>, with the activated gas pump addresses</li> <li><code>invalid</code>, with the gas pump addresses that for some reason did not get activated together with the reason why</li> </ul>
+If the transaction is still being processed, the API returns an error message. In this case, repeat the call later.
 
- If the transaction is still being processed, the API returns an error message. In this case, repeat the call later.
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* TRON
 
- 
+[Back to top](#top){: .btn .btn-purple }
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
-
-[Back to top](#top)
-
+---
 
 
 ## `approveTransferCustodialWallet()`
 
 ### Example
 
-[👉 View "**approveTransferCustodialWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveTransferCustodialWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -443,43 +477,50 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Approve the transfer of an asset from a gas pump address
+> Approve the transfer of an asset from a gas pump address
 
 **2 credits per API call**
 
- Allow another blockchain address (the <code>spender</code> parameter in the request body) to transfer the asset from a gas pump address on behalf of the master address.
+Allow another blockchain address (the `spender` parameter in the request body) to transfer the asset from a gas pump address on behalf of the master address.
 
- Use this API when the customer using the gas pump address sells assets on a marketplace or auction. After the customer creates a listing of the asset, they have to allow the marketplace/auction smart contract to transfer the asset to the buyer after the asset has been bought.
+Use this API when the customer using the gas pump address sells assets on a marketplace or auction. After the customer creates a listing of the asset, they have to allow the marketplace/auction smart contract to transfer the asset to the buyer after the asset has been bought.
 
- The asset can be one of the following types:
+The asset can be one of the following types:
 
- 
+* Fungible token (ERC-20 or equivalent)
+* NFT (ERC-721 or equivalent)
+* Multi Token (ERC-1155 or equivalent)
 
-<ul> <li>Fungible token (ERC-20 or equivalent)</li> <li>NFT (ERC-721 or equivalent)</li> <li>Multi Token (ERC-1155 or equivalent)</li> </ul>
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* XinFin
 
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>XinFin</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When approving the transfer of an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `approveTransferCustodialWalletCelo()`
 
 ### Example
 
-[👉 View "**approveTransferCustodialWalletCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveTransferCustodialWalletCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -505,19 +546,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Approve the transfer of an asset from a gas pump address
+> Approve the transfer of an asset from a gas pump address
 
-ApproveTransferCustodialWalletCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `approveTransferCustodialWalletCeloKMS()`
 
 ### Example
 
-[👉 View "**approveTransferCustodialWalletCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveTransferCustodialWalletCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -543,19 +588,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Approve the transfer of an asset from a gas pump address
+> Approve the transfer of an asset from a gas pump address
 
-ApproveTransferCustodialWalletCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `approveTransferCustodialWalletKMS()`
 
 ### Example
 
-[👉 View "**approveTransferCustodialWalletKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveTransferCustodialWalletKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/approveTransferCustodialWalletKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -581,19 +630,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Approve the transfer of an asset from a gas pump address
+> Approve the transfer of an asset from a gas pump address
 
-ApproveTransferCustodialWalletKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `gasPumpAddressesActivatedOrNot()`
 
 ### Example
 
-[👉 View "**gasPumpAddressesActivatedOrNot.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **gasPumpAddressesActivatedOrNot.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/gasPumpAddressesActivatedOrNot.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -623,29 +676,37 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Check whether the gas pump address with a specified index is activated
+> Check whether the gas pump address with a specified index is activated
 
 **1 credit per API call**
 
- Check whether the gas pump address with a specified index is <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activated</a> and can send funds to other addresses.
+Check whether the gas pump address with a specified index is [activated](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses) and can send funds to other addresses.
 
- You can use this API when a customer initiates a fund transfer and you need to check whether their gas pump address is allowed to send funds.
+You can use this API when a customer initiates a fund transfer and you need to check whether their gas pump address is allowed to send funds.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* TRON
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `precalculateGasPumpAddresses()`
 
 ### Example
 
-[👉 View "**precalculateGasPumpAddresses.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/precalculateGasPumpAddresses.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **precalculateGasPumpAddresses.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/precalculateGasPumpAddresses.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -671,53 +732,59 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Precalculate gas pump addresses
+> Precalculate gas pump addresses
 
 **2 credits per API call**
 
- Precalculate (generate) gas pump addresses that you can assign to the customers of your custodial application.
+Precalculate (generate) gas pump addresses that you can assign to the customers of your custodial application.
 
- This API does not make any changes on the blockchain itself, just generates addresses that follow the blockchain's requirements for the address format; therefore, no gas fee is applied.
+This API does not make any changes on the blockchain itself, just generates addresses that follow the blockchain's requirements for the address format; therefore, no gas fee is applied.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* TRON
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> </ul>
+**Address index** 
+ Each address should be associated with its own index. Use the `from` and `to` request body parameters to set a range of index values for the addresses to precalculate. You can start with any number, but we recommend that you start from 0.
 
- **Address index**
+In one API call, you can precalculate:
 
- Each address should be associated with its own index. Use the <code>from</code> and <code>to</code> request body parameters to set a range of index values for the addresses to precalculate. You can start with any number, but we recommend that you start from 0.
+* Up to 4,000 addresses for Harmony
+* Up to 500 addresses for TRON
+* Up to 5,000 addresses for the other supported blockchains
 
- In one API call, you can precalculate:
+If you need more addresses than one API call can precalculate, make several API calls. For example, if you need 10,000 addresses on Ethereum, make an API call with an index range from 0 through 4,999 and then make another API call with an index range from 5,000 through 9,999.
 
- 
+The order in which the precalculated addresses are returned in the API response is the order of the values in the index range, and the index values are assigned to the addresses accordingly. 
+For example, you precalculated three gas pump addresses with a range of index values from 3 to 5\. The first address in the returned arrray is assigned the index value "3", the second one - "4", and the third one - "5".
 
-<ul> <li>Up to 4,000 addresses for Harmony</li> <li>Up to 500 addresses for TRON</li> <li>Up to 5,000 addresses for the other supported blockchains</li> </ul>
+ [ "0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea", // index is 3 "0x5c6079c14e9cd3d2ea8cb76aed9c5e336ef96126", // index is 4 "0xc5e336ef9612614e9cd3d2ea8cb76aed95c6079c" // index is 5 ] 
 
- If you need more addresses than one API call can precalculate, make several API calls. For example, if you need 10,000 addresses on Ethereum, make an API call with an index range from 0 through 4,999 and then make another API call with an index range from 5,000 through 9,999.
-
- The order in which the precalculated addresses are returned in the API response is the order of the values in the index range, and the index values are assigned to the addresses accordingly.
-
-For example, you precalculated three gas pump addresses with a range of index values from 3 to 5. The first address in the returned arrray is assigned the index value "3", the second one - "4", and the third one - "5".
-
- <pre> [ "0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea", // index is 3 "0x5c6079c14e9cd3d2ea8cb76aed9c5e336ef96126", // index is 4 "0xc5e336ef9612614e9cd3d2ea8cb76aed95c6079c" // index is 5 ] </pre> **The owner of the gas pump addresses**
-
+**The owner of the gas pump addresses** 
  The owner (also referred to as "master address") is the blockchain address that will own the precalculated gas pump addresses. The owner will also be paying gas fees for operations made on the gas pump addresses. You have to make sure that the owner always has enough funds to cover these gas fees.
 
- **Activated and not activated addresses**
+**Activated and not activated addresses** 
+ The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, [activate them](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses).
 
- The precalculated addresses can be immediately assigned to customers and can **receive** funds. However, they cannot be used to **send** funds to other addresses. This is because the addresses are not activated. To make the addresses be able to send funds, <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activate them</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferCustodialWallet()`
 
 ### Example
 
-[👉 View "**transferCustodialWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -743,49 +810,55 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an asset from a gas pump address
+> Transfer an asset from a gas pump address
 
 **2 credits per API call**
 
- Transfer (send) an asset from a gas pump address to the other address.
+Transfer (send) an asset from a gas pump address to the other address.
 
- This operation is usually performed by users in your custodial application: a user who has a gas pump address assigned wants to transfer an asset to some address on the blockchain.
+This operation is usually performed by users in your custodial application: a user who has a gas pump address assigned wants to transfer an asset to some address on the blockchain.
 
- The gas fee for sending the asset will be covered by crypto funds on the master address. Make sure that the master address always has enough funds to cover gas fees.
+The gas fee for sending the asset will be covered by crypto funds on the master address. Make sure that the master address always has enough funds to cover gas fees.
 
- To be able to send the asset:
+To be able to send the asset:
 
- 
+* The gas pump address must be [activated](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses). 
+To check whether the gas pump address is activated, use [this API](https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot).
+* The gas pump address must be the owner of the asset.
 
-<ul> <li>The gas pump address must be <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activated</a>.
+With this API, you can send only one asset per API call. If you want to send multiple assets, use the [API for transferring multiple assets from a gas pump account](https://apidoc.tatum.io/tag/Gas-pump/#operation/transfercustodialwalletbatch).
 
-To check whether the gas pump address is activated, use <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot">this API</a>.</li> <li>The gas pump address must be the owner of the asset.</li> </ul>
+This API is supported for the following blockchains:
 
- With this API, you can send only one asset per API call. If you want to send multiple assets, use the <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/transfercustodialwalletbatch">API for transferring multiple assets from a gas pump account</a>.
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* TRON
+* XinFin
 
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When transferring an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferCustodialWalletBatch()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatch.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletBatch.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatch.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -811,49 +884,55 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple assets from a gas pump address
+> Transfer multiple assets from a gas pump address
 
 **2 credits per API call**
 
- Transfer (send) multiple assets from a gas pump address to one or more addresses.
+Transfer (send) multiple assets from a gas pump address to one or more addresses.
 
- This operation is usually performed by users in your custodial application: a user who has a gas pump address assigned wants to transfer multiple assets to one or more addresses on the blockchain.
+This operation is usually performed by users in your custodial application: a user who has a gas pump address assigned wants to transfer multiple assets to one or more addresses on the blockchain.
 
- The gas fee for sending the assets will be covered by crypto funds on the master address. Make sure that the master address always has enough funds to cover gas fees.
+The gas fee for sending the assets will be covered by crypto funds on the master address. Make sure that the master address always has enough funds to cover gas fees.
 
- To be able to send the assets:
+To be able to send the assets:
 
- 
+* The gas pump address must be [activated](https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses). 
+To check whether the gas pump address is activated, use [this API](https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot).
+* The gas pump address must be the owner of the assets.
 
-<ul> <li>The gas pump address must be <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/activategaspumpaddresses">activated</a>.
+If you want to send only one asset, you can also use the [API for transferring an asset from a gas pump account](https://apidoc.tatum.io/tag/Gas-pump/#operation/transfercustodialwallet).
 
-To check whether the gas pump address is activated, use <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/gaspumpaddressesactivatedornot">this API</a>.</li> <li>The gas pump address must be the owner of the assets.</li> </ul>
+This API is supported for the following blockchains:
 
- If you want to send only one asset, you can also use the <a href="https://apidoc.tatum.io/tag/Gas-pump/#operation/transfercustodialwallet">API for transferring an asset from a gas pump account</a>.
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* TRON
+* XinFin
 
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When transferring assets, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferCustodialWalletBatchCelo()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletBatchCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletBatchCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -879,19 +958,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple assets from a gas pump address
+> Transfer multiple assets from a gas pump address
 
-TransferCustodialWalletBatchCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletBatchCeloKMS()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletBatchCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletBatchCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -917,19 +1000,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple assets from a gas pump address
+> Transfer multiple assets from a gas pump address
 
-TransferCustodialWalletBatchCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletBatchKMS()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletBatchKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletBatchKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -955,19 +1042,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple assets from a gas pump address
+> Transfer multiple assets from a gas pump address
 
-TransferCustodialWalletBatchKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletBatchTron()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletBatchTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletBatchTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -993,19 +1084,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple assets from a gas pump address
+> Transfer multiple assets from a gas pump address
 
-TransferCustodialWalletBatchTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletBatchTronKMS()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletBatchTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTronKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletBatchTronKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletBatchTronKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1031,19 +1126,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple assets from a gas pump address
+> Transfer multiple assets from a gas pump address
 
-TransferCustodialWalletBatchTronKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletCelo()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1069,19 +1168,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an asset from a gas pump address
+> Transfer an asset from a gas pump address
 
-TransferCustodialWalletCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletCeloKMS()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1107,19 +1210,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an asset from a gas pump address
+> Transfer an asset from a gas pump address
 
-TransferCustodialWalletCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletKMS()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1145,19 +1252,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an asset from a gas pump address
+> Transfer an asset from a gas pump address
 
-TransferCustodialWalletKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletTron()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1183,19 +1294,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an asset from a gas pump address
+> Transfer an asset from a gas pump address
 
-TransferCustodialWalletTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferCustodialWalletTronKMS()`
 
 ### Example
 
-[👉 View "**transferCustodialWalletTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTronKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferCustodialWalletTronKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/GasPumpApi/transferCustodialWalletTronKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1221,9 +1336,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an asset from a gas pump address
+> Transfer an asset from a gas pump address
 
-TransferCustodialWalletTronKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

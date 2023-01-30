@@ -34,7 +34,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**createCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/createCurrency.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createCurrency.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/createCurrency.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -60,27 +63,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create new virtual currency
+> Create new virtual currency
 
 **2 credits per API call**
 
- Create new virtual currency with given supply stored in account. This will create Tatum internal virtual currency. Every virtual currency must be prefixed with **VC_**.
+Create new virtual currency with given supply stored in account. This will create Tatum internal virtual currency. Every virtual currency must be prefixed with **VC\_**.
 
- Every virtual currency must be pegged to existing FIAT or supported cryptocurrency. 1 unit of virtual currency has then the same amount as 1 unit of the base currency it is pegged to. It is possible to set a custom base rate for the virtual currency. (baseRate = 2 => 1 VC unit = 2 basePair units)
+Every virtual currency must be pegged to existing FIAT or supported cryptocurrency. 1 unit of virtual currency has then the same amount as 1 unit of the base currency it is pegged to. It is possible to set a custom base rate for the virtual currency. (baseRate = 2 => 1 VC unit = 2 basePair units)
 
- Tatum virtual currency acts as any other asset within Tatum. To create a fungible token, see the <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Deploy" target="_blank">API for deploying a fungible token smart contract</a>.
+Tatum virtual currency acts as any other asset within Tatum. To create a fungible token, see the [API for deploying a fungible token smart contract](https://apidoc.tatum.io/tag/Fungible-Tokens-%28ERC-20-or-compatible%29#operation/Erc20Deploy).
 
- This operation returns the newly created Tatum Ledger account with an initial balance set to the virtual currency's total supply. Total supply can be changed in the future.
+This operation returns the newly created Tatum Ledger account with an initial balance set to the virtual currency's total supply. Total supply can be changed in the future.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getCurrency()`
 
 ### Example
 
-[👉 View "**getCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/getCurrency.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getCurrency.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/getCurrency.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -106,21 +113,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get virtual currency
+> Get virtual currency
 
 **1 credit per API call**
 
- Get detail of virtual currency.
+Get detail of virtual currency.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `mintCurrency()`
 
 ### Example
 
-[👉 View "**mintCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/mintCurrency.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintCurrency.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/mintCurrency.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -146,23 +157,27 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create new supply of virtual currency
+> Create new supply of virtual currency
 
 **2 credits per API call**
 
- Create new supply of virtual currency linked on the given accountId. Method increases the total supply of the currency.
+Create new supply of virtual currency linked on the given accountId. Method increases the total supply of the currency.
 
- This method creates Ledger transaction with operationType MINT with undefined counterAccountId.
+This method creates Ledger transaction with operationType MINT with undefined counterAccountId.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `revokeCurrency()`
 
 ### Example
 
-[👉 View "**revokeCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/revokeCurrency.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **revokeCurrency.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/revokeCurrency.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -188,23 +203,27 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Destroy supply of virtual currency
+> Destroy supply of virtual currency
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
- Destroy supply of virtual currency linked on the given accountId. Method decreases the total supply of the currency.
-
+ 
+Destroy supply of virtual currency linked on the given accountId. Method decreases the total supply of the currency. 
  This method creates Ledger transaction with operationType REVOKE with undefined counterAccountId.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `updateCurrency()`
 
 ### Example
 
-[👉 View "**updateCurrency.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/updateCurrency.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateCurrency.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualCurrencyApi/updateCurrency.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -230,11 +249,13 @@ void (empty response body)
 
 ### Description
 
-Update virtual currency
+> Update virtual currency
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
+ 
 Change base pair and/or base rate of existing virtual currency.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

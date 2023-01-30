@@ -76,7 +76,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**bloMarWithdrawFromMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bloMarWithdrawFromMarketplaceSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -102,33 +105,36 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Withdraw funds from the marketplace treasury account on Solana
+> Withdraw funds from the marketplace treasury account on Solana
 
 **2 credits per API call**
 
- Withdraw funds from the NFT marketplace treasury account on Solana.
+Withdraw funds from the NFT marketplace treasury account on Solana.
 
- You can withdraw the funds only if you are the marketplace fee recipient.
+You can withdraw the funds only if you are the marketplace fee recipient.
 
- This API is in **alpha** and is supported only for the mainnet on Solana.
+This API is in **alpha** and is supported only for the mainnet on Solana.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `bloMarWithdrawFromMarketplaceSolanaKMS()`
 
 ### Example
 
-[👉 View "**bloMarWithdrawFromMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **bloMarWithdrawFromMarketplaceSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/bloMarWithdrawFromMarketplaceSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -154,19 +160,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Withdraw funds from the marketplace treasury account on Solana
+> Withdraw funds from the marketplace treasury account on Solana
 
-WithdrawFromMarketplaceSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `buyAssetOnMarketplace()`
 
 ### Example
 
-[👉 View "**buyAssetOnMarketplace.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplace.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **buyAssetOnMarketplace.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplace.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -192,49 +202,52 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Buy an asset on the NFT marketplace
+> Buy an asset on the NFT marketplace
 
 **2 credits per API call**
 
- Buy an asset listed on the NFT marketplace.
+Buy an asset listed on the NFT marketplace.
 
- You can buy the asset either for the native blockchain currency (for example, ETH, MATIC, and so on) or for the fungible tokens of the blockchain.
+You can buy the asset either for the native blockchain currency (for example, ETH, MATIC, and so on) or for the fungible tokens of the blockchain.
 
- 
+* If you want to pay for the asset with the **native blockchain currency**, send the required amount plus the marketplace fee right in the API call (in the `amount` request body parameter).
+* If you want to pay with the **fungible tokens**, [allow the marketplace smart contract to access your tokens](https://apidoc.tatum.io/tag/Fungible-Tokens-%28ERC-20-or-compatible%29#operation/Erc20Approve) before making the purchase. When you make the API call, the marketplace smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.
 
-<ul> <li>If you want to pay for the asset with the **native blockchain currency**, send the required amount plus the marketplace fee right in the API call (in the <code>amount</code> request body parameter).</li> <li>If you want to pay with the **fungible tokens**, <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allow the marketplace smart contract to access your tokens</a> before making the purchase. When you make the API call, the marketplace smart contract will deduct the required amount of the tokens from the smart contract where you hold the tokens.</li> </ul>
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
-
- **The "execution reverted" message**
-
- When making this API call, you may get the following message:
-
- <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
-
+**The "execution reverted" message** 
+ When making this API call, you may get the following message: 
+`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
  This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When buying an asset on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `buyAssetOnMarketplaceCelo()`
 
 ### Example
 
-[👉 View "**buyAssetOnMarketplaceCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **buyAssetOnMarketplaceCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -260,19 +273,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Buy an asset on the NFT marketplace
+> Buy an asset on the NFT marketplace
 
-BuyAssetOnMarketplaceCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `buyAssetOnMarketplaceCeloKMS()`
 
 ### Example
 
-[👉 View "**buyAssetOnMarketplaceCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **buyAssetOnMarketplaceCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -298,19 +315,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Buy an asset on the NFT marketplace
+> Buy an asset on the NFT marketplace
 
-BuyAssetOnMarketplaceCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `buyAssetOnMarketplaceKMS()`
 
 ### Example
 
-[👉 View "**buyAssetOnMarketplaceKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **buyAssetOnMarketplaceKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -336,19 +357,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Buy an asset on the NFT marketplace
+> Buy an asset on the NFT marketplace
 
-BuyAssetOnMarketplaceKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `buyAssetOnMarketplaceSolana()`
 
 ### Example
 
-[👉 View "**buyAssetOnMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **buyAssetOnMarketplaceSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -374,19 +399,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Buy an asset on the NFT marketplace
+> Buy an asset on the NFT marketplace
 
-BuyAssetOnMarketplaceSolana operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `buyAssetOnMarketplaceSolanaKMS()`
 
 ### Example
 
-[👉 View "**buyAssetOnMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **buyAssetOnMarketplaceSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/buyAssetOnMarketplaceSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -412,19 +441,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Buy an asset on the NFT marketplace
+> Buy an asset on the NFT marketplace
 
-BuyAssetOnMarketplaceSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `cancelSellAssetOnMarketplace()`
 
 ### Example
 
-[👉 View "**cancelSellAssetOnMarketplace.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelSellAssetOnMarketplace.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplace.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -450,47 +483,51 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset on the NFT marketplace
+> Cancel the selling of an asset on the NFT marketplace
 
 **2 credits per API call**
 
- Cancel the selling of an asset on the NFT marketplace.
+Cancel the selling of an asset on the NFT marketplace.
 
- You can cancel the selling only if you are the seller of the asset or the marketplace operator. Once the selling is canceled, the asset is returned to the seller.
+You can cancel the selling only if you are the seller of the asset or the marketplace operator. Once the selling is canceled, the asset is returned to the seller.
 
- You cannot cancel the selling if the asset has already been purchased.
+You cannot cancel the selling if the asset has already been purchased.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
-
- **The "execution reverted" message**
-
- When making this API call, you may get the following message:
-
- <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
-
+**The "execution reverted" message** 
+ When making this API call, you may get the following message: 
+`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
  This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When cancelling the selling of an asset, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `cancelSellAssetOnMarketplaceCelo()`
 
 ### Example
 
-[👉 View "**cancelSellAssetOnMarketplaceCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelSellAssetOnMarketplaceCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -516,19 +553,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset on the NFT marketplace
+> Cancel the selling of an asset on the NFT marketplace
 
-CancelSellAssetOnMarketplaceCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `cancelSellAssetOnMarketplaceCeloKMS()`
 
 ### Example
 
-[👉 View "**cancelSellAssetOnMarketplaceCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelSellAssetOnMarketplaceCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -554,19 +595,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset on the NFT marketplace
+> Cancel the selling of an asset on the NFT marketplace
 
-CancelSellAssetOnMarketplaceCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `cancelSellAssetOnMarketplaceKMS()`
 
 ### Example
 
-[👉 View "**cancelSellAssetOnMarketplaceKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelSellAssetOnMarketplaceKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -592,19 +637,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset on the NFT marketplace
+> Cancel the selling of an asset on the NFT marketplace
 
-CancelSellAssetOnMarketplaceKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `cancelSellAssetOnMarketplaceSolana()`
 
 ### Example
 
-[👉 View "**cancelSellAssetOnMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelSellAssetOnMarketplaceSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -630,19 +679,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset on the NFT marketplace
+> Cancel the selling of an asset on the NFT marketplace
 
-CancelSellAssetOnMarketplaceSolana operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `cancelSellAssetOnMarketplaceSolanaKMS()`
 
 ### Example
 
-[👉 View "**cancelSellAssetOnMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **cancelSellAssetOnMarketplaceSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/cancelSellAssetOnMarketplaceSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -668,19 +721,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Cancel the selling of an asset on the NFT marketplace
+> Cancel the selling of an asset on the NFT marketplace
 
-CancelSellAssetOnMarketplaceSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `generateMarketplace()`
 
 ### Example
 
-[👉 View "**generateMarketplace.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplace.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateMarketplace.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplace.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -706,49 +763,53 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT marketplace
+> Create an NFT marketplace
 
 **2 credits per API call**
 
- Deploy an NFT marketplace smart contract on the blockchain. With a deployed marketplace smart contract, you and your customers can create new listings for assets such as non-fungible tokens and combinations of token types as described by the ERC-721 and ERC-1155 standards on the Ethereum blockchain or by the equivalent standards on the other blockchains. As the marketplace operator, you can set a fee as a percentage of the asset price that will be paid on top of the asset price.
+Deploy an NFT marketplace smart contract on the blockchain. With a deployed marketplace smart contract, you and your customers can create new listings for assets such as non-fungible tokens and combinations of token types as described by the ERC-721 and ERC-1155 standards on the Ethereum blockchain or by the equivalent standards on the other blockchains. As the marketplace operator, you can set a fee as a percentage of the asset price that will be paid on top of the asset price.
 
- The purchase process looks like the following:
+The purchase process looks like the following:
 
- 
+1. The seller [creates a listing for an asset on the NFT marketplace](https://apidoc.tatum.io/tag/Marketplace/#operation/sellassetonmarketplace). The listing can be offered for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.
+2. The seller [allows the marketplace smart contract to transfer the asset that they are selling](https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending).
+3. A buyer buys the asset. 
+ * If the buyer wants to pay with the **native blockchain assets**, they [make the purchase](https://apidoc.tatum.io/tag/Marketplace/#operation/buyassetonmarketplace) (the `buyAssetFromListing()` method is called against the marketplace smart contract) and send the required amount of the native assets to the marketplace smart contract. 
+ * If the buyer wants to pay with the **fungible tokens**: 
+ 1. The buyer [allows the marketplace smart contract to access their tokens](https://apidoc.tatum.io/tag/Fungible-Tokens-%28ERC-20-or-compatible%29#operation/Erc20Approve) and makes the purchase (the `buyAssetFromListing()` method is called against the marketplace smart contract). 
+ 2. The marketplace smart contract deducts the required amount of tokens from the smart contract where the buyer holds the tokens.
+4. The marketplace smart contract transfers the asset to the buyer, transfers the asset price to the seller, and sends the fee to the marketplace fee recipient.
 
-<ol> <li>The seller <a href="https://apidoc.tatum.io/tag/Marketplace/#operation/sellassetonmarketplace">creates a listing for an asset on the NFT marketplace</a>. The listing can be offered for the native blockchain assets (for example, ETH, BSC, and so on) or for the fungible tokens of the blockchain.</li> <li>The seller <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allows the marketplace smart contract to transfer the asset that they are selling</a>.</li> <li>A buyer buys the asset. 
+This API is supported for the following blockchains:
 
-<ul><li>If the buyer wants to pay with the **native blockchain assets**, they <a href="https://apidoc.tatum.io/tag/Marketplace/#operation/buyassetonmarketplace">make the purchase</a> (the <code>buyAssetFromListing()</code> method is called against the marketplace smart contract) and send the required amount of the native assets to the marketplace smart contract.</li> <li>If the buyer wants to pay with the **fungible tokens**: 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
-<ol><li>The buyer <a href="https://apidoc.tatum.io/tag/Fungible-Tokens-(ERC-20-or-compatible)#operation/Erc20Approve" target="_blank">allows the marketplace smart contract to access their tokens</a> and makes the purchase (the <code>buyAssetFromListing()</code> method is called against the marketplace smart contract).</li> <li>The marketplace smart contract deducts the required amount of tokens from the smart contract where the buyer holds the tokens.</li></ol>
-
-</li></ul>
-
-</li> <li>The marketplace smart contract transfers the asset to the buyer, transfers the asset price to the seller, and sends the fee to the marketplace fee recipient.</li> </ol>
-
- This API is supported for the following blockchains:
-
- 
-
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When deploying an NFT marketplace smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `generateMarketplaceCelo()`
 
 ### Example
 
-[👉 View "**generateMarketplaceCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateMarketplaceCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -774,19 +835,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT marketplace
+> Create an NFT marketplace
 
-GenerateMarketplaceCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `generateMarketplaceCeloKMS()`
 
 ### Example
 
-[👉 View "**generateMarketplaceCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateMarketplaceCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -812,19 +877,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT marketplace
+> Create an NFT marketplace
 
-GenerateMarketplaceCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `generateMarketplaceKMS()`
 
 ### Example
 
-[👉 View "**generateMarketplaceKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateMarketplaceKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -850,19 +919,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT marketplace
+> Create an NFT marketplace
 
-GenerateMarketplaceKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `generateMarketplaceSolana()`
 
 ### Example
 
-[👉 View "**generateMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateMarketplaceSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -888,19 +961,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT marketplace
+> Create an NFT marketplace
 
-GenerateMarketplaceSolana operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `generateMarketplaceSolanaKMS()`
 
 ### Example
 
-[👉 View "**generateMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **generateMarketplaceSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/generateMarketplaceSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -926,19 +1003,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create an NFT marketplace
+> Create an NFT marketplace
 
-GenerateMarketplaceSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `getMarketplaceFee()`
 
 ### Example
 
-[👉 View "**getMarketplaceFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFee.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getMarketplaceFee.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFee.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -966,27 +1047,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the NFT marketplace fee
+> Get the NFT marketplace fee
 
 **1 credit per API call**
 
- Get the NFT marketplace fee.
+Get the NFT marketplace fee.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `getMarketplaceFeeRecipient()`
 
 ### Example
 
-[👉 View "**getMarketplaceFeeRecipient.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getMarketplaceFeeRecipient.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceFeeRecipient.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1014,27 +1103,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the recipient of the NFT marketplace fee
+> Get the recipient of the NFT marketplace fee
 
 **1 credit per API call**
 
- Get the recipient of the NFT marketplace fee.
+Get the recipient of the NFT marketplace fee.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `getMarketplaceInfo()`
 
 ### Example
 
-[👉 View "**getMarketplaceInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceInfo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getMarketplaceInfo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceInfo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1062,23 +1159,27 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get information about an NFT marketplace on Solana
+> Get information about an NFT marketplace on Solana
 
 **1 credit per API call**
 
- Get information about an NFT marketplace on Solana.
+Get information about an NFT marketplace on Solana.
 
- This API is in **alpha** and is supported only for the mainnet on Solana.
+This API is in **alpha** and is supported only for the mainnet on Solana.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getMarketplaceListing()`
 
 ### Example
 
-[👉 View "**getMarketplaceListing.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListing.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getMarketplaceListing.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListing.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1108,27 +1209,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get information about a listing on the NFT marketplace
+> Get information about a listing on the NFT marketplace
 
 **1 credit per API call**
 
- Get information about a specific listing on the NFT marketplace.
+Get information about a specific listing on the NFT marketplace.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `getMarketplaceListings()`
 
 ### Example
 
-[👉 View "**getMarketplaceListings.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListings.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getMarketplaceListings.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/getMarketplaceListings.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1158,27 +1267,32 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the listings of a certain type from the NFT marketplace
+> Get the listings of a certain type from the NFT marketplace
 
 **1 credit per API call**
 
- Get the open, sold, or cancelled listings from the NFT marketplace.
+Get the open, sold, or cancelled listings from the NFT marketplace.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Celo
+* Ethereum
+* Polygon
+* Solana (in **alpha**)
 
-<ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `sellAssetOnMarketplace()`
 
 ### Example
 
-[👉 View "**sellAssetOnMarketplace.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplace.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sellAssetOnMarketplace.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplace.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1204,55 +1318,56 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset on the NFT marketplace
+> Sell an asset on the NFT marketplace
 
 **2 credits per API call**
 
- Create a new listing for an asset on the NFT marketplace. The listing can be offered for the native blockchain assets (for example, ETH, MATIC, and so on) or for any fungible tokens.
+Create a new listing for an asset on the NFT marketplace. The listing can be offered for the native blockchain assets (for example, ETH, MATIC, and so on) or for any fungible tokens.
 
- After the listing is created, <a href="https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending" target="_blank">allow the marketplace smart contract to transfer the asset that you are selling</a>.
+After the listing is created, [allow the marketplace smart contract to transfer the asset that you are selling](https://apidoc.tatum.io/tag/Auction#operation/ApproveNftAuctionSpending).
 
- You can create a listing only for an existing asset that you own (you must be the owner of the asset).
+You can create a listing only for an existing asset that you own (you must be the owner of the asset).
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
-
- **A known issue on Harmony**
-
- On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following:
-
- <code>Error reverted:x0</code>
-
+**A known issue on Harmony** 
+ On Harmony, when you are viewing a transaction in the Harmony Blockchain Explorer, the transaction status may be displayed as the following: 
+`Error reverted:x0` 
  This is a known issue with the Harmony Blockchain Explorer. This status does not mean that the transaction failed. You can safely ignore it.
 
- **The "execution reverted" message**
-
- When making this API call, you may get the following message:
-
- <code>Although one or more Error Occurred [execution reverted] Contract Execution Completed</code>
-
+**The "execution reverted" message** 
+ When making this API call, you may get the following message: 
+`Although one or more Error Occurred [execution reverted] Contract Execution Completed` 
  This message is a result of the marketplace version check and has no impact on completing the API call. You can safely ignore it.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When creating a new listing on the NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `sellAssetOnMarketplaceCelo()`
 
 ### Example
 
-[👉 View "**sellAssetOnMarketplaceCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sellAssetOnMarketplaceCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1278,19 +1393,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset on the NFT marketplace
+> Sell an asset on the NFT marketplace
 
-SellAssetOnMarketplaceCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `sellAssetOnMarketplaceCeloKMS()`
 
 ### Example
 
-[👉 View "**sellAssetOnMarketplaceCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sellAssetOnMarketplaceCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1316,19 +1435,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset on the NFT marketplace
+> Sell an asset on the NFT marketplace
 
-SellAssetOnMarketplaceCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `sellAssetOnMarketplaceKMS()`
 
 ### Example
 
-[👉 View "**sellAssetOnMarketplaceKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sellAssetOnMarketplaceKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1354,19 +1477,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset on the NFT marketplace
+> Sell an asset on the NFT marketplace
 
-SellAssetOnMarketplaceKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `sellAssetOnMarketplaceSolana()`
 
 ### Example
 
-[👉 View "**sellAssetOnMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sellAssetOnMarketplaceSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1392,19 +1519,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset on the NFT marketplace
+> Sell an asset on the NFT marketplace
 
-SellAssetOnMarketplaceSolana operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `sellAssetOnMarketplaceSolanaKMS()`
 
 ### Example
 
-[👉 View "**sellAssetOnMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sellAssetOnMarketplaceSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/sellAssetOnMarketplaceSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1430,19 +1561,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sell an asset on the NFT marketplace
+> Sell an asset on the NFT marketplace
 
-SellAssetOnMarketplaceSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFee()`
 
 ### Example
 
-[👉 View "**updateFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFee.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFee.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFee.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1468,37 +1603,44 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT marketplace fee
+> Update the NFT marketplace fee
 
 **2 credits per API call**
 
- Update the NFT marketplace fee.
+Update the NFT marketplace fee.
 
- You can update the marketplace fee only if you are the marketplace operator.
+You can update the marketplace fee only if you are the marketplace operator.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When updating the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `updateFeeCelo()`
 
 ### Example
 
-[👉 View "**updateFeeCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1524,19 +1666,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT marketplace fee
+> Update the NFT marketplace fee
 
-UpdateFeeCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeCeloKMS()`
 
 ### Example
 
-[👉 View "**updateFeeCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1562,19 +1708,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT marketplace fee
+> Update the NFT marketplace fee
 
-UpdateFeeCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeKMS()`
 
 ### Example
 
-[👉 View "**updateFeeKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1600,19 +1750,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT marketplace fee
+> Update the NFT marketplace fee
 
-UpdateFeeKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeRecipient()`
 
 ### Example
 
-[👉 View "**updateFeeRecipient.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipient.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeRecipient.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipient.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1638,37 +1792,44 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT marketplace fee
+> Update the recipient of the NFT marketplace fee
 
 **2 credits per API call**
 
- Update the recipient of the NFT marketplace fee.
+Update the recipient of the NFT marketplace fee.
 
- You can update the fee recipient only if you are the marketplace operator.
+You can update the fee recipient only if you are the marketplace operator.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
+* Solana (in **alpha**)
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>Solana (in **alpha**)</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When updating the recipient of the NFT marketplace fee, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `updateFeeRecipientCelo()`
 
 ### Example
 
-[👉 View "**updateFeeRecipientCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeRecipientCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1694,19 +1855,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT marketplace fee
+> Update the recipient of the NFT marketplace fee
 
-UpdateFeeRecipientCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeRecipientCeloKMS()`
 
 ### Example
 
-[👉 View "**updateFeeRecipientCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeRecipientCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1732,19 +1897,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT marketplace fee
+> Update the recipient of the NFT marketplace fee
 
-UpdateFeeRecipientCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeRecipientKMS()`
 
 ### Example
 
-[👉 View "**updateFeeRecipientKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeRecipientKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1770,19 +1939,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT marketplace fee
+> Update the recipient of the NFT marketplace fee
 
-UpdateFeeRecipientKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeRecipientSolana()`
 
 ### Example
 
-[👉 View "**updateFeeRecipientSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeRecipientSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1808,19 +1981,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT marketplace fee
+> Update the recipient of the NFT marketplace fee
 
-UpdateFeeRecipientSolana operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeRecipientSolanaKMS()`
 
 ### Example
 
-[👉 View "**updateFeeRecipientSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeRecipientSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeRecipientSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1846,19 +2023,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the recipient of the NFT marketplace fee
+> Update the recipient of the NFT marketplace fee
 
-UpdateFeeRecipientSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeSolana()`
 
 ### Example
 
-[👉 View "**updateFeeSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1884,19 +2065,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT marketplace fee
+> Update the NFT marketplace fee
 
-UpdateFeeSolana operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateFeeSolanaKMS()`
 
 ### Example
 
-[👉 View "**updateFeeSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateFeeSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateFeeSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1922,19 +2107,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update the NFT marketplace fee
+> Update the NFT marketplace fee
 
-UpdateFeeSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateMarketplaceSolana()`
 
 ### Example
 
-[👉 View "**updateMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateMarketplaceSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1960,33 +2149,36 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update an NFT marketplace on Solana
+> Update an NFT marketplace on Solana
 
 **2 credits per API call**
 
- Update an NFT marketplace on Solana.
+Update an NFT marketplace on Solana.
 
- You can update it only if you are the marketplace operator.
+You can update it only if you are the marketplace operator.
 
- This API is in **alpha** and is supported only for the mainnet on Solana.
+This API is in **alpha** and is supported only for the mainnet on Solana.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When updating an NFT marketplace, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `updateMarketplaceSolanaKMS()`
 
 ### Example
 
-[👉 View "**updateMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateMarketplaceSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/updateMarketplaceSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2012,19 +2204,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update an NFT marketplace on Solana
+> Update an NFT marketplace on Solana
 
-UpdateMarketplaceSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `withdrawFromMarketplaceSolana()`
 
 ### Example
 
-[👉 View "**withdrawFromMarketplaceSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **withdrawFromMarketplaceSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2050,33 +2246,36 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Withdraw funds from the marketplace fee account on Solana
+> Withdraw funds from the marketplace fee account on Solana
 
 **2 credits per API call**
 
- Withdraw funds from the NFT marketplace fee account on Solana.
+Withdraw funds from the NFT marketplace fee account on Solana.
 
- You can withdraw the funds only if you are the marketplace fee recipient.
+You can withdraw the funds only if you are the marketplace fee recipient.
 
- This API is in **alpha** and is supported only for the mainnet on Solana.
+This API is in **alpha** and is supported only for the mainnet on Solana.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When withdrawing the funds, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `withdrawFromMarketplaceSolanaKMS()`
 
 ### Example
 
-[👉 View "**withdrawFromMarketplaceSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **withdrawFromMarketplaceSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MarketplaceApi/withdrawFromMarketplaceSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2102,9 +2301,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Withdraw funds from the marketplace fee account on Solana
+> Withdraw funds from the marketplace fee account on Solana
 
-WithdrawFromMarketplaceSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

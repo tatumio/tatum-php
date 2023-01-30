@@ -30,7 +30,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**offchainEstimateFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualAccountBlockchainFeesApi/offchainEstimateFee.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **offchainEstimateFee.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/VirtualAccountBlockchainFeesApi/offchainEstimateFee.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -56,15 +59,17 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate ledger to blockchain transaction fee
+> Estimate ledger to blockchain transaction fee
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
- Estimate current transaction fee for ledger to blockchain transaction.
-
+ 
+Estimate current transaction fee for ledger to blockchain transaction. 
  Supported blockchains: 
+* Bitcoin
+* Litecoin
+* Dogecoin
 
-<ul> <li>Bitcoin</li> <li>Litecoin</li> <li>Dogecoin</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---

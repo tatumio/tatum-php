@@ -31,7 +31,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**getDeposits.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDeposits.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getDeposits.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDeposits.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -71,21 +74,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-List all deposits for product
+> List all deposits for product
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Lists all deposits for API key.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getDepositsCount()`
 
 ### Example
 
-[👉 View "**getDepositsCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDepositsCount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getDepositsCount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/DepositApi/getDepositsCount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -125,11 +133,13 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Count of found entities for get deposits request
+> Count of found entities for get deposits request
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Counts total entities found by get deposits request.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

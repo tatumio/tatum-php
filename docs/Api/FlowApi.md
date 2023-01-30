@@ -50,7 +50,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**flowAddPubKeyMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeyMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowAddPubKeyMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeyMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -76,25 +79,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add public key to Flow address
+> Add public key to Flow address
 
-<h4>100 credits per API call. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.</h4>
+#### 100 credits per API call. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.
 
- Add public key to existing Flow blockchain addresses. Private key for that public key can be used for signing transaction. There are two possibilites how the transaction on the blockchain can be created: 
+ 
+Add public key to existing Flow blockchain addresses. Private key for that public key can be used for signing transaction. There are two possibilites how the transaction on the blockchain can be created: 
+* Using mnemonic and index - private key is generated based on the index in the mnemonic.
+* Using secret - private keys is entered manually.
+ 
+ 
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-<ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
-
-[Back to top](#top)
-
+---
 
 
 ## `flowAddPubKeySecret()`
 
 ### Example
 
-[👉 View "**flowAddPubKeySecret.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecret.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowAddPubKeySecret.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecret.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -120,19 +129,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add public key to Flow address
+> Add public key to Flow address
 
-FlowAddPubKeySecret operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `flowAddPubKeySecretKMS()`
 
 ### Example
 
-[👉 View "**flowAddPubKeySecretKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecretKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowAddPubKeySecretKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowAddPubKeySecretKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -158,19 +171,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add public key to Flow address
+> Add public key to Flow address
 
-FlowAddPubKeySecretKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `flowCreateAddressFromPubKeyKMS()`
 
 ### Example
 
-[👉 View "**flowCreateAddressFromPubKeyKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowCreateAddressFromPubKeyKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -196,19 +213,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create Flow address from public key
+> Create Flow address from public key
 
-FlowCreateAddressFromPubKeyKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `flowCreateAddressFromPubKeyMnemonic()`
 
 ### Example
 
-[👉 View "**flowCreateAddressFromPubKeyMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowCreateAddressFromPubKeyMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeyMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -234,25 +255,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create Flow address from public key
+> Create Flow address from public key
 
-<h4>100 credits per API call. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.</h4>
+#### 100 credits per API call. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.
 
- Create Flow blockchain addresses from public key. This will generate address on the blockchain with public key. Private key for that public key can be used for signing transaction. There are two possibilites how the transaction on the blockchain can be created: 
+ 
+Create Flow blockchain addresses from public key. This will generate address on the blockchain with public key. Private key for that public key can be used for signing transaction. There are two possibilites how the transaction on the blockchain can be created: 
+* Using mnemonic and index - private key is generated based on the index in the mnemonic.
+* Using secret - private keys is entered manually.
+ 
+ 
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-<ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
-
-[Back to top](#top)
-
+---
 
 
 ## `flowCreateAddressFromPubKeySecret()`
 
 ### Example
 
-[👉 View "**flowCreateAddressFromPubKeySecret.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeySecret.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowCreateAddressFromPubKeySecret.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCreateAddressFromPubKeySecret.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -278,19 +305,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create Flow address from public key
+> Create Flow address from public key
 
-FlowCreateAddressFromPubKeySecret operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `flowCustomTransactionKMS()`
 
 ### Example
 
-[👉 View "**flowCustomTransactionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowCustomTransactionKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -316,19 +347,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send arbitrary transaction to blockchain
+> Send arbitrary transaction to blockchain
 
-FlowCustomTransactionKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `flowCustomTransactionMnemonic()`
 
 ### Example
 
-[👉 View "**flowCustomTransactionMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowCustomTransactionMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -354,27 +389,32 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send arbitrary transaction to blockchain
+> Send arbitrary transaction to blockchain
 
-<h4>100 credits per API call.</h4>
+#### 100 credits per API call.
 
- Send arbitrary blockchain transaction to FLOW blockchain. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.
-
+ 
+Send arbitrary blockchain transaction to FLOW blockchain. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans. 
  There are two possibilites how the transaction on the blockchain can be created: 
+* Using mnemonic and index - private key is generated based on the index in the mnemonic.
+* Using secret - private keys is entered manually.
+ 
+ 
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-<ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
-
-[Back to top](#top)
-
+---
 
 
 ## `flowCustomTransactionPK()`
 
 ### Example
 
-[👉 View "**flowCustomTransactionPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionPK.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowCustomTransactionPK.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowCustomTransactionPK.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -400,19 +440,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send arbitrary transaction to blockchain
+> Send arbitrary transaction to blockchain
 
-FlowCustomTransactionPK operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `flowGenerateAddress()`
 
 ### Example
 
-[👉 View "**flowGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGenerateAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -440,23 +484,27 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Flow address from Extended public key
+> Generate Flow address from Extended public key
 
-<h4>1 credit for GET operation + 3000 credits per address.</h4>
+#### 1 credit for GET operation + 3000 credits per address.
 
- Generate Flow address from Extended public key. This operation internally creates public key and assings it to the newly created address on the blockchain. There is minimal amount, which must be sent to the FLOW address during creation - 0.001 FLOW, which will be used from Tatum service account.
+ 
+Generate Flow address from Extended public key. This operation internally creates public key and assings it to the newly created address on the blockchain. There is minimal amount, which must be sent to the FLOW address during creation - 0.001 FLOW, which will be used from Tatum service account. 
+**This operation is allowed on any Testnet plan and only on Paid Mainnet plans.** Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
- **This operation is allowed on any Testnet plan and only on Paid Mainnet plans.** Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `flowGeneratePubKey()`
 
 ### Example
 
-[👉 View "**flowGeneratePubKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGeneratePubKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -484,21 +532,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Flow public key from Extended public key
+> Generate Flow public key from Extended public key
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Generate Flow public key from Extended public key. This key is added to the address on the blockchain and can control the funds there. Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
+ 
+Generate Flow public key from Extended public key. This key is added to the address on the blockchain and can control the funds there. Public key is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `flowGeneratePubKeyPrivateKey()`
 
 ### Example
 
-[👉 View "**flowGeneratePubKeyPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGeneratePubKeyPrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGeneratePubKeyPrivateKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -524,21 +577,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Flow private key
+> Generate Flow private key
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
- Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
+ 
+Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `flowGenerateWallet()`
 
 ### Example
 
-[👉 View "**flowGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -564,27 +622,32 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Flow wallet
+> Generate Flow wallet
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
-Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-
+ 
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
 Each address is identified by 3 main values:
+* Private Key - your secret value, which should never be revealed
+* Public Key - public address to be published
+* Derivation index - index of generated address
 
-<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+Tatum follows BIP44 specification and generates for Dogecoin wallet with derivation path m'/44'/3'/0'/0\. More about BIP44 HD wallets can be found here - [https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki](https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki). Generate BIP44 compatible Dogecoin wallet.
 
-Tatum follows BIP44 specification and generates for Dogecoin wallet with derivation path m'/44'/3'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki">https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Dogecoin wallet.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `flowGetAccount()`
 
 ### Example
 
-[👉 View "**flowGetAccount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetAccount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGetAccount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetAccount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -610,21 +673,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the balance of a Flow account
+> Get the balance of a Flow account
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Flow account details.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `flowGetBlock()`
 
 ### Example
 
-[👉 View "**flowGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -650,21 +718,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Flow Block by hash or height
+> Get Flow Block by hash or height
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Flow Block detail by block hash or height.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `flowGetBlockChainInfo()`
 
 ### Example
 
-[👉 View "**flowGetBlockChainInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockChainInfo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGetBlockChainInfo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockChainInfo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -686,21 +759,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get Flow current block number
+> Get Flow current block number
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Flow current block number.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `flowGetBlockEvents()`
 
 ### Example
 
-[👉 View "**flowGetBlockEvents.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockEvents.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGetBlockEvents.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetBlockEvents.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -730,21 +808,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Flow events from blocks
+> Get Flow events from blocks
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Flow events from block.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `flowGetRawTransaction()`
 
 ### Example
 
-[👉 View "**flowGetRawTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetRawTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowGetRawTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowGetRawTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -770,21 +853,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Flow Transaction by hash
+> Get Flow Transaction by hash
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Flow Transaction detail by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `flowTransactionKMS()`
 
 ### Example
 
-[👉 View "**flowTransactionKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowTransactionKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -810,19 +898,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Flow to blockchain addresses
+> Send Flow to blockchain addresses
 
-FlowTransactionKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `flowTransactionMnemonic()`
 
 ### Example
 
-[👉 View "**flowTransactionMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowTransactionMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -848,27 +940,32 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Flow to blockchain addresses
+> Send Flow to blockchain addresses
 
-<h4>100 credits per API call.</h4>
+#### 100 credits per API call.
 
- Send Flow or FUSD to blockchain addresses. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans.
-
+ 
+Send Flow or FUSD to blockchain addresses. Tatum covers the fee connected to the transaction costs in subscription credits. This operation can be done on mainnet only for paid plans. 
  There are two possibilites how the transaction on the blockchain can be created: 
+* Using mnemonic and index - private key is generated based on the index in the mnemonic.
+* Using secret - private keys is entered manually.
+ 
+ 
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
-<ul> <li>Using mnemonic and index - private key is generated based on the index in the mnemonic.</li> <li>Using secret - private keys is entered manually.</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and losing funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
-
-[Back to top](#top)
-
+---
 
 
 ## `flowTransactionPK()`
 
 ### Example
 
-[👉 View "**flowTransactionPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionPK.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **flowTransactionPK.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FlowApi/flowTransactionPK.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -894,9 +991,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Flow to blockchain addresses
+> Send Flow to blockchain addresses
 
-FlowTransactionPK operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

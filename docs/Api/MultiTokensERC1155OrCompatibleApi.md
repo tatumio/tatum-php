@@ -65,7 +65,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**addMultiTokenMinter.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **addMultiTokenMinter.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinter.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -93,35 +96,43 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add a Multi Token minter
+> Add a Multi Token minter
 
 **2 credits per API call**
 
- Add Multi Token minter.
+Add Multi Token minter.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+**Signing a transaction**
 
- **Signing a transaction**
+When adding a Multi Token minter, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When adding a Multi Token minter, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `addMultiTokenMinterKMS()`
 
 ### Example
 
-[👉 View "**addMultiTokenMinterKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinterKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **addMultiTokenMinterKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/addMultiTokenMinterKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -149,19 +160,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add a Multi Token minter
+> Add a Multi Token minter
 
-AddMultiTokenMinterKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnMultiToken()`
 
 ### Example
 
-[👉 View "**burnMultiToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnMultiToken.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiToken.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -189,35 +204,43 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn a Multi Token
+> Burn a Multi Token
 
 **2 credits per API call**
 
- Burn a fixed amount of Multi Tokens by id. This method destroys Multi Tokens from smart contract defined in contractAddress.
+Burn a fixed amount of Multi Tokens by id. This method destroys Multi Tokens from smart contract defined in contractAddress.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+**Signing a transaction**
 
- **Signing a transaction**
+When burning a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When burning a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `burnMultiTokenBatch()`
 
 ### Example
 
-[👉 View "**burnMultiTokenBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnMultiTokenBatch.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatch.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -245,35 +268,43 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn multiple Multi Tokens
+> Burn multiple Multi Tokens
 
 **2 credits per API call**
 
- Burn multiple Multi Token Tokens by id assigned to same address in one transaction. This method destroys any Multi Tokens token from smart contract defined in contractAddress.
+Burn multiple Multi Token Tokens by id assigned to same address in one transaction. This method destroys any Multi Tokens token from smart contract defined in contractAddress.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+**Signing a transaction**
 
- **Signing a transaction**
+When burning multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When burning multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `burnMultiTokenBatchCelo()`
 
 ### Example
 
-[👉 View "**burnMultiTokenBatchCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnMultiTokenBatchCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -301,19 +332,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn multiple Multi Tokens
+> Burn multiple Multi Tokens
 
-BurnMultiTokenBatchCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnMultiTokenBatchKMS()`
 
 ### Example
 
-[👉 View "**burnMultiTokenBatchKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnMultiTokenBatchKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -341,19 +376,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn multiple Multi Tokens
+> Burn multiple Multi Tokens
 
-BurnMultiTokenBatchKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnMultiTokenBatchKMSCelo()`
 
 ### Example
 
-[👉 View "**burnMultiTokenBatchKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnMultiTokenBatchKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenBatchKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -381,19 +420,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn multiple Multi Tokens
+> Burn multiple Multi Tokens
 
-BurnMultiTokenBatchKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnMultiTokenCelo()`
 
 ### Example
 
-[👉 View "**burnMultiTokenCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnMultiTokenCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -421,19 +464,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn a Multi Token
+> Burn a Multi Token
 
-BurnMultiTokenCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnMultiTokenKMS()`
 
 ### Example
 
-[👉 View "**burnMultiTokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnMultiTokenKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -461,19 +508,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn a Multi Token
+> Burn a Multi Token
 
-BurnMultiTokenKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnMultiTokenKMSCelo()`
 
 ### Example
 
-[👉 View "**burnMultiTokenKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnMultiTokenKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/burnMultiTokenKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -501,19 +552,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn a Multi Token
+> Burn a Multi Token
 
-BurnMultiTokenKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployMultiToken()`
 
 ### Example
 
-[👉 View "**deployMultiToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployMultiToken.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiToken.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -541,35 +596,43 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a Multi Token smart contract
+> Deploy a Multi Token smart contract
 
 **2 credits per API call**
 
- Deploy Multi Token Smart Contract. This method creates new ERC1155 Smart Contract (Multi Tokens) on the blockchain. Smart contract is standardized and audited. It is possible to mint, burn and transfer tokens. It is also possible to mint multiple tokens at once.
+Deploy Multi Token Smart Contract. This method creates new ERC1155 Smart Contract (Multi Tokens) on the blockchain. Smart contract is standardized and audited. It is possible to mint, burn and transfer tokens. It is also possible to mint multiple tokens at once.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+**Signing a transaction**
 
- **Signing a transaction**
+When deploying a Multi Token smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When deploying a Multi Token smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `deployMultiTokenCelo()`
 
 ### Example
 
-[👉 View "**deployMultiTokenCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployMultiTokenCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -597,19 +660,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a Multi Token smart contract
+> Deploy a Multi Token smart contract
 
-DeployMultiTokenCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployMultiTokenCeloKMS()`
 
 ### Example
 
-[👉 View "**deployMultiTokenCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployMultiTokenCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -637,19 +704,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a Multi Token smart contract
+> Deploy a Multi Token smart contract
 
-DeployMultiTokenCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployMultiTokenKMS()`
 
 ### Example
 
-[👉 View "**deployMultiTokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployMultiTokenKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/deployMultiTokenKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -677,19 +748,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a Multi Token smart contract
+> Deploy a Multi Token smart contract
 
-DeployMultiTokenKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultiToken()`
 
 ### Example
 
-[👉 View "**mintMultiToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultiToken.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiToken.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -717,35 +792,43 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint a Multi Token
+> Mint a Multi Token
 
 **2 credits per API call**
 
- Mint a fixed amount of Multi Token and transfer it to destination account. Create and transfer any Multi Token token from smart contract defined in contractAddress. It is possible to add Metadata to the created token with a more detailed information about instead.
+Mint a fixed amount of Multi Token and transfer it to destination account. Create and transfer any Multi Token token from smart contract defined in contractAddress. It is possible to add Metadata to the created token with a more detailed information about instead.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+**Signing a transaction**
 
- **Signing a transaction**
+When minting a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When minting a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintMultiTokenBatch()`
 
 ### Example
 
-[👉 View "**mintMultiTokenBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultiTokenBatch.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatch.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -773,35 +856,43 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple Multi Tokens
+> Mint multiple Multi Tokens
 
 **2 credits per API call**
 
- Create a fixed amount of multiple Multi Tokens Tokens and transfer them to destination account in one transaction. Create and transfer Multi Tokens tokens from smart contract defined in contractAddress.
+Create a fixed amount of multiple Multi Tokens Tokens and transfer them to destination account in one transaction. Create and transfer Multi Tokens tokens from smart contract defined in contractAddress.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+**Signing a transaction**
 
- **Signing a transaction**
+When minting multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When minting multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintMultiTokenBatchCelo()`
 
 ### Example
 
-[👉 View "**mintMultiTokenBatchCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultiTokenBatchCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -829,19 +920,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple Multi Tokens
+> Mint multiple Multi Tokens
 
-MintMultiTokenBatchCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultiTokenBatchKMS()`
 
 ### Example
 
-[👉 View "**mintMultiTokenBatchKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultiTokenBatchKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -869,19 +964,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple Multi Tokens
+> Mint multiple Multi Tokens
 
-MintMultiTokenBatchKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultiTokenBatchKMSCelo()`
 
 ### Example
 
-[👉 View "**mintMultiTokenBatchKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultiTokenBatchKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenBatchKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -909,19 +1008,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple Multi Tokens
+> Mint multiple Multi Tokens
 
-MintMultiTokenBatchKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultiTokenCelo()`
 
 ### Example
 
-[👉 View "**mintMultiTokenCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultiTokenCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -949,19 +1052,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint a Multi Token
+> Mint a Multi Token
 
-MintMultiTokenCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultiTokenKMS()`
 
 ### Example
 
-[👉 View "**mintMultiTokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultiTokenKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -989,19 +1096,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint a Multi Token
+> Mint a Multi Token
 
-MintMultiTokenKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultiTokenKMSCelo()`
 
 ### Example
 
-[👉 View "**mintMultiTokenKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultiTokenKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/mintMultiTokenKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1029,19 +1140,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint a Multi Token
+> Mint a Multi Token
 
-MintMultiTokenKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `multiTokenGetAddressBalance()`
 
 ### Example
 
-[👉 View "**multiTokenGetAddressBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **multiTokenGetAddressBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetAddressBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1071,27 +1186,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get all Multi Tokens that a blockchain address holds
+> Get all Multi Tokens that a blockchain address holds
 
 **1 credit per API call**
 
- Get all Multi Tokens that a blockchain address holds. The Multi Tokens are returned grouped by the smart contracts they were minted on.
+Get all Multi Tokens that a blockchain address holds. The Multi Tokens are returned grouped by the smart contracts they were minted on.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Celo
+* Ethereum
+* Polygon
 
-<ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `multiTokenGetBalance()`
 
 ### Example
 
-[👉 View "**multiTokenGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **multiTokenGetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1125,27 +1244,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the amount of a specific MultiToken that a blockchain address holds
+> Get the amount of a specific MultiToken that a blockchain address holds
 
 **1 credit per API call**
 
- Get the amount of a specific Multi Token (minted on the smart contract specified by the <code>contractAddress</code> path parameter in the request endpoint URL) that a blockchain address holds.
+Get the amount of a specific Multi Token (minted on the smart contract specified by the `contractAddress` path parameter in the request endpoint URL) that a blockchain address holds.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `multiTokenGetBalanceBatch()`
 
 ### Example
 
-[👉 View "**multiTokenGetBalanceBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **multiTokenGetBalanceBatch.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetBalanceBatch.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1179,27 +1306,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
+> Get the amount of one or multiple Multi Tokens for multiple blockchain addresses
 
 **1 credit per API call**
 
- For multiple blockchain addresses, get the amount of one or multiple Multi Tokens (minted on the smart contract specified by the <code>contractAddress</code> path parameter in the request endpoint URL) that those addresses hold.
+For multiple blockchain addresses, get the amount of one or multiple Multi Tokens (minted on the smart contract specified by the `contractAddress` path parameter in the request endpoint URL) that those addresses hold.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `multiTokenGetMetadata()`
 
 ### Example
 
-[👉 View "**multiTokenGetMetadata.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **multiTokenGetMetadata.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetMetadata.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1231,27 +1366,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Multi Token metadata
+> Get Multi Token metadata
 
 **1 credit per API call**
 
- Get Multi Token metadata.
+Get Multi Token metadata.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `multiTokenGetTransaction()`
 
 ### Example
 
-[👉 View "**multiTokenGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **multiTokenGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1281,27 +1424,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get a Multi Token transaction by its hash
+> Get a Multi Token transaction by its hash
 
 **1 credit per API call**
 
- Get Multi Token transaction by transaction hash.
+Get Multi Token transaction by transaction hash.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `multiTokenGetTransactionByAddress()`
 
 ### Example
 
-[👉 View "**multiTokenGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **multiTokenGetTransactionByAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/multiTokenGetTransactionByAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1339,27 +1490,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Multi Token transactions on a blockchain address
+> Get Multi Token transactions on a blockchain address
 
 **1 credit per API call**
 
- Get incoming and outgoing Multi Token transactions on a blockchain address.
+Get incoming and outgoing Multi Token transactions on a blockchain address.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Celo
+* Ethereum
+* Polygon
 
-<ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferMultiToken()`
 
 ### Example
 
-[👉 View "**transferMultiToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferMultiToken.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiToken.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1387,37 +1542,45 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer a Multi Token
+> Transfer a Multi Token
 
 **2 credits per API call**
 
- Transfer a certain amount of Multi Token from account to another account. Transfer Multi Tokens token from smart contract defined in contractAddress.
+Transfer a certain amount of Multi Token from account to another account. Transfer Multi Tokens token from smart contract defined in contractAddress.
 
- Only 1 specific token with specified tokenId and value can be transferred. This method invokes ERC1155 method safeTransfer() to transfer the token in case of ETH, Celo and blockchains.
+Only 1 specific token with specified tokenId and value can be transferred. This method invokes ERC1155 method safeTransfer() to transfer the token in case of ETH, Celo and blockchains.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+**Signing a transaction**
 
- **Signing a transaction**
+When transferring a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When transferring a Multi Token, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferMultiTokenBatch()`
 
 ### Example
 
-[👉 View "**transferMultiTokenBatch.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferMultiTokenBatch.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatch.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1445,35 +1608,45 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple Multi Tokens
+> Transfer multiple Multi Tokens
 
 **2 credits per API call**
 
- Transfer Multi Token Batch from account to various other accounts in one transaction. Transfer multiple Multi Tokens token from smart contract defined in contractAddress.
+Transfer Multi Token Batch from account to various other accounts in one transaction. Transfer multiple Multi Tokens token from smart contract defined in contractAddress.
 
- Multiple token with specified tokenIds and values can be transferred. This method invokes ERC1155 method safeTransfer() to transfer the token in case of ETH, Celo and BSC.** This API is supported for the following blockchains:
+Multiple token with specified tokenIds and values can be transferred. This method invokes ERC1155 method safeTransfer() to transfer the token in case of ETH, Celo and BSC. 
 
- 
+This API is supported for the following blockchains:
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
- **Signing a transaction**
+**Signing a transaction**
 
- When transferring multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+When transferring multiple Multi Tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferMultiTokenBatchCelo()`
 
 ### Example
 
-[👉 View "**transferMultiTokenBatchCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferMultiTokenBatchCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1501,19 +1674,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple Multi Tokens
+> Transfer multiple Multi Tokens
 
-TransferMultiTokenBatchCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferMultiTokenBatchKMS()`
 
 ### Example
 
-[👉 View "**transferMultiTokenBatchKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferMultiTokenBatchKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1541,19 +1718,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple Multi Tokens
+> Transfer multiple Multi Tokens
 
-TransferMultiTokenBatchKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferMultiTokenBatchKMSCelo()`
 
 ### Example
 
-[👉 View "**transferMultiTokenBatchKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferMultiTokenBatchKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenBatchKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1581,19 +1762,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer multiple Multi Tokens
+> Transfer multiple Multi Tokens
 
-TransferMultiTokenBatchKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferMultiTokenCelo()`
 
 ### Example
 
-[👉 View "**transferMultiTokenCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferMultiTokenCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1621,19 +1806,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer a Multi Token
+> Transfer a Multi Token
 
-TransferMultiTokenCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferMultiTokenKMS()`
 
 ### Example
 
-[👉 View "**transferMultiTokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferMultiTokenKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1661,19 +1850,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer a Multi Token
+> Transfer a Multi Token
 
-TransferMultiTokenKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferMultiTokenKMSCelo()`
 
 ### Example
 
-[👉 View "**transferMultiTokenKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferMultiTokenKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/MultiTokensERC1155OrCompatibleApi/transferMultiTokenKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1701,9 +1894,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer a Multi Token
+> Transfer a Multi Token
 
-TransferMultiTokenKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

@@ -43,7 +43,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**callKcsSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callKcsSmartContractMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -69,19 +72,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on KuCoin Community Chain
+> Invoke a method in a smart contract on KuCoin Community Chain
 
-CallKcsSmartContractMethod operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `callKcsSmartContractMethodKMS()`
 
 ### Example
 
-[👉 View "**callKcsSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractMethodKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callKcsSmartContractMethodKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractMethodKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -107,19 +114,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on KuCoin Community Chain
+> Invoke a method in a smart contract on KuCoin Community Chain
 
-CallKcsSmartContractMethodKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `callKcsSmartContractReadMethod()`
 
 ### Example
 
-[👉 View "**callKcsSmartContractReadMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractReadMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callKcsSmartContractReadMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/callKcsSmartContractReadMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -145,45 +156,45 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on KuCoin Community Chain
+> Invoke a method in a smart contract on KuCoin Community Chain
 
 **2 credits per API call**
 
- Invoke a method in an existing smart contract on KuCoin Community Chain.
+Invoke a method in an existing smart contract on KuCoin Community Chain.
 
- You can call a read-only or write method.
+You can call a read-only or write method.
 
- 
+* For **read-only** methods, the output of the invoked method is returned.
+* For **write** methods, the ID of the associated transaction is returned.
 
-<ul> <li>For **read-only** methods, the output of the invoked method is returned.</li> <li>For **write** methods, the ID of the associated transaction is returned.</li> </ul>
-
- **Troubleshooting a failed transaction**
-
- Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
-
+**Troubleshooting a failed transaction** 
+ Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). 
 However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
- If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
+If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
- For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.
+For more information about invoking methods in smart contracts, see [this article](https://support.tatum.io/support/solutions/articles/80001052441) on our Support Portal.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `kcsBroadcast()`
 
 ### Example
 
-[👉 View "**kcsBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -209,21 +220,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed Kcs transaction
+> Broadcast signed Kcs transaction
 
 **2 credits per API call**
 
- Broadcast signed transaction to Kcs blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+Broadcast signed transaction to Kcs blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `kcsGenerateAddress()`
 
 ### Example
 
-[👉 View "**kcsGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsGenerateAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -251,21 +266,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Kcs account address from Extended public key
+> Generate Kcs account address from Extended public key
 
 **1 credit per API call**
 
- Generate Kcs account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
+Generate Kcs account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `kcsGenerateAddressPrivateKey()`
 
 ### Example
 
-[👉 View "**kcsGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateAddressPrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsGenerateAddressPrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateAddressPrivateKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -291,21 +310,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Kcs private key
+> Generate Kcs private key
 
 **1 credit per API call**
 
- Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
+Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `kcsGenerateWallet()`
 
 ### Example
 
-[👉 View "**kcsGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -331,27 +354,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Kcs wallet
+> Generate Kcs wallet
 
 **1 credit per API call**
 
- Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
 Each address is identified by 3 main values:
+* Private Key - your secret value, which should never be revealed
+* Public Key - public address to be published
+* Derivation index - index of generated address
 
-<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+Tatum follows BIP44 specification and generates for Kcs wallet with derivation path m'/44'/966'/0'/0\. More about BIP44 HD wallets can be found here - [https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). Generate BIP44 compatible Kcs wallet.
 
-Tatum follows BIP44 specification and generates for Kcs wallet with derivation path m'/44'/966'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Kcs wallet.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `kcsGetBalance()`
 
 ### Example
 
-[👉 View "**kcsGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsGetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -377,21 +404,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Kcs Account balance
+> Get Kcs Account balance
 
 **1 credit per API call**
 
- Get Kcs account balance in KCS. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
+Get Kcs account balance in KCS. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `kcsGetBlock()`
 
 ### Example
 
-[👉 View "**kcsGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -417,21 +448,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Kcs block by hash
+> Get Kcs block by hash
 
 **1 credit per API call**
 
- Get Kcs block by block hash or block number.
+Get Kcs block by block hash or block number.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `kcsGetCurrentBlock()`
 
 ### Example
 
-[👉 View "**kcsGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetCurrentBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsGetCurrentBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetCurrentBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -453,21 +488,25 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get current block number
+> Get current block number
 
 **1 credit per API call**
 
- Get Kcs current block number. This is the number of the latest block in the blockchain.
+Get Kcs current block number. This is the number of the latest block in the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `kcsGetTransaction()`
 
 ### Example
 
-[👉 View "**kcsGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -493,21 +532,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Kcs Transaction
+> Get Kcs Transaction
 
 **2 credits per API call**
 
- Get Kcs transaction by transaction hash.
+Get Kcs transaction by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `kcsGetTransactionCount()`
 
 ### Example
 
-[👉 View "**kcsGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetTransactionCount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **kcsGetTransactionCount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/kcsGetTransactionCount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -533,21 +576,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get count of outgoing Kcs transactions
+> Get count of outgoing Kcs transactions
 
 **1 credit per API call**
 
- Get a number of outgoing Kcs transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
+Get a number of outgoing Kcs transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferKcsBlockchain()`
 
 ### Example
 
-[👉 View "**transferKcsBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/transferKcsBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferKcsBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/transferKcsBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -573,31 +620,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send KCS from account to account
+> Send KCS from account to account
 
 **2 credits per API call**
 
- Send KCS from account to account.
+Send KCS from account to account. 
+ 
+**Signing a transaction**
 
- **Signing a transaction**
+When sending KCS, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When sending KCS, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
-
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
  Alternatively, using the Tatum client library for supported languages.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferKcsBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferKcsBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/transferKcsBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferKcsBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/KuCoinApi/transferKcsBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -623,9 +674,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send KCS from account to account
+> Send KCS from account to account
 
-TransferKcsBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

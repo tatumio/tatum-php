@@ -43,7 +43,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**callXdcReadSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcReadSmartContractMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callXdcReadSmartContractMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcReadSmartContractMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -69,45 +72,45 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on XinFin
+> Invoke a method in a smart contract on XinFin
 
 **2 credits per API call**
 
- Invoke a method in an existing smart contract on XinFin.
+Invoke a method in an existing smart contract on XinFin.
 
- You can call a read-only or write method.
+You can call a read-only or write method.
 
- 
+* For **read-only** methods, the output of the invoked method is returned.
+* For **write** methods, the ID of the associated transaction is returned.
 
-<ul> <li>For **read-only** methods, the output of the invoked method is returned.</li> <li>For **write** methods, the ID of the associated transaction is returned.</li> </ul>
-
- **Troubleshooting a failed transaction**
-
- Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
-
+**Troubleshooting a failed transaction** 
+ Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). 
 However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
- If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
+If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
- For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.
+For more information about invoking methods in smart contracts, see [this article](https://support.tatum.io/support/solutions/articles/80001052441) on our Support Portal.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `callXdcSmartContractMethod()`
 
 ### Example
 
-[👉 View "**callXdcSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callXdcSmartContractMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -133,19 +136,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on XinFin
+> Invoke a method in a smart contract on XinFin
 
-CallXdcSmartContractMethod operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `callXdcSmartContractMethodKMS()`
 
 ### Example
 
-[👉 View "**callXdcSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethodKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callXdcSmartContractMethodKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/callXdcSmartContractMethodKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -171,19 +178,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on XinFin
+> Invoke a method in a smart contract on XinFin
 
-CallXdcSmartContractMethodKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferXdcBlockchain()`
 
 ### Example
 
-[👉 View "**transferXdcBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferXdcBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -209,31 +220,35 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send XDC / ERC20 from account to account
+> Send XDC / ERC20 from account to account
 
 **2 credits per API call**
 
- Send XDC or Tatum supported ERC20 token from account to account.
+Send XDC or Tatum supported ERC20 token from account to account. 
+ 
+**Signing a transaction**
 
- **Signing a transaction**
+When sending XDC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When sending XDC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
-
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
  Alternatively, using the Tatum client library for supported languages.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferXdcBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferXdcBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferXdcBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/transferXdcBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -259,19 +274,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send XDC / ERC20 from account to account
+> Send XDC / ERC20 from account to account
 
-TransferXdcBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `xdcBroadcast()`
 
 ### Example
 
-[👉 View "**xdcBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -297,21 +316,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed XDC transaction
+> Broadcast signed XDC transaction
 
 **2 credits per API call**
 
- Broadcast signed transaction to XDC blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+Broadcast signed transaction to XDC blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xdcGenerateAddress()`
 
 ### Example
 
-[👉 View "**xdcGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcGenerateAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -339,21 +362,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate XDC account address from Extended public key
+> Generate XDC account address from Extended public key
 
 **1 credit per API call**
 
- Generate XDC account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
+Generate XDC account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xdcGenerateAddressPrivateKey()`
 
 ### Example
 
-[👉 View "**xdcGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcGenerateAddressPrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateAddressPrivateKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -379,21 +406,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate XDC private key
+> Generate XDC private key
 
 **1 credit per API call**
 
- Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
+Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xdcGenerateWallet()`
 
 ### Example
 
-[👉 View "**xdcGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -419,29 +450,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate XDC wallet
+> Generate XDC wallet
 
 **1 credit per API call**
 
- Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
-
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
  Each address is identified by 3 main values: 
+* Private Key - your secret value, which should never be revealed
+* Public Key - public address to be published
+* Derivation index - index of generated address
 
-<ul><li>Private Key - your secret value, which should never be revealed</li> <li>Public Key - public address to be published</li> <li>Derivation index - index of generated address</li></ul>
+Tatum follows BIP44 specification and generates for XDC wallet with derivation path m'/44'/550'/0'/0\. More about BIP44 HD wallets can be found here - [https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). Generate BIP44 compatible XDC wallet.
 
- 
+[Back to top](#top){: .btn .btn-purple }
 
- Tatum follows BIP44 specification and generates for XDC wallet with derivation path m'/44'/550'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible XDC wallet.
-
-[Back to top](#top)
-
+---
 
 
 ## `xdcGetBalance()`
 
 ### Example
 
-[👉 View "**xdcGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcGetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -467,21 +500,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get XDC Account balance
+> Get XDC Account balance
 
 **1 credit per API call**
 
- Get account balance in XDC. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
+Get account balance in XDC. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xdcGetBlock()`
 
 ### Example
 
-[👉 View "**xdcGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -507,21 +544,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get XDC block by hash
+> Get XDC block by hash
 
 **1 credit per API call**
 
- Get XDC block by block hash or block number.
+Get XDC block by block hash or block number.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xdcGetCurrentBlock()`
 
 ### Example
 
-[👉 View "**xdcGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetCurrentBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcGetCurrentBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetCurrentBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -543,21 +584,25 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get current block number
+> Get current block number
 
 **1 credit per API call**
 
- Get XDC current block number. This is the number of the latest block in the blockchain.
+Get XDC current block number. This is the number of the latest block in the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xdcGetTransaction()`
 
 ### Example
 
-[👉 View "**xdcGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -583,21 +628,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get XDC Transaction
+> Get XDC Transaction
 
 **2 credits per API call**
 
- Get XDC transaction by transaction hash.
+Get XDC transaction by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xdcGetTransactionCount()`
 
 ### Example
 
-[👉 View "**xdcGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransactionCount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xdcGetTransactionCount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/XinFinApi/xdcGetTransactionCount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -623,11 +672,12 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get count of outgoing XDC transactions
+> Get count of outgoing XDC transactions
 
 **1 credit per API call**
 
- Get a number of outgoing XDC transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
+Get a number of outgoing XDC transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

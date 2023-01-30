@@ -33,7 +33,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**freezeApiKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/freezeApiKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **freezeApiKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/freezeApiKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -55,21 +58,26 @@ void (empty response body)
 
 ### Description
 
-Freeze API Key
+> Freeze API Key
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
+ 
 Freeze the API Key. It's not possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage. Only read operations are permitted.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getCredits()`
 
 ### Example
 
-[👉 View "**getCredits.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getCredits.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getCredits.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getCredits.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -91,21 +99,25 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get information about your credit consumption for the last month
+> Get information about your credit consumption for the last month
 
 **1 credit per API call**
 
- Get information about your credit consumption for the last month (used credits per day).
+Get information about your credit consumption for the last month (used credits per day).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getVersion()`
 
 ### Example
 
-[👉 View "**getVersion.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getVersion.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getVersion.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/getVersion.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -127,21 +139,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get API version
+> Get API version
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get current version of the API.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `unfreezeApiKey()`
 
 ### Example
 
-[👉 View "**unfreezeApiKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/unfreezeApiKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **unfreezeApiKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ServiceUtilsApi/unfreezeApiKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -163,11 +180,13 @@ void (empty response body)
 
 ### Description
 
-Unfreeze API Key
+> Unfreeze API Key
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
+ 
 Unfreeze the API Key. It's possible to perform sensitive operations like send ledger transaction, send off-chain transaction, send blockchain transaction, broadcast blockchain transaction, perform Order book trade or create blockage again.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

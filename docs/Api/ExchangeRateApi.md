@@ -30,7 +30,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**getExchangeRate.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ExchangeRateApi/getExchangeRate.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getExchangeRate.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/ExchangeRateApi/getExchangeRate.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -58,13 +61,14 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the current exchange rate for exchanging fiat/crypto assets
+> Get the current exchange rate for exchanging fiat/crypto assets
 
 **1 credit per API call**
 
- Get the current exchange rate for exchanging fiat/crypto assets.
+Get the current exchange rate for exchanging fiat/crypto assets.
 
- By default, the base pair (the target asset) is EUR. When obtaining the exchange rate for an asset (for example, BTC), the value returned by the API expresses the amount of EUR that can be currently exchanged into 1 BTC.
+By default, the base pair (the target asset) is EUR. When obtaining the exchange rate for an asset (for example, BTC), the value returned by the API expresses the amount of EUR that can be currently exchanged into 1 BTC.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

@@ -70,7 +70,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**approveCeloErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveCeloErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveCeloErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveCeloErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -98,19 +101,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Allow a blockchain address to transfer and burn fungible tokens
+> Allow a blockchain address to transfer and burn fungible tokens
 
-ApproveCeloErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `approveCeloErc20KMS()`
 
 ### Example
 
-[👉 View "**approveCeloErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveCeloErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveCeloErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveCeloErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -138,19 +145,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Allow a blockchain address to transfer and burn fungible tokens
+> Allow a blockchain address to transfer and burn fungible tokens
 
-ApproveCeloErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `approveErc20()`
 
 ### Example
 
-[👉 View "**approveErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -178,35 +189,41 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Allow a blockchain address to transfer and burn fungible tokens
+> Allow a blockchain address to transfer and burn fungible tokens
 
 **2 credits per API call**
 
- Allow a blockchain address (the <code>spender</code> parameter in the request body) to transfer and burn fungible tokens on behalf of the smart contract owner.
+Allow a blockchain address (the `spender` parameter in the request body) to transfer and burn fungible tokens on behalf of the smart contract owner.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When allowing a blockchain address to transfer and burn fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `approveErc20KMS()`
 
 ### Example
 
-[👉 View "**approveErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **approveErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/approveErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -234,19 +251,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Allow a blockchain address to transfer and burn fungible tokens
+> Allow a blockchain address to transfer and burn fungible tokens
 
-ApproveErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainBurnCeloErc20()`
 
 ### Example
 
-[👉 View "**chainBurnCeloErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnCeloErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainBurnCeloErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnCeloErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -274,19 +295,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn fungible tokens
+> Burn fungible tokens
 
-ChainBurnCeloErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainBurnCeloErc20KMS()`
 
 ### Example
 
-[👉 View "**chainBurnCeloErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnCeloErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainBurnCeloErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnCeloErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -314,19 +339,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn fungible tokens
+> Burn fungible tokens
 
-ChainBurnCeloErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainBurnErc20()`
 
 ### Example
 
-[👉 View "**chainBurnErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainBurnErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -354,35 +383,44 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn fungible tokens
+> Burn fungible tokens
 
 **2 credits per API call**
 
- Burn fungible tokens. Burning fungible tokens deletes the specified supply of the tokens (the <code>amount</code> parameter in the request body) from the smart contract (the <code>contractAddress</code> parameter in the request body).
+Burn fungible tokens. Burning fungible tokens deletes the specified supply of the tokens (the `amount` parameter in the request body) from the smart contract (the `contractAddress` parameter in the request body).
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Algorand
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* XinFin
 
-<ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>XinFin</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When burning fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `chainBurnErc20KMS()`
 
 ### Example
 
-[👉 View "**chainBurnErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainBurnErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -410,19 +448,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn fungible tokens
+> Burn fungible tokens
 
-ChainBurnErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainBurnKcsErc20()`
 
 ### Example
 
-[👉 View "**chainBurnKcsErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnKcsErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainBurnKcsErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnKcsErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -450,19 +492,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn fungible tokens
+> Burn fungible tokens
 
-ChainBurnKcsErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainBurnKcsErc20KMS()`
 
 ### Example
 
-[👉 View "**chainBurnKcsErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnKcsErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainBurnKcsErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainBurnKcsErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -490,19 +536,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn fungible tokens
+> Burn fungible tokens
 
-ChainBurnKcsErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeployAlgoErc20()`
 
 ### Example
 
-[👉 View "**chainDeployAlgoErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployAlgoErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeployAlgoErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployAlgoErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -530,19 +580,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeployAlgoErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeployAlgoErc20KMS()`
 
 ### Example
 
-[👉 View "**chainDeployAlgoErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployAlgoErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeployAlgoErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployAlgoErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -570,19 +624,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeployAlgoErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeployCeloErc20()`
 
 ### Example
 
-[👉 View "**chainDeployCeloErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployCeloErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeployCeloErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployCeloErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -610,19 +668,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeployCeloErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeployCeloErc20KMS()`
 
 ### Example
 
-[👉 View "**chainDeployCeloErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployCeloErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeployCeloErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployCeloErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -650,19 +712,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeployCeloErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeployErc20()`
 
 ### Example
 
-[👉 View "**chainDeployErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeployErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -690,39 +756,48 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
 **2 credits per API call**
 
- Deploy a fungible token smart contract on the blockchain. In a deployed smart contract, you can mint and burn fungible tokens. The whole supply of fungible tokens (the <code>supply</code> parameter in the request body) will be transferred to the specified blockchain address (the <code>address</code> parameter in the request body).
-
+Deploy a fungible token smart contract on the blockchain. In a deployed smart contract, you can mint and burn fungible tokens. The whole supply of fungible tokens (the `supply` parameter in the request body) will be transferred to the specified blockchain address (the `address` parameter in the request body). 
  Smart contracts are standardized and audited.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Algorand
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* Solana
+* XinFin
 
-<ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>XinFin</li> </ul>
+You can review the code of a deployed smart contract [here](https://github.com/tatumio/tatum-middleware/blob/master/src/contracts/token.sol).
 
- You can review the code of a deployed smart contract <a href="https://github.com/tatumio/tatum-middleware/blob/master/src/contracts/token.sol" target="_blank">here</a>.
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When deploying a fungible token smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `chainDeployErc20KMS()`
 
 ### Example
 
-[👉 View "**chainDeployErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeployErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -750,19 +825,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeployErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeployKcsErc20()`
 
 ### Example
 
-[👉 View "**chainDeployKcsErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployKcsErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeployKcsErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployKcsErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -790,19 +869,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeployKcsErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeployKcsErc20KMS()`
 
 ### Example
 
-[👉 View "**chainDeployKcsErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployKcsErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeployKcsErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeployKcsErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -830,19 +913,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeployKcsErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeploySolanaSpl()`
 
 ### Example
 
-[👉 View "**chainDeploySolanaSpl.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeploySolanaSpl.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeploySolanaSpl.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeploySolanaSpl.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -870,19 +957,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeploySolanaSpl operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainDeploySolanaSplKMS()`
 
 ### Example
 
-[👉 View "**chainDeploySolanaSplKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeploySolanaSplKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainDeploySolanaSplKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainDeploySolanaSplKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -910,19 +1001,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy a fungible token smart contract
+> Deploy a fungible token smart contract
 
-ChainDeploySolanaSplKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainMintCeloErc20()`
 
 ### Example
 
-[👉 View "**chainMintCeloErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintCeloErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainMintCeloErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintCeloErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -950,19 +1045,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint fungible tokens
+> Mint fungible tokens
 
-ChainMintCeloErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainMintCeloErc20KMS()`
 
 ### Example
 
-[👉 View "**chainMintCeloErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintCeloErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainMintCeloErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintCeloErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -990,19 +1089,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint fungible tokens
+> Mint fungible tokens
 
-ChainMintCeloErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainMintErc20()`
 
 ### Example
 
-[👉 View "**chainMintErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainMintErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1030,35 +1133,43 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint fungible tokens
+> Mint fungible tokens
 
 **2 credits per API call**
 
- Create new fungible tokens in the smart contract (the <code>contractAddress</code> parameter in the request body) and transfer them to the specified blockchain address (the <code>to</code> parameter in the request body). You can mint new fungible tokens only if the current supply of tokens in the smart contract is lower than the total supply set for this contract.
+Create new fungible tokens in the smart contract (the `contractAddress` parameter in the request body) and transfer them to the specified blockchain address (the `to` parameter in the request body). You can mint new fungible tokens only if the current supply of tokens in the smart contract is lower than the total supply set for this contract.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* XinFin
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>XinFin</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When minting fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `chainMintErc20KMS()`
 
 ### Example
 
-[👉 View "**chainMintErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainMintErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1086,19 +1197,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint fungible tokens
+> Mint fungible tokens
 
-ChainMintErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainMintKcsErc20()`
 
 ### Example
 
-[👉 View "**chainMintKcsErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintKcsErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainMintKcsErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintKcsErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1126,19 +1241,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint fungible tokens
+> Mint fungible tokens
 
-ChainMintKcsErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainMintKcsErc20KMS()`
 
 ### Example
 
-[👉 View "**chainMintKcsErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintKcsErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainMintKcsErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainMintKcsErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1166,19 +1285,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint fungible tokens
+> Mint fungible tokens
 
-ChainMintKcsErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferAlgoErc20()`
 
 ### Example
 
-[👉 View "**chainTransferAlgoErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferAlgoErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferAlgoErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferAlgoErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1206,19 +1329,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferAlgoErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferAlgoErc20KMS()`
 
 ### Example
 
-[👉 View "**chainTransferAlgoErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferAlgoErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferAlgoErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferAlgoErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1246,19 +1373,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferAlgoErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferBscBep20()`
 
 ### Example
 
-[👉 View "**chainTransferBscBep20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferBscBep20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferBscBep20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferBscBep20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1286,19 +1417,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferBscBep20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferBscBep20KMS()`
 
 ### Example
 
-[👉 View "**chainTransferBscBep20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferBscBep20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferBscBep20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferBscBep20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1326,19 +1461,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferBscBep20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferCeloErc20Token()`
 
 ### Example
 
-[👉 View "**chainTransferCeloErc20Token.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferCeloErc20Token.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferCeloErc20Token.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferCeloErc20Token.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1366,19 +1505,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferCeloErc20Token operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferCeloErc20TokenKMS()`
 
 ### Example
 
-[👉 View "**chainTransferCeloErc20TokenKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferCeloErc20TokenKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferCeloErc20TokenKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferCeloErc20TokenKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1406,19 +1549,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferCeloErc20TokenKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferEthErc20()`
 
 ### Example
 
-[👉 View "**chainTransferEthErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferEthErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferEthErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferEthErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1446,47 +1593,59 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
 **2 credits per API call**
 
- Transfer a supply of fungible tokens existing in the smart contract (the <code>contractAddress</code> parameter in the request body) to the specified blockchain address (the <code>to</code> parameter in the request body).
+Transfer a supply of fungible tokens existing in the smart contract (the `contractAddress` parameter in the request body) to the specified blockchain address (the `to` parameter in the request body). 
+ Transferring fungible tokens invokes the `transfer()` method.
 
- Transferring fungible tokens invokes the <code>transfer()</code> method.
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* Algorand
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* Solana
+* XinFin
 
- 
+**Transferring fungible tokens on Algorand** 
+ On Algorand, the recipient has to agree in advance to receive your fungible tokens because Algorand charges users for storing the tokens on their addresses, and an Algorand blockchain address by default does not receive the tokens unless explicitly agreed. Before transferring the fungible tokens, make sure that the recipient [has agreed to receive the NFT](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset) to their address.
 
-<ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>XinFin</li> </ul>
-
- **Transferring fungible tokens on Algorand**
-
- On Algorand, the recipient has to agree in advance to receive your fungible tokens because Algorand charges users for storing the tokens on their addresses, and an Algorand blockchain address by default does not receive the tokens unless explicitly agreed. Before transferring the fungible tokens, make sure that the recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">has agreed to receive the NFT</a> to their address.
-
- **Blockchain-specific APIs to transfer fungible tokens**
-
+**Blockchain-specific APIs to transfer fungible tokens** 
  You can also use blockchain-specific APIs for transferring fungible tokens on the following blockchains: 
+* [BNB Smart Chain](https://apidoc.tatum.io/tag/BNB-Smart-Chain#operation/BscBlockchainTransfer)
+* [Celo](https://apidoc.tatum.io/tag/Celo#operation/CeloBlockchainTransfer)
+* [Ethereum](https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer)
+* [Harmony](https://apidoc.tatum.io/tag/Harmony#operation/OneBlockchainTransfer)
+* [KuCoin Community Chain](https://apidoc.tatum.io/tag/KuCoin#operation/KcsBlockchainTransfer)
+* [Polygon](https://apidoc.tatum.io/tag/Polygon#operation/PolygonBlockchainTransfer)
+* [XinFin](https://apidoc.tatum.io/tag/XinFin#operation/XdcBlockchainTransfer)
 
-<ul> <li><a href="https://apidoc.tatum.io/tag/BNB-Smart-Chain#operation/BscBlockchainTransfer" target="_blank">BNB Smart Chain</a></li> <li><a href="https://apidoc.tatum.io/tag/Celo#operation/CeloBlockchainTransfer" target="_blank">Celo</a></li> <li><a href="https://apidoc.tatum.io/tag/Ethereum#operation/EthBlockchainTransfer" target="_blank">Ethereum</a></li> <li><a href="https://apidoc.tatum.io/tag/Harmony#operation/OneBlockchainTransfer" target="_blank">Harmony</a></li> <li><a href="https://apidoc.tatum.io/tag/KuCoin#operation/KcsBlockchainTransfer" target="_blank">KuCoin Community Chain</a></li> <li><a href="https://apidoc.tatum.io/tag/Polygon#operation/PolygonBlockchainTransfer" target="_blank">Polygon</a></li> <li><a href="https://apidoc.tatum.io/tag/XinFin#operation/XdcBlockchainTransfer" target="_blank">XinFin</a></li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When transferring fungible tokens, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `chainTransferEthErc20KMS()`
 
 ### Example
 
-[👉 View "**chainTransferEthErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferEthErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferEthErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferEthErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1514,19 +1673,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferEthErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferKcsEthErc20()`
 
 ### Example
 
-[👉 View "**chainTransferKcsEthErc20.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferKcsEthErc20.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferKcsEthErc20.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferKcsEthErc20.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1554,19 +1717,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferKcsEthErc20 operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferKcsEthErc20KMS()`
 
 ### Example
 
-[👉 View "**chainTransferKcsEthErc20KMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferKcsEthErc20KMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferKcsEthErc20KMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferKcsEthErc20KMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1594,19 +1761,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferKcsEthErc20KMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferSolanaSpl()`
 
 ### Example
 
-[👉 View "**chainTransferSolanaSpl.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferSolanaSpl.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferSolanaSpl.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferSolanaSpl.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1634,19 +1805,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferSolanaSpl operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `chainTransferSolanaSplKMS()`
 
 ### Example
 
-[👉 View "**chainTransferSolanaSplKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferSolanaSplKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chainTransferSolanaSplKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/chainTransferSolanaSplKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1674,19 +1849,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer fungible tokens
+> Transfer fungible tokens
 
-ChainTransferSolanaSplKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `erc20GetBalance()`
 
 ### Example
 
-[👉 View "**erc20GetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **erc20GetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1718,27 +1897,39 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the number of fungible tokens that a blockchain address holds in a smart contract
+> Get the number of fungible tokens that a blockchain address holds in a smart contract
 
 **1 credit per API call**
 
- Get the number of the fungible tokens minted on a specific smart contract (the <code>contractAddress</code> path parameter in the request endpoint URL) that a blockchain address holds.
+Get the number of the fungible tokens minted on a specific smart contract (the `contractAddress` path parameter in the request endpoint URL) that a blockchain address holds.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Algorand
+* BNB Smart Chain
+* Celo
+* Elrond
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* Solana
+* XinFin
 
-<ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>XinFin</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `erc20GetBalanceAddress()`
 
 ### Example
 
-[👉 View "**erc20GetBalanceAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalanceAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **erc20GetBalanceAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetBalanceAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1766,27 +1957,33 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the total number of fungible tokens that a blockchain address holds
+> Get the total number of fungible tokens that a blockchain address holds
 
 **1 credit per API call**
 
- Get the number of all fungible tokens that a blockchain address holds across a blockchain. The tokens are returned grouped by the smart contracts they were minted on.
+Get the number of all fungible tokens that a blockchain address holds across a blockchain. The tokens are returned grouped by the smart contracts they were minted on.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Algorand
+* Celo
+* Ethereum
+* Polygon
+* Solana
 
-<ul> <li>Algorand</li> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> <li>Solana</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `erc20GetTransactionByAddress()`
 
 ### Example
 
-[👉 View "**erc20GetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetTransactionByAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **erc20GetTransactionByAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/FungibleTokensERC20OrCompatibleApi/erc20GetTransactionByAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1826,17 +2023,19 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get fungible token transactions on a blockchain address
+> Get fungible token transactions on a blockchain address
 
 **1 credit per API call**
 
- Get incoming and outgoing transactions related to fungible tokens on a blockchain address.
+Get incoming and outgoing transactions related to fungible tokens on a blockchain address.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Algorand
+* Celo
+* Ethereum
+* Polygon
 
-<ul> <li>Algorand</li> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---

@@ -40,7 +40,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**algorandBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **algorandBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -66,21 +69,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed Algorand transaction
+> Broadcast signed Algorand transaction
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
- Broadcast signed transaction to Algorand blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+ 
+Broadcast signed transaction to Algorand blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `algorandGenerateAddress()`
 
 ### Example
 
-[👉 View "**algorandGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGenerateAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **algorandGenerateAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGenerateAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -106,21 +114,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Algorand account address from private key
+> Generate Algorand account address from private key
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Generate Algorand account deposit address from private key.
+ 
+Generate Algorand account deposit address from private key.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `algorandGenerateWallet()`
 
 ### Example
 
-[👉 View "**algorandGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **algorandGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -146,21 +159,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Algorand wallet
+> Generate Algorand wallet
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Tatum supports Algorand wallets.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `algorandGetBalance()`
 
 ### Example
 
-[👉 View "**algorandGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **algorandGetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -186,21 +204,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Algorand Account balance
+> Get Algorand Account balance
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Get Algorand account balance in ALGO.
+ 
+Get Algorand account balance in ALGO.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `algorandGetBlock()`
 
 ### Example
 
-[👉 View "**algorandGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **algorandGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -226,21 +249,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Algorand block by block round number
+> Get Algorand block by block round number
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Algorand block by block round number.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `algorandGetCurrentBlock()`
 
 ### Example
 
-[👉 View "**algorandGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetCurrentBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **algorandGetCurrentBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetCurrentBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -262,21 +290,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get current block number
+> Get current block number
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Algorand current block number. This is the number of the latest block in the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `algorandGetTransaction()`
 
 ### Example
 
-[👉 View "**algorandGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **algorandGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/algorandGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -302,21 +335,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Algorand Transaction
+> Get Algorand Transaction
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Algorand transaction by transaction id.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `receiveAlgorandAsset()`
 
 ### Example
 
-[👉 View "**receiveAlgorandAsset.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/receiveAlgorandAsset.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **receiveAlgorandAsset.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/receiveAlgorandAsset.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -342,23 +380,28 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Enable receiving asset on account
+> Enable receiving asset on account
 
-<h4>2 credits per API call.</h4>
+#### 2 credits per API call.
 
- Enable accepting Algorand asset on the sender account.
+ 
+Enable accepting Algorand asset on the sender account. 
+ 
+ This operation needs the private key of the blockchain address. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
- This operation needs the private key of the blockchain address. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `receiveAlgorandAssetKMS()`
 
 ### Example
 
-[👉 View "**receiveAlgorandAssetKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/receiveAlgorandAssetKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **receiveAlgorandAssetKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/receiveAlgorandAssetKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -384,19 +427,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Enable receiving asset on account
+> Enable receiving asset on account
 
-ReceiveAlgorandAssetKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferAlgorandBlockchain()`
 
 ### Example
 
-[👉 View "**transferAlgorandBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/transferAlgorandBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferAlgorandBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/transferAlgorandBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -422,29 +469,33 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Algos to an Algorand account
+> Send Algos to an Algorand account
 
 **2 credits per API call**
 
- Send Algos from one Algorand address to the other one.
+Send Algos from one Algorand address to the other one.
 
- **Signing a transaction**
+**Signing a transaction**
 
- When sending Algos, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+When sending Algos, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferAlgorandBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferAlgorandBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/transferAlgorandBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferAlgorandBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/AlgorandApi/transferAlgorandBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -470,9 +521,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send Algos to an Algorand account
+> Send Algos to an Algorand account
 
-TransferAlgorandBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

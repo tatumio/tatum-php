@@ -44,7 +44,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**transferXlmBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferXlmBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -70,23 +73,28 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send XLM from address to address
+> Send XLM from address to address
 
-<h4>10 credits per API call.</h4>
+#### 10 credits per API call.
 
- Send XLM from account to account. It is possbile to send native XLM asset, or any other custom asset present on the network.
+ 
+Send XLM from account to account. It is possbile to send native XLM asset, or any other custom asset present on the network. 
+ 
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferXlmBlockchainAsset()`
 
 ### Example
 
-[👉 View "**transferXlmBlockchainAsset.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainAsset.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferXlmBlockchainAsset.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainAsset.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -112,19 +120,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send XLM from address to address
+> Send XLM from address to address
 
-TransferXlmBlockchainAsset operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferXlmBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferXlmBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferXlmBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -150,19 +162,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send XLM from address to address
+> Send XLM from address to address
 
-TransferXlmBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferXlmBlockchainKMSAsset()`
 
 ### Example
 
-[👉 View "**transferXlmBlockchainKMSAsset.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMSAsset.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferXlmBlockchainKMSAsset.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/transferXlmBlockchainKMSAsset.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -188,19 +204,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send XLM from address to address
+> Send XLM from address to address
 
-TransferXlmBlockchainKMSAsset operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `trustLineXlmBlockchain()`
 
 ### Example
 
-[👉 View "**trustLineXlmBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **trustLineXlmBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -226,23 +246,28 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create / Update / Delete XLM trust line
+> Create / Update / Delete XLM trust line
 
-<h4>10 credits per API call.</h4>
+#### 10 credits per API call.
 
- Create / Update / Delete XLM trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions.
+ 
+Create / Update / Delete XLM trust line between accounts to transfer private assets. By creating trustline for the first time, the asset is created automatically and can be used in the transactions. 
+ 
+ This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
 
- This operation needs the private key of the blockchain address. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `trustLineXlmBlockchainKMS()`
 
 ### Example
 
-[👉 View "**trustLineXlmBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **trustLineXlmBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/trustLineXlmBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -268,19 +293,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create / Update / Delete XLM trust line
+> Create / Update / Delete XLM trust line
 
-TrustLineXlmBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `xlmBroadcast()`
 
 ### Example
 
-[👉 View "**xlmBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -306,21 +335,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed XLM transaction
+> Broadcast signed XLM transaction
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
- Broadcast signed transaction to XLM blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+ 
+Broadcast signed transaction to XLM blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xlmGetAccountInfo()`
 
 ### Example
 
-[👉 View "**xlmGetAccountInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountInfo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmGetAccountInfo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountInfo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -346,21 +380,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get XLM Account info
+> Get XLM Account info
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get XLM Account detail.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xlmGetAccountTx()`
 
 ### Example
 
-[👉 View "**xlmGetAccountTx.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountTx.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmGetAccountTx.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetAccountTx.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -388,21 +427,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get XLM Account transactions
+> Get XLM Account transactions
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 List all XLM account transactions.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xlmGetFee()`
 
 ### Example
 
-[👉 View "**xlmGetFee.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetFee.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmGetFee.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetFee.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -424,21 +468,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get actual XLM fee
+> Get actual XLM fee
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get XLM Blockchain fee in 1/10000000 of XLM (stroop)
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xlmGetLastClosedLedger()`
 
 ### Example
 
-[👉 View "**xlmGetLastClosedLedger.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLastClosedLedger.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmGetLastClosedLedger.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLastClosedLedger.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -460,21 +509,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get XLM Blockchain Information
+> Get XLM Blockchain Information
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get XLM Blockchain last closed ledger.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xlmGetLedger()`
 
 ### Example
 
-[👉 View "**xlmGetLedger.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedger.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmGetLedger.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedger.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -500,21 +554,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get XLM Blockchain Ledger by sequence
+> Get XLM Blockchain Ledger by sequence
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get XLM Blockchain ledger for ledger sequence.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xlmGetLedgerTx()`
 
 ### Example
 
-[👉 View "**xlmGetLedgerTx.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedgerTx.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmGetLedgerTx.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetLedgerTx.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -540,21 +599,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get XLM Blockchain Transactions in Ledger
+> Get XLM Blockchain Transactions in Ledger
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get XLM Blockchain transactions in the ledger.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xlmGetTransaction()`
 
 ### Example
 
-[👉 View "**xlmGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -580,21 +644,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get XLM Transaction by hash
+> Get XLM Transaction by hash
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get XLM Transaction by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `xlmWallet()`
 
 ### Example
 
-[👉 View "**xlmWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **xlmWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/StellarApi/xlmWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -616,11 +685,13 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Generate XLM account
+> Generate XLM account
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
- Generate XLM account. Tatum does not support HD wallet for XLM, only specific address and private key can be generated.
+ 
+Generate XLM account. Tatum does not support HD wallet for XLM, only specific address and private key can be generated.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

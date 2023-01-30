@@ -45,7 +45,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**ltcBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -71,21 +74,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed Litecoin transaction
+> Broadcast signed Litecoin transaction
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
- Broadcast signed transaction to Litecoin blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+ 
+Broadcast signed transaction to Litecoin blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGenerateAddress()`
 
 ### Example
 
-[👉 View "**ltcGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGenerateAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -113,21 +121,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Litecoin deposit address from Extended public key
+> Generate Litecoin deposit address from Extended public key
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
- Generate Litecoin deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
+ 
+Generate Litecoin deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31 - 1.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGenerateAddressPrivateKey()`
 
 ### Example
 
-[👉 View "**ltcGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGenerateAddressPrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateAddressPrivateKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -153,21 +166,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Litecoin private key
+> Generate Litecoin private key
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
- Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
+ 
+Generate private key for address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^32 private keys starting from index 0 until 2^31 - 1.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGenerateWallet()`
 
 ### Example
 
-[👉 View "**ltcGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -193,27 +211,32 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Litecoin wallet
+> Generate Litecoin wallet
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
-Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-
+ 
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
 Each address is identified by 3 main values:
+* Private Key - your secret value, which should never be revealed
+* Public Key - public address to be published
+* Derivation index - index of generated address
 
-<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+Tatum follows BIP44 specification and generates for Litecoin wallet with derivation path m'/44'/2'/0'/0\. More about BIP44 HD wallets can be found here - [https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki](https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki). Generate BIP44 compatible Litecoin wallet.
 
-Tatum follows BIP44 specification and generates for Litecoin wallet with derivation path m'/44'/2'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki">https://github.com/litecoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Litecoin wallet.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `ltcGetBalanceOfAddress()`
 
 ### Example
 
-[👉 View "**ltcGetBalanceOfAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBalanceOfAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGetBalanceOfAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBalanceOfAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -239,23 +262,27 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the balance of a Litecoin address
+> Get the balance of a Litecoin address
 
 **5 credits per API call**
 
- Get the balance of a Litecoin address.
+Get the balance of a Litecoin address.
 
- The API returns the balance only if the address has up to 50,000 UTXOs (Unspent Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns an error with the <code>403</code> response code.
+The API returns the balance only if the address has up to 50,000 UTXOs (Unspent Transaction Outputs). For an address with more than 50,000 UTXOs, the API returns an error with the `403` response code.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGetBlock()`
 
 ### Example
 
-[👉 View "**ltcGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -281,21 +308,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Litecoin Block by hash or height
+> Get Litecoin Block by hash or height
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Litecoin Block detail by block hash or height.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGetBlockChainInfo()`
 
 ### Example
 
-[👉 View "**ltcGetBlockChainInfo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockChainInfo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGetBlockChainInfo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockChainInfo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -317,21 +349,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get Litecoin Blockchain Information
+> Get Litecoin Blockchain Information
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Litecoin Blockchain Information. Obtain basic info like testnet / mainnet version of the chain, current block number and it's hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGetBlockHash()`
 
 ### Example
 
-[👉 View "**ltcGetBlockHash.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockHash.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGetBlockHash.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetBlockHash.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -357,21 +394,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Litecoin Block hash
+> Get Litecoin Block hash
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Litecoin Block hash. Returns hash of the block to get the block detail.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGetMempool()`
 
 ### Example
 
-[👉 View "**ltcGetMempool.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetMempool.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGetMempool.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetMempool.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -393,21 +435,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get Mempool Transactions
+> Get Mempool Transactions
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Get Litecoin Transaction ids in the mempool.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGetRawTransaction()`
 
 ### Example
 
-[👉 View "**ltcGetRawTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetRawTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGetRawTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetRawTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -433,21 +480,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Litecoin Transaction by hash
+> Get Litecoin Transaction by hash
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Litecoin Transaction detail by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGetTxByAddress()`
 
 ### Example
 
-[👉 View "**ltcGetTxByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetTxByAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGetTxByAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetTxByAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -477,21 +529,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Litecoin Transactions by address
+> Get Litecoin Transactions by address
 
-<h4>5 credits per API call.</h4>
+#### 5 credits per API call.
 
+ 
 Get Litecoin Transaction by address.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcGetUTXO()`
 
 ### Example
 
-[👉 View "**ltcGetUTXO.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetUTXO.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcGetUTXO.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcGetUTXO.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -519,27 +576,30 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get information about a transaction output (UTXO) in a Litecoin transaction
+> Get information about a transaction output (UTXO) in a Litecoin transaction
 
 **5 credits per API call**
 
- Get information about a transaction output in a transaction and check whether this output is a UTXO or has been spent.
+Get information about a transaction output in a transaction and check whether this output is a UTXO or has been spent.
 
- "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>.
+"UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information the UTXO, see the [Bitcoin user documentation](https://developer.bitcoin.org/devguide/transactions.html).
 
- 
+* If the transaction output is an UTXO, the API returns data about it.
+* If the transaction output has been spent and there is no UTXO to return, the API returns an error with the `404` response code.
 
-<ul> <li>If the transaction output is an UTXO, the API returns data about it.</li> <li>If the transaction output has been spent and there is no UTXO to return, the API returns an error with the <code>404</code> response code.</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `ltcTransactionAddress()`
 
 ### Example
 
-[👉 View "**ltcTransactionAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcTransactionAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -565,55 +625,51 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send LTC to Litecoin addresses
+> Send LTC to Litecoin addresses
 
 **10 credits per API call**
 
- Send LTC to blockchain addresses.
+Send LTC to blockchain addresses.
 
- Litecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about the UTXO, see the <a href="https://developer.bitcoin.org/devguide/transactions.html" target="_blank">Bitcoin user documentation</a>. To check UTXOs in a transaction, see the <a href="https://apidoc.tatum.io/tag/Litecoin/#operation/ltcgetutxo">API for getting information about a transaction output (UTXO) in a Litecoin transaction</a>.
+Litecoin transactions are based on UTXOs. "UTXO" stands for "Unspent Transaction Output". A UTXO is the amount of LTC that remains at a Litecoin address after a cryptocurrency transaction involving this address has been performed. The UTXO can then be used as input for a new cryptocurrency transaction. For more information about the UTXO, see the [Bitcoin user documentation](https://developer.bitcoin.org/devguide/transactions.html). To check UTXOs in a transaction, see the [API for getting information about a transaction output (UTXO) in a Litecoin transaction](https://apidoc.tatum.io/tag/Litecoin/#operation/ltcgetutxo).
 
- You can build a LTC transaction by one of the following methods:
+You can build a LTC transaction by one of the following methods:
 
- 
+* **Sending LTC from blockchain addresses** 
+The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from. 
+ To use this method, use the `LtcTransactionAddress` or `LtcTransactionAddressKMS` schema of the request body.
+* **Sending LTC from UTXOs** 
+The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send. 
+ To use this method, use the `LtcTransactionFromUTXO` or `LtcTransactionFromUTXOKMS` schema of the request body.
 
-<ul> <li>**Sending LTC from blockchain addresses**
+When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 LTC and T2 with 2 LTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 LTC to spend: 
+`1 LTC (from T1) + 2 LTC (from T2) = 3 LTC (to spend in total)`
 
-The assets are sent from a list of addresses. For each address, the last 100 transactions are scanned for any UTXO to be included in the transaction. For easier control over the assets to be sent, we recommend that you use this method only if you have one address to send the assets from.
+You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.
 
- To use this method, use the <code>LtcTransactionAddress</code> or <code>LtcTransactionAddressKMS</code> schema of the request body.</li> <li>**Sending LTC from UTXOs**
+**Paying the gas fee and receiving the change** 
+ When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the `fee` and `changeAddress` parameters in the request body, correspondingly).
 
-The assets are sent from a list of UTXOs. Each UTXO is included in the transaction. Use this method if you want to manually calculate the amount to send.
-
- To use this method, use the <code>LtcTransactionFromUTXO</code> or <code>LtcTransactionFromUTXOKMS</code> schema of the request body.</li> </ul>
-
- When an UTXO is entered into a transaction, the whole UTXO amount is included and must be spent. For example, address A receives two transactions, T1 with 1 LTC and T2 with 2 LTC. A transaction that consumes the UTXOs from both T1 and T2 will have an available amount of 3 LTC to spend:
-
-<code>1 LTC (from T1) + 2 LTC (from T2) = 3 LTC (to spend in total)</code>
-
- You can send the assets to one or multiple recipients in one transaction. If you send the assets to multiple addresses, each address must have its own amount to receive.
-
- **Paying the gas fee and receiving the change**
-
- When the amount that the recipients should receive is lower than the amount from the UTXOs, the difference between these two amounts is by default used as the gas fee for the transaction. Because this amount may be considerable and you may not want to spend it all on the gas fee, you can explicitly specify the fee amount and the blockchain address where any extra funds remaining after covering the fee will be sent (the <code>fee</code> and <code>changeAddress</code> parameters in the request body, correspondingly).
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When sending LTC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `ltcTransactionAddressKMS()`
 
 ### Example
 
-[👉 View "**ltcTransactionAddressKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddressKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcTransactionAddressKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionAddressKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -639,19 +695,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send LTC to Litecoin addresses
+> Send LTC to Litecoin addresses
 
-LtcTransactionAddressKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `ltcTransactionUTXO()`
 
 ### Example
 
-[👉 View "**ltcTransactionUTXO.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXO.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcTransactionUTXO.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXO.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -677,19 +737,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send LTC to Litecoin addresses
+> Send LTC to Litecoin addresses
 
-LtcTransactionUTXO operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `ltcTransactionUTXOKMS()`
 
 ### Example
 
-[👉 View "**ltcTransactionUTXOKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXOKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **ltcTransactionUTXOKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/LitecoinApi/ltcTransactionUTXOKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -715,9 +779,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send LTC to Litecoin addresses
+> Send LTC to Litecoin addresses
 
-LtcTransactionUTXOKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

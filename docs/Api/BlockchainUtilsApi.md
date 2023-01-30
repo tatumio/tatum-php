@@ -31,7 +31,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**getAuctionEstimatedTime.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getAuctionEstimatedTime.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/getAuctionEstimatedTime.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -59,29 +62,36 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Estimate the block height for a future point in time
+> Estimate the block height for a future point in time
 
 **1 credit per API call**
 
- Get an estimated block height (number) for some future point in time.
+Get an estimated block height (number) for some future point in time.
 
- Note that this API returnes an **estimation** of what the block height might be and **not** the exact block height.
+Note that this API returnes an **estimation** of what the block height might be and **not** the exact block height.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `sCGetContractAddress()`
 
 ### Example
 
-[👉 View "**sCGetContractAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/sCGetContractAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **sCGetContractAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/BlockchainUtilsApi/sCGetContractAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -109,17 +119,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the blockchain address of a smart contract by the deployment transaction ID
+> Get the blockchain address of a smart contract by the deployment transaction ID
 
 **1 credit per API call**
 
- Get the blockchain address of a smart contract by the ID of its deployment transaction.
+Get the blockchain address of a smart contract by the ID of its deployment transaction.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Elrond
+* Ethereum
+* Flow
+* Harmony
+* Klaytn
+* Polygon
+* TRON
+* XinFin
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>Polygon</li> <li>TRON</li> <li>XinFin</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---

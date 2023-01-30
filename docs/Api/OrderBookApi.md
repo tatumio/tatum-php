@@ -39,7 +39,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**chartRequest.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/chartRequest.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **chartRequest.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/chartRequest.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -65,21 +68,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Obtain chart data from historical closed trades
+> Obtain chart data from historical closed trades
 
-<h4>2 credits for API call.</h4>
+#### 2 credits for API call.
 
- Obtain data from the closed trades for entering in the chart. Time interval is set between __from__ and __to__ and there is defined time frame. There can be obtained at most 200 time points in the time interval.
+ 
+Obtain data from the closed trades for entering in the chart. Time interval is set between _from_ and _to_ and there is defined time frame. There can be obtained at most 200 time points in the time interval.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `createFutureTrade()`
 
 ### Example
 
-[👉 View "**createFutureTrade.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createFutureTrade.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createFutureTrade.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createFutureTrade.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -105,19 +113,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Store buy / sell trade
+> Store buy / sell trade
 
-CreateFutureTrade operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `createTrade()`
 
 ### Example
 
-[👉 View "**createTrade.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createTrade.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **createTrade.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/createTrade.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -143,23 +155,29 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Store buy / sell trade
+> Store buy / sell trade
 
-<h4>2 credits for API call, 2 credits for each fill of the counter trade. 1 API call + 2 fills = 6 credits.</h4>
+#### 2 credits for API call, 2 credits for each fill of the counter trade. 1 API call + 2 fills = 6 credits.
 
- Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible.
-
+ 
+Store new buy / sell trade. If there is trade already available to fill, fill as much trades as possible. 
  It is possible to charge fees for the trades. Fees are an extra amount on top of the trade amount and are paid in the currency that you going to block e.g.: - BUY BTC/USDT - fees will be paid in USDT - SELL BTC/ETH - fees will be paid in BTC 
 
- If you fill type of the trade with FUTURE_BUY or FUTURE_SELL the trade will behave as a trade future. The trade is concluded now but will be fulfilled in future. The date of fulfillment is by the “Seal Date” field. You can also block a percentage of the amount until the future trade has expired. 
+ If you fill type of the trade with FUTURE\_BUY or FUTURE\_SELL the trade will behave as a trade future. The trade is concluded now but will be fulfilled in future. The date of fulfillment is by the “Seal Date” field. You can also block a percentage of the amount until the future trade has expired. 
 
- Futures can also penalize contracting parties if they don’t have the agreed balance available in their accounts. The penalty is calculated in the following way: Penalty amount = (Percentage of incomplete deal amount because of shortage from user) × (Maximum Penalty percentage of futures deal based on blocked amount and time interval) × (total blocked value). 
+Futures can also penalize contracting parties if they don’t have the agreed balance available in their accounts. The penalty is calculated in the following way: Penalty amount = (Percentage of incomplete deal amount because of shortage from user) × (Maximum Penalty percentage of futures deal based on blocked amount and time interval) × (total blocked value). 
 
- Example of the BTC/USDT trade future:
+Example of the BTC/USDT trade future:
 
- The maker creates a sell with the following properties: 1 BTC at a price of 60000 USDT, with a blocking percentage of 22%, a penalty percentage of 45%, a system commision of 1% and with an expiration time of within 12 hours.
+The maker creates a sell with the following properties: 1 BTC at a price of 60000 USDT, with a blocking percentage of 22%, a penalty percentage of 45%, a system commision of 1% and with an expiration time of within 12 hours.
 
- <pre> { "type": "FUTURE_SELL", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf3", "currency2AccountId": "609d0696bf835c241ac2920f", "fee": 1, "feeAccountId": "609d0696bf835c251ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } </pre> The taker accepts the offer with a buy and blocks 13200 USDT (60000 USDT × 0.22) in their account. <pre> { "type": "FUTURE_BUY", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf2", "currency2AccountId": "609d0696bf835c241ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } </pre> At the time of the trade, the maker and taker have the following conditions. The maker has 0.65 BTC (35% deficit) in their account and the taker has 49200 USDT (18% deficit) in their account. 
+ { "type": "FUTURE_SELL", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf3", "currency2AccountId": "609d0696bf835c241ac2920f", "fee": 1, "feeAccountId": "609d0696bf835c251ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } 
+
+ The taker accepts the offer with a buy and blocks 13200 USDT (60000 USDT × 0.22) in their account. 
+
+ { "type": "FUTURE_BUY", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf2", "currency2AccountId": "609d0696bf835c241ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } 
+
+At the time of the trade, the maker and taker have the following conditions. The maker has 0.65 BTC (35% deficit) in their account and the taker has 49200 USDT (18% deficit) in their account. 
 
  The maker penalty is equal to 0.35 × 0.22 × (0.45 × 1 BTC) = 0.03465 BTC. The taker penalty is equal to 0.18 × 0.22 × (0.45 × 60000 USDT) = 1069.2 USDT. 
 
@@ -169,15 +187,19 @@ Store buy / sell trade
 
  The amount received by the maker after the trade is (0.60535 × 60000) + 1069.2 = 37390.2 USDT and the taker receives 0.60535 + 0.03465 = 0.64 BTC.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `deleteAccountTrades()`
 
 ### Example
 
-[👉 View "**deleteAccountTrades.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteAccountTrades.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deleteAccountTrades.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteAccountTrades.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -203,21 +225,26 @@ void (empty response body)
 
 ### Description
 
-Cancel all existing trades for account
+> Cancel all existing trades for account
 
-<h4>1 credit for API call, 1 credit for each cancelled trade. 1 API call + 2 cancellations = 3 credits.</h4>
+#### 1 credit for API call, 1 credit for each cancelled trade. 1 API call + 2 cancellations = 3 credits.
 
+ 
 Cancel all trades for account.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `deleteTrade()`
 
 ### Example
 
-[👉 View "**deleteTrade.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteTrade.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deleteTrade.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/deleteTrade.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -243,21 +270,26 @@ void (empty response body)
 
 ### Description
 
-Cancel existing trade
+> Cancel existing trade
 
-<h4>1 credit for API call</h4>
+#### 1 credit for API call
 
+ 
 Cancel existing trade.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getBuyTradesBody()`
 
 ### Example
 
-[👉 View "**getBuyTradesBody.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getBuyTradesBody.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getBuyTradesBody.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getBuyTradesBody.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -283,21 +315,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-List all active buy trades
+> List all active buy trades
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 List all active buy trades.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getHistoricalTradesBody()`
 
 ### Example
 
-[👉 View "**getHistoricalTradesBody.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getHistoricalTradesBody.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getHistoricalTradesBody.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getHistoricalTradesBody.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -323,21 +360,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-List all historical trades
+> List all historical trades
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 List all historical trades. It is possible to list all trades, trades for specific trading pair and/or account.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getMatchedTrades()`
 
 ### Example
 
-[👉 View "**getMatchedTrades.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getMatchedTrades.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getMatchedTrades.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getMatchedTrades.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -363,21 +405,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-List all matched orders from FUTURE_SELL/FUTURE_BUY trades
+> List all matched orders from FUTURE_SELL/FUTURE_BUY trades
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
-List all matched orders from the FUTURE_BUY OR FUTURE_SELL orders.
+ 
+List all matched orders from the FUTURE\_BUY OR FUTURE\_SELL orders.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getSellTradesBody()`
 
 ### Example
 
-[👉 View "**getSellTradesBody.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getSellTradesBody.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getSellTradesBody.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getSellTradesBody.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -403,21 +450,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-List all active sell trades
+> List all active sell trades
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 List all active sell trades.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `getTradeById()`
 
 ### Example
 
-[👉 View "**getTradeById.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getTradeById.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getTradeById.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/OrderBookApi/getTradeById.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -443,11 +495,13 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get existing trade
+> Get existing trade
 
-<h4>1 credit for API call</h4>
+#### 1 credit for API call
 
+ 
 Get existing opened trade.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---

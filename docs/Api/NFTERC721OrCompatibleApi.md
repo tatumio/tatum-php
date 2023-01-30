@@ -108,7 +108,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**addNftMinter.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinter.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **addNftMinter.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinter.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -136,39 +139,45 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add a blockchain address as an NFT minter to an NFT smart contract
+> Add a blockchain address as an NFT minter to an NFT smart contract
 
 **2 credits per API call**
 
- Allow a blockchain address (the <code>minter</code> parameter in the request body) to mint NFTs on your NFT smart contract (the <code>contractAddress</code> parameter in the request body).
+Allow a blockchain address (the `minter` parameter in the request body) to mint NFTs on your NFT smart contract (the `contractAddress` parameter in the request body).
 
- **NOTE:** Use this API **only** when you are using NFT Express with your own smart contract. For more information, see "Use your own smart contract to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
-
+**NOTE:** Use this API **only** when you are using NFT Express with your own smart contract. For more information, see "Use your own smart contract to mint NFTs" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721). 
  Do not use this API in any other case.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When allowing a blockchain address to mint NFTs, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `addNftMinterKMS()`
 
 ### Example
 
-[👉 View "**addNftMinterKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinterKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **addNftMinterKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/addNftMinterKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -196,19 +205,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Add a blockchain address as an NFT minter to an NFT smart contract
+> Add a blockchain address as an NFT minter to an NFT smart contract
 
-AddNftMinterKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNft()`
 
 ### Example
 
-[👉 View "**burnNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNft.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNft.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNft.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -236,41 +249,49 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-**100 credits per API call on Flow
+**100 credits per API call on Flow** 
+ **2 credits per API call on the other blockchains**
 
- 2 credits per API call on the other blockchains**
+Destroy an NFT. Burning the NFT transfers it to an un-spendable blockchain address that no one can access.
 
- Destroy an NFT. Burning the NFT transfers it to an un-spendable blockchain address that no one can access.
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* Algorand
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Flow
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* TRON
 
- 
+**Burning NFTs on Algorand** 
+ You can burn only the NFTs that were minted with the address of the manager account specified in the `manager` parameter in the [minting call](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721) (see the `MintNftExpressAlgorand`, `MintNftAlgorand`, and `MintNftAlgorandKMS` schemas of the request body).
 
-<ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>TRON</li> </ul>
-
- **Burning NFTs on Algorand**
-
- You can burn only the NFTs that were minted with the address of the manager account specified in the <code>manager</code> parameter in the <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">minting call</a> (see the <code>MintNftExpressAlgorand</code>, <code>MintNftAlgorand</code>, and <code>MintNftAlgorandKMS</code> schemas of the request body).
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When burning an NFT, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `burnNftAlgo()`
 
 ### Example
 
-[👉 View "**burnNftAlgo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftAlgo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftAlgo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftAlgo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -298,19 +319,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftAlgo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNftCelo()`
 
 ### Example
 
-[👉 View "**burnNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -338,19 +363,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNftFlowKMS()`
 
 ### Example
 
-[👉 View "**burnNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftFlowKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -378,19 +407,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftFlowKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNftFlowMnemonic()`
 
 ### Example
 
-[👉 View "**burnNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftFlowMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -418,19 +451,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftFlowMnemonic operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNftFlowPK()`
 
 ### Example
 
-[👉 View "**burnNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowPK.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftFlowPK.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftFlowPK.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -458,19 +495,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftFlowPK operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNftKMS()`
 
 ### Example
 
-[👉 View "**burnNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -498,19 +539,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNftKMSCelo()`
 
 ### Example
 
-[👉 View "**burnNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -538,19 +583,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNftKMSTron()`
 
 ### Example
 
-[👉 View "**burnNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftKMSTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftKMSTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -578,19 +627,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftKMSTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `burnNftTron()`
 
 ### Example
 
-[👉 View "**burnNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **burnNftTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/burnNftTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -618,19 +671,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Burn an NFT
+> Burn an NFT
 
-BurnNftTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployNft()`
 
 ### Example
 
-[👉 View "**deployNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNft.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNft.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNft.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -658,61 +715,66 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-**100 credits per API call on Flow
+**100 credits per API call on Flow** 
+ **2 credits per API call on the other blockchains**
 
- 2 credits per API call on the other blockchains**
+Deploy an NFT smart contract on the blockchain. In a deployed NFT smart contract, you can mint NFTs (one NFT at a time or multiple NFTs at once), burn, and transfer NFTs.
 
- Deploy an NFT smart contract on the blockchain. In a deployed NFT smart contract, you can mint NFTs (one NFT at a time or multiple NFTs at once), burn, and transfer NFTs.
+Smart contracts are standardized and audited. You can review the code of a deployed NFT smart contract [here](https://github.com/tatumio/flow-contracts) (if the contract is deployed on Flow) or [here](https://github.com/tatumio/smart-contracts/tree/master/contracts/tatum) (if the contract is deployed on any other supported blockchain).
 
- Smart contracts are standardized and audited. You can review the code of a deployed NFT smart contract <a href="https://github.com/tatumio/flow-contracts" target="_blank">here</a> (if the contract is deployed on Flow) or <a href="https://github.com/tatumio/smart-contracts/tree/master/contracts/tatum" target="_blank">here</a> (if the contract is deployed on any other supported blockchain).
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Flow
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* TRON
 
- 
+**General NFT smart contracts** 
+ By default, an NFT smart contract is deployed as a **general NFT smart contract compatible with OpenSea royalties**. This is a standard NFT contract with `AccessControl` and `Ownable`, enhanced with NFT batch minting. NFTs minted on this smart contract are compatible with OpenSea and its royalty structure.
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>TRON</li> </ul>
+**Cashback and provenance NFT smart contracts** 
+ In addition to the general NFT contract, you can deploy the following types of NFT smart contracts for the supported blockchains **except for Flow and TRON**:
 
- **General NFT smart contracts**
+* **Cashback NFT smart contract** is an NFT smart contract that forces on-chain royalties to be paid every time an NFT is transferred, and the royalties are defined as a **fixed value**. The royalties are **not** OpenSea-compatible. 
+ To deploy an NFT smart contract as a cashback contract, deploy the contract with the `cashback` parameter set to `true` in the request body.
+* **Provenance NFT smart contract** is an NFT smart contract that forces on-chain royalties to be paid every time an NFT is transferred, and the royalties are defined as a **percentage of the NFT price**. The royalties are **not** OpenSea-compatible. 
+ To deploy an NFT smart contract as a provenance contract, deploy the contract with the `provenance` parameter set to `true` in the request body.
 
- By default, an NFT smart contract is deployed as a **general NFT smart contract compatible with OpenSea royalties**. This is a standard NFT contract with <code>AccessControl</code> and <code>Ownable</code>, enhanced with NFT batch minting. NFTs minted on this smart contract are compatible with OpenSea and its royalty structure. **Cashback and provenance NFT smart contracts**
+You can enable **public minting** for cashback and provenance smart contracts. By default, public minting is disabled, which means that only the blockchain address whose private key was used to create the smart contract or the blockchain addresses [added to the smart contract as NFT minters](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftaddminter) will be able to mint NFTs for the contract. To enable public minting and allow anyone to mint NFTs on top of the smart contract, deploy the contract with the `publicMint` parameter set to `true` in the request body.
 
- In addition to the general NFT contract, you can deploy the following types of NFT smart contracts for the supported blockchains **except for Flow and TRON**: 
+**NFT smart contracts and NFT Express** 
+ If you want to use NFT Express to mint NFTs on the deployed smart contract, deploy the smart contract as a general NFT smart contract (that is, deploy the contract with the `cashback`, `provenance`, and `publicMint` parameters either set to `false` or not set at all in the request body). 
+ After you have deployed the NFT smart contract, [add the Tatum minter address as an NFT minter to your smart contract](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftaddminter).
 
-<ul> <li>**Cashback NFT smart contract** is an NFT smart contract that forces on-chain royalties to be paid every time an NFT is transferred, and the royalties are defined as a **fixed value**. The royalties are **not** OpenSea-compatible.
+For the complete information about using NFT Express on your smart contract, see "Use your own smart contract to mint NFTs" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
- To deploy an NFT smart contract as a cashback contract, deploy the contract with the <code>cashback</code> parameter set to <code>true</code> in the request body.</li> <li>**Provenance NFT smart contract** is an NFT smart contract that forces on-chain royalties to be paid every time an NFT is transferred, and the royalties are defined as a **percentage of the NFT price**. The royalties are **not** OpenSea-compatible.
-
- To deploy an NFT smart contract as a provenance contract, deploy the contract with the <code>provenance</code> parameter set to <code>true</code> in the request body.</li> </ul>
-
- You can enable **public minting** for cashback and provenance smart contracts. By default, public minting is disabled, which means that only the blockchain address whose private key was used to create the smart contract or the blockchain addresses <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftaddminter">added to the smart contract as NFT minters</a> will be able to mint NFTs for the contract. To enable public minting and allow anyone to mint NFTs on top of the smart contract, deploy the contract with the <code>publicMint</code> parameter set to <code>true</code> in the request body.
-
- **NFT smart contracts and NFT Express**
-
- If you want to use NFT Express to mint NFTs on the deployed smart contract, deploy the smart contract as a general NFT smart contract (that is, deploy the contract with the <code>cashback</code>, <code>provenance</code>, and <code>publicMint</code> parameters either set to <code>false</code> or not set at all in the request body).
-
- After you have deployed the NFT smart contract, <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftaddminter">add the Tatum minter address as an NFT minter to your smart contract</a>.
-
- For the complete information about using NFT Express on your smart contract, see "Use your own smart contract to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When deploying an NFT smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `deployNftCelo()`
 
 ### Example
 
-[👉 View "**deployNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNftCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -740,19 +802,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-DeployNftCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployNftCeloKMS()`
 
 ### Example
 
-[👉 View "**deployNftCeloKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCeloKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNftCeloKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftCeloKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -780,19 +846,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-DeployNftCeloKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployNftFlowKMS()`
 
 ### Example
 
-[👉 View "**deployNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNftFlowKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -820,19 +890,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-DeployNftFlowKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployNftFlowMnemonic()`
 
 ### Example
 
-[👉 View "**deployNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNftFlowMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -860,19 +934,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-DeployNftFlowMnemonic operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployNftFlowPK()`
 
 ### Example
 
-[👉 View "**deployNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowPK.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNftFlowPK.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftFlowPK.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -900,19 +978,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-DeployNftFlowPK operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployNftKMS()`
 
 ### Example
 
-[👉 View "**deployNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNftKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -940,19 +1022,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-DeployNftKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployNftTron()`
 
 ### Example
 
-[👉 View "**deployNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNftTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -980,19 +1066,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-DeployNftTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `deployNftTronKMS()`
 
 ### Example
 
-[👉 View "**deployNftTronKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTronKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **deployNftTronKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/deployNftTronKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1020,19 +1110,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Deploy an NFT smart contract
+> Deploy an NFT smart contract
 
-DeployNftTronKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNft()`
 
 ### Example
 
-[👉 View "**mintMultipleNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNft.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNft.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNft.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1060,19 +1154,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNft operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNftCelo()`
 
 ### Example
 
-[👉 View "**mintMultipleNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1100,19 +1198,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNftCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNftFlowKMS()`
 
 ### Example
 
-[👉 View "**mintMultipleNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftFlowKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1140,19 +1242,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNftFlowKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNftFlowMnemonic()`
 
 ### Example
 
-[👉 View "**mintMultipleNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftFlowMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1180,19 +1286,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNftFlowMnemonic operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNftFlowPK()`
 
 ### Example
 
-[👉 View "**mintMultipleNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowPK.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftFlowPK.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftFlowPK.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1220,19 +1330,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNftFlowPK operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNftKMS()`
 
 ### Example
 
-[👉 View "**mintMultipleNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1260,19 +1374,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNftKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNftKMSCelo()`
 
 ### Example
 
-[👉 View "**mintMultipleNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1300,19 +1418,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNftKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNftKMSTron()`
 
 ### Example
 
-[👉 View "**mintMultipleNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftKMSTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftKMSTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1340,19 +1462,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNftKMSTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintMultipleNftMinter()`
 
 ### Example
 
-[👉 View "**mintMultipleNftMinter.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftMinter.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftMinter.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftMinter.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1380,51 +1506,59 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-**100 credits per API call on Flow
+**100 credits per API call on Flow** 
+ **2 credits per API call on the other blockchains**
 
- 2 credits per API call on the other blockchains**
+Create multiple NFT Tokens and transfer them to destination account. Create and transfer any NFT tokens from smart contract defined in contractAddress.
 
- Create multiple NFT Tokens and transfer them to destination account. Create and transfer any NFT tokens from smart contract defined in contractAddress.
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Flow
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* TRON
+ This operation works in two modes. First mode works just like other NFT endpoints. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, [Tatum KMS](https://github.com/tatumio/tatum-kms) should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. Second mode enables you to mint on any custom NFT ERC-721 smart contract, on which specified minter address is approved as a minter. You don't specify private key or signatureId, only minter address, from which the NFT will be minted. 
+ It means you perform mint multiple NFT request with following body: 
 
- 
+{ "to": ["0x80d8bac9a6901698b3749fe336bbd1385c1f98f2"], "url": ["ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj"], "tokenId": ["9876541124516"], "contractAddress":"0xcd2ada00c48a27faa5cc67f9a1ed55b89ddf7f77", "minter": "0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5", "chain": "MATIC" }
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>TRON</li> </ul>
+ The blockchain fee of the performed transaction is paid from the address connected with built-in private key and is debited in form of credits. The credits are debited only if NFT mint requests are performed with paid API key plan. We transform fee to the credits in accordance to the rates provided by the Tatum. If you want to batch mint on ERC-721 contract which is not deployed via Tatum API, your smart contract must contain this method: 
 
- This operation works in two modes. First mode works just like other NFT endpoints. Every time the funds are transferred, the transaction must be signed with the corresponding private key. No one should ever send it's own private keys to the internet because there is a strong possibility of stealing keys and loss of funds. In this method, it is possible to enter privateKey or signatureId. PrivateKey should be used only for quick development on testnet versions of blockchain when there is no risk of losing funds. In production, <a href="https://github.com/tatumio/tatum-kms" target="_blank">Tatum KMS</a> should be used for the highest security standards, and signatureId should be present in the request. Alternatively, using the Tatum client library for supported languages. Second mode enables you to mint on any custom NFT ERC-721 smart contract, on which specified minter address is approved as a minter. You don't specify private key or signatureId, only minter address, from which the NFT will be minted.
+mintMultiple(address[] to, uint256[] tokenId, string[] uri): boolean
 
- It means you perform mint multiple NFT request with following body: <pre>{ "to": ["0x80d8bac9a6901698b3749fe336bbd1385c1f98f2"], "url": ["ipfs://QmXJJ6UF5WkF4WTJvsdhiA1etGwBLfpva7Vr9AudGMe3pj"], "tokenId": ["9876541124516"], "contractAddress":"0xcd2ada00c48a27faa5cc67f9a1ed55b89ddf7f77", "minter": "0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5", "chain": "MATIC" }</pre> The blockchain fee of the performed transaction is paid from the address connected with built-in private key and is debited in form of credits. The credits are debited only if NFT mint requests are performed with paid API key plan. We transform fee to the credits in accordance to the rates provided by the Tatum. If you want to batch mint on ERC-721 contract which is not deployed via Tatum API, your smart contract must contain this method: <pre>mintMultiple(address[] to, uint256[] tokenId, string[] uri): boolean</pre> You can use addresses specified in the bellow table to be used as a minter. 
+ You can use addresses specified in the bellow table to be used as a minter. 
 
-<table> 
-<tr> <th>Chain</th> <th>Testnet address</th> <th>Mainnet Address</th> </tr>
- 
-<tr> <td>MATIC</td> <td>0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5</td> <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td> </tr>
- 
-<tr> <td>BSC</td> <td>0xc16ae5e8c985b906935a0cadf4e24f0400531883</td> <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td> </tr>
- 
-<tr> <td>ONE</td> <td>0x8906f62d40293ddca77fdf6714c3f63265deddf0</td> <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td> </tr>
- 
-<tr> <td>ETH</td> <td>0x53e8577C4347C365E4e0DA5B57A589cB6f2AB848</td> <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td> </tr>
- 
-<tr> <td>CELO</td> <td>0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F</td> <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td> </tr>
- 
-<tr> <td>KLAY</td> <td>0x80d8bac9a6901698b3749fe336bbd1385c1f98f2</td> <td>0xcf9e127455d28e7362380aec1b92ddee8200b295</td> </tr>
- </table>
+| Chain | Testnet address | Mainnet Address |
+| ----- | ------------------------------------------ | ------------------------------------------ |
+| MATIC | 0x542b9ac4945a3836fd12ad98acbc76a0c8b743f5 | 0xcf9e127455d28e7362380aec1b92ddee8200b295 |
+| BSC | 0xc16ae5e8c985b906935a0cadf4e24f0400531883 | 0xcf9e127455d28e7362380aec1b92ddee8200b295 |
+| ONE | 0x8906f62d40293ddca77fdf6714c3f63265deddf0 | 0xcf9e127455d28e7362380aec1b92ddee8200b295 |
+| ETH | 0x53e8577C4347C365E4e0DA5B57A589cB6f2AB848 | 0xcf9e127455d28e7362380aec1b92ddee8200b295 |
+| CELO | 0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F | 0xcf9e127455d28e7362380aec1b92ddee8200b295 |
+| KLAY | 0x80d8bac9a6901698b3749fe336bbd1385c1f98f2 | 0xcf9e127455d28e7362380aec1b92ddee8200b295 |
 
  If there are not enough coins on any testnet address, feel free to send coins there.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `mintMultipleNftTron()`
 
 ### Example
 
-[👉 View "**mintMultipleNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintMultipleNftTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintMultipleNftTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1452,19 +1586,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint multiple NFTs
+> Mint multiple NFTs
 
-MintMultipleNftTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `mintNft()`
 
 ### Example
 
-[👉 View "**mintNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNft.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNft.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNft.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1492,21 +1630,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNft</code> schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your private key.
+The `MintNft` schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your private key. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftAlgorand()`
 
 ### Example
 
-[👉 View "**mintNftAlgorand.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorand.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftAlgorand.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorand.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1534,21 +1675,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftAlgorand</code> schema lets you mint NFTs natively on Algorand and sign the transaction with your private key.
+The `MintNftAlgorand` schema lets you mint NFTs natively on Algorand and sign the transaction with your private key. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftAlgorandKMS()`
 
 ### Example
 
-[👉 View "**mintNftAlgorandKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorandKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftAlgorandKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftAlgorandKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1576,21 +1720,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftAlgorandKMS</code> schema lets you mint NFTs natively on Algorand and sign the transaction with your signature ID.
+The `MintNftAlgorandKMS` schema lets you mint NFTs natively on Algorand and sign the transaction with your signature ID. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftCelo()`
 
 ### Example
 
-[👉 View "**mintNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1618,21 +1765,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftCelo</code> schema lets you mint NFTs natively on Celo and sign the transaction with your private key.
+The `MintNftCelo` schema lets you mint NFTs natively on Celo and sign the transaction with your private key. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftExpress()`
 
 ### Example
 
-[👉 View "**mintNftExpress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftExpress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1660,21 +1810,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftExpress</code> schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using **NTF Express** with the pre-built smart contract provided by Tatum.
+The `MintNftExpress` schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using **NTF Express** with the pre-built smart contract provided by Tatum. 
+For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftExpressAlgorand()`
 
 ### Example
 
-[👉 View "**mintNftExpressAlgorand.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressAlgorand.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftExpressAlgorand.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressAlgorand.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1702,21 +1855,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftExpressAlgorand</code> schema lets you mint NFTs on Algorand using **NTF Express** with the pre-built smart contract provided by Tatum.
+The `MintNftExpressAlgorand` schema lets you mint NFTs on Algorand using **NTF Express** with the pre-built smart contract provided by Tatum. 
+For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftExpressSolana()`
 
 ### Example
 
-[👉 View "**mintNftExpressSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftExpressSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftExpressSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1744,21 +1900,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftExpressSolana</code> schema lets you mint NFTs on Solana using **NTF Express** with the pre-built smart contract provided by Tatum.
+The `MintNftExpressSolana` schema lets you mint NFTs on Solana using **NTF Express** with the pre-built smart contract provided by Tatum. 
+For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Use the pre-built smart contract provided by Tatum to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftFlowKMS()`
 
 ### Example
 
-[👉 View "**mintNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftFlowKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1786,21 +1945,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftFlowKMS</code> schema lets you mint NFTs natively on Flow and sign the transaction with your signature ID.
+The `MintNftFlowKMS` schema lets you mint NFTs natively on Flow and sign the transaction with your signature ID. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftFlowMnemonic()`
 
 ### Example
 
-[👉 View "**mintNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftFlowMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1828,21 +1990,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftFlowMnemonic</code> schema lets you mint NFTs natively on Flow and sign the transaction with your wallet mnemonic.
+The `MintNftFlowMnemonic` schema lets you mint NFTs natively on Flow and sign the transaction with your wallet mnemonic. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftFlowPK()`
 
 ### Example
 
-[👉 View "**mintNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowPK.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftFlowPK.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftFlowPK.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1870,21 +2035,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftFlowPK</code> schema lets you mint NFTs natively on Flow and sign the transaction with your private key.
+The `MintNftFlowPK` schema lets you mint NFTs natively on Flow and sign the transaction with your private key. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftKMS()`
 
 ### Example
 
-[👉 View "**mintNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1912,21 +2080,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftKMS</code> schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your signature ID.
+The `MintNftKMS` schema lets you mint NFTs natively on BNB Smart Chain, Ethereum, Harmony, Klaytn, KuCoin Community Chain, and Polygon and sign the transaction with your signature ID. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftKMSCelo()`
 
 ### Example
 
-[👉 View "**mintNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1954,21 +2125,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftKMSCelo</code> schema lets you mint NFTs natively on Celo and sign the transaction with your signature ID.
+The `MintNftKMSCelo` schema lets you mint NFTs natively on Celo and sign the transaction with your signature ID. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftKMSTron()`
 
 ### Example
 
-[👉 View "**mintNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftKMSTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftKMSTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -1996,21 +2170,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftKMSTron</code> schema lets you mint NFTs natively on TRON and sign the transaction with your signature ID.
+The `MintNftKMSTron` schema lets you mint NFTs natively on TRON and sign the transaction with your signature ID. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftMinter()`
 
 ### Example
 
-[👉 View "**mintNftMinter.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftMinter.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftMinter.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftMinter.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2038,21 +2215,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftMinter</code> schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using the **NTF minter**, a special blockchain address provided by Tatum that will cover the minting fees.
+The `MintNftMinter` schema lets you mint NFTs on BNB Smart Chain, Celo, Ethereum, Harmony, Klaytn, and Polygon using the **NTF minter**, a special blockchain address provided by Tatum that will cover the minting fees. 
+For more information, see "Use your own smart contract to mint NFTs" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Use your own smart contract to mint NFTs" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftSolana()`
 
 ### Example
 
-[👉 View "**mintNftSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2080,21 +2260,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftSolana</code> schema lets you mint NFTs natively on Solana and sign the transaction with your private key.
+The `MintNftSolana` schema lets you mint NFTs natively on Solana and sign the transaction with your private key. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftSolanaKMS()`
 
 ### Example
 
-[👉 View "**mintNftSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2122,21 +2305,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftSolanaKMS</code> schema lets you mint NFTs natively on Solana and sign the transaction with your signature ID.
+The `MintNftSolanaKMS` schema lets you mint NFTs natively on Solana and sign the transaction with your signature ID. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `mintNftTron()`
 
 ### Example
 
-[👉 View "**mintNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **mintNftTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/mintNftTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2164,21 +2350,24 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Mint an NFT
+> Mint an NFT
 
-The <code>MintNftTron</code> schema lets you mint NFTs natively on TRON and sign the transaction with your private key.
+The `MintNftTron` schema lets you mint NFTs natively on TRON and sign the transaction with your private key. 
+For more information, see "Minting NFTs natively on a blockchain" in [Mint an NFT](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
-For more information, see "Minting NFTs natively on a blockchain" in <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">Mint an NFT</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetBalanceErc721()`
 
 ### Example
 
-[👉 View "**nftGetBalanceErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetBalanceErc721.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetBalanceErc721.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetBalanceErc721.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2210,29 +2399,42 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get the NFTs from a specific smart contract that a blockchain address holds
+> Get the NFTs from a specific smart contract that a blockchain address holds
 
 **1 credit per API call**
 
- Get the NFTs minted on a specific smart contract (the <code>contractAddress</code> path parameter in the request endpoint URL) that a blockchain address holds.
+Get the NFTs minted on a specific smart contract (the `contractAddress` path parameter in the request endpoint URL) that a blockchain address holds.
 
- **NOTE:** This API works only for the NFT smart contracts deployed using the <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftdeployerc721">Tatum smart contract API</a>.
+**NOTE:** This API works only for the NFT smart contracts deployed using the [Tatum smart contract API](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftdeployerc721).
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Algorand
+* BNB Smart Chain
+* Celo
+* Elrond
+* Ethereum
+* Flow
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* Solana
+* TRON
 
-<ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Elrond</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetMetadataErc721()`
 
 ### Example
 
-[👉 View "**nftGetMetadataErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetMetadataErc721.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetMetadataErc721.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetMetadataErc721.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2266,27 +2468,38 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get NFT metadata
+> Get NFT metadata
 
 **1 credit per API call**
 
- Get metadata of an NFT.
+Get metadata of an NFT.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Flow
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* Solana
+* TRON
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetProvenanceDataErc721()`
 
 ### Example
 
-[👉 View "**nftGetProvenanceDataErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetProvenanceDataErc721.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetProvenanceDataErc721.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetProvenanceDataErc721.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2318,29 +2531,37 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get NFT provenance information
+> Get NFT provenance information
 
 **1 credit per API call**
 
- Get provenance information for an NFT.
+Get provenance information for an NFT.
 
- **NOTE:** This API works only for <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftdeployerc721">provenance NFT smart contracts</a>.
+**NOTE:** This API works only for [provenance NFT smart contracts](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftdeployerc721).
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetRoyaltyErc721()`
 
 ### Example
 
-[👉 View "**nftGetRoyaltyErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetRoyaltyErc721.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetRoyaltyErc721.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetRoyaltyErc721.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2372,27 +2593,37 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get NFT royalty information
+> Get NFT royalty information
 
 **1 credit per API call**
 
- Get information about royalties for an NFT.
+Get information about royalties for an NFT.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* Solana
+* TRON
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetTokensByAddressErc721()`
 
 ### Example
 
-[👉 View "**nftGetTokensByAddressErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByAddressErc721.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetTokensByAddressErc721.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByAddressErc721.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2420,29 +2651,36 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get all NFTs that a blockchain address holds
+> Get all NFTs that a blockchain address holds
 
 **1 credit per API call + 5 credits for each owned NFT**
 
- Get all NFTs that a blockchain address holds. The NFTs are returned grouped by the smart contracts they were minted on.
+Get all NFTs that a blockchain address holds. The NFTs are returned grouped by the smart contracts they were minted on.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Algorand
+* BNB Smart Chain - mainnet only
+* Celo
+* Ethereum
+* Polygon
+* Solana
 
-<ul> <li>Algorand</li> <li>BNB Smart Chain - mainnet only</li> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> <li>Solana</li> </ul>
+On Solana and Algorand, if a blockchain address holds fewer than 50 NFTs, the API also returns each NFT's metadata. If the metadata is not returned, you can obtain it using the [API for getting NFT metadata](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/NftGetMetadataErc721).
 
- On Solana and Algorand, if a blockchain address holds fewer than 50 NFTs, the API also returns each NFT's metadata. If the metadata is not returned, you can obtain it using the <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/NftGetMetadataErc721">API for getting NFT metadata</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetTokensByCollectionErc721()`
 
 ### Example
 
-[👉 View "**nftGetTokensByCollectionErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByCollectionErc721.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetTokensByCollectionErc721.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTokensByCollectionErc721.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2474,27 +2712,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get all NFTs from a collection
+> Get all NFTs from a collection
 
 **1 credit per API call + 5 credits for each listed NFT**
 
- Get all NFTs from a collection (all the NFTs that were minted on the smart contract).
+Get all NFTs from a collection (all the NFTs that were minted on the smart contract).
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Celo
+* Ethereum
+* Polygon
 
-<ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetTransactErc721()`
 
 ### Example
 
-[👉 View "**nftGetTransactErc721.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactErc721.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetTransactErc721.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactErc721.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2524,27 +2766,37 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get an NFT transaction by its hash
+> Get an NFT transaction by its hash
 
 **1 credit per API call**
 
- Get an NFT transaction by its hash.
+Get an NFT transaction by its hash.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Flow
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* TRON
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>TRON</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetTransactionByAddress()`
 
 ### Example
 
-[👉 View "**nftGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetTransactionByAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2582,27 +2834,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get NFT transactions on a blockchain address
+> Get NFT transactions on a blockchain address
 
 **1 credit per API call**
 
- Get incoming and outgoing NFT transactions on a blockchain address.
+Get incoming and outgoing NFT transactions on a blockchain address.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Celo
+* Ethereum
+* Polygon
 
-<ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `nftGetTransactionByToken()`
 
 ### Example
 
-[👉 View "**nftGetTransactionByToken.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByToken.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **nftGetTransactionByToken.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/nftGetTransactionByToken.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2640,27 +2896,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get NFT transactions for an NFT
+> Get NFT transactions for an NFT
 
 **1 credit per API call**
 
- Get incoming and outgoing transactions for an NFT.
+Get incoming and outgoing transactions for an NFT.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* Celo
+* Ethereum
+* Polygon
 
-<ul> <li>Celo</li> <li>Ethereum</li> <li>Polygon</li> </ul>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferNft()`
 
 ### Example
 
-[👉 View "**transferNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNft.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNft.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNft.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2688,57 +2948,66 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-**100 credits per API call on Flow
+**100 credits per API call on Flow** 
+ **2 credits per API call on the other blockchains**
 
- 2 credits per API call on the other blockchains**
+Transfer an NFT from the smart contract (the `contractAddress` parameter in the request body) to the specified blockchain address (the `to` parameter in the request body).
 
- Transfer an NFT from the smart contract (the <code>contractAddress</code> parameter in the request body) to the specified blockchain address (the <code>to</code> parameter in the request body).
+In one API call, you can transfer only one NFT.
 
- In one API call, you can transfer only one NFT.
+This API is supported for the following blockchains:
 
- This API is supported for the following blockchains:
+* Algorand
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Flow
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* Solana
+* TRON
 
- 
+For Ethereum, Celo, and BNB Smart Chain, transferring NFTs invokes the `safeTransfer()` method.
 
-<ul> <li>Algorand</li> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Flow</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>Solana</li> <li>TRON</li> </ul>
+**Transferring NFTs on Algorand**
 
- For Ethereum, Celo, and BNB Smart Chain, transferring NFTs invokes the <code>safeTransfer()</code> method.
+* On Algorand, the recipient has to agree in advance to receive your NFT because Algorand charges users for storing NFTs on their addresses, and an Algorand blockchain address by default does not receive NFTs unless explicitly agreed. Before transferring an NFT, make sure that the recipient [has agreed to receive the NFT](https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset) to their address.
+* If you want to transfer an NFT that [was minted using NFT Express](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721), use the `transferNftAlgoExpress` schema of the request body. 
+**NOTE:** On the **mainnet**, Tatum covers your transaction fees for the NFT transfer and pays for them from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. On the **testnet**, no credits are deducted from the monthly credit allowance.
 
- **Transferring NFTs on Algorand**
+**Transferring NFTs on Solana** 
+ If you want to transfer an NFT that [was minted using NFT Express](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721), use the `transferNftSolana` or `transferNftSolanaKMS` schema of the request body. In the request body: 
+* Set the `from` parameter to the address that you used in the `to` parameter in the request body of the minting call.
+* Set the `to` parameter to the recipient's address.
+* Set the `contractAddress` parameter to the address from the `nftAddress` parameter returned in the response body of the minting call.
+* Set the `fromPrivateKey`/`signatureId` parameter to the private key/signature ID of the blockchain address that you specified in the `from` parameter.
 
- 
-
-<ul> <li>On Algorand, the recipient has to agree in advance to receive your NFT because Algorand charges users for storing NFTs on their addresses, and an Algorand blockchain address by default does not receive NFTs unless explicitly agreed. Before transferring an NFT, make sure that the recipient <a href="https://apidoc.tatum.io/tag/Algorand#operation/AlgorandBlockchainReceiveAsset" target="_blank">has agreed to receive the NFT</a> to their address.</li> <li>If you want to transfer an NFT that <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">was minted using NFT Express</a>, use the <code>transferNftAlgoExpress</code> schema of the request body.
-
-**NOTE:** On the **mainnet**, Tatum covers your transaction fees for the NFT transfer and pays for them from its own blockchain address. Then, the fee amount paid by Tatum is converted to the number of credits, and these credits are deducted from the monthly credit allowance of your paid pricing plan. On the **testnet**, no credits are deducted from the monthly credit allowance.</li> </ul>
-
- **Transferring NFTs on Solana**
-
- If you want to transfer an NFT that <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">was minted using NFT Express</a>, use the <code>transferNftSolana</code> or <code>transferNftSolanaKMS</code> schema of the request body. In the request body: 
-
-<ul> <li>Set the <code>from</code> parameter to the address that you used in the <code>to</code> parameter in the request body of the minting call.</li> <li>Set the <code>to</code> parameter to the recipient's address.</li> <li>Set the <code>contractAddress</code> parameter to the address from the <code>nftAddress</code> parameter returned in the response body of the minting call.</li> <li>Set the <code>fromPrivateKey</code>/<code>signatureId</code> parameter to the private key/signature ID of the blockchain address that you specified in the <code>from</code> parameter.</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When transferring an NFT, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- **NOTE:** This does not apply to transferring NFTs that were minted on Algorand using NFT Express (see earlier in this section).
+**NOTE:** This does not apply to transferring NFTs that were minted on Algorand using NFT Express (see earlier in this section).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferNftAlgo()`
 
 ### Example
 
-[👉 View "**transferNftAlgo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftAlgo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2766,19 +3035,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftAlgo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftAlgoExpress()`
 
 ### Example
 
-[👉 View "**transferNftAlgoExpress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoExpress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftAlgoExpress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoExpress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2806,19 +3079,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftAlgoExpress operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftAlgoKMS()`
 
 ### Example
 
-[👉 View "**transferNftAlgoKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftAlgoKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftAlgoKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2846,19 +3123,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftAlgoKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftCelo()`
 
 ### Example
 
-[👉 View "**transferNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2886,19 +3167,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftFlowKMS()`
 
 ### Example
 
-[👉 View "**transferNftFlowKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftFlowKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2926,19 +3211,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftFlowKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftFlowMnemonic()`
 
 ### Example
 
-[👉 View "**transferNftFlowMnemonic.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowMnemonic.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftFlowMnemonic.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowMnemonic.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -2966,19 +3255,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftFlowMnemonic operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftFlowPK()`
 
 ### Example
 
-[👉 View "**transferNftFlowPK.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowPK.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftFlowPK.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftFlowPK.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3006,19 +3299,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftFlowPK operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftKMS()`
 
 ### Example
 
-[👉 View "**transferNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3046,19 +3343,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftKMSCelo()`
 
 ### Example
 
-[👉 View "**transferNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3086,19 +3387,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftKMSTron()`
 
 ### Example
 
-[👉 View "**transferNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftKMSTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftKMSTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3126,19 +3431,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftKMSTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftSolana()`
 
 ### Example
 
-[👉 View "**transferNftSolana.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolana.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftSolana.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolana.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3166,19 +3475,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftSolana operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftSolanaKMS()`
 
 ### Example
 
-[👉 View "**transferNftSolanaKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolanaKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftSolanaKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftSolanaKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3206,19 +3519,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftSolanaKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `transferNftTron()`
 
 ### Example
 
-[👉 View "**transferNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferNftTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/transferNftTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3246,19 +3563,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transfer an NFT
+> Transfer an NFT
 
-TransferNftTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateCashbackValueForAuthorNft()`
 
 ### Example
 
-[👉 View "**updateCashbackValueForAuthorNft.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNft.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateCashbackValueForAuthorNft.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNft.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3286,41 +3607,48 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update NFT royalty information
+> Update NFT royalty information
 
 **2 credits per API call**
 
- Update the value of the royalty cashback set for an NFT.
+Update the value of the royalty cashback set for an NFT.
 
- The royalty cashback value can be updated only from the address of the NFT author (the address that is listed as a royalty cashback receiver in the NFT royalty information). The royalty cashback value cannot be updated from the address of the NFT owner.
-
+The royalty cashback value can be updated only from the address of the NFT author (the address that is listed as a royalty cashback receiver in the NFT royalty information). The royalty cashback value cannot be updated from the address of the NFT owner. 
  In one API call, you can update the first value of the royalty cashback for the NFT author for one NFT.
 
- To disable the royalties for the NFT completely, set it to 0.
+To disable the royalties for the NFT completely, set it to 0.
 
- This API is supported for the following blockchains:
+This API is supported for the following blockchains:
 
- 
+* BNB Smart Chain
+* Celo
+* Ethereum
+* Harmony
+* Klaytn
+* KuCoin Community Chain
+* Polygon
+* TRON
 
-<ul> <li>BNB Smart Chain</li> <li>Celo</li> <li>Ethereum</li> <li>Harmony</li> <li>Klaytn</li> <li>KuCoin Community Chain</li> <li>Polygon</li> <li>TRON</li> </ul>
-
- **Signing a transaction**
-
+**Signing a transaction** 
  When updating NFT royalty, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `updateCashbackValueForAuthorNftCelo()`
 
 ### Example
 
-[👉 View "**updateCashbackValueForAuthorNftCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateCashbackValueForAuthorNftCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3348,19 +3676,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update NFT royalty information
+> Update NFT royalty information
 
-UpdateCashbackValueForAuthorNftCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateCashbackValueForAuthorNftKMS()`
 
 ### Example
 
-[👉 View "**updateCashbackValueForAuthorNftKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateCashbackValueForAuthorNftKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3388,19 +3720,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update NFT royalty information
+> Update NFT royalty information
 
-UpdateCashbackValueForAuthorNftKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateCashbackValueForAuthorNftKMSCelo()`
 
 ### Example
 
-[👉 View "**updateCashbackValueForAuthorNftKMSCelo.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSCelo.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateCashbackValueForAuthorNftKMSCelo.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSCelo.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3428,19 +3764,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update NFT royalty information
+> Update NFT royalty information
 
-UpdateCashbackValueForAuthorNftKMSCelo operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateCashbackValueForAuthorNftKMSTron()`
 
 ### Example
 
-[👉 View "**updateCashbackValueForAuthorNftKMSTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateCashbackValueForAuthorNftKMSTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftKMSTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3468,19 +3808,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update NFT royalty information
+> Update NFT royalty information
 
-UpdateCashbackValueForAuthorNftKMSTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `updateCashbackValueForAuthorNftTron()`
 
 ### Example
 
-[👉 View "**updateCashbackValueForAuthorNftTron.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftTron.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **updateCashbackValueForAuthorNftTron.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/updateCashbackValueForAuthorNftTron.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3508,19 +3852,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Update NFT royalty information
+> Update NFT royalty information
 
-UpdateCashbackValueForAuthorNftTron operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `verifySolanaNFT()`
 
 ### Example
 
-[👉 View "**verifySolanaNFT.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFT.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **verifySolanaNFT.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFT.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3546,33 +3894,36 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Verify an NFT in an NFT collection on Solana
+> Verify an NFT in an NFT collection on Solana
 
 **2 credits per API call**
 
- Verify an NFT in an NFT collection on Solana. Verifying an NFT sets the <code>Verified</code> parameter to <code>true</code> for the NFT, which means that the NFT is really a part of the collection. To know more about Solana collections and verification, refer to the <a href="https://docs.metaplex.com/programs/token-metadata/certified-collections" target="_blank">Solana user documentation</a>.
+Verify an NFT in an NFT collection on Solana. Verifying an NFT sets the `Verified` parameter to `true` for the NFT, which means that the NFT is really a part of the collection. To know more about Solana collections and verification, refer to the [Solana user documentation](https://docs.metaplex.com/programs/token-metadata/certified-collections).
 
- The collection must be a sized collection that was introduced in <a href="https://docs.metaplex.com/programs/token-metadata/changelog/v1.3" target="_blank">Version 1.3</a> of the Metaplex Token Metadata program. The NFT must have been <a href="https://apidoc.tatum.io/tag/NFT-(ERC-721-or-compatible)/#operation/nftminterc721">minted in this collection</a>.
+The collection must be a sized collection that was introduced in [Version 1.3](https://docs.metaplex.com/programs/token-metadata/changelog/v1.3) of the Metaplex Token Metadata program. The NFT must have been [minted in this collection](https://apidoc.tatum.io/tag/NFT-%28ERC-721-or-compatible%29/#operation/nftminterc721).
 
- This API is supported only for Solana.
+This API is supported only for Solana.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When verifying an NFT, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `verifySolanaNFTKMS()`
 
 ### Example
 
-[👉 View "**verifySolanaNFTKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFTKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **verifySolanaNFTKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/NFTERC721OrCompatibleApi/verifySolanaNFTKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -3598,9 +3949,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Verify an NFT in an NFT collection on Solana
+> Verify an NFT in an NFT collection on Solana
 
-VerifySolanaNFTKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

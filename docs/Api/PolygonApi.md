@@ -45,7 +45,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**callPolygonSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callPolygonSmartContractMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -71,19 +74,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Polygon
+> Invoke a method in a smart contract on Polygon
 
-CallPolygonSmartContractMethod operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `callPolygonSmartContractMethodCaller()`
 
 ### Example
 
-[👉 View "**callPolygonSmartContractMethodCaller.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodCaller.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callPolygonSmartContractMethodCaller.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodCaller.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -109,19 +116,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Polygon
+> Invoke a method in a smart contract on Polygon
 
-CallPolygonSmartContractMethodCaller operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `callPolygonSmartContractMethodKMS()`
 
 ### Example
 
-[👉 View "**callPolygonSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callPolygonSmartContractMethodKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractMethodKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -147,19 +158,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Polygon
+> Invoke a method in a smart contract on Polygon
 
-CallPolygonSmartContractMethodKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `callPolygonSmartContractReadMethod()`
 
 ### Example
 
-[👉 View "**callPolygonSmartContractReadMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractReadMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callPolygonSmartContractReadMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/callPolygonSmartContractReadMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -185,47 +200,47 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Polygon
+> Invoke a method in a smart contract on Polygon
 
-**2 credits per API call
+**2 credits per API call**
 
-** Invoke a method in an existing smart contract on Polygon.
+Invoke a method in an existing smart contract on Polygon.
 
- You can call a read-only or write method.
+You can call a read-only or write method.
 
- 
+* For **read-only** methods, the output of the invoked method is returned.
+* For **write** methods, the ID of the associated transaction is returned.
 
-<ul> <li>For **read-only** methods, the output of the invoked method is returned.</li> <li>For **write** methods, the ID of the associated transaction is returned.</li> </ul>
-
- **Troubleshooting a failed transaction**
-
- Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
-
+**Troubleshooting a failed transaction** 
+ Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). 
 However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
- If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
+If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
- For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.
+For more information about invoking methods in smart contracts, see [this article](https://support.tatum.io/support/solutions/articles/80001052441) on our Support Portal.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- If **caller** field is present instead of the private key, Tatum will sign the transaction with the managed private key connected to the caller address. This is applicable only for paid mainnet plans and all testnet plans. Keep in mind that the caller address must have enough access right to perform the action in the smart contract method.
+If **caller** field is present instead of the private key, Tatum will sign the transaction with the managed private key connected to the caller address. This is applicable only for paid mainnet plans and all testnet plans. Keep in mind that the caller address must have enough access right to perform the action in the smart contract method.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonBroadcast()`
 
 ### Example
 
-[👉 View "**polygonBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -251,21 +266,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed Polygon transaction
+> Broadcast signed Polygon transaction
 
-**2 credits per API call
+**2 credits per API call**
 
-** Broadcast signed transaction to Polygon blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+Broadcast signed transaction to Polygon blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonGenerateAddress()`
 
 ### Example
 
-[👉 View "**polygonGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGenerateAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -293,21 +312,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Polygon account address from Extended public key
+> Generate Polygon account address from Extended public key
 
-**1 credit per API call
+**1 credit per API call**
 
-** Generate Polygon account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
+Generate Polygon account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonGenerateAddressPrivateKey()`
 
 ### Example
 
-[👉 View "**polygonGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddressPrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGenerateAddressPrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateAddressPrivateKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -333,21 +356,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Polygon private key
+> Generate Polygon private key
 
-**1 credit per API call
+**1 credit per API call**
 
-** Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
+Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonGenerateWallet()`
 
 ### Example
 
-[👉 View "**polygonGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -373,27 +400,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate Polygon wallet
+> Generate Polygon wallet
 
-**1 credit per API call
+**1 credit per API call**
 
-** Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
 Each address is identified by 3 main values:
+* Private Key - your secret value, which should never be revealed
+* Public Key - public address to be published
+* Derivation index - index of generated address
 
-<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+Tatum follows BIP44 specification and generates for Polygon wallet with derivation path m'/44'/966'/0'/0\. More about BIP44 HD wallets can be found here - [https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). Generate BIP44 compatible Polygon wallet.
 
-Tatum follows BIP44 specification and generates for Polygon wallet with derivation path m'/44'/966'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible Polygon wallet.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `polygonGetBalance()`
 
 ### Example
 
-[👉 View "**polygonGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -419,21 +450,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Polygon Account balance
+> Get Polygon Account balance
 
-**1 credit per API call
+**1 credit per API call**
 
-** Get Polygon account balance in MATIC. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
+Get Polygon account balance in MATIC. This method does not prints any balance of the ERC20 or ERC721 tokens on the account.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonGetBlock()`
 
 ### Example
 
-[👉 View "**polygonGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -459,21 +494,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Polygon block by hash
+> Get Polygon block by hash
 
-**1 credit per API call
+**1 credit per API call**
 
-** Get Polygon block by block hash or block number.
+Get Polygon block by block hash or block number.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonGetCurrentBlock()`
 
 ### Example
 
-[👉 View "**polygonGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetCurrentBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGetCurrentBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetCurrentBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -495,21 +534,25 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get current block number
+> Get current block number
 
-**1 credit per API call
+**1 credit per API call**
 
-** Get Polygon current block number. This is the number of the latest block in the blockchain.
+Get Polygon current block number. This is the number of the latest block in the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonGetTransaction()`
 
 ### Example
 
-[👉 View "**polygonGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -535,21 +578,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Polygon Transaction
+> Get Polygon Transaction
 
-**2 credits per API call
+**2 credits per API call**
 
-** Get Polygon transaction by transaction hash.
+Get Polygon transaction by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonGetTransactionByAddress()`
 
 ### Example
 
-[👉 View "**polygonGetTransactionByAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionByAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGetTransactionByAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionByAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -585,21 +632,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get Polygon transactions by address
+> Get Polygon transactions by address
 
-**1 credit per API call
+**1 credit per API call**
 
-** Get Polygon transactions by address. This includes incoming and outgoing transactions for the address.
+Get Polygon transactions by address. This includes incoming and outgoing transactions for the address.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `polygonGetTransactionCount()`
 
 ### Example
 
-[👉 View "**polygonGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionCount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **polygonGetTransactionCount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/polygonGetTransactionCount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -625,21 +676,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get count of outgoing Polygon transactions
+> Get count of outgoing Polygon transactions
 
-**1 credit per API call
+**1 credit per API call**
 
-** Get a number of outgoing Polygon transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
+Get a number of outgoing Polygon transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferPolygonBlockchain()`
 
 ### Example
 
-[👉 View "**transferPolygonBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferPolygonBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -665,29 +720,33 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send MATIC from account to account
+> Send MATIC from account to account
 
-**2 credits per API call
+**2 credits per API call**
 
-** Send MATIC from account to account.
+Send MATIC from account to account. 
+ 
+**Signing a transaction**
 
- **Signing a transaction**
+When sending MATIC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- When sending MATIC, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `transferPolygonBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferPolygonBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferPolygonBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/PolygonApi/transferPolygonBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -713,9 +772,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send MATIC from account to account
+> Send MATIC from account to account
 
-TransferPolygonBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

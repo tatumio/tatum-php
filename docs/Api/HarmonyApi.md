@@ -44,7 +44,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**callOneReadSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneReadSmartContractMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callOneReadSmartContractMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneReadSmartContractMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -72,45 +75,45 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Harmony
+> Invoke a method in a smart contract on Harmony
 
 **2 credits per API call**
 
- Invoke a method in an existing smart contract on Harmony.
+Invoke a method in an existing smart contract on Harmony.
 
- You can call a read-only or write method.
+You can call a read-only or write method.
 
- 
+* For **read-only** methods, the output of the invoked method is returned.
+* For **write** methods, the ID of the associated transaction is returned.
 
-<ul> <li>For **read-only** methods, the output of the invoked method is returned.</li> <li>For **write** methods, the ID of the associated transaction is returned.</li> </ul>
-
- **Troubleshooting a failed transaction**
-
- Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters).
-
+**Troubleshooting a failed transaction** 
+ Tatum ensures that this API works against the blockchain (accesses the blockchain, finds the specified smart contract, and executes the specified ABI method with the provided parameters). 
 However, because this API can be run against any smart contract on the blockchain, Tatum cannot in any way guarantee that the method itself will be executed successfully.
 
- If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
+If you have issues with invoking the method, refer to the user documentation for this method, or contact the author of the smart contract.
 
- For more information about invoking methods in smart contracts, see <a href="https://support.tatum.io/support/solutions/articles/80001052441" target="_blank">this article</a> on our Support Portal.
+For more information about invoking methods in smart contracts, see [this article](https://support.tatum.io/support/solutions/articles/80001052441) on our Support Portal.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When invoking a method in a smart contract, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `callOneSmartContractMethod()`
 
 ### Example
 
-[👉 View "**callOneSmartContractMethod.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethod.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callOneSmartContractMethod.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethod.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -138,19 +141,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Harmony
+> Invoke a method in a smart contract on Harmony
 
-CallOneSmartContractMethod operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `callOneSmartContractMethodKMS()`
 
 ### Example
 
-[👉 View "**callOneSmartContractMethodKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethodKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **callOneSmartContractMethodKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/callOneSmartContractMethodKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -178,19 +185,23 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Invoke a method in a smart contract on Harmony
+> Invoke a method in a smart contract on Harmony
 
-CallOneSmartContractMethodKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---
 
 
 ## `oneBroadcast()`
 
 ### Example
 
-[👉 View "**oneBroadcast.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneBroadcast.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneBroadcast.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneBroadcast.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -218,21 +229,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Broadcast signed ONE transaction
+> Broadcast signed ONE transaction
 
 **2 credits per API call**
 
- Broadcast signed transaction to ONE blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
+Broadcast signed transaction to ONE blockchain. This method is used internally from Tatum KMS or Tatum client libraries. It is possible to create custom signing mechanism and use this method only for broadcasting data to the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `oneFormatAddress()`
 
 ### Example
 
-[👉 View "**oneFormatAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneFormatAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneFormatAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneFormatAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -258,21 +273,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Transform HEX address to Bech32 ONE address format
+> Transform HEX address to Bech32 ONE address format
 
 **1 credit per API call**
 
- Transform HEX address to Bech32 format with one prefix.
+Transform HEX address to Bech32 format with one prefix.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `oneGenerateAddress()`
 
 ### Example
 
-[👉 View "**oneGenerateAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneGenerateAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -300,21 +319,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate ONE account address from Extended public key
+> Generate ONE account address from Extended public key
 
 **1 credit per API call**
 
- Generate ONE account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
+Generate ONE account deposit address from Extended public key. Deposit address is generated for the specific index - each extended public key can generate up to 2^31 addresses starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `oneGenerateAddressPrivateKey()`
 
 ### Example
 
-[👉 View "**oneGenerateAddressPrivateKey.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneGenerateAddressPrivateKey.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateAddressPrivateKey.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -340,21 +363,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate ONE private key
+> Generate ONE private key
 
 **1 credit per API call**
 
- Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
+Generate private key of address from mnemonic for given derivation path index. Private key is generated for the specific index - each mnemonic can generate up to 2^31 private keys starting from index 0 until 2^31.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `oneGenerateWallet()`
 
 ### Example
 
-[👉 View "**oneGenerateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneGenerateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGenerateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -380,27 +407,31 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Generate ONE wallet
+> Generate ONE wallet
 
 **1 credit per API call**
 
- Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys.
-
+Tatum supports BIP44 HD wallets. It is very convenient and secure, since it can generate 2^31 addresses from 1 mnemonic phrase. Mnemonic phrase consists of 24 special words in defined order and can restore access to all generated addresses and private keys. 
 Each address is identified by 3 main values:
+* Private Key - your secret value, which should never be revealed
+* Public Key - public address to be published
+* Derivation index - index of generated address
 
-<ul><li>Private Key - your secret value, which should never be revealed</li><li>Public Key - public address to be published</li><li>Derivation index - index of generated address</li></ul>
+Tatum follows BIP44 specification and generates for ONE wallet with derivation path m'/44'/60'/0'/0\. More about BIP44 HD wallets can be found here - [https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki). Generate BIP44 compatible ONE wallet.
 
-Tatum follows BIP44 specification and generates for ONE wallet with derivation path m'/44'/60'/0'/0. More about BIP44 HD wallets can be found here - <a target="_blank" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki</a>. Generate BIP44 compatible ONE wallet.
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---
 
 
 ## `oneGetBalance()`
 
 ### Example
 
-[👉 View "**oneGetBalance.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBalance.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneGetBalance.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBalance.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -428,21 +459,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get ONE Account balance
+> Get ONE Account balance
 
 **1 credit per API call**
 
- Get ONE account balance in ONE. This method does not prints any balance of the HRM20 or HRM721 tokens on the account.
+Get ONE account balance in ONE. This method does not prints any balance of the HRM20 or HRM721 tokens on the account.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `oneGetBlock()`
 
 ### Example
 
-[👉 View "**oneGetBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneGetBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -470,21 +505,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get ONE block by hash
+> Get ONE block by hash
 
 **1 credit per API call**
 
- Get ONE block by block hash or block number.
+Get ONE block by block hash or block number.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `oneGetCurrentBlock()`
 
 ### Example
 
-[👉 View "**oneGetCurrentBlock.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetCurrentBlock.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneGetCurrentBlock.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetCurrentBlock.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -506,21 +545,25 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get current block number
+> Get current block number
 
 **1 credit per API call**
 
- Get ONE current block number. This is the number of the latest block in the blockchain.
+Get ONE current block number. This is the number of the latest block in the blockchain.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `oneGetTransaction()`
 
 ### Example
 
-[👉 View "**oneGetTransaction.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransaction.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneGetTransaction.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransaction.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -548,21 +591,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get ONE Transaction
+> Get ONE Transaction
 
 **2 credits per API call**
 
- Get ONE transaction by transaction hash.
+Get ONE transaction by transaction hash.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `oneGetTransactionCount()`
 
 ### Example
 
-[👉 View "**oneGetTransactionCount.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransactionCount.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **oneGetTransactionCount.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/oneGetTransactionCount.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -590,21 +637,25 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get count of outgoing ONE transactions
+> Get count of outgoing ONE transactions
 
 **1 credit per API call**
 
- Get a number of outgoing ONE transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
+Get a number of outgoing ONE transactions for the address. When a transaction is sent, there can be multiple outgoing transactions, which are not yet processed by the blockchain. To distinguish between them, there is a counter called a nonce, which represents the order of the transaction in the list of outgoing transactions.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferOneBlockchain()`
 
 ### Example
 
-[👉 View "**transferOneBlockchain.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchain.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferOneBlockchain.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchain.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -632,33 +683,36 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send ONE from account to account
+> Send ONE from account to account
 
 **2 credits per API call**
 
- Send ONE from account to account.
+Send ONE from account to account.
 
- The default shard <code>0</code> is used for the sender and the recipient.
+The default shard `0` is used for the sender and the recipient.
 
- **Signing a transaction**
-
+**Signing a transaction** 
  When sending ONE, you are charged a fee for the transaction, and you must sign the transaction with the private key of the blockchain address from which the fee will be deducted.
 
- Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
+Providing the private key in the API is not a secure way of signing transactions, because the private key can be stolen or exposed. Your private keys should never leave your security perimeter. You should use the private keys only for testing a solution you are building on the **testnet** of a blockchain.
 
- For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum <a href="https://github.com/tatumio/tatum-kms" target="_blank">Key Management System (KMS)</a> and provide the signature ID instead of the private key in the API. Alternatively, you can use the <a href="https://github.com/tatumio/tatum-js" target="_blank">Tatum JavaScript client</a>.
+For signing transactions on the **mainnet**, we strongly recommend that you use the Tatum [Key Management System (KMS)](https://github.com/tatumio/tatum-kms) and provide the signature ID instead of the private key in the API. Alternatively, you can use the [Tatum JavaScript client](https://github.com/tatumio/tatum-js).
 
  Alternatively, using the Tatum client library for supported languages.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `transferOneBlockchainKMS()`
 
 ### Example
 
-[👉 View "**transferOneBlockchainKMS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchainKMS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **transferOneBlockchainKMS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/HarmonyApi/transferOneBlockchainKMS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -686,9 +740,10 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Send ONE from account to account
+> Send ONE from account to account
 
-TransferOneBlockchainKMS operation
 
-[Back to top](#top)
 
+[Back to top](#top){: .btn .btn-purple }
+
+---

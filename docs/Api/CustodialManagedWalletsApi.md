@@ -34,7 +34,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**custodialCreateWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **custodialCreateWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialCreateWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -60,23 +63,27 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Create managed address
+> Create managed address
 
-<h4>2 credits per API call, 10 credits for each managed wallet every day.</h4>
+#### 2 credits per API call, 10 credits for each managed wallet every day.
 
- Create new managed address for a specific chain. If the address is mainnet or testnet one depends on the API Key - testnet API Key manages testnet addresses, mainnet API Key manages mainnet addresses. Result of the operation is address and walletId, which is used for identifying the wallet later on and/or exporting the private key if needed.
-
+ 
+Create new managed address for a specific chain. If the address is mainnet or testnet one depends on the API Key - testnet API Key manages testnet addresses, mainnet API Key manages mainnet addresses. Result of the operation is address and walletId, which is used for identifying the wallet later on and/or exporting the private key if needed. 
  Free users can manage only 10 addresses per API Key.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `custodialDeleteWallet()`
 
 ### Example
 
-[👉 View "**custodialDeleteWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **custodialDeleteWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialDeleteWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -102,21 +109,26 @@ void (empty response body)
 
 ### Description
 
-Delete managed address
+> Delete managed address
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Delete managed address. Once deleted, the address won't be charged in a daily credit usage, but it **won't be possible to get the private key** for it.
+ 
+Delete managed address. Once deleted, the address won't be charged in a daily credit usage, but it **won't be possible to get the private key** for it.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `custodialGetWallet()`
 
 ### Example
 
-[👉 View "**custodialGetWallet.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallet.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **custodialGetWallet.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallet.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -144,21 +156,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get managed address
+> Get managed address
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Get managed address for an API Key. It's possible to export the private key, if query parameter **export** is set to true.
+ 
+Get managed address for an API Key. It's possible to export the private key, if query parameter **export** is set to true.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `custodialGetWallets()`
 
 ### Example
 
-[👉 View "**custodialGetWallets.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallets.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **custodialGetWallets.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialGetWallets.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -180,21 +197,26 @@ This endpoint does not need any parameter.
 
 ### Description
 
-Get managed addresses
+> Get managed addresses
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
- Get all managed addresses for an API Key.
+ 
+Get all managed addresses for an API Key.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `custodialTransferManagedAddress()`
 
 ### Example
 
-[👉 View "**custodialTransferManagedAddress.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **custodialTransferManagedAddress.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/CustodialManagedWalletsApi/custodialTransferManagedAddress.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -220,39 +242,41 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Sign and transfer using managed address
+> Sign and transfer using managed address
 
-<h4>2 credits per API call, additional credits are charged for each gas covered operation.</h4>
-
- Sign transaction and transfer assets from a custodial managed address.
-
- Supported chains: 
-
-<ul> <li>**Solana**</li> </ul>
+#### 2 credits per API call, additional credits are charged for each gas covered operation.
 
  
-
- Logic for **Solana**
-
+Sign transaction and transfer assets from a custodial managed address. 
+ Supported chains: 
+* **Solana**
+ 
+ Logic for **Solana** 
  In Solana, it's possible to cover the fees connected to any arbitrary transaction by a third party. Tatum can cover these fees for any transaction on the Solana blockchain - transfer of SOL, SPL tokens, minting or transferring NFTs or invoking programs. In order to do this, Tatum fee address must be used as a feePayer address during transaction creation: 
 
-<table> 
-<tr><td></td><td>**Mainnet address**</td><td>**Devnet address**</td></tr>
+| **Mainnet address** | **Devnet address** | |
+| ------------------- | -------------------------------------------- | -------------------------------------------- |
+| **Address** | DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF | DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF |
+
+ Once transaction is constructed using [Solana SDK](https://github.com/solana-labs/solana-web3.js/), it can be serialized to HEX data string, which is then passed to the API and signed. 
+ Transaction could require multiple private keys for signing - fee payer, sender of the SOL assets, minting key during NFT mint operation etc. Some of the keys are used in Tatum - fee payer, or, in case of managed wallet holding SOL assets, the key of that managed wallet - those must be referenced in a list of walletIds to be used. For external keys, which are not managed by Tatum, those could either sign the transaction before it's serialization, or could be passed to the API in it's raw form - this is OK only for keys, which could be exposed and there is no harm of loosing assets on them. 
+ How to partially sign the transaction could be found [here](https://solanacookbook.com/references/offline-transactions.html#partial-sign-transaction). 
+**Fee payer key is used by default, doesn't have to be mentioned in the list of wallets used for signing.** 
  
-<tr><td>**Address**</td><td>DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF</td><td>DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF</td></tr>
- </table>
+**Examples of different transaction payloads.** 
+ 
+ 1\. Send SOL from account HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 to FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU 
 
- Once transaction is constructed using <a href="https://github.com/solana-labs/solana-web3.js/" target="_blank">Solana SDK</a>, it can be serialized to HEX data string, which is then passed to the API and signed.
+ import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction, Connection } from '@solana/web3.js' const connection = new Connection('https://api.tatum.io/v3/blockchain/node/SOL') const from = 'HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58' const to = 'FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU' const amount = '0.000001' const devnet_fee_payer = '5zPr5331CtBjgVeLedhmJPEpFaUsorLCnb3aCQPsUc9w' const fromPubkey = new PublicKey(from) const transaction = new Transaction({ feePayer: new PublicKey(devnet_fee_payer) }) transaction.add( SystemProgram.transfer({ fromPubkey: fromPubkey, toPubkey: new PublicKey(to), lamports: new BigNumber(amount).multipliedBy(LAMPORTS_PER_SOL).toNumber(), }), ) const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('finalized') transaction.recentBlockhash = blockhash transaction.lastValidBlockHeight = lastValidBlockHeight transaction.partialSign(...signers) return transaction.serialize({ requireAllSignatures: false }).toString('hex') 
 
- Transaction could require multiple private keys for signing - fee payer, sender of the SOL assets, minting key during NFT mint operation etc. Some of the keys are used in Tatum - fee payer, or, in case of managed wallet holding SOL assets, the key of that managed wallet - those must be referenced in a list of walletIds to be used. For external keys, which are not managed by Tatum, those could either sign the transaction before it's serialization, or could be passed to the API in it's raw form - this is OK only for keys, which could be exposed and there is no harm of loosing assets on them.
+ For the above example, developer have 2 options how to sign transaction - if the sender address HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 is managed using a Tatum managed wallet with id 0b1eae3d-2520-4903-8bbf-5dec3ad2a5d4, the final payload to the custodial/transaction endpoint should look like this: 
 
- How to partially sign the transaction could be found <a href="https://solanacookbook.com/references/offline-transactions.html#partial-sign-transaction" target="_blank">here</a>.
+ { "chain": "SOL", "txData": "020001044a22af97a838a504e6f7c0b18d779afcea612da50794cc1dac641861fc1ab14afa5cacaf91c298694e64bb5496916c3c68a32affb92d4bcd2736fbb00169d57bd840de2a454960308f688cd3ee308c1fa01ecfa0b03770aaaf3b52d71d46c31d000000000000000000000000000000000000000000000000000000000000000060d38e0da20dc5900b7e902c918eae6a95e2d90af154b53a422f4ab26b050f4f01030201020c02000000e803000000000000", "walletIds": [ { "key": "0b1eae3d-2520-4903-8bbf-5dec3ad2a5d4", "type": "MANAGED" } ] } 
 
- **Fee payer key is used by default, doesn't have to be mentioned in the list of wallets used for signing.**
+ If the sender address is not managed, the transaction could be signed with the private key of that address before the serialization and the payload will look like this: 
 
- **Examples of different transaction payloads.**
+ { "chain": "SOL", "txData": "020001044a22af97a838a504e6f7c0b18d779afcea612da50794cc1dac641861fc1ab14afa5cacaf91c298694e64bb5496916c3c68a32affb92d4bcd2736fbb00169d57bd840de2a454960308f688cd3ee308c1fa01ecfa0b03770aaaf3b52d71d46c31d000000000000000000000000000000000000000000000000000000000000000060d38e0da20dc5900b7e902c918eae6a95e2d90af154b53a422f4ab26b050f4f01030201020c02000000e803000000000000", "walletIds": [] }
 
- 1. Send SOL from account HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 to FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU <pre> import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction, Connection } from '@solana/web3.js' const connection = new Connection('https://api.tatum.io/v3/blockchain/node/SOL') const from = 'HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58' const to = 'FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU' const amount = '0.000001' const devnet_fee_payer = '5zPr5331CtBjgVeLedhmJPEpFaUsorLCnb3aCQPsUc9w' const fromPubkey = new PublicKey(from) const transaction = new Transaction({ feePayer: new PublicKey(devnet_fee_payer) }) transaction.add( SystemProgram.transfer({ fromPubkey: fromPubkey, toPubkey: new PublicKey(to), lamports: new BigNumber(amount).multipliedBy(LAMPORTS_PER_SOL).toNumber(), }), ) const { blockhash, lastValidBlockHeight } = await connection.getLatestBlockhash('finalized') transaction.recentBlockhash = blockhash transaction.lastValidBlockHeight = lastValidBlockHeight transaction.partialSign(...signers) return transaction.serialize({ requireAllSignatures: false }).toString('hex') </pre> For the above example, developer have 2 options how to sign transaction - if the sender address HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 is managed using a Tatum managed wallet with id 0b1eae3d-2520-4903-8bbf-5dec3ad2a5d4, the final payload to the custodial/transaction endpoint should look like this: <pre> { "chain": "SOL", "txData": "020001044a22af97a838a504e6f7c0b18d779afcea612da50794cc1dac641861fc1ab14afa5cacaf91c298694e64bb5496916c3c68a32affb92d4bcd2736fbb00169d57bd840de2a454960308f688cd3ee308c1fa01ecfa0b03770aaaf3b52d71d46c31d000000000000000000000000000000000000000000000000000000000000000060d38e0da20dc5900b7e902c918eae6a95e2d90af154b53a422f4ab26b050f4f01030201020c02000000e803000000000000", "walletIds": [ { "key": "0b1eae3d-2520-4903-8bbf-5dec3ad2a5d4", "type": "MANAGED" } ] } </pre> If the sender address is not managed, the transaction could be signed with the private key of that address before the serialization and the payload will look like this: <pre> { "chain": "SOL", "txData": "020001044a22af97a838a504e6f7c0b18d779afcea612da50794cc1dac641861fc1ab14afa5cacaf91c298694e64bb5496916c3c68a32affb92d4bcd2736fbb00169d57bd840de2a454960308f688cd3ee308c1fa01ecfa0b03770aaaf3b52d71d46c31d000000000000000000000000000000000000000000000000000000000000000060d38e0da20dc5900b7e902c918eae6a95e2d90af154b53a422f4ab26b050f4f01030201020c02000000e803000000000000", "walletIds": [] } </pre>
+[Back to top](#top){: .btn .btn-purple }
 
-[Back to top](#top)
-
+---

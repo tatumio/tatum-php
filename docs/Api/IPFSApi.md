@@ -31,7 +31,10 @@ Method | Description
 
 ### Example
 
-[👉 View "**getIPFSData.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/getIPFSData.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **getIPFSData.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/getIPFSData.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -57,21 +60,26 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Get file from IPFS
+> Get file from IPFS
 
-<h4>1 credit per API call.</h4>
+#### 1 credit per API call.
 
+ 
 Gets data from the IPFS.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
 
 
 ## `storeIPFS()`
 
 ### Example
 
-[👉 View "**storeIPFS.php**" ✨](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/storeIPFS.php)
+{: .new-title }
+> #️⃣ Execute command in terminal 
+> 
+> [✨ php -f **storeIPFS.php**](https://github.com/tatumio/tatum-php/blob/master/examples/Api/IPFSApi/storeIPFS.php){: .btn .btn-green .mt-4}
 
 ### Request
 
@@ -97,11 +105,13 @@ Name | Type | Description  | Notes
 
 ### Description
 
-Store data to IPFS
+> Store data to IPFS
 
-<h4>2 credits per API call. Only files up to 50MB are available for storing.</h4>
+#### 2 credits per API call. Only files up to 50MB are available for storing.
 
- Stores file on the IPFS. We are leveraging <a href="https://nft.storage/" target="_blank">nft.storage</a> from <a href="https://protocol.ai/" target="_blank">Protocol Labs</a> for free storage on the IPFS.
+ 
+Stores file on the IPFS. We are leveraging [nft.storage](https://nft.storage/) from [Protocol Labs](https://protocol.ai/) for free storage on the IPFS.
 
-[Back to top](#top)
+[Back to top](#top){: .btn .btn-purple }
 
+---
