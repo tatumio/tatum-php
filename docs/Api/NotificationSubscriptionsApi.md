@@ -449,7 +449,9 @@ Create a subscription as an HTTP web hook.
 The following subscription types are available:
 
 * **ADDRESS\_TRANSACTION** \- Enable HTTP POST JSON notifications for any blockchain transaction (both incoming and outgoing) at a specified address. This notification applies to transactions in the native blockchain currency or with any type of blockchain tokens. - For **EVM-based blockchains** (ETH), this web hook is first invoked when a transaction appears in the mempool, and then it is invoked again once the transaction is added to a block. - For the **other blockchains**, this webhook is invoked when a transaction is added to a block. Free community plans can monitor up to 10 addresses per plan. The following table describes the availability of this notification type on different blockchains and the credit consumption: 
+
 --- 
+
 | Chain | Testnet/Mainnet | Token assets support | Plan limitation | Credit consumption / day / address | 
 | ------------------- | ------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------- | ---------------------------------- | 
 | Solana | Yes/Yes | SOL, SPL and NFTs | Free plans - 10 addresses across all blockchains, Paid plans - unlimited addresses across all blockchains | 50 credits / day / address | 
@@ -463,12 +465,16 @@ The following subscription types are available:
 | Dogecoin | Yes/Yes | DOGE, only incoming transactions | Free plans - 10 addresses across all blockchains, Paid plans - unlimited addresses across all blockchains | 7 credits / day / address | 
 | Tron | Yes/Yes | Tron, TRC10/TRC20 | Free plans - 10 addresses across all blockchains, Paid plans - unlimited addresses across all blockchains | 30 credits / day / address | 
 | Binance Smart Chain | Yes/Yes | BSC, BEP20, ERC721, ERC1155 | Free plans - 10 addresses across all blockchains, Paid plans - unlimited addresses across all blockchains | 40 credits / day / address | 
+
 --- 
+
  The request body of the POST request is a JSON object with the following structure: 
 { "address": "FykfMwA9WNShzPJbbb9DNXsfgDgS3XZzWiFgrVXfWoPJ", // the address on which the transaction occurs; for EVM-based chains, this is the recipient's address "txId": "2rdy3YCZHSwvpWtuDom1d4Jjy5UU9STLxF3ffXau6GToReDkfw8wEgX541fvzvh6btVC5D8iNapcKTXfPsoDBk7A", // the transaction ID "blockNumber": 110827114, // the block number; does not appear if the transaction is in the mempool (for EVM-based blockchains) "asset": "3gUeeR3BfVhukYJMwtHownRtRkGcf1bvwiV8TbKMZBVz", // the asset of the transaction: for token assets, this is the token address; for native blochckain assets, this is the name of the asset (for example, SOL) "amount": "1", // the amount of the asset that was credited to (+) or debited from (-) the address; for EVM-based chains, when "counterAddress" is present, the amount is always positive "tokenId": "1", // (ERC-721 / ERC-1155 only) the ID of the transferred token "type": "token", // the type of the transaction; can be either "native" or "token" "mempool": true, // (EVM-based blockchains only) if appears and set to "true", the transaction is in the mempool; if set to "false" or does not appear at all, the transaction has been added to a block "counterAddress": undefined // an optional counter party address of the transaction; for EVM-based blockchains, this is the recipient's address "addressesRiskRatio": [ // (optional, subject to change; for Solana mainnet only) risk levels assigned to the addresses with which the address communicated within the transaction; the addresses are assessed using the AML/CFT solution by blockmate.io, see https://docs.blockmate.io/docs/risk-API/sources {"vTEfAhXTmvgFmepgfhzBbRrJ4EtUP9adbMJjpzLsDMk": 0}, {"zBbRrJ4EtUP9adbMJjpzLsDMkvTEfAhXTmvgFmepgfh": 100} ] } 
 **5 credits are debited for each fired web hook.**
 * **CONTRACT\_NFT\_TXS\_PER\_BLOCK** \- Enable HTTP POST JSON notifications for any event of minting, transferring, or burning an NFT that was emitted from any smart contract. This notification is fired as a batch notification per block: it includes all NFT minting, transferring, or burning events from all smart contracts that got recorded into a block. Free community plans can monitor 1 event across all blockchains per plan. The following table describes the availability of this notification type on different blockchains and the credit consumption: 
+
 --- 
+
 | Chain | Available chains (the "chain" parameter in the response payload) | Credit consumption / day | 
 | --------------- | ---------------------------------------------------------------- | ------------------------ | 
 | Ethereum | ethereum-sepolia / ethereum-goerli / ethereum-mainnet | 500,000 credits / day | 
@@ -476,12 +482,16 @@ The following subscription types are available:
 | Celo | celo-testnet / celo-mainnet | 500,000 credits / day | 
 | Klaytn | klaytn-baobab / klaytn-cypress | 500,000 credits / day | 
 | BNB Smart Chain | bsc-testnet / bsc-mainnet | 500,000 credits / day | 
+
 --- 
+
  The request body of the POST request is a JSON object with the following structure: 
 { "events": [ { "timestamp": 1661961758000, "from": "0x0000000000000000000000000000000000000000", "to": "0xfa4e7035b34294407e5df1603215983d65e5a773", "tokenId": "14671", "txId": "0x916fcf878656f7a3772317697e6d2740ac8b1b7dbe6d029aa79592fd72f3fb0b", "contractAddress": "0x55a2430e32dcebc3649120f26f917d1f0686f74c", "type": "erc721", "amount": "1", "logIndex": 578, "metadataURI": "https://graphigo.prd.galaxy.eco/metadata/0x55a2430e32dcebc3649120f26f917d1f0686f74c/14671.json" } ], "blockNumber": 32522207, "chain": "polygon-mainnet", "subscriptionType": "CONTRACT_NFT_TXS_PER_BLOCK" } 
 **1 credit is debited for each fired web hook.**
 * **CONTRACT\_MULTITOKEN\_TXS\_PER\_BLOCK** \- Enable HTTP POST JSON notifications for any event of minting, transferring, or burning a Multi-Token that was emitted from any smart contract. This notification is fired as a batch notification per block: it includes all Multi Token minting, transferring, or burning events from all smart contracts that got recorded into a block. Free community plans can monitor 1 event across all blockchains per plan. The following table describes the availability of this notification type on different blockchains and the credit consumption: 
+
 --- 
+
 | Chain | Available chains (the "chain" parameter in the response payload) | Credit consumption / day | 
 | --------------- | ---------------------------------------------------------------- | ------------------------ | 
 | Ethereum | ethereum-sepolia / ethereum-goerli / ethereum-mainnet | 500,000 credits / day | 
@@ -489,12 +499,16 @@ The following subscription types are available:
 | Celo | celo-testnet / celo-mainnet | 500,000 credits / day | 
 | Klaytn | klaytn-baobab / klaytn-cypress | 500,000 credits / day | 
 | BNB Smart Chain | bsc-testnet / bsc-mainnet | 500,000 credits / day | 
+
 --- 
+
  The request body of the POST request is a JSON object with the following structure: 
 { "events": [ { "timestamp": 1661961758000, "from": "0x85bd970cf0e49acd572f9c2d608713bc55b5ee0e", "to": "0x9ab31230d5413e4af01af9bb697651a3c70c95c9", "tokenId": "1450000023306", "txId": "0x565b9ca6b7b5ff1b1ce0725acd785dbf5ff0930d5ff547bad044c0960291555f", "contractAddress": "0xdb6290f355a528a7284bdd528b05a78fb05226ca", "type": "erc1155", "amount": "1", "logIndex": 571, "metadataURI": "https://touhao.bj.bcebos.com/nft/metadata/1450000023306.json" } ], "blockNumber": 32522207, "chain": "polygon-mainnet", "subscriptionType": "CONTRACT_MULTITOKEN_TXS_PER_BLOCK" } 
 **1 credit is debited for each fired web hook.**
 * **CONTRACT\_LOG\_EVENT** \- Enable HTTP POST JSON notifications for any event that was emitted from any smart contract. This notification is fired as a batch notification per block: it includes all events from all smart contracts that got recorded into a block. Free community plans can monitor 1 event across all blockchains per plan. The following table describes the availability of this notification type on different blockchains and the credit consumption: 
+
 --- 
+
 | Chain | Available chains (the "chain" parameter in the response payload) | Credit consumption / day | 
 | --------------- | ---------------------------------------------------------------- | ------------------------ | 
 | Ethereum | ethereum-sepolia / ethereum-goerli / ethereum-mainnet | 50,000 credits / day | 
@@ -502,7 +516,9 @@ The following subscription types are available:
 | Celo | celo-testnet / celo-mainnet | 50,000 credits / day | 
 | Klaytn | klaytn-baobab / klaytn-cypress | 50,000 credits / day | 
 | BNB Smart Chain | bsc-testnet / bsc-mainnet | 50,000 credits / day | 
+
 --- 
+
  The request body of the POST request is a JSON object with the following structure: 
 { "events": [ { "txId": "0xc98307f09ed527d5cff8305e8f65226b790e3317ded10b9e58f6f07286dcf8f1", "logIndex": 326, "timestamp": 1661774265000, "address": "0xc2132d05d31c914a87c6611c10748aeb04b58e8f", "topic_0": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef", "topic_1": "0x000000000000000000000000a91ab7d77892a559d2a95baaf1d748fc97c65d29", "topic_2": "0x0000000000000000000000009b08288c3be4f62bbf8d1c20ac9c5e6f9467d8b7", "topic_3": null, "data": "0x0000000000000000000000000000000000000000000000000000000002c9e3e4" } ], "blockNumber": 32447538, "chain": "polygon-mumbai", "subscriptionType": "CONTRACT_LOG_EVENT" } 
 **1 credit is debited for each fired web hook.**
