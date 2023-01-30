@@ -245,13 +245,15 @@ Sign transaction and transfer assets from a custodial managed address. Supported
 * **Solana**
  Logic for **Solana** In Solana, it's possible to cover the fees connected to any arbitrary transaction by a third party. Tatum can cover these fees for any transaction on the Solana blockchain - transfer of SOL, SPL tokens, minting or transferring NFTs or invoking programs. In order to do this, Tatum fee address must be used as a feePayer address during transaction creation: 
 
----
+
+--- 
 
 | **Mainnet address** | **Devnet address** | |
 | ------------------- | -------------------------------------------- | -------------------------------------------- |
 | **Address** | DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF | DSpHmb7hLnetoybammcJBJiyqMVR3pDhCuW6hqVg9eBF |
 
----
+
+--- 
 
  Once transaction is constructed using [Solana SDK](https://github.com/solana-labs/solana-web3.js/), it can be serialized to HEX data string, which is then passed to the API and signed. Transaction could require multiple private keys for signing - fee payer, sender of the SOL assets, minting key during NFT mint operation etc. Some of the keys are used in Tatum - fee payer, or, in case of managed wallet holding SOL assets, the key of that managed wallet - those must be referenced in a list of walletIds to be used. For external keys, which are not managed by Tatum, those could either sign the transaction before it's serialization, or could be passed to the API in it's raw form - this is OK only for keys, which could be exposed and there is no harm of loosing assets on them. How to partially sign the transaction could be found [here](https://solanacookbook.com/references/offline-transactions.html#partial-sign-transaction).**Fee payer key is used by default, doesn't have to be mentioned in the list of wallets used for signing.** **Examples of different transaction payloads.** 1\. Send SOL from account HrJtQTy2RW9c6y41RvN8x3bEiD6Co74AuhER2MGCpa58 to FZAS4mtPvswgVxbpc117SqfNgCDLTCtk5CoeAtt58FWU 
 

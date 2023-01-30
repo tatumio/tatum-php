@@ -1520,7 +1520,8 @@ mintMultiple(address[] to, uint256[] tokenId, string[] uri): boolean
 
  You can use addresses specified in the bellow table to be used as a minter. 
 
----
+
+--- 
 
 | Chain | Testnet address | Mainnet Address |
 | ----- | ------------------------------------------ | ------------------------------------------ |
@@ -1531,7 +1532,8 @@ mintMultiple(address[] to, uint256[] tokenId, string[] uri): boolean
 | CELO | 0xBC2eBA680EE50d685cc4Fe65f102AA70AfB27D3F | 0xcf9e127455d28e7362380aec1b92ddee8200b295 |
 | KLAY | 0x80d8bac9a6901698b3749fe336bbd1385c1f98f2 | 0xcf9e127455d28e7362380aec1b92ddee8200b295 |
 
----
+
+--- 
 
  If there are not enough coins on any testnet address, feel free to send coins there.
 
