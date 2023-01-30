@@ -11,6 +11,6 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | kms.missing <br>Example: `kms.missing` |
-**getMessage()** | **string** | No such KMS signature with id '{id}'. <br>Example: `No such KMS signature with id &#39;{id}&#39;.` |
+**getMessage()** | **string** | No such KMS signature with id '{id}'. <br>Example: `No such KMS signature with id '{id}'.` |
 **getStatusCode()** | **float** | 403 <br>Example: `403` |
 

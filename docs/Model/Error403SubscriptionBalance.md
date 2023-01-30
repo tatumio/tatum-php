@@ -11,6 +11,6 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | subscription.attr.balance.invalid <br>Example: `subscription.attr.balance.invalid` |
-**getMessage()** | **string** | Invalid subscription attribute 'limit' or 'typeOfBalance'. <br>Example: `Invalid subscription attribute &#39;limit&#39; or &#39;typeOfBalance&#39;.` |
+**getMessage()** | **string** | Invalid subscription attribute 'limit' or 'typeOfBalance'. <br>Example: `Invalid subscription attribute 'limit' or 'typeOfBalance'.` |
 **getStatusCode()** | **float** | 403 <br>Example: `403` |
 

@@ -11,6 +11,6 @@ layout: page
 Method name | Return type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **getErrorCode()** | **string** | subscription.attr.currency.invalid <br>Example: `subscription.attr.currency.invalid` |
-**getMessage()** | **string** | Invalid subscription attribute 'currency'. <br>Example: `Invalid subscription attribute &#39;currency&#39;.` |
+**getMessage()** | **string** | Invalid subscription attribute 'currency'. <br>Example: `Invalid subscription attribute 'currency'.` |
 **getStatusCode()** | **float** | 403 <br>Example: `403` |
 

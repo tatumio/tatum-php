@@ -28,5 +28,5 @@ Method name | Return type | Description | Notes
 **getGasUsed()** | **float** | The total used gas by all transactions in this block. <br>Example: `7985124` | [optional]
 **getTimestamp()** | **float** | The unix timestamp for when the block was collated. <br>Example: `1569600592` | [optional]
 **getTransactions()** | [**\Tatum\Model\XdcTx[]**](../XdcTx) | Array of transactions. <br>Example: `null` | [optional]
-**getUncles()** | **string[]** | Array of uncle hashes. <br>Example: `[&quot;0x7a44a1f56f12ae825fdc04550d7c3af2344daab987691771c06235f25fafcaa6&quot;]` | [optional]
+**getUncles()** | **string[]** | Array of uncle hashes. <br>Example: `["0x7a44a1f56f12ae825fdc04550d7c3af2344daab987691771c06235f25fafcaa6"]` | [optional]
 
