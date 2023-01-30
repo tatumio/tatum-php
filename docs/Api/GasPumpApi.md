@@ -757,7 +757,7 @@ If you need more addresses than one API call can precalculate, make several API 
 
 The order in which the precalculated addresses are returned in the API response is the order of the values in the index range, and the index values are assigned to the addresses accordingly. For example, you precalculated three gas pump addresses with a range of index values from 3 to 5\. The first address in the returned arrray is assigned the index value "3", the second one - "4", and the third one - "5".
 
- [ "0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea", // index is 3 "0x5c6079c14e9cd3d2ea8cb76aed9c5e336ef96126", // index is 4 "0xc5e336ef9612614e9cd3d2ea8cb76aed95c6079c" // index is 5 ] 
+` [ "0x8cb76aed9c5e336ef961265c6079c14e9cd3d2ea", // index is 3 "0x5c6079c14e9cd3d2ea8cb76aed9c5e336ef96126", // index is 4 "0xc5e336ef9612614e9cd3d2ea8cb76aed95c6079c" // index is 5 ] ` 
 
 **The owner of the gas pump addresses** The owner (also referred to as "master address") is the blockchain address that will own the precalculated gas pump addresses. The owner will also be paying gas fees for operations made on the gas pump addresses. You have to make sure that the owner always has enough funds to cover these gas fees.
 

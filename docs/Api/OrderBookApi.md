@@ -168,11 +168,7 @@ Example of the BTC/USDT trade future:
 
 The maker creates a sell with the following properties: 1 BTC at a price of 60000 USDT, with a blocking percentage of 22%, a penalty percentage of 45%, a system commision of 1% and with an expiration time of within 12 hours.
 
- { "type": "FUTURE_SELL", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf3", "currency2AccountId": "609d0696bf835c241ac2920f", "fee": 1, "feeAccountId": "609d0696bf835c251ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } 
-
- The taker accepts the offer with a buy and blocks 13200 USDT (60000 USDT × 0.22) in their account. 
-
- { "type": "FUTURE_BUY", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf2", "currency2AccountId": "609d0696bf835c241ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } 
+` { "type": "FUTURE_SELL", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf3", "currency2AccountId": "609d0696bf835c241ac2920f", "fee": 1, "feeAccountId": "609d0696bf835c251ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } ` The taker accepts the offer with a buy and blocks 13200 USDT (60000 USDT × 0.22) in their account. ` { "type": "FUTURE_BUY", "price": "60000", "amount": "1", "pair": "BTC/USDT", "currency1AccountId": "60a236db1b57f60d62612bf2", "currency2AccountId": "609d0696bf835c241ac2920a", "attr": { "sealDate": 1621990960631, "percentBlock": 22, "percentPenalty": 45 } } ` 
 
 At the time of the trade, the maker and taker have the following conditions. The maker has 0.65 BTC (35% deficit) in their account and the taker has 49200 USDT (18% deficit) in their account. 
 

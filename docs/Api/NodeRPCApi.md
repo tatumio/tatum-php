@@ -83,11 +83,11 @@ The `POST` method is used. The API endpoint URL acts as an HTTP-based RPC driver
 
 In the request body, provide valid Web3 RPC method content, for example:
 
- { "jsonrpc": "2.0", "id": 1, "method": "method_name", "params": [] } 
+` { "jsonrpc": "2.0", "id": 1, "method": "method_name", "params": [] } ` 
 
 For the blockchains using the JSON-RPC 2.0 specification, you can submit multiple RPC methods in one API call:
 
- [ { "jsonrpc": "2.0", "id": 1, "method": "method_1_name", "params": [] }, { "jsonrpc": "2.0", "id": 2, "method": "method_2_name", "params": [] }, ... ] 
+` [ { "jsonrpc": "2.0", "id": 1, "method": "method_1_name", "params": [] }, { "jsonrpc": "2.0", "id": 2, "method": "method_2_name", "params": [] }, ... ] ` 
 
 This API is supported for the following blockchains:
 
@@ -254,11 +254,11 @@ The `PUT` method is used. The API endpoint URL acts as an HTTP-based RPC driver.
 
 In the request body, provide valid Web3 RPC method content, for example:
 
- { "jsonrpc": "2.0", "id": 1, "method": "method_name", "params": [] } 
+` { "jsonrpc": "2.0", "id": 1, "method": "method_name", "params": [] } ` 
 
 For the blockchains using the JSON-RPC 2.0 specification, you can submit multiple RPC methods in one API call:
 
- [ { "jsonrpc": "2.0", "id": 1, "method": "method_1_name", "params": [] }, { "jsonrpc": "2.0", "id": 2, "method": "method_2_name", "params": [] }, ... ] 
+` [ { "jsonrpc": "2.0", "id": 1, "method": "method_1_name", "params": [] }, { "jsonrpc": "2.0", "id": 2, "method": "method_2_name", "params": [] }, ... ] ` 
 
 This API is supported for the following blockchains:
 
