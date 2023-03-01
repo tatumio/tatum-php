@@ -388,7 +388,7 @@ class Serializer {
 
         // Prepare the data
         $result = $data instanceof StreamInterface ? "$data" : $data;
-        $result = is_string($result) ? json_decode($result) : $result;
+        $result = is_string($result) ? json_decode($result, true, 512, JSON_THROW_ON_ERROR) : $result;
 
         return null !== $result ? static::doDeserialize($result, $type) : null;
     }
@@ -423,7 +423,7 @@ class Serializer {
 
         // for associative array e.g. array<string,int>
         if (preg_match("/^(array<|map\[)/", $type)) {
-            settype($data, "array");
+            $data = (array)$data;
             $inner = substr($type, 4, -1);
             $deserialized = [];
             if (strrpos($inner, ",") !== false) {
@@ -459,9 +459,33 @@ class Serializer {
             }
         }
 
+        // '\DateTime'
+        // '\SplFileObject'
         /** @psalm-suppress ParadoxicalCondition */
-        if (in_array($type, ['\DateTime', '\SplFileObject', 'array', 'bool', 'boolean', 'byte', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
-            settype($data, $type);
+        if (in_array($type, ['\SplFileObject', 'array', 'bool', 'boolean', 'byte', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+            switch ($type)
+            {
+                case 'void':
+                case 'byte':
+                case 'mixed':
+                case 'number': break;
+
+                case 'bool':
+                case 'boolean': $data = (bool) $data; break;
+
+                case 'int':
+                case 'integer': $data = (int) $data; break;
+
+                case 'array': $data = (array) $data; break;
+                case 'float': $data = (float) $data; break;
+                case 'object': $data = (object) $data; break;
+                case 'string': $data = (string) $data; break;
+
+                case '\SplFileObject': $data = new \SplFileObject($data, 'r'); break;
+
+                default: throw new InvalidArgumentException("Invalid value for enum '$type'");
+            }
+
             return $data;
         }
 
