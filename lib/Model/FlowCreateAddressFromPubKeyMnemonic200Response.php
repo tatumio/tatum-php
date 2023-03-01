@@ -44,7 +44,7 @@ class FlowCreateAddressFromPubKeyMnemonic200Response extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -64,7 +64,7 @@ class FlowCreateAddressFromPubKeyMnemonic200Response extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -84,7 +84,7 @@ class FlowCreateAddressFromPubKeyMnemonic200Response extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

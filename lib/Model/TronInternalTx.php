@@ -45,7 +45,7 @@ class TronInternalTx extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -65,7 +65,7 @@ class TronInternalTx extends AbstractModel {
     /**
      * Get internal_tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getInternalTxId(): ?string {
         return $this->_data["internal_tx_id"];
@@ -85,7 +85,7 @@ class TronInternalTx extends AbstractModel {
     /**
      * Get to_address
      *
-     * @return string
+     * @return string|null
      */
     public function getToAddress(): ?string {
         return $this->_data["to_address"];
@@ -105,7 +105,7 @@ class TronInternalTx extends AbstractModel {
     /**
      * Get from_address
      *
-     * @return string
+     * @return string|null
      */
     public function getFromAddress(): ?string {
         return $this->_data["from_address"];

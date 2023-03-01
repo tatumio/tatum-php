@@ -48,7 +48,7 @@ class GenerateCustodialWalletTron extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -59,7 +59,7 @@ class GenerateCustodialWalletTron extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -79,7 +79,7 @@ class GenerateCustodialWalletTron extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
@@ -99,7 +99,7 @@ class GenerateCustodialWalletTron extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -119,7 +119,7 @@ class GenerateCustodialWalletTron extends AbstractModel {
     /**
      * Get enable_fungible_tokens
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnableFungibleTokens(): ?bool {
         return $this->_data["enable_fungible_tokens"];
@@ -139,7 +139,7 @@ class GenerateCustodialWalletTron extends AbstractModel {
     /**
      * Get enable_non_fungible_tokens
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnableNonFungibleTokens(): ?bool {
         return $this->_data["enable_non_fungible_tokens"];
@@ -159,7 +159,7 @@ class GenerateCustodialWalletTron extends AbstractModel {
     /**
      * Get enable_semi_fungible_tokens
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnableSemiFungibleTokens(): ?bool {
         return $this->_data["enable_semi_fungible_tokens"];
@@ -179,7 +179,7 @@ class GenerateCustodialWalletTron extends AbstractModel {
     /**
      * Get enable_batch_transactions
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnableBatchTransactions(): ?bool {
         return $this->_data["enable_batch_transactions"];

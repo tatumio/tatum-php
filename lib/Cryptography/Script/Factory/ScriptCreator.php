@@ -148,7 +148,8 @@ class ScriptCreator {
      * Takes a list of opcodes (the name as a string)
      * and adds the opcodes to the script.
      *
-     * @param string... $opNames
+     * @param  string  ...$opNames
+     *
      * @return $this
      */
     public function op(string ...$opNames) {

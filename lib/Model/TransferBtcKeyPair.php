@@ -51,7 +51,7 @@ class TransferBtcKeyPair extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
@@ -71,7 +71,7 @@ class TransferBtcKeyPair extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -91,7 +91,7 @@ class TransferBtcKeyPair extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -171,7 +171,7 @@ class TransferBtcKeyPair extends AbstractModel {
     /**
      * Get key_pair
      *
-     * @return \Tatum\Model\TransferLtcKeyPairKeyPairInner[]
+     * @return array|null
      */
     public function getKeyPair(): ?array {
         return $this->_data["key_pair"];
@@ -191,7 +191,7 @@ class TransferBtcKeyPair extends AbstractModel {
     /**
      * Get attr
      *
-     * @return string
+     * @return string|null
      */
     public function getAttr(): ?string {
         return $this->_data["attr"];

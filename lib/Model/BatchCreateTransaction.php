@@ -43,7 +43,7 @@ class BatchCreateTransaction extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];

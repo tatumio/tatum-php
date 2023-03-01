@@ -49,7 +49,7 @@ class TransferErc721Celo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -62,7 +62,7 @@ class TransferErc721Celo extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -82,7 +82,7 @@ class TransferErc721Celo extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -102,7 +102,7 @@ class TransferErc721Celo extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -122,7 +122,7 @@ class TransferErc721Celo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

@@ -45,7 +45,7 @@ class TransferKlay20BlockchainFee extends AbstractModel {
     /**
      * Get gas_limit
      *
-     * @return string
+     * @return string|null
      */
     public function getGasLimit(): ?string {
         return $this->_data["gas_limit"];
@@ -65,7 +65,7 @@ class TransferKlay20BlockchainFee extends AbstractModel {
     /**
      * Get gas_price
      *
-     * @return string
+     * @return string|null
      */
     public function getGasPrice(): ?string {
         return $this->_data["gas_price"];

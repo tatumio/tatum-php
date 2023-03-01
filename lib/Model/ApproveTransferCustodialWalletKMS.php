@@ -60,7 +60,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -72,10 +72,11 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
             self::CHAIN_XDC,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getContractTypeAllowableValues(): ?array {
         return [
@@ -88,7 +89,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -108,7 +109,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get custodial_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
@@ -128,7 +129,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get spender
      *
-     * @return string
+     * @return string|null
      */
     public function getSpender(): ?string {
         return $this->_data["spender"];
@@ -148,7 +149,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get contract_type
      *
-     * @return float
+     * @return float|null
      */
     public function getContractType(): ?float {
         return $this->_data["contract_type"];
@@ -168,7 +169,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get token_address
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenAddress(): ?string {
         return $this->_data["token_address"];
@@ -228,7 +229,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

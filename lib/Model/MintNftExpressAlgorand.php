@@ -47,7 +47,7 @@ class MintNftExpressAlgorand extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -58,7 +58,7 @@ class MintNftExpressAlgorand extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -78,7 +78,7 @@ class MintNftExpressAlgorand extends AbstractModel {
     /**
      * Get url
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl(): ?string {
         return $this->_data["url"];
@@ -98,7 +98,7 @@ class MintNftExpressAlgorand extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];

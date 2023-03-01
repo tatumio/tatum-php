@@ -87,7 +87,8 @@ abstract class AbstractWallet {
     /**
      * Generate wallet from mnemonic
      *
-     * @param string $mnemonic (optional) 24-word mnemonic; default <b>null</b>
+     * @param  string|null  $mnemonic  (optional) 24-word mnemonic; default <b>null</b>
+     *
      * @return \Tatum\Model\Wallet Wallet Model
      * @throws \InvalidArgumentException
      */
@@ -107,8 +108,7 @@ abstract class AbstractWallet {
     /**
      * Generate address from private key
      *
-     * @param \Tatum\Model\PrivKey $private key Private key
-     *
+     * @param  \Tatum\Model\PrivKey  $privateKey
      * @return \Tatum\Model\ModelInterface Generated Address Model
      * @throws \InvalidArgumentException
      */
@@ -128,10 +128,10 @@ abstract class AbstractWallet {
     /**
      * Sanitize mnemonic string OR generate a new one
      *
-     * @param string $mnemonic (optional) Mnemonic string; default <b>null</b>
+     * @param  string|null  $mnemonic  (optional) Mnemonic string; default <b>null</b>
      *
      * @return string Mnemonic
-     * @throws \InvalidArgumentException
+     * @throws \Tatum\Cryptography\Exceptions\RandomBytesFailure
      */
     protected function _sanitizeMnemonic(string $mnemonic = null): string {
         if (null === $mnemonic) {

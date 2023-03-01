@@ -21,8 +21,9 @@ interface PrivateKeyInterface extends KeyInterface {
     public function getSecret();
 
     /**
-     * @param BufferInterface $msg32
-     * @param RbgInterface $rbg
+     * @param  BufferInterface                                      $msg32
+     * @param  \Tatum\Cryptography\Crypto\Random\RbgInterface|null  $rbg
+     *
      * @return SignatureInterface
      */
     public function sign(BufferInterface $msg32, RbgInterface $rbg = null);
@@ -45,7 +46,7 @@ interface PrivateKeyInterface extends KeyInterface {
      * Convert the private key to wallet import format. This function
      * optionally takes a NetworkInterface for exporting keys for other networks.
      *
-     * @param NetworkInterface $network
+     * @param  \Tatum\Cryptography\Network\NetworkInterface|null  $network
      * @return string
      */
     public function toWif(NetworkInterface $network = null);

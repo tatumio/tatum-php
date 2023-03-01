@@ -59,17 +59,18 @@ class TransferCustodialWalletCelo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getContractTypeAllowableValues(): ?array {
         return [
@@ -79,10 +80,11 @@ class TransferCustodialWalletCelo extends AbstractModel {
             self::CONTRACT_TYPE_3,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -95,7 +97,7 @@ class TransferCustodialWalletCelo extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -115,7 +117,7 @@ class TransferCustodialWalletCelo extends AbstractModel {
     /**
      * Get custodial_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
@@ -135,7 +137,7 @@ class TransferCustodialWalletCelo extends AbstractModel {
     /**
      * Get recipient
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipient(): ?string {
         return $this->_data["recipient"];
@@ -155,7 +157,7 @@ class TransferCustodialWalletCelo extends AbstractModel {
     /**
      * Get contract_type
      *
-     * @return float
+     * @return float|null
      */
     public function getContractType(): ?float {
         return $this->_data["contract_type"];
@@ -235,7 +237,7 @@ class TransferCustodialWalletCelo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

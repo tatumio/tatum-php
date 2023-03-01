@@ -45,7 +45,7 @@ class LtcTransactionAddressKMS extends AbstractModel {
     /**
      * Get from_address
      *
-     * @return \Tatum\Model\LtcTransactionAddressKMSFromAddressInner[]
+     * @return array|null
      */
     public function getFromAddress(): ?array {
         return $this->_data["from_address"];
@@ -65,7 +65,7 @@ class LtcTransactionAddressKMS extends AbstractModel {
     /**
      * Get to
      *
-     * @return \Tatum\Model\LtcTransactionAddressToInner[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];

@@ -56,7 +56,7 @@ class BurnMultiTokenKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -72,7 +72,7 @@ class BurnMultiTokenKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -92,7 +92,7 @@ class BurnMultiTokenKMS extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -112,7 +112,7 @@ class BurnMultiTokenKMS extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -132,7 +132,7 @@ class BurnMultiTokenKMS extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -172,7 +172,7 @@ class BurnMultiTokenKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -212,7 +212,7 @@ class BurnMultiTokenKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

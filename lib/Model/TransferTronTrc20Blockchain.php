@@ -46,7 +46,7 @@ class TransferTronTrc20Blockchain extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -66,7 +66,7 @@ class TransferTronTrc20Blockchain extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -86,7 +86,7 @@ class TransferTronTrc20Blockchain extends AbstractModel {
     /**
      * Get token_address
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenAddress(): ?string {
         return $this->_data["token_address"];
@@ -106,7 +106,7 @@ class TransferTronTrc20Blockchain extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
@@ -126,7 +126,7 @@ class TransferTronTrc20Blockchain extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];

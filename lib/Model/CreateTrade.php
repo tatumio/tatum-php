@@ -50,7 +50,7 @@ class CreateTrade extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -62,7 +62,7 @@ class CreateTrade extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -82,7 +82,7 @@ class CreateTrade extends AbstractModel {
     /**
      * Get price
      *
-     * @return string
+     * @return string|null
      */
     public function getPrice(): ?string {
         return $this->_data["price"];
@@ -102,7 +102,7 @@ class CreateTrade extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -122,7 +122,7 @@ class CreateTrade extends AbstractModel {
     /**
      * Get pair
      *
-     * @return string
+     * @return string|null
      */
     public function getPair(): ?string {
         return $this->_data["pair"];
@@ -142,7 +142,7 @@ class CreateTrade extends AbstractModel {
     /**
      * Get currency1_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency1AccountId(): ?string {
         return $this->_data["currency1_account_id"];
@@ -162,7 +162,7 @@ class CreateTrade extends AbstractModel {
     /**
      * Get currency2_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency2AccountId(): ?string {
         return $this->_data["currency2_account_id"];

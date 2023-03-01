@@ -43,7 +43,7 @@ class CheckMalicousAddress200Response extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getStatusAllowableValues(): ?array {
         return [

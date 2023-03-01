@@ -44,7 +44,7 @@ class SolanaNftMetadataCreator extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -64,7 +64,7 @@ class SolanaNftMetadataCreator extends AbstractModel {
     /**
      * Get verified
      *
-     * @return bool
+     * @return bool|null
      */
     public function getVerified(): ?bool {
         return $this->_data["verified"];
@@ -84,7 +84,7 @@ class SolanaNftMetadataCreator extends AbstractModel {
     /**
      * Get share
      *
-     * @return float
+     * @return float|null
      */
     public function getShare(): ?float {
         return $this->_data["share"];

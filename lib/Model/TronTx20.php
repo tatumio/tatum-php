@@ -47,7 +47,7 @@ class TronTx20 extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -67,7 +67,7 @@ class TronTx20 extends AbstractModel {
     /**
      * Get token_info
      *
-     * @return \Tatum\Model\TronTx20TokenInfo
+     * @return \Tatum\Model\TronTx20TokenInfo|null
      */
     public function getTokenInfo(): ?\Tatum\Model\TronTx20TokenInfo {
         return $this->_data["token_info"];
@@ -87,7 +87,7 @@ class TronTx20 extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -107,7 +107,7 @@ class TronTx20 extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -127,7 +127,7 @@ class TronTx20 extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -147,7 +147,7 @@ class TronTx20 extends AbstractModel {
     /**
      * Get value
      *
-     * @return string
+     * @return string|null
      */
     public function getValue(): ?string {
         return $this->_data["value"];

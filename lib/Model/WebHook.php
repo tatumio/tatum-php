@@ -59,7 +59,7 @@ class WebHook extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -78,7 +78,7 @@ class WebHook extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -98,7 +98,7 @@ class WebHook extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -118,7 +118,7 @@ class WebHook extends AbstractModel {
     /**
      * Get subscription_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSubscriptionId(): ?string {
         return $this->_data["subscription_id"];
@@ -138,7 +138,7 @@ class WebHook extends AbstractModel {
     /**
      * Get url
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl(): ?string {
         return $this->_data["url"];
@@ -158,7 +158,7 @@ class WebHook extends AbstractModel {
     /**
      * Get data
      *
-     * @return object
+     * @return object|null
      */
     public function getData(): ?object {
         return $this->_data["data"];
@@ -238,7 +238,7 @@ class WebHook extends AbstractModel {
     /**
      * Get failed
      *
-     * @return bool
+     * @return bool|null
      */
     public function getFailed(): ?bool {
         return $this->_data["failed"];
@@ -258,7 +258,7 @@ class WebHook extends AbstractModel {
     /**
      * Get response
      *
-     * @return \Tatum\Model\WebHookResponse
+     * @return \Tatum\Model\WebHookResponse|null
      */
     public function getResponse(): ?\Tatum\Model\WebHookResponse {
         return $this->_data["response"];

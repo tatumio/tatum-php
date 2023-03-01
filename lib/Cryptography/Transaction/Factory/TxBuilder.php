@@ -98,11 +98,13 @@ class TxBuilder {
     }
 
     /**
-     * @param BufferInterface|string $hashPrevOut - hex or BufferInterface
-     * @param int $nPrevOut
-     * @param ScriptInterface $script
-     * @param int $nSequence
+     * @param  BufferInterface|string                           $hashPrevOut  - hex or BufferInterface
+     * @param  int                                              $nPrevOut
+     * @param  \Tatum\Cryptography\Script\ScriptInterface|null  $script
+     * @param  int                                              $nSequence
+     *
      * @return $this
+     * @throws \Tatum\Cryptography\Exceptions\InvalidHashLengthException
      */
     public function input(
         $hashPrevOut,

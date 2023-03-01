@@ -47,7 +47,7 @@ class MintMultipleNftFlowPK extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -58,7 +58,7 @@ class MintMultipleNftFlowPK extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -78,7 +78,7 @@ class MintMultipleNftFlowPK extends AbstractModel {
     /**
      * Get to
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];
@@ -98,7 +98,7 @@ class MintMultipleNftFlowPK extends AbstractModel {
     /**
      * Get url
      *
-     * @return string[]
+     * @return array|null
      */
     public function getUrl(): ?array {
         return $this->_data["url"];
@@ -118,7 +118,7 @@ class MintMultipleNftFlowPK extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -138,7 +138,7 @@ class MintMultipleNftFlowPK extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -158,7 +158,7 @@ class MintMultipleNftFlowPK extends AbstractModel {
     /**
      * Get private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPrivateKey(): ?string {
         return $this->_data["private_key"];

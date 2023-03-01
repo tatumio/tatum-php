@@ -43,7 +43,7 @@ class PrivKeyRequest extends AbstractModel {
     /**
      * Get index
      *
-     * @return int
+     * @return int|null
      */
     public function getIndex(): ?int {
         return $this->_data["index"];
@@ -63,7 +63,7 @@ class PrivKeyRequest extends AbstractModel {
     /**
      * Get mnemonic
      *
-     * @return string
+     * @return string|null
      */
     public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];

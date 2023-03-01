@@ -44,8 +44,9 @@ class Bitcoin {
     }
 
     /**
-     * @param Math $math
-     * @param GeneratorPoint $generator
+     * @param  \Tatum\Cryptography\Math\Math|null                      $math
+     * @param  \Tatum\Cryptography\Ecc\Primitives\GeneratorPoint|null  $generator
+     *
      * @return EcAdapterInterface
      */
     public static function getEcAdapter(Math $math = null, GeneratorPoint $generator = null) {

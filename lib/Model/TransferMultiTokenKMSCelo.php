@@ -54,17 +54,18 @@ class TransferMultiTokenKMSCelo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -77,7 +78,7 @@ class TransferMultiTokenKMSCelo extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -97,7 +98,7 @@ class TransferMultiTokenKMSCelo extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -117,7 +118,7 @@ class TransferMultiTokenKMSCelo extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -137,7 +138,7 @@ class TransferMultiTokenKMSCelo extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -177,7 +178,7 @@ class TransferMultiTokenKMSCelo extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -217,7 +218,7 @@ class TransferMultiTokenKMSCelo extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -257,7 +258,7 @@ class TransferMultiTokenKMSCelo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

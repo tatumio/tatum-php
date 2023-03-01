@@ -104,9 +104,10 @@ class EcSerializer {
     }
 
     /**
-     * @param string $interface
-     * @param bool $useCache
-     * @param EcAdapterInterface $adapter
+     * @param  string                                                                $interface
+     * @param  bool                                                                  $useCache
+     * @param  \Tatum\Cryptography\Crypto\EcAdapter\Adapter\EcAdapterInterface|null  $adapter
+     *
      * @return mixed
      */
     public static function getSerializer(string $interface, $useCache = true, EcAdapterInterface $adapter = null) {

@@ -45,7 +45,7 @@ class TronAccountTrc10Inner extends AbstractModel {
     /**
      * Get key
      *
-     * @return string
+     * @return string|null
      */
     public function getKey(): ?string {
         return $this->_data["key"];
@@ -65,7 +65,7 @@ class TronAccountTrc10Inner extends AbstractModel {
     /**
      * Get value
      *
-     * @return float
+     * @return float|null
      */
     public function getValue(): ?float {
         return $this->_data["value"];

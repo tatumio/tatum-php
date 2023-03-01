@@ -47,7 +47,7 @@ class FreezeTron extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getResourceAllowableValues(): ?array {
         return [
@@ -59,7 +59,7 @@ class FreezeTron extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -79,7 +79,7 @@ class FreezeTron extends AbstractModel {
     /**
      * Get receiver
      *
-     * @return string
+     * @return string|null
      */
     public function getReceiver(): ?string {
         return $this->_data["receiver"];
@@ -99,7 +99,7 @@ class FreezeTron extends AbstractModel {
     /**
      * Get duration
      *
-     * @return float
+     * @return float|null
      */
     public function getDuration(): ?float {
         return $this->_data["duration"];
@@ -119,7 +119,7 @@ class FreezeTron extends AbstractModel {
     /**
      * Get resource
      *
-     * @return string
+     * @return string|null
      */
     public function getResource(): ?string {
         return $this->_data["resource"];
@@ -139,7 +139,7 @@ class FreezeTron extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];

@@ -45,7 +45,7 @@ class EthGasEstimationBatchResult extends AbstractModel {
     /**
      * Get error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getError(): ?bool {
         return $this->_data["error"];

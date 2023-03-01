@@ -48,7 +48,7 @@ class DeployErc721Celo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -61,7 +61,7 @@ class DeployErc721Celo extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -81,7 +81,7 @@ class DeployErc721Celo extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -101,7 +101,7 @@ class DeployErc721Celo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -141,7 +141,7 @@ class DeployErc721Celo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

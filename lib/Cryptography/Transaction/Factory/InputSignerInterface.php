@@ -90,7 +90,8 @@ interface InputSignerInterface {
      * Verifies the input using $flags for script verification, otherwise
      * uses the default, or that passed from SignData.
      *
-     * @param int $flags
+     * @param  int|null  $flags
+     *
      * @return bool
      */
     public function verify(int $flags = null): bool;

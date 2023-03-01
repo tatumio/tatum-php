@@ -59,17 +59,18 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getContractTypeAllowableValues(): ?array {
         return [
@@ -79,10 +80,11 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
             self::CONTRACT_TYPE_3,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -95,7 +97,7 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -115,7 +117,7 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get custodial_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
@@ -135,7 +137,7 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get recipient
      *
-     * @return string[]
+     * @return array|null
      */
     public function getRecipient(): ?array {
         return $this->_data["recipient"];
@@ -155,7 +157,7 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get contract_type
      *
-     * @return float[]
+     * @return array|null
      */
     public function getContractType(): ?array {
         return $this->_data["contract_type"];
@@ -175,7 +177,7 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get token_address
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTokenAddress(): ?array {
         return $this->_data["token_address"];
@@ -195,7 +197,7 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAmount(): ?array {
         return $this->_data["amount"];
@@ -215,7 +217,7 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTokenId(): ?array {
         return $this->_data["token_id"];
@@ -235,7 +237,7 @@ class TransferCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

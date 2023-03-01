@@ -48,7 +48,7 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -59,7 +59,7 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -79,7 +79,7 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -99,7 +99,7 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -139,7 +139,7 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     /**
      * Get batch_count
      *
-     * @return float
+     * @return float|null
      */
     public function getBatchCount(): ?float {
         return $this->_data["batch_count"];
@@ -159,7 +159,7 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     /**
      * Get owner
      *
-     * @return string
+     * @return string|null
      */
     public function getOwner(): ?string {
         return $this->_data["owner"];
@@ -179,7 +179,7 @@ class GenerateCustodialWalletBatchTronKMS extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];

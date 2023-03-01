@@ -52,7 +52,7 @@ class CancelAuction extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -67,7 +67,7 @@ class CancelAuction extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -87,7 +87,7 @@ class CancelAuction extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -107,7 +107,7 @@ class CancelAuction extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -127,7 +127,7 @@ class CancelAuction extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

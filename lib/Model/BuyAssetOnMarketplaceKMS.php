@@ -55,7 +55,7 @@ class BuyAssetOnMarketplaceKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -70,7 +70,7 @@ class BuyAssetOnMarketplaceKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -90,7 +90,7 @@ class BuyAssetOnMarketplaceKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -110,7 +110,7 @@ class BuyAssetOnMarketplaceKMS extends AbstractModel {
     /**
      * Get listing_id
      *
-     * @return string
+     * @return string|null
      */
     public function getListingId(): ?string {
         return $this->_data["listing_id"];
@@ -130,7 +130,7 @@ class BuyAssetOnMarketplaceKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

@@ -42,7 +42,7 @@ class CreateAccountBatch extends AbstractModel {
     /**
      * Get accounts
      *
-     * @return \Tatum\Model\CreateAccount[]
+     * @return array|null
      */
     public function getAccounts(): ?array {
         return $this->_data["accounts"];

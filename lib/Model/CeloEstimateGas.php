@@ -45,7 +45,7 @@ class CeloEstimateGas extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -65,7 +65,7 @@ class CeloEstimateGas extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -85,7 +85,7 @@ class CeloEstimateGas extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];

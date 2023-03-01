@@ -45,7 +45,7 @@ class FlowAddPubKeySecret extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -65,7 +65,7 @@ class FlowAddPubKeySecret extends AbstractModel {
     /**
      * Get public_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPublicKey(): ?string {
         return $this->_data["public_key"];
@@ -85,7 +85,7 @@ class FlowAddPubKeySecret extends AbstractModel {
     /**
      * Get private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPrivateKey(): ?string {
         return $this->_data["private_key"];

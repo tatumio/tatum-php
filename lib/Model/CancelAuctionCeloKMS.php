@@ -53,17 +53,18 @@ class CancelAuctionCeloKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -76,7 +77,7 @@ class CancelAuctionCeloKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -96,7 +97,7 @@ class CancelAuctionCeloKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -116,7 +117,7 @@ class CancelAuctionCeloKMS extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -136,7 +137,7 @@ class CancelAuctionCeloKMS extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
@@ -156,7 +157,7 @@ class CancelAuctionCeloKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

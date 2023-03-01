@@ -46,7 +46,7 @@ class BurnNftFlowPK extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -57,7 +57,7 @@ class BurnNftFlowPK extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -77,7 +77,7 @@ class BurnNftFlowPK extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -97,7 +97,7 @@ class BurnNftFlowPK extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -117,7 +117,7 @@ class BurnNftFlowPK extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -137,7 +137,7 @@ class BurnNftFlowPK extends AbstractModel {
     /**
      * Get private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPrivateKey(): ?string {
         return $this->_data["private_key"];

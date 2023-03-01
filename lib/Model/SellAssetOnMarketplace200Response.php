@@ -44,7 +44,7 @@ class SellAssetOnMarketplace200Response extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -64,7 +64,7 @@ class SellAssetOnMarketplace200Response extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -84,7 +84,7 @@ class SellAssetOnMarketplace200Response extends AbstractModel {
     /**
      * Get listing_id
      *
-     * @return string
+     * @return string|null
      */
     public function getListingId(): ?string {
         return $this->_data["listing_id"];

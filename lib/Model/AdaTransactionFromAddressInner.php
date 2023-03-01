@@ -44,7 +44,7 @@ class AdaTransactionFromAddressInner extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];

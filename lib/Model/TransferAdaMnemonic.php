@@ -51,7 +51,7 @@ class TransferAdaMnemonic extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -71,7 +71,7 @@ class TransferAdaMnemonic extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -131,7 +131,7 @@ class TransferAdaMnemonic extends AbstractModel {
     /**
      * Get index
      *
-     * @return int
+     * @return int|null
      */
     public function getIndex(): ?int {
         return $this->_data["index"];
@@ -151,7 +151,7 @@ class TransferAdaMnemonic extends AbstractModel {
     /**
      * Get mnemonic
      *
-     * @return string
+     * @return string|null
      */
     public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
@@ -171,7 +171,7 @@ class TransferAdaMnemonic extends AbstractModel {
     /**
      * Get xpub
      *
-     * @return string
+     * @return string|null
      */
     public function getXpub(): ?string {
         return $this->_data["xpub"];
@@ -211,7 +211,7 @@ class TransferAdaMnemonic extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];

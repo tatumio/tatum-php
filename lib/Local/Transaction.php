@@ -36,7 +36,7 @@ class Transaction {
     /**
      * Transactions Utility
      *
-     * @param \Tatum\Sdk\Config $caller Caller object
+     * @param  \Tatum\Sdk\Caller  $caller  Caller object
      */
     public function __construct(Caller $caller) {
         $this->_caller = $caller;

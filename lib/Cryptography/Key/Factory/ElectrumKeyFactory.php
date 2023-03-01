@@ -35,8 +35,9 @@ class ElectrumKeyFactory {
     }
 
     /**
-     * @param string $mnemonic
-     * @param ElectrumWordListInterface $wordList
+     * @param  string                                                                $mnemonic
+     * @param  \Tatum\Cryptography\Mnemonic\Electrum\ElectrumWordListInterface|null  $wordList
+     *
      * @return ElectrumKey
      * @throws \Exception
      */

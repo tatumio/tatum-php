@@ -41,7 +41,8 @@ class Bip39Mnemonic implements MnemonicInterface {
     /**
      * Creates a new Bip39 mnemonic string.
      *
-     * @param int $entropySize
+     * @param  int|null  $entropySize
+     *
      * @return string
      * @throws \Tatum\Cryptography\Exceptions\RandomBytesFailure
      */

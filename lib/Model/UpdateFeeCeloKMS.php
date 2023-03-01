@@ -52,17 +52,18 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -75,7 +76,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -95,7 +96,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -115,7 +116,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
@@ -135,7 +136,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Get marketplace_fee
      *
-     * @return float
+     * @return float|null
      */
     public function getMarketplaceFee(): ?float {
         return $this->_data["marketplace_fee"];
@@ -155,7 +156,7 @@ class UpdateFeeCeloKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

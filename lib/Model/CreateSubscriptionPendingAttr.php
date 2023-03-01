@@ -45,7 +45,7 @@ class CreateSubscriptionPendingAttr extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -65,7 +65,7 @@ class CreateSubscriptionPendingAttr extends AbstractModel {
     /**
      * Get url
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl(): ?string {
         return $this->_data["url"];

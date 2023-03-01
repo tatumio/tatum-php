@@ -47,7 +47,7 @@ class NftTokenByAddressErc721 extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -67,7 +67,7 @@ class NftTokenByAddressErc721 extends AbstractModel {
     /**
      * Get balances
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBalances(): ?array {
         return $this->_data["balances"];
@@ -107,7 +107,7 @@ class NftTokenByAddressErc721 extends AbstractModel {
     /**
      * Get metadata
      *
-     * @return \Tatum\Model\NftTokenByAddressErc721TokenMetadata[]
+     * @return array|null
      */
     public function getMetadata(): ?array {
         return $this->_data["metadata"];

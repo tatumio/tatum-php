@@ -20,8 +20,9 @@ namespace Tatum\Cryptography;
 
 class Murmur {
     /**
-     * @param  string $key   Text to hash.
-     * @param  number $seed  Positive integer only
+     * @param  string  $key   Text to hash.
+     * @param  int     $seed  Positive integer only
+     *
      * @return number 32-bit positive integer hash
      */
     public static function hash3_int(string $key, int $seed = 0): int {
@@ -89,8 +90,8 @@ class Murmur {
     }
 
     /**
-     * @param  string $key   Text to hash.
-     * @param  number $seed  Positive integer only
+     * @param  string  $key   Text to hash.
+     * @param  int     $seed  Positive integer only
      * @return string
      */
     public static function hash3(string $key, int $seed = 0): string {

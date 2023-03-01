@@ -63,7 +63,7 @@ class XlmTx extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getMemoTypeAllowableValues(): ?array {
         return [

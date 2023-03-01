@@ -119,15 +119,16 @@ interface GmpMathInterface {
     /**
      * Converts an hexadecimal string to decimal.
      *
-     * @param  string $hexString
-     * @return int|string
+     * @param  string  $hexString
+     *
+     * @return string
      */
     public function hexDec(string $hexString): string;
 
     /**
      * Converts a decimal string to hexadecimal.
      *
-     * @param  int|string $decString
+     * @param  string  $decString
      * @return string
      */
     public function decHex(string $decString): string;
@@ -187,7 +188,7 @@ interface GmpMathInterface {
 
     /**
      *
-     * @param  int|string $s
+     * @param  string  $s
      * @return \GMP
      */
     public function stringToInt(string $s): \GMP;

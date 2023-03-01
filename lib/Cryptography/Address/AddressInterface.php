@@ -11,7 +11,8 @@ use Tatum\Cryptography\Buffertools\BufferInterface;
 
 interface AddressInterface {
     /**
-     * @param NetworkInterface $network
+     * @param  \Tatum\Cryptography\Network\NetworkInterface|null  $network
+     *
      * @return string
      */
     public function getAddress(NetworkInterface $network = null): string;

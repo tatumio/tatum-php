@@ -44,7 +44,7 @@ class FeeBtc extends AbstractModel {
     /**
      * Get fast
      *
-     * @return string
+     * @return string|null
      */
     public function getFast(): ?string {
         return $this->_data["fast"];
@@ -64,7 +64,7 @@ class FeeBtc extends AbstractModel {
     /**
      * Get medium
      *
-     * @return string
+     * @return string|null
      */
     public function getMedium(): ?string {
         return $this->_data["medium"];
@@ -84,7 +84,7 @@ class FeeBtc extends AbstractModel {
     /**
      * Get slow
      *
-     * @return string
+     * @return string|null
      */
     public function getSlow(): ?string {
         return $this->_data["slow"];

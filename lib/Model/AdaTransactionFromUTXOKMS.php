@@ -45,7 +45,7 @@ class AdaTransactionFromUTXOKMS extends AbstractModel {
     /**
      * Get from_utxo
      *
-     * @return \Tatum\Model\AdaTransactionFromUTXOKMSFromUTXOInner[]
+     * @return array|null
      */
     public function getFromUtxo(): ?array {
         return $this->_data["from_utxo"];
@@ -65,7 +65,7 @@ class AdaTransactionFromUTXOKMS extends AbstractModel {
     /**
      * Get to
      *
-     * @return \Tatum\Model\AdaTransactionFromAddressToInner[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];

@@ -11,8 +11,9 @@ use Tatum\Cryptography\Ecc\Math\MathAdapterFactory;
 
 class RandomGeneratorFactory {
     /**
-     * @param bool $debug
-     * @return DebugDecorator|RandomNumberGeneratorInterface
+     * @param  bool  $debug
+     *
+     * @return \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface
      */
     public static function getRandomGenerator(bool $debug = false): RandomNumberGeneratorInterface {
         return self::wrapAdapter(
@@ -23,11 +24,11 @@ class RandomGeneratorFactory {
     }
 
     /**
-     * @param PrivateKeyInterface $privateKey
-     * @param \GMP                $messageHash
-     * @param string              $algorithm
-     * @param bool                $debug
-     * @return DebugDecorator|RandomNumberGeneratorInterface
+     * @param  PrivateKeyInterface  $privateKey
+     * @param  \GMP                 $messageHash
+     * @param  string               $algorithm
+     * @param  bool                 $debug
+     * @return \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface
      */
     public static function getHmacRandomGenerator(
         PrivateKeyInterface $privateKey,
@@ -48,10 +49,10 @@ class RandomGeneratorFactory {
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $generator
-     * @param string                         $name
-     * @param bool                           $debug
-     * @return DebugDecorator|RandomNumberGeneratorInterface
+     * @param  RandomNumberGeneratorInterface  $generator
+     * @param  string                          $name
+     * @param  bool                            $debug
+     * @return \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface
      */
     private static function wrapAdapter(
         RandomNumberGeneratorInterface $generator,

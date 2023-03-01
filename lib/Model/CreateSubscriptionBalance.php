@@ -43,7 +43,7 @@ class CreateSubscriptionBalance extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -54,7 +54,7 @@ class CreateSubscriptionBalance extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -74,7 +74,7 @@ class CreateSubscriptionBalance extends AbstractModel {
     /**
      * Get attr
      *
-     * @return \Tatum\Model\CreateSubscriptionBalanceAttr
+     * @return \Tatum\Model\CreateSubscriptionBalanceAttr|null
      */
     public function getAttr(): ?\Tatum\Model\CreateSubscriptionBalanceAttr {
         return $this->_data["attr"];

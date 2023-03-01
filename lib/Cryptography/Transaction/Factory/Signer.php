@@ -68,8 +68,9 @@ class Signer {
 
     /**
      * TxWitnessSigner constructor.
-     * @param TransactionInterface $tx
-     * @param EcAdapterInterface $ecAdapter
+     *
+     * @param  TransactionInterface                                                  $tx
+     * @param  \Tatum\Cryptography\Crypto\EcAdapter\Adapter\EcAdapterInterface|null  $ecAdapter
      */
     public function __construct(TransactionInterface $tx, EcAdapterInterface $ecAdapter = null) {
         $this->tx = $tx;
@@ -127,11 +128,11 @@ class Signer {
     }
 
     /**
-     * @param int $nIn
-     * @param PrivateKeyInterface $key
-     * @param TransactionOutputInterface $txOut
-     * @param SignData $signData
-     * @param int $sigHashType
+     * @param  int                                                    $nIn
+     * @param  PrivateKeyInterface                                    $key
+     * @param  TransactionOutputInterface                             $txOut
+     * @param  \Tatum\Cryptography\Transaction\Factory\SignData|null  $signData
+     * @param  int                                                    $sigHashType
      * @return $this
      */
     public function sign(

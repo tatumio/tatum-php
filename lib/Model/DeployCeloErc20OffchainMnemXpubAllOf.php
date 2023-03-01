@@ -44,7 +44,7 @@ class DeployCeloErc20OffchainMnemXpubAllOf extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -57,7 +57,7 @@ class DeployCeloErc20OffchainMnemXpubAllOf extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

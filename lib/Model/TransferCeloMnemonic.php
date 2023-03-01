@@ -55,7 +55,7 @@ class TransferCeloMnemonic extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -88,7 +88,7 @@ class TransferCeloMnemonic extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -108,7 +108,7 @@ class TransferCeloMnemonic extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -148,7 +148,7 @@ class TransferCeloMnemonic extends AbstractModel {
     /**
      * Get index
      *
-     * @return int
+     * @return int|null
      */
     public function getIndex(): ?int {
         return $this->_data["index"];
@@ -168,7 +168,7 @@ class TransferCeloMnemonic extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
@@ -228,7 +228,7 @@ class TransferCeloMnemonic extends AbstractModel {
     /**
      * Get mnemonic
      *
-     * @return string
+     * @return string|null
      */
     public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
@@ -268,7 +268,7 @@ class TransferCeloMnemonic extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];

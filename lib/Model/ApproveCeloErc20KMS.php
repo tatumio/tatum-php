@@ -52,17 +52,18 @@ class ApproveCeloErc20KMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -75,7 +76,7 @@ class ApproveCeloErc20KMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -95,7 +96,7 @@ class ApproveCeloErc20KMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -115,7 +116,7 @@ class ApproveCeloErc20KMS extends AbstractModel {
     /**
      * Get spender
      *
-     * @return string
+     * @return string|null
      */
     public function getSpender(): ?string {
         return $this->_data["spender"];
@@ -135,7 +136,7 @@ class ApproveCeloErc20KMS extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -155,7 +156,7 @@ class ApproveCeloErc20KMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -175,7 +176,7 @@ class ApproveCeloErc20KMS extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

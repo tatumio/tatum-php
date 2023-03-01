@@ -58,17 +58,18 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -81,7 +82,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -101,7 +102,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
@@ -121,7 +122,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -141,7 +142,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get nft_address
      *
-     * @return string
+     * @return string|null
      */
     public function getNftAddress(): ?string {
         return $this->_data["nft_address"];
@@ -161,7 +162,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get seller
      *
-     * @return string
+     * @return string|null
      */
     public function getSeller(): ?string {
         return $this->_data["seller"];
@@ -201,7 +202,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get listing_id
      *
-     * @return string
+     * @return string|null
      */
     public function getListingId(): ?string {
         return $this->_data["listing_id"];
@@ -241,7 +242,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -261,7 +262,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get price
      *
-     * @return string
+     * @return string|null
      */
     public function getPrice(): ?string {
         return $this->_data["price"];
@@ -281,7 +282,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get is_erc721
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsErc721(): ?bool {
         return $this->_data["is_erc721"];
@@ -301,7 +302,7 @@ class SellAssetOnMarketplaceCelo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

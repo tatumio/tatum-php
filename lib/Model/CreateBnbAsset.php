@@ -239,7 +239,7 @@ class CreateBnbAsset extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -446,7 +446,7 @@ class CreateBnbAsset extends AbstractModel {
     /**
      * Get token
      *
-     * @return string
+     * @return string|null
      */
     public function getToken(): ?string {
         return $this->_data["token"];
@@ -466,7 +466,7 @@ class CreateBnbAsset extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

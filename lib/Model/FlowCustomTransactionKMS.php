@@ -46,7 +46,7 @@ class FlowCustomTransactionKMS extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -66,7 +66,7 @@ class FlowCustomTransactionKMS extends AbstractModel {
     /**
      * Get transaction
      *
-     * @return string
+     * @return string|null
      */
     public function getTransaction(): ?string {
         return $this->_data["transaction"];
@@ -86,7 +86,7 @@ class FlowCustomTransactionKMS extends AbstractModel {
     /**
      * Get args
      *
-     * @return \Tatum\Model\FlowCustomTransactionPKArgsInner[]
+     * @return array|null
      */
     public function getArgs(): ?array {
         return $this->_data["args"];
@@ -106,7 +106,7 @@ class FlowCustomTransactionKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

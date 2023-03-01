@@ -54,7 +54,7 @@ class BidOnAuction extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -69,7 +69,7 @@ class BidOnAuction extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -89,7 +89,7 @@ class BidOnAuction extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -149,7 +149,7 @@ class BidOnAuction extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -169,7 +169,7 @@ class BidOnAuction extends AbstractModel {
     /**
      * Get bid_value
      *
-     * @return string
+     * @return string|null
      */
     public function getBidValue(): ?string {
         return $this->_data["bid_value"];
@@ -189,7 +189,7 @@ class BidOnAuction extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

@@ -48,7 +48,7 @@ class Address extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -68,7 +68,7 @@ class Address extends AbstractModel {
     /**
      * Get currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency(): ?string {
         return $this->_data["currency"];

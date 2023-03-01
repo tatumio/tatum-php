@@ -43,7 +43,7 @@ class EgldEstimateGas200Response extends AbstractModel {
     /**
      * Get gas_price
      *
-     * @return float
+     * @return float|null
      */
     public function getGasPrice(): ?float {
         return $this->_data["gas_price"];
@@ -63,7 +63,7 @@ class EgldEstimateGas200Response extends AbstractModel {
     /**
      * Get gas_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getGasLimit(): ?float {
         return $this->_data["gas_limit"];

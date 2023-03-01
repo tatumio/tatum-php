@@ -48,7 +48,7 @@ class MintErc721 extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -68,7 +68,7 @@ class MintErc721 extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -88,7 +88,7 @@ class MintErc721 extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -108,7 +108,7 @@ class MintErc721 extends AbstractModel {
     /**
      * Get url
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl(): ?string {
         return $this->_data["url"];

@@ -52,7 +52,7 @@ class UpdateFeeRecipientKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -67,7 +67,7 @@ class UpdateFeeRecipientKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -87,7 +87,7 @@ class UpdateFeeRecipientKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -107,7 +107,7 @@ class UpdateFeeRecipientKMS extends AbstractModel {
     /**
      * Get fee_recipient
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeRecipient(): ?string {
         return $this->_data["fee_recipient"];
@@ -127,7 +127,7 @@ class UpdateFeeRecipientKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

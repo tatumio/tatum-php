@@ -48,7 +48,7 @@ class ActivateGasPumpTronKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -59,7 +59,7 @@ class ActivateGasPumpTronKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -79,7 +79,7 @@ class ActivateGasPumpTronKMS extends AbstractModel {
     /**
      * Get owner
      *
-     * @return string
+     * @return string|null
      */
     public function getOwner(): ?string {
         return $this->_data["owner"];
@@ -99,7 +99,7 @@ class ActivateGasPumpTronKMS extends AbstractModel {
     /**
      * Get from
      *
-     * @return int
+     * @return int|null
      */
     public function getFrom(): ?int {
         return $this->_data["from"];
@@ -119,7 +119,7 @@ class ActivateGasPumpTronKMS extends AbstractModel {
     /**
      * Get to
      *
-     * @return int
+     * @return int|null
      */
     public function getTo(): ?int {
         return $this->_data["to"];
@@ -139,7 +139,7 @@ class ActivateGasPumpTronKMS extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
@@ -159,7 +159,7 @@ class ActivateGasPumpTronKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

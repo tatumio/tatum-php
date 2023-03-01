@@ -50,7 +50,7 @@ class CallSmartContractMethodKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -90,7 +90,7 @@ class CallSmartContractMethodKMS extends AbstractModel {
     /**
      * Get method_name
      *
-     * @return string
+     * @return string|null
      */
     public function getMethodName(): ?string {
         return $this->_data["method_name"];
@@ -110,7 +110,7 @@ class CallSmartContractMethodKMS extends AbstractModel {
     /**
      * Get method_abi
      *
-     * @return object
+     * @return object|null
      */
     public function getMethodAbi(): ?object {
         return $this->_data["method_abi"];
@@ -130,7 +130,7 @@ class CallSmartContractMethodKMS extends AbstractModel {
     /**
      * Get params
      *
-     * @return object[]
+     * @return array|null
      */
     public function getParams(): ?array {
         return $this->_data["params"];
@@ -150,7 +150,7 @@ class CallSmartContractMethodKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

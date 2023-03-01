@@ -23,9 +23,10 @@ class Bitcoin extends AbstractWallet {
     /**
      * Generate Bitcoin wallet
      *
-     * @param string $mnemonic (optional) 24-word mnemonic; default <b>null</b>
+     * @param  string|null  $mnemonic  (optional) 24-word mnemonic; default <b>null</b>
+     *
      * @return \Tatum\Model\Wallet Wallet Model
-     * @throws \InvalidArgumentException
+     * @throws \Tatum\Cryptography\Exceptions\RandomBytesFailure
      */
     public function generateWallet(string $mnemonic = null): \Tatum\Model\Wallet {
         $mnemonic = $this->_sanitizeMnemonic($mnemonic);

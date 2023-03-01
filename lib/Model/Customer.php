@@ -217,7 +217,7 @@ class Customer extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAccountingCurrencyAllowableValues(): ?array {
         return [
@@ -397,7 +397,7 @@ class Customer extends AbstractModel {
     /**
      * Get external_id
      *
-     * @return string
+     * @return string|null
      */
     public function getExternalId(): ?string {
         return $this->_data["external_id"];
@@ -417,7 +417,7 @@ class Customer extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -437,7 +437,7 @@ class Customer extends AbstractModel {
     /**
      * Get enabled
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnabled(): ?bool {
         return $this->_data["enabled"];
@@ -457,7 +457,7 @@ class Customer extends AbstractModel {
     /**
      * Get active
      *
-     * @return bool
+     * @return bool|null
      */
     public function getActive(): ?bool {
         return $this->_data["active"];

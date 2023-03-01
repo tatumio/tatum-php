@@ -50,7 +50,7 @@ class TransferAdaKeyPair extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
@@ -70,7 +70,7 @@ class TransferAdaKeyPair extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -90,7 +90,7 @@ class TransferAdaKeyPair extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -150,7 +150,7 @@ class TransferAdaKeyPair extends AbstractModel {
     /**
      * Get key_pair
      *
-     * @return \Tatum\Model\TransferAdaKeyPairKeyPairInner[]
+     * @return array|null
      */
     public function getKeyPair(): ?array {
         return $this->_data["key_pair"];
@@ -170,7 +170,7 @@ class TransferAdaKeyPair extends AbstractModel {
     /**
      * Get attr
      *
-     * @return string
+     * @return string|null
      */
     public function getAttr(): ?string {
         return $this->_data["attr"];

@@ -46,7 +46,7 @@ class CreateFutureTradeAttr extends AbstractModel {
     /**
      * Get seal_date
      *
-     * @return float
+     * @return float|null
      */
     public function getSealDate(): ?float {
         return $this->_data["seal_date"];

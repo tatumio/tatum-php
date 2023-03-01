@@ -43,7 +43,7 @@ class XlmWallet extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -63,7 +63,7 @@ class XlmWallet extends AbstractModel {
     /**
      * Get secret
      *
-     * @return string
+     * @return string|null
      */
     public function getSecret(): ?string {
         return $this->_data["secret"];

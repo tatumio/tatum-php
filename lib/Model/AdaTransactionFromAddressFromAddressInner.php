@@ -43,7 +43,7 @@ class AdaTransactionFromAddressFromAddressInner extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -63,7 +63,7 @@ class AdaTransactionFromAddressFromAddressInner extends AbstractModel {
     /**
      * Get private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPrivateKey(): ?string {
         return $this->_data["private_key"];

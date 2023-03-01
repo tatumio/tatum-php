@@ -42,7 +42,7 @@ class EthEstimateGasArray extends AbstractModel {
     /**
      * Get estimations
      *
-     * @return \Tatum\Model\EthEstimateGas[]
+     * @return array|null
      */
     public function getEstimations(): ?array {
         return $this->_data["estimations"];

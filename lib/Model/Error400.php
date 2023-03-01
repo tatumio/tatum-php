@@ -45,7 +45,7 @@ class Error400 extends AbstractModel {
     /**
      * Get error_code
      *
-     * @return string
+     * @return string|null
      */
     public function getErrorCode(): ?string {
         return $this->_data["error_code"];
@@ -65,7 +65,7 @@ class Error400 extends AbstractModel {
     /**
      * Get message
      *
-     * @return string
+     * @return string|null
      */
     public function getMessage(): ?string {
         return $this->_data["message"];
@@ -85,7 +85,7 @@ class Error400 extends AbstractModel {
     /**
      * Get status_code
      *
-     * @return float
+     * @return float|null
      */
     public function getStatusCode(): ?float {
         return $this->_data["status_code"];
@@ -105,7 +105,7 @@ class Error400 extends AbstractModel {
     /**
      * Get data
      *
-     * @return \Tatum\Model\Error400DataInner[]
+     * @return array|null
      */
     public function getData(): ?array {
         return $this->_data["data"];

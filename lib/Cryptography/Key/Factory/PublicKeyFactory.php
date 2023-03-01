@@ -21,7 +21,8 @@ class PublicKeyFactory {
 
     /**
      * PublicKeyFactory constructor.
-     * @param EcAdapterInterface $ecAdapter
+     *
+     * @param  \Tatum\Cryptography\Crypto\EcAdapter\Adapter\EcAdapterInterface|null  $ecAdapter
      */
     public function __construct(EcAdapterInterface $ecAdapter = null) {
         $ecAdapter = $ecAdapter ?: Bitcoin::getEcAdapter();

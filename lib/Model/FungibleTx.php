@@ -47,7 +47,7 @@ class FungibleTx extends AbstractModel {
     /**
      * Get block_number
      *
-     * @return float
+     * @return float|null
      */
     public function getBlockNumber(): ?float {
         return $this->_data["block_number"];
@@ -67,7 +67,7 @@ class FungibleTx extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -87,7 +87,7 @@ class FungibleTx extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -107,7 +107,7 @@ class FungibleTx extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -127,7 +127,7 @@ class FungibleTx extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -147,7 +147,7 @@ class FungibleTx extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];

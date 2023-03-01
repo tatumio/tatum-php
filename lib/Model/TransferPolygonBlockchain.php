@@ -50,7 +50,7 @@ class TransferPolygonBlockchain extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getCurrencyAllowableValues(): ?array {
         return [
@@ -103,7 +103,7 @@ class TransferPolygonBlockchain extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -123,7 +123,7 @@ class TransferPolygonBlockchain extends AbstractModel {
     /**
      * Get currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency(): ?string {
         return $this->_data["currency"];
@@ -163,7 +163,7 @@ class TransferPolygonBlockchain extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -183,7 +183,7 @@ class TransferPolygonBlockchain extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

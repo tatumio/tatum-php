@@ -339,7 +339,8 @@ class Contract {
     /**
      * setToAddress
      *
-     * @param string $bytecode
+     * @param $address
+     *
      * @return $this
      */
     public function setToAddress($address) {

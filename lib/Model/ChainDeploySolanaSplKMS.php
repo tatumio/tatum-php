@@ -47,7 +47,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -58,7 +58,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -78,7 +78,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -98,7 +98,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
     /**
      * Get digits
      *
-     * @return float
+     * @return float|null
      */
     public function getDigits(): ?float {
         return $this->_data["digits"];
@@ -118,7 +118,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -138,7 +138,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -158,7 +158,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

@@ -55,7 +55,7 @@ class WithdrawalObject extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getStatusAllowableValues(): ?array {
         return [
@@ -68,7 +68,7 @@ class WithdrawalObject extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -108,7 +108,7 @@ class WithdrawalObject extends AbstractModel {
     /**
      * Get account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getAccountId(): ?string {
         return $this->_data["account_id"];
@@ -148,7 +148,7 @@ class WithdrawalObject extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -168,7 +168,7 @@ class WithdrawalObject extends AbstractModel {
     /**
      * Get reference
      *
-     * @return string
+     * @return string|null
      */
     public function getReference(): ?string {
         return $this->_data["reference"];
@@ -188,7 +188,7 @@ class WithdrawalObject extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -228,7 +228,7 @@ class WithdrawalObject extends AbstractModel {
     /**
      * Get fee
      *
-     * @return string
+     * @return string|null
      */
     public function getFee(): ?string {
         return $this->_data["fee"];

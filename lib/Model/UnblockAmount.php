@@ -50,7 +50,7 @@ class UnblockAmount extends AbstractModel {
     /**
      * Get recipient_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipientAccountId(): ?string {
         return $this->_data["recipient_account_id"];
@@ -70,7 +70,7 @@ class UnblockAmount extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];

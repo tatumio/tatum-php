@@ -420,7 +420,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -428,10 +428,11 @@ class TrcAddress extends AbstractModel {
             self::TYPE_TRC20,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -634,10 +635,11 @@ class TrcAddress extends AbstractModel {
             self::BASE_PAIR_ZWL,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAccountingCurrencyAllowableValues(): ?array {
         return [
@@ -817,7 +819,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -837,7 +839,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -857,7 +859,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get decimals
      *
-     * @return float
+     * @return float|null
      */
     public function getDecimals(): ?float {
         return $this->_data["decimals"];
@@ -877,7 +879,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -897,7 +899,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -917,7 +919,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -937,7 +939,7 @@ class TrcAddress extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

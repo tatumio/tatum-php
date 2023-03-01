@@ -37,8 +37,8 @@ class Script extends Serializable implements ScriptInterface {
     protected $witnessScriptHash;
 
     /**
-     * @param BufferInterface $script
-     * @param Opcodes|null $opCodes
+     * @param  \Tatum\Cryptography\Buffertools\BufferInterface|null  $script
+     * @param  Opcodes|null                                          $opCodes
      */
     public function __construct(BufferInterface $script = null, Opcodes $opCodes = null) {
         $this->script = $script instanceof BufferInterface ? $script->getBinary() : "";

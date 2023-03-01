@@ -45,7 +45,7 @@ class FlowCustomTransactionPK extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -65,7 +65,7 @@ class FlowCustomTransactionPK extends AbstractModel {
     /**
      * Get transaction
      *
-     * @return string
+     * @return string|null
      */
     public function getTransaction(): ?string {
         return $this->_data["transaction"];
@@ -85,7 +85,7 @@ class FlowCustomTransactionPK extends AbstractModel {
     /**
      * Get args
      *
-     * @return \Tatum\Model\FlowCustomTransactionPKArgsInner[]
+     * @return array|null
      */
     public function getArgs(): ?array {
         return $this->_data["args"];
@@ -105,7 +105,7 @@ class FlowCustomTransactionPK extends AbstractModel {
     /**
      * Get private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPrivateKey(): ?string {
         return $this->_data["private_key"];

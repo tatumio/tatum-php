@@ -416,7 +416,7 @@ class VirtualCurrency extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -619,10 +619,11 @@ class VirtualCurrency extends AbstractModel {
             self::BASE_PAIR_ZWL,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAccountingCurrencyAllowableValues(): ?array {
         return [
@@ -802,7 +803,7 @@ class VirtualCurrency extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -822,7 +823,7 @@ class VirtualCurrency extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -842,7 +843,7 @@ class VirtualCurrency extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

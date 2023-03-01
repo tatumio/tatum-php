@@ -248,7 +248,7 @@ class DeployErc20OffchainKMSXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -455,7 +455,7 @@ class DeployErc20OffchainKMSXpub extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -475,7 +475,7 @@ class DeployErc20OffchainKMSXpub extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -495,7 +495,7 @@ class DeployErc20OffchainKMSXpub extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -515,7 +515,7 @@ class DeployErc20OffchainKMSXpub extends AbstractModel {
     /**
      * Get xpub
      *
-     * @return string
+     * @return string|null
      */
     public function getXpub(): ?string {
         return $this->_data["xpub"];
@@ -535,7 +535,7 @@ class DeployErc20OffchainKMSXpub extends AbstractModel {
     /**
      * Get derivation_index
      *
-     * @return int
+     * @return int|null
      */
     public function getDerivationIndex(): ?int {
         return $this->_data["derivation_index"];
@@ -555,7 +555,7 @@ class DeployErc20OffchainKMSXpub extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -595,7 +595,7 @@ class DeployErc20OffchainKMSXpub extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

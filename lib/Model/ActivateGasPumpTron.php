@@ -47,7 +47,7 @@ class ActivateGasPumpTron extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -58,7 +58,7 @@ class ActivateGasPumpTron extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -78,7 +78,7 @@ class ActivateGasPumpTron extends AbstractModel {
     /**
      * Get owner
      *
-     * @return string
+     * @return string|null
      */
     public function getOwner(): ?string {
         return $this->_data["owner"];
@@ -98,7 +98,7 @@ class ActivateGasPumpTron extends AbstractModel {
     /**
      * Get from
      *
-     * @return int
+     * @return int|null
      */
     public function getFrom(): ?int {
         return $this->_data["from"];
@@ -118,7 +118,7 @@ class ActivateGasPumpTron extends AbstractModel {
     /**
      * Get to
      *
-     * @return int
+     * @return int|null
      */
     public function getTo(): ?int {
         return $this->_data["to"];
@@ -138,7 +138,7 @@ class ActivateGasPumpTron extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
@@ -158,7 +158,7 @@ class ActivateGasPumpTron extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

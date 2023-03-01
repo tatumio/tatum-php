@@ -46,7 +46,7 @@ class EstimateFee200Response extends AbstractModel {
     /**
      * Get fast
      *
-     * @return string
+     * @return string|null
      */
     public function getFast(): ?string {
         return $this->_data["fast"];
@@ -66,7 +66,7 @@ class EstimateFee200Response extends AbstractModel {
     /**
      * Get medium
      *
-     * @return string
+     * @return string|null
      */
     public function getMedium(): ?string {
         return $this->_data["medium"];
@@ -86,7 +86,7 @@ class EstimateFee200Response extends AbstractModel {
     /**
      * Get slow
      *
-     * @return string
+     * @return string|null
      */
     public function getSlow(): ?string {
         return $this->_data["slow"];
@@ -106,7 +106,7 @@ class EstimateFee200Response extends AbstractModel {
     /**
      * Get gas_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getGasLimit(): ?float {
         return $this->_data["gas_limit"];
@@ -126,7 +126,7 @@ class EstimateFee200Response extends AbstractModel {
     /**
      * Get gas_price
      *
-     * @return float
+     * @return float|null
      */
     public function getGasPrice(): ?float {
         return $this->_data["gas_price"];

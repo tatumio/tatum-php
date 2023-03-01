@@ -43,7 +43,7 @@ class Broadcast extends AbstractModel {
     /**
      * Get tx_data
      *
-     * @return string
+     * @return string|null
      */
     public function getTxData(): ?string {
         return $this->_data["tx_data"];

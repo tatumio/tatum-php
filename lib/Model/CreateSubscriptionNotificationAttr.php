@@ -56,7 +56,7 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -77,7 +77,7 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -97,7 +97,7 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -117,7 +117,7 @@ class CreateSubscriptionNotificationAttr extends AbstractModel {
     /**
      * Get url
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl(): ?string {
         return $this->_data["url"];

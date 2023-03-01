@@ -50,7 +50,7 @@ class DeployBep20 extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -70,7 +70,7 @@ class DeployBep20 extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -110,7 +110,7 @@ class DeployBep20 extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -130,7 +130,7 @@ class DeployBep20 extends AbstractModel {
     /**
      * Get digits
      *
-     * @return float
+     * @return float|null
      */
     public function getDigits(): ?float {
         return $this->_data["digits"];
@@ -150,7 +150,7 @@ class DeployBep20 extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -170,7 +170,7 @@ class DeployBep20 extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

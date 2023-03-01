@@ -72,7 +72,7 @@ class TransferEthMnemonic extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -92,7 +92,7 @@ class TransferEthMnemonic extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -132,7 +132,7 @@ class TransferEthMnemonic extends AbstractModel {
     /**
      * Get index
      *
-     * @return int
+     * @return int|null
      */
     public function getIndex(): ?int {
         return $this->_data["index"];
@@ -192,7 +192,7 @@ class TransferEthMnemonic extends AbstractModel {
     /**
      * Get mnemonic
      *
-     * @return string
+     * @return string|null
      */
     public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
@@ -232,7 +232,7 @@ class TransferEthMnemonic extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];

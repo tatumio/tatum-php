@@ -51,7 +51,7 @@ class ChainDeployKcsErc20 extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -62,7 +62,7 @@ class ChainDeployKcsErc20 extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -82,7 +82,7 @@ class ChainDeployKcsErc20 extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -102,7 +102,7 @@ class ChainDeployKcsErc20 extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -142,7 +142,7 @@ class ChainDeployKcsErc20 extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -162,7 +162,7 @@ class ChainDeployKcsErc20 extends AbstractModel {
     /**
      * Get digits
      *
-     * @return float
+     * @return float|null
      */
     public function getDigits(): ?float {
         return $this->_data["digits"];
@@ -182,7 +182,7 @@ class ChainDeployKcsErc20 extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -202,7 +202,7 @@ class ChainDeployKcsErc20 extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

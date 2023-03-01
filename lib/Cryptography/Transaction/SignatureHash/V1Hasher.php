@@ -38,10 +38,11 @@ class V1Hasher extends SigHash {
 
     /**
      * V1Hasher constructor.
-     * @param TransactionInterface $transaction
-     * @param int $amount
-     * @param OutPointSerializerInterface $outpointSerializer
-     * @param TransactionOutputSerializer|null $outputSerializer
+     *
+     * @param  TransactionInterface                                                         $transaction
+     * @param  int                                                                          $amount
+     * @param  \Tatum\Cryptography\Serializer\Transaction\OutPointSerializerInterface|null  $outpointSerializer
+     * @param  TransactionOutputSerializer|null                                             $outputSerializer
      */
     public function __construct(
         TransactionInterface $transaction,

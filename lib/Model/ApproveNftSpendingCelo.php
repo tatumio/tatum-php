@@ -53,17 +53,18 @@ class ApproveNftSpendingCelo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -76,7 +77,7 @@ class ApproveNftSpendingCelo extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -96,7 +97,7 @@ class ApproveNftSpendingCelo extends AbstractModel {
     /**
      * Get spender
      *
-     * @return string
+     * @return string|null
      */
     public function getSpender(): ?string {
         return $this->_data["spender"];
@@ -116,7 +117,7 @@ class ApproveNftSpendingCelo extends AbstractModel {
     /**
      * Get is_erc721
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsErc721(): ?bool {
         return $this->_data["is_erc721"];
@@ -136,7 +137,7 @@ class ApproveNftSpendingCelo extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -156,7 +157,7 @@ class ApproveNftSpendingCelo extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -176,7 +177,7 @@ class ApproveNftSpendingCelo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -196,7 +197,7 @@ class ApproveNftSpendingCelo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

@@ -61,7 +61,7 @@ class TransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -73,10 +73,11 @@ class TransferCustodialWalletKMS extends AbstractModel {
             self::CHAIN_XDC,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getContractTypeAllowableValues(): ?array {
         return [
@@ -90,7 +91,7 @@ class TransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -110,7 +111,7 @@ class TransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get custodial_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
@@ -130,7 +131,7 @@ class TransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get recipient
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipient(): ?string {
         return $this->_data["recipient"];
@@ -150,7 +151,7 @@ class TransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get contract_type
      *
-     * @return float
+     * @return float|null
      */
     public function getContractType(): ?float {
         return $this->_data["contract_type"];
@@ -230,7 +231,7 @@ class TransferCustodialWalletKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

@@ -37,9 +37,10 @@ class Block extends Serializable implements BlockInterface {
 
     /**
      * Block constructor.
-     * @param Math $math
-     * @param BlockHeaderInterface $header
-     * @param TransactionInterface[] ...$transactions
+     *
+     * @param  Math                                                  $math
+     * @param  BlockHeaderInterface                                  $header
+     * @param  \Tatum\Cryptography\Transaction\TransactionInterface  ...$transactions
      */
     public function __construct(Math $math, BlockHeaderInterface $header, TransactionInterface ...$transactions) {
         $this->math = $math;

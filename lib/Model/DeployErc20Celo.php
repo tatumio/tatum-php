@@ -52,7 +52,7 @@ class DeployErc20Celo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -65,7 +65,7 @@ class DeployErc20Celo extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -85,7 +85,7 @@ class DeployErc20Celo extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -125,7 +125,7 @@ class DeployErc20Celo extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -145,7 +145,7 @@ class DeployErc20Celo extends AbstractModel {
     /**
      * Get digits
      *
-     * @return float
+     * @return float|null
      */
     public function getDigits(): ?float {
         return $this->_data["digits"];
@@ -165,7 +165,7 @@ class DeployErc20Celo extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -185,7 +185,7 @@ class DeployErc20Celo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -225,7 +225,7 @@ class DeployErc20Celo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

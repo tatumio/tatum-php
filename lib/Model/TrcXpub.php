@@ -421,7 +421,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -429,10 +429,11 @@ class TrcXpub extends AbstractModel {
             self::TYPE_TRC20,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -635,10 +636,11 @@ class TrcXpub extends AbstractModel {
             self::BASE_PAIR_ZWL,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAccountingCurrencyAllowableValues(): ?array {
         return [
@@ -818,7 +820,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -838,7 +840,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -858,7 +860,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get decimals
      *
-     * @return float
+     * @return float|null
      */
     public function getDecimals(): ?float {
         return $this->_data["decimals"];
@@ -878,7 +880,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -898,7 +900,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -918,7 +920,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get xpub
      *
-     * @return string
+     * @return string|null
      */
     public function getXpub(): ?string {
         return $this->_data["xpub"];
@@ -938,7 +940,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get derivation_index
      *
-     * @return int
+     * @return int|null
      */
     public function getDerivationIndex(): ?int {
         return $this->_data["derivation_index"];
@@ -958,7 +960,7 @@ class TrcXpub extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

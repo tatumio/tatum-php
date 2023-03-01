@@ -49,7 +49,7 @@ class Chart extends AbstractModel {
     /**
      * Get timestamp
      *
-     * @return float
+     * @return float|null
      */
     public function getTimestamp(): ?float {
         return $this->_data["timestamp"];
@@ -69,7 +69,7 @@ class Chart extends AbstractModel {
     /**
      * Get high
      *
-     * @return string
+     * @return string|null
      */
     public function getHigh(): ?string {
         return $this->_data["high"];
@@ -89,7 +89,7 @@ class Chart extends AbstractModel {
     /**
      * Get low
      *
-     * @return string
+     * @return string|null
      */
     public function getLow(): ?string {
         return $this->_data["low"];
@@ -109,7 +109,7 @@ class Chart extends AbstractModel {
     /**
      * Get open
      *
-     * @return string
+     * @return string|null
      */
     public function getOpen(): ?string {
         return $this->_data["open"];
@@ -129,7 +129,7 @@ class Chart extends AbstractModel {
     /**
      * Get close
      *
-     * @return string
+     * @return string|null
      */
     public function getClose(): ?string {
         return $this->_data["close"];
@@ -149,7 +149,7 @@ class Chart extends AbstractModel {
     /**
      * Get volume
      *
-     * @return string
+     * @return string|null
      */
     public function getVolume(): ?string {
         return $this->_data["volume"];

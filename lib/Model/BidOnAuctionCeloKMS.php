@@ -55,17 +55,18 @@ class BidOnAuctionCeloKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -78,7 +79,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -98,7 +99,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
@@ -118,7 +119,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -178,7 +179,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -198,7 +199,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
     /**
      * Get bid_value
      *
-     * @return string
+     * @return string|null
      */
     public function getBidValue(): ?string {
         return $this->_data["bid_value"];
@@ -218,7 +219,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

@@ -51,7 +51,7 @@ class CreateFutureTrade extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -63,7 +63,7 @@ class CreateFutureTrade extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -83,7 +83,7 @@ class CreateFutureTrade extends AbstractModel {
     /**
      * Get price
      *
-     * @return string
+     * @return string|null
      */
     public function getPrice(): ?string {
         return $this->_data["price"];
@@ -103,7 +103,7 @@ class CreateFutureTrade extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -123,7 +123,7 @@ class CreateFutureTrade extends AbstractModel {
     /**
      * Get pair
      *
-     * @return string
+     * @return string|null
      */
     public function getPair(): ?string {
         return $this->_data["pair"];
@@ -143,7 +143,7 @@ class CreateFutureTrade extends AbstractModel {
     /**
      * Get currency1_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency1AccountId(): ?string {
         return $this->_data["currency1_account_id"];
@@ -163,7 +163,7 @@ class CreateFutureTrade extends AbstractModel {
     /**
      * Get currency2_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency2AccountId(): ?string {
         return $this->_data["currency2_account_id"];
@@ -223,7 +223,7 @@ class CreateFutureTrade extends AbstractModel {
     /**
      * Get attr
      *
-     * @return \Tatum\Model\CreateFutureTradeAttr
+     * @return \Tatum\Model\CreateFutureTradeAttr|null
      */
     public function getAttr(): ?\Tatum\Model\CreateFutureTradeAttr {
         return $this->_data["attr"];

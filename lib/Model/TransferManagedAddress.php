@@ -44,7 +44,7 @@ class TransferManagedAddress extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -55,7 +55,7 @@ class TransferManagedAddress extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -75,7 +75,7 @@ class TransferManagedAddress extends AbstractModel {
     /**
      * Get tx_data
      *
-     * @return string
+     * @return string|null
      */
     public function getTxData(): ?string {
         return $this->_data["tx_data"];
@@ -95,7 +95,7 @@ class TransferManagedAddress extends AbstractModel {
     /**
      * Get wallet_ids
      *
-     * @return \Tatum\Model\TransferManagedAddressWalletIdsInner[]
+     * @return array|null
      */
     public function getWalletIds(): ?array {
         return $this->_data["wallet_ids"];

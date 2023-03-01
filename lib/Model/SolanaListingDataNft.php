@@ -43,7 +43,7 @@ class SolanaListingDataNft extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -63,7 +63,7 @@ class SolanaListingDataNft extends AbstractModel {
     /**
      * Get data
      *
-     * @return \Tatum\Model\SolanaNftMetadata
+     * @return \Tatum\Model\SolanaNftMetadata|null
      */
     public function getData(): ?\Tatum\Model\SolanaNftMetadata {
         return $this->_data["data"];

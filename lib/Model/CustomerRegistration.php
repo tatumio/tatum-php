@@ -216,7 +216,7 @@ class CustomerRegistration extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAccountingCurrencyAllowableValues(): ?array {
         return [
@@ -396,7 +396,7 @@ class CustomerRegistration extends AbstractModel {
     /**
      * Get external_id
      *
-     * @return string
+     * @return string|null
      */
     public function getExternalId(): ?string {
         return $this->_data["external_id"];

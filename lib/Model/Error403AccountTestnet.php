@@ -44,7 +44,7 @@ class Error403AccountTestnet extends AbstractModel {
     /**
      * Get error_code
      *
-     * @return string
+     * @return string|null
      */
     public function getErrorCode(): ?string {
         return $this->_data["error_code"];
@@ -64,7 +64,7 @@ class Error403AccountTestnet extends AbstractModel {
     /**
      * Get message
      *
-     * @return string
+     * @return string|null
      */
     public function getMessage(): ?string {
         return $this->_data["message"];
@@ -84,7 +84,7 @@ class Error403AccountTestnet extends AbstractModel {
     /**
      * Get status_code
      *
-     * @return float
+     * @return float|null
      */
     public function getStatusCode(): ?float {
         return $this->_data["status_code"];

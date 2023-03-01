@@ -49,7 +49,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -69,7 +69,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     /**
      * Get recipient
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipient(): ?string {
         return $this->_data["recipient"];
@@ -89,7 +89,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -109,7 +109,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     /**
      * Get abbreviation
      *
-     * @return string
+     * @return string|null
      */
     public function getAbbreviation(): ?string {
         return $this->_data["abbreviation"];
@@ -129,7 +129,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -149,7 +149,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     /**
      * Get url
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl(): ?string {
         return $this->_data["url"];
@@ -169,7 +169,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     /**
      * Get total_supply
      *
-     * @return float
+     * @return float|null
      */
     public function getTotalSupply(): ?float {
         return $this->_data["total_supply"];
@@ -189,7 +189,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
     /**
      * Get decimals
      *
-     * @return float
+     * @return float|null
      */
     public function getDecimals(): ?float {
         return $this->_data["decimals"];

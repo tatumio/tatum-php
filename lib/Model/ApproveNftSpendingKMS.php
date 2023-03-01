@@ -54,7 +54,7 @@ class ApproveNftSpendingKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -69,7 +69,7 @@ class ApproveNftSpendingKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -89,7 +89,7 @@ class ApproveNftSpendingKMS extends AbstractModel {
     /**
      * Get spender
      *
-     * @return string
+     * @return string|null
      */
     public function getSpender(): ?string {
         return $this->_data["spender"];
@@ -109,7 +109,7 @@ class ApproveNftSpendingKMS extends AbstractModel {
     /**
      * Get is_erc721
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsErc721(): ?bool {
         return $this->_data["is_erc721"];
@@ -129,7 +129,7 @@ class ApproveNftSpendingKMS extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -149,7 +149,7 @@ class ApproveNftSpendingKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -169,7 +169,7 @@ class ApproveNftSpendingKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

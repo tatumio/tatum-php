@@ -47,7 +47,7 @@ class TronTx extends AbstractModel {
     /**
      * Get ret
      *
-     * @return \Tatum\Model\TronTxRetInner[]
+     * @return array|null
      */
     public function getRet(): ?array {
         return $this->_data["ret"];
@@ -67,7 +67,7 @@ class TronTx extends AbstractModel {
     /**
      * Get signature
      *
-     * @return string[]
+     * @return array|null
      */
     public function getSignature(): ?array {
         return $this->_data["signature"];
@@ -87,7 +87,7 @@ class TronTx extends AbstractModel {
     /**
      * Get block_number
      *
-     * @return float
+     * @return float|null
      */
     public function getBlockNumber(): ?float {
         return $this->_data["block_number"];
@@ -107,7 +107,7 @@ class TronTx extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -147,7 +147,7 @@ class TronTx extends AbstractModel {
     /**
      * Get raw_data
      *
-     * @return \Tatum\Model\TronTxRawData
+     * @return \Tatum\Model\TronTxRawData|null
      */
     public function getRawData(): ?\Tatum\Model\TronTxRawData {
         return $this->_data["raw_data"];

@@ -43,7 +43,7 @@ class SolanaTransactionHashWithConfirm extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -63,7 +63,7 @@ class SolanaTransactionHashWithConfirm extends AbstractModel {
     /**
      * Get confirmed
      *
-     * @return bool
+     * @return bool|null
      */
     public function getConfirmed(): ?bool {
         return $this->_data["confirmed"];

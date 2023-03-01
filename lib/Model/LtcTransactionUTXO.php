@@ -45,7 +45,7 @@ class LtcTransactionUTXO extends AbstractModel {
     /**
      * Get from_utxo
      *
-     * @return \Tatum\Model\AdaTransactionFromUTXOFromUTXOInner[]
+     * @return array|null
      */
     public function getFromUtxo(): ?array {
         return $this->_data["from_utxo"];
@@ -65,7 +65,7 @@ class LtcTransactionUTXO extends AbstractModel {
     /**
      * Get to
      *
-     * @return \Tatum\Model\LtcTransactionAddressToInner[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];

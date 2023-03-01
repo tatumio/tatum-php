@@ -43,7 +43,7 @@ class BchTransactionToInner extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -63,7 +63,7 @@ class BchTransactionToInner extends AbstractModel {
     /**
      * Get value
      *
-     * @return float
+     * @return float|null
      */
     public function getValue(): ?float {
         return $this->_data["value"];

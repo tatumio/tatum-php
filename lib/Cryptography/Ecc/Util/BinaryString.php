@@ -29,9 +29,10 @@ class BinaryString {
     /**
      * Multi-byte-safe substring calculation
      *
-     * @param string $str
-     * @param int $start
-     * @param int $length (optional)
+     * @param  string    $str
+     * @param  int       $start
+     * @param  int|null  $length  (optional)
+     *
      * @return string
      */
     public static function substring(string $str, int $start = 0, int $length = null): string {

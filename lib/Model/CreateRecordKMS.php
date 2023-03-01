@@ -48,7 +48,7 @@ class CreateRecordKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -59,7 +59,7 @@ class CreateRecordKMS extends AbstractModel {
     /**
      * Get data
      *
-     * @return string
+     * @return string|null
      */
     public function getData(): ?string {
         return $this->_data["data"];
@@ -79,7 +79,7 @@ class CreateRecordKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -99,7 +99,7 @@ class CreateRecordKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

@@ -66,12 +66,12 @@ class Erc20Currency {
     const WBTC = 'WBTC';
     
     const XCON = 'XCON';
-    
+
 
     /**
      * Allowed values of the enum
      *
-     * @return string[]|int[]
+     * @return array|null
      */
     public static function getAllowableEnumValues(): ?array {
         return [

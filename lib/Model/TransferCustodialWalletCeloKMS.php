@@ -60,17 +60,18 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getContractTypeAllowableValues(): ?array {
         return [
@@ -80,10 +81,11 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
             self::CONTRACT_TYPE_3,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -96,7 +98,7 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -116,7 +118,7 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get custodial_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
@@ -136,7 +138,7 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get recipient
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipient(): ?string {
         return $this->_data["recipient"];
@@ -156,7 +158,7 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get contract_type
      *
-     * @return float
+     * @return float|null
      */
     public function getContractType(): ?float {
         return $this->_data["contract_type"];
@@ -236,7 +238,7 @@ class TransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

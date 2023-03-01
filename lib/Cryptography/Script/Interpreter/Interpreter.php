@@ -62,7 +62,9 @@ class Interpreter implements InterpreterInterface {
     ];
 
     /**
-     * @param EcAdapterInterface $ecAdapter
+     * @param  \Tatum\Cryptography\Crypto\EcAdapter\Adapter\EcAdapterInterface|null  $ecAdapter
+     *
+     * @throws \Exception
      */
     public function __construct(EcAdapterInterface $ecAdapter = null) {
         $ecAdapter = $ecAdapter ?: Bitcoin::getEcAdapter();

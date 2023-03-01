@@ -45,7 +45,7 @@ class Error400DataInner extends AbstractModel {
     /**
      * Get target
      *
-     * @return array<string,mixed>
+     * @return array|null
      */
     public function getTarget(): ?array {
         return $this->_data["target"];
@@ -53,9 +53,9 @@ class Error400DataInner extends AbstractModel {
 
     /**
      * Set target
-     * 
-     * @param array<string,mixed> $target Request object present in the body of the HTTP request
-     * @throws \InvalidArgumentException
+     *
+     * @param  array  $target  Request object present in the body of the HTTP request
+     *
      * @return $this
      */
     public function setTarget(array $target) {
@@ -113,9 +113,8 @@ class Error400DataInner extends AbstractModel {
 
     /**
      * Set constraints
-     * 
-     * @param array<string,mixed>|null $constraints Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint.
-     * @throws \InvalidArgumentException
+     *
+     * @param  array|null  $constraints  Object of failed constraints for the target object. Key is the constraint, value is detailed description of the failed constraint.
      * @return $this
      */
     public function setConstraints(?array $constraints) {

@@ -1066,7 +1066,8 @@ class InputSigner implements InputSignerInterface {
     /**
      * Verifies the input using $flags for script verification
      *
-     * @param int $flags
+     * @param  int|null  $flags
+     *
      * @return bool
      */
     public function verify(int $flags = null): bool {

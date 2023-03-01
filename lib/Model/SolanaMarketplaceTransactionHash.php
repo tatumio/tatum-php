@@ -45,7 +45,7 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -65,7 +65,7 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -85,7 +85,7 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
     /**
      * Get fee_account
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeAccount(): ?string {
         return $this->_data["fee_account"];
@@ -105,7 +105,7 @@ class SolanaMarketplaceTransactionHash extends AbstractModel {
     /**
      * Get treasury_account
      *
-     * @return string
+     * @return string|null
      */
     public function getTreasuryAccount(): ?string {
         return $this->_data["treasury_account"];

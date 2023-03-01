@@ -55,8 +55,8 @@ class Serializer {
     /**
      * Recursively serialize data
      *
-     * @param mixed  $data   Data to serialize
-     * @param string $format (optional) Format of the OpenAPITools type of the data; default <b>null</b>
+     * @param  mixed        $data    Data to serialize
+     * @param  string|null  $format  (optional) Format of the OpenAPITools type of the data; default <b>null</b>
      *
      * @return string|\object|array|null serialized form of $data
      */
@@ -162,9 +162,9 @@ class Serializer {
     /**
      * Convert value to string or comma-separated list of strings
      *
-     * @param string[]|string|\DateTime $value Object to serialize to string
+     * @param  string[]|string|\DateTime  $value  Object to serialize to string
      *
-     * @return string|null Serialized parameter
+     * @return string Serialized parameter
      */
     public static function toQueryValue($value): string {
         return is_array($value)
@@ -518,15 +518,17 @@ class Serializer {
     /**
      * Create a request from relevant values
      *
-     * @param \Tatum\Sdk\Config          $config      Configuration object
-     * @param string                     $package     Request package
-     * @param string                     $method      Request method type
-     * @param string                     $url         Request URL
-     * @param string                     $urlTemplate Request URL template
-     * @param array<array-key, mixed>    $query       Query parameters
-     * @param array<string, string|null> $headers     Headers
-     * @param array<string|resource[]>   $form        Form parameters
-     * @param mixed                      $body        (optional) Body object; default <b>empty string</b>
+     * @param  \Tatum\Sdk\Config         $config       Configuration object
+     * @param  string                    $package      Request package
+     * @param  string                    $method       Request method type
+     * @param  string                    $url          Request URL
+     * @param  string                    $urlTemplate  Request URL template
+     * @param  array<array-key, mixed>   $query        Query parameters
+     * @param  array                     $headers      Headers
+     * @param  array<string|resource[]>  $form         Form parameters
+     * @param  mixed                     $body         (optional) Body object; default <b>empty string</b>
+     *
+     * @return \Tatum\Sdk\Psr7\Request|void
      */
     public static function createRequest(
         $config,

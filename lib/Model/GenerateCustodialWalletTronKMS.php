@@ -50,7 +50,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -61,7 +61,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -81,7 +81,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
@@ -101,7 +101,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -121,7 +121,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -161,7 +161,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get enable_fungible_tokens
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnableFungibleTokens(): ?bool {
         return $this->_data["enable_fungible_tokens"];
@@ -181,7 +181,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get enable_non_fungible_tokens
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnableNonFungibleTokens(): ?bool {
         return $this->_data["enable_non_fungible_tokens"];
@@ -201,7 +201,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get enable_semi_fungible_tokens
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnableSemiFungibleTokens(): ?bool {
         return $this->_data["enable_semi_fungible_tokens"];
@@ -221,7 +221,7 @@ class GenerateCustodialWalletTronKMS extends AbstractModel {
     /**
      * Get enable_batch_transactions
      *
-     * @return bool
+     * @return bool|null
      */
     public function getEnableBatchTransactions(): ?bool {
         return $this->_data["enable_batch_transactions"];

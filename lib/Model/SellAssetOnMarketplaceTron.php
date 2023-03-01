@@ -53,7 +53,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -64,7 +64,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -84,7 +84,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -104,7 +104,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get nft_address
      *
-     * @return string
+     * @return string|null
      */
     public function getNftAddress(): ?string {
         return $this->_data["nft_address"];
@@ -124,7 +124,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get seller
      *
-     * @return string
+     * @return string|null
      */
     public function getSeller(): ?string {
         return $this->_data["seller"];
@@ -164,7 +164,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get listing_id
      *
-     * @return string
+     * @return string|null
      */
     public function getListingId(): ?string {
         return $this->_data["listing_id"];
@@ -204,7 +204,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -224,7 +224,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get price
      *
-     * @return string
+     * @return string|null
      */
     public function getPrice(): ?string {
         return $this->_data["price"];
@@ -244,7 +244,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get is_erc721
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsErc721(): ?bool {
         return $this->_data["is_erc721"];
@@ -264,7 +264,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -284,7 +284,7 @@ class SellAssetOnMarketplaceTron extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];

@@ -53,7 +53,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getStateAllowableValues(): ?array {
         return [
@@ -66,7 +66,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -106,7 +106,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get listing_id
      *
-     * @return string
+     * @return string|null
      */
     public function getListingId(): ?string {
         return $this->_data["listing_id"];
@@ -126,7 +126,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get nft
      *
-     * @return \Tatum\Model\SolanaListingDataNft
+     * @return \Tatum\Model\SolanaListingDataNft|null
      */
     public function getNft(): ?\Tatum\Model\SolanaListingDataNft {
         return $this->_data["nft"];
@@ -146,7 +146,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get price
      *
-     * @return string
+     * @return string|null
      */
     public function getPrice(): ?string {
         return $this->_data["price"];
@@ -166,7 +166,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get seller
      *
-     * @return string
+     * @return string|null
      */
     public function getSeller(): ?string {
         return $this->_data["seller"];
@@ -186,7 +186,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get state
      *
-     * @return string
+     * @return string|null
      */
     public function getState(): ?string {
         return $this->_data["state"];
@@ -206,7 +206,7 @@ class SolanaListingData extends AbstractModel {
     /**
      * Get created_at
      *
-     * @return float
+     * @return float|null
      */
     public function getCreatedAt(): ?float {
         return $this->_data["created_at"];

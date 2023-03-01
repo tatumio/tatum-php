@@ -67,7 +67,7 @@ class PendingTransaction extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -96,7 +96,7 @@ class PendingTransaction extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -116,7 +116,7 @@ class PendingTransaction extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -136,7 +136,7 @@ class PendingTransaction extends AbstractModel {
     /**
      * Get hashes
      *
-     * @return string[]
+     * @return array|null
      */
     public function getHashes(): ?array {
         return $this->_data["hashes"];
@@ -156,7 +156,7 @@ class PendingTransaction extends AbstractModel {
     /**
      * Get serialized_transaction
      *
-     * @return string
+     * @return string|null
      */
     public function getSerializedTransaction(): ?string {
         return $this->_data["serialized_transaction"];

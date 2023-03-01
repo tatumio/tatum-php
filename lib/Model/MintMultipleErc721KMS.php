@@ -49,7 +49,7 @@ class MintMultipleErc721KMS extends AbstractModel {
     /**
      * Get to
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];
@@ -69,7 +69,7 @@ class MintMultipleErc721KMS extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTokenId(): ?array {
         return $this->_data["token_id"];
@@ -89,7 +89,7 @@ class MintMultipleErc721KMS extends AbstractModel {
     /**
      * Get url
      *
-     * @return string[]
+     * @return array|null
      */
     public function getUrl(): ?array {
         return $this->_data["url"];
@@ -109,7 +109,7 @@ class MintMultipleErc721KMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -129,7 +129,7 @@ class MintMultipleErc721KMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

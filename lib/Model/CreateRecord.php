@@ -56,7 +56,7 @@ class CreateRecord extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -73,7 +73,7 @@ class CreateRecord extends AbstractModel {
     /**
      * Get data
      *
-     * @return string
+     * @return string|null
      */
     public function getData(): ?string {
         return $this->_data["data"];
@@ -93,7 +93,7 @@ class CreateRecord extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -113,7 +113,7 @@ class CreateRecord extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

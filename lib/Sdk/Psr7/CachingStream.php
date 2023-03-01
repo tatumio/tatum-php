@@ -28,8 +28,8 @@ final class CachingStream implements StreamInterface {
     /**
      * We will treat the buffer object as the body of the stream
      *
-     * @param StreamInterface $stream Stream to cache. The cursor is assumed to be at the beginning of the stream.
-     * @param StreamInterface $target Optionally specify where data is cached
+     * @param  StreamInterface                            $stream  Stream to cache. The cursor is assumed to be at the beginning of the stream.
+     * @param  \Tatum\Sdk\Psr7\Http\StreamInterface|null  $target  Optionally specify where data is cached
      */
     public function __construct(StreamInterface $stream, StreamInterface $target = null) {
         $this->remoteStream = $stream;

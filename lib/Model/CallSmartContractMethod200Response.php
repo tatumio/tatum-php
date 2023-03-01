@@ -44,7 +44,7 @@ class CallSmartContractMethod200Response extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -64,7 +64,7 @@ class CallSmartContractMethod200Response extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -84,7 +84,7 @@ class CallSmartContractMethod200Response extends AbstractModel {
     /**
      * Get data
      *
-     * @return \Tatum\Model\DataData
+     * @return \Tatum\Model\DataData|null
      */
     public function getData(): ?\Tatum\Model\DataData {
         return $this->_data["data"];

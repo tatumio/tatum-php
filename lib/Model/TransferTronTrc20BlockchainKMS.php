@@ -48,7 +48,7 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -68,7 +68,7 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -108,7 +108,7 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -128,7 +128,7 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get token_address
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenAddress(): ?string {
         return $this->_data["token_address"];
@@ -148,7 +148,7 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
@@ -168,7 +168,7 @@ class TransferTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];

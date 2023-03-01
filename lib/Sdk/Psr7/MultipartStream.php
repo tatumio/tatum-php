@@ -21,16 +21,16 @@ final class MultipartStream implements StreamInterface {
     private $stream;
 
     /**
-     * @param array  $elements Array of associative arrays, each containing a
-     *                         required "name" key mapping to the form field,
-     *                         name, a required "contents" key mapping to a
-     *                         StreamInterface/resource/string, an optional
-     *                         "headers" associative array of custom headers,
-     *                         and an optional "filename" key mapping to a
-     *                         string to send as the filename in the part.
-     * @param string $boundary You can optionally provide a specific boundary
+     * @param  array        $elements  Array of associative arrays, each containing a
+     *                                 required "name" key mapping to the form field,
+     *                                 name, a required "contents" key mapping to a
+     *                                 StreamInterface/resource/string, an optional
+     *                                 "headers" associative array of custom headers,
+     *                                 and an optional "filename" key mapping to a
+     *                                 string to send as the filename in the part.
+     * @param  string|null  $boundary  You can optionally provide a specific boundary
      *
-     * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function __construct(array $elements = [], string $boundary = null) {
         $this->boundary = $boundary ?: bin2hex(random_bytes(20));
@@ -48,7 +48,9 @@ final class MultipartStream implements StreamInterface {
     /**
      * Get the headers needed before transferring the content of a POST file
      *
-     * @param array<string, string> $headers
+     * @param  array  $headers
+     *
+     * @return string
      */
     private function getHeaders(array $headers): string {
         $str = "";

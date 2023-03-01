@@ -42,7 +42,7 @@ class GetLog200Response extends AbstractModel {
     /**
      * Get data
      *
-     * @return string
+     * @return string|null
      */
     public function getData(): ?string {
         return $this->_data["data"];

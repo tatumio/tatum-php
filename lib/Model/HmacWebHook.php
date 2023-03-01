@@ -42,7 +42,7 @@ class HmacWebHook extends AbstractModel {
     /**
      * Get hmac_secret
      *
-     * @return string
+     * @return string|null
      */
     public function getHmacSecret(): ?string {
         return $this->_data["hmac_secret"];

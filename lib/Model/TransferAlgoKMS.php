@@ -50,7 +50,7 @@ class TransferAlgoKMS extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
@@ -70,7 +70,7 @@ class TransferAlgoKMS extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -90,7 +90,7 @@ class TransferAlgoKMS extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -110,7 +110,7 @@ class TransferAlgoKMS extends AbstractModel {
     /**
      * Get fee
      *
-     * @return string
+     * @return string|null
      */
     public function getFee(): ?string {
         return $this->_data["fee"];
@@ -130,7 +130,7 @@ class TransferAlgoKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

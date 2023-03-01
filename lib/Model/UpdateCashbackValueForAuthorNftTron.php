@@ -47,7 +47,7 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -58,7 +58,7 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -78,7 +78,7 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -98,7 +98,7 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -118,7 +118,7 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
     /**
      * Get cashback_value
      *
-     * @return string
+     * @return string|null
      */
     public function getCashbackValue(): ?string {
         return $this->_data["cashback_value"];
@@ -138,7 +138,7 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
@@ -158,7 +158,7 @@ class UpdateCashbackValueForAuthorNftTron extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

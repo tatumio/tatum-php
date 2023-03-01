@@ -43,7 +43,7 @@ class ReceiveAlgorandAsset extends AbstractModel {
     /**
      * Get asset_id
      *
-     * @return float
+     * @return float|null
      */
     public function getAssetId(): ?float {
         return $this->_data["asset_id"];
@@ -63,7 +63,7 @@ class ReceiveAlgorandAsset extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

@@ -44,7 +44,7 @@ class CreateSubscriptionIntervalAttr extends AbstractModel {
     /**
      * Get interval
      *
-     * @return float
+     * @return float|null
      */
     public function getInterval(): ?float {
         return $this->_data["interval"];

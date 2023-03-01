@@ -109,7 +109,7 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -148,10 +148,11 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
             self::TYPE_STRUCT,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getSubTypeAllowableValues(): ?array {
         return [
@@ -194,7 +195,7 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
     /**
      * Get value
      *
-     * @return \Tatum\Model\FlowCustomTransactionPKArgsInnerValue
+     * @return \Tatum\Model\FlowCustomTransactionPKArgsInnerValue|null
      */
     public function getValue(): ?\Tatum\Model\FlowCustomTransactionPKArgsInnerValue {
         return $this->_data["value"];
@@ -214,7 +215,7 @@ class FlowCustomTransactionPKArgsInner extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];

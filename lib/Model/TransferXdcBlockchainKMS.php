@@ -49,7 +49,7 @@ class TransferXdcBlockchainKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getCurrencyAllowableValues(): ?array {
         return [
@@ -100,7 +100,7 @@ class TransferXdcBlockchainKMS extends AbstractModel {
     /**
      * Get currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency(): ?string {
         return $this->_data["currency"];
@@ -120,7 +120,7 @@ class TransferXdcBlockchainKMS extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -160,7 +160,7 @@ class TransferXdcBlockchainKMS extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -200,7 +200,7 @@ class TransferXdcBlockchainKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

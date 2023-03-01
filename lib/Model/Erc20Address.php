@@ -419,7 +419,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -625,10 +625,11 @@ class Erc20Address extends AbstractModel {
             self::BASE_PAIR_ZWL,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAccountingCurrencyAllowableValues(): ?array {
         return [
@@ -808,7 +809,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -828,7 +829,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -848,7 +849,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Get decimals
      *
-     * @return float
+     * @return float|null
      */
     public function getDecimals(): ?float {
         return $this->_data["decimals"];
@@ -868,7 +869,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -888,7 +889,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -908,7 +909,7 @@ class Erc20Address extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

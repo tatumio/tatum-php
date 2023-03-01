@@ -56,7 +56,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -67,7 +67,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -87,7 +87,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -107,7 +107,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -127,7 +127,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -167,7 +167,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get nft_address
      *
-     * @return string
+     * @return string|null
      */
     public function getNftAddress(): ?string {
         return $this->_data["nft_address"];
@@ -187,7 +187,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get seller
      *
-     * @return string
+     * @return string|null
      */
     public function getSeller(): ?string {
         return $this->_data["seller"];
@@ -227,7 +227,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get listing_id
      *
-     * @return string
+     * @return string|null
      */
     public function getListingId(): ?string {
         return $this->_data["listing_id"];
@@ -267,7 +267,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenId(): ?string {
         return $this->_data["token_id"];
@@ -287,7 +287,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get price
      *
-     * @return string
+     * @return string|null
      */
     public function getPrice(): ?string {
         return $this->_data["price"];
@@ -307,7 +307,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get is_erc721
      *
-     * @return bool
+     * @return bool|null
      */
     public function getIsErc721(): ?bool {
         return $this->_data["is_erc721"];
@@ -347,7 +347,7 @@ class SellAssetOnMarketplaceTronKMS extends AbstractModel {
     /**
      * Get fee_limit
      *
-     * @return float
+     * @return float|null
      */
     public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];

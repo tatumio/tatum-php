@@ -51,7 +51,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get fee_account
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeAccount(): ?string {
         return $this->_data["fee_account"];
@@ -71,7 +71,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get treasury_account
      *
-     * @return string
+     * @return string|null
      */
     public function getTreasuryAccount(): ?string {
         return $this->_data["treasury_account"];
@@ -91,7 +91,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get authority
      *
-     * @return string
+     * @return string|null
      */
     public function getAuthority(): ?string {
         return $this->_data["authority"];
@@ -111,7 +111,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get creator
      *
-     * @return string
+     * @return string|null
      */
     public function getCreator(): ?string {
         return $this->_data["creator"];
@@ -131,7 +131,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get marketplace_fee
      *
-     * @return float
+     * @return float|null
      */
     public function getMarketplaceFee(): ?float {
         return $this->_data["marketplace_fee"];
@@ -151,7 +151,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get treasury_mint
      *
-     * @return string
+     * @return string|null
      */
     public function getTreasuryMint(): ?string {
         return $this->_data["treasury_mint"];
@@ -171,7 +171,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get treasury_withdrawal_destination
      *
-     * @return string
+     * @return string|null
      */
     public function getTreasuryWithdrawalDestination(): ?string {
         return $this->_data["treasury_withdrawal_destination"];
@@ -191,7 +191,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get fee_withdrawal_destination
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeWithdrawalDestination(): ?string {
         return $this->_data["fee_withdrawal_destination"];
@@ -211,7 +211,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get requires_sign_off
      *
-     * @return bool
+     * @return bool|null
      */
     public function getRequiresSignOff(): ?bool {
         return $this->_data["requires_sign_off"];
@@ -231,7 +231,7 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     /**
      * Get can_change_sale_price
      *
-     * @return bool
+     * @return bool|null
      */
     public function getCanChangeSalePrice(): ?bool {
         return $this->_data["can_change_sale_price"];

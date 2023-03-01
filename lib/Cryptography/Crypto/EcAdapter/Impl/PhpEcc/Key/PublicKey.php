@@ -40,10 +40,11 @@ class PublicKey extends Key implements PublicKeyInterface, \Tatum\Cryptography\E
 
     /**
      * PublicKey constructor.
-     * @param EcAdapter $ecAdapter
-     * @param PointInterface $point
-     * @param bool $compressed
-     * @param string $prefix
+     *
+     * @param  EcAdapter       $ecAdapter
+     * @param  PointInterface  $point
+     * @param  bool            $compressed
+     * @param  string|null     $prefix
      */
     public function __construct(
         EcAdapter $ecAdapter,

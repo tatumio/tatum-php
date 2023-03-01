@@ -42,7 +42,7 @@ class OffchainAddresses extends AbstractModel {
     /**
      * Get addresses
      *
-     * @return \Tatum\Model\OffchainAddressesAddressesInner[]
+     * @return array|null
      */
     public function getAddresses(): ?array {
         return $this->_data["addresses"];

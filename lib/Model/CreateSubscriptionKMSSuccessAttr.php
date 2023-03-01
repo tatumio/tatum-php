@@ -44,7 +44,7 @@ class CreateSubscriptionKMSSuccessAttr extends AbstractModel {
     /**
      * Get url
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl(): ?string {
         return $this->_data["url"];

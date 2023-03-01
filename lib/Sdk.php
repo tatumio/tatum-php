@@ -54,9 +54,9 @@ class Sdk {
      * Tatum SDK
      *
      * @see https://apidoc.tatum.io/#section/Authentication
-     * @var string $apiKeyMainnet (optional) MainNet Tatum API Key; default <b>null</b>
-     * @var string $apiKeyTestnet (optional) TestNet Tatum API Key; default <b>null</b>
-     * @throws \RuntimeException
+     *
+     * @param  string|null  $apiKeyMainnet
+     * @param  string|null  $apiKeyTestnet
      */
     public function __construct(?string $apiKeyMainnet = null, ?string $apiKeyTestnet = null) {
         $this->_apiKeyMainnet = "$apiKeyMainnet";

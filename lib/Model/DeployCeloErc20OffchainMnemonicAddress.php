@@ -251,7 +251,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -260,10 +260,11 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
             self::FEE_CURRENCY_CEUR,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -470,7 +471,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
@@ -490,7 +491,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -510,7 +511,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -530,7 +531,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -550,7 +551,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -570,7 +571,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get mnemonic
      *
-     * @return string
+     * @return string|null
      */
     public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
@@ -590,7 +591,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get index
      *
-     * @return int
+     * @return int|null
      */
     public function getIndex(): ?int {
         return $this->_data["index"];
@@ -610,7 +611,7 @@ class DeployCeloErc20OffchainMnemonicAddress extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

@@ -47,7 +47,7 @@ class EstimateFeeFromUTXO extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -55,10 +55,11 @@ class EstimateFeeFromUTXO extends AbstractModel {
             self::CHAIN_LTC,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -69,7 +70,7 @@ class EstimateFeeFromUTXO extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -89,7 +90,7 @@ class EstimateFeeFromUTXO extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -109,7 +110,7 @@ class EstimateFeeFromUTXO extends AbstractModel {
     /**
      * Get from_utxo
      *
-     * @return \Tatum\Model\EstimateFeeFromUTXOFromUTXOInner[]
+     * @return array|null
      */
     public function getFromUtxo(): ?array {
         return $this->_data["from_utxo"];
@@ -129,7 +130,7 @@ class EstimateFeeFromUTXO extends AbstractModel {
     /**
      * Get to
      *
-     * @return \Tatum\Model\EstimateFeeFromAddressToInner[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];

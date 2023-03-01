@@ -77,10 +77,11 @@ class AddressCreator extends BaseAddressCreator {
     }
 
     /**
-     * @param string $strAddress
-     * @param NetworkInterface|null $network
-     * @return Base58AddressInterface|BitcoinCashAddress
-     * @throws UnrecognizedAddressException
+     * @param  string                 $strAddress
+     * @param  NetworkInterface|null  $network
+     *
+     * @return \Tatum\Cryptography\Address\Address
+     * @throws \Tatum\Cryptography\Exceptions\UnrecognizedAddressException
      */
     public function fromString(
         string $strAddress,
@@ -111,9 +112,10 @@ class AddressCreator extends BaseAddressCreator {
     }
 
     /**
-     * @param ScriptInterface $script
-     * @return Base58AddressInterface|BitcoinCashAddress
-     * @throws UnrecognizedAddressException
+     * @param  ScriptInterface  $script
+     * @return \Tatum\Cryptography\Address\Address
+     * @throws \Tatum\Cryptography\Exceptions\BitcoinCashAddressUnsupportedException
+     * @throws \Tatum\Cryptography\Exceptions\UnrecognizedAddressException
      */
     public function fromOutputScript(ScriptInterface $script): \Tatum\Cryptography\Address\Address {
         $decode = (new OutputClassifier())->decode($script);

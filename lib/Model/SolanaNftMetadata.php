@@ -48,7 +48,7 @@ class SolanaNftMetadata extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -68,7 +68,7 @@ class SolanaNftMetadata extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -88,7 +88,7 @@ class SolanaNftMetadata extends AbstractModel {
     /**
      * Get seller_fee_basis_points
      *
-     * @return float
+     * @return float|null
      */
     public function getSellerFeeBasisPoints(): ?float {
         return $this->_data["seller_fee_basis_points"];
@@ -108,7 +108,7 @@ class SolanaNftMetadata extends AbstractModel {
     /**
      * Get uri
      *
-     * @return string
+     * @return string|null
      */
     public function getUri(): ?string {
         return $this->_data["uri"];

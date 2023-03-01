@@ -710,7 +710,7 @@ class CustomerUpdate extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAccountingCurrencyAllowableValues(): ?array {
         return [
@@ -886,10 +886,11 @@ class CustomerUpdate extends AbstractModel {
             self::ACCOUNTING_CURRENCY_ZWL,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getCustomerCountryAllowableValues(): ?array {
         return [
@@ -1143,10 +1144,11 @@ class CustomerUpdate extends AbstractModel {
             self::CUSTOMER_COUNTRY_ZW,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getProviderCountryAllowableValues(): ?array {
         return [
@@ -1404,7 +1406,7 @@ class CustomerUpdate extends AbstractModel {
     /**
      * Get external_id
      *
-     * @return string
+     * @return string|null
      */
     public function getExternalId(): ?string {
         return $this->_data["external_id"];

@@ -53,7 +53,7 @@ interface ModelInterface {
     /**
      * Array of attributes to getter functions (for serialization of requests)
      *
-     * @return array<array-key, string>
+     * @return array|null
      */
     public static function getters(): ?array;
 

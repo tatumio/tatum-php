@@ -44,7 +44,7 @@ class BtcTransactionFromUTXOKMSSource extends AbstractModel {
     /**
      * Get tx_hash
      *
-     * @return string
+     * @return string|null
      */
     public function getTxHash(): ?string {
         return $this->_data["tx_hash"];
@@ -64,7 +64,7 @@ class BtcTransactionFromUTXOKMSSource extends AbstractModel {
     /**
      * Get index
      *
-     * @return float
+     * @return float|null
      */
     public function getIndex(): ?float {
         return $this->_data["index"];
@@ -84,7 +84,7 @@ class BtcTransactionFromUTXOKMSSource extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

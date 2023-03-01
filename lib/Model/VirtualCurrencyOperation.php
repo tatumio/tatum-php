@@ -49,7 +49,7 @@ class VirtualCurrencyOperation extends AbstractModel {
     /**
      * Get account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getAccountId(): ?string {
         return $this->_data["account_id"];
@@ -69,7 +69,7 @@ class VirtualCurrencyOperation extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];

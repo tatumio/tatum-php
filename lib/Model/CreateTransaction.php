@@ -51,7 +51,7 @@ class CreateTransaction extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
@@ -71,7 +71,7 @@ class CreateTransaction extends AbstractModel {
     /**
      * Get recipient_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipientAccountId(): ?string {
         return $this->_data["recipient_account_id"];
@@ -91,7 +91,7 @@ class CreateTransaction extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];

@@ -47,7 +47,7 @@ class CreateTronTrc20Blockchain extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -67,7 +67,7 @@ class CreateTronTrc20Blockchain extends AbstractModel {
     /**
      * Get recipient
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipient(): ?string {
         return $this->_data["recipient"];
@@ -87,7 +87,7 @@ class CreateTronTrc20Blockchain extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -107,7 +107,7 @@ class CreateTronTrc20Blockchain extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -127,7 +127,7 @@ class CreateTronTrc20Blockchain extends AbstractModel {
     /**
      * Get total_supply
      *
-     * @return float
+     * @return float|null
      */
     public function getTotalSupply(): ?float {
         return $this->_data["total_supply"];
@@ -147,7 +147,7 @@ class CreateTronTrc20Blockchain extends AbstractModel {
     /**
      * Get decimals
      *
-     * @return float
+     * @return float|null
      */
     public function getDecimals(): ?float {
         return $this->_data["decimals"];

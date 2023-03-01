@@ -45,7 +45,7 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -65,7 +65,7 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
     /**
      * Get public_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPublicKey(): ?string {
         return $this->_data["public_key"];
@@ -85,7 +85,7 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
     /**
      * Get mnemonic
      *
-     * @return string
+     * @return string|null
      */
     public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
@@ -105,7 +105,7 @@ class FlowCreateAddressFromPubKeyMnemonic extends AbstractModel {
     /**
      * Get index
      *
-     * @return float
+     * @return float|null
      */
     public function getIndex(): ?float {
         return $this->_data["index"];

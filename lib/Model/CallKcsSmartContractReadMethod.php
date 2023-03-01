@@ -45,7 +45,7 @@ class CallKcsSmartContractReadMethod extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -65,7 +65,7 @@ class CallKcsSmartContractReadMethod extends AbstractModel {
     /**
      * Get method_name
      *
-     * @return string
+     * @return string|null
      */
     public function getMethodName(): ?string {
         return $this->_data["method_name"];
@@ -85,7 +85,7 @@ class CallKcsSmartContractReadMethod extends AbstractModel {
     /**
      * Get method_abi
      *
-     * @return object
+     * @return object|null
      */
     public function getMethodAbi(): ?object {
         return $this->_data["method_abi"];
@@ -105,7 +105,7 @@ class CallKcsSmartContractReadMethod extends AbstractModel {
     /**
      * Get params
      *
-     * @return string[]
+     * @return array|null
      */
     public function getParams(): ?array {
         return $this->_data["params"];

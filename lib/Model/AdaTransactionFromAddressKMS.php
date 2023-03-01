@@ -45,7 +45,7 @@ class AdaTransactionFromAddressKMS extends AbstractModel {
     /**
      * Get from_address
      *
-     * @return \Tatum\Model\AdaTransactionFromAddressKMSFromAddressInner[]
+     * @return array|null
      */
     public function getFromAddress(): ?array {
         return $this->_data["from_address"];
@@ -65,7 +65,7 @@ class AdaTransactionFromAddressKMS extends AbstractModel {
     /**
      * Get to
      *
-     * @return \Tatum\Model\AdaTransactionFromAddressToInner[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];

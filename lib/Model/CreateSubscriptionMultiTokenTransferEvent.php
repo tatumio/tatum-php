@@ -43,7 +43,7 @@ class CreateSubscriptionMultiTokenTransferEvent extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -54,7 +54,7 @@ class CreateSubscriptionMultiTokenTransferEvent extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -74,7 +74,7 @@ class CreateSubscriptionMultiTokenTransferEvent extends AbstractModel {
     /**
      * Get attr
      *
-     * @return \Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr
+     * @return \Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr|null
      */
     public function getAttr(): ?\Tatum\Model\CreateSubscriptionMultiTokenTransferEventAttr {
         return $this->_data["attr"];

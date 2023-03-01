@@ -56,7 +56,7 @@ class ChartRequest extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTimeFrameAllowableValues(): ?array {
         return [
@@ -78,7 +78,7 @@ class ChartRequest extends AbstractModel {
     /**
      * Get pair
      *
-     * @return string
+     * @return string|null
      */
     public function getPair(): ?string {
         return $this->_data["pair"];
@@ -98,7 +98,7 @@ class ChartRequest extends AbstractModel {
     /**
      * Get from
      *
-     * @return float
+     * @return float|null
      */
     public function getFrom(): ?float {
         return $this->_data["from"];
@@ -118,7 +118,7 @@ class ChartRequest extends AbstractModel {
     /**
      * Get to
      *
-     * @return float
+     * @return float|null
      */
     public function getTo(): ?float {
         return $this->_data["to"];
@@ -138,7 +138,7 @@ class ChartRequest extends AbstractModel {
     /**
      * Get time_frame
      *
-     * @return string
+     * @return string|null
      */
     public function getTimeFrame(): ?string {
         return $this->_data["time_frame"];

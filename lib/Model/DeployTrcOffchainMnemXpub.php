@@ -252,7 +252,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -260,10 +260,11 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
             self::TYPE_TRC20,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -470,7 +471,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -490,7 +491,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -510,7 +511,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get decimals
      *
-     * @return float
+     * @return float|null
      */
     public function getDecimals(): ?float {
         return $this->_data["decimals"];
@@ -530,7 +531,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -550,7 +551,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -570,7 +571,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get xpub
      *
-     * @return string
+     * @return string|null
      */
     public function getXpub(): ?string {
         return $this->_data["xpub"];
@@ -590,7 +591,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get derivation_index
      *
-     * @return int
+     * @return int|null
      */
     public function getDerivationIndex(): ?int {
         return $this->_data["derivation_index"];
@@ -610,7 +611,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get mnemonic
      *
-     * @return string
+     * @return string|null
      */
     public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
@@ -630,7 +631,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get index
      *
-     * @return int
+     * @return int|null
      */
     public function getIndex(): ?int {
         return $this->_data["index"];
@@ -650,7 +651,7 @@ class DeployTrcOffchainMnemXpub extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

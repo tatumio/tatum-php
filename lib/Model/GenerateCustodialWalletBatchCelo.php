@@ -51,17 +51,18 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -74,7 +75,7 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -114,7 +115,7 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -134,7 +135,7 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get batch_count
      *
-     * @return float
+     * @return float|null
      */
     public function getBatchCount(): ?float {
         return $this->_data["batch_count"];
@@ -154,7 +155,7 @@ class GenerateCustodialWalletBatchCelo extends AbstractModel {
     /**
      * Get owner
      *
-     * @return string
+     * @return string|null
      */
     public function getOwner(): ?string {
         return $this->_data["owner"];

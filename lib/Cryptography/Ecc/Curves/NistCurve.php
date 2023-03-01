@@ -55,7 +55,8 @@ class NistCurve {
     /**
      * Returns an NIST P-192 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
+     *
      * @return GeneratorPoint
      */
     public function generator192(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {
@@ -85,7 +86,7 @@ class NistCurve {
     /**
      * Returns an NIST P-224 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return GeneratorPoint
      */
     public function generator224(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {
@@ -115,7 +116,7 @@ class NistCurve {
     /**
      * Returns an NIST P-256 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return GeneratorPoint
      */
     public function generator256(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {
@@ -151,7 +152,7 @@ class NistCurve {
     /**
      * Returns an NIST P-384 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return GeneratorPoint
      */
     public function generator384(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {
@@ -196,7 +197,7 @@ class NistCurve {
     /**
      * Returns an NIST P-521 generator.
      *
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return GeneratorPoint
      */
     public function generator521(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {

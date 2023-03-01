@@ -29,7 +29,8 @@ class PrivateKeyFactory {
 
     /**
      * PrivateKeyFactory constructor.
-     * @param EcAdapterInterface $ecAdapter
+     *
+     * @param  \Tatum\Cryptography\Crypto\EcAdapter\Adapter\EcAdapterInterface|null  $ecAdapter
      */
     public function __construct(EcAdapterInterface $ecAdapter = null) {
         $ecAdapter = $ecAdapter ?: Bitcoin::getEcAdapter();
@@ -92,12 +93,11 @@ class PrivateKeyFactory {
     }
 
     /**
-     * @param string $wif
-     * @param NetworkInterface $network
+     * @param  string                                             $wif
+     * @param  \Tatum\Cryptography\Network\NetworkInterface|null  $network
      * @return PrivateKeyInterface
      * @throws \Tatum\Cryptography\Exceptions\Base58ChecksumFailure
      * @throws \Tatum\Cryptography\Exceptions\InvalidPrivateKey
-     * @throws \Exception
      */
     public function fromWif(string $wif, NetworkInterface $network = null): PrivateKeyInterface {
         return $this->wifSerializer->parse($wif, $network);

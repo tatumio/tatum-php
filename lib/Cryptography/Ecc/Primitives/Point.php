@@ -60,15 +60,13 @@ class Point implements PointInterface {
     /**
      * Initialize a new instance
      *
-     * @param GmpMathInterface     $adapter
-     * @param CurveFpInterface     $curve
-     * @param \GMP                 $x
-     * @param \GMP                 $y
-     * @param \GMP                 $order
-     * @param bool                 $infinity
+     * @param  GmpMathInterface  $adapter
+     * @param  CurveFpInterface  $curve
+     * @param  \GMP              $x
+     * @param  \GMP              $y
+     * @param  \GMP|null         $order
+     * @param  bool              $infinity
      *
-     * @throws \RuntimeException    when either the curve does not contain the given coordinates or
-     *                                      when order is not null and P(x, y) * order is not equal to infinity.
      */
     public function __construct(
         GmpMathInterface $adapter,

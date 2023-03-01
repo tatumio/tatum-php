@@ -43,7 +43,7 @@ class CreateSubscriptionNotification extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -54,7 +54,7 @@ class CreateSubscriptionNotification extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -74,7 +74,7 @@ class CreateSubscriptionNotification extends AbstractModel {
     /**
      * Get attr
      *
-     * @return \Tatum\Model\CreateSubscriptionNotificationAttr
+     * @return \Tatum\Model\CreateSubscriptionNotificationAttr|null
      */
     public function getAttr(): ?\Tatum\Model\CreateSubscriptionNotificationAttr {
         return $this->_data["attr"];

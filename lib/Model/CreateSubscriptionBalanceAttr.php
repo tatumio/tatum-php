@@ -46,7 +46,7 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeOfBalanceAllowableValues(): ?array {
         return [
@@ -58,7 +58,7 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
     /**
      * Get limit
      *
-     * @return string
+     * @return string|null
      */
     public function getLimit(): ?string {
         return $this->_data["limit"];
@@ -78,7 +78,7 @@ class CreateSubscriptionBalanceAttr extends AbstractModel {
     /**
      * Get type_of_balance
      *
-     * @return string
+     * @return string|null
      */
     public function getTypeOfBalance(): ?string {
         return $this->_data["type_of_balance"];

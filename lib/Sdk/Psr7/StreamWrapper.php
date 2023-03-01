@@ -111,7 +111,7 @@ final class StreamWrapper {
     }
 
     /**
-     * @return array<int|string, int>
+     * @return array
      */
     public function stream_stat(): array {
         static $modeMap = [
@@ -140,7 +140,10 @@ final class StreamWrapper {
     }
 
     /**
-     * @return array<int|string, int>
+     * @param  string  $path
+     * @param  int     $flags
+     *
+     * @return array
      */
     public function url_stat(string $path, int $flags): array {
         return [

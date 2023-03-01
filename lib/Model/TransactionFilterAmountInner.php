@@ -48,7 +48,7 @@ class TransactionFilterAmountInner extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getOpAllowableValues(): ?array {
         return [
@@ -64,7 +64,7 @@ class TransactionFilterAmountInner extends AbstractModel {
     /**
      * Get op
      *
-     * @return string
+     * @return string|null
      */
     public function getOp(): ?string {
         return $this->_data["op"];
@@ -84,7 +84,7 @@ class TransactionFilterAmountInner extends AbstractModel {
     /**
      * Get value
      *
-     * @return string
+     * @return string|null
      */
     public function getValue(): ?string {
         return $this->_data["value"];

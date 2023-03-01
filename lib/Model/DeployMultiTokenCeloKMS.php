@@ -51,17 +51,18 @@ class DeployMultiTokenCeloKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -74,7 +75,7 @@ class DeployMultiTokenCeloKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -94,7 +95,7 @@ class DeployMultiTokenCeloKMS extends AbstractModel {
     /**
      * Get uri
      *
-     * @return string
+     * @return string|null
      */
     public function getUri(): ?string {
         return $this->_data["uri"];
@@ -154,7 +155,7 @@ class DeployMultiTokenCeloKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -194,7 +195,7 @@ class DeployMultiTokenCeloKMS extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

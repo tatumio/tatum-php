@@ -23,12 +23,12 @@ class GeneratorPoint extends Point {
     private $generator;
 
     /**
-     * @param GmpMathInterface               $adapter
-     * @param CurveFpInterface               $curve
-     * @param \GMP                           $x
-     * @param \GMP                           $y
-     * @param \GMP                           $order
-     * @param RandomNumberGeneratorInterface $generator
+     * @param  GmpMathInterface                                                    $adapter
+     * @param  CurveFpInterface                                                    $curve
+     * @param  \GMP                                                                $x
+     * @param  \GMP                                                                $y
+     * @param  \GMP                                                                $order
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $generator
      */
     public function __construct(
         GmpMathInterface $adapter,

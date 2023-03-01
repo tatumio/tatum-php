@@ -255,7 +255,7 @@ class VC extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTrcTypeAllowableValues(): ?array {
         return [
@@ -263,10 +263,11 @@ class VC extends AbstractModel {
             self::TRC_TYPE_TRC20,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -469,10 +470,11 @@ class VC extends AbstractModel {
             self::BASE_PAIR_ZWL,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -485,7 +487,7 @@ class VC extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -505,7 +507,7 @@ class VC extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -525,7 +527,7 @@ class VC extends AbstractModel {
     /**
      * Get account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getAccountId(): ?string {
         return $this->_data["account_id"];
@@ -545,7 +547,7 @@ class VC extends AbstractModel {
     /**
      * Get base_rate
      *
-     * @return float
+     * @return float|null
      */
     public function getBaseRate(): ?float {
         return $this->_data["base_rate"];
@@ -605,7 +607,7 @@ class VC extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

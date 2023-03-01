@@ -158,8 +158,10 @@ class PrivateKey extends Key implements PrivateKeyInterface {
     }
 
     /**
-     * @param NetworkInterface $network
+     * @param  \Tatum\Cryptography\Network\NetworkInterface|null  $network
+     *
      * @return string
+     * @throws \Exception
      */
     public function toWif(NetworkInterface $network = null): string {
         $network = $network ?: Bitcoin::getNetwork();

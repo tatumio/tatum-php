@@ -247,7 +247,7 @@ class DeployKCSErc20OffchainPKXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -454,7 +454,7 @@ class DeployKCSErc20OffchainPKXpub extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -474,7 +474,7 @@ class DeployKCSErc20OffchainPKXpub extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -494,7 +494,7 @@ class DeployKCSErc20OffchainPKXpub extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -514,7 +514,7 @@ class DeployKCSErc20OffchainPKXpub extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];
@@ -574,7 +574,7 @@ class DeployKCSErc20OffchainPKXpub extends AbstractModel {
     /**
      * Get xpub
      *
-     * @return string
+     * @return string|null
      */
     public function getXpub(): ?string {
         return $this->_data["xpub"];
@@ -594,7 +594,7 @@ class DeployKCSErc20OffchainPKXpub extends AbstractModel {
     /**
      * Get derivation_index
      *
-     * @return int
+     * @return int|null
      */
     public function getDerivationIndex(): ?int {
         return $this->_data["derivation_index"];
@@ -614,7 +614,7 @@ class DeployKCSErc20OffchainPKXpub extends AbstractModel {
     /**
      * Get private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPrivateKey(): ?string {
         return $this->_data["private_key"];

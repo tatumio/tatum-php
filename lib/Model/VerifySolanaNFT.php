@@ -46,7 +46,7 @@ class VerifySolanaNFT extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -57,7 +57,7 @@ class VerifySolanaNFT extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -77,7 +77,7 @@ class VerifySolanaNFT extends AbstractModel {
     /**
      * Get nft_address
      *
-     * @return string
+     * @return string|null
      */
     public function getNftAddress(): ?string {
         return $this->_data["nft_address"];
@@ -97,7 +97,7 @@ class VerifySolanaNFT extends AbstractModel {
     /**
      * Get collection_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCollectionAddress(): ?string {
         return $this->_data["collection_address"];
@@ -117,7 +117,7 @@ class VerifySolanaNFT extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -137,7 +137,7 @@ class VerifySolanaNFT extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

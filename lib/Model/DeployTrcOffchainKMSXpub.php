@@ -253,7 +253,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
@@ -261,10 +261,11 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
             self::TYPE_TRC20,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -471,7 +472,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -491,7 +492,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get supply
      *
-     * @return string
+     * @return string|null
      */
     public function getSupply(): ?string {
         return $this->_data["supply"];
@@ -511,7 +512,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get decimals
      *
-     * @return float
+     * @return float|null
      */
     public function getDecimals(): ?float {
         return $this->_data["decimals"];
@@ -531,7 +532,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -551,7 +552,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get description
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription(): ?string {
         return $this->_data["description"];
@@ -571,7 +572,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get xpub
      *
-     * @return string
+     * @return string|null
      */
     public function getXpub(): ?string {
         return $this->_data["xpub"];
@@ -591,7 +592,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get derivation_index
      *
-     * @return int
+     * @return int|null
      */
     public function getDerivationIndex(): ?int {
         return $this->_data["derivation_index"];
@@ -611,7 +612,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -631,7 +632,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -671,7 +672,7 @@ class DeployTrcOffchainKMSXpub extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

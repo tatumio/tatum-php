@@ -46,7 +46,7 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -66,7 +66,7 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
     /**
      * Get public_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPublicKey(): ?string {
         return $this->_data["public_key"];
@@ -86,7 +86,7 @@ class FlowAddPubKeySecretKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

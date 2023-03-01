@@ -51,7 +51,7 @@ class ActivateGasPumpTatum extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -67,7 +67,7 @@ class ActivateGasPumpTatum extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -87,7 +87,7 @@ class ActivateGasPumpTatum extends AbstractModel {
     /**
      * Get owner
      *
-     * @return string
+     * @return string|null
      */
     public function getOwner(): ?string {
         return $this->_data["owner"];
@@ -107,7 +107,7 @@ class ActivateGasPumpTatum extends AbstractModel {
     /**
      * Get from
      *
-     * @return int
+     * @return int|null
      */
     public function getFrom(): ?int {
         return $this->_data["from"];
@@ -127,7 +127,7 @@ class ActivateGasPumpTatum extends AbstractModel {
     /**
      * Get to
      *
-     * @return int
+     * @return int|null
      */
     public function getTo(): ?int {
         return $this->_data["to"];
@@ -147,7 +147,7 @@ class ActivateGasPumpTatum extends AbstractModel {
     /**
      * Get fees_covered
      *
-     * @return bool
+     * @return bool|null
      */
     public function getFeesCovered(): ?bool {
         return $this->_data["fees_covered"];

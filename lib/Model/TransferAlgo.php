@@ -49,7 +49,7 @@ class TransferAlgo extends AbstractModel {
     /**
      * Get sender_account_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
@@ -69,7 +69,7 @@ class TransferAlgo extends AbstractModel {
     /**
      * Get address
      *
-     * @return string
+     * @return string|null
      */
     public function getAddress(): ?string {
         return $this->_data["address"];
@@ -89,7 +89,7 @@ class TransferAlgo extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -109,7 +109,7 @@ class TransferAlgo extends AbstractModel {
     /**
      * Get fee
      *
-     * @return string
+     * @return string|null
      */
     public function getFee(): ?string {
         return $this->_data["fee"];
@@ -129,7 +129,7 @@ class TransferAlgo extends AbstractModel {
     /**
      * Get private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getPrivateKey(): ?string {
         return $this->_data["private_key"];

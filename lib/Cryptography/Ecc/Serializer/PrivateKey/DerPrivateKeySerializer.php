@@ -36,8 +36,8 @@ class DerPrivateKeySerializer implements PrivateKeySerializerInterface {
     private $pubKeySerializer;
 
     /**
-     * @param GmpMathInterface       $adapter
-     * @param DerPublicKeySerializer $pubKeySerializer
+     * @param  \Tatum\Cryptography\Ecc\Math\GmpMathInterface|null                        $adapter
+     * @param  \Tatum\Cryptography\Ecc\Serializer\PublicKey\DerPublicKeySerializer|null  $pubKeySerializer
      */
     public function __construct(GmpMathInterface $adapter = null, DerPublicKeySerializer $pubKeySerializer = null) {
         $this->adapter = $adapter ?: MathAdapterFactory::getAdapter();

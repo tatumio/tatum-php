@@ -59,7 +59,7 @@ class ApproveTransferCustodialWallet extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -71,10 +71,11 @@ class ApproveTransferCustodialWallet extends AbstractModel {
             self::CHAIN_XDC,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getContractTypeAllowableValues(): ?array {
         return [
@@ -87,7 +88,7 @@ class ApproveTransferCustodialWallet extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -107,7 +108,7 @@ class ApproveTransferCustodialWallet extends AbstractModel {
     /**
      * Get custodial_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
@@ -127,7 +128,7 @@ class ApproveTransferCustodialWallet extends AbstractModel {
     /**
      * Get spender
      *
-     * @return string
+     * @return string|null
      */
     public function getSpender(): ?string {
         return $this->_data["spender"];
@@ -147,7 +148,7 @@ class ApproveTransferCustodialWallet extends AbstractModel {
     /**
      * Get contract_type
      *
-     * @return float
+     * @return float|null
      */
     public function getContractType(): ?float {
         return $this->_data["contract_type"];
@@ -167,7 +168,7 @@ class ApproveTransferCustodialWallet extends AbstractModel {
     /**
      * Get token_address
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenAddress(): ?string {
         return $this->_data["token_address"];
@@ -227,7 +228,7 @@ class ApproveTransferCustodialWallet extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

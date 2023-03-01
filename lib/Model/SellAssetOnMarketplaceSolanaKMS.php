@@ -48,7 +48,7 @@ class SellAssetOnMarketplaceSolanaKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -59,7 +59,7 @@ class SellAssetOnMarketplaceSolanaKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -79,7 +79,7 @@ class SellAssetOnMarketplaceSolanaKMS extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -99,7 +99,7 @@ class SellAssetOnMarketplaceSolanaKMS extends AbstractModel {
     /**
      * Get nft_address
      *
-     * @return string
+     * @return string|null
      */
     public function getNftAddress(): ?string {
         return $this->_data["nft_address"];
@@ -139,7 +139,7 @@ class SellAssetOnMarketplaceSolanaKMS extends AbstractModel {
     /**
      * Get price
      *
-     * @return string
+     * @return string|null
      */
     public function getPrice(): ?string {
         return $this->_data["price"];
@@ -179,7 +179,7 @@ class SellAssetOnMarketplaceSolanaKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

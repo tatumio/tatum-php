@@ -43,7 +43,7 @@ class SolanaMarketplaceSellTransactionHash extends AbstractModel {
     /**
      * Get tx_id
      *
-     * @return string
+     * @return string|null
      */
     public function getTxId(): ?string {
         return $this->_data["tx_id"];
@@ -63,7 +63,7 @@ class SolanaMarketplaceSellTransactionHash extends AbstractModel {
     /**
      * Get listing_id
      *
-     * @return string
+     * @return string|null
      */
     public function getListingId(): ?string {
         return $this->_data["listing_id"];

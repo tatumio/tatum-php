@@ -41,9 +41,8 @@ abstract class AbstractBitcoinCash extends Network implements BitcoinCashNetwork
     }
 
     /**
-     * @param $prefixType
      * @return string
-     * @throws MissingCashAddressPrefix
+     * @throws \Tatum\Cryptography\Exceptions\MissingCashAddressPrefix
      */
     protected function loadCashAddressPrefix() {
         if (!$this->hasCashAddressPrefix()) {

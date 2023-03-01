@@ -45,7 +45,7 @@ class BroadcastWithdrawal extends AbstractModel {
     /**
      * Get currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency(): ?string {
         return $this->_data["currency"];
@@ -65,7 +65,7 @@ class BroadcastWithdrawal extends AbstractModel {
     /**
      * Get tx_data
      *
-     * @return string
+     * @return string|null
      */
     public function getTxData(): ?string {
         return $this->_data["tx_data"];

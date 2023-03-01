@@ -333,8 +333,10 @@ class Uri implements UriInterface, \JsonSerializable {
      *
      * It has the same behavior as withQueryValue() but for an associative array of key => value.
      *
-     * @param UriInterface               $uri           URI to use as a base.
-     * @param array<string, string|null> $keyValueArray Associative array of key and values
+     * @param  UriInterface  $uri            URI to use as a base.
+     * @param  array         $keyValueArray  Associative array of key and values
+     *
+     * @return \Tatum\Sdk\Psr7\Http\UriInterface
      */
     public static function withQueryValues(UriInterface $uri, array $keyValueArray): UriInterface {
         $result = self::getFilteredQueryString($uri, array_keys($keyValueArray));

@@ -50,7 +50,7 @@ class GenerateMarketplaceSolana extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -61,7 +61,7 @@ class GenerateMarketplaceSolana extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -81,7 +81,7 @@ class GenerateMarketplaceSolana extends AbstractModel {
     /**
      * Get marketplace_fee
      *
-     * @return float
+     * @return float|null
      */
     public function getMarketplaceFee(): ?float {
         return $this->_data["marketplace_fee"];
@@ -101,7 +101,7 @@ class GenerateMarketplaceSolana extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -221,7 +221,7 @@ class GenerateMarketplaceSolana extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

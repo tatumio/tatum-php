@@ -50,7 +50,7 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -65,7 +65,7 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
     /**
      * Get event
      *
-     * @return string
+     * @return string|null
      */
     public function getEvent(): ?string {
         return $this->_data["event"];
@@ -85,7 +85,7 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -105,7 +105,7 @@ class CreateSubscriptionContractLogEventAttr extends AbstractModel {
     /**
      * Get url
      *
-     * @return string
+     * @return string|null
      */
     public function getUrl(): ?string {
         return $this->_data["url"];

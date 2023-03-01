@@ -48,7 +48,7 @@ class TransferEthBlockchain extends AbstractModel {
     /**
      * Get to
      *
-     * @return string
+     * @return string|null
      */
     public function getTo(): ?string {
         return $this->_data["to"];
@@ -68,7 +68,7 @@ class TransferEthBlockchain extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -88,7 +88,7 @@ class TransferEthBlockchain extends AbstractModel {
     /**
      * Get currency
      *
-     * @return \Tatum\Model\Erc20Currency
+     * @return \Tatum\Model\Erc20Currency|null
      */
     public function getCurrency(): ?\Tatum\Model\Erc20Currency {
         return $this->_data["currency"];
@@ -108,7 +108,7 @@ class TransferEthBlockchain extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

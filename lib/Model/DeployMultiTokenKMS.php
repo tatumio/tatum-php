@@ -52,7 +52,7 @@ class DeployMultiTokenKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -68,7 +68,7 @@ class DeployMultiTokenKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -88,7 +88,7 @@ class DeployMultiTokenKMS extends AbstractModel {
     /**
      * Get uri
      *
-     * @return string
+     * @return string|null
      */
     public function getUri(): ?string {
         return $this->_data["uri"];
@@ -128,7 +128,7 @@ class DeployMultiTokenKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

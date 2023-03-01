@@ -240,7 +240,7 @@ class CreateXrpAsset extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -447,7 +447,7 @@ class CreateXrpAsset extends AbstractModel {
     /**
      * Get issuer_account
      *
-     * @return string
+     * @return string|null
      */
     public function getIssuerAccount(): ?string {
         return $this->_data["issuer_account"];
@@ -467,7 +467,7 @@ class CreateXrpAsset extends AbstractModel {
     /**
      * Get token
      *
-     * @return string
+     * @return string|null
      */
     public function getToken(): ?string {
         return $this->_data["token"];
@@ -487,7 +487,7 @@ class CreateXrpAsset extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];

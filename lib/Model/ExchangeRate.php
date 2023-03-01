@@ -441,7 +441,7 @@ class ExchangeRate extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getIdAllowableValues(): ?array {
         return [
@@ -644,10 +644,11 @@ class ExchangeRate extends AbstractModel {
             self::ID_ZWL,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getBasePairAllowableValues(): ?array {
         return [
@@ -854,7 +855,7 @@ class ExchangeRate extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];
@@ -874,7 +875,7 @@ class ExchangeRate extends AbstractModel {
     /**
      * Get value
      *
-     * @return string
+     * @return string|null
      */
     public function getValue(): ?string {
         return $this->_data["value"];
@@ -894,7 +895,7 @@ class ExchangeRate extends AbstractModel {
     /**
      * Get base_pair
      *
-     * @return string
+     * @return string|null
      */
     public function getBasePair(): ?string {
         return $this->_data["base_pair"];
@@ -914,7 +915,7 @@ class ExchangeRate extends AbstractModel {
     /**
      * Get timestamp
      *
-     * @return float
+     * @return float|null
      */
     public function getTimestamp(): ?float {
         return $this->_data["timestamp"];
@@ -934,7 +935,7 @@ class ExchangeRate extends AbstractModel {
     /**
      * Get source
      *
-     * @return string
+     * @return string|null
      */
     public function getSource(): ?string {
         return $this->_data["source"];

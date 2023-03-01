@@ -43,7 +43,7 @@ class AccountBalance extends AbstractModel {
     /**
      * Get account_balance
      *
-     * @return string
+     * @return string|null
      */
     public function getAccountBalance(): ?string {
         return $this->_data["account_balance"];
@@ -63,7 +63,7 @@ class AccountBalance extends AbstractModel {
     /**
      * Get available_balance
      *
-     * @return string
+     * @return string|null
      */
     public function getAvailableBalance(): ?string {
         return $this->_data["available_balance"];

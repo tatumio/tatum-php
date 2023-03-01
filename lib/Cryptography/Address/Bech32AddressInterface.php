@@ -9,7 +9,8 @@ use Tatum\Cryptography\Network\NetworkInterface;
 
 interface Bech32AddressInterface extends AddressInterface {
     /**
-     * @param NetworkInterface $network
+     * @param  \Tatum\Cryptography\Network\NetworkInterface|null  $network
+     *
      * @return string
      */
     public function getHRP(NetworkInterface $network = null): string;

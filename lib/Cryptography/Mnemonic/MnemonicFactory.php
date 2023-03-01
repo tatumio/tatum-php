@@ -14,8 +14,9 @@ use Tatum\Cryptography\Mnemonic\Electrum\ElectrumWordListInterface;
 
 class MnemonicFactory {
     /**
-     * @param ElectrumWordListInterface $wordList
-     * @param EcAdapterInterface $ecAdapter
+     * @param  \Tatum\Cryptography\Mnemonic\Electrum\ElectrumWordListInterface|null  $wordList
+     * @param  \Tatum\Cryptography\Crypto\EcAdapter\Adapter\EcAdapterInterface|null  $ecAdapter
+     *
      * @return ElectrumMnemonic
      */
     public static function electrum(
@@ -29,8 +30,8 @@ class MnemonicFactory {
     }
 
     /**
-     * @param \Tatum\Cryptography\Mnemonic\Bip39\Bip39WordListInterface $wordList
-     * @param EcAdapterInterface $ecAdapter
+     * @param  \Tatum\Cryptography\Mnemonic\Bip39\Bip39WordListInterface|null        $wordList
+     * @param  \Tatum\Cryptography\Crypto\EcAdapter\Adapter\EcAdapterInterface|null  $ecAdapter
      * @return Bip39Mnemonic
      */
     public static function bip39(

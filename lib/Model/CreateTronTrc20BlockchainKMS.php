@@ -49,7 +49,7 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get from
      *
-     * @return string
+     * @return string|null
      */
     public function getFrom(): ?string {
         return $this->_data["from"];
@@ -69,7 +69,7 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
@@ -109,7 +109,7 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get recipient
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipient(): ?string {
         return $this->_data["recipient"];
@@ -129,7 +129,7 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get name
      *
-     * @return string
+     * @return string|null
      */
     public function getName(): ?string {
         return $this->_data["name"];
@@ -149,7 +149,7 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get symbol
      *
-     * @return string
+     * @return string|null
      */
     public function getSymbol(): ?string {
         return $this->_data["symbol"];
@@ -169,7 +169,7 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get total_supply
      *
-     * @return float
+     * @return float|null
      */
     public function getTotalSupply(): ?float {
         return $this->_data["total_supply"];
@@ -189,7 +189,7 @@ class CreateTronTrc20BlockchainKMS extends AbstractModel {
     /**
      * Get decimals
      *
-     * @return float
+     * @return float|null
      */
     public function getDecimals(): ?float {
         return $this->_data["decimals"];

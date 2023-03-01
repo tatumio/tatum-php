@@ -43,7 +43,7 @@ class EthGasEstimationBatch extends AbstractModel {
     /**
      * Get error
      *
-     * @return bool
+     * @return bool|null
      */
     public function getError(): ?bool {
         return $this->_data["error"];
@@ -63,7 +63,7 @@ class EthGasEstimationBatch extends AbstractModel {
     /**
      * Get result
      *
-     * @return \Tatum\Model\EthGasEstimationBatchResult[]
+     * @return array|null
      */
     public function getResult(): ?array {
         return $this->_data["result"];

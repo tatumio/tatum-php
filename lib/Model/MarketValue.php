@@ -242,7 +242,7 @@ class MarketValue extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getCurrencyAllowableValues(): ?array {
         return [
@@ -448,7 +448,7 @@ class MarketValue extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];
@@ -468,7 +468,7 @@ class MarketValue extends AbstractModel {
     /**
      * Get currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency(): ?string {
         return $this->_data["currency"];
@@ -488,7 +488,7 @@ class MarketValue extends AbstractModel {
     /**
      * Get source_date
      *
-     * @return float
+     * @return float|null
      */
     public function getSourceDate(): ?float {
         return $this->_data["source_date"];
@@ -508,7 +508,7 @@ class MarketValue extends AbstractModel {
     /**
      * Get source
      *
-     * @return string
+     * @return string|null
      */
     public function getSource(): ?string {
         return $this->_data["source"];

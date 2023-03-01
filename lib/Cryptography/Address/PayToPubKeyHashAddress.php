@@ -25,7 +25,8 @@ class PayToPubKeyHashAddress extends Base58Address {
     }
 
     /**
-     * @param NetworkInterface $network
+     * @param  \Tatum\Cryptography\Network\NetworkInterface|null  $network
+     *
      * @return string
      */
     public function getPrefixByte(NetworkInterface $network = null): string {

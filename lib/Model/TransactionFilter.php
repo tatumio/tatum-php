@@ -84,7 +84,7 @@ class TransactionFilter extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTransactionTypeAllowableValues(): ?array {
         return [
@@ -101,10 +101,11 @@ class TransactionFilter extends AbstractModel {
             self::TRANSACTION_TYPE_CREDIT_INCOMING_PAYMENT,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTransactionTypesAllowableValues(): ?array {
         return [
@@ -121,10 +122,11 @@ class TransactionFilter extends AbstractModel {
             self::TRANSACTION_TYPES_CREDIT_INCOMING_PAYMENT,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getOpTypeAllowableValues(): ?array {
         return [
@@ -142,7 +144,7 @@ class TransactionFilter extends AbstractModel {
     /**
      * Get id
      *
-     * @return string
+     * @return string|null
      */
     public function getId(): ?string {
         return $this->_data["id"];

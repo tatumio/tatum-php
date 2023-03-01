@@ -48,7 +48,7 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
     /**
      * Get caller
      *
-     * @return string
+     * @return string|null
      */
     public function getCaller(): ?string {
         return $this->_data["caller"];
@@ -68,7 +68,7 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -108,7 +108,7 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
     /**
      * Get method_name
      *
-     * @return string
+     * @return string|null
      */
     public function getMethodName(): ?string {
         return $this->_data["method_name"];
@@ -128,7 +128,7 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
     /**
      * Get method_abi
      *
-     * @return object
+     * @return object|null
      */
     public function getMethodAbi(): ?object {
         return $this->_data["method_abi"];
@@ -148,7 +148,7 @@ class CallPolygonSmartContractMethodCaller extends AbstractModel {
     /**
      * Get params
      *
-     * @return string[]
+     * @return array|null
      */
     public function getParams(): ?array {
         return $this->_data["params"];

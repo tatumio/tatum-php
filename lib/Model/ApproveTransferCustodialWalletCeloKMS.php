@@ -59,17 +59,18 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getContractTypeAllowableValues(): ?array {
         return [
@@ -78,10 +79,11 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
             self::CONTRACT_TYPE_2,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -94,7 +96,7 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -114,7 +116,7 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get custodial_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
@@ -134,7 +136,7 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get spender
      *
-     * @return string
+     * @return string|null
      */
     public function getSpender(): ?string {
         return $this->_data["spender"];
@@ -154,7 +156,7 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get contract_type
      *
-     * @return float
+     * @return float|null
      */
     public function getContractType(): ?float {
         return $this->_data["contract_type"];
@@ -174,7 +176,7 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get token_address
      *
-     * @return string
+     * @return string|null
      */
     public function getTokenAddress(): ?string {
         return $this->_data["token_address"];
@@ -234,7 +236,7 @@ class ApproveTransferCustodialWalletCeloKMS extends AbstractModel {
     /**
      * Get signature_id
      *
-     * @return string
+     * @return string|null
      */
     public function getSignatureId(): ?string {
         return $this->_data["signature_id"];

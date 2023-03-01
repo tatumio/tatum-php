@@ -34,7 +34,9 @@ interface ScriptInterface extends SerializableInterface {
      * Returns boolean indicating whether script
      * was push only. If true, $ops is populated
      * with the contained buffers
-     * @param array $ops
+     *
+     * @param  array|null  $ops
+     *
      * @return bool
      */
     public function isPushOnly(array &$ops = null): bool;

@@ -26,9 +26,10 @@ interface CurveFpInterface {
     /**
      * Returns the point identified by given coordinates.
      *
-     * @param  \GMP $x
-     * @param  \GMP $y
-     * @param  \GMP $order
+     * @param  \GMP       $x
+     * @param  \GMP       $y
+     * @param  \GMP|null  $order
+     *
      * @return PointInterface
      */
     public function getPoint(\GMP $x, \GMP $y, \GMP $order = null): PointInterface;
@@ -49,10 +50,10 @@ interface CurveFpInterface {
 
     /**
      *
-     * @param  \GMP $x
-     * @param  \GMP $y
-     * @param  \GMP $order
-     * @param  RandomNumberGeneratorInterface $randomGenerator
+     * @param  \GMP                                                                $x
+     * @param  \GMP                                                                $y
+     * @param  \GMP                                                                $order
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return GeneratorPoint
      */
     public function getGenerator(

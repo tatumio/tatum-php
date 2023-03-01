@@ -52,17 +52,18 @@ class BurnMultiTokenBatchCelo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -75,7 +76,7 @@ class BurnMultiTokenBatchCelo extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -95,7 +96,7 @@ class BurnMultiTokenBatchCelo extends AbstractModel {
     /**
      * Get account
      *
-     * @return string
+     * @return string|null
      */
     public function getAccount(): ?string {
         return $this->_data["account"];
@@ -115,7 +116,7 @@ class BurnMultiTokenBatchCelo extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTokenId(): ?array {
         return $this->_data["token_id"];
@@ -135,7 +136,7 @@ class BurnMultiTokenBatchCelo extends AbstractModel {
     /**
      * Get amounts
      *
-     * @return string[]
+     * @return array|null
      */
     public function getAmounts(): ?array {
         return $this->_data["amounts"];
@@ -155,7 +156,7 @@ class BurnMultiTokenBatchCelo extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -175,7 +176,7 @@ class BurnMultiTokenBatchCelo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -215,7 +216,7 @@ class BurnMultiTokenBatchCelo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

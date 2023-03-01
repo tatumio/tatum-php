@@ -50,7 +50,7 @@ class MintMultipleErc721Celo extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -63,7 +63,7 @@ class MintMultipleErc721Celo extends AbstractModel {
     /**
      * Get to
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];
@@ -83,7 +83,7 @@ class MintMultipleErc721Celo extends AbstractModel {
     /**
      * Get token_id
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTokenId(): ?array {
         return $this->_data["token_id"];
@@ -103,7 +103,7 @@ class MintMultipleErc721Celo extends AbstractModel {
     /**
      * Get url
      *
-     * @return string[]
+     * @return array|null
      */
     public function getUrl(): ?array {
         return $this->_data["url"];
@@ -123,7 +123,7 @@ class MintMultipleErc721Celo extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -143,7 +143,7 @@ class MintMultipleErc721Celo extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
@@ -183,7 +183,7 @@ class MintMultipleErc721Celo extends AbstractModel {
     /**
      * Get fee_currency
      *
-     * @return string
+     * @return string|null
      */
     public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];

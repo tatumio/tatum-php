@@ -84,7 +84,7 @@ class AdaTransaction extends AbstractModel {
     /**
      * Get to
      *
-     * @return \Tatum\Model\AdaTransactionToInner[]
+     * @return array|null
      */
     public function getTo(): ?array {
         return $this->_data["to"];

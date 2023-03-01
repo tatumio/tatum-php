@@ -60,7 +60,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -73,20 +73,22 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
             self::CHAIN_MATIC,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_TRANSFER_CUSTODIAL,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getTokenTypeAllowableValues(): ?array {
         return [
@@ -100,7 +102,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -120,7 +122,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Get type
      *
-     * @return string
+     * @return string|null
      */
     public function getType(): ?string {
         return $this->_data["type"];
@@ -140,7 +142,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Get sender
      *
-     * @return string
+     * @return string|null
      */
     public function getSender(): ?string {
         return $this->_data["sender"];
@@ -160,7 +162,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Get recipient
      *
-     * @return string
+     * @return string|null
      */
     public function getRecipient(): ?string {
         return $this->_data["recipient"];
@@ -180,7 +182,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Get custodial_address
      *
-     * @return string
+     * @return string|null
      */
     public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
@@ -200,7 +202,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Get token_type
      *
-     * @return float
+     * @return float|null
      */
     public function getTokenType(): ?float {
         return $this->_data["token_type"];
@@ -220,7 +222,7 @@ class EstimateFeeTransferFromCustodial extends AbstractModel {
     /**
      * Get amount
      *
-     * @return string
+     * @return string|null
      */
     public function getAmount(): ?string {
         return $this->_data["amount"];

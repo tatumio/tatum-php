@@ -68,8 +68,9 @@ class EcAdapter implements EcAdapterInterface {
     }
 
     /**
-     * @param BufferInterface $messageHash
-     * @param CompactSignature|CompactSignatureInterface $signature
+     * @param  BufferInterface                                                           $messageHash
+     * @param  \Tatum\Cryptography\Crypto\EcAdapter\Signature\CompactSignatureInterface  $signature
+     *
      * @return PublicKeyInterface
      * @throws \Exception
      */

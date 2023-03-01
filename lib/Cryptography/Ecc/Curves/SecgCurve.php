@@ -50,7 +50,8 @@ class SecgCurve {
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
+     *
      * @return GeneratorPoint
      */
     public function generator112r1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {
@@ -77,7 +78,7 @@ class SecgCurve {
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return \Tatum\Cryptography\Ecc\Primitives\GeneratorPoint
      */
     public function generator192k1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {
@@ -104,7 +105,7 @@ class SecgCurve {
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return GeneratorPoint
      */
     public function generator256k1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {
@@ -131,7 +132,7 @@ class SecgCurve {
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return GeneratorPoint
      */
     public function generator256r1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {
@@ -167,7 +168,7 @@ class SecgCurve {
     }
 
     /**
-     * @param RandomNumberGeneratorInterface $randomGenerator
+     * @param  \Tatum\Cryptography\Ecc\Random\RandomNumberGeneratorInterface|null  $randomGenerator
      * @return GeneratorPoint
      */
     public function generator384r1(RandomNumberGeneratorInterface $randomGenerator = null): GeneratorPoint {

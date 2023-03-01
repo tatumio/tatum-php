@@ -182,8 +182,9 @@ class Ethabi {
     /**
      * decodeParameters
      *
-     * @param stdClass|array $type
-     * @param string $param
+     * @param          $types
+     * @param  string  $param
+     *
      * @return string
      */
     public function decodeParameters($types, $param) {
@@ -273,10 +274,10 @@ class Ethabi {
     /**
      * encodeWithOffset
      *
-     * @param string $type
-     * @param \Tatum\Cryptography\Web3\Contracts\SolidityType $solidityType
-     * @param mixed $encode
-     * @param int $offset
+     * @param  string                                           $type
+     * @param  \Tatum\Cryptography\Web3\Contracts\SolidityType  $solidityType
+     * @param                                                   $encoded
+     * @param  int                                              $offset
      * @return string
      */
     protected function encodeWithOffset($type, $solidityType, $encoded, $offset) {

@@ -57,7 +57,7 @@ class AddMultiTokenMinter extends AbstractModel {
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getChainAllowableValues(): ?array {
         return [
@@ -70,10 +70,11 @@ class AddMultiTokenMinter extends AbstractModel {
             self::CHAIN_BSC,
         ];
     }
+
     /**
      * Get allowable values
      *
-     * @return string[]
+     * @return array|null
      */
     public function getFeeCurrencyAllowableValues(): ?array {
         return [
@@ -86,7 +87,7 @@ class AddMultiTokenMinter extends AbstractModel {
     /**
      * Get chain
      *
-     * @return string
+     * @return string|null
      */
     public function getChain(): ?string {
         return $this->_data["chain"];
@@ -106,7 +107,7 @@ class AddMultiTokenMinter extends AbstractModel {
     /**
      * Get contract_address
      *
-     * @return string
+     * @return string|null
      */
     public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
@@ -126,7 +127,7 @@ class AddMultiTokenMinter extends AbstractModel {
     /**
      * Get minter
      *
-     * @return string
+     * @return string|null
      */
     public function getMinter(): ?string {
         return $this->_data["minter"];
@@ -146,7 +147,7 @@ class AddMultiTokenMinter extends AbstractModel {
     /**
      * Get from_private_key
      *
-     * @return string
+     * @return string|null
      */
     public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];

@@ -42,7 +42,7 @@ class Data extends AbstractModel {
     /**
      * Get data
      *
-     * @return \Tatum\Model\DataData
+     * @return \Tatum\Model\DataData|null
      */
     public function getData(): ?\Tatum\Model\DataData {
         return $this->_data["data"];
