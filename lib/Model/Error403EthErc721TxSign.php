@@ -32,7 +32,7 @@ class Error403EthErc721TxSign extends AbstractModel {
     /**
      * Error403EthErc721TxSign
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

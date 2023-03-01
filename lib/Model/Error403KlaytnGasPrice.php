@@ -32,7 +32,7 @@ class Error403KlaytnGasPrice extends AbstractModel {
     /**
      * Error403KlaytnGasPrice
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

@@ -32,7 +32,7 @@ class Error403EthMnemonicPrivateKey extends AbstractModel {
     /**
      * Error403EthMnemonicPrivateKey
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

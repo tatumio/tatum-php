@@ -31,7 +31,7 @@ class FlowEventPayloadValueFieldsInnerValueOneOf1 extends AbstractModel {
     /**
      * FlowEventPayloadValueFieldsInnerValueOneOf1
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

@@ -31,7 +31,7 @@ class Trc20Response extends AbstractModel {
     /**
      * Trc20Response
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

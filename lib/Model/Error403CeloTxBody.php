@@ -32,7 +32,7 @@ class Error403CeloTxBody extends AbstractModel {
     /**
      * Error403CeloTxBody
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

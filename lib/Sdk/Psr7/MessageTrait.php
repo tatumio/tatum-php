@@ -174,7 +174,7 @@ trait MessageTrait {
      * header-field = field-name ":" OWS field-value OWS
      * OWS          = *( SP / HTAB )
      *
-     * @param mixed[] $values Header values
+     * @param  array  $values  Header values
      *
      * @return string[] Trimmed header values
      *

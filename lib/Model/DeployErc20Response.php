@@ -31,7 +31,7 @@ class DeployErc20Response extends AbstractModel {
     /**
      * DeployErc20Response
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

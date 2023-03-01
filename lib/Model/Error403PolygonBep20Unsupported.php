@@ -32,7 +32,7 @@ class Error403PolygonBep20Unsupported extends AbstractModel {
     /**
      * Error403PolygonBep20Unsupported
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

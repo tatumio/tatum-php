@@ -37,7 +37,7 @@ class TronTrc10Detail extends AbstractModel {
     /**
      * TronTrc10Detail
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

@@ -236,7 +236,7 @@ class DeployErc20OffchainKMSAddress extends AbstractModel {
     /**
      * DeployErc20OffchainKMSAddress
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

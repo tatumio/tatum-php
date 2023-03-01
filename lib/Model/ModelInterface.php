@@ -81,7 +81,7 @@ interface ModelInterface {
     /**
      * Get list of additional properties for the model
      *
-     * @return mixed[] List of additional properties
+     * @return array List of additional properties
      */
     public function listAdditionalProperties(): array;
 

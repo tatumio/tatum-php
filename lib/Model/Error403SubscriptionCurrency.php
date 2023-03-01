@@ -32,7 +32,7 @@ class Error403SubscriptionCurrency extends AbstractModel {
     /**
      * Error403SubscriptionCurrency
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

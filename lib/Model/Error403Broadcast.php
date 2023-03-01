@@ -32,7 +32,7 @@ class Error403Broadcast extends AbstractModel {
     /**
      * Error403Broadcast
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

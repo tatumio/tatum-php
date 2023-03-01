@@ -32,7 +32,7 @@ class BtcBroadcast403Response extends AbstractModel {
     /**
      * BtcBroadcast403Response
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

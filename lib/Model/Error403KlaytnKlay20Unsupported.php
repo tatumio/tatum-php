@@ -32,7 +32,7 @@ class Error403KlaytnKlay20Unsupported extends AbstractModel {
     /**
      * Error403KlaytnKlay20Unsupported
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

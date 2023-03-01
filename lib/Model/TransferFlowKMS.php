@@ -38,7 +38,7 @@ class TransferFlowKMS extends AbstractModel {
     /**
      * TransferFlowKMS
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

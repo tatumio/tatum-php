@@ -32,7 +32,7 @@ class Error403XdcErc20Set extends AbstractModel {
     /**
      * Error403XdcErc20Set
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

@@ -34,7 +34,7 @@ class DeployErc721 extends AbstractModel {
     /**
      * DeployErc721
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

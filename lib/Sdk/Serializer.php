@@ -58,7 +58,7 @@ class Serializer {
      * @param mixed  $data   Data to serialize
      * @param string $format (optional) Format of the OpenAPITools type of the data; default <b>null</b>
      *
-     * @return string|\object|\mixed[]|null serialized form of $data
+     * @return string|\object|array|null serialized form of $data
      */
     public static function sanitizeForSerialization($data, string $format = null) {
         $result = $data;

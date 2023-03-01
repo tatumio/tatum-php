@@ -30,7 +30,7 @@ class Stream implements StreamInterface {
     private $writable;
     /** @var string|null */
     private $uri;
-    /** @var mixed[] */
+    /** @var array */
     private $customMetadata;
 
     /**

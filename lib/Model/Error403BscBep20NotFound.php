@@ -32,7 +32,7 @@ class Error403BscBep20NotFound extends AbstractModel {
     /**
      * Error403BscBep20NotFound
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

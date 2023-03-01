@@ -31,7 +31,7 @@ class NftTokenByCollectionErc721 extends AbstractModel {
     /**
      * NftTokenByCollectionErc721
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {

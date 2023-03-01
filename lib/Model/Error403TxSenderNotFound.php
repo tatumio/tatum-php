@@ -32,7 +32,7 @@ class Error403TxSenderNotFound extends AbstractModel {
     /**
      * Error403TxSenderNotFound
      *
-     * @param mixed[] $data Model data
+     * @param  array  $data  Model data
      */
     public function __construct(array $data = []) {
         foreach(static::$_definition as $k => $v) {
