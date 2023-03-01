@@ -1155,7 +1155,7 @@ class InputSigner implements InputSignerInterface {
     }
 
     /**
-     * @return Checksig[]|Conditional[]|mixed
+     * @return Checksig[]|Conditional[]
      */
     public function getSteps() {
         return $this->steps;

@@ -97,16 +97,16 @@ class BscTx extends AbstractModel {
     /**
      * Get block_number
      *
-     * @return mixed|null
+     * @return mixed
      */
-    public function getBlockNumber(): ?mixed {
+    public function getBlockNumber(): mixed {
         return $this->_data["block_number"];
     }
 
     /**
      * Set block_number
      * 
-     * @param mixed|null $block_number The number of the block that the transaction is included in; if not returned, the transaction has not been included in a block yet.
+     * @param mixed $block_number The number of the block that the transaction is included in; if not returned, the transaction has not been included in a block yet.
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -257,16 +257,16 @@ class BscTx extends AbstractModel {
     /**
      * Get transaction_index
      *
-     * @return mixed|null
+     * @return mixed
      */
-    public function getTransactionIndex(): ?mixed {
+    public function getTransactionIndex(): mixed {
         return $this->_data["transaction_index"];
     }
 
     /**
      * Set transaction_index
      * 
-     * @param mixed|null $transaction_index The integer of the transactions index position in the block; if not returned, the transaction has not been included in a block yet.
+     * @param mixed $transaction_index The integer of the transactions index position in the block; if not returned, the transaction has not been included in a block yet.
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -297,16 +297,16 @@ class BscTx extends AbstractModel {
     /**
      * Get gas_used
      *
-     * @return mixed|null
+     * @return mixed
      */
-    public function getGasUsed(): ?mixed {
+    public function getGasUsed(): mixed {
         return $this->_data["gas_used"];
     }
 
     /**
      * Set gas_used
      * 
-     * @param mixed|null $gas_used The amount of gas used by this specific transaction alone; if not returned, the transaction has not been included in a block yet.
+     * @param mixed $gas_used The amount of gas used by this specific transaction alone; if not returned, the transaction has not been included in a block yet.
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -317,16 +317,16 @@ class BscTx extends AbstractModel {
     /**
      * Get cumulative_gas_used
      *
-     * @return mixed|null
+     * @return mixed
      */
-    public function getCumulativeGasUsed(): ?mixed {
+    public function getCumulativeGasUsed(): mixed {
         return $this->_data["cumulative_gas_used"];
     }
 
     /**
      * Set cumulative_gas_used
      * 
-     * @param mixed|null $cumulative_gas_used The total amount of gas used when this transaction was executed in the block; if not returned, the transaction has not been included in a block yet.
+     * @param mixed $cumulative_gas_used The total amount of gas used when this transaction was executed in the block; if not returned, the transaction has not been included in a block yet.
      * @throws \InvalidArgumentException
      * @return $this
      */

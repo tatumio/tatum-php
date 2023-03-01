@@ -66,16 +66,16 @@ class CreateFutureTradeAttr extends AbstractModel {
     /**
      * Get percent_block
      *
-     * @return mixed|null
+     * @return mixed
      */
-    public function getPercentBlock(): ?mixed {
+    public function getPercentBlock(): mixed {
         return $this->_data["percent_block"];
     }
 
     /**
      * Set percent_block
      * 
-     * @param mixed|null $percent_block Percentage of the future amount which selling or buying account must have available on future creation. This amount will be blocked till future is filled or expires.
+     * @param mixed $percent_block Percentage of the future amount which selling or buying account must have available on future creation. This amount will be blocked till future is filled or expires.
      * @throws \InvalidArgumentException
      * @return $this
      */
@@ -86,16 +86,16 @@ class CreateFutureTradeAttr extends AbstractModel {
     /**
      * Get percent_penalty
      *
-     * @return mixed|null
+     * @return mixed
      */
-    public function getPercentPenalty(): ?mixed {
+    public function getPercentPenalty(): mixed {
         return $this->_data["percent_penalty"];
     }
 
     /**
      * Set percent_penalty
      * 
-     * @param mixed|null $percent_penalty If one of the parties dont have filled full amount of the future at the time of expiration, the party will be penalized. Penalty is sent to opposite party in exchanged crypto.
+     * @param mixed $percent_penalty If one of the parties dont have filled full amount of the future at the time of expiration, the party will be penalized. Penalty is sent to opposite party in exchanged crypto.
      * @throws \InvalidArgumentException
      * @return $this
      */

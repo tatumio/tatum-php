@@ -100,7 +100,7 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
      *
      * @return mixed
      */
-    public function getListingId(): ?mixed {
+    public function getListingId(): mixed {
         return $this->_data["listing_id"];
     }
 
@@ -120,7 +120,7 @@ class BuyAssetOnMarketplaceSolana extends AbstractModel {
      *
      * @return mixed
      */
-    public function getFrom(): ?mixed {
+    public function getFrom(): mixed {
         return $this->_data["from"];
     }
 

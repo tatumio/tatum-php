@@ -99,7 +99,7 @@ class WithdrawFromMarketplaceSolanaKMS extends AbstractModel {
      *
      * @return mixed
      */
-    public function getFrom(): ?mixed {
+    public function getFrom(): mixed {
         return $this->_data["from"];
     }
 

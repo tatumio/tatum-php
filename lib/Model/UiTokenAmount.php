@@ -85,16 +85,16 @@ class UiTokenAmount extends AbstractModel {
     /**
      * Get ui_amount
      *
-     * @return mixed|null
+     * @return mixed
      */
-    public function getUiAmount(): ?mixed {
+    public function getUiAmount(): mixed {
         return $this->_data["ui_amount"];
     }
 
     /**
      * Set ui_amount
      * 
-     * @param mixed|null $ui_amount Token amount as a float, accounting for decimals.
+     * @param mixed $ui_amount Token amount as a float, accounting for decimals.
      * @throws \InvalidArgumentException
      * @return $this
      */
