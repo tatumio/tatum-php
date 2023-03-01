@@ -388,7 +388,7 @@ class Serializer {
 
         // Prepare the data
         $result = $data instanceof StreamInterface ? "$data" : $data;
-        $result = is_string($result) ? json_decode($result, true, 512, JSON_THROW_ON_ERROR) : $result;
+        $result = is_string($result) ? json_decode($result, false, 512, JSON_THROW_ON_ERROR) : $result;
 
         return null !== $result ? static::doDeserialize($result, $type) : null;
     }
