@@ -87,7 +87,7 @@ class UiTokenAmount extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getUiAmount(): ?mixed {
+    public function getUiAmount(): mixed {
         return $this->_data["ui_amount"];
     }
 
@@ -98,7 +98,7 @@ class UiTokenAmount extends AbstractModel {
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setUiAmount(?mixed $ui_amount) {
+    public function setUiAmount(mixed $ui_amount) {
         return $this->_set("ui_amount", $ui_amount);
     }
 

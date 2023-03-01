@@ -68,7 +68,7 @@ class CreateFutureTradeAttr extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getPercentBlock(): ?mixed {
+    public function getPercentBlock(): mixed {
         return $this->_data["percent_block"];
     }
 
@@ -79,7 +79,7 @@ class CreateFutureTradeAttr extends AbstractModel {
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setPercentBlock(?mixed $percent_block) {
+    public function setPercentBlock(mixed $percent_block) {
         return $this->_set("percent_block", $percent_block);
     }
 
@@ -88,7 +88,7 @@ class CreateFutureTradeAttr extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getPercentPenalty(): ?mixed {
+    public function getPercentPenalty(): mixed {
         return $this->_data["percent_penalty"];
     }
 
@@ -99,7 +99,7 @@ class CreateFutureTradeAttr extends AbstractModel {
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setPercentPenalty(?mixed $percent_penalty) {
+    public function setPercentPenalty(mixed $percent_penalty) {
         return $this->_set("percent_penalty", $percent_penalty);
     }
 }

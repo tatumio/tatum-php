@@ -110,7 +110,7 @@ class NftGetTransactErc721200Response extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getBlockNumber(): ?mixed {
+    public function getBlockNumber(): mixed {
         return $this->_data["block_number"];
     }
 
@@ -121,7 +121,7 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setBlockNumber(?mixed $block_number) {
+    public function setBlockNumber(mixed $block_number) {
         return $this->_set("block_number", $block_number);
     }
 
@@ -270,7 +270,7 @@ class NftGetTransactErc721200Response extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getTransactionIndex(): ?mixed {
+    public function getTransactionIndex(): mixed {
         return $this->_data["transaction_index"];
     }
 
@@ -281,7 +281,7 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setTransactionIndex(?mixed $transaction_index) {
+    public function setTransactionIndex(mixed $transaction_index) {
         return $this->_set("transaction_index", $transaction_index);
     }
 
@@ -310,7 +310,7 @@ class NftGetTransactErc721200Response extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getGasUsed(): ?mixed {
+    public function getGasUsed(): mixed {
         return $this->_data["gas_used"];
     }
 
@@ -321,7 +321,7 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setGasUsed(?mixed $gas_used) {
+    public function setGasUsed(mixed $gas_used) {
         return $this->_set("gas_used", $gas_used);
     }
 
@@ -330,7 +330,7 @@ class NftGetTransactErc721200Response extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getCumulativeGasUsed(): ?mixed {
+    public function getCumulativeGasUsed(): mixed {
         return $this->_data["cumulative_gas_used"];
     }
 
@@ -341,7 +341,7 @@ class NftGetTransactErc721200Response extends AbstractModel {
      * @throws \InvalidArgumentException
      * @return $this
      */
-    public function setCumulativeGasUsed(?mixed $cumulative_gas_used) {
+    public function setCumulativeGasUsed(mixed $cumulative_gas_used) {
         return $this->_set("cumulative_gas_used", $cumulative_gas_used);
     }
 
