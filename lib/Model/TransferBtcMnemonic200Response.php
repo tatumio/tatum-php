@@ -47,7 +47,7 @@ class TransferBtcMnemonic200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 
@@ -67,7 +67,7 @@ class TransferBtcMnemonic200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getTxId(): string {
+    public function getTxId(): ?string {
         return $this->_data["tx_id"];
     }
 
@@ -87,7 +87,7 @@ class TransferBtcMnemonic200Response extends AbstractModel {
      *
      * @return bool
      */
-    public function getCompleted(): bool {
+    public function getCompleted(): ?bool {
         return $this->_data["completed"];
     }
 
@@ -107,7 +107,7 @@ class TransferBtcMnemonic200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

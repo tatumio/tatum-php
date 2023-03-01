@@ -63,7 +63,7 @@ class EstimateFee extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
             self::CHAIN_ETH,
@@ -79,7 +79,7 @@ class EstimateFee extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_DEPLOY_ERC20,
             self::TYPE_DEPLOY_NFT,
@@ -97,7 +97,7 @@ class EstimateFee extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -117,7 +117,7 @@ class EstimateFee extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 

@@ -45,7 +45,7 @@ class CreateSubscriptionKMSError extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_KMS_FAILED_TX,
         ];
@@ -56,7 +56,7 @@ class CreateSubscriptionKMSError extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -76,7 +76,7 @@ class CreateSubscriptionKMSError extends AbstractModel {
      *
      * @return \Tatum\Model\CreateSubscriptionKMSErrorAttr
      */
-    public function getAttr(): \Tatum\Model\CreateSubscriptionKMSErrorAttr {
+    public function getAttr(): ?\Tatum\Model\CreateSubscriptionKMSErrorAttr {
         return $this->_data["attr"];
     }
 

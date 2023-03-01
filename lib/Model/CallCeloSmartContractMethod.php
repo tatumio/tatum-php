@@ -54,7 +54,7 @@ class CallCeloSmartContractMethod extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -67,7 +67,7 @@ class CallCeloSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -87,7 +87,7 @@ class CallCeloSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getMethodName(): string {
+    public function getMethodName(): ?string {
         return $this->_data["method_name"];
     }
 
@@ -107,7 +107,7 @@ class CallCeloSmartContractMethod extends AbstractModel {
      *
      * @return object
      */
-    public function getMethodAbi(): object {
+    public function getMethodAbi(): ?object {
         return $this->_data["method_abi"];
     }
 
@@ -127,7 +127,7 @@ class CallCeloSmartContractMethod extends AbstractModel {
      *
      * @return string[]
      */
-    public function getParams(): array {
+    public function getParams(): ?array {
         return $this->_data["params"];
     }
 
@@ -167,7 +167,7 @@ class CallCeloSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 
@@ -227,7 +227,7 @@ class CallCeloSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 

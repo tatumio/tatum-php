@@ -46,7 +46,7 @@ class BurnNftAlgo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ALGO,
         ];
@@ -57,7 +57,7 @@ class BurnNftAlgo extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -77,7 +77,7 @@ class BurnNftAlgo extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -97,7 +97,7 @@ class BurnNftAlgo extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

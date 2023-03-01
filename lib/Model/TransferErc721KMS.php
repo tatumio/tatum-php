@@ -50,7 +50,7 @@ class TransferErc721KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -70,7 +70,7 @@ class TransferErc721KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTokenId(): string {
+    public function getTokenId(): ?string {
         return $this->_data["token_id"];
     }
 
@@ -90,7 +90,7 @@ class TransferErc721KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -110,7 +110,7 @@ class TransferErc721KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

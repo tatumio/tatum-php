@@ -50,7 +50,7 @@ class TransferXdcBlockchain extends AbstractModel {
      *
      * @return string[]
      */
-    public function getCurrencyAllowableValues(): array {
+    public function getCurrencyAllowableValues(): ?array {
         return [
             self::CURRENCY_XDC,
         ];
@@ -81,7 +81,7 @@ class TransferXdcBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -121,7 +121,7 @@ class TransferXdcBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -161,7 +161,7 @@ class TransferXdcBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -181,7 +181,7 @@ class TransferXdcBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

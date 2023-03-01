@@ -50,7 +50,7 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_TRON,
         ];
@@ -81,7 +81,7 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeRecipient(): string {
+    public function getFeeRecipient(): ?string {
         return $this->_data["fee_recipient"];
     }
 
@@ -101,7 +101,7 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getMarketplaceFee(): float {
+    public function getMarketplaceFee(): ?float {
         return $this->_data["marketplace_fee"];
     }
 
@@ -121,7 +121,7 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -141,7 +141,7 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -181,7 +181,7 @@ class GenerateMarketplaceTronKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getFeeLimit(): float {
+    public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
     }
 

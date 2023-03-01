@@ -55,7 +55,7 @@ class ChainBurnErc20 extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_BSC,
@@ -72,7 +72,7 @@ class ChainBurnErc20 extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -92,7 +92,7 @@ class ChainBurnErc20 extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -112,7 +112,7 @@ class ChainBurnErc20 extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -132,7 +132,7 @@ class ChainBurnErc20 extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

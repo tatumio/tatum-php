@@ -46,7 +46,7 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -66,7 +66,7 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getAssetId(): float {
+    public function getAssetId(): ?float {
         return $this->_data["asset_id"];
     }
 
@@ -86,7 +86,7 @@ class ReceiveAlgorandAssetKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

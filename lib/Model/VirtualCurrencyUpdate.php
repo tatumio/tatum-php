@@ -242,7 +242,7 @@ class VirtualCurrencyUpdate extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -449,7 +449,7 @@ class VirtualCurrencyUpdate extends AbstractModel {
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->_data["name"];
     }
 

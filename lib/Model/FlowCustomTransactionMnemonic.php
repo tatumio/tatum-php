@@ -48,7 +48,7 @@ class FlowCustomTransactionMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -68,7 +68,7 @@ class FlowCustomTransactionMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getTransaction(): string {
+    public function getTransaction(): ?string {
         return $this->_data["transaction"];
     }
 
@@ -88,7 +88,7 @@ class FlowCustomTransactionMnemonic extends AbstractModel {
      *
      * @return \Tatum\Model\FlowCustomTransactionPKArgsInner[]
      */
-    public function getArgs(): array {
+    public function getArgs(): ?array {
         return $this->_data["args"];
     }
 
@@ -108,7 +108,7 @@ class FlowCustomTransactionMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -128,7 +128,7 @@ class FlowCustomTransactionMnemonic extends AbstractModel {
      *
      * @return float
      */
-    public function getIndex(): float {
+    public function getIndex(): ?float {
         return $this->_data["index"];
     }
 

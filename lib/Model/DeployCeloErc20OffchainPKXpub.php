@@ -253,7 +253,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -265,7 +265,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -472,7 +472,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -492,7 +492,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -512,7 +512,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -532,7 +532,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): ?string {
         return $this->_data["description"];
     }
 
@@ -552,7 +552,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getXpub(): string {
+    public function getXpub(): ?string {
         return $this->_data["xpub"];
     }
 
@@ -572,7 +572,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return int
      */
-    public function getDerivationIndex(): int {
+    public function getDerivationIndex(): ?int {
         return $this->_data["derivation_index"];
     }
 
@@ -592,7 +592,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getPrivateKey(): string {
+    public function getPrivateKey(): ?string {
         return $this->_data["private_key"];
     }
 
@@ -612,7 +612,7 @@ class DeployCeloErc20OffchainPKXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 

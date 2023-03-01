@@ -48,7 +48,7 @@ class TransferVetBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -68,7 +68,7 @@ class TransferVetBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -88,7 +88,7 @@ class TransferVetBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

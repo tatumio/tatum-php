@@ -51,7 +51,7 @@ class GenerateCustodialWalletBatchPayer extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_MATIC,
@@ -66,7 +66,7 @@ class GenerateCustodialWalletBatchPayer extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -86,7 +86,7 @@ class GenerateCustodialWalletBatchPayer extends AbstractModel {
      *
      * @return bool
      */
-    public function getFeesCovered(): bool {
+    public function getFeesCovered(): ?bool {
         return $this->_data["fees_covered"];
     }
 
@@ -106,7 +106,7 @@ class GenerateCustodialWalletBatchPayer extends AbstractModel {
      *
      * @return float
      */
-    public function getBatchCount(): float {
+    public function getBatchCount(): ?float {
         return $this->_data["batch_count"];
     }
 
@@ -126,7 +126,7 @@ class GenerateCustodialWalletBatchPayer extends AbstractModel {
      *
      * @return string
      */
-    public function getOwner(): string {
+    public function getOwner(): ?string {
         return $this->_data["owner"];
     }
 

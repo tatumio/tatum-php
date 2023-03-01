@@ -53,7 +53,7 @@ class TransferXrpKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSenderAccountId(): string {
+    public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
     }
 
@@ -73,7 +73,7 @@ class TransferXrpKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -93,7 +93,7 @@ class TransferXrpKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -113,7 +113,7 @@ class TransferXrpKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -213,7 +213,7 @@ class TransferXrpKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

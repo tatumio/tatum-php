@@ -46,7 +46,7 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_MANAGED,
             self::TYPE_RAW,
@@ -58,7 +58,7 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
      *
      * @return string
      */
-    public function getKey(): string {
+    public function getKey(): ?string {
         return $this->_data["key"];
     }
 
@@ -78,7 +78,7 @@ class TransferManagedAddressWalletIdsInner extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 

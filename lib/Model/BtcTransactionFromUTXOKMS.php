@@ -47,7 +47,7 @@ class BtcTransactionFromUTXOKMS extends AbstractModel {
      *
      * @return \Tatum\Model\BtcTransactionFromUTXOKMSSource[]
      */
-    public function getFromUtxo(): array {
+    public function getFromUtxo(): ?array {
         return $this->_data["from_utxo"];
     }
 
@@ -67,7 +67,7 @@ class BtcTransactionFromUTXOKMS extends AbstractModel {
      *
      * @return \Tatum\Model\BtcTransactionFromUTXOKMSTarget[]
      */
-    public function getTo(): array {
+    public function getTo(): ?array {
         return $this->_data["to"];
     }
 

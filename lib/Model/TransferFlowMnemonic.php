@@ -52,7 +52,7 @@ class TransferFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getSenderAccountId(): string {
+    public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
     }
 
@@ -72,7 +72,7 @@ class TransferFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -92,7 +92,7 @@ class TransferFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -112,7 +112,7 @@ class TransferFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -132,7 +132,7 @@ class TransferFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -152,7 +152,7 @@ class TransferFlowMnemonic extends AbstractModel {
      *
      * @return float
      */
-    public function getIndex(): float {
+    public function getIndex(): ?float {
         return $this->_data["index"];
     }
 

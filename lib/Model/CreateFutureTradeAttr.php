@@ -48,7 +48,7 @@ class CreateFutureTradeAttr extends AbstractModel {
      *
      * @return float
      */
-    public function getSealDate(): float {
+    public function getSealDate(): ?float {
         return $this->_data["seal_date"];
     }
 
@@ -68,7 +68,7 @@ class CreateFutureTradeAttr extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getPercentBlock(): mixed {
+    public function getPercentBlock(): ?mixed {
         return $this->_data["percent_block"];
     }
 
@@ -88,7 +88,7 @@ class CreateFutureTradeAttr extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getPercentPenalty(): mixed {
+    public function getPercentPenalty(): ?mixed {
         return $this->_data["percent_penalty"];
     }
 

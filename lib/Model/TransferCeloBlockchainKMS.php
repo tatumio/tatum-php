@@ -57,7 +57,7 @@ class TransferCeloBlockchainKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getCurrencyAllowableValues(): array {
+    public function getCurrencyAllowableValues(): ?array {
         return [
             self::CURRENCY_CELO,
             self::CURRENCY_CUSD,
@@ -69,7 +69,7 @@ class TransferCeloBlockchainKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -122,7 +122,7 @@ class TransferCeloBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -162,7 +162,7 @@ class TransferCeloBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -182,7 +182,7 @@ class TransferCeloBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -202,7 +202,7 @@ class TransferCeloBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -242,7 +242,7 @@ class TransferCeloBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

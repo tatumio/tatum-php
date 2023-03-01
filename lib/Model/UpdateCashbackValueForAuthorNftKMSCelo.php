@@ -54,7 +54,7 @@ class UpdateCashbackValueForAuthorNftKMSCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -64,7 +64,7 @@ class UpdateCashbackValueForAuthorNftKMSCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -77,7 +77,7 @@ class UpdateCashbackValueForAuthorNftKMSCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -97,7 +97,7 @@ class UpdateCashbackValueForAuthorNftKMSCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getTokenId(): string {
+    public function getTokenId(): ?string {
         return $this->_data["token_id"];
     }
 
@@ -117,7 +117,7 @@ class UpdateCashbackValueForAuthorNftKMSCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -137,7 +137,7 @@ class UpdateCashbackValueForAuthorNftKMSCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getCashbackValue(): string {
+    public function getCashbackValue(): ?string {
         return $this->_data["cashback_value"];
     }
 
@@ -157,7 +157,7 @@ class UpdateCashbackValueForAuthorNftKMSCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -177,7 +177,7 @@ class UpdateCashbackValueForAuthorNftKMSCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

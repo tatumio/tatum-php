@@ -48,7 +48,7 @@ class TrustLineXlmBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFromAccount(): string {
+    public function getFromAccount(): ?string {
         return $this->_data["from_account"];
     }
 
@@ -68,7 +68,7 @@ class TrustLineXlmBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getIssuerAccount(): string {
+    public function getIssuerAccount(): ?string {
         return $this->_data["issuer_account"];
     }
 
@@ -88,7 +88,7 @@ class TrustLineXlmBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getToken(): string {
+    public function getToken(): ?string {
         return $this->_data["token"];
     }
 
@@ -108,7 +108,7 @@ class TrustLineXlmBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

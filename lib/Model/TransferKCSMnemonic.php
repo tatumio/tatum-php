@@ -74,7 +74,7 @@ class TransferKCSMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -94,7 +94,7 @@ class TransferKCSMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -134,7 +134,7 @@ class TransferKCSMnemonic extends AbstractModel {
      *
      * @return int
      */
-    public function getIndex(): int {
+    public function getIndex(): ?int {
         return $this->_data["index"];
     }
 
@@ -194,7 +194,7 @@ class TransferKCSMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -234,7 +234,7 @@ class TransferKCSMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getSenderAccountId(): string {
+    public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
     }
 

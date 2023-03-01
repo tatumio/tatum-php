@@ -49,7 +49,7 @@ class FlowTransactionPK extends AbstractModel {
      *
      * @return string[]
      */
-    public function getCurrencyAllowableValues(): array {
+    public function getCurrencyAllowableValues(): ?array {
         return [
             self::CURRENCY_FLOW,
             self::CURRENCY_FUSD,
@@ -61,7 +61,7 @@ class FlowTransactionPK extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -81,7 +81,7 @@ class FlowTransactionPK extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -101,7 +101,7 @@ class FlowTransactionPK extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -121,7 +121,7 @@ class FlowTransactionPK extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -141,7 +141,7 @@ class FlowTransactionPK extends AbstractModel {
      *
      * @return string
      */
-    public function getPrivateKey(): string {
+    public function getPrivateKey(): ?string {
         return $this->_data["private_key"];
     }
 

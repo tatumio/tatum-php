@@ -45,7 +45,7 @@ class CreateSubscriptionNotification extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_ADDRESS_TRANSACTION,
         ];
@@ -56,7 +56,7 @@ class CreateSubscriptionNotification extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -76,7 +76,7 @@ class CreateSubscriptionNotification extends AbstractModel {
      *
      * @return \Tatum\Model\CreateSubscriptionNotificationAttr
      */
-    public function getAttr(): \Tatum\Model\CreateSubscriptionNotificationAttr {
+    public function getAttr(): ?\Tatum\Model\CreateSubscriptionNotificationAttr {
         return $this->_data["attr"];
     }
 

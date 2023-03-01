@@ -65,7 +65,7 @@ class XlmTx extends AbstractModel {
      *
      * @return string[]
      */
-    public function getMemoTypeAllowableValues(): array {
+    public function getMemoTypeAllowableValues(): ?array {
         return [
             self::MEMO_TYPE_TEXT,
             self::MEMO_TYPE_ID,

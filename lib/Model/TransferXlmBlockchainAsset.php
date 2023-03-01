@@ -51,7 +51,7 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getFromAccount(): string {
+    public function getFromAccount(): ?string {
         return $this->_data["from_account"];
     }
 
@@ -71,7 +71,7 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -91,7 +91,7 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -111,7 +111,7 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getFromSecret(): string {
+    public function getFromSecret(): ?string {
         return $this->_data["from_secret"];
     }
 
@@ -151,7 +151,7 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getToken(): string {
+    public function getToken(): ?string {
         return $this->_data["token"];
     }
 
@@ -171,7 +171,7 @@ class TransferXlmBlockchainAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getIssuerAccount(): string {
+    public function getIssuerAccount(): ?string {
         return $this->_data["issuer_account"];
     }
 

@@ -55,7 +55,7 @@ class SolanaListingData extends AbstractModel {
      *
      * @return string[]
      */
-    public function getStateAllowableValues(): array {
+    public function getStateAllowableValues(): ?array {
         return [
             self::STATE__0,
             self::STATE__1,
@@ -68,7 +68,7 @@ class SolanaListingData extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -108,7 +108,7 @@ class SolanaListingData extends AbstractModel {
      *
      * @return string
      */
-    public function getListingId(): string {
+    public function getListingId(): ?string {
         return $this->_data["listing_id"];
     }
 
@@ -128,7 +128,7 @@ class SolanaListingData extends AbstractModel {
      *
      * @return \Tatum\Model\SolanaListingDataNft
      */
-    public function getNft(): \Tatum\Model\SolanaListingDataNft {
+    public function getNft(): ?\Tatum\Model\SolanaListingDataNft {
         return $this->_data["nft"];
     }
 
@@ -148,7 +148,7 @@ class SolanaListingData extends AbstractModel {
      *
      * @return string
      */
-    public function getPrice(): string {
+    public function getPrice(): ?string {
         return $this->_data["price"];
     }
 
@@ -168,7 +168,7 @@ class SolanaListingData extends AbstractModel {
      *
      * @return string
      */
-    public function getSeller(): string {
+    public function getSeller(): ?string {
         return $this->_data["seller"];
     }
 
@@ -188,7 +188,7 @@ class SolanaListingData extends AbstractModel {
      *
      * @return string
      */
-    public function getState(): string {
+    public function getState(): ?string {
         return $this->_data["state"];
     }
 
@@ -208,7 +208,7 @@ class SolanaListingData extends AbstractModel {
      *
      * @return float
      */
-    public function getCreatedAt(): float {
+    public function getCreatedAt(): ?float {
         return $this->_data["created_at"];
     }
 

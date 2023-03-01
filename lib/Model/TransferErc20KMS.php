@@ -54,7 +54,7 @@ class TransferErc20KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSenderAccountId(): string {
+    public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
     }
 
@@ -74,7 +74,7 @@ class TransferErc20KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -94,7 +94,7 @@ class TransferErc20KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -174,7 +174,7 @@ class TransferErc20KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

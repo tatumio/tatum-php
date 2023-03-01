@@ -57,7 +57,7 @@ class DeployNft extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_MATIC,
@@ -73,7 +73,7 @@ class DeployNft extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -93,7 +93,7 @@ class DeployNft extends AbstractModel {
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->_data["name"];
     }
 
@@ -113,7 +113,7 @@ class DeployNft extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -133,7 +133,7 @@ class DeployNft extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

@@ -51,7 +51,7 @@ class UpdateFeeTronKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_TRON,
         ];
@@ -62,7 +62,7 @@ class UpdateFeeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -82,7 +82,7 @@ class UpdateFeeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -102,7 +102,7 @@ class UpdateFeeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -122,7 +122,7 @@ class UpdateFeeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -162,7 +162,7 @@ class UpdateFeeTronKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getMarketplaceFee(): float {
+    public function getMarketplaceFee(): ?float {
         return $this->_data["marketplace_fee"];
     }
 
@@ -202,7 +202,7 @@ class UpdateFeeTronKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getFeeLimit(): float {
+    public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
     }
 

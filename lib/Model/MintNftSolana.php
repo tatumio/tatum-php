@@ -51,7 +51,7 @@ class MintNftSolana extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_SOL,
         ];
@@ -62,7 +62,7 @@ class MintNftSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -82,7 +82,7 @@ class MintNftSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -102,7 +102,7 @@ class MintNftSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -122,7 +122,7 @@ class MintNftSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 
@@ -162,7 +162,7 @@ class MintNftSolana extends AbstractModel {
      *
      * @return \Tatum\Model\SolanaNftMetadata
      */
-    public function getMetadata(): \Tatum\Model\SolanaNftMetadata {
+    public function getMetadata(): ?\Tatum\Model\SolanaNftMetadata {
         return $this->_data["metadata"];
     }
 

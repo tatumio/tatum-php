@@ -53,7 +53,7 @@ class ChainCallSmartContractMethod extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_BSC,
@@ -66,7 +66,7 @@ class ChainCallSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -86,7 +86,7 @@ class ChainCallSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -106,7 +106,7 @@ class ChainCallSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getMethodName(): string {
+    public function getMethodName(): ?string {
         return $this->_data["method_name"];
     }
 
@@ -126,7 +126,7 @@ class ChainCallSmartContractMethod extends AbstractModel {
      *
      * @return object
      */
-    public function getMethodAbi(): object {
+    public function getMethodAbi(): ?object {
         return $this->_data["method_abi"];
     }
 
@@ -146,7 +146,7 @@ class ChainCallSmartContractMethod extends AbstractModel {
      *
      * @return string[]
      */
-    public function getParams(): array {
+    public function getParams(): ?array {
         return $this->_data["params"];
     }
 
@@ -166,7 +166,7 @@ class ChainCallSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

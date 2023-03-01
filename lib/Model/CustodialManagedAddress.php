@@ -55,7 +55,7 @@ class CustodialManagedAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_BSC,
             self::CHAIN_ETH,
@@ -74,7 +74,7 @@ class CustodialManagedAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -94,7 +94,7 @@ class CustodialManagedAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getWalletId(): string {
+    public function getWalletId(): ?string {
         return $this->_data["wallet_id"];
     }
 
@@ -114,7 +114,7 @@ class CustodialManagedAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 

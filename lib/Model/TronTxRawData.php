@@ -50,7 +50,7 @@ class TronTxRawData extends AbstractModel {
      *
      * @return \Tatum\Model\TronTxRawDataContractInner[]
      */
-    public function getContract(): array {
+    public function getContract(): ?array {
         return $this->_data["contract"];
     }
 
@@ -110,7 +110,7 @@ class TronTxRawData extends AbstractModel {
      *
      * @return float
      */
-    public function getExpiration(): float {
+    public function getExpiration(): ?float {
         return $this->_data["expiration"];
     }
 
@@ -130,7 +130,7 @@ class TronTxRawData extends AbstractModel {
      *
      * @return float
      */
-    public function getTimestamp(): float {
+    public function getTimestamp(): ?float {
         return $this->_data["timestamp"];
     }
 

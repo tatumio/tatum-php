@@ -45,7 +45,7 @@ class CreateSubscriptionPending extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_ACCOUNT_PENDING_BLOCKCHAIN_TRANSACTION,
         ];
@@ -56,7 +56,7 @@ class CreateSubscriptionPending extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -76,7 +76,7 @@ class CreateSubscriptionPending extends AbstractModel {
      *
      * @return \Tatum\Model\CreateSubscriptionPendingAttr
      */
-    public function getAttr(): \Tatum\Model\CreateSubscriptionPendingAttr {
+    public function getAttr(): ?\Tatum\Model\CreateSubscriptionPendingAttr {
         return $this->_data["attr"];
     }
 

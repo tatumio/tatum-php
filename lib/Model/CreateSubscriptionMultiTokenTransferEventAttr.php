@@ -51,7 +51,7 @@ class CreateSubscriptionMultiTokenTransferEventAttr extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_MATIC,
@@ -66,7 +66,7 @@ class CreateSubscriptionMultiTokenTransferEventAttr extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -86,7 +86,7 @@ class CreateSubscriptionMultiTokenTransferEventAttr extends AbstractModel {
      *
      * @return string
      */
-    public function getUrl(): string {
+    public function getUrl(): ?string {
         return $this->_data["url"];
     }
 

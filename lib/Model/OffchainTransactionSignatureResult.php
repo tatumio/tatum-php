@@ -44,7 +44,7 @@ class OffchainTransactionSignatureResult extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

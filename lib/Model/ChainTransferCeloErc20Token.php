@@ -54,7 +54,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -64,7 +64,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -77,7 +77,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -97,7 +97,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -117,7 +117,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -137,7 +137,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -157,7 +157,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return float
      */
-    public function getDigits(): float {
+    public function getDigits(): ?float {
         return $this->_data["digits"];
     }
 
@@ -177,7 +177,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 
@@ -217,7 +217,7 @@ class ChainTransferCeloErc20Token extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 

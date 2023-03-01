@@ -56,7 +56,7 @@ class Subscription extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_ADDRESS_TRANSACTION,
             self::TYPE_CONTRACT_LOG_EVENT,
@@ -77,7 +77,7 @@ class Subscription extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -97,7 +97,7 @@ class Subscription extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 

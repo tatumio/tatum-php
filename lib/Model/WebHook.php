@@ -61,7 +61,7 @@ class WebHook extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_INCOMING_BLOCKCHAIN_HOOK,
             self::TYPE_ADDRESS_TRANSACTION,
@@ -80,7 +80,7 @@ class WebHook extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -100,7 +100,7 @@ class WebHook extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 
@@ -120,7 +120,7 @@ class WebHook extends AbstractModel {
      *
      * @return string
      */
-    public function getSubscriptionId(): string {
+    public function getSubscriptionId(): ?string {
         return $this->_data["subscription_id"];
     }
 
@@ -140,7 +140,7 @@ class WebHook extends AbstractModel {
      *
      * @return string
      */
-    public function getUrl(): string {
+    public function getUrl(): ?string {
         return $this->_data["url"];
     }
 
@@ -160,7 +160,7 @@ class WebHook extends AbstractModel {
      *
      * @return object
      */
-    public function getData(): object {
+    public function getData(): ?object {
         return $this->_data["data"];
     }
 
@@ -240,7 +240,7 @@ class WebHook extends AbstractModel {
      *
      * @return bool
      */
-    public function getFailed(): bool {
+    public function getFailed(): ?bool {
         return $this->_data["failed"];
     }
 
@@ -260,7 +260,7 @@ class WebHook extends AbstractModel {
      *
      * @return \Tatum\Model\WebHookResponse
      */
-    public function getResponse(): \Tatum\Model\WebHookResponse {
+    public function getResponse(): ?\Tatum\Model\WebHookResponse {
         return $this->_data["response"];
     }
 

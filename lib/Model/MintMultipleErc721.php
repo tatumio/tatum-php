@@ -50,7 +50,7 @@ class MintMultipleErc721 extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTo(): array {
+    public function getTo(): ?array {
         return $this->_data["to"];
     }
 
@@ -70,7 +70,7 @@ class MintMultipleErc721 extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTokenId(): array {
+    public function getTokenId(): ?array {
         return $this->_data["token_id"];
     }
 
@@ -90,7 +90,7 @@ class MintMultipleErc721 extends AbstractModel {
      *
      * @return string[]
      */
-    public function getUrl(): array {
+    public function getUrl(): ?array {
         return $this->_data["url"];
     }
 
@@ -110,7 +110,7 @@ class MintMultipleErc721 extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -130,7 +130,7 @@ class MintMultipleErc721 extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

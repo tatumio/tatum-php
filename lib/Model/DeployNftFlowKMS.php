@@ -47,7 +47,7 @@ class DeployNftFlowKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_FLOW,
         ];
@@ -58,7 +58,7 @@ class DeployNftFlowKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -78,7 +78,7 @@ class DeployNftFlowKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -98,7 +98,7 @@ class DeployNftFlowKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

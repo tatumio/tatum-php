@@ -54,7 +54,7 @@ class GenerateAuctionCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -64,7 +64,7 @@ class GenerateAuctionCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -77,7 +77,7 @@ class GenerateAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -97,7 +97,7 @@ class GenerateAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeRecipient(): string {
+    public function getFeeRecipient(): ?string {
         return $this->_data["fee_recipient"];
     }
 
@@ -117,7 +117,7 @@ class GenerateAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -137,7 +137,7 @@ class GenerateAuctionCeloKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getAuctionFee(): float {
+    public function getAuctionFee(): ?float {
         return $this->_data["auction_fee"];
     }
 
@@ -157,7 +157,7 @@ class GenerateAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

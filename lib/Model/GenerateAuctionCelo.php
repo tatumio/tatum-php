@@ -53,7 +53,7 @@ class GenerateAuctionCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -63,7 +63,7 @@ class GenerateAuctionCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -76,7 +76,7 @@ class GenerateAuctionCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -96,7 +96,7 @@ class GenerateAuctionCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeRecipient(): string {
+    public function getFeeRecipient(): ?string {
         return $this->_data["fee_recipient"];
     }
 
@@ -116,7 +116,7 @@ class GenerateAuctionCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -136,7 +136,7 @@ class GenerateAuctionCelo extends AbstractModel {
      *
      * @return float
      */
-    public function getAuctionFee(): float {
+    public function getAuctionFee(): ?float {
         return $this->_data["auction_fee"];
     }
 
@@ -156,7 +156,7 @@ class GenerateAuctionCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

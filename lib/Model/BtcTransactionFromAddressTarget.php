@@ -45,7 +45,7 @@ class BtcTransactionFromAddressTarget extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -65,7 +65,7 @@ class BtcTransactionFromAddressTarget extends AbstractModel {
      *
      * @return float
      */
-    public function getValue(): float {
+    public function getValue(): ?float {
         return $this->_data["value"];
     }
 

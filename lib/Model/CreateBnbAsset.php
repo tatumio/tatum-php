@@ -241,7 +241,7 @@ class CreateBnbAsset extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -448,7 +448,7 @@ class CreateBnbAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getToken(): string {
+    public function getToken(): ?string {
         return $this->_data["token"];
     }
 
@@ -468,7 +468,7 @@ class CreateBnbAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 

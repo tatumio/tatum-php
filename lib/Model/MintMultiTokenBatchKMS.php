@@ -58,7 +58,7 @@ class MintMultiTokenBatchKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_ONE,
@@ -74,7 +74,7 @@ class MintMultiTokenBatchKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -94,7 +94,7 @@ class MintMultiTokenBatchKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTo(): array {
+    public function getTo(): ?array {
         return $this->_data["to"];
     }
 
@@ -114,7 +114,7 @@ class MintMultiTokenBatchKMS extends AbstractModel {
      *
      * @return string[][]
      */
-    public function getTokenId(): array {
+    public function getTokenId(): ?array {
         return $this->_data["token_id"];
     }
 
@@ -134,7 +134,7 @@ class MintMultiTokenBatchKMS extends AbstractModel {
      *
      * @return string[][]
      */
-    public function getAmounts(): array {
+    public function getAmounts(): ?array {
         return $this->_data["amounts"];
     }
 
@@ -174,7 +174,7 @@ class MintMultiTokenBatchKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -214,7 +214,7 @@ class MintMultiTokenBatchKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

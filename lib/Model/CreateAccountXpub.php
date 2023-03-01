@@ -219,7 +219,7 @@ class CreateAccountXpub extends AbstractModel {
      *
      * @return string[]
      */
-    public function getAccountingCurrencyAllowableValues(): array {
+    public function getAccountingCurrencyAllowableValues(): ?array {
         return [
             self::ACCOUNTING_CURRENCY_AED,
             self::ACCOUNTING_CURRENCY_AFN,
@@ -399,7 +399,7 @@ class CreateAccountXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -419,7 +419,7 @@ class CreateAccountXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getXpub(): string {
+    public function getXpub(): ?string {
         return $this->_data["xpub"];
     }
 

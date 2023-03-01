@@ -47,7 +47,7 @@ class TronTx20TokenInfo extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -67,7 +67,7 @@ class TronTx20TokenInfo extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -87,7 +87,7 @@ class TronTx20TokenInfo extends AbstractModel {
      *
      * @return float
      */
-    public function getDecimals(): float {
+    public function getDecimals(): ?float {
         return $this->_data["decimals"];
     }
 
@@ -107,7 +107,7 @@ class TronTx20TokenInfo extends AbstractModel {
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->_data["name"];
     }
 

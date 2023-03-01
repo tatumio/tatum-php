@@ -55,7 +55,7 @@ class ApproveNftSpending extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_BSC,
             self::CHAIN_ETH,
@@ -70,7 +70,7 @@ class ApproveNftSpending extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -90,7 +90,7 @@ class ApproveNftSpending extends AbstractModel {
      *
      * @return string
      */
-    public function getSpender(): string {
+    public function getSpender(): ?string {
         return $this->_data["spender"];
     }
 
@@ -110,7 +110,7 @@ class ApproveNftSpending extends AbstractModel {
      *
      * @return bool
      */
-    public function getIsErc721(): bool {
+    public function getIsErc721(): ?bool {
         return $this->_data["is_erc721"];
     }
 
@@ -130,7 +130,7 @@ class ApproveNftSpending extends AbstractModel {
      *
      * @return string
      */
-    public function getTokenId(): string {
+    public function getTokenId(): ?string {
         return $this->_data["token_id"];
     }
 
@@ -150,7 +150,7 @@ class ApproveNftSpending extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -170,7 +170,7 @@ class ApproveNftSpending extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

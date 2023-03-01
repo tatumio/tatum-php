@@ -46,7 +46,7 @@ class Error403KlaytnMnemonicPrivateKey extends AbstractModel {
      *
      * @return string
      */
-    public function getErrorCode(): string {
+    public function getErrorCode(): ?string {
         return $this->_data["error_code"];
     }
 
@@ -66,7 +66,7 @@ class Error403KlaytnMnemonicPrivateKey extends AbstractModel {
      *
      * @return string
      */
-    public function getMessage(): string {
+    public function getMessage(): ?string {
         return $this->_data["message"];
     }
 
@@ -86,7 +86,7 @@ class Error403KlaytnMnemonicPrivateKey extends AbstractModel {
      *
      * @return float
      */
-    public function getStatusCode(): float {
+    public function getStatusCode(): ?float {
         return $this->_data["status_code"];
     }
 

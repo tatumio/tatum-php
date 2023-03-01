@@ -51,7 +51,7 @@ class TransferErc20BlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -71,7 +71,7 @@ class TransferErc20BlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -91,7 +91,7 @@ class TransferErc20BlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -111,7 +111,7 @@ class TransferErc20BlockchainKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getDigits(): float {
+    public function getDigits(): ?float {
         return $this->_data["digits"];
     }
 
@@ -151,7 +151,7 @@ class TransferErc20BlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

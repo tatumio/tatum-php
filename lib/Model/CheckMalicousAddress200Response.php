@@ -45,7 +45,7 @@ class CheckMalicousAddress200Response extends AbstractModel {
      *
      * @return string[]
      */
-    public function getStatusAllowableValues(): array {
+    public function getStatusAllowableValues(): ?array {
         return [
             self::STATUS_VALID,
             self::STATUS_INVALID,

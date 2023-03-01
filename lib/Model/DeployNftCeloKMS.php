@@ -56,7 +56,7 @@ class DeployNftCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -66,7 +66,7 @@ class DeployNftCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -79,7 +79,7 @@ class DeployNftCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -99,7 +99,7 @@ class DeployNftCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->_data["name"];
     }
 
@@ -119,7 +119,7 @@ class DeployNftCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -159,7 +159,7 @@ class DeployNftCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -259,7 +259,7 @@ class DeployNftCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 

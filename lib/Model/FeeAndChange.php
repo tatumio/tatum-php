@@ -45,7 +45,7 @@ class FeeAndChange extends AbstractModel {
      *
      * @return string
      */
-    public function getChangeAddress(): string {
+    public function getChangeAddress(): ?string {
         return $this->_data["change_address"];
     }
 

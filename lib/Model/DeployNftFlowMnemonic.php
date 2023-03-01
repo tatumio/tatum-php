@@ -47,7 +47,7 @@ class DeployNftFlowMnemonic extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_FLOW,
         ];
@@ -58,7 +58,7 @@ class DeployNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -78,7 +78,7 @@ class DeployNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -98,7 +98,7 @@ class DeployNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -118,7 +118,7 @@ class DeployNftFlowMnemonic extends AbstractModel {
      *
      * @return int
      */
-    public function getIndex(): int {
+    public function getIndex(): ?int {
         return $this->_data["index"];
     }
 

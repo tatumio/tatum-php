@@ -52,7 +52,7 @@ class TransferKcsBlockchain extends AbstractModel {
      *
      * @return string[]
      */
-    public function getCurrencyAllowableValues(): array {
+    public function getCurrencyAllowableValues(): ?array {
         return [
             self::CURRENCY_KCS,
             self::CURRENCY_USDC_KCS,
@@ -105,7 +105,7 @@ class TransferKcsBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -125,7 +125,7 @@ class TransferKcsBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -165,7 +165,7 @@ class TransferKcsBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -185,7 +185,7 @@ class TransferKcsBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

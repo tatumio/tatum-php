@@ -53,7 +53,7 @@ class GenerateAuction extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_ONE,
@@ -68,7 +68,7 @@ class GenerateAuction extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -88,7 +88,7 @@ class GenerateAuction extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeRecipient(): string {
+    public function getFeeRecipient(): ?string {
         return $this->_data["fee_recipient"];
     }
 
@@ -108,7 +108,7 @@ class GenerateAuction extends AbstractModel {
      *
      * @return float
      */
-    public function getAuctionFee(): float {
+    public function getAuctionFee(): ?float {
         return $this->_data["auction_fee"];
     }
 
@@ -128,7 +128,7 @@ class GenerateAuction extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

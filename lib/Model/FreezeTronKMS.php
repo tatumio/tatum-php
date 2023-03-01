@@ -51,7 +51,7 @@ class FreezeTronKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getResourceAllowableValues(): array {
+    public function getResourceAllowableValues(): ?array {
         return [
             self::RESOURCE_BANDWIDTH,
             self::RESOURCE_ENERGY,
@@ -63,7 +63,7 @@ class FreezeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -83,7 +83,7 @@ class FreezeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -123,7 +123,7 @@ class FreezeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getReceiver(): string {
+    public function getReceiver(): ?string {
         return $this->_data["receiver"];
     }
 
@@ -143,7 +143,7 @@ class FreezeTronKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getDuration(): float {
+    public function getDuration(): ?float {
         return $this->_data["duration"];
     }
 
@@ -163,7 +163,7 @@ class FreezeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getResource(): string {
+    public function getResource(): ?string {
         return $this->_data["resource"];
     }
 
@@ -183,7 +183,7 @@ class FreezeTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 

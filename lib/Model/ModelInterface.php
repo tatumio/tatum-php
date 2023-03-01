@@ -55,7 +55,7 @@ interface ModelInterface {
      *
      * @return array<array-key, string>
      */
-    public static function getters(): array;
+    public static function getters(): ?array;
 
     /**
      * The original name of the model

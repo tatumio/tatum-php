@@ -49,7 +49,7 @@ class DeployErc721KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->_data["name"];
     }
 
@@ -69,7 +69,7 @@ class DeployErc721KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -89,7 +89,7 @@ class DeployErc721KMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

@@ -49,7 +49,7 @@ class NftTx extends AbstractModel {
      *
      * @return float
      */
-    public function getBlockNumber(): float {
+    public function getBlockNumber(): ?float {
         return $this->_data["block_number"];
     }
 
@@ -69,7 +69,7 @@ class NftTx extends AbstractModel {
      *
      * @return string
      */
-    public function getTxId(): string {
+    public function getTxId(): ?string {
         return $this->_data["tx_id"];
     }
 
@@ -89,7 +89,7 @@ class NftTx extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -109,7 +109,7 @@ class NftTx extends AbstractModel {
      *
      * @return string
      */
-    public function getTokenId(): string {
+    public function getTokenId(): ?string {
         return $this->_data["token_id"];
     }
 
@@ -129,7 +129,7 @@ class NftTx extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -149,7 +149,7 @@ class NftTx extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 

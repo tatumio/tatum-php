@@ -47,7 +47,7 @@ class FlowCreateAddressFromPubKeyKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -67,7 +67,7 @@ class FlowCreateAddressFromPubKeyKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getPublicKey(): string {
+    public function getPublicKey(): ?string {
         return $this->_data["public_key"];
     }
 
@@ -87,7 +87,7 @@ class FlowCreateAddressFromPubKeyKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

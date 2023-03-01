@@ -58,7 +58,7 @@ class ChartRequest extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTimeFrameAllowableValues(): array {
+    public function getTimeFrameAllowableValues(): ?array {
         return [
             self::TIME_FRAME_MIN_1,
             self::TIME_FRAME_MIN_3,
@@ -80,7 +80,7 @@ class ChartRequest extends AbstractModel {
      *
      * @return string
      */
-    public function getPair(): string {
+    public function getPair(): ?string {
         return $this->_data["pair"];
     }
 
@@ -100,7 +100,7 @@ class ChartRequest extends AbstractModel {
      *
      * @return float
      */
-    public function getFrom(): float {
+    public function getFrom(): ?float {
         return $this->_data["from"];
     }
 
@@ -120,7 +120,7 @@ class ChartRequest extends AbstractModel {
      *
      * @return float
      */
-    public function getTo(): float {
+    public function getTo(): ?float {
         return $this->_data["to"];
     }
 
@@ -140,7 +140,7 @@ class ChartRequest extends AbstractModel {
      *
      * @return string
      */
-    public function getTimeFrame(): string {
+    public function getTimeFrame(): ?string {
         return $this->_data["time_frame"];
     }
 

@@ -47,7 +47,7 @@ class BtcTransactionFromAddress extends AbstractModel {
      *
      * @return \Tatum\Model\BtcTransactionFromAddressSource[]
      */
-    public function getFromAddress(): array {
+    public function getFromAddress(): ?array {
         return $this->_data["from_address"];
     }
 
@@ -67,7 +67,7 @@ class BtcTransactionFromAddress extends AbstractModel {
      *
      * @return \Tatum\Model\BtcTransactionFromAddressTarget[]
      */
-    public function getTo(): array {
+    public function getTo(): ?array {
         return $this->_data["to"];
     }
 

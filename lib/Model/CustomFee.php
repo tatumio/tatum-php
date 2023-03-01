@@ -47,7 +47,7 @@ class CustomFee extends AbstractModel {
      *
      * @return string
      */
-    public function getGasPrice(): string {
+    public function getGasPrice(): ?string {
         return $this->_data["gas_price"];
     }
 
@@ -67,7 +67,7 @@ class CustomFee extends AbstractModel {
      *
      * @return string
      */
-    public function getGasLimit(): string {
+    public function getGasLimit(): ?string {
         return $this->_data["gas_limit"];
     }
 

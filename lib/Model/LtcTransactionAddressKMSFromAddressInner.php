@@ -46,7 +46,7 @@ class LtcTransactionAddressKMSFromAddressInner extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -66,7 +66,7 @@ class LtcTransactionAddressKMSFromAddressInner extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

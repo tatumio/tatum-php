@@ -50,7 +50,7 @@ class MintNftExpress200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getTxId(): string {
+    public function getTxId(): ?string {
         return $this->_data["tx_id"];
     }
 
@@ -170,7 +170,7 @@ class MintNftExpress200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

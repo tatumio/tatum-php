@@ -252,7 +252,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -264,7 +264,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -471,7 +471,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -491,7 +491,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -511,7 +511,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -531,7 +531,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): ?string {
         return $this->_data["description"];
     }
 
@@ -551,7 +551,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -571,7 +571,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getPrivateKey(): string {
+    public function getPrivateKey(): ?string {
         return $this->_data["private_key"];
     }
 
@@ -591,7 +591,7 @@ class DeployCeloErc20OffchainPKAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 

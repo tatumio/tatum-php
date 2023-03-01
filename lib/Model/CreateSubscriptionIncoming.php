@@ -45,7 +45,7 @@ class CreateSubscriptionIncoming extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_ACCOUNT_INCOMING_BLOCKCHAIN_TRANSACTION,
         ];
@@ -56,7 +56,7 @@ class CreateSubscriptionIncoming extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -76,7 +76,7 @@ class CreateSubscriptionIncoming extends AbstractModel {
      *
      * @return \Tatum\Model\CreateSubscriptionIncomingAttr
      */
-    public function getAttr(): \Tatum\Model\CreateSubscriptionIncomingAttr {
+    public function getAttr(): ?\Tatum\Model\CreateSubscriptionIncomingAttr {
         return $this->_data["attr"];
     }
 

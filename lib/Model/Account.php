@@ -53,7 +53,7 @@ class Account extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 
@@ -73,7 +73,7 @@ class Account extends AbstractModel {
      *
      * @return \Tatum\Model\AccountBalance
      */
-    public function getBalance(): \Tatum\Model\AccountBalance {
+    public function getBalance(): ?\Tatum\Model\AccountBalance {
         return $this->_data["balance"];
     }
 
@@ -93,7 +93,7 @@ class Account extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -113,7 +113,7 @@ class Account extends AbstractModel {
      *
      * @return bool
      */
-    public function getFrozen(): bool {
+    public function getFrozen(): ?bool {
         return $this->_data["frozen"];
     }
 
@@ -133,7 +133,7 @@ class Account extends AbstractModel {
      *
      * @return bool
      */
-    public function getActive(): bool {
+    public function getActive(): ?bool {
         return $this->_data["active"];
     }
 

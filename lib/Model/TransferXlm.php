@@ -52,7 +52,7 @@ class TransferXlm extends AbstractModel {
      *
      * @return string
      */
-    public function getSenderAccountId(): string {
+    public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
     }
 
@@ -72,7 +72,7 @@ class TransferXlm extends AbstractModel {
      *
      * @return string
      */
-    public function getFromAccount(): string {
+    public function getFromAccount(): ?string {
         return $this->_data["from_account"];
     }
 
@@ -92,7 +92,7 @@ class TransferXlm extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -112,7 +112,7 @@ class TransferXlm extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -132,7 +132,7 @@ class TransferXlm extends AbstractModel {
      *
      * @return string
      */
-    public function getSecret(): string {
+    public function getSecret(): ?string {
         return $this->_data["secret"];
     }
 

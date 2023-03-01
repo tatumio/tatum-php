@@ -52,7 +52,7 @@ class MintNftFlowMnemonic extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_FLOW,
         ];
@@ -63,7 +63,7 @@ class MintNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -83,7 +83,7 @@ class MintNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -103,7 +103,7 @@ class MintNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getUrl(): string {
+    public function getUrl(): ?string {
         return $this->_data["url"];
     }
 
@@ -123,7 +123,7 @@ class MintNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -143,7 +143,7 @@ class MintNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -163,7 +163,7 @@ class MintNftFlowMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -183,7 +183,7 @@ class MintNftFlowMnemonic extends AbstractModel {
      *
      * @return int
      */
-    public function getIndex(): int {
+    public function getIndex(): ?int {
         return $this->_data["index"];
     }
 

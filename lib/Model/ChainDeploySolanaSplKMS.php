@@ -49,7 +49,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_SOL,
         ];
@@ -60,7 +60,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -80,7 +80,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -100,7 +100,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getDigits(): float {
+    public function getDigits(): ?float {
         return $this->_data["digits"];
     }
 
@@ -120,7 +120,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -140,7 +140,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -160,7 +160,7 @@ class ChainDeploySolanaSplKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

@@ -45,7 +45,7 @@ class CreateSubscriptionContractLogEvent extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_CONTRACT_LOG_EVENT,
         ];
@@ -56,7 +56,7 @@ class CreateSubscriptionContractLogEvent extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -76,7 +76,7 @@ class CreateSubscriptionContractLogEvent extends AbstractModel {
      *
      * @return \Tatum\Model\CreateSubscriptionContractLogEventAttr
      */
-    public function getAttr(): \Tatum\Model\CreateSubscriptionContractLogEventAttr {
+    public function getAttr(): ?\Tatum\Model\CreateSubscriptionContractLogEventAttr {
         return $this->_data["attr"];
     }
 

@@ -46,7 +46,7 @@ class EthGasEstimation extends AbstractModel {
      *
      * @return string
      */
-    public function getGasLimit(): string {
+    public function getGasLimit(): ?string {
         return $this->_data["gas_limit"];
     }
 
@@ -66,7 +66,7 @@ class EthGasEstimation extends AbstractModel {
      *
      * @return string
      */
-    public function getGasPrice(): string {
+    public function getGasPrice(): ?string {
         return $this->_data["gas_price"];
     }
 
@@ -86,7 +86,7 @@ class EthGasEstimation extends AbstractModel {
      *
      * @return \Tatum\Model\EthGasEstimationDetails
      */
-    public function getEstimations(): \Tatum\Model\EthGasEstimationDetails {
+    public function getEstimations(): ?\Tatum\Model\EthGasEstimationDetails {
         return $this->_data["estimations"];
     }
 

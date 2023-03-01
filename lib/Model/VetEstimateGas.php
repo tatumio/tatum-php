@@ -48,7 +48,7 @@ class VetEstimateGas extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -68,7 +68,7 @@ class VetEstimateGas extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -88,7 +88,7 @@ class VetEstimateGas extends AbstractModel {
      *
      * @return string
      */
-    public function getValue(): string {
+    public function getValue(): ?string {
         return $this->_data["value"];
     }
 

@@ -55,7 +55,7 @@ class TronAccount extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -75,7 +75,7 @@ class TronAccount extends AbstractModel {
      *
      * @return float
      */
-    public function getBalance(): float {
+    public function getBalance(): ?float {
         return $this->_data["balance"];
     }
 
@@ -95,7 +95,7 @@ class TronAccount extends AbstractModel {
      *
      * @return \Tatum\Model\TronAccountTrc10Inner[]
      */
-    public function getTrc10(): array {
+    public function getTrc10(): ?array {
         return $this->_data["trc10"];
     }
 
@@ -115,7 +115,7 @@ class TronAccount extends AbstractModel {
      *
      * @return object[]
      */
-    public function getTrc20(): array {
+    public function getTrc20(): ?array {
         return $this->_data["trc20"];
     }
 
@@ -135,7 +135,7 @@ class TronAccount extends AbstractModel {
      *
      * @return float
      */
-    public function getCreateTime(): float {
+    public function getCreateTime(): ?float {
         return $this->_data["create_time"];
     }
 
@@ -195,7 +195,7 @@ class TronAccount extends AbstractModel {
      *
      * @return float
      */
-    public function getFreeNetUsage(): float {
+    public function getFreeNetUsage(): ?float {
         return $this->_data["free_net_usage"];
     }
 
@@ -275,7 +275,7 @@ class TronAccount extends AbstractModel {
      *
      * @return float
      */
-    public function getBandwidth(): float {
+    public function getBandwidth(): ?float {
         return $this->_data["bandwidth"];
     }
 

@@ -52,7 +52,7 @@ class CustodialCreateWalletRequest extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_BSC,
             self::CHAIN_ETH,
@@ -71,7 +71,7 @@ class CustodialCreateWalletRequest extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 

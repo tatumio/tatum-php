@@ -57,7 +57,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
             self::CHAIN_ETH,
@@ -73,7 +73,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_MINT_NFT_BATCH,
         ];
@@ -84,7 +84,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -104,7 +104,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -124,7 +124,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string
      */
-    public function getSender(): string {
+    public function getSender(): ?string {
         return $this->_data["sender"];
     }
 
@@ -144,7 +144,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string[]
      */
-    public function getRecipients(): array {
+    public function getRecipients(): ?array {
         return $this->_data["recipients"];
     }
 
@@ -164,7 +164,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -184,7 +184,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTokenIds(): array {
+    public function getTokenIds(): ?array {
         return $this->_data["token_ids"];
     }
 
@@ -204,7 +204,7 @@ class EstimateFeeBatchMintNft extends AbstractModel {
      *
      * @return string[]
      */
-    public function getUrls(): array {
+    public function getUrls(): ?array {
         return $this->_data["urls"];
     }
 

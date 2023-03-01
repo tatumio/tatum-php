@@ -49,7 +49,7 @@ class EstimateFeeFromAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_BTC,
             self::CHAIN_LTC,
@@ -60,7 +60,7 @@ class EstimateFeeFromAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_TRANSFER,
         ];
@@ -71,7 +71,7 @@ class EstimateFeeFromAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -91,7 +91,7 @@ class EstimateFeeFromAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -111,7 +111,7 @@ class EstimateFeeFromAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFromAddress(): array {
+    public function getFromAddress(): ?array {
         return $this->_data["from_address"];
     }
 
@@ -131,7 +131,7 @@ class EstimateFeeFromAddress extends AbstractModel {
      *
      * @return \Tatum\Model\EstimateFeeFromAddressToInner[]
      */
-    public function getTo(): array {
+    public function getTo(): ?array {
         return $this->_data["to"];
     }
 

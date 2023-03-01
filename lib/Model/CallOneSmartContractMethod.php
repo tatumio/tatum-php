@@ -51,7 +51,7 @@ class CallOneSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -91,7 +91,7 @@ class CallOneSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getMethodName(): string {
+    public function getMethodName(): ?string {
         return $this->_data["method_name"];
     }
 
@@ -111,7 +111,7 @@ class CallOneSmartContractMethod extends AbstractModel {
      *
      * @return object
      */
-    public function getMethodAbi(): object {
+    public function getMethodAbi(): ?object {
         return $this->_data["method_abi"];
     }
 
@@ -131,7 +131,7 @@ class CallOneSmartContractMethod extends AbstractModel {
      *
      * @return string[]
      */
-    public function getParams(): array {
+    public function getParams(): ?array {
         return $this->_data["params"];
     }
 
@@ -151,7 +151,7 @@ class CallOneSmartContractMethod extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

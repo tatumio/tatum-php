@@ -48,7 +48,7 @@ class FlowAddPubKeyMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -68,7 +68,7 @@ class FlowAddPubKeyMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getPublicKey(): string {
+    public function getPublicKey(): ?string {
         return $this->_data["public_key"];
     }
 
@@ -88,7 +88,7 @@ class FlowAddPubKeyMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -108,7 +108,7 @@ class FlowAddPubKeyMnemonic extends AbstractModel {
      *
      * @return float
      */
-    public function getIndex(): float {
+    public function getIndex(): ?float {
         return $this->_data["index"];
     }
 

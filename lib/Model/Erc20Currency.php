@@ -73,7 +73,7 @@ class Erc20Currency {
      *
      * @return string[]|int[]
      */
-    public static function getAllowableEnumValues(): array {
+    public static function getAllowableEnumValues(): ?array {
         return [
             self::BAT,
             self::BUSD,

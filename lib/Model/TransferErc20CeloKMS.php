@@ -53,7 +53,7 @@ class TransferErc20CeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -66,7 +66,7 @@ class TransferErc20CeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -86,7 +86,7 @@ class TransferErc20CeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -106,7 +106,7 @@ class TransferErc20CeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -126,7 +126,7 @@ class TransferErc20CeloKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getDigits(): float {
+    public function getDigits(): ?float {
         return $this->_data["digits"];
     }
 
@@ -166,7 +166,7 @@ class TransferErc20CeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -206,7 +206,7 @@ class TransferErc20CeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 

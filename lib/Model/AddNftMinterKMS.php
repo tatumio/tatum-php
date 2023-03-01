@@ -60,7 +60,7 @@ class AddNftMinterKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_BSC,
             self::CHAIN_CELO,
@@ -76,7 +76,7 @@ class AddNftMinterKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -89,7 +89,7 @@ class AddNftMinterKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -109,7 +109,7 @@ class AddNftMinterKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -129,7 +129,7 @@ class AddNftMinterKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getMinter(): string {
+    public function getMinter(): ?string {
         return $this->_data["minter"];
     }
 
@@ -149,7 +149,7 @@ class AddNftMinterKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

@@ -61,7 +61,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_ONE,
@@ -76,7 +76,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -96,7 +96,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -116,7 +116,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getNftAddress(): string {
+    public function getNftAddress(): ?string {
         return $this->_data["nft_address"];
     }
 
@@ -136,7 +136,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSeller(): string {
+    public function getSeller(): ?string {
         return $this->_data["seller"];
     }
 
@@ -176,7 +176,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getListingId(): string {
+    public function getListingId(): ?string {
         return $this->_data["listing_id"];
     }
 
@@ -216,7 +216,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTokenId(): string {
+    public function getTokenId(): ?string {
         return $this->_data["token_id"];
     }
 
@@ -236,7 +236,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getPrice(): string {
+    public function getPrice(): ?string {
         return $this->_data["price"];
     }
 
@@ -256,7 +256,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return bool
      */
-    public function getIsErc721(): bool {
+    public function getIsErc721(): ?bool {
         return $this->_data["is_erc721"];
     }
 
@@ -276,7 +276,7 @@ class SellAssetOnMarketplaceKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

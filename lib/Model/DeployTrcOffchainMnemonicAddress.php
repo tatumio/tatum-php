@@ -253,7 +253,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_TRC10,
             self::TYPE_TRC20,
@@ -264,7 +264,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -471,7 +471,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -491,7 +491,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -511,7 +511,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return float
      */
-    public function getDecimals(): float {
+    public function getDecimals(): ?float {
         return $this->_data["decimals"];
     }
 
@@ -531,7 +531,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -551,7 +551,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): ?string {
         return $this->_data["description"];
     }
 
@@ -571,7 +571,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -591,7 +591,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -611,7 +611,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return int
      */
-    public function getIndex(): int {
+    public function getIndex(): ?int {
         return $this->_data["index"];
     }
 
@@ -631,7 +631,7 @@ class DeployTrcOffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 

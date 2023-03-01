@@ -48,7 +48,7 @@ class XlmAccountSignersInner extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_SHA256_HASH,
             self::TYPE_ED25519_PUBLIC_KEY,

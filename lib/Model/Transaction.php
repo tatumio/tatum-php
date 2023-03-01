@@ -77,7 +77,7 @@ class Transaction extends AbstractModel {
      *
      * @return string[]
      */
-    public function getOperationTypeAllowableValues(): array {
+    public function getOperationTypeAllowableValues(): ?array {
         return [
             self::OPERATION_TYPE_PAYMENT,
             self::OPERATION_TYPE_WITHDRAWAL,
@@ -94,7 +94,7 @@ class Transaction extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTransactionTypeAllowableValues(): array {
+    public function getTransactionTypeAllowableValues(): ?array {
         return [
             self::TRANSACTION_TYPE_FAILED,
             self::TRANSACTION_TYPE_DEBIT_PAYMENT,
@@ -114,7 +114,7 @@ class Transaction extends AbstractModel {
      *
      * @return string
      */
-    public function getAccountId(): string {
+    public function getAccountId(): ?string {
         return $this->_data["account_id"];
     }
 
@@ -154,7 +154,7 @@ class Transaction extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -174,7 +174,7 @@ class Transaction extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -194,7 +194,7 @@ class Transaction extends AbstractModel {
      *
      * @return bool
      */
-    public function getAnonymous(): bool {
+    public function getAnonymous(): ?bool {
         return $this->_data["anonymous"];
     }
 
@@ -214,7 +214,7 @@ class Transaction extends AbstractModel {
      *
      * @return float
      */
-    public function getCreated(): float {
+    public function getCreated(): ?float {
         return $this->_data["created"];
     }
 
@@ -234,7 +234,7 @@ class Transaction extends AbstractModel {
      *
      * @return \Tatum\Model\MarketValue
      */
-    public function getMarketValue(): \Tatum\Model\MarketValue {
+    public function getMarketValue(): ?\Tatum\Model\MarketValue {
         return $this->_data["market_value"];
     }
 
@@ -254,7 +254,7 @@ class Transaction extends AbstractModel {
      *
      * @return string
      */
-    public function getOperationType(): string {
+    public function getOperationType(): ?string {
         return $this->_data["operation_type"];
     }
 
@@ -274,7 +274,7 @@ class Transaction extends AbstractModel {
      *
      * @return string
      */
-    public function getTransactionType(): string {
+    public function getTransactionType(): ?string {
         return $this->_data["transaction_type"];
     }
 
@@ -294,7 +294,7 @@ class Transaction extends AbstractModel {
      *
      * @return string
      */
-    public function getReference(): string {
+    public function getReference(): ?string {
         return $this->_data["reference"];
     }
 

@@ -87,7 +87,7 @@ class TransactionFilterCustomer extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTransactionTypeAllowableValues(): array {
+    public function getTransactionTypeAllowableValues(): ?array {
         return [
             self::TRANSACTION_TYPE_FAILED,
             self::TRANSACTION_TYPE_DEBIT_PAYMENT,
@@ -107,7 +107,7 @@ class TransactionFilterCustomer extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTransactionTypesAllowableValues(): array {
+    public function getTransactionTypesAllowableValues(): ?array {
         return [
             self::TRANSACTION_TYPES_FAILED,
             self::TRANSACTION_TYPES_DEBIT_PAYMENT,
@@ -127,7 +127,7 @@ class TransactionFilterCustomer extends AbstractModel {
      *
      * @return string[]
      */
-    public function getOpTypeAllowableValues(): array {
+    public function getOpTypeAllowableValues(): ?array {
         return [
             self::OP_TYPE_PAYMENT,
             self::OP_TYPE_WITHDRAWAL,
@@ -145,7 +145,7 @@ class TransactionFilterCustomer extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 

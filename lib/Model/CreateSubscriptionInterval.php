@@ -45,7 +45,7 @@ class CreateSubscriptionInterval extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_TRANSACTION_HISTORY_REPORT,
         ];
@@ -56,7 +56,7 @@ class CreateSubscriptionInterval extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -76,7 +76,7 @@ class CreateSubscriptionInterval extends AbstractModel {
      *
      * @return \Tatum\Model\CreateSubscriptionIntervalAttr
      */
-    public function getAttr(): \Tatum\Model\CreateSubscriptionIntervalAttr {
+    public function getAttr(): ?\Tatum\Model\CreateSubscriptionIntervalAttr {
         return $this->_data["attr"];
     }
 

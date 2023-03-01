@@ -249,7 +249,7 @@ class DeployKCSErc20OffchainMnemonicAddress extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -456,7 +456,7 @@ class DeployKCSErc20OffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -476,7 +476,7 @@ class DeployKCSErc20OffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -496,7 +496,7 @@ class DeployKCSErc20OffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): ?string {
         return $this->_data["description"];
     }
 
@@ -516,7 +516,7 @@ class DeployKCSErc20OffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 
@@ -576,7 +576,7 @@ class DeployKCSErc20OffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -596,7 +596,7 @@ class DeployKCSErc20OffchainMnemonicAddress extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -616,7 +616,7 @@ class DeployKCSErc20OffchainMnemonicAddress extends AbstractModel {
      *
      * @return int
      */
-    public function getIndex(): int {
+    public function getIndex(): ?int {
         return $this->_data["index"];
     }
 

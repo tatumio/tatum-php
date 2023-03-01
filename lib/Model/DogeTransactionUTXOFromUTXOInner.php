@@ -48,7 +48,7 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      *
      * @return string
      */
-    public function getTxHash(): string {
+    public function getTxHash(): ?string {
         return $this->_data["tx_hash"];
     }
 
@@ -68,7 +68,7 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      *
      * @return string
      */
-    public function getValue(): string {
+    public function getValue(): ?string {
         return $this->_data["value"];
     }
 
@@ -88,7 +88,7 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -108,7 +108,7 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      *
      * @return float
      */
-    public function getIndex(): float {
+    public function getIndex(): ?float {
         return $this->_data["index"];
     }
 
@@ -128,7 +128,7 @@ class DogeTransactionUTXOFromUTXOInner extends AbstractModel {
      *
      * @return string
      */
-    public function getPrivateKey(): string {
+    public function getPrivateKey(): ?string {
         return $this->_data["private_key"];
     }
 

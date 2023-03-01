@@ -51,7 +51,7 @@ class TransferEthBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -71,7 +71,7 @@ class TransferEthBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -91,7 +91,7 @@ class TransferEthBlockchainKMS extends AbstractModel {
      *
      * @return \Tatum\Model\Erc20Currency
      */
-    public function getCurrency(): \Tatum\Model\Erc20Currency {
+    public function getCurrency(): ?\Tatum\Model\Erc20Currency {
         return $this->_data["currency"];
     }
 
@@ -111,7 +111,7 @@ class TransferEthBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

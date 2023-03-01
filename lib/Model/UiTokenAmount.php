@@ -87,7 +87,7 @@ class UiTokenAmount extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getUiAmount(): mixed {
+    public function getUiAmount(): ?mixed {
         return $this->_data["ui_amount"];
     }
 

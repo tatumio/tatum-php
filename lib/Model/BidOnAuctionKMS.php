@@ -57,7 +57,7 @@ class BidOnAuctionKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_ONE,
@@ -72,7 +72,7 @@ class BidOnAuctionKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -152,7 +152,7 @@ class BidOnAuctionKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 
@@ -172,7 +172,7 @@ class BidOnAuctionKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getBidValue(): string {
+    public function getBidValue(): ?string {
         return $this->_data["bid_value"];
     }
 
@@ -192,7 +192,7 @@ class BidOnAuctionKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

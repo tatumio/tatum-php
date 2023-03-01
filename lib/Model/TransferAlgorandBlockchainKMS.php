@@ -50,7 +50,7 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -70,7 +70,7 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -90,7 +90,7 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFee(): string {
+    public function getFee(): ?string {
         return $this->_data["fee"];
     }
 
@@ -110,7 +110,7 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -170,7 +170,7 @@ class TransferAlgorandBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

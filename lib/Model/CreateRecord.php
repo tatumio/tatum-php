@@ -58,7 +58,7 @@ class CreateRecord extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_BSC,
             self::CHAIN_EGLD,
@@ -75,7 +75,7 @@ class CreateRecord extends AbstractModel {
      *
      * @return string
      */
-    public function getData(): string {
+    public function getData(): ?string {
         return $this->_data["data"];
     }
 
@@ -95,7 +95,7 @@ class CreateRecord extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -115,7 +115,7 @@ class CreateRecord extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

@@ -48,7 +48,7 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFromAccount(): string {
+    public function getFromAccount(): ?string {
         return $this->_data["from_account"];
     }
 
@@ -68,7 +68,7 @@ class AccountSettingsXrpBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

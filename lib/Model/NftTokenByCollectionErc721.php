@@ -45,7 +45,7 @@ class NftTokenByCollectionErc721 extends AbstractModel {
      *
      * @return string
      */
-    public function getTokenId(): string {
+    public function getTokenId(): ?string {
         return $this->_data["token_id"];
     }
 

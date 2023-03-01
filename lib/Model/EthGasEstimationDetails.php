@@ -49,7 +49,7 @@ class EthGasEstimationDetails extends AbstractModel {
      *
      * @return string
      */
-    public function getSafe(): string {
+    public function getSafe(): ?string {
         return $this->_data["safe"];
     }
 
@@ -69,7 +69,7 @@ class EthGasEstimationDetails extends AbstractModel {
      *
      * @return string
      */
-    public function getStandard(): string {
+    public function getStandard(): ?string {
         return $this->_data["standard"];
     }
 
@@ -89,7 +89,7 @@ class EthGasEstimationDetails extends AbstractModel {
      *
      * @return string
      */
-    public function getFast(): string {
+    public function getFast(): ?string {
         return $this->_data["fast"];
     }
 
@@ -109,7 +109,7 @@ class EthGasEstimationDetails extends AbstractModel {
      *
      * @return string
      */
-    public function getBaseFee(): string {
+    public function getBaseFee(): ?string {
         return $this->_data["base_fee"];
     }
 

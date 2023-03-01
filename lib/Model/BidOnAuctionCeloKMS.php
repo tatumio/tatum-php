@@ -57,7 +57,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -67,7 +67,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -80,7 +80,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -100,7 +100,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -120,7 +120,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -180,7 +180,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 
@@ -200,7 +200,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getBidValue(): string {
+    public function getBidValue(): ?string {
         return $this->_data["bid_value"];
     }
 
@@ -220,7 +220,7 @@ class BidOnAuctionCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

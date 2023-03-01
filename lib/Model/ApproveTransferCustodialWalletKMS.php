@@ -62,7 +62,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_BSC,
             self::CHAIN_ETH,
@@ -77,7 +77,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getContractTypeAllowableValues(): array {
+    public function getContractTypeAllowableValues(): ?array {
         return [
             self::CONTRACT_TYPE_0,
             self::CONTRACT_TYPE_1,
@@ -90,7 +90,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -110,7 +110,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getCustodialAddress(): string {
+    public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
     }
 
@@ -130,7 +130,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSpender(): string {
+    public function getSpender(): ?string {
         return $this->_data["spender"];
     }
 
@@ -150,7 +150,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getContractType(): float {
+    public function getContractType(): ?float {
         return $this->_data["contract_type"];
     }
 
@@ -170,7 +170,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTokenAddress(): string {
+    public function getTokenAddress(): ?string {
         return $this->_data["token_address"];
     }
 
@@ -230,7 +230,7 @@ class ApproveTransferCustodialWalletKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

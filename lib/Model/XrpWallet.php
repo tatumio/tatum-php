@@ -45,7 +45,7 @@ class XrpWallet extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -65,7 +65,7 @@ class XrpWallet extends AbstractModel {
      *
      * @return string
      */
-    public function getSecret(): string {
+    public function getSecret(): ?string {
         return $this->_data["secret"];
     }
 

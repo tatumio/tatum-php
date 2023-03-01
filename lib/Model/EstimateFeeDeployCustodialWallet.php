@@ -53,7 +53,7 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
             self::CHAIN_ETH,
@@ -69,7 +69,7 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_DEPLOY_CUSTODIAL_WALLET_BATCH,
         ];
@@ -80,7 +80,7 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -100,7 +100,7 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -120,7 +120,7 @@ class EstimateFeeDeployCustodialWallet extends AbstractModel {
      *
      * @return float
      */
-    public function getBatchCount(): float {
+    public function getBatchCount(): ?float {
         return $this->_data["batch_count"];
     }
 

@@ -56,7 +56,7 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -66,7 +66,7 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -79,7 +79,7 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -119,7 +119,7 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -159,7 +159,7 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      *
      * @return bool
      */
-    public function getEnableFungibleTokens(): bool {
+    public function getEnableFungibleTokens(): ?bool {
         return $this->_data["enable_fungible_tokens"];
     }
 
@@ -179,7 +179,7 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      *
      * @return bool
      */
-    public function getEnableNonFungibleTokens(): bool {
+    public function getEnableNonFungibleTokens(): ?bool {
         return $this->_data["enable_non_fungible_tokens"];
     }
 
@@ -199,7 +199,7 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      *
      * @return bool
      */
-    public function getEnableSemiFungibleTokens(): bool {
+    public function getEnableSemiFungibleTokens(): ?bool {
         return $this->_data["enable_semi_fungible_tokens"];
     }
 
@@ -219,7 +219,7 @@ class GenerateCustodialWalletCeloKMS extends AbstractModel {
      *
      * @return bool
      */
-    public function getEnableBatchTransactions(): bool {
+    public function getEnableBatchTransactions(): ?bool {
         return $this->_data["enable_batch_transactions"];
     }
 

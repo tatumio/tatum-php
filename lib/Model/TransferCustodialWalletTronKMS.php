@@ -57,7 +57,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_TRON,
         ];
@@ -67,7 +67,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getContractTypeAllowableValues(): array {
+    public function getContractTypeAllowableValues(): ?array {
         return [
             self::CONTRACT_TYPE_0,
             self::CONTRACT_TYPE_1,
@@ -80,7 +80,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -100,7 +100,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getCustodialAddress(): string {
+    public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
     }
 
@@ -120,7 +120,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -140,7 +140,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getRecipient(): string {
+    public function getRecipient(): ?string {
         return $this->_data["recipient"];
     }
 
@@ -160,7 +160,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getContractType(): float {
+    public function getContractType(): ?float {
         return $this->_data["contract_type"];
     }
 
@@ -240,7 +240,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -280,7 +280,7 @@ class TransferCustodialWalletTronKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getFeeLimit(): float {
+    public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
     }
 

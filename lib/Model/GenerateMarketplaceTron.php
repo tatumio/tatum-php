@@ -48,7 +48,7 @@ class GenerateMarketplaceTron extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_TRON,
         ];
@@ -79,7 +79,7 @@ class GenerateMarketplaceTron extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeRecipient(): string {
+    public function getFeeRecipient(): ?string {
         return $this->_data["fee_recipient"];
     }
 
@@ -99,7 +99,7 @@ class GenerateMarketplaceTron extends AbstractModel {
      *
      * @return float
      */
-    public function getMarketplaceFee(): float {
+    public function getMarketplaceFee(): ?float {
         return $this->_data["marketplace_fee"];
     }
 
@@ -119,7 +119,7 @@ class GenerateMarketplaceTron extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 
@@ -139,7 +139,7 @@ class GenerateMarketplaceTron extends AbstractModel {
      *
      * @return float
      */
-    public function getFeeLimit(): float {
+    public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
     }
 

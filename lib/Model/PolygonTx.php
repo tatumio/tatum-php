@@ -99,7 +99,7 @@ class PolygonTx extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getBlockNumber(): mixed {
+    public function getBlockNumber(): ?mixed {
         return $this->_data["block_number"];
     }
 
@@ -259,7 +259,7 @@ class PolygonTx extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getTransactionIndex(): mixed {
+    public function getTransactionIndex(): ?mixed {
         return $this->_data["transaction_index"];
     }
 
@@ -299,7 +299,7 @@ class PolygonTx extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getGasUsed(): mixed {
+    public function getGasUsed(): ?mixed {
         return $this->_data["gas_used"];
     }
 
@@ -319,7 +319,7 @@ class PolygonTx extends AbstractModel {
      *
      * @return mixed|null
      */
-    public function getCumulativeGasUsed(): mixed {
+    public function getCumulativeGasUsed(): ?mixed {
         return $this->_data["cumulative_gas_used"];
     }
 

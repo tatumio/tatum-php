@@ -46,7 +46,7 @@ class OffchainTransactionResult extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 
@@ -66,7 +66,7 @@ class OffchainTransactionResult extends AbstractModel {
      *
      * @return string
      */
-    public function getTxId(): string {
+    public function getTxId(): ?string {
         return $this->_data["tx_id"];
     }
 
@@ -86,7 +86,7 @@ class OffchainTransactionResult extends AbstractModel {
      *
      * @return bool
      */
-    public function getCompleted(): bool {
+    public function getCompleted(): ?bool {
         return $this->_data["completed"];
     }
 

@@ -45,7 +45,7 @@ class DeployAlgoErc20Response extends AbstractModel {
      *
      * @return string
      */
-    public function getAccountId(): string {
+    public function getAccountId(): ?string {
         return $this->_data["account_id"];
     }
 
@@ -65,7 +65,7 @@ class DeployAlgoErc20Response extends AbstractModel {
      *
      * @return string
      */
-    public function getTxId(): string {
+    public function getTxId(): ?string {
         return $this->_data["tx_id"];
     }
 

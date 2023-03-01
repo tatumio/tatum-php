@@ -421,7 +421,7 @@ class Erc20Address extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -630,7 +630,7 @@ class Erc20Address extends AbstractModel {
      *
      * @return string[]
      */
-    public function getAccountingCurrencyAllowableValues(): array {
+    public function getAccountingCurrencyAllowableValues(): ?array {
         return [
             self::ACCOUNTING_CURRENCY_AED,
             self::ACCOUNTING_CURRENCY_AFN,
@@ -810,7 +810,7 @@ class Erc20Address extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -830,7 +830,7 @@ class Erc20Address extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -850,7 +850,7 @@ class Erc20Address extends AbstractModel {
      *
      * @return float
      */
-    public function getDecimals(): float {
+    public function getDecimals(): ?float {
         return $this->_data["decimals"];
     }
 
@@ -870,7 +870,7 @@ class Erc20Address extends AbstractModel {
      *
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): ?string {
         return $this->_data["description"];
     }
 
@@ -890,7 +890,7 @@ class Erc20Address extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -910,7 +910,7 @@ class Erc20Address extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 

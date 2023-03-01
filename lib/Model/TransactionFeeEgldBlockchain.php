@@ -47,7 +47,7 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getSender(): string {
+    public function getSender(): ?string {
         return $this->_data["sender"];
     }
 
@@ -67,7 +67,7 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getReceiver(): string {
+    public function getReceiver(): ?string {
         return $this->_data["receiver"];
     }
 
@@ -87,7 +87,7 @@ class TransactionFeeEgldBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getValue(): string {
+    public function getValue(): ?string {
         return $this->_data["value"];
     }
 

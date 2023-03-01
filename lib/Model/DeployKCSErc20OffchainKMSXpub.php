@@ -249,7 +249,7 @@ class DeployKCSErc20OffchainKMSXpub extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -456,7 +456,7 @@ class DeployKCSErc20OffchainKMSXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -476,7 +476,7 @@ class DeployKCSErc20OffchainKMSXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -496,7 +496,7 @@ class DeployKCSErc20OffchainKMSXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): ?string {
         return $this->_data["description"];
     }
 
@@ -516,7 +516,7 @@ class DeployKCSErc20OffchainKMSXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 
@@ -576,7 +576,7 @@ class DeployKCSErc20OffchainKMSXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getXpub(): string {
+    public function getXpub(): ?string {
         return $this->_data["xpub"];
     }
 
@@ -596,7 +596,7 @@ class DeployKCSErc20OffchainKMSXpub extends AbstractModel {
      *
      * @return int
      */
-    public function getDerivationIndex(): int {
+    public function getDerivationIndex(): ?int {
         return $this->_data["derivation_index"];
     }
 
@@ -616,7 +616,7 @@ class DeployKCSErc20OffchainKMSXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

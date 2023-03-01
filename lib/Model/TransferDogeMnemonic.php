@@ -54,7 +54,7 @@ class TransferDogeMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getSenderAccountId(): string {
+    public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
     }
 
@@ -74,7 +74,7 @@ class TransferDogeMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -94,7 +94,7 @@ class TransferDogeMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -194,7 +194,7 @@ class TransferDogeMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -214,7 +214,7 @@ class TransferDogeMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getXpub(): string {
+    public function getXpub(): ?string {
         return $this->_data["xpub"];
     }
 

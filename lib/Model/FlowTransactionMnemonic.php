@@ -50,7 +50,7 @@ class FlowTransactionMnemonic extends AbstractModel {
      *
      * @return string[]
      */
-    public function getCurrencyAllowableValues(): array {
+    public function getCurrencyAllowableValues(): ?array {
         return [
             self::CURRENCY_FLOW,
             self::CURRENCY_FUSD,
@@ -62,7 +62,7 @@ class FlowTransactionMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAccount(): string {
+    public function getAccount(): ?string {
         return $this->_data["account"];
     }
 
@@ -82,7 +82,7 @@ class FlowTransactionMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -102,7 +102,7 @@ class FlowTransactionMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -122,7 +122,7 @@ class FlowTransactionMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -142,7 +142,7 @@ class FlowTransactionMnemonic extends AbstractModel {
      *
      * @return string
      */
-    public function getMnemonic(): string {
+    public function getMnemonic(): ?string {
         return $this->_data["mnemonic"];
     }
 
@@ -162,7 +162,7 @@ class FlowTransactionMnemonic extends AbstractModel {
      *
      * @return float
      */
-    public function getIndex(): float {
+    public function getIndex(): ?float {
         return $this->_data["index"];
     }
 

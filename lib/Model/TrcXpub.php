@@ -423,7 +423,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_TRC10,
             self::TYPE_TRC20,
@@ -434,7 +434,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -640,7 +640,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string[]
      */
-    public function getAccountingCurrencyAllowableValues(): array {
+    public function getAccountingCurrencyAllowableValues(): ?array {
         return [
             self::ACCOUNTING_CURRENCY_AED,
             self::ACCOUNTING_CURRENCY_AFN,
@@ -820,7 +820,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getSymbol(): string {
+    public function getSymbol(): ?string {
         return $this->_data["symbol"];
     }
 
@@ -840,7 +840,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -860,7 +860,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return float
      */
-    public function getDecimals(): float {
+    public function getDecimals(): ?float {
         return $this->_data["decimals"];
     }
 
@@ -880,7 +880,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -900,7 +900,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): ?string {
         return $this->_data["description"];
     }
 
@@ -920,7 +920,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getXpub(): string {
+    public function getXpub(): ?string {
         return $this->_data["xpub"];
     }
 
@@ -940,7 +940,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return int
      */
-    public function getDerivationIndex(): int {
+    public function getDerivationIndex(): ?int {
         return $this->_data["derivation_index"];
     }
 
@@ -960,7 +960,7 @@ class TrcXpub extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 

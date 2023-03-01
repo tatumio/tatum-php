@@ -45,7 +45,7 @@ class CreateSubscriptionPartialTradeMatch extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_CUSTOMER_PARTIAL_TRADE_MATCH,
         ];
@@ -56,7 +56,7 @@ class CreateSubscriptionPartialTradeMatch extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -76,7 +76,7 @@ class CreateSubscriptionPartialTradeMatch extends AbstractModel {
      *
      * @return \Tatum\Model\CreateSubscriptionPartialTradeMatchAttr
      */
-    public function getAttr(): \Tatum\Model\CreateSubscriptionPartialTradeMatchAttr {
+    public function getAttr(): ?\Tatum\Model\CreateSubscriptionPartialTradeMatchAttr {
         return $this->_data["attr"];
     }
 

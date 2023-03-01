@@ -55,7 +55,7 @@ class GenerateCustodialWalletBatchKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_MATIC,
             self::CHAIN_ETH,
@@ -71,7 +71,7 @@ class GenerateCustodialWalletBatchKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -91,7 +91,7 @@ class GenerateCustodialWalletBatchKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -131,7 +131,7 @@ class GenerateCustodialWalletBatchKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getBatchCount(): float {
+    public function getBatchCount(): ?float {
         return $this->_data["batch_count"];
     }
 
@@ -151,7 +151,7 @@ class GenerateCustodialWalletBatchKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getOwner(): string {
+    public function getOwner(): ?string {
         return $this->_data["owner"];
     }
 

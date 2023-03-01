@@ -51,7 +51,7 @@ class CallPolygonSmartContractMethodKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -71,7 +71,7 @@ class CallPolygonSmartContractMethodKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getMethodName(): string {
+    public function getMethodName(): ?string {
         return $this->_data["method_name"];
     }
 
@@ -91,7 +91,7 @@ class CallPolygonSmartContractMethodKMS extends AbstractModel {
      *
      * @return object
      */
-    public function getMethodAbi(): object {
+    public function getMethodAbi(): ?object {
         return $this->_data["method_abi"];
     }
 
@@ -111,7 +111,7 @@ class CallPolygonSmartContractMethodKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getParams(): array {
+    public function getParams(): ?array {
         return $this->_data["params"];
     }
 
@@ -151,7 +151,7 @@ class CallPolygonSmartContractMethodKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

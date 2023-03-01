@@ -47,7 +47,7 @@ class LtcTransactionAddress extends AbstractModel {
      *
      * @return \Tatum\Model\AdaTransactionFromAddressFromAddressInner[]
      */
-    public function getFromAddress(): array {
+    public function getFromAddress(): ?array {
         return $this->_data["from_address"];
     }
 
@@ -67,7 +67,7 @@ class LtcTransactionAddress extends AbstractModel {
      *
      * @return \Tatum\Model\LtcTransactionAddressToInner[]
      */
-    public function getTo(): array {
+    public function getTo(): ?array {
         return $this->_data["to"];
     }
 

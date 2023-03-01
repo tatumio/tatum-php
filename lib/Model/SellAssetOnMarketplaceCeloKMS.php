@@ -61,7 +61,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -71,7 +71,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -84,7 +84,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -104,7 +104,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -124,7 +124,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -144,7 +144,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getNftAddress(): string {
+    public function getNftAddress(): ?string {
         return $this->_data["nft_address"];
     }
 
@@ -164,7 +164,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSeller(): string {
+    public function getSeller(): ?string {
         return $this->_data["seller"];
     }
 
@@ -204,7 +204,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getListingId(): string {
+    public function getListingId(): ?string {
         return $this->_data["listing_id"];
     }
 
@@ -244,7 +244,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTokenId(): string {
+    public function getTokenId(): ?string {
         return $this->_data["token_id"];
     }
 
@@ -264,7 +264,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getPrice(): string {
+    public function getPrice(): ?string {
         return $this->_data["price"];
     }
 
@@ -284,7 +284,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return bool
      */
-    public function getIsErc721(): bool {
+    public function getIsErc721(): ?bool {
         return $this->_data["is_erc721"];
     }
 
@@ -304,7 +304,7 @@ class SellAssetOnMarketplaceCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

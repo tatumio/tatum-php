@@ -53,7 +53,7 @@ class ActivateGasPumpCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -63,7 +63,7 @@ class ActivateGasPumpCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -76,7 +76,7 @@ class ActivateGasPumpCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -96,7 +96,7 @@ class ActivateGasPumpCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getOwner(): string {
+    public function getOwner(): ?string {
         return $this->_data["owner"];
     }
 
@@ -116,7 +116,7 @@ class ActivateGasPumpCeloKMS extends AbstractModel {
      *
      * @return int
      */
-    public function getFrom(): int {
+    public function getFrom(): ?int {
         return $this->_data["from"];
     }
 
@@ -136,7 +136,7 @@ class ActivateGasPumpCeloKMS extends AbstractModel {
      *
      * @return int
      */
-    public function getTo(): int {
+    public function getTo(): ?int {
         return $this->_data["to"];
     }
 
@@ -156,7 +156,7 @@ class ActivateGasPumpCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 
@@ -176,7 +176,7 @@ class ActivateGasPumpCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

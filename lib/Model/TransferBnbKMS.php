@@ -52,7 +52,7 @@ class TransferBnbKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSenderAccountId(): string {
+    public function getSenderAccountId(): ?string {
         return $this->_data["sender_account_id"];
     }
 
@@ -72,7 +72,7 @@ class TransferBnbKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -92,7 +92,7 @@ class TransferBnbKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -172,7 +172,7 @@ class TransferBnbKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -192,7 +192,7 @@ class TransferBnbKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFromAddress(): string {
+    public function getFromAddress(): ?string {
         return $this->_data["from_address"];
     }
 

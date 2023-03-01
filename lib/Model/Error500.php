@@ -45,7 +45,7 @@ class Error500 extends AbstractModel {
      *
      * @return string
      */
-    public function getMessage(): string {
+    public function getMessage(): ?string {
         return $this->_data["message"];
     }
 
@@ -65,7 +65,7 @@ class Error500 extends AbstractModel {
      *
      * @return float
      */
-    public function getStatusCode(): float {
+    public function getStatusCode(): ?float {
         return $this->_data["status_code"];
     }
 

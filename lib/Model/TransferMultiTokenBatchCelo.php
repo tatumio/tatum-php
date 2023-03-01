@@ -55,7 +55,7 @@ class TransferMultiTokenBatchCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -65,7 +65,7 @@ class TransferMultiTokenBatchCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -78,7 +78,7 @@ class TransferMultiTokenBatchCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -98,7 +98,7 @@ class TransferMultiTokenBatchCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -118,7 +118,7 @@ class TransferMultiTokenBatchCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTokenId(): array {
+    public function getTokenId(): ?array {
         return $this->_data["token_id"];
     }
 
@@ -138,7 +138,7 @@ class TransferMultiTokenBatchCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getAmounts(): array {
+    public function getAmounts(): ?array {
         return $this->_data["amounts"];
     }
 
@@ -178,7 +178,7 @@ class TransferMultiTokenBatchCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -198,7 +198,7 @@ class TransferMultiTokenBatchCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

@@ -46,7 +46,7 @@ class Error extends AbstractModel {
      *
      * @return string
      */
-    public function getErrorCode(): string {
+    public function getErrorCode(): ?string {
         return $this->_data["error_code"];
     }
 
@@ -66,7 +66,7 @@ class Error extends AbstractModel {
      *
      * @return string
      */
-    public function getMessage(): string {
+    public function getMessage(): ?string {
         return $this->_data["message"];
     }
 

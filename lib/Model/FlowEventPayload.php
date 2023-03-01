@@ -45,7 +45,7 @@ class FlowEventPayload extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_EVENT,
         ];

@@ -46,7 +46,7 @@ class TransferVetBlockchainFee extends AbstractModel {
      *
      * @return string
      */
-    public function getGasLimit(): string {
+    public function getGasLimit(): ?string {
         return $this->_data["gas_limit"];
     }
 

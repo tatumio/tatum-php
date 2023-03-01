@@ -219,7 +219,7 @@ class Customer extends AbstractModel {
      *
      * @return string[]
      */
-    public function getAccountingCurrencyAllowableValues(): array {
+    public function getAccountingCurrencyAllowableValues(): ?array {
         return [
             self::ACCOUNTING_CURRENCY_AED,
             self::ACCOUNTING_CURRENCY_AFN,
@@ -399,7 +399,7 @@ class Customer extends AbstractModel {
      *
      * @return string
      */
-    public function getExternalId(): string {
+    public function getExternalId(): ?string {
         return $this->_data["external_id"];
     }
 
@@ -419,7 +419,7 @@ class Customer extends AbstractModel {
      *
      * @return string
      */
-    public function getId(): string {
+    public function getId(): ?string {
         return $this->_data["id"];
     }
 
@@ -439,7 +439,7 @@ class Customer extends AbstractModel {
      *
      * @return bool
      */
-    public function getEnabled(): bool {
+    public function getEnabled(): ?bool {
         return $this->_data["enabled"];
     }
 
@@ -459,7 +459,7 @@ class Customer extends AbstractModel {
      *
      * @return bool
      */
-    public function getActive(): bool {
+    public function getActive(): ?bool {
         return $this->_data["active"];
     }
 

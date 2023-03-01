@@ -57,7 +57,7 @@ class Trade extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_BUY,
             self::TYPE_SELL,

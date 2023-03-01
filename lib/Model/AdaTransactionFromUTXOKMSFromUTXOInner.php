@@ -46,7 +46,7 @@ class AdaTransactionFromUTXOKMSFromUTXOInner extends AbstractModel {
      *
      * @return string
      */
-    public function getTxHash(): string {
+    public function getTxHash(): ?string {
         return $this->_data["tx_hash"];
     }
 
@@ -66,7 +66,7 @@ class AdaTransactionFromUTXOKMSFromUTXOInner extends AbstractModel {
      *
      * @return float
      */
-    public function getIndex(): float {
+    public function getIndex(): ?float {
         return $this->_data["index"];
     }
 
@@ -86,7 +86,7 @@ class AdaTransactionFromUTXOKMSFromUTXOInner extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

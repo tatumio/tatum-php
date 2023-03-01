@@ -45,7 +45,7 @@ class EstimateFeeFromUTXOFromUTXOInner extends AbstractModel {
      *
      * @return string
      */
-    public function getTxHash(): string {
+    public function getTxHash(): ?string {
         return $this->_data["tx_hash"];
     }
 
@@ -65,7 +65,7 @@ class EstimateFeeFromUTXOFromUTXOInner extends AbstractModel {
      *
      * @return float
      */
-    public function getIndex(): float {
+    public function getIndex(): ?float {
         return $this->_data["index"];
     }
 

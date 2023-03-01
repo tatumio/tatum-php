@@ -52,7 +52,7 @@ class CreateRecordCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -62,7 +62,7 @@ class CreateRecordCelo extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -75,7 +75,7 @@ class CreateRecordCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getData(): string {
+    public function getData(): ?string {
         return $this->_data["data"];
     }
 
@@ -95,7 +95,7 @@ class CreateRecordCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -115,7 +115,7 @@ class CreateRecordCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 
@@ -135,7 +135,7 @@ class CreateRecordCelo extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeCurrency(): string {
+    public function getFeeCurrency(): ?string {
         return $this->_data["fee_currency"];
     }
 

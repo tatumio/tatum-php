@@ -57,7 +57,7 @@ class MintMultipleNftMinter extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_MATIC,
@@ -73,7 +73,7 @@ class MintMultipleNftMinter extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
         ];
@@ -84,7 +84,7 @@ class MintMultipleNftMinter extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -104,7 +104,7 @@ class MintMultipleNftMinter extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTo(): array {
+    public function getTo(): ?array {
         return $this->_data["to"];
     }
 
@@ -124,7 +124,7 @@ class MintMultipleNftMinter extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTokenId(): array {
+    public function getTokenId(): ?array {
         return $this->_data["token_id"];
     }
 
@@ -144,7 +144,7 @@ class MintMultipleNftMinter extends AbstractModel {
      *
      * @return string
      */
-    public function getMinter(): string {
+    public function getMinter(): ?string {
         return $this->_data["minter"];
     }
 
@@ -164,7 +164,7 @@ class MintMultipleNftMinter extends AbstractModel {
      *
      * @return string[]
      */
-    public function getUrl(): array {
+    public function getUrl(): ?array {
         return $this->_data["url"];
     }
 
@@ -184,7 +184,7 @@ class MintMultipleNftMinter extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 

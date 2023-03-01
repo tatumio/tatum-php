@@ -60,7 +60,7 @@ class Deposit extends AbstractModel {
      *
      * @return string[]
      */
-    public function getStatusAllowableValues(): array {
+    public function getStatusAllowableValues(): ?array {
         return [
             self::STATUS_IN_PROGRESS,
             self::STATUS_DONE,
@@ -73,7 +73,7 @@ class Deposit extends AbstractModel {
      *
      * @return string
      */
-    public function getTxId(): string {
+    public function getTxId(): ?string {
         return $this->_data["tx_id"];
     }
 
@@ -93,7 +93,7 @@ class Deposit extends AbstractModel {
      *
      * @return string
      */
-    public function getAddress(): string {
+    public function getAddress(): ?string {
         return $this->_data["address"];
     }
 
@@ -113,7 +113,7 @@ class Deposit extends AbstractModel {
      *
      * @return float
      */
-    public function getTimestamp(): float {
+    public function getTimestamp(): ?float {
         return $this->_data["timestamp"];
     }
 
@@ -133,7 +133,7 @@ class Deposit extends AbstractModel {
      *
      * @return string
      */
-    public function getXpub(): string {
+    public function getXpub(): ?string {
         return $this->_data["xpub"];
     }
 
@@ -153,7 +153,7 @@ class Deposit extends AbstractModel {
      *
      * @return int
      */
-    public function getDerivationKey(): int {
+    public function getDerivationKey(): ?int {
         return $this->_data["derivation_key"];
     }
 
@@ -173,7 +173,7 @@ class Deposit extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -193,7 +193,7 @@ class Deposit extends AbstractModel {
      *
      * @return string
      */
-    public function getStatus(): string {
+    public function getStatus(): ?string {
         return $this->_data["status"];
     }
 
@@ -213,7 +213,7 @@ class Deposit extends AbstractModel {
      *
      * @return string
      */
-    public function getAccountId(): string {
+    public function getAccountId(): ?string {
         return $this->_data["account_id"];
     }
 
@@ -233,7 +233,7 @@ class Deposit extends AbstractModel {
      *
      * @return string
      */
-    public function getCurrency(): string {
+    public function getCurrency(): ?string {
         return $this->_data["currency"];
     }
 
@@ -253,7 +253,7 @@ class Deposit extends AbstractModel {
      *
      * @return string
      */
-    public function getReference(): string {
+    public function getReference(): ?string {
         return $this->_data["reference"];
     }
 
@@ -273,7 +273,7 @@ class Deposit extends AbstractModel {
      *
      * @return float
      */
-    public function getVout(): float {
+    public function getVout(): ?float {
         return $this->_data["vout"];
     }
 
@@ -293,7 +293,7 @@ class Deposit extends AbstractModel {
      *
      * @return bool
      */
-    public function getSpent(): bool {
+    public function getSpent(): ?bool {
         return $this->_data["spent"];
     }
 
@@ -313,7 +313,7 @@ class Deposit extends AbstractModel {
      *
      * @return float
      */
-    public function getBlockHeight(): float {
+    public function getBlockHeight(): ?float {
         return $this->_data["block_height"];
     }
 

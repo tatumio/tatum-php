@@ -53,7 +53,7 @@ class CreateGasPump extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_BSC,
             self::CHAIN_CELO,
@@ -70,7 +70,7 @@ class CreateGasPump extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -90,7 +90,7 @@ class CreateGasPump extends AbstractModel {
      *
      * @return string
      */
-    public function getOwner(): string {
+    public function getOwner(): ?string {
         return $this->_data["owner"];
     }
 
@@ -110,7 +110,7 @@ class CreateGasPump extends AbstractModel {
      *
      * @return int
      */
-    public function getFrom(): int {
+    public function getFrom(): ?int {
         return $this->_data["from"];
     }
 
@@ -130,7 +130,7 @@ class CreateGasPump extends AbstractModel {
      *
      * @return int
      */
-    public function getTo(): int {
+    public function getTo(): ?int {
         return $this->_data["to"];
     }
 

@@ -45,7 +45,7 @@ class OffchainAddressesAddressesInner extends AbstractModel {
      *
      * @return string
      */
-    public function getAccountId(): string {
+    public function getAccountId(): ?string {
         return $this->_data["account_id"];
     }
 

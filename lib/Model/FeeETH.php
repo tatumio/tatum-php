@@ -45,7 +45,7 @@ class FeeETH extends AbstractModel {
      *
      * @return float
      */
-    public function getGasLimit(): float {
+    public function getGasLimit(): ?float {
         return $this->_data["gas_limit"];
     }
 
@@ -65,7 +65,7 @@ class FeeETH extends AbstractModel {
      *
      * @return float
      */
-    public function getGasPrice(): float {
+    public function getGasPrice(): ?float {
         return $this->_data["gas_price"];
     }
 

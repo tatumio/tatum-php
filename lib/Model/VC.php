@@ -257,7 +257,7 @@ class VC extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTrcTypeAllowableValues(): array {
+    public function getTrcTypeAllowableValues(): ?array {
         return [
             self::TRC_TYPE_TRC10,
             self::TRC_TYPE_TRC20,
@@ -268,7 +268,7 @@ class VC extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -474,7 +474,7 @@ class VC extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_ETH,
             self::CHAIN_XRP,
@@ -487,7 +487,7 @@ class VC extends AbstractModel {
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->_data["name"];
     }
 
@@ -507,7 +507,7 @@ class VC extends AbstractModel {
      *
      * @return string
      */
-    public function getSupply(): string {
+    public function getSupply(): ?string {
         return $this->_data["supply"];
     }
 
@@ -527,7 +527,7 @@ class VC extends AbstractModel {
      *
      * @return string
      */
-    public function getAccountId(): string {
+    public function getAccountId(): ?string {
         return $this->_data["account_id"];
     }
 
@@ -547,7 +547,7 @@ class VC extends AbstractModel {
      *
      * @return float
      */
-    public function getBaseRate(): float {
+    public function getBaseRate(): ?float {
         return $this->_data["base_rate"];
     }
 
@@ -607,7 +607,7 @@ class VC extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 

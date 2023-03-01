@@ -45,7 +45,7 @@ class CreateSubscriptionTxInTheBlock extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array {
+    public function getTypeAllowableValues(): ?array {
         return [
             self::TYPE_TRANSACTION_IN_THE_BLOCK,
         ];
@@ -56,7 +56,7 @@ class CreateSubscriptionTxInTheBlock extends AbstractModel {
      *
      * @return string
      */
-    public function getType(): string {
+    public function getType(): ?string {
         return $this->_data["type"];
     }
 
@@ -76,7 +76,7 @@ class CreateSubscriptionTxInTheBlock extends AbstractModel {
      *
      * @return \Tatum\Model\CreateSubscriptionTxInTheBlockAttr
      */
-    public function getAttr(): \Tatum\Model\CreateSubscriptionTxInTheBlockAttr {
+    public function getAttr(): ?\Tatum\Model\CreateSubscriptionTxInTheBlockAttr {
         return $this->_data["attr"];
     }
 

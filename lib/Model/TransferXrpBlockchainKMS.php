@@ -50,7 +50,7 @@ class TransferXrpBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFromAccount(): string {
+    public function getFromAccount(): ?string {
         return $this->_data["from_account"];
     }
 
@@ -70,7 +70,7 @@ class TransferXrpBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -90,7 +90,7 @@ class TransferXrpBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -110,7 +110,7 @@ class TransferXrpBlockchainKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

@@ -54,7 +54,7 @@ class BuyAssetOnMarketplaceTronKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_TRON,
         ];
@@ -65,7 +65,7 @@ class BuyAssetOnMarketplaceTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -85,7 +85,7 @@ class BuyAssetOnMarketplaceTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -105,7 +105,7 @@ class BuyAssetOnMarketplaceTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -145,7 +145,7 @@ class BuyAssetOnMarketplaceTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getListingId(): string {
+    public function getListingId(): ?string {
         return $this->_data["listing_id"];
     }
 
@@ -165,7 +165,7 @@ class BuyAssetOnMarketplaceTronKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 
@@ -265,7 +265,7 @@ class BuyAssetOnMarketplaceTronKMS extends AbstractModel {
      *
      * @return float
      */
-    public function getFeeLimit(): float {
+    public function getFeeLimit(): ?float {
         return $this->_data["fee_limit"];
     }
 

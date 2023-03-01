@@ -45,7 +45,7 @@ class XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields extends AbstractMode
      *
      * @return string
      */
-    public function getBalance(): string {
+    public function getBalance(): ?string {
         return $this->_data["balance"];
     }
 
@@ -65,7 +65,7 @@ class XrpTxMetaAffectedNodesInnerModifiedNodePreviousFields extends AbstractMode
      *
      * @return float
      */
-    public function getSequence(): float {
+    public function getSequence(): ?float {
         return $this->_data["sequence"];
     }
 

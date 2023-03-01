@@ -51,7 +51,7 @@ class BlockchainFee extends AbstractModel {
      *
      * @return float
      */
-    public function getFast(): float {
+    public function getFast(): ?float {
         return $this->_data["fast"];
     }
 
@@ -71,7 +71,7 @@ class BlockchainFee extends AbstractModel {
      *
      * @return float
      */
-    public function getMedium(): float {
+    public function getMedium(): ?float {
         return $this->_data["medium"];
     }
 
@@ -91,7 +91,7 @@ class BlockchainFee extends AbstractModel {
      *
      * @return float
      */
-    public function getSlow(): float {
+    public function getSlow(): ?float {
         return $this->_data["slow"];
     }
 
@@ -131,7 +131,7 @@ class BlockchainFee extends AbstractModel {
      *
      * @return string
      */
-    public function getTime(): string {
+    public function getTime(): ?string {
         return $this->_data["time"];
     }
 
@@ -151,7 +151,7 @@ class BlockchainFee extends AbstractModel {
      *
      * @return float
      */
-    public function getBlock(): float {
+    public function getBlock(): ?float {
         return $this->_data["block"];
     }
 

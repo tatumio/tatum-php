@@ -65,7 +65,7 @@ class TronAccountTx200Response extends AbstractModel {
      *
      * @return \Tatum\Model\TronTx[]
      */
-    public function getTransactions(): array {
+    public function getTransactions(): ?array {
         return $this->_data["transactions"];
     }
 

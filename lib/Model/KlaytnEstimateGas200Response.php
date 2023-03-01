@@ -45,7 +45,7 @@ class KlaytnEstimateGas200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getGasPrice(): string {
+    public function getGasPrice(): ?string {
         return $this->_data["gas_price"];
     }
 
@@ -65,7 +65,7 @@ class KlaytnEstimateGas200Response extends AbstractModel {
      *
      * @return float
      */
-    public function getGasLimit(): float {
+    public function getGasLimit(): ?float {
         return $this->_data["gas_limit"];
     }
 

@@ -48,7 +48,7 @@ class WithdrawFromMarketplaceSolana extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_SOL,
         ];
@@ -59,7 +59,7 @@ class WithdrawFromMarketplaceSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -79,7 +79,7 @@ class WithdrawFromMarketplaceSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -99,7 +99,7 @@ class WithdrawFromMarketplaceSolana extends AbstractModel {
      *
      * @return mixed
      */
-    public function getFrom(): mixed {
+    public function getFrom(): ?mixed {
         return $this->_data["from"];
     }
 
@@ -119,7 +119,7 @@ class WithdrawFromMarketplaceSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 
@@ -139,7 +139,7 @@ class WithdrawFromMarketplaceSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 

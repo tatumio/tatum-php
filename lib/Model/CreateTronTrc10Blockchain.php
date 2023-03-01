@@ -51,7 +51,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getFromPrivateKey(): string {
+    public function getFromPrivateKey(): ?string {
         return $this->_data["from_private_key"];
     }
 
@@ -71,7 +71,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getRecipient(): string {
+    public function getRecipient(): ?string {
         return $this->_data["recipient"];
     }
 
@@ -91,7 +91,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getName(): string {
+    public function getName(): ?string {
         return $this->_data["name"];
     }
 
@@ -111,7 +111,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getAbbreviation(): string {
+    public function getAbbreviation(): ?string {
         return $this->_data["abbreviation"];
     }
 
@@ -131,7 +131,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getDescription(): string {
+    public function getDescription(): ?string {
         return $this->_data["description"];
     }
 
@@ -151,7 +151,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getUrl(): string {
+    public function getUrl(): ?string {
         return $this->_data["url"];
     }
 
@@ -171,7 +171,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      *
      * @return float
      */
-    public function getTotalSupply(): float {
+    public function getTotalSupply(): ?float {
         return $this->_data["total_supply"];
     }
 
@@ -191,7 +191,7 @@ class CreateTronTrc10Blockchain extends AbstractModel {
      *
      * @return float
      */
-    public function getDecimals(): float {
+    public function getDecimals(): ?float {
         return $this->_data["decimals"];
     }
 

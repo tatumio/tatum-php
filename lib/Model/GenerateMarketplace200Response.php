@@ -48,7 +48,7 @@ class GenerateMarketplace200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getTxId(): string {
+    public function getTxId(): ?string {
         return $this->_data["tx_id"];
     }
 
@@ -68,7 +68,7 @@ class GenerateMarketplace200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getContractAddress(): string {
+    public function getContractAddress(): ?string {
         return $this->_data["contract_address"];
     }
 
@@ -88,7 +88,7 @@ class GenerateMarketplace200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getFeeAccount(): string {
+    public function getFeeAccount(): ?string {
         return $this->_data["fee_account"];
     }
 
@@ -108,7 +108,7 @@ class GenerateMarketplace200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getTreasuryAccount(): string {
+    public function getTreasuryAccount(): ?string {
         return $this->_data["treasury_account"];
     }
 
@@ -128,7 +128,7 @@ class GenerateMarketplace200Response extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

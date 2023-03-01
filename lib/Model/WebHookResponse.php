@@ -88,7 +88,7 @@ class WebHookResponse extends AbstractModel {
      *
      * @return bool
      */
-    public function getNetworkError(): bool {
+    public function getNetworkError(): ?bool {
         return $this->_data["network_error"];
     }
 

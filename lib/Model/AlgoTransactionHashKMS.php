@@ -47,7 +47,7 @@ class AlgoTransactionHashKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getTxId(): string {
+    public function getTxId(): ?string {
         return $this->_data["tx_id"];
     }
 

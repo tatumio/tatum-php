@@ -62,7 +62,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_CELO,
         ];
@@ -72,7 +72,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getContractTypeAllowableValues(): array {
+    public function getContractTypeAllowableValues(): ?array {
         return [
             self::CONTRACT_TYPE_0,
             self::CONTRACT_TYPE_1,
@@ -85,7 +85,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getFeeCurrencyAllowableValues(): array {
+    public function getFeeCurrencyAllowableValues(): ?array {
         return [
             self::FEE_CURRENCY_CELO,
             self::FEE_CURRENCY_CUSD,
@@ -98,7 +98,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -118,7 +118,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getCustodialAddress(): string {
+    public function getCustodialAddress(): ?string {
         return $this->_data["custodial_address"];
     }
 
@@ -138,7 +138,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getRecipient(): array {
+    public function getRecipient(): ?array {
         return $this->_data["recipient"];
     }
 
@@ -158,7 +158,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return float[]
      */
-    public function getContractType(): array {
+    public function getContractType(): ?array {
         return $this->_data["contract_type"];
     }
 
@@ -178,7 +178,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTokenAddress(): array {
+    public function getTokenAddress(): ?array {
         return $this->_data["token_address"];
     }
 
@@ -198,7 +198,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getAmount(): array {
+    public function getAmount(): ?array {
         return $this->_data["amount"];
     }
 
@@ -218,7 +218,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTokenId(): array {
+    public function getTokenId(): ?array {
         return $this->_data["token_id"];
     }
 
@@ -238,7 +238,7 @@ class TransferCustodialWalletBatchCeloKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

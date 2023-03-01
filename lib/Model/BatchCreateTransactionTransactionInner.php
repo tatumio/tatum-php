@@ -52,7 +52,7 @@ class BatchCreateTransactionTransactionInner extends AbstractModel {
      *
      * @return string
      */
-    public function getRecipientAccountId(): string {
+    public function getRecipientAccountId(): ?string {
         return $this->_data["recipient_account_id"];
     }
 
@@ -72,7 +72,7 @@ class BatchCreateTransactionTransactionInner extends AbstractModel {
      *
      * @return string
      */
-    public function getAmount(): string {
+    public function getAmount(): ?string {
         return $this->_data["amount"];
     }
 

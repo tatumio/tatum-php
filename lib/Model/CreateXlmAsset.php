@@ -242,7 +242,7 @@ class CreateXlmAsset extends AbstractModel {
      *
      * @return string[]
      */
-    public function getBasePairAllowableValues(): array {
+    public function getBasePairAllowableValues(): ?array {
         return [
             self::BASE_PAIR_AED,
             self::BASE_PAIR_AFN,
@@ -449,7 +449,7 @@ class CreateXlmAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getIssuerAccount(): string {
+    public function getIssuerAccount(): ?string {
         return $this->_data["issuer_account"];
     }
 
@@ -469,7 +469,7 @@ class CreateXlmAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getToken(): string {
+    public function getToken(): ?string {
         return $this->_data["token"];
     }
 
@@ -489,7 +489,7 @@ class CreateXlmAsset extends AbstractModel {
      *
      * @return string
      */
-    public function getBasePair(): string {
+    public function getBasePair(): ?string {
         return $this->_data["base_pair"];
     }
 

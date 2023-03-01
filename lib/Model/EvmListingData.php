@@ -54,7 +54,7 @@ class EvmListingData extends AbstractModel {
      *
      * @return string[]
      */
-    public function getStateAllowableValues(): array {
+    public function getStateAllowableValues(): ?array {
         return [
             self::STATE__0,
             self::STATE__1,

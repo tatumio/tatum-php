@@ -48,7 +48,7 @@ class AccountSettingsXrpBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getFromAccount(): string {
+    public function getFromAccount(): ?string {
         return $this->_data["from_account"];
     }
 
@@ -68,7 +68,7 @@ class AccountSettingsXrpBlockchain extends AbstractModel {
      *
      * @return string
      */
-    public function getFromSecret(): string {
+    public function getFromSecret(): ?string {
         return $this->_data["from_secret"];
     }
 

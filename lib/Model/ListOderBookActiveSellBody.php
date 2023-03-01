@@ -66,7 +66,7 @@ class ListOderBookActiveSellBody extends AbstractModel {
      *
      * @return string[]
      */
-    public function getTradeTypeAllowableValues(): array {
+    public function getTradeTypeAllowableValues(): ?array {
         return [
             self::TRADE_TYPE_FUTURE_SELL,
             self::TRADE_TYPE_SELL,
@@ -77,7 +77,7 @@ class ListOderBookActiveSellBody extends AbstractModel {
      *
      * @return string[]
      */
-    public function getSortAllowableValues(): array {
+    public function getSortAllowableValues(): ?array {
         return [
             self::SORT_PRICE_ASC,
             self::SORT_PRICE_DESC,
@@ -137,7 +137,7 @@ class ListOderBookActiveSellBody extends AbstractModel {
      *
      * @return float
      */
-    public function getPageSize(): float {
+    public function getPageSize(): ?float {
         return $this->_data["page_size"];
     }
 

@@ -48,7 +48,7 @@ class VerifySolanaNFTKMS extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_SOL,
         ];
@@ -59,7 +59,7 @@ class VerifySolanaNFTKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -79,7 +79,7 @@ class VerifySolanaNFTKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getNftAddress(): string {
+    public function getNftAddress(): ?string {
         return $this->_data["nft_address"];
     }
 
@@ -99,7 +99,7 @@ class VerifySolanaNFTKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getCollectionAddress(): string {
+    public function getCollectionAddress(): ?string {
         return $this->_data["collection_address"];
     }
 
@@ -119,7 +119,7 @@ class VerifySolanaNFTKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getFrom(): string {
+    public function getFrom(): ?string {
         return $this->_data["from"];
     }
 
@@ -139,7 +139,7 @@ class VerifySolanaNFTKMS extends AbstractModel {
      *
      * @return string
      */
-    public function getSignatureId(): string {
+    public function getSignatureId(): ?string {
         return $this->_data["signature_id"];
     }
 

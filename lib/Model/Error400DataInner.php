@@ -47,7 +47,7 @@ class Error400DataInner extends AbstractModel {
      *
      * @return array<string,mixed>
      */
-    public function getTarget(): array {
+    public function getTarget(): ?array {
         return $this->_data["target"];
     }
 

@@ -48,7 +48,7 @@ class MintNftExpressSolana extends AbstractModel {
      *
      * @return string[]
      */
-    public function getChainAllowableValues(): array {
+    public function getChainAllowableValues(): ?array {
         return [
             self::CHAIN_SOL,
         ];
@@ -59,7 +59,7 @@ class MintNftExpressSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getChain(): string {
+    public function getChain(): ?string {
         return $this->_data["chain"];
     }
 
@@ -79,7 +79,7 @@ class MintNftExpressSolana extends AbstractModel {
      *
      * @return string
      */
-    public function getTo(): string {
+    public function getTo(): ?string {
         return $this->_data["to"];
     }
 
@@ -99,7 +99,7 @@ class MintNftExpressSolana extends AbstractModel {
      *
      * @return \Tatum\Model\SolanaNftExpressMetadata
      */
-    public function getMetadata(): \Tatum\Model\SolanaNftExpressMetadata {
+    public function getMetadata(): ?\Tatum\Model\SolanaNftExpressMetadata {
         return $this->_data["metadata"];
     }
 
