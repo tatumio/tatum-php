@@ -29,11 +29,9 @@ Tatum blockchain development framework, visit [our website](https://tatum.io/fra
 The Tatum API features powerful endpoints that simplify a complex blockchain into single API requests. Code for all
 supported blockchains using unified API calls.
 
-### Need help?
+### Troubleshooting
 
-To chat with other developers, get help from the Support team, and engage with the thriving Tatum community, join 
-our [Discord server](https://discord.com/invite/tatum). For more information about how to work with Tatum,
-review the [API documentation](https://docs.tatum.io/).
+Should you face any issues, feel free to contribute to our troubleshooting process by forking the SDK and submitting pull requests for any changes. For reporting issues and tracking progress, create new issues within this GitHub repository.
 
 ### Getting started
 
