@@ -26,9 +26,9 @@ class CancelSellAssetOnMarketplaceSolana extends AbstractModel {
     protected static $_name = "CancelSellAssetOnMarketplaceSolana";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
-        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
-        "from" => ["from", "mixed", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "from" => ["from", "mixed", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
         "authority_private_key" => ["authorityPrivateKey", "string", null, "getAuthorityPrivateKey", "setAuthorityPrivateKey", null, ["r" => 0, "nl" => 87, "xl" => 128]], 
         "from_private_key" => ["fromPrivateKey", "string", null, "getFromPrivateKey", "setFromPrivateKey", null, ["r" => 1, "nl" => 87, "xl" => 128]]
     ];

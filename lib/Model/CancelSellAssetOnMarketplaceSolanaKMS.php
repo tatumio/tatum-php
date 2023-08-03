@@ -26,9 +26,9 @@ class CancelSellAssetOnMarketplaceSolanaKMS extends AbstractModel {
     protected static $_name = "CancelSellAssetOnMarketplaceSolanaKMS";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
-        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
-        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
-        "from" => ["from", "mixed", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "contract_address" => ["contractAddress", "string", null, "getContractAddress", "setContractAddress", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "listing_id" => ["listingId", "mixed", null, "getListingId", "setListingId", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "from" => ["from", "mixed", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
         "authority_signature_id" => ["authoritySignatureId", "string", 'uuid', "getAuthoritySignatureId", "setAuthoritySignatureId", null, ["r" => 0]], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
