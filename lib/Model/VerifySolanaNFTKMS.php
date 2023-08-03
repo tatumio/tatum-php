@@ -26,9 +26,9 @@ class VerifySolanaNFTKMS extends AbstractModel {
     protected static $_name = "VerifySolanaNFTKMS";
     protected static $_definition = [
         "chain" => ["chain", "string", null, "getChain", "setChain", null, ["r" => 1, "e" => 1]], 
-        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
-        "collection_address" => ["collectionAddress", "string", null, "getCollectionAddress", "setCollectionAddress", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
-        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "nft_address" => ["nftAddress", "string", null, "getNftAddress", "setNftAddress", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "collection_address" => ["collectionAddress", "string", null, "getCollectionAddress", "setCollectionAddress", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "from" => ["from", "string", null, "getFrom", "setFrom", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
         "signature_id" => ["signatureId", "string", 'uuid', "getSignatureId", "setSignatureId", null, ["r" => 1]]
     ];
 

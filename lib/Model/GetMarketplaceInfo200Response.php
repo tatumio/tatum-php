@@ -24,14 +24,14 @@ class GetMarketplaceInfo200Response extends AbstractModel {
     public const _D = null;
     protected static $_name = "GetMarketplaceInfo_200_response";
     protected static $_definition = [
-        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
-        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
-        "authority" => ["authority", "string", null, "getAuthority", "setAuthority", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
-        "creator" => ["creator", "string", null, "getCreator", "setCreator", null, ["r" => 1, "nl" => 44, "xl" => 44]], 
+        "fee_account" => ["feeAccount", "string", null, "getFeeAccount", "setFeeAccount", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "treasury_account" => ["treasuryAccount", "string", null, "getTreasuryAccount", "setTreasuryAccount", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "authority" => ["authority", "string", null, "getAuthority", "setAuthority", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "creator" => ["creator", "string", null, "getCreator", "setCreator", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
         "marketplace_fee" => ["marketplaceFee", "float", null, "getMarketplaceFee", "setMarketplaceFee", null, ["r" => 1, "n" => [0], "x" => [10000]]], 
-        "treasury_mint" => ["treasuryMint", "string", null, "getTreasuryMint", "setTreasuryMint", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
-        "treasury_withdrawal_destination" => ["treasuryWithdrawalDestination", "string", null, "getTreasuryWithdrawalDestination", "setTreasuryWithdrawalDestination", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
-        "fee_withdrawal_destination" => ["feeWithdrawalDestination", "string", null, "getFeeWithdrawalDestination", "setFeeWithdrawalDestination", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "treasury_mint" => ["treasuryMint", "string", null, "getTreasuryMint", "setTreasuryMint", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "treasury_withdrawal_destination" => ["treasuryWithdrawalDestination", "string", null, "getTreasuryWithdrawalDestination", "setTreasuryWithdrawalDestination", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
+        "fee_withdrawal_destination" => ["feeWithdrawalDestination", "string", null, "getFeeWithdrawalDestination", "setFeeWithdrawalDestination", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
         "requires_sign_off" => ["requiresSignOff", "bool", null, "getRequiresSignOff", "setRequiresSignOff", null, ["r" => 1]], 
         "can_change_sale_price" => ["canChangeSalePrice", "bool", null, "getCanChangeSalePrice", "setCanChangeSalePrice", null, ["r" => 1]]
     ];

@@ -24,7 +24,7 @@ class SolanaNftMetadataCreator extends AbstractModel {
     public const _D = null;
     protected static $_name = "SolanaNftMetadataCreator";
     protected static $_definition = [
-        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 43, "xl" => 44]], 
+        "address" => ["address", "string", null, "getAddress", "setAddress", null, ["r" => 1, "nl" => 32, "xl" => 44]], 
         "verified" => ["verified", "bool", null, "getVerified", "setVerified", null, ["r" => 1]], 
         "share" => ["share", "float", null, "getShare", "setShare", null, ["r" => 1]]
     ];

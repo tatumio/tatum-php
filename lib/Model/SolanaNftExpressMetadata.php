@@ -28,7 +28,7 @@ class SolanaNftExpressMetadata extends AbstractModel {
         "symbol" => ["symbol", "string", null, "getSymbol", "setSymbol", null, ["r" => 1, "xl" => 255]], 
         "seller_fee_basis_points" => ["sellerFeeBasisPoints", "float", null, "getSellerFeeBasisPoints", "setSellerFeeBasisPoints", null, ["r" => 1]], 
         "uri" => ["uri", "string", null, "getUri", "setUri", null, ["r" => 1, "xl" => 500]], 
-        "collection" => ["collection", "string", null, "getCollection", "setCollection", null, ["r" => 0, "nl" => 43, "xl" => 44]], 
+        "collection" => ["collection", "string", null, "getCollection", "setCollection", null, ["r" => 0, "nl" => 32, "xl" => 44]], 
         "mutable" => ["mutable", "bool", null, "getMutable", "setMutable", true, ["r" => 0]], 
         "creators" => ["creators", "\Tatum\Model\SolanaNftMetadataCreator[]", null, "getCreators", "setCreators", null, ["r" => 0, "c" => 1]]
     ];
