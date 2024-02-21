@@ -1,5 +1,12 @@
 # Tatum - PHP SDK
 
+## Tatum - PHP SDK is no longer supported
+
+
+### For PHP recommended way is to use API
+
+<p>&nbsp;</p>
+
 <p align="center">
     <a href="https://tatumio.github.io/tatum-php/" target="_blank">
         <img src="https://repository-images.githubusercontent.com/364242763/d637cddc-cf10-4992-9058-8339bd3e2239"/>
@@ -14,7 +21,7 @@
 ## Table of Contents
 - [Welcome!](#welcome)
   - [What is Tatum?](#what-is-tatum)
-  - [Need help?](#need-help)
+  - [Need help?](#troubleshooting)
 - [Getting Started](#getting-started)
 
 ## Welcome!
